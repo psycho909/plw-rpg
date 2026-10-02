@@ -1,12 +1,12 @@
 # PLW 專案身份繼承與 GPT-6.1 Sol 規範同步
 
-- Status: blocked
+- Status: accepted
 - Owner: 本專案使用者（沿用 README 已確認身份）
 - Approver: 本專案使用者（預設同 Owner）
 - Approval evidence: 2026-10-02；Owner 在本 Session 明確要求「D:\Codex\plw-rpg 此專案的也一起調整」；依本 Session 已核准的身份繼承與 AGENTS 調整目標界定本 Ticket 文件 Scope，未授權變更產品驗收。
 - Risk: L2
-- Updated: 2026-10-02
-- Branch: main（unborn，尚無 HEAD）
+- Updated: 2026-10-03
+- Branch: main
 - Git / Remote authority: 依 README 既有 standing authorization；本次 worker 不執行 Git 交付，由主 Agent 核對。unborn main 及全部產品檔案未追蹤，不因本次文件 Scope 一併發布產品；若無安全文件交付基準，記錄同步阻塞。
 
 ## Goal
@@ -37,10 +37,8 @@
 - 不以文件／設定變更推論模型 runtime 或效能證據。
 
 ## Dependencies and Blockers
-- 本機文件驗證與主 Agent review 已完成，Git 交付受阻：`git status --short --branch` 顯示 unborn main，`git log -1` 無 HEAD，`git ls-remote --heads origin` exit 0 但無分支。產品檔案全部未追蹤，現有 V1 Persistence Delivery Ticket 仍待產品測試／review。只提交本次 7 份文件會缺少其引用的規範與 SPEC；提交整包產品又超出本次範圍，不採這兩條路。
-- Next Action: 在原產品交付 Ticket 完成必要驗收並建立可靠 Git 基準後，核對並提交本次文件；本次不接手產品實作、部署或修改其 Acceptance。Git 同步前維持 blocked，不能把本機文件檢查當成遠端交付。
-
+- None；原先產品驗收／unborn main 阻塞已於 2026-10-03 解除。V1 主 Agent 完成 77 項測試、build、review fallback，建立並推送初始 commit，規範文件隨產品基準完整交付。
 ## Evidence
 - Verification: 四份同步文件對照 `templates/project/` 執行 `git diff --no-index --check`，均 exit 0；新 Ticket 對照 `NUL` 的 `git diff --no-index --check` exit 1（新增檔案差異，無空白錯誤診斷）；直接尾端空白掃描 PASS。PowerShell inline Markdown link checker 檢查 7 份文件，共 42 個連結（39 個相對連結）及 5 個錨點，全部通過；檢查移除 fenced code／HTML comments 後的 inline links，確認本機目標檔案及標題錨點。未執行遊戲檢查。
 - Review / Audit: 主 Agent 分開完成 Standards／Spec 檢查：四份規範文件與正式模板 LF／trimEnd 正規化內容一致；README 已確認身份、Git standing authorization、產品正本、損毀存檔保護與模型限制保留；CHANGELOG／本 Ticket 只涉及文件 Scope，沒有應用程式變更。整合重驗 7 份文件、39 個相對連結及 5 個錨點、尾端空白皆 PASS（Node inline checker exit 0）。此為施工主 Agent 的整合 review，不是 Independent Audit；L2 未觸發 L3 稽核。
-- Commit / PR: 未 stage／commit／push；README standing authorization 仍有效，但無安全的獨立文件 Git 交付基準，記錄 blocked。無 PR、merge、deploy；未進行產品 build／test 或模型實測。
+- Commit / PR: 2026-10-03 由 V1 主 Agent 整合交付，75662ae3b5aa4045976a2844b41c01d4bbcef340 已包含本 Ticket 與全部規範依據；origin/main 與 HEAD 核對一致，原 Git 基準阻塞解除。結案狀態隨後再 commit／push。無 PR／merge；部署由另行授權的 Vercel Ticket 處理。

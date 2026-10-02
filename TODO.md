@@ -8,9 +8,6 @@
 
 ## Now
 
-- [ ] 世界核心自動驗收 — Ticket: [V1 Core World](tickets/20261002-v1-core-world.md)
-- [ ] 生活與冒險完成驗收 — Ticket: [V1 Life Adventure](tickets/20261002-v1-life-adventure.md)
-- [ ] 存檔、離線與整體交付 — Ticket: [V1 Persistence Delivery](tickets/20261002-v1-persistence-delivery.md)
 - [ ] 正式網站與 main 自動部署 — Ticket: [Vercel Production](tickets/20261003-vercel-production.md)
 
 ## Next

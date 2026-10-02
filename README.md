@@ -24,6 +24,16 @@ npm.cmd run dev
 
 農田操作為整地、播種、等待兩日、收割。商店需走到建築旁並在營業時間交易。酒館與鐵匠鋪於聚落成長為村莊後解鎖。旅人筆記可等待一日、一季或一年，等待不會自動回血。角色死亡後選擇成年居民接續，世界不重置。
 
+## 正式網站與部署
+
+遊戲網址：[plw-rpg.vercel.app](https://plw-rpg.vercel.app)。
+
+Vercel 專案為 `psycho909s-projects/plw-rpg`，Git integration 連接 `psycho909/plw-rpg`，Production Branch 為 `main`。推送至 `origin/main` 後，Vercel 自動 build 並更新正式網址；其他分支使用 Preview deployment。[Vercel Git integration](https://vercel.com/docs/git)
+
+部署使用 Node.js 22、Vite preset、`npm ci`、`npm run build` 與 `dist`。交付前在本機執行 `npm.cmd run check`；Vercel build 失敗時不會把失敗產物切換成正式版本。設定與驗證證據見 [部署 Ticket](tickets/20261003-vercel-production.md)。
+
+存檔保存在該瀏覽器的 localStorage；正式網址與 localhost 的存檔各自獨立，不會自動跨裝置同步。`.vercel/`、`.env*` 保持 Git 忽略。
+
 ## Work Authority 與 Git handoff
 
 - Work Authority：Git 追蹤的 [`tickets/*.md`](tickets/README.md)
