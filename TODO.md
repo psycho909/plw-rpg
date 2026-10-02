@@ -8,7 +8,6 @@
 
 ## Now
 
-- [ ] 正式網站與 main 自動部署 — Ticket: [Vercel Production](tickets/20261003-vercel-production.md)
 
 ## Next
 
