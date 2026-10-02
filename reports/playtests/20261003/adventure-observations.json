@@ -1,0 +1,968 @@
+{
+  "startedAtUtc": "2026-10-02T17:33:16.510377+00:00",
+  "environment": {
+    "url": "http://127.0.0.1:5173/",
+    "browser": "Chromium via Playwright",
+    "headless": true,
+    "isolatedContext": true
+  },
+  "observations": [
+    {
+      "checkpoint": "start",
+      "note": "Fresh isolated context; paused via UI; no state injection.",
+      "ui_location": "🏘️ 橡谷聚落",
+      "ui_clock": "✿\n第 1 年 · 春 1 日\n08:00",
+      "worldTime": 480,
+      "worldSeed": 909,
+      "position": {
+        "x": 7,
+        "y": 9
+      },
+      "currentRegion": "village",
+      "level": 1,
+      "exp": 0,
+      "hp": 100,
+      "maxHp": 100,
+      "stamina": 84,
+      "gold": 45,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "hamlet",
+      "settlementGrowth": 0,
+      "regionDiscovered": false,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 0,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "橡谷聚落建立。奧登，今天起這裡就是你的家。"
+      ]
+    },
+    {
+      "checkpoint": "forest-first-win",
+      "note": "UI: forest encounter; defended, used potion, attacked to victory.",
+      "ui_location": "🌲 北方森林",
+      "ui_clock": "✿\n第 1 年 · 春 1 日\n08:39",
+      "worldTime": 519,
+      "worldSeed": 909,
+      "position": {
+        "x": 5,
+        "y": 4
+      },
+      "currentRegion": "forest",
+      "level": 1,
+      "exp": 15,
+      "hp": 94,
+      "maxHp": 100,
+      "stamina": 76,
+      "gold": 53,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 1,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "hamlet",
+      "settlementGrowth": 0,
+      "regionDiscovered": false,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 0,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "橡谷聚落建立。奧登，今天起這裡就是你的家。",
+        "遭遇史萊姆。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。"
+      ]
+    },
+    {
+      "checkpoint": "forest-second-win",
+      "note": "UI: second forest encounter completed with attacks; checked level/loot.",
+      "ui_location": "🌲 北方森林",
+      "ui_clock": "✿\n第 1 年 · 春 1 日\n08:41",
+      "worldTime": 521,
+      "worldSeed": 909,
+      "position": {
+        "x": 5,
+        "y": 4
+      },
+      "currentRegion": "forest",
+      "level": 2,
+      "exp": 0,
+      "hp": 97,
+      "maxHp": 106,
+      "stamina": 68,
+      "gold": 61,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 2,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "hamlet",
+      "settlementGrowth": 0,
+      "regionDiscovered": false,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 0,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "橡谷聚落建立。奧登，今天起這裡就是你的家。",
+        "遭遇史萊姆。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+        "遭遇史萊姆。",
+        "奧登 升到 Lv.2。",
+        "戰鬥熟練度升到 Lv.2。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。"
+      ]
+    },
+    {
+      "checkpoint": "forest-run",
+      "note": "UI: started a third forest encounter, chose Run, verified combat closed.",
+      "ui_location": "🌲 北方森林",
+      "ui_clock": "✿\n第 1 年 · 春 1 日\n08:51",
+      "worldTime": 531,
+      "worldSeed": 909,
+      "position": {
+        "x": 5,
+        "y": 4
+      },
+      "currentRegion": "forest",
+      "level": 2,
+      "exp": 0,
+      "hp": 97,
+      "maxHp": 106,
+      "stamina": 60,
+      "gold": 61,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 2,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "hamlet",
+      "settlementGrowth": 0,
+      "regionDiscovered": false,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 0,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "遭遇史萊姆。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+        "遭遇史萊姆。",
+        "奧登 升到 Lv.2。",
+        "戰鬥熟練度升到 Lv.2。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+        "遭遇史萊姆。",
+        "你撤離了戰鬥。"
+      ]
+    },
+    {
+      "checkpoint": "mist-revealed",
+      "note": "UI: walked along map route into unknown region; read-only save confirms discovery.",
+      "ui_location": "🕳️ 迷霧山谷",
+      "ui_clock": "✿\n第 1 年 · 春 1 日\n10:11",
+      "worldTime": 611,
+      "worldSeed": 909,
+      "position": {
+        "x": 20,
+        "y": 3
+      },
+      "currentRegion": "unknown",
+      "level": 2,
+      "exp": 25,
+      "hp": 97,
+      "maxHp": 106,
+      "stamina": 60,
+      "gold": 61,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 2,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "hamlet",
+      "settlementGrowth": 0,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 1,
+        "progress": 0,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+        "遭遇史萊姆。",
+        "奧登 升到 Lv.2。",
+        "戰鬥熟練度升到 Lv.2。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+        "遭遇史萊姆。",
+        "你撤離了戰鬥。",
+        "迷霧散開。你發現了山谷中的廢棄礦坑。"
+      ]
+    },
+    {
+      "checkpoint": "dungeon-floor-one",
+      "note": "UI: entered abandoned mine, explored floor one, and won its slime encounter.",
+      "ui_location": "🕳️ 迷霧山谷",
+      "ui_clock": "✿\n第 1 年 · 春 1 日\n10:23",
+      "worldTime": 623,
+      "worldSeed": 909,
+      "position": {
+        "x": 20,
+        "y": 3
+      },
+      "currentRegion": "unknown",
+      "level": 2,
+      "exp": 40,
+      "hp": 95,
+      "maxHp": 106,
+      "stamina": 47,
+      "gold": 69,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 3,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "hamlet",
+      "settlementGrowth": 0,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 1,
+        "progress": 0,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": true
+      },
+      "recentEvents": [
+        "戰鬥熟練度升到 Lv.2。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+        "遭遇史萊姆。",
+        "你撤離了戰鬥。",
+        "迷霧散開。你發現了山谷中的廢棄礦坑。",
+        "進入廢棄礦坑。前方依序是普通怪、精英與守衛首領。",
+        "遭遇史萊姆。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。"
+      ]
+    },
+    {
+      "checkpoint": "dungeon-left",
+      "note": "UI: used Leave Mine after first floor; no state injection.",
+      "ui_location": "🕳️ 迷霧山谷",
+      "ui_clock": "✿\n第 1 年 · 春 1 日\n10:23",
+      "worldTime": 623,
+      "worldSeed": 909,
+      "position": {
+        "x": 20,
+        "y": 3
+      },
+      "currentRegion": "unknown",
+      "level": 2,
+      "exp": 40,
+      "hp": 95,
+      "maxHp": 106,
+      "stamina": 47,
+      "gold": 69,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 3,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "hamlet",
+      "settlementGrowth": 0,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 1,
+        "progress": 0,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "戰鬥熟練度升到 Lv.2。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+        "遭遇史萊姆。",
+        "你撤離了戰鬥。",
+        "迷霧散開。你發現了山谷中的廢棄礦坑。",
+        "進入廢棄礦坑。前方依序是普通怪、精英與守衛首領。",
+        "遭遇史萊姆。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。"
+      ]
+    },
+    {
+      "checkpoint": "world-season-1",
+      "note": "UI journal action: advanced one season (1/3) toward village unlock.",
+      "ui_location": "🏘️ 橡谷聚落",
+      "ui_clock": "☀\n第 1 年 · 夏 1 日\n12:58",
+      "worldTime": 43978,
+      "worldSeed": 909,
+      "position": {
+        "x": 7,
+        "y": 9
+      },
+      "currentRegion": "village",
+      "level": 2,
+      "exp": 40,
+      "hp": 106,
+      "maxHp": 106,
+      "stamina": 82,
+      "gold": 69,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 3,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "hamlet",
+      "settlementGrowth": 34.610380799999994,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 1,
+        "progress": 12.000000000000005,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "迷霧散開。你發現了山谷中的廢棄礦坑。",
+        "進入廢棄礦坑。前方依序是普通怪、精英與守衛首領。",
+        "遭遇史萊姆。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+        "休息後，你恢復了生命與體力。",
+        "奧斯卡 30 搬進橡谷，成為礦工。",
+        "米拉 31 搬進橡谷，成為樵夫。",
+        "羅恩 32 出生了。"
+      ]
+    },
+    {
+      "checkpoint": "world-season-2",
+      "note": "UI journal action: advanced one season (2/3) toward village unlock.",
+      "ui_location": "🏘️ 橡谷聚落",
+      "ui_clock": "❧\n第 1 年 · 秋 1 日\n12:58",
+      "worldTime": 87178,
+      "worldSeed": 909,
+      "position": {
+        "x": 7,
+        "y": 9
+      },
+      "currentRegion": "village",
+      "level": 2,
+      "exp": 40,
+      "hp": 106,
+      "maxHp": 106,
+      "stamina": 82,
+      "gold": 69,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 3,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "hamlet",
+      "settlementGrowth": 73.88986879999999,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 1,
+        "progress": 23.99999999999998,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "休息後，你恢復了生命與體力。",
+        "奧斯卡 30 搬進橡谷，成為礦工。",
+        "米拉 31 搬進橡谷，成為樵夫。",
+        "羅恩 32 出生了。",
+        "艾妲 33 搬進橡谷，成為店主。",
+        "北方森林威脅升到 Lv.2；哥布林營地擴張了。",
+        "芬恩 34 搬進橡谷，成為守衛。",
+        "諾拉 35 出生了。"
+      ]
+    },
+    {
+      "checkpoint": "world-season-3",
+      "note": "UI journal action: advanced one season (3/3) toward village unlock.",
+      "ui_location": "🏘️ 橡谷聚落",
+      "ui_clock": "❄\n第 1 年 · 冬 1 日\n12:58",
+      "worldTime": 130378,
+      "worldSeed": 909,
+      "position": {
+        "x": 7,
+        "y": 9
+      },
+      "currentRegion": "village",
+      "level": 2,
+      "exp": 40,
+      "hp": 106,
+      "maxHp": 106,
+      "stamina": 82,
+      "gold": 69,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 3,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "village",
+      "settlementGrowth": 113.59521279999998,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 2,
+        "progress": 35.999999999999936,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "芬恩 34 搬進橡谷，成為守衛。",
+        "諾拉 35 出生了。",
+        "橡谷成長為村莊。酒館與鐵匠鋪開始營業。",
+        "林間哥布林活動增加。樵夫帶回不安的消息。",
+        "雨果 36 搬進橡谷，成為農夫。",
+        "廢棄礦坑的威脅升到 Lv.2。",
+        "露西 37 搬進橡谷，成為礦工。",
+        "西蒙 38 出生了。"
+      ]
+    },
+    {
+      "checkpoint": "woodcutting",
+      "note": "UI: worked in forest for wage/materials; no balance edits.",
+      "ui_location": "🌲 北方森林",
+      "ui_clock": "❄\n第 1 年 · 冬 1 日\n15:40",
+      "worldTime": 130540,
+      "worldSeed": 909,
+      "position": {
+        "x": 5,
+        "y": 4
+      },
+      "currentRegion": "forest",
+      "level": 3,
+      "exp": 10,
+      "hp": 112,
+      "maxHp": 112,
+      "stamina": 52,
+      "gold": 81,
+      "inventory": {
+        "wood": 6,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 3,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "village",
+      "settlementGrowth": 113.59521279999998,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 2,
+        "progress": 35.999999999999936,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "廢棄礦坑的威脅升到 Lv.2。",
+        "露西 37 搬進橡谷，成為礦工。",
+        "西蒙 38 出生了。",
+        "取得 2 份木材，工作報酬 4 金幣。",
+        "奧登 升到 Lv.3。",
+        "伐木熟練度升到 Lv.2。",
+        "取得 2 份木材，工作報酬 4 金幣。",
+        "取得 2 份木材，工作報酬 4 金幣。"
+      ]
+    },
+    {
+      "checkpoint": "sold-materials",
+      "note": "UI: sold gathered wood and monster loot at the open store.",
+      "ui_location": "🏘️ 橡谷聚落",
+      "ui_clock": "❄\n第 1 年 · 冬 1 日\n17:20",
+      "worldTime": 130640,
+      "worldSeed": 909,
+      "position": {
+        "x": 10,
+        "y": 8
+      },
+      "currentRegion": "village",
+      "level": 3,
+      "exp": 10,
+      "hp": 112,
+      "maxHp": 112,
+      "stamina": 52,
+      "gold": 135,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 1,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "village",
+      "settlementGrowth": 113.59521279999998,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 2,
+        "progress": 35.999999999999936,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。"
+      ]
+    },
+    {
+      "checkpoint": "smith-purchase",
+      "note": "UI: attempted affordable smith purchases; saved state read-only.",
+      "ui_location": "🏘️ 橡谷聚落",
+      "ui_clock": "❄\n第 1 年 · 冬 1 日\n17:35",
+      "worldTime": 130655,
+      "worldSeed": 909,
+      "position": {
+        "x": 12,
+        "y": 8
+      },
+      "currentRegion": "village",
+      "level": 3,
+      "exp": 10,
+      "hp": 112,
+      "maxHp": 112,
+      "stamina": 52,
+      "gold": 65,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 1,
+        "sword": 1,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "village",
+      "settlementGrowth": 113.59521279999998,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 2,
+        "progress": 35.999999999999936,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "購買一份鐵劍。"
+      ]
+    },
+    {
+      "checkpoint": "equipment-equipped",
+      "note": "UI: equipped purchased sword from inventory; armor purchase was not affordable after reserving tavern hire cost.",
+      "ui_location": "🏘️ 橡谷聚落",
+      "ui_clock": "❄\n第 1 年 · 冬 1 日\n17:35",
+      "worldTime": 130655,
+      "worldSeed": 909,
+      "position": {
+        "x": 12,
+        "y": 8
+      },
+      "currentRegion": "village",
+      "level": 3,
+      "exp": 10,
+      "hp": 112,
+      "maxHp": 112,
+      "stamina": 52,
+      "gold": 65,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 1,
+        "sword": 1,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": "sword",
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "village",
+      "settlementGrowth": 113.59521279999998,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 2,
+        "progress": 35.999999999999936,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "購買一份鐵劍。"
+      ]
+    },
+    {
+      "checkpoint": "tavern-open",
+      "note": "UI: moved to tavern and advanced normal clock to operating hours.",
+      "ui_location": "🏘️ 橡谷聚落",
+      "ui_clock": "❄\n第 1 年 · 冬 1 日\n18:35",
+      "worldTime": 130715,
+      "worldSeed": 909,
+      "position": {
+        "x": 11,
+        "y": 11
+      },
+      "currentRegion": "village",
+      "level": 3,
+      "exp": 10,
+      "hp": 112,
+      "maxHp": 112,
+      "stamina": 52,
+      "gold": 65,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 1,
+        "sword": 1,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": "sword",
+        "armor": null
+      },
+      "party": 0,
+      "settlementStage": "village",
+      "settlementGrowth": 113.59521279999998,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 2,
+        "progress": 35.999999999999936,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "購買一份鐵劍。"
+      ]
+    },
+    {
+      "checkpoint": "tavern-hire-attempt",
+      "note": "UI: attempted to hire first available listed mercenary; no balance edits.",
+      "ui_location": "🏘️ 橡谷聚落",
+      "ui_clock": "❄\n第 1 年 · 冬 1 日\n18:45",
+      "worldTime": 130725,
+      "worldSeed": 909,
+      "position": {
+        "x": 11,
+        "y": 11
+      },
+      "currentRegion": "village",
+      "level": 3,
+      "exp": 10,
+      "hp": 112,
+      "maxHp": 112,
+      "stamina": 52,
+      "gold": 40,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 1,
+        "sword": 1,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": "sword",
+        "armor": null
+      },
+      "party": 1,
+      "settlementStage": "village",
+      "settlementGrowth": 113.59521279999998,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 2,
+        "progress": 35.999999999999936,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "購買一份鐵劍。",
+        "露西 7 加入同行，日薪 4 金幣，契約 3 日。"
+      ],
+      "hireClicked": true
+    },
+    {
+      "checkpoint": "final",
+      "note": "End-of-route UI save and read-only localStorage inspection.",
+      "ui_location": "🏘️ 橡谷聚落",
+      "ui_clock": "❄\n第 1 年 · 冬 1 日\n18:45",
+      "worldTime": 130725,
+      "worldSeed": 909,
+      "position": {
+        "x": 11,
+        "y": 11
+      },
+      "currentRegion": "village",
+      "level": 3,
+      "exp": 10,
+      "hp": 112,
+      "maxHp": 112,
+      "stamina": 52,
+      "gold": 40,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 1,
+        "sword": 1,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": "sword",
+        "armor": null
+      },
+      "party": 1,
+      "settlementStage": "village",
+      "settlementGrowth": 113.59521279999998,
+      "regionDiscovered": true,
+      "combatActive": false,
+      "dungeon": {
+        "discovered": true,
+        "threat": 2,
+        "progress": 35.999999999999936,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "recentEvents": [
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份木材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "出售一份怪物素材。",
+        "購買一份鐵劍。",
+        "露西 7 加入同行，日薪 4 金幣，契約 3 日。"
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "route": {
+    "forestBattles": [
+      {
+        "enemy": "史萊姆",
+        "attacks": 2
+      },
+      {
+        "enemy": "史萊姆",
+        "attacks": 2
+      }
+    ],
+    "dungeonBattle": {
+      "enemy": "史萊姆",
+      "attacks": 2
+    }
+  }
+}

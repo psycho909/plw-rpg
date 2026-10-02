@@ -1,0 +1,862 @@
+{
+  "elapsed_year_clicks": 64,
+  "storage_key": "oakvale-v1",
+  "world_seed": 909,
+  "stored_world_time": 11059680,
+  "active_character_id": "npc-2",
+  "character": {
+    "id": "npc-2",
+    "name": "羅恩 2",
+    "age": 84,
+    "lifeStage": "elder",
+    "isAlive": true,
+    "birthYear": -19,
+    "deathYear": null,
+    "deathCause": null
+  },
+  "alive_population": 80,
+  "alive_npc_count": 79,
+  "npc_count": 79,
+  "npc_jobs": {
+    "guard": 9,
+    "mercenary": 5,
+    "farmer": 42,
+    "woodcutter": 5,
+    "blacksmith": 8,
+    "shopkeeper": 4,
+    "miner": 6
+  },
+  "npc_activities": {
+    "work": 67,
+    "leisure": 12
+  },
+  "npc_schedule_sample": [
+    {
+      "id": "npc-27",
+      "name": "露西 27",
+      "age": 83,
+      "job": "guard",
+      "currentActivity": "work",
+      "position": {
+        "x": 8,
+        "y": 6
+      }
+    },
+    {
+      "id": "npc-28",
+      "name": "西蒙 28",
+      "age": 85,
+      "job": "mercenary",
+      "currentActivity": "work",
+      "position": {
+        "x": 11,
+        "y": 11
+      }
+    },
+    {
+      "id": "npc-32",
+      "name": "羅恩 32",
+      "age": 64,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-35",
+      "name": "諾拉 35",
+      "age": 64,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-38",
+      "name": "西蒙 38",
+      "age": 64,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-41",
+      "name": "米拉 41",
+      "age": 63,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-44",
+      "name": "芬恩 44",
+      "age": 63,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-47",
+      "name": "露西 47",
+      "age": 63,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-50",
+      "name": "奧斯卡 50",
+      "age": 63,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-53",
+      "name": "艾妲 53",
+      "age": 62,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-56",
+      "name": "雨果 56",
+      "age": 62,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-59",
+      "name": "艾琳 59",
+      "age": 62,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    }
+  ],
+  "settlement": {
+    "name": "橡谷",
+    "stage": "town",
+    "capacity": 80,
+    "food": 100,
+    "prosperity": 100,
+    "safety": 30.70000000000009,
+    "growth": 11400.58920746792,
+    "buildings": [
+      "house",
+      "farm",
+      "store",
+      "inn",
+      "tavern",
+      "blacksmith"
+    ]
+  },
+  "threat": {
+    "threatLevel": 3,
+    "campLevel": 3,
+    "monsterPopulation": 100,
+    "bossProgress": 100,
+    "bossAlive": true
+  },
+  "dungeon": {
+    "threat": 3,
+    "discovered": false,
+    "stage": 0
+  },
+  "seed_candidates": {
+    "worldSeed": 909
+  },
+  "storage_keys": [
+    "oakvale-v1"
+  ],
+  "storage_root_keys": [
+    "saveVersion",
+    "worldSeed",
+    "rngState",
+    "worldTime",
+    "activeCharacterId",
+    "characters",
+    "npcs",
+    "tiles",
+    "settlement",
+    "regions",
+    "threat",
+    "dungeon",
+    "crops",
+    "preparedPlots",
+    "party",
+    "combat",
+    "events",
+    "history",
+    "eventSequence",
+    "nextNpcId",
+    "lastSavedAt"
+  ],
+  "ui_time_and_status": "♣\nOakvale\n在世界裡，好好生活。\n✿\n第 65 年 · 春 1 日\n08:00\n暫停\n×1\n×5\n×20\n儲存世界 ↧\n⌘\n世界\n♙\n角色\n▣\n背包\n☷\n旅人筆記\n◷\n世界歷史\n時間已暫停\n即使站著不動，\n故事也會繼續。\n重建世界\n\n你的旅程，第 7681 天\n\n旅人筆記\n⛰️ 灰石礦場\n今天，想怎麼過？\n🌾\n過一點平凡日子\n\n到東方農田整地、播種，兩日後收割。到森林伐木或礦場採礦，再把素材賣給雜貨店。\n\n🧭\n出門看看\n\n步行進入迷霧山谷，尋找廢棄礦坑。帶足藥水，找同行者，再挑戰更危險的地方。\n\n🌲\n聽聽世界的聲音\n\n居民每天上班與休息。聚落會自己成長，森林的怪物也會聚集。你的選擇不是世界唯一的故事。\n\n讓時間往前走\n等待 1 日\n度過一季\n度過一年\n\n時間會影響所有人。田地成熟、契約到期、居民衰老，森林威脅也會成長。等待期間不會自動恢復生命與體力。\n\n你的同行者 · 0 / 2\n\n目前獨自旅行。橡谷成長為村莊後，去酒館找找夥伴。\n\n世界的聲音 \n持續發生的日常\n全部\n自己\n居民\n世界\n威脅\n聚落\n第 65 年 春 1 日 08:00\n\n羅恩 2 接續了旅程。橡谷的歷史繼續書寫。\n\n第 65 年 春 1 日 00:00\n\n露西 137 出生了。\n\n第 65 年 春 1 日 00:00\n\n雨果 136 搬進橡谷，成為樵夫。\n\n第 65 年 春 1 日 00:00\n\n第 65 年開始了。每個人都長了一歲。\n\n第 65 年 春 1 日 00:00\n\n米拉 1 因自然老化離世，享年 82 歲。世界仍會延續。\n\n第 65 年 春 1 日 00:00\n\n奧登 因自然老化離世，享年 80 歲。世界仍會延續。\n\n第 64 年 冬 30 日 00:00\n\n米拉 81 在北方道路受傷，需要休養兩日。\n\n第 64 年 冬 23 日 00:00\n\n諾拉 85 在北方道路受傷，需要休養兩日。\n\n第 64 年 冬 16 日 00:00\n\n雨果 86 在北方道路受傷，需要休養兩日。\n\n第 64 年 冬 9 日 00:00\n\n羅恩 112 在北方道路受傷，需要休養兩日。\n\n第 64 年 冬 2 日 00:00\n\n艾妲 83 在北方道路受傷，需要休養兩日。\n\n第 64 年 秋 25 日 00:00\n\n芬恩 104 在北方道路受傷，需要休養兩日。\n\n第 64 年 秋 18 日 00:00\n\n艾琳 59 在北方道路受傷，需要休養兩日。\n\n第 64 年 秋 11 日 00:00\n\n西蒙 118 在北方道路受傷，需要休養兩日。\n\n第 64 年 秋 4 日 00:00\n\n米拉 81 在北方道路受傷，需要休養兩日。\n\n第 64 年 夏 27 日 00:00\n\n米拉 111 在北方道路受傷，需要休養兩日。\n\n第 64 年 夏 20 日 00:00\n\n米拉 41 在北方道路受傷，需要休養兩日。\n\n第 64 年 夏 13 日 00:00\n\n露西 77 在北方道路受傷，需要休養兩日。\n\n第 64 年 夏 6 日 00:00\n\n諾拉 115 在北方道路受傷，需要休養兩日。\n\n第 64 年 夏 1 日 00:00\n\n諾拉 135 搬進橡谷，成為礦工。\n\n第 64 年 春 29 日 00:00\n\n諾拉 35 在北方道路受傷，需要休養兩日。\n\n第 64 年 春 22 日 00:00\n\n奧斯卡 100 在北方道路受傷，需要休養兩日。\n\n第 64 年 春 16 日 00:00\n\n芬恩 134 搬進橡谷，成為農夫。\n\n第 64 年 春 15 日 00:00\n\n西蒙 128 在北方道路受傷，需要休養兩日。\n\n第 64 年 春 8 日 00:00\n\n米拉 101 在北方道路受傷，需要休養兩日。\n\n第 64 年 春 1 日 00:00\n\n西蒙 68 在北方道路受傷，需要休養兩日。\n\n第 64 年 春 1 日 00:00\n\n艾妲 133 出生了。\n\n第 64 年 春 1 日 00:00\n\n羅恩 132 搬進橡谷，成為守衛。\n\n第 64 年 春 1 日 00:00\n\n第 64 年開始了。每個人都長了一歲。\n\n第 64 年 春 1 日 00:00\n\n露西 67 因自然老化離世，享年 89 歲。世界仍會延續。\n\n第 64 年 春 1 日 00:00\n\n奧斯卡 60 因自然老化離世，享年 85 歲。世界仍會延續。\n\n第 64 年 春 1 日 00:00\n\n諾拉 45 因自然老化離世，享年 84 歲。世界仍會延續。\n\n第 64 年 春 1 日 00:00\n\n艾妲 43 因自然老化離世，享年 85 歲。世界仍會延續。\n\n第 63 年 冬 24 日 00:00\n\n艾妲 53 在北方道路受傷，需要休養兩日。\n\n第 63 年 冬 17 日 00:00\n\n露西 97 在北方道路受傷，需要休養兩日。\n\n🙂\n羅恩 2\n84 歲 · 長者\nLv.32\n生命\n286 / 286\n體力\n68 / 68\n🪙 45 金幣\n同行 0 / 2\n徒手\n便服\n橡谷\n城鎮\n80\n位居民\n容量 80\n🏘️\n糧食\n100\n繁榮\n100\n安全\n31\n🏠\n🌾\n🏪\n🛏️\n🍺\n⚒️\n\n居民的工作會讓聚落自然成長。\n\n看看居民在做什麼 +\n北方森林\n威脅 3\n\n👺 哥布林營地\nLv.3\n\n怪物數量\n100\n\n👹 酋長已出現，商路受阻。\n\n🕳️ 尚未發現的礦坑\nLv.3\n\n✓ 世界已存於此瀏覽器\n離線最多延續 8 小時\n\n世界已儲存。\n×",
+  "recent_events": [
+    {
+      "id": 1297,
+      "at": 10896480,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "米拉 101 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1298,
+      "at": 10906560,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "西蒙 128 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1299,
+      "at": 10908000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "芬恩 134 搬進橡谷，成為農夫。"
+    },
+    {
+      "id": 1300,
+      "at": 10916640,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "奧斯卡 100 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1301,
+      "at": 10926720,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "諾拉 35 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1302,
+      "at": 10929600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "諾拉 135 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 1303,
+      "at": 10936800,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "諾拉 115 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1304,
+      "at": 10946880,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "露西 77 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1305,
+      "at": 10956960,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "米拉 41 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1306,
+      "at": 10967040,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "米拉 111 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1307,
+      "at": 10977120,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "米拉 81 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1308,
+      "at": 10987200,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "西蒙 118 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1309,
+      "at": 10997280,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "艾琳 59 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1310,
+      "at": 11007360,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "芬恩 104 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1311,
+      "at": 11017440,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "艾妲 83 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1312,
+      "at": 11027520,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "羅恩 112 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1313,
+      "at": 11037600,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "雨果 86 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1314,
+      "at": 11047680,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "諾拉 85 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1315,
+      "at": 11057760,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "米拉 81 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 1316,
+      "at": 11059200,
+      "type": "npc.died",
+      "category": "player",
+      "message": "奧登 因自然老化離世，享年 80 歲。世界仍會延續。"
+    },
+    {
+      "id": 1317,
+      "at": 11059200,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "米拉 1 因自然老化離世，享年 82 歲。世界仍會延續。"
+    },
+    {
+      "id": 1318,
+      "at": 11059200,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 65 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 1319,
+      "at": 11059200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "雨果 136 搬進橡谷，成為樵夫。"
+    },
+    {
+      "id": 1320,
+      "at": 11059200,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "露西 137 出生了。"
+    },
+    {
+      "id": 1321,
+      "at": 11059680,
+      "type": "character.successor",
+      "category": "player",
+      "message": "羅恩 2 接續了旅程。橡谷的歷史繼續書寫。"
+    }
+  ],
+  "history": [
+    {
+      "id": 1228,
+      "at": 10368000,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "奧斯卡 80 因自然老化離世，享年 78 歲。世界仍會延續。"
+    },
+    {
+      "id": 1229,
+      "at": 10368000,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 61 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 1230,
+      "at": 10368000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "西蒙 128 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 1231,
+      "at": 10368000,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "艾琳 129 出生了。"
+    },
+    {
+      "id": 1249,
+      "at": 10540800,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "西蒙 78 因自然老化離世，享年 83 歲。世界仍會延續。"
+    },
+    {
+      "id": 1250,
+      "at": 10540800,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 62 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 1251,
+      "at": 10540800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "奧斯卡 130 搬進橡谷，成為鐵匠。"
+    },
+    {
+      "id": 1269,
+      "at": 10713600,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "艾琳 49 因自然老化離世，享年 80 歲。世界仍會延續。"
+    },
+    {
+      "id": 1270,
+      "at": 10713600,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 63 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 1271,
+      "at": 10713600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "米拉 131 搬進橡谷，成為店主。"
+    },
+    {
+      "id": 1289,
+      "at": 10886400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "艾妲 43 因自然老化離世，享年 85 歲。世界仍會延續。"
+    },
+    {
+      "id": 1290,
+      "at": 10886400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "諾拉 45 因自然老化離世，享年 84 歲。世界仍會延續。"
+    },
+    {
+      "id": 1291,
+      "at": 10886400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "奧斯卡 60 因自然老化離世，享年 85 歲。世界仍會延續。"
+    },
+    {
+      "id": 1292,
+      "at": 10886400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "露西 67 因自然老化離世，享年 89 歲。世界仍會延續。"
+    },
+    {
+      "id": 1293,
+      "at": 10886400,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 64 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 1294,
+      "at": 10886400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "羅恩 132 搬進橡谷，成為守衛。"
+    },
+    {
+      "id": 1295,
+      "at": 10886400,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "艾妲 133 出生了。"
+    },
+    {
+      "id": 1299,
+      "at": 10908000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "芬恩 134 搬進橡谷，成為農夫。"
+    },
+    {
+      "id": 1302,
+      "at": 10929600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "諾拉 135 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 1316,
+      "at": 11059200,
+      "type": "npc.died",
+      "category": "player",
+      "message": "奧登 因自然老化離世，享年 80 歲。世界仍會延續。"
+    },
+    {
+      "id": 1317,
+      "at": 11059200,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "米拉 1 因自然老化離世，享年 82 歲。世界仍會延續。"
+    },
+    {
+      "id": 1318,
+      "at": 11059200,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 65 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 1319,
+      "at": 11059200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "雨果 136 搬進橡谷，成為樵夫。"
+    },
+    {
+      "id": 1320,
+      "at": 11059200,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "露西 137 出生了。"
+    },
+    {
+      "id": 1321,
+      "at": 11059680,
+      "type": "character.successor",
+      "category": "player",
+      "message": "羅恩 2 接續了旅程。橡谷的歷史繼續書寫。"
+    }
+  ],
+  "milestones": [
+    {
+      "id": 1153,
+      "at": 9849600,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "雨果 76 因自然老化離世，享年 81 歲。世界仍會延續。"
+    },
+    {
+      "id": 1155,
+      "at": 9849600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "雨果 116 搬進橡谷，成為鐵匠。"
+    },
+    {
+      "id": 1156,
+      "at": 9849600,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "露西 117 出生了。"
+    },
+    {
+      "id": 1159,
+      "at": 9871200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "西蒙 118 搬進橡谷，成為守衛。"
+    },
+    {
+      "id": 1162,
+      "at": 9892800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾琳 119 搬進橡谷，成為傭兵。"
+    },
+    {
+      "id": 1163,
+      "at": 9892800,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "奧斯卡 120 出生了。"
+    },
+    {
+      "id": 1177,
+      "at": 10022400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "奧斯卡 30 因自然老化離世，享年 80 歲。世界仍會延續。"
+    },
+    {
+      "id": 1178,
+      "at": 10022400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "艾妲 33 因自然老化離世，享年 79 歲。世界仍會延續。"
+    },
+    {
+      "id": 1179,
+      "at": 10022400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "雨果 46 因自然老化離世，享年 83 歲。世界仍會延續。"
+    },
+    {
+      "id": 1180,
+      "at": 10022400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "羅恩 72 因自然老化離世，享年 74 歲。世界仍會延續。"
+    },
+    {
+      "id": 1182,
+      "at": 10022400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "米拉 121 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 1183,
+      "at": 10022400,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "羅恩 122 出生了。"
+    },
+    {
+      "id": 1186,
+      "at": 10044000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾妲 123 搬進橡谷，成為鐵匠。"
+    },
+    {
+      "id": 1189,
+      "at": 10065600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "芬恩 124 搬進橡谷，成為店主。"
+    },
+    {
+      "id": 1203,
+      "at": 10195200,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "艾琳 29 因自然老化離世，享年 82 歲。世界仍會延續。"
+    },
+    {
+      "id": 1204,
+      "at": 10195200,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "羅恩 52 因自然老化離世，享年 77 歲。世界仍會延續。"
+    },
+    {
+      "id": 1205,
+      "at": 10195200,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "露西 57 因自然老化離世，享年 81 歲。世界仍會延續。"
+    },
+    {
+      "id": 1207,
+      "at": 10195200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "諾拉 125 搬進橡谷，成為守衛。"
+    },
+    {
+      "id": 1208,
+      "at": 10195200,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "雨果 126 出生了。"
+    },
+    {
+      "id": 1211,
+      "at": 10216800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "露西 127 搬進橡谷，成為農夫。"
+    },
+    {
+      "id": 1227,
+      "at": 10368000,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "艾琳 39 因自然老化離世，享年 78 歲。世界仍會延續。"
+    },
+    {
+      "id": 1228,
+      "at": 10368000,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "奧斯卡 80 因自然老化離世，享年 78 歲。世界仍會延續。"
+    },
+    {
+      "id": 1230,
+      "at": 10368000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "西蒙 128 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 1231,
+      "at": 10368000,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "艾琳 129 出生了。"
+    },
+    {
+      "id": 1249,
+      "at": 10540800,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "西蒙 78 因自然老化離世，享年 83 歲。世界仍會延續。"
+    },
+    {
+      "id": 1251,
+      "at": 10540800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "奧斯卡 130 搬進橡谷，成為鐵匠。"
+    },
+    {
+      "id": 1269,
+      "at": 10713600,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "艾琳 49 因自然老化離世，享年 80 歲。世界仍會延續。"
+    },
+    {
+      "id": 1271,
+      "at": 10713600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "米拉 131 搬進橡谷，成為店主。"
+    },
+    {
+      "id": 1289,
+      "at": 10886400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "艾妲 43 因自然老化離世，享年 85 歲。世界仍會延續。"
+    },
+    {
+      "id": 1290,
+      "at": 10886400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "諾拉 45 因自然老化離世，享年 84 歲。世界仍會延續。"
+    },
+    {
+      "id": 1291,
+      "at": 10886400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "奧斯卡 60 因自然老化離世，享年 85 歲。世界仍會延續。"
+    },
+    {
+      "id": 1292,
+      "at": 10886400,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "露西 67 因自然老化離世，享年 89 歲。世界仍會延續。"
+    },
+    {
+      "id": 1294,
+      "at": 10886400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "羅恩 132 搬進橡谷，成為守衛。"
+    },
+    {
+      "id": 1295,
+      "at": 10886400,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "艾妲 133 出生了。"
+    },
+    {
+      "id": 1299,
+      "at": 10908000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "芬恩 134 搬進橡谷，成為農夫。"
+    },
+    {
+      "id": 1302,
+      "at": 10929600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "諾拉 135 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 1316,
+      "at": 11059200,
+      "type": "npc.died",
+      "category": "player",
+      "message": "奧登 因自然老化離世，享年 80 歲。世界仍會延續。"
+    },
+    {
+      "id": 1317,
+      "at": 11059200,
+      "type": "npc.died",
+      "category": "npc",
+      "message": "米拉 1 因自然老化離世，享年 82 歲。世界仍會延續。"
+    },
+    {
+      "id": 1319,
+      "at": 11059200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "雨果 136 搬進橡谷，成為樵夫。"
+    },
+    {
+      "id": 1320,
+      "at": 11059200,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "露西 137 出生了。"
+    }
+  ]
+}

@@ -1,0 +1,574 @@
+{
+  "result": "passed",
+  "route": "normal Playwright UI clicks only; no game state injection",
+  "initial": {
+    "label": "fresh_context_start",
+    "clock_ui": "✿\n第 1 年 · 春 1 日\n08:01",
+    "journey_ui": "你的旅程，第 1 天\n\n一個正在生活的世界\n🏘️ 橡谷聚落",
+    "location_ui": "🏘️ 橡谷聚落",
+    "status_ui": "世界已儲存。\n×",
+    "read_only_saved_state": {
+      "worldTime": 481,
+      "worldSeed": 909,
+      "position": {
+        "x": 7,
+        "y": 9
+      },
+      "stamina": 84,
+      "gold": 45,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "equipment": {
+        "weapon": null,
+        "armor": null
+      },
+      "crop_count": 0,
+      "preparedPlots": 0,
+      "settlement_stage": "hamlet",
+      "settlement_growth": 0,
+      "threatLevel": 1
+    },
+    "seed_source": "read-only oakvale-v1 save created by clicking the normal Save button",
+    "browser_context": "new non-persistent Playwright context"
+  },
+  "steps": [
+    {
+      "label": "fresh_context_start",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n08:01",
+      "journey_ui": "你的旅程，第 1 天\n\n一個正在生活的世界\n🏘️ 橡谷聚落",
+      "location_ui": "🏘️ 橡谷聚落",
+      "status_ui": "世界已儲存。\n×",
+      "read_only_saved_state": {
+        "worldTime": 481,
+        "worldSeed": 909,
+        "position": {
+          "x": 7,
+          "y": 9
+        },
+        "stamina": 84,
+        "gold": 45,
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 3,
+          "material": 0,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "crop_count": 0,
+        "preparedPlots": 0,
+        "settlement_stage": "hamlet",
+        "settlement_growth": 0,
+        "threatLevel": 1
+      },
+      "seed_source": "read-only oakvale-v1 save created by clicking the normal Save button",
+      "browser_context": "new non-persistent Playwright context"
+    },
+    {
+      "label": "npc_observation_daytime",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n08:01",
+      "resident_rows_ui": "👨‍🌾\n米拉 1\n18 歲 · 農夫 · 工作\n⛏️\n羅恩 2\n20 歲 · 礦工 · 工作\n🪓\n艾妲 3\n22 歲 · 樵夫 · 工作\n⚒️\n芬恩 4\n24 歲 · 鐵匠 · 工作\n🧺\n諾拉 5\n26 歲 · 店主 · 工作\n🛡️\n雨果 6\n28 歲 · 守衛 · 工作\n⚔️\n露西 7\n30 歲 · 傭兵 · 工作\n👨‍🌾\n西蒙 8\n32 歲 · 農夫 · 工作\n⛏️\n艾琳 9\n34 歲 · 礦工 · 工作\n🪓\n奧斯卡 10\n36 歲 · 樵夫 · 工作\n⚒️\n米拉 11\n38 歲 · 鐵匠 · 工作\n🧺\n羅恩 12\n40 歲 · 店主 · 工作\n🛡️\n艾妲 13\n42 歲 · 守衛 · 工作\n⚔️\n芬恩 14\n44 歲 · 傭兵 · 工作\n👨‍🌾\n諾拉 15\n46 歲 · 農夫 · 工作\n⛏️\n雨果 16\n48 歲 · 礦工 · 工作\n🪓\n露西 17\n50 歲 · 樵夫 · 工作\n⚒️\n西蒙 18\n52 歲 · 鐵匠 · 工作\n🧺\n艾琳 19\n54 歲 · 店主 · 工作\n🛡️\n奧斯卡 20\n56 歲 · 守衛 · 工作\n⚔️\n米拉 21\n58 歲 · 傭兵 · 工作\n👨‍🌾\n羅恩 22\n60 歲 · 農夫 · 工作\n⛏️\n艾妲 23\n62 歲 · 礦工 · 工作\n🪓\n芬恩 24\n64 歲 · 樵夫 · 工作\n⚒️\n諾拉 25\n66 歲 · 鐵匠 · 工作\n🧺\n雨果 26\n68 歲 · 店主 · 工作\n🛡️\n露西 27\n19 歲 · 守衛 · 工作\n⚔️\n西蒙 28\n21 歲 · 傭兵 · 工作\n👨‍🌾\n艾琳 29\n23 歲 · 農夫 · 工作"
+    },
+    {
+      "label": "farm_harvested",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n11:51",
+      "journey_ui": "你的旅程，第 3 天\n\n一個正在生活的世界\n🌾 東方農田",
+      "location_ui": "🌾 東方農田",
+      "status_ui": "世界已儲存。\n×",
+      "read_only_saved_state": {
+        "worldTime": 3591,
+        "worldSeed": 909,
+        "position": {
+          "x": 16,
+          "y": 10
+        },
+        "stamina": 28,
+        "gold": 45,
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 28,
+          "material": 0,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "crop_count": 0,
+        "preparedPlots": 0,
+        "settlement_stage": "hamlet",
+        "settlement_growth": 2.0973580800000002,
+        "threatLevel": 1
+      },
+      "before_mature_ui": "🌱\n剩 47 小時\n🌱\n剩 47 小時\n🌱\n剩 48 小時\n🌱\n剩 48 小時",
+      "mature_ui": "🌾\n可收割\n🌾\n可收割\n🌾\n可收割\n🌾\n可收割",
+      "after_harvest_ui": "·\n空田\n·\n空田\n·\n空田\n·\n空田",
+      "harvest_result_ui": [
+        "收穫 6 份食物，耕作經驗增加。\n×",
+        "收穫 6 份食物，耕作經驗增加。\n×",
+        "收穫 6 份食物，耕作經驗增加。\n×",
+        "收穫 7 份食物，耕作經驗增加。\n×"
+      ],
+      "harvest_yields": [
+        6,
+        6,
+        6,
+        7
+      ]
+    },
+    {
+      "label": "gathering_stamina_boundary",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n14:42",
+      "journey_ui": "你的旅程，第 3 天\n\n一個正在生活的世界\n🌲 北方森林",
+      "location_ui": "🌲 北方森林",
+      "status_ui": "世界已儲存。\n×",
+      "read_only_saved_state": {
+        "worldTime": 3762,
+        "worldSeed": 909,
+        "position": {
+          "x": 5,
+          "y": 4
+        },
+        "stamina": 8,
+        "gold": 53,
+        "inventory": {
+          "wood": 4,
+          "stone": 0,
+          "iron": 0,
+          "food": 28,
+          "material": 0,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "crop_count": 0,
+        "preparedPlots": 0,
+        "settlement_stage": "hamlet",
+        "settlement_growth": 2.0973580800000002,
+        "threatLevel": 1
+      },
+      "third_gather_failure": "體力不足，請先回聚落休息。\n×"
+    },
+    {
+      "label": "shop_sell_wood_buy_potion",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n15:37",
+      "journey_ui": "你的旅程，第 3 天\n\n一個正在生活的世界\n🏘️ 橡谷聚落",
+      "location_ui": "🏘️ 橡谷聚落",
+      "status_ui": "世界已儲存。\n×",
+      "read_only_saved_state": {
+        "worldTime": 3817,
+        "worldSeed": 909,
+        "position": {
+          "x": 10,
+          "y": 8
+        },
+        "stamina": 8,
+        "gold": 37,
+        "inventory": {
+          "wood": 3,
+          "stone": 0,
+          "iron": 0,
+          "food": 28,
+          "material": 0,
+          "potion": 3,
+          "sword": 0,
+          "armor": 0
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "crop_count": 0,
+        "preparedPlots": 0,
+        "settlement_stage": "hamlet",
+        "settlement_growth": 2.0973580800000002,
+        "threatLevel": 1
+      },
+      "shop_ui": "雜貨店 · 歡迎光臨\n🪵 木材\n持有 3\n買 8 金\n賣 4 金\n🪨 石材\n持有 0\n買 6 金\n賣 3 金\n⛏️ 鐵礦\n持有 0\n買 16 金\n賣 8 金\n🌾 食物\n持有 28\n買 10 金\n賣 5 金\n🦴 怪物素材\n持有 0\n買 20 金\n賣 10 金\n🧪 治療藥水\n持有 3\n買 20 金\n賣 10 金"
+    },
+    {
+      "label": "shop_after_closing_time",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n20:01",
+      "shop_panel_visible": false,
+      "hint_ui": "靠近建築即可使用服務。雜貨店 08–20 時，鐵匠鋪 08–18 時，酒館 17–24 時。"
+    },
+    {
+      "label": "day_10_plus_before_reload",
+      "clock_ui": "✿\n第 1 年 · 春 11 日\n21:21",
+      "journey_ui": "你的旅程，第 11 天\n\n一個正在生活的世界\n🏘️ 橡谷聚落",
+      "location_ui": "🏘️ 橡谷聚落",
+      "status_ui": "世界已儲存。\n×",
+      "read_only_saved_state": {
+        "worldTime": 15681,
+        "worldSeed": 909,
+        "position": {
+          "x": 7,
+          "y": 9
+        },
+        "stamina": 43,
+        "gold": 37,
+        "inventory": {
+          "wood": 3,
+          "stone": 0,
+          "iron": 0,
+          "food": 28,
+          "material": 0,
+          "potion": 3,
+          "sword": 0,
+          "armor": 0
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "crop_count": 0,
+        "preparedPlots": 0,
+        "settlement_stage": "hamlet",
+        "settlement_growth": 11.023944960000001,
+        "threatLevel": 1
+      },
+      "resident_rows_ui": "👨‍🌾\n米拉 1\n18 歲 · 農夫 · 移動\n⛏️\n羅恩 2\n20 歲 · 礦工 · 移動\n🪓\n艾妲 3\n22 歲 · 樵夫 · 移動\n⚒️\n芬恩 4\n24 歲 · 鐵匠 · 移動\n🧺\n諾拉 5\n26 歲 · 店主 · 移動\n🛡️\n雨果 6\n28 歲 · 守衛 · 移動\n⚔️\n露西 7\n30 歲 · 傭兵 · 移動\n👨‍🌾\n西蒙 8\n32 歲 · 農夫 · 移動\n⛏️\n艾琳 9\n34 歲 · 礦工 · 移動\n🪓\n奧斯卡 10\n36 歲 · 樵夫 · 移動\n⚒️\n米拉 11\n38 歲 · 鐵匠 · 移動\n🧺\n羅恩 12\n40 歲 · 店主 · 移動\n🛡️\n艾妲 13\n42 歲 · 守衛 · 移動\n⚔️\n芬恩 14\n44 歲 · 傭兵 · 移動\n👨‍🌾\n諾拉 15\n46 歲 · 農夫 · 移動\n⛏️\n雨果 16\n48 歲 · 礦工 · 移動\n🪓\n露西 17\n50 歲 · 樵夫 · 移動\n⚒️\n西蒙 18\n52 歲 · 鐵匠 · 移動\n🧺\n艾琳 19\n54 歲 · 店主 · 移動\n🛡️\n奧斯卡 20\n56 歲 · 守衛 · 移動\n⚔️\n米拉 21\n58 歲 · 傭兵 · 移動\n👨‍🌾\n羅恩 22\n60 歲 · 農夫 · 移動\n⛏️\n艾妲 23\n62 歲 · 礦工 · 移動\n🪓\n芬恩 24\n64 歲 · 樵夫 · 移動\n⚒️\n諾拉 25\n66 歲 · 鐵匠 · 移動\n🧺\n雨果 26\n68 歲 · 店主 · 移動\n🛡️\n露西 27\n19 歲 · 守衛 · 移動\n⚔️\n西蒙 28\n21 歲 · 傭兵 · 移動\n👨‍🌾\n艾琳 29\n23 歲 · 農夫 · 移動"
+    },
+    {
+      "label": "save_reload_check",
+      "clock_ui": "✿\n第 1 年 · 春 11 日\n21:22",
+      "journey_ui": "你的旅程，第 11 天\n\n一個正在生活的世界\n🏘️ 橡谷聚落",
+      "location_ui": "🏘️ 橡谷聚落",
+      "status_ui": "世界已儲存。\n×",
+      "read_only_saved_state": {
+        "worldTime": 15682,
+        "worldSeed": 909,
+        "position": {
+          "x": 7,
+          "y": 9
+        },
+        "stamina": 43,
+        "gold": 37,
+        "inventory": {
+          "wood": 3,
+          "stone": 0,
+          "iron": 0,
+          "food": 28,
+          "material": 0,
+          "potion": 3,
+          "sword": 0,
+          "armor": 0
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "crop_count": 0,
+        "preparedPlots": 0,
+        "settlement_stage": "hamlet",
+        "settlement_growth": 11.023944960000001,
+        "threatLevel": 1
+      }
+    }
+  ],
+  "actions": [
+    {
+      "operation": "暫停",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n08:01",
+      "result_ui": ""
+    },
+    {
+      "operation": "儲存世界",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n08:01",
+      "result_ui": "世界已儲存。\n×"
+    },
+    {
+      "operation": "看看居民在做什麼",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n08:01",
+      "result_ui": "居民清單顯示"
+    },
+    {
+      "operation": "步行前往農田",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n08:51",
+      "result_ui": "已到達。\n×"
+    },
+    {
+      "operation": "收割",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n08:51",
+      "result_ui": "小麥還沒成熟，讓世界時間繼續前進。\n×"
+    },
+    {
+      "operation": "播種 · 10 分",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n08:51",
+      "result_ui": "請先整地，再播種。\n×"
+    },
+    {
+      "operation": "整地 · 20 分",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n09:11",
+      "result_ui": "翻整了一塊田，可以播種了。\n×"
+    },
+    {
+      "operation": "播種 · 10 分",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n09:21",
+      "result_ui": "播下小麥。兩日後即可收割。\n×"
+    },
+    {
+      "operation": "整地 · 20 分",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n09:41",
+      "result_ui": "翻整了一塊田，可以播種了。\n×"
+    },
+    {
+      "operation": "播種 · 10 分",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n09:51",
+      "result_ui": "播下小麥。兩日後即可收割。\n×"
+    },
+    {
+      "operation": "整地 · 20 分",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n10:11",
+      "result_ui": "翻整了一塊田，可以播種了。\n×"
+    },
+    {
+      "operation": "播種 · 10 分",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n10:21",
+      "result_ui": "播下小麥。兩日後即可收割。\n×"
+    },
+    {
+      "operation": "整地 · 20 分",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n10:41",
+      "result_ui": "翻整了一塊田，可以播種了。\n×"
+    },
+    {
+      "operation": "播種 · 10 分",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n10:51",
+      "result_ui": "播下小麥。兩日後即可收割。\n×"
+    },
+    {
+      "operation": "整地 · 20 分",
+      "clock_ui": "✿\n第 1 年 · 春 1 日\n10:51",
+      "result_ui": "四塊田都已使用，請先收割。\n×"
+    },
+    {
+      "operation": "等待 1 日",
+      "clock_ui": "✿\n第 1 年 · 春 2 日\n10:51",
+      "result_ui": "時間繼續前進。聚落與森林都有自己的生活。\n×"
+    },
+    {
+      "operation": "等待 1 日",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n10:51",
+      "result_ui": "時間繼續前進。聚落與森林都有自己的生活。\n×"
+    },
+    {
+      "operation": "收割",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n11:06",
+      "result_ui": "收穫 6 份食物，耕作經驗增加。\n×"
+    },
+    {
+      "operation": "收割",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n11:21",
+      "result_ui": "收穫 6 份食物，耕作經驗增加。\n×"
+    },
+    {
+      "operation": "收割",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n11:36",
+      "result_ui": "收穫 6 份食物，耕作經驗增加。\n×"
+    },
+    {
+      "operation": "收割",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n11:51",
+      "result_ui": "收穫 7 份食物，耕作經驗增加。\n×"
+    },
+    {
+      "operation": "儲存世界",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n11:51",
+      "result_ui": "世界已儲存。\n×"
+    },
+    {
+      "operation": "步行前往森林",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n13:16",
+      "result_ui": "已到達。\n×"
+    },
+    {
+      "operation": "🪓 伐木",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n13:59",
+      "result_ui": "取得 2 份木材，工作報酬 4 金幣。\n×"
+    },
+    {
+      "operation": "🪓 伐木",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n14:42",
+      "result_ui": "取得 2 份木材，工作報酬 4 金幣。\n×"
+    },
+    {
+      "operation": "🪓 伐木",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n14:42",
+      "result_ui": "體力不足，請先回聚落休息。\n×"
+    },
+    {
+      "operation": "儲存世界",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n14:42",
+      "result_ui": "世界已儲存。\n×"
+    },
+    {
+      "operation": "開啟背包",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n14:42",
+      "result_ui": "背包頁顯示"
+    },
+    {
+      "operation": "步行前往雜貨店",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n15:27",
+      "result_ui": "已到達。\n×"
+    },
+    {
+      "operation": "出售木材 1 份",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n15:32",
+      "result_ui": "出售一份木材。\n×"
+    },
+    {
+      "operation": "購買治療藥水 1 瓶",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n15:37",
+      "result_ui": "購買一份治療藥水。\n×"
+    },
+    {
+      "operation": "儲存世界",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n15:37",
+      "result_ui": "世界已儲存。\n×"
+    },
+    {
+      "operation": "×20",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n15:41",
+      "result_ui": "世界已儲存。\n×"
+    },
+    {
+      "operation": "暫停",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n20:01",
+      "result_ui": "世界已儲存。\n×"
+    },
+    {
+      "operation": "步行回聚落",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n20:21",
+      "result_ui": "已到達。\n×"
+    },
+    {
+      "operation": "休息 · 1 小時",
+      "clock_ui": "✿\n第 1 年 · 春 3 日\n21:21",
+      "result_ui": "休息後，你恢復了生命與體力。\n×"
+    },
+    {
+      "operation": "等待 1 日",
+      "clock_ui": "✿\n第 1 年 · 春 4 日\n21:21",
+      "result_ui": "時間繼續前進。聚落與森林都有自己的生活。\n×"
+    },
+    {
+      "operation": "等待 1 日",
+      "clock_ui": "✿\n第 1 年 · 春 5 日\n21:21",
+      "result_ui": "時間繼續前進。聚落與森林都有自己的生活。\n×"
+    },
+    {
+      "operation": "等待 1 日",
+      "clock_ui": "✿\n第 1 年 · 春 6 日\n21:21",
+      "result_ui": "時間繼續前進。聚落與森林都有自己的生活。\n×"
+    },
+    {
+      "operation": "等待 1 日",
+      "clock_ui": "✿\n第 1 年 · 春 7 日\n21:21",
+      "result_ui": "時間繼續前進。聚落與森林都有自己的生活。\n×"
+    },
+    {
+      "operation": "等待 1 日",
+      "clock_ui": "✿\n第 1 年 · 春 8 日\n21:21",
+      "result_ui": "時間繼續前進。聚落與森林都有自己的生活。\n×"
+    },
+    {
+      "operation": "等待 1 日",
+      "clock_ui": "✿\n第 1 年 · 春 9 日\n21:21",
+      "result_ui": "時間繼續前進。聚落與森林都有自己的生活。\n×"
+    },
+    {
+      "operation": "等待 1 日",
+      "clock_ui": "✿\n第 1 年 · 春 10 日\n21:21",
+      "result_ui": "時間繼續前進。聚落與森林都有自己的生活。\n×"
+    },
+    {
+      "operation": "等待 1 日",
+      "clock_ui": "✿\n第 1 年 · 春 11 日\n21:21",
+      "result_ui": "時間繼續前進。聚落與森林都有自己的生活。\n×"
+    },
+    {
+      "operation": "儲存世界",
+      "clock_ui": "✿\n第 1 年 · 春 11 日\n21:21",
+      "result_ui": "世界已儲存。\n×"
+    },
+    {
+      "operation": "重新載入存檔",
+      "clock_ui": "✿\n第 1 年 · 春 11 日\n21:21",
+      "result_ui": "頁面重新載入"
+    },
+    {
+      "operation": "暫停",
+      "clock_ui": "✿\n第 1 年 · 春 11 日\n21:22",
+      "result_ui": ""
+    },
+    {
+      "operation": "儲存世界",
+      "clock_ui": "✿\n第 1 年 · 春 11 日\n21:22",
+      "result_ui": "世界已儲存。\n×"
+    }
+  ],
+  "final_saved_state": {
+    "worldTime": 15682,
+    "worldSeed": 909,
+    "position": {
+      "x": 7,
+      "y": 9
+    },
+    "stamina": 43,
+    "gold": 37,
+    "inventory": {
+      "wood": 3,
+      "stone": 0,
+      "iron": 0,
+      "food": 28,
+      "material": 0,
+      "potion": 3,
+      "sword": 0,
+      "armor": 0
+    },
+    "equipment": {
+      "weapon": null,
+      "armor": null
+    },
+    "crop_count": 0,
+    "preparedPlots": 0,
+    "settlement_stage": "hamlet",
+    "settlement_growth": 11.023944960000001,
+    "threatLevel": 1
+  },
+  "elapsed_game_minutes": 15201,
+  "elapsed_game_days": 10.56,
+  "browser_errors": [],
+  "screenshots": [
+    "life-day-10.png",
+    "life-farm-harvested.png",
+    "life-farm-mature.png",
+    "life-reloaded.png",
+    "life-shop-closed.png",
+    "life-shop-open.png",
+    "life-start.png"
+  ]
+}

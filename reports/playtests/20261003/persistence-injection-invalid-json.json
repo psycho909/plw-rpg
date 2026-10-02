@@ -1,0 +1,43 @@
+{
+  "name": "invalid-json",
+  "kind": "corrupt",
+  "injectedBytes": 7,
+  "injectedRaw": "{broken",
+  "initialUiMessage": "Expected property name or '}' in JSON at position 1 (line 1 column 2)\n×",
+  "afterAutoSaveRawUnchanged": true,
+  "manualNotice": "原始存檔已保留。請確認後使用「重建世界」。\n×",
+  "afterManualRawUnchanged": true,
+  "cancelDialog": [
+    {
+      "type": "confirm",
+      "message": "重建世界會覆蓋目前存檔與所有歷史。確定重新開始？"
+    }
+  ],
+  "afterCancelRawUnchanged": true,
+  "confirmDialog": [
+    {
+      "type": "confirm",
+      "message": "重建世界會覆蓋目前存檔與所有歷史。確定重新開始？"
+    }
+  ],
+  "afterConfirmRebuild": {
+    "saveVersion": 1,
+    "worldSeed": 909,
+    "worldTime": 480,
+    "lastSavedAt": 1790962525865,
+    "character": "奧登",
+    "position": {
+      "x": 7,
+      "y": 9
+    },
+    "region": "village",
+    "food": 3,
+    "preparedPlots": 0,
+    "crops": [],
+    "population": 30,
+    "threat": 1,
+    "settlement": "hamlet"
+  },
+  "confirmedRebuildReplacedCorruptRaw": true,
+  "result": "corrupt raw preserved through load, autosave, manual save and canceled rebuild"
+}

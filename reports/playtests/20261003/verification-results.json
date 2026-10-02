@@ -1,0 +1,37 @@
+{
+  "result": "passed",
+  "seed": 909,
+  "initialWorldTime": 481,
+  "checks": [
+    {
+      "action": "ArrowRight then a",
+      "worldTime": 491,
+      "position": "7, 9"
+    },
+    {
+      "action": "暫停",
+      "observedGameMinutes": 0,
+      "measurementMs": 1600
+    },
+    {
+      "action": "×1",
+      "observedGameMinutes": 3,
+      "measurementMs": 1600
+    },
+    {
+      "action": "×5",
+      "observedGameMinutes": 17,
+      "measurementMs": 1600
+    },
+    {
+      "action": "×20",
+      "observedGameMinutes": 68,
+      "measurementMs": 1600
+    },
+    {
+      "action": "automatic save while paused",
+      "lastSavedAtAdvanced": true
+    }
+  ],
+  "pageErrors": []
+}

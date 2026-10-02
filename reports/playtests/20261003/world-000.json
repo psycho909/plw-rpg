@@ -1,0 +1,250 @@
+{
+  "elapsed_year_clicks": 0,
+  "storage_key": "oakvale-v1",
+  "world_seed": 909,
+  "stored_world_time": 480,
+  "active_character_id": "alden",
+  "character": {
+    "id": "alden",
+    "name": "奧登",
+    "age": 16,
+    "lifeStage": "young",
+    "isAlive": true,
+    "birthYear": -15,
+    "deathYear": null,
+    "deathCause": null
+  },
+  "alive_population": 30,
+  "alive_npc_count": 29,
+  "npc_count": 29,
+  "npc_jobs": {
+    "farmer": 5,
+    "miner": 4,
+    "woodcutter": 4,
+    "blacksmith": 4,
+    "shopkeeper": 4,
+    "guard": 4,
+    "mercenary": 4
+  },
+  "npc_activities": {
+    "work": 29
+  },
+  "npc_schedule_sample": [
+    {
+      "id": "npc-1",
+      "name": "米拉 1",
+      "age": 18,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-2",
+      "name": "羅恩 2",
+      "age": 20,
+      "job": "miner",
+      "currentActivity": "work",
+      "position": {
+        "x": 19,
+        "y": 5
+      }
+    },
+    {
+      "id": "npc-3",
+      "name": "艾妲 3",
+      "age": 22,
+      "job": "woodcutter",
+      "currentActivity": "work",
+      "position": {
+        "x": 5,
+        "y": 4
+      }
+    },
+    {
+      "id": "npc-4",
+      "name": "芬恩 4",
+      "age": 24,
+      "job": "blacksmith",
+      "currentActivity": "work",
+      "position": {
+        "x": 12,
+        "y": 8
+      }
+    },
+    {
+      "id": "npc-5",
+      "name": "諾拉 5",
+      "age": 26,
+      "job": "shopkeeper",
+      "currentActivity": "work",
+      "position": {
+        "x": 10,
+        "y": 8
+      }
+    },
+    {
+      "id": "npc-6",
+      "name": "雨果 6",
+      "age": 28,
+      "job": "guard",
+      "currentActivity": "work",
+      "position": {
+        "x": 8,
+        "y": 6
+      }
+    },
+    {
+      "id": "npc-7",
+      "name": "露西 7",
+      "age": 30,
+      "job": "mercenary",
+      "currentActivity": "work",
+      "position": {
+        "x": 11,
+        "y": 11
+      }
+    },
+    {
+      "id": "npc-8",
+      "name": "西蒙 8",
+      "age": 32,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-9",
+      "name": "艾琳 9",
+      "age": 34,
+      "job": "miner",
+      "currentActivity": "work",
+      "position": {
+        "x": 19,
+        "y": 5
+      }
+    },
+    {
+      "id": "npc-10",
+      "name": "奧斯卡 10",
+      "age": 36,
+      "job": "woodcutter",
+      "currentActivity": "work",
+      "position": {
+        "x": 5,
+        "y": 4
+      }
+    },
+    {
+      "id": "npc-11",
+      "name": "米拉 11",
+      "age": 38,
+      "job": "blacksmith",
+      "currentActivity": "work",
+      "position": {
+        "x": 12,
+        "y": 8
+      }
+    },
+    {
+      "id": "npc-12",
+      "name": "羅恩 12",
+      "age": 40,
+      "job": "shopkeeper",
+      "currentActivity": "work",
+      "position": {
+        "x": 10,
+        "y": 8
+      }
+    }
+  ],
+  "settlement": {
+    "name": "橡谷",
+    "stage": "hamlet",
+    "capacity": 40,
+    "food": 78,
+    "prosperity": 52,
+    "safety": 88,
+    "growth": 0,
+    "buildings": [
+      "house",
+      "farm",
+      "store",
+      "inn"
+    ]
+  },
+  "threat": {
+    "threatLevel": 1,
+    "campLevel": 1,
+    "monsterPopulation": 12,
+    "bossProgress": 0,
+    "bossAlive": false
+  },
+  "dungeon": {
+    "threat": 1,
+    "discovered": false,
+    "stage": 0
+  },
+  "seed_candidates": {
+    "worldSeed": 909
+  },
+  "storage_keys": [
+    "oakvale-v1"
+  ],
+  "storage_root_keys": [
+    "saveVersion",
+    "worldSeed",
+    "rngState",
+    "worldTime",
+    "activeCharacterId",
+    "characters",
+    "npcs",
+    "tiles",
+    "settlement",
+    "regions",
+    "threat",
+    "dungeon",
+    "crops",
+    "preparedPlots",
+    "party",
+    "combat",
+    "events",
+    "history",
+    "eventSequence",
+    "nextNpcId",
+    "lastSavedAt"
+  ],
+  "ui_time_and_status": "♣\nOakvale\n在世界裡，好好生活。\n✿\n第 1 年 · 春 1 日\n08:00\n暫停\n×1\n×5\n×20\n儲存世界 ↧\n⌘\n世界\n♙\n角色\n▣\n背包\n☷\n旅人筆記\n◷\n世界歷史\n時間已暫停\n即使站著不動，\n故事也會繼續。\n重建世界\n\n你的旅程，第 1 天\n\n一個正在生活的世界\n🏘️ 橡谷聚落\n橡谷與周邊\nWASD / 方向鍵移動 · 點地圖步行前往\n7, 9\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n·\n·\n·\n·\n·\n≈\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n▲\n·\n·\n·\n·\n·\n≈\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n▲\n·\n·\n·\n·\n·\n≈\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n▲\n·\n·\n·\n·\n·\n≈\n♣\n♣\n♣\n♣\n🪓\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n▲\n·\n·\n·\n·\n·\n≈\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n▲\n⛏️\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n🛡️\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n·\n⚒️\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n·\n·\n·\n🙂\n·\n·\n·\n·\n·\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≋\n≋\n🌾\n農田\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n·\n·\n·\n⚔️\n·\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n東方農田\n橡谷小聚落\n未知的山谷\n你\n自主生活的居民\n未探索\n←\n↑\n↓\n→\n步行前往\n🏘️ 回家\n🌾 農田\n🌲 森林\n⛰️ 礦場\n🕳️ 探索迷霧\n橡谷聚落\n\n你的生活，從這裡開始\n\n等待 1 日\n休息 · 1 小時\n🏪 雜貨店\n🛏️ 旅店\n🍺 酒館（村莊解鎖）\n⚒️ 鐵匠鋪（村莊解鎖）\n\n靠近建築即可使用服務。雜貨店 08–20 時，鐵匠鋪 08–18 時，酒館 17–24 時。\n\n世界的聲音 \n持續發生的日常\n全部\n自己\n居民\n世界\n威脅\n聚落\n第 1 年 春 1 日 08:00\n\n橡谷聚落建立。奧登，今天起這裡就是你的家。\n\n🙂\n奧登\n16 歲 · 青年\nLv.1\n生命\n100 / 100\n體力\n84 / 84\n🪙 45 金幣\n同行 0 / 2\n徒手\n便服\n橡谷\n小聚落\n30\n位居民\n容量 40\n🏘️\n糧食\n78\n繁榮\n52\n安全\n88\n🏠\n🌾\n🏪\n🛏️\n\n居民的工作會讓聚落自然成長。\n\n看看居民在做什麼 +\n北方森林\n威脅 1\n\n👺 哥布林營地\nLv.1\n\n怪物數量\n12\n\n林間仍然平靜，但怪物正在聚集。\n\n🕳️ 尚未發現的礦坑\nLv.1\n\n✓ 世界已存於此瀏覽器\n離線最多延續 8 小時\n\n世界已儲存。\n×",
+  "recent_events": [
+    {
+      "id": 1,
+      "at": 480,
+      "type": "world.founded",
+      "category": "world",
+      "message": "橡谷聚落建立。奧登，今天起這裡就是你的家。"
+    }
+  ],
+  "history": [
+    {
+      "id": 1,
+      "at": 480,
+      "type": "world.founded",
+      "category": "world",
+      "message": "橡谷聚落建立。奧登，今天起這裡就是你的家。"
+    }
+  ],
+  "milestones": [
+    {
+      "id": 1,
+      "at": 480,
+      "type": "world.founded",
+      "category": "world",
+      "message": "橡谷聚落建立。奧登，今天起這裡就是你的家。"
+    }
+  ]
+}

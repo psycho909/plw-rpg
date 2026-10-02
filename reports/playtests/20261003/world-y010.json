@@ -1,0 +1,862 @@
+{
+  "elapsed_year_clicks": 10,
+  "storage_key": "oakvale-v1",
+  "world_seed": 909,
+  "stored_world_time": 1728480,
+  "active_character_id": "alden",
+  "character": {
+    "id": "alden",
+    "name": "奧登",
+    "age": 26,
+    "lifeStage": "adult",
+    "isAlive": true,
+    "birthYear": -15,
+    "deathYear": null,
+    "deathCause": null
+  },
+  "alive_population": 80,
+  "alive_npc_count": 79,
+  "npc_count": 79,
+  "npc_jobs": {
+    "farmer": 26,
+    "miner": 10,
+    "woodcutter": 9,
+    "blacksmith": 8,
+    "shopkeeper": 9,
+    "guard": 9,
+    "mercenary": 8
+  },
+  "npc_activities": {
+    "work": 63,
+    "leisure": 16
+  },
+  "npc_schedule_sample": [
+    {
+      "id": "npc-1",
+      "name": "米拉 1",
+      "age": 28,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-2",
+      "name": "羅恩 2",
+      "age": 30,
+      "job": "miner",
+      "currentActivity": "work",
+      "position": {
+        "x": 19,
+        "y": 5
+      }
+    },
+    {
+      "id": "npc-3",
+      "name": "艾妲 3",
+      "age": 32,
+      "job": "woodcutter",
+      "currentActivity": "work",
+      "position": {
+        "x": 5,
+        "y": 4
+      }
+    },
+    {
+      "id": "npc-4",
+      "name": "芬恩 4",
+      "age": 34,
+      "job": "blacksmith",
+      "currentActivity": "work",
+      "position": {
+        "x": 12,
+        "y": 8
+      }
+    },
+    {
+      "id": "npc-5",
+      "name": "諾拉 5",
+      "age": 36,
+      "job": "shopkeeper",
+      "currentActivity": "work",
+      "position": {
+        "x": 10,
+        "y": 8
+      }
+    },
+    {
+      "id": "npc-6",
+      "name": "雨果 6",
+      "age": 38,
+      "job": "guard",
+      "currentActivity": "work",
+      "position": {
+        "x": 8,
+        "y": 6
+      }
+    },
+    {
+      "id": "npc-7",
+      "name": "露西 7",
+      "age": 40,
+      "job": "mercenary",
+      "currentActivity": "work",
+      "position": {
+        "x": 11,
+        "y": 11
+      }
+    },
+    {
+      "id": "npc-8",
+      "name": "西蒙 8",
+      "age": 42,
+      "job": "farmer",
+      "currentActivity": "work",
+      "position": {
+        "x": 16,
+        "y": 10
+      }
+    },
+    {
+      "id": "npc-9",
+      "name": "艾琳 9",
+      "age": 44,
+      "job": "miner",
+      "currentActivity": "work",
+      "position": {
+        "x": 19,
+        "y": 5
+      }
+    },
+    {
+      "id": "npc-10",
+      "name": "奧斯卡 10",
+      "age": 46,
+      "job": "woodcutter",
+      "currentActivity": "work",
+      "position": {
+        "x": 5,
+        "y": 4
+      }
+    },
+    {
+      "id": "npc-11",
+      "name": "米拉 11",
+      "age": 48,
+      "job": "blacksmith",
+      "currentActivity": "work",
+      "position": {
+        "x": 12,
+        "y": 8
+      }
+    },
+    {
+      "id": "npc-12",
+      "name": "羅恩 12",
+      "age": 50,
+      "job": "shopkeeper",
+      "currentActivity": "work",
+      "position": {
+        "x": 10,
+        "y": 8
+      }
+    }
+  ],
+  "settlement": {
+    "name": "橡谷",
+    "stage": "town",
+    "capacity": 80,
+    "food": 100,
+    "prosperity": 100,
+    "safety": 65.69999999999683,
+    "growth": 1674.0380074666605,
+    "buildings": [
+      "house",
+      "farm",
+      "store",
+      "inn",
+      "tavern",
+      "blacksmith"
+    ]
+  },
+  "threat": {
+    "threatLevel": 3,
+    "campLevel": 3,
+    "monsterPopulation": 100,
+    "bossProgress": 100,
+    "bossAlive": true
+  },
+  "dungeon": {
+    "threat": 3,
+    "discovered": false,
+    "stage": 0
+  },
+  "seed_candidates": {
+    "worldSeed": 909
+  },
+  "storage_keys": [
+    "oakvale-v1"
+  ],
+  "storage_root_keys": [
+    "saveVersion",
+    "worldSeed",
+    "rngState",
+    "worldTime",
+    "activeCharacterId",
+    "characters",
+    "npcs",
+    "tiles",
+    "settlement",
+    "regions",
+    "threat",
+    "dungeon",
+    "crops",
+    "preparedPlots",
+    "party",
+    "combat",
+    "events",
+    "history",
+    "eventSequence",
+    "nextNpcId",
+    "lastSavedAt"
+  ],
+  "ui_time_and_status": "♣\nOakvale\n在世界裡，好好生活。\n✿\n第 11 年 · 春 1 日\n08:00\n暫停\n×1\n×5\n×20\n儲存世界 ↧\n⌘\n世界\n♙\n角色\n▣\n背包\n☷\n旅人筆記\n◷\n世界歷史\n時間已暫停\n即使站著不動，\n故事也會繼續。\n重建世界\n\n你的旅程，第 1201 天\n\n旅人筆記\n🏘️ 橡谷聚落\n今天，想怎麼過？\n🌾\n過一點平凡日子\n\n到東方農田整地、播種，兩日後收割。到森林伐木或礦場採礦，再把素材賣給雜貨店。\n\n🧭\n出門看看\n\n步行進入迷霧山谷，尋找廢棄礦坑。帶足藥水，找同行者，再挑戰更危險的地方。\n\n🌲\n聽聽世界的聲音\n\n居民每天上班與休息。聚落會自己成長，森林的怪物也會聚集。你的選擇不是世界唯一的故事。\n\n讓時間往前走\n等待 1 日\n度過一季\n度過一年\n\n時間會影響所有人。田地成熟、契約到期、居民衰老，森林威脅也會成長。等待期間不會自動恢復生命與體力。\n\n你的同行者 · 0 / 2\n\n目前獨自旅行。橡谷成長為村莊後，去酒館找找夥伴。\n\n世界的聲音 \n持續發生的日常\n全部\n自己\n居民\n世界\n威脅\n聚落\n第 11 年 春 1 日 00:00\n\n第 11 年開始了。每個人都長了一歲。\n\n第 10 年 冬 28 日 00:00\n\n艾妲 73 在北方道路受傷，需要休養兩日。\n\n第 10 年 冬 21 日 00:00\n\n芬恩 24 在北方道路受傷，需要休養兩日。\n\n第 10 年 冬 14 日 00:00\n\n芬恩 24 在北方道路受傷，需要休養兩日。\n\n第 10 年 冬 7 日 00:00\n\n羅恩 52 在北方道路受傷，需要休養兩日。\n\n第 10 年 秋 30 日 00:00\n\n芬恩 24 在北方道路受傷，需要休養兩日。\n\n第 10 年 秋 23 日 00:00\n\n羅恩 72 在北方道路受傷，需要休養兩日。\n\n第 10 年 秋 16 日 00:00\n\n艾琳 29 在北方道路受傷，需要休養兩日。\n\n第 10 年 秋 9 日 00:00\n\n米拉 31 在北方道路受傷，需要休養兩日。\n\n第 10 年 秋 2 日 00:00\n\n諾拉 75 在北方道路受傷，需要休養兩日。\n\n第 10 年 夏 25 日 00:00\n\n西蒙 78 在北方道路受傷，需要休養兩日。\n\n第 10 年 夏 18 日 00:00\n\n西蒙 58 在北方道路受傷，需要休養兩日。\n\n第 10 年 夏 11 日 00:00\n\n芬恩 24 在北方道路受傷，需要休養兩日。\n\n第 10 年 夏 4 日 00:00\n\n艾妲 33 在北方道路受傷，需要休養兩日。\n\n第 10 年 春 27 日 00:00\n\n諾拉 45 在北方道路受傷，需要休養兩日。\n\n第 10 年 春 20 日 00:00\n\n諾拉 5 在北方道路受傷，需要休養兩日。\n\n第 10 年 春 13 日 00:00\n\n奧斯卡 20 在北方道路受傷，需要休養兩日。\n\n第 10 年 春 6 日 00:00\n\n露西 27 在北方道路受傷，需要休養兩日。\n\n第 10 年 春 1 日 00:00\n\n第 10 年開始了。每個人都長了一歲。\n\n第 9 年 冬 29 日 00:00\n\n艾妲 23 在北方道路受傷，需要休養兩日。\n\n第 9 年 冬 22 日 00:00\n\n芬恩 24 在北方道路受傷，需要休養兩日。\n\n第 9 年 冬 15 日 00:00\n\n雨果 26 在北方道路受傷，需要休養兩日。\n\n第 9 年 冬 8 日 00:00\n\n羅恩 42 在北方道路受傷，需要休養兩日。\n\n第 9 年 冬 1 日 00:00\n\n米拉 1 在北方道路受傷，需要休養兩日。\n\n第 9 年 秋 24 日 00:00\n\n奧斯卡 70 在北方道路受傷，需要休養兩日。\n\n第 9 年 秋 17 日 00:00\n\n露西 57 在北方道路受傷，需要休養兩日。\n\n第 9 年 秋 10 日 00:00\n\n雨果 76 在北方道路受傷，需要休養兩日。\n\n第 9 年 秋 3 日 00:00\n\n羅恩 72 在北方道路受傷，需要休養兩日。\n\n第 9 年 夏 26 日 00:00\n\n米拉 31 在北方道路受傷，需要休養兩日。\n\n第 9 年 夏 19 日 00:00\n\n艾琳 39 在北方道路受傷，需要休養兩日。\n\n第 9 年 夏 12 日 00:00\n\n西蒙 8 在北方道路受傷，需要休養兩日。\n\n第 9 年 夏 5 日 00:00\n\n艾琳 69 在北方道路受傷，需要休養兩日。\n\n第 9 年 春 28 日 00:00\n\n西蒙 8 在北方道路受傷，需要休養兩日。\n\n第 9 年 春 21 日 00:00\n\n艾妲 73 在北方道路受傷，需要休養兩日。\n\n第 9 年 春 14 日 00:00\n\n羅恩 12 在北方道路受傷，需要休養兩日。\n\n🙂\n奧登\n26 歲 · 成年\nLv.1\n生命\n100 / 100\n體力\n80 / 80\n🪙 45 金幣\n同行 0 / 2\n徒手\n便服\n橡谷\n城鎮\n80\n位居民\n容量 80\n🏘️\n糧食\n100\n繁榮\n100\n安全\n66\n🏠\n🌾\n🏪\n🛏️\n🍺\n⚒️\n\n居民的工作會讓聚落自然成長。\n\n看看居民在做什麼 +\n北方森林\n威脅 3\n\n👺 哥布林營地\nLv.3\n\n怪物數量\n100\n\n👹 酋長已出現，商路受阻。\n\n🕳️ 尚未發現的礦坑\nLv.3\n\n✓ 世界已存於此瀏覽器\n離線最多延續 8 小時\n\n世界已儲存。\n×",
+  "recent_events": [
+    {
+      "id": 200,
+      "at": 1501920,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "奧斯卡 70 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 201,
+      "at": 1512000,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "米拉 1 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 202,
+      "at": 1522080,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "羅恩 42 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 203,
+      "at": 1532160,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "雨果 26 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 204,
+      "at": 1542240,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "芬恩 24 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 205,
+      "at": 1552320,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "艾妲 23 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 206,
+      "at": 1555200,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 10 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 207,
+      "at": 1562400,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "露西 27 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 208,
+      "at": 1572480,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "奧斯卡 20 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 209,
+      "at": 1582560,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "諾拉 5 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 210,
+      "at": 1592640,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "諾拉 45 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 211,
+      "at": 1602720,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "艾妲 33 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 212,
+      "at": 1612800,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "芬恩 24 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 213,
+      "at": 1622880,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "西蒙 58 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 214,
+      "at": 1632960,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "西蒙 78 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 215,
+      "at": 1643040,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "諾拉 75 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 216,
+      "at": 1653120,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "米拉 31 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 217,
+      "at": 1663200,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "艾琳 29 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 218,
+      "at": 1673280,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "羅恩 72 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 219,
+      "at": 1683360,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "芬恩 24 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 220,
+      "at": 1693440,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "羅恩 52 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 221,
+      "at": 1703520,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "芬恩 24 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 222,
+      "at": 1713600,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "芬恩 24 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 223,
+      "at": 1723680,
+      "type": "npc.injured",
+      "category": "npc",
+      "message": "艾妲 73 在北方道路受傷，需要休養兩日。"
+    },
+    {
+      "id": 224,
+      "at": 1728000,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 11 年開始了。每個人都長了一歲。"
+    }
+  ],
+  "history": [
+    {
+      "id": 78,
+      "at": 496800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾妲 63 搬進橡谷，成為傭兵。"
+    },
+    {
+      "id": 81,
+      "at": 518400,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 4 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 82,
+      "at": 518400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "芬恩 64 搬進橡谷，成為農夫。"
+    },
+    {
+      "id": 83,
+      "at": 518400,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "諾拉 65 出生了。"
+    },
+    {
+      "id": 86,
+      "at": 540000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "雨果 66 搬進橡谷，成為樵夫。"
+    },
+    {
+      "id": 89,
+      "at": 561600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "露西 67 搬進橡谷，成為鐵匠。"
+    },
+    {
+      "id": 90,
+      "at": 561600,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "西蒙 68 出生了。"
+    },
+    {
+      "id": 93,
+      "at": 583200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾琳 69 搬進橡谷，成為守衛。"
+    },
+    {
+      "id": 96,
+      "at": 604800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "奧斯卡 70 搬進橡谷，成為傭兵。"
+    },
+    {
+      "id": 97,
+      "at": 604800,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "米拉 71 出生了。"
+    },
+    {
+      "id": 101,
+      "at": 626400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "羅恩 72 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 104,
+      "at": 648000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾妲 73 搬進橡谷，成為樵夫。"
+    },
+    {
+      "id": 105,
+      "at": 648000,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "芬恩 74 出生了。"
+    },
+    {
+      "id": 108,
+      "at": 669600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "諾拉 75 搬進橡谷，成為店主。"
+    },
+    {
+      "id": 111,
+      "at": 691200,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 5 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 112,
+      "at": 691200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "雨果 76 搬進橡谷，成為守衛。"
+    },
+    {
+      "id": 113,
+      "at": 691200,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "露西 77 出生了。"
+    },
+    {
+      "id": 116,
+      "at": 712800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "西蒙 78 搬進橡谷，成為農夫。"
+    },
+    {
+      "id": 119,
+      "at": 734400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾琳 79 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 133,
+      "at": 864000,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 6 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 151,
+      "at": 1036800,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 7 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 169,
+      "at": 1209600,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 8 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 188,
+      "at": 1382400,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 9 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 206,
+      "at": 1555200,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 10 年開始了。每個人都長了一歲。"
+    },
+    {
+      "id": 224,
+      "at": 1728000,
+      "type": "world.newYear",
+      "category": "world",
+      "message": "第 11 年開始了。每個人都長了一歲。"
+    }
+  ],
+  "milestones": [
+    {
+      "id": 24,
+      "at": 194400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "羅恩 42 搬進橡谷，成為傭兵。"
+    },
+    {
+      "id": 27,
+      "at": 216000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾妲 43 搬進橡谷，成為農夫。"
+    },
+    {
+      "id": 28,
+      "at": 216000,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "芬恩 44 出生了。"
+    },
+    {
+      "id": 31,
+      "at": 234720,
+      "type": "dungeon.threatIncreased",
+      "category": "monster",
+      "message": "廢棄礦坑的威脅升到 Lv.3。"
+    },
+    {
+      "id": 32,
+      "at": 237600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "諾拉 45 搬進橡谷，成為樵夫。"
+    },
+    {
+      "id": 35,
+      "at": 253440,
+      "type": "settlement.grew",
+      "category": "settlement",
+      "message": "橡谷成為城鎮。商店貨源增加，更多冒險者前來。"
+    },
+    {
+      "id": 36,
+      "at": 259200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "雨果 46 搬進橡谷，成為鐵匠。"
+    },
+    {
+      "id": 37,
+      "at": 259200,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "露西 47 出生了。"
+    },
+    {
+      "id": 40,
+      "at": 280800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "西蒙 48 搬進橡谷，成為守衛。"
+    },
+    {
+      "id": 43,
+      "at": 302400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾琳 49 搬進橡谷，成為傭兵。"
+    },
+    {
+      "id": 44,
+      "at": 302400,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "奧斯卡 50 出生了。"
+    },
+    {
+      "id": 48,
+      "at": 324000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "米拉 51 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 52,
+      "at": 345600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "羅恩 52 搬進橡谷，成為樵夫。"
+    },
+    {
+      "id": 53,
+      "at": 345600,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "艾妲 53 出生了。"
+    },
+    {
+      "id": 56,
+      "at": 367200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "芬恩 54 搬進橡谷，成為店主。"
+    },
+    {
+      "id": 59,
+      "at": 388800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "諾拉 55 搬進橡谷，成為守衛。"
+    },
+    {
+      "id": 60,
+      "at": 388800,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "雨果 56 出生了。"
+    },
+    {
+      "id": 63,
+      "at": 410400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "露西 57 搬進橡谷，成為農夫。"
+    },
+    {
+      "id": 66,
+      "at": 432000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "西蒙 58 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 67,
+      "at": 432000,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "艾琳 59 出生了。"
+    },
+    {
+      "id": 70,
+      "at": 453600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "奧斯卡 60 搬進橡谷，成為鐵匠。"
+    },
+    {
+      "id": 74,
+      "at": 475200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "米拉 61 搬進橡谷，成為店主。"
+    },
+    {
+      "id": 75,
+      "at": 475200,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "羅恩 62 出生了。"
+    },
+    {
+      "id": 78,
+      "at": 496800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾妲 63 搬進橡谷，成為傭兵。"
+    },
+    {
+      "id": 82,
+      "at": 518400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "芬恩 64 搬進橡谷，成為農夫。"
+    },
+    {
+      "id": 83,
+      "at": 518400,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "諾拉 65 出生了。"
+    },
+    {
+      "id": 86,
+      "at": 540000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "雨果 66 搬進橡谷，成為樵夫。"
+    },
+    {
+      "id": 89,
+      "at": 561600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "露西 67 搬進橡谷，成為鐵匠。"
+    },
+    {
+      "id": 90,
+      "at": 561600,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "西蒙 68 出生了。"
+    },
+    {
+      "id": 93,
+      "at": 583200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾琳 69 搬進橡谷，成為守衛。"
+    },
+    {
+      "id": 96,
+      "at": 604800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "奧斯卡 70 搬進橡谷，成為傭兵。"
+    },
+    {
+      "id": 97,
+      "at": 604800,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "米拉 71 出生了。"
+    },
+    {
+      "id": 101,
+      "at": 626400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "羅恩 72 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 104,
+      "at": 648000,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾妲 73 搬進橡谷，成為樵夫。"
+    },
+    {
+      "id": 105,
+      "at": 648000,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "芬恩 74 出生了。"
+    },
+    {
+      "id": 108,
+      "at": 669600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "諾拉 75 搬進橡谷，成為店主。"
+    },
+    {
+      "id": 112,
+      "at": 691200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "雨果 76 搬進橡谷，成為守衛。"
+    },
+    {
+      "id": 113,
+      "at": 691200,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "露西 77 出生了。"
+    },
+    {
+      "id": 116,
+      "at": 712800,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "西蒙 78 搬進橡谷，成為農夫。"
+    },
+    {
+      "id": 119,
+      "at": 734400,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "艾琳 79 搬進橡谷，成為礦工。"
+    }
+  ]
+}
