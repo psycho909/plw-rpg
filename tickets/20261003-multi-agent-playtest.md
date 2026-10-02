@@ -1,6 +1,6 @@
 # 多 Agent 模擬遊玩與 Bug 紀錄
 
-- Status: in_progress
+- Status: accepted
 - Owner: 本專案使用者；沿用 README 的身份設定
 - Approver: 同 Owner
 - Approval evidence: 2026-10-03，使用者明確要求「派多個sub agent進行遊戲的模擬遊玩，並且記錄遊玩紀錄和bug」
@@ -32,7 +32,7 @@
 - [x] 每條路線記錄環境、seed／起始條件、操作、遊戲時間、結果、通過與未執行項目。
 - [x] Bug 紀錄有重現步驟、預期／實際、影響、證據與確認狀態；主 Agent 重驗接受的確認 Bug。
 - [x] 保存整合報告與分路線紀錄；不強求找出 Bug。
-- [ ] 程式與依賴未變更，文件檢查通過，本次紀錄提交並同步 work 分支。
+- [x] 程式與依賴未變更，文件檢查通過，本次紀錄提交並同步 work 分支。
 
 ## Constraints and Decisions
 
@@ -52,5 +52,5 @@
 - Verification: 四個 sub agent 的 Playwright UI 路線已完成，詳見 [整合報告](../reports/playtests/20261003/README.md)。生活路線10.56日、冒險路線90日以上且聘傭兵成功、存檔正常與4項注入、世界路線64年及自然死亡繼承；各路線的實際腳本、JSON及截圖均已保存。世界路線完成後由主Agent接手收尾文件，依world-final.json的10項成功斷言驗收。
 - Verification: 主Agent額外執行verification.py（鍵盤／倍速／自動保存，exit0）及verify_bugs.py（成功重現PT-001，exit0）；PT-001只在受控損毀存檔注入確認，正常遊玩未確認其他Bug。修復不在本次Scope。
 - Review / Audit: L1主Agent自查（參與整合，非獨立Audit）。基準／HEAD為8945fa76343a3efed38b21e4615d269f9ebef529；範圍為本Ticket與reports/playtests/20261003/。已核對實際Python脚本、JSON數據、Markdown連結、PNG完整性及分路線的成功／未跑項目；Standards與本次Spec均符合，未修改應用程式與依賴。主Agent逐一斷言4條路線結果及PT-001資料一致。
-- Review / Audit: git diff --check、保護路徑git diff --exit-code通過；新增檔案以git ls-files --others --exclude-standard檢查，待staging後核對git diff --cached --check與提交清單。只有報告、重現腳本及證據，未建立Audit Report或額外修復Ticket。
-- Commit / PR: 遊玩紀錄準備完成，待提交並同步work分支後結案；不建立PR。
+- Review / Audit: git diff --check、保護路徑git diff --exit-code通過；新增檔案及staging後git diff --cached --check與提交清單已核對，91個檔案全部限本次Ticket與報告路徑，無Python快取。7份Markdown、6支腳本、25份JSON與52張PNG的連結／語法／格式／完整性均已檢查。只有報告、重現腳本及證據，未建立Audit Report或額外修復Ticket。
+- Commit / PR: 報告與證據commit為6bb387db5444f1ad730324e041d353d5f5697ada，已push至origin/work並以git ls-remote確認遠端SHA一致；本次Ticket結案狀態另隨後續文件commit保存。不建立PR，不推送main。
