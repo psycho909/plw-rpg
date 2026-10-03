@@ -1,6 +1,6 @@
 # 單機即時自動保存與追加遊玩紀錄
 
-- Status: in_progress
+- Status: done
 - Owner: 本專案使用者；沿用 README 已確認身份
 - Approver: 同 Owner
 - Approval evidence: 2026-10-03 使用者要求遊戲進度／事件與測試紀錄兩者自動保存且不可透過應用程式調整；後續明確「先不用製作伺服器的部分，先以單機為止」，並「修改或刪除檔案先不理會」。本票以最新限制取代先前伺服器選項。
@@ -37,7 +37,7 @@
 - [x] 追加紀錄包含超過UI150筆限制的完整事件；重建保留舊紀錄，提供唯讀匯出。
 - [x] 無法追加或quota錯誤分開提示；不靜默丟紀錄，保存失敗暫停時間，保留重試／匯出。
 - [x] 測試發布writer自動追加紀錄，清楚區分先前版本與本次開始追加的版本。
-- [ ] 適用checks、實際browser與review完成，提交並同步work。
+- [x] 適用checks、實際browser與review完成，提交並同步work。
 
 ## Constraints and Decisions
 
@@ -55,4 +55,4 @@
 
 - Verification: 全量 Vitest136/7、TypeScript／production build、Pythonwriter4 tests PASS；Chromium固定5186實測18/18 PASS（正常30日、一筆3自然事件；35.13秒×20、API故障／重載補寫／去重／內容衝突／匯出／rapid action／reset與1440/390），0page errors，1筆console404另列。超過UI150上限的220完整事件與rest途中自然死亡仍保存由正式回歸證明。root額外390雙故障恢復、紀錄庫故障期間reset保留原pending皆PASS。[來源指紋與check](../reports/playtests/20261003-local-autosave/source-checks.json)、[瀏覽器](../reports/playtests/20261003-local-autosave/results.json)、[雙故障](../reports/playtests/20261003-local-autosave/root-dual-failure.json)、[待補写reset](../reports/playtests/20261003-local-autosave/root-reset-pending.json)。
 - Review / Audit: 一般L2獨立Standards／Spec review ACCEPTED，未參與施工的review context，明確gpt-6-luna/max委派；[最終報告](../reports/playtests/20261003-local-autosave/local-review.md)。Windows鎖定、雙故障提示、store原因保留、真IndexedDB error→abort競態四項finding全修復，無未解程式／規格finding。Astra承接兩次原因遺失修復及變更後失敗操作補證，主Agent接受結果；不觸發伺服器Independent Audit。
-- Commit / PR: 待驗證；不建立PR。
+- Commit / PR: `fb5679fea7bb54e06512bd74a25f9441132c8828` 已提交並 push 至 origin/work；2026-10-03 以 ls-remote 確認遠端 SHA 與本機相同。主 Agent 最終驗收通過，staged diff --check 與八項來源指紋檢查通過；不建立PR。
