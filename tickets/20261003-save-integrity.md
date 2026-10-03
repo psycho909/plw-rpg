@@ -1,6 +1,6 @@
 # PT-001 存檔田地數完整性修復
 
-- Status: in_progress
+- Status: accepted
 - Owner: 本專案使用者，繼承 README 2026-10-02 已確認身份
 - Approver: 同 Owner
 - Approval evidence: 2026-10-03 使用者「如果有重大bug需要修復或者疑慮時分配給astra 去解決」；既有 PT-001 有可重現存檔完整性疑慮
@@ -21,7 +21,7 @@ src/services/saveService.ts／saveService.test.ts 的最小驗證修復與回歸
 ## Acceptance
 - [x] 原有重現案例拒絕非整數田地數，原始存檔保持保護。
 - [x] 合法整數田地數與正常農作存檔可 round-trip。
-- [ ] meaningful RED／GREEN 回歸、全套 unit／build、主 Agent 審查與分支同步。
+- [x] meaningful RED／GREEN 回歸、全套 unit／build、主 Agent 審查與分支同步。
 
 ## Constraints and Decisions
 - 使用者這次明確指定疑慮／重大 bug 由 Astra 處理，覆寫 README 的預設 Luna subagent 模型，僅限此 bug 工作者。
@@ -42,5 +42,5 @@ src/services/saveService.ts／saveService.test.ts 的最小驗證修復與回歸
 - Worker review: 以 HEAD `ec0240bdfc056649f71cb4fd837233690116fb6a` 的指定 service unstaged diff 自查 Scope／契約，修改僅一個驗證條件與七個回歸案例；未 commit／push，待主 Agent 整合。
 - Integration verification: 主 Agent 核對完整 service diff 與原 PT-001 payload；最終整合 `npm run check` exit 0，90 tests、type check、build PASS。UI [verify.py](../reports/ui/20261003-world-first/verify.py) 的受控 0.5 fixture 首次拒絕、手動存檔與移動後原文字保持不變；[results.json](../reports/ui/20261003-world-first/artifacts/results.json) 共 107 browser checks PASS、零 page errors，source 指紋逐檔一致。沒有自動修補／遷移已損毀資料。
 - Review / Audit: 主 Agent 已核對最小一行修復、RED／GREEN 與 browser 防覆寫證據；未參與施工的 Luna／max Standards、Spec reviewer 完成 service 與最終 staged 內容檢查，兩者無剩餘 blocker。最終 32 source hashes 與保存的 90 tests／107 browser checks 相符，包含 0.5 初次拒絕／原文防覆寫。一般 L2 review，未擴充版本／schema／simulation。
-- Final review: 本票前兩項 Acceptance 已有 unit 與 browser 證據，主 Agent 判定修復可接受；尚待 commit／push 同步。
-- Commit / PR: 待整合提交。
+- Final review: Acceptance 的首次拒絕、合法 round-trip、RED／GREEN、整合檢查與分支同步均已成立，主 Agent 判定 accepted。
+- Commit / PR: 整合於 `d9d2b4d553441025a2f63ac16662978774837c19`，已 push origin/work 並以 `git ls-remote` 確認一致。結案狀態另保存於本票所在後續文件 commit；沒有 PR 或 main merge。

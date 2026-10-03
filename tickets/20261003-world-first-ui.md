@@ -1,6 +1,6 @@
 # 世界優先的黑白復古 UI／UX 重製
 
-- Status: in_progress
+- Status: accepted
 - Owner: 本專案使用者，繼承 README 2026-10-02 已確認身份
 - Approver: 同 Owner
 - Approval evidence: 2026-10-03 使用者「讀取design/DESIGN.md進行UIUX調整」，並允許提出問題與想法
@@ -26,7 +26,7 @@
 - [x] WASD／方向鍵、Enter、Esc、C／I／L／M、滑鼠及手機方向控制可用，IME 與文字輸入不觸發快捷鍵。
 - [x] 聚落成長、農作、迷霧與威脅透過真實 state 在地圖變化。
 - [x] 1440／1280／1024、768 平板、390／320 手機有瀏覽器證據；存檔重載與失敗保護仍可用。
-- [ ] npm run check、靜態契約檢查、實際瀏覽器流程與 Standards／Spec review 通過，commit／push 工作分支。
+- [x] npm run check、靜態契約檢查、實際瀏覽器流程與 Standards／Spec review 通過，commit／push 工作分支。
 
 ## Constraints and Decisions
 - docs/design/DESIGN.md 是使用者此次指定的視覺正本，其 World First 要求取代 SPEC.md 54–58 的舊固定側欄布局；SPEC 的遊戲規則不變。
@@ -46,5 +46,5 @@
 - Skills: frontend-design-premium:frontend-design＋frontend-design-premium、matt-skills-curated:implement／tdd／code-review，依專案 workflow 適配；使用者明確指定 Astra bug 工作者，其餘獨立 reviewer 使用 README 的 GPT-6 Luna Max。
 - Review / Audit: 未參與施工的 ui_standards_review、ui_spec_review，入口明確指定 GPT-6 Luna／max（選用證據，非後端遙測），完成 Standards／Spec 與修正後復查。固定 base＝HEAD `ec0240b...`，先涵蓋 unstaged／cached／untracked 新檔，再核對最後 77 個 staged 檔案及 source 指紋 `4abb7b...`；一般 L2 review。兩者最終均無剩餘 blocker、可接受；沒有自行重跑 suite，以保存的 90 tests／107 browser checks、32 source hashes 與 RED／GREEN artifacts 核對。
 - Findings disposition: Spec 的暫存範圍文句已更正，Enter／WASD runtime 補測；Standards 的 M 視窗負 tabindex 格誤納入 Tab 已由 Astra 最小修復且四案例 RED→GREEN、六尺寸最終回歸通過。自動存檔恢復的舊錯誤訊息建議也已修正，unit 保留較新行動訊息，browser 真正自動儲存更新成功提示。
-- Final review: 主 Agent 核對 Scope、相對連結、staged diff、全部新檔與最後指紋，runtime 證據符合 Acceptance；剩餘 V2／跨瀏覽器與實機限制見報告。尚待工作分支 commit／push 完成。
-- Commit / PR: 尚未提交。
+- Final review: 主 Agent 核對 Scope、相對連結、staged diff、全部新檔與最後指紋，runtime 證據符合 Acceptance，判定 accepted；剩餘 V2／跨瀏覽器與實機限制見報告。
+- Commit / PR: 程式、文件與完整驗收證據於 `d9d2b4d553441025a2f63ac16662978774837c19` 提交並 push origin/work；`git ls-remote origin refs/heads/work` 已核對一致。結案狀態另保存於本票所在後續文件 commit；不 merge main、沒有建立 PR。
