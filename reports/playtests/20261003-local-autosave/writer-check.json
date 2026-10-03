@@ -1,0 +1,12 @@
+{
+  "command": "python3 -B -m unittest discover -s scripts -p test_*.py",
+  "startedAt": "2026-10-03T11:07:24.131639+00:00",
+  "finishedAt": "2026-10-03T11:07:24.243790+00:00",
+  "exitCode": 0,
+  "tests": 4,
+  "windows": "mock branch only; actual runtime Linux",
+  "source": {
+    "scripts/recorded_reports.py": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+    "scripts/test_recorded_reports.py": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2"
+  }
+}

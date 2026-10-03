@@ -1,0 +1,49 @@
+{
+  "started_at": "2026-10-03T05:49:43Z",
+  "url": "http://127.0.0.1:5181/",
+  "source_sha256": {
+    "src/engine/actions.ts": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+    "src/engine/actions.test.ts": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8"
+  },
+  "cases": [
+    {
+      "kind": "inn",
+      "gold_before": 8,
+      "gold_after": 0,
+      "party_after": 0,
+      "mode": "public-engine-generated save without field injection",
+      "reload_consistent": true,
+      "reload_time_delta_minutes": 1
+    },
+    {
+      "kind": "inn",
+      "gold_before": 12,
+      "gold_after": 0,
+      "party_after": 1,
+      "mode": "controlled payment-boundary fixture",
+      "reload_consistent": true,
+      "reload_time_delta_minutes": 1
+    },
+    {
+      "kind": "tavern",
+      "gold_before": 6,
+      "gold_after": 3,
+      "party_after": 0,
+      "mode": "controlled payment-boundary fixture",
+      "reload_consistent": true,
+      "reload_time_delta_minutes": 1
+    },
+    {
+      "kind": "tavern",
+      "gold_before": 7,
+      "gold_after": 0,
+      "party_after": 1,
+      "mode": "controlled payment-boundary fixture",
+      "reload_consistent": true,
+      "reload_time_delta_minutes": 1
+    }
+  ],
+  "elapsed_seconds": 8.56,
+  "page_errors": [],
+  "status": "passed"
+}

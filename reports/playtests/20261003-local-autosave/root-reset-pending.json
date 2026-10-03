@@ -1,0 +1,35 @@
+{
+  "url": "http://127.0.0.1:5186/",
+  "fixture": "Readwrite transaction throws until restored; reset uses normal UI",
+  "steps": [
+    {
+      "step": "old world has durable pending",
+      "worldId": "5d3e0272-ffb0-4a90-95b1-acfff6987fe2",
+      "pendingIds": [
+        "1b16da21-cbcc-4a75-83d3-dbddfe44cd9c"
+      ]
+    },
+    {
+      "step": "reset preserves old pending",
+      "newWorldId": "9cbbf2f3-699f-4b23-b264-34c3cac8afd3",
+      "oldPendingUnchanged": true,
+      "resetIds": [
+        "49594b8e-4e9b-4f84-90bc-a07d6f6dfea3"
+      ],
+      "queuedIds": [
+        "1b16da21-cbcc-4a75-83d3-dbddfe44cd9c",
+        "49594b8e-4e9b-4f84-90bc-a07d6f6dfea3"
+      ]
+    },
+    {
+      "step": "restored journal drains both worlds once",
+      "pending": 0,
+      "oldArchiveIdsRetained": true,
+      "oldPendingAndResetIdsCommittedOnce": true,
+      "worldId": "9cbbf2f3-699f-4b23-b264-34c3cac8afd3"
+    }
+  ],
+  "pageErrors": [],
+  "harnessCorrection": "Prior probe returned a native function from page.evaluate assignment; Playwright invoked it without its receiver. Restore now uses a block returning undefined.",
+  "status": "pass"
+}

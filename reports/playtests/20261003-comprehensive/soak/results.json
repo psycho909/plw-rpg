@@ -1,0 +1,1234 @@
+{
+  "baseline_commit": "694c6d76df67e3d3dd4da5aa98feba8581ecc2ba",
+  "url": "http://127.0.0.1:5180/",
+  "target_elapsed_seconds": 1200,
+  "status": "completed",
+  "started_at_utc": "2026-10-03T05:46:15.385+00:00",
+  "ended_at_utc": "2026-10-03T06:06:15.674+00:00",
+  "elapsed_seconds": 1200.293,
+  "RESULTS": {
+    "page_errors": []
+  },
+  "console_errors": [
+    {
+      "at_utc": "2026-10-03T05:46:14.937+00:00",
+      "elapsed_seconds": null,
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+    }
+  ],
+  "interruptions": [],
+  "observations": [
+    {
+      "minute": 1,
+      "scheduled_elapsed_seconds": 60,
+      "checkpoint_at_utc": "2026-10-03T05:47:15.385+00:00",
+      "interaction": {
+        "route_key": "c",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 40.6,
+        "route_error": null,
+        "move_key": "ArrowRight",
+        "move_latency_ms": 15.0,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": {
+          "attempted": true,
+          "returned_to_menu_trigger": true,
+          "error": null
+        }
+      },
+      "elapsed_seconds": 60.174,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 3 日 00:13",
+        "selected_speed": "×20",
+        "dom_nodes": 891,
+        "js_heap_used_bytes": 15511346,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 8, 9 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791006434925,
+          "last_saved_world_time": 2864,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 29,
+          "events_count": 1,
+          "history_count": 1,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "menu-trigger"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 2,
+      "scheduled_elapsed_seconds": 120,
+      "checkpoint_at_utc": "2026-10-03T05:48:15.385+00:00",
+      "interaction": {
+        "route_key": "i",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 23.7,
+        "route_error": null,
+        "move_key": "ArrowDown",
+        "move_latency_ms": 9.9,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 120.055,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 4 日 16:14",
+        "selected_speed": "×20",
+        "dom_nodes": 885,
+        "js_heap_used_bytes": 31256359,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 8, 10 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791006495025,
+          "last_saved_world_time": 5273,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 29,
+          "events_count": 1,
+          "history_count": 1,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "menu-trigger"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 3,
+      "scheduled_elapsed_seconds": 180,
+      "checkpoint_at_utc": "2026-10-03T05:49:15.385+00:00",
+      "interaction": {
+        "route_key": "l",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 35.0,
+        "route_error": null,
+        "move_key": "ArrowLeft",
+        "move_latency_ms": 10.0,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 180.061,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 6 日 08:19",
+        "selected_speed": "×20",
+        "dom_nodes": 886,
+        "js_heap_used_bytes": 17110713,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 7, 10 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791006555125,
+          "last_saved_world_time": 7682,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 29,
+          "events_count": 1,
+          "history_count": 1,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "menu-trigger"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 4,
+      "scheduled_elapsed_seconds": 240,
+      "checkpoint_at_utc": "2026-10-03T05:50:15.385+00:00",
+      "interaction": {
+        "route_key": "m",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 56.7,
+        "route_error": null,
+        "move_key": "ArrowUp",
+        "move_latency_ms": 8.7,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 240.083,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 8 日 00:25",
+        "selected_speed": "×20",
+        "dom_nodes": 891,
+        "js_heap_used_bytes": 6183178,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 7, 9 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791006615225,
+          "last_saved_world_time": 10091,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 29,
+          "events_count": 1,
+          "history_count": 1,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "menu-trigger"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 5,
+      "scheduled_elapsed_seconds": 300,
+      "checkpoint_at_utc": "2026-10-03T05:51:15.385+00:00",
+      "interaction": {
+        "route_key": "c",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 41.1,
+        "route_error": null,
+        "move_key": "ArrowRight",
+        "move_latency_ms": 13.9,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": {
+          "attempted": true,
+          "returned_to_menu_trigger": true,
+          "error": null
+        }
+      },
+      "save_reload": {
+        "attempted_at_utc": "2026-10-03T05:51:15.587+00:00",
+        "success": true,
+        "save_world_time": 12513,
+        "reloaded_world_time": 12517,
+        "world_time_non_decreasing": true,
+        "state_complete": true,
+        "reload_elapsed_seconds": 0.311,
+        "error": null,
+        "save_last_saved_at_ms": 1791006675610,
+        "saved_state_counts": {
+          "characters": 1,
+          "npcs": 29,
+          "events": 1,
+          "history": 1,
+          "tiles": 384
+        },
+        "visible_game_time_after_reload": "第 1 年 春 9 日\n16:41",
+        "completed_at_utc": "2026-10-03T05:51:15.898+00:00"
+      },
+      "elapsed_seconds": 300.514,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 9 日 16:41",
+        "selected_speed": "×20",
+        "dom_nodes": 882,
+        "js_heap_used_bytes": 27305242,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 8, 9 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791006675709,
+          "last_saved_world_time": 12517,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 29,
+          "events_count": 1,
+          "history_count": 1,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 6,
+      "scheduled_elapsed_seconds": 360,
+      "checkpoint_at_utc": "2026-10-03T05:52:15.385+00:00",
+      "interaction": {
+        "route_key": "i",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 24.6,
+        "route_error": null,
+        "move_key": "ArrowDown",
+        "move_latency_ms": 7.5,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 360.052,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 11 日 08:26",
+        "selected_speed": "×20",
+        "dom_nodes": 885,
+        "js_heap_used_bytes": 13027149,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 8, 10 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791006726052,
+          "last_saved_world_time": 14529,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 29,
+          "events_count": 1,
+          "history_count": 1,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 7,
+      "scheduled_elapsed_seconds": 420,
+      "checkpoint_at_utc": "2026-10-03T05:53:15.385+00:00",
+      "interaction": {
+        "route_key": "l",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 19.3,
+        "route_error": null,
+        "move_key": "ArrowLeft",
+        "move_latency_ms": 6.4,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 420.047,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 13 日 00:31",
+        "selected_speed": "×20",
+        "dom_nodes": 891,
+        "js_heap_used_bytes": 10964093,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 7, 10 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791006786152,
+          "last_saved_world_time": 16938,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 29,
+          "events_count": 1,
+          "history_count": 1,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 8,
+      "scheduled_elapsed_seconds": 480,
+      "checkpoint_at_utc": "2026-10-03T05:54:15.385+00:00",
+      "interaction": {
+        "route_key": "m",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 62.0,
+        "route_error": null,
+        "move_key": "ArrowUp",
+        "move_latency_ms": 12.4,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 480.098,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 14 日 16:40",
+        "selected_speed": "×20",
+        "dom_nodes": 886,
+        "js_heap_used_bytes": 7645915,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 7, 9 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791006846152,
+          "last_saved_world_time": 19343,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 29,
+          "events_count": 1,
+          "history_count": 1,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 9,
+      "scheduled_elapsed_seconds": 540,
+      "checkpoint_at_utc": "2026-10-03T05:55:15.385+00:00",
+      "interaction": {
+        "route_key": "c",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 23.9,
+        "route_error": null,
+        "move_key": "ArrowRight",
+        "move_latency_ms": 11.3,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 540.059,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 16 日 08:41",
+        "selected_speed": "×20",
+        "dom_nodes": 886,
+        "js_heap_used_bytes": 28548572,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 8, 9 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791006906352,
+          "last_saved_world_time": 21756,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 30,
+          "events_count": 2,
+          "history_count": 2,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 10,
+      "scheduled_elapsed_seconds": 600,
+      "checkpoint_at_utc": "2026-10-03T05:56:15.385+00:00",
+      "interaction": {
+        "route_key": "i",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 22.7,
+        "route_error": null,
+        "move_key": "ArrowDown",
+        "move_latency_ms": 8.2,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": {
+          "attempted": true,
+          "returned_to_menu_trigger": true,
+          "error": null
+        }
+      },
+      "save_reload": {
+        "attempted_at_utc": "2026-10-03T05:56:15.546+00:00",
+        "success": true,
+        "save_world_time": 24534,
+        "reloaded_world_time": 24538,
+        "world_time_non_decreasing": true,
+        "state_complete": true,
+        "reload_elapsed_seconds": 0.376,
+        "error": null,
+        "save_last_saved_at_ms": 1791006975585,
+        "saved_state_counts": {
+          "characters": 1,
+          "npcs": 30,
+          "events": 2,
+          "history": 2,
+          "tiles": 384
+        },
+        "visible_game_time_after_reload": "第 1 年 春 18 日\n01:02",
+        "completed_at_utc": "2026-10-03T05:56:15.922+00:00"
+      },
+      "elapsed_seconds": 600.642,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 18 日 01:10",
+        "selected_speed": "×20",
+        "dom_nodes": 887,
+        "js_heap_used_bytes": 22198988,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 8, 10 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791006975685,
+          "last_saved_world_time": 24538,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 30,
+          "events_count": 2,
+          "history_count": 2,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 11,
+      "scheduled_elapsed_seconds": 660,
+      "checkpoint_at_utc": "2026-10-03T05:57:15.385+00:00",
+      "interaction": {
+        "route_key": "l",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 35.9,
+        "route_error": null,
+        "move_key": "ArrowLeft",
+        "move_latency_ms": 22.0,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 660.093,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 19 日 16:51",
+        "selected_speed": "×20",
+        "dom_nodes": 886,
+        "js_heap_used_bytes": 7685230,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 7, 10 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791007025824,
+          "last_saved_world_time": 26542,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 30,
+          "events_count": 2,
+          "history_count": 2,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 12,
+      "scheduled_elapsed_seconds": 720,
+      "checkpoint_at_utc": "2026-10-03T05:58:15.385+00:00",
+      "interaction": {
+        "route_key": "m",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 39.7,
+        "route_error": null,
+        "move_key": "ArrowUp",
+        "move_latency_ms": 10.6,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 720.066,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 21 日 08:56",
+        "selected_speed": "×20",
+        "dom_nodes": 886,
+        "js_heap_used_bytes": 17605919,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 7, 9 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791007085924,
+          "last_saved_world_time": 28951,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 30,
+          "events_count": 2,
+          "history_count": 2,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 13,
+      "scheduled_elapsed_seconds": 780,
+      "checkpoint_at_utc": "2026-10-03T05:59:15.385+00:00",
+      "interaction": {
+        "route_key": "c",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 33.8,
+        "route_error": null,
+        "move_key": "ArrowRight",
+        "move_latency_ms": 16.9,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 780.065,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 23 日 01:01",
+        "selected_speed": "×20",
+        "dom_nodes": 891,
+        "js_heap_used_bytes": 30334663,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 8, 9 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791007146123,
+          "last_saved_world_time": 31364,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 30,
+          "events_count": 2,
+          "history_count": 2,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 14,
+      "scheduled_elapsed_seconds": 840,
+      "checkpoint_at_utc": "2026-10-03T06:00:15.385+00:00",
+      "interaction": {
+        "route_key": "i",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 12.4,
+        "route_error": null,
+        "move_key": "ArrowDown",
+        "move_latency_ms": 11.3,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 840.043,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 24 日 17:06",
+        "selected_speed": "×20",
+        "dom_nodes": 885,
+        "js_heap_used_bytes": 34386682,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 8, 10 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791007206224,
+          "last_saved_world_time": 33773,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 30,
+          "events_count": 2,
+          "history_count": 2,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 15,
+      "scheduled_elapsed_seconds": 900,
+      "checkpoint_at_utc": "2026-10-03T06:01:15.385+00:00",
+      "interaction": {
+        "route_key": "l",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 30.2,
+        "route_error": null,
+        "move_key": "ArrowLeft",
+        "move_latency_ms": 14.4,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": {
+          "attempted": true,
+          "returned_to_menu_trigger": true,
+          "error": null
+        }
+      },
+      "save_reload": {
+        "attempted_at_utc": "2026-10-03T06:01:15.563+00:00",
+        "success": true,
+        "save_world_time": 36555,
+        "reloaded_world_time": 36559,
+        "world_time_non_decreasing": true,
+        "state_complete": true,
+        "reload_elapsed_seconds": 0.307,
+        "error": null,
+        "save_last_saved_at_ms": 1791007275603,
+        "saved_state_counts": {
+          "characters": 1,
+          "npcs": 30,
+          "events": 2,
+          "history": 2,
+          "tiles": 384
+        },
+        "visible_game_time_after_reload": "第 1 年 春 26 日\n09:23",
+        "completed_at_utc": "2026-10-03T06:01:15.869+00:00"
+      },
+      "elapsed_seconds": 900.484,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 26 日 09:23",
+        "selected_speed": "×20",
+        "dom_nodes": 882,
+        "js_heap_used_bytes": 16808556,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 7, 10 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791007275694,
+          "last_saved_world_time": 36559,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 30,
+          "events_count": 2,
+          "history_count": 2,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 16,
+      "scheduled_elapsed_seconds": 960,
+      "checkpoint_at_utc": "2026-10-03T06:02:15.385+00:00",
+      "interaction": {
+        "route_key": "m",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 42.5,
+        "route_error": null,
+        "move_key": "ArrowUp",
+        "move_latency_ms": 11.6,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 960.068,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 28 日 01:12",
+        "selected_speed": "×20",
+        "dom_nodes": 891,
+        "js_heap_used_bytes": 10558863,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 7, 9 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791007325931,
+          "last_saved_world_time": 38567,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 30,
+          "events_count": 2,
+          "history_count": 2,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 17,
+      "scheduled_elapsed_seconds": 1020,
+      "checkpoint_at_utc": "2026-10-03T06:03:15.385+00:00",
+      "interaction": {
+        "route_key": "c",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 18.8,
+        "route_error": null,
+        "move_key": "ArrowRight",
+        "move_latency_ms": 10.2,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 1020.046,
+      "snapshot": {
+        "visible_game_time": "第 1 年 春 29 日 17:17",
+        "selected_speed": "×20",
+        "dom_nodes": 886,
+        "js_heap_used_bytes": 19566826,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 8, 9 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791007385931,
+          "last_saved_world_time": 40972,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 30,
+          "events_count": 2,
+          "history_count": 2,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 18,
+      "scheduled_elapsed_seconds": 1080,
+      "checkpoint_at_utc": "2026-10-03T06:04:15.385+00:00",
+      "interaction": {
+        "route_key": "i",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 21.2,
+        "route_error": null,
+        "move_key": "ArrowDown",
+        "move_latency_ms": 8.4,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 1080.049,
+      "snapshot": {
+        "visible_game_time": "第 1 年 夏 1 日 09:22",
+        "selected_speed": "×20",
+        "dom_nodes": 885,
+        "js_heap_used_bytes": 8604999,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 8, 10 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791007446031,
+          "last_saved_world_time": 43381,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 32,
+          "events_count": 4,
+          "history_count": 4,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 19,
+      "scheduled_elapsed_seconds": 1140,
+      "checkpoint_at_utc": "2026-10-03T06:05:15.385+00:00",
+      "interaction": {
+        "route_key": "l",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 21.0,
+        "route_error": null,
+        "move_key": "ArrowLeft",
+        "move_latency_ms": 9.4,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": null
+      },
+      "elapsed_seconds": 1140.052,
+      "snapshot": {
+        "visible_game_time": "第 1 年 夏 3 日 01:27",
+        "selected_speed": "×20",
+        "dom_nodes": 891,
+        "js_heap_used_bytes": 6788795,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 7, 10 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791007506131,
+          "last_saved_world_time": 45790,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 32,
+          "events_count": 4,
+          "history_count": 4,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "selected"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    },
+    {
+      "minute": 20,
+      "scheduled_elapsed_seconds": 1200,
+      "checkpoint_at_utc": "2026-10-03T06:06:15.385+00:00",
+      "interaction": {
+        "route_key": "m",
+        "route_opened": true,
+        "route_closed": true,
+        "route_latency_ms": 45.3,
+        "route_error": null,
+        "move_key": "ArrowUp",
+        "move_latency_ms": 12.6,
+        "position_changed": false,
+        "move_error": null,
+        "focus_restore": {
+          "attempted": true,
+          "returned_to_menu_trigger": true,
+          "error": null
+        }
+      },
+      "elapsed_seconds": 1200.282,
+      "snapshot": {
+        "visible_game_time": "第 1 年 夏 4 日 17:40",
+        "selected_speed": "×20",
+        "dom_nodes": 885,
+        "js_heap_used_bytes": 6824853,
+        "active_dialog": null,
+        "save_warning": null,
+        "position_caption": "🏘️ 橡谷聚落 7, 9 世界正在流動",
+        "local_storage": {
+          "last_saved_at_ms": 1791007566231,
+          "last_saved_world_time": 48199,
+          "save_version": 1,
+          "active_character_id": "alden",
+          "characters_count": 1,
+          "npcs_count": 32,
+          "events_count": 4,
+          "history_count": 4,
+          "tiles_count": 384
+        },
+        "storage_parse_error": null,
+        "focus_tag": "BUTTON",
+        "focus_class": "menu-trigger"
+      },
+      "page_error_count": 0,
+      "console_error_count": 1,
+      "new_page_errors": [],
+      "new_console_errors": [
+        {
+          "at_utc": "2026-10-03T05:46:14.937+00:00",
+          "elapsed_seconds": null,
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ]
+    }
+  ],
+  "start_monotonic": 45716.106609249,
+  "initial_snapshot": {
+    "visible_game_time": "第 1 年 春 1 日 08:05",
+    "selected_speed": "×20",
+    "dom_nodes": 882,
+    "js_heap_used_bytes": 5139051,
+    "active_dialog": null,
+    "save_warning": null,
+    "position_caption": "🏘️ 橡谷聚落 7, 9 世界正在流動",
+    "local_storage": null,
+    "storage_parse_error": null,
+    "focus_tag": "BUTTON",
+    "focus_class": "selected"
+  },
+  "final_snapshot": {
+    "visible_game_time": "第 1 年 夏 4 日 17:40",
+    "selected_speed": "×20",
+    "dom_nodes": 885,
+    "js_heap_used_bytes": 6824853,
+    "active_dialog": null,
+    "save_warning": null,
+    "position_caption": "🏘️ 橡谷聚落 7, 9 世界正在流動",
+    "local_storage": {
+      "last_saved_at_ms": 1791007566231,
+      "last_saved_world_time": 48199,
+      "save_version": 1,
+      "active_character_id": "alden",
+      "characters_count": 1,
+      "npcs_count": 32,
+      "events_count": 4,
+      "history_count": 4,
+      "tiles_count": 384
+    },
+    "storage_parse_error": null,
+    "focus_tag": "BUTTON",
+    "focus_class": "menu-trigger"
+  },
+  "measurement_limitations": [
+    "The live runner loaded before the wait_for_function arg=before fix. Its direction keys were sent, but move_latency_ms/position_changed samples are invalid because the API call exception was caught as a non-change.",
+    "The three in-soak reload checks inspected same-context localStorage after reload; an independent fresh context separately verified UI save, reload, application re-save, no warning, state completeness, non-decreasing worldTime, and ×20 recovery."
+  ],
+  "supplemental_validation": {
+    "started_at_utc": "2026-10-03T05:50:25.303+00:00",
+    "url": "http://127.0.0.1:5180/",
+    "fixtures_used": false,
+    "requests": [
+      {
+        "url": "http://127.0.0.1:5180/",
+        "resource_type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:5180/assets/index-9BB7fMEh.js",
+        "resource_type": "script"
+      },
+      {
+        "url": "http://127.0.0.1:5180/assets/index-B0QR5Rvd.css",
+        "resource_type": "stylesheet"
+      },
+      {
+        "url": "http://127.0.0.1:5180/",
+        "resource_type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:5180/assets/index-9BB7fMEh.js",
+        "resource_type": "script"
+      },
+      {
+        "url": "http://127.0.0.1:5180/assets/index-B0QR5Rvd.css",
+        "resource_type": "stylesheet"
+      }
+    ],
+    "responses_ge_400": [],
+    "page_errors": [],
+    "console_errors": [
+      {
+        "at_utc": "2026-10-03T05:50:26.394+00:00",
+        "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+      }
+    ],
+    "checks": {
+      "initial_ui_save": {
+        "world_time": 481,
+        "last_saved_at_ms": 1791006626797,
+        "character_count": 1,
+        "npc_count": 29
+      },
+      "reloaded_state_app_resaved": {
+        "save_warning_visible": false,
+        "world_time_non_decreasing": true,
+        "save_version_preserved": true,
+        "active_character_present": true,
+        "characters_count": 1,
+        "npcs_count": 29,
+        "events_count": 1,
+        "history_count": 1,
+        "tiles_count": 384,
+        "speed_selected": "true"
+      },
+      "corrected_move_sample": {
+        "key": "ArrowRight",
+        "position_caption_changed": true,
+        "latency_ms": 18.1
+      },
+      "all_reload_checks_pass": true
+    },
+    "ended_at_utc": "2026-10-03T05:50:27.253+00:00"
+  },
+  "http_404_correlation": {
+    "console_error_count": 1,
+    "server_log_evidence": "http-404-evidence.txt records /, CSS, and JS as 200 and GET /favicon.ico as 404 in the same second as the initial console error.",
+    "attribution": "Correlated by timestamp and server log; the console message itself did not include a resource URL."
+  }
+}

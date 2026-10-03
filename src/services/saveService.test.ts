@@ -1,10 +1,109 @@
 import { describe, expect, it } from 'vitest'
 import { CONFIG } from '../data/config'
 import { combatTurn, encounter, equip, farm } from '../engine/actions'
-import { createGame, die, player, simulate, walkTo } from '../engine/simulation'
+import { chooseSuccessor, createGame, die, player, simulate, walkTo } from '../engine/simulation'
 import { deserialize, offlineProgress, serialize } from './saveService'
 
 describe('versioned saves and deterministic continuation', () => {
+  it('rejects a null crop with the standard preserved-save error', () => {
+    const raw = JSON.parse(serialize(createGame(), 0))
+    raw.crops = [null]
+    expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+  })
+
+  it.each([-1, 0, 1.5, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER + 1])('rejects unsafe nextNpcId %s', value => {
+    const s = createGame(); s.nextNpcId = value
+    expect(() => deserialize(serialize(s, 0))).toThrow('原始存檔已保留')
+  })
+  it.each([-1, 0.5, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER + 1])('rejects unsafe eventSequence %s', value => {
+    const s = createGame(); s.eventSequence = value
+    expect(() => deserialize(serialize(s, 0))).toThrow('原始存檔已保留')
+  })
+  it.each(['events', 'history', 'crops'] as const)('rejects a sequence behind an ID in %s', collection => {
+    const s = createGame()
+    walkTo(s, { x: 16, y: 10 }); farm(s, 'prepare'); farm(s, 'plant')
+    // A saved JSON world has separate objects in the recent and historic lists.
+    s.events = s.events.map(event => ({ ...event }))
+    s.history = s.history.map(event => ({ ...event }))
+    s[collection][0]!.id = s.eventSequence + 1
+    for (const other of ['events', 'history', 'crops'] as const) {
+      if (other !== collection) expect(s[other].every(entry => entry.id <= s.eventSequence)).toBe(true)
+    }
+    expect(() => deserialize(serialize(s, 0))).toThrow('原始存檔已保留')
+  })
+  it.each([0, -1, 0.5, Number.MAX_SAFE_INTEGER + 1])('rejects unsafe crop ID %s', value => {
+    const s = createGame()
+    walkTo(s, { x: 16, y: 10 }); farm(s, 'prepare'); farm(s, 'plant')
+    s.crops[0]!.id = value
+    expect(() => deserialize(serialize(s, 0))).toThrow('原始存檔已保留')
+  })
+  it('checks the NPC counter against inherited characters as well as remaining NPCs', () => {
+    const s = createGame(), heir = s.npcs.at(-1)!
+    die(s, player(s), '戰鬥傷勢')
+    expect(chooseSuccessor(s, heir.id)).toBe(true)
+    expect(deserialize(serialize(s, 0)).state).toEqual(s)
+    s.nextNpcId = Number(heir.id.slice(4))
+    expect(s.npcs.every(n => Number(n.id.slice(4)) < s.nextNpcId)).toBe(true)
+    expect(() => deserialize(serialize(s, 0))).toThrow('原始存檔已保留')
+  })
+  it('round trips four normally planted crops and harvests exactly one at a time', () => {
+    const s = createGame(); walkTo(s, { x: 16, y: 10 })
+    for (let i = 0; i < 4; i++) {
+      expect(farm(s, 'prepare')).toBe(''); expect(farm(s, 'plant')).toBe('')
+    }
+    simulate(s, 2 * 1440)
+    const loaded = deserialize(serialize(s, 0)).state
+    for (let remaining = 3; remaining >= 0; remaining--) {
+      expect(farm(loaded, 'harvest')).toBe('')
+      expect(loaded.crops).toHaveLength(remaining)
+      expect(deserialize(serialize(loaded, 0)).state).toEqual(loaded)
+    }
+  })
+  it('round trips 500 years of history, natural deaths and successors and continues deterministically', () => {
+    const s = createGame(909)
+    for (let year = 0; year < 500; year++) {
+      simulate(s, 120 * 1440)
+      if (!player(s).isAlive) {
+        const heir = s.npcs.find(n => n.isAlive && n.age >= 15)
+        expect(heir).toBeDefined(); expect(chooseSuccessor(s, heir!.id)).toBe(true)
+      }
+    }
+    expect(s.characters.length).toBeGreaterThan(2)
+    expect(s.history.length).toBeGreaterThan(150)
+    expect(s.events).toHaveLength(150)
+    const loaded = deserialize(serialize(s, 0)).state
+    expect(loaded).toEqual(s)
+    simulate(s, 15 * 1440); simulate(loaded, 15 * 1440)
+    expect(loaded).toEqual(s)
+    expect(deserialize(serialize(loaded, 0)).state).toEqual(loaded)
+  })
+
+  it('rejects a rolled-back event sequence before planting duplicates a crop ID', () => {
+    const s = createGame(909)
+    walkTo(s, { x: 16, y: 10 })
+    expect(farm(s, 'prepare')).toBe(''); expect(farm(s, 'prepare')).toBe('')
+    expect(farm(s, 'plant')).toBe('')
+    s.eventSequence = s.crops[0]!.id - 1
+    expect(() => deserialize(serialize(s, 0))).toThrow('原始存檔已保留')
+  })
+
+  it('rejects duplicate crop IDs before harvesting can remove an extra plot', () => {
+    const s = createGame(909)
+    walkTo(s, { x: 16, y: 10 })
+    for (let i = 0; i < 2; i++) {
+      expect(farm(s, 'prepare')).toBe(''); expect(farm(s, 'plant')).toBe('')
+    }
+    simulate(s, 2 * 1440)
+    s.crops[1]!.id = s.crops[0]!.id
+    expect(() => deserialize(serialize(s, 0))).toThrow('原始存檔已保留')
+  })
+
+  it('rejects an NPC counter that would collide with an existing resident', () => {
+    const s = createGame(909)
+    s.nextNpcId = 1
+    expect(() => deserialize(serialize(s, 0))).toThrow('原始存檔已保留')
+  })
+
   it('round trips a living world and preserves future simulation', () => {
     const s = createGame(32); simulate(s, 100 * 1440)
     const saved = deserialize(serialize(s, 1000))

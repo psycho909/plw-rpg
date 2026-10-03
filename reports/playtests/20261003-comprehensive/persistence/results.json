@@ -1,0 +1,336 @@
+{
+  "suite": "comprehensive-playtest-persistence",
+  "baseline_commit": "694c6d76df67e3d3dd4da5aa98feba8581ecc2ba",
+  "url": "http://127.0.0.1:5180/",
+  "started_at_utc": "2026-10-03T06:18:33.642513+00:00",
+  "cases": [
+    {
+      "name": "normal_ui_save_reload",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:18:37.061964+00:00",
+      "evidence": {
+        "exact_state_equal_excluding_lastSavedAt": true,
+        "serialized_bytes": 72562,
+        "offline_prompt": 0
+      }
+    },
+    {
+      "name": "accepted_nextNpcId_collision_bricks_reload",
+      "status": "confirmed_integrity_bug",
+      "finished_at_utc": "2026-10-03T06:18:40.240757+00:00",
+      "evidence": {
+        "classification": "confirmed_integrity_bug",
+        "accepted_fixture": true,
+        "trigger": "worldTime advanced 2 minutes across day 15 with nextNpcId=1",
+        "clock_after_trigger": "第 1 年 春 16 日\n00:01",
+        "duplicate_ids": [
+          "npc-1"
+        ],
+        "duplicate_count": 1,
+        "duplicate_resident_count": 30,
+        "save_then_reload_rejected": true,
+        "reload_warning": "原始存檔已保留。現在的世界不會覆蓋它；確認後可從選單重建世界。\n查看重建選項",
+        "raw_unchanged_after_rejected_save_excluding_lastSavedAt": true,
+        "save_raw_sha256": "ae9c1e231bccb9ade8fb1adbe2679ec8c4bcf31d5bcb8c7c5c01541205940cbd",
+        "fixture_raw_sha256": "6ec51d5585b9523529e09ca1467990f856b13dbe40cdff22bf295b53068129c1",
+        "reload_raw_sha256_before_rejected_attempt": "70c76590bd49eb1e03431b8978453f3de04c289e3192e2d7855a76339fb5d32a"
+      }
+    },
+    {
+      "name": "accepted_duplicate_crop_id_loses_crop",
+      "status": "confirmed_resource_loss",
+      "finished_at_utc": "2026-10-03T06:18:41.597354+00:00",
+      "evidence": {
+        "classification": "confirmed_resource_loss",
+        "fixture": "two mature crops share id=101",
+        "accepted_by_load": true,
+        "harvests_recorded": 1,
+        "crops_before": 2,
+        "crops_after": 0,
+        "food_yield": 5,
+        "one_crop_worth_of_yield_lost": true
+      }
+    },
+    {
+      "name": "fixture_roundtrip_crop",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:18:43.127911+00:00",
+      "evidence": {
+        "controlled_fixture": true,
+        "state_exact_excluding_lastSavedAt": true,
+        "dialog_after_reload": 0,
+        "pagehide_save_preserved_fixture": true
+      }
+    },
+    {
+      "name": "fixture_roundtrip_combat",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:18:44.544163+00:00",
+      "evidence": {
+        "controlled_fixture": true,
+        "state_exact_excluding_lastSavedAt": true,
+        "dialog_after_reload": 1,
+        "pagehide_save_preserved_fixture": true
+      }
+    },
+    {
+      "name": "fixture_roundtrip_dungeon",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:18:45.985941+00:00",
+      "evidence": {
+        "controlled_fixture": true,
+        "state_exact_excluding_lastSavedAt": true,
+        "dialog_after_reload": 1,
+        "pagehide_save_preserved_fixture": true
+      }
+    },
+    {
+      "name": "fixture_roundtrip_party",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:18:47.443808+00:00",
+      "evidence": {
+        "controlled_fixture": true,
+        "state_exact_excluding_lastSavedAt": true,
+        "dialog_after_reload": 0,
+        "pagehide_save_preserved_fixture": true
+      }
+    },
+    {
+      "name": "fixture_roundtrip_dead",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:18:48.837509+00:00",
+      "evidence": {
+        "controlled_fixture": true,
+        "state_exact_excluding_lastSavedAt": true,
+        "dialog_after_reload": 1,
+        "pagehide_save_preserved_fixture": true
+      }
+    },
+    {
+      "name": "fractional_crop_continuation",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:18:51.557569+00:00",
+      "evidence": {
+        "controlled_fixture": true,
+        "fractional_matureAt_accepted": true,
+        "worldTime_after_simulation": 484,
+        "worldTime_is_integer": true,
+        "crop_status_after_simulation": "mature",
+        "active_food": 3,
+        "reloaded_without_save_warning": true,
+        "no_fractional_clock_or_continuation_failure": true
+      }
+    },
+    {
+      "name": "rejected_raws_preserved",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:19:00.412268+00:00",
+      "evidence": {
+        "rejected_count": 10,
+        "cases": [
+          {
+            "case": "invalid_json",
+            "rejected": true,
+            "raw_preserved_byte_for_byte": true,
+            "raw_bytes": 1,
+            "raw_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96"
+          },
+          {
+            "case": "unsupported_version",
+            "rejected": true,
+            "raw_preserved_byte_for_byte": true,
+            "raw_bytes": 72563,
+            "raw_sha256": "02c7400e54bd4602d0fd3a3e564425eb411c89c5d5bd1fdfe3fac7742de85232"
+          },
+          {
+            "case": "missing_field",
+            "rejected": true,
+            "raw_preserved_byte_for_byte": true,
+            "raw_bytes": 35890,
+            "raw_sha256": "9a66c396c25a7671a41822f80658afd8f9f8481cf73e1f085e7f1f4dee4c0c81"
+          },
+          {
+            "case": "fractional_prepared_plots",
+            "rejected": true,
+            "raw_preserved_byte_for_byte": true,
+            "raw_bytes": 72564,
+            "raw_sha256": "38a33260cd07cb9ecd6d63415c2aab473172784213f1facb46aa3ef2283ddbc8"
+          },
+          {
+            "case": "duplicate_person_id",
+            "rejected": true,
+            "raw_preserved_byte_for_byte": true,
+            "raw_bytes": 72562,
+            "raw_sha256": "1160828fdb18452ab4e07945c93a9b7a0fb321cc31314d603661769e88f9e32f"
+          },
+          {
+            "case": "missing_active_id",
+            "rejected": true,
+            "raw_preserved_byte_for_byte": true,
+            "raw_bytes": 72574,
+            "raw_sha256": "b57ef3b673c69944b05a59774238fe09ae4956763495ff7b08f8550d2ebc038e"
+          },
+          {
+            "case": "invalid_position",
+            "rejected": true,
+            "raw_preserved_byte_for_byte": true,
+            "raw_bytes": 72563,
+            "raw_sha256": "8e1a39d0703dc7c1a1338b067f32162796a174c8f45658ad1eeb015fc9a34470"
+          },
+          {
+            "case": "invalid_dungeon_stage",
+            "rejected": true,
+            "raw_preserved_byte_for_byte": true,
+            "raw_bytes": 72561,
+            "raw_sha256": "bcf615c8a4d2064e8fcd88fe9faef1afe52e6b44d1c854b20bb9075b1ec7472d"
+          },
+          {
+            "case": "combat_dungeon_mismatch",
+            "rejected": true,
+            "raw_preserved_byte_for_byte": true,
+            "raw_bytes": 72668,
+            "raw_sha256": "71d0ec7caf69a85af23d672f61e2216257eb61003062fa800d7286ed1cc6fb26"
+          },
+          {
+            "case": "invalid_saved_timestamp",
+            "rejected": true,
+            "raw_preserved_byte_for_byte": true,
+            "raw_bytes": 72561,
+            "raw_sha256": "8936fb9443aad7fc78e1e0134a359c3b0c8a3ef90c2fc5c1ee324bc06fb4b6f8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "large_record_policy",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:19:01.425769+00:00",
+      "evidence": {
+        "raw_bytes": 334700,
+        "large_record_accepted": true,
+        "manual_save_succeeded": true,
+        "save_warning": 0,
+        "policy_note": "The validator has no general raw-record byte-size limit; this sub-MiB record loads and saves."
+      }
+    },
+    {
+      "name": "storage_failure_autosave_visibility_pagehide_recovery",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:19:14.628389+00:00",
+      "evidence": {
+        "quota_setItem": {
+          "quota_error_visible": true,
+          "raw_preserved_after_manual_autosave_visibility_pagehide": true,
+          "recovered_on_same_page": true,
+          "recovered_record_bytes": 72562,
+          "recovery_raw_sha256": "0a5fda3027fd425dc9b472ca8595470e1bdad5109778903a87b2da2d4e228920"
+        },
+        "getItem_and_unavailable": [
+          {
+            "case": "getItem_throw",
+            "protected": true,
+            "raw_preserved_byte_for_byte": true
+          },
+          {
+            "case": "storage_unavailable",
+            "protected": true,
+            "raw_preserved_byte_for_byte": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "offline_elapsed_vectors_and_single_count",
+      "status": "passed",
+      "finished_at_utc": "2026-10-03T06:19:24.078035+00:00",
+      "evidence": {
+        "vectors": [
+          {
+            "case": "zero",
+            "elapsed_ms": 0,
+            "expected_and_observed_game_minutes": 0,
+            "offline_prompt_visible_before_save": false,
+            "second_reload_double_count_minutes": 0,
+            "state_after_manual_save_and_reload_equal": true
+          },
+          {
+            "case": "negative_elapsed",
+            "elapsed_ms": -1000,
+            "expected_and_observed_game_minutes": 0,
+            "offline_prompt_visible_before_save": false,
+            "second_reload_double_count_minutes": 0,
+            "state_after_manual_save_and_reload_equal": true
+          },
+          {
+            "case": "future_timestamp",
+            "elapsed_ms": -86400000,
+            "expected_and_observed_game_minutes": 0,
+            "offline_prompt_visible_before_save": false,
+            "second_reload_double_count_minutes": 0,
+            "state_after_manual_save_and_reload_equal": true
+          },
+          {
+            "case": "one_second",
+            "elapsed_ms": 1000,
+            "expected_and_observed_game_minutes": 2,
+            "offline_prompt_visible_before_save": true,
+            "second_reload_double_count_minutes": 0,
+            "state_after_manual_save_and_reload_equal": true
+          },
+          {
+            "case": "eight_hours",
+            "elapsed_ms": 28800000,
+            "expected_and_observed_game_minutes": 57600,
+            "offline_prompt_visible_before_save": true,
+            "second_reload_double_count_minutes": 0,
+            "state_after_manual_save_and_reload_equal": true
+          },
+          {
+            "case": "above_eight_hours",
+            "elapsed_ms": 108000000,
+            "expected_and_observed_game_minutes": 57600,
+            "offline_prompt_visible_before_save": true,
+            "second_reload_double_count_minutes": 0,
+            "state_after_manual_save_and_reload_equal": true
+          }
+        ],
+        "all_capped_and_single_counted": true
+      }
+    }
+  ],
+  "page_errors": [],
+  "limitations": [
+    "Browser checks use disposable Chromium contexts and generated save fixtures only.",
+    "No real player profile or production origin is accessed."
+  ],
+  "baseline_verification": {
+    "head": "694c6d76df67e3d3dd4da5aa98feba8581ecc2ba",
+    "source_hashes_at_run": {
+      "src/services/saveService.ts": {
+        "current": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+        "manifest": "84fdc59920c77eec2e0ede1d0b48c8e958d4c8362a9fcfe84e3a1cc674b6578a",
+        "match": false
+      },
+      "src/stores/gameStore.ts": {
+        "current": "f5b4d25f83927f0daee6cd926faaef255152f82d875e56b5008105f549e010c3",
+        "manifest": "f5b4d25f83927f0daee6cd926faaef255152f82d875e56b5008105f549e010c3",
+        "match": true
+      },
+      "src/engine/simulation.ts": {
+        "current": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+        "manifest": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+        "match": true
+      },
+      "src/App.vue": {
+        "current": "ae64cbcccfb564d5b6c417877de3f83e9b96ad8ff7e87663e078ca951d8176e1",
+        "manifest": "ae64cbcccfb564d5b6c417877de3f83e9b96ad8ff7e87663e078ca951d8176e1",
+        "match": true
+      }
+    },
+    "manifest_url": "http://127.0.0.1:5180/",
+    "runtime_source": "fixed localhost production build at 127.0.0.1:5180; checks do not import current source modules",
+    "working_tree_source_drift_does_not_change_runtime_target": true
+  },
+  "finished_at_utc": "2026-10-03T06:19:24.153986+00:00",
+  "elapsed_seconds": 50.511
+}

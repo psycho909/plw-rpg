@@ -1,0 +1,45 @@
+{
+  "baseline": "694c6d76df67e3d3dd4da5aa98feba8581ecc2ba",
+  "mode": "public engine route; no field injection; pinned git archive",
+  "utc": "2026-10-03T05:51:15.537Z",
+  "log": [
+    {
+      "action": "hire",
+      "result": ""
+    },
+    {
+      "action": "buy stone twice",
+      "result": [
+        "",
+        ""
+      ]
+    },
+    {
+      "action": "inn overnight",
+      "result": ""
+    }
+  ],
+  "goldBefore": 8,
+  "goldAfter": -4,
+  "timeBefore": 130720,
+  "timeAfter": 131200,
+  "partyBefore": [
+    {
+      "npcId": "npc-7",
+      "hireCost": 25,
+      "dailyWage": 4,
+      "contractEnd": 133920,
+      "archetype": "fighter"
+    }
+  ],
+  "partyAfter": [
+    {
+      "npcId": "npc-7",
+      "hireCost": 25,
+      "dailyWage": 4,
+      "contractEnd": 133920,
+      "archetype": "fighter"
+    }
+  ],
+  "reloadError": "Error: 存檔資料不完整。原始存檔已保留，請確認後重建世界。"
+}

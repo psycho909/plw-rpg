@@ -34,7 +34,7 @@ const title = computed(() => pane.value === 'place' ? Object.hasOwn(BUILDINGS, p
 const menus: { id: WindowId; label: string; key?: string }[] = [{ id: 'character', label: '角色', key: 'C' }, { id: 'inventory', label: '物品', key: 'I' }, { id: 'log', label: '日誌', key: 'L' }, { id: 'world', label: '地圖與世界', key: 'M' }, { id: 'history', label: '世界歷史' }, { id: 'notes', label: '旅人筆記' }]
 const records = computed(() => pane.value === 'world' || pane.value === 'log' || pane.value === 'history' || pane.value === 'notes' ? pane.value : null)
 const successors = computed(() => game.state.npcs.filter(n => n.isAlive && n.age >= 15))
-const saveWarning = computed(() => game.saveBlocked ? '原始存檔已保留。現在的世界不會覆蓋它；確認後可從選單重建世界。' : game.saveError)
+const saveWarning = computed(() => game.saveBlocked ? '原始存檔已保留。現在的世界不會覆蓋它；確認後可從選單重建世界。' : [game.saveError, game.journalError].filter(Boolean).join(' '))
 function openWindow(id: WindowId) { if (c.value.isAlive || id === 'successor') pane.value = id }
 function closeWindow() { if (c.value.isAlive) pane.value = null }
 function setSpeed(speed: number) { if (speed) lastSpeed.value = speed; game.speed = speed }
@@ -124,7 +124,7 @@ onUnmounted(() => {
     <nav class="mobile-nav" aria-label="遊戲選單"><button @click="openWindow('world')">地圖</button><button @click="openWindow('character')">角色</button><button @click="openWindow('inventory')">物品</button><button @click="openWindow('log')">日誌</button></nav>
 
     <PixelWindow v-if="pane" :title="title" :dismissible="pane !== 'successor'" @close="closeWindow">
-      <div v-if="pane === 'menu'" class="pixel-menu"><p class="muted">世界正在你的身後繼續生活。</p><button v-for="menu in menus" :key="menu.id" :aria-label="menu.label" @click="openWindow(menu.id)"><span>{{ menu.label }}</span><kbd v-if="menu.key">{{ menu.key }}</kbd></button><button @click="game.save(true)">儲存世界 <small>{{ game.savedAt ? '已存於此瀏覽器' : '每 10 秒自動存檔' }}</small></button><button v-if="game.offline" @click="openWindow('offline')">離線摘要</button><button class="danger reset-trigger" @click="openWindow('reset')">重建世界</button></div>
+      <div v-if="pane === 'menu'" class="pixel-menu"><p class="muted">世界正在你的身後繼續生活。</p><button v-for="menu in menus" :key="menu.id" :aria-label="menu.label" @click="openWindow(menu.id)"><span>{{ menu.label }}</span><kbd v-if="menu.key">{{ menu.key }}</kbd></button><button @click="game.save(true)">儲存世界 <small>{{ game.savedAt ? '已存於此瀏覽器 · 操作後立即保存' : '每次操作自動存檔' }}</small></button><button @click="game.exportJournal()">匯出遊玩紀錄 <small>{{ game.pendingRecords ? `待補寫 ${game.pendingRecords} 筆` : '紀錄只能追加' }}</small></button><button v-if="game.offline" @click="openWindow('offline')">離線摘要</button><button class="danger reset-trigger" @click="openWindow('reset')">重建世界</button></div>
       <CharacterSheet v-else-if="pane === 'character'" />
       <InventoryWindow v-else-if="pane === 'inventory'" />
       <WorldRecords v-else-if="records" :kind="records" @travel="go" @npc="openNpc" @wait="wait" />
@@ -132,7 +132,7 @@ onUnmounted(() => {
       <PlaceWindow v-else-if="pane === 'place'" :place="place" />
       <NpcWindow v-else-if="pane === 'npc'" :npc-id="selectedNpc" @travel="go" />
       <AdventureWindow v-else-if="pane === 'battle' || pane === 'dungeon'" />
-      <section v-else-if="pane === 'reset'"><h3>從頭開始一個世界？</h3><p class="help-text">這會覆蓋此瀏覽器的橡谷存檔，移除角色、田地、同行者與全部世界歷史。無法復原。</p><div class="action-buttons"><button class="primary" data-autofocus @click="closeWindow">保留目前世界</button><button class="danger" @click="rebuild">覆蓋存檔並重建世界</button></div></section>
+      <section v-else-if="pane === 'reset'"><h3>從頭開始一個世界？</h3><p class="help-text">目前世界的角色、田地、同行者與世界歷史會重新開始。已累積的遊玩紀錄會保留，可匯出查看；進度無法回退。</p><div class="action-buttons"><button class="primary" data-autofocus @click="closeWindow">保留目前世界</button><button class="danger" @click="rebuild">覆蓋存檔並重建世界</button></div></section>
       <section v-else-if="pane === 'successor'"><p class="memorial" aria-hidden="true">─── ◇ ───</p><p>{{ c.name }} 享年 {{ c.age }} 歲。橡谷的時間與歷史仍在。</p><h3 class="section-title">選一位居民，接續旅程</h3><div class="successor-list"><button v-for="npc in successors" :key="npc.id" @click="game.act(() => chooseSuccessor(game.state, npc.id))">{{ jobIcons[npc.job] }} {{ npc.name }} · {{ npc.age }} 歲 · {{ JOBS[npc.job].name }} · Lv.{{ npc.level }}</button><button v-if="!successors.length" @click="game.advance(15 * 1440)">等待新居民抵達 · 15 日</button></div></section>
       <section v-else-if="pane === 'offline' && game.offline"><h3>離開後，世界依然繼續。</h3><p class="help-text">經過 {{ Math.floor(game.offline.minutes / 1440) }} 日 {{ Math.floor(game.offline.minutes % 1440 / 60) }} 小時 {{ game.offline.minutes % 60 }} 分鐘。</p><dl class="info-lines"><dt>人口變化</dt><dd>{{ game.offline.populationChange >= 0 ? '+' : '' }}{{ game.offline.populationChange }}</dd><dt>新成熟田地</dt><dd>{{ game.offline.matured }}</dd><dt>森林威脅</dt><dd>{{ game.offline.threatBefore }} → {{ game.offline.threatAfter }}</dd><dt>聚落</dt><dd>{{ stages[game.offline.stageAfter] }}</dd><dt>結束契約</dt><dd>{{ game.offline.contractsEnded }}</dd></dl><p class="muted">離線最多延續 8 個真實小時。存檔只保存在此瀏覽器，不會跨裝置同步。</p><div class="action-buttons"><button class="primary" @click="game.offline = null; closeWindow()">回到世界</button></div></section>
       <template #footer>

@@ -1,0 +1,66 @@
+{
+  "started_at_utc": "2026-10-03T05:50:25.303+00:00",
+  "url": "http://127.0.0.1:5180/",
+  "fixtures_used": false,
+  "requests": [
+    {
+      "url": "http://127.0.0.1:5180/",
+      "resource_type": "document"
+    },
+    {
+      "url": "http://127.0.0.1:5180/assets/index-9BB7fMEh.js",
+      "resource_type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:5180/assets/index-B0QR5Rvd.css",
+      "resource_type": "stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:5180/",
+      "resource_type": "document"
+    },
+    {
+      "url": "http://127.0.0.1:5180/assets/index-9BB7fMEh.js",
+      "resource_type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:5180/assets/index-B0QR5Rvd.css",
+      "resource_type": "stylesheet"
+    }
+  ],
+  "responses_ge_400": [],
+  "page_errors": [],
+  "console_errors": [
+    {
+      "at_utc": "2026-10-03T05:50:26.394+00:00",
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+    }
+  ],
+  "checks": {
+    "initial_ui_save": {
+      "world_time": 481,
+      "last_saved_at_ms": 1791006626797,
+      "character_count": 1,
+      "npc_count": 29
+    },
+    "reloaded_state_app_resaved": {
+      "save_warning_visible": false,
+      "world_time_non_decreasing": true,
+      "save_version_preserved": true,
+      "active_character_present": true,
+      "characters_count": 1,
+      "npcs_count": 29,
+      "events_count": 1,
+      "history_count": 1,
+      "tiles_count": 384,
+      "speed_selected": "true"
+    },
+    "corrected_move_sample": {
+      "key": "ArrowRight",
+      "position_caption_changed": true,
+      "latency_ms": 18.1
+    },
+    "all_reload_checks_pass": true
+  },
+  "ended_at_utc": "2026-10-03T05:50:27.253+00:00"
+}

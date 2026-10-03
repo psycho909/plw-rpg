@@ -1,0 +1,42 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/saveService.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (35 tests | 1 failed) 145ms
+     × rejects an NPC counter that would collide with an existing resident 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects an NPC counter that would collide with an existing resident
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ src/services/saveService.test.ts:11:48
+      9|     const s = createGame(909)
+     10|     s.nextNpcId = 1
+     11|     expect(() => deserialize(serialize(s, 0))).toThrow('原始存檔已保留')
+       |                                                ^
+     12|   })
+     13|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 34 passed (35)
+   Start at  06:01:54
+   Duration  380ms (transform 99ms, setup 0ms, import 123ms, tests 145ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

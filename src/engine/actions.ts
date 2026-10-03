@@ -9,11 +9,13 @@ export function canVisit(state: GameState, building: BuildingId) {
   const c = player(state), b = BUILDINGS[building], hour = calendar(state.worldTime).hour
   return c.isAlive && !state.combat && !state.dungeon.inDungeon && state.settlement.buildings.includes(building) && distance(c.position, b.position) <= 1 && hour >= b.opens && hour < b.closes
 }
-function cost(state: GameState, stamina: number, minutes: number) {
+function cost(state: GameState, stamina: number, minutes: number, gold = 0) {
   const c = player(state)
   if (!c.isAlive || state.combat || state.dungeon.inDungeon) return '目前無法進行這項活動。'
   if (c.stamina < stamina) return '體力不足，請先回聚落休息。'
-  c.stamina -= stamina; simulate(state, minutes)
+  if (c.gold < gold) return '金幣不足。'
+  // Pay before time advances so daily wages only spend the remaining balance.
+  c.gold -= gold; c.stamina -= stamina; simulate(state, minutes)
   return c.isAlive ? '' : '角色已離世，請選擇繼任者。'
 }
 export function farm(state: GameState, action: 'prepare' | 'plant' | 'harvest') {
@@ -53,9 +55,8 @@ export function rest(state: GameState, kind: 'rest' | 'inn' | 'tavern') {
   if (kind === 'rest' && c.currentRegion !== 'village') return '請回聚落休息。'
   if (kind !== 'rest' && !canVisit(state, kind)) return '請在營業時間前往建築旁。'
   const gold = kind === 'inn' ? 8 : kind === 'tavern' ? 3 : 0
-  if (c.gold < gold) return '金幣不足。'
-  const error = cost(state, 0, kind === 'inn' ? 480 : 60); if (error) return error
-  c.gold -= gold; c.hp = Math.min(c.maxHp, c.hp + (kind === 'inn' ? c.maxHp : 15)); c.stamina = Math.min(c.maxStamina, c.stamina + (kind === 'inn' ? c.maxStamina : 35))
+  const error = cost(state, 0, kind === 'inn' ? 480 : 60, gold); if (error) return error
+  c.hp = Math.min(c.maxHp, c.hp + (kind === 'inn' ? c.maxHp : 15)); c.stamina = Math.min(c.maxStamina, c.stamina + (kind === 'inn' ? c.maxStamina : 35))
   emit(state, 'player.rested', 'player', kind === 'inn' ? '在旅店睡了一覺，生命與體力完全恢復。' : '休息後，你恢復了生命與體力。')
   return ''
 }

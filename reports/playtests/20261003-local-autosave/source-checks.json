@@ -1,0 +1,34 @@
+{
+  "base": "694c6d76df67e3d3dd4da5aa98feba8581ecc2ba",
+  "url": "http://127.0.0.1:5186",
+  "workingTreeHashes": {
+    "src/App.vue": "ce5002b9e63c0f1e8bdcf90807abbc7f7057c94360e9fcea1951097d0b578b22",
+    "src/engine/events.ts": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+    "src/stores/gameStore.ts": "3ec1c6d99073b6236cf6b3aa53eea19e1ddd9cbbd15737127083e9da20543246",
+    "src/stores/gameStore.test.ts": "c7079731b4293be6e659740a42d410f419f3dde17563c28a5f942efe5c8952c5",
+    "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+    "src/services/playJournal.test.ts": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+    "scripts/recorded_reports.py": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+    "scripts/test_recorded_reports.py": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2"
+  },
+  "buildHashes": {
+    "index.html": "1c1b06bb8958f7a45d6c141863253922a0e50f651e36178e3956cdacf2f3927a",
+    "assets/index-DcqD1dRF.js": "d2ff6dccdf819cf8f4e911c16048863951ab602fa7878838f41dbe9b37f7c813",
+    "assets/index-B0QR5Rvd.css": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8"
+  },
+  "checks": {
+    "fullVitest": {
+      "tests": 136,
+      "files": 7,
+      "log": "astra-idb-abort.log"
+    },
+    "typesAndBuild": {
+      "exitCode": 0,
+      "log": "final-build.log"
+    },
+    "reportWriter": {
+      "tests": 4,
+      "log": "writer-check.log"
+    }
+  }
+}

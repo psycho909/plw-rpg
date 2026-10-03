@@ -1,0 +1,39 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/saveService.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (57 tests | 1 failed) 710ms
+     × rejects a null crop with the standard preserved-save error 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a null crop with the standard preserved-save error
+AssertionError: expected [Function] to throw error including '原始存檔已保留' but got 'Cannot read properties of null (readi…'
+
+Expected: "原始存檔已保留"
+Received: "Cannot read properties of null (reading 'id')"
+
+ ❯ src/services/saveService.test.ts:11:52
+      9|     const raw = JSON.parse(serialize(createGame(), 0))
+     10|     raw.crops = [null]
+     11|     expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+       |                                                    ^
+     12|   })
+     13|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 56 passed (57)
+   Start at  06:05:56
+   Duration  963ms (transform 117ms, setup 0ms, import 140ms, tests 710ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

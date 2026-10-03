@@ -21,6 +21,8 @@ function valid(state: unknown): state is GameState {
   const regions = Object.keys(template.regions)
   return s.saveVersion === CONFIG.saveVersion && Number.isSafeInteger(s.worldTime) && s.worldTime >= 0
     && s.characters.length > 0 && s.characters.length <= 1000 && s.npcs.length <= 1000 && new Set(ids).size === ids.length
+    && Number.isSafeInteger(s.nextNpcId) && s.nextNpcId > 0 && s.nextNpcId < Number.MAX_SAFE_INTEGER
+    && ids.every(id => !/^npc-[1-9]\d*$/.test(id) || Number(id.slice(4)) < s.nextNpcId)
     && s.characters.some(c => c.id === s.activeCharacterId)
     && [...s.characters, ...s.npcs].every(c => c.age >= 0 && Number.isSafeInteger(c.level) && c.level >= 1 && c.exp >= 0 && c.exp < c.level * 30
       && Object.values(c.skills).every(skill => Number.isSafeInteger(skill.level) && skill.level >= 1 && skill.exp >= 0 && skill.exp < skill.level * 20)
@@ -40,9 +42,12 @@ function valid(state: unknown): state is GameState {
     && s.tiles.every(t => validPosition(t)
       && regions.includes(t.regionId) && ['water', 'grass', 'forest', 'field', 'mountain', 'road'].includes(t.terrain) && (t.building === undefined || Object.hasOwn(BUILDINGS, t.building)))
     && Number.isSafeInteger(s.preparedPlots) && s.preparedPlots >= 0 && s.crops.length + s.preparedPlots <= CONFIG.maxPlots
-    && s.crops.every(c => matches({ id: 0, plantedAt: 0, growthDuration: 0, matureAt: 0, status: '' }, c) && ['growing', 'mature'].includes(c.status))
+    && s.crops.every(c => matches({ id: 0, plantedAt: 0, growthDuration: 0, matureAt: 0, status: '' }, c) && Number.isSafeInteger(c.id) && c.id > 0 && ['growing', 'mature'].includes(c.status))
+    && new Set(s.crops.map(c => c.id)).size === s.crops.length
     && s.party.length <= 2 && s.party.every(p => matches({ npcId: '', hireCost: 0, dailyWage: 0, contractEnd: 0, archetype: '' }, p) && ['fighter', 'healer'].includes(p.archetype) && s.npcs.some(n => n.id === p.npcId))
     && (s.combat === null || (matches({ monsterId: '', hp: 0, maxHp: 0, attack: 0, defense: 0, exp: 0, gold: 0, elite: false, dungeon: false }, s.combat) && Object.hasOwn(MONSTERS, s.combat.monsterId)))
+    && Number.isSafeInteger(s.eventSequence) && s.eventSequence >= 0 && s.eventSequence < Number.MAX_SAFE_INTEGER
+    && [...s.events, ...s.history, ...s.crops].every(entry => object(entry) && Number.isSafeInteger(entry.id) && entry.id > 0 && entry.id <= s.eventSequence)
     && s.events.length <= 150 && s.history.length <= 20000 && Number.isInteger(s.dungeon.stage) && s.dungeon.stage >= 0 && s.dungeon.stage <= DUNGEON.encounters.length
     && (!s.dungeon.inDungeon || s.dungeon.stage < DUNGEON.encounters.length)
     && (s.combat === null || s.combat.dungeon === s.dungeon.inDungeon)

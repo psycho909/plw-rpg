@@ -1,0 +1,66 @@
+{
+  "record": {
+    "id": "beea7033-8820-43e9-ba6b-bb303eaa6c45",
+    "worldId": "2dac29b5-e5fa-422f-8206-c924573e6967",
+    "at": 1791041939199,
+    "kind": "time",
+    "from": 487,
+    "to": 43687,
+    "characterId": "alden",
+    "message": "世界時間繼續前進。",
+    "events": [
+      {
+        "id": 2,
+        "at": 21600,
+        "type": "npc.immigrated",
+        "category": "npc",
+        "message": "奧斯卡 30 搬進橡谷，成為礦工。"
+      },
+      {
+        "id": 3,
+        "at": 43200,
+        "type": "npc.immigrated",
+        "category": "npc",
+        "message": "米拉 31 搬進橡谷，成為樵夫。"
+      },
+      {
+        "id": 4,
+        "at": 43200,
+        "type": "npc.born",
+        "category": "npc",
+        "message": "羅恩 32 出生了。"
+      }
+    ],
+    "ordinal": 5
+  },
+  "rollingCheckpointEvents": [
+    {
+      "id": 1,
+      "at": 480,
+      "type": "world.founded",
+      "category": "world",
+      "message": "橡谷聚落建立。奧登，今天起這裡就是你的家。"
+    },
+    {
+      "id": 2,
+      "at": 21600,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "奧斯卡 30 搬進橡谷，成為礦工。"
+    },
+    {
+      "id": 3,
+      "at": 43200,
+      "type": "npc.immigrated",
+      "category": "npc",
+      "message": "米拉 31 搬進橡谷，成為樵夫。"
+    },
+    {
+      "id": 4,
+      "at": 43200,
+      "type": "npc.born",
+      "category": "npc",
+      "message": "羅恩 32 出生了。"
+    }
+  ]
+}

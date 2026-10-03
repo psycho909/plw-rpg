@@ -1,0 +1,42 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/saveService.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (36 tests | 1 failed) 140ms
+     × rejects duplicate crop IDs before harvesting can remove an extra plot 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects duplicate crop IDs before harvesting can remove an extra plot
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ src/services/saveService.test.ts:16:48
+     14|     simulate(s, 2 * 1440)
+     15|     s.crops[1]!.id = s.crops[0]!.id
+     16|     expect(() => deserialize(serialize(s, 0))).toThrow('原始存檔已保留')
+       |                                                ^
+     17|   })
+     18|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 35 passed (36)
+   Start at  06:02:19
+   Duration  373ms (transform 99ms, setup 0ms, import 120ms, tests 140ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

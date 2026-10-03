@@ -1,0 +1,4540 @@
+{
+  "title": "Baseline multi-seed 500-year headless longevity simulation",
+  "source": {
+    "commit": "694c6d76df67e3d3dd4da5aa98feba8581ecc2ba",
+    "snapshotRoot": "/tmp/plw-rpg-baseline-694c6d76",
+    "sourceFileCount": 13,
+    "sourceTreeSha256": "da0e9930463141a4dea8e5d12289433d4aafa01005e98f847b108a37ffdbb68e",
+    "workingHeadAtStart": "694c6d76df67e3d3dd4da5aa98feba8581ecc2ba",
+    "files": [
+      {
+        "path": "src/data/config.ts",
+        "sha256": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80"
+      },
+      {
+        "path": "src/domain/types.ts",
+        "sha256": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80"
+      },
+      {
+        "path": "src/engine/actions.test.ts",
+        "sha256": "2461065dede9733ebc785b7bef1f835af37e71fd8e47fa5e156d93c62279082a"
+      },
+      {
+        "path": "src/engine/actions.ts",
+        "sha256": "03adf7e51cc7e0ea417f33fbf404c7b3836195041762276aceeb1c41d54cba5e"
+      },
+      {
+        "path": "src/engine/calendar.ts",
+        "sha256": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524"
+      },
+      {
+        "path": "src/engine/events.ts",
+        "sha256": "f35c6ae520ee9d4a59bbda216337adf3c1a1d3ebb177ecb601cfc9811b88b52f"
+      },
+      {
+        "path": "src/engine/gameLoop.test.ts",
+        "sha256": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7"
+      },
+      {
+        "path": "src/engine/gameLoop.ts",
+        "sha256": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9"
+      },
+      {
+        "path": "src/engine/random.ts",
+        "sha256": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734"
+      },
+      {
+        "path": "src/engine/simulation.test.ts",
+        "sha256": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53"
+      },
+      {
+        "path": "src/engine/simulation.ts",
+        "sha256": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8"
+      },
+      {
+        "path": "src/services/saveService.test.ts",
+        "sha256": "66f3e7d6b784a4fef03aa69785bf80116417367f2d4bdd26fa9ddb268bbc559f"
+      },
+      {
+        "path": "src/services/saveService.ts",
+        "sha256": "84fdc59920c77eec2e0ede1d0b48c8e958d4c8362a9fcfe84e3a1cc674b6578a"
+      }
+    ]
+  },
+  "run": {
+    "status": "passed",
+    "startedAtUtc": "2026-10-03T06:07:14.283Z",
+    "finishedAtUtc": "2026-10-03T06:07:51.082Z",
+    "elapsedMs": 36798.74,
+    "node": "v24.19.0",
+    "platform": "linux-x64",
+    "requiredSeeds": [
+      0,
+      1,
+      42,
+      321,
+      909,
+      4294967295,
+      7,
+      20261003
+    ],
+    "yearsPerSeed": 500,
+    "advanceStep": "one-day maximum, midnight-aligned, partial first/last intervals",
+    "dailySimulationCalls": 484000,
+    "annualCheckpoints": 4000,
+    "exactSaveRoundTrips": 4056,
+    "calendarDayChecks": 484000,
+    "seasonTransitions": 16000,
+    "yearTransitions": 4000,
+    "naturalPlayerDeaths": 56,
+    "successorTransitions": 56
+  },
+  "seeds": [
+    {
+      "seed": 0,
+      "status": "passed",
+      "yearsCompleted": 500,
+      "elapsedMs": 4217.391,
+      "checks": {
+        "annual": 500,
+        "saveRoundTrips": 507,
+        "finiteNumberLeaves": 3348746,
+        "seasonTransitions": 2000,
+        "yearTransitions": 500
+      },
+      "populationRange": {
+        "min": 30,
+        "max": 80
+      },
+      "lineage": [
+        {
+          "year": 65,
+          "from": "alden",
+          "to": "npc-102",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 134,
+          "from": "npc-102",
+          "to": "npc-199",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 204,
+          "from": "npc-199",
+          "to": "npc-291",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 264,
+          "from": "npc-291",
+          "to": "npc-372",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 325,
+          "from": "npc-372",
+          "to": "npc-440",
+          "age": 18,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 380,
+          "from": "npc-440",
+          "to": "npc-507",
+          "age": 17,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 446,
+          "from": "npc-507",
+          "to": "npc-594",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        }
+      ],
+      "eventCounts": {
+        "world.founded": 1,
+        "npc.immigrated": 460,
+        "npc.born": 198,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.injured": 8554,
+        "npc.died": 608,
+        "character.successor": 7
+      },
+      "events": {
+        "world.founded": 1,
+        "npc.immigrated": 460,
+        "npc.born": 198,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.died": 608,
+        "character.successor": 7
+      },
+      "saveTrend": [
+        {
+          "year": 1,
+          "bytes": 92433,
+          "serializeMs": 0.461,
+          "deserializeMs": 2.977,
+          "roundTripMs": 3.438,
+          "elapsedMs": 14.031
+        },
+        {
+          "year": 10,
+          "bytes": 164000,
+          "serializeMs": 0.709,
+          "deserializeMs": 2.191,
+          "roundTripMs": 2.9,
+          "elapsedMs": 103.665
+        },
+        {
+          "year": 20,
+          "bytes": 166431,
+          "serializeMs": 1.281,
+          "deserializeMs": 1.86,
+          "roundTripMs": 3.141,
+          "elapsedMs": 210.337
+        },
+        {
+          "year": 30,
+          "bytes": 169387,
+          "serializeMs": 0.665,
+          "deserializeMs": 2.16,
+          "roundTripMs": 2.825,
+          "elapsedMs": 290.903
+        },
+        {
+          "year": 40,
+          "bytes": 171220,
+          "serializeMs": 1.099,
+          "deserializeMs": 2.813,
+          "roundTripMs": 3.912,
+          "elapsedMs": 379.104
+        },
+        {
+          "year": 50,
+          "bytes": 175527,
+          "serializeMs": 0.676,
+          "deserializeMs": 2.57,
+          "roundTripMs": 3.246,
+          "elapsedMs": 462.234
+        },
+        {
+          "year": 60,
+          "bytes": 181854,
+          "serializeMs": 0.721,
+          "deserializeMs": 1.699,
+          "roundTripMs": 2.421,
+          "elapsedMs": 538.471
+        },
+        {
+          "year": 70,
+          "bytes": 191133,
+          "serializeMs": 0.705,
+          "deserializeMs": 2.165,
+          "roundTripMs": 2.871,
+          "elapsedMs": 631.547
+        },
+        {
+          "year": 80,
+          "bytes": 195882,
+          "serializeMs": 0.696,
+          "deserializeMs": 1.286,
+          "roundTripMs": 1.982,
+          "elapsedMs": 707.435
+        },
+        {
+          "year": 90,
+          "bytes": 199871,
+          "serializeMs": 0.751,
+          "deserializeMs": 1.251,
+          "roundTripMs": 2.002,
+          "elapsedMs": 782.621
+        },
+        {
+          "year": 100,
+          "bytes": 203119,
+          "serializeMs": 1.219,
+          "deserializeMs": 2.212,
+          "roundTripMs": 3.431,
+          "elapsedMs": 869.544
+        },
+        {
+          "year": 110,
+          "bytes": 208251,
+          "serializeMs": 0.768,
+          "deserializeMs": 1.582,
+          "roundTripMs": 2.35,
+          "elapsedMs": 936.073
+        },
+        {
+          "year": 120,
+          "bytes": 211953,
+          "serializeMs": 0.797,
+          "deserializeMs": 1.329,
+          "roundTripMs": 2.126,
+          "elapsedMs": 1026.886
+        },
+        {
+          "year": 130,
+          "bytes": 217350,
+          "serializeMs": 0.753,
+          "deserializeMs": 1.474,
+          "roundTripMs": 2.226,
+          "elapsedMs": 1099.214
+        },
+        {
+          "year": 140,
+          "bytes": 223490,
+          "serializeMs": 0.89,
+          "deserializeMs": 1.386,
+          "roundTripMs": 2.276,
+          "elapsedMs": 1177.718
+        },
+        {
+          "year": 150,
+          "bytes": 227881,
+          "serializeMs": 0.773,
+          "deserializeMs": 2.135,
+          "roundTripMs": 2.908,
+          "elapsedMs": 1250.216
+        },
+        {
+          "year": 160,
+          "bytes": 232379,
+          "serializeMs": 0.899,
+          "deserializeMs": 1.485,
+          "roundTripMs": 2.384,
+          "elapsedMs": 1322.179
+        },
+        {
+          "year": 170,
+          "bytes": 238050,
+          "serializeMs": 1.002,
+          "deserializeMs": 1.444,
+          "roundTripMs": 2.446,
+          "elapsedMs": 1392.665
+        },
+        {
+          "year": 180,
+          "bytes": 240808,
+          "serializeMs": 0.874,
+          "deserializeMs": 1.499,
+          "roundTripMs": 2.373,
+          "elapsedMs": 1462.617
+        },
+        {
+          "year": 190,
+          "bytes": 246490,
+          "serializeMs": 0.919,
+          "deserializeMs": 1.509,
+          "roundTripMs": 2.427,
+          "elapsedMs": 1533.756
+        },
+        {
+          "year": 200,
+          "bytes": 250233,
+          "serializeMs": 0.828,
+          "deserializeMs": 1.463,
+          "roundTripMs": 2.291,
+          "elapsedMs": 1608.283
+        },
+        {
+          "year": 210,
+          "bytes": 255797,
+          "serializeMs": 1.027,
+          "deserializeMs": 1.466,
+          "roundTripMs": 2.493,
+          "elapsedMs": 1690.398
+        },
+        {
+          "year": 220,
+          "bytes": 260347,
+          "serializeMs": 0.907,
+          "deserializeMs": 2.371,
+          "roundTripMs": 3.278,
+          "elapsedMs": 1791.494
+        },
+        {
+          "year": 230,
+          "bytes": 263817,
+          "serializeMs": 0.831,
+          "deserializeMs": 1.489,
+          "roundTripMs": 2.321,
+          "elapsedMs": 1871.041
+        },
+        {
+          "year": 240,
+          "bytes": 267722,
+          "serializeMs": 0.825,
+          "deserializeMs": 1.714,
+          "roundTripMs": 2.54,
+          "elapsedMs": 1944.46
+        },
+        {
+          "year": 250,
+          "bytes": 276573,
+          "serializeMs": 0.876,
+          "deserializeMs": 1.513,
+          "roundTripMs": 2.389,
+          "elapsedMs": 2017.332
+        },
+        {
+          "year": 260,
+          "bytes": 279791,
+          "serializeMs": 0.948,
+          "deserializeMs": 1.653,
+          "roundTripMs": 2.601,
+          "elapsedMs": 2092.465
+        },
+        {
+          "year": 270,
+          "bytes": 285148,
+          "serializeMs": 0.88,
+          "deserializeMs": 1.527,
+          "roundTripMs": 2.407,
+          "elapsedMs": 2171.076
+        },
+        {
+          "year": 280,
+          "bytes": 289171,
+          "serializeMs": 0.869,
+          "deserializeMs": 1.545,
+          "roundTripMs": 2.414,
+          "elapsedMs": 2246.912
+        },
+        {
+          "year": 290,
+          "bytes": 295016,
+          "serializeMs": 0.874,
+          "deserializeMs": 1.595,
+          "roundTripMs": 2.47,
+          "elapsedMs": 2319.289
+        },
+        {
+          "year": 300,
+          "bytes": 296510,
+          "serializeMs": 0.889,
+          "deserializeMs": 1.633,
+          "roundTripMs": 2.522,
+          "elapsedMs": 2392.145
+        },
+        {
+          "year": 310,
+          "bytes": 304099,
+          "serializeMs": 1.08,
+          "deserializeMs": 1.605,
+          "roundTripMs": 2.684,
+          "elapsedMs": 2471.584
+        },
+        {
+          "year": 320,
+          "bytes": 306147,
+          "serializeMs": 1.078,
+          "deserializeMs": 1.608,
+          "roundTripMs": 2.686,
+          "elapsedMs": 2554.763
+        },
+        {
+          "year": 330,
+          "bytes": 315935,
+          "serializeMs": 1.102,
+          "deserializeMs": 1.655,
+          "roundTripMs": 2.757,
+          "elapsedMs": 2637.794
+        },
+        {
+          "year": 340,
+          "bytes": 319409,
+          "serializeMs": 1.128,
+          "deserializeMs": 3.136,
+          "roundTripMs": 4.263,
+          "elapsedMs": 2720.832
+        },
+        {
+          "year": 350,
+          "bytes": 323397,
+          "serializeMs": 1.342,
+          "deserializeMs": 1.795,
+          "roundTripMs": 3.137,
+          "elapsedMs": 2802.646
+        },
+        {
+          "year": 360,
+          "bytes": 327726,
+          "serializeMs": 1.1,
+          "deserializeMs": 1.776,
+          "roundTripMs": 2.877,
+          "elapsedMs": 2884.961
+        },
+        {
+          "year": 370,
+          "bytes": 333407,
+          "serializeMs": 2.176,
+          "deserializeMs": 3.022,
+          "roundTripMs": 5.198,
+          "elapsedMs": 2980.655
+        },
+        {
+          "year": 380,
+          "bytes": 339125,
+          "serializeMs": 1.249,
+          "deserializeMs": 2.301,
+          "roundTripMs": 3.55,
+          "elapsedMs": 3079.217
+        },
+        {
+          "year": 390,
+          "bytes": 343798,
+          "serializeMs": 1.192,
+          "deserializeMs": 3.078,
+          "roundTripMs": 4.269,
+          "elapsedMs": 3175.616
+        },
+        {
+          "year": 400,
+          "bytes": 348447,
+          "serializeMs": 1.443,
+          "deserializeMs": 2.13,
+          "roundTripMs": 3.573,
+          "elapsedMs": 3268.975
+        },
+        {
+          "year": 410,
+          "bytes": 353121,
+          "serializeMs": 1.213,
+          "deserializeMs": 2.057,
+          "roundTripMs": 3.27,
+          "elapsedMs": 3365.014
+        },
+        {
+          "year": 420,
+          "bytes": 358081,
+          "serializeMs": 1.248,
+          "deserializeMs": 1.927,
+          "roundTripMs": 3.174,
+          "elapsedMs": 3455.584
+        },
+        {
+          "year": 430,
+          "bytes": 361990,
+          "serializeMs": 1.267,
+          "deserializeMs": 1.899,
+          "roundTripMs": 3.167,
+          "elapsedMs": 3546.505
+        },
+        {
+          "year": 440,
+          "bytes": 367864,
+          "serializeMs": 1.269,
+          "deserializeMs": 1.87,
+          "roundTripMs": 3.139,
+          "elapsedMs": 3634.676
+        },
+        {
+          "year": 450,
+          "bytes": 373545,
+          "serializeMs": 1.374,
+          "deserializeMs": 2.135,
+          "roundTripMs": 3.51,
+          "elapsedMs": 3740.561
+        },
+        {
+          "year": 460,
+          "bytes": 377539,
+          "serializeMs": 1.33,
+          "deserializeMs": 2.633,
+          "roundTripMs": 3.964,
+          "elapsedMs": 3837.591
+        },
+        {
+          "year": 470,
+          "bytes": 382567,
+          "serializeMs": 1.352,
+          "deserializeMs": 1.995,
+          "roundTripMs": 3.347,
+          "elapsedMs": 3933.902
+        },
+        {
+          "year": 480,
+          "bytes": 387435,
+          "serializeMs": 1.34,
+          "deserializeMs": 1.894,
+          "roundTripMs": 3.234,
+          "elapsedMs": 4024.637
+        },
+        {
+          "year": 490,
+          "bytes": 391889,
+          "serializeMs": 1.28,
+          "deserializeMs": 1.985,
+          "roundTripMs": 3.265,
+          "elapsedMs": 4121.865
+        },
+        {
+          "year": 500,
+          "bytes": 397007,
+          "serializeMs": 1.336,
+          "deserializeMs": 1.943,
+          "roundTripMs": 3.279,
+          "elapsedMs": 4214.75
+        }
+      ],
+      "saveLatencyMs": {
+        "p50": 2.724,
+        "p95": 3.835,
+        "max": 8.126,
+        "mean": 2.829
+      },
+      "simulationMsPerYear": {
+        "mean": 2.23,
+        "p50": 1.881,
+        "p95": 4.055,
+        "max": 8.083
+      },
+      "final": {
+        "calendar": {
+          "year": 501,
+          "season": 0,
+          "day": 1,
+          "hour": 8,
+          "minute": 0
+        },
+        "population": 80,
+        "playerId": "npc-594",
+        "playerAge": 70,
+        "settlementStage": "town",
+        "settlementCapacity": 80,
+        "threatLevel": 3,
+        "campLevel": 3,
+        "bossAlive": true,
+        "bossProgress": 100,
+        "dungeonThreat": 3,
+        "historyLength": 1783,
+        "eventLength": 150,
+        "npcCount": 79,
+        "livingCharacterCount": 1,
+        "totalCharacters": 8,
+        "npcNaturalDeaths": 601,
+        "crops": 0,
+        "preparedPlots": 0
+      },
+      "naturalPlayerDeaths": 7
+    },
+    {
+      "seed": 1,
+      "status": "passed",
+      "yearsCompleted": 500,
+      "elapsedMs": 3845.215,
+      "checks": {
+        "annual": 500,
+        "saveRoundTrips": 507,
+        "finiteNumberLeaves": 3359061,
+        "seasonTransitions": 2000,
+        "yearTransitions": 500
+      },
+      "populationRange": {
+        "min": 30,
+        "max": 80
+      },
+      "lineage": [
+        {
+          "year": 65,
+          "from": "alden",
+          "to": "npc-103",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 134,
+          "from": "npc-103",
+          "to": "npc-203",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 191,
+          "from": "npc-203",
+          "to": "npc-275",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 247,
+          "from": "npc-275",
+          "to": "npc-347",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 308,
+          "from": "npc-347",
+          "to": "npc-441",
+          "age": 20,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 375,
+          "from": "npc-441",
+          "to": "npc-512",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 443,
+          "from": "npc-512",
+          "to": "npc-598",
+          "age": 17,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        }
+      ],
+      "eventCounts": {
+        "world.founded": 1,
+        "npc.immigrated": 464,
+        "npc.born": 199,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.injured": 8554,
+        "npc.died": 613,
+        "character.successor": 7
+      },
+      "events": {
+        "world.founded": 1,
+        "npc.immigrated": 464,
+        "npc.born": 199,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.died": 613,
+        "character.successor": 7
+      },
+      "saveTrend": [
+        {
+          "year": 1,
+          "bytes": 92433,
+          "serializeMs": 0.433,
+          "deserializeMs": 0.915,
+          "roundTripMs": 1.348,
+          "elapsedMs": 4.585
+        },
+        {
+          "year": 10,
+          "bytes": 163713,
+          "serializeMs": 0.657,
+          "deserializeMs": 1.205,
+          "roundTripMs": 1.862,
+          "elapsedMs": 54.552
+        },
+        {
+          "year": 20,
+          "bytes": 166894,
+          "serializeMs": 0.62,
+          "deserializeMs": 1.108,
+          "roundTripMs": 1.728,
+          "elapsedMs": 114.657
+        },
+        {
+          "year": 30,
+          "bytes": 169311,
+          "serializeMs": 0.636,
+          "deserializeMs": 1.184,
+          "roundTripMs": 1.819,
+          "elapsedMs": 174.777
+        },
+        {
+          "year": 40,
+          "bytes": 171800,
+          "serializeMs": 0.67,
+          "deserializeMs": 1.126,
+          "roundTripMs": 1.796,
+          "elapsedMs": 236.564
+        },
+        {
+          "year": 50,
+          "bytes": 172396,
+          "serializeMs": 0.663,
+          "deserializeMs": 1.102,
+          "roundTripMs": 1.764,
+          "elapsedMs": 297.093
+        },
+        {
+          "year": 60,
+          "bytes": 183992,
+          "serializeMs": 0.674,
+          "deserializeMs": 1.201,
+          "roundTripMs": 1.875,
+          "elapsedMs": 359.4
+        },
+        {
+          "year": 70,
+          "bytes": 190833,
+          "serializeMs": 0.696,
+          "deserializeMs": 1.181,
+          "roundTripMs": 1.877,
+          "elapsedMs": 422.71
+        },
+        {
+          "year": 80,
+          "bytes": 193207,
+          "serializeMs": 0.722,
+          "deserializeMs": 1.177,
+          "roundTripMs": 1.9,
+          "elapsedMs": 488.244
+        },
+        {
+          "year": 90,
+          "bytes": 198776,
+          "serializeMs": 0.719,
+          "deserializeMs": 1.199,
+          "roundTripMs": 1.918,
+          "elapsedMs": 550.707
+        },
+        {
+          "year": 100,
+          "bytes": 200220,
+          "serializeMs": 0.772,
+          "deserializeMs": 1.284,
+          "roundTripMs": 2.056,
+          "elapsedMs": 613.914
+        },
+        {
+          "year": 110,
+          "bytes": 207662,
+          "serializeMs": 0.762,
+          "deserializeMs": 1.228,
+          "roundTripMs": 1.989,
+          "elapsedMs": 677.202
+        },
+        {
+          "year": 120,
+          "bytes": 213060,
+          "serializeMs": 0.787,
+          "deserializeMs": 1.321,
+          "roundTripMs": 2.108,
+          "elapsedMs": 744.869
+        },
+        {
+          "year": 130,
+          "bytes": 216440,
+          "serializeMs": 0.783,
+          "deserializeMs": 1.271,
+          "roundTripMs": 2.055,
+          "elapsedMs": 814.713
+        },
+        {
+          "year": 140,
+          "bytes": 223248,
+          "serializeMs": 0.758,
+          "deserializeMs": 1.343,
+          "roundTripMs": 2.101,
+          "elapsedMs": 884.342
+        },
+        {
+          "year": 150,
+          "bytes": 228360,
+          "serializeMs": 0.787,
+          "deserializeMs": 1.303,
+          "roundTripMs": 2.09,
+          "elapsedMs": 954.253
+        },
+        {
+          "year": 160,
+          "bytes": 232623,
+          "serializeMs": 0.76,
+          "deserializeMs": 1.37,
+          "roundTripMs": 2.13,
+          "elapsedMs": 1019.231
+        },
+        {
+          "year": 170,
+          "bytes": 238395,
+          "serializeMs": 0.82,
+          "deserializeMs": 1.507,
+          "roundTripMs": 2.327,
+          "elapsedMs": 1084.399
+        },
+        {
+          "year": 180,
+          "bytes": 242604,
+          "serializeMs": 0.821,
+          "deserializeMs": 1.41,
+          "roundTripMs": 2.231,
+          "elapsedMs": 1151.756
+        },
+        {
+          "year": 190,
+          "bytes": 248203,
+          "serializeMs": 0.836,
+          "deserializeMs": 1.378,
+          "roundTripMs": 2.214,
+          "elapsedMs": 1223.135
+        },
+        {
+          "year": 200,
+          "bytes": 253512,
+          "serializeMs": 0.852,
+          "deserializeMs": 1.433,
+          "roundTripMs": 2.284,
+          "elapsedMs": 1291.857
+        },
+        {
+          "year": 210,
+          "bytes": 257536,
+          "serializeMs": 0.827,
+          "deserializeMs": 1.468,
+          "roundTripMs": 2.295,
+          "elapsedMs": 1360.613
+        },
+        {
+          "year": 220,
+          "bytes": 262307,
+          "serializeMs": 0.858,
+          "deserializeMs": 1.427,
+          "roundTripMs": 2.285,
+          "elapsedMs": 1429.845
+        },
+        {
+          "year": 230,
+          "bytes": 266740,
+          "serializeMs": 1.104,
+          "deserializeMs": 1.635,
+          "roundTripMs": 2.739,
+          "elapsedMs": 1501.381
+        },
+        {
+          "year": 240,
+          "bytes": 270476,
+          "serializeMs": 0.863,
+          "deserializeMs": 1.448,
+          "roundTripMs": 2.311,
+          "elapsedMs": 1571.221
+        },
+        {
+          "year": 250,
+          "bytes": 276885,
+          "serializeMs": 0.93,
+          "deserializeMs": 2.49,
+          "roundTripMs": 3.42,
+          "elapsedMs": 1644.523
+        },
+        {
+          "year": 260,
+          "bytes": 283518,
+          "serializeMs": 0.887,
+          "deserializeMs": 1.515,
+          "roundTripMs": 2.402,
+          "elapsedMs": 1713.602
+        },
+        {
+          "year": 270,
+          "bytes": 287190,
+          "serializeMs": 1.001,
+          "deserializeMs": 1.518,
+          "roundTripMs": 2.519,
+          "elapsedMs": 1785.874
+        },
+        {
+          "year": 280,
+          "bytes": 292628,
+          "serializeMs": 1.029,
+          "deserializeMs": 1.6,
+          "roundTripMs": 2.629,
+          "elapsedMs": 1858.642
+        },
+        {
+          "year": 290,
+          "bytes": 296418,
+          "serializeMs": 0.905,
+          "deserializeMs": 1.884,
+          "roundTripMs": 2.789,
+          "elapsedMs": 1936.102
+        },
+        {
+          "year": 300,
+          "bytes": 298583,
+          "serializeMs": 0.924,
+          "deserializeMs": 1.565,
+          "roundTripMs": 2.489,
+          "elapsedMs": 2014.207
+        },
+        {
+          "year": 310,
+          "bytes": 307691,
+          "serializeMs": 1.141,
+          "deserializeMs": 1.658,
+          "roundTripMs": 2.799,
+          "elapsedMs": 2102.186
+        },
+        {
+          "year": 320,
+          "bytes": 311827,
+          "serializeMs": 1.107,
+          "deserializeMs": 1.879,
+          "roundTripMs": 2.985,
+          "elapsedMs": 2189.215
+        },
+        {
+          "year": 330,
+          "bytes": 316719,
+          "serializeMs": 1.131,
+          "deserializeMs": 1.652,
+          "roundTripMs": 2.783,
+          "elapsedMs": 2273.667
+        },
+        {
+          "year": 340,
+          "bytes": 321717,
+          "serializeMs": 1.148,
+          "deserializeMs": 1.697,
+          "roundTripMs": 2.845,
+          "elapsedMs": 2359.216
+        },
+        {
+          "year": 350,
+          "bytes": 326327,
+          "serializeMs": 1.27,
+          "deserializeMs": 2.057,
+          "roundTripMs": 3.327,
+          "elapsedMs": 2448.447
+        },
+        {
+          "year": 360,
+          "bytes": 330126,
+          "serializeMs": 1.152,
+          "deserializeMs": 1.692,
+          "roundTripMs": 2.844,
+          "elapsedMs": 2536.073
+        },
+        {
+          "year": 370,
+          "bytes": 332511,
+          "serializeMs": 1.267,
+          "deserializeMs": 1.759,
+          "roundTripMs": 3.027,
+          "elapsedMs": 2623.838
+        },
+        {
+          "year": 380,
+          "bytes": 341928,
+          "serializeMs": 1.16,
+          "deserializeMs": 1.716,
+          "roundTripMs": 2.876,
+          "elapsedMs": 2723.754
+        },
+        {
+          "year": 390,
+          "bytes": 345170,
+          "serializeMs": 1.149,
+          "deserializeMs": 1.908,
+          "roundTripMs": 3.056,
+          "elapsedMs": 2819.601
+        },
+        {
+          "year": 400,
+          "bytes": 350088,
+          "serializeMs": 1.387,
+          "deserializeMs": 1.887,
+          "roundTripMs": 3.274,
+          "elapsedMs": 2906.967
+        },
+        {
+          "year": 410,
+          "bytes": 354542,
+          "serializeMs": 1.159,
+          "deserializeMs": 2.049,
+          "roundTripMs": 3.209,
+          "elapsedMs": 2992.909
+        },
+        {
+          "year": 420,
+          "bytes": 358036,
+          "serializeMs": 1.291,
+          "deserializeMs": 1.76,
+          "roundTripMs": 3.051,
+          "elapsedMs": 3080.055
+        },
+        {
+          "year": 430,
+          "bytes": 361260,
+          "serializeMs": 1.193,
+          "deserializeMs": 1.805,
+          "roundTripMs": 2.999,
+          "elapsedMs": 3167.604
+        },
+        {
+          "year": 440,
+          "bytes": 369070,
+          "serializeMs": 1.3,
+          "deserializeMs": 1.941,
+          "roundTripMs": 3.241,
+          "elapsedMs": 3259.733
+        },
+        {
+          "year": 450,
+          "bytes": 374982,
+          "serializeMs": 1.212,
+          "deserializeMs": 1.956,
+          "roundTripMs": 3.168,
+          "elapsedMs": 3357.394
+        },
+        {
+          "year": 460,
+          "bytes": 378882,
+          "serializeMs": 1.287,
+          "deserializeMs": 1.836,
+          "roundTripMs": 3.123,
+          "elapsedMs": 3451.936
+        },
+        {
+          "year": 470,
+          "bytes": 382180,
+          "serializeMs": 1.349,
+          "deserializeMs": 1.963,
+          "roundTripMs": 3.313,
+          "elapsedMs": 3547.203
+        },
+        {
+          "year": 480,
+          "bytes": 388557,
+          "serializeMs": 1.424,
+          "deserializeMs": 1.981,
+          "roundTripMs": 3.406,
+          "elapsedMs": 3641.234
+        },
+        {
+          "year": 490,
+          "bytes": 394092,
+          "serializeMs": 1.537,
+          "deserializeMs": 2.024,
+          "roundTripMs": 3.561,
+          "elapsedMs": 3747.539
+        },
+        {
+          "year": 500,
+          "bytes": 398284,
+          "serializeMs": 1.333,
+          "deserializeMs": 2.172,
+          "roundTripMs": 3.505,
+          "elapsedMs": 3843.784
+        }
+      ],
+      "saveLatencyMs": {
+        "p50": 2.489,
+        "p95": 3.479,
+        "max": 4.95,
+        "mean": 2.588
+      },
+      "simulationMsPerYear": {
+        "mean": 2.032,
+        "p50": 1.851,
+        "p95": 2.934,
+        "max": 12.696
+      },
+      "final": {
+        "calendar": {
+          "year": 501,
+          "season": 0,
+          "day": 1,
+          "hour": 8,
+          "minute": 0
+        },
+        "population": 80,
+        "playerId": "npc-598",
+        "playerAge": 75,
+        "settlementStage": "town",
+        "settlementCapacity": 80,
+        "threatLevel": 3,
+        "campLevel": 3,
+        "bossAlive": true,
+        "bossProgress": 100,
+        "dungeonThreat": 3,
+        "historyLength": 1793,
+        "eventLength": 150,
+        "npcCount": 79,
+        "livingCharacterCount": 1,
+        "totalCharacters": 8,
+        "npcNaturalDeaths": 606,
+        "crops": 0,
+        "preparedPlots": 0
+      },
+      "naturalPlayerDeaths": 7
+    },
+    {
+      "seed": 42,
+      "status": "passed",
+      "yearsCompleted": 500,
+      "elapsedMs": 3849.047,
+      "checks": {
+        "annual": 500,
+        "saveRoundTrips": 507,
+        "finiteNumberLeaves": 3358452,
+        "seasonTransitions": 2000,
+        "yearTransitions": 500
+      },
+      "populationRange": {
+        "min": 30,
+        "max": 80
+      },
+      "lineage": [
+        {
+          "year": 65,
+          "from": "alden",
+          "to": "npc-101",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 139,
+          "from": "npc-101",
+          "to": "npc-209",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 199,
+          "from": "npc-209",
+          "to": "npc-291",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 258,
+          "from": "npc-291",
+          "to": "npc-360",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 321,
+          "from": "npc-360",
+          "to": "npc-437",
+          "age": 17,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 385,
+          "from": "npc-437",
+          "to": "npc-527",
+          "age": 17,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 449,
+          "from": "npc-527",
+          "to": "npc-611",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        }
+      ],
+      "eventCounts": {
+        "world.founded": 1,
+        "npc.immigrated": 483,
+        "npc.born": 183,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.injured": 8554,
+        "npc.died": 616,
+        "character.successor": 7
+      },
+      "events": {
+        "world.founded": 1,
+        "npc.immigrated": 483,
+        "npc.born": 183,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.died": 616,
+        "character.successor": 7
+      },
+      "saveTrend": [
+        {
+          "year": 1,
+          "bytes": 92434,
+          "serializeMs": 0.37,
+          "deserializeMs": 0.877,
+          "roundTripMs": 1.248,
+          "elapsedMs": 4.01
+        },
+        {
+          "year": 10,
+          "bytes": 163440,
+          "serializeMs": 0.672,
+          "deserializeMs": 1.211,
+          "roundTripMs": 1.882,
+          "elapsedMs": 53.343
+        },
+        {
+          "year": 20,
+          "bytes": 166411,
+          "serializeMs": 0.633,
+          "deserializeMs": 2.248,
+          "roundTripMs": 2.881,
+          "elapsedMs": 116.331
+        },
+        {
+          "year": 30,
+          "bytes": 168931,
+          "serializeMs": 0.696,
+          "deserializeMs": 1.106,
+          "roundTripMs": 1.802,
+          "elapsedMs": 174.998
+        },
+        {
+          "year": 40,
+          "bytes": 171473,
+          "serializeMs": 0.623,
+          "deserializeMs": 1.225,
+          "roundTripMs": 1.847,
+          "elapsedMs": 232.962
+        },
+        {
+          "year": 50,
+          "bytes": 173382,
+          "serializeMs": 0.616,
+          "deserializeMs": 1.12,
+          "roundTripMs": 1.735,
+          "elapsedMs": 290.669
+        },
+        {
+          "year": 60,
+          "bytes": 182927,
+          "serializeMs": 0.635,
+          "deserializeMs": 1.406,
+          "roundTripMs": 2.04,
+          "elapsedMs": 349.301
+        },
+        {
+          "year": 70,
+          "bytes": 190588,
+          "serializeMs": 0.676,
+          "deserializeMs": 1.179,
+          "roundTripMs": 1.856,
+          "elapsedMs": 411.61
+        },
+        {
+          "year": 80,
+          "bytes": 194642,
+          "serializeMs": 0.664,
+          "deserializeMs": 1.212,
+          "roundTripMs": 1.876,
+          "elapsedMs": 478.04
+        },
+        {
+          "year": 90,
+          "bytes": 199392,
+          "serializeMs": 0.694,
+          "deserializeMs": 1.196,
+          "roundTripMs": 1.89,
+          "elapsedMs": 539.492
+        },
+        {
+          "year": 100,
+          "bytes": 203815,
+          "serializeMs": 1.004,
+          "deserializeMs": 1.224,
+          "roundTripMs": 2.228,
+          "elapsedMs": 601.704
+        },
+        {
+          "year": 110,
+          "bytes": 208673,
+          "serializeMs": 0.714,
+          "deserializeMs": 1.311,
+          "roundTripMs": 2.024,
+          "elapsedMs": 664.652
+        },
+        {
+          "year": 120,
+          "bytes": 213652,
+          "serializeMs": 0.711,
+          "deserializeMs": 1.265,
+          "roundTripMs": 1.977,
+          "elapsedMs": 726.842
+        },
+        {
+          "year": 130,
+          "bytes": 216472,
+          "serializeMs": 0.703,
+          "deserializeMs": 1.272,
+          "roundTripMs": 1.975,
+          "elapsedMs": 790.22
+        },
+        {
+          "year": 140,
+          "bytes": 224429,
+          "serializeMs": 0.747,
+          "deserializeMs": 1.296,
+          "roundTripMs": 2.043,
+          "elapsedMs": 858.777
+        },
+        {
+          "year": 150,
+          "bytes": 228423,
+          "serializeMs": 1.325,
+          "deserializeMs": 2.254,
+          "roundTripMs": 3.579,
+          "elapsedMs": 927.807
+        },
+        {
+          "year": 160,
+          "bytes": 233034,
+          "serializeMs": 0.808,
+          "deserializeMs": 1.324,
+          "roundTripMs": 2.132,
+          "elapsedMs": 1013.862
+        },
+        {
+          "year": 170,
+          "bytes": 238235,
+          "serializeMs": 0.754,
+          "deserializeMs": 1.37,
+          "roundTripMs": 2.124,
+          "elapsedMs": 1080.287
+        },
+        {
+          "year": 180,
+          "bytes": 240638,
+          "serializeMs": 0.822,
+          "deserializeMs": 2.443,
+          "roundTripMs": 3.264,
+          "elapsedMs": 1148.274
+        },
+        {
+          "year": 190,
+          "bytes": 247904,
+          "serializeMs": 0.844,
+          "deserializeMs": 1.375,
+          "roundTripMs": 2.22,
+          "elapsedMs": 1215.06
+        },
+        {
+          "year": 200,
+          "bytes": 253805,
+          "serializeMs": 0.849,
+          "deserializeMs": 1.391,
+          "roundTripMs": 2.24,
+          "elapsedMs": 1286.943
+        },
+        {
+          "year": 210,
+          "bytes": 254769,
+          "serializeMs": 0.84,
+          "deserializeMs": 1.425,
+          "roundTripMs": 2.265,
+          "elapsedMs": 1356.783
+        },
+        {
+          "year": 220,
+          "bytes": 262689,
+          "serializeMs": 0.86,
+          "deserializeMs": 1.61,
+          "roundTripMs": 2.47,
+          "elapsedMs": 1437.732
+        },
+        {
+          "year": 230,
+          "bytes": 267129,
+          "serializeMs": 0.811,
+          "deserializeMs": 1.439,
+          "roundTripMs": 2.25,
+          "elapsedMs": 1508.033
+        },
+        {
+          "year": 240,
+          "bytes": 268841,
+          "serializeMs": 0.816,
+          "deserializeMs": 1.447,
+          "roundTripMs": 2.263,
+          "elapsedMs": 1579.268
+        },
+        {
+          "year": 250,
+          "bytes": 276541,
+          "serializeMs": 0.886,
+          "deserializeMs": 3.076,
+          "roundTripMs": 3.962,
+          "elapsedMs": 1653.056
+        },
+        {
+          "year": 260,
+          "bytes": 283445,
+          "serializeMs": 0.892,
+          "deserializeMs": 1.513,
+          "roundTripMs": 2.405,
+          "elapsedMs": 1732.132
+        },
+        {
+          "year": 270,
+          "bytes": 288141,
+          "serializeMs": 0.877,
+          "deserializeMs": 1.633,
+          "roundTripMs": 2.51,
+          "elapsedMs": 1805.907
+        },
+        {
+          "year": 280,
+          "bytes": 292404,
+          "serializeMs": 0.907,
+          "deserializeMs": 1.54,
+          "roundTripMs": 2.446,
+          "elapsedMs": 1879.729
+        },
+        {
+          "year": 290,
+          "bytes": 296292,
+          "serializeMs": 1.04,
+          "deserializeMs": 1.583,
+          "roundTripMs": 2.623,
+          "elapsedMs": 1955.034
+        },
+        {
+          "year": 300,
+          "bytes": 300504,
+          "serializeMs": 1.076,
+          "deserializeMs": 1.581,
+          "roundTripMs": 2.657,
+          "elapsedMs": 2030.14
+        },
+        {
+          "year": 310,
+          "bytes": 303856,
+          "serializeMs": 1.084,
+          "deserializeMs": 1.671,
+          "roundTripMs": 2.755,
+          "elapsedMs": 2109.954
+        },
+        {
+          "year": 320,
+          "bytes": 312812,
+          "serializeMs": 1.154,
+          "deserializeMs": 2.76,
+          "roundTripMs": 3.913,
+          "elapsedMs": 2197.583
+        },
+        {
+          "year": 330,
+          "bytes": 317432,
+          "serializeMs": 1.121,
+          "deserializeMs": 1.768,
+          "roundTripMs": 2.889,
+          "elapsedMs": 2280.856
+        },
+        {
+          "year": 340,
+          "bytes": 321828,
+          "serializeMs": 1.16,
+          "deserializeMs": 1.646,
+          "roundTripMs": 2.806,
+          "elapsedMs": 2363.397
+        },
+        {
+          "year": 350,
+          "bytes": 326227,
+          "serializeMs": 1.174,
+          "deserializeMs": 1.75,
+          "roundTripMs": 2.924,
+          "elapsedMs": 2447.092
+        },
+        {
+          "year": 360,
+          "bytes": 332139,
+          "serializeMs": 1.16,
+          "deserializeMs": 1.658,
+          "roundTripMs": 2.817,
+          "elapsedMs": 2528.567
+        },
+        {
+          "year": 370,
+          "bytes": 335491,
+          "serializeMs": 1.194,
+          "deserializeMs": 1.67,
+          "roundTripMs": 2.864,
+          "elapsedMs": 2611.461
+        },
+        {
+          "year": 380,
+          "bytes": 339768,
+          "serializeMs": 1.173,
+          "deserializeMs": 1.74,
+          "roundTripMs": 2.913,
+          "elapsedMs": 2696.562
+        },
+        {
+          "year": 390,
+          "bytes": 346577,
+          "serializeMs": 1.186,
+          "deserializeMs": 2.839,
+          "roundTripMs": 4.026,
+          "elapsedMs": 2787.048
+        },
+        {
+          "year": 400,
+          "bytes": 350450,
+          "serializeMs": 1.216,
+          "deserializeMs": 1.707,
+          "roundTripMs": 2.923,
+          "elapsedMs": 2870.99
+        },
+        {
+          "year": 410,
+          "bytes": 354378,
+          "serializeMs": 1.393,
+          "deserializeMs": 1.74,
+          "roundTripMs": 3.133,
+          "elapsedMs": 2959.31
+        },
+        {
+          "year": 420,
+          "bytes": 361858,
+          "serializeMs": 1.258,
+          "deserializeMs": 1.763,
+          "roundTripMs": 3.022,
+          "elapsedMs": 3047.708
+        },
+        {
+          "year": 430,
+          "bytes": 366107,
+          "serializeMs": 1.525,
+          "deserializeMs": 1.815,
+          "roundTripMs": 3.34,
+          "elapsedMs": 3137.445
+        },
+        {
+          "year": 440,
+          "bytes": 370293,
+          "serializeMs": 1.277,
+          "deserializeMs": 2.929,
+          "roundTripMs": 4.206,
+          "elapsedMs": 3238.956
+        },
+        {
+          "year": 450,
+          "bytes": 375669,
+          "serializeMs": 1.228,
+          "deserializeMs": 1.859,
+          "roundTripMs": 3.086,
+          "elapsedMs": 3366.966
+        },
+        {
+          "year": 460,
+          "bytes": 379730,
+          "serializeMs": 1.229,
+          "deserializeMs": 2.121,
+          "roundTripMs": 3.35,
+          "elapsedMs": 3462.37
+        },
+        {
+          "year": 470,
+          "bytes": 384294,
+          "serializeMs": 1.262,
+          "deserializeMs": 1.875,
+          "roundTripMs": 3.137,
+          "elapsedMs": 3555.434
+        },
+        {
+          "year": 480,
+          "bytes": 390693,
+          "serializeMs": 1.327,
+          "deserializeMs": 1.908,
+          "roundTripMs": 3.235,
+          "elapsedMs": 3650.519
+        },
+        {
+          "year": 490,
+          "bytes": 395821,
+          "serializeMs": 1.407,
+          "deserializeMs": 2.599,
+          "roundTripMs": 4.006,
+          "elapsedMs": 3751.104
+        },
+        {
+          "year": 500,
+          "bytes": 399597,
+          "serializeMs": 1.256,
+          "deserializeMs": 2.101,
+          "roundTripMs": 3.357,
+          "elapsedMs": 3846.67
+        }
+      ],
+      "saveLatencyMs": {
+        "p50": 2.478,
+        "p95": 3.639,
+        "max": 14.609,
+        "mean": 2.622
+      },
+      "simulationMsPerYear": {
+        "mean": 2.001,
+        "p50": 1.812,
+        "p95": 2.903,
+        "max": 6.169
+      },
+      "final": {
+        "calendar": {
+          "year": 501,
+          "season": 0,
+          "day": 1,
+          "hour": 8,
+          "minute": 0
+        },
+        "population": 80,
+        "playerId": "npc-611",
+        "playerAge": 67,
+        "settlementStage": "town",
+        "settlementCapacity": 80,
+        "threatLevel": 3,
+        "campLevel": 3,
+        "bossAlive": true,
+        "bossProgress": 100,
+        "dungeonThreat": 3,
+        "historyLength": 1799,
+        "eventLength": 150,
+        "npcCount": 79,
+        "livingCharacterCount": 1,
+        "totalCharacters": 8,
+        "npcNaturalDeaths": 609,
+        "crops": 0,
+        "preparedPlots": 0
+      },
+      "naturalPlayerDeaths": 7
+    },
+    {
+      "seed": 321,
+      "status": "passed",
+      "yearsCompleted": 500,
+      "elapsedMs": 3934.192,
+      "checks": {
+        "annual": 500,
+        "saveRoundTrips": 507,
+        "finiteNumberLeaves": 3349302,
+        "seasonTransitions": 2000,
+        "yearTransitions": 500
+      },
+      "populationRange": {
+        "min": 30,
+        "max": 80
+      },
+      "lineage": [
+        {
+          "year": 65,
+          "from": "alden",
+          "to": "npc-139",
+          "age": 18,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 135,
+          "from": "npc-139",
+          "to": "npc-198",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 198,
+          "from": "npc-198",
+          "to": "npc-282",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 269,
+          "from": "npc-282",
+          "to": "npc-373",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 325,
+          "from": "npc-373",
+          "to": "npc-446",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 395,
+          "from": "npc-446",
+          "to": "npc-532",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 455,
+          "from": "npc-532",
+          "to": "npc-610",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        }
+      ],
+      "eventCounts": {
+        "world.founded": 1,
+        "npc.immigrated": 467,
+        "npc.born": 192,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.injured": 8554,
+        "npc.died": 609,
+        "character.successor": 7
+      },
+      "events": {
+        "world.founded": 1,
+        "npc.immigrated": 467,
+        "npc.born": 192,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.died": 609,
+        "character.successor": 7
+      },
+      "saveTrend": [
+        {
+          "year": 1,
+          "bytes": 92435,
+          "serializeMs": 0.522,
+          "deserializeMs": 0.956,
+          "roundTripMs": 1.478,
+          "elapsedMs": 7.108
+        },
+        {
+          "year": 10,
+          "bytes": 163732,
+          "serializeMs": 0.625,
+          "deserializeMs": 1.129,
+          "roundTripMs": 1.754,
+          "elapsedMs": 55.909
+        },
+        {
+          "year": 20,
+          "bytes": 166924,
+          "serializeMs": 0.662,
+          "deserializeMs": 1.151,
+          "roundTripMs": 1.814,
+          "elapsedMs": 116.196
+        },
+        {
+          "year": 30,
+          "bytes": 169431,
+          "serializeMs": 0.656,
+          "deserializeMs": 2.193,
+          "roundTripMs": 2.85,
+          "elapsedMs": 177.483
+        },
+        {
+          "year": 40,
+          "bytes": 171986,
+          "serializeMs": 0.649,
+          "deserializeMs": 1.114,
+          "roundTripMs": 1.763,
+          "elapsedMs": 237.891
+        },
+        {
+          "year": 50,
+          "bytes": 175146,
+          "serializeMs": 0.668,
+          "deserializeMs": 1.142,
+          "roundTripMs": 1.81,
+          "elapsedMs": 300.046
+        },
+        {
+          "year": 60,
+          "bytes": 181739,
+          "serializeMs": 0.694,
+          "deserializeMs": 1.153,
+          "roundTripMs": 1.847,
+          "elapsedMs": 359.52
+        },
+        {
+          "year": 70,
+          "bytes": 190202,
+          "serializeMs": 0.686,
+          "deserializeMs": 1.184,
+          "roundTripMs": 1.87,
+          "elapsedMs": 434.927
+        },
+        {
+          "year": 80,
+          "bytes": 193999,
+          "serializeMs": 0.935,
+          "deserializeMs": 1.281,
+          "roundTripMs": 2.216,
+          "elapsedMs": 507.917
+        },
+        {
+          "year": 90,
+          "bytes": 200387,
+          "serializeMs": 0.73,
+          "deserializeMs": 1.233,
+          "roundTripMs": 1.963,
+          "elapsedMs": 578.458
+        },
+        {
+          "year": 100,
+          "bytes": 203161,
+          "serializeMs": 0.76,
+          "deserializeMs": 1.232,
+          "roundTripMs": 1.992,
+          "elapsedMs": 653.448
+        },
+        {
+          "year": 110,
+          "bytes": 207780,
+          "serializeMs": 0.722,
+          "deserializeMs": 1.27,
+          "roundTripMs": 1.993,
+          "elapsedMs": 720.151
+        },
+        {
+          "year": 120,
+          "bytes": 212196,
+          "serializeMs": 0.759,
+          "deserializeMs": 1.279,
+          "roundTripMs": 2.038,
+          "elapsedMs": 787.558
+        },
+        {
+          "year": 130,
+          "bytes": 216182,
+          "serializeMs": 0.753,
+          "deserializeMs": 1.309,
+          "roundTripMs": 2.062,
+          "elapsedMs": 856.595
+        },
+        {
+          "year": 140,
+          "bytes": 223882,
+          "serializeMs": 1.17,
+          "deserializeMs": 1.35,
+          "roundTripMs": 2.52,
+          "elapsedMs": 933.9
+        },
+        {
+          "year": 150,
+          "bytes": 228389,
+          "serializeMs": 0.857,
+          "deserializeMs": 1.359,
+          "roundTripMs": 2.216,
+          "elapsedMs": 1014.265
+        },
+        {
+          "year": 160,
+          "bytes": 232340,
+          "serializeMs": 0.806,
+          "deserializeMs": 1.377,
+          "roundTripMs": 2.183,
+          "elapsedMs": 1085.091
+        },
+        {
+          "year": 170,
+          "bytes": 237547,
+          "serializeMs": 0.786,
+          "deserializeMs": 1.338,
+          "roundTripMs": 2.124,
+          "elapsedMs": 1155.021
+        },
+        {
+          "year": 180,
+          "bytes": 241689,
+          "serializeMs": 0.801,
+          "deserializeMs": 1.376,
+          "roundTripMs": 2.177,
+          "elapsedMs": 1224.408
+        },
+        {
+          "year": 190,
+          "bytes": 245950,
+          "serializeMs": 0.851,
+          "deserializeMs": 1.445,
+          "roundTripMs": 2.296,
+          "elapsedMs": 1291.912
+        },
+        {
+          "year": 200,
+          "bytes": 253153,
+          "serializeMs": 0.843,
+          "deserializeMs": 1.371,
+          "roundTripMs": 2.214,
+          "elapsedMs": 1361.962
+        },
+        {
+          "year": 210,
+          "bytes": 258314,
+          "serializeMs": 0.845,
+          "deserializeMs": 1.461,
+          "roundTripMs": 2.306,
+          "elapsedMs": 1428.684
+        },
+        {
+          "year": 220,
+          "bytes": 262086,
+          "serializeMs": 0.885,
+          "deserializeMs": 1.424,
+          "roundTripMs": 2.31,
+          "elapsedMs": 1498.234
+        },
+        {
+          "year": 230,
+          "bytes": 266257,
+          "serializeMs": 0.888,
+          "deserializeMs": 1.476,
+          "roundTripMs": 2.365,
+          "elapsedMs": 1570.763
+        },
+        {
+          "year": 240,
+          "bytes": 271037,
+          "serializeMs": 0.885,
+          "deserializeMs": 1.477,
+          "roundTripMs": 2.362,
+          "elapsedMs": 1642.676
+        },
+        {
+          "year": 250,
+          "bytes": 275881,
+          "serializeMs": 0.927,
+          "deserializeMs": 2.635,
+          "roundTripMs": 3.562,
+          "elapsedMs": 1723.298
+        },
+        {
+          "year": 260,
+          "bytes": 279648,
+          "serializeMs": 2.625,
+          "deserializeMs": 1.675,
+          "roundTripMs": 4.3,
+          "elapsedMs": 1806.348
+        },
+        {
+          "year": 270,
+          "bytes": 286219,
+          "serializeMs": 0.9,
+          "deserializeMs": 1.575,
+          "roundTripMs": 2.474,
+          "elapsedMs": 1889.971
+        },
+        {
+          "year": 280,
+          "bytes": 290894,
+          "serializeMs": 0.946,
+          "deserializeMs": 1.543,
+          "roundTripMs": 2.489,
+          "elapsedMs": 1978.816
+        },
+        {
+          "year": 290,
+          "bytes": 295290,
+          "serializeMs": 0.942,
+          "deserializeMs": 1.559,
+          "roundTripMs": 2.501,
+          "elapsedMs": 2079.812
+        },
+        {
+          "year": 300,
+          "bytes": 297551,
+          "serializeMs": 0.961,
+          "deserializeMs": 1.533,
+          "roundTripMs": 2.493,
+          "elapsedMs": 2155.034
+        },
+        {
+          "year": 310,
+          "bytes": 305134,
+          "serializeMs": 1.052,
+          "deserializeMs": 1.589,
+          "roundTripMs": 2.641,
+          "elapsedMs": 2232.478
+        },
+        {
+          "year": 320,
+          "bytes": 308645,
+          "serializeMs": 1.045,
+          "deserializeMs": 1.61,
+          "roundTripMs": 2.655,
+          "elapsedMs": 2312.17
+        },
+        {
+          "year": 330,
+          "bytes": 314733,
+          "serializeMs": 1.104,
+          "deserializeMs": 1.622,
+          "roundTripMs": 2.726,
+          "elapsedMs": 2396.66
+        },
+        {
+          "year": 340,
+          "bytes": 319550,
+          "serializeMs": 1.095,
+          "deserializeMs": 1.636,
+          "roundTripMs": 2.732,
+          "elapsedMs": 2478.803
+        },
+        {
+          "year": 350,
+          "bytes": 321134,
+          "serializeMs": 1.085,
+          "deserializeMs": 1.757,
+          "roundTripMs": 2.843,
+          "elapsedMs": 2561.37
+        },
+        {
+          "year": 360,
+          "bytes": 326036,
+          "serializeMs": 1.099,
+          "deserializeMs": 1.751,
+          "roundTripMs": 2.85,
+          "elapsedMs": 2643.49
+        },
+        {
+          "year": 370,
+          "bytes": 333524,
+          "serializeMs": 1.149,
+          "deserializeMs": 1.684,
+          "roundTripMs": 2.833,
+          "elapsedMs": 2726.987
+        },
+        {
+          "year": 380,
+          "bytes": 336448,
+          "serializeMs": 1.252,
+          "deserializeMs": 1.728,
+          "roundTripMs": 2.98,
+          "elapsedMs": 2813.027
+        },
+        {
+          "year": 390,
+          "bytes": 342942,
+          "serializeMs": 1.248,
+          "deserializeMs": 1.94,
+          "roundTripMs": 3.188,
+          "elapsedMs": 2902.07
+        },
+        {
+          "year": 400,
+          "bytes": 349045,
+          "serializeMs": 1.132,
+          "deserializeMs": 3.057,
+          "roundTripMs": 4.189,
+          "elapsedMs": 2999.185
+        },
+        {
+          "year": 410,
+          "bytes": 352741,
+          "serializeMs": 1.159,
+          "deserializeMs": 2.028,
+          "roundTripMs": 3.187,
+          "elapsedMs": 3086.409
+        },
+        {
+          "year": 420,
+          "bytes": 358161,
+          "serializeMs": 1.153,
+          "deserializeMs": 1.809,
+          "roundTripMs": 2.962,
+          "elapsedMs": 3193.571
+        },
+        {
+          "year": 430,
+          "bytes": 359555,
+          "serializeMs": 1.171,
+          "deserializeMs": 1.875,
+          "roundTripMs": 3.046,
+          "elapsedMs": 3281.196
+        },
+        {
+          "year": 440,
+          "bytes": 368141,
+          "serializeMs": 1.211,
+          "deserializeMs": 2.046,
+          "roundTripMs": 3.257,
+          "elapsedMs": 3370.398
+        },
+        {
+          "year": 450,
+          "bytes": 372855,
+          "serializeMs": 1.223,
+          "deserializeMs": 3.253,
+          "roundTripMs": 4.476,
+          "elapsedMs": 3465.228
+        },
+        {
+          "year": 460,
+          "bytes": 377797,
+          "serializeMs": 1.181,
+          "deserializeMs": 1.819,
+          "roundTripMs": 3,
+          "elapsedMs": 3560.692
+        },
+        {
+          "year": 470,
+          "bytes": 382700,
+          "serializeMs": 1.222,
+          "deserializeMs": 2.014,
+          "roundTripMs": 3.237,
+          "elapsedMs": 3654.616
+        },
+        {
+          "year": 480,
+          "bytes": 387798,
+          "serializeMs": 1.242,
+          "deserializeMs": 1.896,
+          "roundTripMs": 3.139,
+          "elapsedMs": 3746.73
+        },
+        {
+          "year": 490,
+          "bytes": 393174,
+          "serializeMs": 1.238,
+          "deserializeMs": 1.876,
+          "roundTripMs": 3.114,
+          "elapsedMs": 3839.797
+        },
+        {
+          "year": 500,
+          "bytes": 397498,
+          "serializeMs": 1.216,
+          "deserializeMs": 1.881,
+          "roundTripMs": 3.096,
+          "elapsedMs": 3932.759
+        }
+      ],
+      "saveLatencyMs": {
+        "p50": 2.619,
+        "p95": 3.562,
+        "max": 5.6,
+        "mean": 2.628
+      },
+      "simulationMsPerYear": {
+        "mean": 2.081,
+        "p50": 1.823,
+        "p95": 3.275,
+        "max": 7.137
+      },
+      "final": {
+        "calendar": {
+          "year": 501,
+          "season": 0,
+          "day": 1,
+          "hour": 8,
+          "minute": 0
+        },
+        "population": 80,
+        "playerId": "npc-610",
+        "playerAge": 62,
+        "settlementStage": "town",
+        "settlementCapacity": 80,
+        "threatLevel": 3,
+        "campLevel": 3,
+        "bossAlive": true,
+        "bossProgress": 100,
+        "dungeonThreat": 3,
+        "historyLength": 1785,
+        "eventLength": 150,
+        "npcCount": 79,
+        "livingCharacterCount": 1,
+        "totalCharacters": 8,
+        "npcNaturalDeaths": 602,
+        "crops": 0,
+        "preparedPlots": 0
+      },
+      "naturalPlayerDeaths": 7
+    },
+    {
+      "seed": 909,
+      "status": "passed",
+      "yearsCompleted": 500,
+      "elapsedMs": 3952.063,
+      "checks": {
+        "annual": 500,
+        "saveRoundTrips": 507,
+        "finiteNumberLeaves": 3351189,
+        "seasonTransitions": 2000,
+        "yearTransitions": 500
+      },
+      "populationRange": {
+        "min": 30,
+        "max": 80
+      },
+      "lineage": [
+        {
+          "year": 65,
+          "from": "alden",
+          "to": "npc-103",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 138,
+          "from": "npc-103",
+          "to": "npc-205",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 205,
+          "from": "npc-205",
+          "to": "npc-290",
+          "age": 17,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 260,
+          "from": "npc-290",
+          "to": "npc-362",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 331,
+          "from": "npc-362",
+          "to": "npc-452",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 395,
+          "from": "npc-452",
+          "to": "npc-553",
+          "age": 20,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 449,
+          "from": "npc-553",
+          "to": "npc-604",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        }
+      ],
+      "eventCounts": {
+        "world.founded": 1,
+        "npc.immigrated": 468,
+        "npc.born": 191,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.injured": 8554,
+        "npc.died": 609,
+        "character.successor": 7
+      },
+      "events": {
+        "world.founded": 1,
+        "npc.immigrated": 468,
+        "npc.born": 191,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.died": 609,
+        "character.successor": 7
+      },
+      "saveTrend": [
+        {
+          "year": 1,
+          "bytes": 92434,
+          "serializeMs": 0.375,
+          "deserializeMs": 0.746,
+          "roundTripMs": 1.121,
+          "elapsedMs": 3.936
+        },
+        {
+          "year": 10,
+          "bytes": 163416,
+          "serializeMs": 0.679,
+          "deserializeMs": 1.113,
+          "roundTripMs": 1.792,
+          "elapsedMs": 54.569
+        },
+        {
+          "year": 20,
+          "bytes": 166356,
+          "serializeMs": 0.658,
+          "deserializeMs": 1.139,
+          "roundTripMs": 1.797,
+          "elapsedMs": 117.351
+        },
+        {
+          "year": 30,
+          "bytes": 169287,
+          "serializeMs": 0.656,
+          "deserializeMs": 1.384,
+          "roundTripMs": 2.04,
+          "elapsedMs": 179.908
+        },
+        {
+          "year": 40,
+          "bytes": 172041,
+          "serializeMs": 0.694,
+          "deserializeMs": 1.136,
+          "roundTripMs": 1.83,
+          "elapsedMs": 246.034
+        },
+        {
+          "year": 50,
+          "bytes": 175688,
+          "serializeMs": 0.642,
+          "deserializeMs": 1.128,
+          "roundTripMs": 1.77,
+          "elapsedMs": 307.205
+        },
+        {
+          "year": 60,
+          "bytes": 183283,
+          "serializeMs": 0.671,
+          "deserializeMs": 1.135,
+          "roundTripMs": 1.806,
+          "elapsedMs": 367.7
+        },
+        {
+          "year": 70,
+          "bytes": 190726,
+          "serializeMs": 0.694,
+          "deserializeMs": 1.173,
+          "roundTripMs": 1.867,
+          "elapsedMs": 432.084
+        },
+        {
+          "year": 80,
+          "bytes": 193877,
+          "serializeMs": 0.704,
+          "deserializeMs": 1.479,
+          "roundTripMs": 2.183,
+          "elapsedMs": 494.714
+        },
+        {
+          "year": 90,
+          "bytes": 199034,
+          "serializeMs": 0.722,
+          "deserializeMs": 1.258,
+          "roundTripMs": 1.98,
+          "elapsedMs": 564.636
+        },
+        {
+          "year": 100,
+          "bytes": 202223,
+          "serializeMs": 0.73,
+          "deserializeMs": 1.256,
+          "roundTripMs": 1.986,
+          "elapsedMs": 627.077
+        },
+        {
+          "year": 110,
+          "bytes": 206651,
+          "serializeMs": 0.768,
+          "deserializeMs": 1.416,
+          "roundTripMs": 2.184,
+          "elapsedMs": 695.105
+        },
+        {
+          "year": 120,
+          "bytes": 211637,
+          "serializeMs": 0.759,
+          "deserializeMs": 1.258,
+          "roundTripMs": 2.017,
+          "elapsedMs": 758.8
+        },
+        {
+          "year": 130,
+          "bytes": 216803,
+          "serializeMs": 0.747,
+          "deserializeMs": 1.298,
+          "roundTripMs": 2.045,
+          "elapsedMs": 835.487
+        },
+        {
+          "year": 140,
+          "bytes": 223889,
+          "serializeMs": 0.763,
+          "deserializeMs": 1.297,
+          "roundTripMs": 2.06,
+          "elapsedMs": 905.03
+        },
+        {
+          "year": 150,
+          "bytes": 228691,
+          "serializeMs": 0.784,
+          "deserializeMs": 1.307,
+          "roundTripMs": 2.091,
+          "elapsedMs": 968.016
+        },
+        {
+          "year": 160,
+          "bytes": 232236,
+          "serializeMs": 0.784,
+          "deserializeMs": 1.366,
+          "roundTripMs": 2.15,
+          "elapsedMs": 1033.944
+        },
+        {
+          "year": 170,
+          "bytes": 237129,
+          "serializeMs": 0.801,
+          "deserializeMs": 1.35,
+          "roundTripMs": 2.15,
+          "elapsedMs": 1103.041
+        },
+        {
+          "year": 180,
+          "bytes": 241599,
+          "serializeMs": 0.88,
+          "deserializeMs": 1.495,
+          "roundTripMs": 2.375,
+          "elapsedMs": 1172.714
+        },
+        {
+          "year": 190,
+          "bytes": 246523,
+          "serializeMs": 0.824,
+          "deserializeMs": 1.43,
+          "roundTripMs": 2.254,
+          "elapsedMs": 1240.835
+        },
+        {
+          "year": 200,
+          "bytes": 251916,
+          "serializeMs": 0.978,
+          "deserializeMs": 1.585,
+          "roundTripMs": 2.563,
+          "elapsedMs": 1318.334
+        },
+        {
+          "year": 210,
+          "bytes": 257594,
+          "serializeMs": 0.876,
+          "deserializeMs": 1.656,
+          "roundTripMs": 2.532,
+          "elapsedMs": 1402.201
+        },
+        {
+          "year": 220,
+          "bytes": 258133,
+          "serializeMs": 0.875,
+          "deserializeMs": 1.594,
+          "roundTripMs": 2.468,
+          "elapsedMs": 1482.062
+        },
+        {
+          "year": 230,
+          "bytes": 266879,
+          "serializeMs": 0.889,
+          "deserializeMs": 1.585,
+          "roundTripMs": 2.474,
+          "elapsedMs": 1557.652
+        },
+        {
+          "year": 240,
+          "bytes": 271710,
+          "serializeMs": 0.924,
+          "deserializeMs": 1.66,
+          "roundTripMs": 2.585,
+          "elapsedMs": 1636.193
+        },
+        {
+          "year": 250,
+          "bytes": 275707,
+          "serializeMs": 0.927,
+          "deserializeMs": 1.509,
+          "roundTripMs": 2.436,
+          "elapsedMs": 1714.787
+        },
+        {
+          "year": 260,
+          "bytes": 281781,
+          "serializeMs": 0.95,
+          "deserializeMs": 1.847,
+          "roundTripMs": 2.797,
+          "elapsedMs": 1790.548
+        },
+        {
+          "year": 270,
+          "bytes": 286627,
+          "serializeMs": 0.91,
+          "deserializeMs": 1.497,
+          "roundTripMs": 2.407,
+          "elapsedMs": 1861.426
+        },
+        {
+          "year": 280,
+          "bytes": 290867,
+          "serializeMs": 1.051,
+          "deserializeMs": 1.594,
+          "roundTripMs": 2.646,
+          "elapsedMs": 1935.429
+        },
+        {
+          "year": 290,
+          "bytes": 296520,
+          "serializeMs": 0.926,
+          "deserializeMs": 1.563,
+          "roundTripMs": 2.489,
+          "elapsedMs": 2008.938
+        },
+        {
+          "year": 300,
+          "bytes": 300028,
+          "serializeMs": 0.964,
+          "deserializeMs": 1.555,
+          "roundTripMs": 2.519,
+          "elapsedMs": 2083.089
+        },
+        {
+          "year": 310,
+          "bytes": 305045,
+          "serializeMs": 1.048,
+          "deserializeMs": 1.585,
+          "roundTripMs": 2.633,
+          "elapsedMs": 2162.701
+        },
+        {
+          "year": 320,
+          "bytes": 309621,
+          "serializeMs": 1.159,
+          "deserializeMs": 1.699,
+          "roundTripMs": 2.858,
+          "elapsedMs": 2241.664
+        },
+        {
+          "year": 330,
+          "bytes": 314172,
+          "serializeMs": 1.069,
+          "deserializeMs": 3.051,
+          "roundTripMs": 4.12,
+          "elapsedMs": 2325.951
+        },
+        {
+          "year": 340,
+          "bytes": 320519,
+          "serializeMs": 1.228,
+          "deserializeMs": 1.688,
+          "roundTripMs": 2.917,
+          "elapsedMs": 2416.534
+        },
+        {
+          "year": 350,
+          "bytes": 324727,
+          "serializeMs": 1.264,
+          "deserializeMs": 1.687,
+          "roundTripMs": 2.951,
+          "elapsedMs": 2503.37
+        },
+        {
+          "year": 360,
+          "bytes": 329925,
+          "serializeMs": 1.173,
+          "deserializeMs": 1.787,
+          "roundTripMs": 2.96,
+          "elapsedMs": 2591.649
+        },
+        {
+          "year": 370,
+          "bytes": 334662,
+          "serializeMs": 1.482,
+          "deserializeMs": 1.975,
+          "roundTripMs": 3.457,
+          "elapsedMs": 2684.721
+        },
+        {
+          "year": 380,
+          "bytes": 339899,
+          "serializeMs": 1.287,
+          "deserializeMs": 1.889,
+          "roundTripMs": 3.176,
+          "elapsedMs": 2776.486
+        },
+        {
+          "year": 390,
+          "bytes": 342715,
+          "serializeMs": 1.275,
+          "deserializeMs": 1.784,
+          "roundTripMs": 3.059,
+          "elapsedMs": 2867.714
+        },
+        {
+          "year": 400,
+          "bytes": 350235,
+          "serializeMs": 1.525,
+          "deserializeMs": 2.841,
+          "roundTripMs": 4.367,
+          "elapsedMs": 2965.533
+        },
+        {
+          "year": 410,
+          "bytes": 353751,
+          "serializeMs": 1.37,
+          "deserializeMs": 1.766,
+          "roundTripMs": 3.136,
+          "elapsedMs": 3057.338
+        },
+        {
+          "year": 420,
+          "bytes": 359379,
+          "serializeMs": 1.263,
+          "deserializeMs": 1.891,
+          "roundTripMs": 3.155,
+          "elapsedMs": 3152.86
+        },
+        {
+          "year": 430,
+          "bytes": 363551,
+          "serializeMs": 1.245,
+          "deserializeMs": 2.226,
+          "roundTripMs": 3.471,
+          "elapsedMs": 3251.68
+        },
+        {
+          "year": 440,
+          "bytes": 368470,
+          "serializeMs": 1.444,
+          "deserializeMs": 1.843,
+          "roundTripMs": 3.287,
+          "elapsedMs": 3345.9
+        },
+        {
+          "year": 450,
+          "bytes": 374950,
+          "serializeMs": 1.306,
+          "deserializeMs": 2.351,
+          "roundTripMs": 3.657,
+          "elapsedMs": 3447.481
+        },
+        {
+          "year": 460,
+          "bytes": 379335,
+          "serializeMs": 2.021,
+          "deserializeMs": 2.173,
+          "roundTripMs": 4.194,
+          "elapsedMs": 3547.918
+        },
+        {
+          "year": 470,
+          "bytes": 382122,
+          "serializeMs": 1.443,
+          "deserializeMs": 2.626,
+          "roundTripMs": 4.069,
+          "elapsedMs": 3648.585
+        },
+        {
+          "year": 480,
+          "bytes": 388840,
+          "serializeMs": 1.377,
+          "deserializeMs": 1.938,
+          "roundTripMs": 3.315,
+          "elapsedMs": 3746.608
+        },
+        {
+          "year": 490,
+          "bytes": 393524,
+          "serializeMs": 1.532,
+          "deserializeMs": 1.973,
+          "roundTripMs": 3.505,
+          "elapsedMs": 3844.96
+        },
+        {
+          "year": 500,
+          "bytes": 397483,
+          "serializeMs": 1.287,
+          "deserializeMs": 1.974,
+          "roundTripMs": 3.261,
+          "elapsedMs": 3942.102
+        }
+      ],
+      "saveLatencyMs": {
+        "p50": 2.547,
+        "p95": 3.748,
+        "max": 5.76,
+        "mean": 2.657
+      },
+      "simulationMsPerYear": {
+        "mean": 2.038,
+        "p50": 1.849,
+        "p95": 3.124,
+        "max": 6.99
+      },
+      "final": {
+        "calendar": {
+          "year": 501,
+          "season": 0,
+          "day": 1,
+          "hour": 8,
+          "minute": 0
+        },
+        "population": 80,
+        "playerId": "npc-604",
+        "playerAge": 67,
+        "settlementStage": "town",
+        "settlementCapacity": 80,
+        "threatLevel": 3,
+        "campLevel": 3,
+        "bossAlive": true,
+        "bossProgress": 100,
+        "dungeonThreat": 3,
+        "historyLength": 1785,
+        "eventLength": 150,
+        "npcCount": 79,
+        "livingCharacterCount": 1,
+        "totalCharacters": 8,
+        "npcNaturalDeaths": 602,
+        "crops": 0,
+        "preparedPlots": 0
+      },
+      "naturalPlayerDeaths": 7
+    },
+    {
+      "seed": 4294967295,
+      "status": "passed",
+      "yearsCompleted": 500,
+      "elapsedMs": 4261.285,
+      "checks": {
+        "annual": 500,
+        "saveRoundTrips": 507,
+        "finiteNumberLeaves": 3350751,
+        "seasonTransitions": 2000,
+        "yearTransitions": 500
+      },
+      "populationRange": {
+        "min": 30,
+        "max": 80
+      },
+      "lineage": [
+        {
+          "year": 65,
+          "from": "alden",
+          "to": "npc-101",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 130,
+          "from": "npc-101",
+          "to": "npc-193",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 202,
+          "from": "npc-193",
+          "to": "npc-285",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 258,
+          "from": "npc-285",
+          "to": "npc-364",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 330,
+          "from": "npc-364",
+          "to": "npc-449",
+          "age": 20,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 397,
+          "from": "npc-449",
+          "to": "npc-535",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 455,
+          "from": "npc-535",
+          "to": "npc-607",
+          "age": 20,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        }
+      ],
+      "eventCounts": {
+        "world.founded": 1,
+        "npc.immigrated": 465,
+        "npc.born": 194,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.injured": 8554,
+        "npc.died": 609,
+        "character.successor": 7
+      },
+      "events": {
+        "world.founded": 1,
+        "npc.immigrated": 465,
+        "npc.born": 194,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.died": 609,
+        "character.successor": 7
+      },
+      "saveTrend": [
+        {
+          "year": 1,
+          "bytes": 92442,
+          "serializeMs": 0.427,
+          "deserializeMs": 1.566,
+          "roundTripMs": 1.993,
+          "elapsedMs": 8.751
+        },
+        {
+          "year": 10,
+          "bytes": 163415,
+          "serializeMs": 0.639,
+          "deserializeMs": 1.451,
+          "roundTripMs": 2.09,
+          "elapsedMs": 74.188
+        },
+        {
+          "year": 20,
+          "bytes": 166162,
+          "serializeMs": 0.63,
+          "deserializeMs": 1.163,
+          "roundTripMs": 1.794,
+          "elapsedMs": 141.786
+        },
+        {
+          "year": 30,
+          "bytes": 169369,
+          "serializeMs": 0.828,
+          "deserializeMs": 1.236,
+          "roundTripMs": 2.064,
+          "elapsedMs": 216.008
+        },
+        {
+          "year": 40,
+          "bytes": 171620,
+          "serializeMs": 0.656,
+          "deserializeMs": 1.446,
+          "roundTripMs": 2.102,
+          "elapsedMs": 297.179
+        },
+        {
+          "year": 50,
+          "bytes": 175338,
+          "serializeMs": 0.752,
+          "deserializeMs": 1.237,
+          "roundTripMs": 1.988,
+          "elapsedMs": 378.445
+        },
+        {
+          "year": 60,
+          "bytes": 180133,
+          "serializeMs": 0.674,
+          "deserializeMs": 1.16,
+          "roundTripMs": 1.834,
+          "elapsedMs": 443.995
+        },
+        {
+          "year": 70,
+          "bytes": 190035,
+          "serializeMs": 0.803,
+          "deserializeMs": 1.245,
+          "roundTripMs": 2.048,
+          "elapsedMs": 519.22
+        },
+        {
+          "year": 80,
+          "bytes": 194661,
+          "serializeMs": 0.801,
+          "deserializeMs": 1.253,
+          "roundTripMs": 2.053,
+          "elapsedMs": 597.744
+        },
+        {
+          "year": 90,
+          "bytes": 199559,
+          "serializeMs": 0.738,
+          "deserializeMs": 1.398,
+          "roundTripMs": 2.136,
+          "elapsedMs": 671.464
+        },
+        {
+          "year": 100,
+          "bytes": 202708,
+          "serializeMs": 0.857,
+          "deserializeMs": 1.287,
+          "roundTripMs": 2.144,
+          "elapsedMs": 748.058
+        },
+        {
+          "year": 110,
+          "bytes": 207273,
+          "serializeMs": 0.786,
+          "deserializeMs": 1.256,
+          "roundTripMs": 2.042,
+          "elapsedMs": 820.002
+        },
+        {
+          "year": 120,
+          "bytes": 212619,
+          "serializeMs": 0.917,
+          "deserializeMs": 1.47,
+          "roundTripMs": 2.387,
+          "elapsedMs": 888.327
+        },
+        {
+          "year": 130,
+          "bytes": 218782,
+          "serializeMs": 0.858,
+          "deserializeMs": 1.335,
+          "roundTripMs": 2.193,
+          "elapsedMs": 961.577
+        },
+        {
+          "year": 140,
+          "bytes": 222096,
+          "serializeMs": 0.779,
+          "deserializeMs": 1.326,
+          "roundTripMs": 2.106,
+          "elapsedMs": 1033.316
+        },
+        {
+          "year": 150,
+          "bytes": 229449,
+          "serializeMs": 0.76,
+          "deserializeMs": 1.365,
+          "roundTripMs": 2.124,
+          "elapsedMs": 1106.334
+        },
+        {
+          "year": 160,
+          "bytes": 232549,
+          "serializeMs": 0.822,
+          "deserializeMs": 1.415,
+          "roundTripMs": 2.237,
+          "elapsedMs": 1210.141
+        },
+        {
+          "year": 170,
+          "bytes": 238407,
+          "serializeMs": 0.839,
+          "deserializeMs": 1.346,
+          "roundTripMs": 2.185,
+          "elapsedMs": 1279.794
+        },
+        {
+          "year": 180,
+          "bytes": 240756,
+          "serializeMs": 0.939,
+          "deserializeMs": 1.378,
+          "roundTripMs": 2.316,
+          "elapsedMs": 1352.562
+        },
+        {
+          "year": 190,
+          "bytes": 245977,
+          "serializeMs": 0.807,
+          "deserializeMs": 1.461,
+          "roundTripMs": 2.268,
+          "elapsedMs": 1422.522
+        },
+        {
+          "year": 200,
+          "bytes": 249401,
+          "serializeMs": 0.838,
+          "deserializeMs": 1.423,
+          "roundTripMs": 2.262,
+          "elapsedMs": 1491.279
+        },
+        {
+          "year": 210,
+          "bytes": 258112,
+          "serializeMs": 0.867,
+          "deserializeMs": 1.57,
+          "roundTripMs": 2.437,
+          "elapsedMs": 1565.326
+        },
+        {
+          "year": 220,
+          "bytes": 262865,
+          "serializeMs": 1.106,
+          "deserializeMs": 1.506,
+          "roundTripMs": 2.612,
+          "elapsedMs": 1637.676
+        },
+        {
+          "year": 230,
+          "bytes": 266086,
+          "serializeMs": 1.013,
+          "deserializeMs": 2.634,
+          "roundTripMs": 3.647,
+          "elapsedMs": 1714.164
+        },
+        {
+          "year": 240,
+          "bytes": 272436,
+          "serializeMs": 0.879,
+          "deserializeMs": 1.68,
+          "roundTripMs": 2.558,
+          "elapsedMs": 1787.629
+        },
+        {
+          "year": 250,
+          "bytes": 275659,
+          "serializeMs": 0.885,
+          "deserializeMs": 1.474,
+          "roundTripMs": 2.359,
+          "elapsedMs": 1862.241
+        },
+        {
+          "year": 260,
+          "bytes": 282558,
+          "serializeMs": 0.899,
+          "deserializeMs": 1.653,
+          "roundTripMs": 2.553,
+          "elapsedMs": 1942.031
+        },
+        {
+          "year": 270,
+          "bytes": 287272,
+          "serializeMs": 0.958,
+          "deserializeMs": 1.737,
+          "roundTripMs": 2.695,
+          "elapsedMs": 2023.653
+        },
+        {
+          "year": 280,
+          "bytes": 290005,
+          "serializeMs": 0.983,
+          "deserializeMs": 1.955,
+          "roundTripMs": 2.939,
+          "elapsedMs": 2102.903
+        },
+        {
+          "year": 290,
+          "bytes": 295007,
+          "serializeMs": 0.955,
+          "deserializeMs": 1.726,
+          "roundTripMs": 2.681,
+          "elapsedMs": 2187.227
+        },
+        {
+          "year": 300,
+          "bytes": 300731,
+          "serializeMs": 1.364,
+          "deserializeMs": 1.701,
+          "roundTripMs": 3.065,
+          "elapsedMs": 2267.04
+        },
+        {
+          "year": 310,
+          "bytes": 305875,
+          "serializeMs": 1.2,
+          "deserializeMs": 1.759,
+          "roundTripMs": 2.959,
+          "elapsedMs": 2354.568
+        },
+        {
+          "year": 320,
+          "bytes": 309498,
+          "serializeMs": 1.126,
+          "deserializeMs": 1.696,
+          "roundTripMs": 2.821,
+          "elapsedMs": 2451.801
+        },
+        {
+          "year": 330,
+          "bytes": 315878,
+          "serializeMs": 1.388,
+          "deserializeMs": 1.652,
+          "roundTripMs": 3.04,
+          "elapsedMs": 2576.967
+        },
+        {
+          "year": 340,
+          "bytes": 319780,
+          "serializeMs": 1.174,
+          "deserializeMs": 1.628,
+          "roundTripMs": 2.802,
+          "elapsedMs": 2669.672
+        },
+        {
+          "year": 350,
+          "bytes": 324521,
+          "serializeMs": 1.149,
+          "deserializeMs": 1.645,
+          "roundTripMs": 2.794,
+          "elapsedMs": 2754.829
+        },
+        {
+          "year": 360,
+          "bytes": 330380,
+          "serializeMs": 1.228,
+          "deserializeMs": 1.712,
+          "roundTripMs": 2.94,
+          "elapsedMs": 2841.209
+        },
+        {
+          "year": 370,
+          "bytes": 334590,
+          "serializeMs": 1.198,
+          "deserializeMs": 1.815,
+          "roundTripMs": 3.013,
+          "elapsedMs": 2940.739
+        },
+        {
+          "year": 380,
+          "bytes": 338339,
+          "serializeMs": 1.182,
+          "deserializeMs": 1.793,
+          "roundTripMs": 2.974,
+          "elapsedMs": 3029.445
+        },
+        {
+          "year": 390,
+          "bytes": 341864,
+          "serializeMs": 1.171,
+          "deserializeMs": 1.76,
+          "roundTripMs": 2.931,
+          "elapsedMs": 3116.807
+        },
+        {
+          "year": 400,
+          "bytes": 349105,
+          "serializeMs": 1.235,
+          "deserializeMs": 1.978,
+          "roundTripMs": 3.212,
+          "elapsedMs": 3212.688
+        },
+        {
+          "year": 410,
+          "bytes": 351239,
+          "serializeMs": 1.239,
+          "deserializeMs": 1.851,
+          "roundTripMs": 3.09,
+          "elapsedMs": 3308.314
+        },
+        {
+          "year": 420,
+          "bytes": 359437,
+          "serializeMs": 1.438,
+          "deserializeMs": 2.15,
+          "roundTripMs": 3.588,
+          "elapsedMs": 3409.505
+        },
+        {
+          "year": 430,
+          "bytes": 362802,
+          "serializeMs": 1.31,
+          "deserializeMs": 1.884,
+          "roundTripMs": 3.194,
+          "elapsedMs": 3503.337
+        },
+        {
+          "year": 440,
+          "bytes": 368145,
+          "serializeMs": 1.252,
+          "deserializeMs": 1.887,
+          "roundTripMs": 3.139,
+          "elapsedMs": 3600.804
+        },
+        {
+          "year": 450,
+          "bytes": 372087,
+          "serializeMs": 1.367,
+          "deserializeMs": 3.36,
+          "roundTripMs": 4.727,
+          "elapsedMs": 3715.681
+        },
+        {
+          "year": 460,
+          "bytes": 377706,
+          "serializeMs": 1.33,
+          "deserializeMs": 1.889,
+          "roundTripMs": 3.22,
+          "elapsedMs": 3823.001
+        },
+        {
+          "year": 470,
+          "bytes": 382115,
+          "serializeMs": 1.272,
+          "deserializeMs": 1.943,
+          "roundTripMs": 3.215,
+          "elapsedMs": 3920.471
+        },
+        {
+          "year": 480,
+          "bytes": 387071,
+          "serializeMs": 1.284,
+          "deserializeMs": 1.988,
+          "roundTripMs": 3.271,
+          "elapsedMs": 4026.336
+        },
+        {
+          "year": 490,
+          "bytes": 392968,
+          "serializeMs": 1.382,
+          "deserializeMs": 2.136,
+          "roundTripMs": 3.518,
+          "elapsedMs": 4153.998
+        },
+        {
+          "year": 500,
+          "bytes": 397422,
+          "serializeMs": 1.511,
+          "deserializeMs": 1.926,
+          "roundTripMs": 3.436,
+          "elapsedMs": 4258.872
+        }
+      ],
+      "saveLatencyMs": {
+        "p50": 2.674,
+        "p95": 3.716,
+        "max": 16.665,
+        "mean": 2.77
+      },
+      "simulationMsPerYear": {
+        "mean": 2.278,
+        "p50": 1.933,
+        "p95": 3.813,
+        "max": 11.805
+      },
+      "final": {
+        "calendar": {
+          "year": 501,
+          "season": 0,
+          "day": 1,
+          "hour": 8,
+          "minute": 0
+        },
+        "population": 80,
+        "playerId": "npc-607",
+        "playerAge": 66,
+        "settlementStage": "town",
+        "settlementCapacity": 80,
+        "threatLevel": 3,
+        "campLevel": 3,
+        "bossAlive": true,
+        "bossProgress": 100,
+        "dungeonThreat": 3,
+        "historyLength": 1785,
+        "eventLength": 150,
+        "npcCount": 79,
+        "livingCharacterCount": 1,
+        "totalCharacters": 8,
+        "npcNaturalDeaths": 602,
+        "crops": 0,
+        "preparedPlots": 0
+      },
+      "naturalPlayerDeaths": 7
+    },
+    {
+      "seed": 7,
+      "status": "passed",
+      "yearsCompleted": 500,
+      "elapsedMs": 4462.978,
+      "checks": {
+        "annual": 500,
+        "saveRoundTrips": 507,
+        "finiteNumberLeaves": 3356058,
+        "seasonTransitions": 2000,
+        "yearTransitions": 500
+      },
+      "populationRange": {
+        "min": 30,
+        "max": 80
+      },
+      "lineage": [
+        {
+          "year": 65,
+          "from": "alden",
+          "to": "npc-100",
+          "age": 18,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 124,
+          "from": "npc-100",
+          "to": "npc-185",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 182,
+          "from": "npc-185",
+          "to": "npc-262",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 252,
+          "from": "npc-262",
+          "to": "npc-356",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 316,
+          "from": "npc-356",
+          "to": "npc-433",
+          "age": 18,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 382,
+          "from": "npc-433",
+          "to": "npc-521",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 449,
+          "from": "npc-521",
+          "to": "npc-605",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        }
+      ],
+      "eventCounts": {
+        "world.founded": 1,
+        "npc.immigrated": 470,
+        "npc.born": 196,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.injured": 8554,
+        "npc.died": 616,
+        "character.successor": 7
+      },
+      "events": {
+        "world.founded": 1,
+        "npc.immigrated": 470,
+        "npc.born": 196,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.died": 616,
+        "character.successor": 7
+      },
+      "saveTrend": [
+        {
+          "year": 1,
+          "bytes": 92433,
+          "serializeMs": 0.442,
+          "deserializeMs": 1.44,
+          "roundTripMs": 1.883,
+          "elapsedMs": 15.894
+        },
+        {
+          "year": 10,
+          "bytes": 163744,
+          "serializeMs": 0.7,
+          "deserializeMs": 1.223,
+          "roundTripMs": 1.923,
+          "elapsedMs": 107.4
+        },
+        {
+          "year": 20,
+          "bytes": 166331,
+          "serializeMs": 0.703,
+          "deserializeMs": 1.09,
+          "roundTripMs": 1.793,
+          "elapsedMs": 173.173
+        },
+        {
+          "year": 30,
+          "bytes": 168797,
+          "serializeMs": 0.653,
+          "deserializeMs": 1.407,
+          "roundTripMs": 2.06,
+          "elapsedMs": 233.938
+        },
+        {
+          "year": 40,
+          "bytes": 172066,
+          "serializeMs": 0.645,
+          "deserializeMs": 1.142,
+          "roundTripMs": 1.787,
+          "elapsedMs": 295.561
+        },
+        {
+          "year": 50,
+          "bytes": 175361,
+          "serializeMs": 0.719,
+          "deserializeMs": 1.164,
+          "roundTripMs": 1.883,
+          "elapsedMs": 355.481
+        },
+        {
+          "year": 60,
+          "bytes": 183248,
+          "serializeMs": 0.688,
+          "deserializeMs": 1.185,
+          "roundTripMs": 1.873,
+          "elapsedMs": 417.723
+        },
+        {
+          "year": 70,
+          "bytes": 190287,
+          "serializeMs": 0.709,
+          "deserializeMs": 1.181,
+          "roundTripMs": 1.89,
+          "elapsedMs": 487.093
+        },
+        {
+          "year": 80,
+          "bytes": 195253,
+          "serializeMs": 0.711,
+          "deserializeMs": 1.193,
+          "roundTripMs": 1.905,
+          "elapsedMs": 549.45
+        },
+        {
+          "year": 90,
+          "bytes": 199580,
+          "serializeMs": 0.715,
+          "deserializeMs": 1.207,
+          "roundTripMs": 1.922,
+          "elapsedMs": 612.464
+        },
+        {
+          "year": 100,
+          "bytes": 203037,
+          "serializeMs": 0.755,
+          "deserializeMs": 1.355,
+          "roundTripMs": 2.11,
+          "elapsedMs": 677.702
+        },
+        {
+          "year": 110,
+          "bytes": 207652,
+          "serializeMs": 0.752,
+          "deserializeMs": 1.269,
+          "roundTripMs": 2.022,
+          "elapsedMs": 744.552
+        },
+        {
+          "year": 120,
+          "bytes": 212451,
+          "serializeMs": 0.769,
+          "deserializeMs": 1.314,
+          "roundTripMs": 2.082,
+          "elapsedMs": 814.592
+        },
+        {
+          "year": 130,
+          "bytes": 217598,
+          "serializeMs": 0.784,
+          "deserializeMs": 1.387,
+          "roundTripMs": 2.171,
+          "elapsedMs": 886.344
+        },
+        {
+          "year": 140,
+          "bytes": 222387,
+          "serializeMs": 0.86,
+          "deserializeMs": 1.343,
+          "roundTripMs": 2.203,
+          "elapsedMs": 965.087
+        },
+        {
+          "year": 150,
+          "bytes": 226705,
+          "serializeMs": 1.237,
+          "deserializeMs": 1.498,
+          "roundTripMs": 2.735,
+          "elapsedMs": 1043.421
+        },
+        {
+          "year": 160,
+          "bytes": 233002,
+          "serializeMs": 0.813,
+          "deserializeMs": 1.383,
+          "roundTripMs": 2.195,
+          "elapsedMs": 1114.733
+        },
+        {
+          "year": 170,
+          "bytes": 237575,
+          "serializeMs": 0.803,
+          "deserializeMs": 1.412,
+          "roundTripMs": 2.215,
+          "elapsedMs": 1194.269
+        },
+        {
+          "year": 180,
+          "bytes": 241258,
+          "serializeMs": 0.879,
+          "deserializeMs": 1.532,
+          "roundTripMs": 2.411,
+          "elapsedMs": 1269.522
+        },
+        {
+          "year": 190,
+          "bytes": 247874,
+          "serializeMs": 0.865,
+          "deserializeMs": 1.384,
+          "roundTripMs": 2.249,
+          "elapsedMs": 1349.651
+        },
+        {
+          "year": 200,
+          "bytes": 249038,
+          "serializeMs": 0.825,
+          "deserializeMs": 1.373,
+          "roundTripMs": 2.198,
+          "elapsedMs": 1425.637
+        },
+        {
+          "year": 210,
+          "bytes": 258367,
+          "serializeMs": 0.837,
+          "deserializeMs": 1.443,
+          "roundTripMs": 2.28,
+          "elapsedMs": 1495.235
+        },
+        {
+          "year": 220,
+          "bytes": 263336,
+          "serializeMs": 0.971,
+          "deserializeMs": 1.489,
+          "roundTripMs": 2.46,
+          "elapsedMs": 1569.877
+        },
+        {
+          "year": 230,
+          "bytes": 267482,
+          "serializeMs": 2.217,
+          "deserializeMs": 1.736,
+          "roundTripMs": 3.953,
+          "elapsedMs": 1666.911
+        },
+        {
+          "year": 240,
+          "bytes": 271460,
+          "serializeMs": 0.973,
+          "deserializeMs": 1.595,
+          "roundTripMs": 2.568,
+          "elapsedMs": 1760.267
+        },
+        {
+          "year": 250,
+          "bytes": 276133,
+          "serializeMs": 1.005,
+          "deserializeMs": 1.514,
+          "roundTripMs": 2.519,
+          "elapsedMs": 1857.084
+        },
+        {
+          "year": 260,
+          "bytes": 282533,
+          "serializeMs": 1.365,
+          "deserializeMs": 1.82,
+          "roundTripMs": 3.185,
+          "elapsedMs": 1958.509
+        },
+        {
+          "year": 270,
+          "bytes": 286974,
+          "serializeMs": 0.939,
+          "deserializeMs": 1.67,
+          "roundTripMs": 2.61,
+          "elapsedMs": 2053.129
+        },
+        {
+          "year": 280,
+          "bytes": 291843,
+          "serializeMs": 1.013,
+          "deserializeMs": 1.795,
+          "roundTripMs": 2.808,
+          "elapsedMs": 2143.867
+        },
+        {
+          "year": 290,
+          "bytes": 295827,
+          "serializeMs": 0.988,
+          "deserializeMs": 1.634,
+          "roundTripMs": 2.622,
+          "elapsedMs": 2239.495
+        },
+        {
+          "year": 300,
+          "bytes": 300846,
+          "serializeMs": 1.129,
+          "deserializeMs": 1.577,
+          "roundTripMs": 2.706,
+          "elapsedMs": 2328.582
+        },
+        {
+          "year": 310,
+          "bytes": 305748,
+          "serializeMs": 1.19,
+          "deserializeMs": 1.679,
+          "roundTripMs": 2.869,
+          "elapsedMs": 2460.105
+        },
+        {
+          "year": 320,
+          "bytes": 311479,
+          "serializeMs": 1.135,
+          "deserializeMs": 2.057,
+          "roundTripMs": 3.193,
+          "elapsedMs": 2572.642
+        },
+        {
+          "year": 330,
+          "bytes": 315611,
+          "serializeMs": 1.122,
+          "deserializeMs": 2.877,
+          "roundTripMs": 3.999,
+          "elapsedMs": 2668.728
+        },
+        {
+          "year": 340,
+          "bytes": 320132,
+          "serializeMs": 1.16,
+          "deserializeMs": 1.7,
+          "roundTripMs": 2.859,
+          "elapsedMs": 2766.095
+        },
+        {
+          "year": 350,
+          "bytes": 325477,
+          "serializeMs": 1.162,
+          "deserializeMs": 1.725,
+          "roundTripMs": 2.887,
+          "elapsedMs": 2871.982
+        },
+        {
+          "year": 360,
+          "bytes": 329378,
+          "serializeMs": 1.494,
+          "deserializeMs": 2.312,
+          "roundTripMs": 3.806,
+          "elapsedMs": 2975.269
+        },
+        {
+          "year": 370,
+          "bytes": 335549,
+          "serializeMs": 1.475,
+          "deserializeMs": 1.812,
+          "roundTripMs": 3.287,
+          "elapsedMs": 3096.572
+        },
+        {
+          "year": 380,
+          "bytes": 338909,
+          "serializeMs": 2.036,
+          "deserializeMs": 1.877,
+          "roundTripMs": 3.913,
+          "elapsedMs": 3196.574
+        },
+        {
+          "year": 390,
+          "bytes": 345163,
+          "serializeMs": 1.258,
+          "deserializeMs": 3.533,
+          "roundTripMs": 4.791,
+          "elapsedMs": 3309.37
+        },
+        {
+          "year": 400,
+          "bytes": 349696,
+          "serializeMs": 1.539,
+          "deserializeMs": 2.028,
+          "roundTripMs": 3.568,
+          "elapsedMs": 3411.224
+        },
+        {
+          "year": 410,
+          "bytes": 355075,
+          "serializeMs": 1.351,
+          "deserializeMs": 2.106,
+          "roundTripMs": 3.457,
+          "elapsedMs": 3515.033
+        },
+        {
+          "year": 420,
+          "bytes": 358441,
+          "serializeMs": 1.206,
+          "deserializeMs": 1.962,
+          "roundTripMs": 3.169,
+          "elapsedMs": 3608.607
+        },
+        {
+          "year": 430,
+          "bytes": 364252,
+          "serializeMs": 1.303,
+          "deserializeMs": 1.901,
+          "roundTripMs": 3.204,
+          "elapsedMs": 3700.961
+        },
+        {
+          "year": 440,
+          "bytes": 367788,
+          "serializeMs": 2.388,
+          "deserializeMs": 1.889,
+          "roundTripMs": 4.276,
+          "elapsedMs": 3794.722
+        },
+        {
+          "year": 450,
+          "bytes": 374796,
+          "serializeMs": 1.239,
+          "deserializeMs": 1.89,
+          "roundTripMs": 3.129,
+          "elapsedMs": 3903.67
+        },
+        {
+          "year": 460,
+          "bytes": 379256,
+          "serializeMs": 1.395,
+          "deserializeMs": 2.075,
+          "roundTripMs": 3.47,
+          "elapsedMs": 4011.932
+        },
+        {
+          "year": 470,
+          "bytes": 383435,
+          "serializeMs": 1.306,
+          "deserializeMs": 2.039,
+          "roundTripMs": 3.345,
+          "elapsedMs": 4116.278
+        },
+        {
+          "year": 480,
+          "bytes": 388978,
+          "serializeMs": 1.584,
+          "deserializeMs": 3.135,
+          "roundTripMs": 4.719,
+          "elapsedMs": 4226.665
+        },
+        {
+          "year": 490,
+          "bytes": 394000,
+          "serializeMs": 1.362,
+          "deserializeMs": 2.125,
+          "roundTripMs": 3.487,
+          "elapsedMs": 4337.455
+        },
+        {
+          "year": 500,
+          "bytes": 399191,
+          "serializeMs": 1.525,
+          "deserializeMs": 2.767,
+          "roundTripMs": 4.293,
+          "elapsedMs": 4460.621
+        }
+      ],
+      "saveLatencyMs": {
+        "p50": 2.849,
+        "p95": 4.804,
+        "max": 14.258,
+        "mean": 2.973
+      },
+      "simulationMsPerYear": {
+        "mean": 2.269,
+        "p50": 1.898,
+        "p95": 3.998,
+        "max": 14.917
+      },
+      "final": {
+        "calendar": {
+          "year": 501,
+          "season": 0,
+          "day": 1,
+          "hour": 8,
+          "minute": 0
+        },
+        "population": 80,
+        "playerId": "npc-605",
+        "playerAge": 68,
+        "settlementStage": "town",
+        "settlementCapacity": 80,
+        "threatLevel": 3,
+        "campLevel": 3,
+        "bossAlive": true,
+        "bossProgress": 100,
+        "dungeonThreat": 3,
+        "historyLength": 1799,
+        "eventLength": 150,
+        "npcCount": 79,
+        "livingCharacterCount": 1,
+        "totalCharacters": 8,
+        "npcNaturalDeaths": 609,
+        "crops": 0,
+        "preparedPlots": 0
+      },
+      "naturalPlayerDeaths": 7
+    },
+    {
+      "seed": 20261003,
+      "status": "passed",
+      "yearsCompleted": 500,
+      "elapsedMs": 4128.252,
+      "checks": {
+        "annual": 500,
+        "saveRoundTrips": 507,
+        "finiteNumberLeaves": 3352535,
+        "seasonTransitions": 2000,
+        "yearTransitions": 500
+      },
+      "populationRange": {
+        "min": 30,
+        "max": 80
+      },
+      "lineage": [
+        {
+          "year": 65,
+          "from": "alden",
+          "to": "npc-103",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 123,
+          "from": "npc-103",
+          "to": "npc-183",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 191,
+          "from": "npc-183",
+          "to": "npc-271",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 251,
+          "from": "npc-271",
+          "to": "npc-346",
+          "age": 16,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 320,
+          "from": "npc-346",
+          "to": "npc-437",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 390,
+          "from": "npc-437",
+          "to": "npc-528",
+          "age": 17,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        },
+        {
+          "year": 451,
+          "from": "npc-528",
+          "to": "npc-605",
+          "age": 15,
+          "policy": "youngest living NPC age>=15, tie by NPC ID"
+        }
+      ],
+      "eventCounts": {
+        "world.founded": 1,
+        "npc.immigrated": 463,
+        "npc.born": 198,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.injured": 8554,
+        "npc.died": 611,
+        "character.successor": 7
+      },
+      "events": {
+        "world.founded": 1,
+        "npc.immigrated": 463,
+        "npc.born": 198,
+        "monster.threatIncreased": 2,
+        "boss.warning": 2,
+        "settlement.grew": 2,
+        "dungeon.threatIncreased": 2,
+        "world.newYear": 500,
+        "boss.spawned": 1,
+        "npc.died": 611,
+        "character.successor": 7
+      },
+      "saveTrend": [
+        {
+          "year": 1,
+          "bytes": 92440,
+          "serializeMs": 0.494,
+          "deserializeMs": 0.902,
+          "roundTripMs": 1.396,
+          "elapsedMs": 5.523
+        },
+        {
+          "year": 10,
+          "bytes": 163695,
+          "serializeMs": 0.682,
+          "deserializeMs": 1.156,
+          "roundTripMs": 1.838,
+          "elapsedMs": 57.001
+        },
+        {
+          "year": 20,
+          "bytes": 166352,
+          "serializeMs": 0.632,
+          "deserializeMs": 1.355,
+          "roundTripMs": 1.988,
+          "elapsedMs": 124.202
+        },
+        {
+          "year": 30,
+          "bytes": 168837,
+          "serializeMs": 1.133,
+          "deserializeMs": 1.987,
+          "roundTripMs": 3.12,
+          "elapsedMs": 191.639
+        },
+        {
+          "year": 40,
+          "bytes": 171827,
+          "serializeMs": 1.112,
+          "deserializeMs": 1.429,
+          "roundTripMs": 2.54,
+          "elapsedMs": 262.367
+        },
+        {
+          "year": 50,
+          "bytes": 175775,
+          "serializeMs": 0.681,
+          "deserializeMs": 1.411,
+          "roundTripMs": 2.092,
+          "elapsedMs": 332.652
+        },
+        {
+          "year": 60,
+          "bytes": 183124,
+          "serializeMs": 0.805,
+          "deserializeMs": 1.23,
+          "roundTripMs": 2.036,
+          "elapsedMs": 400.806
+        },
+        {
+          "year": 70,
+          "bytes": 189783,
+          "serializeMs": 0.825,
+          "deserializeMs": 1.302,
+          "roundTripMs": 2.127,
+          "elapsedMs": 473.667
+        },
+        {
+          "year": 80,
+          "bytes": 193088,
+          "serializeMs": 0.76,
+          "deserializeMs": 1.306,
+          "roundTripMs": 2.067,
+          "elapsedMs": 547.163
+        },
+        {
+          "year": 90,
+          "bytes": 199938,
+          "serializeMs": 0.768,
+          "deserializeMs": 1.246,
+          "roundTripMs": 2.013,
+          "elapsedMs": 619.277
+        },
+        {
+          "year": 100,
+          "bytes": 202907,
+          "serializeMs": 0.812,
+          "deserializeMs": 1.448,
+          "roundTripMs": 2.26,
+          "elapsedMs": 688.643
+        },
+        {
+          "year": 110,
+          "bytes": 206939,
+          "serializeMs": 0.755,
+          "deserializeMs": 1.271,
+          "roundTripMs": 2.026,
+          "elapsedMs": 764.449
+        },
+        {
+          "year": 120,
+          "bytes": 211489,
+          "serializeMs": 0.76,
+          "deserializeMs": 1.287,
+          "roundTripMs": 2.046,
+          "elapsedMs": 835.253
+        },
+        {
+          "year": 130,
+          "bytes": 215916,
+          "serializeMs": 0.852,
+          "deserializeMs": 1.317,
+          "roundTripMs": 2.168,
+          "elapsedMs": 912.613
+        },
+        {
+          "year": 140,
+          "bytes": 223392,
+          "serializeMs": 0.786,
+          "deserializeMs": 1.405,
+          "roundTripMs": 2.192,
+          "elapsedMs": 998.011
+        },
+        {
+          "year": 150,
+          "bytes": 228610,
+          "serializeMs": 0.814,
+          "deserializeMs": 1.385,
+          "roundTripMs": 2.199,
+          "elapsedMs": 1069.336
+        },
+        {
+          "year": 160,
+          "bytes": 231820,
+          "serializeMs": 0.983,
+          "deserializeMs": 1.658,
+          "roundTripMs": 2.641,
+          "elapsedMs": 1147.765
+        },
+        {
+          "year": 170,
+          "bytes": 236262,
+          "serializeMs": 1.062,
+          "deserializeMs": 2.062,
+          "roundTripMs": 3.124,
+          "elapsedMs": 1229.137
+        },
+        {
+          "year": 180,
+          "bytes": 240467,
+          "serializeMs": 0.85,
+          "deserializeMs": 2.558,
+          "roundTripMs": 3.408,
+          "elapsedMs": 1308.423
+        },
+        {
+          "year": 190,
+          "bytes": 247938,
+          "serializeMs": 1.831,
+          "deserializeMs": 1.54,
+          "roundTripMs": 3.371,
+          "elapsedMs": 1393.834
+        },
+        {
+          "year": 200,
+          "bytes": 252005,
+          "serializeMs": 0.831,
+          "deserializeMs": 1.473,
+          "roundTripMs": 2.304,
+          "elapsedMs": 1474.366
+        },
+        {
+          "year": 210,
+          "bytes": 255969,
+          "serializeMs": 0.865,
+          "deserializeMs": 1.452,
+          "roundTripMs": 2.317,
+          "elapsedMs": 1551.245
+        },
+        {
+          "year": 220,
+          "bytes": 259454,
+          "serializeMs": 0.987,
+          "deserializeMs": 1.442,
+          "roundTripMs": 2.43,
+          "elapsedMs": 1635.576
+        },
+        {
+          "year": 230,
+          "bytes": 264258,
+          "serializeMs": 0.905,
+          "deserializeMs": 1.916,
+          "roundTripMs": 2.821,
+          "elapsedMs": 1714.466
+        },
+        {
+          "year": 240,
+          "bytes": 270153,
+          "serializeMs": 0.851,
+          "deserializeMs": 1.531,
+          "roundTripMs": 2.382,
+          "elapsedMs": 1791.988
+        },
+        {
+          "year": 250,
+          "bytes": 275740,
+          "serializeMs": 0.857,
+          "deserializeMs": 3.07,
+          "roundTripMs": 3.927,
+          "elapsedMs": 1869.862
+        },
+        {
+          "year": 260,
+          "bytes": 281544,
+          "serializeMs": 0.867,
+          "deserializeMs": 1.57,
+          "roundTripMs": 2.437,
+          "elapsedMs": 1941.98
+        },
+        {
+          "year": 270,
+          "bytes": 286292,
+          "serializeMs": 0.897,
+          "deserializeMs": 1.544,
+          "roundTripMs": 2.442,
+          "elapsedMs": 2014.878
+        },
+        {
+          "year": 280,
+          "bytes": 290123,
+          "serializeMs": 0.914,
+          "deserializeMs": 1.562,
+          "roundTripMs": 2.476,
+          "elapsedMs": 2091.377
+        },
+        {
+          "year": 290,
+          "bytes": 294850,
+          "serializeMs": 0.88,
+          "deserializeMs": 1.571,
+          "roundTripMs": 2.452,
+          "elapsedMs": 2167.987
+        },
+        {
+          "year": 300,
+          "bytes": 299655,
+          "serializeMs": 0.899,
+          "deserializeMs": 1.626,
+          "roundTripMs": 2.525,
+          "elapsedMs": 2245.935
+        },
+        {
+          "year": 310,
+          "bytes": 305357,
+          "serializeMs": 1.154,
+          "deserializeMs": 1.619,
+          "roundTripMs": 2.773,
+          "elapsedMs": 2328.653
+        },
+        {
+          "year": 320,
+          "bytes": 312016,
+          "serializeMs": 1.118,
+          "deserializeMs": 1.652,
+          "roundTripMs": 2.77,
+          "elapsedMs": 2414.941
+        },
+        {
+          "year": 330,
+          "bytes": 315592,
+          "serializeMs": 1.166,
+          "deserializeMs": 1.65,
+          "roundTripMs": 2.816,
+          "elapsedMs": 2512.253
+        },
+        {
+          "year": 340,
+          "bytes": 319685,
+          "serializeMs": 1.133,
+          "deserializeMs": 1.7,
+          "roundTripMs": 2.833,
+          "elapsedMs": 2597.83
+        },
+        {
+          "year": 350,
+          "bytes": 324451,
+          "serializeMs": 1.189,
+          "deserializeMs": 1.669,
+          "roundTripMs": 2.858,
+          "elapsedMs": 2684.203
+        },
+        {
+          "year": 360,
+          "bytes": 330266,
+          "serializeMs": 1.146,
+          "deserializeMs": 1.778,
+          "roundTripMs": 2.924,
+          "elapsedMs": 2770.013
+        },
+        {
+          "year": 370,
+          "bytes": 334580,
+          "serializeMs": 1.183,
+          "deserializeMs": 1.765,
+          "roundTripMs": 2.948,
+          "elapsedMs": 2857.613
+        },
+        {
+          "year": 380,
+          "bytes": 338094,
+          "serializeMs": 1.184,
+          "deserializeMs": 1.773,
+          "roundTripMs": 2.957,
+          "elapsedMs": 2945.819
+        },
+        {
+          "year": 390,
+          "bytes": 344845,
+          "serializeMs": 1.193,
+          "deserializeMs": 1.822,
+          "roundTripMs": 3.015,
+          "elapsedMs": 3038.531
+        },
+        {
+          "year": 400,
+          "bytes": 349267,
+          "serializeMs": 1.216,
+          "deserializeMs": 1.799,
+          "roundTripMs": 3.015,
+          "elapsedMs": 3127.538
+        },
+        {
+          "year": 410,
+          "bytes": 353992,
+          "serializeMs": 1.206,
+          "deserializeMs": 1.788,
+          "roundTripMs": 2.994,
+          "elapsedMs": 3217.64
+        },
+        {
+          "year": 420,
+          "bytes": 359685,
+          "serializeMs": 1.246,
+          "deserializeMs": 1.813,
+          "roundTripMs": 3.059,
+          "elapsedMs": 3309.3
+        },
+        {
+          "year": 430,
+          "bytes": 362038,
+          "serializeMs": 1.272,
+          "deserializeMs": 1.85,
+          "roundTripMs": 3.122,
+          "elapsedMs": 3400.285
+        },
+        {
+          "year": 440,
+          "bytes": 368345,
+          "serializeMs": 1.27,
+          "deserializeMs": 1.85,
+          "roundTripMs": 3.12,
+          "elapsedMs": 3492.157
+        },
+        {
+          "year": 450,
+          "bytes": 374902,
+          "serializeMs": 1.419,
+          "deserializeMs": 1.912,
+          "roundTripMs": 3.331,
+          "elapsedMs": 3590.457
+        },
+        {
+          "year": 460,
+          "bytes": 379868,
+          "serializeMs": 1.476,
+          "deserializeMs": 2.842,
+          "roundTripMs": 4.318,
+          "elapsedMs": 3699.705
+        },
+        {
+          "year": 470,
+          "bytes": 383910,
+          "serializeMs": 1.296,
+          "deserializeMs": 2.006,
+          "roundTripMs": 3.302,
+          "elapsedMs": 3802.914
+        },
+        {
+          "year": 480,
+          "bytes": 389063,
+          "serializeMs": 1.732,
+          "deserializeMs": 2.62,
+          "roundTripMs": 4.352,
+          "elapsedMs": 3908.378
+        },
+        {
+          "year": 490,
+          "bytes": 393651,
+          "serializeMs": 1.606,
+          "deserializeMs": 2.606,
+          "roundTripMs": 4.213,
+          "elapsedMs": 4011.907
+        },
+        {
+          "year": 500,
+          "bytes": 397848,
+          "serializeMs": 1.676,
+          "deserializeMs": 2.128,
+          "roundTripMs": 3.805,
+          "elapsedMs": 4118.415
+        }
+      ],
+      "saveLatencyMs": {
+        "p50": 2.766,
+        "p95": 3.771,
+        "max": 5.338,
+        "mean": 2.752
+      },
+      "simulationMsPerYear": {
+        "mean": 2.094,
+        "p50": 1.832,
+        "p95": 3.461,
+        "max": 6.14
+      },
+      "final": {
+        "calendar": {
+          "year": 501,
+          "season": 0,
+          "day": 1,
+          "hour": 8,
+          "minute": 0
+        },
+        "population": 80,
+        "playerId": "npc-605",
+        "playerAge": 65,
+        "settlementStage": "town",
+        "settlementCapacity": 80,
+        "threatLevel": 3,
+        "campLevel": 3,
+        "bossAlive": true,
+        "bossProgress": 100,
+        "dungeonThreat": 3,
+        "historyLength": 1789,
+        "eventLength": 150,
+        "npcCount": 79,
+        "livingCharacterCount": 1,
+        "totalCharacters": 8,
+        "npcNaturalDeaths": 604,
+        "crops": 0,
+        "preparedPlots": 0
+      },
+      "naturalPlayerDeaths": 7
+    }
+  ],
+  "chunkDeterminism": {
+    "status": "passed: all serialized world states exactly equal",
+    "seed": 42,
+    "years": 3,
+    "totalMinutes": 518400,
+    "chunks": [
+      1,
+      60,
+      1440,
+      43200
+    ],
+    "cropSetup": "walkTo farm; farm prepare; farm plant",
+    "variants": [
+      {
+        "chunkMinutes": 1,
+        "simulationCalls": 518400,
+        "elapsedMs": 3926.006,
+        "saveBytes": 134282,
+        "stateSha256": "1ec78534ddc4e38d86afd1a0a1b453b8698909390f72fbeec710a55762e33fe6",
+        "cropStatus": "mature",
+        "cropCount": 1,
+        "finiteNumberLeaves": 4097,
+        "calendar": {
+          "year": 4,
+          "season": 0,
+          "day": 1,
+          "hour": 9,
+          "minute": 20
+        }
+      },
+      {
+        "chunkMinutes": 60,
+        "simulationCalls": 8640,
+        "elapsedMs": 43.979,
+        "saveBytes": 134282,
+        "stateSha256": "1ec78534ddc4e38d86afd1a0a1b453b8698909390f72fbeec710a55762e33fe6",
+        "cropStatus": "mature",
+        "cropCount": 1,
+        "finiteNumberLeaves": 4097,
+        "calendar": {
+          "year": 4,
+          "season": 0,
+          "day": 1,
+          "hour": 9,
+          "minute": 20
+        }
+      },
+      {
+        "chunkMinutes": 1440,
+        "simulationCalls": 360,
+        "elapsedMs": 7.393,
+        "saveBytes": 134282,
+        "stateSha256": "1ec78534ddc4e38d86afd1a0a1b453b8698909390f72fbeec710a55762e33fe6",
+        "cropStatus": "mature",
+        "cropCount": 1,
+        "finiteNumberLeaves": 4097,
+        "calendar": {
+          "year": 4,
+          "season": 0,
+          "day": 1,
+          "hour": 9,
+          "minute": 20
+        }
+      },
+      {
+        "chunkMinutes": 43200,
+        "simulationCalls": 12,
+        "elapsedMs": 5.544,
+        "saveBytes": 134282,
+        "stateSha256": "1ec78534ddc4e38d86afd1a0a1b453b8698909390f72fbeec710a55762e33fe6",
+        "cropStatus": "mature",
+        "cropCount": 1,
+        "finiteNumberLeaves": 4097,
+        "calendar": {
+          "year": 4,
+          "season": 0,
+          "day": 1,
+          "hour": 9,
+          "minute": 20
+        }
+      }
+    ],
+    "successionBoundaryCrossed": false,
+    "inheritanceNote": "three-year matrix ends before active-character natural lifespan; 500-year suite applies the same daily successor policy in every seed"
+  },
+  "failures": []
+}

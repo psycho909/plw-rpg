@@ -1,0 +1,42 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/actions.test.ts
+
+
+ RUN  v4.1.11 /tmp/plw-rest-integrity
+
+ ❯ src/engine/actions.test.ts (18 tests | 1 failed) 50ms
+     × keeps an overnight stay reloadable when its fee leaves no money for wages 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/actions.test.ts > personal life activities > keeps an overnight stay reloadable when its fee leaves no money for wages
+AssertionError: expected -4 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ -4
+
+ ❯ src/engine/actions.test.ts:48:28
+     46|     const start = s.worldTime
+     47|     expect(rest(s, 'inn')).toBe('')
+     48|     expect(player(s).gold).toBe(0)
+       |                            ^
+     49|     expect(s.worldTime).toBe(start + 480)
+     50|     expect(s.party).toHaveLength(0)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 17 passed (18)
+   Start at  05:44:50
+   Duration  306ms (transform 118ms, setup 0ms, import 147ms, tests 50ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

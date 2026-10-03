@@ -1,0 +1,625 @@
+{
+  "run": {
+    "started_at": "2026-10-03T15:38:53+00:00",
+    "build": "local production artifact served at http://127.0.0.1:5186/; runtime HTML and referenced asset hashes captured before play",
+    "url": "http://127.0.0.1:5186/",
+    "browser": "/usr/bin/chromium via Python Playwright",
+    "scope": "singleplayer local storage / IndexedDB / automatic report behavior",
+    "fixtures": "failure and repair cases are explicitly labeled as controlled fixtures",
+    "served_assets": {
+      "http_status": 200,
+      "sha256": {
+        "index.html": "1c1b06bb8958f7a45d6c141863253922a0e50f651e36178e3956cdacf2f3927a",
+        "index-DcqD1dRF.js": "d2ff6dccdf819cf8f4e911c16048863951ab602fa7878838f41dbe9b37f7c813",
+        "index-B0QR5Rvd.css": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8"
+      }
+    },
+    "finished_at": "2026-10-03T15:39:42+00:00",
+    "runtime_page_errors": [],
+    "console_error_count": 1,
+    "all_cases_passed": true
+  },
+  "cases": [
+    {
+      "name": "fresh world writes initial created record",
+      "category": "normal-ui",
+      "outcome": "pass",
+      "evidence": {
+        "worldId": "2dac29b5-e5fa-422f-8206-c924573e6967",
+        "pending": 0,
+        "archiveCount": 1,
+        "recordKinds": [
+          "created"
+        ],
+        "createdRecordCount": 1
+      },
+      "note": "The running clock may append time records before Playwright can pause the fresh page; the assertion checks for exactly one initial created record."
+    },
+    {
+      "name": "malformed legacy raw stays byte-for-byte intact and shows protection warning",
+      "category": "controlled-failure-fixture",
+      "outcome": "pass",
+      "evidence": {
+        "rawBefore": "{\"saveVersion\":1,\"characters\":",
+        "rawAfter": "{\"saveVersion\":1,\"characters\":",
+        "unchanged": true,
+        "warningShown": true,
+        "alerts": [
+          "原始存檔已保留。現在的世界不會覆蓋它；確認後可從選單重建世界。\n查看重建選項"
+        ]
+      },
+      "note": "A separate browser context started with malformed legacy JSON. Its original bytes were checked after the application had time to attempt normal startup saves."
+    },
+    {
+      "name": "UI action checkpoints before manual save and is acknowledged once",
+      "category": "normal-ui",
+      "outcome": "pass",
+      "evidence": {
+        "immediatePending": [],
+        "immediateCommittedRows": [
+          {
+            "id": "7965ba38-1fd5-4c9f-8112-c18c6df8a817",
+            "worldId": "2dac29b5-e5fa-422f-8206-c924573e6967",
+            "at": 1791041936734,
+            "kind": "action",
+            "from": 480,
+            "to": 485,
+            "characterId": "alden",
+            "message": "已到達。",
+            "events": [],
+            "ordinal": 2
+          }
+        ],
+        "kind": "action",
+        "worldTimeBefore": 480,
+        "worldTimeImmediate": 485,
+        "positionBefore": {
+          "id": "alden",
+          "name": "奧登",
+          "position": {
+            "x": 7,
+            "y": 9
+          },
+          "hp": 100,
+          "isAlive": true
+        },
+        "positionAfter": {
+          "id": "alden",
+          "name": "奧登",
+          "position": {
+            "x": 8,
+            "y": 9
+          },
+          "hp": 100,
+          "isAlive": true
+        },
+        "archiveBefore": 1,
+        "archiveAfter": 2,
+        "matchingIds": [
+          "7965ba38-1fd5-4c9f-8112-c18c6df8a817"
+        ]
+      },
+      "note": "No manual save button was clicked between the movement and immediate checkpoint."
+    },
+    {
+      "name": "failed boundary move creates no record",
+      "category": "controlled-failure-fixture",
+      "outcome": "pass",
+      "evidence": {
+        "requestedFixturePosition": {
+          "x": 0,
+          "y": 0
+        },
+        "loadedFixturePosition": {
+          "x": 0,
+          "y": 0
+        },
+        "fixtureLoaded": true,
+        "pendingBefore": 0,
+        "pendingAfter": 0,
+        "archiveBefore": 3,
+        "archiveAfter": 3,
+        "worldTimeBefore": 486,
+        "worldTimeAfter": 486,
+        "message": {
+          "time": "第 1 年 春 1 日\n08:06",
+          "caption": "🏘️ 橡谷聚落 0, 0\n時間已暫停",
+          "player": "🙂\n奧登 Lv.1",
+          "speed": "暫停",
+          "alerts": [],
+          "title": "世界 — 橡谷"
+        }
+      },
+      "note": "Injected valid save with player at the map boundary, then attempted a real UI move into the void."
+    },
+    {
+      "name": "normal UI advances one 30-day season and journals its observed event set",
+      "category": "normal-ui",
+      "outcome": "pass",
+      "evidence": {
+        "worldTimeBefore": 487,
+        "worldTimeImmediate": 43687,
+        "expectedDelta": 43200,
+        "immediatePendingCount": 0,
+        "committedRecordId": "beea7033-8820-43e9-ba6b-bb303eaa6c45",
+        "recordEventCount": 3,
+        "checkpointRollingEventCount": 4,
+        "archiveCount": 5,
+        "committed": true,
+        "firstEvents": [
+          {
+            "id": 2,
+            "at": 21600,
+            "type": "npc.immigrated",
+            "category": "npc",
+            "message": "奧斯卡 30 搬進橡谷，成為礦工。"
+          },
+          {
+            "id": 3,
+            "at": 43200,
+            "type": "npc.immigrated",
+            "category": "npc",
+            "message": "米拉 31 搬進橡谷，成為樵夫。"
+          },
+          {
+            "id": 4,
+            "at": 43200,
+            "type": "npc.born",
+            "category": "npc",
+            "message": "羅恩 32 出生了。"
+          }
+        ],
+        "lastEvents": [
+          {
+            "id": 2,
+            "at": 21600,
+            "type": "npc.immigrated",
+            "category": "npc",
+            "message": "奧斯卡 30 搬進橡谷，成為礦工。"
+          },
+          {
+            "id": 3,
+            "at": 43200,
+            "type": "npc.immigrated",
+            "category": "npc",
+            "message": "米拉 31 搬進橡谷，成為樵夫。"
+          },
+          {
+            "id": 4,
+            "at": 43200,
+            "type": "npc.born",
+            "category": "npc",
+            "message": "羅恩 32 出生了。"
+          }
+        ]
+      },
+      "note": "Clicked the normal traveller-notes action ‘度過一季’; recorded the actual event count without requiring this natural run to exceed the 150-item state cap."
+    },
+    {
+      "name": "real UI ×20 clock runs for 35 seconds, pauses, saves and drains journal",
+      "category": "normal-ui",
+      "outcome": "pass",
+      "evidence": {
+        "elapsedSeconds": 35.13,
+        "worldTimeBefore": 43687,
+        "worldTimeAtPause": 45095,
+        "gameMinutesAdvanced": 1408,
+        "intermediateSamples": [
+          {
+            "atSeconds": 15,
+            "worldTime": 44287,
+            "pending": 0,
+            "storageBytes": 77371
+          }
+        ],
+        "localStorageBytes": 77314,
+        "archiveBefore": 5,
+        "archiveAfter": 357,
+        "newTimeRecordsApprox": 352,
+        "pendingAfterDrain": 0,
+        "drained": true,
+        "uniqueRecordIds": 357,
+        "duplicateIds": false,
+        "journalErrorVisible": false
+      },
+      "note": "The clock ran through the application timer at UI speed ×20 for 35 real seconds."
+    },
+    {
+      "name": "controlled IndexedDB readwrite failure leaves checkpoint pending and reports retry",
+      "category": "controlled-failure-fixture",
+      "outcome": "pass",
+      "evidence": {
+        "pendingCount": 1,
+        "pendingIds": [
+          "90891124-7845-4417-ad69-20cba9d2fd39"
+        ],
+        "archiveBefore": 357,
+        "archiveAfter": 357,
+        "warningShown": true,
+        "visibleAlerts": [
+          "controlled test transaction failure 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。\n重試存檔"
+        ],
+        "injectedFailure": "IDBDatabase.transaction(readwrite, records) throws InvalidStateError"
+      },
+      "note": "A test-only browser wrapper rejected the journal readwrite transaction; this is not a game runtime error."
+    },
+    {
+      "name": "reload retries pending IDB record exactly once",
+      "category": "controlled-repair-fixture",
+      "outcome": "pass",
+      "evidence": {
+        "recoveredId": "90891124-7845-4417-ad69-20cba9d2fd39",
+        "matchingRows": 1,
+        "archiveCountBefore": 357,
+        "archiveCountAfter": 359,
+        "pendingAfterReload": 0,
+        "uniqueIds": 359
+      },
+      "note": "The failure wrapper was lost at document reload; saved checkpoint reloaded and normal automatic flush recovered it."
+    },
+    {
+      "name": "committed record replay deduplicates without a second row",
+      "category": "controlled-replay-fixture",
+      "outcome": "pass",
+      "evidence": {
+        "replayedId": "90891124-7845-4417-ad69-20cba9d2fd39",
+        "archiveBeforeCount": 359,
+        "archiveAfterCount": 360,
+        "fixtureLoaded": true,
+        "sameIdCount": 1,
+        "bodyUnchanged": true,
+        "preservedOldIds": 359,
+        "newRecordKinds": [
+          "time"
+        ],
+        "pendingAfter": 0
+      },
+      "note": "Fixture copied a committed record body into the checkpoint pending queue and reloaded the real UI."
+    },
+    {
+      "name": "same-ID altered body refuses overwrite and preserves pending with visible error",
+      "category": "controlled-failure-fixture",
+      "outcome": "pass",
+      "evidence": {
+        "recordId": "90891124-7845-4417-ad69-20cba9d2fd39",
+        "alteredBodyPreserved": "已到達。 [controlled altered body]",
+        "fixtureLoaded": true,
+        "warningShown": true,
+        "pendingCount": 2,
+        "archiveBeforeCount": 360,
+        "archiveAfterCount": 360,
+        "oldIdsPreserved": 360,
+        "targetArchivedExactlyOnce": true,
+        "targetArchiveBodyUnchanged": true,
+        "additionalArchiveKinds": [],
+        "pendingKinds": [
+          "action",
+          "time"
+        ],
+        "alerts": [
+          "同一紀錄編號的內容不同，已保留待送資料。 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。\n重試存檔"
+        ],
+        "injectedFailure": "checkpoint body intentionally differs from immutable IDB body"
+      },
+      "note": "This uses a deliberately altered checkpoint fixture; it does not represent normal user play."
+    },
+    {
+      "name": "menu export includes archive, pending record and current checkpoint",
+      "category": "normal-ui-with-controlled-pending-fixture",
+      "outcome": "pass",
+      "evidence": {
+        "downloadName": "oakvale-play-records.json",
+        "archiveAvailable": true,
+        "archiveRows": 360,
+        "archiveOldIdsPreserved": 360,
+        "pendingRows": 2,
+        "pendingIds": [
+          "90891124-7845-4417-ad69-20cba9d2fd39",
+          "0d44acb7-d837-4aa0-963b-291ed5ddd0e9"
+        ],
+        "checkpointWorldId": "2dac29b5-e5fa-422f-8206-c924573e6967",
+        "checkpointWorldTime": 45103
+      },
+      "note": "Export was triggered from the real menu while a controlled ID collision remained pending."
+    },
+    {
+      "name": "restoring exact committed body clears replayed pending fixture",
+      "category": "controlled-repair-fixture",
+      "outcome": "pass",
+      "evidence": {
+        "fixtureLoaded": true,
+        "pendingAfter": 0,
+        "archiveRows": 362,
+        "expectedOldIds": 359,
+        "oldIdsPreserved": 359,
+        "targetSameIdCount": 1,
+        "newRecordKinds": [
+          "time",
+          "time",
+          "time"
+        ]
+      },
+      "note": "Repair restored the exact previously committed body in a controlled local checkpoint."
+    },
+    {
+      "name": "localStorage write failure preserves prior disk, pauses time, export and manual retry recover memory",
+      "category": "controlled-failure-and-repair-fixture",
+      "outcome": "pass",
+      "evidence": {
+        "diskUnchangedOnFailure": true,
+        "diskBytesBefore": 76965,
+        "diskBytesDuringFailure": 76965,
+        "warningShown": true,
+        "failureUi": {
+          "time": "第 1 年 夏 2 日\n07:49",
+          "caption": "🏘️ 橡谷聚落 9, 9\n時間已暫停",
+          "player": "🙂\n奧登 Lv.1",
+          "speed": "暫停",
+          "alerts": [
+            "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。\n重試存檔"
+          ],
+          "title": "世界 — 橡谷"
+        },
+        "memoryExportPendingIds": [
+          "3e8e86f7-dbf8-4cac-ad42-72960272a99b"
+        ],
+        "memoryExportCurrentWorldTime": 45109,
+        "manualRetry": true,
+        "pendingAfterRetry": 0,
+        "recoveredPosition": {
+          "x": 9,
+          "y": 9
+        },
+        "archivedRecoveryIds": [
+          "3e8e86f7-dbf8-4cac-ad42-72960272a99b"
+        ],
+        "archiveBefore": 362,
+        "archiveAfter": 363
+      },
+      "note": "Storage.setItem was wrapped to throw QuotaExceededError for oakvale-v1; the test then exported in-memory data, restored the browser API, and clicked the real Save button."
+    },
+    {
+      "name": "rapid UI actions during pending flush persist latest progress and all unique IDs",
+      "category": "normal-ui-burst",
+      "outcome": "pass",
+      "evidence": {
+        "dispatchedClicks": 12,
+        "immediatePending": 12,
+        "pendingIds": [
+          "d85b8b25-9065-44f2-82ff-2c7966968f56",
+          "baa7b36a-4cde-4170-aed2-ef82bde24f80",
+          "8179c1a9-d61a-43b3-9334-3749d4468fc8",
+          "466fdcb1-6ce5-41a7-a946-eaecad57fb63",
+          "718e5dd0-fa2c-456e-896c-245c2aeec961",
+          "d757f82c-1c0b-4c22-93d0-53457efb9b82",
+          "6fb8a4a8-c67d-43a6-938e-e595cfbe7b42",
+          "54696ae1-fe4a-4ae6-af6e-3dbe86060d98",
+          "c4ad6c09-05f7-4a99-8ce9-a79d74658e48",
+          "c7bf84f3-b805-46ca-bb98-0f7a059576b7",
+          "a2f1b74c-4baa-4f06-82ec-5e702a59898c",
+          "42fb267e-bb89-4dc8-970a-cafd000cbf92"
+        ],
+        "immediateWorldTime": 45169,
+        "finalWorldTime": 45169,
+        "worldTimeBefore": 45109,
+        "archiveBefore": 363,
+        "archiveAfter": 375,
+        "matchedCommittedIds": 12,
+        "pendingAfter": 0,
+        "uniqueArchiveIds": 375
+      },
+      "note": "Twelve alternating real direction-button click handlers were dispatched within one browser task to overlap the IDB flush."
+    },
+    {
+      "name": "menu reset retains old-world archive and appends reset under new world ID",
+      "category": "normal-ui",
+      "outcome": "pass",
+      "evidence": {
+        "oldWorldId": "2dac29b5-e5fa-422f-8206-c924573e6967",
+        "newWorldId": "ec88b69e-a8cd-4e32-ba52-c4b25d0e7416",
+        "worldIdChanged": true,
+        "oldArchiveRows": 375,
+        "archiveAfter": 376,
+        "oldIdsPreserved": 375,
+        "newWorldResetRows": [
+          {
+            "id": "6b5e6461-7701-47da-ab5a-205d6576f739",
+            "worldId": "ec88b69e-a8cd-4e32-ba52-c4b25d0e7416",
+            "at": 1791041981182,
+            "kind": "reset",
+            "from": 45169,
+            "to": 480,
+            "characterId": "alden",
+            "message": "重建新的世界；先前遊玩紀錄保留。",
+            "events": [
+              {
+                "id": 1,
+                "at": 480,
+                "type": "world.founded",
+                "category": "world",
+                "message": "橡谷聚落建立。奧登，今天起這裡就是你的家。"
+              }
+            ],
+            "ordinal": 376
+          }
+        ],
+        "pendingImmediatelyAfterReset": 0
+      },
+      "note": "Used the visible menu reset confirmation; no storage was manually cleared."
+    },
+    {
+      "name": "menu fits 1440px viewport",
+      "category": "responsive-ui",
+      "outcome": "pass",
+      "evidence": {
+        "innerWidth": 1440,
+        "documentWidth": 1440,
+        "dialog": {
+          "x": 380,
+          "y": 143.90625,
+          "width": 680,
+          "height": 712.1875,
+          "right": 1060,
+          "bottom": 856.09375
+        },
+        "buttons": [
+          {
+            "text": "角色\nC",
+            "right": 1017,
+            "left": 408,
+            "width": 609
+          },
+          {
+            "text": "物品\nI",
+            "right": 1017,
+            "left": 408,
+            "width": 609
+          },
+          {
+            "text": "日誌\nL",
+            "right": 1017,
+            "left": 408,
+            "width": 609
+          },
+          {
+            "text": "地圖與世界\nM",
+            "right": 1017,
+            "left": 408,
+            "width": 609
+          },
+          {
+            "text": "世界歷史",
+            "right": 1017,
+            "left": 408,
+            "width": 609
+          },
+          {
+            "text": "旅人筆記",
+            "right": 1017,
+            "left": 408,
+            "width": 609
+          },
+          {
+            "text": "儲存世界\n已存於此瀏覽器 · 操作後立即保存",
+            "right": 1017,
+            "left": 408,
+            "width": 609
+          },
+          {
+            "text": "匯出遊玩紀錄\n紀錄只能追加",
+            "right": 1017,
+            "left": 408,
+            "width": 609
+          },
+          {
+            "text": "重建世界",
+            "right": 1017,
+            "left": 408,
+            "width": 609
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "name": "menu fits 390px viewport",
+      "category": "responsive-ui",
+      "outcome": "pass",
+      "evidence": {
+        "innerWidth": 390,
+        "documentWidth": 390,
+        "dialog": {
+          "x": 17,
+          "y": 105.90625,
+          "width": 356,
+          "height": 632.1875,
+          "right": 373,
+          "bottom": 738.09375
+        },
+        "buttons": [
+          {
+            "text": "角色\nC",
+            "right": 336,
+            "left": 39,
+            "width": 297
+          },
+          {
+            "text": "物品\nI",
+            "right": 336,
+            "left": 39,
+            "width": 297
+          },
+          {
+            "text": "日誌\nL",
+            "right": 336,
+            "left": 39,
+            "width": 297
+          },
+          {
+            "text": "地圖與世界\nM",
+            "right": 336,
+            "left": 39,
+            "width": 297
+          },
+          {
+            "text": "世界歷史",
+            "right": 336,
+            "left": 39,
+            "width": 297
+          },
+          {
+            "text": "旅人筆記",
+            "right": 336,
+            "left": 39,
+            "width": 297
+          },
+          {
+            "text": "儲存世界\n已存於此瀏覽器 · 操作後立即保存",
+            "right": 336,
+            "left": 39,
+            "width": 297
+          },
+          {
+            "text": "匯出遊玩紀錄\n紀錄只能追加",
+            "right": 336,
+            "left": 39,
+            "width": 297
+          },
+          {
+            "text": "重建世界",
+            "right": 336,
+            "left": 39,
+            "width": 297
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "name": "no unhandled browser exceptions or unexpected HTTP failures",
+      "category": "runtime-ui",
+      "outcome": "pass",
+      "evidence": {
+        "pageErrors": [],
+        "httpFailures": [],
+        "knownFavicon404Count": 0,
+        "consoleErrors": [
+          {
+            "phase": "normal-ui",
+            "message": "Failed to load resource: the server responded with a status of 404 (File not found)"
+          }
+        ]
+      },
+      "note": "The browser may request `/favicon.ico`, which this local production artifact does not provide; that known 404 is tracked separately from application failures."
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [
+    {
+      "phase": "normal-ui",
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)"
+    }
+  ],
+  "http_failures": [],
+  "status": "complete"
+}

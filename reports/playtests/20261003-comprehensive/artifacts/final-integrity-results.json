@@ -1,0 +1,75 @@
+{
+  "started_at": "2026-10-03T06:09:32.904Z",
+  "mode": "final-source public engine, yearly steps; ID corruption cases separately",
+  "source_sha256": {
+    "src/engine/simulation.ts": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+    "src/engine/actions.ts": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+    "src/services/saveService.ts": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852"
+  },
+  "seeds": [
+    {
+      "seed": 0,
+      "years": 500,
+      "yearly_round_trips": 500,
+      "successors": 7,
+      "status": "passed"
+    },
+    {
+      "seed": 1,
+      "years": 500,
+      "yearly_round_trips": 500,
+      "successors": 7,
+      "status": "passed"
+    },
+    {
+      "seed": 42,
+      "years": 500,
+      "yearly_round_trips": 500,
+      "successors": 7,
+      "status": "passed"
+    },
+    {
+      "seed": 321,
+      "years": 500,
+      "yearly_round_trips": 500,
+      "successors": 7,
+      "status": "passed"
+    },
+    {
+      "seed": 909,
+      "years": 500,
+      "yearly_round_trips": 500,
+      "successors": 7,
+      "status": "passed"
+    },
+    {
+      "seed": 4294967295,
+      "years": 500,
+      "yearly_round_trips": 500,
+      "successors": 7,
+      "status": "passed"
+    },
+    {
+      "seed": 7,
+      "years": 500,
+      "yearly_round_trips": 500,
+      "successors": 7,
+      "status": "passed"
+    },
+    {
+      "seed": 20261003,
+      "years": 500,
+      "yearly_round_trips": 500,
+      "successors": 7,
+      "status": "passed"
+    }
+  ],
+  "rejected_fixtures": [
+    "id-npc-input.json",
+    "id-crop-input.json",
+    "id-sequence-input.json"
+  ],
+  "normal_farming": "four normal crops round-trip; each harvest removes exactly one",
+  "status": "passed",
+  "elapsed_seconds": 17.747823883000002
+}

@@ -1,0 +1,43 @@
+{
+  "url": "http://127.0.0.1:5186/",
+  "runner": "root",
+  "fixture": "Browser API write failures; no game-state edits",
+  "steps": [
+    {
+      "step": "journal failure",
+      "pending": 1,
+      "warning": "測試紀錄庫寫入失敗 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。\n重試存檔"
+    },
+    {
+      "step": "both failures visible and paused",
+      "warning": "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。 測試紀錄庫寫入失敗 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。\n重試存檔",
+      "diskUnchanged": true,
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "warningRight": 380
+      }
+    },
+    {
+      "step": "memory export",
+      "pendingIds": [
+        "9375a63f-c815-4269-8958-c424efb39436",
+        "364b95f5-b527-4d90-8ca0-a836c34cb282"
+      ],
+      "worldTime": 490,
+      "archiveAvailable": true
+    },
+    {
+      "step": "recovery",
+      "worldTime": 490,
+      "pending": 0,
+      "idsCommittedOnce": [
+        "9375a63f-c815-4269-8958-c424efb39436",
+        "364b95f5-b527-4d90-8ca0-a836c34cb282"
+      ],
+      "errorsCleared": true
+    }
+  ],
+  "pageErrors": [],
+  "status": "pass"
+}

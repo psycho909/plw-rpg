@@ -34,7 +34,7 @@ Vercel 專案為 `psycho909s-projects/plw-rpg`，Git integration 連接 `psycho9
 
 部署使用 Node.js 22、Vite preset、`npm ci`、`npm run build` 與 `dist`。交付前在本機執行 `npm.cmd run check`；Vercel build 失敗時不會把失敗產物切換成正式版本。設定與驗證證據見 [部署 Ticket](tickets/20261003-vercel-production.md)。
 
-存檔保存在該瀏覽器的 localStorage；正式網址與 localhost 的存檔各自獨立，不會自動跨裝置同步。`.vercel/`、`.env*` 保持 Git 忽略。
+進度保存在該瀏覽器的 localStorage，完整遊玩紀錄追加至 IndexedDB；正式網址與 localhost 的資料各自獨立，不會自動跨裝置同步。`.vercel/`、`.env*` 保持 Git 忽略。
 
 ## Work Authority 與 Git handoff
 
@@ -129,11 +129,16 @@ AGENTS.md
 - `src/data/config.ts`：日曆、地圖、物品、職業、怪物與建築資料。
 - `src/engine/`：獨立於 Vue 的時間、RNG、移動、生活、戰鬥與每日演化；`gameLoop.ts` 提供單一排程。
 - `src/services/saveService.ts`：版本／資料驗證、序列化與最多 8 小時離線模擬。
+- `src/services/playJournal.ts`：進度與待補寫紀錄一起保存；IndexedDB 追加、重送去重與完整紀錄讀取。
 - `src/stores/gameStore.ts` → `src/App.vue`：Pinia 接上 engine，Vue 負責 DOM／CSS Grid 呈現；Emoji 只放在 presentation／UI。
 - `src/components/`：世界地圖、情境內容與共用像素視窗／進度／訊息；`src/presentation/worldUI.ts` 從真實 state 產生附近互動與世界圖示。
 - `src/style.scss`：黑白復古 UI 的執行期 token 與響應式樣式；視覺正本為 `docs/design/DESIGN.md`。
 
-預設 30 日／季、120 日／年，真實每秒推進 2 遊戲分鐘，支援暫停／×1／×5／×20。離線固定使用 ×1 換算，最多 8 真實小時（40 遊戲日）；即使上次離開前暫停，重新開啟仍會處理離線演化。自動存檔每 10 秒，並於頁面隱藏／離開時存檔。損毀存檔禁止自動覆蓋；重建世界必須由介面確認。
+預設 30 日／季、120 日／年，真實每秒推進 2 遊戲分鐘，支援暫停／×1／×5／×20。離線固定使用 ×1 換算，最多 8 真實小時（40 遊戲日）；即使上次離開前暫停，重新開啟仍會處理離線演化。每次有效操作或世界時間推進立即存檔，每 10 秒及頁面隱藏／離開時再保存。損毀存檔禁止自動覆蓋；重建世界必須由介面確認。
+
+遊玩紀錄保存操作結果、前後遊戲時間及完整事件，介面只提供追加與「匯出遊玩紀錄」，沒有編輯或回退。進度與待補寫紀錄一起存入 localStorage，紀錄庫交易完成後才清除待送資料；重載會補寫且同一筆不重複。舊 version 1 存檔可載入，啟用前被裁切的事件無法補回。重建世界保留舊遊玩紀錄。
+
+紀錄庫暫時不可用時，介面提示待補寫並保留資料；進度保存失敗會暫停時間，可重試或匯出目前記憶體資料。紀錄庫無法讀取時匯出會明示只含待補寫紀錄與目前進度。此版本以單機為範圍，未製作伺服器。
 
 固定使用 `tickets/` 保存 Work Authority。條件式目錄按需求建立：`docs/CONTEXT.md` 保存共享 Domain／架構語彙；`docs/adr/` 保存重大且難逆轉的決策；`reports/audit/` 只在觸發 Independent Audit 時建立；`.scratch/<task>/` 只保存未完成任務。
 
@@ -149,5 +154,8 @@ AGENTS.md
 - [TODO.md](TODO.md)／[CHANGELOG.md](CHANGELOG.md)：backlog 與已完成的重要變更
 - [Design](docs/design/DESIGN.md)／[UI Contract](docs/UI.md)：世界優先設計與實際元件、操作、token 契約
 - [UI 驗收紀錄](reports/ui/20261003-world-first/README.md)：桌機／平板／手機截圖、遊玩流程與限制
+- [完整遊玩測試](reports/playtests/20261003-comprehensive/README.md)：生活、Boss、世界演化、存檔故障與長時間驗證
+- [單機保存驗證](reports/playtests/20261003-local-autosave/README.md)：即時保存、補寫、匯出與瀏覽器故障恢復
+- [自動測試紀錄](scripts/README.md)：本機追加報告版本與重現命令
 
 無後端 API；遊戲介面契約集中於 `docs/UI.md`。

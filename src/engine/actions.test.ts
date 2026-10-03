@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { BUILDINGS, DUNGEON, MONSTERS } from '../data/config'
 import type { GameState } from '../domain/types'
 import { canVisit, combatTurn, encounter, enterDungeon, equip, farm, gather, hire, leaveDungeon, rest, trade, usePotion } from './actions'
+import { deserialize, serialize } from '../services/saveService'
 import { calendar } from './calendar'
 import { createGame, player, simulate, walkTo } from './simulation'
 
@@ -31,6 +32,72 @@ it('selects wild encounters from configured spawn levels', () => {
 })
 
 describe('personal life activities', () => {
+  it('keeps an overnight stay reloadable when its fee leaves no money for wages', () => {
+    const s = createGame(909)
+    while (s.settlement.stage === 'hamlet') simulate(s, 30 * 1440)
+    simulate(s, (17 * 60 - s.worldTime % 1440 + 1440) % 1440)
+    walkTo(s, { x: 11, y: 11 })
+    const mercenary = s.npcs.find(n => n.job === 'mercenary' && n.isAlive && n.age >= 15 && n.injuredUntil <= s.worldTime)!
+    expect(hire(s, mercenary.id)).toBe('')
+    walkTo(s, { x: 10, y: 8 })
+    expect(trade(s, 'stone', true)).toBe(''); expect(trade(s, 'stone', true)).toBe('')
+    walkTo(s, { x: 7, y: 11 })
+    expect(player(s).gold).toBe(8)
+    const start = s.worldTime
+    expect(rest(s, 'inn')).toBe('')
+    expect(player(s).gold).toBe(0)
+    expect(s.worldTime).toBe(start + 480)
+    expect(s.party).toHaveLength(0)
+    expect(s.events.some(e => e.type === 'party.unpaid')).toBe(true)
+    expect(deserialize(serialize(s, 0)).state).toEqual(s)
+  })
+
+  it.each([
+    ['inn', 8, 0, 0], ['inn', 12, 0, 1],
+    ['tavern', 6, 3, 0], ['tavern', 7, 0, 1],
+    ['rest', 0, 0, 0], ['rest', 4, 0, 1],
+  ] as const)('settles %s before midnight wages with %i gold', (kind, gold, remaining, partySize) => {
+    const s = createGame(); tavern(s)
+    expect(hire(s, s.npcs.find(n => n.job === 'mercenary')!.id)).toBe('')
+    if (kind === 'inn') walkTo(s, BUILDINGS.inn.position)
+    simulate(s, 23 * 60 + 30 - s.worldTime % 1440)
+    player(s).gold = gold
+    const start = s.worldTime
+    expect(rest(s, kind)).toBe('')
+    expect(s.worldTime).toBe(start + (kind === 'inn' ? 480 : 60))
+    expect(player(s).gold).toBe(remaining)
+    expect(s.party).toHaveLength(partySize)
+    expect(deserialize(serialize(s, 0)).state).toEqual(s)
+  })
+  it.each(['inn', 'tavern'] as const)('rejects unaffordable %s without advancing time or changing state', kind => {
+    const s = createGame(); tavern(s)
+    if (kind === 'inn') walkTo(s, BUILDINGS.inn.position)
+    player(s).gold = kind === 'inn' ? 7 : 2
+    const before = structuredClone(s)
+    expect(rest(s, kind)).toBe('金幣不足。')
+    expect(s).toEqual(before)
+  })
+  it('charges lodging once when natural death interrupts recovery at the new year', () => {
+    const s = createGame(), c = player(s)
+    walkTo(s, BUILDINGS.inn.position)
+    simulate(s, 120 * 1440 - 30 - s.worldTime)
+    c.birthYear = calendar(s.worldTime).year - c.lifespan + 1
+    c.gold = 8; c.hp = 10
+    const start = s.worldTime
+    expect(rest(s, 'inn')).toBe('角色已離世，請選擇繼任者。')
+    expect(c.isAlive).toBe(false); expect(c.hp).toBe(0); expect(c.gold).toBe(0)
+    expect(s.worldTime).toBe(start + 480)
+    expect(s.events.some(e => e.type === 'player.rested')).toBe(false)
+    expect(deserialize(serialize(s, 0)).state).toEqual(s)
+    const after = structuredClone(s)
+    expect(rest(s, 'inn')).not.toBe(''); expect(s).toEqual(after)
+  })
+  it('does not charge or advance a blocked free rest', () => {
+    const s = createGame(); player(s).isAlive = false
+    const before = structuredClone(s)
+    expect(rest(s, 'rest')).toBe('目前無法進行這項活動。')
+    expect(s).toEqual(before)
+  })
   it('requires farmland, preparation and exact world-time growth before harvest', () => {
     const s = createGame(), c = player(s)
     expect(farm(s, 'prepare')).not.toBe('')

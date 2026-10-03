@@ -1,0 +1,69 @@
+{
+  "started_at": "2026-10-03T05:55:12.997Z",
+  "mode": "public engine; no fixtures",
+  "seeds": [
+    {
+      "seed": 0,
+      "visited_walkable_tiles": 308,
+      "invalid_moves_rejected_without_mutation": 84,
+      "traversal_minutes": 1605,
+      "status": "passed"
+    },
+    {
+      "seed": 1,
+      "visited_walkable_tiles": 308,
+      "invalid_moves_rejected_without_mutation": 84,
+      "traversal_minutes": 1605,
+      "status": "passed"
+    },
+    {
+      "seed": 42,
+      "visited_walkable_tiles": 308,
+      "invalid_moves_rejected_without_mutation": 84,
+      "traversal_minutes": 1605,
+      "status": "passed"
+    },
+    {
+      "seed": 321,
+      "visited_walkable_tiles": 308,
+      "invalid_moves_rejected_without_mutation": 84,
+      "traversal_minutes": 1605,
+      "status": "passed"
+    },
+    {
+      "seed": 909,
+      "visited_walkable_tiles": 308,
+      "invalid_moves_rejected_without_mutation": 84,
+      "traversal_minutes": 1605,
+      "status": "passed"
+    },
+    {
+      "seed": 2026,
+      "visited_walkable_tiles": 308,
+      "invalid_moves_rejected_without_mutation": 84,
+      "traversal_minutes": 1605,
+      "status": "passed"
+    },
+    {
+      "seed": 123456789,
+      "visited_walkable_tiles": 308,
+      "invalid_moves_rejected_without_mutation": 84,
+      "traversal_minutes": 1605,
+      "status": "passed"
+    },
+    {
+      "seed": 4294967295,
+      "visited_walkable_tiles": 308,
+      "invalid_moves_rejected_without_mutation": 84,
+      "traversal_minutes": 1605,
+      "status": "passed"
+    }
+  ],
+  "source_sha256": {
+    "src/engine/simulation.ts": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+    "src/engine/actions.ts": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+    "src/services/saveService.ts": "84fdc59920c77eec2e0ede1d0b48c8e958d4c8362a9fcfe84e3a1cc674b6578a"
+  },
+  "elapsed_seconds": 0.9218001649999998,
+  "status": "passed"
+}

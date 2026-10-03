@@ -1,0 +1,25 @@
+{
+  "baseline": "694c6d76df67e3d3dd4da5aa98feba8581ecc2ba",
+  "utc": "2026-10-03T06:00:11.188Z",
+  "mode": "controlled ID corruption; not normal play",
+  "cases": [
+    {
+      "name": "nextNpcId collision",
+      "initial_corrupt_save_accepted": true,
+      "duplicate_ids": [
+        "npc-1"
+      ],
+      "saved_continuation_rejected": true,
+      "reload_error": "Error: 存檔資料不完整。原始存檔已保留，請確認後重建世界。"
+    },
+    {
+      "name": "duplicate crop IDs",
+      "initial_corrupt_save_accepted": true,
+      "crops_before": 2,
+      "crops_after_one_harvest": 0,
+      "food_received": 5,
+      "expected_crops_remaining": 1,
+      "unintended_crop_loss": true
+    }
+  ]
+}
