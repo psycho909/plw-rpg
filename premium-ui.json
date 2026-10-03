@@ -1,0 +1,16 @@
+{
+  "profile": "product-admin",
+  "sourceRoots": ["src"],
+  "locale": "zh-TW",
+  "canonicalMap": "docs/UI.md",
+  "requiredCapabilities": ["Scrollbar", "Toast", "CRUD"],
+  "requiredCommands": ["check", "browser"],
+  "commands": {
+    "check": "npm run check",
+    "browser": "python reports/ui/20261003-world-first/verify.py"
+  },
+  "evidence": {
+    "crudFullFlow": "reports/ui/20261003-world-first/verify.py",
+    "failurePaths": "reports/ui/20261003-world-first/verify.py"
+  }
+}

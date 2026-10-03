@@ -20,7 +20,9 @@ npm.cmd ci
 npm.cmd run dev
 ```
 
-開啟 Vite 顯示的本機網址（預設 http://127.0.0.1:5173）。WASD／方向鍵移動；點地圖或目的地按鈕會逐格步行並推進時間。角色只操作自己，NPC 日程與聚落成長自動執行。
+開啟 Vite 顯示的本機網址（預設 http://127.0.0.1:5173）。正常遊玩以世界地圖為主；WASD／方向鍵或畫面方向鍵移動，Enter／「互動」開啟附近生活操作。點地圖或地圖視窗的目的地會逐格步行並推進時間。角色只操作自己，NPC 日程與聚落成長自動執行。
+
+Esc 開選單／關閉視窗，C 查看角色、I 查看物品、L 查看日誌、M 查看地圖與世界；歷史、旅人筆記與重建確認也在選單中。手機提供底部選單與方向控制。開啟視窗不會暫停時間，可使用時鐘旁或視窗底部的暫停按鈕。
 
 農田操作為整地、播種、等待兩日、收割。商店需走到建築旁並在營業時間交易。酒館與鐵匠鋪於聚落成長為村莊後解鎖。旅人筆記可等待一日、一季或一年，等待不會自動回血。角色死亡後選擇成年居民接續，世界不重置。
 
@@ -85,7 +87,7 @@ AGENTS 沿用按需讀取、授權內持續完成、G3 事件式更新、條件�
 | 文件 | 根目錄 `git diff --check`、核對連結與 Ticket | 不證明執行行為 |
 | 程式模組 | 根目錄 `npm.cmd run test`；Vitest exit 0 | 包含 1／10／50 年 headless；無 DOM |
 | API | N/A（無後端） | 不呼叫外部 API |
-| UI | `npm.cmd run build`＋本機實際瀏覽器操作 | Build 只證明 type check／打包，不能代替操作驗收 |
+| UI | `npm.cmd run build`＋本機實際瀏覽器操作；可重現流程 `python reports/ui/20261003-world-first/verify.py` | Python 流程需 Playwright、Chromium 與已啟動的本機 Vite；使用可丟棄 context，build 不能代替操作驗收 |
 | 資料遷移 | N/A（V1 存檔 version 1） | 不支援版本明確拒絕並保留原始存檔 |
 | 設定／依賴 | `npm.cmd ci`、`npm.cmd audit`、`npm.cmd run check` | `check` 執行 test＋type check＋build；未配置額外 lint runner |
 
@@ -128,6 +130,8 @@ AGENTS.md
 - `src/engine/`：獨立於 Vue 的時間、RNG、移動、生活、戰鬥與每日演化；`gameLoop.ts` 提供單一排程。
 - `src/services/saveService.ts`：版本／資料驗證、序列化與最多 8 小時離線模擬。
 - `src/stores/gameStore.ts` → `src/App.vue`：Pinia 接上 engine，Vue 負責 DOM／CSS Grid 呈現；Emoji 只放在 presentation／UI。
+- `src/components/`：世界地圖、情境內容與共用像素視窗／進度／訊息；`src/presentation/worldUI.ts` 從真實 state 產生附近互動與世界圖示。
+- `src/style.scss`：黑白復古 UI 的執行期 token 與響應式樣式；視覺正本為 `docs/design/DESIGN.md`。
 
 預設 30 日／季、120 日／年，真實每秒推進 2 遊戲分鐘，支援暫停／×1／×5／×20。離線固定使用 ×1 換算，最多 8 真實小時（40 遊戲日）；即使上次離開前暫停，重新開啟仍會處理離線演化。自動存檔每 10 秒，並於頁面隱藏／離開時存檔。損毀存檔禁止自動覆蓋；重建世界必須由介面確認。
 
@@ -143,5 +147,7 @@ AGENTS.md
 - [Handoff](docs/HANDOFF.md)：未完成任務跨環境接續
 - [Subagents](docs/SUBAGENTS.md)：委派契約、邊界與整合驗收
 - [TODO.md](TODO.md)／[CHANGELOG.md](CHANGELOG.md)：backlog 與已完成的重要變更
+- [Design](docs/design/DESIGN.md)／[UI Contract](docs/UI.md)：世界優先設計與實際元件、操作、token 契約
+- [UI 驗收紀錄](reports/ui/20261003-world-first/README.md)：桌機／平板／手機截圖、遊玩流程與限制
 
-API 或 UI 契約實際存在時，從 project-standards 上游的 `templates/optional/docs/` 複製對應模板到 `docs/`，再加入本索引。
+無後端 API；遊戲介面契約集中於 `docs/UI.md`。

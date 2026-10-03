@@ -1,6 +1,6 @@
 import type { BuildingId, ItemId, JobId, RegionId } from '../domain/types'
 
-export const terrainIcons = { water: '≈', grass: '·', forest: '♣', field: '≋', mountain: '▲', road: '' }
+export const terrainIcons = { water: '≈', grass: '·', forest: '♣', field: '≋', mountain: '▲', road: '─' }
 export const buildingIcons: Record<BuildingId, string> = { house: '🏠', farm: '🌾', store: '🏪', inn: '🛏️', tavern: '🍺', blacksmith: '⚒️' }
 export const jobIcons: Record<JobId, string> = { farmer: '👨‍🌾', miner: '⛏️', woodcutter: '🪓', blacksmith: '⚒️', shopkeeper: '🧺', guard: '🛡️', mercenary: '⚔️' }
 export const itemIcons: Record<ItemId, string> = { wood: '🪵', stone: '🪨', iron: '⛏️', food: '🌾', material: '🦴', potion: '🧪', sword: '⚔️', armor: '🦺' }

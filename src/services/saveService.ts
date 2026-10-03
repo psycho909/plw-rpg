@@ -39,7 +39,7 @@ function valid(state: unknown): state is GameState {
     && s.tiles.length === CONFIG.width * CONFIG.height && new Set(s.tiles.map(t => `${t.x},${t.y}`)).size === s.tiles.length
     && s.tiles.every(t => validPosition(t)
       && regions.includes(t.regionId) && ['water', 'grass', 'forest', 'field', 'mountain', 'road'].includes(t.terrain) && (t.building === undefined || Object.hasOwn(BUILDINGS, t.building)))
-    && s.preparedPlots >= 0 && s.crops.length + s.preparedPlots <= CONFIG.maxPlots
+    && Number.isSafeInteger(s.preparedPlots) && s.preparedPlots >= 0 && s.crops.length + s.preparedPlots <= CONFIG.maxPlots
     && s.crops.every(c => matches({ id: 0, plantedAt: 0, growthDuration: 0, matureAt: 0, status: '' }, c) && ['growing', 'mature'].includes(c.status))
     && s.party.length <= 2 && s.party.every(p => matches({ npcId: '', hireCost: 0, dailyWage: 0, contractEnd: 0, archetype: '' }, p) && ['fighter', 'healer'].includes(p.archetype) && s.npcs.some(n => n.id === p.npcId))
     && (s.combat === null || (matches({ monsterId: '', hp: 0, maxHp: 0, attack: 0, defense: 0, exp: 0, gold: 0, elite: false, dungeon: false }, s.combat) && Object.hasOwn(MONSTERS, s.combat.monsterId)))

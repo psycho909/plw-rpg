@@ -27,6 +27,31 @@ describe('versioned saves and deterministic continuation', () => {
     raw.saveVersion = 1; delete raw.npcs; expect(() => deserialize(JSON.stringify(raw))).toThrow('資料')
     expect(() => deserialize('{')).toThrow()
   })
+  it('rejects fractional prepared plots on the first load (PT-001)', () => {
+    const s = createGame()
+    s.preparedPlots = 0.5
+    expect(() => deserialize(serialize(s, 1000))).toThrow('原始存檔已保留')
+  })
+  it.each([0, 1, 2, 3, 4])('round trips %s whole prepared plots', preparedPlots => {
+    const s = createGame()
+    s.preparedPlots = preparedPlots
+    expect(deserialize(serialize(s, 1000)).state).toEqual(s)
+  })
+  it('round trips normal farming at capacity and continues planting', () => {
+    const s = createGame()
+    walkTo(s, { x: 16, y: 10 })
+    for (let i = 0; i < 4; i++) expect(farm(s, 'prepare')).toBe('')
+    expect(s.preparedPlots).toBe(4)
+    expect(farm(s, 'plant')).toBe('')
+    expect(s.preparedPlots).toBe(3)
+    expect(s.crops).toHaveLength(1)
+    const loaded = deserialize(serialize(s, 1000)).state
+    expect(loaded).toEqual(s)
+    expect(farm(loaded, 'plant')).toBe('')
+    expect(loaded.preparedPlots).toBe(2)
+    expect(loaded.crops).toHaveLength(2)
+    expect(deserialize(serialize(loaded, 2000)).state).toEqual(loaded)
+  })
   it.each(['invalid-calendar', 'invalid-character-stage', 'invalid-event', 'invalid-combat'])('rejects a corrupt %s save', kind => {
     const raw = JSON.parse(serialize(createGame(), 1000))
     if (kind === 'invalid-calendar') raw.worldTime = -10

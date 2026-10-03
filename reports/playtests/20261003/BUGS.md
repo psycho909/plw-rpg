@@ -4,7 +4,7 @@
 
 ## PT-001：非整數農田數量被載入，後續普通整地操作產生無法重載的存檔
 
-- 狀態：**已確認，限定受控損毀存檔注入**。主 Agent 已在另一個獨立 browser context 重現完整結果。
+- 狀態：**已修復（2026-10-03，由使用者指定的 Astra 處理）**。原缺陷已確認，限定受控損毀存檔注入；以下保留基準版本的重現證據。
 - 建議嚴重度：中（存檔復原／資料驗證邊界）；沒有證據顯示正常 UI 會產生起始的非整數值。
 - 受影響位置：[saveService.ts](../../../src/services/saveService.ts)、[actions.ts](../../../src/engine/actions.ts)。
 - 契約依據：README 的損毀存檔保護、SPEC §53 的存檔與重新載入、§23 的耕作流程，以及 CONFIG.maxPlots=4 的離散農田限制。
@@ -28,7 +28,7 @@ cd /workspace/plw-rpg
 python reports/playtests/20261003/verify_bugs.py
 ```
 
-本次 exit 0 表示**成功重現缺陷**，不表示遊戲正確性通過。結果：[verify-bugs-results.json](verify-bugs-results.json)。
+基準版本的這次 exit 0 表示**成功重現缺陷**，不表示遊戲正確性通過。結果：[verify-bugs-results.json](verify-bugs-results.json)。此腳本保留舊 UI 選擇器與缺陷斷言；修復後驗收改用下方回歸入口。
 
 - [超過四田仍可保存的畫面](verify-fractional-plots-before-reload.png)
 - [重載後拒絕繼續的畫面](verify-fractional-plots-rejected.png)
@@ -38,7 +38,13 @@ python reports/playtests/20261003/verify_bugs.py
 
 `saveService.valid` 對 `preparedPlots` 只檢查 `>=0` 與總田數 `<=maxPlots`，缺少 `Number.isSafeInteger`。`farm('prepare')` 使用加 1 及事前總量判斷，所以會沿用已載入的小數並跨過上限。
 
-後續修復可補足初次載入的整數驗證，並為此無效存檔增加真正的回歸測試。這次只紀錄，未修改遊戲。
+原遊玩任務僅紀錄，沒有修改遊戲。後續修復補足初次載入的整數驗證，並為此無效存檔增加真正的回歸測試。
+
+### 修復與回歸
+
+修復票：[PT-001 存檔完整性](../../../tickets/20261003-save-integrity.md)。`saveService.valid` 加入 `Number.isSafeInteger(preparedPlots)`，不改存檔版本或農作規則。Astra 先驗證小數首次拒絕的測試 RED，修正後 GREEN；另覆蓋合法 0–4 田地數及正常整地／播種／載入後繼續農作。完整單元共 90 項通過。
+
+瀏覽器回歸入口為 [UI verify.py](../../ui/20261003-world-first/verify.py)，包含小數資料首次載入拒絕與手動儲存不覆寫原文。最終實際結果見 [UI 驗收紀錄](../../ui/20261003-world-first/README.md)。既有損毀的小數存檔會保持保護；本修復不自動修補或覆蓋。
 
 ## 紀錄原則
 
