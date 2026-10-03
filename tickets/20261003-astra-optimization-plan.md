@@ -1,6 +1,6 @@
 # Astra 單機遊戲優化規劃
 
-- Status: in_progress
+- Status: accepted
 - Owner: 本專案使用者；沿用 README 已確認身份
 - Approver: 同 Owner
 - Approval evidence: 2026-10-03 使用者明確要求「使用astra規劃可以優化的地方」。授權本輪分析與規劃文件，未授權執行所提出的行為變更。
@@ -33,7 +33,7 @@
 - [x] 計畫涵蓋玩家體驗及工程改善，重要建議都有可核對來源。
 - [x] 提供優先順序、首輪建議與階段依賴，每項含可驗證完成條件。
 - [x] 區分既有問題／待驗證假說／新玩法提案，遵守單機限制。
-- [ ] 主 Agent 文件與證據自查通過，工作內容限本票路徑並同步 work。
+- [x] 主 Agent 文件與證據自查通過，工作內容限本票路徑並同步 work。
 
 ## Constraints and Decisions
 
@@ -50,6 +50,6 @@
 
 ## Evidence
 
-- Verification: [計畫](../docs/plans/20261003-astra-optimization.md)共9項候選，首輪O1→O2→O3，每項具來源、最小範圍與驗收。主 Agent完整閱讀最終文件，核對戰鬥回饋、聘用角色、等待、保存／匯出與多分頁契約；相對來源／行號檢查通過。Astra重新計算既有source-checks的8個指紋均相符；主 Agent確認src、scripts、reports、依賴與正式UI／設計正本無diff。本輪未跑新runtime／全測，不將既有PASS或效能假說當成本輪實測。
+- Verification: [計畫](../docs/plans/20261003-astra-optimization.md)共9項候選，首輪O1→O2→O3，每項具來源、最小範圍與驗收。主 Agent完整閱讀最終文件，核對戰鬥回饋、聘用角色、等待、保存／匯出與多分頁契約；48個相對來源／行號、staged diff --check及僅兩份文件的staging核對通過，計畫SHA-256為72d59d69ada16d8f0d95e4f75f70758c2c5b136732306ad90a39ade2ccd9a02d。Astra重新計算既有source-checks的8個指紋均相符；主 Agent確認src、scripts、reports、依賴與正式UI／設計正本無diff。本輪未跑新runtime／全測，不將既有PASS或效能假說當成本輪實測。
 - Review / Audit: L1，由主 Agent自查，非獨立Audit。Standards：實際新增計畫與本票均已完整讀取，符合繁中、單一檔案擁有者、文件驗證及Git授權。Spec：9項及首輪3項完成，已區分能力缺口／待驗證／新玩法，維持單機與即時保存、追加、ACK及壞raw保護；未新增施工授權。Astra前次用量中斷已揭露，使用者「繼續」後同一agent接續並交付完整文件，無未解規劃finding。
-- Commit / PR: 待交付；不建立 PR。
+- Commit / PR: 規劃產出commit為ebd9f6a9b30ae7e99b2df105642547ff010d7006，已push origin/work；2026-10-03以ls-remote核對遠端與本機SHA一致。主Agent最終驗收通過，本票結案metadata另行同步；不建立PR。
