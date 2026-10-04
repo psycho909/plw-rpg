@@ -1,0 +1,156 @@
+{
+  "status": "completed_observation",
+  "startedAt": "2026-10-04T02:51:06.362887+00:00",
+  "url": "http://127.0.0.1:5192/",
+  "method": "Separate disposable Chromium context, repeated native modal UI; forced GC only in this supplemental probe, never in 2-hour soak.",
+  "sourceManifest": "../baseline/final-manifest.json",
+  "samples": [
+    {
+      "label": "initial forced-GC baseline",
+      "at": "2026-10-04T02:51:07.914263+00:00",
+      "heap": {
+        "usedSize": 3247576,
+        "totalSize": 3727360,
+        "embedderHeapUsedSize": 3543752,
+        "backingStorageSize": 150371
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 2113,
+        "jsEventListeners": 427
+      },
+      "connectedElements": 882
+    },
+    {
+      "label": "10 open/close cycles without GC",
+      "at": "2026-10-04T02:51:08.346344+00:00",
+      "heap": {
+        "usedSize": 6018796,
+        "totalSize": 8765440,
+        "embedderHeapUsedSize": 14248160,
+        "backingStorageSize": 151125
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 7054,
+        "jsEventListeners": 1315
+      },
+      "connectedElements": 882
+    },
+    {
+      "label": "20 open/close cycles without GC",
+      "at": "2026-10-04T02:51:08.739029+00:00",
+      "heap": {
+        "usedSize": 7609612,
+        "totalSize": 14008320,
+        "embedderHeapUsedSize": 6425496,
+        "backingStorageSize": 151028
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 14088,
+        "jsEventListeners": 2570
+      },
+      "connectedElements": 882
+    },
+    {
+      "label": "30 open/close cycles without GC",
+      "at": "2026-10-04T02:51:09.113643+00:00",
+      "heap": {
+        "usedSize": 10963128,
+        "totalSize": 14008320,
+        "embedderHeapUsedSize": 19293984,
+        "backingStorageSize": 151128
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 18974,
+        "jsEventListeners": 3435
+      },
+      "connectedElements": 882
+    },
+    {
+      "label": "40 open/close cycles without GC",
+      "at": "2026-10-04T02:51:09.492436+00:00",
+      "heap": {
+        "usedSize": 13492416,
+        "totalSize": 18989056,
+        "embedderHeapUsedSize": 36634152,
+        "backingStorageSize": 151128
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 26008,
+        "jsEventListeners": 4690
+      },
+      "connectedElements": 882
+    },
+    {
+      "label": "50 open/close cycles without GC",
+      "at": "2026-10-04T02:51:09.826250+00:00",
+      "heap": {
+        "usedSize": 13318004,
+        "totalSize": 21348352,
+        "embedderHeapUsedSize": 15905472,
+        "backingStorageSize": 151128
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 30860,
+        "jsEventListeners": 5553
+      },
+      "connectedElements": 882
+    },
+    {
+      "label": "60 open/close cycles without GC",
+      "at": "2026-10-04T02:51:10.157924+00:00",
+      "heap": {
+        "usedSize": 17638420,
+        "totalSize": 21348352,
+        "embedderHeapUsedSize": 32559872,
+        "backingStorageSize": 151128
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 37894,
+        "jsEventListeners": 6808
+      },
+      "connectedElements": 882
+    },
+    {
+      "label": "before final forced GC",
+      "at": "2026-10-04T02:51:10.162276+00:00",
+      "heap": {
+        "usedSize": 17640084,
+        "totalSize": 21348352,
+        "embedderHeapUsedSize": 32559872,
+        "backingStorageSize": 151128
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 37894,
+        "jsEventListeners": 6808
+      },
+      "connectedElements": 882
+    },
+    {
+      "label": "after final forced GC",
+      "at": "2026-10-04T02:51:10.213409+00:00",
+      "heap": {
+        "usedSize": 14132052,
+        "totalSize": 15056896,
+        "embedderHeapUsedSize": 10851512,
+        "backingStorageSize": 151016
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 37828,
+        "jsEventListeners": 6800
+      },
+      "connectedElements": 882
+    }
+  ],
+  "pageErrors": [],
+  "finishedAt": "2026-10-04T02:51:10.218951+00:00",
+  "limitation": "This short controlled probe can distinguish reclaimable detached objects from objects retained through forced GC. It does not establish that the natural 2-hour curve has no leak."
+}

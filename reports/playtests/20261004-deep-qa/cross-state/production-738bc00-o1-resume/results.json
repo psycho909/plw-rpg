@@ -1,0 +1,1091 @@
+{
+  "suite": "20261004-deep-qa-cross-state-delayed-combat-follow-up",
+  "baselineCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+  "sourceLabel": "738bc00 + O1 verified patch; exact final-manifest source hashes",
+  "url": "http://127.0.0.1:5193/",
+  "startedAtUtc": "2026-10-04T07:40:32.389410+00:00",
+  "method": {
+    "runtime": "fixed production assets on localhost; no HMR or source imports",
+    "browser": "Playwright Chromium /usr/bin/chromium, headless, isolated disposable contexts",
+    "clock": "The ×20 cases use the application's real 100 ms interval and real wall-clock waits. Exact calendar boundaries are explicit valid-save fixtures only; no Date/performance/timer fake clock is installed.",
+    "normalRoute": "The dungeon party is established by Traveler Notes, movement, gathering, tavern hiring, and the rendered dungeon/combat/save controls.",
+    "fixtures": [
+      {
+        "kind": "valid-save-controlled-combat",
+        "changedFields": [
+          "activeCharacter.status",
+          "combat",
+          "lastSavedAt"
+        ],
+        "combat": "Configured wolf encounter payload; matching active character status; no dungeon combat.",
+        "source": "normal UI save generated in this run; only the listed fields changed for controlled entry into combat",
+        "purpose": "exercise the rendered Attack action while a real IndexedDB readwrite transaction is natively complete but its application oncomplete callback is delayed"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "name": "fixed-production-assets-and-exact-source-hashes",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T07:40:34.360+00:00",
+      "evidence": {
+        "sourceLabel": "738bc00 + O1 verified patch; exact final-manifest source hashes",
+        "baseline": {
+          "sourceCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+          "manifestSha256": "ba71b37f0c37e07d44d130c35602aae2210334b7704e7b4e1ce81c69cb2425ae",
+          "httpStatus": 200,
+          "assets": {
+            "index.html": {
+              "sha256": "c05d86559e72706f8acfd1b979aab9cb530c0769022c3e0134c1b6a91a99b911",
+              "status": 200
+            },
+            "assets/index-BicP0bQ_.js": {
+              "sha256": "24c25d4370be890fe10194c1b3a9d85e2bb9289a8d67bcc6757da11e3fc2c8c9",
+              "status": 200
+            },
+            "assets/index-B0QR5Rvd.css": {
+              "sha256": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+              "status": 200
+            }
+          },
+          "checkoutSourceHashes": {
+            "scripts/recorded_reports.py": {
+              "manifestSha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+              "checkoutSha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+              "match": true
+            },
+            "scripts/test_recorded_reports.py": {
+              "manifestSha256": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+              "checkoutSha256": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+              "match": true
+            },
+            "src/App.vue": {
+              "manifestSha256": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310",
+              "checkoutSha256": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310",
+              "match": true
+            },
+            "src/components/AdventureWindow.vue": {
+              "manifestSha256": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+              "checkoutSha256": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+              "match": true
+            },
+            "src/components/CharacterSheet.vue": {
+              "manifestSha256": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+              "checkoutSha256": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+              "match": true
+            },
+            "src/components/InventoryWindow.vue": {
+              "manifestSha256": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+              "checkoutSha256": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+              "match": true
+            },
+            "src/components/NpcWindow.vue": {
+              "manifestSha256": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+              "checkoutSha256": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+              "match": true
+            },
+            "src/components/PixelMeter.vue": {
+              "manifestSha256": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+              "checkoutSha256": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+              "match": true
+            },
+            "src/components/PixelWindow.vue": {
+              "manifestSha256": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+              "checkoutSha256": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+              "match": true
+            },
+            "src/components/PlaceWindow.vue": {
+              "manifestSha256": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+              "checkoutSha256": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+              "match": true
+            },
+            "src/components/StatusNotice.vue": {
+              "manifestSha256": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+              "checkoutSha256": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+              "match": true
+            },
+            "src/components/WorldMap.vue": {
+              "manifestSha256": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+              "checkoutSha256": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+              "match": true
+            },
+            "src/components/WorldRecords.vue": {
+              "manifestSha256": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+              "checkoutSha256": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+              "match": true
+            },
+            "src/data/config.ts": {
+              "manifestSha256": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+              "checkoutSha256": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+              "match": true
+            },
+            "src/domain/types.ts": {
+              "manifestSha256": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+              "checkoutSha256": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+              "match": true
+            },
+            "src/engine/actions.test.ts": {
+              "manifestSha256": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+              "checkoutSha256": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+              "match": true
+            },
+            "src/engine/actions.ts": {
+              "manifestSha256": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+              "checkoutSha256": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+              "match": true
+            },
+            "src/engine/calendar.ts": {
+              "manifestSha256": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+              "checkoutSha256": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+              "match": true
+            },
+            "src/engine/events.ts": {
+              "manifestSha256": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+              "checkoutSha256": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+              "match": true
+            },
+            "src/engine/gameLoop.test.ts": {
+              "manifestSha256": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+              "checkoutSha256": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+              "match": true
+            },
+            "src/engine/gameLoop.ts": {
+              "manifestSha256": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+              "checkoutSha256": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+              "match": true
+            },
+            "src/engine/random.ts": {
+              "manifestSha256": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+              "checkoutSha256": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+              "match": true
+            },
+            "src/engine/simulation.test.ts": {
+              "manifestSha256": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+              "checkoutSha256": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+              "match": true
+            },
+            "src/engine/simulation.ts": {
+              "manifestSha256": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+              "checkoutSha256": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+              "match": true
+            },
+            "src/main.ts": {
+              "manifestSha256": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+              "checkoutSha256": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+              "match": true
+            },
+            "src/presentation/icons.ts": {
+              "manifestSha256": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+              "checkoutSha256": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+              "match": true
+            },
+            "src/presentation/worldUI.test.ts": {
+              "manifestSha256": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+              "checkoutSha256": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+              "match": true
+            },
+            "src/presentation/worldUI.ts": {
+              "manifestSha256": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+              "checkoutSha256": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+              "match": true
+            },
+            "src/services/playJournal.test.ts": {
+              "manifestSha256": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+              "checkoutSha256": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+              "match": true
+            },
+            "src/services/playJournal.ts": {
+              "manifestSha256": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+              "checkoutSha256": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+              "match": true
+            },
+            "src/services/saveService.test.ts": {
+              "manifestSha256": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+              "checkoutSha256": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+              "match": true
+            },
+            "src/services/saveService.ts": {
+              "manifestSha256": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+              "checkoutSha256": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+              "match": true
+            },
+            "src/stores/gameStore.test.ts": {
+              "manifestSha256": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3",
+              "checkoutSha256": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3",
+              "match": true
+            },
+            "src/stores/gameStore.ts": {
+              "manifestSha256": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe",
+              "checkoutSha256": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe",
+              "match": true
+            },
+            "src/style.scss": {
+              "manifestSha256": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78",
+              "checkoutSha256": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78",
+              "match": true
+            }
+          }
+        },
+        "browser": {
+          "name": "Chromium",
+          "executable": "/usr/bin/chromium",
+          "version": "151.0.7922.173",
+          "headless": true
+        },
+        "initialWorld": {
+          "worldTime": 480,
+          "activeCharacter": "alden",
+          "settlementStage": "hamlet",
+          "party": [],
+          "pendingCount": 0,
+          "archiveRecordCount": 1,
+          "archiveIds": [
+            "aba73f10-ff05-4524-858d-ca217a5ee183"
+          ]
+        },
+        "raw": {
+          "file": "raw/normal-ui-start.raw.json",
+          "bytes": 72652,
+          "sha256": "225ff72557f4c9014f324a2c51d156068be73c4859dcf4a1bbcf6f543354906b"
+        },
+        "screenshot": "artifacts/normal-ui-start.png"
+      }
+    },
+    {
+      "name": "delayed-ack-public-combat-attack-time-and-reload",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T07:40:41.748+00:00",
+      "evidence": {
+        "fixture": {
+          "kind": "valid-save-controlled-combat",
+          "changedFields": [
+            "activeCharacter.status",
+            "combat",
+            "lastSavedAt"
+          ],
+          "combat": "Configured wolf encounter payload; matching active character status; no dungeon combat.",
+          "source": "normal UI save generated in this run; only the listed fields changed for controlled entry into combat",
+          "purpose": "exercise the rendered Attack action while a real IndexedDB readwrite transaction is natively complete but its application oncomplete callback is delayed"
+        },
+        "fixtureRaw": {
+          "file": "raw/delayed-attack-controlled-combat-fixture.raw.json",
+          "bytes": 72761,
+          "sha256": "d60b8712753c85fd2d178a7d82363c8fd97c716d3158056ab141aa270e1c8fee"
+        },
+        "ackDelayMs": 2500,
+        "nativeCommitObservedBeforeCallback": true,
+        "followupPublicAttackCount": 2,
+        "publicAttackRecordCount": 3,
+        "timeRecordCount": 2,
+        "worldTimeBeforeRace": 480,
+        "worldTimeAfterRace": 491,
+        "preExistingArchiveIds": [],
+        "recordIds": [
+          "1b970425-14bd-442f-99ba-5b64ab0f59c2",
+          "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159",
+          "b218fb8c-bf2f-4e82-9935-228fff1950db",
+          "cdf9558f-7357-4957-90ed-b5c55402467b",
+          "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd"
+        ],
+        "archiveIds": [
+          "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+          "1b970425-14bd-442f-99ba-5b64ab0f59c2",
+          "b218fb8c-bf2f-4e82-9935-228fff1950db",
+          "cdf9558f-7357-4957-90ed-b5c55402467b",
+          "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159"
+        ],
+        "eachIdExactlyOnce": true,
+        "pendingAfterAcks": 0,
+        "latestStateNeverRolledBack": true,
+        "delayedWriteTransactions": 2,
+        "allCallbacksDelivered": true,
+        "exactReloadRoundtrip": true,
+        "archiveUnchangedAfterReload": true,
+        "reloadArchiveCount": 5,
+        "pageErrors": [],
+        "consoleErrors": [
+          {
+            "atUtc": "2026-10-04T07:40:33.666+00:00",
+            "message": "Failed to load resource: the server responded with a status of 404 (File not found)",
+            "url": "http://127.0.0.1:5193/"
+          }
+        ],
+        "transactionTrace": [
+          {
+            "event": "oncomplete",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T07:40:35.883Z",
+            "delayMs": 2500,
+            "errorName": null,
+            "errorMessage": null,
+            "applicationHandlerAt": "2026-10-04T07:40:38.384Z"
+          },
+          {
+            "event": "oncomplete",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T07:40:38.391Z",
+            "delayMs": 2500,
+            "errorName": null,
+            "errorMessage": null,
+            "applicationHandlerAt": "2026-10-04T07:40:40.891Z"
+          }
+        ],
+        "timeline": [
+          {
+            "event": "valid-combat-fixture-loaded-paused-at-x20",
+            "atUtc": "2026-10-04T07:40:35.817+00:00",
+            "browserPerformanceMs": 1116.8,
+            "worldTime": 480,
+            "combat": {
+              "monsterId": "wolf",
+              "hp": 30,
+              "maxHp": 30,
+              "attack": 8,
+              "defense": 1,
+              "exp": 25,
+              "gold": 12,
+              "elite": false,
+              "dungeon": false
+            },
+            "preExistingArchiveCount": 0
+          },
+          {
+            "event": "first-public-attack-recorded",
+            "atUtc": "2026-10-04T07:40:35.895+00:00",
+            "browserPerformanceMs": 1194.5,
+            "recordId": "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+            "worldTime": 481,
+            "combatHp": 22
+          },
+          {
+            "event": "native-indexeddb-commit-observed-application-ack-pending",
+            "atUtc": "2026-10-04T07:40:35.910+00:00",
+            "browserPerformanceMs": 1209.6,
+            "recordId": "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+            "archiveRecordCount": 1,
+            "pendingIds": [
+              "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd"
+            ],
+            "nativeHandlerAt": "2026-10-04T07:40:35.883Z",
+            "delayMs": 2500
+          },
+          {
+            "event": "second-public-attack-added-while-first-ack-pending",
+            "atUtc": "2026-10-04T07:40:36.068+00:00",
+            "browserPerformanceMs": 1367.5,
+            "actionIds": [
+              "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+              "1b970425-14bd-442f-99ba-5b64ab0f59c2"
+            ],
+            "worldTime": 482,
+            "firstAckTrace": [
+              {
+                "event": "oncomplete",
+                "mode": "readwrite",
+                "objectStore": [
+                  "records"
+                ],
+                "nativeHandlerAt": "2026-10-04T07:40:35.883Z",
+                "delayMs": 2500,
+                "errorName": null,
+                "errorMessage": null
+              }
+            ]
+          },
+          {
+            "event": "real-x20-world-time-added-pending-records-during-ack",
+            "atUtc": "2026-10-04T07:40:36.232+00:00",
+            "browserPerformanceMs": 1531.5,
+            "speed": 20,
+            "worldTimeBefore": 482,
+            "worldTimeAfter": 486,
+            "timeRecordIds": [
+              "b218fb8c-bf2f-4e82-9935-228fff1950db"
+            ]
+          },
+          {
+            "event": "time-and-follow-up-attacks-pending-before-application-ack",
+            "atUtc": "2026-10-04T07:40:36.369+00:00",
+            "browserPerformanceMs": 1668.9,
+            "pendingKinds": {
+              "action": 3,
+              "time": 2
+            },
+            "pendingIds": [
+              "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+              "1b970425-14bd-442f-99ba-5b64ab0f59c2",
+              "b218fb8c-bf2f-4e82-9935-228fff1950db",
+              "cdf9558f-7357-4957-90ed-b5c55402467b",
+              "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159"
+            ],
+            "worldTime": 491,
+            "combat": {
+              "monsterId": "wolf",
+              "hp": 6,
+              "maxHp": 30,
+              "attack": 8,
+              "defense": 1,
+              "exp": 25,
+              "gold": 12,
+              "elite": false,
+              "dungeon": false
+            },
+            "firstNativeCompleteAt": "2026-10-04T07:40:35.883Z",
+            "ackStillPending": true
+          },
+          {
+            "event": "delayed-ack-drained-all-pending-records",
+            "atUtc": "2026-10-04T07:40:40.922+00:00",
+            "browserPerformanceMs": 6221.1,
+            "archivedIds": [
+              "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+              "1b970425-14bd-442f-99ba-5b64ab0f59c2",
+              "b218fb8c-bf2f-4e82-9935-228fff1950db",
+              "cdf9558f-7357-4957-90ed-b5c55402467b",
+              "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159"
+            ],
+            "pendingCount": 0,
+            "transactionCompletions": 2,
+            "noStateRollback": true,
+            "worldTime": 491
+          },
+          {
+            "event": "reload-restored-exact-game-and-journal-state",
+            "atUtc": "2026-10-04T07:40:41.721+00:00",
+            "browserPerformanceMs": 681,
+            "worldTime": 491,
+            "combat": {
+              "monsterId": "wolf",
+              "hp": 6,
+              "maxHp": 30,
+              "attack": 8,
+              "defense": 1,
+              "exp": 25,
+              "gold": 12,
+              "elite": false,
+              "dungeon": false
+            },
+            "archiveCount": 5,
+            "pendingCount": 0
+          }
+        ]
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "name": "fixed-production-baseline-and-normal-ui-seed",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T07:40:34.325+00:00",
+      "evidence": {
+        "sourceLabel": "738bc00 + O1 verified patch; exact final-manifest source hashes",
+        "baseline": {
+          "sourceCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+          "manifestSha256": "ba71b37f0c37e07d44d130c35602aae2210334b7704e7b4e1ce81c69cb2425ae",
+          "httpStatus": 200,
+          "assets": {
+            "index.html": {
+              "sha256": "c05d86559e72706f8acfd1b979aab9cb530c0769022c3e0134c1b6a91a99b911",
+              "status": 200
+            },
+            "assets/index-BicP0bQ_.js": {
+              "sha256": "24c25d4370be890fe10194c1b3a9d85e2bb9289a8d67bcc6757da11e3fc2c8c9",
+              "status": 200
+            },
+            "assets/index-B0QR5Rvd.css": {
+              "sha256": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+              "status": 200
+            }
+          },
+          "checkoutSourceHashes": {
+            "scripts/recorded_reports.py": {
+              "manifestSha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+              "checkoutSha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+              "match": true
+            },
+            "scripts/test_recorded_reports.py": {
+              "manifestSha256": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+              "checkoutSha256": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+              "match": true
+            },
+            "src/App.vue": {
+              "manifestSha256": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310",
+              "checkoutSha256": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310",
+              "match": true
+            },
+            "src/components/AdventureWindow.vue": {
+              "manifestSha256": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+              "checkoutSha256": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+              "match": true
+            },
+            "src/components/CharacterSheet.vue": {
+              "manifestSha256": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+              "checkoutSha256": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+              "match": true
+            },
+            "src/components/InventoryWindow.vue": {
+              "manifestSha256": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+              "checkoutSha256": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+              "match": true
+            },
+            "src/components/NpcWindow.vue": {
+              "manifestSha256": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+              "checkoutSha256": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+              "match": true
+            },
+            "src/components/PixelMeter.vue": {
+              "manifestSha256": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+              "checkoutSha256": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+              "match": true
+            },
+            "src/components/PixelWindow.vue": {
+              "manifestSha256": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+              "checkoutSha256": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+              "match": true
+            },
+            "src/components/PlaceWindow.vue": {
+              "manifestSha256": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+              "checkoutSha256": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+              "match": true
+            },
+            "src/components/StatusNotice.vue": {
+              "manifestSha256": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+              "checkoutSha256": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+              "match": true
+            },
+            "src/components/WorldMap.vue": {
+              "manifestSha256": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+              "checkoutSha256": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+              "match": true
+            },
+            "src/components/WorldRecords.vue": {
+              "manifestSha256": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+              "checkoutSha256": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+              "match": true
+            },
+            "src/data/config.ts": {
+              "manifestSha256": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+              "checkoutSha256": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+              "match": true
+            },
+            "src/domain/types.ts": {
+              "manifestSha256": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+              "checkoutSha256": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+              "match": true
+            },
+            "src/engine/actions.test.ts": {
+              "manifestSha256": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+              "checkoutSha256": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+              "match": true
+            },
+            "src/engine/actions.ts": {
+              "manifestSha256": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+              "checkoutSha256": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+              "match": true
+            },
+            "src/engine/calendar.ts": {
+              "manifestSha256": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+              "checkoutSha256": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+              "match": true
+            },
+            "src/engine/events.ts": {
+              "manifestSha256": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+              "checkoutSha256": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+              "match": true
+            },
+            "src/engine/gameLoop.test.ts": {
+              "manifestSha256": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+              "checkoutSha256": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+              "match": true
+            },
+            "src/engine/gameLoop.ts": {
+              "manifestSha256": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+              "checkoutSha256": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+              "match": true
+            },
+            "src/engine/random.ts": {
+              "manifestSha256": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+              "checkoutSha256": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+              "match": true
+            },
+            "src/engine/simulation.test.ts": {
+              "manifestSha256": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+              "checkoutSha256": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+              "match": true
+            },
+            "src/engine/simulation.ts": {
+              "manifestSha256": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+              "checkoutSha256": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+              "match": true
+            },
+            "src/main.ts": {
+              "manifestSha256": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+              "checkoutSha256": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+              "match": true
+            },
+            "src/presentation/icons.ts": {
+              "manifestSha256": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+              "checkoutSha256": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+              "match": true
+            },
+            "src/presentation/worldUI.test.ts": {
+              "manifestSha256": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+              "checkoutSha256": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+              "match": true
+            },
+            "src/presentation/worldUI.ts": {
+              "manifestSha256": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+              "checkoutSha256": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+              "match": true
+            },
+            "src/services/playJournal.test.ts": {
+              "manifestSha256": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+              "checkoutSha256": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+              "match": true
+            },
+            "src/services/playJournal.ts": {
+              "manifestSha256": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+              "checkoutSha256": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+              "match": true
+            },
+            "src/services/saveService.test.ts": {
+              "manifestSha256": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+              "checkoutSha256": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+              "match": true
+            },
+            "src/services/saveService.ts": {
+              "manifestSha256": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+              "checkoutSha256": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+              "match": true
+            },
+            "src/stores/gameStore.test.ts": {
+              "manifestSha256": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3",
+              "checkoutSha256": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3",
+              "match": true
+            },
+            "src/stores/gameStore.ts": {
+              "manifestSha256": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe",
+              "checkoutSha256": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe",
+              "match": true
+            },
+            "src/style.scss": {
+              "manifestSha256": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78",
+              "checkoutSha256": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78",
+              "match": true
+            }
+          }
+        },
+        "browser": {
+          "name": "Chromium",
+          "executable": "/usr/bin/chromium",
+          "version": "151.0.7922.173",
+          "headless": true
+        },
+        "initialWorld": {
+          "worldTime": 480,
+          "activeCharacter": "alden",
+          "settlementStage": "hamlet",
+          "party": [],
+          "pendingCount": 0,
+          "archiveRecordCount": 1,
+          "archiveIds": [
+            "aba73f10-ff05-4524-858d-ca217a5ee183"
+          ]
+        },
+        "raw": {
+          "file": "raw/normal-ui-start.raw.json",
+          "bytes": 72652,
+          "sha256": "225ff72557f4c9014f324a2c51d156068be73c4859dcf4a1bbcf6f543354906b"
+        },
+        "screenshot": "artifacts/normal-ui-start.png"
+      }
+    },
+    {
+      "name": "delayed-attack-controlled-combat-fixture",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T07:40:35.819+00:00",
+      "evidence": {
+        "fixture": {
+          "kind": "valid-save-controlled-combat",
+          "changedFields": [
+            "activeCharacter.status",
+            "combat",
+            "lastSavedAt"
+          ],
+          "combat": "Configured wolf encounter payload; matching active character status; no dungeon combat.",
+          "source": "normal UI save generated in this run; only the listed fields changed for controlled entry into combat",
+          "purpose": "exercise the rendered Attack action while a real IndexedDB readwrite transaction is natively complete but its application oncomplete callback is delayed"
+        },
+        "fixtureRaw": {
+          "file": "raw/delayed-attack-controlled-combat-fixture.raw.json",
+          "bytes": 72761,
+          "sha256": "d60b8712753c85fd2d178a7d82363c8fd97c716d3158056ab141aa270e1c8fee"
+        },
+        "settledBeforeAttackRaw": {
+          "file": "raw/delayed-attack-settled-before-public-action.raw.json",
+          "bytes": 72761,
+          "sha256": "8f390f8b3aa7d354c588ce71a9c79864b617fd11f11bd5febdec819639178ca2"
+        },
+        "worldTime": 480,
+        "initialArchiveCount": 0,
+        "initialArchiveIds": [],
+        "initialPendingCount": 0,
+        "speed": 20,
+        "pausedBeforeRace": true,
+        "combatModalVisible": true,
+        "screenshot": "artifacts/delayed-attack-combat-paused-x20.png",
+        "timeline": {
+          "event": "valid-combat-fixture-loaded-paused-at-x20",
+          "atUtc": "2026-10-04T07:40:35.817+00:00",
+          "browserPerformanceMs": 1116.8,
+          "worldTime": 480,
+          "combat": {
+            "monsterId": "wolf",
+            "hp": 30,
+            "maxHp": 30,
+            "attack": 8,
+            "defense": 1,
+            "exp": 25,
+            "gold": 12,
+            "elite": false,
+            "dungeon": false
+          },
+          "preExistingArchiveCount": 0
+        }
+      }
+    },
+    {
+      "name": "delayed-attack-first-public-action",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T07:40:35.897+00:00",
+      "evidence": {
+        "control": "Rendered modal button 攻擊",
+        "combatHpBefore": 30,
+        "combatHpAfter": 22,
+        "pendingKinds": [
+          "action"
+        ],
+        "pendingIds": [
+          "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd"
+        ],
+        "raw": {
+          "file": "raw/delayed-attack-after-public-attack-before-native-complete.raw.json",
+          "bytes": 73019,
+          "sha256": "0a6a72946c8ae0014e24c72170d6df5aae83e6056f7ed916a3ec351516bbc166"
+        },
+        "timeline": {
+          "event": "first-public-attack-recorded",
+          "atUtc": "2026-10-04T07:40:35.895+00:00",
+          "browserPerformanceMs": 1194.5,
+          "recordId": "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+          "worldTime": 481,
+          "combatHp": 22
+        }
+      }
+    },
+    {
+      "name": "delayed-attack-native-commit-before-ack",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T07:40:36.017+00:00",
+      "evidence": {
+        "nativeTransactionCompleted": true,
+        "applicationOncompleteCallbackDelivered": false,
+        "ackDelayMs": 2500,
+        "archiveContainsFirstActionExactlyOnce": true,
+        "firstActionStillPendingInLatestCheckpoint": true,
+        "archiveCount": 1,
+        "pendingIds": [
+          "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd"
+        ],
+        "trace": [
+          {
+            "event": "oncomplete",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T07:40:35.883Z",
+            "delayMs": 2500,
+            "errorName": null,
+            "errorMessage": null
+          }
+        ],
+        "raw": {
+          "file": "raw/delayed-attack-native-commit-pending-ack.raw.json",
+          "bytes": 73019,
+          "sha256": "0a6a72946c8ae0014e24c72170d6df5aae83e6056f7ed916a3ec351516bbc166"
+        },
+        "screenshot": "artifacts/delayed-attack-native-commit-pending-ack.png",
+        "timeline": {
+          "event": "native-indexeddb-commit-observed-application-ack-pending",
+          "atUtc": "2026-10-04T07:40:35.910+00:00",
+          "browserPerformanceMs": 1209.6,
+          "recordId": "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+          "archiveRecordCount": 1,
+          "pendingIds": [
+            "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd"
+          ],
+          "nativeHandlerAt": "2026-10-04T07:40:35.883Z",
+          "delayMs": 2500
+        }
+      }
+    },
+    {
+      "name": "delayed-attack-x20-time-and-follow-up-actions-before-ack",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T07:40:36.486+00:00",
+      "evidence": {
+        "speed": 20,
+        "realTimerAdvancedWhileAckDelayed": true,
+        "worldTimeBefore": 482,
+        "worldTimeAfter": 491,
+        "publicAttackActionCount": 3,
+        "timeRecordCount": 2,
+        "pendingKinds": {
+          "action": 3,
+          "time": 2
+        },
+        "pendingIds": [
+          "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+          "1b970425-14bd-442f-99ba-5b64ab0f59c2",
+          "b218fb8c-bf2f-4e82-9935-228fff1950db",
+          "cdf9558f-7357-4957-90ed-b5c55402467b",
+          "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159"
+        ],
+        "ackStillPending": true,
+        "firstCommitArchiveCount": 1,
+        "traceBeforeAck": [
+          {
+            "event": "oncomplete",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T07:40:35.883Z",
+            "delayMs": 2500,
+            "errorName": null,
+            "errorMessage": null
+          }
+        ],
+        "raw": {
+          "file": "raw/delayed-attack-time-and-actions-pending-before-ack.raw.json",
+          "bytes": 73982,
+          "sha256": "36cc77f32bc60d166209a105d6f2857bd8d9c7deb8036bdeae1a276ff12fa8d9"
+        },
+        "screenshot": "artifacts/delayed-attack-time-and-actions-pending-before-ack.png",
+        "timeline": {
+          "event": "time-and-follow-up-attacks-pending-before-application-ack",
+          "atUtc": "2026-10-04T07:40:36.369+00:00",
+          "browserPerformanceMs": 1668.9,
+          "pendingKinds": {
+            "action": 3,
+            "time": 2
+          },
+          "pendingIds": [
+            "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+            "1b970425-14bd-442f-99ba-5b64ab0f59c2",
+            "b218fb8c-bf2f-4e82-9935-228fff1950db",
+            "cdf9558f-7357-4957-90ed-b5c55402467b",
+            "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159"
+          ],
+          "worldTime": 491,
+          "combat": {
+            "monsterId": "wolf",
+            "hp": 6,
+            "maxHp": 30,
+            "attack": 8,
+            "defense": 1,
+            "exp": 25,
+            "gold": 12,
+            "elite": false,
+            "dungeon": false
+          },
+          "firstNativeCompleteAt": "2026-10-04T07:40:35.883Z",
+          "ackStillPending": true
+        }
+      }
+    },
+    {
+      "name": "delayed-attack-all-ids-archived-once-latest-state-retained",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T07:40:40.924+00:00",
+      "evidence": {
+        "expectedRecordIds": [
+          "1b970425-14bd-442f-99ba-5b64ab0f59c2",
+          "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159",
+          "b218fb8c-bf2f-4e82-9935-228fff1950db",
+          "cdf9558f-7357-4957-90ed-b5c55402467b",
+          "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd"
+        ],
+        "newPendingRecordIds": [
+          "1b970425-14bd-442f-99ba-5b64ab0f59c2",
+          "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159",
+          "b218fb8c-bf2f-4e82-9935-228fff1950db",
+          "cdf9558f-7357-4957-90ed-b5c55402467b",
+          "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd"
+        ],
+        "archiveIds": [
+          "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+          "1b970425-14bd-442f-99ba-5b64ab0f59c2",
+          "b218fb8c-bf2f-4e82-9935-228fff1950db",
+          "cdf9558f-7357-4957-90ed-b5c55402467b",
+          "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159"
+        ],
+        "recordCountsById": {
+          "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd": 1,
+          "1b970425-14bd-442f-99ba-5b64ab0f59c2": 1,
+          "b218fb8c-bf2f-4e82-9935-228fff1950db": 1,
+          "cdf9558f-7357-4957-90ed-b5c55402467b": 1,
+          "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159": 1
+        },
+        "eachPendingIdArchivedExactlyOnce": true,
+        "pendingAfterAck": 0,
+        "latestGameStateRetainedAfterAck": true,
+        "worldTimeLatestBeforeAck": 491,
+        "worldTimeAfterAck": 491,
+        "transactionTrace": [
+          {
+            "event": "oncomplete",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T07:40:35.883Z",
+            "delayMs": 2500,
+            "errorName": null,
+            "errorMessage": null,
+            "applicationHandlerAt": "2026-10-04T07:40:38.384Z"
+          },
+          {
+            "event": "oncomplete",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T07:40:38.391Z",
+            "delayMs": 2500,
+            "errorName": null,
+            "errorMessage": null,
+            "applicationHandlerAt": "2026-10-04T07:40:40.891Z"
+          }
+        ],
+        "rawLatestBeforeAck": {
+          "file": "raw/delayed-attack-time-and-actions-pending-before-ack.raw.json",
+          "bytes": 73982,
+          "sha256": "36cc77f32bc60d166209a105d6f2857bd8d9c7deb8036bdeae1a276ff12fa8d9"
+        },
+        "rawAfterAck": {
+          "file": "raw/delayed-attack-after-all-acks.raw.json",
+          "bytes": 72759,
+          "sha256": "d1ae86028d803c4ed3ad9374e28ddfb8b129f4434037eacfd3bb610347525fd4"
+        },
+        "timeline": {
+          "event": "delayed-ack-drained-all-pending-records",
+          "atUtc": "2026-10-04T07:40:40.922+00:00",
+          "browserPerformanceMs": 6221.1,
+          "archivedIds": [
+            "d8f60ffb-242d-4c56-b8e9-92b6da27c5bd",
+            "1b970425-14bd-442f-99ba-5b64ab0f59c2",
+            "b218fb8c-bf2f-4e82-9935-228fff1950db",
+            "cdf9558f-7357-4957-90ed-b5c55402467b",
+            "5a9587f1-a8d7-4f58-bd09-7a7a8e51c159"
+          ],
+          "pendingCount": 0,
+          "transactionCompletions": 2,
+          "noStateRollback": true,
+          "worldTime": 491
+        }
+      }
+    },
+    {
+      "name": "delayed-attack-exact-reload-roundtrip",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T07:40:41.723+00:00",
+      "evidence": {
+        "gameAndJournalExactAfterReload": true,
+        "archiveRowsIdenticalAfterReload": true,
+        "pendingAfterReload": 0,
+        "worldTimeBeforeReload": 491,
+        "worldTimeAfterReload": 491,
+        "combatBeforeReload": {
+          "monsterId": "wolf",
+          "hp": 6,
+          "maxHp": 30,
+          "attack": 8,
+          "defense": 1,
+          "exp": 25,
+          "gold": 12,
+          "elite": false,
+          "dungeon": false
+        },
+        "combatAfterReload": {
+          "monsterId": "wolf",
+          "hp": 6,
+          "maxHp": 30,
+          "attack": 8,
+          "defense": 1,
+          "exp": 25,
+          "gold": 12,
+          "elite": false,
+          "dungeon": false
+        },
+        "archiveCount": 5,
+        "rawBeforeReload": {
+          "file": "raw/delayed-attack-before-reload.raw.json",
+          "bytes": 72759,
+          "sha256": "d1ae86028d803c4ed3ad9374e28ddfb8b129f4434037eacfd3bb610347525fd4"
+        },
+        "rawAfterReload": {
+          "file": "raw/delayed-attack-after-reload.raw.json",
+          "bytes": 72759,
+          "sha256": "7dc99cf697a58f383fb4b3d9a532bb2a53886febd8c9d756b2ec18a7c32ed3d3"
+        },
+        "screenshotBeforeReload": "artifacts/delayed-attack-before-reload.png",
+        "screenshotAfterReload": "artifacts/delayed-attack-after-reload.png",
+        "timeline": {
+          "event": "reload-restored-exact-game-and-journal-state",
+          "atUtc": "2026-10-04T07:40:41.721+00:00",
+          "browserPerformanceMs": 681,
+          "worldTime": 491,
+          "combat": {
+            "monsterId": "wolf",
+            "hp": 6,
+            "maxHp": 30,
+            "attack": 8,
+            "defense": 1,
+            "exp": 25,
+            "gold": 12,
+            "elite": false,
+            "dungeon": false
+          },
+          "archiveCount": 5,
+          "pendingCount": 0
+        }
+      }
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "atUtc": "2026-10-04T07:40:33.666+00:00",
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:5193/"
+    }
+  ],
+  "focus": "Actual public combat attack inside delayed IndexedDB oncomplete ACK window, with ×20 timer and exact reload roundtrip.",
+  "updatedAtUtc": "2026-10-04T07:40:41.813+00:00",
+  "finishedAtUtc": "2026-10-04T07:40:41.813+00:00",
+  "summary": {
+    "caseCount": 2,
+    "failedCases": [],
+    "checkpointCount": 7,
+    "pageErrorCount": 0,
+    "consoleErrorCount": 1
+  }
+}

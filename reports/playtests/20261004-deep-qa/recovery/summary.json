@@ -1,0 +1,26 @@
+{
+  "status": "worker_complete_pending_root_browser_build_soak_review",
+  "finishedAt": "2026-10-04T02:39:15.222296+00:00",
+  "baselineCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+  "sourceHashes": {
+    "src/stores/gameStore.ts": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe",
+    "src/stores/gameStore.test.ts": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3",
+    "src/App.vue": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310"
+  },
+  "tests": {
+    "files": 7,
+    "passed": 143,
+    "failed": 0
+  },
+  "storeTests": 20,
+  "typecheckExitCode": 0,
+  "staticAuditExitCode": 0,
+  "diffCheckExitCode": 0,
+  "changedFiles": [
+    "src/stores/gameStore.ts",
+    "src/stores/gameStore.test.ts",
+    "src/App.vue"
+  ],
+  "browserValidation": "root owned; not run by this worker",
+  "report": "README.md"
+}

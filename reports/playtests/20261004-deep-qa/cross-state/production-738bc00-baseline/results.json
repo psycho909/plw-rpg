@@ -1,0 +1,3316 @@
+{
+  "suite": "20261004-deep-qa-cross-state",
+  "baselineCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+  "sourceLabel": "738bc00 baseline without O1 recovery patch",
+  "url": "http://127.0.0.1:5191/",
+  "startedAtUtc": "2026-10-04T02:52:48.331557+00:00",
+  "method": {
+    "runtime": "fixed production assets on localhost; no HMR or source imports",
+    "browser": "Playwright Chromium /usr/bin/chromium, headless, isolated disposable contexts",
+    "clock": "The ×20 cases use the application's real 100 ms interval and real wall-clock waits. Exact calendar boundaries are explicit valid-save fixtures only; no Date/performance/timer fake clock is installed.",
+    "normalRoute": "The dungeon party is established by Traveler Notes, movement, gathering, tavern hiring, and the rendered dungeon/combat/save controls.",
+    "fixtures": [
+      {
+        "kind": "valid-save-exact-calendar-boundary",
+        "changedFields": [
+          "worldTime",
+          "lastSavedAt"
+        ],
+        "worldTime": 12958,
+        "lastSavedAt": "future timestamp to prevent offline-progress on load",
+        "source": "generated normal UI save from this harness"
+      },
+      {
+        "kind": "valid-save-exact-calendar-boundary",
+        "changedFields": [
+          "worldTime",
+          "lastSavedAt"
+        ],
+        "worldTime": 172798,
+        "lastSavedAt": "future timestamp to prevent offline-progress on load",
+        "source": "generated normal UI save from this harness"
+      },
+      {
+        "kind": "valid-save-controlled-combat",
+        "changedFields": [
+          "activeCharacter.status",
+          "activeCharacter.inventory.potion",
+          "combat"
+        ],
+        "purpose": "dialog focus, disabled actions and movement lock only; battle mechanics exercised separately through public combat controls"
+      },
+      {
+        "kind": "valid-save-controlled-death",
+        "changedFields": [
+          "activeCharacter.isAlive",
+          "hp",
+          "status",
+          "deathYear",
+          "deathCause",
+          "combat",
+          "dungeon.inDungeon",
+          "party"
+        ],
+        "purpose": "death/successor modal and disabled movement focus only"
+      },
+      {
+        "kind": "valid-save-party-injury-boundary",
+        "changedFields": [
+          "npcs.npc-7.injuredUntil",
+          "currentActivity",
+          "position"
+        ],
+        "purpose": "verify an injured companion remains contracted but does not follow the party until the expiry minute"
+      },
+      {
+        "kind": "valid-save-party-newyear-boundary",
+        "changedFields": [
+          "worldTime",
+          "activeCharacter.gold",
+          "party.contractEnd",
+          "lastSavedAt"
+        ],
+        "purpose": "cross contract day boundary at new year using visible wait-one-day UI, with the exact boundary as a separate legal save fixture",
+        "yearBoundaryWorldTime": 345600,
+        "contractEndWorldTime": 347040,
+        "affectedNpc": null
+      },
+      {
+        "kind": "valid-save-contracting-companion-natural-age-death-boundary",
+        "changedFields": [
+          "worldTime",
+          "activeCharacter.gold",
+          "party.contractEnd",
+          "lastSavedAt",
+          "npcs.npc-7.age",
+          "birthYear",
+          "lifeStage",
+          "maxStamina",
+          "stamina",
+          "position",
+          "currentActivity"
+        ],
+        "purpose": "cross contract day boundary at new year using visible wait-one-day UI, with the exact boundary as a separate legal save fixture",
+        "yearBoundaryWorldTime": 345600,
+        "contractEndWorldTime": 347040,
+        "affectedNpc": "npc-7"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "name": "fixed-production-baseline-and-normal-ui-seed",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T02:52:50.268+00:00",
+      "evidence": {
+        "sourceLabel": "738bc00 baseline without O1 recovery patch",
+        "baseline": {
+          "sourceCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+          "manifestSha256": "efa756a586fc23f2f2b6712c2358d41f7a9a82cf4abe3c6b682825a52212b3cb",
+          "httpStatus": 200,
+          "assets": {
+            "index.html": {
+              "sha256": "1c1b06bb8958f7a45d6c141863253922a0e50f651e36178e3956cdacf2f3927a",
+              "status": 200
+            },
+            "assets/index-DcqD1dRF.js": {
+              "sha256": "d2ff6dccdf819cf8f4e911c16048863951ab602fa7878838f41dbe9b37f7c813",
+              "status": 200
+            },
+            "assets/index-B0QR5Rvd.css": {
+              "sha256": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+              "status": 200
+            }
+          },
+          "checkoutSourceHashes": {
+            "scripts/recorded_reports.py": {
+              "manifestSha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+              "checkoutSha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+              "match": true
+            },
+            "scripts/test_recorded_reports.py": {
+              "manifestSha256": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+              "checkoutSha256": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+              "match": true
+            },
+            "src/App.vue": {
+              "manifestSha256": "ce5002b9e63c0f1e8bdcf90807abbc7f7057c94360e9fcea1951097d0b578b22",
+              "checkoutSha256": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310",
+              "match": false
+            },
+            "src/components/AdventureWindow.vue": {
+              "manifestSha256": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+              "checkoutSha256": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+              "match": true
+            },
+            "src/components/CharacterSheet.vue": {
+              "manifestSha256": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+              "checkoutSha256": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+              "match": true
+            },
+            "src/components/InventoryWindow.vue": {
+              "manifestSha256": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+              "checkoutSha256": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+              "match": true
+            },
+            "src/components/NpcWindow.vue": {
+              "manifestSha256": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+              "checkoutSha256": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+              "match": true
+            },
+            "src/components/PixelMeter.vue": {
+              "manifestSha256": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+              "checkoutSha256": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+              "match": true
+            },
+            "src/components/PixelWindow.vue": {
+              "manifestSha256": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+              "checkoutSha256": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+              "match": true
+            },
+            "src/components/PlaceWindow.vue": {
+              "manifestSha256": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+              "checkoutSha256": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+              "match": true
+            },
+            "src/components/StatusNotice.vue": {
+              "manifestSha256": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+              "checkoutSha256": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+              "match": true
+            },
+            "src/components/WorldMap.vue": {
+              "manifestSha256": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+              "checkoutSha256": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+              "match": true
+            },
+            "src/components/WorldRecords.vue": {
+              "manifestSha256": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+              "checkoutSha256": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+              "match": true
+            },
+            "src/data/config.ts": {
+              "manifestSha256": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+              "checkoutSha256": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+              "match": true
+            },
+            "src/domain/types.ts": {
+              "manifestSha256": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+              "checkoutSha256": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+              "match": true
+            },
+            "src/engine/actions.test.ts": {
+              "manifestSha256": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+              "checkoutSha256": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+              "match": true
+            },
+            "src/engine/actions.ts": {
+              "manifestSha256": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+              "checkoutSha256": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+              "match": true
+            },
+            "src/engine/calendar.ts": {
+              "manifestSha256": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+              "checkoutSha256": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+              "match": true
+            },
+            "src/engine/events.ts": {
+              "manifestSha256": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+              "checkoutSha256": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+              "match": true
+            },
+            "src/engine/gameLoop.test.ts": {
+              "manifestSha256": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+              "checkoutSha256": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+              "match": true
+            },
+            "src/engine/gameLoop.ts": {
+              "manifestSha256": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+              "checkoutSha256": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+              "match": true
+            },
+            "src/engine/random.ts": {
+              "manifestSha256": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+              "checkoutSha256": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+              "match": true
+            },
+            "src/engine/simulation.test.ts": {
+              "manifestSha256": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+              "checkoutSha256": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+              "match": true
+            },
+            "src/engine/simulation.ts": {
+              "manifestSha256": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+              "checkoutSha256": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+              "match": true
+            },
+            "src/main.ts": {
+              "manifestSha256": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+              "checkoutSha256": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+              "match": true
+            },
+            "src/presentation/icons.ts": {
+              "manifestSha256": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+              "checkoutSha256": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+              "match": true
+            },
+            "src/presentation/worldUI.test.ts": {
+              "manifestSha256": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+              "checkoutSha256": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+              "match": true
+            },
+            "src/presentation/worldUI.ts": {
+              "manifestSha256": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+              "checkoutSha256": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+              "match": true
+            },
+            "src/services/playJournal.test.ts": {
+              "manifestSha256": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+              "checkoutSha256": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+              "match": true
+            },
+            "src/services/playJournal.ts": {
+              "manifestSha256": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+              "checkoutSha256": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+              "match": true
+            },
+            "src/services/saveService.test.ts": {
+              "manifestSha256": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+              "checkoutSha256": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+              "match": true
+            },
+            "src/services/saveService.ts": {
+              "manifestSha256": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+              "checkoutSha256": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+              "match": true
+            },
+            "src/stores/gameStore.test.ts": {
+              "manifestSha256": "c7079731b4293be6e659740a42d410f419f3dde17563c28a5f942efe5c8952c5",
+              "checkoutSha256": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3",
+              "match": false
+            },
+            "src/stores/gameStore.ts": {
+              "manifestSha256": "3ec1c6d99073b6236cf6b3aa53eea19e1ddd9cbbd15737127083e9da20543246",
+              "checkoutSha256": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe",
+              "match": false
+            },
+            "src/style.scss": {
+              "manifestSha256": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78",
+              "checkoutSha256": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78",
+              "match": true
+            }
+          }
+        },
+        "browser": {
+          "name": "Chromium",
+          "executable": "/usr/bin/chromium",
+          "version": "151.0.7922.173",
+          "headless": true
+        },
+        "initialWorld": {
+          "worldTime": 480,
+          "activeCharacter": "alden",
+          "settlementStage": "hamlet",
+          "party": [],
+          "pendingCount": 0,
+          "archiveRecordCount": 1,
+          "archiveIds": [
+            "1f45fd43-67f6-4254-97d2-28fd1da616ea"
+          ]
+        },
+        "raw": {
+          "file": "raw/normal-ui-start.raw.json",
+          "bytes": 72652,
+          "sha256": "1ac614617e2297a2da47dcc82d6ecafa4e2bc7194f3684cb36adff959b1e1ac2"
+        },
+        "screenshot": "artifacts/normal-ui-start.png"
+      }
+    },
+    {
+      "name": "x20-real-timer-modal-background-and-focus",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T02:52:54.108+00:00"
+    },
+    {
+      "name": "x20-real-timer-day-boundary",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T02:52:56.657+00:00"
+    },
+    {
+      "name": "x20-real-timer-new-year-boundary",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T02:52:59.237+00:00"
+    },
+    {
+      "name": "indexeddb-delayed-ack-queue-race",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T02:53:05.638+00:00"
+    },
+    {
+      "name": "indexeddb-transaction-abort-rollback",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T02:53:06.690+00:00"
+    },
+    {
+      "name": "combat-and-death-modal-focus-targets",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T02:53:11.954+00:00"
+    },
+    {
+      "name": "public-ui-party-dungeon-save-reload-matrix",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T02:53:24.516+00:00",
+      "evidence": {
+        "party": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "worldTime": 173878,
+        "stage": "village",
+        "partyRaw": {
+          "file": "raw/party-public-ui-final.raw.json",
+          "bytes": 94371,
+          "sha256": "ec9df491633f1afc86969de2c25b4445d311b4b4ebb5a119168e23bd9dbaedc5"
+        }
+      }
+    },
+    {
+      "name": "party-daily-wages-and-expiry",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T02:53:26.217+00:00"
+    },
+    {
+      "name": "party-cross-year-expiry-and-member-death",
+      "status": "passed",
+      "finishedAtUtc": "2026-10-04T02:53:29.204+00:00"
+    }
+  ],
+  "checkpoints": [
+    {
+      "name": "fixed-production-baseline-and-normal-ui-seed",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:52:50.240+00:00",
+      "evidence": {
+        "sourceLabel": "738bc00 baseline without O1 recovery patch",
+        "baseline": {
+          "sourceCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+          "manifestSha256": "efa756a586fc23f2f2b6712c2358d41f7a9a82cf4abe3c6b682825a52212b3cb",
+          "httpStatus": 200,
+          "assets": {
+            "index.html": {
+              "sha256": "1c1b06bb8958f7a45d6c141863253922a0e50f651e36178e3956cdacf2f3927a",
+              "status": 200
+            },
+            "assets/index-DcqD1dRF.js": {
+              "sha256": "d2ff6dccdf819cf8f4e911c16048863951ab602fa7878838f41dbe9b37f7c813",
+              "status": 200
+            },
+            "assets/index-B0QR5Rvd.css": {
+              "sha256": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+              "status": 200
+            }
+          },
+          "checkoutSourceHashes": {
+            "scripts/recorded_reports.py": {
+              "manifestSha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+              "checkoutSha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+              "match": true
+            },
+            "scripts/test_recorded_reports.py": {
+              "manifestSha256": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+              "checkoutSha256": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+              "match": true
+            },
+            "src/App.vue": {
+              "manifestSha256": "ce5002b9e63c0f1e8bdcf90807abbc7f7057c94360e9fcea1951097d0b578b22",
+              "checkoutSha256": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310",
+              "match": false
+            },
+            "src/components/AdventureWindow.vue": {
+              "manifestSha256": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+              "checkoutSha256": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+              "match": true
+            },
+            "src/components/CharacterSheet.vue": {
+              "manifestSha256": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+              "checkoutSha256": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+              "match": true
+            },
+            "src/components/InventoryWindow.vue": {
+              "manifestSha256": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+              "checkoutSha256": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+              "match": true
+            },
+            "src/components/NpcWindow.vue": {
+              "manifestSha256": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+              "checkoutSha256": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+              "match": true
+            },
+            "src/components/PixelMeter.vue": {
+              "manifestSha256": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+              "checkoutSha256": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+              "match": true
+            },
+            "src/components/PixelWindow.vue": {
+              "manifestSha256": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+              "checkoutSha256": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+              "match": true
+            },
+            "src/components/PlaceWindow.vue": {
+              "manifestSha256": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+              "checkoutSha256": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+              "match": true
+            },
+            "src/components/StatusNotice.vue": {
+              "manifestSha256": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+              "checkoutSha256": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+              "match": true
+            },
+            "src/components/WorldMap.vue": {
+              "manifestSha256": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+              "checkoutSha256": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+              "match": true
+            },
+            "src/components/WorldRecords.vue": {
+              "manifestSha256": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+              "checkoutSha256": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+              "match": true
+            },
+            "src/data/config.ts": {
+              "manifestSha256": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+              "checkoutSha256": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+              "match": true
+            },
+            "src/domain/types.ts": {
+              "manifestSha256": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+              "checkoutSha256": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+              "match": true
+            },
+            "src/engine/actions.test.ts": {
+              "manifestSha256": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+              "checkoutSha256": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+              "match": true
+            },
+            "src/engine/actions.ts": {
+              "manifestSha256": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+              "checkoutSha256": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+              "match": true
+            },
+            "src/engine/calendar.ts": {
+              "manifestSha256": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+              "checkoutSha256": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+              "match": true
+            },
+            "src/engine/events.ts": {
+              "manifestSha256": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+              "checkoutSha256": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+              "match": true
+            },
+            "src/engine/gameLoop.test.ts": {
+              "manifestSha256": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+              "checkoutSha256": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+              "match": true
+            },
+            "src/engine/gameLoop.ts": {
+              "manifestSha256": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+              "checkoutSha256": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+              "match": true
+            },
+            "src/engine/random.ts": {
+              "manifestSha256": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+              "checkoutSha256": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+              "match": true
+            },
+            "src/engine/simulation.test.ts": {
+              "manifestSha256": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+              "checkoutSha256": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+              "match": true
+            },
+            "src/engine/simulation.ts": {
+              "manifestSha256": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+              "checkoutSha256": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+              "match": true
+            },
+            "src/main.ts": {
+              "manifestSha256": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+              "checkoutSha256": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+              "match": true
+            },
+            "src/presentation/icons.ts": {
+              "manifestSha256": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+              "checkoutSha256": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+              "match": true
+            },
+            "src/presentation/worldUI.test.ts": {
+              "manifestSha256": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+              "checkoutSha256": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+              "match": true
+            },
+            "src/presentation/worldUI.ts": {
+              "manifestSha256": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+              "checkoutSha256": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+              "match": true
+            },
+            "src/services/playJournal.test.ts": {
+              "manifestSha256": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+              "checkoutSha256": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+              "match": true
+            },
+            "src/services/playJournal.ts": {
+              "manifestSha256": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+              "checkoutSha256": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+              "match": true
+            },
+            "src/services/saveService.test.ts": {
+              "manifestSha256": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+              "checkoutSha256": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+              "match": true
+            },
+            "src/services/saveService.ts": {
+              "manifestSha256": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+              "checkoutSha256": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+              "match": true
+            },
+            "src/stores/gameStore.test.ts": {
+              "manifestSha256": "c7079731b4293be6e659740a42d410f419f3dde17563c28a5f942efe5c8952c5",
+              "checkoutSha256": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3",
+              "match": false
+            },
+            "src/stores/gameStore.ts": {
+              "manifestSha256": "3ec1c6d99073b6236cf6b3aa53eea19e1ddd9cbbd15737127083e9da20543246",
+              "checkoutSha256": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe",
+              "match": false
+            },
+            "src/style.scss": {
+              "manifestSha256": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78",
+              "checkoutSha256": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78",
+              "match": true
+            }
+          }
+        },
+        "browser": {
+          "name": "Chromium",
+          "executable": "/usr/bin/chromium",
+          "version": "151.0.7922.173",
+          "headless": true
+        },
+        "initialWorld": {
+          "worldTime": 480,
+          "activeCharacter": "alden",
+          "settlementStage": "hamlet",
+          "party": [],
+          "pendingCount": 0,
+          "archiveRecordCount": 1,
+          "archiveIds": [
+            "1f45fd43-67f6-4254-97d2-28fd1da616ea"
+          ]
+        },
+        "raw": {
+          "file": "raw/normal-ui-start.raw.json",
+          "bytes": 72652,
+          "sha256": "1ac614617e2297a2da47dcc82d6ecafa4e2bc7194f3684cb36adff959b1e1ac2"
+        },
+        "screenshot": "artifacts/normal-ui-start.png"
+      }
+    },
+    {
+      "name": "x20-real-timer-modal-background-and-focus",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:52:54.080+00:00",
+      "evidence": {
+        "fixture": "normal save; no clock fixture",
+        "speed": 20,
+        "elapsedRealSeconds": 2.203,
+        "worldTimeBefore": 488,
+        "worldTimeAfter": 576,
+        "worldMinutesDelta": 88,
+        "expectedFromElapsed": 88.1,
+        "modalStayedOpen": true,
+        "focusStayedInsideEnabledDialogControls": true,
+        "focusSamples": [
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "物品",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "日誌",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "地圖與世界",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "世界歷史",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "旅人筆記",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "儲存世界\n已存於此瀏覽器 · 操作後立即保存",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "匯出遊玩紀錄\n紀錄只能追加",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "重建世界",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "暫停時間",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "關閉視窗",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "DIV",
+            "label": "視窗內容，可捲動",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "角色",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "物品",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "日誌",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "地圖與世界",
+            "disabled": false
+          },
+          {
+            "insideDialog": true,
+            "tag": "BUTTON",
+            "label": "世界歷史",
+            "disabled": false
+          }
+        ],
+        "rawBefore": {
+          "file": "raw/x20-modal-before.raw.json",
+          "bytes": 72652,
+          "sha256": "9dd2bbf531b29cab49fdf9384ca74b6418efba389634475455d3121ec9807f3f"
+        },
+        "rawAfter": {
+          "file": "raw/x20-modal-after.raw.json",
+          "bytes": 72652,
+          "sha256": "a63ea481e419abdd81d073b7cda77844b5f9199e8eb2857cc17eb87f9c78357e"
+        },
+        "screenshot": "artifacts/x20-modal-background-time.png"
+      }
+    },
+    {
+      "name": "x20-real-timer-day",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:52:56.633+00:00",
+      "evidence": {
+        "fixture": {
+          "kind": "valid-save-exact-calendar-boundary",
+          "changedFields": [
+            "worldTime",
+            "lastSavedAt"
+          ],
+          "worldTime": 12958,
+          "lastSavedAt": "future timestamp to prevent offline-progress on load",
+          "source": "generated normal UI save from this harness"
+        },
+        "loadedWithoutWarning": true,
+        "speed": 20,
+        "elapsedRealSeconds": 1.302,
+        "worldTimeBefore": 12958,
+        "worldTimeAfter": 13009,
+        "worldMinutesDelta": 51,
+        "crossedDay": true,
+        "yearBefore": 1,
+        "yearAfter": 1,
+        "newYearHistoryEvents": [],
+        "activeAgeBefore": 16,
+        "activeAgeAfter": 16,
+        "uiClockAfter": "第 1 年 春 10 日\n00:49",
+        "journalPendingAfterAck": 0,
+        "archiveRecordCount": 13,
+        "rawBefore": {
+          "file": "raw/day-before.raw.json",
+          "bytes": 72654,
+          "sha256": "aad8dc5c8f11209bdf458ff0b97239d378d6f2eb411876163275721ede395722"
+        },
+        "rawAfter": {
+          "file": "raw/day-after.raw.json",
+          "bytes": 72704,
+          "sha256": "7e468d41d5d2328715430460ac7202ceb5d43972e554ed28e82a775a8adcfc2b"
+        },
+        "screenshot": "artifacts/day-boundary.png"
+      }
+    },
+    {
+      "name": "x20-real-timer-year",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:52:59.216+00:00",
+      "evidence": {
+        "fixture": {
+          "kind": "valid-save-exact-calendar-boundary",
+          "changedFields": [
+            "worldTime",
+            "lastSavedAt"
+          ],
+          "worldTime": 172798,
+          "lastSavedAt": "future timestamp to prevent offline-progress on load",
+          "source": "generated normal UI save from this harness"
+        },
+        "loadedWithoutWarning": true,
+        "speed": 20,
+        "elapsedRealSeconds": 1.303,
+        "worldTimeBefore": 172798,
+        "worldTimeAfter": 172849,
+        "worldMinutesDelta": 51,
+        "crossedDay": true,
+        "yearBefore": 1,
+        "yearAfter": 2,
+        "newYearHistoryEvents": [
+          {
+            "id": 2,
+            "at": 172800,
+            "type": "world.newYear",
+            "category": "world",
+            "message": "第 2 年開始了。每個人都長了一歲。"
+          }
+        ],
+        "activeAgeBefore": 16,
+        "activeAgeAfter": 17,
+        "uiClockAfter": "第 2 年 春 1 日\n00:49",
+        "journalPendingAfterAck": 0,
+        "archiveRecordCount": 13,
+        "rawBefore": {
+          "file": "raw/year-before.raw.json",
+          "bytes": 72655,
+          "sha256": "9139372b8b3a86db60a478daa222c1148ed50e4faf59d6c2f4cd101cbcc095c6"
+        },
+        "rawAfter": {
+          "file": "raw/year-after.raw.json",
+          "bytes": 75890,
+          "sha256": "7a8504f294252a878fbc6eeada185d14ef81c3415583763b6d97bb8b08340d1b"
+        },
+        "screenshot": "artifacts/year-boundary.png"
+      }
+    },
+    {
+      "name": "indexeddb-delayed-ack-queue-race",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:05.614+00:00",
+      "evidence": {
+        "controlled": "Only IDBTransaction.oncomplete application callback delivery was delayed; native transaction operations and onabort were not suppressed.",
+        "ackDelayMs": 1800,
+        "actionsWhileAckInFlight": [
+          {
+            "key": "ArrowRight",
+            "worldTimeBefore": 480,
+            "worldTimeAfter": 485,
+            "pendingIds": [
+              "4cb7fc9e-6ac1-44e1-a3c6-8ca0b345f3ce"
+            ],
+            "rawBefore": {
+              "file": "raw/ack-action-1-before.raw.json",
+              "bytes": 72652,
+              "sha256": "67a8533b19c8154867dc4b5e07756ab589fc34b062d3eeb470a1473a91105b5e"
+            },
+            "rawAfter": {
+              "file": "raw/ack-action-1-after.raw.json",
+              "bytes": 72860,
+              "sha256": "e88c0836e20e8fd3e9707c23363477957b3a8b6b291d068cfaa5fe82b4862993"
+            }
+          },
+          {
+            "key": "ArrowLeft",
+            "worldTimeBefore": 485,
+            "worldTimeAfter": 490,
+            "pendingIds": [
+              "4cb7fc9e-6ac1-44e1-a3c6-8ca0b345f3ce",
+              "30961157-6f51-40f7-aa83-32caaf48173b"
+            ],
+            "rawBefore": {
+              "file": "raw/ack-action-2-before.raw.json",
+              "bytes": 72860,
+              "sha256": "e88c0836e20e8fd3e9707c23363477957b3a8b6b291d068cfaa5fe82b4862993"
+            },
+            "rawAfter": {
+              "file": "raw/ack-action-2-after.raw.json",
+              "bytes": 73069,
+              "sha256": "0f137632f3d329bbc32e4a00bbcfec3b8331d5d64eed446faf6b472912a63d84"
+            }
+          },
+          {
+            "key": "ArrowDown",
+            "worldTimeBefore": 490,
+            "worldTimeAfter": 495,
+            "pendingIds": [
+              "4cb7fc9e-6ac1-44e1-a3c6-8ca0b345f3ce",
+              "30961157-6f51-40f7-aa83-32caaf48173b",
+              "947d98a3-fdfc-4974-9dd1-890df0eac804"
+            ],
+            "rawBefore": {
+              "file": "raw/ack-action-3-before.raw.json",
+              "bytes": 73069,
+              "sha256": "0f137632f3d329bbc32e4a00bbcfec3b8331d5d64eed446faf6b472912a63d84"
+            },
+            "rawAfter": {
+              "file": "raw/ack-action-3-after.raw.json",
+              "bytes": 73279,
+              "sha256": "35a3fa218b4f688fc6a0266104e06bee2c6878abc4dbed30708852b8c9455446"
+            }
+          },
+          {
+            "key": "ArrowUp",
+            "worldTimeBefore": 495,
+            "worldTimeAfter": 500,
+            "pendingIds": [
+              "4cb7fc9e-6ac1-44e1-a3c6-8ca0b345f3ce",
+              "30961157-6f51-40f7-aa83-32caaf48173b",
+              "947d98a3-fdfc-4974-9dd1-890df0eac804",
+              "3011d9bc-d5cc-433b-be3b-763b58bb11de"
+            ],
+            "rawBefore": {
+              "file": "raw/ack-action-4-before.raw.json",
+              "bytes": 73279,
+              "sha256": "35a3fa218b4f688fc6a0266104e06bee2c6878abc4dbed30708852b8c9455446"
+            },
+            "rawAfter": {
+              "file": "raw/ack-action-4-after.raw.json",
+              "bytes": 73487,
+              "sha256": "6ad3e91264b0cbcb8b4098742cb8d88f02c9c901d298530143630a70d708f9f9"
+            }
+          }
+        ],
+        "expectedRecordIds": [
+          "3011d9bc-d5cc-433b-be3b-763b58bb11de",
+          "30961157-6f51-40f7-aa83-32caaf48173b",
+          "4cb7fc9e-6ac1-44e1-a3c6-8ca0b345f3ce",
+          "947d98a3-fdfc-4974-9dd1-890df0eac804"
+        ],
+        "archivedAddedIds": [
+          "3011d9bc-d5cc-433b-be3b-763b58bb11de",
+          "30961157-6f51-40f7-aa83-32caaf48173b",
+          "4cb7fc9e-6ac1-44e1-a3c6-8ca0b345f3ce",
+          "947d98a3-fdfc-4974-9dd1-890df0eac804"
+        ],
+        "pendingAfterAllAcks": 0,
+        "archiveRecordCountBefore": 1,
+        "archiveRecordCountAfter": 5,
+        "archiveIdsUnique": true,
+        "transactionTrace": [
+          {
+            "event": "oncomplete",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T02:52:59.522Z",
+            "delayMs": 1800,
+            "errorName": null,
+            "errorMessage": null,
+            "applicationHandlerAt": "2026-10-04T02:53:01.323Z"
+          },
+          {
+            "event": "oncomplete",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T02:53:01.376Z",
+            "delayMs": 1800,
+            "errorName": null,
+            "errorMessage": null,
+            "applicationHandlerAt": "2026-10-04T02:53:03.176Z"
+          },
+          {
+            "event": "oncomplete",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T02:53:03.182Z",
+            "delayMs": 1800,
+            "errorName": null,
+            "errorMessage": null,
+            "applicationHandlerAt": "2026-10-04T02:53:04.982Z"
+          }
+        ],
+        "rawBefore": {
+          "file": "raw/ack-race-before.raw.json",
+          "bytes": 72652,
+          "sha256": "67a8533b19c8154867dc4b5e07756ab589fc34b062d3eeb470a1473a91105b5e"
+        },
+        "rawAfter": {
+          "file": "raw/ack-race-after.raw.json",
+          "bytes": 72652,
+          "sha256": "19837b9adc1685be0c082bef535bdde7bad311c07e0f9724b22bd09dff06e83f"
+        }
+      }
+    },
+    {
+      "name": "indexeddb-abort-rollback-integrity",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:06.670+00:00",
+      "evidence": {
+        "fixture": "one existing unique-ID record conflicts with a pending record's content; this is an intentional failure case",
+        "transactionAbortObserved": true,
+        "abortCount": 2,
+        "pendingPreservedAfterAbortAndRetry": true,
+        "pendingCountImmediatelyAfterAbort": 1,
+        "archiveBefore": [
+          {
+            "id": "qa-controlled-rollback-1",
+            "worldId": "53340c54-ee65-4f77-ba4e-9bf058ca2047",
+            "at": 1000,
+            "kind": "action",
+            "from": 480,
+            "to": 485,
+            "characterId": "alden",
+            "message": "existing archived value",
+            "events": []
+          }
+        ],
+        "archiveAfter": [
+          {
+            "id": "qa-controlled-rollback-1",
+            "worldId": "53340c54-ee65-4f77-ba4e-9bf058ca2047",
+            "at": 1000,
+            "kind": "action",
+            "from": 480,
+            "to": 485,
+            "characterId": "alden",
+            "message": "existing archived value",
+            "events": []
+          }
+        ],
+        "archiveContentUnchanged": true,
+        "rawFixture": {
+          "file": "raw/rollback-conflict-fixture.raw.json",
+          "bytes": 72850,
+          "sha256": "96842da6a29b3e7e68cd46aa95ea42ded9c46d740fe68fba21402fd2f862c979"
+        },
+        "rawBefore": {
+          "file": "raw/rollback-before.raw.json",
+          "bytes": 72850,
+          "sha256": "657cff04355ad90def2966688800200fc0baa1ca55e9382f4145729ba22499a4"
+        },
+        "rawAfterAbort": {
+          "file": "raw/rollback-after-abort.raw.json",
+          "bytes": 72850,
+          "sha256": "657cff04355ad90def2966688800200fc0baa1ca55e9382f4145729ba22499a4"
+        },
+        "rawAfterRetry": {
+          "file": "raw/rollback-after-retry.raw.json",
+          "bytes": 72850,
+          "sha256": "5e04af959f1ecd06d886f69892ea697ff566b65dc6fabf9018c25881196b96cd"
+        },
+        "journalErrorVisible": true,
+        "transactionTrace": [
+          {
+            "event": "onabort",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T02:53:05.990Z",
+            "delayMs": 0,
+            "errorName": null,
+            "errorMessage": null,
+            "applicationHandlerAt": "2026-10-04T02:53:05.990Z"
+          },
+          {
+            "event": "onabort",
+            "mode": "readwrite",
+            "objectStore": [
+              "records"
+            ],
+            "nativeHandlerAt": "2026-10-04T02:53:06.498Z",
+            "delayMs": 0,
+            "errorName": null,
+            "errorMessage": null,
+            "applicationHandlerAt": "2026-10-04T02:53:06.498Z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "combat-modal-disabled-target-focus-and-x20",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:09.237+00:00",
+      "evidence": {
+        "fixture": {
+          "kind": "valid-save-controlled-combat",
+          "changedFields": [
+            "activeCharacter.status",
+            "activeCharacter.inventory.potion",
+            "combat"
+          ],
+          "purpose": "dialog focus, disabled actions and movement lock only; battle mechanics exercised separately through public combat controls"
+        },
+        "battleDialog": true,
+        "potionDisabled": true,
+        "mapActionsDisabled": true,
+        "directionActionsDisabled": true,
+        "focusTrapSkippedDisabledControls": true,
+        "focusSamples": [
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "防禦"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "逃跑"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "繼續時間"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "關閉視窗"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "DIV",
+            "label": "視窗內容，可捲動"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "攻擊"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "防禦"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "逃跑"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "繼續時間"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "關閉視窗"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "DIV",
+            "label": "視窗內容，可捲動"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "攻擊"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "防禦"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "逃跑"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "繼續時間"
+          },
+          {
+            "insideDialog": true,
+            "disabled": false,
+            "tag": "BUTTON",
+            "label": "關閉視窗"
+          }
+        ],
+        "speed": 20,
+        "elapsedRealSeconds": 1.108,
+        "worldTimeDelta": 44,
+        "combatStateUnchanged": true,
+        "screenshot": "artifacts/combat-modal-x20-disabled-focus.png"
+      }
+    },
+    {
+      "name": "dead-character-successor-modal-and-world-continues",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:11.924+00:00",
+      "evidence": {
+        "fixture": {
+          "kind": "valid-save-controlled-death",
+          "changedFields": [
+            "activeCharacter.isAlive",
+            "hp",
+            "status",
+            "deathYear",
+            "deathCause",
+            "combat",
+            "dungeon.inDungeon",
+            "party"
+          ],
+          "purpose": "death/successor modal and disabled movement focus only"
+        },
+        "successorCount": 29,
+        "nonDismissible": true,
+        "movementTargetsDisabled": true,
+        "speed": 1,
+        "elapsedRealSeconds": 1.409,
+        "worldTimeDelta": 2,
+        "successorModalStayedOpen": true,
+        "screenshot": "artifacts/dead-successor-modal-background-time.png"
+      }
+    },
+    {
+      "name": "ui-time-度過一年",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:13.418+00:00",
+      "evidence": {
+        "control": "度過一年",
+        "from": 524,
+        "to": 173324,
+        "elapsedSeconds": 0.183,
+        "partyCount": 0,
+        "gold": 45
+      }
+    },
+    {
+      "name": "normal-ui-one-year-town-growth",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:13.423+00:00",
+      "evidence": {
+        "fromWorldTime": 524,
+        "toWorldTime": 173324,
+        "stage": "village",
+        "buildings": [
+          "house",
+          "farm",
+          "store",
+          "inn",
+          "tavern",
+          "blacksmith"
+        ],
+        "growth": 153.6286848,
+        "party": [],
+        "method": "visible Traveler Notes wait one year action; simulation accelerated by game control, no fake timers"
+      }
+    },
+    {
+      "name": "public-ui-forest-gathering",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:14.091+00:00",
+      "evidence": {
+        "requested": 6,
+        "completed": 6,
+        "gold": 69,
+        "stamina": 24,
+        "wood": 12,
+        "worldTime": 173609,
+        "raw": {
+          "file": "raw/public-gather.raw.json",
+          "bytes": 93600,
+          "sha256": "ebaac841285350e80081850cee388ab14be062782e88b8841202b0d707944368"
+        }
+      }
+    },
+    {
+      "name": "public-ui-rest-before-adventure",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:14.411+00:00",
+      "evidence": {
+        "requestedHours": 2,
+        "completedHours": 2,
+        "stamina": 84,
+        "hp": 106,
+        "worldTime": 173764,
+        "raw": {
+          "file": "raw/public-rest.raw.json",
+          "bytes": 93841,
+          "sha256": "7c991cdf28265adf64a564d34102030f2a1e9d2ecbed2698a934f8129cd366cb"
+        }
+      }
+    },
+    {
+      "name": "party-route-real-clock-to-1700",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:16.133+00:00",
+      "evidence": {
+        "fromMinuteOfDay": 964,
+        "requestedMinuteOfDay": 1020,
+        "uiClockAfter": "第 2 年 春 1 日\n17:08",
+        "realElapsedSeconds": 1.667,
+        "gameMinutesRequested": 56,
+        "speed": 20
+      }
+    },
+    {
+      "name": "public-ui-hired-fighter-and-healer",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:16.594+00:00",
+      "evidence": {
+        "hiredNpcIds": [
+          "npc-7",
+          "npc-14"
+        ],
+        "party": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "roles": [
+          "fighter",
+          "healer"
+        ],
+        "gold": 19,
+        "worldTime": 173878,
+        "contractEnd": [
+          177120,
+          177120
+        ],
+        "raw": {
+          "file": "raw/party-public-ui-hired.raw.json",
+          "bytes": 94371,
+          "sha256": "ec9df491633f1afc86969de2c25b4445d311b4b4ebb5a119168e23bd9dbaedc5"
+        },
+        "uiRoster": "同行 露西 7、芬恩 14"
+      }
+    },
+    {
+      "name": "party-public-ui-save-before-dungeon",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:16.817+00:00",
+      "evidence": {
+        "snapshot": {
+          "file": "raw/party-public-ui-final.raw.json",
+          "bytes": 94371,
+          "sha256": "ec9df491633f1afc86969de2c25b4445d311b4b4ebb5a119168e23bd9dbaedc5"
+        },
+        "party": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "dailyWages": [
+          4,
+          4
+        ],
+        "contractEnds": [
+          177120,
+          177120
+        ],
+        "gold": 19,
+        "archiveIds": [
+          "cb14049b-e3df-4351-84dc-d699a6fc479c",
+          "998d883b-5b85-4e39-92c6-d7e11a508565",
+          "5ce3bc97-5c28-4638-a745-723f351c9251",
+          "95807503-86f0-408f-ac5c-4007871b15e5",
+          "97b546f4-6c4a-4153-b888-e54d6b1b1ef7",
+          "b56fc66f-6531-433f-bb8c-20fe930673ac",
+          "cdcd1f66-5341-44b0-b3df-9e95d87dd715",
+          "da236b27-85cf-47f3-bb5d-b6c6c1e2b70d",
+          "dee25828-d3be-43d9-9613-c3f501cb8480",
+          "c8f4c8d5-6925-4d9e-b83b-654c3f1225c9",
+          "b4c01317-0960-4c56-aabb-caf49fa81088",
+          "dd55a374-ffb0-4d81-b692-78d919ce8272",
+          "f500c640-9129-4fb7-b8d8-20156eef6e7a",
+          "7c2e9abc-6b4d-4841-a409-ba2234990b67",
+          "80b6570d-af67-41ad-ada5-6b0265092850",
+          "95b46a2c-d01f-4ba4-88e1-3201950f8c6f",
+          "26fcdeb6-1864-42ae-bea5-a5cd5605aed1",
+          "aa050669-d7d8-47d5-8904-36d8c8b58a1e",
+          "b61c9fec-1743-43b3-80a8-bfe3898ff8ca",
+          "607a8b13-8636-4c73-bda8-73357cc40979",
+          "84ebf79a-c99a-4c41-90a1-5444978c5f13",
+          "1b08b17e-1fcd-44fc-83ff-c949b24c3e7a",
+          "be2d8f30-f7a8-40bd-a893-99b429a5c710",
+          "9afa4a49-9e29-4888-921d-004868f49e06",
+          "ca50a733-b4e0-4dde-afda-4c87502252ba",
+          "1f4f61d4-2585-4454-87f4-bb7b871d0da2",
+          "509b90ca-aafa-436c-84a3-6335bf6581c5",
+          "b91de8bf-fb18-4b78-89a3-130ea23c1904",
+          "dce14ad3-ea1b-4763-b334-9437e85a681e",
+          "3329d369-8420-4dc0-9dc7-e9b2f3bb83ee",
+          "a3a2257b-55f9-4e6e-b108-0ac1a12dd998"
+        ]
+      }
+    },
+    {
+      "name": "ui-time-等待 1 日",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:18.050+00:00",
+      "evidence": {
+        "control": "等待 1 日",
+        "from": 173878,
+        "to": 175318,
+        "elapsedSeconds": 0.159,
+        "partyCount": 2,
+        "gold": 11
+      }
+    },
+    {
+      "name": "party-injury-expiry-and-follow-state",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:18.054+00:00",
+      "evidence": {
+        "fixture": {
+          "kind": "valid-save-party-injury-boundary",
+          "changedFields": [
+            "npcs.npc-7.injuredUntil",
+            "currentActivity",
+            "position"
+          ],
+          "purpose": "verify an injured companion remains contracted but does not follow the party until the expiry minute"
+        },
+        "injuredUntil": 175317,
+        "worldTimeBefore": 173878,
+        "worldTimeAfterOneDay": 175318,
+        "partyBefore": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "partyAfter": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "npcBefore": {
+          "injuredUntil": 175317,
+          "position": {
+            "x": 9,
+            "y": 10
+          },
+          "home": {
+            "x": 9,
+            "y": 10
+          },
+          "currentActivity": "leisure"
+        },
+        "npcAfter": {
+          "injuredUntil": 175317,
+          "position": {
+            "x": 11,
+            "y": 11
+          },
+          "home": {
+            "x": 9,
+            "y": 10
+          },
+          "currentActivity": "travel"
+        }
+      }
+    },
+    {
+      "name": "normal-ui-discover-mine",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:18.325+00:00",
+      "evidence": {
+        "worldTime": 173963,
+        "position": {
+          "x": 20,
+          "y": 3
+        },
+        "regions": {
+          "village": {
+            "discovered": true,
+            "remainingAmount": 0,
+            "regenerationRate": 0
+          },
+          "farmland": {
+            "discovered": true,
+            "remainingAmount": 0,
+            "regenerationRate": 0
+          },
+          "forest": {
+            "discovered": true,
+            "remainingAmount": 88,
+            "regenerationRate": 10
+          },
+          "mine": {
+            "discovered": true,
+            "remainingAmount": 100,
+            "regenerationRate": 8
+          },
+          "unknown": {
+            "discovered": true,
+            "remainingAmount": 100,
+            "regenerationRate": 2
+          }
+        },
+        "dungeon": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 0,
+          "inDungeon": false
+        },
+        "raw": {
+          "file": "raw/mine-discovered.raw.json",
+          "bytes": 94673,
+          "sha256": "80fd5230cbc53a0b82f885d5b798a1e6815a5f8279156aabd48c31db558cc1ca"
+        }
+      }
+    },
+    {
+      "name": "normal-ui-dungeon-entry-stage-zero",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:18.536+00:00",
+      "evidence": {
+        "dungeon": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 0,
+          "inDungeon": true
+        },
+        "party": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "raw": {
+          "file": "raw/dungeon-entry.raw.json",
+          "bytes": 94824,
+          "sha256": "35f38c5729d01e2c90bc437b233265ddcc86c6328e08e93a3e40a92a6b7b4674"
+        },
+        "screenshot": "artifacts/dungeon-entry-stage-zero.png"
+      }
+    },
+    {
+      "name": "save-reload-dungeon-entry",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:19.262+00:00",
+      "evidence": {
+        "case": "dungeon-entry",
+        "samePartyDungeonCombat": {
+          "party": true,
+          "dungeon": true,
+          "combat": true
+        },
+        "worldTimeBefore": 173973,
+        "worldTimeAfterReload": 173973,
+        "archiveIdsBefore": [
+          "cb14049b-e3df-4351-84dc-d699a6fc479c",
+          "998d883b-5b85-4e39-92c6-d7e11a508565",
+          "5ce3bc97-5c28-4638-a745-723f351c9251",
+          "95807503-86f0-408f-ac5c-4007871b15e5",
+          "97b546f4-6c4a-4153-b888-e54d6b1b1ef7",
+          "b56fc66f-6531-433f-bb8c-20fe930673ac",
+          "cdcd1f66-5341-44b0-b3df-9e95d87dd715",
+          "da236b27-85cf-47f3-bb5d-b6c6c1e2b70d",
+          "dee25828-d3be-43d9-9613-c3f501cb8480",
+          "c8f4c8d5-6925-4d9e-b83b-654c3f1225c9",
+          "b4c01317-0960-4c56-aabb-caf49fa81088",
+          "dd55a374-ffb0-4d81-b692-78d919ce8272",
+          "f500c640-9129-4fb7-b8d8-20156eef6e7a",
+          "7c2e9abc-6b4d-4841-a409-ba2234990b67",
+          "80b6570d-af67-41ad-ada5-6b0265092850",
+          "95b46a2c-d01f-4ba4-88e1-3201950f8c6f",
+          "26fcdeb6-1864-42ae-bea5-a5cd5605aed1",
+          "aa050669-d7d8-47d5-8904-36d8c8b58a1e",
+          "b61c9fec-1743-43b3-80a8-bfe3898ff8ca",
+          "607a8b13-8636-4c73-bda8-73357cc40979",
+          "84ebf79a-c99a-4c41-90a1-5444978c5f13",
+          "1b08b17e-1fcd-44fc-83ff-c949b24c3e7a",
+          "be2d8f30-f7a8-40bd-a893-99b429a5c710",
+          "9afa4a49-9e29-4888-921d-004868f49e06",
+          "ca50a733-b4e0-4dde-afda-4c87502252ba",
+          "1f4f61d4-2585-4454-87f4-bb7b871d0da2",
+          "509b90ca-aafa-436c-84a3-6335bf6581c5",
+          "b91de8bf-fb18-4b78-89a3-130ea23c1904",
+          "dce14ad3-ea1b-4763-b334-9437e85a681e",
+          "3329d369-8420-4dc0-9dc7-e9b2f3bb83ee",
+          "a3a2257b-55f9-4e6e-b108-0ac1a12dd998",
+          "7fb33ff6-5717-494f-b897-d6b2d0933bc0",
+          "ee09d160-633a-4190-b002-57789d2f9589"
+        ],
+        "archiveIdsAfter": [
+          "cb14049b-e3df-4351-84dc-d699a6fc479c",
+          "998d883b-5b85-4e39-92c6-d7e11a508565",
+          "5ce3bc97-5c28-4638-a745-723f351c9251",
+          "95807503-86f0-408f-ac5c-4007871b15e5",
+          "97b546f4-6c4a-4153-b888-e54d6b1b1ef7",
+          "b56fc66f-6531-433f-bb8c-20fe930673ac",
+          "cdcd1f66-5341-44b0-b3df-9e95d87dd715",
+          "da236b27-85cf-47f3-bb5d-b6c6c1e2b70d",
+          "dee25828-d3be-43d9-9613-c3f501cb8480",
+          "c8f4c8d5-6925-4d9e-b83b-654c3f1225c9",
+          "b4c01317-0960-4c56-aabb-caf49fa81088",
+          "dd55a374-ffb0-4d81-b692-78d919ce8272",
+          "f500c640-9129-4fb7-b8d8-20156eef6e7a",
+          "7c2e9abc-6b4d-4841-a409-ba2234990b67",
+          "80b6570d-af67-41ad-ada5-6b0265092850",
+          "95b46a2c-d01f-4ba4-88e1-3201950f8c6f",
+          "26fcdeb6-1864-42ae-bea5-a5cd5605aed1",
+          "aa050669-d7d8-47d5-8904-36d8c8b58a1e",
+          "b61c9fec-1743-43b3-80a8-bfe3898ff8ca",
+          "607a8b13-8636-4c73-bda8-73357cc40979",
+          "84ebf79a-c99a-4c41-90a1-5444978c5f13",
+          "1b08b17e-1fcd-44fc-83ff-c949b24c3e7a",
+          "be2d8f30-f7a8-40bd-a893-99b429a5c710",
+          "9afa4a49-9e29-4888-921d-004868f49e06",
+          "ca50a733-b4e0-4dde-afda-4c87502252ba",
+          "1f4f61d4-2585-4454-87f4-bb7b871d0da2",
+          "509b90ca-aafa-436c-84a3-6335bf6581c5",
+          "b91de8bf-fb18-4b78-89a3-130ea23c1904",
+          "dce14ad3-ea1b-4763-b334-9437e85a681e",
+          "3329d369-8420-4dc0-9dc7-e9b2f3bb83ee",
+          "a3a2257b-55f9-4e6e-b108-0ac1a12dd998",
+          "7fb33ff6-5717-494f-b897-d6b2d0933bc0",
+          "ee09d160-633a-4190-b002-57789d2f9589"
+        ],
+        "archiveIdsUnique": true,
+        "pendingAfterReload": 0,
+        "rawBefore": {
+          "file": "raw/dungeon-entry-before-reload.raw.json",
+          "bytes": 94824,
+          "sha256": "35f38c5729d01e2c90bc437b233265ddcc86c6328e08e93a3e40a92a6b7b4674"
+        },
+        "rawAfter": {
+          "file": "raw/dungeon-entry-after-reload.raw.json",
+          "bytes": 94824,
+          "sha256": "45e3af9adaca9cf342a1acec0711ee9d410d5132a783e3e4b1346c1399d7db6a"
+        }
+      }
+    },
+    {
+      "name": "dungeon-battle-retreat-exits-without-clear",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:19.519+00:00",
+      "evidence": {
+        "dungeonBefore": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 0,
+          "inDungeon": true
+        },
+        "dungeonAfter": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 0,
+          "inDungeon": false
+        },
+        "combatBefore": {
+          "monsterId": "slime",
+          "hp": 23,
+          "maxHp": 23,
+          "attack": 6,
+          "defense": 0,
+          "exp": 19,
+          "gold": 10,
+          "elite": false,
+          "dungeon": true
+        },
+        "combatAfter": null,
+        "runs": 0,
+        "party": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "rawBefore": {
+          "file": "raw/dungeon-retreat-before.raw.json",
+          "bytes": 95030,
+          "sha256": "13042d83c550381d9a6466b199adfcbd9917d2b467fdd9b9875a5e4333d0ab94"
+        },
+        "rawAfter": {
+          "file": "raw/dungeon-retreat-after.raw.json",
+          "bytes": 95018,
+          "sha256": "cf39d0cc9c73084d06d7db3b8ebaaf057d654b757aec7f26eb20326972bc4182"
+        }
+      }
+    },
+    {
+      "name": "dungeon-reentry-after-retreat-resets-to-stage-zero",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:19.645+00:00",
+      "evidence": {
+        "dungeon": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 0,
+          "inDungeon": true
+        },
+        "raw": {
+          "file": "raw/reentry-after-retreat.raw.json",
+          "bytes": 95169,
+          "sha256": "79027e8a5c0bf6c9e85d0113c868391f309dd7c39eb967ca9aee8e7bb1444af2"
+        }
+      }
+    },
+    {
+      "name": "dungeon-abandoned-mine-reentry-floor-1-battle-resolved",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:20.057+00:00",
+      "evidence": {
+        "stageName": "abandoned-mine-reentry-floor-1",
+        "enemy": "slime",
+        "turnCount": 1,
+        "turns": [
+          {
+            "turn": 1,
+            "command": "攻擊",
+            "enemyHpBefore": 23,
+            "enemyHpAfter": null,
+            "playerHpBefore": 106,
+            "playerHpAfter": 112,
+            "worldTime": 173994
+          }
+        ],
+        "combatSaveReload": null,
+        "battleStartRaw": {
+          "file": "raw/abandoned-mine-reentry-floor-1-battle-start.raw.json",
+          "bytes": 95375,
+          "sha256": "f7b3f4a26f28d4e56a413733a68b6f73be89ab7f36b401277c346a8515ad8d98"
+        },
+        "battleStartScreenshot": "artifacts/abandoned-mine-reentry-floor-1-battle-start.png",
+        "worldTimeAfter": 173994,
+        "playerHpAfter": 112,
+        "partyAfter": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "dungeonAfter": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 1,
+          "inDungeon": true
+        },
+        "recentEvents": [
+          "region.discovered",
+          "dungeon.entered",
+          "combat.started",
+          "combat.ran",
+          "dungeon.entered",
+          "combat.started",
+          "character.levelUp",
+          "combat.won"
+        ]
+      }
+    },
+    {
+      "name": "dungeon-leave-between-floor-one-and-two",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:20.257+00:00",
+      "evidence": {
+        "label": "leave-between-floor-one-and-two",
+        "dungeonBefore": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 1,
+          "inDungeon": true
+        },
+        "dungeonAfter": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 1,
+          "inDungeon": false
+        },
+        "worldTime": 173994,
+        "rawBefore": {
+          "file": "raw/leave-between-floor-one-and-two-before.raw.json",
+          "bytes": 95493,
+          "sha256": "60d491a703cf121cd241e64472d7c130b287336746c47a8ed2ca98965a09a08a"
+        },
+        "rawAfter": {
+          "file": "raw/leave-between-floor-one-and-two-after.raw.json",
+          "bytes": 95494,
+          "sha256": "1be71ee80dd3eee46b2e00124e2de156bcd956ab8997644e3c4e7bdd87e827bd"
+        }
+      }
+    },
+    {
+      "name": "dungeon-leave-and-reentry-reset-design",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:20.357+00:00",
+      "evidence": {
+        "stageAfterFirstClear": 1,
+        "afterLeave": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 1,
+          "inDungeon": false
+        },
+        "afterReentry": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 0,
+          "inDungeon": true
+        },
+        "interpretation": "leave retains the cleared-stage number outside; the next enter action resets the next expedition to stage 0"
+      }
+    },
+    {
+      "name": "dungeon-full-run-floor-1-battle-resolved",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:20.722+00:00",
+      "evidence": {
+        "stageName": "full-run-floor-1",
+        "enemy": "slime",
+        "turnCount": 1,
+        "turns": [
+          {
+            "turn": 1,
+            "command": "攻擊",
+            "enemyHpBefore": 23,
+            "enemyHpAfter": null,
+            "playerHpBefore": 112,
+            "playerHpAfter": 112,
+            "worldTime": 174005
+          }
+        ],
+        "combatSaveReload": null,
+        "battleStartRaw": {
+          "file": "raw/full-run-floor-1-battle-start.raw.json",
+          "bytes": 95851,
+          "sha256": "e2abf26b12ba004de23b9b3c3ae18e5518da19ccdcbad8268f7500abe8de07f3"
+        },
+        "battleStartScreenshot": "artifacts/full-run-floor-1-battle-start.png",
+        "worldTimeAfter": 174005,
+        "playerHpAfter": 112,
+        "partyAfter": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "dungeonAfter": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 1,
+          "inDungeon": true
+        },
+        "recentEvents": [
+          "dungeon.entered",
+          "combat.started",
+          "character.levelUp",
+          "combat.won",
+          "dungeon.entered",
+          "combat.started",
+          "character.skillUp",
+          "combat.won"
+        ]
+      }
+    },
+    {
+      "name": "save-reload-full-run-floor-2-combat",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:21.933+00:00",
+      "evidence": {
+        "case": "full-run-floor-2-combat",
+        "samePartyDungeonCombat": {
+          "party": true,
+          "dungeon": true,
+          "combat": true
+        },
+        "worldTimeBefore": 174006,
+        "worldTimeAfterReload": 174006,
+        "archiveIdsBefore": [
+          "cb14049b-e3df-4351-84dc-d699a6fc479c",
+          "998d883b-5b85-4e39-92c6-d7e11a508565",
+          "5ce3bc97-5c28-4638-a745-723f351c9251",
+          "95807503-86f0-408f-ac5c-4007871b15e5",
+          "97b546f4-6c4a-4153-b888-e54d6b1b1ef7",
+          "b56fc66f-6531-433f-bb8c-20fe930673ac",
+          "cdcd1f66-5341-44b0-b3df-9e95d87dd715",
+          "da236b27-85cf-47f3-bb5d-b6c6c1e2b70d",
+          "dee25828-d3be-43d9-9613-c3f501cb8480",
+          "c8f4c8d5-6925-4d9e-b83b-654c3f1225c9",
+          "b4c01317-0960-4c56-aabb-caf49fa81088",
+          "dd55a374-ffb0-4d81-b692-78d919ce8272",
+          "f500c640-9129-4fb7-b8d8-20156eef6e7a",
+          "7c2e9abc-6b4d-4841-a409-ba2234990b67",
+          "80b6570d-af67-41ad-ada5-6b0265092850",
+          "95b46a2c-d01f-4ba4-88e1-3201950f8c6f",
+          "26fcdeb6-1864-42ae-bea5-a5cd5605aed1",
+          "aa050669-d7d8-47d5-8904-36d8c8b58a1e",
+          "b61c9fec-1743-43b3-80a8-bfe3898ff8ca",
+          "607a8b13-8636-4c73-bda8-73357cc40979",
+          "84ebf79a-c99a-4c41-90a1-5444978c5f13",
+          "1b08b17e-1fcd-44fc-83ff-c949b24c3e7a",
+          "be2d8f30-f7a8-40bd-a893-99b429a5c710",
+          "9afa4a49-9e29-4888-921d-004868f49e06",
+          "ca50a733-b4e0-4dde-afda-4c87502252ba",
+          "1f4f61d4-2585-4454-87f4-bb7b871d0da2",
+          "509b90ca-aafa-436c-84a3-6335bf6581c5",
+          "b91de8bf-fb18-4b78-89a3-130ea23c1904",
+          "dce14ad3-ea1b-4763-b334-9437e85a681e",
+          "3329d369-8420-4dc0-9dc7-e9b2f3bb83ee",
+          "a3a2257b-55f9-4e6e-b108-0ac1a12dd998",
+          "7fb33ff6-5717-494f-b897-d6b2d0933bc0",
+          "ee09d160-633a-4190-b002-57789d2f9589",
+          "5e486bbc-d088-4221-9d6c-cbf153a8a28e",
+          "f7bfc001-4d72-4a3f-9da1-4738e555836c",
+          "9b26b759-e8fe-4361-a890-a06e834f1de1",
+          "75bc758e-4801-4e5f-8246-5231894e3009",
+          "389fdc8b-08a9-49e8-ba2c-222a3dc11fee",
+          "ddd11874-c1bd-417a-8ca4-43ce55f0ca9c",
+          "0a08b42e-3969-4de3-bac3-3b2038158005",
+          "dcffcadd-33f8-4913-8f73-758a806615f2",
+          "b4beb4ff-2955-4b1b-8862-f6833d679207",
+          "84227f40-d2a9-402f-9e5f-ee4685f7eec6",
+          "c2eb5fa6-2673-44fa-8ed3-4bc0b63b5d23"
+        ],
+        "archiveIdsAfter": [
+          "cb14049b-e3df-4351-84dc-d699a6fc479c",
+          "998d883b-5b85-4e39-92c6-d7e11a508565",
+          "5ce3bc97-5c28-4638-a745-723f351c9251",
+          "95807503-86f0-408f-ac5c-4007871b15e5",
+          "97b546f4-6c4a-4153-b888-e54d6b1b1ef7",
+          "b56fc66f-6531-433f-bb8c-20fe930673ac",
+          "cdcd1f66-5341-44b0-b3df-9e95d87dd715",
+          "da236b27-85cf-47f3-bb5d-b6c6c1e2b70d",
+          "dee25828-d3be-43d9-9613-c3f501cb8480",
+          "c8f4c8d5-6925-4d9e-b83b-654c3f1225c9",
+          "b4c01317-0960-4c56-aabb-caf49fa81088",
+          "dd55a374-ffb0-4d81-b692-78d919ce8272",
+          "f500c640-9129-4fb7-b8d8-20156eef6e7a",
+          "7c2e9abc-6b4d-4841-a409-ba2234990b67",
+          "80b6570d-af67-41ad-ada5-6b0265092850",
+          "95b46a2c-d01f-4ba4-88e1-3201950f8c6f",
+          "26fcdeb6-1864-42ae-bea5-a5cd5605aed1",
+          "aa050669-d7d8-47d5-8904-36d8c8b58a1e",
+          "b61c9fec-1743-43b3-80a8-bfe3898ff8ca",
+          "607a8b13-8636-4c73-bda8-73357cc40979",
+          "84ebf79a-c99a-4c41-90a1-5444978c5f13",
+          "1b08b17e-1fcd-44fc-83ff-c949b24c3e7a",
+          "be2d8f30-f7a8-40bd-a893-99b429a5c710",
+          "9afa4a49-9e29-4888-921d-004868f49e06",
+          "ca50a733-b4e0-4dde-afda-4c87502252ba",
+          "1f4f61d4-2585-4454-87f4-bb7b871d0da2",
+          "509b90ca-aafa-436c-84a3-6335bf6581c5",
+          "b91de8bf-fb18-4b78-89a3-130ea23c1904",
+          "dce14ad3-ea1b-4763-b334-9437e85a681e",
+          "3329d369-8420-4dc0-9dc7-e9b2f3bb83ee",
+          "a3a2257b-55f9-4e6e-b108-0ac1a12dd998",
+          "7fb33ff6-5717-494f-b897-d6b2d0933bc0",
+          "ee09d160-633a-4190-b002-57789d2f9589",
+          "5e486bbc-d088-4221-9d6c-cbf153a8a28e",
+          "f7bfc001-4d72-4a3f-9da1-4738e555836c",
+          "9b26b759-e8fe-4361-a890-a06e834f1de1",
+          "75bc758e-4801-4e5f-8246-5231894e3009",
+          "389fdc8b-08a9-49e8-ba2c-222a3dc11fee",
+          "ddd11874-c1bd-417a-8ca4-43ce55f0ca9c",
+          "0a08b42e-3969-4de3-bac3-3b2038158005",
+          "dcffcadd-33f8-4913-8f73-758a806615f2",
+          "b4beb4ff-2955-4b1b-8862-f6833d679207",
+          "84227f40-d2a9-402f-9e5f-ee4685f7eec6",
+          "c2eb5fa6-2673-44fa-8ed3-4bc0b63b5d23"
+        ],
+        "archiveIdsUnique": true,
+        "pendingAfterReload": 0,
+        "rawBefore": {
+          "file": "raw/full-run-floor-2-combat-before-reload.raw.json",
+          "bytes": 96188,
+          "sha256": "9f5cdb32016a3456a7f03defe9e765b48e2080eadc48826bb74cb3b2003aab05"
+        },
+        "rawAfter": {
+          "file": "raw/full-run-floor-2-combat-after-reload.raw.json",
+          "bytes": 96188,
+          "sha256": "c1c4e0ff79bf33c36d3e324000bcf31aae168b2e314be08d85127904ca7562fb"
+        }
+      }
+    },
+    {
+      "name": "dungeon-full-run-floor-2-battle-resolved",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:22.271+00:00",
+      "evidence": {
+        "stageName": "full-run-floor-2",
+        "enemy": "goblin",
+        "turnCount": 3,
+        "turns": [
+          {
+            "turn": 1,
+            "command": "攻擊",
+            "enemyHpBefore": 55,
+            "enemyHpAfter": 29,
+            "playerHpBefore": 108,
+            "playerHpAfter": 94,
+            "worldTime": 174007
+          },
+          {
+            "turn": 2,
+            "command": "攻擊",
+            "enemyHpBefore": 29,
+            "enemyHpAfter": 3,
+            "playerHpBefore": 94,
+            "playerHpAfter": 80,
+            "worldTime": 174008
+          },
+          {
+            "turn": 3,
+            "command": "攻擊",
+            "enemyHpBefore": 3,
+            "enemyHpAfter": null,
+            "playerHpBefore": 80,
+            "playerHpAfter": 86,
+            "worldTime": 174009
+          }
+        ],
+        "combatSaveReload": {
+          "preReloadRaw": {
+            "file": "raw/full-run-floor-2-combat-before-reload.raw.json",
+            "bytes": 96188,
+            "sha256": "9f5cdb32016a3456a7f03defe9e765b48e2080eadc48826bb74cb3b2003aab05"
+          },
+          "afterDefendWorldTime": 174006,
+          "combat": {
+            "monsterId": "goblin",
+            "hp": 55,
+            "maxHp": 69,
+            "attack": 17,
+            "defense": 2,
+            "exp": 58,
+            "gold": 30,
+            "elite": true,
+            "dungeon": true
+          },
+          "stage": 1,
+          "screenshot": "artifacts/full-run-floor-2-combat-saved.png"
+        },
+        "battleStartRaw": {
+          "file": "raw/full-run-floor-2-battle-start.raw.json",
+          "bytes": 96188,
+          "sha256": "01f41be0e2e85452bbc0e461ec88ee2a8c38d5f5f24f9a813d5e1151697fba6d"
+        },
+        "battleStartScreenshot": "artifacts/full-run-floor-2-battle-start.png",
+        "worldTimeAfter": 174009,
+        "playerHpAfter": 86,
+        "partyAfter": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "dungeonAfter": {
+          "discovered": true,
+          "threat": 2,
+          "progress": 47.99999999999989,
+          "runs": 0,
+          "stage": 2,
+          "inDungeon": true
+        },
+        "recentEvents": [
+          "dungeon.entered",
+          "combat.started",
+          "character.skillUp",
+          "combat.won",
+          "combat.started",
+          "character.levelUp",
+          "character.skillUp",
+          "combat.won"
+        ]
+      }
+    },
+    {
+      "name": "save-reload-full-run-floor-3-combat",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:23.465+00:00",
+      "evidence": {
+        "case": "full-run-floor-3-combat",
+        "samePartyDungeonCombat": {
+          "party": true,
+          "dungeon": true,
+          "combat": true
+        },
+        "worldTimeBefore": 174010,
+        "worldTimeAfterReload": 174010,
+        "archiveIdsBefore": [
+          "cb14049b-e3df-4351-84dc-d699a6fc479c",
+          "998d883b-5b85-4e39-92c6-d7e11a508565",
+          "5ce3bc97-5c28-4638-a745-723f351c9251",
+          "95807503-86f0-408f-ac5c-4007871b15e5",
+          "97b546f4-6c4a-4153-b888-e54d6b1b1ef7",
+          "b56fc66f-6531-433f-bb8c-20fe930673ac",
+          "cdcd1f66-5341-44b0-b3df-9e95d87dd715",
+          "da236b27-85cf-47f3-bb5d-b6c6c1e2b70d",
+          "dee25828-d3be-43d9-9613-c3f501cb8480",
+          "c8f4c8d5-6925-4d9e-b83b-654c3f1225c9",
+          "b4c01317-0960-4c56-aabb-caf49fa81088",
+          "dd55a374-ffb0-4d81-b692-78d919ce8272",
+          "f500c640-9129-4fb7-b8d8-20156eef6e7a",
+          "7c2e9abc-6b4d-4841-a409-ba2234990b67",
+          "80b6570d-af67-41ad-ada5-6b0265092850",
+          "95b46a2c-d01f-4ba4-88e1-3201950f8c6f",
+          "26fcdeb6-1864-42ae-bea5-a5cd5605aed1",
+          "aa050669-d7d8-47d5-8904-36d8c8b58a1e",
+          "b61c9fec-1743-43b3-80a8-bfe3898ff8ca",
+          "607a8b13-8636-4c73-bda8-73357cc40979",
+          "84ebf79a-c99a-4c41-90a1-5444978c5f13",
+          "1b08b17e-1fcd-44fc-83ff-c949b24c3e7a",
+          "be2d8f30-f7a8-40bd-a893-99b429a5c710",
+          "9afa4a49-9e29-4888-921d-004868f49e06",
+          "ca50a733-b4e0-4dde-afda-4c87502252ba",
+          "1f4f61d4-2585-4454-87f4-bb7b871d0da2",
+          "509b90ca-aafa-436c-84a3-6335bf6581c5",
+          "b91de8bf-fb18-4b78-89a3-130ea23c1904",
+          "dce14ad3-ea1b-4763-b334-9437e85a681e",
+          "3329d369-8420-4dc0-9dc7-e9b2f3bb83ee",
+          "a3a2257b-55f9-4e6e-b108-0ac1a12dd998",
+          "7fb33ff6-5717-494f-b897-d6b2d0933bc0",
+          "ee09d160-633a-4190-b002-57789d2f9589",
+          "5e486bbc-d088-4221-9d6c-cbf153a8a28e",
+          "f7bfc001-4d72-4a3f-9da1-4738e555836c",
+          "9b26b759-e8fe-4361-a890-a06e834f1de1",
+          "75bc758e-4801-4e5f-8246-5231894e3009",
+          "389fdc8b-08a9-49e8-ba2c-222a3dc11fee",
+          "ddd11874-c1bd-417a-8ca4-43ce55f0ca9c",
+          "0a08b42e-3969-4de3-bac3-3b2038158005",
+          "dcffcadd-33f8-4913-8f73-758a806615f2",
+          "b4beb4ff-2955-4b1b-8862-f6833d679207",
+          "84227f40-d2a9-402f-9e5f-ee4685f7eec6",
+          "c2eb5fa6-2673-44fa-8ed3-4bc0b63b5d23",
+          "5a884dcb-b944-4424-b99a-c99a58e1b6ef",
+          "46e8dd7a-1076-41f4-b789-c492e1b00445",
+          "74a1b0e5-c923-4bc4-a88c-dc1d8cc7630e",
+          "7d798b9e-1339-469c-84ea-fb5089fc324f",
+          "24f89c35-b6a8-4e12-8708-6c2a64bca5c8"
+        ],
+        "archiveIdsAfter": [
+          "cb14049b-e3df-4351-84dc-d699a6fc479c",
+          "998d883b-5b85-4e39-92c6-d7e11a508565",
+          "5ce3bc97-5c28-4638-a745-723f351c9251",
+          "95807503-86f0-408f-ac5c-4007871b15e5",
+          "97b546f4-6c4a-4153-b888-e54d6b1b1ef7",
+          "b56fc66f-6531-433f-bb8c-20fe930673ac",
+          "cdcd1f66-5341-44b0-b3df-9e95d87dd715",
+          "da236b27-85cf-47f3-bb5d-b6c6c1e2b70d",
+          "dee25828-d3be-43d9-9613-c3f501cb8480",
+          "c8f4c8d5-6925-4d9e-b83b-654c3f1225c9",
+          "b4c01317-0960-4c56-aabb-caf49fa81088",
+          "dd55a374-ffb0-4d81-b692-78d919ce8272",
+          "f500c640-9129-4fb7-b8d8-20156eef6e7a",
+          "7c2e9abc-6b4d-4841-a409-ba2234990b67",
+          "80b6570d-af67-41ad-ada5-6b0265092850",
+          "95b46a2c-d01f-4ba4-88e1-3201950f8c6f",
+          "26fcdeb6-1864-42ae-bea5-a5cd5605aed1",
+          "aa050669-d7d8-47d5-8904-36d8c8b58a1e",
+          "b61c9fec-1743-43b3-80a8-bfe3898ff8ca",
+          "607a8b13-8636-4c73-bda8-73357cc40979",
+          "84ebf79a-c99a-4c41-90a1-5444978c5f13",
+          "1b08b17e-1fcd-44fc-83ff-c949b24c3e7a",
+          "be2d8f30-f7a8-40bd-a893-99b429a5c710",
+          "9afa4a49-9e29-4888-921d-004868f49e06",
+          "ca50a733-b4e0-4dde-afda-4c87502252ba",
+          "1f4f61d4-2585-4454-87f4-bb7b871d0da2",
+          "509b90ca-aafa-436c-84a3-6335bf6581c5",
+          "b91de8bf-fb18-4b78-89a3-130ea23c1904",
+          "dce14ad3-ea1b-4763-b334-9437e85a681e",
+          "3329d369-8420-4dc0-9dc7-e9b2f3bb83ee",
+          "a3a2257b-55f9-4e6e-b108-0ac1a12dd998",
+          "7fb33ff6-5717-494f-b897-d6b2d0933bc0",
+          "ee09d160-633a-4190-b002-57789d2f9589",
+          "5e486bbc-d088-4221-9d6c-cbf153a8a28e",
+          "f7bfc001-4d72-4a3f-9da1-4738e555836c",
+          "9b26b759-e8fe-4361-a890-a06e834f1de1",
+          "75bc758e-4801-4e5f-8246-5231894e3009",
+          "389fdc8b-08a9-49e8-ba2c-222a3dc11fee",
+          "ddd11874-c1bd-417a-8ca4-43ce55f0ca9c",
+          "0a08b42e-3969-4de3-bac3-3b2038158005",
+          "dcffcadd-33f8-4913-8f73-758a806615f2",
+          "b4beb4ff-2955-4b1b-8862-f6833d679207",
+          "84227f40-d2a9-402f-9e5f-ee4685f7eec6",
+          "c2eb5fa6-2673-44fa-8ed3-4bc0b63b5d23",
+          "5a884dcb-b944-4424-b99a-c99a58e1b6ef",
+          "46e8dd7a-1076-41f4-b789-c492e1b00445",
+          "74a1b0e5-c923-4bc4-a88c-dc1d8cc7630e",
+          "7d798b9e-1339-469c-84ea-fb5089fc324f",
+          "24f89c35-b6a8-4e12-8708-6c2a64bca5c8"
+        ],
+        "archiveIdsUnique": true,
+        "pendingAfterReload": 0,
+        "rawBefore": {
+          "file": "raw/full-run-floor-3-combat-before-reload.raw.json",
+          "bytes": 96629,
+          "sha256": "b70fe935f0d1d2c898cceaa9adb3a4b1b7875960bc3ee52a0accec33782a5d66"
+        },
+        "rawAfter": {
+          "file": "raw/full-run-floor-3-combat-after-reload.raw.json",
+          "bytes": 96629,
+          "sha256": "f7d18e232370f502e291eb2b7ce6a990872c9291bbec38fab516650be7eebdfe"
+        }
+      }
+    },
+    {
+      "name": "dungeon-full-run-floor-3-battle-resolved",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:24.346+00:00",
+      "evidence": {
+        "stageName": "full-run-floor-3",
+        "enemy": "chief",
+        "turnCount": 9,
+        "turns": [
+          {
+            "turn": 1,
+            "command": "攻擊",
+            "enemyHpBefore": 130,
+            "enemyHpAfter": 110,
+            "playerHpBefore": 81,
+            "playerHpAfter": 63,
+            "worldTime": 174011
+          },
+          {
+            "turn": 2,
+            "command": "攻擊",
+            "enemyHpBefore": 110,
+            "enemyHpAfter": 90,
+            "playerHpBefore": 63,
+            "playerHpAfter": 45,
+            "worldTime": 174012
+          },
+          {
+            "turn": 3,
+            "command": "攻擊",
+            "enemyHpBefore": 90,
+            "enemyHpAfter": 74,
+            "playerHpBefore": 45,
+            "playerHpAfter": 37,
+            "worldTime": 174013
+          },
+          {
+            "turn": 4,
+            "command": "攻擊",
+            "enemyHpBefore": 74,
+            "enemyHpAfter": 58,
+            "playerHpBefore": 37,
+            "playerHpAfter": 29,
+            "worldTime": 174014
+          },
+          {
+            "turn": 5,
+            "command": "使用藥水",
+            "enemyHpBefore": 58,
+            "enemyHpAfter": 50,
+            "playerHpBefore": 29,
+            "playerHpAfter": 56,
+            "worldTime": 174015
+          },
+          {
+            "turn": 6,
+            "command": "攻擊",
+            "enemyHpBefore": 50,
+            "enemyHpAfter": 34,
+            "playerHpBefore": 56,
+            "playerHpAfter": 48,
+            "worldTime": 174016
+          },
+          {
+            "turn": 7,
+            "command": "攻擊",
+            "enemyHpBefore": 34,
+            "enemyHpAfter": 18,
+            "playerHpBefore": 48,
+            "playerHpAfter": 40,
+            "worldTime": 174017
+          },
+          {
+            "turn": 8,
+            "command": "攻擊",
+            "enemyHpBefore": 18,
+            "enemyHpAfter": 2,
+            "playerHpBefore": 40,
+            "playerHpAfter": 32,
+            "worldTime": 174018
+          },
+          {
+            "turn": 9,
+            "command": "使用藥水",
+            "enemyHpBefore": 2,
+            "enemyHpAfter": null,
+            "playerHpBefore": 32,
+            "playerHpAfter": 83,
+            "worldTime": 174019
+          }
+        ],
+        "combatSaveReload": {
+          "preReloadRaw": {
+            "file": "raw/full-run-floor-3-combat-before-reload.raw.json",
+            "bytes": 96629,
+            "sha256": "b70fe935f0d1d2c898cceaa9adb3a4b1b7875960bc3ee52a0accec33782a5d66"
+          },
+          "afterDefendWorldTime": 174010,
+          "combat": {
+            "monsterId": "chief",
+            "hp": 130,
+            "maxHp": 138,
+            "attack": 21,
+            "defense": 5,
+            "exp": 188,
+            "gold": 125,
+            "elite": false,
+            "dungeon": true
+          },
+          "stage": 2,
+          "screenshot": "artifacts/full-run-floor-3-combat-saved.png"
+        },
+        "battleStartRaw": {
+          "file": "raw/full-run-floor-3-battle-start.raw.json",
+          "bytes": 96629,
+          "sha256": "33c1ce04bbf1df4163f7618b85f60bda43b56c295da43c6788e9bbf525f8e170"
+        },
+        "battleStartScreenshot": "artifacts/full-run-floor-3-battle-start.png",
+        "worldTimeAfter": 174019,
+        "playerHpAfter": 83,
+        "partyAfter": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "dungeonAfter": {
+          "discovered": true,
+          "threat": 1,
+          "progress": 17.999999999999893,
+          "runs": 1,
+          "stage": 3,
+          "inDungeon": false
+        },
+        "recentEvents": [
+          "character.skillUp",
+          "combat.won",
+          "combat.started",
+          "character.levelUp",
+          "character.skillUp",
+          "character.skillUp",
+          "dungeon.cleared",
+          "combat.won"
+        ]
+      }
+    },
+    {
+      "name": "dungeon-three-stages-complete-with-two-companion-archetypes",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:24.458+00:00",
+      "evidence": {
+        "firstStage": {
+          "stageName": "full-run-floor-1",
+          "enemy": "slime",
+          "turnCount": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "command": "攻擊",
+              "enemyHpBefore": 23,
+              "enemyHpAfter": null,
+              "playerHpBefore": 112,
+              "playerHpAfter": 112,
+              "worldTime": 174005
+            }
+          ],
+          "combatSaveReload": null,
+          "battleStartRaw": {
+            "file": "raw/full-run-floor-1-battle-start.raw.json",
+            "bytes": 95851,
+            "sha256": "e2abf26b12ba004de23b9b3c3ae18e5518da19ccdcbad8268f7500abe8de07f3"
+          },
+          "battleStartScreenshot": "artifacts/full-run-floor-1-battle-start.png",
+          "worldTimeAfter": 174005,
+          "playerHpAfter": 112,
+          "partyAfter": [
+            {
+              "npcId": "npc-7",
+              "hireCost": 25,
+              "dailyWage": 4,
+              "contractEnd": 177120,
+              "archetype": "fighter"
+            },
+            {
+              "npcId": "npc-14",
+              "hireCost": 25,
+              "dailyWage": 4,
+              "contractEnd": 177120,
+              "archetype": "healer"
+            }
+          ],
+          "dungeonAfter": {
+            "discovered": true,
+            "threat": 2,
+            "progress": 47.99999999999989,
+            "runs": 0,
+            "stage": 1,
+            "inDungeon": true
+          },
+          "recentEvents": [
+            "dungeon.entered",
+            "combat.started",
+            "character.levelUp",
+            "combat.won",
+            "dungeon.entered",
+            "combat.started",
+            "character.skillUp",
+            "combat.won"
+          ]
+        },
+        "secondStage": {
+          "stageName": "full-run-floor-2",
+          "enemy": "goblin",
+          "turnCount": 3,
+          "turns": [
+            {
+              "turn": 1,
+              "command": "攻擊",
+              "enemyHpBefore": 55,
+              "enemyHpAfter": 29,
+              "playerHpBefore": 108,
+              "playerHpAfter": 94,
+              "worldTime": 174007
+            },
+            {
+              "turn": 2,
+              "command": "攻擊",
+              "enemyHpBefore": 29,
+              "enemyHpAfter": 3,
+              "playerHpBefore": 94,
+              "playerHpAfter": 80,
+              "worldTime": 174008
+            },
+            {
+              "turn": 3,
+              "command": "攻擊",
+              "enemyHpBefore": 3,
+              "enemyHpAfter": null,
+              "playerHpBefore": 80,
+              "playerHpAfter": 86,
+              "worldTime": 174009
+            }
+          ],
+          "combatSaveReload": {
+            "preReloadRaw": {
+              "file": "raw/full-run-floor-2-combat-before-reload.raw.json",
+              "bytes": 96188,
+              "sha256": "9f5cdb32016a3456a7f03defe9e765b48e2080eadc48826bb74cb3b2003aab05"
+            },
+            "afterDefendWorldTime": 174006,
+            "combat": {
+              "monsterId": "goblin",
+              "hp": 55,
+              "maxHp": 69,
+              "attack": 17,
+              "defense": 2,
+              "exp": 58,
+              "gold": 30,
+              "elite": true,
+              "dungeon": true
+            },
+            "stage": 1,
+            "screenshot": "artifacts/full-run-floor-2-combat-saved.png"
+          },
+          "battleStartRaw": {
+            "file": "raw/full-run-floor-2-battle-start.raw.json",
+            "bytes": 96188,
+            "sha256": "01f41be0e2e85452bbc0e461ec88ee2a8c38d5f5f24f9a813d5e1151697fba6d"
+          },
+          "battleStartScreenshot": "artifacts/full-run-floor-2-battle-start.png",
+          "worldTimeAfter": 174009,
+          "playerHpAfter": 86,
+          "partyAfter": [
+            {
+              "npcId": "npc-7",
+              "hireCost": 25,
+              "dailyWage": 4,
+              "contractEnd": 177120,
+              "archetype": "fighter"
+            },
+            {
+              "npcId": "npc-14",
+              "hireCost": 25,
+              "dailyWage": 4,
+              "contractEnd": 177120,
+              "archetype": "healer"
+            }
+          ],
+          "dungeonAfter": {
+            "discovered": true,
+            "threat": 2,
+            "progress": 47.99999999999989,
+            "runs": 0,
+            "stage": 2,
+            "inDungeon": true
+          },
+          "recentEvents": [
+            "dungeon.entered",
+            "combat.started",
+            "character.skillUp",
+            "combat.won",
+            "combat.started",
+            "character.levelUp",
+            "character.skillUp",
+            "combat.won"
+          ]
+        },
+        "thirdStage": {
+          "stageName": "full-run-floor-3",
+          "enemy": "chief",
+          "turnCount": 9,
+          "turns": [
+            {
+              "turn": 1,
+              "command": "攻擊",
+              "enemyHpBefore": 130,
+              "enemyHpAfter": 110,
+              "playerHpBefore": 81,
+              "playerHpAfter": 63,
+              "worldTime": 174011
+            },
+            {
+              "turn": 2,
+              "command": "攻擊",
+              "enemyHpBefore": 110,
+              "enemyHpAfter": 90,
+              "playerHpBefore": 63,
+              "playerHpAfter": 45,
+              "worldTime": 174012
+            },
+            {
+              "turn": 3,
+              "command": "攻擊",
+              "enemyHpBefore": 90,
+              "enemyHpAfter": 74,
+              "playerHpBefore": 45,
+              "playerHpAfter": 37,
+              "worldTime": 174013
+            },
+            {
+              "turn": 4,
+              "command": "攻擊",
+              "enemyHpBefore": 74,
+              "enemyHpAfter": 58,
+              "playerHpBefore": 37,
+              "playerHpAfter": 29,
+              "worldTime": 174014
+            },
+            {
+              "turn": 5,
+              "command": "使用藥水",
+              "enemyHpBefore": 58,
+              "enemyHpAfter": 50,
+              "playerHpBefore": 29,
+              "playerHpAfter": 56,
+              "worldTime": 174015
+            },
+            {
+              "turn": 6,
+              "command": "攻擊",
+              "enemyHpBefore": 50,
+              "enemyHpAfter": 34,
+              "playerHpBefore": 56,
+              "playerHpAfter": 48,
+              "worldTime": 174016
+            },
+            {
+              "turn": 7,
+              "command": "攻擊",
+              "enemyHpBefore": 34,
+              "enemyHpAfter": 18,
+              "playerHpBefore": 48,
+              "playerHpAfter": 40,
+              "worldTime": 174017
+            },
+            {
+              "turn": 8,
+              "command": "攻擊",
+              "enemyHpBefore": 18,
+              "enemyHpAfter": 2,
+              "playerHpBefore": 40,
+              "playerHpAfter": 32,
+              "worldTime": 174018
+            },
+            {
+              "turn": 9,
+              "command": "使用藥水",
+              "enemyHpBefore": 2,
+              "enemyHpAfter": null,
+              "playerHpBefore": 32,
+              "playerHpAfter": 83,
+              "worldTime": 174019
+            }
+          ],
+          "combatSaveReload": {
+            "preReloadRaw": {
+              "file": "raw/full-run-floor-3-combat-before-reload.raw.json",
+              "bytes": 96629,
+              "sha256": "b70fe935f0d1d2c898cceaa9adb3a4b1b7875960bc3ee52a0accec33782a5d66"
+            },
+            "afterDefendWorldTime": 174010,
+            "combat": {
+              "monsterId": "chief",
+              "hp": 130,
+              "maxHp": 138,
+              "attack": 21,
+              "defense": 5,
+              "exp": 188,
+              "gold": 125,
+              "elite": false,
+              "dungeon": true
+            },
+            "stage": 2,
+            "screenshot": "artifacts/full-run-floor-3-combat-saved.png"
+          },
+          "battleStartRaw": {
+            "file": "raw/full-run-floor-3-battle-start.raw.json",
+            "bytes": 96629,
+            "sha256": "33c1ce04bbf1df4163f7618b85f60bda43b56c295da43c6788e9bbf525f8e170"
+          },
+          "battleStartScreenshot": "artifacts/full-run-floor-3-battle-start.png",
+          "worldTimeAfter": 174019,
+          "playerHpAfter": 83,
+          "partyAfter": [
+            {
+              "npcId": "npc-7",
+              "hireCost": 25,
+              "dailyWage": 4,
+              "contractEnd": 177120,
+              "archetype": "fighter"
+            },
+            {
+              "npcId": "npc-14",
+              "hireCost": 25,
+              "dailyWage": 4,
+              "contractEnd": 177120,
+              "archetype": "healer"
+            }
+          ],
+          "dungeonAfter": {
+            "discovered": true,
+            "threat": 1,
+            "progress": 17.999999999999893,
+            "runs": 1,
+            "stage": 3,
+            "inDungeon": false
+          },
+          "recentEvents": [
+            "character.skillUp",
+            "combat.won",
+            "combat.started",
+            "character.levelUp",
+            "character.skillUp",
+            "character.skillUp",
+            "dungeon.cleared",
+            "combat.won"
+          ]
+        },
+        "dungeon": {
+          "discovered": true,
+          "threat": 1,
+          "progress": 17.999999999999893,
+          "runs": 1,
+          "stage": 3,
+          "inDungeon": false
+        },
+        "party": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "partyArchetypes": [
+          "fighter",
+          "healer"
+        ],
+        "player": {
+          "hp": 83,
+          "maxHp": 124,
+          "gold": 194,
+          "inventory": {
+            "wood": 12,
+            "stone": 0,
+            "iron": 3,
+            "food": 3,
+            "material": 4,
+            "potion": 0,
+            "sword": 0,
+            "armor": 0
+          }
+        },
+        "recentEvents": [
+          "combat.started",
+          "character.levelUp",
+          "character.skillUp",
+          "combat.won",
+          "combat.started",
+          "character.levelUp",
+          "character.skillUp",
+          "character.skillUp",
+          "dungeon.cleared",
+          "combat.won"
+        ],
+        "raw": {
+          "file": "raw/dungeon-three-stage-clear.raw.json",
+          "bytes": 97222,
+          "sha256": "e3245749e96cc2496ae48a5a33a9b72e25b87cf992eb473bc45bf42a79518180"
+        },
+        "screenshot": "artifacts/dungeon-three-stage-clear.png"
+      }
+    },
+    {
+      "name": "dungeon-route-final-journal-archive",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:24.485+00:00",
+      "evidence": {
+        "archiveRecordCount": 58,
+        "archiveIds": [
+          "cb14049b-e3df-4351-84dc-d699a6fc479c",
+          "998d883b-5b85-4e39-92c6-d7e11a508565",
+          "5ce3bc97-5c28-4638-a745-723f351c9251",
+          "95807503-86f0-408f-ac5c-4007871b15e5",
+          "97b546f4-6c4a-4153-b888-e54d6b1b1ef7",
+          "b56fc66f-6531-433f-bb8c-20fe930673ac",
+          "cdcd1f66-5341-44b0-b3df-9e95d87dd715",
+          "da236b27-85cf-47f3-bb5d-b6c6c1e2b70d",
+          "dee25828-d3be-43d9-9613-c3f501cb8480",
+          "c8f4c8d5-6925-4d9e-b83b-654c3f1225c9",
+          "b4c01317-0960-4c56-aabb-caf49fa81088",
+          "dd55a374-ffb0-4d81-b692-78d919ce8272",
+          "f500c640-9129-4fb7-b8d8-20156eef6e7a",
+          "7c2e9abc-6b4d-4841-a409-ba2234990b67",
+          "80b6570d-af67-41ad-ada5-6b0265092850",
+          "95b46a2c-d01f-4ba4-88e1-3201950f8c6f",
+          "26fcdeb6-1864-42ae-bea5-a5cd5605aed1",
+          "aa050669-d7d8-47d5-8904-36d8c8b58a1e",
+          "b61c9fec-1743-43b3-80a8-bfe3898ff8ca",
+          "607a8b13-8636-4c73-bda8-73357cc40979",
+          "84ebf79a-c99a-4c41-90a1-5444978c5f13",
+          "1b08b17e-1fcd-44fc-83ff-c949b24c3e7a",
+          "be2d8f30-f7a8-40bd-a893-99b429a5c710",
+          "9afa4a49-9e29-4888-921d-004868f49e06",
+          "ca50a733-b4e0-4dde-afda-4c87502252ba",
+          "1f4f61d4-2585-4454-87f4-bb7b871d0da2",
+          "509b90ca-aafa-436c-84a3-6335bf6581c5",
+          "b91de8bf-fb18-4b78-89a3-130ea23c1904",
+          "dce14ad3-ea1b-4763-b334-9437e85a681e",
+          "3329d369-8420-4dc0-9dc7-e9b2f3bb83ee",
+          "a3a2257b-55f9-4e6e-b108-0ac1a12dd998",
+          "7fb33ff6-5717-494f-b897-d6b2d0933bc0",
+          "ee09d160-633a-4190-b002-57789d2f9589",
+          "5e486bbc-d088-4221-9d6c-cbf153a8a28e",
+          "f7bfc001-4d72-4a3f-9da1-4738e555836c",
+          "9b26b759-e8fe-4361-a890-a06e834f1de1",
+          "75bc758e-4801-4e5f-8246-5231894e3009",
+          "389fdc8b-08a9-49e8-ba2c-222a3dc11fee",
+          "ddd11874-c1bd-417a-8ca4-43ce55f0ca9c",
+          "0a08b42e-3969-4de3-bac3-3b2038158005",
+          "dcffcadd-33f8-4913-8f73-758a806615f2",
+          "b4beb4ff-2955-4b1b-8862-f6833d679207",
+          "84227f40-d2a9-402f-9e5f-ee4685f7eec6",
+          "c2eb5fa6-2673-44fa-8ed3-4bc0b63b5d23",
+          "5a884dcb-b944-4424-b99a-c99a58e1b6ef",
+          "46e8dd7a-1076-41f4-b789-c492e1b00445",
+          "74a1b0e5-c923-4bc4-a88c-dc1d8cc7630e",
+          "7d798b9e-1339-469c-84ea-fb5089fc324f",
+          "24f89c35-b6a8-4e12-8708-6c2a64bca5c8",
+          "875cbb3d-3d23-4f0a-b657-4599335592a6",
+          "7948a9b0-25c4-4d31-818c-48145da28268",
+          "d09090b6-2341-4999-a2ee-460d7be15cd2",
+          "e0ed9dbc-1930-425a-bbbd-e07a03db190c",
+          "421f33d1-2882-4f3a-8a85-8dc911a8fee4",
+          "51ac4fd3-4880-47c7-9380-4e780c2b8e10",
+          "f795e2ad-7180-4824-a12b-3b36d07eb4d4",
+          "dfc18e9e-20b2-4be4-846f-3cce730b2e03",
+          "3c84e2b4-2fe6-4866-bbf6-c6ae049ca1f4"
+        ],
+        "uniqueIds": true,
+        "pending": [],
+        "party": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "dungeon": {
+          "discovered": true,
+          "threat": 1,
+          "progress": 17.999999999999893,
+          "runs": 1,
+          "stage": 3,
+          "inDungeon": false
+        }
+      }
+    },
+    {
+      "name": "ui-time-等待 1 日",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:25.645+00:00",
+      "evidence": {
+        "control": "等待 1 日",
+        "from": 173894,
+        "to": 175334,
+        "elapsedSeconds": 0.126,
+        "partyCount": 2,
+        "gold": 11
+      }
+    },
+    {
+      "name": "ui-time-等待 1 日",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:25.914+00:00",
+      "evidence": {
+        "control": "等待 1 日",
+        "from": 175334,
+        "to": 176774,
+        "elapsedSeconds": 0.145,
+        "partyCount": 2,
+        "gold": 3
+      }
+    },
+    {
+      "name": "ui-time-等待 1 日",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:26.175+00:00",
+      "evidence": {
+        "control": "等待 1 日",
+        "from": 176774,
+        "to": 178214,
+        "elapsedSeconds": 0.146,
+        "partyCount": 0,
+        "gold": 3
+      }
+    },
+    {
+      "name": "party-two-daily-wages-and-three-day-contract-expiry",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:26.193+00:00",
+      "evidence": {
+        "partyBefore": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 177120,
+            "archetype": "healer"
+          }
+        ],
+        "days": [
+          {
+            "day": 1,
+            "worldTime": 175334,
+            "gold": 11,
+            "party": [
+              {
+                "npcId": "npc-7",
+                "hireCost": 25,
+                "dailyWage": 4,
+                "contractEnd": 177120,
+                "archetype": "fighter"
+              },
+              {
+                "npcId": "npc-14",
+                "hireCost": 25,
+                "dailyWage": 4,
+                "contractEnd": 177120,
+                "archetype": "healer"
+              }
+            ],
+            "expiredEvents": []
+          },
+          {
+            "day": 2,
+            "worldTime": 176774,
+            "gold": 3,
+            "party": [
+              {
+                "npcId": "npc-7",
+                "hireCost": 25,
+                "dailyWage": 4,
+                "contractEnd": 177120,
+                "archetype": "fighter"
+              },
+              {
+                "npcId": "npc-14",
+                "hireCost": 25,
+                "dailyWage": 4,
+                "contractEnd": 177120,
+                "archetype": "healer"
+              }
+            ],
+            "expiredEvents": []
+          },
+          {
+            "day": 3,
+            "worldTime": 178214,
+            "gold": 3,
+            "party": [],
+            "expiredEvents": [
+              "party.expired",
+              "party.expired"
+            ]
+          }
+        ],
+        "startGold": 19,
+        "endGold": 3,
+        "expectedWagesForTwoPaidDays": 16,
+        "observedGoldLoss": 16,
+        "expiredCount": 2,
+        "partyAfter": [],
+        "rawBefore": {
+          "file": "raw/party-wages-before.raw.json",
+          "bytes": 94433,
+          "sha256": "b6ad3d46fc9132ad203faff18d099a5f58b605750c10da5ce7ec8ce283d56a61"
+        },
+        "rawAfter": {
+          "file": "raw/party-wages-expired-after.raw.json",
+          "bytes": 94798,
+          "sha256": "98a50cc05f2fc96a1af7b0cf9fa3c57a212262773edcc94b3dc1b71141b74053"
+        }
+      }
+    },
+    {
+      "name": "ui-time-等待 1 日",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:27.365+00:00",
+      "evidence": {
+        "control": "等待 1 日",
+        "from": 345598,
+        "to": 347038,
+        "elapsedSeconds": 0.13,
+        "partyCount": 2,
+        "gold": 992
+      }
+    },
+    {
+      "name": "ui-time-等待 1 日",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:27.631+00:00",
+      "evidence": {
+        "control": "等待 1 日",
+        "from": 347038,
+        "to": 348478,
+        "elapsedSeconds": 0.146,
+        "partyCount": 0,
+        "gold": 992
+      }
+    },
+    {
+      "name": "party-contract-expiry-crosses-midnight-and-new-year",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:27.649+00:00",
+      "evidence": {
+        "fixture": {
+          "kind": "valid-save-party-newyear-boundary",
+          "changedFields": [
+            "worldTime",
+            "activeCharacter.gold",
+            "party.contractEnd",
+            "lastSavedAt"
+          ],
+          "purpose": "cross contract day boundary at new year using visible wait-one-day UI, with the exact boundary as a separate legal save fixture",
+          "yearBoundaryWorldTime": 345600,
+          "contractEndWorldTime": 347040,
+          "affectedNpc": null
+        },
+        "steps": [
+          {
+            "day": 1,
+            "worldTime": 347038,
+            "calendarYear": 3,
+            "gold": 992,
+            "party": [
+              {
+                "npcId": "npc-7",
+                "hireCost": 25,
+                "dailyWage": 4,
+                "contractEnd": 347040,
+                "archetype": "fighter"
+              },
+              {
+                "npcId": "npc-14",
+                "hireCost": 25,
+                "dailyWage": 4,
+                "contractEnd": 347040,
+                "archetype": "healer"
+              }
+            ],
+            "expiredCount": 0
+          },
+          {
+            "day": 2,
+            "worldTime": 348478,
+            "calendarYear": 3,
+            "gold": 992,
+            "party": [],
+            "expiredCount": 2
+          }
+        ],
+        "startGold": 1000,
+        "goldAfter": 992,
+        "paidWagesBeforeExpiry": 8,
+        "expiredPartyCount": 2,
+        "contractEvents": [
+          "party.hired",
+          "party.hired",
+          "party.expired",
+          "party.expired"
+        ],
+        "partyAfter": [],
+        "rawBefore": {
+          "file": "raw/cross-year-contract-before.raw.json",
+          "bytes": 94373,
+          "sha256": "deda24e14c3dd77d62e1d73c5c74d91968d74406ed1188a5ac2f82af7ae9bbfd"
+        },
+        "rawAfter": {
+          "file": "raw/cross-year-contract-after.raw.json",
+          "bytes": 97858,
+          "sha256": "2937bf5591e7094a19b0ff04d304ff32e3b5f0024d6c0e73f2149565b824b69b"
+        }
+      }
+    },
+    {
+      "name": "ui-time-等待 1 日",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:28.899+00:00",
+      "evidence": {
+        "control": "等待 1 日",
+        "from": 345598,
+        "to": 347038,
+        "elapsedSeconds": 0.133,
+        "partyCount": 1,
+        "gold": 996
+      }
+    },
+    {
+      "name": "ui-time-等待 1 日",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:29.154+00:00",
+      "evidence": {
+        "control": "等待 1 日",
+        "from": 347038,
+        "to": 348478,
+        "elapsedSeconds": 0.139,
+        "partyCount": 0,
+        "gold": 996
+      }
+    },
+    {
+      "name": "party-member-natural-death-removes-contract-at-new-year",
+      "status": "passed",
+      "recordedAtUtc": "2026-10-04T02:53:29.170+00:00",
+      "evidence": {
+        "fixture": {
+          "kind": "valid-save-contracting-companion-natural-age-death-boundary",
+          "changedFields": [
+            "worldTime",
+            "activeCharacter.gold",
+            "party.contractEnd",
+            "lastSavedAt",
+            "npcs.npc-7.age",
+            "birthYear",
+            "lifeStage",
+            "maxStamina",
+            "stamina",
+            "position",
+            "currentActivity"
+          ],
+          "purpose": "cross contract day boundary at new year using visible wait-one-day UI, with the exact boundary as a separate legal save fixture",
+          "yearBoundaryWorldTime": 345600,
+          "contractEndWorldTime": 347040,
+          "affectedNpc": "npc-7"
+        },
+        "affectedNpc": "npc-7",
+        "ageBefore": 73,
+        "lifespan": 74,
+        "ageOnBoundary": null,
+        "deadEvent": [
+          {
+            "id": 34,
+            "at": 345600,
+            "type": "npc.died",
+            "category": "npc",
+            "message": "露西 7 因自然老化離世，享年 74 歲。世界仍會延續。"
+          }
+        ],
+        "partyBefore": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 347040,
+            "archetype": "fighter"
+          },
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 347040,
+            "archetype": "healer"
+          }
+        ],
+        "partyAfterNewYearDeath": [
+          {
+            "npcId": "npc-14",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 347040,
+            "archetype": "healer"
+          }
+        ],
+        "survivorAfterExpiryDay": [],
+        "remainingContractEvents": [
+          "party.hired",
+          "party.hired",
+          "party.expired"
+        ],
+        "rawBefore": {
+          "file": "raw/party-member-death-before.raw.json",
+          "bytes": 94373,
+          "sha256": "a529b73786f34a0dc4e52b0fdddf7bec216931d720279e28d4652342ac5599e4"
+        },
+        "rawAfterDeath": {
+          "file": "raw/party-member-death-after.raw.json",
+          "bytes": 96748,
+          "sha256": "a490f627cd89d968a22732ace1960ac546464e172199262b4b0fcd0f2318a3d5"
+        },
+        "rawAfterSurvivorExpiry": {
+          "file": "raw/party-member-death-expiry-after.raw.json",
+          "bytes": 96748,
+          "sha256": "a490f627cd89d968a22732ace1960ac546464e172199262b4b0fcd0f2318a3d5"
+        }
+      }
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "atUtc": "2026-10-04T02:52:49.471+00:00",
+      "message": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:5191/"
+    }
+  ],
+  "updatedAtUtc": "2026-10-04T02:53:29.280+00:00",
+  "finishedAtUtc": "2026-10-04T02:53:29.280+00:00",
+  "summary": {
+    "caseCount": 10,
+    "failedCases": [],
+    "checkpointCount": 42,
+    "pageErrorCount": 0,
+    "consoleErrorCount": 1
+  }
+}

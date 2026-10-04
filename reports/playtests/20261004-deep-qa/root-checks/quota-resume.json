@@ -1,0 +1,61 @@
+{
+  "status": "completed_observation",
+  "url": "http://127.0.0.1:5191/",
+  "startedAt": "2026-10-04T02:24:36.293346+00:00",
+  "method": "Controlled Storage.setItem quota failure; no state/timer injection. Normal UI actions and real timers.",
+  "sourceCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+  "steps": [
+    {
+      "name": "baseline",
+      "at": "2026-10-04T02:24:37.897220+00:00",
+      "worldTime": 481,
+      "browser": "151.0.7922.173",
+      "actualBuildHashes": {
+        "assets/index-B0QR5Rvd.css": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+        "assets/index-DcqD1dRF.js": "d2ff6dccdf819cf8f4e911c16048863951ab602fa7878838f41dbe9b37f7c813",
+        "index.html": "1c1b06bb8958f7a45d6c141863253922a0e50f651e36178e3956cdacf2f3927a"
+      }
+    },
+    {
+      "name": "first failed save pauses",
+      "at": "2026-10-04T02:24:38.075922+00:00",
+      "worldTimeInMemory": 486,
+      "diskUnchanged": true,
+      "pending": 1,
+      "warning": "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。\n重試存檔"
+    },
+    {
+      "name": "real x20 resume during quota",
+      "at": "2026-10-04T02:24:38.930978+00:00",
+      "worldTimeInMemory": 489,
+      "deltaFromFirstFailure": 3,
+      "diskUnchanged": true,
+      "pending": 2,
+      "pausedAgain": true
+    },
+    {
+      "name": "normal season wait during quota",
+      "at": "2026-10-04T02:24:39.208027+00:00",
+      "worldTimeInMemory": 43689,
+      "deltaFromX20": 43200,
+      "diskUnchanged": true,
+      "pending": 3
+    },
+    {
+      "name": "manual save recovery",
+      "at": "2026-10-04T02:24:39.388417+00:00",
+      "worldTime": 43689,
+      "allPendingCommittedOnce": true,
+      "pending": 0,
+      "warningCleared": true
+    },
+    {
+      "name": "disposition",
+      "at": "2026-10-04T02:24:39.391015+00:00",
+      "awaitingPolicyDiagnosis": true
+    }
+  ],
+  "pageErrors": [],
+  "finishedAt": "2026-10-04T02:24:39.391007+00:00",
+  "finding": "O1 confirmed: x20 resume and season wait can accumulate progress while checkpoint storage keeps failing. Old disk survives; successful retry retains memory progress and commits pending once. Requires recovery-policy diagnosis, not proof of silent corruption."
+}

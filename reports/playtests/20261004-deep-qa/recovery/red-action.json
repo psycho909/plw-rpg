@@ -1,0 +1,22 @@
+{
+  "command": [
+    "npm",
+    "run",
+    "test",
+    "--",
+    "src/stores/gameStore.test.ts",
+    "-t",
+    "blocks the next action"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedAt": "2026-10-04T02:31:41.214245+00:00",
+  "sourceCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+  "sourceHashes": {
+    "src/stores/gameStore.ts": "3ec1c6d99073b6236cf6b3aa53eea19e1ddd9cbbd15737127083e9da20543246",
+    "src/stores/gameStore.test.ts": "8b00f8183be98683fc41f01365b28c59d88fcefb8e352163e14f754328c7808b",
+    "src/App.vue": "ce5002b9e63c0f1e8bdcf90807abbc7f7057c94360e9fcea1951097d0b578b22"
+  },
+  "exitCode": 1,
+  "finishedAt": "2026-10-04T02:31:42.022228+00:00",
+  "log": "red-action.log"
+}

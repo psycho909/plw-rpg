@@ -1,0 +1,52 @@
+{
+  "status": "passed_scoped_content_validation",
+  "at": "2026-10-04T07:38:01.116287+00:00",
+  "archivedVersionsVerified": 96,
+  "publishedFileProjectionMatches": {
+    "native-retainer-before.heapsnapshot": true,
+    "probe.py": true,
+    "map-retainer-before.heapsnapshot": true,
+    "diagnosis-metadata.json": true,
+    "native-dialog-no-selectors.heapsnapshot": true,
+    "probe.json": true,
+    "retainer-probe.json": true,
+    "README.md": true,
+    "followup_probe.py": true,
+    "evidence-checks.json": true,
+    "retaining-paths.json": true,
+    "hypotheses.json": true,
+    "retainer_probe.py": true,
+    "map-retainer-after.heapsnapshot": true,
+    "native-retainer-after.heapsnapshot": true,
+    "analyze_evidence.py": true,
+    "playwright-source-evidence.json": true,
+    "followup-probe.json": true,
+    "native-dialog-visible-wait.heapsnapshot": true
+  },
+  "localReadmeLinks": {
+    "../baseline/final-manifest.json": true,
+    "followup-probe.json": true,
+    "diagnosis-metadata.json": true,
+    "probe.py": true,
+    "probe.json": true,
+    "../root-checks/modal-gc-probe.json": true,
+    "../root-checks/modal-gc-followup.json": true,
+    "followup_probe.py": true,
+    "retaining-paths.json": true,
+    "retainer_probe.py": true,
+    "retainer-probe.json": true,
+    "playwright-source-evidence.json": true,
+    "evidence-checks.json": true
+  },
+  "pythonCompile": "passed; no execution or bytecode files",
+  "jsonParse": "passed",
+  "readmeTrailingWhitespace": "none",
+  "sourceHashesMatchFinalManifest": true,
+  "readmeSha256": "a23872b2c6f5d29416dda57d72f6c8269abdb974cc3cc3f1d1265fa6dd44dd25",
+  "scopeReview": {
+    "Standards": "All authored outputs stay in memory-diagnosis/ and publish via recorded_reports; runtime source/binaries unchanged; no Git commands, subagents or main-soak attachment.",
+    "Spec": "Artifact-vs-product classification supported by completed controls, exact build hashes, raw heap paths and local binding inspection. No two-hour acceptance claimed.",
+    "independence": "Worker self-review; Orchestrator owns integration review and Git."
+  },
+  "gitDiffCheck": "not run: parent explicitly prohibited Git for this worker; source-hash, archive-projection, whitespace and link checks used within scope"
+}

@@ -1,0 +1,80 @@
+{
+  "status": "completed_read_only_inspection",
+  "at": "2026-10-04T07:33:17.001806+00:00",
+  "pythonPlaywrightVersion": "1.62.0",
+  "driverVersion": "1.62.0",
+  "finding": "Installed Python Locator.wait_for awaits Frame.wait_for_selector and discards its Optional[ElementHandle] return without disposal or omitReturnValue. Server returns/adopts the node unless omitReturnValue is requested. The installed JavaScript Locator.waitFor explicitly sends omitReturnValue:true. ChannelOwner registration retains protocol objects until disposal/context destruction.",
+  "scope": "These are exact files in this environment; no claim about every Playwright version or an upstream release history. No installed runtime package was edited.",
+  "notExecuted": [
+    "Public page.wait_for_selector followed by explicit handle.dispose control",
+    "Protocol trace mapping every handle to its release",
+    "Dependency upgrade or monkeypatch"
+  ],
+  "sources": [
+    {
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_locator.py",
+      "sha256": "ffac4718e1a33a29d1dad723016f8e8d697e558d1e1621481d697eb805357636",
+      "excerpts": [
+        {
+          "startLine": 742,
+          "endLine": 751,
+          "text": "\n    async def wait_for(\n        self,\n        timeout: float = None,\n        state: Literal[\"attached\", \"detached\", \"hidden\", \"visible\"] = None,\n    ) -> None:\n        await self._frame.wait_for_selector(\n            self._selector, strict=True, timeout=timeout, state=state\n        )\n"
+        }
+      ]
+    },
+    {
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_frame.py",
+      "sha256": "194bfc8b899e53633efe1e1f6b9f1d0be9c33428394e904810edcbfae3c70180",
+      "excerpts": [
+        {
+          "startLine": 386,
+          "endLine": 400,
+          "text": "    async def wait_for_selector(\n        self,\n        selector: str,\n        strict: bool = None,\n        timeout: float = None,\n        state: Literal[\"attached\", \"detached\", \"hidden\", \"visible\"] = None,\n    ) -> Optional[ElementHandle]:\n        return from_nullable_channel(\n            await self._channel.send(\n                \"waitForSelector\", self._timeout, locals_to_params(locals())\n            )\n        )\n\n    async def is_checked(\n        self, selector: str, strict: bool = None, timeout: float = None"
+        }
+      ]
+    },
+    {
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_js_handle.py",
+      "sha256": "2db455b97af07dbf007e114ee3f546139ee09ab2f7a1d6b15293cdfb61792d79",
+      "excerpts": [
+        {
+          "startLine": 113,
+          "endLine": 122,
+          "text": "    async def dispose(self) -> None:\n        try:\n            await self._channel.send(\n                \"dispose\",\n                None,\n            )\n        except Exception as e:\n            if not is_target_closed_error(e):\n                raise e\n"
+        }
+      ]
+    },
+    {
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_connection.py",
+      "sha256": "1e323ddddbc6fe2c5739760059b6cd5d7cc7b1456547ec8ce44023e4774a9d6e",
+      "excerpts": [
+        {
+          "startLine": 180,
+          "endLine": 217,
+          "text": "        self,\n        parent: Union[\"ChannelOwner\", \"Connection\"],\n        type: str,\n        guid: str,\n        initializer: Dict,\n    ) -> None:\n        super().__init__(loop=parent._loop)\n        self._loop: asyncio.AbstractEventLoop = parent._loop\n        self._dispatcher_fiber: Any = parent._dispatcher_fiber\n        self._type = type\n        self._guid: str = guid\n        self._connection: Connection = (\n            parent._connection if isinstance(parent, ChannelOwner) else parent\n        )\n        self._parent: Optional[ChannelOwner] = (\n            parent if isinstance(parent, ChannelOwner) else None\n        )\n        self._objects: Dict[str, \"ChannelOwner\"] = {}\n        self._channel: Channel = Channel(self._connection, self)\n        self._initializer = initializer\n        self._was_collected = False\n\n        self._connection._objects[guid] = self\n        if self._parent:\n            self._parent._objects[guid] = self\n\n        self._event_to_subscription_mapping: Dict[str, str] = {}\n\n    def _dispose(self, reason: Optional[str]) -> None:\n        # Clean up from parent and connection.\n        if self._parent:\n            del self._parent._objects[self._guid]\n        del self._connection._objects[self._guid]\n        self._was_collected = reason == \"gc\"\n\n        # Dispose all children.\n        for object in list(self._objects.values()):\n            object._dispose(reason)"
+        }
+      ]
+    },
+    {
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/driver/package/lib/coreBundle.js",
+      "sha256": "3258d1cf334c6afc95f22aa9c292436cb976b391e0437f1359c83b84f0cb9d66",
+      "excerpts": [
+        {
+          "startLine": 23192,
+          "endLine": 23231,
+          "text": "          const resolved = await progress3.race(this.selectors.callOnSelectorHandle(selector, { ...options, scope }, ({ injected, elements }) => {\n            const element4 = elements[0];\n            const visible2 = element4 ? injected.utils.isElementVisible(element4) : false;\n            let log3 = \"\";\n            if (elements.length > 1)\n              log3 = `  locator resolved to ${elements.length} elements. Proceeding with the first one: ${injected.previewNode(elements[0])}`;\n            else if (element4)\n              log3 = `  locator resolved to ${visible2 ? \"visible\" : \"hidden\"} ${injected.previewNode(element4)}`;\n            return { log: log3, element: element4, visible: visible2, attached: !!element4 };\n          }, {}));\n          if (!resolved) {\n            if (state === \"hidden\" || state === \"detached\")\n              return null;\n            return continuePolling;\n          }\n          const result2 = resolved.result;\n          const { log: log2, visible, attached } = await progress3.race(result2.evaluate((r) => ({ log: r.log, visible: r.visible, attached: r.attached })));\n          if (log2)\n            progress3.log(log2);\n          const success = { attached, detached: !attached, visible, hidden: !visible }[state];\n          if (!success) {\n            result2.dispose();\n            return continuePolling;\n          }\n          if (options.omitReturnValue) {\n            result2.dispose();\n            return null;\n          }\n          const element3 = state === \"attached\" || state === \"visible\" ? await progress3.race(result2.evaluateHandle((r) => r.element)) : null;\n          result2.dispose();\n          if (!element3)\n            return null;\n          if (options.__testHookBeforeAdoptNode)\n            await progress3.race(options.__testHookBeforeAdoptNode());\n          try {\n            const mainContext = await progress3.race(element3._frame.mainContext());\n            return await progress3.race(element3._adoptTo(mainContext));\n          } catch (e) {\n            return continuePolling;\n          }"
+        },
+        {
+          "startLine": 54398,
+          "endLine": 54400,
+          "text": "      async waitForSelector(params2, progress2) {\n        return { element: ElementHandleDispatcher.fromNullable(this, await this._frame.waitForSelector(progress2, params2.selector, true, params2)) };\n      }"
+        },
+        {
+          "startLine": 58231,
+          "endLine": 58236,
+          "text": "        return await this._frame.$$eval(this._selector, (ee) => ee.map((e) => e.textContent || \"\"));\n      }\n      async waitFor(options) {\n        await this._frame._channel.waitForSelector({ selector: this._selector, strict: true, omitReturnValue: true, ...options }, this._frame._timeout(options));\n      }\n      async waitForFunction(pageFunction, arg, options) {"
+        }
+      ]
+    }
+  ]
+}

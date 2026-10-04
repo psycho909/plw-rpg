@@ -1,0 +1,44 @@
+{
+  "createdAt": "2026-10-04T02:48:29.496Z",
+  "sourceCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+  "sourceRoot": "/tmp/plw-rpg-qa-source-738bc00",
+  "sourceHashes": {
+    "src/data/config.ts": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+    "src/domain/types.ts": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+    "src/engine/actions.ts": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/events.ts": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/simulation.ts": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+    "src/services/saveService.ts": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852"
+  },
+  "fixtures": [
+    {
+      "file": "population-overcapacity-save.json",
+      "kind": "controlled schema-valid overcapacity fixture",
+      "source": "createGame(73004) plus cloned original NPC schema rows with unique sequential IDs",
+      "naturallyPlayerReachable": false,
+      "population": 1001,
+      "npcRows": 1000,
+      "capacity": 40,
+      "bytes": 1319813,
+      "sha256": "88e894e3a0e20ead4c39879ff4d1305e5f395cf4efe0378a8941c80c6160e53c",
+      "decoderAccepted": true,
+      "lastSavedAt": 1791082109328
+    },
+    {
+      "file": "population-zero-save.json",
+      "kind": "controlled zero-population dead-active-character fixture",
+      "source": "createGame(73005) followed by exported die() for every resident",
+      "naturallyPlayerReachable": false,
+      "population": 0,
+      "npcRows": 29,
+      "activeCharacterAlive": false,
+      "bytes": 82983,
+      "sha256": "928dfd7d752ac550201e1f79c7b3dee04cd3f0aaa84cc5e6a2a9572a559db3e8",
+      "decoderAccepted": true,
+      "lastSavedAt": 1791082109442
+    }
+  ],
+  "note": "Raw fixtures were published through scripts.recorded_reports.write_recorded and are loaded only in disposable Chromium contexts on localhost:5192."
+}

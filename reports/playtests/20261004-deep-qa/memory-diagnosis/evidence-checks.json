@@ -1,0 +1,22 @@
+{
+  "status": "passed_evidence_consistency",
+  "at": "2026-10-04T07:33:17.006517+00:00",
+  "checks": {
+    "followupCompleted": true,
+    "allSixFollowupCasesExecuted": true,
+    "finalBuildMatches": true,
+    "mapNoSelectorsExactDOMBaseline": true,
+    "mapWaitControlReproducesRetention": true,
+    "nativeNoSelectorsExactDOMBaseline": true,
+    "nativeNoSelectorSnapshotHasNoDialogs": true,
+    "nativeVisibleWaitSnapshotHas20DetachedDialogs": true,
+    "mapVisibleWaitSnapshotHas4DetachedDialogs": true,
+    "everyRetainedDialogHasDirectDevToolsGlobalHandleRoot": true,
+    "retainerAllThreeCasesCompleted": true,
+    "noConsoleOrExceptionEventsInRetainerControls": true,
+    "additionalCDPConsoleDiscardDidNotReleaseDialogs": true,
+    "noFollowupPageErrors": true
+  },
+  "scope": "Checks recorded observations and snapshot/source consistency; not product regression coverage or a completed two-hour soak.",
+  "harnessSha256": "1b50005cfe039107af863f8aa95cae9255759df93003844baaaf74aa61303f1b"
+}

@@ -1,0 +1,50 @@
+# Deep QA artifact review — preliminary L2 review
+
+**Disposition: PRELIMINARY / PARTIAL.** The frozen route artifacts listed below pass this review, with one offline validator finding corrected and checked through targeted controls. This is not acceptance of the deep QA ticket: the two-hour soak, final integrated report and final scope manifest remain pending, and native Safari/physical-device checks remain blocked.
+
+## Reviewer and method
+
+- Reviewer: independent general L2 reviewer, not an author of the source or QA route implementation. The assigned model route is GPT-6 Luna Max, max. Backend execution telemetry is unavailable, so this records the task route and makes no inference about backend execution.
+- Review type: general L2 review, not an L3 independent audit. `matt-skills-curated:code-review` was adapted to the repository contract; Standards and Spec were evaluated separately by one reviewer. No additional agents were used.
+- Standards basis: `AGENTS.md` §§3–6, `README.md`, `docs/SUBAGENTS.md`, `docs/agents/review.md`, `docs/governance/ai-governance.md`, `scripts/README.md`, and the report-writer contract in `scripts/recorded_reports.py`.
+- Spec basis: `tickets/20261004-deep-qa.md`, especially QA-01–QA-08, Constraints and Decisions, and Acceptance. The ticket remains `in_progress` and is requirements context, not treated as a final report.
+
+## Frozen snapshot and provenance
+
+- Current HEAD: `c22de4e636215b11057e2a37b0fc4eaf826a8234`.
+- The historical fixed-build manifest is `baseline/final-manifest.json`, SHA-256 `ba71b37f0c37e07d44d130c35602aae2210334b7704e7b4e1ce81c69cb2425ae`. Its historical label is `738bc00 + O1 recovery patch (exact sourceHashes)` and its recorded source commit is `738bc0010c549fa3fb2420437d171f5aa2a043a0`. This accurately describes the build-time patch state; it is not attributed to that commit alone.
+- `baseline/source-commit.json`, SHA-256 `df92e56560fee0dfcb74993b64c5814f5e9a8568bbe156bd9d80c3cf1e64c50f`, identifies commit `c22de4e636215b11057e2a37b0fc4eaf826a8234` and reports exact source-hash agreement with the fixed manifest. Independent recomputation found 35/35 current source hashes matching the manifest; mismatches: [].
+- `platforms/README.md` now distinguishes the historical manifest label from the final QA08 smoke: before that 07:52 UTC smoke, O1 had been committed as `c22de4e636215b11057e2a37b0fc4eaf826a8234`, with all 35 source hashes matching the fixed build. The linked relative source-commit evidence resolves.
+- Pure-engine routes use their documented frozen `738bc00` engine snapshot; browser routes identify their fixed build and exact assets. The evidence does not collapse those different source contexts.
+
+## Standards
+
+**PASS within the reviewed frozen scope; one test-tooling finding is resolved.** Route evidence preserves checkpoints and append-only report history. Source/build fingerprints, actual operations versus controlled fixtures, failures and limitations are described. Large binary evidence was checked by size and SHA-256; raw contents were not printed or copied into this report. The complete selected-file inventory is recorded in the JSON companion.
+
+The initial static review found that the offline soak validator compared its three fingerprint fields only to each other, so three absent or equally altered values could satisfy the equality check. This was a validation-tooling risk, not evidence that the active browser used a wrong build. The current validator (`soak/clean-run/validate_export.py`, SHA-256 `58fb8963678762e2a01166909bec22d69dccec539a87faf5fd44bee433fa9e31`) now requires a valid complete three-asset SHA-256 map from `baseline/final-manifest.json` and exact matches for start fingerprint, end fingerprint, and build map. The targeted controls call that actual gate: pass, 8/8 passed, including missing, empty, incomplete, changed, absent-field and invalid-authority cases. The controls' own recorded SHA-256 is `45d1b6f5ca1f9dcc99b4bdbdd970f7f0f85621c914108a64ba0ba0e011ddfc00`. These are targeted validator controls, not a soak rerun; full export/duration validation is still pending.
+
+Other reviewed project hygiene is consistent: `.gitignore` excludes generated Python caches and only the oversized local `balance/raw-runs.json` projection; its compressed, hash-verified archive remains in scope. The `TODO.md` addition is a single backlog pointer to the formal ticket. No source, dependency, or Git changes were made by this reviewer.
+
+## Spec results by route
+
+| Route | Reviewed evidence and result | Scope limit |
+|---|---|---|
+| QA-03/04 `world/` | 15 pure-engine strategy/seed runs, 60 checkpoints and 21,600 daily rows; separate final-build browser population run has 8 checkpoints and no recorded page errors. Natural strategies, pressure/zero/recovery states, and invalid validator inputs are distinguished. **Pass within route.** | Controlled population and validator cases are fixtures, not natural player-frequency claims. |
+| QA-05 `inheritance/` | 13/13 legal cases, 4/4 invalid-input rejections and 40 serialization round-trips; natural cases and validation fixtures are labelled separately. **Pass within route.** | Pure-engine frozen source scope as documented; no claim that each case was a live browser interaction. |
+| Memory diagnosis | Follow-up and retainer probes plus 14/14 consistency checks support the documented Playwright selector/ElementHandle retention diagnosis. **Pass as a bounded diagnosis.** | The evidence identifies a test-tool retention path; it does not prove the whole game leak-free or the pending two-hour soak successful. |
+| QA-02 `balance/` | 6 seeds × 7 policies × 3 horizons = 126 main runs, plus 6 paired contract trials; all 126 cash residuals are zero. Corrected CSV shows 4 estimated wage ticks for each paired case. **Pass within route.** | Engine simulation, not a player-behaviour distribution. The corrected exporter was projected from existing raw trials; matrix was not rerun. |
+| QA-06/07 `cross-state/` | Baseline 10/10 cases and 42 checkpoints; O1 final 10/10 and 42; delayed-combat ACK follow-up 2/2 and 7. Public attacks/time/reload paths are separated from legal controlled-save fixtures; five new record IDs are retained once. **Pass within route.** | Chromium-only evidence; the delayed callback tests event-loop ordering, not parallel JavaScript re-entry. |
+| QA-08 `platforms/` | Final run 07:52:14–07:52:45 UTC: 24/24 cases, 12 Chromium and 12 Linux Firefox ESR, 70 checkpoints, zero harness errors. Chromium exact mobile CSS viewport emulation passed. **Pass for these tested Linux browser cases.** | Firefox's requested narrow viewport did not reach 390/412 CSS px; README records actual 488 px document/visual width. Native Safari, real iPhone/Android and Linux WebKit remain blocked, not passed. |
+| QA-01 `soak/` | The frozen summaries and latest writer records show the baseline incomplete at 168.834s with no terminal export and the first patched run failed at 1,620.171s with BrokenPipe and no export-chain validation. Neither is credited to the clean run. The clean run started at 07:22:33.511 UTC and must independently reach 7,200 seconds. The offline validator/analyzer were statically reviewed but not executed by this reviewer. **Pending.** | Active clean-run results/profile/export and final integration remain excluded; no soak pass claim. |
+
+## Game failures, tooling issues, and blockers
+
+Archived worker interruptions and early harness setup failures are retained and identified as tooling/history rather than game failures. The paired-contract CSV field mismatch was an exporter defect, corrected from the six existing raw trials; raw JSON and gzip were not rewritten and the matrix was not rerun. The memory diagnosis attributes retained DOM handles to visible-selector waits in the Playwright setup and limits its claim accordingly. Platform/cross-state browser console observations are the missing local favicon (404); the reviewed final smoke has zero page errors and zero harness errors. No reviewed evidence relabels an unavailable platform as a pass.
+
+The gzip-only reconciliation evidence records 71 archived entries and seven latest projections passing when tested against a fresh-checkout layout with `raw-runs.json` absent. That is a time-specific transport test. The current balance `playlog.jsonl` has 74 lines; this review counted the lines and checked the projection size/hash metadata, but did not rerun the full archive verifier. The root reports the updated records checksum-verified. The raw projection remains 211,517,799 bytes (SHA-256 `9d771bc0b5c1cbe0ad8460b40dcf6f3b8784bf6774f42f4bfb9882d72cd75f98`), and `raw-runs.json.gz` is 7,231,437 bytes (SHA-256 `27a5cae2793ab31ee503b5368a7b3be746fe4bd9c13e31a3a70c31dc4dbe13d2`); recorded decompression reproduces the original byte count and hash. The validator script's gzip fallback is read-only and uses streaming decompression.
+
+## Inventory and disposition
+
+The reviewed inventory covers 264 files / 506,941,825 bytes across the six frozen route directories, the named provenance/check files, and the two historical soak summaries with their append-only logs. It includes 261 non-ignored untracked files and 3 ignored files; the sorted `path, bytes, SHA-256, ignored` digest is `7454e04df34bdb90e5d7e77e2ede110591056f88a958525ebb84d23998197911`. Binary artifacts were verified by size/hash only. This inventory intentionally excludes active clean-run outputs, the integrated QA README/report, the final scope manifest, other root-check artifacts and this self-referential review report; those require a later scope-manifest follow-up.
+
+**Disposition: PRELIMINARY / PARTIAL; no open finding in the reviewed frozen scope.** The route-level evidence is acceptable within each stated limit. The QA ticket is still in progress. Final soak analysis, hardware blockers, integration, scope-manifest reconciliation and the later cross/platform review remain for follow-up. This report does not authorize or perform commit, push, merge or deployment.

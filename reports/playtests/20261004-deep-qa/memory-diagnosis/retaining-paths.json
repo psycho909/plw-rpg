@@ -1,0 +1,2658 @@
+{
+  "status": "completed_analysis",
+  "at": "2026-10-04T07:33:15.211327+00:00",
+  "method": "Breadth-first traversal from snapshot node 0, excluding edge type weak; preserve node IDs, detachedness, exact edge names and full shortest paths. No dominator/retained-size inference. DevTools console is a literal snapshot edge label, not evidence of console.log calls.",
+  "snapshots": [
+    {
+      "file": "map-retainer-after.heapsnapshot",
+      "bytes": 19882764,
+      "sha256": "117098fec66cb7df3414b070f6cf5a10bae5be8e27366f0a0566286ea36fa689",
+      "snapshotNodeCount": 188062,
+      "nativeDialogCount": 4,
+      "detachedNativeDialogCount": 4,
+      "dialogs": [
+        {
+          "target": {
+            "index": 3710,
+            "type": "native",
+            "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+            "id": 7421,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "82 / DevTools console"
+              },
+              "to": {
+                "index": 3710,
+                "type": "native",
+                "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+                "id": 7421,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3713,
+            "type": "native",
+            "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+            "id": 7427,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "86 / DevTools console"
+              },
+              "to": {
+                "index": 3713,
+                "type": "native",
+                "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+                "id": 7427,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3714,
+            "type": "native",
+            "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+            "id": 7429,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "87 / DevTools console"
+              },
+              "to": {
+                "index": 3714,
+                "type": "native",
+                "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+                "id": 7429,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3716,
+            "type": "native",
+            "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+            "id": 7433,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "89 / DevTools console"
+              },
+              "to": {
+                "index": 3716,
+                "type": "native",
+                "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+                "id": 7433,
+                "detachedness": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "map-retainer-before.heapsnapshot",
+      "bytes": 19878404,
+      "sha256": "4420f2e59f29ae0c76d7c43318b8d76ab09778e6e45e248af71aca275988397d",
+      "snapshotNodeCount": 188062,
+      "nativeDialogCount": 4,
+      "detachedNativeDialogCount": 4,
+      "dialogs": [
+        {
+          "target": {
+            "index": 3710,
+            "type": "native",
+            "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+            "id": 7421,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "82 / DevTools console"
+              },
+              "to": {
+                "index": 3710,
+                "type": "native",
+                "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+                "id": 7421,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3713,
+            "type": "native",
+            "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+            "id": 7427,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "86 / DevTools console"
+              },
+              "to": {
+                "index": 3713,
+                "type": "native",
+                "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+                "id": 7427,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3714,
+            "type": "native",
+            "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+            "id": 7429,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "87 / DevTools console"
+              },
+              "to": {
+                "index": 3714,
+                "type": "native",
+                "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+                "id": 7429,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3716,
+            "type": "native",
+            "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+            "id": 7433,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "89 / DevTools console"
+              },
+              "to": {
+                "index": 3716,
+                "type": "native",
+                "name": "<dialog class=\"pixel-window\" aria-labelledby=\"window-title\" tabindex=\"-1\" open=\"\">",
+                "id": 7433,
+                "detachedness": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "native-dialog-no-selectors.heapsnapshot",
+      "bytes": 2863871,
+      "sha256": "6507867237f596facc21fdf3a98c853a0520db7ef5233f02ae8e7806266fd533",
+      "snapshotNodeCount": 31441,
+      "nativeDialogCount": 0,
+      "detachedNativeDialogCount": 0,
+      "dialogs": []
+    },
+    {
+      "file": "native-dialog-visible-wait.heapsnapshot",
+      "bytes": 4144885,
+      "sha256": "36f957f34594c49712de2301d2aa223699fb51c9874eb1d5bbc4a8301da7761c",
+      "snapshotNodeCount": 46709,
+      "nativeDialogCount": 20,
+      "detachedNativeDialogCount": 20,
+      "dialogs": [
+        {
+          "target": {
+            "index": 3710,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-0\" open=\"\">",
+            "id": 7421,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "83 / DevTools console"
+              },
+              "to": {
+                "index": 3710,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-0\" open=\"\">",
+                "id": 7421,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3711,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-1\" open=\"\">",
+            "id": 7423,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "84 / DevTools console"
+              },
+              "to": {
+                "index": 3711,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-1\" open=\"\">",
+                "id": 7423,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3713,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-2\" open=\"\">",
+            "id": 7427,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "86 / DevTools console"
+              },
+              "to": {
+                "index": 3713,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-2\" open=\"\">",
+                "id": 7427,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3714,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-3\" open=\"\">",
+            "id": 7429,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "87 / DevTools console"
+              },
+              "to": {
+                "index": 3714,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-3\" open=\"\">",
+                "id": 7429,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3715,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-4\" open=\"\">",
+            "id": 7431,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "88 / DevTools console"
+              },
+              "to": {
+                "index": 3715,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-4\" open=\"\">",
+                "id": 7431,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3716,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-5\" open=\"\">",
+            "id": 7433,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "89 / DevTools console"
+              },
+              "to": {
+                "index": 3716,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-5\" open=\"\">",
+                "id": 7433,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3717,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-6\" open=\"\">",
+            "id": 7435,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "90 / DevTools console"
+              },
+              "to": {
+                "index": 3717,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-6\" open=\"\">",
+                "id": 7435,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3718,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-7\" open=\"\">",
+            "id": 7437,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "91 / DevTools console"
+              },
+              "to": {
+                "index": 3718,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-7\" open=\"\">",
+                "id": 7437,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3719,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-8\" open=\"\">",
+            "id": 7439,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "92 / DevTools console"
+              },
+              "to": {
+                "index": 3719,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-8\" open=\"\">",
+                "id": 7439,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3720,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-9\" open=\"\">",
+            "id": 7441,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "93 / DevTools console"
+              },
+              "to": {
+                "index": 3720,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-9\" open=\"\">",
+                "id": 7441,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3721,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-10\" open=\"\">",
+            "id": 7443,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "94 / DevTools console"
+              },
+              "to": {
+                "index": 3721,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-10\" open=\"\">",
+                "id": 7443,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3722,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-11\" open=\"\">",
+            "id": 7445,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "95 / DevTools console"
+              },
+              "to": {
+                "index": 3722,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-11\" open=\"\">",
+                "id": 7445,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3723,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-12\" open=\"\">",
+            "id": 7447,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "96 / DevTools console"
+              },
+              "to": {
+                "index": 3723,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-12\" open=\"\">",
+                "id": 7447,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3724,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-13\" open=\"\">",
+            "id": 7449,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "97 / DevTools console"
+              },
+              "to": {
+                "index": 3724,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-13\" open=\"\">",
+                "id": 7449,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3725,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-14\" open=\"\">",
+            "id": 7451,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "98 / DevTools console"
+              },
+              "to": {
+                "index": 3725,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-14\" open=\"\">",
+                "id": 7451,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3726,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-15\" open=\"\">",
+            "id": 7453,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "99 / DevTools console"
+              },
+              "to": {
+                "index": 3726,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-15\" open=\"\">",
+                "id": 7453,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3727,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-16\" open=\"\">",
+            "id": 7455,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "100 / DevTools console"
+              },
+              "to": {
+                "index": 3727,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-16\" open=\"\">",
+                "id": 7455,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3728,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-17\" open=\"\">",
+            "id": 7457,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "101 / DevTools console"
+              },
+              "to": {
+                "index": 3728,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-17\" open=\"\">",
+                "id": 7457,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3729,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-18\" open=\"\">",
+            "id": 7459,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "102 / DevTools console"
+              },
+              "to": {
+                "index": 3729,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-18\" open=\"\">",
+                "id": 7459,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3730,
+            "type": "native",
+            "name": "<dialog id=\"memory-probe-dialog-19\" open=\"\">",
+            "id": 7461,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "103 / DevTools console"
+              },
+              "to": {
+                "index": 3730,
+                "type": "native",
+                "name": "<dialog id=\"memory-probe-dialog-19\" open=\"\">",
+                "id": 7461,
+                "detachedness": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "native-retainer-after.heapsnapshot",
+      "bytes": 4075357,
+      "sha256": "d6894860a1cfd8028b4f364d1a766b46919ceb38c5514ae53648f2d806ec94fe",
+      "snapshotNodeCount": 45773,
+      "nativeDialogCount": 4,
+      "detachedNativeDialogCount": 4,
+      "dialogs": [
+        {
+          "target": {
+            "index": 3710,
+            "type": "native",
+            "name": "<dialog id=\"retainer-probe-dialog-0\" open=\"\">",
+            "id": 7421,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "83 / DevTools console"
+              },
+              "to": {
+                "index": 3710,
+                "type": "native",
+                "name": "<dialog id=\"retainer-probe-dialog-0\" open=\"\">",
+                "id": 7421,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3711,
+            "type": "native",
+            "name": "<dialog id=\"retainer-probe-dialog-1\" open=\"\">",
+            "id": 7423,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "84 / DevTools console"
+              },
+              "to": {
+                "index": 3711,
+                "type": "native",
+                "name": "<dialog id=\"retainer-probe-dialog-1\" open=\"\">",
+                "id": 7423,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3713,
+            "type": "native",
+            "name": "<dialog id=\"retainer-probe-dialog-2\" open=\"\">",
+            "id": 7427,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "86 / DevTools console"
+              },
+              "to": {
+                "index": 3713,
+                "type": "native",
+                "name": "<dialog id=\"retainer-probe-dialog-2\" open=\"\">",
+                "id": 7427,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3714,
+            "type": "native",
+            "name": "<dialog id=\"retainer-probe-dialog-3\" open=\"\">",
+            "id": 7429,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "87 / DevTools console"
+              },
+              "to": {
+                "index": 3714,
+                "type": "native",
+                "name": "<dialog id=\"retainer-probe-dialog-3\" open=\"\">",
+                "id": 7429,
+                "detachedness": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "native-retainer-before.heapsnapshot",
+      "bytes": 4075357,
+      "sha256": "9eb182a55900ee0cd23943f8f303024f666373030abb7cc010462f34ea070717",
+      "snapshotNodeCount": 45773,
+      "nativeDialogCount": 4,
+      "detachedNativeDialogCount": 4,
+      "dialogs": [
+        {
+          "target": {
+            "index": 3710,
+            "type": "native",
+            "name": "<dialog id=\"retainer-probe-dialog-0\" open=\"\">",
+            "id": 7421,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "83 / DevTools console"
+              },
+              "to": {
+                "index": 3710,
+                "type": "native",
+                "name": "<dialog id=\"retainer-probe-dialog-0\" open=\"\">",
+                "id": 7421,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3711,
+            "type": "native",
+            "name": "<dialog id=\"retainer-probe-dialog-1\" open=\"\">",
+            "id": 7423,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "84 / DevTools console"
+              },
+              "to": {
+                "index": 3711,
+                "type": "native",
+                "name": "<dialog id=\"retainer-probe-dialog-1\" open=\"\">",
+                "id": 7423,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3713,
+            "type": "native",
+            "name": "<dialog id=\"retainer-probe-dialog-2\" open=\"\">",
+            "id": 7427,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "86 / DevTools console"
+              },
+              "to": {
+                "index": 3713,
+                "type": "native",
+                "name": "<dialog id=\"retainer-probe-dialog-2\" open=\"\">",
+                "id": 7427,
+                "detachedness": 2
+              }
+            }
+          ]
+        },
+        {
+          "target": {
+            "index": 3714,
+            "type": "native",
+            "name": "<dialog id=\"retainer-probe-dialog-3\" open=\"\">",
+            "id": 7429,
+            "detachedness": 2
+          },
+          "reachableFromSnapshotRoot": true,
+          "shortestNonWeakPath": [
+            {
+              "from": {
+                "index": 0,
+                "type": "synthetic",
+                "name": "",
+                "id": 1,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "1"
+              },
+              "to": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 1,
+                "type": "synthetic",
+                "name": "(GC roots)",
+                "id": 3,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "element",
+                "name": "10"
+              },
+              "to": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              }
+            },
+            {
+              "from": {
+                "index": 11,
+                "type": "synthetic",
+                "name": "(Global handles)",
+                "id": 23,
+                "detachedness": 0
+              },
+              "edge": {
+                "type": "internal",
+                "name": "87 / DevTools console"
+              },
+              "to": {
+                "index": 3714,
+                "type": "native",
+                "name": "<dialog id=\"retainer-probe-dialog-3\" open=\"\">",
+                "id": 7429,
+                "detachedness": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

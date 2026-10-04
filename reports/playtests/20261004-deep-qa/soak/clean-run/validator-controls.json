@@ -1,0 +1,64 @@
+{
+  "status": "pass",
+  "cases": [
+    {
+      "name": "complete manifest match",
+      "expected": true,
+      "observed": true,
+      "legacySelfEqualityResult": true,
+      "pass": true
+    },
+    {
+      "name": "all fingerprint fields absent",
+      "expected": false,
+      "observed": false,
+      "legacySelfEqualityResult": true,
+      "pass": true
+    },
+    {
+      "name": "all fingerprint fields empty",
+      "expected": false,
+      "observed": false,
+      "legacySelfEqualityResult": true,
+      "pass": true
+    },
+    {
+      "name": "all fields equally incomplete",
+      "expected": false,
+      "observed": false,
+      "legacySelfEqualityResult": true,
+      "pass": true
+    },
+    {
+      "name": "all fields equal altered hash",
+      "expected": false,
+      "observed": false,
+      "legacySelfEqualityResult": true,
+      "pass": true
+    },
+    {
+      "name": "one fingerprint field absent",
+      "expected": false,
+      "observed": false,
+      "legacySelfEqualityResult": false,
+      "pass": true
+    },
+    {
+      "name": "empty authoritative manifest",
+      "expected": false,
+      "observed": false,
+      "legacySelfEqualityResult": true,
+      "pass": true
+    },
+    {
+      "name": "malformed authoritative hash",
+      "expected": false,
+      "observed": false,
+      "legacySelfEqualityResult": true,
+      "pass": true
+    }
+  ],
+  "validatorSha256": "58fb8963678762e2a01166909bec22d69dccec539a87faf5fd44bee433fa9e31",
+  "method": "Eight isolated controls call the actual offline gate; no browser or game state interaction.",
+  "limitation": "Full journal/export/duration validation awaits the completed actual soak."
+}

@@ -1,0 +1,155 @@
+{
+  "status": "pass",
+  "startedAtUtc": "2026-10-04T07:22:33.511+00:00",
+  "endedAtUtc": "2026-10-04T09:22:33.730+00:00",
+  "realActiveDurationSecondsUtc": 7200.219,
+  "elapsedIncludingExportSeconds": 7202.2,
+  "sampleCount": 120,
+  "initialWorldTime": 480,
+  "pausedEndWorldTime": 288548,
+  "gameDaysAdvanced": 200.04722222222222,
+  "measurements": {
+    "jsHeapMiB": {
+      "count": 120,
+      "first": 11.807777404785156,
+      "last": 29.19577407836914,
+      "min": 4.58038330078125,
+      "max": 39.641090393066406,
+      "p50": 14.058015823364258,
+      "p95": 35.93416175842285
+    },
+    "rssTreeMiB": {
+      "count": 120,
+      "first": 855.1328125,
+      "last": 896.1015625,
+      "min": 853.05859375,
+      "max": 911.52734375,
+      "p50": 899.486328125,
+      "p95": 908.57890625
+    },
+    "storageEstimateMiB": {
+      "count": 120,
+      "first": 0.49600696563720703,
+      "last": 12.804368019104004,
+      "min": 0.49600696563720703,
+      "max": 12.864876747131348,
+      "p50": 6.665379047393799,
+      "p95": 11.903870344161987
+    },
+    "checkpointKiB": {
+      "count": 120,
+      "first": 71.0166015625,
+      "last": 102.814453125,
+      "min": 71.0166015625,
+      "max": 102.814453125,
+      "p50": 85.24169921875,
+      "p95": 101.1986328125
+    },
+    "archiveRecords": {
+      "count": 120,
+      "first": 602,
+      "last": 72012,
+      "min": 602,
+      "max": 72012,
+      "p50": 36308.0,
+      "p95": 68442.0
+    },
+    "pendingRecords": {
+      "count": 120,
+      "first": 0,
+      "last": 0,
+      "min": 0,
+      "max": 1,
+      "p50": 0.0,
+      "p95": 0.0
+    },
+    "domNodes": {
+      "count": 120,
+      "first": 2523,
+      "last": 2549,
+      "min": 2116,
+      "max": 5707,
+      "p50": 2609.5,
+      "p95": 4286.25
+    },
+    "eventListeners": {
+      "count": 120,
+      "first": 705,
+      "last": 515,
+      "min": 419,
+      "max": 2649,
+      "p50": 818.0,
+      "p95": 1178.0
+    },
+    "connectedElements": {
+      "count": 120,
+      "first": 891,
+      "last": 891,
+      "min": 885,
+      "max": 893,
+      "p50": 890.0,
+      "p95": 893.0
+    }
+  },
+  "uiRoundtripPaintMs": {
+    "close": {
+      "count": 120,
+      "first": 34.175,
+      "last": 41.511,
+      "min": 27.239,
+      "max": 67.185,
+      "p50": 38.692499999999995,
+      "p95": 54.8732
+    },
+    "move": {
+      "count": 12,
+      "first": 32.159,
+      "last": 56.777,
+      "min": 32.159,
+      "max": 56.777,
+      "p50": 44.647,
+      "p95": 54.866299999999995
+    },
+    "open": {
+      "count": 120,
+      "first": 67.121,
+      "last": 30.851,
+      "min": 27.625,
+      "max": 99.495,
+      "p50": 44.2085,
+      "p95": 79.25824999999999
+    }
+  },
+  "longTasks": {
+    "count": 14,
+    "totalMs": 1184,
+    "maxMs": 205,
+    "error": null
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:5193/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "httpFailures": [],
+  "exportChainPass": true,
+  "exportRecordCount": 72013,
+  "resultsSha256": "48ad9f4adb3409674f95d0ae3a7f62bf2f2c98ac178a14df00501943b39f253b",
+  "limitations": [
+    "Headless Linux Chromium; RSS process-tree sum can count shared pages repeatedly.",
+    "UI latency includes Playwright transport and two animation frames.",
+    "Storage estimates are browser estimates; IndexedDB count only during profiling.",
+    "First memory/RSS sample is at minute one; baseline initialGameState has no heap/RSS sample.",
+    "No forced GC: individual CDP heap/node peaks are not retained-memory measurements.",
+    "One browser run is evidence for this tested scenario, not proof against all leaks or races.",
+    "IndexedDB is append-only by product behavior, so archive count/storage growth is expected."
+  ]
+}

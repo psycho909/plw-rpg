@@ -1,0 +1,45 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/stores/gameStore.test.ts -t blocks the next action
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/stores/gameStore.test.ts (13 tests | 1 failed | 12 skipped) 42ms
+     × blocks the next action until the failed checkpoint can be saved 41ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > blocks the next action until the failed checkpoint can be saved
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array []
+
+
+Number of calls: 1
+
+ ❯ src/stores/gameStore.test.ts:62:24
+     60|     const failedState = JSON.stringify(game.state), action = vi.fn(() …
+     61|     game.act(action)
+     62|     expect(action).not.toHaveBeenCalled()
+       |                        ^
+     63|     expect(JSON.stringify(game.state)).toBe(failedState)
+     64|     expect(game.pendingRecords).toBe(pending + 1)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 skipped (13)
+   Start at  02:31:41
+   Duration  336ms (transform 108ms, setup 0ms, import 177ms, tests 42ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,117 @@
+{
+  "base": "/workspace/plw-rpg/reports/playtests/20261004-deep-qa",
+  "archives": [
+    {
+      "path": "balance/playlog.jsonl",
+      "records": 75,
+      "latestProjections": 7,
+      "status": "pass"
+    },
+    {
+      "path": "baseline/playlog.jsonl",
+      "records": 5,
+      "latestProjections": 5,
+      "status": "pass"
+    },
+    {
+      "path": "cross-state/production-738bc00-baseline/playlog.jsonl",
+      "records": 98,
+      "latestProjections": 1,
+      "status": "pass"
+    },
+    {
+      "path": "cross-state/production-738bc00-o1-final/playlog.jsonl",
+      "records": 53,
+      "latestProjections": 1,
+      "status": "pass"
+    },
+    {
+      "path": "cross-state/production-738bc00-o1-resume/playlog.jsonl",
+      "records": 24,
+      "latestProjections": 1,
+      "status": "pass"
+    },
+    {
+      "path": "inheritance/cases/playlog.jsonl",
+      "records": 328,
+      "latestProjections": 13,
+      "status": "pass"
+    },
+    {
+      "path": "inheritance/playlog.jsonl",
+      "records": 19,
+      "latestProjections": 4,
+      "status": "pass"
+    },
+    {
+      "path": "memory-diagnosis/playlog.jsonl",
+      "records": 97,
+      "latestProjections": 20,
+      "status": "pass"
+    },
+    {
+      "path": "platforms/playlog.jsonl",
+      "records": 711,
+      "latestProjections": 13,
+      "status": "pass"
+    },
+    {
+      "path": "playlog.jsonl",
+      "records": 9,
+      "latestProjections": 4,
+      "status": "pass"
+    },
+    {
+      "path": "recovery/playlog.jsonl",
+      "records": 26,
+      "latestProjections": 26,
+      "status": "pass"
+    },
+    {
+      "path": "review/playlog.jsonl",
+      "records": 6,
+      "latestProjections": 4,
+      "status": "pass"
+    },
+    {
+      "path": "root-checks/playlog.jsonl",
+      "records": 38,
+      "latestProjections": 8,
+      "status": "pass"
+    },
+    {
+      "path": "soak/clean-run/playlog.jsonl",
+      "records": 139,
+      "latestProjections": 12,
+      "status": "pass"
+    },
+    {
+      "path": "soak/final-run/playlog.jsonl",
+      "records": 33,
+      "latestProjections": 3,
+      "status": "pass"
+    },
+    {
+      "path": "soak/monitor-low/playlog.jsonl",
+      "records": 11,
+      "latestProjections": 3,
+      "status": "pass"
+    },
+    {
+      "path": "soak/playlog.jsonl",
+      "records": 11,
+      "latestProjections": 3,
+      "status": "pass"
+    },
+    {
+      "path": "world/playlog.jsonl",
+      "records": 281,
+      "latestProjections": 10,
+      "status": "pass"
+    }
+  ],
+  "failures": [],
+  "records": 1964,
+  "status": "pass",
+  "observedAt": "2026-10-04T13:19:27.523991+00:00"
+}

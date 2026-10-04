@@ -1,0 +1,636 @@
+{
+  "status": "completed_observation",
+  "startedAt": "2026-10-04T07:23:47.020712+00:00",
+  "url": "http://127.0.0.1:5193/",
+  "sourceLabel": "738bc00 + O1 recovery patch (exact sourceHashes)",
+  "sourceHashes": {
+    "scripts/recorded_reports.py": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+    "scripts/test_recorded_reports.py": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+    "src/App.vue": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310",
+    "src/components/AdventureWindow.vue": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+    "src/components/CharacterSheet.vue": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+    "src/components/InventoryWindow.vue": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+    "src/components/NpcWindow.vue": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+    "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+    "src/components/PixelWindow.vue": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+    "src/components/PlaceWindow.vue": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+    "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+    "src/components/WorldMap.vue": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+    "src/components/WorldRecords.vue": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+    "src/data/config.ts": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+    "src/domain/types.ts": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+    "src/engine/actions.test.ts": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+    "src/engine/actions.ts": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/events.ts": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+    "src/engine/gameLoop.test.ts": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+    "src/engine/gameLoop.ts": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/simulation.test.ts": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+    "src/engine/simulation.ts": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+    "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+    "src/presentation/icons.ts": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+    "src/presentation/worldUI.test.ts": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+    "src/presentation/worldUI.ts": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+    "src/services/playJournal.test.ts": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+    "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+    "src/services/saveService.test.ts": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+    "src/services/saveService.ts": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+    "src/stores/gameStore.test.ts": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3",
+    "src/stores/gameStore.ts": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe",
+    "src/style.scss": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78"
+  },
+  "expectedBuildHashes": {
+    "assets/index-B0QR5Rvd.css": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+    "assets/index-BicP0bQ_.js": "24c25d4370be890fe10194c1b3a9d85e2bb9289a8d67bcc6757da11e3fc2c8c9",
+    "index.html": "c05d86559e72706f8acfd1b979aab9cb530c0769022c3e0134c1b6a91a99b911"
+  },
+  "pythonPlaywrightVersion": "1.62.0",
+  "driverVersion": "1.62.0",
+  "driverCoreBundleSha256": "3258d1cf334c6afc95f22aa9c292436cb976b391e0437f1359c83b84f0cb9d66",
+  "harnessSha256": "70d91a6aa3516e2204a149d1878c6edde83e6686065d5aab8882730a213bd3ce",
+  "method": {
+    "browser": "New disposable Chromium process; fresh context per case; never connect to or collect from main soak.",
+    "app": "Immutable final production build; ordinary keyboard m/Escape; UI pause; no game-state fixtures or source edits.",
+    "singleVariable": "Every cycle uses 15 ms after opening and closing plus boolean-only document checks. Conditions add exactly named Playwright selector calls; no user ElementHandle is created.",
+    "evaluateReturns": "Only undefined, boolean, integer, or serialized counter objects; never return DOM nodes or retain them on window.",
+    "gc": "200 ms settle, two CDP HeapProfiler.collectGarbage calls separated by 100 ms; only this disposable browser.",
+    "snapshots": "Native dialog cases only, after final GC sample; raw V8 snapshot text published with write_recorded. Taking a snapshot can itself collect garbage; these are diagnostic cases, not soak results."
+  },
+  "cases": [
+    {
+      "name": "map-keyboard-no-selectors",
+      "kind": "app",
+      "cycles": 40,
+      "selector": "none",
+      "checkedOpenCycles": 40,
+      "checkedClosedCycles": 40,
+      "samples": [
+        {
+          "label": "baseline after forced GC",
+          "at": "2026-10-04T07:23:49.105307+00:00",
+          "heap": {
+            "usedSize": 2384604,
+            "totalSize": 3145728,
+            "embedderHeapUsedSize": 3437096,
+            "backingStorageSize": 150438
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 2111,
+            "jsEventListeners": 414
+          },
+          "connectedElements": 882,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles before forced GC",
+          "at": "2026-10-04T07:23:50.674503+00:00",
+          "heap": {
+            "usedSize": 9495152,
+            "totalSize": 14942208,
+            "embedderHeapUsedSize": 34322456,
+            "backingStorageSize": 150800
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 16095,
+            "jsEventListeners": 3207
+          },
+          "connectedElements": 882,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles after forced GC",
+          "at": "2026-10-04T07:23:51.120818+00:00",
+          "heap": {
+            "usedSize": 2992212,
+            "totalSize": 3932160,
+            "embedderHeapUsedSize": 3833568,
+            "backingStorageSize": 150770
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 2111,
+            "jsEventListeners": 414
+          },
+          "connectedElements": 882,
+          "openDialogs": 0
+        },
+        {
+          "label": "40 cycles before forced GC",
+          "at": "2026-10-04T07:23:52.655641+00:00",
+          "heap": {
+            "usedSize": 7580544,
+            "totalSize": 15728640,
+            "embedderHeapUsedSize": 25320960,
+            "backingStorageSize": 150800
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 12099,
+            "jsEventListeners": 2409
+          },
+          "connectedElements": 882,
+          "openDialogs": 0
+        },
+        {
+          "label": "40 cycles after forced GC",
+          "at": "2026-10-04T07:23:53.093297+00:00",
+          "heap": {
+            "usedSize": 3019820,
+            "totalSize": 3932160,
+            "embedderHeapUsedSize": 3840160,
+            "backingStorageSize": 150770
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 2111,
+            "jsEventListeners": 414
+          },
+          "connectedElements": 882,
+          "openDialogs": 0
+        }
+      ],
+      "deltasAfterGC": {
+        "documents": 0,
+        "nodes": 0,
+        "jsEventListeners": 0
+      },
+      "heapUsedDeltaAfterGC": 635216,
+      "status": "completed_observation"
+    },
+    {
+      "name": "map-keyboard-both-waits",
+      "kind": "app",
+      "cycles": 40,
+      "selector": "both-waits",
+      "checkedOpenCycles": 40,
+      "checkedClosedCycles": 40,
+      "samples": [
+        {
+          "label": "baseline after forced GC",
+          "at": "2026-10-04T07:23:54.217642+00:00",
+          "heap": {
+            "usedSize": 2384396,
+            "totalSize": 2883584,
+            "embedderHeapUsedSize": 3436600,
+            "backingStorageSize": 149677
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 2111,
+            "jsEventListeners": 414
+          },
+          "connectedElements": 882,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles before forced GC",
+          "at": "2026-10-04T07:23:56.014919+00:00",
+          "heap": {
+            "usedSize": 17712260,
+            "totalSize": 23183360,
+            "embedderHeapUsedSize": 31593312,
+            "backingStorageSize": 150284
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 42089,
+            "jsEventListeners": 8390
+          },
+          "connectedElements": 882,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles after forced GC",
+          "at": "2026-10-04T07:23:56.510012+00:00",
+          "heap": {
+            "usedSize": 15384692,
+            "totalSize": 16105472,
+            "embedderHeapUsedSize": 11790048,
+            "backingStorageSize": 150175
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 42071,
+            "jsEventListeners": 8380
+          },
+          "connectedElements": 882,
+          "openDialogs": 0
+        },
+        {
+          "label": "40 cycles before forced GC",
+          "at": "2026-10-04T07:23:58.207873+00:00",
+          "heap": {
+            "usedSize": 27349584,
+            "totalSize": 39960576,
+            "embedderHeapUsedSize": 27516392,
+            "backingStorageSize": 150284
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 82037,
+            "jsEventListeners": 16324
+          },
+          "connectedElements": 882,
+          "openDialogs": 0
+        },
+        {
+          "label": "40 cycles after forced GC",
+          "at": "2026-10-04T07:23:58.742943+00:00",
+          "heap": {
+            "usedSize": 26563400,
+            "totalSize": 27377664,
+            "embedderHeapUsedSize": 19772704,
+            "backingStorageSize": 150175
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 82031,
+            "jsEventListeners": 16320
+          },
+          "connectedElements": 882,
+          "openDialogs": 0
+        }
+      ],
+      "deltasAfterGC": {
+        "documents": 0,
+        "nodes": 79920,
+        "jsEventListeners": 15906
+      },
+      "heapUsedDeltaAfterGC": 24179004,
+      "status": "completed_observation"
+    },
+    {
+      "name": "native-dialog-no-selectors",
+      "kind": "native",
+      "cycles": 20,
+      "selector": "none",
+      "snapshot": true,
+      "checkedOpenCycles": 20,
+      "checkedClosedCycles": 20,
+      "samples": [
+        {
+          "label": "baseline after forced GC",
+          "at": "2026-10-04T07:23:59.816593+00:00",
+          "heap": {
+            "usedSize": 596656,
+            "totalSize": 1048576,
+            "embedderHeapUsedSize": 295816,
+            "backingStorageSize": 3559
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 0
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles before forced GC",
+          "at": "2026-10-04T07:24:00.651051+00:00",
+          "heap": {
+            "usedSize": 907352,
+            "totalSize": 1835008,
+            "embedderHeapUsedSize": 1676776,
+            "backingStorageSize": 3648
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 164,
+            "jsEventListeners": 20
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles after forced GC",
+          "at": "2026-10-04T07:24:01.107530+00:00",
+          "heap": {
+            "usedSize": 720948,
+            "totalSize": 1572864,
+            "embedderHeapUsedSize": 312160,
+            "backingStorageSize": 3568
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 0
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        },
+        {
+          "label": "after heap snapshot (diagnostic only)",
+          "at": "2026-10-04T07:24:01.405090+00:00",
+          "heap": {
+            "usedSize": 720948,
+            "totalSize": 1572864,
+            "embedderHeapUsedSize": 312160,
+            "backingStorageSize": 3568
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 0
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        }
+      ],
+      "deltasAfterGC": {
+        "documents": 0,
+        "nodes": 0,
+        "jsEventListeners": 0
+      },
+      "heapUsedDeltaAfterGC": 124292,
+      "heapSnapshot": {
+        "path": "native-dialog-no-selectors.heapsnapshot",
+        "sha256": "6507867237f596facc21fdf3a98c853a0520db7ef5233f02ae8e7806266fd533",
+        "bytes": 2863871,
+        "nodeCount": 31441
+      },
+      "status": "completed_observation"
+    },
+    {
+      "name": "native-dialog-visible-wait",
+      "kind": "native",
+      "cycles": 20,
+      "selector": "visible-wait",
+      "snapshot": true,
+      "checkedOpenCycles": 20,
+      "checkedClosedCycles": 20,
+      "samples": [
+        {
+          "label": "baseline after forced GC",
+          "at": "2026-10-04T07:24:02.505448+00:00",
+          "heap": {
+            "usedSize": 596656,
+            "totalSize": 1048576,
+            "embedderHeapUsedSize": 295816,
+            "backingStorageSize": 3559
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 0
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles before forced GC",
+          "at": "2026-10-04T07:24:03.537069+00:00",
+          "heap": {
+            "usedSize": 2717824,
+            "totalSize": 3784704,
+            "embedderHeapUsedSize": 1795352,
+            "backingStorageSize": 4272
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 204,
+            "jsEventListeners": 46
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles after forced GC",
+          "at": "2026-10-04T07:24:03.962945+00:00",
+          "heap": {
+            "usedSize": 1846784,
+            "totalSize": 2736128,
+            "embedderHeapUsedSize": 355960,
+            "backingStorageSize": 3740
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 144,
+            "jsEventListeners": 46
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        },
+        {
+          "label": "after heap snapshot (diagnostic only)",
+          "at": "2026-10-04T07:24:04.377782+00:00",
+          "heap": {
+            "usedSize": 1846636,
+            "totalSize": 2736128,
+            "embedderHeapUsedSize": 355960,
+            "backingStorageSize": 3740
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 144,
+            "jsEventListeners": 46
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        }
+      ],
+      "deltasAfterGC": {
+        "documents": 0,
+        "nodes": 140,
+        "jsEventListeners": 46
+      },
+      "heapUsedDeltaAfterGC": 1250128,
+      "heapSnapshot": {
+        "path": "native-dialog-visible-wait.heapsnapshot",
+        "sha256": "36f957f34594c49712de2301d2aa223699fb51c9874eb1d5bbc4a8301da7761c",
+        "bytes": 4144885,
+        "nodeCount": 46709
+      },
+      "status": "completed_observation"
+    },
+    {
+      "name": "native-dialog-detached-wait",
+      "kind": "native",
+      "cycles": 20,
+      "selector": "detached-wait",
+      "checkedOpenCycles": 20,
+      "checkedClosedCycles": 20,
+      "samples": [
+        {
+          "label": "baseline after forced GC",
+          "at": "2026-10-04T07:24:05.440948+00:00",
+          "heap": {
+            "usedSize": 596656,
+            "totalSize": 1048576,
+            "embedderHeapUsedSize": 295816,
+            "backingStorageSize": 3559
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 0
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles before forced GC",
+          "at": "2026-10-04T07:24:06.408802+00:00",
+          "heap": {
+            "usedSize": 1852724,
+            "totalSize": 2940928,
+            "embedderHeapUsedSize": 1798520,
+            "backingStorageSize": 3791
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 164,
+            "jsEventListeners": 33
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles after forced GC",
+          "at": "2026-10-04T07:24:06.836923+00:00",
+          "heap": {
+            "usedSize": 1323184,
+            "totalSize": 2154496,
+            "embedderHeapUsedSize": 317768,
+            "backingStorageSize": 3717
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 13
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        }
+      ],
+      "deltasAfterGC": {
+        "documents": 0,
+        "nodes": 0,
+        "jsEventListeners": 13
+      },
+      "heapUsedDeltaAfterGC": 726528,
+      "status": "completed_observation"
+    },
+    {
+      "name": "native-dialog-is-visible",
+      "kind": "native",
+      "cycles": 20,
+      "selector": "is-visible",
+      "checkedOpenCycles": 20,
+      "checkedClosedCycles": 20,
+      "samples": [
+        {
+          "label": "baseline after forced GC",
+          "at": "2026-10-04T07:24:07.913418+00:00",
+          "heap": {
+            "usedSize": 596656,
+            "totalSize": 1048576,
+            "embedderHeapUsedSize": 295816,
+            "backingStorageSize": 3559
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 0
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles before forced GC",
+          "at": "2026-10-04T07:24:08.826546+00:00",
+          "heap": {
+            "usedSize": 1908840,
+            "totalSize": 2940928,
+            "embedderHeapUsedSize": 1804344,
+            "backingStorageSize": 3830
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 164,
+            "jsEventListeners": 33
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        },
+        {
+          "label": "20 cycles after forced GC",
+          "at": "2026-10-04T07:24:09.256225+00:00",
+          "heap": {
+            "usedSize": 1359696,
+            "totalSize": 2154496,
+            "embedderHeapUsedSize": 324624,
+            "backingStorageSize": 3740
+          },
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 13
+          },
+          "connectedElements": 3,
+          "openDialogs": 0
+        }
+      ],
+      "deltasAfterGC": {
+        "documents": 0,
+        "nodes": 0,
+        "jsEventListeners": 13
+      },
+      "heapUsedDeltaAfterGC": 763040,
+      "status": "completed_observation"
+    }
+  ],
+  "pageErrors": [],
+  "limitations": [
+    "Short controlled diagnostic, not QA-01 two-hour completion or a general no-leak claim.",
+    "Paused map controls measure mount/unmount retention; native cases exclude Vue and the game.",
+    "An expected red control is reported as reproduced retention; no product change is made."
+  ],
+  "actualBuildHashes": {
+    "assets/index-B0QR5Rvd.css": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+    "assets/index-BicP0bQ_.js": "24c25d4370be890fe10194c1b3a9d85e2bb9289a8d67bcc6757da11e3fc2c8c9",
+    "index.html": "c05d86559e72706f8acfd1b979aab9cb530c0769022c3e0134c1b6a91a99b911"
+  },
+  "observedSourceHashes": {
+    "scripts/recorded_reports.py": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+    "scripts/test_recorded_reports.py": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+    "src/App.vue": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310",
+    "src/components/AdventureWindow.vue": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+    "src/components/CharacterSheet.vue": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+    "src/components/InventoryWindow.vue": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+    "src/components/NpcWindow.vue": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+    "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+    "src/components/PixelWindow.vue": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+    "src/components/PlaceWindow.vue": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+    "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+    "src/components/WorldMap.vue": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+    "src/components/WorldRecords.vue": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+    "src/data/config.ts": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+    "src/domain/types.ts": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+    "src/engine/actions.test.ts": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+    "src/engine/actions.ts": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/events.ts": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+    "src/engine/gameLoop.test.ts": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+    "src/engine/gameLoop.ts": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/simulation.test.ts": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+    "src/engine/simulation.ts": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+    "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+    "src/presentation/icons.ts": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+    "src/presentation/worldUI.test.ts": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+    "src/presentation/worldUI.ts": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+    "src/services/playJournal.test.ts": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+    "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+    "src/services/saveService.test.ts": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+    "src/services/saveService.ts": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+    "src/stores/gameStore.test.ts": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3",
+    "src/stores/gameStore.ts": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe",
+    "src/style.scss": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78"
+  },
+  "browserVersion": "151.0.7922.173",
+  "finishedAt": "2026-10-04T07:24:09.360811+00:00"
+}

@@ -1,0 +1,2448 @@
+{
+  "baselineCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+  "sourceLabel": "738bc00 + O1 recovery patch (exact sourceHashes)",
+  "sourceStatus": "uncommitted verified recovery patch; does not claim baseline commit alone contains this source",
+  "sourceManifest": "/workspace/plw-rpg/reports/playtests/20261004-deep-qa/baseline/final-manifest.json",
+  "sourceHashes": {
+    "scripts/recorded_reports.py": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+    "scripts/test_recorded_reports.py": "e5f4fcac67daf09e01c156834de286b30c6a6ebcddbe819d7e4bb7a6f0ca93e2",
+    "src/App.vue": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310",
+    "src/components/AdventureWindow.vue": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+    "src/components/CharacterSheet.vue": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+    "src/components/InventoryWindow.vue": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+    "src/components/NpcWindow.vue": "90b20ae6259d5250676352985a52dc12beb95a2f5f062bf0ad0a33602bee769d",
+    "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+    "src/components/PixelWindow.vue": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+    "src/components/PlaceWindow.vue": "7648a2813e9a1a469f8ed18d1c1244d4781c3b4a92f09a7489f110cbd5afd5de",
+    "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+    "src/components/WorldMap.vue": "bed70ce4d91cb3b892ed479533d9983b8271dc112ffbd000dd338dd71a181722",
+    "src/components/WorldRecords.vue": "b0a4b2b9ac1da825a05bb220552493089e3ddf483363f2ab2c71ff17b7b2967c",
+    "src/data/config.ts": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+    "src/domain/types.ts": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+    "src/engine/actions.test.ts": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+    "src/engine/actions.ts": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/events.ts": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+    "src/engine/gameLoop.test.ts": "3cfc01215c955105a26159c21db036207340121b600a7b5fd07f8f87063e2ea7",
+    "src/engine/gameLoop.ts": "8d9f57331c9ec55a681055dd6f2fb9433a2806046710e4ea70e328d3dce5d6c9",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/simulation.test.ts": "54a41af6b4f9fcbfbe5b644d9732bbace8701e89ffd37091a81f6c1afeaf4e53",
+    "src/engine/simulation.ts": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+    "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+    "src/presentation/icons.ts": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+    "src/presentation/worldUI.test.ts": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+    "src/presentation/worldUI.ts": "3b0c6255514e800f583d06697ff994c706c879f9faddc063edba2bce92d0734f",
+    "src/services/playJournal.test.ts": "83ca4fff0d59d7c42281a260c65f1e532a7afa06444c8fd7d30dac2461224dcb",
+    "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+    "src/services/saveService.test.ts": "6dc6560c38677a4326ecaf2bf64c2cee3a0a3f0a4e09bfd6bacb34b562ce0482",
+    "src/services/saveService.ts": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852",
+    "src/stores/gameStore.test.ts": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3",
+    "src/stores/gameStore.ts": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe",
+    "src/style.scss": "0423fd51f6bf630409f672adb9642ae19acabae676df119e79e5ef46b5855d78"
+  },
+  "buildHashes": {
+    "assets/index-B0QR5Rvd.css": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+    "assets/index-BicP0bQ_.js": "24c25d4370be890fe10194c1b3a9d85e2bb9289a8d67bcc6757da11e3fc2c8c9",
+    "index.html": "c05d86559e72706f8acfd1b979aab9cb530c0769022c3e0134c1b6a91a99b911"
+  },
+  "changedSinceBaseline": {
+    "src/App.vue": {
+      "before": "ce5002b9e63c0f1e8bdcf90807abbc7f7057c94360e9fcea1951097d0b578b22",
+      "after": "e28a60e602dbed5f5dba0a44fda1172e77e5a4c6576bf722d39ee675c352b310"
+    },
+    "src/stores/gameStore.test.ts": {
+      "before": "c7079731b4293be6e659740a42d410f419f3dde17563c28a5f942efe5c8952c5",
+      "after": "fefc711704046afea5be1b2f363fd8b2d3cfde460497164db9eca2dd17454bc3"
+    },
+    "src/stores/gameStore.ts": {
+      "before": "3ec1c6d99073b6236cf6b3aa53eea19e1ddd9cbbd15737127083e9da20543246",
+      "after": "d0be0a7ab5a147a46d04313ccc54e57f86eb84cfc0049afe020c4e70224721fe"
+    }
+  },
+  "buildPath": "/tmp/plw-rpg-qa-20261004-recovery-fixed",
+  "url": "http://127.0.0.1:5192/",
+  "targetElapsedSeconds": 7200,
+  "status": "failed",
+  "startedAtUtc": "2026-10-04T02:40:48.844+00:00",
+  "targetEndUtc": "2026-10-04T04:40:48.844+00:00",
+  "endedAtUtc": "2026-10-04T03:07:49.015+00:00",
+  "elapsedSeconds": 1620.171,
+  "fingerprintStart": {
+    "assets": {
+      "/": "c05d86559e72706f8acfd1b979aab9cb530c0769022c3e0134c1b6a91a99b911",
+      "/assets/index-B0QR5Rvd.css": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+      "/assets/index-BicP0bQ_.js": "24c25d4370be890fe10194c1b3a9d85e2bb9289a8d67bcc6757da11e3fc2c8c9"
+    },
+    "asset_count": 3
+  },
+  "fingerprintEnd": null,
+  "observations": [
+    {
+      "checkpoint": 1,
+      "scheduledElapsedSeconds": 60,
+      "sampledAtUtc": "2026-10-04T02:41:48.962+00:00",
+      "elapsedSeconds": 60.118,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 2885,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791081708896,
+        "localStorageBytes": 72731,
+        "indexedDbRecordCount": 603,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 520984,
+          "quota": 10737939224,
+          "usageDetails": {
+            "indexedDB": 520984
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 3 日 00:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 887,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 909893632,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": [
+          {
+            "startTime": 37.1000000089407,
+            "duration": 165,
+            "name": "self"
+          }
+        ]
+      },
+      "cdpHeap": {
+        "usedSize": 25011056,
+        "totalSize": 67952640,
+        "embedderHeapUsedSize": 7591160,
+        "backingStorageSize": 304191
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 2553,
+        "jsEventListeners": 743
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 2,
+      "scheduledElapsedSeconds": 120,
+      "sampledAtUtc": "2026-10-04T02:42:48.960+00:00",
+      "elapsedSeconds": 120.116,
+      "action": {
+        "route": "i",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 5285,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791081768901,
+        "localStorageBytes": 72767,
+        "indexedDbRecordCount": 1203,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1040696,
+          "quota": 10738458936,
+          "usageDetails": {
+            "indexedDB": 1040696
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 4 日 16:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 882,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 911437824,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 11208344,
+        "totalSize": 64741376,
+        "embedderHeapUsedSize": 5152904,
+        "backingStorageSize": 300983
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 2445,
+        "jsEventListeners": 469
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 3,
+      "scheduledElapsedSeconds": 180,
+      "sampledAtUtc": "2026-10-04T02:43:48.939+00:00",
+      "elapsedSeconds": 180.096,
+      "action": {
+        "route": "l",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 7685,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791081828891,
+        "localStorageBytes": 72798,
+        "indexedDbRecordCount": 1803,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1560402,
+          "quota": 10738978642,
+          "usageDetails": {
+            "indexedDB": 1560402
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 6 日 08:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 882,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 911593472,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 6674116,
+        "totalSize": 63561728,
+        "embedderHeapUsedSize": 9997000,
+        "backingStorageSize": 306657
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 3077,
+        "jsEventListeners": 940
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 4,
+      "scheduledElapsedSeconds": 240,
+      "sampledAtUtc": "2026-10-04T02:44:48.970+00:00",
+      "elapsedSeconds": 240.126,
+      "action": {
+        "route": "m",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 10085,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791081888904,
+        "localStorageBytes": 72820,
+        "indexedDbRecordCount": 2403,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2081060,
+          "quota": 10739499300,
+          "usageDetails": {
+            "indexedDB": 2081060
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 8 日 00:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 887,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 918220800,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 24157832,
+        "totalSize": 66838528,
+        "embedderHeapUsedSize": 9528080,
+        "backingStorageSize": 302015
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 4543,
+        "jsEventListeners": 970
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 5,
+      "scheduledElapsedSeconds": 300,
+      "sampledAtUtc": "2026-10-04T02:45:49.068+00:00",
+      "elapsedSeconds": 300.224,
+      "action": {
+        "route": "Escape",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 12489,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791081949032,
+        "localStorageBytes": 72785,
+        "indexedDbRecordCount": 3004,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2602840,
+          "quota": 10740021080,
+          "usageDetails": {
+            "indexedDB": 2602840
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 9 日 16:09",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 920068096,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 15777384,
+        "totalSize": 66150400,
+        "embedderHeapUsedSize": 5606792,
+        "backingStorageSize": 301306
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 4599,
+        "jsEventListeners": 893
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 6,
+      "scheduledElapsedSeconds": 360,
+      "sampledAtUtc": "2026-10-04T02:46:48.931+00:00",
+      "elapsedSeconds": 360.087,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 14885,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082008887,
+        "localStorageBytes": 72795,
+        "indexedDbRecordCount": 3603,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1630585,
+          "quota": 10739048825,
+          "usageDetails": {
+            "indexedDB": 1630585
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 11 日 08:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 921378816,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 40656604,
+        "totalSize": 71720960,
+        "embedderHeapUsedSize": 10761320,
+        "backingStorageSize": 306771
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 5404,
+        "jsEventListeners": 1357
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 7,
+      "scheduledElapsedSeconds": 420,
+      "sampledAtUtc": "2026-10-04T02:47:48.962+00:00",
+      "elapsedSeconds": 420.119,
+      "action": {
+        "route": "m",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 17285,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082068896,
+        "localStorageBytes": 72795,
+        "indexedDbRecordCount": 4203,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2151497,
+          "quota": 10739569737,
+          "usageDetails": {
+            "indexedDB": 2151497
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 13 日 00:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 891,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 922873856,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 25878040,
+        "totalSize": 68182016,
+        "embedderHeapUsedSize": 10026992,
+        "backingStorageSize": 302345
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 6875,
+        "jsEventListeners": 1388
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 8,
+      "scheduledElapsedSeconds": 480,
+      "sampledAtUtc": "2026-10-04T02:48:48.940+00:00",
+      "elapsedSeconds": 480.096,
+      "action": {
+        "route": "i",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 19685,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082128910,
+        "localStorageBytes": 72779,
+        "indexedDbRecordCount": 4803,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2672409,
+          "quota": 10740090649,
+          "usageDetails": {
+            "indexedDB": 2672409
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 14 日 16:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 924012544,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 7175436,
+        "totalSize": 64610304,
+        "embedderHeapUsedSize": 5826168,
+        "backingStorageSize": 301043
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 6923,
+        "jsEventListeners": 1304
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 9,
+      "scheduledElapsedSeconds": 540,
+      "sampledAtUtc": "2026-10-04T02:49:48.941+00:00",
+      "elapsedSeconds": 540.097,
+      "action": {
+        "route": "l",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 22085,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082188890,
+        "localStorageBytes": 74311,
+        "indexedDbRecordCount": 5403,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3193421,
+          "quota": 10740611661,
+          "usageDetails": {
+            "indexedDB": 3193421
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 16 日 08:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 924323840,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 24701440,
+        "totalSize": 68771840,
+        "embedderHeapUsedSize": 10300096,
+        "backingStorageSize": 308535
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 7515,
+        "jsEventListeners": 1681
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 10,
+      "scheduledElapsedSeconds": 600,
+      "sampledAtUtc": "2026-10-04T02:50:49.139+00:00",
+      "elapsedSeconds": 600.295,
+      "action": {
+        "route": "Escape",
+        "opened": true,
+        "closed": true,
+        "errors": [],
+        "moved": true
+      },
+      "browser": {
+        "worldTime": 24498,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082249096,
+        "localStorageBytes": 74330,
+        "indexedDbRecordCount": 6006,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3716929,
+          "quota": 10741135169,
+          "usageDetails": {
+            "indexedDB": 3716929
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 18 日 00:18",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 891,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 926789632,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 16578056,
+        "totalSize": 67780608,
+        "embedderHeapUsedSize": 5959528,
+        "backingStorageSize": 304331
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 7081,
+        "jsEventListeners": 1335
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 11,
+      "scheduledElapsedSeconds": 660,
+      "sampledAtUtc": "2026-10-04T02:51:48.936+00:00",
+      "elapsedSeconds": 660.092,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 26890,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082308887,
+        "localStorageBytes": 74309,
+        "indexedDbRecordCount": 6604,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1440872,
+          "quota": 10738859112,
+          "usageDetails": {
+            "indexedDB": 1440872
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 19 日 16:10",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 924692480,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 34012876,
+        "totalSize": 71155712,
+        "embedderHeapUsedSize": 7899592,
+        "backingStorageSize": 308703
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 7511,
+        "jsEventListeners": 1709
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 12,
+      "scheduledElapsedSeconds": 720,
+      "sampledAtUtc": "2026-10-04T02:52:48.935+00:00",
+      "elapsedSeconds": 720.091,
+      "action": {
+        "route": "i",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 29290,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082368889,
+        "localStorageBytes": 74348,
+        "indexedDbRecordCount": 7204,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1961784,
+          "quota": 10739380024,
+          "usageDetails": {
+            "indexedDB": 1961784
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 21 日 08:10",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 924782592,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 18489968,
+        "totalSize": 67821568,
+        "embedderHeapUsedSize": 6672152,
+        "backingStorageSize": 304425
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 7463,
+        "jsEventListeners": 1360
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 13,
+      "scheduledElapsedSeconds": 780,
+      "sampledAtUtc": "2026-10-04T02:53:48.931+00:00",
+      "elapsedSeconds": 780.087,
+      "action": {
+        "route": "l",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 31690,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082428887,
+        "localStorageBytes": 74367,
+        "indexedDbRecordCount": 7804,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2482696,
+          "quota": 10739900936,
+          "usageDetails": {
+            "indexedDB": 2482696
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 23 日 00:10",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 891,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 925274112,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 28385352,
+        "totalSize": 69943296,
+        "embedderHeapUsedSize": 8484792,
+        "backingStorageSize": 307812
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 7687,
+        "jsEventListeners": 1650
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 14,
+      "scheduledElapsedSeconds": 840,
+      "sampledAtUtc": "2026-10-04T02:54:49.025+00:00",
+      "elapsedSeconds": 840.181,
+      "action": {
+        "route": "m",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 34094,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082489010,
+        "localStorageBytes": 74350,
+        "indexedDbRecordCount": 8405,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3004476,
+          "quota": 10740422716,
+          "usageDetails": {
+            "indexedDB": 3004476
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 24 日 16:14",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 931172352,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 13571492,
+        "totalSize": 65822720,
+        "embedderHeapUsedSize": 9059040,
+        "backingStorageSize": 304293
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 9475,
+        "jsEventListeners": 1764
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 15,
+      "scheduledElapsedSeconds": 900,
+      "sampledAtUtc": "2026-10-04T02:55:49.047+00:00",
+      "elapsedSeconds": 900.203,
+      "action": {
+        "route": "Escape",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 36494,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082549011,
+        "localStorageBytes": 74351,
+        "indexedDbRecordCount": 9005,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3525381,
+          "quota": 10740943621,
+          "usageDetails": {
+            "indexedDB": 3525381
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 26 日 08:14",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 935608320,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": [
+          {
+            "startTime": 886292.3000000119,
+            "duration": 62,
+            "name": "self"
+          }
+        ]
+      },
+      "cdpHeap": {
+        "usedSize": 11453360,
+        "totalSize": 66789376,
+        "embedderHeapUsedSize": 10201072,
+        "backingStorageSize": 306220
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 9999,
+        "jsEventListeners": 1927
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 16,
+      "scheduledElapsedSeconds": 960,
+      "sampledAtUtc": "2026-10-04T02:56:48.941+00:00",
+      "elapsedSeconds": 960.097,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 38890,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082608890,
+        "localStorageBytes": 74355,
+        "indexedDbRecordCount": 9604,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1902386,
+          "quota": 10739320626,
+          "usageDetails": {
+            "indexedDB": 1902386
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 28 日 00:10",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 891,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 935247872,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 28888424,
+        "totalSize": 70688768,
+        "embedderHeapUsedSize": 12003680,
+        "backingStorageSize": 312885
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 10272,
+        "jsEventListeners": 2493
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 17,
+      "scheduledElapsedSeconds": 1020,
+      "sampledAtUtc": "2026-10-04T02:57:48.972+00:00",
+      "elapsedSeconds": 1020.128,
+      "action": {
+        "route": "m",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 41290,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082668891,
+        "localStorageBytes": 74333,
+        "indexedDbRecordCount": 10204,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2423298,
+          "quota": 10739841538,
+          "usageDetails": {
+            "indexedDB": 2423298
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 29 日 16:10",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 935858176,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 27677128,
+        "totalSize": 70647808,
+        "embedderHeapUsedSize": 11754736,
+        "backingStorageSize": 307260
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 11882,
+        "jsEventListeners": 2428
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 18,
+      "scheduledElapsedSeconds": 1080,
+      "sampledAtUtc": "2026-10-04T02:58:48.963+00:00",
+      "elapsedSeconds": 1080.119,
+      "action": {
+        "route": "i",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 43690,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082728907,
+        "localStorageBytes": 77257,
+        "indexedDbRecordCount": 10804,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2944381,
+          "quota": 10740362621,
+          "usageDetails": {
+            "indexedDB": 2944381
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 夏 1 日 08:10",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 956006400,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 25347404,
+        "totalSize": 72138752,
+        "embedderHeapUsedSize": 24473240,
+        "backingStorageSize": 330924
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 13602,
+        "jsEventListeners": 3931
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 19,
+      "scheduledElapsedSeconds": 1140,
+      "sampledAtUtc": "2026-10-04T02:59:48.935+00:00",
+      "elapsedSeconds": 1140.091,
+      "action": {
+        "route": "l",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 46090,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082788890,
+        "localStorageBytes": 77273,
+        "indexedDbRecordCount": 11404,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3465293,
+          "quota": 10740883533,
+          "usageDetails": {
+            "indexedDB": 3465293
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 夏 3 日 00:10",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 891,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 901312512,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 10925812,
+        "totalSize": 40493056,
+        "embedderHeapUsedSize": 9113816,
+        "backingStorageSize": 313227
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 12131,
+        "jsEventListeners": 2466
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 20,
+      "scheduledElapsedSeconds": 1200,
+      "sampledAtUtc": "2026-10-04T03:00:49.115+00:00",
+      "elapsedSeconds": 1200.271,
+      "action": {
+        "route": "Escape",
+        "opened": true,
+        "closed": true,
+        "errors": [],
+        "moved": true
+      },
+      "browser": {
+        "worldTime": 48503,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082849102,
+        "localStorageBytes": 77257,
+        "indexedDbRecordCount": 12007,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3988801,
+          "quota": 10741407041,
+          "usageDetails": {
+            "indexedDB": 3988801
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 夏 4 日 16:23",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 885,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 941543424,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 27149412,
+        "totalSize": 72228864,
+        "embedderHeapUsedSize": 12729712,
+        "backingStorageSize": 318035
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 12673,
+        "jsEventListeners": 2862
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 21,
+      "scheduledElapsedSeconds": 1260,
+      "sampledAtUtc": "2026-10-04T03:01:48.929+00:00",
+      "elapsedSeconds": 1260.085,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 50895,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082908888,
+        "localStorageBytes": 77291,
+        "indexedDbRecordCount": 12605,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2370312,
+          "quota": 10739788552,
+          "usageDetails": {
+            "indexedDB": 2370312
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 夏 6 日 08:15",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 885,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 940965888,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 30170828,
+        "totalSize": 71852032,
+        "embedderHeapUsedSize": 11556200,
+        "backingStorageSize": 313494
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 12785,
+        "jsEventListeners": 2500
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 22,
+      "scheduledElapsedSeconds": 1320,
+      "sampledAtUtc": "2026-10-04T03:02:48.961+00:00",
+      "elapsedSeconds": 1320.117,
+      "action": {
+        "route": "i",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 53295,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791082968892,
+        "localStorageBytes": 77613,
+        "indexedDbRecordCount": 13205,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2891348,
+          "quota": 10740309588,
+          "usageDetails": {
+            "indexedDB": 2891348
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 夏 8 日 00:15",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 891,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 943087616,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 15248736,
+        "totalSize": 69001216,
+        "embedderHeapUsedSize": 7113408,
+        "backingStorageSize": 310755
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 12383,
+        "jsEventListeners": 2235
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 23,
+      "scheduledElapsedSeconds": 1380,
+      "sampledAtUtc": "2026-10-04T03:03:48.924+00:00",
+      "elapsedSeconds": 1380.08,
+      "action": {
+        "route": "l",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 55695,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791083028907,
+        "localStorageBytes": 77594,
+        "indexedDbRecordCount": 13805,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3412260,
+          "quota": 10740830500,
+          "usageDetails": {
+            "indexedDB": 3412260
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 夏 9 日 16:15",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 885,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 940740608,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 17730712,
+        "totalSize": 68788224,
+        "embedderHeapUsedSize": 8976760,
+        "backingStorageSize": 315266
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 12692,
+        "jsEventListeners": 2623
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 24,
+      "scheduledElapsedSeconds": 1440,
+      "sampledAtUtc": "2026-10-04T03:04:48.972+00:00",
+      "elapsedSeconds": 1440.128,
+      "action": {
+        "route": "m",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 58095,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791083088904,
+        "localStorageBytes": 77596,
+        "indexedDbRecordCount": 14405,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3933172,
+          "quota": 10741351412,
+          "usageDetails": {
+            "indexedDB": 3933172
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 夏 11 日 08:19",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 885,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 945115136,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 31926672,
+        "totalSize": 71901184,
+        "embedderHeapUsedSize": 11959936,
+        "backingStorageSize": 310890
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 14542,
+        "jsEventListeners": 2663
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 25,
+      "scheduledElapsedSeconds": 1500,
+      "sampledAtUtc": "2026-10-04T03:05:49.054+00:00",
+      "elapsedSeconds": 1500.21,
+      "action": {
+        "route": "Escape",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 60499,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791083149005,
+        "localStorageBytes": 77612,
+        "indexedDbRecordCount": 15006,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 4454952,
+          "quota": 10741873192,
+          "usageDetails": {
+            "indexedDB": 4454952
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 夏 13 日 00:19",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 891,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 945491968,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 31709660,
+        "totalSize": 72425472,
+        "embedderHeapUsedSize": 7726872,
+        "backingStorageSize": 311490
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 14581,
+        "jsEventListeners": 2712
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 26,
+      "scheduledElapsedSeconds": 1560,
+      "sampledAtUtc": "2026-10-04T03:06:48.950+00:00",
+      "elapsedSeconds": 1560.106,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 62895,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791083208890,
+        "localStorageBytes": 77592,
+        "indexedDbRecordCount": 15605,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2836701,
+          "quota": 10740254941,
+          "usageDetails": {
+            "indexedDB": 2836701
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 夏 14 日 16:15",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 885,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 943472640,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 26663836,
+        "totalSize": 71966720,
+        "embedderHeapUsedSize": 10152208,
+        "backingStorageSize": 315357
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 15065,
+        "jsEventListeners": 3051
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 27,
+      "scheduledElapsedSeconds": 1620,
+      "sampledAtUtc": "2026-10-04T03:07:48.966+00:00",
+      "elapsedSeconds": 1620.122,
+      "action": {
+        "route": "m",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 65295,
+        "pendingRecords": 0,
+        "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+        "saveVersion": 1,
+        "lastSavedAt": 1791083268893,
+        "localStorageBytes": 79059,
+        "indexedDbRecordCount": 16205,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3357711,
+          "quota": 10740775951,
+          "usageDetails": {
+            "indexedDB": 3357711
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 夏 16 日 08:15",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 885,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 943939584,
+        "process_count": 9,
+        "root_pid": 86423,
+        "pids": [
+          86423,
+          86440,
+          86441,
+          86461,
+          86476,
+          86477,
+          86510,
+          86519,
+          86520
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 2,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 37608904,
+        "totalSize": 74031104,
+        "embedderHeapUsedSize": 12808120,
+        "backingStorageSize": 313882
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 16916,
+        "jsEventListeners": 3086
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    }
+  ],
+  "uiLatenciesMs": [
+    {
+      "kind": "openModal",
+      "ms": 71.0
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.8
+    },
+    {
+      "kind": "openModal",
+      "ms": 65.0
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.9
+    },
+    {
+      "kind": "openModal",
+      "ms": 48.2
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.2
+    },
+    {
+      "kind": "openModal",
+      "ms": 81.2
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.9
+    },
+    {
+      "kind": "openModal",
+      "ms": 94.3
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.3
+    },
+    {
+      "kind": "manualSave",
+      "ms": 81.1
+    },
+    {
+      "kind": "openModal",
+      "ms": 46.7
+    },
+    {
+      "kind": "closeModal",
+      "ms": 30.6
+    },
+    {
+      "kind": "openModal",
+      "ms": 73.2
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.5
+    },
+    {
+      "kind": "openModal",
+      "ms": 38.3
+    },
+    {
+      "kind": "closeModal",
+      "ms": 45.6
+    },
+    {
+      "kind": "openModal",
+      "ms": 40.6
+    },
+    {
+      "kind": "closeModal",
+      "ms": 45.6
+    },
+    {
+      "kind": "openModal",
+      "ms": 67.6
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.6
+    },
+    {
+      "kind": "move",
+      "ms": 94.7
+    },
+    {
+      "kind": "manualSave",
+      "ms": 81.7
+    },
+    {
+      "kind": "openModal",
+      "ms": 48.4
+    },
+    {
+      "kind": "closeModal",
+      "ms": 32.1
+    },
+    {
+      "kind": "openModal",
+      "ms": 47.2
+    },
+    {
+      "kind": "closeModal",
+      "ms": 32.2
+    },
+    {
+      "kind": "openModal",
+      "ms": 43.7
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.1
+    },
+    {
+      "kind": "openModal",
+      "ms": 124.9
+    },
+    {
+      "kind": "closeModal",
+      "ms": 37.0
+    },
+    {
+      "kind": "openModal",
+      "ms": 89.2
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.0
+    },
+    {
+      "kind": "manualSave",
+      "ms": 64.3
+    },
+    {
+      "kind": "openModal",
+      "ms": 52.0
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.2
+    },
+    {
+      "kind": "openModal",
+      "ms": 83.3
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.2
+    },
+    {
+      "kind": "openModal",
+      "ms": 58.7
+    },
+    {
+      "kind": "closeModal",
+      "ms": 38.6
+    },
+    {
+      "kind": "openModal",
+      "ms": 45.8
+    },
+    {
+      "kind": "closeModal",
+      "ms": 31.6
+    },
+    {
+      "kind": "openModal",
+      "ms": 77.4
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.1
+    },
+    {
+      "kind": "move",
+      "ms": 79.4
+    },
+    {
+      "kind": "manualSave",
+      "ms": 64.7
+    },
+    {
+      "kind": "openModal",
+      "ms": 44.8
+    },
+    {
+      "kind": "closeModal",
+      "ms": 29.4
+    },
+    {
+      "kind": "openModal",
+      "ms": 71.9
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.4
+    },
+    {
+      "kind": "openModal",
+      "ms": 38.8
+    },
+    {
+      "kind": "closeModal",
+      "ms": 30.7
+    },
+    {
+      "kind": "openModal",
+      "ms": 78.7
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.0
+    },
+    {
+      "kind": "openModal",
+      "ms": 82.0
+    },
+    {
+      "kind": "closeModal",
+      "ms": 31.8
+    },
+    {
+      "kind": "manualSave",
+      "ms": 81.3
+    },
+    {
+      "kind": "openModal",
+      "ms": 61.0
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.8
+    },
+    {
+      "kind": "openModal",
+      "ms": 75.8
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.4
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "atUtc": "2026-10-04T02:40:48.406+00:00",
+      "elapsed": null,
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:5192/favicon.ico"
+    }
+  ],
+  "resourceFailures": [],
+  "droppedDiagnostics": {
+    "consoleErrors": 1
+  },
+  "interruptions": [],
+  "limitations": [
+    "Single disposable Chromium profile and local build; no forced GC.",
+    "Per-checkpoint IndexedDB uses count() only. Final UI export reads the archive once.",
+    "Chromium RSS is summed over the process tree; shared pages may be counted more than once."
+  ],
+  "startMonotonic": 120989.565509005,
+  "chromiumProfile": "/tmp/plw-rpg-qa-20261004-soak-profile-rbi9xfzn",
+  "initialGameState": {
+    "worldTime": 481,
+    "worldId": "08c1c0f3-405b-4365-b269-af9d8f26180e",
+    "activeCharacterId": "alden",
+    "selectedSpeed": "×20"
+  },
+  "failure": "BrokenPipeError: [Errno 32] Broken pipe"
+}

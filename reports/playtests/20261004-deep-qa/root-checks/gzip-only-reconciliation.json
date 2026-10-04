@@ -1,0 +1,15 @@
+{
+  "base": "temporary disposable gzip-only projection check",
+  "archives": [
+    {
+      "path": "playlog.jsonl",
+      "records": 71,
+      "latestProjections": 7,
+      "status": "pass"
+    }
+  ],
+  "failures": [],
+  "records": 71,
+  "status": "pass",
+  "method": "Read-only symlinked balance artifacts with raw-runs.json absent, proving verifier uses decompressed raw-runs.json.gz on a fresh checkout."
+}

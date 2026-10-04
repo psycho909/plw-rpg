@@ -1,0 +1,33 @@
+{
+  "artifact": "raw-runs.json.gz",
+  "source_projection": "raw-runs.json",
+  "createdAtUtc": "2026-10-04T07:36:42+00:00",
+  "format": "gzip, deflate; deterministic timestamp/name flags (-n)",
+  "gzipVersion": "gzip 1.13",
+  "regenerateCommand": "cd reports/playtests/20261004-deep-qa/balance && gzip -n -c raw-runs.json > raw-runs.json.gz",
+  "restoreCommand": "cd reports/playtests/20261004-deep-qa/balance && gzip -dc raw-runs.json.gz > raw-runs.json",
+  "checksums": {
+    "sourceProjection": {
+      "bytes": 211517799,
+      "sha256": "9d771bc0b5c1cbe0ad8460b40dcf6f3b8784bf6774f42f4bfb9882d72cd75f98"
+    },
+    "compressedArchive": {
+      "bytes": 7231437,
+      "sha256": "27a5cae2793ab31ee503b5368a7b3be746fe4bd9c13e31a3a70c31dc4dbe13d2"
+    },
+    "decompressedArchive": {
+      "bytes": 211517799,
+      "sha256": "9d771bc0b5c1cbe0ad8460b40dcf6f3b8784bf6774f42f4bfb9882d72cd75f98",
+      "matchesSourceProjection": true
+    }
+  },
+  "gzipHeader": {
+    "mtimeSeconds": 0,
+    "flags": 0
+  },
+  "compressionRatio": 0.034188,
+  "notes": [
+    "The original raw-runs.json remains as the local latest projection.",
+    "The gzip file was written as binary directly and verified by streaming decompression; the decoded SHA-256 equals the original file SHA-256."
+  ]
+}

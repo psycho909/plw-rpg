@@ -1,0 +1,45 @@
+{
+  "status": "resolved_as_test_tool_artifact",
+  "at": "2026-10-04T03:00:11.136177+00:00",
+  "baselineEvidence": [
+    "../root-checks/modal-gc-probe.json",
+    "../root-checks/modal-gc-followup.json"
+  ],
+  "observed": "Disconnected nodes/listeners and JS heap survive delayed triple forced GC across 60 paused and 60 further active modal cycles. Connected DOM stays stable. These are retained objects, but ownership/root cause is not yet established.",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "prediction": "If native open-dialog lifecycle retains removed modal nodes, raw native showModal/remove cycles will also grow, and explicit close before removal will prevent growth."
+    },
+    {
+      "id": "H2",
+      "prediction": "If application/Vue effects or callbacks retain a component subtree, native-only controls will be stable but selector-free app UI cycles will still grow."
+    },
+    {
+      "id": "H3",
+      "prediction": "If Playwright selector/locator instrumentation retains modal nodes, equivalent keyboard or native DOM UI operation without locator resolution will release after forced GC."
+    },
+    {
+      "id": "H4",
+      "prediction": "If delayed DOM GC or paused scheduler alone explains retention, delayed multiple GC after real clock resume should restore counters; root followup currently contradicts this."
+    }
+  ],
+  "sourceFlow": "PixelWindow calls dialog.value?.close in onUnmounted; Vue may clear template refs before that hook. WorldMap removes its resize listener in onUnmounted; setup watchers belong to component scope. Neither observation alone proves the retaining root.",
+  "scope": "Only this diagnosis report directory is writable; source and production fixed build remain unchanged; no main-soak CDP/profile access.",
+  "resolvedAt": "2026-10-04T07:37:08.610036+00:00",
+  "disposition": "Observed modal DOM retention is caused by the tested automation/inspector path; no game source edit is justified by this signal. Does not claim general absence of game memory leaks or QA-01 completion.",
+  "followupEvidence": [
+    "followup-probe.json",
+    "retainer-probe.json",
+    "retaining-paths.json",
+    "playwright-source-evidence.json",
+    "evidence-checks.json"
+  ],
+  "findings": {
+    "H1": "Not supported as an application-independent dialog-lifecycle leak: native no-selector controls return to 4 nodes / 0 listeners after GC, with either open removal or close-removal in prior probe.",
+    "H2": "Not supported for the measured mount/unmount DOM growth: paused same-build map and inventory without Playwright selectors return exactly to 2111 nodes / 414 listeners; native dialogs with visible waits reproduce outside Vue.",
+    "H3": "Supported and localized: Python 1.62.0 visible Locator.wait_for path retains nodes through inspector global handles. Installed binding discards the returned ElementHandle without disposal; detached wait and is_visible controls do not retain dialog nodes.",
+    "H4": "Rejected as the sole explanation: delayed GC cannot release strongly rooted inspector handles. No-selector controls are reclaimable under the same collection schedule.",
+    "consoleBuffer": "A new CDP session Runtime.discardConsoleEntries did not release the nodes. No console or exception events were observed. The snapshot edge label DevTools console is not a claim about user console.log or its buffer."
+  }
+}

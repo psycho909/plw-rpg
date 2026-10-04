@@ -295,3 +295,16 @@ python3 -B -m unittest discover -s scripts -p 'test_*.py'
 2026-10-04 本次工作為文件彙整：實際核對 CHANGELOG、Ticket、報告、JSON、review、Git 版本與來源連結；確認僅新增本 Markdown，檢查 Markdown 空白、相對檔案連結及重點數值。沒有重新執行遊戲測試、build、依賴 audit 或正式網站驗收；本文所有 runtime 數據均保留原執行日期與階段。
 
 文件核對結果：48 個相對引用有效；136／7、writer 4、browser 18、生活 176 操作／159 checkpoint、冒險 37 checkpoint／7 場勝利、8×500 年／56 次繼承／4,056 次往返與 1,200.293 秒等重點數值符合原始 JSON。8 個來源指紋與既有驗證版本一致；staged diff 空白檢查通過，提交範圍只有本 Markdown。此為主 Agent 的 L1 文件自查，非獨立 runtime 驗證。
+
+
+## 13. 後續八項深度 QA（2026-10-04）
+
+前十二節保留前階段的交付與驗證歷史。本節追加最新單機來源 `c22de4e636215b11057e2a37b0fc4eaf826a8234` 的測試；完整方法、紀錄與限制見[八項 QA 彙整](../playtests/20261004-deep-qa/README.md)。未合併 main、未部署。
+
+- 最新固定 build 真 Chromium 長測：台灣時間 15:22:33.511 至 17:22:33.730，active 7,200.219 秒，120 次取樣；正常 ×20 推進約 200.05 遊戲日。72,013 筆匯出紀錄通過 ID、內容、序號、時間連續性及 checkpoint 驗證。沒有注入時計或強制 GC；自然觀察 Boss 生成，這段長測未與 Boss 戰鬥。
+- 記憶體／容量與介面反應見[趨勢圖與分析](../playtests/20261004-deep-qa/soak/clean-run/profile-summary.json)。無 JavaScript page error；另有 favicon 404。單一 headless 情境不能證明所有情境沒有 leak。Astra 確認舊 selector-wait 的 DOM 累積來自測試工具保留，乾淨長測移除該干擾。
+- 完成 126 經濟情境與 6 組傭兵配對、15 條各 1,440 日 Threat 路線、人口爆炸／歸零、13 合法死亡繼承與 4 非法輸入拒絕；×20／跨日跨年／Modal／地下城與傭兵保存交叉有真瀏覽器紀錄。收益與契約時間差異列為平衡候選觀察，未直接改公式。
+- Astra 修復 checkpoint 保存失敗後仍可恢復倍率或推進動作的 O1 問題；最新 143 tests／7 files、type check、build 與 Chromium 8/8 保存復原回歸通過。詳見[修復與回歸](../playtests/20261004-deep-qa/recovery/README.md)。
+- Chromium 12 項、Firefox ESR 12 項 smoke 通過。原生 Safari、iPhone／Android 實機缺少硬體或連線入口，仍待驗收；手機 viewport 不算實機。
+
+長時間監看依使用者要求指定 GPT-6 Luna／low；留存監看至第 90 分鐘，harness 自動完成兩小時後由 root 核對終點。各 QA 報告版本保存在本機追加 archive；不保證防止外部修改或刪除。完整大型原始經濟資料以可逐 byte 還原的 gzip 交付。

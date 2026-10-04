@@ -1,0 +1,253 @@
+{
+  "status": "completed_observation",
+  "startedAt": "2026-10-04T07:27:26.137061+00:00",
+  "url": "http://127.0.0.1:5193/",
+  "sourceLabel": "738bc00 + O1 recovery patch (exact sourceHashes)",
+  "buildHashes": {
+    "assets/index-B0QR5Rvd.css": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+    "assets/index-BicP0bQ_.js": "24c25d4370be890fe10194c1b3a9d85e2bb9289a8d67bcc6757da11e3fc2c8c9",
+    "index.html": "c05d86559e72706f8acfd1b979aab9cb530c0769022c3e0134c1b6a91a99b911"
+  },
+  "harnessSha256": "0f20994b2674be70c44d15df374dcb0bc6a527700d45d62adc58658ee512ea95",
+  "pythonPlaywrightVersion": "1.62.0",
+  "cases": [
+    {
+      "kind": "native",
+      "visibleSelectorWait": false,
+      "cycles": 4,
+      "consoleEvents": [],
+      "exceptionEvents": [],
+      "samples": [
+        {
+          "label": "baseline after forced GC",
+          "at": "2026-10-04T07:27:27.975982+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 0
+          },
+          "heap": {
+            "usedSize": 596656,
+            "totalSize": 1048576,
+            "embedderHeapUsedSize": 295816,
+            "backingStorageSize": 3559
+          },
+          "connectedElements": 3
+        },
+        {
+          "label": "four cycles after forced GC",
+          "at": "2026-10-04T07:27:28.588394+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 0
+          },
+          "heap": {
+            "usedSize": 723588,
+            "totalSize": 1572864,
+            "embedderHeapUsedSize": 311008,
+            "backingStorageSize": 3568
+          },
+          "connectedElements": 3
+        },
+        {
+          "label": "after Runtime.discardConsoleEntries and forced GC",
+          "at": "2026-10-04T07:27:29.015167+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 0
+          },
+          "heap": {
+            "usedSize": 723604,
+            "totalSize": 1572864,
+            "embedderHeapUsedSize": 311008,
+            "backingStorageSize": 3568
+          },
+          "connectedElements": 3
+        }
+      ],
+      "consoleDiscardResult": {},
+      "status": "completed_observation"
+    },
+    {
+      "kind": "native",
+      "visibleSelectorWait": true,
+      "cycles": 4,
+      "consoleEvents": [],
+      "exceptionEvents": [],
+      "samples": [
+        {
+          "label": "baseline after forced GC",
+          "at": "2026-10-04T07:27:30.073592+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 4,
+            "jsEventListeners": 0
+          },
+          "heap": {
+            "usedSize": 596656,
+            "totalSize": 1048576,
+            "embedderHeapUsedSize": 295816,
+            "backingStorageSize": 3559
+          },
+          "connectedElements": 3
+        },
+        {
+          "label": "four cycles after forced GC",
+          "at": "2026-10-04T07:27:30.721595+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 32,
+            "jsEventListeners": 30
+          },
+          "heap": {
+            "usedSize": 1796600,
+            "totalSize": 2736128,
+            "embedderHeapUsedSize": 325624,
+            "backingStorageSize": 3740
+          },
+          "connectedElements": 3
+        },
+        {
+          "label": "after snapshot before console discard",
+          "at": "2026-10-04T07:27:31.038780+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 32,
+            "jsEventListeners": 30
+          },
+          "heap": {
+            "usedSize": 1796584,
+            "totalSize": 2736128,
+            "embedderHeapUsedSize": 325624,
+            "backingStorageSize": 3740
+          },
+          "connectedElements": 3
+        },
+        {
+          "label": "after Runtime.discardConsoleEntries and forced GC",
+          "at": "2026-10-04T07:27:31.461327+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 32,
+            "jsEventListeners": 30
+          },
+          "heap": {
+            "usedSize": 1796584,
+            "totalSize": 2736128,
+            "embedderHeapUsedSize": 325624,
+            "backingStorageSize": 3740
+          },
+          "connectedElements": 3
+        }
+      ],
+      "beforeSnapshot": {
+        "path": "native-retainer-before.heapsnapshot",
+        "sha256": "9eb182a55900ee0cd23943f8f303024f666373030abb7cc010462f34ea070717",
+        "bytes": 4075357
+      },
+      "consoleDiscardResult": {},
+      "afterSnapshot": {
+        "path": "native-retainer-after.heapsnapshot",
+        "sha256": "d6894860a1cfd8028b4f364d1a766b46919ceb38c5514ae53648f2d806ec94fe",
+        "bytes": 4075357
+      },
+      "status": "completed_observation"
+    },
+    {
+      "kind": "map",
+      "visibleSelectorWait": true,
+      "cycles": 4,
+      "consoleEvents": [],
+      "exceptionEvents": [],
+      "samples": [
+        {
+          "label": "baseline after forced GC",
+          "at": "2026-10-04T07:27:32.901635+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 2111,
+            "jsEventListeners": 414
+          },
+          "heap": {
+            "usedSize": 2380992,
+            "totalSize": 3145728,
+            "embedderHeapUsedSize": 3437096,
+            "backingStorageSize": 150358
+          },
+          "connectedElements": 882
+        },
+        {
+          "label": "four cycles after forced GC",
+          "at": "2026-10-04T07:27:33.786290+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 10103,
+            "jsEventListeners": 2028
+          },
+          "heap": {
+            "usedSize": 6196456,
+            "totalSize": 6930432,
+            "embedderHeapUsedSize": 5469040,
+            "backingStorageSize": 150856
+          },
+          "connectedElements": 882
+        },
+        {
+          "label": "after snapshot before console discard",
+          "at": "2026-10-04T07:27:34.935896+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 10103,
+            "jsEventListeners": 2028
+          },
+          "heap": {
+            "usedSize": 6197056,
+            "totalSize": 6930432,
+            "embedderHeapUsedSize": 5469040,
+            "backingStorageSize": 150856
+          },
+          "connectedElements": 882
+        },
+        {
+          "label": "after Runtime.discardConsoleEntries and forced GC",
+          "at": "2026-10-04T07:27:35.391255+00:00",
+          "dom": {
+            "documents": 1,
+            "nodes": 10103,
+            "jsEventListeners": 2028
+          },
+          "heap": {
+            "usedSize": 6196456,
+            "totalSize": 6930432,
+            "embedderHeapUsedSize": 5469040,
+            "backingStorageSize": 150856
+          },
+          "connectedElements": 882
+        }
+      ],
+      "beforeSnapshot": {
+        "path": "map-retainer-before.heapsnapshot",
+        "sha256": "4420f2e59f29ae0c76d7c43318b8d76ab09778e6e45e248af71aca275988397d",
+        "bytes": 19878404
+      },
+      "consoleDiscardResult": {},
+      "afterSnapshot": {
+        "path": "map-retainer-after.heapsnapshot",
+        "sha256": "117098fec66cb7df3414b070f6cf5a10bae5be8e27366f0a0566286ea36fa689",
+        "bytes": 19882764
+      },
+      "status": "completed_observation"
+    }
+  ],
+  "method": "New browser, fresh contexts; Runtime.enable for scalar console/exception event metadata in every case; UI pause; four checked open/remove cycles. Collect twice, snapshot, then discard console entries and collect twice. All GC/snapshots/console interventions affect only this disposable browser; never main soak or game source.",
+  "limitation": "A short inspector-retention diagnosis; does not verify real-time soak or exclude other memory growth.",
+  "actualBuildHashes": {
+    "assets/index-B0QR5Rvd.css": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+    "assets/index-BicP0bQ_.js": "24c25d4370be890fe10194c1b3a9d85e2bb9289a8d67bcc6757da11e3fc2c8c9",
+    "index.html": "c05d86559e72706f8acfd1b979aab9cb530c0769022c3e0134c1b6a91a99b911"
+  },
+  "browserVersion": "151.0.7922.173",
+  "finishedAt": "2026-10-04T07:27:36.755108+00:00"
+}

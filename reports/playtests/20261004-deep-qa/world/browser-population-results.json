@@ -1,0 +1,654 @@
+{
+  "schemaVersion": 1,
+  "runId": "browser-population-1791082466",
+  "startedAt": "2026-10-04T02:54:26+00:00",
+  "url": "http://127.0.0.1:5192/",
+  "browser": {
+    "engine": "Chromium",
+    "version": "151.0.7922.173",
+    "headless": true,
+    "viewportOvercapacity": [
+      1440,
+      1000
+    ],
+    "viewportZeroPopulation": [
+      390,
+      844
+    ]
+  },
+  "productionBuild": {
+    "indexHtmlSha256": "c05d86559e72706f8acfd1b979aab9cb530c0769022c3e0134c1b6a91a99b911",
+    "appAsset": "index-BicP0bQ_.js",
+    "appAssetSha256": "24c25d4370be890fe10194c1b3a9d85e2bb9289a8d67bcc6757da11e3fc2c8c9",
+    "assetBytes": 151471,
+    "servedStatus": 200
+  },
+  "checkpoints": [
+    {
+      "name": "overcapacity-loaded",
+      "recordedAt": "2026-10-04T02:54:28+00:00",
+      "fixture": "population-overcapacity-save.json",
+      "fixtureBytes": 1319813,
+      "fixtureSha256": "88e894e3a0e20ead4c39879ff4d1305e5f395cf4efe0378a8941c80c6160e53c",
+      "loaded": {
+        "population": 1001,
+        "npcRows": 1000,
+        "characterRows": 1,
+        "activeCharacterId": "alden",
+        "activeCharacterAlive": true,
+        "worldTime": 1197,
+        "capacity": 40,
+        "stage": "hamlet",
+        "pendingRecords": 0,
+        "historyLength": 1,
+        "eventSequence": 1
+      },
+      "browser": {
+        "worldTime": 1197,
+        "population": 1001,
+        "npcRows": 1000,
+        "localStorageBytes": 1323870,
+        "jsHeapUsedBytes": 10952923,
+        "jsHeapTotalBytes": 29646275,
+        "domNodeCount": 877,
+        "residentButtonCount": 0,
+        "mapTileButtonCount": 0,
+        "pendingRecords": 0,
+        "alertText": [],
+        "documentWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "indexedDbRecords": 2,
+      "pageErrors": []
+    },
+    {
+      "name": "overcapacity-residents-modal",
+      "recordedAt": "2026-10-04T02:54:29+00:00",
+      "residentButtons": 1000,
+      "browser": {
+        "worldTime": 1197,
+        "population": 1001,
+        "npcRows": 1000,
+        "localStorageBytes": 1323870,
+        "jsHeapUsedBytes": 14157164,
+        "jsHeapTotalBytes": 31757112,
+        "domNodeCount": 3897,
+        "residentButtonCount": 1000,
+        "mapTileButtonCount": 0,
+        "pendingRecords": 0,
+        "alertText": [],
+        "documentWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "overcapacity-map-x20-30s",
+      "recordedAt": "2026-10-04T02:55:02+00:00",
+      "mapTiles": 384,
+      "wallSeconds": 30.001,
+      "gameMinutesAdvanced": 1250,
+      "expectedGameMinutesAtX20": 1200,
+      "browserBefore": {
+        "worldTime": 1197,
+        "population": 1001,
+        "npcRows": 1000,
+        "localStorageBytes": 1323870,
+        "jsHeapUsedBytes": 21722295,
+        "jsHeapTotalBytes": 40403831,
+        "domNodeCount": 1676,
+        "residentButtonCount": 0,
+        "mapTileButtonCount": 384,
+        "pendingRecords": 0,
+        "alertText": [],
+        "documentWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "browserAfter": {
+        "worldTime": 2447,
+        "population": 1001,
+        "npcRows": 1000,
+        "localStorageBytes": 1319918,
+        "jsHeapUsedBytes": 15724862,
+        "jsHeapTotalBytes": 112489634,
+        "domNodeCount": 1688,
+        "residentButtonCount": 0,
+        "mapTileButtonCount": 384,
+        "pendingRecords": 0,
+        "alertText": [],
+        "documentWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "samples": [
+        {
+          "at": 1791082470503,
+          "worldTime": 1234,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1324989,
+          "jsHeapUsedBytes": 43039629,
+          "domNodeCount": 1676,
+          "pendingRecords": 5
+        },
+        {
+          "at": 1791082471515,
+          "worldTime": 1275,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1324472,
+          "jsHeapUsedBytes": 52514704,
+          "domNodeCount": 1678,
+          "pendingRecords": 9
+        },
+        {
+          "at": 1791082472519,
+          "worldTime": 1316,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1323282,
+          "jsHeapUsedBytes": 78142462,
+          "domNodeCount": 1684,
+          "pendingRecords": 6
+        },
+        {
+          "at": 1791082473532,
+          "worldTime": 1356,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1322351,
+          "jsHeapUsedBytes": 94517212,
+          "domNodeCount": 1698,
+          "pendingRecords": 8
+        },
+        {
+          "at": 1791082474586,
+          "worldTime": 1399,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321903,
+          "jsHeapUsedBytes": 38189488,
+          "domNodeCount": 1698,
+          "pendingRecords": 6
+        },
+        {
+          "at": 1791082475523,
+          "worldTime": 1436,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1322575,
+          "jsHeapUsedBytes": 53452873,
+          "domNodeCount": 1698,
+          "pendingRecords": 9
+        },
+        {
+          "at": 1791082476611,
+          "worldTime": 1479,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321917,
+          "jsHeapUsedBytes": 61514105,
+          "domNodeCount": 1698,
+          "pendingRecords": 6
+        },
+        {
+          "at": 1791082477550,
+          "worldTime": 1516,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1322365,
+          "jsHeapUsedBytes": 85420659,
+          "domNodeCount": 1698,
+          "pendingRecords": 8
+        },
+        {
+          "at": 1791082478542,
+          "worldTime": 1555,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1322589,
+          "jsHeapUsedBytes": 62665207,
+          "domNodeCount": 1698,
+          "pendingRecords": 9
+        },
+        {
+          "at": 1791082479448,
+          "worldTime": 1593,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321917,
+          "jsHeapUsedBytes": 109187401,
+          "domNodeCount": 1698,
+          "pendingRecords": 6
+        },
+        {
+          "at": 1791082480576,
+          "worldTime": 1635,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321693,
+          "jsHeapUsedBytes": 99755509,
+          "domNodeCount": 1698,
+          "pendingRecords": 5
+        },
+        {
+          "at": 1791082481546,
+          "worldTime": 1677,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1322141,
+          "jsHeapUsedBytes": 43813477,
+          "domNodeCount": 1698,
+          "pendingRecords": 7
+        },
+        {
+          "at": 1791082482459,
+          "worldTime": 1713,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1322589,
+          "jsHeapUsedBytes": 68729045,
+          "domNodeCount": 1698,
+          "pendingRecords": 9
+        },
+        {
+          "at": 1791082483523,
+          "worldTime": 1756,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1322141,
+          "jsHeapUsedBytes": 63916601,
+          "domNodeCount": 1698,
+          "pendingRecords": 7
+        },
+        {
+          "at": 1791082484540,
+          "worldTime": 1797,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321917,
+          "jsHeapUsedBytes": 95856979,
+          "domNodeCount": 1698,
+          "pendingRecords": 6
+        },
+        {
+          "at": 1791082485526,
+          "worldTime": 1836,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1322365,
+          "jsHeapUsedBytes": 77994389,
+          "domNodeCount": 1698,
+          "pendingRecords": 8
+        },
+        {
+          "at": 1791082486561,
+          "worldTime": 1874,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1322900,
+          "jsHeapUsedBytes": 116380646,
+          "domNodeCount": 1708,
+          "pendingRecords": 5
+        },
+        {
+          "at": 1791082487505,
+          "worldTime": 1914,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1323451,
+          "jsHeapUsedBytes": 87296055,
+          "domNodeCount": 1696,
+          "pendingRecords": 7
+        },
+        {
+          "at": 1791082488587,
+          "worldTime": 1954,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321709,
+          "jsHeapUsedBytes": 47378622,
+          "domNodeCount": 1688,
+          "pendingRecords": 8
+        },
+        {
+          "at": 1791082489484,
+          "worldTime": 1994,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321709,
+          "jsHeapUsedBytes": 28702356,
+          "domNodeCount": 1688,
+          "pendingRecords": 8
+        },
+        {
+          "at": 1791082490615,
+          "worldTime": 2039,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321261,
+          "jsHeapUsedBytes": 50259778,
+          "domNodeCount": 1688,
+          "pendingRecords": 6
+        },
+        {
+          "at": 1791082491536,
+          "worldTime": 2074,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321485,
+          "jsHeapUsedBytes": 64643914,
+          "domNodeCount": 1688,
+          "pendingRecords": 7
+        },
+        {
+          "at": 1791082492587,
+          "worldTime": 2117,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321933,
+          "jsHeapUsedBytes": 63991178,
+          "domNodeCount": 1688,
+          "pendingRecords": 9
+        },
+        {
+          "at": 1791082493635,
+          "worldTime": 2160,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1324261,
+          "jsHeapUsedBytes": 92347676,
+          "domNodeCount": 1688,
+          "pendingRecords": 6
+        },
+        {
+          "at": 1791082494526,
+          "worldTime": 2196,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1324709,
+          "jsHeapUsedBytes": 96602866,
+          "domNodeCount": 1688,
+          "pendingRecords": 8
+        },
+        {
+          "at": 1791082495577,
+          "worldTime": 2235,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321037,
+          "jsHeapUsedBytes": 116128382,
+          "domNodeCount": 1688,
+          "pendingRecords": 5
+        },
+        {
+          "at": 1791082496692,
+          "worldTime": 2282,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321261,
+          "jsHeapUsedBytes": 28443139,
+          "domNodeCount": 1688,
+          "pendingRecords": 6
+        },
+        {
+          "at": 1791082497541,
+          "worldTime": 2317,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321485,
+          "jsHeapUsedBytes": 40467083,
+          "domNodeCount": 1688,
+          "pendingRecords": 7
+        },
+        {
+          "at": 1791082498568,
+          "worldTime": 2357,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321709,
+          "jsHeapUsedBytes": 77255261,
+          "domNodeCount": 1688,
+          "pendingRecords": 8
+        },
+        {
+          "at": 1791082499449,
+          "worldTime": 2393,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321933,
+          "jsHeapUsedBytes": 88898961,
+          "domNodeCount": 1688,
+          "pendingRecords": 9
+        },
+        {
+          "at": 1791082500559,
+          "worldTime": 2436,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1321485,
+          "jsHeapUsedBytes": 71750410,
+          "domNodeCount": 1688,
+          "pendingRecords": 7
+        },
+        {
+          "at": 1791082501418,
+          "worldTime": 2447,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1319918,
+          "jsHeapUsedBytes": 21010210,
+          "domNodeCount": 1688,
+          "pendingRecords": 0
+        },
+        {
+          "at": 1791082502418,
+          "worldTime": 2447,
+          "population": 1001,
+          "npcRows": 1000,
+          "localStorageBytes": 1319918,
+          "jsHeapUsedBytes": 15724862,
+          "domNodeCount": 1688,
+          "pendingRecords": 0
+        }
+      ],
+      "indexedDbRecords": 217,
+      "pageErrors": [],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)"
+      ]
+    },
+    {
+      "name": "overcapacity-manual-save-reload",
+      "recordedAt": "2026-10-04T02:55:03+00:00",
+      "beforeSave": {
+        "population": 1001,
+        "npcRows": 1000,
+        "characterRows": 1,
+        "activeCharacterId": "alden",
+        "activeCharacterAlive": true,
+        "worldTime": 2447,
+        "capacity": 40,
+        "stage": "hamlet",
+        "pendingRecords": 0,
+        "historyLength": 1,
+        "eventSequence": 1
+      },
+      "afterManualSave": {
+        "population": 1001,
+        "npcRows": 1000,
+        "characterRows": 1,
+        "activeCharacterId": "alden",
+        "activeCharacterAlive": true,
+        "worldTime": 2447,
+        "capacity": 40,
+        "stage": "hamlet",
+        "pendingRecords": 0,
+        "historyLength": 1,
+        "eventSequence": 1
+      },
+      "afterReload": {
+        "population": 1001,
+        "npcRows": 1000,
+        "characterRows": 1,
+        "activeCharacterId": "alden",
+        "activeCharacterAlive": true,
+        "worldTime": 2447,
+        "capacity": 40,
+        "stage": "hamlet",
+        "pendingRecords": 0,
+        "historyLength": 1,
+        "eventSequence": 1
+      },
+      "browser": {
+        "worldTime": 2447,
+        "population": 1001,
+        "npcRows": 1000,
+        "localStorageBytes": 1319918,
+        "jsHeapUsedBytes": 25189734,
+        "jsHeapTotalBytes": 87452646,
+        "domNodeCount": 882,
+        "residentButtonCount": 0,
+        "mapTileButtonCount": 0,
+        "pendingRecords": 0,
+        "alertText": [],
+        "documentWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "indexedDbRecords": 217,
+      "pageErrors": []
+    },
+    {
+      "name": "overcapacity-export",
+      "recordedAt": "2026-10-04T02:55:04+00:00",
+      "downloadName": "oakvale-play-records.json",
+      "exportBytes": 2817316,
+      "exportSha256": "638beffad4ae3265c81244e2f29e513d10d8e9f9de219e7c84c14a43066195b5",
+      "archiveAvailable": true,
+      "exportedRecordCount": 217,
+      "exportedPendingCount": 0,
+      "checkpoint": {
+        "population": 1001,
+        "npcRows": 1000,
+        "characterRows": 1,
+        "activeCharacterId": "alden",
+        "activeCharacterAlive": true,
+        "worldTime": 2447,
+        "capacity": 40,
+        "stage": "hamlet",
+        "pendingRecords": 0,
+        "historyLength": 1,
+        "eventSequence": 1
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "zero-population-no-heir",
+      "recordedAt": "2026-10-04T02:55:05+00:00",
+      "fixture": "population-zero-save.json",
+      "fixtureSha256": "928dfd7d752ac550201e1f79c7b3dee04cd3f0aaa84cc5e6a2a9572a559db3e8",
+      "state": {
+        "population": 0,
+        "npcRows": 29,
+        "characterRows": 1,
+        "activeCharacterId": "alden",
+        "activeCharacterAlive": false,
+        "worldTime": 1271,
+        "capacity": 40,
+        "stage": "hamlet",
+        "pendingRecords": 0,
+        "historyLength": 31,
+        "eventSequence": 31
+      },
+      "waitButton": "等待新居民抵達 · 15 日",
+      "pageErrors": []
+    },
+    {
+      "name": "zero-population-ui-wait-15-days",
+      "recordedAt": "2026-10-04T02:55:06+00:00",
+      "beforeWorldTime": 1271,
+      "afterWorldTime": 22871,
+      "gameMinutesAdvanced": 21600,
+      "population": 1,
+      "eligibleHeirs": 1,
+      "candidateId": "npc-30",
+      "pageErrors": []
+    },
+    {
+      "name": "zero-population-ui-successor-save-reload",
+      "recordedAt": "2026-10-04T02:55:06+00:00",
+      "selectedId": "npc-30",
+      "selectedName": "奧斯卡 30",
+      "afterSelection": {
+        "population": 1,
+        "npcRows": 0,
+        "characterRows": 2,
+        "activeCharacterId": "npc-30",
+        "activeCharacterAlive": true,
+        "worldTime": 22871,
+        "capacity": 40,
+        "stage": "hamlet",
+        "pendingRecords": 0,
+        "historyLength": 33,
+        "eventSequence": 33
+      },
+      "afterReload": {
+        "population": 1,
+        "npcRows": 0,
+        "characterRows": 2,
+        "activeCharacterId": "npc-30",
+        "activeCharacterAlive": true,
+        "worldTime": 22872,
+        "capacity": 40,
+        "stage": "hamlet",
+        "pendingRecords": 0,
+        "historyLength": 33,
+        "eventSequence": 33
+      },
+      "indexedDbRecords": 5,
+      "pageErrors": [],
+      "consoleErrors": []
+    }
+  ],
+  "errors": [],
+  "fixtures": {
+    "sourceCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+    "sourceHashes": {
+      "src/data/config.ts": "89990929c7dc4b9b7400de10d97b69ba73e1008fb59a45581467776b768f5e80",
+      "src/domain/types.ts": "dc140e180dc574b44ef6bd6068c959d378526f56636220fbecb85459fbcc8f80",
+      "src/engine/actions.ts": "005e2a7f59ab076178e843d2021e5cbf3315b3ee9d07122358c76c6943313c6c",
+      "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+      "src/engine/events.ts": "4412f6888221b757202dcebd1f8e0dea30a4ea9ee58c3d20efa1b2d9e3689c8f",
+      "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+      "src/engine/simulation.ts": "8934de8cd84e68e0fa15b197352636c9636d726283757b9342779531d6fa09d8",
+      "src/services/saveService.ts": "2a8cced65b901c2f616c022ee82f170c6b13d2ab486e7ddd0cab13aab5b98852"
+    },
+    "overcapacity": {
+      "file": "population-overcapacity-save.json",
+      "kind": "controlled schema-valid overcapacity fixture",
+      "source": "createGame(73004) plus cloned original NPC schema rows with unique sequential IDs",
+      "naturallyPlayerReachable": false,
+      "population": 1001,
+      "npcRows": 1000,
+      "capacity": 40,
+      "bytes": 1319813,
+      "sha256": "88e894e3a0e20ead4c39879ff4d1305e5f395cf4efe0378a8941c80c6160e53c",
+      "decoderAccepted": true,
+      "lastSavedAt": 1791082109328
+    },
+    "zeroPopulation": {
+      "file": "population-zero-save.json",
+      "kind": "controlled zero-population dead-active-character fixture",
+      "source": "createGame(73005) followed by exported die() for every resident",
+      "naturallyPlayerReachable": false,
+      "population": 0,
+      "npcRows": 29,
+      "activeCharacterAlive": false,
+      "bytes": 82983,
+      "sha256": "928dfd7d752ac550201e1f79c7b3dee04cd3f0aaa84cc5e6a2a9572a559db3e8",
+      "decoderAccepted": true,
+      "lastSavedAt": 1791082109442
+    }
+  },
+  "finishedAt": "2026-10-04T02:55:06+00:00",
+  "status": "passed"
+}

@@ -1,0 +1,182 @@
+{
+  "baselineCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+  "buildPath": "/tmp/plw-rpg-qa-20261004-738bc00",
+  "url": "http://127.0.0.1:5191/",
+  "targetElapsedSeconds": 7200,
+  "status": "incomplete",
+  "startedAtUtc": "2026-10-04T02:28:41.763+00:00",
+  "targetEndUtc": "2026-10-04T04:28:41.763+00:00",
+  "endedAtUtc": "2026-10-04T02:31:30.598+00:00",
+  "elapsedSeconds": 168.834,
+  "fingerprintStart": {
+    "assets": {
+      "/": "1c1b06bb8958f7a45d6c141863253922a0e50f651e36178e3956cdacf2f3927a",
+      "/assets/index-B0QR5Rvd.css": "cb53c449ba9875b40c40ecfba8fd4eb473b63903a19ebb4f3dbb810dcfc65fb8",
+      "/assets/index-DcqD1dRF.js": "d2ff6dccdf819cf8f4e911c16048863951ab602fa7878838f41dbe9b37f7c813"
+    },
+    "asset_count": 3
+  },
+  "fingerprintEnd": null,
+  "observations": [
+    {
+      "checkpoint": 1,
+      "scheduledElapsedSeconds": 60,
+      "sampledAtUtc": "2026-10-04T02:29:41.854+00:00",
+      "elapsedSeconds": 60.091,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 2885,
+        "pendingRecords": 0,
+        "worldId": "86b79c70-c075-4fcd-baba-2a08f82da53a",
+        "saveVersion": 1,
+        "lastSavedAt": 1791080981870,
+        "localStorageBytes": 72731,
+        "indexedDbRecordCount": 603,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 520984,
+          "quota": 10737939224,
+          "usageDetails": {
+            "indexedDB": 520984
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 3 日 00:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 891,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 909713408,
+        "process_count": 9,
+        "available": true
+      },
+      "cdpHeap": {
+        "usedSize": 19842696,
+        "totalSize": 66510848,
+        "embedderHeapUsedSize": 7388664,
+        "backingStorageSize": 304073
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 2545,
+        "jsEventListeners": 738
+      },
+      "worldTimeAdvanced": null,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 2,
+      "scheduledElapsedSeconds": 120,
+      "sampledAtUtc": "2026-10-04T02:30:41.830+00:00",
+      "elapsedSeconds": 120.066,
+      "action": {
+        "route": "i",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 5285,
+        "pendingRecords": 0,
+        "worldId": "86b79c70-c075-4fcd-baba-2a08f82da53a",
+        "saveVersion": 1,
+        "lastSavedAt": 1791081041852,
+        "localStorageBytes": 72767,
+        "indexedDbRecordCount": 1203,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1040696,
+          "quota": 10738458936,
+          "usageDetails": {
+            "indexedDB": 1040696
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 4 日 16:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "rss": {
+        "rss_bytes": 913338368,
+        "process_count": 9,
+        "available": true
+      },
+      "cdpHeap": {
+        "usedSize": 17798688,
+        "totalSize": 66707456,
+        "embedderHeapUsedSize": 11053576,
+        "backingStorageSize": 309899
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 3102,
+        "jsEventListeners": 1218
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    }
+  ],
+  "uiLatenciesMs": [
+    {
+      "kind": "openModal",
+      "ms": 19.9
+    },
+    {
+      "kind": "closeModal",
+      "ms": 13.3
+    },
+    {
+      "kind": "openModal",
+      "ms": 8.1
+    },
+    {
+      "kind": "closeModal",
+      "ms": 21.6
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "atUtc": "2026-10-04T02:28:41.329+00:00",
+      "elapsed": null,
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:5191/favicon.ico"
+    }
+  ],
+  "resourceFailures": [],
+  "droppedDiagnostics": {
+    "consoleErrors": 1
+  },
+  "interruptions": [],
+  "limitations": [
+    "Single disposable Chromium profile and local build; no forced GC.",
+    "Per-checkpoint IndexedDB uses count() only. Final UI export reads the archive once."
+  ],
+  "startMonotonic": 120262.485140471,
+  "chromiumProfile": "/tmp/plw-rpg-qa-20261004-soak-profile-psp409ob",
+  "terminationReason": "Intentionally stopped for re-baseline after root reported an in-scope application repair in progress.",
+  "interruptedBy": "KeyboardInterrupt: ",
+  "actualElapsedSeconds": 168.834,
+  "exportValidation": {
+    "attempted": false,
+    "reason": "Incomplete baseline run; no end-of-run export was performed."
+  },
+  "baselineRunOnly": true
+}

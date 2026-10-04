@@ -1,0 +1,1712 @@
+{
+  "head": "c22de4e636215b11057e2a37b0fc4eaf826a8234",
+  "frozenAt": "2026-10-04T13:19:27.872359+00:00",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 147,
+      "sha256": "b10f5341ed654839609e7086c594f7724a944e2e8b50bd580dc5259c0b2324b9"
+    },
+    {
+      "path": ".scratch/20261004-deep-qa/handoff.md",
+      "bytes": 3690,
+      "sha256": "b595116d12a19838297c06371f4796a9eb5c199564d30a9d9782ac669d5f0114"
+    },
+    {
+      "path": "TODO.md",
+      "bytes": 909,
+      "sha256": "51e9efe23aaaa2fc172d0067f02ba15bf09ac6c6e79bb14aac2e2720d9fabd45"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/README.md",
+      "bytes": 4347,
+      "sha256": "c5701f5ded76d06153e29d17df0186a1d83ff4d559048170a8321d93968588e2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/balance/README.md",
+      "bytes": 7254,
+      "sha256": "c0d4c38337333aca74154ff8681636fdc753e3a89cecf37788b5e5796df93325"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/balance/archive-storage.json",
+      "bytes": 1276,
+      "sha256": "883ef134e0efbca9011ae643223c63b59348374d58472f5600be564d55769921"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/balance/paired-contract-trials.csv",
+      "bytes": 1930,
+      "sha256": "f1d8c1e81f12c04cb1aa82aabc19edb565024673d6f59e7fb26d5c38a6ce94fc"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/balance/playlog.jsonl",
+      "bytes": 97867733,
+      "sha256": "c639d63628fa389e48448a3bdb52edc521491dae3766ceb5cf991e7b2e023942"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/balance/raw-runs.csv",
+      "bytes": 57287,
+      "sha256": "5fb482ed50498b7984dbd8c72137ebb8043c2d02a37757d1437dffd2bc7387b3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/balance/raw-runs.json.gz",
+      "bytes": 7231437,
+      "sha256": "27a5cae2793ab31ee503b5368a7b3be746fe4bd9c13e31a3a70c31dc4dbe13d2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/balance/results.md",
+      "bytes": 11205,
+      "sha256": "f6abc6c092bc620246892842a6a6037d3ca4912c84835e7b501be533aa26b26e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/balance/runner.mjs",
+      "bytes": 77713,
+      "sha256": "cd0dfe63e83e2bd71d527cc36193fdbebeb1582c8b2a0ce67c3d9e7e560bbb26"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/baseline/check.log",
+      "bytes": 1327,
+      "sha256": "6b9308fbc78df7ff4364775001b058b2fa7900063053151ecea53dcb9b8eda05"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/baseline/final-build.log",
+      "bytes": 612,
+      "sha256": "3e5bba26e626e6cd33b2fa6151f4117a87d6eeb63711993e8076ad0cbbaf2059"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/baseline/final-manifest.json",
+      "bytes": 5009,
+      "sha256": "ba71b37f0c37e07d44d130c35602aae2210334b7704e7b4e1ce81c69cb2425ae"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/baseline/manifest.json",
+      "bytes": 4174,
+      "sha256": "efa756a586fc23f2f2b6712c2358d41f7a9a82cf4abe3c6b682825a52212b3cb"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/baseline/playlog.jsonl",
+      "bytes": 11689,
+      "sha256": "0bf55db57f3d81b85f86a1aa23c4ac7b4d5cb17868efb927a075457b1ced71ba"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/baseline/source-commit.json",
+      "bytes": 4212,
+      "sha256": "df92e56560fee0dfcb74993b64c5814f5e9a8568bbe156bd9d80c3cf1e64c50f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/check_links.py",
+      "bytes": 1758,
+      "sha256": "bb78a2cff34cf940910f3616c4e0a3303a9730dab927fca7cd68ad192844f512"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/README.md",
+      "bytes": 6031,
+      "sha256": "b77c1f83c68db1497997902d15b15bf0131a2aebedc511cfa20b699dd13249f8"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/delayed_combat_ack.py",
+      "bytes": 23733,
+      "sha256": "6c8d1edbdc00ea9bbd76709d46d36f291865c83e5e69dd1120e650c2e528fe64"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/harness.py",
+      "bytes": 70909,
+      "sha256": "ebc24d086f2948ce4d561ccdbe70379be42c5a8e9693b7c00d682e618b453bf4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/README.md",
+      "bytes": 2250,
+      "sha256": "24960648f3039150a8d8509b98aef9e72d64d21cf5c45d88338ad502510b9c35"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/abandoned-mine-reentry-floor-1-battle-start.png",
+      "bytes": 115913,
+      "sha256": "8137459e35265d095ecdb70e45ffa712cc7ca0a715e3d259b05e22c98938e039"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/combat-modal-x20-disabled-focus.png",
+      "bytes": 124328,
+      "sha256": "0f53fa3e6ef4f886d3ed3fe2449bde6e4b74f6d583f0fd1280c95a1cba994aca"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/day-boundary.png",
+      "bytes": 172840,
+      "sha256": "3dae59cda27cd7c85a6642710871144705ff70fd700bd4dd680e9dfe043d9365"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/dead-successor-modal-background-time.png",
+      "bytes": 153161,
+      "sha256": "04c426f5fa67753c30b60b6577582b146ec15d07ec6104c6c4665821389ae36e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/dungeon-entry-stage-zero.png",
+      "bytes": 134853,
+      "sha256": "9f1d26c9888277553879ec92b8b4f15e8fe467c46894b7e4026817d62fcdaa55"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/dungeon-three-stage-clear.png",
+      "bytes": 178196,
+      "sha256": "ddaa1fc0b67b1fe4d6af1975bcb5ef608d051955284e6fa1bebf438c15d5f22b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/full-run-floor-1-battle-start.png",
+      "bytes": 115556,
+      "sha256": "529f84cf91f8c011cb922e63ca40dceb778c604af9e0e1a00f9208d829bfcfb8"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/full-run-floor-2-battle-start.png",
+      "bytes": 120432,
+      "sha256": "492fb9e0163c953663297047dd2fe36620d75863d78febfaf9177504d094edec"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/full-run-floor-2-combat-saved.png",
+      "bytes": 173038,
+      "sha256": "e2fdbecd193ea3b629b6551ab2d63291e9fafeeb9434aa51db108bb264e91a1f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/full-run-floor-3-battle-start.png",
+      "bytes": 121530,
+      "sha256": "17f3fec9514a52ca3caabaac53af0a6d5c0b8891f74cd36866fac9961efc0a7b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/full-run-floor-3-combat-saved.png",
+      "bytes": 172746,
+      "sha256": "65a5b1b34d6944f2ec03b6bc6e78ae0ace8f85b9d44189ed13162002ae3d823b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/normal-ui-start.png",
+      "bytes": 161687,
+      "sha256": "ab27bd11f3783fd5960806cfe625c4018be5d58a705e80363f6dae19d3a7a02e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/x20-modal-background-time.png",
+      "bytes": 122613,
+      "sha256": "bea1670f45d7accdfac67cfd211a7efc01fa503bc88a87aeb9717edd33de0b4d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/artifacts/year-boundary.png",
+      "bytes": 169886,
+      "sha256": "d074b7721eccb1f6fb7e699d354ce9f73f2fcb20b5edcf0fd99b7aef41c33541"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/playlog.jsonl",
+      "bytes": 1163538,
+      "sha256": "baf6e1cbb1aeb4856775e4be78d19359d83e4daa60f7fd25cad6bc9b723c327f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/abandoned-mine-reentry-floor-1-battle-start.raw.json",
+      "bytes": 95375,
+      "sha256": "f7b3f4a26f28d4e56a413733a68b6f73be89ab7f36b401277c346a8515ad8d98"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/ack-action-1-after.raw.json",
+      "bytes": 72860,
+      "sha256": "e88c0836e20e8fd3e9707c23363477957b3a8b6b291d068cfaa5fe82b4862993"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/ack-action-1-before.raw.json",
+      "bytes": 72652,
+      "sha256": "67a8533b19c8154867dc4b5e07756ab589fc34b062d3eeb470a1473a91105b5e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/ack-action-2-after.raw.json",
+      "bytes": 73069,
+      "sha256": "0f137632f3d329bbc32e4a00bbcfec3b8331d5d64eed446faf6b472912a63d84"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/ack-action-2-before.raw.json",
+      "bytes": 72860,
+      "sha256": "e88c0836e20e8fd3e9707c23363477957b3a8b6b291d068cfaa5fe82b4862993"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/ack-action-3-after.raw.json",
+      "bytes": 73279,
+      "sha256": "35a3fa218b4f688fc6a0266104e06bee2c6878abc4dbed30708852b8c9455446"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/ack-action-3-before.raw.json",
+      "bytes": 73069,
+      "sha256": "0f137632f3d329bbc32e4a00bbcfec3b8331d5d64eed446faf6b472912a63d84"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/ack-action-4-after.raw.json",
+      "bytes": 73487,
+      "sha256": "6ad3e91264b0cbcb8b4098742cb8d88f02c9c901d298530143630a70d708f9f9"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/ack-action-4-before.raw.json",
+      "bytes": 73279,
+      "sha256": "35a3fa218b4f688fc6a0266104e06bee2c6878abc4dbed30708852b8c9455446"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/ack-race-after.raw.json",
+      "bytes": 72652,
+      "sha256": "19837b9adc1685be0c082bef535bdde7bad311c07e0f9724b22bd09dff06e83f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/ack-race-before.raw.json",
+      "bytes": 72652,
+      "sha256": "67a8533b19c8154867dc4b5e07756ab589fc34b062d3eeb470a1473a91105b5e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/cross-year-contract-after.raw.json",
+      "bytes": 97858,
+      "sha256": "2937bf5591e7094a19b0ff04d304ff32e3b5f0024d6c0e73f2149565b824b69b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/cross-year-contract-before.raw.json",
+      "bytes": 94373,
+      "sha256": "deda24e14c3dd77d62e1d73c5c74d91968d74406ed1188a5ac2f82af7ae9bbfd"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/day-after.raw.json",
+      "bytes": 72704,
+      "sha256": "7e468d41d5d2328715430460ac7202ceb5d43972e554ed28e82a775a8adcfc2b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/day-before.raw.json",
+      "bytes": 72654,
+      "sha256": "aad8dc5c8f11209bdf458ff0b97239d378d6f2eb411876163275721ede395722"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/dungeon-entry-after-reload.raw.json",
+      "bytes": 94824,
+      "sha256": "45e3af9adaca9cf342a1acec0711ee9d410d5132a783e3e4b1346c1399d7db6a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/dungeon-entry-before-reload.raw.json",
+      "bytes": 94824,
+      "sha256": "35f38c5729d01e2c90bc437b233265ddcc86c6328e08e93a3e40a92a6b7b4674"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/dungeon-entry.raw.json",
+      "bytes": 94824,
+      "sha256": "35f38c5729d01e2c90bc437b233265ddcc86c6328e08e93a3e40a92a6b7b4674"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/dungeon-retreat-after.raw.json",
+      "bytes": 95018,
+      "sha256": "cf39d0cc9c73084d06d7db3b8ebaaf057d654b757aec7f26eb20326972bc4182"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/dungeon-retreat-before.raw.json",
+      "bytes": 95030,
+      "sha256": "13042d83c550381d9a6466b199adfcbd9917d2b467fdd9b9875a5e4333d0ab94"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/dungeon-three-stage-clear.raw.json",
+      "bytes": 97222,
+      "sha256": "e3245749e96cc2496ae48a5a33a9b72e25b87cf992eb473bc45bf42a79518180"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/full-run-floor-1-battle-start.raw.json",
+      "bytes": 95851,
+      "sha256": "e2abf26b12ba004de23b9b3c3ae18e5518da19ccdcbad8268f7500abe8de07f3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/full-run-floor-2-battle-start.raw.json",
+      "bytes": 96188,
+      "sha256": "01f41be0e2e85452bbc0e461ec88ee2a8c38d5f5f24f9a813d5e1151697fba6d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/full-run-floor-2-combat-after-reload.raw.json",
+      "bytes": 96188,
+      "sha256": "c1c4e0ff79bf33c36d3e324000bcf31aae168b2e314be08d85127904ca7562fb"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/full-run-floor-2-combat-before-reload.raw.json",
+      "bytes": 96188,
+      "sha256": "9f5cdb32016a3456a7f03defe9e765b48e2080eadc48826bb74cb3b2003aab05"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/full-run-floor-3-battle-start.raw.json",
+      "bytes": 96629,
+      "sha256": "33c1ce04bbf1df4163f7618b85f60bda43b56c295da43c6788e9bbf525f8e170"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/full-run-floor-3-combat-after-reload.raw.json",
+      "bytes": 96629,
+      "sha256": "f7d18e232370f502e291eb2b7ce6a990872c9291bbec38fab516650be7eebdfe"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/full-run-floor-3-combat-before-reload.raw.json",
+      "bytes": 96629,
+      "sha256": "b70fe935f0d1d2c898cceaa9adb3a4b1b7875960bc3ee52a0accec33782a5d66"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/leave-between-floor-one-and-two-after.raw.json",
+      "bytes": 95494,
+      "sha256": "1be71ee80dd3eee46b2e00124e2de156bcd956ab8997644e3c4e7bdd87e827bd"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/leave-between-floor-one-and-two-before.raw.json",
+      "bytes": 95493,
+      "sha256": "60d491a703cf121cd241e64472d7c130b287336746c47a8ed2ca98965a09a08a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/mine-discovered.raw.json",
+      "bytes": 94673,
+      "sha256": "80fd5230cbc53a0b82f885d5b798a1e6815a5f8279156aabd48c31db558cc1ca"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/normal-ui-start.raw.json",
+      "bytes": 72652,
+      "sha256": "1ac614617e2297a2da47dcc82d6ecafa4e2bc7194f3684cb36adff959b1e1ac2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/party-member-death-after.raw.json",
+      "bytes": 96748,
+      "sha256": "a490f627cd89d968a22732ace1960ac546464e172199262b4b0fcd0f2318a3d5"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/party-member-death-before.raw.json",
+      "bytes": 94373,
+      "sha256": "a529b73786f34a0dc4e52b0fdddf7bec216931d720279e28d4652342ac5599e4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/party-member-death-expiry-after.raw.json",
+      "bytes": 96748,
+      "sha256": "a490f627cd89d968a22732ace1960ac546464e172199262b4b0fcd0f2318a3d5"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/party-public-ui-final.raw.json",
+      "bytes": 94371,
+      "sha256": "ec9df491633f1afc86969de2c25b4445d311b4b4ebb5a119168e23bd9dbaedc5"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/party-public-ui-hired.raw.json",
+      "bytes": 94371,
+      "sha256": "ec9df491633f1afc86969de2c25b4445d311b4b4ebb5a119168e23bd9dbaedc5"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/party-wages-before.raw.json",
+      "bytes": 94433,
+      "sha256": "b6ad3d46fc9132ad203faff18d099a5f58b605750c10da5ce7ec8ce283d56a61"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/party-wages-expired-after.raw.json",
+      "bytes": 94798,
+      "sha256": "98a50cc05f2fc96a1af7b0cf9fa3c57a212262773edcc94b3dc1b71141b74053"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/public-gather.raw.json",
+      "bytes": 93600,
+      "sha256": "ebaac841285350e80081850cee388ab14be062782e88b8841202b0d707944368"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/public-rest.raw.json",
+      "bytes": 93841,
+      "sha256": "7c991cdf28265adf64a564d34102030f2a1e9d2ecbed2698a934f8129cd366cb"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/reentry-after-retreat.raw.json",
+      "bytes": 95169,
+      "sha256": "79027e8a5c0bf6c9e85d0113c868391f309dd7c39eb967ca9aee8e7bb1444af2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/rollback-after-abort.raw.json",
+      "bytes": 72850,
+      "sha256": "657cff04355ad90def2966688800200fc0baa1ca55e9382f4145729ba22499a4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/rollback-after-retry.raw.json",
+      "bytes": 72850,
+      "sha256": "5e04af959f1ecd06d886f69892ea697ff566b65dc6fabf9018c25881196b96cd"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/rollback-before.raw.json",
+      "bytes": 72850,
+      "sha256": "657cff04355ad90def2966688800200fc0baa1ca55e9382f4145729ba22499a4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/rollback-conflict-fixture.raw.json",
+      "bytes": 72850,
+      "sha256": "96842da6a29b3e7e68cd46aa95ea42ded9c46d740fe68fba21402fd2f862c979"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/x20-modal-after.raw.json",
+      "bytes": 72652,
+      "sha256": "a63ea481e419abdd81d073b7cda77844b5f9199e8eb2857cc17eb87f9c78357e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/x20-modal-before.raw.json",
+      "bytes": 72652,
+      "sha256": "9dd2bbf531b29cab49fdf9384ca74b6418efba389634475455d3121ec9807f3f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/year-after.raw.json",
+      "bytes": 75890,
+      "sha256": "7a8504f294252a878fbc6eeada185d14ef81c3415583763b6d97bb8b08340d1b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/raw/year-before.raw.json",
+      "bytes": 72655,
+      "sha256": "9139372b8b3a86db60a478daa222c1148ed50e4faf59d6c2f4cd101cbcc095c6"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-baseline/results.json",
+      "bytes": 115346,
+      "sha256": "504f8d335a5a539793eca748ad597a52297ffbabe3c3d70980ac050eda1f836f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/README.md",
+      "bytes": 2167,
+      "sha256": "1cdd5c24b7abedcb7848c4b457b43bbe048288c2ff9256a277032c364276c920"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/abandoned-mine-reentry-floor-1-battle-start.png",
+      "bytes": 115913,
+      "sha256": "8137459e35265d095ecdb70e45ffa712cc7ca0a715e3d259b05e22c98938e039"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/combat-modal-x20-disabled-focus.png",
+      "bytes": 124285,
+      "sha256": "1851e2f53df51ae5130dd31ebc178f6a0a460fde0e4722282d8ff8d23679b205"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/day-boundary.png",
+      "bytes": 172944,
+      "sha256": "a9496d13b7034f7570a57d29c579a5bb8625408fca0fab4a6e0974a052dfe1ee"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/dead-successor-modal-background-time.png",
+      "bytes": 153140,
+      "sha256": "720547711d9a7dd66a756f49d544ca2a59a3f254b1253987f58827ae3b0630ce"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/dungeon-entry-stage-zero.png",
+      "bytes": 134853,
+      "sha256": "9f1d26c9888277553879ec92b8b4f15e8fe467c46894b7e4026817d62fcdaa55"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/dungeon-three-stage-clear.png",
+      "bytes": 178196,
+      "sha256": "ddaa1fc0b67b1fe4d6af1975bcb5ef608d051955284e6fa1bebf438c15d5f22b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/full-run-floor-1-battle-start.png",
+      "bytes": 115556,
+      "sha256": "529f84cf91f8c011cb922e63ca40dceb778c604af9e0e1a00f9208d829bfcfb8"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/full-run-floor-2-battle-start.png",
+      "bytes": 120432,
+      "sha256": "492fb9e0163c953663297047dd2fe36620d75863d78febfaf9177504d094edec"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/full-run-floor-2-combat-saved.png",
+      "bytes": 173038,
+      "sha256": "e2fdbecd193ea3b629b6551ab2d63291e9fafeeb9434aa51db108bb264e91a1f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/full-run-floor-3-battle-start.png",
+      "bytes": 121530,
+      "sha256": "17f3fec9514a52ca3caabaac53af0a6d5c0b8891f74cd36866fac9961efc0a7b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/full-run-floor-3-combat-saved.png",
+      "bytes": 172746,
+      "sha256": "65a5b1b34d6944f2ec03b6bc6e78ae0ace8f85b9d44189ed13162002ae3d823b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/normal-ui-start.png",
+      "bytes": 161687,
+      "sha256": "ab27bd11f3783fd5960806cfe625c4018be5d58a705e80363f6dae19d3a7a02e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/x20-modal-background-time.png",
+      "bytes": 122942,
+      "sha256": "ea583bc4e5654ef5860b95a837ac9ee2407198890c92c35ef9a452af9bd0060e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/artifacts/year-boundary.png",
+      "bytes": 169982,
+      "sha256": "43aceacdcc7a2f3b3988f6c0818eb0a1beecb4cbc402783a9a3e7cf3af656356"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/playlog.jsonl",
+      "bytes": 734611,
+      "sha256": "6def70e1584e4cd1e80b1de4b146e00ea44d1d475ebf006e523db120643d40b2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/abandoned-mine-reentry-floor-1-battle-start.raw.json",
+      "bytes": 95375,
+      "sha256": "4956dd691665bf23ff06851ba51fdc376b16428a730fbdfd90e0f35a542e0535"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/ack-action-1-after.raw.json",
+      "bytes": 72860,
+      "sha256": "3d54d2e96d0982ea7c3c90bce83472a8d5ea624eb0a9917145329f47c3b620d3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/ack-action-1-before.raw.json",
+      "bytes": 72652,
+      "sha256": "6ba733b7b27248977f40135b07dfa1c0ccbcbdc12b5d08ab1f600a46cac080fe"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/ack-action-2-after.raw.json",
+      "bytes": 73069,
+      "sha256": "ab6873777e72e94d7eacb9339b4f7ee8357084567a2f4623cb4e7e9a8b583570"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/ack-action-2-before.raw.json",
+      "bytes": 72860,
+      "sha256": "3d54d2e96d0982ea7c3c90bce83472a8d5ea624eb0a9917145329f47c3b620d3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/ack-action-3-after.raw.json",
+      "bytes": 73279,
+      "sha256": "145a005b56a0d172a837e85ac58c6955006285185f6d5aa01aa54969534ecd66"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/ack-action-3-before.raw.json",
+      "bytes": 73069,
+      "sha256": "ab6873777e72e94d7eacb9339b4f7ee8357084567a2f4623cb4e7e9a8b583570"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/ack-action-4-after.raw.json",
+      "bytes": 73487,
+      "sha256": "e064608c6fb99f101185e6498a55379081534b97e42d97ba6912d3a6c57a5dda"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/ack-action-4-before.raw.json",
+      "bytes": 73279,
+      "sha256": "145a005b56a0d172a837e85ac58c6955006285185f6d5aa01aa54969534ecd66"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/ack-race-after.raw.json",
+      "bytes": 72652,
+      "sha256": "b1a9e059d98eb3896917c045a752b00674b5936107bf6a229aeed0a23292e247"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/ack-race-before.raw.json",
+      "bytes": 72652,
+      "sha256": "6ba733b7b27248977f40135b07dfa1c0ccbcbdc12b5d08ab1f600a46cac080fe"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/cross-year-contract-after.raw.json",
+      "bytes": 97858,
+      "sha256": "6f7fb3cdf4fa762626fb5638ba68206a6a228ef6d16386674c9ca8194b404779"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/cross-year-contract-before.raw.json",
+      "bytes": 94373,
+      "sha256": "bb3073a7829a6ff103a6f7e9d74581a0c06f689ed905bcd47ba99b53363eeda1"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/day-after.raw.json",
+      "bytes": 72704,
+      "sha256": "9fcfcda6cdd621f774c49f6f23230ec217c08ca6669b260a7a7b2bbd0f82fcaf"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/day-before.raw.json",
+      "bytes": 72654,
+      "sha256": "5f8617f532550ce5cc546826568232e35632e03d594204f498aca8dc38e0d367"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/dungeon-entry-after-reload.raw.json",
+      "bytes": 94824,
+      "sha256": "27414ba6cbc0f23c7ac7c6fe960e658b118a992f4e0a8fbf089454d7675774b9"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/dungeon-entry-before-reload.raw.json",
+      "bytes": 94824,
+      "sha256": "065b4806ac91f837a86a29c2ffdc348ddfe77ca6aea7258489623bbae08013b4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/dungeon-entry.raw.json",
+      "bytes": 94824,
+      "sha256": "065b4806ac91f837a86a29c2ffdc348ddfe77ca6aea7258489623bbae08013b4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/dungeon-retreat-after.raw.json",
+      "bytes": 95018,
+      "sha256": "a9931804302598d8c6a9d61553012dbe6d02e5d25dc445b21e42be6b204305da"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/dungeon-retreat-before.raw.json",
+      "bytes": 95030,
+      "sha256": "9c5786efe04b3632653e77ce976db05ee05094cd199e381c7f90c98efe7b1bfe"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/dungeon-three-stage-clear.raw.json",
+      "bytes": 97222,
+      "sha256": "dd9c038512097dac185fc92cf78fe730e1897a245466f678136b07978ce80920"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/full-run-floor-1-battle-start.raw.json",
+      "bytes": 95851,
+      "sha256": "915775f131a02f9458439bc4aa10816b8d1d0b2a89ce7de878874b504881546c"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/full-run-floor-2-battle-start.raw.json",
+      "bytes": 96188,
+      "sha256": "23fc316fc3312615bcd1621536f7bd21c77e56457d5d16543b5880c98e2c3d64"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/full-run-floor-2-combat-after-reload.raw.json",
+      "bytes": 96188,
+      "sha256": "bfa331134907fbbe6e19295d66aee4739057fa6d1cd2506b6ac16038de97db1a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/full-run-floor-2-combat-before-reload.raw.json",
+      "bytes": 96188,
+      "sha256": "828bcb05d8aa0a0d2eaf95eaa099a40ed239284072dd88a0c0ec5620396aa707"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/full-run-floor-3-battle-start.raw.json",
+      "bytes": 96629,
+      "sha256": "eb92b654a20c7c23ccd4ff2fa39c07b5c8064c0c8942ec5d6476ac8283e1c0e3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/full-run-floor-3-combat-after-reload.raw.json",
+      "bytes": 96629,
+      "sha256": "f4d4600d39536b9d62766aaa7ff4cc2e896a7fc02d35e0f8a109bd9f8b1ebcfe"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/full-run-floor-3-combat-before-reload.raw.json",
+      "bytes": 96629,
+      "sha256": "5fa7f54efb8bffbf448c81f9fd3e6ba5758bf7b14340902635b782867754c22c"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/leave-between-floor-one-and-two-after.raw.json",
+      "bytes": 95494,
+      "sha256": "2be69f79b5fee9d07cf8732bf47c73bef59ada6d050c6f93060ad1acc3f409f5"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/leave-between-floor-one-and-two-before.raw.json",
+      "bytes": 95493,
+      "sha256": "ab58a13e737924ab0c04688338d496f25625bf0153176f649a378e979a55a33e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/mine-discovered.raw.json",
+      "bytes": 94673,
+      "sha256": "28c46842fb5495cae8b10a5e1542298efaa79fb9dbe4476f4ac1ea177ce888d9"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/normal-ui-start.raw.json",
+      "bytes": 72652,
+      "sha256": "cbc852340a5c731f5248197d2fbca3e1106c86fc37b35b80c7a20759e39175e6"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/party-member-death-after.raw.json",
+      "bytes": 96748,
+      "sha256": "03d42951874bc94a6346b1b8077a100b0082e8ec5b30ac7ad0f9d52821c8f938"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/party-member-death-before.raw.json",
+      "bytes": 94373,
+      "sha256": "2da0ae78127b644ce9900e185b792f510e373cb577a7d36604b118bfe63654fc"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/party-member-death-expiry-after.raw.json",
+      "bytes": 96748,
+      "sha256": "03d42951874bc94a6346b1b8077a100b0082e8ec5b30ac7ad0f9d52821c8f938"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/party-public-ui-final.raw.json",
+      "bytes": 94371,
+      "sha256": "e459752d06528d00e93567291162b5355187367e9b405f780f90077b97314549"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/party-public-ui-hired.raw.json",
+      "bytes": 94371,
+      "sha256": "e459752d06528d00e93567291162b5355187367e9b405f780f90077b97314549"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/party-wages-before.raw.json",
+      "bytes": 94433,
+      "sha256": "b1ad142c2122dd5eab5abc9a8c9097f4b5d3dca62b81e51012f65b3af36c3129"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/party-wages-expired-after.raw.json",
+      "bytes": 94798,
+      "sha256": "2a3739f71026e3e7dfa5742d10352dd69a8bb75994d5d0c5abbc7fe76d31034b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/public-gather.raw.json",
+      "bytes": 93600,
+      "sha256": "2f3f49191e44cd6d32993b55440f88988be4417857b984b44c8660b5cb5fc678"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/public-rest.raw.json",
+      "bytes": 93841,
+      "sha256": "8677a855c752c53d3cfe2cf5696a987fbc88686a671c5a5db22e9c9938c220dc"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/reentry-after-retreat.raw.json",
+      "bytes": 95169,
+      "sha256": "6d932cfa9a7293d2b70a89f2ac8ed04432f24b206a1c0cf21b32f07481048f76"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/rollback-after-abort.raw.json",
+      "bytes": 72850,
+      "sha256": "2e8f76990d5286da700fa4b0f10e24a827a8f83f9541a51cbc65fd63fd9d60cb"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/rollback-after-retry.raw.json",
+      "bytes": 72850,
+      "sha256": "b4d89559c16f41535bdf6375280be15ec9ce51063d9fb8e12b924b83240f167b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/rollback-before.raw.json",
+      "bytes": 72850,
+      "sha256": "2e8f76990d5286da700fa4b0f10e24a827a8f83f9541a51cbc65fd63fd9d60cb"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/rollback-conflict-fixture.raw.json",
+      "bytes": 72850,
+      "sha256": "5a485620172734f15501c6fa5d5c7d41191b7a894fb88d2ea5dff06cae452209"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/x20-modal-after.raw.json",
+      "bytes": 72652,
+      "sha256": "828622191531162f8e96878c22e68747682479297f4eb5a30247d35239a73ac3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/x20-modal-before.raw.json",
+      "bytes": 72652,
+      "sha256": "f341915eab2c793f2db70c1929ed04394274d1d66db8c3dc1f619245ea2fa26c"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/year-after.raw.json",
+      "bytes": 75890,
+      "sha256": "bfbca7a48b5be5e82714d784cadff47a33672d6d49161e82c5a1b7d72d6aa7fd"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/raw/year-before.raw.json",
+      "bytes": 72655,
+      "sha256": "4faf6cc72becadecd3806b870bebe4775873973c49f23cb586079d693b53ba48"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-final/results.json",
+      "bytes": 115331,
+      "sha256": "98f0ad1406b0197e427e1e1fc12ba731f5df66e5effd94f17d7ed57db5bdcbec"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/README.md",
+      "bytes": 3845,
+      "sha256": "ab23ed48cf97aba0f370c70fa4889b7668dfcdbbec73023ff943607b6a3bc75f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/artifacts/delayed-attack-after-reload.png",
+      "bytes": 125717,
+      "sha256": "2b2d1b103bac3ea5dcff619f82406e7c0d30ddcbb56864fa6b3ebc6d7a06d5af"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/artifacts/delayed-attack-before-reload.png",
+      "bytes": 127205,
+      "sha256": "6511adab149c09a8cccf69ce4bbfad233b999e607def5f9938cee1f88c6c989b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/artifacts/delayed-attack-combat-paused-x20.png",
+      "bytes": 124791,
+      "sha256": "920c9feaf193286606986d33e7b77a94b269fba9d32c4f4d087ee33905bc5e60"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/artifacts/delayed-attack-native-commit-pending-ack.png",
+      "bytes": 127612,
+      "sha256": "8d2307cb46e34d47222ce77df23c80ab0f5c4298d6d357ce30dd83db2a688e10"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/artifacts/delayed-attack-time-and-actions-pending-before-ack.png",
+      "bytes": 127205,
+      "sha256": "6511adab149c09a8cccf69ce4bbfad233b999e607def5f9938cee1f88c6c989b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/artifacts/normal-ui-start.png",
+      "bytes": 161687,
+      "sha256": "ab27bd11f3783fd5960806cfe625c4018be5d58a705e80363f6dae19d3a7a02e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/playlog.jsonl",
+      "bytes": 155600,
+      "sha256": "1100d2050418a2ed6ea635b3131d06986bdb7a09e447b2ac19c74c1cb63fb530"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/raw/delayed-attack-after-all-acks.raw.json",
+      "bytes": 72759,
+      "sha256": "d1ae86028d803c4ed3ad9374e28ddfb8b129f4434037eacfd3bb610347525fd4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/raw/delayed-attack-after-public-attack-before-native-complete.raw.json",
+      "bytes": 73019,
+      "sha256": "0a6a72946c8ae0014e24c72170d6df5aae83e6056f7ed916a3ec351516bbc166"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/raw/delayed-attack-after-reload.raw.json",
+      "bytes": 72759,
+      "sha256": "7dc99cf697a58f383fb4b3d9a532bb2a53886febd8c9d756b2ec18a7c32ed3d3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/raw/delayed-attack-before-reload.raw.json",
+      "bytes": 72759,
+      "sha256": "d1ae86028d803c4ed3ad9374e28ddfb8b129f4434037eacfd3bb610347525fd4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/raw/delayed-attack-controlled-combat-fixture.raw.json",
+      "bytes": 72761,
+      "sha256": "d60b8712753c85fd2d178a7d82363c8fd97c716d3158056ab141aa270e1c8fee"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/raw/delayed-attack-native-commit-pending-ack.raw.json",
+      "bytes": 73019,
+      "sha256": "0a6a72946c8ae0014e24c72170d6df5aae83e6056f7ed916a3ec351516bbc166"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/raw/delayed-attack-settled-before-public-action.raw.json",
+      "bytes": 72761,
+      "sha256": "8f390f8b3aa7d354c588ce71a9c79864b617fd11f11bd5febdec819639178ca2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/raw/delayed-attack-time-and-actions-pending-before-ack.raw.json",
+      "bytes": 73982,
+      "sha256": "36cc77f32bc60d166209a105d6f2857bd8d9c7deb8036bdeae1a276ff12fa8d9"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/raw/normal-ui-start.raw.json",
+      "bytes": 72652,
+      "sha256": "225ff72557f4c9014f324a2c51d156068be73c4859dcf4a1bbcf6f543354906b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/cross-state/production-738bc00-o1-resume/results.json",
+      "bytes": 46651,
+      "sha256": "71ce59426fae89a5cf14e623a0308ec6e3808655cf0dc1f9d7b77524b42b8f5e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/README.md",
+      "bytes": 6716,
+      "sha256": "e115c6f23ae35cb2fb1ca602254fa38d8a0e59855e02638873a27a199ed5ae3a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/children-only-no-heir.json",
+      "bytes": 517250,
+      "sha256": "1aca6ebe57a9c6963dc71606bcc8c3cc24665a9d304931967ff2e8414ae2c0d4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/combat-death.json",
+      "bytes": 519378,
+      "sha256": "ab0b629dabcb6d5b3a77fc82ad00699d37c3cad43a0d07a31460d3e4a1642142"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/contract-crosses-midnight-then-heir.json",
+      "bytes": 623902,
+      "sha256": "6a93944aa3103e14121c786419258799b475422705a6e9df8e9111e5a2d402fb"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/dungeon-combat-death-and-reset.json",
+      "bytes": 698454,
+      "sha256": "990d55af2ab0fb5006b0ddcf62923205fb115dce601d85fe45b2d7c666ac0f21"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/farming-action-interrupted-by-natural-death.json",
+      "bytes": 654563,
+      "sha256": "99c646cf0e530627f93a76d17b3f38e9cf6222b1a972a752ccbc235dbe719a67"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/highest-safe-gold-heir.json",
+      "bytes": 518652,
+      "sha256": "b1b638f06a18dedb5cb849f931106e0965b7afeafd539893ce3352bc1f568aa3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/injured-adult-successor.json",
+      "bytes": 518561,
+      "sha256": "b1e0a2807e313bb51a1df501e52e7f31097e54ec575e773e25fddbc29213f139"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/lowest-gold-heir.json",
+      "bytes": 518535,
+      "sha256": "22e032cb7a5ca245ccdfc52c9b9d8e39996c16c98be5e6e4bbd55e1a1909e1be"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/natural-death-successor.json",
+      "bytes": 650488,
+      "sha256": "9145c9a600e895a35a6fae10d238cd03e6614b1069379dba66f5a4c140f89dbf"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/new-year-inn-rest-lethal-failure.json",
+      "bytes": 650388,
+      "sha256": "3779a632256d24504fc1588ddc1ff42ad8e2addf7b0dfc7cef8e010fad61620d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/no-living-resident-heir.json",
+      "bytes": 562698,
+      "sha256": "9a58eb01f22024a65cf17c4d2f9df3a2644173797152c0decb7377dba19e4d4a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/party-member-as-heir.json",
+      "bytes": 623733,
+      "sha256": "7cd6b4c40de4be69e5c5e0b12a639f8354cf1bfbd3cfda2d4e868b14df3be656"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/playlog.jsonl",
+      "bytes": 5804000,
+      "sha256": "9d4bb308a41cb802597b066b829ead8831a3cbc69e9d12ae8934f32234bd0f7f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/cases/single-candidate-age-15-boundary.json",
+      "bytes": 518587,
+      "sha256": "c1a738ab1ab44f35031eb70bed2e2f52cdc6243f978b009cba7bf6915695d2f9"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/invalid-fixtures.json",
+      "bytes": 681492,
+      "sha256": "e55d97d00d183b43cec59120fb29a439b83a115d2f7c1516af4509140d722e89"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/playlog.jsonl",
+      "bytes": 249864,
+      "sha256": "badf37f88a065c9a0a830ebe698a37429f13464eb2783e802b6281f92d9fc411"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/qa05-inheritance.mjs",
+      "bytes": 31606,
+      "sha256": "add447841341d48ecbd4d548684f6e8ecfe8c4d4bf107a0c3a5ec8c0bb96b178"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/inheritance/results.json",
+      "bytes": 4484,
+      "sha256": "d9692b51e49c9bc16030aad0e220b0484cb39f357a8c40d3fd2d5987111715b1"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/README.md",
+      "bytes": 9433,
+      "sha256": "a23872b2c6f5d29416dda57d72f6c8269abdb974cc3cc3f1d1265fa6dd44dd25"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/analyze_evidence.py",
+      "bytes": 8580,
+      "sha256": "1b50005cfe039107af863f8aa95cae9255759df93003844baaaf74aa61303f1b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/diagnosis-metadata.json",
+      "bytes": 1637,
+      "sha256": "9daaaee50e3bb45f3a0306054a1ee4b43bf7e45455039dd4b847160f977cde98"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/evidence-checks.json",
+      "bytes": 1001,
+      "sha256": "0e52d960ec85c77dae4011678a0495cf57c0774a4bf186c26c195c0278df998e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/followup-probe.json",
+      "bytes": 24369,
+      "sha256": "4350315786f277b03dabe8b4e3fb71be88d773253ebdd8d2c08467209db6f8c4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/followup_probe.py",
+      "bytes": 9318,
+      "sha256": "70d91a6aa3516e2204a149d1878c6edde83e6686065d5aab8882730a213bd3ce"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/hypotheses.json",
+      "bytes": 3379,
+      "sha256": "feea0c8493358012aa5d53dd7e5a44cfce6b430425e653cc75912247c1a49857"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/map-retainer-after.heapsnapshot",
+      "bytes": 19882764,
+      "sha256": "117098fec66cb7df3414b070f6cf5a10bae5be8e27366f0a0566286ea36fa689"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/map-retainer-before.heapsnapshot",
+      "bytes": 19878404,
+      "sha256": "4420f2e59f29ae0c76d7c43318b8d76ab09778e6e45e248af71aca275988397d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/native-dialog-no-selectors.heapsnapshot",
+      "bytes": 2863871,
+      "sha256": "6507867237f596facc21fdf3a98c853a0520db7ef5233f02ae8e7806266fd533"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/native-dialog-visible-wait.heapsnapshot",
+      "bytes": 4144885,
+      "sha256": "36f957f34594c49712de2301d2aa223699fb51c9874eb1d5bbc4a8301da7761c"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/native-retainer-after.heapsnapshot",
+      "bytes": 4075357,
+      "sha256": "d6894860a1cfd8028b4f364d1a766b46919ceb38c5514ae53648f2d806ec94fe"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/native-retainer-before.heapsnapshot",
+      "bytes": 4075357,
+      "sha256": "9eb182a55900ee0cd23943f8f303024f666373030abb7cc010462f34ea070717"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/playlog.jsonl",
+      "bytes": 12105894,
+      "sha256": "2ce097583b94373746e6170d7686745423bcb0e476b82e82cb5a83a57feb2f2f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/playwright-source-evidence.json",
+      "bytes": 8207,
+      "sha256": "bb2a9dfafe85fe1a4ef6c087b6e1ee90db16bfb8e77a1b1aa54e46f550be2678"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/probe.json",
+      "bytes": 22166,
+      "sha256": "6f92ff9061fb873288185c30b73a3c599c5db6fcbaf785dbedce4504590b5b6b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/probe.py",
+      "bytes": 5746,
+      "sha256": "c0ea1473e8f5e5731ae3bda5351bf1fce8cba3bae889ee764ff076feaae40cc5"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/retainer-probe.json",
+      "bytes": 8207,
+      "sha256": "3b930007fafcc3fce9840712f72d417f371fad6e616df58354327669dcf0e260"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/retainer_probe.py",
+      "bytes": 6955,
+      "sha256": "0f20994b2674be70c44d15df374dcb0bc6a527700d45d62adc58658ee512ea95"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/retaining-paths.json",
+      "bytes": 75124,
+      "sha256": "5d3d9ad7ec83f159e77965e8c3ae72429adeee4adf346583db1c519ede13e50c"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/memory-diagnosis/verification.json",
+      "bytes": 2260,
+      "sha256": "4b8b20953384799b05db7bdb64d7e13a8e3e3e4bc0adaf1203016829833d6b3e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/README.md",
+      "bytes": 9518,
+      "sha256": "964459efd94b5ff90194c607cc33ec8de8ff2fd911556145b95427d193a096bd"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/browser-events.json",
+      "bytes": 53697,
+      "sha256": "48659ed50646d4d429565f9f1ccd92983788e92acdece83663518b6c4b513598"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-390x844-home.png",
+      "bytes": 113516,
+      "sha256": "5bf183a8462ccf4862d105c8a26602ffdae2ced184e6298965d8283ecf5469ee"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-412x915-home.png",
+      "bytes": 119557,
+      "sha256": "acdcda4a5f5a99879a9a84f545549c1fddc496308e79b78739ef07a21cc6f243"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-after-reload.png",
+      "bytes": 188324,
+      "sha256": "66516db45f0c8026421fbef4f00ea516d884a5269984fece6fe6eee2d9865166"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-character-modal.png",
+      "bytes": 126010,
+      "sha256": "563162ed58ed163f7f237556151fd517e1d9f3a44cd9f816cb38bbfbe654244d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-farm-mature.png",
+      "bytes": 151466,
+      "sha256": "ffe824975fc50c936a0e027c59537ccf88bb5ef51b6962075daf99819a74bb60"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-farm-planted.png",
+      "bytes": 135616,
+      "sha256": "b55bd0c527b940636d3b31bf7489055ce8bea3b5d3877e2ff8cd5cb34e9ea34f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-party-hired.png",
+      "bytes": 135534,
+      "sha256": "6ba2dbf1f0cf4f734964f134c873edd0718eeffe22d43d329faad66d9e6ba0f5"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-party-precondition-failure.png",
+      "bytes": 127721,
+      "sha256": "a47206f860cd3cd5859edb8db228703dd04cdf0edc9c66303a7b7b0f70e2f85e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-play-record-export.json",
+      "bytes": 153075,
+      "sha256": "2bc9375fab367c64773ca1b647e704cd20e02fa4b36607522e00c4ff19eb0379"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-reload-storage-trace-20261004T073904+0000.json",
+      "bytes": 351640,
+      "sha256": "278b559a39f60c5c7b7c4deae424209734824d93e3dc7b94f602ff16496eb384"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-reload-storage-trace-20261004T074521+0000.json",
+      "bytes": 351640,
+      "sha256": "a8e14c7aa5cd9a5f265b616eafd929a6122f06ea5217e0e50126dc9c209ab130"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/chromium-reload-storage-trace-20261004T075214+0000.json",
+      "bytes": 351640,
+      "sha256": "ec782580a37a644c84e5a0368b426fee8adf6598e3145c7d14aec6743b88cf7d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-390x844-home.png",
+      "bytes": 71944,
+      "sha256": "6633febf86e315b8294644c356fe45184b4cc75612d1da87ac2042d7b46927b9"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-412x915-home.png",
+      "bytes": 80680,
+      "sha256": "33d03219f129d4a2e26e5a2dda3cf720041beb74ca6d567878111e06be2b69d4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-after-reload.png",
+      "bytes": 199926,
+      "sha256": "ee71205e6be6ebf4bea1703a4fbd9cbd27614fd561209233b0509e5d864b0f93"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-character-modal.png",
+      "bytes": 154476,
+      "sha256": "f4891959698287ea0965b1afa4f7c4b94672df18bae53a6dd429fc1d25378439"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-farm-mature.png",
+      "bytes": 177118,
+      "sha256": "18e9d28e718dfaeba9a001d39efc675f853f353422bbe62c4ff14d090c4c668a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-farm-planted.png",
+      "bytes": 157338,
+      "sha256": "1c5463035be2e283c3c67bdf51c0bbb537dfec5fc67cb960c281045974735eb2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-party-hired.png",
+      "bytes": 162810,
+      "sha256": "fbecf3ca4aa8b788f629e6d65d19d5b2f3da5ac81b2f1820210a3661153b28ac"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-play-record-export.json",
+      "bytes": 152088,
+      "sha256": "14bf27de0e71e55761b550e4ccacbf4d0941c6f577f2b16c17184b1dbb050a07"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-reload-storage-trace-20261004T073904+0000.json",
+      "bytes": 263837,
+      "sha256": "3533f6a3674335e22de1d42b43727d329df2b1650798d0aaafce42de9a9c58e4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-reload-storage-trace-20261004T074521+0000.json",
+      "bytes": 263837,
+      "sha256": "ba6ae8b69aeb16843c9edf6086a49ac078d5f7e4a94ee8555eb24e1f2732cd3c"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/firefox-esr-reload-storage-trace-20261004T075214+0000.json",
+      "bytes": 263837,
+      "sha256": "cf6bf1df3db145a6a11e9f4d3bef07ac684a6c453aff4c7f6026dac2b1bd51da"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/geckodriver-session.log",
+      "bytes": 2073,
+      "sha256": "dc829197278da529b71815b8fe8c2a88ec4b48f1f52d9fc0367d497b24fb6e7e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/platform_inventory.json",
+      "bytes": 10235,
+      "sha256": "a15f885e7838e88a75bfe1969108fa0dc38c0e2a01309051bee4d373a33f2b7d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/playlog.jsonl",
+      "bytes": 20332625,
+      "sha256": "58350aec774a61f9bb0244c04837054715cedff2ad4a566c29ece3f289026407"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/qa08_smoke.py",
+      "bytes": 63919,
+      "sha256": "bf7c28fd9029b93981410992180b21c2371ec799ea3625c4fe4e56727bcc1d04"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/platforms/smoke.json",
+      "bytes": 1475524,
+      "sha256": "cee13964eb078aab60f14aedb5e472fdebf74f2bf2c45721a565b5f8a68f3674"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/README.md",
+      "bytes": 5724,
+      "sha256": "1c0137689ec759ba2cb6f71c2f547334f1b811949148dee29d096b09d00c13f3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/diagnosis.json",
+      "bytes": 2660,
+      "sha256": "690b460d2f612b566fcdf72e23ebe69dd4c5a9a569c17ab08cd27d07267d71cb"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/diff-check.json",
+      "bytes": 710,
+      "sha256": "3c62e57b08b57c8b4b414d09264beb96acb7a4341bc2206307e951eb5559f87f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/diff-check.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/full-tests.json",
+      "bytes": 610,
+      "sha256": "12bd173abe85ce41597098115c359d15f3240768803d3bcf609513f9144c4221"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/full-tests.log",
+      "bytes": 451,
+      "sha256": "6d1edbc606743d1f43cb15fccb128a0435d10a558f931d8627363ee74f5ed0e0"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/green-action.json",
+      "bytes": 658,
+      "sha256": "050fb8fbfc6fdf05cd5975fa1d214ebce8e5ff6e4cd42ad7f0ee0713cb0bde07"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/green-action.log",
+      "bytes": 478,
+      "sha256": "63423dcb4b5d18c79978ae26b56ef137b8d7c826bce9a546ce39d5d51a4aefa7"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/green-advance.json",
+      "bytes": 659,
+      "sha256": "7fe856fbce0ebcdaf42b6008ef0deb0d3ff95aff66e305a50a9afbee752c45d0"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/green-advance.log",
+      "bytes": 478,
+      "sha256": "f0e7cecb76252681b561450e063101100c77123a05095ea2adef0a32b7731447"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/green-speed.json",
+      "bytes": 657,
+      "sha256": "105ab82cada9a288e65c26758b86d1e8c0ec3bab797376f09b0873b3a6bbc672"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/green-speed.log",
+      "bytes": 478,
+      "sha256": "966808716bcb7f0fba2d9c9ef9b50e5835ef10196b4517359cb5c127b92388dc"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/playlog.jsonl",
+      "bytes": 37815,
+      "sha256": "0aaa77c9cdd9f88c8de6c1efbfec983b5525ed10f019a90f0a3411aa2d564882"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/premium-audit-run.json",
+      "bytes": 494,
+      "sha256": "eeabe1f2c4669840347274c29c726cff1f14fcadf389ddb17ececa9f5d694505"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/premium-audit.json",
+      "bytes": 215,
+      "sha256": "f5882a4e62c9e260f1d723724c90ad9aef6d26dfa18ee9caea80793f877fdf37"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/recovery-regressions.json",
+      "bytes": 666,
+      "sha256": "330ba0f2174582863901375114020da1038862d636eb05744b4cc70be2694bbb"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/recovery-regressions.log",
+      "bytes": 478,
+      "sha256": "b75cc35e017467c799466f7d4d0120ecd372a2a14a2df6b41b5af1b3a4c43080"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/red-action.json",
+      "bytes": 696,
+      "sha256": "549d42d21c2548d02fd09b0c11cd0a9869303512795a5787d333dcd2791bbef2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/red-action.log",
+      "bytes": 1463,
+      "sha256": "794c400f9659fe296601e3d2b92fcabb14ba79cfe48da473c3a4a06f10b3884b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/red-advance.json",
+      "bytes": 706,
+      "sha256": "69f4f741188ff0516e2f9d99fa9dbc6f27c6a98cc1245961e3943a566322a1ab"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/red-advance.log",
+      "bytes": 151142,
+      "sha256": "da9a0ad93a0b2db5bc34670a2682e12c4e515da6a835425a982706311760f1f2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/red-speed.json",
+      "bytes": 711,
+      "sha256": "32ba0e15a6983114e3ff27103c229343d672c7c26505239b88f9cbfc07c34ce2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/red-speed.log",
+      "bytes": 1704,
+      "sha256": "dadd1c83027f6eb4fd4e9d73cf33213232ae5d5d92fc70eed5c4f6a56728b776"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/run_check.py",
+      "bytes": 1481,
+      "sha256": "21d36bcc8e4785b27c3ff09dc6b0b89e98100656c7e91422166bc1ac760adb7b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/summary.json",
+      "bytes": 868,
+      "sha256": "e926701e9aa2647293faa053fa41039710766dd078e500c6ba0da86db094356a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/types.json",
+      "bytes": 613,
+      "sha256": "95ce2b060617b8e11076fc8d467213a06ac265ce8d623bad539dfb37222aa00b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/recovery/types.log",
+      "bytes": 208,
+      "sha256": "76162e465989f3f070a9de8db711fbf358e53b74d09ce1bbdb57c727e4c4a16d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/archive-reconciliation.json",
+      "bytes": 2611,
+      "sha256": "67083f72d0cae576c9d569b3e0e802bc15c2f9db10e6f00cc387c3c1cc86c96e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/gzip-only-reconciliation.json",
+      "bytes": 410,
+      "sha256": "dc13c9f28dd4447057023c49f9526ee4e6b68bd2d3f03d1ff02a5f684297cd9d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/markdown-links.json",
+      "bytes": 285,
+      "sha256": "74df10eb0450c4e664ac58d5eb3b3ee1ea5ecd410d50de438c087e980fc93889"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/modal-gc-followup.json",
+      "bytes": 7148,
+      "sha256": "946447bb98a0437e627f0001c8e2cc38ae452247acd428a53751ef0421c73695"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/modal-gc-probe.json",
+      "bytes": 4315,
+      "sha256": "314f140bb81a0548b3824699a3510d89ebf6ae2eabcb78f296f0b4e153866c2d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/modal_gc_followup.py",
+      "bytes": 3377,
+      "sha256": "e986cb6e95ca74c9571487c38ce89d1de154f0a5261ed36e978680bf9773eca3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/modal_gc_probe.py",
+      "bytes": 2805,
+      "sha256": "493d2a4f77ca9dd32f9c565f8e6bfe09c9b9cd1bf527a651d1cf5b2a90db58bb"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/physical-platform-tools.json",
+      "bytes": 571,
+      "sha256": "900cc39d734f6415e280573f9f949233914ed5969a6d11af9ee0314d88b1c891"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/playlog.jsonl",
+      "bytes": 88201,
+      "sha256": "1dcd6027266d4e057783ad9fefa9d43495a8347d8fbc4848fc9db2b63a1dfd75"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/quota-resume.json",
+      "bytes": 2272,
+      "sha256": "fa36198719dcab0fe1af686dadecf01bf43b5f104b42a99305af9860b984609d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/quota_resume.py",
+      "bytes": 5647,
+      "sha256": "8c3fdc2776e52a37daca65e044c4b9426d6286898f5f25f0aafa28248e0bf021"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/recovery-browser.json",
+      "bytes": 6636,
+      "sha256": "fc1f21b90e812b748e7b72fe9ab75c2a610e719aad999edda79e2da4a90c2516"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/root-checks/recovery_browser.py",
+      "bytes": 9688,
+      "sha256": "7687744fcb614fe9645ddad4d5e11da9ffb5988c3767947689d986bd7ca0568f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/README.md",
+      "bytes": 2911,
+      "sha256": "68868c685e2020d993ce65352307e30a9d0ae7082c1637de37f55b30cb19d4ed"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/checkpoints.json",
+      "bytes": 5158,
+      "sha256": "49a35917958381ea680691394fa88420c7d04fb9979e5cfa4e513e31d8fa024d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/README.md",
+      "bytes": 4111,
+      "sha256": "01f6e5dbd89703cd064e02fe86b36682ce3c9276edb5bf784f785ee3355ee4f6"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/analyze.py",
+      "bytes": 5598,
+      "sha256": "aab0827a652171587cfeafa02a07dd763d5a650a08f2fa059c95b26e1154be30"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/checkpoints.json",
+      "bytes": 194910,
+      "sha256": "42ebc6e0d21e7eb9056b854110f181a9c60ca0af2a4d4018cc98ce179ab645c1"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/export-chain-validation.json",
+      "bytes": 1819,
+      "sha256": "dd20b1b11343f9ceb9add8c2b91b2012888ab906d259b73790ec0401b38383c6"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/harness.py",
+      "bytes": 10087,
+      "sha256": "041b5bfddf8d13b21f91caf08c5577a7e8647152f8d64fdb35847909e264d44f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/hour-1.png",
+      "bytes": 175845,
+      "sha256": "1c9f71571170fe695cf13551ff0552d224fd998fe879622e6d0d7d84088fe56c"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/oakvale-play-records.json",
+      "bytes": 24201485,
+      "sha256": "67d32d9a265422f5959a36931215bcb6b9f45426a07941eb56e16ee488296ede"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/playlog.jsonl",
+      "bytes": 5513926,
+      "sha256": "ba0712a144c6f9ac25d00ba6cfbd4689c26b28bfc60ce46f5c3adf76537cc56d"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/profile-figure.json",
+      "bytes": 127,
+      "sha256": "04b005523c9948b3cc71491f28a5e37cf46e8a8a5a32e732d69f015bdd565ae3"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/profile-summary.json",
+      "bytes": 3938,
+      "sha256": "1ae2e4468b49a0848bec4e20d7491520dcd82bf2ac33ced7f8e22d6716bf5c73"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/profile-timeseries.csv",
+      "bytes": 12016,
+      "sha256": "96fab57438efb4100e6e83c190c864983420fd575d703975c28fdb03b3acff9f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/profile.png",
+      "bytes": 308596,
+      "sha256": "48af7a22eedf02cd64c854be39497a57cf35c7733ffe42966a793e602bfd0319"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/results.json",
+      "bytes": 194908,
+      "sha256": "48ad9f4adb3409674f95d0ae3a7f62bf2f2c98ac178a14df00501943b39f253b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/start.png",
+      "bytes": 159579,
+      "sha256": "b8ff2b270e40ae81213ccaa77a9744617bfb61f71b202950765461d0849e2ab4"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/validate_export.py",
+      "bytes": 8868,
+      "sha256": "58fb8963678762e2a01166909bec22d69dccec539a87faf5fd44bee433fa9e31"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/validator-controls.json",
+      "bytes": 1670,
+      "sha256": "45d1b6f5ca1f9dcc99b4bdbdd970f7f0f85621c914108a64ba0ba0e011ddfc00"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/clean-run/validator_controls.py",
+      "bytes": 2517,
+      "sha256": "254722f6c5c3ecad3946d1b7dc611977e292b0b36b9174df58158a40dd0b4eb1"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/final-run/README.md",
+      "bytes": 1725,
+      "sha256": "4bd47311aad3a96fbfb3cf3f8b7c30a0930b4fad5a81c8ab399bdad08b06a2a2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/final-run/checkpoints.json",
+      "bytes": 64567,
+      "sha256": "6d42efba647fae0ff0879f0637af8036ec8c604cdbf863f7b0e9f4b6c646819e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/final-run/harness.py",
+      "bytes": 28996,
+      "sha256": "12802c114a1044e687152eb31572c047f2705d2df0d693c0f44f458520961ca8"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/final-run/playlog.jsonl",
+      "bytes": 245018,
+      "sha256": "5dc325222ee7f9cbeda8f450fece55b2b341d9e716f2e62ba7787874edbb2abd"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/final-run/raw_profiles.jsonl",
+      "bytes": 34479,
+      "sha256": "4a6a21917d5b1241b0ba386db29393c4e5e1555f2bcd1fa7e7875c007400dc06"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/final-run/results.json",
+      "bytes": 64567,
+      "sha256": "eaa190ff94fd4627caeae74b89724c740b1be21395f8e19affd5cb6a2d95be66"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/final-run/start.png",
+      "bytes": 159903,
+      "sha256": "458bae5f18c969769271298598ae299ecfad7960333081c9c3053a6a2364a01a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/final-run/validate_export.py",
+      "bytes": 6496,
+      "sha256": "2dcc9771cd1e138213dc3b8f5dd76e6614edbaa6861964869996f43e9db55adc"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/harness-baseline-incomplete.py",
+      "bytes": 20943,
+      "sha256": "a01c924ddb2af5e7acb6ff694330816487ff61237dceb78c7b37addf90b2d896"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/harness-final-template.py",
+      "bytes": 28996,
+      "sha256": "8799230444426c55e39b58e720f670b8f481fe21bddea9d9287e82bd2b3e51a2"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/harness.py",
+      "bytes": 20943,
+      "sha256": "a01c924ddb2af5e7acb6ff694330816487ff61237dceb78c7b37addf90b2d896"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/monitor-low/README.md",
+      "bytes": 2012,
+      "sha256": "5140ba6a610b812911d6d8b7194d5ef51da6086796a5a0cfc50dbff50ef9154f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/monitor-low/playlog.jsonl",
+      "bytes": 15016,
+      "sha256": "924aaf3c433a3d7f7711064e77e15f155f02858ae73f2d284c7fbc11ecd20798"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/monitor-low/snapshots.json",
+      "bytes": 6535,
+      "sha256": "2112670abe625582cef5ca8155ebc915a41b3ddab82883ea070098f14b13daae"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/monitor-low/terminal-reconciliation.json",
+      "bytes": 586,
+      "sha256": "7e4d1242c35d40326d2b801ad3f979cdca67299463c512c0056c21ce30143f5a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/playlog.jsonl",
+      "bytes": 26272,
+      "sha256": "33a2d53a9bfa5bee368729418f5ac461977c3de41cf73d5fa36f85aa34a2142e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/raw_profiles.jsonl",
+      "bytes": 2007,
+      "sha256": "ec951a0c9ca3185482a7e65482ac9203dd0531d36b13b006edc13fe312ac7465"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/results.json",
+      "bytes": 5158,
+      "sha256": "e9541483a9b0728d8e04f58dd0b00d028e9b1b9e4a2176766518b1f49415c70f"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/soak/start.png",
+      "bytes": 159903,
+      "sha256": "458bae5f18c969769271298598ae299ecfad7960333081c9c3053a6a2364a01a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/verify_archives.py",
+      "bytes": 2726,
+      "sha256": "e963e9b1e17eccebb0db252bde03de4bc81046a524053d33559c39c11528259b"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/README.md",
+      "bytes": 14941,
+      "sha256": "b1e791537c298afebd38b9d6cc536f01c059eff8b3e20e7086b13091bc754835"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/browser-fixtures.json",
+      "bytes": 2161,
+      "sha256": "f539a2cc18d5c43722c2ee876a39073d234a45ceeb515f3b2bb066f40eccf8dd"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/browser-population-results.json",
+      "bytes": 19302,
+      "sha256": "d6543132b858f1df5c0e3917c2d1728b6e3f8b77c7f7f272cea5019603ae7d22"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/browser_population.py",
+      "bytes": 21372,
+      "sha256": "0ea4a41c58f0beb229fff41eb40cd9bee06ad07cf0957dba59d917c2ebfad85a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/checkpoints.json",
+      "bytes": 220210,
+      "sha256": "8367262543094f88855997e7bd98ca280106ef33ca2962e52cbecc633f8bdec9"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/daily-series.json",
+      "bytes": 37666012,
+      "sha256": "5eab0686b9779d0d72c90eb56762d26e38838cb5df0728082d21072d524d026c"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/failure.json",
+      "bytes": 1940,
+      "sha256": "1bc3a0b56b2ad4537c9011bd3ae04176508b82ad250cd8a6686d453d02fbd09e"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/make_browser_fixtures.mjs",
+      "bytes": 5143,
+      "sha256": "50e861daebf950f8d19c8ae43e7123d9cf252a7ef6200edad1e72749138f04fe"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/playlog.jsonl",
+      "bytes": 22779968,
+      "sha256": "a63a7b6424a588af5e4dc76b49858bba401680a7018c7e5ec70d98b104957f27"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/population-cases.json",
+      "bytes": 13594,
+      "sha256": "94ca896b98af6c624ed9fd36f07d30033c6f69d2307631888683b144566e515a"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/population-export.json",
+      "bytes": 2817316,
+      "sha256": "638beffad4ae3265c81244e2f29e513d10d8e9f9de219e7c84c14a43066195b5"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/population-overcapacity-save.json",
+      "bytes": 1319813,
+      "sha256": "88e894e3a0e20ead4c39879ff4d1305e5f395cf4efe0378a8941c80c6160e53c"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/population-zero-save.json",
+      "bytes": 82983,
+      "sha256": "928dfd7d752ac550201e1f79c7b3dee04cd3f0aaa84cc5e6a2a9572a559db3e8"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/results.json",
+      "bytes": 351172,
+      "sha256": "5434d0e7de9907d609db28d7c285f8f77c18847446767adc158453714e24c0c7"
+    },
+    {
+      "path": "reports/playtests/20261004-deep-qa/world/run.mjs",
+      "bytes": 36655,
+      "sha256": "7118aed505a136d83e0b4dddb3badf90b5d3a7f6324a0339817cf38fd5d23a35"
+    },
+    {
+      "path": "reports/v1/20261004-v1-delivery-summary.md",
+      "bytes": 31742,
+      "sha256": "7d06cc1c1790ab00b6071a6d153ec512c1751cfadeb4f9a098f968f0e2295b5f"
+    },
+    {
+      "path": "tickets/20261004-deep-qa.md",
+      "bytes": 9709,
+      "sha256": "45a6fe43ca43218c3e660d66ed8523e14d9ef601acd1e951d74b18cd20cdea88"
+    }
+  ],
+  "exclusions": [
+    "reports/playtests/20261004-deep-qa/delivery-scope.json",
+    "reports/playtests/20261004-deep-qa/playlog.jsonl",
+    "review/** independent review output"
+  ],
+  "notes": "Root playlog and manifest self-reference excluded; archives verified independently. No source changes after accepted c22de4e. Native Safari/iPhone/Android remain blocked."
+}

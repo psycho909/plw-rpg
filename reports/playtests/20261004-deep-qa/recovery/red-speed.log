@@ -1,0 +1,43 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/stores/gameStore.test.ts -t retries the checkpoint before resuming
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/stores/gameStore.test.ts (17 tests | 3 failed | 14 skipped) 65ms
+     × retries the checkpoint before resuming at speed 1 33ms
+     × retries the checkpoint before resuming at speed 5 16ms
+     × retries the checkpoint before resuming at speed 20 15ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > retries the checkpoint before resuming at speed 1
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > retries the checkpoint before resuming at speed 5
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > retries the checkpoint before resuming at speed 20
+AssertionError: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ src/stores/gameStore.test.ts:93:27
+     91|     storage.setItem.mockImplementation(() => { throw new Error('quota'…
+     92|     game.save()
+     93|     expect(game.setSpeed).toBeTypeOf('function')
+       |                           ^
+     94|     storage.setItem.mockClear()
+     95|     game.setSpeed(0)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 14 skipped (17)
+   Start at  02:33:30
+   Duration  395ms (transform 133ms, setup 0ms, import 204ms, tests 65ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

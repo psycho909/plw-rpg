@@ -1,0 +1,44 @@
+{
+  "status": "confirmed_bug_before_fix",
+  "at": "2026-10-04T02:31:10.246260+00:00",
+  "baselineCommit": "738bc0010c549fa3fb2420437d171f5aa2a043a0",
+  "sourceHashes": {
+    "src/stores/gameStore.ts": "3ec1c6d99073b6236cf6b3aa53eea19e1ddd9cbbd15737127083e9da20543246",
+    "src/stores/gameStore.test.ts": "c7079731b4293be6e659740a42d410f419f3dde17563c28a5f942efe5c8952c5",
+    "src/App.vue": "ce5002b9e63c0f1e8bdcf90807abbc7f7057c94360e9fcea1951097d0b578b22"
+  },
+  "evidence": "../root-checks/quota-resume.json",
+  "observed": {
+    "initialMemory": 486,
+    "afterX20": 489,
+    "afterSeasonWait": 43689,
+    "persistedTime": 481,
+    "oldRawUnchanged": true,
+    "recoveredPendingOnce": true,
+    "pageErrors": 0
+  },
+  "diagnosis": "Confirmed recovery-boundary bug, not silent corruption: known checkpoint failure sets speed=0, but act/advance and App direct speed writes can resume unpersisted progress.",
+  "authority": [
+    "tickets/20261004-deep-qa.md: confirmed major bug diagnosis and necessary minimal repair",
+    "docs/UI.md: progress-save failure pauses time and preserves recovery notice",
+    "docs/plans/20261003-astra-optimization.md O1: retry checkpoint at shared entry before next progress"
+  ],
+  "minimalFix": "When saveError is already known, require successful save of current state and pending before act, advance, or positive setSpeed. Do not gate journalError alone, rollback first failed operation, throttle saves, discard pending, or delete archives. Viewing/export/manual retry/confirmed reset remain available.",
+  "skills": [
+    "cloud-environment-onboarding:setup (existing ready environment; coding authorized separately by current ticket)",
+    "cloud-environment:cloud-environment-runtime",
+    "matt-skills-curated:implement (repository verification adaptation)",
+    "matt-skills-curated:tdd",
+    "frontend-design-premium:frontend-design",
+    "frontend-design-premium:frontend-design-premium 1.4.0 (narrow existing interaction wiring only)"
+  ],
+  "validationPlan": [
+    "act callback not invoked under persistent checkpoint failure",
+    "advance leaves full state/time/pending unchanged",
+    "resume speeds retry checkpoint before starting",
+    "recovered checkpoint contains old pending before next action; committed once",
+    "archive-only failure stays playable; double fault/reset regression",
+    "full unit suite and vue-tsc; root owns new production build, real browser, final soak"
+  ],
+  "limits": "Fault injection uses disposable local data. Parent runtime evidence establishes baseline; this worker has not run fixed-build browser validation. No network, dependencies, Git mutation, or deployment."
+}

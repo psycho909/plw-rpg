@@ -1,0 +1,26 @@
+1791100350202	geckodriver	INFO	Listening on 127.0.0.1:60691
+1791100350305	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/tmp/plw-rpg-qa08-brow ... efox-esr" "--marionette" "-headless" "-no-remote" "-profile" "/tmp/plw-rpg-qa08-browsers/webdriver-tmp/rust_mozprofileU4Eyci"
+*** You are running in headless mode.
+1791100350515	Marionette	INFO	Marionette enabled
+[106184] Sandbox: writing /proc/self/uid_map: EROFS
+1791100350613	Marionette	INFO	Listening on port 43163
+Read port: 43163
+[106197] Sandbox: writing /proc/self/uid_map: EROFS
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+[106257] Sandbox: writing /proc/self/uid_map: EROFS
+console.error: RSLoader: 
+  Failed to retrieve recipes from Remote Settings
+  Message: Error: Could not sync nimbus-desktop-experiments: get-exception
+  Stack:
+    RemoteSettingsSyncError@resource://nimbus/lib/RemoteSettingsExperimentLoader.sys.mjs:1415:5
+getRecipesFromCollection@resource://nimbus/lib/RemoteSettingsExperimentLoader.sys.mjs:687:13
+
+[Parent 106120, Main Thread] WARNING: g_object_get: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file toolkit/xre/nsSigHandlers.cpp:200
+
+(firefox-esr:106120): GLib-GObject-CRITICAL **: 07:52:41.704: g_object_get: assertion 'G_IS_OBJECT (object)' failed
+1791100363689	Marionette	INFO	Stopped listening on port 43163
+[Parent 106120, IPC I/O Parent] WARNING: process 106257 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+JavaScript error: resource://gre/modules/PrivateBrowsingUtils.sys.mjs, line 50: TypeError: can't access property "QueryInterface", aWindow.docShell is null
+[Parent 106120, IPC I/O Parent] WARNING: process 106184 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+[Parent 106120, IPC I/O Parent] WARNING: process 106197 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+1791100365932	webdriver::server	INFO	Shutting down
