@@ -37,7 +37,7 @@ const successors = computed(() => game.state.npcs.filter(n => n.isAlive && n.age
 const saveWarning = computed(() => game.saveBlocked ? '原始存檔已保留。現在的世界不會覆蓋它；確認後可從選單重建世界。' : [game.saveError, game.journalError].filter(Boolean).join(' '))
 function openWindow(id: WindowId) { if (c.value.isAlive || id === 'successor') pane.value = id }
 function closeWindow() { if (c.value.isAlive) pane.value = null }
-function setSpeed(speed: number) { if (speed) lastSpeed.value = speed; game.speed = speed }
+function setSpeed(speed: number) { game.setSpeed(speed); if (game.speed) lastSpeed.value = game.speed }
 function openNpc(id: string) { selectedNpc.value = id; openWindow('npc') }
 function selectInteraction(target: Interaction) {
   if (target.npcId) openNpc(target.npcId)
@@ -56,7 +56,7 @@ function go(position: Position) {
 function move(dx: number, dy: number) { game.act(() => movePlayer(game.state, dx, dy)) }
 function wait(minutes: number) {
   if (game.state.combat || game.state.dungeon.inDungeon || !c.value.isAlive) { game.message = '請先完成戰鬥或離開礦坑。'; return }
-  game.advance(minutes); game.message = '時間繼續前進。聚落與森林都有自己的生活。'
+  game.advance(minutes); if (!game.saveError) game.message = '時間繼續前進。聚落與森林都有自己的生活。'
 }
 function rebuild() { game.reset(); pane.value = null }
 function keydown(event: KeyboardEvent) {

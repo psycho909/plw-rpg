@@ -63,11 +63,18 @@ export const useGameStore = defineStore('game', () => {
     state.value = createGame(); offline.value = null; speed.value = 1; saveBlocked.value = false
     journal = { ...emptyJournal(), pending }; record('reset', before, state.value.events.map(e => ({ ...e })), '重建新的世界；先前遊玩紀錄保留。'); save(true)
   }
+  function canProgress() { return !saveError.value || save() }
+  function setSpeed(next: number) {
+    if (next && !canProgress()) return
+    speed.value = next
+  }
   function advance(minutes: number) {
+    if (!canProgress()) return
     const before = state.value.worldTime, captured = captureEvents(state.value, () => simulate(state.value, minutes))
     if (state.value.worldTime !== before) { record('time', before, captured.events, '世界時間繼續前進。'); save() }
   }
   function act(action: () => string | boolean) {
+    if (!canProgress()) return
     const before = state.value.worldTime, sequence = state.value.eventSequence, captured = captureEvents(state.value, action), result = captured.result
     message.value = typeof result === 'string' ? result || state.value.events.at(-1)?.message || '完成。' : result ? '已到達。' : '目前無法移動。'
     if (result === '' || result === true || before !== state.value.worldTime || sequence !== state.value.eventSequence) {
@@ -84,5 +91,5 @@ export const useGameStore = defineStore('game', () => {
     if (!archiveAvailable) journalError.value = '紀錄庫暫時無法讀取；匯出包含待補寫紀錄與目前進度，尚未包含全部舊紀錄。'
   }
   if (!saveBlocked.value) save()
-  return { state, speed, message, savedAt, saveBlocked, saveError, offline, character, save, reset, advance, act, journalError, pendingRecords, exportJournal }
+  return { state, speed, setSpeed, message, savedAt, saveBlocked, saveError, offline, character, save, reset, advance, act, journalError, pendingRecords, exportJournal }
 })
