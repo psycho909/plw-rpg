@@ -9,8 +9,9 @@
 - Branch: work
 - Remote: origin (psycho909/plw-rpg)
 - Base commit: 2e8ad94132b0e1bff11c971f40185ce92afae06e
-- Working tree: 本次V2工程與證據納入交付commit；以接手時git status核對。
+- Working tree: 工程候選版caede8a已commit/push且明確fetch work核對HEAD=origin/work、src符合驗證指紋；本handoff與Git證據的最後文件commit再同步。接手時核對最新git status及遠端。
 - Sync target: origin/work
+- Fetch command: git fetch origin work:refs/remotes/origin/work（目前remote.origin.fetch只追main，plain fetch不會更新work追蹤ref）
 
 ## Goal and Acceptance
 正式規格、Scope與Acceptance以Ticket為正本。V2-0～V2-6已實作；V2-7真人Fun Gate未驗收，不宣告V2成功，不開始V3。

@@ -1,0 +1,11 @@
+{
+  "candidateCommit": "caede8a77c064b2c5ad566ff07c2292ef945ee3b",
+  "originWorkAfterPushAndExplicitFetch": "caede8a77c064b2c5ad566ff07c2292ef945ee3b",
+  "headEqualsRemote": true,
+  "candidateSourceMatchesVerifiedManifest": true,
+  "remoteContainsHandoff": true,
+  "fetchCommand": "git fetch origin work:refs/remotes/origin/work",
+  "fetchReason": "remote.origin.fetch tracks main only; plain git fetch origin does not update origin/work",
+  "publication": "work only; no main merge, PR or deploy",
+  "note": "Final metadata changes must also be pushed and verified; no self-referencing commit hash is stored."
+}
