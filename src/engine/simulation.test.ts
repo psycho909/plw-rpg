@@ -88,9 +88,11 @@ describe('characters, movement and autonomous residents', () => {
     const s = createGame(), id = s.npcs[0]!.id
     expect(chooseSuccessor(s, id)).toBe(false)
     die(s, player(s), '測試傷勢'); simulate(s, day)
-    const time = s.worldTime, history = s.history.length
+    const time = s.worldTime, history = structuredClone(s.history)
     expect(chooseSuccessor(s, id)).toBe(true)
-    expect(s.worldTime).toBe(time); expect(s.history).toHaveLength(history + 1)
+    expect(s.worldTime).toBe(time); expect(s.history.slice(0, history.length)).toEqual(history)
+    expect(s.history.at(-1)?.type).toBe('character.successor')
+    expect(s.history.slice(history.length).every(event => ['character.successor', 'identity.formed'].includes(event.type))).toBe(true)
     expect(s.activeCharacterId).toBe(id); expect(s.npcs.some(n => n.id === id)).toBe(false)
     expect(s.characters[0]!.isAlive).toBe(false)
   })

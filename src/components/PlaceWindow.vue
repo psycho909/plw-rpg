@@ -2,7 +2,8 @@
 import { computed } from 'vue'
 import { BUILDINGS, CONFIG, DUNGEON, ITEMS, REGIONS } from '../data/config'
 import type { ItemId } from '../domain/types'
-import { canVisit, encounter, enterDungeon, farm, gather, hire, rest, trade } from '../engine/actions'
+import { buyPrice, canVisit, encounter, enterDungeon, farm, gather, hire, hireTerms, rest, trade } from '../engine/actions'
+import { npcCanWork } from '../engine/npcLife'
 import { distance, stageIndex } from '../engine/simulation'
 import { buildingIcons, itemIcons } from '../presentation/icons'
 import type { PlaceId } from '../presentation/worldUI'
@@ -14,9 +15,11 @@ const game = useGameStore()
 const c = computed(() => game.character)
 const shop = computed(() => props.place === 'store' || props.place === 'blacksmith' ? props.place : null)
 const products = computed(() => (Object.keys(ITEMS) as ItemId[]).filter(i => props.place === 'blacksmith' ? ['sword', 'armor'].includes(i) : !['sword', 'armor'].includes(i)))
-const mercenaries = computed(() => game.state.npcs.filter(n => n.isAlive && n.job === 'mercenary' && n.age >= 15 && !game.state.party.some(p => p.npcId === n.id)))
+const mercenaries = computed(() => game.state.npcs.filter(n => n.job === 'mercenary' && npcCanWork(game.state, n.id) && !game.state.party.some(p => p.npcId === n.id))
+  .map(npc => ({ id: npc.id, name: npc.name, age: npc.age, level: npc.level, injuredUntil: npc.injuredUntil })))
+const terms = computed(() => hireTerms(game.state))
 const blocked = computed(() => !c.value.isAlive || !!game.state.combat || game.state.dungeon.inDungeon)
-const price = (item: ItemId) => Math.ceil(ITEMS[item].price * (stageIndex(game.state) === 2 ? .8 : 1))
+const price = (item: ItemId) => buyPrice(game.state, item)
 const canSell = (item: ItemId) => c.value.inventory[item] > (c.value.equipment.weapon === item || c.value.equipment.armor === item ? 1 : 0)
 const rumor = computed(() => game.state.threat.bossAlive ? '北方出現了哥布林酋長，商人都不敢出門了。' : game.state.threat.threatLevel >= 2 ? '森林裡的腳步聲愈來愈多，出門記得找個伴。' : '最近林子還算安靜。聽說山谷裡藏著一座舊礦坑。')
 </script>
@@ -60,9 +63,10 @@ const rumor = computed(() => game.state.threat.bossAlive ? '北方出現了哥�
     <p class="scene-description">🍺 酒館 · 17:00–24:00</p><p class="rumor">「{{ rumor }}」</p>
     <p v-if="!canVisit(game.state, 'tavern')" class="inline-warning">尚未營業或離店門太遠。傍晚再來坐坐。</p>
     <button :disabled="!canVisit(game.state, 'tavern') || c.gold < 3" @click="game.act(() => rest(game.state, 'tavern'))">喝一杯、歇歇腳 · 3 金／1 小時</button>
-    <h3 class="section-title">找一位同行者 · {{ game.state.party.length }}/2</h3><p class="muted">契約 3 日、日薪 4 金；聘金 {{ 20 + stageIndex(game.state) * 5 }} 金。最多兩名同行者，休養中的傭兵無法加入。</p>
+    <h3 class="section-title">找一位同行者 · {{ game.state.party.length }}/2</h3><p class="muted">契約 3 日、日薪 4 金；聘金 {{ terms.hireCost }} 金。最多兩名同行者，休養中的傭兵無法加入。</p>
+    <p v-if="!terms.eligible" class="inline-warning">傭兵目前不願接受你的委託；先修復與橡谷的信任。</p>
     <p v-if="!mercenaries.length" class="empty-state">今天沒有可聘請的傭兵。</p>
-    <div v-for="npc in mercenaries" :key="npc.id" class="mercenary"><div>⚔️ {{ npc.name }}<small>{{ npc.age }} 歲 · Lv.{{ npc.level }} · {{ npc.injuredUntil > game.state.worldTime ? '休養中' : '可同行' }}</small></div><button :disabled="!canVisit(game.state, 'tavern') || game.state.party.length >= 2 || npc.injuredUntil > game.state.worldTime || c.gold < 20 + stageIndex(game.state) * 5" @click="game.act(() => hire(game.state, npc.id))">聘請</button></div>
+    <div v-for="npc in mercenaries" :key="npc.id" class="mercenary"><div>⚔️ {{ npc.name }}<small>{{ npc.age }} 歲 · Lv.{{ npc.level }} · {{ npc.injuredUntil > game.state.worldTime ? '休養中' : '可同行' }}</small></div><button :disabled="!canVisit(game.state, 'tavern') || game.state.party.length >= 2 || npc.injuredUntil > game.state.worldTime || !terms.eligible || c.gold < terms.hireCost" @click="game.act(() => hire(game.state, npc.id))">聘請</button></div>
   </template>
   <template v-else-if="place === 'inn'">
     <div class="scene-illustration" aria-hidden="true">┌─┐　🛏️　┌─┐</div><p>旅店隨時營業。睡一晚，恢復生命與體力。</p>

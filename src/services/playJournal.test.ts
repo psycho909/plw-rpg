@@ -3,13 +3,31 @@ import { createGame } from '../engine/simulation'
 import { serialize } from './saveService'
 import { createPlayJournal, emptyJournal, packCheckpoint, unpackCheckpoint, type PlayRecord } from './playJournal'
 
+function versionOneFixture(lastSavedAt = 100000) {
+  const raw = JSON.parse(serialize(createGame(88), lastSavedAt))
+  delete raw.life
+  raw.saveVersion = 1
+  return JSON.stringify(raw)
+}
+
 afterEach(() => vi.unstubAllGlobals())
 
 describe('atomic local checkpoint envelope', () => {
-  it('loads an existing version1 world and starts a separate journal', () => {
-    const state = createGame(88), loaded = unpackCheckpoint(serialize(state, 100000))
-    expect(loaded.state).toEqual(state); expect(loaded.imported).toBe(true)
+  it('migrates a real V1 world and starts a separate journal', () => {
+    const loaded = unpackCheckpoint(versionOneFixture())
+    expect(loaded.state.saveVersion).toBe(2); expect(loaded.state.life.openingSeen).toBe(true); expect(loaded.imported).toBe(true)
     expect(loaded.journal.pending).toEqual([])
+  })
+  it('preserves historical offline journal entries unchanged during V1 migration', () => {
+    const raw = JSON.parse(versionOneFixture()), journal = emptyJournal()
+    journal.worldId = 'world-1'
+    journal.pending.push({ id: 'offline-old', worldId: journal.worldId, at: 90000, kind: 'offline', from: 480, to: 960,
+      characterId: 'player-1', message: '既有的 V1 離線紀錄', events: [] })
+    raw.playJournal = journal
+    const loaded = unpackCheckpoint(JSON.stringify(raw))
+    expect(loaded.state.worldTime).toBe(480)
+    expect(loaded.journal.pending).toEqual(journal.pending)
+    expect(loaded.imported).toBe(false)
   })
   it('round trips both the checkpoint and pending records without engine metadata', () => {
     const state = createGame(), journal = emptyJournal()

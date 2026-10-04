@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
-import { BUILDINGS, CONFIG, DUNGEON, REGIONS } from '../data/config'
+import { BUILDINGS, CONFIG } from '../data/config'
 import type { Position, Tile } from '../domain/types'
-import { distance } from '../engine/simulation'
-import { buildingIcons, jobIcons, stages, terrainIcons } from '../presentation/icons'
-import { worldMarks } from '../presentation/worldUI'
+import { stages } from '../presentation/icons'
+import { projectWorld } from '../presentation/worldProjection'
 import { useGameStore } from '../stores/gameStore'
 
 const props = withDefaults(defineProps<{ overview?: boolean }>(), { overview: false })
@@ -12,28 +11,7 @@ const emit = defineEmits<{ travel: [position: Position] }>()
 const game = useGameStore()
 const viewport = ref<HTMLElement>()
 const map = ref<HTMLElement>()
-const marks = computed(() => worldMarks(game.state))
-const npcs = computed(() => {
-  const result = new Map<string, typeof game.state.npcs>()
-  for (const npc of game.state.npcs.filter(n => n.isAlive)) {
-    const key = `${npc.position.x},${npc.position.y}`
-    result.set(key, [...(result.get(key) ?? []), npc])
-  }
-  return result
-})
-const cells = computed(() => game.state.tiles.map(tile => {
-  const key = `${tile.x},${tile.y}`, c = game.character
-  const isPlayer = c.isAlive && distance(c.position, tile) === 0
-  const building = tile.discovered && tile.building && game.state.settlement.buildings.includes(tile.building) ? tile.building : null
-  const people = tile.discovered ? npcs.value.get(key) ?? [] : []
-  const mark = marks.value.get(key)
-  const dungeon = tile.x === DUNGEON.position.x && tile.y === DUNGEON.position.y && game.state.dungeon.discovered
-  const terrain = tile.terrain === 'road' ? tile.x === 13 ? tile.y === 7 || tile.y === 10 ? '┼' : '│' : '─' : tile.terrain === 'forest' && (tile.x * 3 + tile.y) % 7 === 0 ? '🌲' : terrainIcons[tile.terrain]
-  const icon = !tile.discovered ? '░' : isPlayer ? '🙂' : dungeon ? '🕳️' : mark?.kind === 'crop' ? mark.icon : building ? buildingIcons[building] : people[0] ? jobIcons[people[0].job] : mark?.icon ?? terrain
-  const object = !tile.discovered ? '未探索' : dungeon ? DUNGEON.name : mark?.kind === 'crop' ? mark.label : building ? BUILDINGS[building].name : mark?.label
-  const label = `${tile.x}, ${tile.y}：${tile.discovered ? REGIONS[tile.regionId].name : '未知區域'}${object ? `，${object}` : ''}${isPlayer ? '，你在這裡' : ''}${people.length ? `，${people.map(n => n.name).join('、')}` : ''}`
-  return { tile, key, isPlayer, building, people, mark, icon, object, label }
-}))
+const cells = computed(() => projectWorld(game.state))
 async function followPlayer() {
   await nextTick()
   if (props.overview || !viewport.value || !map.value) return

@@ -1,8 +1,9 @@
 import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest'
+import { computed, isReactive, nextTick, watch, watchEffect } from 'vue'
 import { createPinia, setActivePinia } from 'pinia'
 import { createGame, player, simulate, walkTo } from '../engine/simulation'
 import { BUILDINGS } from '../data/config'
-import { rest } from '../engine/actions'
+import { equip, rest, usePotion } from '../engine/actions'
 import { calendar } from '../engine/calendar'
 import { SAVE_KEY, serialize } from '../services/saveService'
 import { movePlayer } from '../engine/simulation'
@@ -16,6 +17,19 @@ const storage = { getItem: () => saved, setItem: vi.fn((_key: string, value: str
 beforeEach(() => { saved = null; storage.setItem.mockReset().mockImplementation((_key, value) => { saved = value }); vi.stubGlobal('localStorage', storage); setActivePinia(createPinia()); vi.useFakeTimers(); vi.setSystemTime(100000) })
 afterEach(() => { vi.useRealTimers(); vi.unstubAllGlobals(); vi.restoreAllMocks() })
 
+function startedGame() {
+  const game = useGameStore()
+  game.startLife()
+  return game
+}
+
+function versionOneFixture(lastSavedAt = 1000) {
+  const raw = JSON.parse(serialize(createGame(88), lastSavedAt))
+  delete raw.life
+  raw.saveVersion = 1
+  return JSON.stringify(raw)
+}
+
 describe('safe browser persistence', () => {
   it('preserves corrupt saves and blocks automatic and manual overwrite', () => {
     saved = '{broken'
@@ -23,12 +37,28 @@ describe('safe browser persistence', () => {
     expect(game.message).not.toBe(''); expect(game.save()).toBe(false); expect(game.save(true)).toBe(false)
     expect(saved).toBe('{broken'); expect(storage.setItem).not.toHaveBeenCalled()
   })
-  it('loads a valid world and applies offline time only through the shared simulation', () => {
-    const state = createGame(88); saved = serialize(state, 90000)
+  it('migrates V1 without offline advancement and retains the historical world checkpoint', () => {
+    const state = createGame(88); saved = versionOneFixture(1000)
     const game = useGameStore()
-    expect(game.state.worldSeed).toBe(88); expect(game.state.worldTime).toBe(state.worldTime + 20)
-    expect(game.offline?.minutes).toBe(20)
-    expect(game.save(true)).toBe(true); expect(game.savedAt).toBe(100000)
+    expect(game.state.worldSeed).toBe(88)
+    expect(game.state.worldTime).toBe(state.worldTime)
+    expect(game.state.rngState).toBe(state.rngState)
+    expect(game.state.saveVersion).toBe(2)
+    expect(game.speed).toBe(1)
+    expect(game.offline).toBe(null)
+    expect(JSON.parse(saved!).saveVersion).toBe(2)
+    expect(game.savedAt).toBe(100000)
+  })
+  it('keeps historical offline journal records but adds no offline load record', () => {
+    const raw = JSON.parse(versionOneFixture(1000)), worldTime = raw.worldTime
+    const historical = { id: 'old-offline', worldId: 'old-world', at: 90000, kind: 'offline', from: worldTime,
+      to: worldTime + 480, characterId: raw.activeCharacterId, message: '既有紀錄', events: [] }
+    raw.playJournal = { version: 1, worldId: 'old-world', pending: [historical] }
+    saved = JSON.stringify(raw)
+    const game = useGameStore()
+    expect(game.state.worldTime).toBe(worldTime)
+    expect(unpackCheckpoint(saved!).journal.pending).toEqual([historical])
+    expect(unpackCheckpoint(saved!).journal.pending.some(record => record.kind === 'offline')).toBe(true)
   })
   it('reports storage failure without silently clearing state', () => {
     const game = useGameStore(), time = game.state.worldTime
@@ -48,10 +78,33 @@ describe('safe browser persistence', () => {
   })
   it('allows explicit reset to replace corrupt data after the UI confirmation', () => {
     saved = '{broken'; const game = useGameStore(); game.reset()
-    expect(game.save()).toBe(true); expect(JSON.parse(saved!).saveVersion).toBe(1)
+    expect(game.save()).toBe(true); expect(JSON.parse(saved!).saveVersion).toBe(2)
+    expect(game.speed).toBe(0); expect(game.state.life.openingSeen).toBe(false)
+  })
+  it('keeps a new world paused until startLife and triggers shallow world updates', () => {
+    const game = useGameStore(), before = game.state.worldTime
+    expect(SAVE_KEY).toBe('oakvale-v1')
+    expect(game.speed).toBe(0)
+    expect(game.state.life.openingSeen).toBe(false)
+    expect(isReactive(game.state)).toBe(false)
+    expect(isReactive(game.state.characters)).toBe(false)
+    game.setSpeed(20)
+    game.advance(60)
+    expect(game.speed).toBe(0)
+    expect(game.state.worldTime).toBe(before)
+
+    expect(game.startLife()).toBe(true)
+    expect(game.state.life.openingSeen).toBe(true)
+    expect(game.speed).toBe(1)
+    const observed = vi.fn()
+    const unwatch = watch(() => game.state.worldTime, observed, { flush: 'sync' })
+    game.advance(10)
+    expect(game.state.worldTime).toBe(before + 10)
+    expect(observed).toHaveBeenCalledWith(before + 10, before, expect.any(Function))
+    unwatch()
   })
   it('blocks the next action until the failed checkpoint can be saved', () => {
-    const game = useGameStore(), oldRaw = saved, before = game.state.worldTime, pending = game.pendingRecords
+    const game = startedGame(), oldRaw = saved, before = game.state.worldTime, pending = game.pendingRecords
     storage.setItem.mockImplementation(() => { throw new Error('quota') })
     game.act(() => movePlayer(game.state, 1, 0))
     expect(game.state.worldTime).toBe(before + 5)
@@ -72,8 +125,34 @@ describe('safe browser persistence', () => {
     expect(game.message).toBe('世界已儲存。')
     expect(unpackCheckpoint(saved!).state).toEqual(JSON.parse(failedState))
   })
+  it('updates character display dependencies after health, equipment and life changes', async () => {
+    const game = startedGame(), character = player(game.state)
+    character.hp = 10
+    character.inventory.sword = 1
+    const equipped = computed(() => game.character.equipment.weapon === 'sword')
+    let display = { hp: 0, potions: 0, equipped: false }
+    const stopDisplay = watchEffect(() => {
+      display = { hp: game.character.hp, potions: game.character.inventory.potion, equipped: equipped.value }
+    })
+    const lifeChanged = vi.fn()
+    const stopLife = watch(() => game.character.isAlive, lifeChanged)
+    try {
+      expect(display).toEqual({ hp: 10, potions: 2, equipped: false })
+      game.act(() => usePotion(game.state))
+      await nextTick()
+      expect(display).toEqual({ hp: 55, potions: 1, equipped: false })
+      game.act(() => equip(game.state, 'sword'))
+      await nextTick()
+      expect(display.equipped).toBe(true)
+      game.act(() => { character.isAlive = false; character.hp = 0; return '' })
+      await nextTick()
+      expect(display.hp).toBe(0)
+      expect(lifeChanged).toHaveBeenCalledWith(false, true, expect.any(Function))
+      expect(isReactive(game.state)).toBe(false)
+    } finally { stopDisplay(); stopLife() }
+  })
   it('blocks further time advancement while the failed checkpoint still cannot be saved', () => {
-    const game = useGameStore(), oldRaw = saved
+    const game = startedGame(), oldRaw = saved
     storage.setItem.mockImplementation(() => { throw new Error('quota') })
     game.act(() => movePlayer(game.state, 1, 0))
     const failedState = JSON.stringify(game.state), pending = game.pendingRecords
@@ -87,7 +166,7 @@ describe('safe browser persistence', () => {
     expect(game.message).toBe(game.saveError)
   })
   it.each([1, 5, 20])('retries the checkpoint before resuming at speed %s', (speed) => {
-    const game = useGameStore(), oldRaw = saved, state = JSON.stringify(game.state), pending = game.pendingRecords
+    const game = startedGame(), oldRaw = saved, state = JSON.stringify(game.state), pending = game.pendingRecords
     storage.setItem.mockImplementation(() => { throw new Error('quota') })
     game.save()
     expect(game.setSpeed).toBeTypeOf('function')
@@ -110,7 +189,7 @@ describe('safe browser persistence', () => {
     const appended: playJournal.PlayRecord[] = []
     const appendBatch = vi.fn(async (batch: playJournal.PlayRecord[]) => { appended.push(...batch) })
     vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
-    const game = useGameStore(), before = game.state.worldTime
+    const game = startedGame(), before = game.state.worldTime
     await Promise.resolve()
     expect(game.pendingRecords).toBe(0)
     const oldRaw = saved
@@ -146,7 +225,7 @@ describe('safe browser persistence', () => {
   it('continues actions, time, and resume when only the journal archive is unavailable', async () => {
     const appendBatch = vi.fn(async () => { throw new Error('archive unavailable') })
     vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
-    const game = useGameStore(), before = game.state.worldTime
+    const game = startedGame(), before = game.state.worldTime
     await Promise.resolve()
     expect(game.journalError).toContain('archive unavailable')
     expect(game.saveError).toBe('')
@@ -173,7 +252,7 @@ describe('safe browser persistence', () => {
       appended.push(...batch)
     })
     vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
-    const game = useGameStore(), oldRaw = saved!, old = unpackCheckpoint(oldRaw).journal
+    const game = startedGame(), oldRaw = saved!, old = unpackCheckpoint(oldRaw).journal
     await Promise.resolve()
     storage.setItem.mockImplementation(() => { throw new Error('quota') })
     game.act(() => movePlayer(game.state, 1, 0))
@@ -203,7 +282,7 @@ describe('safe browser persistence', () => {
     expect(game.journalError).toBe('')
   })
   it('saves movement and time immediately without manual saving', () => {
-    const game = useGameStore(), before = game.state.worldTime
+    const game = startedGame(), before = game.state.worldTime
     game.act(() => movePlayer(game.state, 1, 0))
     expect(unpackCheckpoint(saved!).state.characters[0]!.position).toEqual(game.character.position)
     expect(JSON.parse(saved!).playJournal.pending.at(-1).kind).toBe('action')
@@ -212,7 +291,7 @@ describe('safe browser persistence', () => {
     expect(JSON.parse(saved!).playJournal.pending.at(-1).kind).toBe('time')
   })
   it('immediately saves death-interrupted lodging and its failure events', () => {
-    const game = useGameStore(), character = game.character
+    const game = startedGame(), character = player(game.state)
     // Controlled fixture: reach the year boundary before exercising the real store action.
     walkTo(game.state, BUILDINGS.inn.position)
     simulate(game.state, 120 * 1440 - 30 - game.state.worldTime)
@@ -237,7 +316,7 @@ describe('safe browser persistence', () => {
     expect(record.events.some(event => event.type === 'player.rested')).toBe(false)
   })
   it('retains persisted pending records on reload without leaking metadata into the engine', () => {
-    const first = useGameStore(); first.advance(1440)
+    const first = startedGame(); first.advance(1440)
     const pending = JSON.parse(saved!).playJournal.pending
     setActivePinia(createPinia())
     const second = useGameStore()
@@ -246,14 +325,14 @@ describe('safe browser persistence', () => {
     expect(second.state.worldTime).toBe(first.state.worldTime)
   })
   it('records all events even when a single operation exceeds the visible log limit', () => {
-    const game = useGameStore()
+    const game = startedGame()
     game.act(() => { for (let i = 0; i < 220; i++) emit(game.state, 'test.event', 'world', `event ${i}`); return '' })
     expect(game.state.events).toHaveLength(150)
     const events = JSON.parse(saved!).playJournal.pending.at(-1).events
     expect(events).toHaveLength(220); expect(events[0].message).toBe('event 0')
   })
   it('retains the old world journal when explicitly rebuilding', () => {
-    const game = useGameStore(), old = JSON.parse(saved!).playJournal
+    const game = startedGame(), old = JSON.parse(saved!).playJournal
     game.reset()
     const current = JSON.parse(saved!).playJournal
     expect(current.worldId).not.toBe(old.worldId)
@@ -266,7 +345,7 @@ describe('safe browser persistence', () => {
     const appendBatch = vi.fn((): Promise<void> => Promise.reject(new Error(conflict)))
     appendBatch.mockImplementationOnce(() => new Promise<void>((_resolve, reject) => { rejectAppend = reject }))
     vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
-    const game = useGameStore(), initialTime = game.state.worldTime
+    const game = startedGame(), initialTime = game.state.worldTime
     // A newer checkpoint is saved while the initial journal transaction is unresolved.
     game.advance(10)
     const persistedCheckpoint = saved!, pending = unpackCheckpoint(persistedCheckpoint).journal.pending

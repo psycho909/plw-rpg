@@ -1,3 +1,4 @@
+import type { WorldLife } from './life'
 export type RegionId = 'village' | 'farmland' | 'forest' | 'mine' | 'unknown'
 export type LifeStage = 'child' | 'young' | 'adult' | 'middleAge' | 'elder'
 export type SkillId = 'combat' | 'farming' | 'mining' | 'woodcutting'
@@ -22,8 +23,9 @@ export interface NPC extends Character {
   injuredUntil: number
 }
 export interface Tile extends Position { terrain: 'water' | 'grass' | 'forest' | 'field' | 'mountain' | 'road'; regionId: RegionId; discovered: boolean; walkable: boolean; building?: BuildingId }
-export interface WorldEvent { id: number; at: number; type: string; category: Category; message: string }
+export interface WorldEvent { id: number; at: number; type: string; category: Category; message: string; tier?: 'transient' | 'gameplay' | 'major' | 'debug' }
 export interface GameState {
+  life: WorldLife
   saveVersion: number; worldSeed: number; rngState: number; worldTime: number; activeCharacterId: string
   characters: Character[]; npcs: NPC[]; tiles: Tile[]
   settlement: { name: string; stage: 'hamlet' | 'village' | 'town'; capacity: number; food: number; prosperity: number; safety: number; infrastructure: number; growth: number; buildings: BuildingId[] }

@@ -1,13 +1,41 @@
 import { CONFIG } from '../data/config'
 
-export function startLoop(advance: (minutes: number) => void, getSpeed: () => number, save: () => void) {
-  let last = performance.now(), remainder = 0, savedAt = last
-  const interval = setInterval(() => {
-    const now = performance.now(), elapsed = Math.max(0, now - last); last = now
-    remainder += elapsed / 1000 * CONFIG.realSecondMinutes * getSpeed()
-    const minutes = Math.floor(remainder); remainder -= minutes
-    if (minutes > 0) advance(minutes)
-    if (now - savedAt >= 10000) { save(); savedAt = now }
-  }, 100)
-  return () => clearInterval(interval)
+export type StopLoop = (() => void) & { flush: () => void }
+
+const TICK_MS = 100
+const SAVE_MS = 10000
+
+export function startLoop(advance: (minutes: number) => void, getSpeed: () => number, save: () => void,
+  monotonicNow: () => number = () => performance.now()): StopLoop {
+  let last = monotonicNow(), savedAt = last, remainder = 0, stopped = false
+
+  function consume(forceSave = false) {
+    if (stopped) return
+    const now = Math.max(last, monotonicNow())
+    const elapsed = now - last
+    last = now
+    const speed = getSpeed()
+    if (elapsed > 0 && Number.isFinite(speed) && speed > 0) {
+      remainder += elapsed / 1000 * CONFIG.realSecondMinutes * speed
+      const minutes = Math.floor(remainder)
+      if (minutes > 0) {
+        advance(minutes)
+        remainder -= minutes
+      }
+    }
+    if (forceSave || now - savedAt >= SAVE_MS) {
+      save()
+      savedAt = now
+    }
+  }
+
+  const timer = setInterval(() => consume(), TICK_MS)
+  const stop = (() => {
+    if (stopped) return
+    consume(true)
+    clearInterval(timer)
+    stopped = true
+  }) as StopLoop
+  stop.flush = () => consume(true)
+  return stop
 }

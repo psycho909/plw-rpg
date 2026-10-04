@@ -4,7 +4,7 @@
 
 ## 目的
 
-V1 瀏覽器原型。玩家控制一名居民，自由選擇耕作、工作、採集或冒險；NPC、人口、聚落、怪物與地下城沿同一時間軸自主演化。產品與驗收正本為 [SPEC.md](SPEC.md)。
+單機瀏覽器生活世界 RPG。玩家自由選擇耕作、工作、採集或冒險；NPC、人口、聚落、怪物與地下城沿同一時間軸自主演化。V2 在 V1 世界上加入人生身分與聲望、NPC 職涯和有限記憶、自宅／農地／農場事業、地方消息與世界請求。V1 產品規則見 [SPEC.md](SPEC.md)，V2 正式規格見 [V2-LIFE-EMERGENCE.md](docs/specs/V2-LIFE-EMERGENCE.md)。
 
 ## 快速開始
 
@@ -25,6 +25,20 @@ npm.cmd run dev
 Esc 開選單／關閉視窗，C 查看角色、I 查看物品、L 查看日誌、M 查看地圖與世界；歷史、旅人筆記與重建確認也在選單中。手機提供底部選單與方向控制。開啟視窗不會暫停時間，可使用時鐘旁或視窗底部的暫停按鈕。
 
 農田操作為整地、播種、等待兩日、收割。商店需走到建築旁並在營業時間交易。酒館與鐵匠鋪於聚落成長為村莊後解鎖。旅人筆記可等待一日、一季或一年，等待不會自動回血。角色死亡後選擇成年居民接續，世界不重置。
+
+新世界會先顯示開場，按「起身」後才開始時間。選單中的「這一生」、「住所與產業」及「地方消息與委託」可查看身分、聚落聲望、名下產業、近期消息和待處理請求。
+
+## V2 已實作內容與驗收狀態
+
+- V1 存檔可遷移至 V2：驗證完整舊世界後新增人生資料，保留原有世界時間、seed、RNG 與其他世界欄位。無效或不支援的存檔會保留原始資料並阻止自動覆蓋；重建仍須明確確認。目前存檔版本由 `src/data/config.ts` 的 `CONFIG.saveVersion` 管理，值為 `2`。
+- 世界只在目前遊戲 Session 中依所選倍率前進；開啟視窗不會暫停，瀏覽器背景計時延遲會在同一 Session 內補進。完整關閉頁面後世界凍結，重新載入不依據現實經過時間推進。
+- 身分由生活行為、技能、職涯與產業形成，允許同時累積農夫、熟練農夫、礦工、熟練礦工、冒險者、資深冒險者及農場主人。聚落聲望會影響身分視窗的稱號、居民對話、產業資格與傭兵聘用。
+- 傭兵聘金依聚落階段為 20／25／30 金；聲望低於 -25 時無法聘請，每 25 點正聲望折 1 金，最多折 4 金。契約為 3 日、日薪 4 金。
+- NPC 保存有上限的職涯、性格、掛心事項和結構化重要記憶。個人回憶只對親身相關的當代角色顯示；居民依職業、特質、接觸與事件傳聞得知有限消息，對話會參考其所知的記憶、職涯、玩家身分與聲望。
+- 自宅提供休息和儲物，農地與農場事業有聚落階段、金幣、聲望、位置及土地條件。農場事業由玩家親自供應食物：每次最多 10 份、每日最多 60 份；沒有 AFK 收入。
+- 「地方消息與委託」依地方、區域、傳聞、重大分類顯示有界近期消息，並提供食物、狩獵、鐵礦與傷者照料請求。地圖透過 World First projection 顯示已探索區域的居民、產業、作物和威脅標記；標記是既有世界狀態的呈現，不新增模擬實體。
+
+真人 Fun Gate 尚待 1–2 小時實際遊玩及玩家回答人生記憶／動機問題；自動化測試與程式實作不代表 Fun Gate 通過。
 
 ## 正式網站與部署
 
@@ -85,13 +99,13 @@ AGENTS 沿用按需讀取、授權內持續完成、G3 事件式更新、條件�
 | 變更類型 | 首選驗證 | 替代驗證或限制 |
 | --- | --- | --- |
 | 文件 | 根目錄 `git diff --check`、核對連結與 Ticket | 不證明執行行為 |
-| 程式模組 | 根目錄 `npm.cmd run test`；Vitest exit 0 | 包含 1／10／50 年 headless；無 DOM |
+| 程式模組 | 根目錄 `npm.cmd run test`；Vitest exit 0 | 包含 10／50／100 年整合及 500 年延續；無 DOM |
 | API | N/A（無後端） | 不呼叫外部 API |
-| UI | `npm.cmd run build`＋本機實際瀏覽器操作；可重現流程 `python reports/ui/20261003-world-first/verify.py` | Python 流程需 Playwright、Chromium 與已啟動的本機 Vite；使用可丟棄 context，build 不能代替操作驗收 |
-| 資料遷移 | N/A（V1 存檔 version 1） | 不支援版本明確拒絕並保留原始存檔 |
+| UI | `npm.cmd run build`＋本機實際瀏覽器操作；可重現流程 `python3 reports/v2/20261004-life-emergence/verify_browser.py` | Python 流程需 Playwright、Chromium 與 build 靜態服務（預設 5194，可用 PLW_V2_URL 指定）；使用可丟棄 context，build 不能代替操作驗收 |
+| 資料遷移 | `npm.cmd run test -- src/services/saveService.test.ts`；V1 遷移保留世界欄位、時間、seed 與 RNG | `npm.cmd run test -- src/stores/gameStore.test.ts` 覆蓋 V1 載入不補離線時間；無效或不支援存檔明確拒絕並保留原始存檔 |
 | 設定／依賴 | `npm.cmd ci`、`npm.cmd audit`、`npm.cmd run check` | `check` 執行 test＋type check＋build；未配置額外 lint runner |
 
-單元測試使用可丟棄的記憶體世界，不讀正式存檔、不呼叫網路；可重複執行。瀏覽器驗收使用獨立工作階段的本機存檔。驗收證據保存在對應 `tickets/20261002-v1-*.md`。
+單元測試使用可丟棄的記憶體世界，不讀正式存檔、不呼叫網路；可重複執行。瀏覽器驗收使用獨立工作階段的本機存檔。V2 驗收與已知限制見[開發與測試紀錄](reports/v2/20261004-life-emergence/README.md)，V1 證據保留在原 Ticket 與報告。
 
 每個實際存在的驗證入口須填寫工作目錄／命令、成功判準及必要環境；fallback 要說明不能證明的部分。若測試使用可丟棄 fixtures、無正式資料或外部副作用，可明確列為已授權的可重複執行檢查；未確認的安全條件不得先填為事實。驗證失敗先區分既有問題與本次回歸，必要證據無法取得時依 AGENTS 記錄阻塞。
 
@@ -128,13 +142,13 @@ AGENTS.md
 - `src/domain/types.ts`：可序列化人物、NPC、世界與戰鬥狀態。
 - `src/data/config.ts`：日曆、地圖、物品、職業、怪物與建築資料。
 - `src/engine/`：獨立於 Vue 的時間、RNG、移動、生活、戰鬥與每日演化；`gameLoop.ts` 提供單一排程。
-- `src/services/saveService.ts`：版本／資料驗證、序列化與最多 8 小時離線模擬。
+- `src/services/saveService.ts`：依 `CONFIG.saveVersion` 驗證與序列化存檔；V1→V2 遷移新增人生資料，不消耗舊 RNG，也不補算離線時間。
 - `src/services/playJournal.ts`：進度與待補寫紀錄一起保存；IndexedDB 追加、重送去重與完整紀錄讀取。
 - `src/stores/gameStore.ts` → `src/App.vue`：Pinia 接上 engine，Vue 負責 DOM／CSS Grid 呈現；Emoji 只放在 presentation／UI。
 - `src/components/`：世界地圖、情境內容與共用像素視窗／進度／訊息；`src/presentation/worldUI.ts` 從真實 state 產生附近互動與世界圖示。
 - `src/style.scss`：黑白復古 UI 的執行期 token 與響應式樣式；視覺正本為 `docs/design/DESIGN.md`。
 
-預設 30 日／季、120 日／年，真實每秒推進 2 遊戲分鐘，支援暫停／×1／×5／×20。離線固定使用 ×1 換算，最多 8 真實小時（40 遊戲日）；即使上次離開前暫停，重新開啟仍會處理離線演化。每次有效操作或世界時間推進立即存檔，每 10 秒及頁面隱藏／離開時再保存。損毀存檔禁止自動覆蓋；重建世界必須由介面確認。
+預設 30 日／季、120 日／年，真實每秒推進 2 遊戲分鐘，支援暫停／×1／×5／×20。新世界在開場按下「起身」前保持暫停；開始後只在目前 Session 依選定倍率推進。背景分頁的延遲會在同一 Session 補進，關閉頁面後不模擬離線時間。每次有效操作或世界時間推進立即存檔，每 10 秒及頁面隱藏／離開時再保存。損毀存檔禁止自動覆蓋；重建世界必須由介面確認。
 
 遊玩紀錄保存操作結果、前後遊戲時間及完整事件，介面只提供追加與「匯出遊玩紀錄」，沒有編輯或回退。進度與待補寫紀錄一起存入 localStorage，紀錄庫交易完成後才清除待送資料；重載會補寫且同一筆不重複。舊 version 1 存檔可載入，啟用前被裁切的事件無法補回。重建世界保留舊遊玩紀錄。
 
@@ -153,6 +167,7 @@ AGENTS.md
 - [Subagents](docs/SUBAGENTS.md)：委派契約、邊界與整合驗收
 - [TODO.md](TODO.md)／[CHANGELOG.md](CHANGELOG.md)：backlog 與已完成的重要變更
 - [Design](docs/design/DESIGN.md)／[UI Contract](docs/UI.md)：世界優先設計與實際元件、操作、token 契約
+- [V2 Life & Emergence Spec](docs/specs/V2-LIFE-EMERGENCE.md)：V2 產品規則、系統切片與 Fun Gate 驗收條件
 - [UI 驗收紀錄](reports/ui/20261003-world-first/README.md)：桌機／平板／手機截圖、遊玩流程與限制
 - [完整遊玩測試](reports/playtests/20261003-comprehensive/README.md)：生活、Boss、世界演化、存檔故障與長時間驗證
 - [單機保存驗證](reports/playtests/20261003-local-autosave/README.md)：即時保存、補寫、匯出與瀏覽器故障恢復

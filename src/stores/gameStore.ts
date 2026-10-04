@@ -1,14 +1,18 @@
-import { computed, ref } from 'vue'
+import { computed, ref, shallowRef, triggerRef } from 'vue'
 import { defineStore } from 'pinia'
-import { createGame, player, simulate } from '../engine/simulation'
+import { createGame, simulate } from '../engine/simulation'
+import { projectCharacter } from '../presentation/lifeProjection'
 import { captureEvents } from '../engine/events'
-import { offlineProgress, SAVE_KEY } from '../services/saveService'
+import { SAVE_KEY } from '../services/saveService'
 import { createPlayJournal, emptyJournal, packCheckpoint, unpackCheckpoint, type PlayRecord } from '../services/playJournal'
 import type { WorldEvent } from '../domain/types'
 
 export const useGameStore = defineStore('game', () => {
-  const state = ref(createGame()), speed = ref(1), message = ref(''), savedAt = ref<number | null>(null)
-  const saveBlocked = ref(false), saveError = ref(''), offline = ref<ReturnType<typeof offlineProgress>>(null)
+  const state = shallowRef(createGame()), speed = ref(0), message = ref(''), savedAt = ref<number | null>(null)
+  const saveBlocked = ref(false), saveError = ref(''), offline = ref<{
+    minutes: number; populationChange: number; matured: number; threatBefore: number; threatAfter: number
+    stageBefore: string; stage: string; stageAfter: string; contractsEnded: number; years: number
+  } | null>(null)
   const journalError = ref(''), pendingRecords = ref(0), repository = createPlayJournal()
   let journal = emptyJournal(), flushing = false, persisted = new Set<string>()
   function record(kind: PlayRecord['kind'], from: number, events: WorldEvent[], result: string) {
@@ -22,12 +26,11 @@ export const useGameStore = defineStore('game', () => {
       const loaded = unpackCheckpoint(raw); state.value = loaded.state; journal = loaded.journal
       persisted = new Set(journal.pending.map(r => r.id)); pendingRecords.value = journal.pending.length
       if (loaded.imported) record('imported', state.value.worldTime, state.value.events.map(e => ({ ...e })), '啟用追加紀錄；較早的完整遊玩紀錄未追溯補齊。')
-      const before = state.value.worldTime, captured = captureEvents(state.value, () => offlineProgress(state.value, loaded.lastSavedAt))
-      offline.value = captured.result; savedAt.value = loaded.lastSavedAt
-      if (state.value.worldTime !== before) record('offline', before, captured.events, '離線世界進度。')
+      speed.value = state.value.life.openingSeen ? 1 : 0
+      savedAt.value = loaded.lastSavedAt
     } else record('created', state.value.worldTime, state.value.events.map(e => ({ ...e })), '新的世界開始了。')
   } catch (error) { message.value = error instanceof Error ? error.message : '無法讀取存檔。'; saveBlocked.value = true }
-  const character = computed(() => player(state.value))
+  const character = computed(() => projectCharacter(state.value))
   async function flushJournal() {
     if (flushing || saveBlocked.value) return
     flushing = true
@@ -60,22 +63,33 @@ export const useGameStore = defineStore('game', () => {
   }
   function reset() {
     const before = state.value.worldTime, pending = journal.pending
-    state.value = createGame(); offline.value = null; speed.value = 1; saveBlocked.value = false
+    state.value = createGame(); offline.value = null; speed.value = 0; saveBlocked.value = false
     journal = { ...emptyJournal(), pending }; record('reset', before, state.value.events.map(e => ({ ...e })), '重建新的世界；先前遊玩紀錄保留。'); save(true)
   }
   function canProgress() { return !saveError.value || save() }
   function setSpeed(next: number) {
-    if (next && !canProgress()) return
+    if (next && (!state.value.life.openingSeen || !canProgress())) return
     speed.value = next
   }
+  function startLife() {
+    if (saveBlocked.value) return false
+    if (!canProgress()) return false
+    state.value.life.openingSeen = true
+    triggerRef(state)
+    if (!save()) return false
+    speed.value = 1
+    return true
+  }
   function advance(minutes: number) {
-    if (!canProgress()) return
+    if (!state.value.life.openingSeen || !canProgress()) return
     const before = state.value.worldTime, captured = captureEvents(state.value, () => simulate(state.value, minutes))
+    triggerRef(state)
     if (state.value.worldTime !== before) { record('time', before, captured.events, '世界時間繼續前進。'); save() }
   }
   function act(action: () => string | boolean) {
-    if (!canProgress()) return
+    if (!state.value.life.openingSeen || !canProgress()) return
     const before = state.value.worldTime, sequence = state.value.eventSequence, captured = captureEvents(state.value, action), result = captured.result
+    triggerRef(state)
     message.value = typeof result === 'string' ? result || state.value.events.at(-1)?.message || '完成。' : result ? '已到達。' : '目前無法移動。'
     if (result === '' || result === true || before !== state.value.worldTime || sequence !== state.value.eventSequence) {
       record('action', before, captured.events, message.value); save()
@@ -91,5 +105,5 @@ export const useGameStore = defineStore('game', () => {
     if (!archiveAvailable) journalError.value = '紀錄庫暫時無法讀取；匯出包含待補寫紀錄與目前進度，尚未包含全部舊紀錄。'
   }
   if (!saveBlocked.value) save()
-  return { state, speed, setSpeed, message, savedAt, saveBlocked, saveError, offline, character, save, reset, advance, act, journalError, pendingRecords, exportJournal }
+  return { state, speed, setSpeed, startLife, message, savedAt, saveBlocked, saveError, offline, character, save, reset, advance, act, journalError, pendingRecords, exportJournal }
 })

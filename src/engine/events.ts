@@ -9,9 +9,14 @@ export function captureEvents<T>(state: GameState, action: () => T): { result: T
 }
 
 export function emit(state: GameState, type: string, category: Category, message: string, historic = false) {
-  const event = { id: ++state.eventSequence, at: state.worldTime, type, category, message }
+  const tier: WorldEvent['tier'] = historic ? 'major' : type.startsWith('npc.schedule') ? 'transient' : type.startsWith('debug.') ? 'debug' : 'gameplay'
+  const event: WorldEvent = { id: ++state.eventSequence, at: state.worldTime, type, category, message, tier }
   captures.get(state)?.push({ ...event })
   state.events.push(event)
   if (state.events.length > 150) state.events.shift()
-  if (historic) state.history.push(event)
+  if (historic) {
+    state.history.push(event)
+    // Complete records remain in the append journal; the world carries a bounded major-history view.
+    if (state.history.length > 20000) state.history.shift()
+  }
 }

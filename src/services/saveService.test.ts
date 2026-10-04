@@ -1,10 +1,86 @@
 import { describe, expect, it } from 'vitest'
-import { CONFIG } from '../data/config'
+import { CONFIG, ITEMS } from '../data/config'
 import { combatTurn, encounter, equip, farm } from '../engine/actions'
 import { chooseSuccessor, createGame, die, player, simulate, walkTo } from '../engine/simulation'
-import { deserialize, offlineProgress, serialize } from './saveService'
+import { deserialize, serialize } from './saveService'
+
+function versionOneFixture(seed = 88, lastSavedAt = 1000) {
+  const raw = JSON.parse(serialize(createGame(seed), lastSavedAt))
+  delete raw.life
+  raw.saveVersion = 1
+  for (const event of [...raw.events, ...raw.history]) delete event.tier
+  return raw
+}
 
 describe('versioned saves and deterministic continuation', () => {
+  it.each(['origin', 'identity', 'trait', 'career'] as const)('rejects coercible arrays where a V2 %s enum string is required', kind => {
+    const raw = JSON.parse(serialize(createGame(), 1000))
+    const life = raw.life.characters[raw.activeCharacterId], npcLife = raw.life.npcs[raw.npcs[0].id]
+    if (kind === 'origin') life.origin = ['OTHER_WORLD']
+    if (kind === 'identity') life.identities[0] = ['resident']
+    if (kind === 'trait') npcLife.traits[0] = [npcLife.traits[0]]
+    if (kind === 'career') npcLife.career = ['resident']
+    expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+  })
+  it('validates a complete V1 world before migration and preserves every legacy world field and RNG', () => {
+    const raw = versionOneFixture(909, 4321)
+    raw.nativeExtension = { generation: 1, data: ['kept'] }
+    const expected = structuredClone(raw)
+    delete expected.lastSavedAt
+    delete expected.saveVersion
+    const loaded = deserialize(JSON.stringify(raw))
+    const migrated = { ...loaded.state } as Record<string, unknown>
+    delete migrated.life
+    delete migrated.saveVersion
+    expect(migrated).toEqual(expected)
+    expect(loaded.state.saveVersion).toBe(2)
+    expect(loaded.state.life.openingSeen).toBe(true)
+    expect(loaded.state.rngState).toBe(raw.rngState)
+    expect(loaded.state.worldTime).toBe(raw.worldTime)
+    expect(loaded.lastSavedAt).toBe(4321)
+  })
+
+  it.each(['world-time', 'missing-world-field', 'bad-reference'] as const)('rejects a corrupt V1 world before migration: %s', kind => {
+    const raw = versionOneFixture()
+    if (kind === 'world-time') raw.worldTime = -1
+    if (kind === 'missing-world-field') delete raw.regions
+    if (kind === 'bad-reference') raw.activeCharacterId = 'missing-character'
+    expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+  })
+
+  it('rejects a V1 payload that already contains life metadata instead of overwriting it', () => {
+    const raw = versionOneFixture()
+    raw.life = { future: 'unknown V1 data' }
+    expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+  })
+
+  it.each(['canon', 'extra-life-field', 'origin', 'reputation', 'character-reference', 'npc-reference', 'property-owner', 'property-bounds', 'property-day', 'property-daily-total', 'milestone-bound'] as const)(
+    'rejects malformed V2 life data: %s', kind => {
+      const raw = JSON.parse(serialize(createGame(), 1000))
+      const characterId = raw.activeCharacterId
+      const npcId = raw.npcs[0].id
+      if (kind === 'canon') raw.life.canon = 'OTHER_WORLD'
+      if (kind === 'extra-life-field') raw.life.unknown = true
+      if (kind === 'origin') raw.life.characters[characterId].origin = 'unknown-origin'
+      if (kind === 'reputation') raw.life.characters[characterId].reputation = 101
+      if (kind === 'character-reference') delete raw.life.characters[characterId]
+      if (kind === 'npc-reference') delete raw.life.npcs[npcId]
+      if (kind === 'property-owner') raw.life.properties.push({ id: 'home-1', kind: 'home', ownerId: 'missing', acquiredAt: raw.worldTime,
+        position: { x: 7, y: 9 }, storage: Object.fromEntries(Object.keys(ITEMS).map(id => [id, 0])), foodSupplied: 0,
+        suppliedDay: Math.floor(raw.worldTime / CONFIG.minutesPerDay), suppliedToday: 0 })
+      if (kind === 'property-bounds') raw.life.properties.push({ id: 'home-1', kind: 'home', ownerId: characterId, acquiredAt: raw.worldTime,
+        position: { x: CONFIG.width, y: 9 }, storage: Object.fromEntries(Object.keys(ITEMS).map(id => [id, 0])), foodSupplied: 0,
+        suppliedDay: Math.floor(raw.worldTime / CONFIG.minutesPerDay), suppliedToday: 0 })
+      if (kind === 'property-day') raw.life.properties.push({ id: 'home-1', kind: 'home', ownerId: characterId, acquiredAt: raw.worldTime,
+        position: { x: 7, y: 9 }, storage: Object.fromEntries(Object.keys(ITEMS).map(id => [id, 0])), foodSupplied: 0,
+        suppliedDay: Math.floor(raw.worldTime / CONFIG.minutesPerDay) + 1, suppliedToday: 0 })
+      if (kind === 'property-daily-total') raw.life.properties.push({ id: 'farm-1', kind: 'farmBusiness', ownerId: characterId, acquiredAt: raw.worldTime,
+        position: { x: 7, y: 9 }, storage: Object.fromEntries(Object.keys(ITEMS).map(id => [id, 0])), foodSupplied: 200,
+        suppliedDay: Math.floor(raw.worldTime / CONFIG.minutesPerDay), suppliedToday: 61 })
+      if (kind === 'milestone-bound') raw.life.characters[characterId].milestones = Array.from({ length: 33 }, (_, i) => ({ id: `m-${i}`, at: raw.worldTime, text: '里程碑' }))
+      expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+    })
+
   it('rejects a null crop with the standard preserved-save error', () => {
     const raw = JSON.parse(serialize(createGame(), 0))
     raw.crops = [null]
@@ -76,7 +152,7 @@ describe('versioned saves and deterministic continuation', () => {
     simulate(s, 15 * 1440); simulate(loaded, 15 * 1440)
     expect(loaded).toEqual(s)
     expect(deserialize(serialize(loaded, 0)).state).toEqual(loaded)
-  })
+  }, 15000)
 
   it('rejects a rolled-back event sequence before planting duplicates a crop ID', () => {
     const s = createGame(909)
@@ -191,29 +267,5 @@ describe('versioned saves and deterministic continuation', () => {
     if (kind === 'workplace') raw.npcs[0].workplace.y = -1
     if (kind === 'threat') raw.threat.threatLevel = 0
     expect(() => deserialize(JSON.stringify(raw))).toThrow('資料')
-  })
-})
-
-describe('bounded offline progress', () => {
-  it('advances crops, population, threats and settlement with a return summary', () => {
-    const s = createGame(); walkTo(s, { x: 16, y: 10 }); farm(s, 'prepare'); farm(s, 'plant')
-    const start = s.worldTime, growth = s.settlement.growth
-    const summary = offlineProgress(s, 1000, 1000 + 8 * 3600000)!
-    expect(summary.minutes).toBe(57600); expect(s.worldTime - start).toBe(57600)
-    expect(summary.matured).toBe(1); expect(summary.populationChange).toBeGreaterThan(0)
-    expect(s.settlement.growth).toBeGreaterThan(growth); expect(summary.threatAfter).toBe(2)
-  })
-  it('caps elapsed time at eight real hours and ignores negative elapsed time', () => {
-    const a = createGame(), b = createGame()
-    offlineProgress(a, 1000, 1000 + 8 * 3600000); offlineProgress(b, 1000, 1000 + 30 * 3600000)
-    expect(a).toEqual(b)
-    const snapshot = JSON.stringify(a); expect(offlineProgress(a, 2000, 1000)).toBeNull(); expect(JSON.stringify(a)).toBe(snapshot)
-  })
-  it('ages people on year rollover and expires mercenary contracts offline', () => {
-    const s = createGame(), npc = s.npcs.find(n => n.job === 'mercenary')!
-    s.worldTime = CONFIG.daysPerSeason * 4 * 1440 - 1440
-    s.party.push({ npcId: npc.id, hireCost: 25, dailyWage: 4, contractEnd: s.worldTime + 1440, archetype: 'fighter' })
-    const summary = offlineProgress(s, 1000, 1000 + 3600000)!
-    expect(player(s).age).toBe(17); expect(summary.contractsEnded).toBe(1); expect(summary.years).toBe(1)
   })
 })

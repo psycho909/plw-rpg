@@ -1,0 +1,66 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/lifeIntegration.test.ts (7 tests | 5 failed) 2647ms
+     × lets life actions form an identity without selecting a class 9ms
+     × retires elderly NPCs through daily evolution and stops their paid work schedule 4ms
+     × keeps a 10-year world bounded, serializable and deterministic after save 240ms
+     × keeps a 50-year world bounded, serializable and deterministic after save 758ms
+     × keeps a 100-year world bounded, serializable and deterministic after save 1500ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/lifeIntegration.test.ts > V2 integrated life rules > lets life actions form an identity without selecting a class
+AssertionError: expected [ 'resident' ] to include 'miner'
+ ❯ src/engine/lifeIntegration.test.ts:12:53
+     10|     c.currentRegion = 'mine'; c.position = { x: 19, y: 5 }
+     11|     for (let i = 0; i < 12; i++) { c.stamina = c.maxStamina; state.reg…
+     12|     expect(state.life.characters[c.id]!.identities).toContain('miner')
+       |                                                     ^
+     13|     c.currentRegion = 'farmland'; c.stamina = c.maxStamina
+     14|     expect(farm(state, 'prepare')).toBe('')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  src/engine/lifeIntegration.test.ts > V2 integrated life rules > retires elderly NPCs through daily evolution and stops their paid work schedule
+AssertionError: expected 'resident' to be 'retired' // Object.is equality
+
+Expected: "retired"
+Received: "resident"
+
+ ❯ src/engine/lifeIntegration.test.ts:21:43
+     19|     n.birthYear = -67; n.age = 68; n.lifespan = 100
+     20|     simulate(state, 1440)
+     21|     expect(state.life.npcs[n.id]!.career).toBe('retired')
+       |                                           ^
+     22|     simulate(state, 8 * 60)
+     23|     expect(n.currentActivity).not.toBe('work')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  src/engine/lifeIntegration.test.ts > V2 integrated life rules > keeps a 10-year world bounded, serializable and deterministic after save
+ FAIL  src/engine/lifeIntegration.test.ts > V2 integrated life rules > keeps a 50-year world bounded, serializable and deterministic after save
+ FAIL  src/engine/lifeIntegration.test.ts > V2 integrated life rules > keeps a 100-year world bounded, serializable and deterministic after save
+Error: 存檔資料不完整。原始存檔已保留，請確認後重建世界。
+ ❯ deserialize src/services/saveService.ts:65:133
+     63|   const value: unknown = JSON.parse(raw)
+     64|   if (!object(value) || value.saveVersion !== CONFIG.saveVersion) thro…
+     65|   if (!valid(value) || typeof value.lastSavedAt !== 'number' || !Numbe…
+       |                                                                                                                                     ^
+     66|   const { lastSavedAt, ...state } = value
+     67|   return { state: state as unknown as GameState, lastSavedAt }
+ ❯ src/engine/lifeIntegration.test.ts:51:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 2 passed (7)
+   Start at  14:21:38
+   Duration  2.90s (transform 114ms, setup 0ms, import 137ms, tests 2.65s, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

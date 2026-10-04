@@ -1,6 +1,6 @@
 # 遊戲介面契約
 
-視覺正本：[design/DESIGN.md](design/DESIGN.md)。產品規則：[SPEC.md](../SPEC.md)；本文件描述 UI 結果。使用者於 2026-10-03 指定重製，取代 SPEC 54–58 的固定側欄布局；玩法依 SPEC，後續即時保存與追加紀錄依[單機保存 Ticket](../tickets/20261003-local-autosave-journal.md)。
+視覺正本：[design/DESIGN.md](design/DESIGN.md)。V1 產品規則：[SPEC.md](../SPEC.md)；V2 正式規格：[V2-LIFE-EMERGENCE.md](specs/V2-LIFE-EMERGENCE.md)；本文件描述實際 UI 結果。使用者於 2026-10-03 指定重製，取代 SPEC 54–58 的固定側欄布局；玩法依對應規格，即時保存與追加紀錄依[單機保存 Ticket](../tickets/20261003-local-autosave-journal.md)。
 
 ## 視覺與 token 所有權
 
@@ -27,6 +27,11 @@
 | Scrollbar | src/style.scss 全域規則 | 本文件 token 映射 | 地圖／視窗內部捲動 | 瀏覽器 computed style、窄螢幕 |
 | Toast | src/components/StatusNotice.vue + gameStore.message | gameStore.act／save | 探索上方訊息、modal 內訊息 | 成功／失敗／dismiss／live region |
 | CRUD | gameStore.save／reset + App.vue 確認流程 | SPEC 53、saveService | 手動存檔、自動存檔、重建確認 | 存檔重載、失敗保護、取消 |
+| Identity／Reputation | App.vue + IdentityWindow.vue | `state.life.characters[activeCharacterId]` | 身分、聲望稱號、人生記事、名下產業 | `identity.test.ts`、`lifeIntegration.test.ts` |
+| NPC life | NpcWindow.vue | `state.life.npcs[npcId]` 與目前居民 state | 職涯、熟悉度、掛心事項、旅人狀態、記得與玩家有關的事 | `npcLife.test.ts`、`lifeIntegration.test.ts` |
+| Property | PropertyWindow.vue | `state.life.properties`、`PROPERTY_DEFINITIONS` | 自宅、農地、農場事業及手動供糧 | `ownership.test.ts`、`lifeIntegration.test.ts` |
+| Living news／requests | LifeNewsWindow.vue | `projectLivingNews`、`state.life.requests` | 地方／區域／傳聞／重大消息、近期委託 | `livingEvents.test.ts`、`lifeIntegration.test.ts` |
+| World First map | WorldMap.vue + `projectWorld` | `GameState` 經 `worldProjection.ts`／`worldUI.ts` 投影 | 已探索圖格、居民、產業、作物和威脅標記 | `worldProjection.test.ts`、瀏覽器遊玩流程 |
 
 本機遊戲無表格選取、日期輸入、表單或 single-select；不建立無用 UI primitive。PixelWindow 是所有 modal 唯一 owner，PixelMeter 是生命／體力／熟練度／作物進度唯一 owner。清單篩選用原生按鈕群組，保持 aria-pressed。
 
@@ -38,14 +43,23 @@
 - 快捷鍵忽略 IME、修飾鍵、文字輸入；modal 開啟時不移動玩家，不覆寫原生按鈕 Enter 行為。地圖一個 Tab 入口，方向鍵直接控制角色。
 - 原生 dialog.showModal 負責背景 inert，PixelWindow 統一循環 Tab／Shift+Tab，避免焦點跑到瀏覽器介面。開啟聚焦內容／安全取消；Esc 只取消，關閉還原觸發者，觸發者已不存在則回地圖。繼任視窗不可關閉。
 - 只允許一個 modal，內部導覽換內容，不疊加 dialog。訊息於 modal 內呈現，避免被 top layer 遮蔽。
-- 世界時間照所選倍率流動，開視窗不自動暫停。持續顯示精簡時鐘；等待一季／一年明示會改變所有人的生命與契約，不能於戰鬥／地下城使用。
+- 選單提供「這一生」、「住所與產業」和「地方消息與委託」視窗；詳細資料以目前角色與世界 state 呈現，關閉視窗不改變模擬狀態。
+- 世界時間照所選倍率流動，開視窗不自動暫停。背景分頁在同一 Session 透過單一 monotonic loop 補進延遲時間；頁面關閉後世界凍結，重新載入不做 offline advancement。持續顯示精簡時鐘；等待一季／一年明示會改變所有人的生命與契約，不能於戰鬥／地下城使用。
 - 單一畫面無 URL 路由，視窗狀態不寫入存檔。物品選取與日誌篩選僅在視窗開啟期間暫存；關閉後回到預設。文件標題依當前視窗更新為「內容 — 橡谷」。
 
 ## 情境操作與復原
 
 附近建築／NPC 的定義使用引擎 Manhattan distance ≤ 1；農作／採集仍依引擎區域條件。服務營業、價格、資源、體力、裝備與傭兵上限取自 config／actions。打烊時視窗保留營業時間與離開按鈕，操作停用；時間流動後條件即時重算。失敗顯示引擎中文原因，不跳離原操作視窗。
 
-NPC 資訊來自真實 NPC state，交談使用活動／職業與世界狀態模板，不保存新社交資料。畫面中的民居、農作格與怪物蹤跡是既有 aggregate state 的呈現投影，沒有新增實體／碰撞／指定怪物機制；迷霧不洩露建築、NPC 或內容。
+居民視窗顯示年齡、職涯、大家認得的角色、目前活動、位置、熟悉度、掛心事項與已知回憶。個人回憶只顯示與目前角色相關的部分；交談依職業、職涯、特質、已知記憶、玩家身分和聲望選擇對話，居民不會知道未親歷或未聽聞的事。NPC 保存有界結構化記憶，每種重要記憶會受距離、職業、特質或親身關係限制，避免形成全知或逐人好感度系統。
+
+「這一生」視窗顯示目前角色累積的多重身分、聚落聲望稱號、最近人生記事和名下產業。身分由生活行為、技能、職涯或農場事業形成；聲望稱號與 NPC 對話會隨聚落聲望改變。聲望也會影響聘請傭兵：低於 -25 時無法簽約，每 25 點正聲望降低 1 金聘金，最多降低 4 金；基本聘金隨聚落階段為 20／25／30 金。實際資格和費用由 engine 顯示，UI 不重算公式。
+
+「住所與產業」視窗提供自宅、農地和農場事業。取得條件依金幣、聲望、聚落階段、位置與先有農地等規則顯示；自宅可休息及存取儲物，農場事業需玩家親自供應食物，每次最多 10 份、每日最多 60 份，沒有離線或 AFK 收入。
+
+「地方消息與委託」分為地方、區域、傳聞和重大消息，並列出未到期的食物、狩獵、鐵礦及傷者照料請求，可直接前往目標或交付點。消息與請求來自持續演化的世界狀態；視窗只投影有界的近期消息和開啟中的請求。
+
+地圖由 `projectWorld` 將真實 `GameState` 投影為格子、居民、地標與可及性標記。未探索格不顯示居民、建築或地標。民居、農作和威脅蹤跡是 aggregate state 的呈現投影，產業標記讀取 ownership state；這些投影不新增模擬實體、碰撞或指定怪物機制。
 
 物品清單＋選取詳情，裝備／藥水呼叫原 actions；沒有引擎背包容量，不顯示假的容量。日誌最新 100 筆、歷史最新 100 筆，居民最多 80，全部 render 有界資料。空分類有中文空狀態。
 
@@ -59,4 +73,4 @@ NPC 資訊來自真實 NPC state，交談使用活動／職業與世界狀態模
 
 桌機保留完整大地圖；平板與手機仍先呈現世界，窄螢幕用可捲動世界視野並跟隨玩家，M 地圖視窗可看全圖。手機底部簡短選單與方向鍵提供移動／互動。視窗受 viewport 與 safe-area 約束，長內容於視窗內捲動，關閉與操作可達。
 
-驗證：`npm run check`、`src/presentation/worldUI.test.ts`，以及 `reports/ui/20261003-world-first/verify.py` 的本機 Chromium 流程。無 DOM runner／Storybook／lint／formatter；不宣稱這些未配置的檢查通過。
+驗證入口：`npm.cmd run check`、`npm.cmd run test -- src/presentation/worldProjection.test.ts`，以及 `reports/v2/20261004-life-emergence/verify_browser.py` 的本機 production Chromium 流程。Chromium 流程需 Playwright、Chromium 與已啟動的本機 build 靜態服務（預設 5194，可用 PLW_V2_URL 指定），不能以 build 或單元測試代替。無 DOM runner／Storybook／lint／formatter；本文件列出驗證入口，不表示這些檢查或 V2 真人 Fun Gate 已執行／通過。

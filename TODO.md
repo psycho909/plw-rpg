@@ -9,12 +9,14 @@
 ## Now
 
 
+
 ## Next
 
 <!-- 已確認但尚未開始的 backlog。 -->
 
 ## Blocked
 
+- [ ] Oakvale V2 真人 Fun Gate — Ticket: [20261004-v2-life-emergence](tickets/20261004-v2-life-emergence.md)
 
 
 完成條件：每個項目都有唯一正式 Ticket、只出現在一個區段，且沒有已完成工作或執行細節。

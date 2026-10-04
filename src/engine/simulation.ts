@@ -3,6 +3,10 @@ import type { Character, GameState, JobId, NPC, Position, RegionId, SkillId, Til
 import { calendar, lifeStage } from './calendar'
 import { emit } from './events'
 import { random } from './random'
+import { emptyLife, initializeLife, newCharacterLife, newNpcLife } from './lifeState'
+import { refreshIdentity } from './identity'
+import { dailyNpcLife, npcCanWork, rememberNpc } from './npcLife'
+import { dailyLivingEvents } from './livingEvents'
 
 export const player = (state: GameState) => state.characters.find(c => c.id === state.activeCharacterId)!
 const bound = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n))
@@ -25,7 +29,7 @@ function character(id: string, name: string, age: number, year: number): Charact
   }
 }
 
-function addNpc(state: GameState, age: number, cause: 'initial' | 'birth' | 'immigration') {
+function addNpc(state: GameState, age: number, cause: 'initial' | 'birth' | 'immigration' | 'visitor') {
   const id = state.nextNpcId++
   const jobs = Object.keys(JOBS) as JobId[]
   const job = age < 15 ? 'farmer' : jobs[(id - 1) % jobs.length]!
@@ -48,11 +52,30 @@ function addNpc(state: GameState, age: number, cause: 'initial' | 'birth' | 'imm
     lifespan: 72 + Math.floor(random(state) * 18),
   }
   state.npcs.push(npc)
-  if (cause !== 'initial') emit(state, cause === 'birth' ? 'npc.born' : 'npc.immigrated', 'npc', cause === 'birth' ? `${npc.name} 出生了。` : `${npc.name} 搬進橡谷，成為${JOBS[job].name}。`, true)
+  state.life.npcs[npc.id] = newNpcLife(state, npc.id, npc.job, state.npcs.length - 1)
+  state.life.npcs[npc.id]!.featured = state.npcs.filter(n => n.id !== npc.id && n.isAlive && state.life.npcs[n.id]?.featured).length < 6
+  if (cause === 'birth' || cause === 'immigration') emit(state, cause === 'birth' ? 'npc.born' : 'npc.immigrated', 'npc', cause === 'birth' ? `${npc.name} 出生了。` : `${npc.name} 搬進橡谷，成為${JOBS[job].name}。`, true)
+  return npc
+}
+
+export function spawnTraveler(state: GameState, visitor: { kind: 'elf' | 'mage' | 'knight' | 'adventurer' | 'merchant'; durationDays: number; rumor: string }): boolean {
+  if (population(state) >= state.settlement.capacity || state.npcs.filter(n => (state.life.npcs[n.id]?.visitor?.until ?? 0) > state.worldTime).length >= 2) return false
+  const npc = addNpc(state, 20 + Math.floor(random(state) * 25), 'visitor')
+  const labels = { elf: '精靈旅人', mage: '魔法學者', knight: '遠方騎士', adventurer: '行腳冒險者', merchant: '旅行商人' }
+  npc.name = `${labels[visitor.kind]} ${npc.name}`
+  npc.job = visitor.kind === 'merchant' || visitor.kind === 'elf' ? 'shopkeeper' : visitor.kind === 'mage' ? 'blacksmith' : 'guard'
+  npc.home = { ...BUILDINGS.inn.position }; npc.workplace = { ...BUILDINGS.store.position }; npc.position = { ...npc.home }
+  const life = state.life.npcs[npc.id]!
+  life.careerJob = npc.job; life.career = 'experienced'; life.featured = false
+  life.visitor = { kind: visitor.kind, until: state.worldTime + visitor.durationDays * CONFIG.minutesPerDay }
+  life.concern = visitor.rumor
+  emit(state, 'npc.visitorArrived', 'npc', `${npc.name} 暫住旅店，帶來邊境之外的消息。`, true)
+  return true
 }
 
 export function createGame(seed = 909): GameState {
   const state: GameState = {
+    life: emptyLife(8 * 60),
     saveVersion: CONFIG.saveVersion, worldSeed: seed >>> 0, rngState: seed >>> 0, worldTime: 8 * 60, activeCharacterId: 'alden',
     characters: [character('alden', '奧登', 16, 1)], npcs: [], tiles: [],
     settlement: { name: '橡谷', stage: 'hamlet', capacity: 40, food: 78, prosperity: 52, safety: 88, infrastructure: 25, growth: 0, buildings: ['house', 'farm', 'store', 'inn'] },
@@ -70,7 +93,8 @@ export function createGame(seed = 909): GameState {
     const building = (Object.keys(BUILDINGS) as (keyof typeof BUILDINGS)[]).find(id => BUILDINGS[id].position.x === x && BUILDINGS[id].position.y === y)
     state.tiles.push({ x, y, terrain, regionId, discovered: state.regions[regionId].discovered, walkable: !water, ...(building ? { building } : {}) })
   }
-  emit(state, 'world.founded', 'world', '橡谷聚落建立。奧登，今天起這裡就是你的家。', true)
+  initializeLife(state)
+  emit(state, 'world.founded', 'world', '陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。', true)
   syncNpcs(state)
   return state
 }
@@ -96,6 +120,11 @@ export function die(state: GameState, c: Character, cause: string) {
   c.isAlive = false; c.hp = 0; c.status = 'dead'; c.deathCause = cause; c.deathYear = calendar(state.worldTime).year
   if (c.id === state.activeCharacterId) { state.combat = null; state.dungeon.inDungeon = false }
   state.party = state.party.filter(p => p.npcId !== c.id)
+  const life = state.life.characters[c.id] ?? state.life.npcs[c.id]
+  if (life) {
+    life.milestones.push({ id: `death-${c.id}`, at: state.worldTime, text: `${c.name} 因${cause}離世，享年${c.age}歲。` })
+    life.milestones = life.milestones.slice(-32)
+  }
   emit(state, 'npc.died', c.id === state.activeCharacterId ? 'player' : 'npc', `${c.name} 因${cause}離世，享年 ${c.age} 歲。世界仍會延續。`, true)
 }
 
@@ -110,7 +139,7 @@ export function syncNpcs(state: GameState) {
   const minute = state.worldTime % CONFIG.minutesPerDay
   for (const n of state.npcs) {
     if (!n.isAlive) continue
-    if (n.age < 15 || n.injuredUntil > state.worldTime) { n.currentActivity = minute >= 1320 || minute < 420 ? 'sleep' : 'leisure'; n.position = { ...n.home }; continue }
+    if (!npcCanWork(state, n.id) || n.injuredUntil > state.worldTime) { n.currentActivity = minute >= 1320 || minute < 420 ? 'sleep' : 'leisure'; n.position = { ...n.home }; continue }
     if (state.party.some(p => p.npcId === n.id)) { n.currentActivity = 'travel'; n.position = { ...player(state).position }; continue }
     const slot = [...n.schedule].reverse().find(s => s.start <= minute)!
     n.currentActivity = slot.activity
@@ -123,16 +152,22 @@ export function syncNpcs(state: GameState) {
     const dy = Math.min(Math.abs(dest.y - source.y), steps - dx)
     n.position = { x: source.x + Math.sign(dest.x - source.x) * dx, y: source.y + Math.sign(dest.y - source.y) * dy }
   }
+  for (const n of state.npcs) if (n.isAlive) n.currentRegion = tileAt(state, n.position)?.regionId ?? n.currentRegion
 }
 
 function dailyTick(state: GameState) {
   const s = state.settlement, t = state.threat
   const day = Math.floor(state.worldTime / CONFIG.minutesPerDay)
+  const leaving = state.npcs.filter(n => (state.life.npcs[n.id]?.visitor?.until ?? Infinity) <= state.worldTime)
+  for (const n of leaving) emit(state, 'npc.visitorLeft', 'npc', `${n.name} 繼續旅程，離開橡谷。`, true)
+  const leavingIds = new Set(leaving.map(n => n.id))
+  state.npcs = state.npcs.filter(n => !leavingIds.has(n.id))
   if (day % (CONFIG.daysPerSeason * 4) === 0) {
     for (const c of [...state.characters, ...state.npcs]) ageCharacter(state, c)
     emit(state, 'world.newYear', 'world', `第 ${calendar(state.worldTime).year} 年開始了。每個人都長了一歲。`, true)
   }
-  const workers = state.npcs.filter(n => n.isAlive && n.age >= 15 && n.injuredUntil <= state.worldTime && !state.party.some(p => p.npcId === n.id))
+  dailyNpcLife(state)
+  const workers = state.npcs.filter(n => npcCanWork(state, n.id) && n.injuredUntil <= state.worldTime && !state.party.some(p => p.npcId === n.id))
   for (const n of workers) gainExp(state, n, 2, JOBS[n.job].skill)
   const farmers = workers.filter(n => n.job === 'farmer').length
   const guards = workers.filter(n => n.job === 'guard').length
@@ -153,6 +188,8 @@ function dailyTick(state: GameState) {
   if (population(state) < s.capacity && s.food >= 40 && s.prosperity >= 30 && day % 30 === 0) addNpc(state, 0, 'birth')
   // Retain every deceased player; inactive NPCs are represented by permanent history.
   state.npcs = state.npcs.filter(n => n.isAlive)
+  const retainedIds = new Set([...state.npcs, ...state.characters].map(c => c.id))
+  for (const [id, life] of Object.entries(state.life.npcs)) if (!retainedIds.has(id) && !life.featured) delete state.life.npcs[id]
   const priorLevel = t.threatLevel
   t.monsterPopulation = bound(t.monsterPopulation + t.growthRate - guards * .035, 0, 100)
   t.threatLevel = threatLevel(t.monsterPopulation)
@@ -181,20 +218,21 @@ function dailyTick(state: GameState) {
     } else if (player(state).gold >= contract.dailyWage && player(state).isAlive) player(state).gold -= contract.dailyWage
     else { state.party = state.party.filter(p => p !== contract); emit(state, 'party.unpaid', 'player', '無法支付日薪，傭兵結束了契約。') }
   }
+  dailyLivingEvents(state, { spawnTraveler })
 }
 
 export function simulate(state: GameState, gameMinutes: number) {
   if (!Number.isFinite(gameMinutes) || gameMinutes < 0) throw new Error('模擬時間必須是非負有限數值。')
   const end = state.worldTime + Math.floor(gameMinutes)
   if (!Number.isSafeInteger(end)) throw new Error('模擬時間超出安全範圍。')
-  // Daily boundaries give offline and headless simulation the same rules as live time.
+  // Canonical daily boundaries keep live and headless simulation deterministic.
   while (state.worldTime < end) {
     const cropBoundary = Math.min(...state.crops.filter(c => c.status === 'growing').map(c => Math.max(state.worldTime + 1, c.matureAt)))
     state.worldTime = Math.min(end, cropBoundary, (Math.floor(state.worldTime / CONFIG.minutesPerDay) + 1) * CONFIG.minutesPerDay)
     for (const crop of state.crops) if (crop.status === 'growing' && crop.matureAt <= state.worldTime) {
       crop.status = 'mature'; emit(state, 'crop.matured', 'player', '小麥已成熟，可以前往農田收割。')
     }
-    if (state.worldTime % CONFIG.minutesPerDay === 0) dailyTick(state)
+    if (state.worldTime % CONFIG.minutesPerDay === 0) { syncNpcs(state); dailyTick(state) }
   }
   syncNpcs(state)
 }
@@ -206,6 +244,10 @@ export function reveal(state: GameState, region: RegionId) {
   state.dungeon.discovered = true
   gainExp(state, player(state), 25)
   emit(state, 'region.discovered', 'world', '迷霧散開。你發現了山谷中的廢棄礦坑。', true)
+  const memory = { kind: 'DUNGEON_DISCOVERED' as const, actorId: state.activeCharacterId, at: state.worldTime, detail: '山谷中的廢棄礦坑重新被發現。' }
+  state.life.worldMemories.push(memory)
+  if (state.life.worldMemories.length > 100) state.life.worldMemories.shift()
+  for (const npc of state.npcs) rememberNpc(state, npc.id, memory)
 }
 
 export function movePlayer(state: GameState, dx: number, dy: number) {
@@ -217,6 +259,7 @@ export function movePlayer(state: GameState, dx: number, dy: number) {
   c.position = destination; c.currentRegion = tile.regionId
   reveal(state, tile.regionId)
   simulate(state, 5)
+  state.life.director.lastPlayerActivity = state.worldTime
   return true
 }
 
@@ -247,6 +290,9 @@ export function chooseSuccessor(state: GameState, npcId: string) {
   if (!npc) return false
   state.characters.push({ ...npc, position: { ...npc.position }, currentRegion: tileAt(state, npc.position)!.regionId, inventory: { ...npc.inventory }, skills: { combat: { ...npc.skills.combat }, farming: { ...npc.skills.farming }, mining: { ...npc.skills.mining }, woodcutting: { ...npc.skills.woodcutting } }, status: 'idle' })
   state.npcs = state.npcs.filter(n => n.id !== npcId); state.activeCharacterId = npcId; state.party = []; state.combat = null
+  const generation = Math.max(...Object.values(state.life.characters).map(life => life.generation)) + 1
+  state.life.characters[npcId] = newCharacterLife(generation, 'LOCAL_WORLD')
+  refreshIdentity(state, npcId)
   emit(state, 'character.successor', 'player', `${npc.name} 接續了旅程。橡谷的歷史繼續書寫。`, true)
   return true
 }

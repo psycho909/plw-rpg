@@ -3,6 +3,10 @@ import type { BuildingId, GameState, ItemId, SkillId } from '../domain/types'
 import { calendar } from './calendar'
 import { emit } from './events'
 import { random } from './random'
+import { changeReputation, recordLifeAction } from './identity'
+import { MERCENARY_REPUTATION } from '../data/lifeRules'
+import { npcCanWork, rememberNpc } from './npcLife'
+import { recordHunt, recordLivingTrade, tradePriceMultiplier } from './livingEvents'
 import { die, distance, gainExp, player, simulate, stageIndex, threatLevel } from './simulation'
 
 export function canVisit(state: GameState, building: BuildingId) {
@@ -16,6 +20,7 @@ function cost(state: GameState, stamina: number, minutes: number, gold = 0) {
   if (c.gold < gold) return '金幣不足。'
   // Pay before time advances so daily wages only spend the remaining balance.
   c.gold -= gold; c.stamina -= stamina; simulate(state, minutes)
+  state.life.director.lastPlayerActivity = state.worldTime
   return c.isAlive ? '' : '角色已離世，請選擇繼任者。'
 }
 export function farm(state: GameState, action: 'prepare' | 'plant' | 'harvest') {
@@ -38,6 +43,8 @@ export function farm(state: GameState, action: 'prepare' | 'plant' | 'harvest') 
     state.crops = state.crops.filter(c => c.id !== crop.id); gainExp(state, player(state), 15, 'farming')
     emit(state, 'crop.harvested', 'player', `收穫 ${yieldAmount} 份食物，耕作經驗增加。`)
   }
+  recordLifeAction(state, 'farming')
+  if (action === 'harvest') changeReputation(state, 1, '收成補充橡谷糧食')
   return ''
 }
 export function gather(state: GameState, kind: 'wood' | 'stone' | 'iron') {
@@ -48,6 +55,7 @@ export function gather(state: GameState, kind: 'wood' | 'stone' | 'iron') {
   const error = cost(state, 10, Math.max(15, 45 - c.skills[skill].level * 2)); if (error) return error
   state.regions[region].remainingAmount -= amount; c.inventory[kind] += amount; c.gold += 4
   gainExp(state, c, 10, skill); emit(state, 'player.gathered', 'player', `取得 ${amount} 份${ITEMS[kind].name}，工作報酬 4 金幣。`)
+  recordLifeAction(state, skill)
   return ''
 }
 export function rest(state: GameState, kind: 'rest' | 'inn' | 'tavern') {
@@ -63,8 +71,7 @@ export function rest(state: GameState, kind: 'rest' | 'inn' | 'tavern') {
 export function trade(state: GameState, item: ItemId, buying: boolean) {
   const c = player(state), equipment = item === 'sword' || item === 'armor', shop = equipment ? 'blacksmith' : 'store'
   if (!canVisit(state, shop)) return `請在營業時間前往${BUILDINGS[shop].name}旁。`
-  const definition = ITEMS[item], bonus = stageIndex(state) === 2 ? .8 : 1
-  const price = Math.ceil(definition.price * bonus)
+  const definition = ITEMS[item], price = buyPrice(state, item)
   if (buying) {
     if (stageIndex(state) < definition.minStage) return '聚落尚未提供這項商品。'
     if (c.gold < price) return '金幣不足。'
@@ -74,25 +81,41 @@ export function trade(state: GameState, item: ItemId, buying: boolean) {
     if (c.inventory[item] <= (equipped ? 1 : 0)) return '沒有可出售的物品；已穿戴的裝備請先卸下。'
     c.inventory[item]--; c.gold += definition.sell; state.settlement.prosperity = Math.min(100, state.settlement.prosperity + .2)
   }
+  recordLivingTrade(state, item, buying)
   simulate(state, 5); emit(state, 'player.traded', 'player', `${buying ? '購買' : '出售'}一份${definition.name}。`)
+  state.life.director.lastPlayerActivity = state.worldTime
   return ''
+}
+export function buyPrice(state: GameState, item: ItemId) {
+  return Math.ceil(ITEMS[item].price * (stageIndex(state) === 2 ? .8 : 1) * tradePriceMultiplier(state))
 }
 export function equip(state: GameState, item: 'sword' | 'armor') {
   const c = player(state)
   if (!c.isAlive || state.combat) return '目前無法更換裝備。'
   if (!c.inventory[item]) return '背包裡沒有這件裝備。'
   const slot = item === 'sword' ? 'weapon' : 'armor'; c.equipment[slot] = c.equipment[slot] === item ? null : item
+  state.life.director.lastPlayerActivity = state.worldTime
   return ''
+}
+export function hireTerms(state: GameState) {
+  const reputation = state.life.characters[state.activeCharacterId]!.reputation
+  return {
+    hireCost: 20 + stageIndex(state) * 5 - Math.min(MERCENARY_REPUTATION.maximumDiscount, Math.floor(Math.max(0, reputation) / MERCENARY_REPUTATION.discountStep)),
+    eligible: reputation >= MERCENARY_REPUTATION.minimum,
+  }
 }
 export function hire(state: GameState, npcId: string) {
   if (!canVisit(state, 'tavern')) return '請在 17:00–24:00 前往酒館旁。'
   if (state.party.length >= 2) return '最多只能聘請兩名同行者。'
   const npc = state.npcs.find(n => n.id === npcId && n.job === 'mercenary' && n.isAlive && n.age >= 15 && n.injuredUntil <= state.worldTime)
-  if (!npc || state.party.some(p => p.npcId === npcId)) return '這名傭兵目前無法受雇。'
-  const c = player(state), hireCost = 20 + stageIndex(state) * 5
+  if (!npc || !npcCanWork(state, npcId) || state.party.some(p => p.npcId === npcId)) return '這名傭兵目前無法受雇。'
+  const { hireCost, eligible } = hireTerms(state)
+  if (!eligible) return '傭兵目前不願接受你的委託；先修復與橡谷的信任。'
+  const c = player(state)
   if (c.gold < hireCost) return '金幣不足。'
   c.gold -= hireCost
   state.party.push({ npcId, hireCost, dailyWage: 4, contractEnd: (Math.floor(state.worldTime / CONFIG.minutesPerDay) + CONFIG.contractDays) * CONFIG.minutesPerDay, archetype: state.party.length === 1 ? 'healer' : 'fighter' })
+  rememberNpc(state, npcId, { kind: 'PLAYER_HIRED_ME', actorId: c.id, at: state.worldTime, detail: `${c.name}聘請我同行。` })
   simulate(state, 10); emit(state, 'party.hired', 'player', `${npc.name} 加入同行，日薪 4 金幣，契約 ${CONFIG.contractDays} 日。`)
   return ''
 }
@@ -123,6 +146,7 @@ export function encounter(state: GameState, boss = false) {
   const scale = 1 + ((d.inDungeon ? d.threat : state.threat.threatLevel) - 1) * .25 + (elite ? .4 : 0)
   state.combat = { monsterId: id, hp: Math.round(m.hp * scale), maxHp: Math.round(m.hp * scale), attack: Math.round(m.attack * scale), defense: m.defense, exp: Math.round(m.exp * scale), gold: Math.round(m.gold * scale), elite, dungeon: d.inDungeon }
   c.status = 'combat'; emit(state, 'combat.started', 'player', `遭遇${elite ? '精英' : ''}${m.name}。`)
+  state.life.director.lastPlayerActivity = state.worldTime
   return ''
 }
 export function usePotion(state: GameState) {
@@ -147,14 +171,22 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
     else if (c.hp > c.maxHp * .25) monster.hp = Math.max(0, monster.hp - Math.max(1, npc.stats.strength / 2 + stageIndex(state) * 2 - monster.defense))
   }
   if (monster.hp <= 0) {
+    recordHunt(state)
     c.gold += monster.gold; c.inventory[MONSTERS[monster.monsterId as keyof typeof MONSTERS].loot]++
-    gainExp(state, c, monster.exp, 'combat'); state.combat = null; c.status = 'idle'
+    gainExp(state, c, monster.exp, 'combat'); recordLifeAction(state, 'combat'); state.combat = null; c.status = 'idle'
     if (!monster.dungeon) {
+      changeReputation(state, MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss ? 12 : 1, '守護橡谷北方道路')
+      for (const npc of state.npcs) rememberNpc(state, npc.id, { kind: MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss ? 'GOBLIN_CHIEF_DEFEATED' : 'PLAYER_DEFENDED_OAKVALE', actorId: c.id, at: state.worldTime, detail: `${c.name}擊退北方道路的威脅。` })
       state.threat.monsterPopulation = Math.max(0, state.threat.monsterPopulation - 5)
       state.threat.bossProgress = Math.max(0, state.threat.bossProgress - 10)
       state.threat.threatLevel = threatLevel(state.threat.monsterPopulation)
       state.threat.campLevel = state.threat.threatLevel
-      if (MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss) { state.threat.bossAlive = false; state.threat.bossProgress = 0; state.threat.warningLevel = 0; emit(state, 'boss.defeated', 'monster', `${MONSTERS[BOSS.monsterId].name}被擊敗，北方商路暫時恢復平靜。`, true) }
+      if (MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss) {
+        state.threat.bossAlive = false; state.threat.bossProgress = 0; state.threat.warningLevel = 0
+        state.life.worldMemories.push({ kind: 'GOBLIN_CHIEF_DEFEATED', actorId: c.id, at: state.worldTime, detail: `${c.name}擊敗哥布林酋長。` })
+        if (state.life.worldMemories.length > 100) state.life.worldMemories.shift()
+        emit(state, 'boss.defeated', 'monster', `${MONSTERS[BOSS.monsterId].name}被擊敗，北方商路暫時恢復平靜。`, true)
+      }
     } else {
       state.dungeon.stage++
       if (state.dungeon.stage >= DUNGEON.encounters.length) {
@@ -172,5 +204,6 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
     if (!c.hp) die(state, c, '戰鬥傷勢')
   }
   simulate(state, 1)
+  state.life.director.lastPlayerActivity = state.worldTime
   return ''
 }

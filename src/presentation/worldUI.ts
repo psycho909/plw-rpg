@@ -47,6 +47,14 @@ export function worldMarks(state: GameState): Map<string, MapMark> {
     if (state.threat.campLevel >= 2) put(11, 3, { icon: state.threat.campLevel >= 3 ? '♜' : '🏕️', label: '哥布林營地', kind: 'threat' })
     if (state.threat.bossAlive) put(12, 4, { icon: '👹', label: '哥布林酋長出沒', kind: 'threat' })
   }
+  for (const property of state.life.properties) {
+    const owner = state.characters.find(c => c.id === property.ownerId)
+    const label = `${owner?.isAlive === false ? '已故' : ''}${owner?.name ?? '居民'}的${property.kind === 'home' ? '自宅' : property.kind === 'land' ? '農地' : '農場事業'}`
+    const key = `${property.position.x},${property.position.y}`
+    const crop = marks.get(key)
+    if (crop?.kind === 'crop') crop.label = `${label} · ${crop.label}`
+    else put(property.position.x, property.position.y, { icon: property.kind === 'home' ? '🏠' : '🌾', label, kind: 'home' })
+  }
   return marks
 }
 export function directionFor(key: string): Position | null {
