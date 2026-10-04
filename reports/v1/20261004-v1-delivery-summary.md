@@ -308,3 +308,5 @@ python3 -B -m unittest discover -s scripts -p 'test_*.py'
 - Chromium 12 項、Firefox ESR 12 項 smoke 通過。原生 Safari、iPhone／Android 實機缺少硬體或連線入口，仍待驗收；手機 viewport 不算實機。
 
 長時間監看依使用者要求指定 GPT-6 Luna／low；留存監看至第 90 分鐘，harness 自動完成兩小時後由 root 核對終點。各 QA 報告版本保存在本機追加 archive；不保證防止外部修改或刪除。完整大型原始經濟資料以可逐 byte 還原的 gzip 交付。
+
+後續結案：使用者於2026-10-04明確排除原生Safari與手機實機測試；本輪平台驗收保留已通過的Chromium／Firefox，修訂範圍已完成。上述實機未驗收描述為先前狀態，排除項目不列PASS。QA完整紀錄提交1c0115e並同步work。

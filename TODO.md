@@ -15,7 +15,6 @@
 
 ## Blocked
 
-- [ ] 最新 V1 八路線深度 QA 與實機 smoke — Ticket: [20261004-deep-qa](tickets/20261004-deep-qa.md)
 
 
 完成條件：每個項目都有唯一正式 Ticket、只出現在一個區段，且沒有已完成工作或執行細節。

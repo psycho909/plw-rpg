@@ -7,3 +7,5 @@ Standards：340 個凍結檔案 bytes/SHA 全吻合；staged 347，另外 7 項�
 Spec：獨立 reviewer 核對完成的 soak、export、profile、四份 README、V1 §13、Ticket/TODO/handoff、terminal attribution 及 archive/link PASS，回報「截至目前無阻擋 finding」。未重跑 source tests 或大型矩陣；使用已保存的實際 runtime 證據。
 
 Root 驗收目前已完成的交付範圍。原生 Safari、iPhone／Android 實機仍未驗收；整體 Ticket 保持 blocked。效能數值為本次情境觀察，不宣稱符合未定義門檻或所有情境均無 leak。
+
+後續Scope修訂：使用者明確排除原生Safari與手機實機測試。Root核對本次僅更新平台排除、Ticket／handoff結案與同步證據；原始runtime與凍結審查結果不改，修訂範圍無待驗收項目。此為root結案補查，非新增獨立runtime測試。

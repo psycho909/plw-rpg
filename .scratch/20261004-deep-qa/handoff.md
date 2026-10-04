@@ -3,13 +3,13 @@
 ## Identity
 - Task: 最新 V1 八路線深度 QA
 - Authority / Ticket: [20261004-deep-qa](../../tickets/20261004-deep-qa.md)
-- Status: blocked
+- Status: done
 - Updated: 2026-10-04（最新終點核對）
 - Source environment: managed cloud Linux /workspace/plw-rpg
 - Branch: work
 - Remote: origin (https://github.com/psycho909/plw-rpg.git)
 - Base commit: 738bc0010c549fa3fb2420437d171f5aa2a043a0
-- Working tree: O1 source checkpoint c22de4e 已同步；QA reports、Ticket 更新、TODO、.gitignore 與本 handoff 尚待最終整合提交。
+- Working tree: O1來源c22de4e與QA證據1c0115e已同步work；本結案僅追加使用者平台範圍修訂與最終狀態。
 - Sync target: origin/work
 
 ## Goal and Acceptance
@@ -26,8 +26,7 @@
 
 ## Remaining
 
-- clean-run 已完成 active 7200.219 秒；離線 export chain 72013筆 PASS、profile已產出。文件審查與同步由 root 收尾。
-- 原生 Safari、iPhone／Android 實機沒有已配置硬體或 callable tool，未通過；使用者的裝置／服務入口問題仍未回答。
+無；使用者已明確排除原生Safari與手機實機，本輪修訂範圍完成。
 
 ## Decisions
 
@@ -51,8 +50,12 @@
 
 ## Blockers
 
-原生 Safari／iPhone／Android 實機缺連線；其他 runtime 測試已完成。整合 review／同步證據由 root 收尾。
+無。原生Safari／手機實機依使用者最新指示移出本輪Scope，未列PASS。
+
+## Final Evidence
+
+完整QA證據提交1c0115e已push並fetch核對；最終獨立review實際結果見review/final-review.md/json。後續結案僅更新Scope與狀態；root同步包含此handoff的提交。
 
 ## Next Action
 
-取得可連線的 Mac Safari 與 iPhone／Android 實機或已授權裝置服務入口，依 platforms/README.md 在相同 c22de4e 固定 build 執行 QA-08；不得以 viewport 或 Linux WebKit 替代。
+完成；無需接續本輪測試。

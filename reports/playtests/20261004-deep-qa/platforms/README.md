@@ -1,6 +1,8 @@
 # QA-08 瀏覽器與平台 Smoke
 
-**目前結果：Chromium 與 Firefox ESR 共 24/24 cases 通過；Safari 與實機尚待連線。** 這份報告只完成 QA-08，不代表 `tickets/20261004-deep-qa.md` 的其他七條路線已通過。
+**最終結果：Chromium 與 Firefox ESR 共24/24 cases通過；使用者最新明確排除原生Safari與手機實機測試，本轮QA-08結案。** 這份報告只完成 QA-08，不代表 `tickets/20261004-deep-qa.md` 的其他七條路線已通過。
+
+以下runtime與原先平台阻塞描述保留執行當時的歷史；已排除平台不列PASS，也不再阻塞本輪驗收。
 
 最新完整 run 為 2026-10-04 07:52:14–07:52:45 UTC，狀態 `complete-with-platform-blockers`。最終單次結果見 [smoke.json](smoke.json)，完整 console、page error、request、resource、IndexedDB 與效能快照見 [browser-events.json](browser-events.json)。每次 checkpoint 和報告更新都經 `scripts.recorded_reports.write_recorded` 寫入；[playlog.jsonl](playlog.jsonl) 是 append-only 歷程，保留先前中斷與修正中的 harness 結果，不要把較早的 partial snapshot 當成最終 run。
 

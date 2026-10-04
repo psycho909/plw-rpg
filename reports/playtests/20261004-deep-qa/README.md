@@ -1,6 +1,6 @@
-# 最新 V1 八路線深度 QA（整合中）
+# 最新 V1 八路線深度 QA（已完成）
 
-起始來源為 `738bc0010c549fa3fb2420437d171f5aa2a043a0`。最終受測 production 快照包含 O1 保存復原修正，精確來源與資產 SHA-256 見 [final-manifest](baseline/final-manifest.json)；目前由 localhost 5193 提供相同固定資產。[source-commit.json](baseline/source-commit.json) 已核對後續提交 `c22de4e` 的 35 個來源 hash 完全相同。QA-01–07 的路線證據已完成；QA-08 的 Chromium／Firefox ESR smoke 通過，但原生 Safari 與 iPhone／Android 實機仍缺連線。整體仍待 root 完成最終整合 review／Git sync，不宣稱八路線全數通過。
+起始來源為 `738bc0010c549fa3fb2420437d171f5aa2a043a0`。最終受測 production 快照包含 O1 保存復原修正，精確來源與資產 SHA-256 見 [final-manifest](baseline/final-manifest.json)；目前由 localhost 5193 提供相同固定資產。[source-commit.json](baseline/source-commit.json) 已核對後續提交 `c22de4e` 的 35 個來源 hash 完全相同。QA-01–07 的路線證據已完成；QA-08 的 Chromium／Firefox ESR 共24/24 smoke通過。使用者最新明確排除原生 Safari 與手機實機測試，這些項目移出本輪驗收，不列PASS。最終獨立審查對照無阻擋finding，root已接受修訂後範圍；完整證據提交 `1c0115e` 並同步 work。
 
 - 授權與驗收正本：[Ticket](../../../tickets/20261004-deep-qa.md)。
 - baseline：136 tests／7 files；修復後 143 tests／7 files、type check、production build 通過。見 [baseline](baseline/check.log)、[修復 build](baseline/final-build.log)、[Astra 修復](recovery/README.md)。
@@ -16,9 +16,11 @@
 | QA-05 死亡繼承 | [inheritance](inheritance/README.md) | 13/13 合法案例、40 保存 roundtrip 通過；4/4 非法存檔按預期拒絕。 |
 | QA-06 ×20 競態／延遲 ACK | [cross-state](cross-state/README.md) | 最終 build 10 案例／42 checkpoint，加實際戰鬥延遲 ACK 2 案例／7 checkpoint；通過。 |
 | QA-07 地城、隊伍、契約、保存 | [cross-state](cross-state/README.md) | 公開 UI 隊伍／三層地城流程及保存、reload、死亡、撤退、薪資／到期交叉矩陣通過。 |
-| QA-08 瀏覽器／實機平台 | [platforms](platforms/README.md) | Chromium 12 + Firefox ESR 12＝24/24 通過；原生 Safari、iPhone／Android 實機仍 BLOCKED，沒有以模擬代替。 |
+| QA-08 瀏覽器／實機平台 | [platforms](platforms/README.md) | Chromium 12 + Firefox ESR 12＝24/24 通過；原生 Safari、iPhone／Android 已依使用者最新指示移出範圍，未列PASS。 |
 | O1 保存復原必要修復 | [recovery](recovery/README.md)、[browser regression](root-checks/recovery-browser.json) | Astra 最小 store/UI gate；143 tests 與 Chromium 8/8 回歸通過，修復 review 已接受並同步 work。 |
 | 記憶體測試工具診斷 | [memory-diagnosis](memory-diagnosis/README.md) | selector wait 的 retained DOM 訊號定位為 Playwright 測試工具 ElementHandle；不宣稱整個遊戲沒有 memory leak。 |
 正常 UI 時鐘、公開等待、headless 引擎模擬、邊界 fixture 與手機 viewport emulation 是不同證據。Linux WebKit 不代表原生 Safari，手機 viewport 不代表 iPhone／Android 實機。未取得裝置的項目不記 PASS。
 
 每次報告 checkpoint 使用 `scripts/recorded_reports.py` 自動追加至資料夾的 `playlog.jsonl`，目前可讀報告只是最新投影；未製作伺服器或防止外部改檔／刪檔機制。一次性 QA 與一般 L2 review 採 GPT-6 Luna/max；依使用者最新指示，長時間例行監看採 GPT-6 Luna/low，重大疑慮採 Astra。這些是工具要求的路由設定，不等同後端模型遙測。
+
+最終審查與紀錄：[final review](review/final-review.md)。2026-10-04使用者縮小平台Scope後，本輪結案；原先實機缺連線的歷史保存在追加archive，未改寫原始runtime JSON。
