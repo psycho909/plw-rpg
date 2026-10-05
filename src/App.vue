@@ -39,6 +39,12 @@ const records = computed(() => pane.value === 'world' || pane.value === 'log' ||
 const successors = computed(() => game.state.npcs.filter(n => n.isAlive && n.age >= 15)
   .map(npc => ({ id: npc.id, name: npc.name, age: npc.age, job: npc.job, level: npc.level })))
 const saveWarning = computed(() => game.saveBlocked ? '原始存檔已保留。現在的世界不會覆蓋它；確認後可從選單重建世界。' : [game.saveError, game.journalError].filter(Boolean).join(' '))
+function recoverSave() {
+  if (game.writerPending) return
+  if (!game.writerReady) window.location.reload()
+  else if (game.saveBlocked) openWindow('reset')
+  else game.save(true)
+}
 function openWindow(id: WindowId) { if (!game.state.life.openingSeen && !game.saveBlocked) return; if (c.value.isAlive || id === 'successor') pane.value = id }
 function closeWindow() { if (c.value.isAlive && pane.value !== 'opening') pane.value = null }
 function setSpeed(speed: number) { stop?.flush(); game.setSpeed(speed); if (game.speed) lastSpeed.value = game.speed }
@@ -80,11 +86,13 @@ function keydown(event: KeyboardEvent) {
   if (direction) { event.preventDefault(); move(direction.x, direction.y) }
   else if (event.key === 'Enter' && !(target instanceof HTMLElement && target.closest('button, a'))) { event.preventDefault(); interact() }
 }
-watch(() => [c.value.isAlive, !!game.state.combat, game.state.dungeon.inDungeon], ([alive, battle, dungeon]) => {
+watch(() => [game.writerReady, c.value.isAlive, !!game.state.combat, game.state.dungeon.inDungeon, game.state.life.openingSeen], ([ready, alive, battle, dungeon, openingSeen]) => {
+  if (!ready) return
   if (!alive) pane.value = 'successor'
   else if (battle) pane.value = 'battle'
   else if (dungeon) pane.value = 'dungeon'
-  else if (pane.value && ['battle', 'dungeon', 'successor'].includes(pane.value)) pane.value = null
+  else if (!openingSeen && !game.saveBlocked) pane.value = 'opening'
+  else if (pane.value && ['battle', 'dungeon', 'successor', 'opening'].includes(pane.value)) pane.value = null
 }, { immediate: true })
 watch(title, value => document.title = `${value} — 橡谷`, { immediate: true })
 let stop: ReturnType<typeof startLoop> | undefined
@@ -112,7 +120,7 @@ onUnmounted(() => {
     </header>
     <main class="world-stage" aria-label="探索世界">
       <div v-if="!pane && (saveWarning || game.message)" class="world-notices">
-        <div v-if="saveWarning" class="save-warning" role="alert"><span>{{ saveWarning }}</span><button @click="game.saveBlocked ? openWindow('reset') : game.save(true)">{{ game.saveBlocked ? '查看重建選項' : '重試存檔' }}</button></div>
+        <div v-if="saveWarning" class="save-warning" role="alert"><span>{{ saveWarning }}</span><button :disabled="game.writerPending" @click="recoverSave">{{ game.writerPending ? '確認中' : !game.writerReady ? '重新整理' : game.saveBlocked ? '查看重建選項' : '重試存檔' }}</button></div>
         <StatusNotice :message="game.message" @dismiss="game.message = ''" />
       </div>
       <div class="world-caption"><span>{{ regionIcons[c.currentRegion] }} {{ REGIONS[c.currentRegion].name }} <small>{{ c.position.x }}, {{ c.position.y }}</small></span><span class="world-condition">{{ game.state.threat.bossAlive ? '北方傳來酋長出沒的消息' : game.speed ? '世界正在流動' : '時間已暫停' }}</span></div>
@@ -130,7 +138,7 @@ onUnmounted(() => {
 
     <PixelWindow v-if="pane" :title="title" :dismissible="pane !== 'successor' && pane !== 'opening'" @close="closeWindow">
       <div v-if="pane === 'menu'" class="pixel-menu"><p class="muted">世界正在你的身後繼續生活。</p><button v-for="menu in menus" :key="menu.id" :aria-label="menu.label" @click="openWindow(menu.id)"><span>{{ menu.label }}</span><kbd v-if="menu.key">{{ menu.key }}</kbd></button><button @click="game.save(true)">儲存世界 <small>{{ game.savedAt ? '已存於此瀏覽器 · 操作後立即保存' : '每次操作自動存檔' }}</small></button><button @click="game.exportJournal()">匯出遊玩紀錄 <small>{{ game.pendingRecords ? `待補寫 ${game.pendingRecords} 筆` : '紀錄只能追加' }}</small></button><button class="danger reset-trigger" @click="openWindow('reset')">重建世界</button></div>
-      <section v-else-if="pane === 'opening'" class="life-opening"><p>你醒了過來。</p><p>陌生的天空，陌生的土地。</p><p>你記得另一個地方、另一段人生。但那已經結束了。</p><p>遠方似乎有炊煙。你得先想辦法活下去。</p><button class="primary" data-autofocus @click="beginLife">起身</button></section>
+      <section v-else-if="pane === 'opening'" class="life-opening"><p>你醒了過來。</p><p>陌生的天空，陌生的土地。</p><p>你記得另一個地方、另一段人生。但那已經結束了。</p><p>遠方似乎有炊煙。你得先想辦法活下去。</p><button class="primary" data-autofocus :disabled="!game.writerReady" @click="beginLife">起身</button></section>
       <IdentityWindow v-else-if="pane === 'identity'" />
       <PropertyWindow v-else-if="pane === 'property'" @travel="go" />
       <LifeNewsWindow v-else-if="pane === 'news'" @travel="go" />
@@ -145,7 +153,7 @@ onUnmounted(() => {
       <section v-else-if="pane === 'successor'"><p class="memorial" aria-hidden="true">─── ◇ ───</p><p>{{ c.name }} 享年 {{ c.age }} 歲。這段人生已經結束；橡谷與他留下的痕跡仍在。</p><p class="muted">接續的是這個世界已有的成年居民，不是再次轉生。</p><h3 class="section-title">選一位居民，接續旅程</h3><div class="successor-list"><button v-for="npc in successors" :key="npc.id" @click="game.act(() => chooseSuccessor(game.state, npc.id))">{{ jobIcons[npc.job] }} {{ npc.name }} · {{ npc.age }} 歲 · {{ JOBS[npc.job].name }} · Lv.{{ npc.level }}</button><button v-if="!successors.length" @click="game.advance(15 * 1440)">等待新居民抵達 · 15 日</button></div></section>
 
       <template #footer>
-        <p v-if="saveWarning" class="inline-warning" role="alert">{{ saveWarning }}</p>
+        <p v-if="saveWarning" class="inline-warning" role="alert">{{ saveWarning }}<button v-if="!game.writerReady" :disabled="game.writerPending" @click="recoverSave">{{ game.writerPending ? '確認中' : '重新整理' }}</button></p>
         <StatusNotice :message="game.message" @dismiss="game.message = ''" />
         <div class="window-world-status"><small>{{ clockLabel(game.state.worldTime) }} · 生命 {{ c.hp }} · 體力 {{ c.stamina }} · {{ c.gold }} 金</small><button :aria-pressed="game.speed === 0" @click="setSpeed(game.speed ? 0 : lastSpeed)">{{ game.speed ? '暫停時間' : '繼續時間' }}</button></div>
       </template>

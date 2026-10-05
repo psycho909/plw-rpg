@@ -14,7 +14,15 @@ import { useGameStore } from './gameStore'
 
 let saved: string | null
 const storage = { getItem: () => saved, setItem: vi.fn((_key: string, value: string) => { saved = value }) }
-beforeEach(() => { saved = null; storage.setItem.mockReset().mockImplementation((_key, value) => { saved = value }); vi.stubGlobal('localStorage', storage); setActivePinia(createPinia()); vi.useFakeTimers(); vi.setSystemTime(100000) })
+beforeEach(() => {
+  saved = null
+  storage.setItem.mockReset().mockImplementation((_key, value) => { saved = value })
+  vi.stubGlobal('localStorage', storage)
+  // Existing single-store tests use a synchronously granted lease. The ownership
+  // tests below exercise delayed grants, contention, rejection and disposal.
+  vi.stubGlobal('navigator', { locks: { request: vi.fn((_name, _options, callback) => Promise.resolve(callback({ name: 'oakvale-v1:writer' }))) } })
+  setActivePinia(createPinia()); vi.useFakeTimers(); vi.setSystemTime(100000)
+})
 afterEach(() => { vi.useRealTimers(); vi.unstubAllGlobals(); vi.restoreAllMocks() })
 
 function startedGame() {
@@ -373,4 +381,110 @@ describe('safe browser persistence', () => {
     expect(unpackCheckpoint(saved!).journal.pending).toHaveLength(game.pendingRecords)
     expect(game.journalError).toContain(conflict)
   })
+})
+
+
+describe('exclusive checkpoint writer', () => {
+  it('prevents a second tab from overwriting newer progress or appending its own journal', async () => {
+    let occupied = false
+    vi.stubGlobal('navigator', { locks: { request: vi.fn((_name, _options, callback) => {
+      const granted = !occupied; occupied = true
+      return Promise.resolve(callback(granted ? { name: 'oakvale-v1:writer' } : null))
+    }) } })
+    const appendBatch = vi.fn(async () => {})
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValue({ appendBatch, readAll: async () => [] })
+    const first = startedGame()
+    setActivePinia(createPinia())
+    const second = useGameStore()
+    first.act(() => movePlayer(first.state, 0, 1))
+    await Promise.resolve(); await Promise.resolve()
+    const latest = saved, pending = appendBatch.mock.calls.length
+    expect(second.save(true)).toBe(false)
+    const action = vi.fn(() => true)
+    second.act(action); second.advance(60); second.setSpeed(20); second.startLife(); second.reset()
+    await Promise.resolve()
+    expect(action).not.toHaveBeenCalled()
+    expect(second.speed).toBe(0)
+    expect(second.saveError).toContain('另一個')
+    expect(saved).toBe(latest)
+    expect(appendBatch).toHaveBeenCalledTimes(pending)
+    expect(unpackCheckpoint(saved!).state.worldTime).toBe(485)
+  })
+})
+
+it('exports the latest persisted checkpoint from a blocked tab, not its stale preview', async () => {
+  const first = startedGame()
+  vi.stubGlobal('navigator', { locks: { request: (_name: string, _options: unknown, callback: (lock: null) => unknown) => Promise.resolve(callback(null)) } })
+  setActivePinia(createPinia())
+  const blocked = useGameStore()
+  first.act(() => movePlayer(first.state, 0, 1))
+  const blobs: Blob[] = []
+  vi.spyOn(URL, 'createObjectURL').mockImplementation(blob => { if (!(blob instanceof Blob)) throw new Error('Expected Blob export'); blobs.push(blob); return 'blob:test' })
+  vi.stubGlobal('document', { createElement: () => ({ click: vi.fn() }) })
+  await blocked.exportJournal()
+  const data = JSON.parse(await blobs[0]!.text())
+  expect(data.checkpoint.worldTime).toBe(485)
+  expect(data.checkpoint.characters.find((c: { id: string }) => c.id === data.checkpoint.activeCharacterId).position).toEqual({ x: 7, y: 10 })
+})
+
+it('does not write before asynchronous lock acquisition and re-reads the winning checkpoint', () => {
+  let grant: (() => unknown) | undefined
+  vi.stubGlobal('navigator', { locks: { request: (_name: string, _options: unknown, callback: (lock: object) => unknown) => {
+    grant = () => callback({ name: 'oakvale-v1:writer' })
+    return new Promise(() => {})
+  } } })
+  const game = useGameStore(), action = vi.fn(() => true)
+  expect(game.writerPending).toBe(true)
+  game.act(action); game.startLife(); game.advance(60); game.setSpeed(20); game.reset(); game.save(true)
+  expect(storage.setItem).not.toHaveBeenCalled()
+  expect(action).not.toHaveBeenCalled()
+  const winner = createGame(777); winner.life.openingSeen = true; simulate(winner, 150)
+  saved = serialize(winner, 99000)
+  grant!()
+  expect(game.writerReady).toBe(true)
+  expect(game.writerPending).toBe(false)
+  expect(game.state).toEqual(winner)
+  expect(unpackCheckpoint(saved!).state).toEqual(winner)
+})
+
+it.each(['unsupported', 'rejected'])('fails closed with %s browser lock support', async kind => {
+  vi.stubGlobal('navigator', kind === 'unsupported' ? {} : { locks: { request: () => Promise.reject(new Error('denied')) } })
+  const game = useGameStore(), action = vi.fn(() => true)
+  await Promise.resolve()
+  game.act(action); game.startLife(); game.advance(60); game.reset(); game.setSpeed(20)
+  expect(game.save(true)).toBe(false)
+  expect(game.writerReady).toBe(false)
+  expect(game.speed).toBe(0)
+  expect(game.saveError).toContain('無法安全協調')
+  expect(action).not.toHaveBeenCalled()
+  expect(storage.setItem).not.toHaveBeenCalled()
+})
+
+it('releases ownership on store disposal and a new session reads the latest save', async () => {
+  let occupied = false
+  vi.stubGlobal('navigator', { locks: { request: (_name: string, _options: unknown, callback: (lock: object | null) => unknown) => {
+    if (occupied) return Promise.resolve(callback(null))
+    occupied = true
+    return Promise.resolve(callback({ name: 'oakvale-v1:writer' })).finally(() => { occupied = false })
+  } } })
+  const first = startedGame()
+  first.act(() => movePlayer(first.state, 0, 1))
+  const expected = JSON.parse(JSON.stringify(first.state))
+  first.$dispose()
+  expect(first.save()).toBe(false)
+  await Promise.resolve(); await Promise.resolve()
+  setActivePinia(createPinia())
+  const reopened = useGameStore()
+  expect(reopened.writerReady).toBe(true)
+  expect(reopened.state).toEqual(expected)
+})
+
+it('does not activate an asynchronously granted lease after store disposal', () => {
+  let grant: (() => unknown) | undefined
+  vi.stubGlobal('navigator', { locks: { request: (_name: string, _options: unknown, callback: (lock: object) => unknown) => {
+    grant = () => callback({ name: 'oakvale-v1:writer' }); return new Promise(() => {})
+  } } })
+  const game = useGameStore(); game.$dispose(); grant!()
+  expect(game.writerReady).toBe(false)
+  expect(storage.setItem).not.toHaveBeenCalled()
 })
