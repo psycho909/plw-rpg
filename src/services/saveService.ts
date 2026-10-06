@@ -6,6 +6,8 @@ import type { WorldLife } from '../domain/life'
 import type { GameState, Position } from '../domain/types'
 import { createGame } from '../engine/simulation'
 import { initializeLife } from '../engine/lifeState'
+import { emptyReward } from '../engine/rewardState'
+import { validFamilyEncounter, validateReward } from './rewardValidation'
 
 export const SAVE_KEY = 'oakvale-v1'
 
@@ -42,7 +44,7 @@ function validBase(value: unknown, version: 1 | 2): value is GameState {
   const currentTemplate = createGame()
   // Event tiers were introduced in V2; native V1 history must retain its original shape.
   for (const event of [...currentTemplate.events, ...currentTemplate.history]) delete event.tier
-  const { life: _life, ...baseTemplate } = currentTemplate
+  const { life: _life, reward: _reward, ...baseTemplate } = currentTemplate
   const template: Record<string, unknown> = { ...baseTemplate, saveVersion: version }
   if (version === 1) {
     // Life did not exist in native V1 saves; accepting it could overwrite unknown saved data.
@@ -84,10 +86,11 @@ function validBase(value: unknown, version: 1 | 2): value is GameState {
     && s.party.length <= 2 && s.party.every(p => exactShape(p, ['npcId', 'hireCost', 'dailyWage', 'contractEnd', 'archetype'])
       && ['fighter', 'healer'].includes(p.archetype) && s.npcs.some(n => n.id === p.npcId)
       && safeInt(p.hireCost) && safeInt(p.dailyWage) && safeInt(p.contractEnd))
-    && (s.combat === null || (exactShape(s.combat, ['monsterId', 'hp', 'maxHp', 'attack', 'defense', 'exp', 'gold', 'elite', 'dungeon'])
+    && (s.combat === null || (exactShape(s.combat, ['monsterId', 'hp', 'maxHp', 'attack', 'defense', 'exp', 'gold', 'elite', 'dungeon'], ['familyEncounter'])
       && Object.hasOwn(MONSTERS, s.combat.monsterId) && boundedNumber(s.combat.hp, 0, Number.MAX_SAFE_INTEGER)
       && boundedNumber(s.combat.maxHp, 1, Number.MAX_SAFE_INTEGER) && safeInt(s.combat.attack) && safeInt(s.combat.defense)
-      && safeInt(s.combat.exp) && safeInt(s.combat.gold) && typeof s.combat.elite === 'boolean' && typeof s.combat.dungeon === 'boolean'))
+      && safeInt(s.combat.exp) && safeInt(s.combat.gold) && typeof s.combat.elite === 'boolean' && typeof s.combat.dungeon === 'boolean'
+      && (!Object.hasOwn(s.combat, 'familyEncounter') || (Object.hasOwn(value, 'reward') && validFamilyEncounter(s.combat.familyEncounter, s)))))
     && safeInt(s.eventSequence) && s.eventSequence < Number.MAX_SAFE_INTEGER
     && [...s.events, ...s.history, ...s.crops].every(entry => object(entry) && safeInt(entry.id, 1) && entry.id <= s.eventSequence)
     && s.events.length <= 150 && s.history.length <= 20000 && Number.isInteger(s.dungeon.stage) && s.dungeon.stage >= 0 && s.dungeon.stage <= DUNGEON.encounters.length
@@ -260,13 +263,18 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
   if (value.saveVersion === 1) {
     if (!validBase(stateData, 1)) throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
     const state = stateData as unknown as GameState
+    if (Object.hasOwn(stateData, 'reward')) throw new Error('存檔資料不完整。原始存檔已保留。')
     // initializeLife uses a dedicated stream and must not consume the preserved V1 RNG.
     initializeLife(state, true)
+    state.reward = emptyReward()
     state.saveVersion = CONFIG.saveVersion
     return { state, lastSavedAt }
   }
   if (!validBase(stateData, CONFIG.saveVersion) || !validLife(stateData.life, stateData as unknown as GameState)) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
-  return { state: stateData as unknown as GameState, lastSavedAt }
+  const state = stateData as unknown as GameState
+  if (!Object.hasOwn(stateData, 'reward')) state.reward = emptyReward()
+  else if (!validateReward(stateData.reward, state)) throw new Error('存檔資料不完整。原始存檔已保留。')
+  return { state, lastSavedAt }
 }

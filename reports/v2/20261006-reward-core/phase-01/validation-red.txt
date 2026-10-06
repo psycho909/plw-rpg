@@ -1,0 +1,60 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/rewardSave.test.ts --maxWorkers=1
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/rewardSave.test.ts (12 tests | 10 failed) 70ms
+   × rejects malformed reward schema without recreating a world 10ms
+   × rejects malformed reward duplicate without recreating a world 4ms
+   × rejects malformed reward owner without recreating a world 3ms
+   × rejects malformed reward reference without recreating a world 3ms
+   × rejects malformed reward dual-gear without recreating a world 4ms
+   × rejects malformed reward stats without recreating a world 3ms
+   × rejects malformed reward affix-slot without recreating a world 3ms
+   × rejects malformed reward affix-value without recreating a world 3ms
+   × rejects malformed reward materials without recreating a world 5ms
+   × rejects malformed reward collection without recreating a world 3ms
+
+ Test Files  1 failed (1)
+      Tests  10 failed | 2 passed (12)
+   Start at  00:59:21
+   Duration  489ms (transform 224ms, setup 0ms, import 265ms, tests 70ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/rewardSave.test.ts > rejects malformed reward schema without recreating a world
+ FAIL  src/services/rewardSave.test.ts > rejects malformed reward duplicate without recreating a world
+ FAIL  src/services/rewardSave.test.ts > rejects malformed reward owner without recreating a world
+ FAIL  src/services/rewardSave.test.ts > rejects malformed reward reference without recreating a world
+ FAIL  src/services/rewardSave.test.ts > rejects malformed reward dual-gear without recreating a world
+ FAIL  src/services/rewardSave.test.ts > rejects malformed reward stats without recreating a world
+ FAIL  src/services/rewardSave.test.ts > rejects malformed reward affix-slot without recreating a world
+ FAIL  src/services/rewardSave.test.ts > rejects malformed reward affix-value without recreating a world
+ FAIL  src/services/rewardSave.test.ts > rejects malformed reward materials without recreating a world
+ FAIL  src/services/rewardSave.test.ts > rejects malformed reward collection without recreating a world
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ src/services/rewardSave.test.ts:52:52
+     50|     if (kind === 'materials') raw.reward.materials.alden = { wolfFang:…
+     51|     if (kind === 'collection') raw.reward.collection.seen = ['grayWolf…
+     52|     expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+       |                                                    ^
+     53|   })
+     54|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

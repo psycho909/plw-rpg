@@ -34,6 +34,7 @@ function startedGame() {
 function versionOneFixture(lastSavedAt = 1000) {
   const raw = JSON.parse(serialize(createGame(88), lastSavedAt))
   delete raw.life
+  delete raw.reward
   raw.saveVersion = 1
   return JSON.stringify(raw)
 }
@@ -44,6 +45,18 @@ describe('safe browser persistence', () => {
     const game = useGameStore()
     expect(game.message).not.toBe(''); expect(game.save()).toBe(false); expect(game.save(true)).toBe(false)
     expect(saved).toBe('{broken'); expect(storage.setItem).not.toHaveBeenCalled()
+  })
+  it('preserves malformed reward extensions and blocks all progress instead of discarding owned gear', () => {
+    const raw = JSON.parse(serialize(createGame(), 0))
+    raw.reward.schemaVersion = 99
+    const original = JSON.stringify(raw)
+    saved = original
+    const game = useGameStore()
+    expect(game.saveBlocked).toBe(true)
+    expect(game.save()).toBe(false)
+    game.startLife(); game.setSpeed(20); game.advance(60)
+    expect(saved).toBe(original)
+    expect(storage.setItem).not.toHaveBeenCalled()
   })
   it('migrates V1 without offline advancement and retains the historical world checkpoint', () => {
     const state = createGame(88); saved = versionOneFixture(1000)

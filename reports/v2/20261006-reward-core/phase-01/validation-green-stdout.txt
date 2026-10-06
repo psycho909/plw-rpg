@@ -1,0 +1,13 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/rewardSave.test.ts src/stores/gameStore.test.ts src/services/saveService.test.ts src/services/playJournal.test.ts --maxWorkers=1
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  4 passed (4)
+      Tests  123 passed (123)
+   Start at  01:05:42
+   Duration  9.44s (transform 323ms, setup 0ms, import 526ms, tests 8.39s, environment 2ms)
+

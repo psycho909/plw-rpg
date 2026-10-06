@@ -1,6 +1,6 @@
 # Oakvale V2.x — Reward & Retention
 
-> Persistent Living Fantasy World RPG  
+> Persistent Living Fantasy World RPG
 > 階段定位：**Core Depth / Reward / Retention**
 >
 > 本版本不是 V3。

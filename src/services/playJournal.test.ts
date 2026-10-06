@@ -6,6 +6,7 @@ import { createPlayJournal, emptyJournal, packCheckpoint, unpackCheckpoint, type
 function versionOneFixture(lastSavedAt = 100000) {
   const raw = JSON.parse(serialize(createGame(88), lastSavedAt))
   delete raw.life
+  delete raw.reward
   raw.saveVersion = 1
   return JSON.stringify(raw)
 }

@@ -1,0 +1,29 @@
+{
+  "title": "Phase 1 Reward Validation Worker Report",
+  "status": "IMPLEMENTED_AWAITING_ROOT_RERUN",
+  "changed_source_files": [
+    "src/services/rewardValidation.ts"
+  ],
+  "exports": [
+    "validateReward(value: unknown, state: GameState): value is RewardState",
+    "validFamilyEncounter(snapshot: unknown, state: GameState): snapshot is FamilyEncounter"
+  ],
+  "coverage": [
+    "exact reward shape and schemaVersion 1 including required wolfBossForm",
+    "globally unique item-N IDs, monotonic counter and current/retained character ownership",
+    "registered base/material/rarity/affix/monster IDs and bounded collection arrays",
+    "level, rarity affix count, affix eligibility, duplicates, tier/value and exact rolledItemStats",
+    "moonHunter legendary weapon and legendary-only provenance with valid actor/time/material/boss source",
+    "exact full material stack keys and safe integer counts",
+    "owned slot refs, no duplicate equipped instance and no legacy same-slot conflict",
+    "family rank/trait/variant/turn/time/context/howl constraints and matching active combat identity",
+    "persistent wolfBossForm checked independently from current combat"
+  ],
+  "verification": {
+    "run_by_worker": false,
+    "parent_reported_initial_targeted_tests": "123 passed",
+    "parent_reported_initial_typecheck": "exit 2 with four type errors; corresponding narrowing/include locations were corrected in source, rerun pending",
+    "derived_family_combat_stats": "Not checked until Phase 3 provides the canonical variant-aware resolver; formulas were not guessed."
+  },
+  "owner_note": "SaveService integration/tests and final gate remain root-owned. This worker is not the final independent reviewer."
+}

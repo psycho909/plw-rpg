@@ -1,6 +1,6 @@
 # V2.x Phase 2 — Procedural Equipment Vertical Slice
 
-- Status: approved
+- Status: in_progress
 - Owner: 本專案使用者；沿用 README 2026-10-02 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-06 使用者提供 V2.x 規格並明確要求「繼續下一階段的開發」；規格 §77 限首輪 Phase 0–3。
@@ -32,7 +32,7 @@ Phase 4–10、50 monsters/100 items、V3、server、native Safari/手機實機�
 - 單機紀錄以 scripts.recorded_reports.write_recorded 追加版本，原始 failures 永久保留。
 
 ## Dependencies and Blockers
-Blocked by: [20261006-v2x-01-data-model](20261006-v2x-01-data-model.md)
+Dependency satisfied: [20261006-v2x-01-data-model](20261006-v2x-01-data-model.md)
 
 ## Evidence
 - Verification: 待執行；baseline ac144ef4759d14570bf686e6a0e6b2983075fa9b，實際 V2 app 441e3c2。

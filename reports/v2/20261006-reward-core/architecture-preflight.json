@@ -1,0 +1,101 @@
+{
+  "title": "V2.x Reward Core Architecture Preflight",
+  "status": "PREFLIGHT_VIABLE_WITH_CONTRACT_GATES",
+  "scope": {
+    "repository": "/workspace/plw-rpg",
+    "branch": "v2x/reward-core",
+    "baseline": "ac144ef4759d14570bf686e6a0e6b2983075fa9b",
+    "head": "ac144ef4759d14570bf686e6a0e6b2983075fa9b",
+    "working_tree_source_changes_observed": false,
+    "review_type": "read-only architecture preflight; not final independent implementation review",
+    "head_at_initial_inspection": "ac144ef4759d14570bf686e6a0e6b2983075fa9b",
+    "head_at_report_update": "468a4923d3e847dbd04a5b7edeff6cf5be21a9d5",
+    "subsequent_root_owned_phase1_changes_observed": [
+      "src/domain/types.ts",
+      "src/engine/simulation.ts",
+      "src/services/saveService.ts",
+      "src/services/saveService.test.ts",
+      "src/domain/reward.ts",
+      "src/engine/rewardState.ts",
+      "src/services/rewardSave.test.ts"
+    ],
+    "subsequent_changes_reviewed": false,
+    "source_changes_status_claim": "The initial source snapshot was at baseline; later root-owned Phase 1 edits are in progress and outside this preflight."
+  },
+  "recommendation": {
+    "save_version": 2,
+    "reward_schema_version": 1,
+    "legacy_inventory_equipment": "preserve Record<ItemId, number> and fixed sword/armor fields and semantics; no legacy conversion",
+    "reward_state": [
+      "monotonic nextInstanceId",
+      "instances with ownerId",
+      "per-character material stacks",
+      "per-character weapon/armor instance refs",
+      "finite registry-bounded collection"
+    ],
+    "save_migration": "native V1/V2 without reward gets a pure empty extension only after legacy validation; present reward is strict validated; malformed extension fails closed",
+    "wolf_combat": "independent encounterWolf API plus optional tagged inline combat.familyEncounter; preserve legacy encounter/dungeon/chief route; no reward.encounter second source of truth"
+  },
+  "findings": [
+    {
+      "id": "PF-1",
+      "severity": "blocking-for-implementation",
+      "topic": "validBase template compatibility",
+      "evidence": "validBase builds its required-key template from createGame(); matches requires every template object key. Adding reward without removing it from the legacy template rejects all native V1/V2 saves lacking reward.",
+      "recommendation": "Remove life and reward from the legacy base template and validate/default reward separately; keep V1 life rules and current world comparisons intact."
+    },
+    {
+      "id": "PF-2",
+      "severity": "blocking-for-implementation",
+      "topic": "family combat side effects",
+      "evidence": "combatTurn currently routes all non-dungeon wins through threat reductions and checks MONSTERS[monsterId].boss to clear the single goblin crisis boss, reset warnings, and write goblin-chief memories.",
+      "recommendation": "Use a tagged family encounter combat variant and isolated resolver; never mark wolf family entries as legacy boss records or let their victory use goblin settlement effects."
+    },
+    {
+      "id": "PF-3",
+      "severity": "important",
+      "topic": "journal is not a state-diff archive",
+      "evidence": "packCheckpoint serializes the full state, while PlayRecord stores only operation/time/message/events.",
+      "recommendation": "Keep reward in GameState checkpoint; emit readable reward events. Do not rely on PlayRecord to reconstruct exact instances, stack counts, or discovery state."
+    },
+    {
+      "id": "PF-4",
+      "severity": "important",
+      "topic": "legacy item and ownership contracts",
+      "evidence": "InventoryWindow and actions use ItemId stacks; transferStorage accepts ItemId and ownership storage validates the current ITEM registry; fixed sword/armor effects are read directly in combat.",
+      "recommendation": "Keep new material IDs and instances in reward state and the UI as a distinct projection; share only the existing weapon/armor slots and prevent dual effects."
+    }
+  ],
+  "proposed_contract": {
+    "reward": {
+      "schemaVersion": 1,
+      "nextInstanceId": "positive safe integer greater than every stored ID; never reused",
+      "instances": "unique ItemInstance records with ownerId, baseId, rarity, rolledStats, affixes, specialTrait, optional provenance",
+      "materialsByCharacter": "sparse character-keyed registry ID to nonnegative safe integer map",
+      "equippedByCharacter": "sparse character-keyed {weapon, armor} refs to owned, matching-slot instances",
+      "collection": "unique arrays of finite registered monster/item/material/boss IDs; each array length bounded by catalog size"
+    },
+    "combat": {
+      "legacy": "existing combat shape and action path unchanged",
+      "familyEncounter": "tagged optional inline metadata: definition/family, rank, variant, traits, turn/phase state, and resolved snapshot needed for deterministic load continuation",
+      "api": [
+        "encounterWolf(state, request?)",
+        "resolveFamilyCombatTurn(state, command)"
+      ],
+      "save_invariants": [
+        "wolf base and family definition agree",
+        "rank/elite/dungeon/traits/variant agree",
+        "turn state is valid",
+        "hp <= maxHp",
+        "resolved combat stats match saved encounter snapshot"
+      ]
+    }
+  },
+  "verification": {
+    "tests_run": false,
+    "build_run": false,
+    "browser_run": false,
+    "runtime_acceptance": false,
+    "limitations": "Source inspection only; no implementation existed at the reviewed HEAD."
+  }
+}

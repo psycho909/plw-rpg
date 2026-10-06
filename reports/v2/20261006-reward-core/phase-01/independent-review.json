@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "title": "Phase 1 Reward Data / Save Migration — Independent Review",
+  "disposition": "PASS_WITH_FOLLOW_UP",
+  "currentPhaseBlockers": [],
+  "scope": {
+    "ticket": "tickets/20261006-v2x-01-data-model.md",
+    "baselineSourceCommit": "ac144ef4759d14570bf686e6a0e6b2983075fa9b",
+    "baseCommit": "468a4923d3e847dbd04a5b7edeff6cf5be21a9d5",
+    "head": "468a4923d3e847dbd04a5b7edeff6cf5be21a9d5",
+    "workingTreeContainsUncommittedPhase1Changes": true,
+    "stagedDiff": "empty",
+    "reviewedCommands": [
+      "git diff --stat",
+      "git diff -- src/domain/types.ts src/engine/simulation.ts src/services/saveService.ts src/services/saveService.test.ts src/stores/gameStore.test.ts src/services/playJournal.test.ts tickets/20261006-v2x-01-data-model.md docs/specs/V2X-REWARD-RETENTION.md",
+      "git diff --cached --stat",
+      "git ls-files --others --exclude-standard",
+      "git diff --check"
+    ],
+    "newFilesReadInFull": [
+      "src/domain/reward.ts",
+      "src/data/rewards.ts",
+      "src/engine/rewardState.ts",
+      "src/engine/gearStats.ts",
+      "src/services/rewardValidation.ts",
+      "src/services/rewardSave.test.ts"
+    ],
+    "sourceSha256": {
+      "src/domain/reward.ts": "4c34b926386fbbb6642954eee92a1e2b9e5523fcb4a1e37d33414009362b7279",
+      "src/data/rewards.ts": "7734afccc540e398dc9d622c8d044067f4b9184ca329e357db60315712bfe513",
+      "src/engine/rewardState.ts": "0544a7fe955cd1965985e2f99c8fb4ef5ff38c6094bf41068186a06b267c5d1f",
+      "src/engine/gearStats.ts": "5b26e121761f613a08ad2d09f25d7055137819490482c25a56ed23235997d20f",
+      "src/services/rewardValidation.ts": "fac48c4d92e290b027925509928018ef6a8d862faa1cc9461f9d4e858ea20100",
+      "src/services/rewardSave.test.ts": "4110e563a0a1f0aca6d4090f1fbcfd1ad38cef37ddfd1cd8e63aa0fb39725c38",
+      "src/domain/types.ts": "d91ba10e135abfcda060fdfddb31125a3eb19fb0cc6b6d1b14b7d4068a475705",
+      "src/engine/simulation.ts": "e85e143a23a9130df8b68a62fdd3a9c06d09cc9a1c7a2af2bdde8ec8395a2484",
+      "src/services/saveService.ts": "371b59e7b13228e0b7fdae5b6e7bd62e4d538ff1223013c8c708fb1c0cf05850"
+    }
+  },
+  "reviewer": {
+    "role": "independent reviewer context",
+    "modelRequestedByOrchestrationTool": "gpt-6-luna",
+    "reasoningEffortRequested": "max",
+    "forkTurns": "none",
+    "runtimeModelTelemetryAvailable": false,
+    "projectLunaProfile": ".codex/agents/luna_worker.toml",
+    "projectLunaProfileExists": false
+  },
+  "standards": {
+    "result": "PASS_WITH_FOLLOW_UP",
+    "evidence": [
+      "AGENTS.md",
+      "README.md",
+      "docs/agents/review.md",
+      "The ticket scope and review contract require additive compatibility, failure preservation, and honest evidence."
+    ]
+  },
+  "spec": {
+    "result": "PASS_WITH_FOLLOW_UP",
+    "evidence": [
+      "V2X-REWARD-RETENTION.md sections 47–50 and Phase 0–3 gates",
+      "V1/V2 worlds remain intact; instances and stack/material counts remain separate; no Phase 2/3 implementation was assessed as missing Phase 1."
+    ]
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "P2",
+      "title": "Tagged family combat stats are not cross-validated against the encounter snapshot",
+      "location": [
+        "src/services/saveService.ts:89",
+        "src/services/rewardValidation.ts:196"
+      ],
+      "evidence": "Each combat number is checked only against broad numeric bounds. validFamilyEncounter checks encounter shape, matching metadata, and elite rank, but not hp <= maxHp or stat derivation from definition/traits/variant/context. The architecture preflight requires both checks.",
+      "impact": "A forged or corrupt family encounter save can resume with impossible combat HP/stats once a family combat consumer exists.",
+      "phaseDisposition": "No current Phase 1 producer or consumer exists; canonical derived-stat resolver belongs to Phase 3. This is a required pre-Phase-3 follow-up rather than a current Phase 1 gate blocker.",
+      "closure": "Before enabling family encounters, validate hp <= maxHp and exact derived combat stats with the shared Phase 3 resolver. Until then reject any usable family encounter payload."
+    }
+  ],
+  "verification": {
+    "reviewerReranTests": false,
+    "reviewerRanBuild": false,
+    "reviewerRanGitDiffCheck": true,
+    "gitDiffCheck": "PASS",
+    "rootProvidedEvidence": {
+      "fullRegression": "243 tests / 15 files PASS",
+      "buildAndVueTsc": "PASS",
+      "chromium": "20 checks PASS; zero uncaught page exceptions",
+      "sourceStableDuringRuns": true
+    },
+    "limitation": "These test/build/browser runs are recorded in reports/v2/20261006-reward-core/phase-01/verification.md and were not rerun during this read-only review."
+  }
+}

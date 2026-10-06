@@ -1,4 +1,5 @@
 import type { WorldLife } from './life'
+import type { FamilyEncounter, RewardState } from './reward'
 export type RegionId = 'village' | 'farmland' | 'forest' | 'mine' | 'unknown'
 export type LifeStage = 'child' | 'young' | 'adult' | 'middleAge' | 'elder'
 export type SkillId = 'combat' | 'farming' | 'mining' | 'woodcutting'
@@ -25,6 +26,7 @@ export interface NPC extends Character {
 export interface Tile extends Position { terrain: 'water' | 'grass' | 'forest' | 'field' | 'mountain' | 'road'; regionId: RegionId; discovered: boolean; walkable: boolean; building?: BuildingId }
 export interface WorldEvent { id: number; at: number; type: string; category: Category; message: string; tier?: 'transient' | 'gameplay' | 'major' | 'debug' }
 export interface GameState {
+  reward: RewardState
   life: WorldLife
   saveVersion: number; worldSeed: number; rngState: number; worldTime: number; activeCharacterId: string
   characters: Character[]; npcs: NPC[]; tiles: Tile[]
@@ -34,6 +36,6 @@ export interface GameState {
   dungeon: { discovered: boolean; threat: number; progress: number; runs: number; stage: number; inDungeon: boolean }
   crops: { id: number; plantedAt: number; growthDuration: number; matureAt: number; status: 'growing' | 'mature' }[]; preparedPlots: number
   party: { npcId: string; hireCost: number; dailyWage: number; contractEnd: number; archetype: 'fighter' | 'healer' }[]
-  combat: { monsterId: string; hp: number; maxHp: number; attack: number; defense: number; exp: number; gold: number; elite: boolean; dungeon: boolean } | null
+  combat: { monsterId: string; hp: number; maxHp: number; attack: number; defense: number; exp: number; gold: number; elite: boolean; dungeon: boolean; familyEncounter?: FamilyEncounter } | null
   events: WorldEvent[]; history: WorldEvent[]; eventSequence: number; nextNpcId: number
 }

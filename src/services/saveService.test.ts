@@ -7,6 +7,7 @@ import { deserialize, serialize } from './saveService'
 function versionOneFixture(seed = 88, lastSavedAt = 1000) {
   const raw = JSON.parse(serialize(createGame(seed), lastSavedAt))
   delete raw.life
+  delete raw.reward
   raw.saveVersion = 1
   for (const event of [...raw.events, ...raw.history]) delete event.tier
   return raw
@@ -31,6 +32,7 @@ describe('versioned saves and deterministic continuation', () => {
     const loaded = deserialize(JSON.stringify(raw))
     const migrated = { ...loaded.state } as Record<string, unknown>
     delete migrated.life
+    delete migrated.reward
     delete migrated.saveVersion
     expect(migrated).toEqual(expected)
     expect(loaded.state.saveVersion).toBe(2)

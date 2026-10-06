@@ -7,6 +7,7 @@ import { emptyLife, initializeLife, newCharacterLife, newNpcLife } from './lifeS
 import { refreshIdentity } from './identity'
 import { dailyNpcLife, npcCanWork, rememberNpc } from './npcLife'
 import { dailyLivingEvents } from './livingEvents'
+import { emptyReward } from './rewardState'
 
 export const player = (state: GameState) => state.characters.find(c => c.id === state.activeCharacterId)!
 const bound = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n))
@@ -75,6 +76,7 @@ export function spawnTraveler(state: GameState, visitor: { kind: 'elf' | 'mage' 
 
 export function createGame(seed = 909): GameState {
   const state: GameState = {
+    reward: emptyReward(),
     life: emptyLife(8 * 60),
     saveVersion: CONFIG.saveVersion, worldSeed: seed >>> 0, rngState: seed >>> 0, worldTime: 8 * 60, activeCharacterId: 'alden',
     characters: [character('alden', '奧登', 16, 1)], npcs: [], tiles: [],

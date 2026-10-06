@@ -1,0 +1,7 @@
+src/services/rewardValidation.ts(53,57): error TS2345: Argument of type '"striking" | "keen" | "piercing" | "bleeding" | "sturdy" | "blocking" | "warding"' is not assignable to parameter of type 'never'.
+  Type '"striking"' is not assignable to type 'never'.
+src/services/rewardValidation.ts(53,96): error TS2345: Argument of type '"armor" | "weapon"' is not assignable to parameter of type 'never'.
+  Type '"armor"' is not assignable to type 'never'.
+src/services/rewardValidation.ts(116,55): error TS18046: 'right.traits' is of type 'unknown'.
+src/services/rewardValidation.ts(204,23): error TS2345: Argument of type 'FamilyEncounter' is not assignable to parameter of type 'Record<string, unknown>'.
+  Index signature for type 'string' is missing in type 'FamilyEncounter'.

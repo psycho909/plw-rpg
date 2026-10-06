@@ -8,7 +8,7 @@
 
 ## Now
 
-- [ ] V2.x Phase 1 Reward Data Model — Ticket: [20261006-v2x-01-data-model](tickets/20261006-v2x-01-data-model.md)
+- [ ] V2.x Phase 2 Procedural Equipment — Ticket: [20261006-v2x-02-equipment-slice](tickets/20261006-v2x-02-equipment-slice.md)
 
 
 ## Next
