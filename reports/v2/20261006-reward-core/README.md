@@ -2,7 +2,7 @@
 
 依正式規格§77完成第一個施工範圍；**Development / Engineering Gate: PASS WITH FINDINGS**。本頁為最新投影，歷史版本在playlog.jsonl。
 
-- Branch: `v2x/reward-core`；Source與遠端交付見[最終報告](final-review.md)及[Phase3 correlation](phase-03/source-commit-correlation.json)。
+- Branch: `v2x/reward-core`；Phase3 accepted app source `4780c0a22af20c0a3b5b5bf950453fed1b106f02` 已push並核對remote一致，74source與實際受測snapshot相同。Source與遠端交付見[最終報告](final-review.md)及[Phase3 correlation](phase-03/source-commit-correlation.json)。
 - [baseline](baseline.md)、[architecture](architecture.md)、[UI plan](ui-plan.md)、[正式spec](../../../docs/specs/V2X-REWARD-RETENTION.md)。
 - Phase0：baseline229tests＋typecheck/build＋20Chromiumchecks；原harness failure保留。
 - Phase1：[verification](phase-01/verification.md)，sourcef89c2c2；typed registry／compatible migration，243tests／15files＋build＋20Chromiumchecks。

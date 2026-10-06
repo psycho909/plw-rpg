@@ -4,7 +4,7 @@
 
 ## Source
 
-工作分支：`v2x/reward-core`。Phase3測試的base commit為`6568b466390d06e6be0af2585e7524b9415204b8`，實際受測為新增Phase3的working-tree source，74個檔案SHA-256完整保存在source-freeze/build/full/regression/simulation/stress artifacts。交付source commit與這74個hash的逐檔對照見[correlation](phase-03/source-commit-correlation.json)。不能將base SHA單獨當作Phase3實作commit。
+工作分支：`v2x/reward-core`。已驗證、commit/push及fetch核對的Phase3 application source commit為`4780c0a22af20c0a3b5b5bf950453fed1b106f02`；74個source與受測snapshot逐檔一致。後續correlation／交付文件commit不改動app source。Phase3測試的base commit為`6568b466390d06e6be0af2585e7524b9415204b8`，實際受測為新增Phase3的working-tree source，74個檔案SHA-256完整保存在source-freeze/build/full/regression/simulation/stress artifacts。交付source commit與這74個hash的逐檔對照見[correlation](phase-03/source-commit-correlation.json)。不能將base SHA單獨當作Phase3實作commit。
 
 Phase1 source：f89c2c292aaadb6c22bc0453188661f22e4f15b2；Phase2 source：6568b466390d06e6be0af2585e7524b9415204b8。當前production assets的hash已記錄；當時build-status沒有獨立asset SHA清單，因此不聲稱跨時間逐byte對照。來源指紋、完整check build輸出與固定production runtime共同提供本輪證據。
 
