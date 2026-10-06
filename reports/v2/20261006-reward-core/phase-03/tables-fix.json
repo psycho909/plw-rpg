@@ -1,0 +1,63 @@
+{
+  "issue": "Markdown table rows were not consistently projected to the seven-column header; several rows omitted cells or placed distribution values in chronological endpoint columns.",
+  "bad_rows": {
+    "Player gold": {
+      "published_first": "322",
+      "expected_first": "45",
+      "expected_last": "322"
+    },
+    "Event ring entries": {
+      "published_first": "150",
+      "expected_first": "1",
+      "expected_last": "150"
+    },
+    "Origin storage estimate bytes": {
+      "published_first": "794592",
+      "expected_first": "2398",
+      "expected_last": "794592"
+    }
+  },
+  "source": "qa-summary.json gates.productionChromiumStress.metrics",
+  "expected_header_cells": 7,
+  "verification": {
+    "status": "PASS",
+    "command": "PYTHONPATH=reports/v2/20261006-reward-core/phase-03 python3 -B -m unittest discover -s reports/v2/20261006-reward-core/phase-03 -p test_performance_table.py",
+    "testsRun": 1,
+    "tableHeaderCells": 7,
+    "dataRows": 13,
+    "tableRowCellCounts": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+    ],
+    "knownEndpoints": {
+      "Player gold": [
+        "45",
+        "322"
+      ],
+      "Event ring entries": [
+        "1",
+        "150"
+      ],
+      "Origin storage estimate bytes": [
+        "2,398",
+        "794,592"
+      ]
+    },
+    "performanceMdSha256": "eb517958bdbfd717e009ec6fdf34b368cf5958fec3496663bd9a539956ba30c1",
+    "qaSummarySha256": "d8a62dc0148676aabbd2ef22e94ac792efae3d4e22a457ad8c32c92ddee07fd4",
+    "rawStressSha256": "119f46bf1565f14b99b002411e4b7b15b85baeb0a81abd8617b3cab70af9e23f"
+  }
+}

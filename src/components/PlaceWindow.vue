@@ -4,6 +4,7 @@ import { BUILDINGS, CONFIG, DUNGEON, ITEMS, REGIONS } from '../data/config'
 import type { ItemId } from '../domain/types'
 import { buyPrice, canVisit, encounter, enterDungeon, farm, gather, hire, hireTerms, rest, trade } from '../engine/actions'
 import { npcCanWork } from '../engine/npcLife'
+import { encounterWolf, wolfEncounterOptions } from '../engine/wolfFamily'
 import { distance, stageIndex } from '../engine/simulation'
 import { buildingIcons, itemIcons } from '../presentation/icons'
 import type { PlaceId } from '../presentation/worldUI'
@@ -22,6 +23,7 @@ const blocked = computed(() => !c.value.isAlive || !!game.state.combat || game.s
 const price = (item: ItemId) => buyPrice(game.state, item)
 const canSell = (item: ItemId) => c.value.inventory[item] > (c.value.equipment.weapon === item || c.value.equipment.armor === item ? 1 : 0)
 const rumor = computed(() => game.state.threat.bossAlive ? '北方出現了哥布林酋長，商人都不敢出門了。' : game.state.threat.threatLevel >= 2 ? '森林裡的腳步聲愈來愈多，出門記得找個伴。' : '最近林子還算安靜。聽說山谷裡藏著一座舊礦坑。')
+const wolfOptions = computed(() => props.place === 'forest' ? wolfEncounterOptions(game.state) : [])
 </script>
 
 <template>
@@ -44,6 +46,11 @@ const rumor = computed(() => game.state.threat.bossAlive ? '北方出現了哥�
       <button v-if="place === 'forest' && game.state.threat.bossAlive" class="danger" :disabled="blocked || c.stamina < 8" @click="game.act(() => encounter(game.state, true))">👹 挑戰哥布林酋長</button>
     </div>
     <p v-if="place === 'forest'" class="rumor">{{ rumor }}</p>
+    <section v-if="place === 'forest'" aria-labelledby="wolf-track-title">
+      <h3 id="wolf-track-title" class="section-title">狼族蹤跡</h3>
+      <p class="muted help-text">沿著擊退紀錄追蹤更深處的狼群。每次追蹤花費 8 體力；先準備裝備與藥水，再留意戰鬥中的下一回合提示。</p>
+      <div class="wolf-track-list"><div v-for="option in wolfOptions" :key="option.definitionId" class="wolf-track-row"><button :class="{ danger: option.rank === 'boss' }" :disabled="!option.eligible" @click="game.act(() => encounterWolf(game.state, option.definitionId))">{{ option.label }}</button><span v-if="option.reason" class="muted">{{ option.reason }}</span></div></div>
+    </section>
   </template>
   <template v-else-if="place === 'unknown'">
     <div class="scene-illustration" aria-hidden="true">▲　░　🕳️　░　▲</div>

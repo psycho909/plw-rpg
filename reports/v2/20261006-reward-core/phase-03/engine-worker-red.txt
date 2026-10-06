@@ -1,0 +1,5 @@
+RED — wolf-family implementation not present
+
+Command: `npm test -- --maxWorkers=1 src/engine/wolfFamily.test.ts`
+Exit code: 1
+Result: Vitest collected 0 tests because `src/engine/wolfFamily.ts` did not yet exist. The expected public import failed at `src/engine/wolfFamily.test.ts:7` with `Cannot find module './wolfFamily'`. This is the pre-implementation baseline; behavioral assertions are in `src/engine/wolfFamily.test.ts` and will be rerun after the engine module is added.

@@ -8,16 +8,18 @@
 
 ## Now
 
-- [ ] V2.x Phase 3 Wolf Family — Ticket: [20261006-v2x-03-monster-slice](tickets/20261006-v2x-03-monster-slice.md)
+<!-- 本輪核准的 V2.x Phase0–3 已完成；正式驗收證據留在 Tickets。 -->
 
 
 ## Next
 
 <!-- 已確認但尚未開始的 backlog。 -->
 
+- [ ] 真人產品驗證後續工作（目前 DEFERRED / NOT APPLICABLE AT THIS STAGE，不阻擋工程 QA） — Ticket: [20261004-v2-life-emergence](tickets/20261004-v2-life-emergence.md)
+
 ## Blocked
 
-- [ ] Oakvale V2 真人 Fun Gate — Ticket: [20261004-v2-life-emergence](tickets/20261004-v2-life-emergence.md)
+<!-- 當前沒有因真人驗證而阻擋的工程工作。 -->
 
 
 完成條件：每個項目都有唯一正式 Ticket、只出現在一個區段，且沒有已完成工作或執行細節。

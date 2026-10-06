@@ -1,0 +1,2318 @@
+{
+  "generatedAtUTC": "2026-10-06T07:54:45.377+00:00",
+  "baseCommit": "6568b466390d06e6be0af2585e7524b9415204b8",
+  "frozenAtUTC": "2026-10-06T06:28:52.540161+00:00",
+  "sourceFileCount": 74,
+  "frozenSourceSha256": {
+    "src/App.vue": "f5cdc05df85713c36dbdb27e88ad47f3e4127d8579dd637d5d075d8b096fcf1f",
+    "src/components/AdventureWindow.vue": "69fc5aef756c1402dbbf45c8b85f44631239a0ba94479db6ecbeabca57fdc1b6",
+    "src/components/CharacterSheet.vue": "db3d94e19d29efe49e33d558d022ca9f3dd3bba621365db9075c7baeb395002b",
+    "src/components/IdentityWindow.vue": "8af6030805a92095b004cbfe3765f0b796ead51acc10842c95975557db397fc8",
+    "src/components/InventoryWindow.vue": "98dea84a2e24aeebd44fc7304665580be410dfb432a44444ff5427ffca2bdec9",
+    "src/components/LifeNewsWindow.vue": "deeade4eb492f3ac846d5de7755254f6dea86687f136426c888f14b4379bd322",
+    "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+    "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+    "src/components/PixelWindow.vue": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+    "src/components/PlaceWindow.vue": "375bd0b4b392c3a1680a16ec9b7d4ae734ee6d0305c2cfe090d386f930fb6a13",
+    "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+    "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+    "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+    "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+    "src/data/config.ts": "eefe62b9bf0e05ad6925bd996ec1d64c00665de08135af91c32d94e26277535b",
+    "src/data/identity.ts": "ac9f7c5ff096f3328e2c98e6cc4298204bbb327a231a2c40d22ef24dbd26504a",
+    "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+    "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+    "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+    "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+    "src/data/rewards.ts": "f98cd1bd30004deb13154fd5266274733f1e2c8a8a72d682d2cd8343ac3baf87",
+    "src/domain/life.ts": "7144387d09afd98abf2b825231fe6278b3e4ec0162f2cd33f7fb80c89e952b4b",
+    "src/domain/reward.ts": "4c34b926386fbbb6642954eee92a1e2b9e5523fcb4a1e37d33414009362b7279",
+    "src/domain/types.ts": "d91ba10e135abfcda060fdfddb31125a3eb19fb0cc6b6d1b14b7d4068a475705",
+    "src/engine/actions.test.ts": "01d7e4d2b3b0e461b9bd7d014dd4a6d81e1b26c5079815861e896c8a12315741",
+    "src/engine/actions.ts": "9ded93363336f0d8cdeea1e475453740a3fab3aaf002277b4b8ea2c8f5ae488a",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/combatStats.test.ts": "4c683baf554b8ee396a1ccc1cee913dde791c8a7a43ffead31064ae993e6d2bb",
+    "src/engine/combatStats.ts": "1c7f81284abb68d6e1a68e047368f3cc89a6c0f29328eb257d3a8f02c7891b3b",
+    "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+    "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+    "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+    "src/engine/gearStats.ts": "5b26e121761f613a08ad2d09f25d7055137819490482c25a56ed23235997d20f",
+    "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+    "src/engine/identity.ts": "d1038f5f21d107ec87a0398afe7bcd4062e465b5cb815652ca014fd0cccf7fc8",
+    "src/engine/itemGeneration.test.ts": "0c5e03b0637dca5a0dadc5db7a6f2fcfe457ccaf1597068ac97b1f7c9b039a59",
+    "src/engine/itemGeneration.ts": "8b0b23f8c36b67530ebe2f8fd85ef672f4b7428a1982676b70191ac3d66e9b46",
+    "src/engine/lifeIntegration.test.ts": "c9e702a8819e0d372aff7411f45a85ebc1e829dfc6f1e753b728863a21f56a16",
+    "src/engine/lifeState.ts": "45526f4bc5bb3d560e6b404c6e142f6624d2e40b201c61ea43c8166404faa6d7",
+    "src/engine/livingEvents.test.ts": "cfbb5b99724fe0de53428c80378249b1063084f2dee6f9d85652b950979c10c0",
+    "src/engine/livingEvents.ts": "afd535e634752a328d7ae3e0daa3d93cf07c4f7c2473705ed64d3058f02867f4",
+    "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+    "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+    "src/engine/npcLife.ts": "892a5be0f0d3bfa9f7fea7b962d6d37e3dea567c9551a3c1f16f715456bddb91",
+    "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+    "src/engine/ownership.ts": "fef2361be0a18221e7d50d17d97c82b64df360c257cc0598684842c9295f5526",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/rewardActions.test.ts": "ff32e05eab73c66114b579a0857d32d3682e4540d8744bced9f4ca77037d8fd4",
+    "src/engine/rewardActions.ts": "f71bd64a5ac6a3b0ca59d7dbbb84a2a18ca14dff36e8177541700f665cdd09b2",
+    "src/engine/rewardState.ts": "0544a7fe955cd1965985e2f99c8fb4ef5ff38c6094bf41068186a06b267c5d1f",
+    "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+    "src/engine/simulation.ts": "e85e143a23a9130df8b68a62fdd3a9c06d09cc9a1c7a2af2bdde8ec8395a2484",
+    "src/engine/wolfFamily.test.ts": "b1988d5c54adaf1fd36459c0a6b157ebfb52c43d8d068ff2d612cec34957bf64",
+    "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+    "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+    "src/presentation/icons.ts": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+    "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+    "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+    "src/presentation/rewardProjection.test.ts": "32099e63ced6b0f3b0f011eebb30eff8e776dfe3ccc6df861e6401a1e718997c",
+    "src/presentation/rewardProjection.ts": "b83c2a8c5ad438c4bcdef6d220cea6b9a912d91bd63feec532fe627ca1596a3e",
+    "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+    "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+    "src/presentation/worldUI.test.ts": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+    "src/presentation/worldUI.ts": "a0abdb1cc227cf4d60e7bb3c1531fc555dff800d462b74be312f67c562e6c91e",
+    "src/services/playJournal.test.ts": "a874387c07de1194d3d3b5583e3de6c77f1ff34196c6a0dc08ea75053e537994",
+    "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+    "src/services/rewardSave.test.ts": "06574352794efdb1cb37a17b20607c4146aabe84190d355ce9f2459015eb7a92",
+    "src/services/rewardValidation.ts": "ee5a658aa6664baceb34cce9714d8d186e7201b6a2861766760bcadc5ee48f84",
+    "src/services/saveService.test.ts": "21901b38dc5390cd203bcb14eddbd6c67143d8c224549e6823fff6e587ab4d7d",
+    "src/services/saveService.ts": "371b59e7b13228e0b7fdae5b6e7bd62e4d538ff1223013c8c708fb1c0cf05850",
+    "src/services/saveWriter.ts": "0703016eb96d12bb843f0b04b6e21b6568bf7f9b44defc59e340896c675ff43b",
+    "src/stores/gameStore.test.ts": "50255cc94697246a979569e39a13166d77ea303390e958e7746b606a4b5cd29f",
+    "src/stores/gameStore.ts": "6ad3c0b49b3b7007ca72bdd90aaf1cc9caf4530b8f084c92c3351e5168b0c9b9",
+    "src/style.scss": "9f42d10449f0f9a016c7bcb6c89ea3f7f59e826943faf8249b01fd3e8efb2f69"
+  },
+  "currentSourceSha256": {
+    "src/App.vue": "f5cdc05df85713c36dbdb27e88ad47f3e4127d8579dd637d5d075d8b096fcf1f",
+    "src/components/AdventureWindow.vue": "69fc5aef756c1402dbbf45c8b85f44631239a0ba94479db6ecbeabca57fdc1b6",
+    "src/components/CharacterSheet.vue": "db3d94e19d29efe49e33d558d022ca9f3dd3bba621365db9075c7baeb395002b",
+    "src/components/IdentityWindow.vue": "8af6030805a92095b004cbfe3765f0b796ead51acc10842c95975557db397fc8",
+    "src/components/InventoryWindow.vue": "98dea84a2e24aeebd44fc7304665580be410dfb432a44444ff5427ffca2bdec9",
+    "src/components/LifeNewsWindow.vue": "deeade4eb492f3ac846d5de7755254f6dea86687f136426c888f14b4379bd322",
+    "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+    "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+    "src/components/PixelWindow.vue": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+    "src/components/PlaceWindow.vue": "375bd0b4b392c3a1680a16ec9b7d4ae734ee6d0305c2cfe090d386f930fb6a13",
+    "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+    "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+    "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+    "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+    "src/data/config.ts": "eefe62b9bf0e05ad6925bd996ec1d64c00665de08135af91c32d94e26277535b",
+    "src/data/identity.ts": "ac9f7c5ff096f3328e2c98e6cc4298204bbb327a231a2c40d22ef24dbd26504a",
+    "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+    "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+    "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+    "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+    "src/data/rewards.ts": "f98cd1bd30004deb13154fd5266274733f1e2c8a8a72d682d2cd8343ac3baf87",
+    "src/domain/life.ts": "7144387d09afd98abf2b825231fe6278b3e4ec0162f2cd33f7fb80c89e952b4b",
+    "src/domain/reward.ts": "4c34b926386fbbb6642954eee92a1e2b9e5523fcb4a1e37d33414009362b7279",
+    "src/domain/types.ts": "d91ba10e135abfcda060fdfddb31125a3eb19fb0cc6b6d1b14b7d4068a475705",
+    "src/engine/actions.test.ts": "01d7e4d2b3b0e461b9bd7d014dd4a6d81e1b26c5079815861e896c8a12315741",
+    "src/engine/actions.ts": "9ded93363336f0d8cdeea1e475453740a3fab3aaf002277b4b8ea2c8f5ae488a",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/combatStats.test.ts": "4c683baf554b8ee396a1ccc1cee913dde791c8a7a43ffead31064ae993e6d2bb",
+    "src/engine/combatStats.ts": "1c7f81284abb68d6e1a68e047368f3cc89a6c0f29328eb257d3a8f02c7891b3b",
+    "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+    "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+    "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+    "src/engine/gearStats.ts": "5b26e121761f613a08ad2d09f25d7055137819490482c25a56ed23235997d20f",
+    "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+    "src/engine/identity.ts": "d1038f5f21d107ec87a0398afe7bcd4062e465b5cb815652ca014fd0cccf7fc8",
+    "src/engine/itemGeneration.test.ts": "0c5e03b0637dca5a0dadc5db7a6f2fcfe457ccaf1597068ac97b1f7c9b039a59",
+    "src/engine/itemGeneration.ts": "8b0b23f8c36b67530ebe2f8fd85ef672f4b7428a1982676b70191ac3d66e9b46",
+    "src/engine/lifeIntegration.test.ts": "c9e702a8819e0d372aff7411f45a85ebc1e829dfc6f1e753b728863a21f56a16",
+    "src/engine/lifeState.ts": "45526f4bc5bb3d560e6b404c6e142f6624d2e40b201c61ea43c8166404faa6d7",
+    "src/engine/livingEvents.test.ts": "cfbb5b99724fe0de53428c80378249b1063084f2dee6f9d85652b950979c10c0",
+    "src/engine/livingEvents.ts": "afd535e634752a328d7ae3e0daa3d93cf07c4f7c2473705ed64d3058f02867f4",
+    "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+    "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+    "src/engine/npcLife.ts": "892a5be0f0d3bfa9f7fea7b962d6d37e3dea567c9551a3c1f16f715456bddb91",
+    "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+    "src/engine/ownership.ts": "fef2361be0a18221e7d50d17d97c82b64df360c257cc0598684842c9295f5526",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/rewardActions.test.ts": "ff32e05eab73c66114b579a0857d32d3682e4540d8744bced9f4ca77037d8fd4",
+    "src/engine/rewardActions.ts": "f71bd64a5ac6a3b0ca59d7dbbb84a2a18ca14dff36e8177541700f665cdd09b2",
+    "src/engine/rewardState.ts": "0544a7fe955cd1965985e2f99c8fb4ef5ff38c6094bf41068186a06b267c5d1f",
+    "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+    "src/engine/simulation.ts": "e85e143a23a9130df8b68a62fdd3a9c06d09cc9a1c7a2af2bdde8ec8395a2484",
+    "src/engine/wolfFamily.test.ts": "b1988d5c54adaf1fd36459c0a6b157ebfb52c43d8d068ff2d612cec34957bf64",
+    "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+    "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+    "src/presentation/icons.ts": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+    "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+    "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+    "src/presentation/rewardProjection.test.ts": "32099e63ced6b0f3b0f011eebb30eff8e776dfe3ccc6df861e6401a1e718997c",
+    "src/presentation/rewardProjection.ts": "b83c2a8c5ad438c4bcdef6d220cea6b9a912d91bd63feec532fe627ca1596a3e",
+    "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+    "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+    "src/presentation/worldUI.test.ts": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+    "src/presentation/worldUI.ts": "a0abdb1cc227cf4d60e7bb3c1531fc555dff800d462b74be312f67c562e6c91e",
+    "src/services/playJournal.test.ts": "a874387c07de1194d3d3b5583e3de6c77f1ff34196c6a0dc08ea75053e537994",
+    "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+    "src/services/rewardSave.test.ts": "06574352794efdb1cb37a17b20607c4146aabe84190d355ce9f2459015eb7a92",
+    "src/services/rewardValidation.ts": "ee5a658aa6664baceb34cce9714d8d186e7201b6a2861766760bcadc5ee48f84",
+    "src/services/saveService.test.ts": "21901b38dc5390cd203bcb14eddbd6c67143d8c224549e6823fff6e587ab4d7d",
+    "src/services/saveService.ts": "371b59e7b13228e0b7fdae5b6e7bd62e4d538ff1223013c8c708fb1c0cf05850",
+    "src/services/saveWriter.ts": "0703016eb96d12bb843f0b04b6e21b6568bf7f9b44defc59e340896c675ff43b",
+    "src/stores/gameStore.test.ts": "50255cc94697246a979569e39a13166d77ea303390e958e7746b606a4b5cd29f",
+    "src/stores/gameStore.ts": "6ad3c0b49b3b7007ca72bdd90aaf1cc9caf4530b8f084c92c3351e5168b0c9b9",
+    "src/style.scss": "9f42d10449f0f9a016c7bcb6c89ea3f7f59e826943faf8249b01fd3e8efb2f69"
+  },
+  "sourceFingerprintComparison": {
+    "mismatches": {},
+    "matchesFrozenManifest": true,
+    "pathBasis": "repository-relative POSIX paths"
+  },
+  "buildSourceMatchesFreeze": true,
+  "stressSourceMatchesFreeze": true,
+  "stressBuildSourceMatchesFreeze": true,
+  "stressHarness": {
+    "path": "reports/v2/20261006-reward-core/phase-03/stress_browser.py",
+    "sha256": "1423a3638721e7866feb78b3e863d4723f60d8d4a9228d44ec84a34347e47280",
+    "expectedSha256": "1423a3638721e7866feb78b3e863d4723f60d8d4a9228d44ec84a34347e47280",
+    "matchesExpected": true
+  },
+  "currentDistFiles": [
+    {
+      "path": "dist/assets/index-CijSXHhh.css",
+      "bytes": 26973,
+      "sha256": "f0f22c9f44727355465a06c2f35f3d921389ffec6873ad552afd660a6f53bf05"
+    },
+    {
+      "path": "dist/assets/index-aCt8yeJb.js",
+      "bytes": 259708,
+      "sha256": "aea1457d4b0632b86c67254a2e8b2fe91ddfb2cdd50a601c30bfd26a9bbb8c5b"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 448,
+      "sha256": "e91c1ee5cba49a084e033cd0da7e9629a5b483ae1a27bf68962d25558d1eb686"
+    }
+  ],
+  "distComparisonLimit": "Frozen metadata includes source hashes and build stdout names/sizes, but has no expected dist-asset SHA-256 manifest; current asset hashes are recorded, exact frozen-byte comparison unavailable.",
+  "archives": {
+    "scope": "Every playlog.jsonl under reports/v2/20261006-reward-core, read once under a shared lock before publication.",
+    "files": [
+      {
+        "path": "reports/v2/20261006-reward-core/baseline-run/playlog.jsonl",
+        "verifiedEntries": 54
+      },
+      {
+        "path": "reports/v2/20261006-reward-core/long-term/playlog.jsonl",
+        "verifiedEntries": 8
+      },
+      {
+        "path": "reports/v2/20261006-reward-core/phase-01/browser-run/playlog.jsonl",
+        "verifiedEntries": 21
+      },
+      {
+        "path": "reports/v2/20261006-reward-core/phase-01/playlog.jsonl",
+        "verifiedEntries": 31
+      },
+      {
+        "path": "reports/v2/20261006-reward-core/phase-02/browser-run/playlog.jsonl",
+        "verifiedEntries": 41
+      },
+      {
+        "path": "reports/v2/20261006-reward-core/phase-02/playlog.jsonl",
+        "verifiedEntries": 270
+      },
+      {
+        "path": "reports/v2/20261006-reward-core/phase-03/browser-run/playlog.jsonl",
+        "verifiedEntries": 21
+      },
+      {
+        "path": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+        "verifiedEntries": 225
+      },
+      {
+        "path": "reports/v2/20261006-reward-core/playlog.jsonl",
+        "verifiedEntries": 28
+      },
+      {
+        "path": "reports/v2/20261006-reward-core/ui-preflight/playlog.jsonl",
+        "verifiedEntries": 3
+      }
+    ],
+    "archiveCount": 10,
+    "entriesVerified": 702,
+    "decodeOrChecksumErrors": [],
+    "allVerified": true
+  },
+  "browserStressArchiveVersions": [
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 64,
+      "recordedAt": "2026-10-06T06:56:13.891+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 65,
+      "recordedAt": "2026-10-06T06:56:14.330+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 66,
+      "recordedAt": "2026-10-06T06:56:14.355+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 67,
+      "recordedAt": "2026-10-06T06:56:14.813+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 68,
+      "recordedAt": "2026-10-06T06:56:15.261+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 69,
+      "recordedAt": "2026-10-06T06:56:16.051+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 70,
+      "recordedAt": "2026-10-06T06:56:16.504+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 71,
+      "recordedAt": "2026-10-06T06:56:17.127+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 72,
+      "recordedAt": "2026-10-06T06:56:18.333+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 73,
+      "recordedAt": "2026-10-06T06:56:21.170+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 74,
+      "recordedAt": "2026-10-06T06:56:21.227+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 75,
+      "recordedAt": "2026-10-06T06:56:24.748+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 76,
+      "recordedAt": "2026-10-06T06:56:25.316+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": "FAIL",
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": "AssertionError()",
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 78,
+      "recordedAt": "2026-10-06T06:56:27.048+00:00"
+    },
+    {
+      "runId": "20261006T065612Z",
+      "status": "FAIL",
+      "durationSeconds": 13.16307967100147,
+      "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+      "startUTC": "2026-10-06T06:56:12.976064+00:00",
+      "endUTC": "2026-10-06T06:56:27.054079+00:00",
+      "cycles": null,
+      "failure": "AssertionError()",
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 79,
+      "recordedAt": "2026-10-06T06:56:27.066+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 87,
+      "recordedAt": "2026-10-06T07:06:02.210+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 88,
+      "recordedAt": "2026-10-06T07:06:02.681+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 89,
+      "recordedAt": "2026-10-06T07:06:02.702+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 90,
+      "recordedAt": "2026-10-06T07:06:03.121+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 91,
+      "recordedAt": "2026-10-06T07:06:03.539+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 92,
+      "recordedAt": "2026-10-06T07:06:04.246+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 94,
+      "recordedAt": "2026-10-06T07:06:04.734+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 95,
+      "recordedAt": "2026-10-06T07:06:05.249+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 96,
+      "recordedAt": "2026-10-06T07:06:06.282+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 97,
+      "recordedAt": "2026-10-06T07:06:08.907+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 98,
+      "recordedAt": "2026-10-06T07:06:08.961+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 99,
+      "recordedAt": "2026-10-06T07:06:12.431+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 100,
+      "recordedAt": "2026-10-06T07:06:13.093+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 101,
+      "recordedAt": "2026-10-06T07:06:17.621+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 102,
+      "recordedAt": "2026-10-06T07:06:17.969+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 103,
+      "recordedAt": "2026-10-06T07:06:32.767+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 107,
+      "recordedAt": "2026-10-06T07:07:03.013+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 108,
+      "recordedAt": "2026-10-06T07:07:33.068+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 111,
+      "recordedAt": "2026-10-06T07:08:03.295+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 112,
+      "recordedAt": "2026-10-06T07:08:33.718+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 113,
+      "recordedAt": "2026-10-06T07:09:03.793+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 114,
+      "recordedAt": "2026-10-06T07:09:18.528+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 115,
+      "recordedAt": "2026-10-06T07:09:33.897+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 118,
+      "recordedAt": "2026-10-06T07:10:04.319+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 121,
+      "recordedAt": "2026-10-06T07:10:34.460+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 122,
+      "recordedAt": "2026-10-06T07:11:04.518+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 123,
+      "recordedAt": "2026-10-06T07:11:34.741+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 124,
+      "recordedAt": "2026-10-06T07:12:04.904+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 125,
+      "recordedAt": "2026-10-06T07:12:19.328+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 126,
+      "recordedAt": "2026-10-06T07:12:34.997+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 127,
+      "recordedAt": "2026-10-06T07:13:05.063+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 128,
+      "recordedAt": "2026-10-06T07:13:35.395+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 129,
+      "recordedAt": "2026-10-06T07:14:05.673+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 130,
+      "recordedAt": "2026-10-06T07:14:35.735+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 133,
+      "recordedAt": "2026-10-06T07:15:06.033+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 134,
+      "recordedAt": "2026-10-06T07:15:20.232+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 135,
+      "recordedAt": "2026-10-06T07:15:36.115+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 136,
+      "recordedAt": "2026-10-06T07:16:06.175+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 137,
+      "recordedAt": "2026-10-06T07:16:36.304+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 139,
+      "recordedAt": "2026-10-06T07:17:06.374+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 140,
+      "recordedAt": "2026-10-06T07:17:36.461+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 141,
+      "recordedAt": "2026-10-06T07:18:06.562+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 142,
+      "recordedAt": "2026-10-06T07:18:21.077+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 145,
+      "recordedAt": "2026-10-06T07:18:36.645+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 146,
+      "recordedAt": "2026-10-06T07:19:06.723+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 148,
+      "recordedAt": "2026-10-06T07:19:36.808+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 149,
+      "recordedAt": "2026-10-06T07:20:06.896+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 152,
+      "recordedAt": "2026-10-06T07:20:37.062+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 153,
+      "recordedAt": "2026-10-06T07:21:07.136+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 154,
+      "recordedAt": "2026-10-06T07:21:21.548+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 155,
+      "recordedAt": "2026-10-06T07:21:37.217+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 156,
+      "recordedAt": "2026-10-06T07:22:07.280+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 157,
+      "recordedAt": "2026-10-06T07:22:37.383+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 158,
+      "recordedAt": "2026-10-06T07:23:07.685+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 159,
+      "recordedAt": "2026-10-06T07:23:37.767+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 160,
+      "recordedAt": "2026-10-06T07:24:07.890+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 161,
+      "recordedAt": "2026-10-06T07:24:22.783+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 162,
+      "recordedAt": "2026-10-06T07:24:38.327+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 163,
+      "recordedAt": "2026-10-06T07:25:08.435+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": null,
+      "durationSeconds": null,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": null,
+      "cycles": null,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 165,
+      "recordedAt": "2026-10-06T07:25:38.542+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": "PASS",
+      "durationSeconds": 1200.5455197659976,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": "2026-10-06T07:26:02.755366+00:00",
+      "cycles": 1425,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 166,
+      "recordedAt": "2026-10-06T07:26:02.803+00:00"
+    },
+    {
+      "runId": "20261006T070601Z",
+      "status": "PASS",
+      "durationSeconds": 1200.610157307001,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "startUTC": "2026-10-06T07:06:01.199397+00:00",
+      "endUTC": "2026-10-06T07:26:02.820006+00:00",
+      "cycles": 1425,
+      "failure": null,
+      "screenshots": [
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+        "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png"
+      ],
+      "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+      "line": 167,
+      "recordedAt": "2026-10-06T07:26:02.866+00:00"
+    }
+  ],
+  "retainedUniqueRawLogsAndScreens": [
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/browser-stress-fixed-20261006T070601108979Z-in-progress-stdout.log",
+      "bytes": 1634,
+      "sha256": "f84d6c77f9424bffa17b2eec35618a6e8f8cd17315bc41f1a53ab50d98955cf8"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/browser-stress-fixed-20261006T070601108979Z-in-progress-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/browser-stress-20261006T065612870602Z-in-progress-stdout.log",
+      "bytes": 806,
+      "sha256": "f1a88c0ae044f4234e9b4ffeccc4377ae9a6052096dd9d8aebc5e1e78feae21c"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/browser-stress-20261006T065612870602Z-in-progress-stderr.log",
+      "bytes": 608,
+      "sha256": "70398f2f30f57b33288ea0600741487c6f293397a383e6c2b3d56fde04621a14"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-failure-screen.png",
+      "bytes": 148055,
+      "sha256": "2728a88f4217d85da0e86bfdf5639c5966fc338aeaae0cf4bb255417f5cf6d7b"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-desktop.png",
+      "bytes": 147101,
+      "sha256": "8d41ddafe3ffef89619f0cd04ea6e513b4fbe76e8e1caf81cc51d2a042d69c85"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-wolf-track-390-reduced-motion.png",
+      "bytes": 44429,
+      "sha256": "0c111133ed7ad2594e07cd9041f074ffaa643896d3fd99eb53cbf23872a5d880"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-desktop.png",
+      "bytes": 122379,
+      "sha256": "1a7d1d001efdf1ccb5d22771d5e5f87f0f26dcc50ab5e48384351a4cedacff09"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/20261006T070601Z-gray-rush-cue-390-reduced-motion.png",
+      "bytes": 36018,
+      "sha256": "728edf9ccb77bc717581140d34999679401757895bb0ba59229d57ee5da72372"
+    }
+  ],
+  "selfReference": "This JSON and new playlog entries intentionally have no self-referential hashes.",
+  "reportCorrection": {
+    "correctedAtUTC": "2026-10-06T07:30:44+00:00",
+    "reason": "Initial aggregation keyed live source hashes with absolute paths while the freeze uses repository-relative paths; latest projection normalizes paths and confirms all 74 hashes match. Earlier projection remains in playlog history."
+  },
+  "runSourceComparisons": {
+    "build": {
+      "statusArtifact": "reports/v2/20261006-reward-core/phase-03/build-status.json",
+      "sourceFileCount": 74,
+      "sourceMatchesFreeze": true,
+      "sourceStableDuringRun": true,
+      "harnessStableDuringRun": true
+    },
+    "fullRegression": {
+      "statusArtifact": "reports/v2/20261006-reward-core/phase-03/full-status.json",
+      "sourceFileCount": 74,
+      "sourceMatchesFreeze": true,
+      "sourceStableDuringRun": true,
+      "harnessStableDuringRun": true
+    },
+    "browserRegression": {
+      "statusArtifact": "reports/v2/20261006-reward-core/phase-03/browser-regression-status.json",
+      "sourceFileCount": 74,
+      "sourceMatchesFreeze": true,
+      "sourceStableDuringRun": true,
+      "harnessStableDuringRun": true
+    },
+    "simulation": {
+      "statusArtifact": "reports/v2/20261006-reward-core/phase-03/simulation-status.json",
+      "sourceFileCount": 74,
+      "sourceMatchesFreeze": true,
+      "sourceStableDuringRun": true,
+      "harnessStableDuringRun": true
+    },
+    "stress": {
+      "statusArtifact": "reports/v2/20261006-reward-core/phase-03/browser-stress-fixed-status.json",
+      "sourceFileCount": 74,
+      "sourceMatchesFreeze": true,
+      "sourceStableDuringRun": true,
+      "harnessStableDuringRun": true
+    }
+  },
+  "applicationSourceChangedByThisIntegrityRefresh": false,
+  "prePublicationSnapshot": {
+    "capturedAtUTC": "2026-10-06T07:54:08.462+00:00",
+    "jsonFileCountParsed": 80,
+    "jsonParseErrors": [],
+    "archiveCount": 10,
+    "archiveEntriesVerified": 702,
+    "archiveDecodeOrChecksumErrors": [],
+    "excludesThisPublication": true
+  },
+  "jsonParseVerification": {
+    "scope": "Every current *.json under reports/v2/20261006-reward-core before this publication.",
+    "fileCount": 80,
+    "errors": [],
+    "allParsed": true
+  },
+  "latestReportAndHelperHashes": {
+    "capturedAtUTC": "2026-10-06T07:54:08.462+00:00",
+    "scope": "Current phase-03 JSON/Markdown/helpers plus feature README/final-review; excludes this artifact, playlogs, raw logs/text captures/screenshots.",
+    "files": {
+      "reports/v2/20261006-reward-core/phase-03/baseline-current.json": {
+        "bytes": 1249,
+        "sha256": "14f3988d0952395c1e01cae60f0644010c6b5e31f6be00b4c1488794be64c409"
+      },
+      "reports/v2/20261006-reward-core/phase-03/baseline.json": {
+        "bytes": 1646,
+        "sha256": "dd1e0b566cb345705d8e29c9dc15d537f114a5dc1b39dcd8c107efc0e568c373"
+      },
+      "reports/v2/20261006-reward-core/phase-03/browser-regression-status.json": {
+        "bytes": 10052,
+        "sha256": "7e7c08bd4f214943a6192bdaf257b6f3e389fa0969624d1c6812396e58ca7f33"
+      },
+      "reports/v2/20261006-reward-core/phase-03/browser-run/browser.json": {
+        "bytes": 11195,
+        "sha256": "d81b33010482e56f0346c2ebfd26e83e04710db2a68456db3574857d9f36e354"
+      },
+      "reports/v2/20261006-reward-core/phase-03/browser-run/verify_browser.py": {
+        "bytes": 15164,
+        "sha256": "e1cb50984b6c5b824f5d1ae10cd47db5f506e556131bf5704fa21e4f423bff49"
+      },
+      "reports/v2/20261006-reward-core/phase-03/browser-stress-fixed-status.json": {
+        "bytes": 10044,
+        "sha256": "40d44b3327f079fde6f1f497239b4694cf74c865fff32eaaa21b913350c6ea17"
+      },
+      "reports/v2/20261006-reward-core/phase-03/browser-stress-status.json": {
+        "bytes": 10032,
+        "sha256": "21ffecaea7c8abf9a077592147ac2412c2c5041538352b8f6f3c9d474d187b31"
+      },
+      "reports/v2/20261006-reward-core/phase-03/browser-stress.md": {
+        "bytes": 4127,
+        "sha256": "bd0d4a8246a78b49daf22ad779c1523e2cfbc47b637b635f64c298015bacf638"
+      },
+      "reports/v2/20261006-reward-core/phase-03/bugfix.json": {
+        "bytes": 3732,
+        "sha256": "fe738f08853a25fa248dfc140b0ac5790c137022bac5124a5cda0cc0fc1a7158"
+      },
+      "reports/v2/20261006-reward-core/phase-03/bugfix.md": {
+        "bytes": 2081,
+        "sha256": "a7431be6697a9680968028ccf87b19797c97aa8010cb2f58b9c72c7e3a0fe784"
+      },
+      "reports/v2/20261006-reward-core/phase-03/bugs.md": {
+        "bytes": 6126,
+        "sha256": "26a9327a33d90b5b9f6d7dbd9fef997ac56b33a8ec5d1c9b6cb44f1751833103"
+      },
+      "reports/v2/20261006-reward-core/phase-03/build-status.json": {
+        "bytes": 10105,
+        "sha256": "019dd751eeb8bb9bc749611a69c5e410281ef11aefd93067e56404d859fae0ce"
+      },
+      "reports/v2/20261006-reward-core/phase-03/development-status.md": {
+        "bytes": 2099,
+        "sha256": "cf88c24b57a8dc5c460b54d0dd9d4534500e64393971ce73f1d377ffe2d819dd"
+      },
+      "reports/v2/20261006-reward-core/phase-03/engine-worker.json": {
+        "bytes": 2654,
+        "sha256": "780cb656dca2a5d180bce73f5e69c91b244f957f09fe8000891f6aba0bf8ab82"
+      },
+      "reports/v2/20261006-reward-core/phase-03/engine-worker.md": {
+        "bytes": 4026,
+        "sha256": "b1b43d19938586b803607e2de05c073b58c3851970d9eb636581c57eb268f09c"
+      },
+      "reports/v2/20261006-reward-core/phase-03/failure-raw-save.json": {
+        "bytes": 102268,
+        "sha256": "b4a3ef9ea16f437005c2fd56a1225b94086dcad73761338060fd3d194e8640fd"
+      },
+      "reports/v2/20261006-reward-core/phase-03/fight_sim.test.ts": {
+        "bytes": 4732,
+        "sha256": "8dcfca660e046f20203995605e0740559469190043ddd9304b12a255592078c6"
+      },
+      "reports/v2/20261006-reward-core/phase-03/final-evidence-review-delta.json": {
+        "bytes": 1551,
+        "sha256": "063b24be5a7590c0ff905abaa9f86c8431598a9b1f60b08b7c6f6d69beb7c846"
+      },
+      "reports/v2/20261006-reward-core/phase-03/final-evidence-review-delta.md": {
+        "bytes": 1708,
+        "sha256": "8e067cdc696acb0603e2761c4398447f9a4bdc858e396d3fbaac082e3663d417"
+      },
+      "reports/v2/20261006-reward-core/phase-03/final-evidence-review.json": {
+        "bytes": 2031,
+        "sha256": "332442642fd5ac890db4a3318e209eb75aaa3374cc567e6c3f717e533353aa18"
+      },
+      "reports/v2/20261006-reward-core/phase-03/final-evidence-review.md": {
+        "bytes": 2300,
+        "sha256": "0eb306a8879cfab8b80ad1c6098f74e819dbc71eda8269830fd0cfaa7bbfc73c"
+      },
+      "reports/v2/20261006-reward-core/phase-03/full-status.json": {
+        "bytes": 9966,
+        "sha256": "8bcb8d7de931da4f631a9ad59792c81bfd5c26f5d7e0df7a42af9972f1d9a402"
+      },
+      "reports/v2/20261006-reward-core/phase-03/harness-review.json": {
+        "bytes": 2319,
+        "sha256": "e5bec6cfba064b4c343667cac929b3e21fc48fa8dfc35f2d8585da4a85065e36"
+      },
+      "reports/v2/20261006-reward-core/phase-03/harness-review.md": {
+        "bytes": 1995,
+        "sha256": "407df7e7cbb682a926897cbc620fa554a78373863f0ac39ccbb37d1e7eabf3a9"
+      },
+      "reports/v2/20261006-reward-core/phase-03/independent-review.json": {
+        "bytes": 20435,
+        "sha256": "0f4778b6b0df5ea6b933fe5d9279de6192cd5000a92d14904a73dd3589955402"
+      },
+      "reports/v2/20261006-reward-core/phase-03/independent-review.md": {
+        "bytes": 11178,
+        "sha256": "db79d12220c5b151f66cc76f1b4fa944c9c458ec977c30be082b3ffabd7647f4"
+      },
+      "reports/v2/20261006-reward-core/phase-03/long-term.md": {
+        "bytes": 2350,
+        "sha256": "1c9845874bf8ddbeab5b7e9cc16f1b180062e636d9df96ff6249e2a9007849e2"
+      },
+      "reports/v2/20261006-reward-core/phase-03/metrics-fix-review.json": {
+        "bytes": 1928,
+        "sha256": "a284bde7cb2ebd6e73c12fba7c3e768969f74ec0fdb31078bc3375304b4a8c9a"
+      },
+      "reports/v2/20261006-reward-core/phase-03/metrics-fix-review.md": {
+        "bytes": 2391,
+        "sha256": "965509d32c70097014820cefc949db7771b3757f4b60484759582b7e1be46ced"
+      },
+      "reports/v2/20261006-reward-core/phase-03/metrics-repro.json": {
+        "bytes": 1058,
+        "sha256": "58b09ae38b05ddcd37bd9a2982dbf1b450e96b766c29b22249538cfae4182c6a"
+      },
+      "reports/v2/20261006-reward-core/phase-03/metrics-repro.md": {
+        "bytes": 694,
+        "sha256": "e51b9fa7927f8bf1697cd8ff20aa4340014ec322b25a023d97005a2347dd6991"
+      },
+      "reports/v2/20261006-reward-core/phase-03/performance.md": {
+        "bytes": 4370,
+        "sha256": "eb517958bdbfd717e009ec6fdf34b368cf5958fec3496663bd9a539956ba30c1"
+      },
+      "reports/v2/20261006-reward-core/phase-03/premium-audit-fixed-status.json": {
+        "bytes": 10068,
+        "sha256": "0541a35a39a79f499acfc7452c947cae2ca6c2ce3557f7ce0d27b7254a4abded"
+      },
+      "reports/v2/20261006-reward-core/phase-03/premium-audit-status.json": {
+        "bytes": 10056,
+        "sha256": "860452a4cffcf0b489b8a671ce53cf7b03f4f2d98cb6853e220656fd4acdcd09"
+      },
+      "reports/v2/20261006-reward-core/phase-03/qa-summary.json": {
+        "bytes": 32404,
+        "sha256": "d8a62dc0148676aabbd2ef22e94ac792efae3d4e22a457ad8c32c92ddee07fd4"
+      },
+      "reports/v2/20261006-reward-core/phase-03/qa_metrics.py": {
+        "bytes": 3018,
+        "sha256": "09afb486ab313645857968381581f55a8d1869d173e816ff83288c585a73a48e"
+      },
+      "reports/v2/20261006-reward-core/phase-03/regression.md": {
+        "bytes": 2627,
+        "sha256": "955687d2424ea3720672ebc3e95f89f55f8c1d79954e48eb847244c220849c1d"
+      },
+      "reports/v2/20261006-reward-core/phase-03/review-decisions.md": {
+        "bytes": 5746,
+        "sha256": "2dc07c9a52f1a2d05af275c5d4d00c0a4a343da445e1a11d00d710d3c144155c"
+      },
+      "reports/v2/20261006-reward-core/phase-03/review-format-fix.json": {
+        "bytes": 2326,
+        "sha256": "bb5c71bd0ea69c5dfb6b428877e28762a959b3f1b7708e4aa294bbdebbb482b2"
+      },
+      "reports/v2/20261006-reward-core/phase-03/review-format-fix.md": {
+        "bytes": 795,
+        "sha256": "1794c2c6bce0eeec9cd2bd6e354f1a352585f77ad205f1b0446ae0509b1546e7"
+      },
+      "reports/v2/20261006-reward-core/phase-03/reward-findings.md": {
+        "bytes": 2933,
+        "sha256": "af3c5c2eb8d67576203392423725a2423d4318912cc218ed7ce0ed6170a238e1"
+      },
+      "reports/v2/20261006-reward-core/phase-03/routing-update.json": {
+        "bytes": 1887,
+        "sha256": "f7c1f77b92aaaa3210fa1c56259db6277ea3bf382cb6b32fb7516f7e1856403b"
+      },
+      "reports/v2/20261006-reward-core/phase-03/routing-update.md": {
+        "bytes": 2330,
+        "sha256": "2c19d0d957da0098f871036f7162f397db5c90be466439ecb062ca336a021295"
+      },
+      "reports/v2/20261006-reward-core/phase-03/simulation-status.json": {
+        "bytes": 10055,
+        "sha256": "45e1ceacb69334296756ba333f3200f068c2c310480406bb239602473da3f5cb"
+      },
+      "reports/v2/20261006-reward-core/phase-03/simulation-summary.json": {
+        "bytes": 27338,
+        "sha256": "324c86dca1e2a2c27c3172e9cae6c2f8e47f3ad6b740286ea0719bccab257ef2"
+      },
+      "reports/v2/20261006-reward-core/phase-03/source-freeze.json": {
+        "bytes": 8159,
+        "sha256": "023ecd92c35d81c03b3a092a6e74be165cbdca3af19844111bee0a7c1fc46cd4"
+      },
+      "reports/v2/20261006-reward-core/phase-03/spec-review.md": {
+        "bytes": 2353,
+        "sha256": "fb19c1b48f967550431e543ca53682b20136f04fcb6fc2dade2ce3a53b132011"
+      },
+      "reports/v2/20261006-reward-core/phase-03/standards-review.json": {
+        "bytes": 905,
+        "sha256": "f7187c05baf3aeb487331e1d82bb2335364e35a22b78f8af7f82d91b7e6f37bc"
+      },
+      "reports/v2/20261006-reward-core/phase-03/standards-review.md": {
+        "bytes": 1235,
+        "sha256": "fc1eaf461401bb30b7344e288fc1537e320c319298222936b35a27b51a1f9f61"
+      },
+      "reports/v2/20261006-reward-core/phase-03/stress-browser.json": {
+        "bytes": 1294140,
+        "sha256": "119f46bf1565f14b99b002411e4b7b15b85baeb0a81abd8617b3cab70af9e23f"
+      },
+      "reports/v2/20261006-reward-core/phase-03/stress_browser.py": {
+        "bytes": 51551,
+        "sha256": "1423a3638721e7866feb78b3e863d4723f60d8d4a9228d44ec84a34347e47280"
+      },
+      "reports/v2/20261006-reward-core/phase-03/tables-fix.json": {
+        "bytes": 1672,
+        "sha256": "99440621f09261bf42ae7d0a2065c39407dffd0970750222b67d7fb6336084ef"
+      },
+      "reports/v2/20261006-reward-core/phase-03/tables-fix.md": {
+        "bytes": 453,
+        "sha256": "224102ecd1d9cf5a9ec3761f4bda4688767ca5882af0985733dad28837e09f6c"
+      },
+      "reports/v2/20261006-reward-core/phase-03/test_performance_table.py": {
+        "bytes": 2336,
+        "sha256": "c229a7aa934f9f85ef9f676e4e858586cae6e79c700c63a22e6941fbcc041f72"
+      },
+      "reports/v2/20261006-reward-core/phase-03/test_qa_metrics.py": {
+        "bytes": 1909,
+        "sha256": "210fcfaa2aee87b6457430ebd4c4c518a00d04b4491fad0c38dff69ed6a2cbc0"
+      },
+      "reports/v2/20261006-reward-core/phase-03/ui-plan.md": {
+        "bytes": 2109,
+        "sha256": "36e60599aa06352bedcdb40a71e27948d35c8a91258ae9e62a18101eb77708ae"
+      },
+      "reports/v2/20261006-reward-core/phase-03/visual-review.md": {
+        "bytes": 2106,
+        "sha256": "57eddc163ce59827fd3478859de18cb080f895442ce09c8cb0f596472a29e784"
+      },
+      "reports/v2/20261006-reward-core/phase-03/wolf-family-test.pre-run.json": {
+        "bytes": 392,
+        "sha256": "92afabb372195e18b0400183fe1c51ad56ac3e56d484d9fbd3413fa213803490"
+      },
+      "reports/v2/20261006-reward-core/phase-03/wolf-family-test.shared-regional-defense.json": {
+        "bytes": 644,
+        "sha256": "d48cac04bba5fa3ee759885e8f49ba0d29a92986749ecd0bcd6e7cdefa63507b"
+      },
+      "reports/v2/20261006-reward-core/README.md": {
+        "bytes": 2798,
+        "sha256": "f144a480d42f0da059dfabdcc5b521ba62a967070168105c29fdc2e6ee07195f"
+      },
+      "reports/v2/20261006-reward-core/final-review.md": {
+        "bytes": 6634,
+        "sha256": "fc70ae7c1c3ed79827522e37b26ee5e305fff16104f0aa5c7c31dfc8bed264dc"
+      }
+    }
+  },
+  "correctionEvidence": {
+    "qaSummarySha256": "d8a62dc0148676aabbd2ef22e94ac792efae3d4e22a457ad8c32c92ddee07fd4",
+    "expectedQaSummarySha256": "d8a62dc0148676aabbd2ef22e94ac792efae3d4e22a457ad8c32c92ddee07fd4",
+    "performanceSha256": "eb517958bdbfd717e009ec6fdf34b368cf5958fec3496663bd9a539956ba30c1",
+    "expectedPerformanceSha256": "eb517958bdbfd717e009ec6fdf34b368cf5958fec3496663bd9a539956ba30c1",
+    "metricsFixReview": {
+      "path": "reports/v2/20261006-reward-core/phase-03/metrics-fix-review.json",
+      "sha256": "a284bde7cb2ebd6e73c12fba7c3e768969f74ec0fdb31078bc3375304b4a8c9a",
+      "expectedSha256": "a284bde7cb2ebd6e73c12fba7c3e768969f74ec0fdb31078bc3375304b4a8c9a9",
+      "validation": "current JSON parsed; 27-raw-sample independent PASS preserved per report."
+    },
+    "tablesFix": {
+      "path": "reports/v2/20261006-reward-core/phase-03/tables-fix.json",
+      "sha256": "99440621f09261bf42ae7d0a2065c39407dffd0970750222b67d7fb6336084ef",
+      "validation": "prior three Python regression checks reported PASS; not rerun in this refresh."
+    },
+    "reviewFormatFix": {
+      "jsonPath": "reports/v2/20261006-reward-core/phase-03/review-format-fix.json",
+      "jsonSha256": "bb5c71bd0ea69c5dfb6b428877e28762a959b3f1b7708e4aa294bbdebbb482b2",
+      "expectedJsonSha256": "Not supplied; latestReportAndHelperHashes contains the computed value.",
+      "markdownPath": "reports/v2/20261006-reward-core/phase-03/review-format-fix.md",
+      "markdownSha256": "1794c2c6bce0eeec9cd2bd6e354f1a352585f77ad205f1b0446ae0509b1546e7",
+      "validation": "format repair evidence; prior invalid JSON versions remain archived."
+    },
+    "metricHistory": "Corrected metric reports are the current projections; prior report versions remain archived as historical snapshots.",
+    "finalEvidenceReview": {
+      "path": "reports/v2/20261006-reward-core/phase-03/final-evidence-review.json",
+      "sha256": "332442642fd5ac890db4a3318e209eb75aaa3374cc567e6c3f717e533353aa18",
+      "sha256MatchesRootProvidedValue": true
+    },
+    "finalEvidenceReviewDelta": {
+      "path": "reports/v2/20261006-reward-core/phase-03/final-evidence-review-delta.json",
+      "sha256": "063b24be5a7590c0ff905abaa9f86c8431598a9b1f60b08b7c6f6d69beb7c846",
+      "sha256MatchesRootProvidedValue": true
+    }
+  },
+  "scopedDiffCheck": {
+    "tracked": {
+      "command": "git diff --check -- scoped changed source/docs/current reports/scripts paths",
+      "paths": [
+        "AGENTS.md",
+        "CHANGELOG.md",
+        "README.md",
+        "TODO.md",
+        "docs/SUBAGENTS.md",
+        "docs/UI.md",
+        "premium-ui.json",
+        "reports/v2/20261006-reward-core/README.md",
+        "reports/v2/20261006-reward-core/architecture.md",
+        "reports/v2/20261006-reward-core/long-term/long_world.test.ts",
+        "reports/v2/20261006-reward-core/phase-02/acceptance.md",
+        "reports/v2/20261006-reward-core/simulation.config.ts",
+        "reports/v2/20261006-reward-core/ui-plan.md",
+        "src/components/AdventureWindow.vue",
+        "src/components/PlaceWindow.vue",
+        "src/data/rewards.ts",
+        "src/engine/actions.ts",
+        "src/services/rewardSave.test.ts",
+        "src/services/rewardValidation.ts",
+        "src/style.scss",
+        "tickets/20261006-v2x-03-monster-slice.md"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "",
+      "rawLogsTxtJsonlExcluded": true,
+      "filesMutated": false
+    },
+    "untracked": {
+      "command": "git diff --no-index --check -- /dev/null <each untracked scoped Markdown/helper code file>",
+      "checks": [
+        {
+          "path": "docs/agents/agent-routing.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/final-review.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/browser-run/verify_browser.py",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/browser-stress.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/bugfix.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/bugs.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/development-status.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/engine-worker.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/fight_sim.test.ts",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/final-evidence-review-delta.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/final-evidence-review.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/harness-review.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/independent-review.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/long-term.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/metrics-fix-review.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/metrics-repro.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/performance.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/qa_metrics.py",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/regression.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/review-decisions.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/review-format-fix.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/reward-findings.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/routing-update.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/spec-review.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/standards-review.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/stress_browser.py",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/tables-fix.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/test_performance_table.py",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/test_qa_metrics.py",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/ui-plan.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "reports/v2/20261006-reward-core/phase-03/visual-review.md",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "src/engine/wolfFamily.test.ts",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "src/engine/wolfFamily.ts",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "allNoCheckDiagnostics": true,
+      "rawLogsTxtJsonlExcluded": true,
+      "filesMutated": false,
+      "lineEndings": "No normalization performed; existing original line endings preserved."
+    }
+  },
+  "pendingPostCommitCorrelation": {
+    "expectedPath": "reports/v2/20261006-reward-core/phase-03/source-commit-correlation.json",
+    "status": "Expected after root application commit; absence at this pre-commit snapshot is not an integrity failure."
+  },
+  "selfReferencePolicy": "No hash is assigned to this artifact or playlog.jsonl. Archive checksums/counts and report hashes describe the exact pre-publication snapshot.",
+  "timedHarnessAndPostProcessing": {
+    "timedHarness": {
+      "path": "reports/v2/20261006-reward-core/phase-03/stress_browser.py",
+      "sha256": "1423a3638721e7866feb78b3e863d4723f60d8d4a9228d44ec84a34347e47280",
+      "status": "this exact harness was used for the recorded timed stress run"
+    },
+    "postprocessingHelpers": {
+      "reports/v2/20261006-reward-core/phase-03/qa_metrics.py": {
+        "bytes": 3018,
+        "sha256": "09afb486ab313645857968381581f55a8d1869d173e816ff83288c585a73a48e"
+      },
+      "reports/v2/20261006-reward-core/phase-03/test_performance_table.py": {
+        "bytes": 2336,
+        "sha256": "c229a7aa934f9f85ef9f676e4e858586cae6e79c700c63a22e6941fbcc041f72"
+      },
+      "reports/v2/20261006-reward-core/phase-03/test_qa_metrics.py": {
+        "bytes": 1909,
+        "sha256": "210fcfaa2aee87b6457430ebd4c4c518a00d04b4491fad0c38dff69ed6a2cbc0"
+      }
+    },
+    "note": "Post-processing helpers were added after the timed soak and are not part of the timed harness or stress runtime."
+  }
+}

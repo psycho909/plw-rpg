@@ -1,5 +1,5 @@
 import { ARCHETYPES, BOSS, BUILDINGS, CONFIG, CROP, DUNGEON, ITEMS, MONSTERS } from '../data/config'
-import { ITEM_BASES, RARITIES } from '../data/rewards'
+import { ITEM_BASES, RARITIES, WOLF_MONSTERS } from '../data/rewards'
 import type { GameState, ItemId, SkillId } from '../domain/types'
 import { emit } from './events'
 import { random } from './random'
@@ -11,6 +11,7 @@ import { die, distance, gainExp, player, simulate, stageIndex, threatLevel } fro
 import { canVisit } from './rewardActions'
 import { awardWolfLoot } from './itemGeneration'
 import { incomingDamage, playerAttackDamage } from './combatStats'
+import { advanceWolfTurn, wolfAttackForTurn, wolfChargeHealing, wolfCombatPhase, wolfDefenseForTurn } from './wolfFamily'
 
 export { canVisit } from './rewardActions'
 function cost(state: GameState, stamina: number, minutes: number, gold = 0) {
@@ -164,35 +165,45 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
     emit(state, 'combat.ran', 'player', '你撤離了戰鬥。'); return ''
   }
   if (command === 'potion') { const error = usePotion(state); if (error) return error }
-  if (command === 'attack') monster.hp = Math.max(0, monster.hp - playerAttackDamage(state, monster.defense, monster.monsterId === 'wolf'))
+  const family = !monster.dungeon && monster.monsterId === 'wolf' ? monster.familyEncounter : undefined
+  const familyPhase = family ? wolfCombatPhase(family, monster.hp, monster.maxHp) : null
+  const effectiveDefense = family && familyPhase ? wolfDefenseForTurn(monster.defense, familyPhase) : monster.defense
+  if (command === 'attack') monster.hp = Math.max(0, monster.hp - playerAttackDamage(state, effectiveDefense, monster.monsterId === 'wolf'))
   for (const p of state.party) {
     const npc = state.npcs.find(n => n.id === p.npcId && n.isAlive)
     if (!npc) continue
     if (p.archetype === 'healer' && c.hp < c.maxHp * .5) c.hp = Math.min(c.maxHp, c.hp + ARCHETYPES.healer.heal + stageIndex(state) * 2)
-    else if (c.hp > c.maxHp * .25) monster.hp = Math.max(0, monster.hp - Math.max(1, npc.stats.strength / 2 + stageIndex(state) * 2 - monster.defense))
+    else if (c.hp > c.maxHp * .25) monster.hp = Math.max(0, monster.hp - Math.max(1, npc.stats.strength / 2 + stageIndex(state) * 2 - effectiveDefense))
   }
   if (monster.hp <= 0) {
     const wolfFamilyPayout = !monster.dungeon && monster.monsterId === 'wolf'
     const wolfLoot = wolfFamilyPayout
-      ? awardWolfLoot(state, { definitionId: 'grayWolf' })
+      ? awardWolfLoot(state, { definitionId: family?.definitionId ?? 'grayWolf' })
       : null
+    const wolfBoss = !!family && WOLF_MONSTERS[family.definitionId].rank === 'boss'
+    const goblinBoss = !family && MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss
     recordHunt(state)
     c.gold += monster.gold
     if (!wolfFamilyPayout) c.inventory[MONSTERS[monster.monsterId as keyof typeof MONSTERS].loot]++
     gainExp(state, c, monster.exp, 'combat'); recordLifeAction(state, 'combat'); state.combat = null; c.status = 'idle'
     if (!monster.dungeon) {
-      changeReputation(state, MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss ? 12 : 1, '守護橡谷北方道路')
-      for (const npc of state.npcs) rememberNpc(state, npc.id, { kind: MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss ? 'GOBLIN_CHIEF_DEFEATED' : 'PLAYER_DEFENDED_OAKVALE', actorId: c.id, at: state.worldTime, detail: `${c.name}擊退北方道路的威脅。` })
+      changeReputation(state, goblinBoss || wolfBoss ? 12 : 1, '守護橡谷北方道路')
+      if (!wolfBoss) {
+        const detail = family ? `${c.name}擊退森林裡的威脅。` : `${c.name}擊退北方道路的威脅。`
+        for (const npc of state.npcs) rememberNpc(state, npc.id, { kind: goblinBoss ? 'GOBLIN_CHIEF_DEFEATED' : 'PLAYER_DEFENDED_OAKVALE', actorId: c.id, at: state.worldTime,
+          detail })
+      }
       state.threat.monsterPopulation = Math.max(0, state.threat.monsterPopulation - 5)
       state.threat.bossProgress = Math.max(0, state.threat.bossProgress - 10)
       state.threat.threatLevel = threatLevel(state.threat.monsterPopulation)
       state.threat.campLevel = state.threat.threatLevel
-      if (MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss) {
+      if (goblinBoss) {
         state.threat.bossAlive = false; state.threat.bossProgress = 0; state.threat.warningLevel = 0
         state.life.worldMemories.push({ kind: 'GOBLIN_CHIEF_DEFEATED', actorId: c.id, at: state.worldTime, detail: `${c.name}擊敗哥布林酋長。` })
         if (state.life.worldMemories.length > 100) state.life.worldMemories.shift()
         emit(state, 'boss.defeated', 'monster', `${MONSTERS[BOSS.monsterId].name}被擊敗，北方商路暫時恢復平靜。`, true)
       }
+      if (wolfBoss) emit(state, 'wolf.boss.defeated', 'monster', `${WOLF_MONSTERS[family.definitionId].name}被擊敗，狼群的威脅暫時減弱。`, true)
     } else {
       state.dungeon.stage++
       if (state.dungeon.stage >= DUNGEON.encounters.length) {
@@ -208,8 +219,16 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
     emit(state, 'combat.won', 'player', `戰鬥勝利！獲得 ${monster.exp} 經驗與 ${monster.gold} 金幣。${gearMessage}`)
   } else {
     const companionGuard = state.party.some(p => p.archetype === 'fighter') && c.hp <= c.maxHp * .25 ? ARCHETYPES.fighter.guard : 0
-    c.hp = Math.max(0, c.hp - incomingDamage(state, monster.attack, command === 'defend', companionGuard))
+    if (family && familyPhase) {
+      const healing = wolfChargeHealing(family, monster.hp, monster.maxHp, familyPhase)
+      monster.hp = Math.min(monster.maxHp, monster.hp + healing)
+    }
+    const incomingAttack = family && familyPhase
+      ? wolfAttackForTurn(family, monster.attack, command === 'defend', familyPhase)
+      : monster.attack
+    c.hp = Math.max(0, c.hp - incomingDamage(state, incomingAttack, command === 'defend', companionGuard))
     if (!c.hp) die(state, c, '戰鬥傷勢')
+    if (state.combat?.familyEncounter) advanceWolfTurn(state.combat.familyEncounter)
   }
   simulate(state, 1)
   state.life.director.lastPlayerActivity = state.worldTime

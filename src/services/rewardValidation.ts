@@ -1,7 +1,8 @@
-import { AFFIXES, BOSS_VARIANTS, ITEM_BASES, MATERIALS, MONSTER_TRAITS, RARITIES, WOLF_MONSTERS } from '../data/rewards'
+import { AFFIXES, BOSS_VARIANTS, ITEM_BASES, MATERIALS, MONSTER_TRAITS, RARITIES, WOLF_ENCOUNTER_RULES, WOLF_MONSTERS } from '../data/rewards'
 import type { FamilyEncounter, ItemAffix, ItemBaseId, ItemInstance, RewardState } from '../domain/reward'
 import type { GameState } from '../domain/types'
 import { maximumAffixTier, rolledItemStats } from '../engine/gearStats'
+import { resolveWolfCombatStats } from '../engine/wolfFamily'
 
 const rewardKeys = ['schemaVersion', 'nextInstanceId', 'instances', 'equipped', 'materials', 'collection', 'wolfBossDefeatedAt', 'wolfBossForm']
 const instanceKeys = ['instanceId', 'ownerId', 'baseId', 'level', 'material', 'rarity', 'rolledStats', 'affixes', 'specialTrait', 'provenance']
@@ -110,8 +111,7 @@ function uniqueCatalogArray(value: unknown, catalog: readonly string[]): value i
 }
 
 function sameEncounter(left: FamilyEncounter, right: FamilyEncounter): boolean {
-  if (left.definitionId !== right.definitionId || left.variant !== right.variant || left.turn !== right.turn
-    || left.formedAt !== right.formedAt || left.howlActive !== right.howlActive
+  if (left.definitionId !== right.definitionId || left.variant !== right.variant || left.formedAt !== right.formedAt
     || left.traits.length !== right.traits.length
     || !left.traits.every((trait, index) => trait === right.traits[index])) return false
   return left.context.population === right.context.population && left.context.hunted === right.context.hunted
@@ -126,16 +126,19 @@ function validEncounterShape(value: unknown, worldTime: number): value is Family
   const definition = WOLF_MONSTERS[value.definitionId]
   const traitCount = value.traits.length
   const bounds = definition.rank === 'normal' ? [0, 1] : definition.rank === 'elite' ? [1, 2] : definition.rank === 'miniBoss' ? [2, 3] : [1, 2]
-  if (traitCount < bounds[0]! || traitCount > bounds[1]! || traitCount > Object.keys(MONSTER_TRAITS).length) return false
+  if (traitCount < bounds[0]! || traitCount > bounds[1]! || traitCount > Object.keys(MONSTER_TRAITS).length
+    || value.turn > worldTime - value.formedAt) return false
   const traits = new Set<string>()
   for (const trait of value.traits) {
     if (!catalogKey(MONSTER_TRAITS, trait) || traits.has(trait)) return false
     traits.add(trait)
   }
+  if (definition.rank === 'miniBoss' && (traitCount !== 2 || !traits.has('swift') || !traits.has('armored'))) return false
 
   const validVariant = definition.rank === 'boss' ? catalogKey(BOSS_VARIANTS, value.variant) : value.variant === null
-  return validVariant && safeInt(value.context.population, 0, 100) && safeInt(value.context.hunted)
-    && bounded(value.context.safety, 0, 100)
+  const expectedHowl = definition.core === 'howl' && value.turn % WOLF_ENCOUNTER_RULES.howlEvery === WOLF_ENCOUNTER_RULES.howlEvery - 1
+  return validVariant && value.howlActive === expectedHowl && safeInt(value.context.population, 0, 100)
+    && safeInt(value.context.hunted) && bounded(value.context.safety, 0, 100)
 }
 
 /** Strict guard for a persisted reward extension. It never mutates state or throws on malformed values. */
@@ -202,7 +205,17 @@ export function validFamilyEncounter(snapshot: unknown, state: GameState): snaps
   const combatEncounter = combat.familyEncounter
   if (combat.monsterId !== 'wolf' || combat.dungeon !== false
     || !validEncounterShape(combatEncounter, stateRecord.worldTime)
+    || !bounded(combat.hp, 0, Number.MAX_SAFE_INTEGER) || !bounded(combat.maxHp, 1, Number.MAX_SAFE_INTEGER)
     || !sameEncounter(snapshot, combatEncounter)) return false
   const definition = WOLF_MONSTERS[snapshot.definitionId]
-  return combat.elite === (definition.rank === 'elite')
+  const derived = resolveWolfCombatStats(snapshot)
+  if (combat.hp > combat.maxHp || combat.maxHp !== derived.maxHp || combat.attack !== derived.attack
+    || combat.defense !== derived.defense || combat.exp !== derived.exp || combat.gold !== derived.gold
+    || combat.elite !== derived.elite) return false
+
+  if (definition.rank !== 'boss') return true
+  const reward = stateRecord.reward
+  if (!record(reward) || !validEncounterShape(reward.wolfBossForm, stateRecord.worldTime)) return false
+  const form = reward.wolfBossForm
+  return form.definitionId === 'wolfKing' && form.turn === 0 && !form.howlActive && sameEncounter(form, snapshot)
 }

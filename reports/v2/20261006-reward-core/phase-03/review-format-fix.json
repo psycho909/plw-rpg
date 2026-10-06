@@ -1,0 +1,53 @@
+{
+  "cause": "Three JSON projections ended with the two literal characters backslash+n after their closing brace, so raw_decode found the object but json.loads rejected extra data.",
+  "jsonFiles": {
+    "final-evidence-review.json": {
+      "invalidOriginalSha256": "658b44ddcc9eadf8ff2311189f478c33147adc705d0d55f0681e8cfe55b8f387",
+      "correctedSha256": "332442642fd5ac890db4a3318e209eb75aaa3374cc567e6c3f717e533353aa18",
+      "rawDecodeSuffix": "'\\\\n'",
+      "originalWholeParse": "JSONDecodeError: Extra data",
+      "decodedObjectsEqual": true,
+      "correctedWholeFileParses": true
+    },
+    "final-evidence-review-delta.json": {
+      "invalidOriginalSha256": "9aad4381f1440d3231e7fa09a00ac4ce9a17dc1973a2f41d736443782d0c39af",
+      "correctedSha256": "063b24be5a7590c0ff905abaa9f86c8431598a9b1f60b08b7c6f6d69beb7c846",
+      "rawDecodeSuffix": "'\\\\n'",
+      "originalWholeParse": "JSONDecodeError: Extra data",
+      "decodedObjectsEqual": true,
+      "correctedWholeFileParses": true
+    },
+    "metrics-fix-review.json": {
+      "invalidOriginalSha256": "eaaa9846cc494821647d828bfc3613fd65575b561156a53ff2d7207c53120158",
+      "correctedSha256": "a284bde7cb2ebd6e73c12fba7c3e768969f74ec0fdb31078bc3375304b4a8c9a",
+      "rawDecodeSuffix": "'\\\\n'",
+      "originalWholeParse": "JSONDecodeError: Extra data",
+      "decodedObjectsEqual": true,
+      "correctedWholeFileParses": true
+    }
+  },
+  "markdownFiles": {
+    "bugfix.md": {
+      "originalSha256": "3a8bf883bc12ea4533756cb6e1b61f1104a1711122c0ef6e19ef2b139f6fd539",
+      "correctedSha256": "a7431be6697a9680968028ccf87b19797c97aa8010cb2f58b9c72c7e3a0fe784",
+      "linesConvertedFromHardbreakToParagraphs": [
+        3,
+        4
+      ],
+      "semanticTextPreserved": true,
+      "noTrailingWhitespace": true
+    },
+    "harness-review.md": {
+      "originalSha256": "ae560531791208cfae4da6186d818e175887f0f17bf275d968a69c7407945c67",
+      "correctedSha256": "407df7e7cbb682a926897cbc620fa554a78373863f0ac39ccbb37d1e7eabf3a9",
+      "linesConvertedFromHardbreakToParagraphs": [
+        3,
+        4,
+        5
+      ],
+      "semanticTextPreserved": true,
+      "noTrailingWhitespace": true
+    }
+  },
+  "scope": "Only the three JSON serialization endings and hardbreak spacing in the two named authored Markdown projections changed."
+}

@@ -4,6 +4,8 @@ import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import { createGame, chooseSuccessor, player, population, simulate } from '../../../../src/engine/simulation'
 import { CONFIG } from '../../../../src/data/config'
+import { encounterWolf } from '../../../../src/engine/wolfFamily'
+import { combatTurn } from '../../../../src/engine/actions'
 import { generateItem } from '../../../../src/engine/itemGeneration'
 import { deserialize, serialize } from '../../../../src/services/saveService'
 
@@ -27,6 +29,16 @@ it.each([17, 909, 2026])('preserves reward and living-world data over 10/50/100 
   for (let i = 0; i < 500; i++) state.reward.instances.push(generateItem(state, { baseId: i % 2 ? 'axe' : 'chainArmor', level: 1 + i % 10, material: i % 2 ? 'wolfFang' : 'wolfHide' }))
   expect(JSON.stringify(state.characters)).toBe(beforeWorld)
   const originalItems = structuredClone(state.reward.instances)
+  // Controlled progression/location fixture; formation is produced only by canonical encounter API.
+  state.reward.collection.seen = ['grayWolf', 'scarredWolf', 'alphaWolf', 'packLeader']
+  state.reward.collection.defeated = [...state.reward.collection.seen]
+  player(state).position = { x: 7, y: 6 }; player(state).currentRegion = 'forest'
+  expect(encounterWolf(state, 'wolfKing')).toBe('')
+  const originalBossForm = structuredClone(state.reward.wolfBossForm)
+  expect(originalBossForm).not.toBeNull()
+  for (let attempt = 0; attempt < 20 && state.combat; attempt++) expect(combatTurn(state, 'run')).toBe('')
+  expect(state.combat).toBeNull()
+  const startingWorldTime = state.worldTime
   const began = performance.now()
   for (let elapsedYears = 1; elapsedYears <= 100; elapsedYears++) {
     simulate(state, year)
@@ -36,7 +48,8 @@ it.each([17, 909, 2026])('preserves reward and living-world data over 10/50/100 
     }
     if (![10, 50, 100].includes(elapsedYears)) continue
     expect(state.worldSeed).toBe(initialSeed)
-    expect(state.worldTime).toBe(480 + elapsedYears * year)
+    expect(state.worldTime).toBe(startingWorldTime + elapsedYears * year)
+    expect(state.reward.wolfBossForm).toEqual(originalBossForm)
     expect(state.reward.instances).toEqual(originalItems)
     expect(state.reward.instances.every(item => item.ownerId === owner)).toBe(true)
     expect(new Set(state.reward.instances.map(item => item.instanceId)).size).toBe(500)
@@ -63,9 +76,9 @@ it.each([17, 909, 2026])('preserves reward and living-world data over 10/50/100 
       ownership: state.life.properties.length, arcs: state.life.arcs.length, news: state.life.news.length,
       memories: Object.values(state.life.npcs).reduce((sum, npc) => sum + npc.memories.length, 0),
       threat: state.threat, economy: state.settlement, events: state.events.length, history: state.history.length,
-      instances: state.reward.instances.length, saveBytes: Buffer.byteLength(json), saveMs, loadMs,
+      bossForm: state.reward.wolfBossForm, startingWorldTime, instances: state.reward.instances.length, saveBytes: Buffer.byteLength(json), saveMs, loadMs,
       elapsedMs: performance.now() - began, playerAlive: player(state).isAlive,
-      limitation: 'Headless simulation; 500 generated gear fixtures retained by their original owner. Not normal-play elapsed browser time and not human Fun Gate.' }
+      limitation: 'Headless simulation; 500 generated gear fixtures retained by their original owner; controlled prior family progress/location with canonically formed and fled boss persisted across generations. Not normal-play elapsed browser time and not human Fun Gate.' }
     appendFileSync(rawPath, JSON.stringify(sample) + '\n')
     // Immutable, timestamped raw file; root recorded_reports publishes final projections after runner completes.
   }

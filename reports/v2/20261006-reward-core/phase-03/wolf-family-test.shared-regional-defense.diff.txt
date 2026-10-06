@@ -1,0 +1,30 @@
+--- pre-run-fixture
++++ src/engine/wolfFamily.test.ts
+@@ -125,11 +125,16 @@
+     expect(wolfEncounterOptions(state).find(option => option.definitionId === 'wolfKing')?.eligible).toBe(true)
+   })
+ 
+-  it('uses the actual encounter definition for victory, collection, and family loot without goblin-chief side effects', () => {
++  it('uses the actual encounter definition and shared regional-defense effects without goblin-chief side effects', () => {
+     const state = createGame(81)
+     forest(state); bossUnlocked(state)
+     player(state).stats.strength = 500
++    // Forest victories reduce shared regional pressure without resolving goblin-boss state.
++    state.threat.bossProgress = 30
++    state.threat.warningLevel = 2
+     state.threat.bossAlive = true
++    const initialReputation = state.life.characters[state.activeCharacterId]!.reputation
++    expect(initialReputation).toBeLessThan(88)
+     expect(encounterWolf(state, 'wolfKing')).toBe('')
+ 
+     expect(combatTurn(state, 'attack')).toBe('')
+@@ -141,6 +146,9 @@
+     expect(state.reward.wolfBossForm).toBeNull()
+     expect(state.reward.wolfBossDefeatedAt).toBe(state.worldTime - 1)
+     expect(state.threat.bossAlive).toBe(true)
++    expect(state.threat.bossProgress).toBe(20)
++    expect(state.threat.warningLevel).toBe(2)
++    expect(state.life.characters[state.activeCharacterId]!.reputation).toBe(initialReputation + 12)
+     expect(state.life.worldMemories.some(memory => memory.kind === 'GOBLIN_CHIEF_DEFEATED')).toBe(false)
+   })
+ 

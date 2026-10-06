@@ -1,0 +1,55 @@
+{
+  "verdict": "PASS WITH FINDINGS",
+  "scope": "independent corrected-metric evidence review; no source/gate rerun",
+  "recomputedMetricSeries": 27,
+  "qaSummary": {
+    "chronologicalEndpointMismatches": 0,
+    "distributionStatisticMismatches": 0,
+    "rawSource": "stress-browser.json checkpoints in recorded chronological order"
+  },
+  "testReview": {
+    "cases": 2,
+    "coversSortedDistributionVsChronologicalEndpoints": true,
+    "coversAllProductionSeriesAgainstRawData": true
+  },
+  "checkpoint41": {
+    "worldTime": 13341,
+    "elapsedSeconds": 1176.289617841001,
+    "monsterPopulation": 2.5499999999999994,
+    "cdpNodes": 2786,
+    "actualJsListeners": 529,
+    "jsHeapUsedBytes": 18189164
+  },
+  "actualFinalState": {
+    "worldTime": 13390,
+    "deltaGameMinutesAfterCheckpoint41": 49,
+    "elapsedGameMinutesFromInitial": 12910,
+    "elapsedGameTime": "8 days 23 hours 10 minutes",
+    "population": 30,
+    "livingNPC": 29,
+    "threat": 2.5499999999999994,
+    "goblinBossProgress": 1.9500000000000004,
+    "eventSequence": 1658,
+    "events": 150,
+    "history": 2,
+    "pendingJournal": 0,
+    "rewardItems": 4,
+    "serializedStateBytes": 103036,
+    "serializedStateBytesIsEstimate": true,
+    "domHeapListenerCountersAvailable": false
+  },
+  "finding": {
+    "file": "performance.md",
+    "detail": "Markdown table has missing/misplaced chronological endpoint cells. Player gold lists 322 under First although raw/JSON first is 45 and omits last; event ring lists 150 under First although first is 1; origin storage estimate lists 794592 under First although first is 2398. Several rows omit the last cell."
+  },
+  "openLimitations": {
+    "C01": "OPEN",
+    "C02": "OPEN",
+    "C03": "OPEN",
+    "twoHourSoakClaim": false,
+    "humanFunRetention": "DEFERRED / NOT APPLICABLE AT THIS STAGE",
+    "scope": "Phase 3 only",
+    "favicon404Disclosed": true
+  },
+  "previousTotalsOnlyPassPreserved": true
+}

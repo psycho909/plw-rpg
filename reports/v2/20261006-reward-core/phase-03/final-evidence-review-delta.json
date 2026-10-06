@@ -1,0 +1,48 @@
+{
+  "verdict": "PASS",
+  "scope": "bounded final-report aggregation delta review; no reruns or source audit",
+  "reportsReviewed": [
+    "browser-stress.md",
+    "performance.md",
+    "qa-summary.json",
+    "artifact-integrity.json",
+    "baseline-current.json"
+  ],
+  "stressRun": {
+    "runId": "20261006T070601Z",
+    "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+    "actualEndUTC": "2026-10-06T07:26:02.820006+00:00",
+    "durationSeconds": 1200.610157307001,
+    "cycles": 1425,
+    "reloads": 7,
+    "operations": 17647,
+    "checkpoints": 41,
+    "separatePriorFailureRetained": true
+  },
+  "sourceIntegrity": {
+    "baseCommit": "6568b466390d06e6be0af2585e7524b9415204b8",
+    "frozenSourceFiles": 74,
+    "repositoryRelativeMismatches": 0,
+    "buildAndStressSourceMatchFreeze": true,
+    "absoluteRelativeProjectionCorrectionArchived": true
+  },
+  "dist": {
+    "currentAssetHashesRecorded": true,
+    "historicalExpectedAssetHashesAvailable": false,
+    "exactCrossTimeByteCompareClaimed": false
+  },
+  "scopeAndLimits": {
+    "twoHourSoakClaim": false,
+    "C01": "OPEN",
+    "C02": "OPEN",
+    "C03": "OPEN",
+    "humanFunRetention": "DEFERRED / NOT APPLICABLE AT THIS STAGE",
+    "blocksEngineeringQA": false,
+    "phase": "Phase 3",
+    "phase4PlusClaim": false,
+    "productReadinessClaim": false,
+    "formalAcceptance": "root-owned pending"
+  },
+  "knownConsoleFinding": "One /favicon.ico 404; no page exceptions, rejections, or storage errors.",
+  "baselineMetadataCapture": "Read-only; no test/browser/simulation rerun"
+}

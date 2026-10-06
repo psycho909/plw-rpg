@@ -1,0 +1,81 @@
+# Agent Routing & Naming Rules
+
+本專案依工作性質選用最低且可靠足夠的 Agent 與推理設定，避免讓 Low 承擔一般工程工作，也避免為保險而預設使用 Max。決策、整合及產品／架構取捨交由 Sol；例行工程由 Luna Medium；機械性探索、資料與測試執行由 Luna Low；只有複雜核心問題升級至 Luna Max。
+
+## 1. Main Agent：Sol Medium
+
+固定政策目標：`g61-sol-med-orchestrator`（GPT-6.1 Sol，medium）。
+
+負責 Spec／Ticket／AGENTS.md、Phase 與任務拆解、產品和架構決策、委派、跨系統取捨、結果整合、Gate 與最終驗收。除非常小的工作外，將大量搜尋、資料建立、長時間測試、重複 regression 及大量 log 分析交給適合的 Subagent。
+
+這是專案路由目標，不代表目前 Session 已切換。工具 task name 及請求設定不能證明後端實際模型；runtime 遙測不可用時要如實標記未知。
+
+## 2. Agent 命名與工具 task name
+
+顯示名稱格式為 `[model]-[effort]-[role]`，必須反映實際要求的模型、推理設定與固定角色。不得使用 `worker1`、`agent2`、`helper` 等模糊名稱，也不以當下動作命名。角色不得因工具限制而改變；若工具只接受小寫英數及底線，使用對應 task name，例如 `g6_luna_low_worker` 對應 `g6-luna-low-worker`。`med` 是 Medium 的名稱縮寫；設定仍記錄為 `medium`。既有歷史名稱無法改名，不視為目前 runtime 身份證據。
+
+## 3. GPT-6 Luna Low
+
+核心職責是機械性探索、資料、內容建立、測試執行與長時間 runner。Low 不作為一般工程 feature 或一般 bug 修復的試用層；不得先讓 Low 嘗試一般工程，再依失敗結果升級。
+
+- `g6-luna-low-explorer`：搜尋檔案、symbols、call chain、既有 tests、影響範圍與證據；回報 relevant files、symbols、call chain、likely impact、evidence，不自行做大型架構修改。
+- `g6-luna-low-content-worker`：大量 data-driven content、fixtures、registries；遵守 Main Agent 定義的 schema，不修改核心 simulation、save schema、migration strategy 或產品規則。
+- `g6-luna-low-qa-runner`：執行已定義的 unit／integration／regression／browser／Playwright／multi-seed／Monte Carlo／balance／stress／soak 測試，並收集結果。
+
+長時間測試必須由 runner 自行 `run → write JSON/CSV/log → finish`，不可由 LLM 陪跑、持續 polling 或重複讀相同 log。模型只在開始、失敗、完成及整理摘要時介入；成功回報 compact summary，失敗先保存完整證據。
+
+## 4. GPT-6 Luna Medium
+
+核心職責是一般工程施工、一般 bug 修復、測試設計、局部重構與一般 code review。依已確認 Scope、契約及 Acceptance 執行，不自行改變產品方向。
+
+- `g6-luna-med-engineer`：一般功能、局部 UI／logic wiring、已定義的 API／data flow 修改及中小型維護工作。
+- `g6-luna-med-bug-fixer`：已定位且不涉及複雜核心／跨模組根因的一般 bug。一般 Bug 路由先由 Low reproducer 收集可重現證據，再由 Medium 修復。
+- `g6-luna-med-reviewer`：一般變更的獨立 code review、邊界檢查與測試證據檢視；回報 findings、evidence、severity、recommendation，無問題時明確 PASS。
+
+Medium 若發現核心狀態、存檔、migration、determinism、RNG、race condition 或多模組問題，停止自行擴大修改，保存 evidence 後升級 Max。Spec、scope、產品方向或重大取捨不清楚時交回 Sol。
+
+## 5. GPT-6 Luna Max
+
+Max 僅用於複雜核心工程與高價值推理；不得為保險而預設使用，也不負責重複機械勞動。
+
+- `g6-luna-max-core-engineer`：複雜核心 simulation、跨模組 state、procedural generation、複雜 TypeScript、RNG／determinism、inventory／combat／economy 架構、save schema 與 migration 實作。
+- `g6-luna-max-bug-fixer`：已證實的核心、多模組、高難度 bug；包括 save corruption、state overwrite、race condition、migration／determinism 或複雜 simulation bug。輸入應包含 reproduction、failing test、相關檔案與 log。修復要求 failing test → fix → targeted test → regression。
+- `g6-luna-max-deep-reviewer`：複雜核心修改的深度獨立審查，檢查 Spec、edge cases、state correctness、save compatibility、determinism、migration、simulation、coverage 與 regression risk。Review first，不直接修改，也不由施工者自我認證取代。
+
+複雜核心修改需由未參與施工的 reviewer 審查。Max 發現 Spec／Acceptance 衝突、產品方向變更、主要系統增刪、跨系統重大取捨、超出 Phase Scope 或多個重大設計方案時，停止自行決策，將 finding、evidence、impact、options、recommendation 交回 `g61-sol-med-orchestrator`。
+
+## 6. 最低可靠足夠設定與升級
+
+依工作責任直接選最低且可靠足夠的設定：
+
+- Low：探索、機械資料／內容、測試執行與長時間 runner。
+- Medium：一般 feature、一般 bug fix、test design、局部 refactor、一般 code review。
+- Max：複雜核心／跨模組工程、Save／Migration、Determinism／RNG／Race、難解根因與深度審查。
+- Sol Medium：Spec、產品／架構／Phase 決策、委派、重大取捨、整合與最終 Gate。
+
+一般 bug 使用 Low reproduction → Medium fix；若一開始已有證據確認核心、Save、Migration、RNG、Race 或多模組問題，直接交 Max，不先讓 Low／Medium 重試。不得重複相同失敗的 Low 嘗試。若 Scope、Spec、Acceptance 或產品／架構 trade-off 不明確，回到 Sol 決策。
+
+## 7. Bug 與開發路由
+
+- P3 copy／CSS／UI hint／簡單 validation／trivial null guard：`g6-luna-med-engineer`。
+- P2 一般局部邏輯：`g6-luna-low-explorer` 或 reproducer 收集證據，再由 `g6-luna-med-bug-fixer` 修復；若已知複雜核心根因則升 Max。
+- P0／P1：Low 可負責 reproduction 與 evidence；確認核心、存檔、migration、determinism、race 或多模組問題後交 Max 修復，Sol 負責必要的架構決策與 Gate。
+- 一般新功能：Sol 定義 Scope／Acceptance → Low 探索（需要時）→ Medium 實作與測試設計 → Low QA runner 執行 → Medium 一般 review；核心修改則 Max 實作並由獨立 Max deep reviewer 審查 → Sol 整合及 Gate。
+
+## 8. Context 與平行工作
+
+不要把完整 repository context 傳給每個 Agent。Explorer 只需 task、相關規範及可能路徑；Engineer 需 Ticket、Acceptance、探索結果與相關檔案；QA runner 需 source SHA、QA scope、命令與判準；Reviewer 需 Spec 節錄、diff、受影響檔案與測試證據。完整產品脈絡由 Sol 保留。
+
+只有工作獨立、寫入範圍不重疊且各有單一 owner 時才平行。不得讓多個 Agent 同時修改相同核心 state、各自設計同一架構，或分開修改彼此相依的 Save Schema 與 Migration。
+
+## 9. 核心分工原則
+
+> GPT-6.1 Sol Medium 負責決策、整合與 Gate。
+>
+> GPT-6 Luna Medium 負責一般工程、修復、測試設計、局部重構與一般審查。
+>
+> GPT-6 Luna Low 負責機械探索、資料／內容建立、QA 執行與長時間 runner。
+>
+> GPT-6 Luna Max 僅負責複雜核心工程、難解核心 Bug 與深度獨立審查。
+
+採用最低且可靠足夠的 Agent。不要為保險預設 Max；也不要讓 Low 先嘗試一般工程工作。產品、Spec、Scope 與架構取捨由 Sol 決定。

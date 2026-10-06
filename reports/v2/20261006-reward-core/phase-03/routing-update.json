@@ -1,0 +1,29 @@
+{
+  "kind": "documentation-update",
+  "owner_revision": "third-final-routing",
+  "owner_revision_supersedes_original_and_intermediate": true,
+  "original_source_file": "reports/v2/20261006-reward-core/phase-03/agent-routing-original.txt",
+  "original_source_sha256": "4539d575556c7b2a119becf597e4b4140382658af2942e22234c2865cbac6d40",
+  "original_source_byte_identical": true,
+  "intermediate_source_file": "reports/v2/20261006-reward-core/phase-03/agent-routing-intermediate.txt",
+  "intermediate_source_sha256": "38fd26d7f0846097a3cf1ac3f469936b6c0664b7c23611356e070813046c7f54",
+  "historical_report_versions_preserved": true,
+  "effective_policy": "lowest-total-token-cost reliable role; one effective attempt; no fixed pipeline",
+  "roles": {
+    "low": "mechanical exploration, data/content/fixtures, reproduction, tests/browser QA/simulation/benchmarks/long runners",
+    "medium": "daily default: general features/bugs/local refactor/test design/general review",
+    "max": "complex/high-risk core state, save/migration/RNG/determinism/race/concurrency/complex algorithms/hard bugs/deep independent review",
+    "sol": "GPT-6.1 Sol medium; Spec/product/architecture/Scope/Phase/delegation/integration/final Gate"
+  },
+  "escalation": "after one reasonable attempt is inadequate, no reliable cause, or core/high risk confirmed",
+  "max_tradeoffs_return_to_sol": true,
+  "long_runner_llm_polling": false,
+  "runtime_model_effort_telemetry": "unavailable",
+  "changed_document_sha256": {
+    "AGENTS.md": "bf4a459e3d20f8086f2ad62f3b2e92bbb5907b81abd876e66b3d5779503bd94a",
+    "README.md": "9922394efee1d4f9219bec2bc8b9396b2962ef960286f9b5c9c00f253970e092",
+    "docs/SUBAGENTS.md": "419352ab83948c76a84fe2e13740a9e7e967eb06d3a02c8729007492bdac5697",
+    "docs/agents/agent-routing.md": "9c97ca110bc8ca31720030913cb00d2041eec363e8ab3f087c373d3b3e925a42"
+  },
+  "tests_run": false
+}

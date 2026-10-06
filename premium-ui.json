@@ -16,10 +16,10 @@
   ],
   "commands": {
     "check": "npm run check",
-    "browser": "python3 reports/v2/20261006-reward-core/phase-02/targeted_browser.py"
+    "browser": "python3 reports/v2/20261006-reward-core/phase-03/stress_browser.py"
   },
   "evidence": {
-    "crudFullFlow": "reports/v2/20261006-reward-core/phase-02/targeted_browser.py",
-    "failurePaths": "reports/v2/20261006-reward-core/phase-02/browser-run/verify_browser.py"
+    "crudFullFlow": "reports/v2/20261006-reward-core/phase-03/stress_browser.py",
+    "failurePaths": "reports/v2/20261006-reward-core/phase-03/browser-run/verify_browser.py"
   }
 }

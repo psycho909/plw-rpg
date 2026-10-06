@@ -1,0 +1,26 @@
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/wolfFamily.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/wolfFamily.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/wolfFamily.test.ts [ src/engine/wolfFamily.test.ts ]
+Error: Cannot find module './wolfFamily' imported from /workspace/plw-rpg/src/engine/wolfFamily.test.ts
+ ❯ src/engine/wolfFamily.test.ts:7:1
+      5| import { combatTurn } from './actions'
+      6| import { createGame, player, walkTo } from './simulation'
+      7| import {
+       | ^
+      8|   encounterWolf,
+      9|   resolveWolfCombatStats,
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

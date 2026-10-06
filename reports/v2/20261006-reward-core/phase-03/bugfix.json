@@ -1,0 +1,86 @@
+{
+  "owner": "gpt6luna_max_browser_harness",
+  "artifact": "reports/v2/20261006-reward-core/phase-03/stress_browser.py",
+  "artifactSha256": "1423a3638721e7866feb78b3e863d4723f60d8d4a9228d44ec84a34347e47280",
+  "status": "NARROW_HARNESS_FIX_PUBLISHED_STATIC_ONLY",
+  "reproduction": {
+    "runId": "20261006T065612Z",
+    "startedUTC": "2026-10-06T06:56:12.976064+00:00",
+    "endedUTC": "2026-10-06T06:56:27.054079+00:00",
+    "actualDurationSeconds": 13.16307967100147,
+    "exitCode": 1,
+    "failure": "Harness assertion at the cooldown-row check expected a cooldown reason before allowing normal population recovery.",
+    "state": {
+      "worldTime": 5968,
+      "wolfBossDefeatedAt": 5967,
+      "monsterPopulation": 0,
+      "wolfBossForm": null,
+      "playerAlive": true,
+      "playerLevel": 5,
+      "playerGold": 166,
+      "playerHp": 91,
+      "defeated": [
+        "grayWolf",
+        "scarredWolf",
+        "alphaWolf",
+        "packLeader",
+        "wolfKing"
+      ]
+    },
+    "uiObserved": "The forest screenshot shows the wolf king row disabled with “附近暫時沒有怪物。” because global population eligibility is evaluated before boss cooldown text.",
+    "runtimeErrors": {
+      "pageErrors": 0,
+      "unhandledRejections": 0,
+      "storageErrors": 0,
+      "consoleErrors": 1,
+      "consoleErrorLocation": "favicon.ico 404 only"
+    }
+  },
+  "preservedEvidence": [
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/browser-stress-status.json",
+      "sha256": "21ffecaea7c8abf9a077592147ac2412c2c5041538352b8f6f3c9d474d187b31"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/browser-stress-stderr.txt",
+      "sha256": "70398f2f30f57b33288ea0600741487c6f293397a383e6c2b3d56fde04621a14"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/browser-stress-stdout.txt",
+      "sha256": "f1a88c0ae044f4234e9b4ffeccc4377ae9a6052096dd9d8aebc5e1e78feae21c"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/stress-browser.json",
+      "sha256": "16f03f72e8f0b39fd30e37d6875e8a0c9f6bae8e3e9ada0aedfd8344e79e3d28"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/failure-raw-save.json",
+      "sha256": "b4a3ef9ea16f437005c2fd56a1225b94086dcad73761338060fd3d194e8640fd"
+    },
+    {
+      "path": "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-failure-screen.png",
+      "sha256": "2728a88f4217d85da0e86bfdf5639c5966fc338aeaae0cf4bb255417f5cf6d7b"
+    }
+  ],
+  "fix": {
+    "scope": "Only the wolf king post-victory cooldown observation in stress_browser.py.",
+    "steps": [
+      "Record the exact visible disabled row text and the relevant post-victory save fields before population recovery.",
+      "If population is below 1, use the existing real-UI rest_until route with cap=120 game-hours until population reaches 1.",
+      "Reopen the forest and re-read UI/state; require exact wolfBossDefeatedAt preservation and wolfBossForm=None.",
+      "If still within seven days, assert the disabled row shows the cooldown reason and exact ceiling-rounded remaining days in 1..7.",
+      "If legal recovery crosses the seven-day expiry, record a design finding and make no cooldown-confirmation claim."
+    ],
+    "gameStateInjection": false,
+    "sourceChanges": false,
+    "fullBuildRerunNeeded": false
+  },
+  "validation": {
+    "pythonCompile": "PASS",
+    "browserRerunByOwner": "NOT RUN",
+    "sourceFingerprintMatchesBuildStatus": true,
+    "sourceFileCount": 74,
+    "rootOwnsFresh1200SecondRun": true
+  },
+  "auditNote": "The original short failure evidence remains in place and was writer-recorded by the run workflow. This report does not relabel the 13.16-second run as a stress pass."
+}

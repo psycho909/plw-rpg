@@ -1,0 +1,35 @@
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/wolfFamily.test.ts src/services/rewardSave.test.ts src/engine/actions.test.ts src/engine/combatStats.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/rewardSave.test.ts (32 tests | 1 failed) 161ms
+   × round-trips a fractional wolf HP caused by companion damage 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/rewardSave.test.ts > round-trips a fractional wolf HP caused by companion damage
+AssertionError: expected +0 not to be +0 // Object.is equality
+ ❯ src/services/rewardSave.test.ts:126:36
+    124|   state.party.push({ npcId: companion.id, hireCost: 0, dailyWage: 0, c…
+    125|   combatTurn(state, 'defend')
+    126|   expect(state.combat!.hp % 1).not.toBe(0)
+       |                                    ^
+    127|   expect(deserialize(serialize(state)).state).toEqual(state)
+    128| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 78 passed (79)
+   Start at  06:20:07
+   Duration  1.44s (transform 251ms, setup 0ms, import 394ms, tests 592ms, environment 1ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

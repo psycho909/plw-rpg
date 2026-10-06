@@ -1,0 +1,578 @@
+# Agent Routing & Naming Rules
+
+本專案採固定的 Agent 職權與模型分工，目標為：
+
+**盡量使用低成本 Agent 處理機械性工作，只把真正需要高推理能力的工作升級，降低 Token／Quota 消耗，同時維持工程品質。**
+
+## 1. Main Agent
+
+主 Agent 固定為：
+
+`g61-sol-med-orchestrator`
+
+Model:
+`GPT-6.1 Sol`
+
+Reasoning:
+`medium`
+
+職權：
+
+- 讀取與維護 Spec / Ticket / AGENTS.md
+- 拆解 Phase 與任務
+- 決定實作方向
+- 分派 Sub Agent
+- 處理跨系統取捨
+- 處理產品／架構決策
+- 整合 Sub Agent 結果
+- 判定 Gate
+- 最終驗收
+
+原則：
+
+**Sol Medium 負責決策與整合，不負責大量機械勞動。**
+
+除非任務非常小，否則不要讓 Main Agent 自己：
+
+- 大量搜尋檔案
+- 大量建立資料
+- 跑長時間測試
+- 重複執行 regression
+- 逐筆分析大量 log
+- 處理可明確委派的 routine work
+
+---
+
+# 2. Agent Naming Convention
+
+所有 Sub Agent 使用：
+
+`[model]-[effort]-[role]`
+
+禁止使用模糊名稱，例如：
+
+`worker1`
+`agent2`
+`helper`
+`test-agent`
+
+也不要以當下動作命名：
+
+`fixing-save`
+`testing-combat`
+
+使用固定 Role。
+
+範例：
+
+`g6-luna-low-explorer`
+
+`g6-luna-low-worker`
+
+`g6-luna-low-bug-reproducer`
+
+`g6-luna-low-qa-runner`
+
+`g6-luna-low-content-worker`
+
+`g6-luna-max-core-engineer`
+
+`g6-luna-max-bug-fixer`
+
+`g6-luna-max-reviewer`
+
+名稱必須真實反映實際使用的：
+
+**Model + Reasoning Effort + Role**
+
+不得名稱標示 Luna Low，實際卻使用 Max，反之亦然。
+
+---
+
+# 3. GPT-6 Luna Low
+
+核心原則：
+
+**Low 負責探索、資料、執行與測試。**
+
+## `g6-luna-low-explorer`
+
+用途：
+
+- 搜尋相關檔案
+- 尋找 call chain
+- 尋找 type / interface
+- 尋找既有 tests
+- 找出影響範圍
+- 彙整相關 implementation
+
+只回報：
+
+- relevant files
+- relevant symbols
+- call chain
+- likely impact
+- evidence
+
+不要自行做大型架構修改。
+
+---
+
+## `g6-luna-low-worker`
+
+用途：
+
+- 小型明確修改
+- 簡單 UI wiring
+- Data registry
+- Fixture
+- 樣板程式
+- 明確且局部的實作
+
+適用於：
+
+- 規格已完整
+- Acceptance Criteria 明確
+- 不涉及跨系統設計
+
+若開始牽涉核心架構，停止並升級。
+
+---
+
+## `g6-luna-low-content-worker`
+
+專門處理大量 Data-driven Content：
+
+- Monster definitions
+- Item definitions
+- Material definitions
+- Crop definitions
+- Loot table data
+- Affix data
+- Content fixtures
+
+不得自行修改：
+
+- 核心 Simulation 架構
+- Save schema
+- Migration strategy
+- Product rules
+
+Content 必須遵守 Main Agent 已定義 Schema。
+
+---
+
+## `g6-luna-low-bug-reproducer`
+
+Bug 第一線使用。
+
+負責：
+
+- 重現 Bug
+- 找 minimal reproduction
+- 保存 error / log
+- 找出 relevant files
+- 建立 failing test
+- 縮小問題範圍
+
+原則：
+
+**先證明問題，再修問題。**
+
+除非 Bug 非常單純，不負責複雜 root-cause fix。
+
+---
+
+## `g6-luna-low-qa-runner`
+
+負責：
+
+- Unit tests
+- Integration tests
+- Regression
+- Browser tests
+- Playwright
+- Multi-seed tests
+- Monte Carlo
+- Balance runner
+- Long-term simulation
+- Browser stress
+- Long soak
+
+長時間測試必須：
+
+**runner-driven，不是 model-driven。**
+
+Runner 自己：
+
+`run → write JSON/CSV/log → finish`
+
+Agent 不得長時間陪跑、持續 polling 或反覆讀取相同 log。
+
+只有：
+
+- 開始
+- failure
+- 完成
+- summary
+
+需要模型介入。
+
+---
+
+# 4. GPT-6 Luna Max
+
+核心原則：
+
+**Max 負責困難工程與高價值推理，不負責重複勞動。**
+
+## `g6-luna-max-core-engineer`
+
+使用於：
+
+- Core Simulation
+- 跨模組 State
+- Procedural Generation
+- Complex TypeScript
+- RNG architecture
+- Inventory architecture
+- Combat architecture
+- Economy architecture
+- Migration implementation
+- 複雜資料模型
+
+必須基於 Main Agent 已核定的 Spec。
+
+不得自行改變產品方向。
+
+---
+
+## `g6-luna-max-bug-fixer`
+
+使用於：
+
+- P0 / P1 Bug
+- Save corruption
+- State overwrite
+- Race condition
+- Migration Bug
+- Determinism Bug
+- Complex Simulation Bug
+- 跨模組 Root Cause
+
+輸入最好包含：
+
+- reproduction
+- failing test
+- relevant files
+- logs
+
+不要讓 Max 從整個 repository 無目的搜尋開始。
+
+修復後必須：
+
+`failing test → fix → targeted test → regression`
+
+---
+
+## `g6-luna-max-reviewer`
+
+作為獨立工程 Reviewer。
+
+負責檢查：
+
+- Implementation 是否符合 Spec
+- Edge cases
+- State correctness
+- Save compatibility
+- Determinism
+- Migration
+- Simulation
+- Test coverage
+- Regression risk
+
+原則：
+
+**Review first，不直接偷偷修改。**
+
+輸出：
+
+- finding
+- evidence
+- severity
+- recommendation
+
+若沒有問題：
+
+明確回報 PASS。
+
+---
+
+# 5. Escalation Rules
+
+所有任務預設：
+
+`Lowest sufficient model first`
+
+但不是無限制讓 Low 嘗試。
+
+## Low → Max
+
+符合以下任一條件立即升級：
+
+- 無法明確定位 root cause
+- 涉及多個核心模組
+- Save schema
+- Migration
+- Deterministic Simulation
+- Race condition
+- Complex async state
+- Core combat/economy rules
+- Procedural generation architecture
+- 低階 Agent 已有一次有效嘗試但無法可靠完成
+
+不要反覆讓 Low 嘗試相同問題以浪費 Token。
+
+---
+
+# 6. Max → Main Sol
+
+符合以下任一條件停止自行決策並交回 Main Agent：
+
+- Spec 衝突
+- Acceptance Criteria 衝突
+- 需要改變產品方向
+- 需要新增／刪除主要系統
+- 涉及跨系統 architecture trade-off
+- 修改會突破當前 Phase Scope
+- 找到問題但存在兩種以上重大設計方案
+- 修正可能破壞既有產品哲學
+
+此時回報：
+
+`finding`
+
+`evidence`
+
+`impact`
+
+`options`
+
+`recommendation`
+
+由：
+
+`g61-sol-med-orchestrator`
+
+決定。
+
+---
+
+# 7. Bug Routing
+
+P3：
+
+- copy
+- CSS
+- UI hint
+- simple validation
+- trivial null guard
+
+優先：
+
+`g6-luna-low-worker`
+
+P2：
+
+一般局部邏輯問題：
+
+先：
+
+`g6-luna-low-bug-reproducer`
+
+若修正明確可由 Low 處理。
+
+若 root cause 複雜：
+
+升級：
+
+`g6-luna-max-bug-fixer`
+
+P1 / P0：
+
+直接：
+
+`g6-luna-low-bug-reproducer`
+
+取得證據後：
+
+`g6-luna-max-bug-fixer`
+
+必要時由 Main Agent 做最終架構決策。
+
+---
+
+# 8. Development Routing
+
+一般新功能：
+
+`g61-sol-med-orchestrator`
+→ 定義 Scope / Acceptance Criteria
+
+↓
+
+`g6-luna-low-explorer`
+→ 找影響範圍
+
+↓
+
+依難度：
+
+Simple:
+`g6-luna-low-worker`
+
+Core:
+`g6-luna-max-core-engineer`
+
+↓
+
+`g6-luna-low-qa-runner`
+→ tests / regression
+
+↓
+
+核心修改才使用：
+
+`g6-luna-max-reviewer`
+
+↓
+
+`g61-sol-med-orchestrator`
+→ 整合與 Gate
+
+---
+
+# 9. QA Routing
+
+QA 預設由：
+
+`g6-luna-low-qa-runner`
+
+執行：
+
+- regression
+- browser
+- soak
+- simulation
+- Monte Carlo
+- performance data collection
+
+測試成功：
+
+只回報 compact summary。
+
+測試失敗：
+
+先保存完整 evidence。
+
+只有需要 root-cause reasoning 時才呼叫：
+
+`g6-luna-max-bug-fixer`
+
+或：
+
+`g6-luna-max-reviewer`
+
+Main Sol 不直接分析大量 raw logs。
+
+---
+
+# 10. Context Budget Rules
+
+不要把完整 Repository Context 傳給每個 Agent。
+
+## Explorer
+
+只需要：
+
+- current task
+- relevant AGENTS rules
+- likely paths
+
+## Worker / Engineer
+
+只需要：
+
+- Ticket
+- Acceptance Criteria
+- Explorer 結果
+- relevant files
+
+## QA Runner
+
+只需要：
+
+- source SHA
+- QA scope
+- commands
+- expected criteria
+
+## Reviewer
+
+只需要：
+
+- Spec subsection
+- diff
+- affected files
+- test evidence
+
+只有：
+
+`g61-sol-med-orchestrator`
+
+保留完整產品脈絡。
+
+---
+
+# 11. Parallelism
+
+只有彼此獨立的工作才平行執行。
+
+適合平行：
+
+- 不同 Monster Family Data
+- 不同 Item Content
+- independent test suites
+- code exploration
+- documentation verification
+
+不適合平行：
+
+- 多個 Agent 同時修改相同核心 State
+- 多個 Max 同時解同一 Bug
+- Migration 與 Save Schema 各自獨立修改
+- 多個 Agent 各自重新設計同一 Architecture
+
+避免重複 Token 消耗與 merge conflict。
+
+---
+
+# 12. 核心分工原則
+
+永遠遵守：
+
+> **GPT-6.1 Sol Medium 負責決策、整合與 Gate，不負責重複勞動。**
+
+> **GPT-6 Luna Max 負責困難工程、複雜 Bug 與高價值 Review，不負責機械性大量工作。**
+
+> **GPT-6 Luna Low 負責探索、資料、測試、內容生成與長時間執行。**
+
+採：
+
+> **Low execution → Max reasoning → Sol decision**
+
+只有證據顯示 Low 不足時才升級 Max。
+
+只有涉及產品或架構取捨時才升級 Sol。
+
+不要因為 Max / Sol 比較強，就預設使用更高成本模型。

@@ -38,7 +38,13 @@ Esc 開選單／關閉視窗，C 查看角色、I 查看物品、L 查看日誌�
 - 自宅提供休息和儲物，農地與農場事業有聚落階段、金幣、聲望、位置及土地條件。農場事業由玩家親自供應食物：每次最多 10 份、每日最多 60 份；沒有 AFK 收入。
 - 「地方消息與委託」依地方、區域、傳聞、重大分類顯示有界近期消息，並提供食物、狩獵、鐵礦與傷者照料請求。地圖透過 World First projection 顯示已探索區域的居民、產業、作物和威脅標記；標記是既有世界狀態的呈現，不新增模擬實體。
 
-真人 Fun Gate 尚待 1–2 小時實際遊玩及玩家回答人生記憶／動機問題；自動化測試與程式實作不代表 Fun Gate 通過。
+目前 V2.x 首輪仍屬開發工程驗證；真人遊玩、Fun Gate 與 Retention Survey 為 `DEFERRED / NOT APPLICABLE AT THIS STAGE`，不阻擋工程 QA。正式宣告穩定 Build 準備進入真人產品測試時，才啟用 1–2 小時實際遊玩與玩家回饋；Agent／自動化測試不代替真人答案。
+
+## V2.x 首輪：Reward Core
+
+依 [V2.x 規格](docs/specs/V2X-REWARD-RETENTION.md) §77 完成 Phase0–3：程序裝備的掉落／比較／穿戴／保存流程，以及森林五種狼族遭遇、實際戰鬥提示、traits與持久化狼王變種。狼族由灰狼逐步解鎖；未解鎖或暫不可挑戰時顯示原因。狼王逃跑／重載不重抽形態，勝利後冷卻7個遊戲日。
+
+首輪 Engineering Gate：**PASS WITH FINDINGS**。314tests、typecheck/build、20項Chromium回歸、20分鐘正常UI壓力測試與多seed10/50/100年模擬通過；[交付報告](reports/v2/20261006-reward-core/final-review.md)保存原始失敗及限制。Phase4–10、完整內容預算與產品／retention驗收未宣告完成；真人驗證在本開發階段為DEFERRED，不阻擋工程。
 
 ## 正式網站與部署
 
@@ -65,19 +71,21 @@ Owner 在初始化時確認一次；身份未變時不重填、不重問。Appro
 
 ## 角色與模型
 
-| 角色 | 預設允許模型／身份 | 權責 |
-| --- | --- | --- |
-| Orchestrator／Final Reviewer | 目前 Session 選用的主 Agent 模型；建議 GPT-6.1 Sol，仍可選用可用的 Astra 或 Luna | 需求、架構、風險、整合與最終驗收；重大例外仍由 Owner 決定 |
-| Developer | GPT-6 Luna Max；以 `.codex/agents/luna_worker.toml` 為設定正本，入口依 [Subagent 規則](docs/SUBAGENTS.md) | 已授權且邊界明確的施工；不得自行擴權或發布 |
-| Independent Auditor | 未參與施工的獨立 context；以 subagent 委派時同樣使用 GPT-6 Luna Max | 必要獨立稽核；L3 最終授權仍屬人類 Owner |
+| 角色 | 模型／effort | 固定顯示名稱 | 權責 |
+| --- | --- | --- | --- |
+| Orchestrator／Final Reviewer | GPT-6.1 Sol／medium（專案路由目標） | `g61-sol-med-orchestrator` | Spec、產品與架構決策、委派、整合及最終 Gate；實際 Session 身份依可觀測 runtime 資訊記錄 |
+| Luna Low | GPT-6 Luna／low | `g6-luna-low-explorer`、`g6-luna-low-content-worker`、`g6-luna-low-qa-runner` | 機械探索、資料／內容建立、QA 執行與長時間 runner |
+| Luna Medium | GPT-6 Luna／medium | `g6-luna-med-engineer`、`g6-luna-med-bug-fixer`、`g6-luna-med-reviewer` | 一般 feature／bug fix、測試設計、局部重構與一般 review |
+| Luna Max | GPT-6 Luna／max | `g6-luna-max-core-engineer`、`g6-luna-max-bug-fixer`、`g6-luna-max-deep-reviewer` | 僅複雜核心／跨模組、Save／Migration／Determinism／Race 與深度 review |
+| Independent Auditor | 未參與施工的獨立 context；依路由規則與工具能力選擇 | 依工作選用符合實際 effort 的 reviewer | 必要獨立稽核；L3 最終授權仍屬人類 Owner |
 
-角色不是模型暱稱；一般 L1／L2 review 的執行者與 fallback 見 [Review 規範](docs/agents/review.md)。切換主 Agent 模型不改變 Ticket、安全與 Git 權限；所有 subagent（包含 review／audit）固定 GPT-6 Luna Max，不把工具內建的舊版 `luna_worker` 誤認為已升級。不以推測的單一模型能力刪掉共通保障。
+直接選一次可可靠完成工作的最低成本角色，整體成本包含重試與升級；不採固定 Low→Medium→Max→Sol pipeline，不先把明顯屬於 Medium／Max 的任務交給 Low，也不重做 Subagent 已可靠完成的工作。一般 bug 的修復由 Medium 負責；只有較低成本的合理嘗試已證明不足或確認核心／高風險時才升級。完整路由、context、長時間 runner 與獨立審查規則見 [Agent Routing & Naming Rules](docs/agents/agent-routing.md)；一般 L1／L2 review 的執行者與 fallback 見 [Review 規範](docs/agents/review.md)。工具 task name 轉換不得改變 requested model／effort／role；task name 不代表 runtime 身份。切換主 Agent 模型不改變 Ticket、安全與 Git 權限。
 
 Skill 首選來源與適配見 [Skill Workflows](docs/agents/skill-workflows.md)；若專案另選來源，在此記錄完整 Skill 名稱與理由，避免僅寫短名稱造成不同裝置選到不同流程。
 
 ### GPT-6.1 Sol 使用設定
 
-官方來源核對日期：2026-10-02。主 Agent 可在目前 Codex Session 選用 GPT-6.1 Sol；需要明確設定時，以下為主 Agent 的設定範例，僅套用到目標專案／Session，不能覆寫 `luna_worker` profile：
+官方來源核對日期：2026-10-02。主 Agent 可在目前 Codex Session 選用 GPT-6.1 Sol；需要明確設定時，以下為主 Agent 的設定範例，作為主 Agent 的專案目標設定，供環境可用時選用：
 
 ```toml
 model = "gpt-6.1-sol"
@@ -90,9 +98,11 @@ GPT-6.1 Sol 支援 `low`、`medium`、`high`、`xhigh`、`max`；官方模型預
 
 AGENTS 沿用按需讀取、授權內持續完成、G3 事件式更新、條件式委派與相稱驗證。官方 GPT-6 指南的五項提示主要描述 Astra 行為，可作家族方法起點，仍須用選定模型與實際工作評估；本規範更新不代表已完成 GPT-6.1 Sol 的 runtime、速度、成本或品質實測。[官方 GPT-6 指南](https://developers.openai.com/api/docs/guides/latest-model)
 
-模型名稱、設定檔與請求被接受只代表選用／路由證據；未取得 runtime 遙測時，不推論後端實際執行模型。高風險工作由主 Agent 整合及最終驗證；必要 Independent Audit 仍依治理規範由未參與施工的獨立 context 執行。
+模型名稱、設定檔與請求被接受只代表選用／路由證據；本文件所列 `g61-sol-med-orchestrator` 是專案政策目標，不代表目前 Session 已切換。未取得 runtime 遙測時，不推論後端實際執行模型。高風險工作由主 Agent 整合及最終驗證；必要 Independent Audit 仍依治理規範由未參與施工的獨立 context 執行。
 
 ## 驗證
+
+依使用者 2026-10-06 最新指示：開發、除錯與功能施工階段的真人遊玩／Fun Gate／Retention Survey 一律標記 `DEFERRED / NOT APPLICABLE AT THIS STAGE`，不阻擋 Development QA、Engineering QA 或 Release Candidate Engineering Gate。只有當前任務明確宣告穩定 Build 已準備好進入真人產品測試，才啟用真人產品驗證；Agent／Playwright 不能代填真人結果。
 
 <!-- 保留實際存在的變更類型；不適用時標記 N/A。 -->
 
@@ -165,10 +175,11 @@ AGENTS.md
 - [Skill Workflows](docs/agents/skill-workflows.md)／[Review](docs/agents/review.md)：來源適配、審查範圍及失敗處理
 - [Handoff](docs/HANDOFF.md)：未完成任務跨環境接續
 - [Subagents](docs/SUBAGENTS.md)：委派契約、邊界與整合驗收
+- [Agent Routing & Naming Rules](docs/agents/agent-routing.md)：固定角色、模型／推理路由、升級與命名規則
 - [TODO.md](TODO.md)／[CHANGELOG.md](CHANGELOG.md)：backlog 與已完成的重要變更
 - [Design](docs/design/DESIGN.md)／[UI Contract](docs/UI.md)：世界優先設計與實際元件、操作、token 契約
 - [V2 Life & Emergence Spec](docs/specs/V2-LIFE-EMERGENCE.md)：V2 產品規則、系統切片與 Fun Gate 驗收條件
-- [V2 最終 QA](reports/playtests/20261004-v2-final-qa/README.md)：229 tests、最新2小時Chromium、三路Agent探索與長期世界驗證；工程／Browser／Agent PASS WITH FINDINGS，真人Fun Gate仍PENDING
+- [V2 最終 QA](reports/playtests/20261004-v2-final-qa/README.md)：229 tests、最新2小時Chromium、三路Agent探索與長期世界驗證；工程／Browser／Agent PASS WITH FINDINGS，歷史產品測試的真人Fun Gate仍PENDING；目前V2.x開發階段為DEFERRED
 - [真人 Fun Gate 測試包](reports/playtests/20261004-v2-final-qa/human-fun-gate.md)：1～2小時自由遊玩、八題及觀察欄；不以Agent代填
 - [UI 驗收紀錄](reports/ui/20261003-world-first/README.md)：桌機／平板／手機截圖、遊玩流程與限制
 - [完整遊玩測試](reports/playtests/20261003-comprehensive/README.md)：生活、Boss、世界演化、存檔故障與長時間驗證

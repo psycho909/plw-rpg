@@ -62,6 +62,29 @@ export const WOLF_LOOT_RULES = {
   bossRarityWeights: { rare: 85, epic: 14, legendary: 1 },
 } as const
 
+export const WOLF_ENCOUNTER_RULES = {
+  order: ['grayWolf', 'scarredWolf', 'alphaWolf', 'packLeader', 'wolfKing'],
+  staminaCost: 8,
+  bossCooldownDays: 7,
+  contextScalePerPopulation: .001,
+  attackScalePerUnsafePoint: .002,
+  armoredBaseDefense: 1,
+  periodicArmor: 3,
+  fastRushEvery: 2,
+  traitRushEvery: 3,
+  bruiserHeavyEvery: 3,
+  howlEvery: 3,
+  bossChargeEvery: 4,
+  starvedChargeEvery: 3,
+  rushRoleBonus: .3,
+  rushTraitBonus: .5,
+  heavyStrikeBonus: .4,
+  howlAttackBonus: .3,
+  chargeAttackBonus: .6,
+  wellFedAttackBonus: .5,
+  moonlitHeal: 8,
+} as const
+
 export const ITEM_GENERATION_RULES = {
   legendaryWeaponSpecialChance: .1,
 } as const

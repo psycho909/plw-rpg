@@ -1,0 +1,49 @@
+{
+  "producer": "[GPT6Luna][max][Wolf Engine]",
+  "requestedProfile": "GPT-6 Luna / max per the assigned ticket and parent request",
+  "runtimeModelTelemetry": "unavailable; no runtime model claim",
+  "sourceFrozenAt": "2026-10-06 06:21 UTC",
+  "baselineSourceCommit": "6568b466390d06e6be0af2585e7524b9415204b8",
+  "status": "engine implementation complete; final Phase 3 gates pending root",
+  "verification": [
+    {
+      "kind": "red",
+      "command": "npm test -- --maxWorkers=1 src/engine/wolfFamily.test.ts",
+      "exitCode": 1,
+      "result": "pre-implementation module import missing; Vitest collected 0 tests",
+      "rawArtifact": "reports/v2/20261006-reward-core/phase-03/engine-worker-red.raw.txt"
+    },
+    {
+      "kind": "focused-test-first",
+      "command": "npm test -- --maxWorkers=1 src/engine/wolfFamily.test.ts src/services/rewardSave.test.ts src/engine/actions.test.ts src/engine/combatStats.test.ts",
+      "exitCode": 1,
+      "result": "78 passed, one fixture failed to produce fractional HP because minimum damage floored to one; fixture corrected; no app defect",
+      "rawArtifact": "reports/v2/20261006-reward-core/phase-03/engine-worker-focused-first.txt"
+    },
+    {
+      "kind": "focused-test-green",
+      "command": "npm test -- --maxWorkers=1 src/engine/wolfFamily.test.ts src/services/rewardSave.test.ts src/engine/actions.test.ts src/engine/combatStats.test.ts",
+      "exitCode": 0,
+      "result": "4 files, 79 tests passed",
+      "rawArtifact": "reports/v2/20261006-reward-core/phase-03/engine-worker-focused-green.txt"
+    },
+    {
+      "kind": "build",
+      "command": "npm run build",
+      "exitCode": 0,
+      "result": "vue-tsc passed; Vite production build transformed 78 modules",
+      "rawArtifact": "reports/v2/20261006-reward-core/phase-03/engine-worker-build-green.txt"
+    }
+  ],
+  "sourceFingerprints": {
+    "src/data/rewards.ts": "f98cd1bd30004deb13154fd5266274733f1e2c8a8a72d682d2cd8343ac3baf87",
+    "src/engine/actions.ts": "9ded93363336f0d8cdeea1e475453740a3fab3aaf002277b4b8ea2c8f5ae488a",
+    "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+    "src/engine/wolfFamily.test.ts": "3683ff513d7ceaed4397279d9cd57fc4f48cca5eedfd0a0f4a692d3f5ab6194b",
+    "src/services/rewardValidation.ts": "ee5a658aa6664baceb34cce9714d8d186e7201b6a2861766760bcadc5ee48f84",
+    "src/services/rewardSave.test.ts": "06574352794efdb1cb37a17b20607c4146aabe84190d355ce9f2459015eb7a92"
+  },
+  "limitations": [
+    "Full regression, multi-seed/long-term simulation, production browser stress, and independent review are root-owned and remain pending."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Phase 3 standards review",
+  "axis": "standards",
+  "result": "pass",
+  "findings": [],
+  "reviewer": {
+    "role": "independent Standards reviewer",
+    "assigned_model": "GPT-6 Luna Max",
+    "reasoning_effort": "max",
+    "runtime_model_telemetry": "unavailable"
+  },
+  "scope": {
+    "base": "6568b466390d06e6be0af2585e7524b9415204b8",
+    "head": "6568b466390d06e6be0af2585e7524b9415204b8",
+    "worktree": "uncommitted Phase 3",
+    "reviewed_untracked_source": [
+      "src/engine/wolfFamily.ts",
+      "src/engine/wolfFamily.test.ts"
+    ]
+  },
+  "source_freeze": {
+    "manifest": "reports/v2/20261006-reward-core/phase-03/source-freeze.json",
+    "hashes_matched": 74,
+    "hashes_missing_or_mismatched": 0
+  },
+  "verification": "No tests or other checks run by reviewer; read-only source-hash comparison only.",
+  "spec_axis": "Reviewed separately; no spec-completeness claim."
+}

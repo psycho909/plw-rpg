@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-03/stress_browser.py", line 889, in <module>
+    main()
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-03/stress_browser.py", line 818, in main
+    boss_flow(page)
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-03/stress_browser.py", line 669, in boss_flow
+    assert ("7" in cooldown or "等待" in cooldown) and final["worldTime"] - defeated_at < 7 * 1440
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

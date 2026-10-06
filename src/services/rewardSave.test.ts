@@ -1,6 +1,8 @@
 import { expect, it } from 'vitest'
 import type { ItemInstance } from '../domain/reward'
-import { createGame } from '../engine/simulation'
+import { encounterWolf } from '../engine/wolfFamily'
+import { combatTurn } from '../engine/actions'
+import { chooseSuccessor, createGame, walkTo } from '../engine/simulation'
 import { deserialize, serialize } from './saveService'
 import nativeV1 from '../../reports/v2/20261004-life-emergence/fixtures/native-v1.json'
 
@@ -61,3 +63,97 @@ it.each(['schema', 'duplicate', 'owner', 'reference', 'dual-gear', 'stats', 'aff
     if (kind === 'collection') raw.reward.collection.seen = ['grayWolf', 'grayWolf']
     expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
   })
+
+function startedWolf(state = createGame(90), definitionId: 'wolfKing' | 'packLeader' = 'wolfKing') {
+  walkTo(state, { x: 5, y: 4 })
+  state.reward.collection.defeated = definitionId === 'wolfKing'
+    ? ['grayWolf', 'scarredWolf', 'alphaWolf', 'packLeader']
+    : ['grayWolf', 'scarredWolf', 'alphaWolf']
+  expect(encounterWolf(state, definitionId)).toBe('')
+  return state
+}
+
+it('round-trips canonical family stats and preserves a boss formation across live turns', () => {
+  const state = startedWolf()
+  expect(deserialize(serialize(state)).state).toEqual(state)
+
+  combatTurn(state, 'attack')
+
+  expect(state.combat?.familyEncounter?.turn).toBe(1)
+  expect(deserialize(serialize(state)).state).toEqual(state)
+})
+
+it.each(['hp', 'maxHp', 'attack', 'defense', 'exp', 'gold', 'elite', 'root-traits', 'root-variant', 'root-formedAt', 'root-context', 'root-missing', 'turn', 'howl'] as const)(
+  'rejects a wolf boss save with a forged %s before loading the world', kind => {
+    const raw = JSON.parse(serialize(startedWolf()))
+    if (kind === 'hp') raw.combat.hp = raw.combat.maxHp + 1
+    if (kind === 'maxHp') raw.combat.maxHp++
+    if (kind === 'attack') raw.combat.attack++
+    if (kind === 'defense') raw.combat.defense++
+    if (kind === 'exp') raw.combat.exp++
+    if (kind === 'gold') raw.combat.gold++
+    if (kind === 'elite') raw.combat.elite = true
+    if (kind === 'root-traits') raw.reward.wolfBossForm.traits = ['swift']
+    if (kind === 'root-variant') raw.reward.wolfBossForm.variant = raw.reward.wolfBossForm.variant === 'wellFed' ? 'moonlit' : 'wellFed'
+    if (kind === 'root-formedAt') raw.reward.wolfBossForm.formedAt--
+    if (kind === 'root-context') raw.reward.wolfBossForm.context.population++
+    if (kind === 'root-missing') raw.reward.wolfBossForm = null
+    if (kind === 'turn') raw.combat.familyEncounter.turn = raw.worldTime - raw.combat.familyEncounter.formedAt + 1
+    if (kind === 'howl') raw.combat.familyEncounter.howlActive = true
+    expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+  })
+
+it('accepts the fixed howl phase and rejects impossible turn/howl combinations', () => {
+  const state = startedWolf(createGame(91), 'packLeader')
+  combatTurn(state, 'defend'); combatTurn(state, 'defend')
+  expect(state.combat?.familyEncounter).toMatchObject({ turn: 2, howlActive: true })
+  expect(deserialize(serialize(state)).state).toEqual(state)
+
+  const raw = JSON.parse(serialize(state))
+  raw.combat.familyEncounter.howlActive = false
+  expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+  raw.combat.familyEncounter.turn = 1
+  raw.combat.familyEncounter.howlActive = true
+  expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+})
+
+it('round-trips a fractional wolf HP caused by companion damage', () => {
+  const state = startedWolf(createGame(94), 'packLeader')
+  const companion = state.npcs[0]!
+  companion.stats.strength = 15
+  state.party.push({ npcId: companion.id, hireCost: 0, dailyWage: 0, contractEnd: 1000, archetype: 'fighter' })
+  combatTurn(state, 'defend')
+  expect(state.combat!.hp % 1).not.toBe(0)
+  expect(deserialize(serialize(state)).state).toEqual(state)
+})
+
+it('keeps a boss form after death and lets a successor reuse it without another formation draw', () => {
+  const state = startedWolf(createGame(95))
+  const rootForm = structuredClone(state.reward.wolfBossForm)
+  state.characters[0]!.hp = 1
+  combatTurn(state, 'defend')
+  expect(state.combat).toBeNull()
+  expect(state.characters[0]!.isAlive).toBe(false)
+  expect(state.reward.wolfBossForm).toEqual(rootForm)
+  expect(deserialize(serialize(state)).state.reward.wolfBossForm).toEqual(rootForm)
+
+  const heir = state.npcs.find(npc => npc.isAlive && npc.age >= 15)!
+  expect(chooseSuccessor(state, heir.id)).toBe(true)
+  walkTo(state, { x: 5, y: 4 })
+  const rngBefore = state.rngState
+  expect(encounterWolf(state, 'wolfKing')).toBe('')
+  expect(state.rngState).toBe(rngBefore)
+  expect(state.combat!.familyEncounter).toMatchObject({ definitionId: 'wolfKing', variant: rootForm!.variant,
+    traits: rootForm!.traits, formedAt: rootForm!.formedAt, context: rootForm!.context })
+})
+
+it('keeps legacy untagged wolf and dungeon fights loadable', () => {
+  const outdoor = createGame(92)
+  outdoor.combat = { monsterId: 'wolf', hp: 20, maxHp: 30, attack: 8, defense: 1, exp: 20, gold: 5, elite: false, dungeon: false }
+  expect(deserialize(serialize(outdoor)).state).toEqual(outdoor)
+
+  const dungeon = createGame(93)
+  dungeon.dungeon.inDungeon = true
+  dungeon.combat = { monsterId: 'wolf', hp: 20, maxHp: 30, attack: 8, defense: 1, exp: 20, gold: 5, elite: false, dungeon: true }
+  expect(deserialize(serialize(dungeon)).state).toEqual(dungeon)
+})

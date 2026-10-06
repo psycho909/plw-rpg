@@ -196,6 +196,12 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .enemy-portrait { font-size: 60px; text-align: center; margin-bottom: 10px; }
 .battle-divider { text-align: center; color: var(--text-muted); margin: 20px 0; }
 .battle-commands { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 24px; }
+.wolf-fight-details { margin: 12px 0; font-size: 12px; line-height: 1.7; }
+.wolf-fight-details p { margin: 6px 0; }
+.battle-scene > .wolf-turn-cue { text-align: left; }
+.wolf-track-list { display: grid; gap: 8px; }
+.wolf-track-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; align-items: center; font-size: 12px; line-height: 1.7; }
+@media (max-width: 560px) { .wolf-track-row { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
 .dungeon-route { display: grid; grid-template-columns: repeat(3, 1fr); margin: 24px 0; border: 2px solid var(--border-muted); }
 .dungeon-route > div { display: grid; justify-items: center; gap: 12px; padding: 18px 8px; }
 .dungeon-route > div + div { border-left: 1px solid var(--border-muted); }

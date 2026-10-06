@@ -1,0 +1,957 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUTC": "2026-10-06T07:31:16+00:00",
+  "phase": "Phase 3 frozen-source final QA evidence aggregation",
+  "disposition": "evidence-complete; root-owned formal acceptance pending",
+  "source": {
+    "baseCommit": "6568b466390d06e6be0af2585e7524b9415204b8",
+    "frozenAtUTC": "2026-10-06T06:28:52.540161+00:00",
+    "sourceFileCount": 74,
+    "sourceMatchesFrozenManifest": true,
+    "fullFingerprints": "artifact-integrity.json / source-freeze.json",
+    "fingerprintComparison": "artifact-integrity.json; repository-relative SHA-256 paths"
+  },
+  "requestedRunnerIdentity": {
+    "requestedModel": "GPT-6 Luna",
+    "requestedEffort": "low",
+    "runtimeVerified": false,
+    "actualRuntimeModel": "unknown; runtime telemetry unavailable"
+  },
+  "gates": {
+    "fullRegressionTypecheckBuild": {
+      "status": "PASS",
+      "command": "npm run check",
+      "testFiles": 20,
+      "tests": 314,
+      "productionModules": 78,
+      "evidence": [
+        "full-status.json",
+        "full-stdout.txt"
+      ],
+      "sourceStableDuringRun": true,
+      "harnessStableDuringRun": true
+    },
+    "productionChromiumRegression": {
+      "status": "PASS",
+      "checks": 20,
+      "evidence": [
+        "browser-regression-status.json",
+        "browser-regression-stdout.txt"
+      ],
+      "sourceStableDuringRun": true,
+      "harnessStableDuringRun": true
+    },
+    "fightAndLongTermSimulation": {
+      "status": "PASS",
+      "files": 3,
+      "tests": 5,
+      "repeatedFights": 240,
+      "uniqueScenarios": 120,
+      "winsInUniqueRuns": 120,
+      "seeds": [
+        17,
+        909,
+        2026
+      ],
+      "years": [
+        10,
+        50,
+        100
+      ],
+      "evidence": [
+        "simulation-status.json",
+        "simulation-summary.json"
+      ],
+      "sourceStableDuringRun": true,
+      "limitations": [
+        "controlled headless fixtures; not normal elapsed browser time or human play"
+      ]
+    },
+    "productionChromiumStress": {
+      "status": "PASS",
+      "runId": "20261006T070601Z",
+      "durationSeconds": 1200.610157307001,
+      "actualStartUTC": "2026-10-06T07:06:02.209845+00:00",
+      "actualEndUTC": "2026-10-06T07:26:02.820006+00:00",
+      "actualStartTaipei": "2026-10-06T15:06:02.209+08:00",
+      "actualEndTaipei": "2026-10-06T15:26:02.820+08:00",
+      "wrapperStartUTC": "2026-10-06T07:06:01.108979+00:00",
+      "wrapperEndUTC": "2026-10-06T07:26:03.028626+00:00",
+      "wrapperExitCode": 0,
+      "cycles": 1425,
+      "reloads": 7,
+      "checkpoints": 41,
+      "operations": 17647,
+      "pageErrors": 0,
+      "unhandledRejections": 0,
+      "storageErrors": 0,
+      "consoleErrorCount": 1,
+      "metrics": {
+        "worldTime": {
+          "n": 41,
+          "min": 480,
+          "p50": 10951,
+          "p95NearestRank": 13065,
+          "max": 13341,
+          "first": 480,
+          "last": 13341
+        },
+        "population": {
+          "n": 41,
+          "min": 30,
+          "p50": 30,
+          "p95NearestRank": 30,
+          "max": 30,
+          "first": 30,
+          "last": 30
+        },
+        "livingNPC": {
+          "n": 41,
+          "min": 29,
+          "p50": 29,
+          "p95NearestRank": 29,
+          "max": 29,
+          "first": 29,
+          "last": 29
+        },
+        "deadNPC": {
+          "n": 41,
+          "min": 0,
+          "p50": 0,
+          "p95NearestRank": 0,
+          "max": 0,
+          "first": 0,
+          "last": 0
+        },
+        "playerGold": {
+          "n": 41,
+          "min": 45,
+          "p50": 246,
+          "p95NearestRank": 314,
+          "max": 322,
+          "first": 45,
+          "last": 322
+        },
+        "settlementFood": {
+          "n": 41,
+          "min": 78,
+          "p50": 100,
+          "p95NearestRank": 100,
+          "max": 100,
+          "first": 78,
+          "last": 100
+        },
+        "settlementProsperity": {
+          "n": 41,
+          "min": 52,
+          "p50": 57.60399999999998,
+          "p95NearestRank": 59.23599999999997,
+          "max": 59.23599999999997,
+          "first": 52,
+          "last": 59.23599999999997
+        },
+        "settlementSafety": {
+          "n": 41,
+          "min": 88,
+          "p50": 89.75,
+          "p95NearestRank": 90.25,
+          "max": 90.25,
+          "first": 88,
+          "last": 90.25
+        },
+        "settlementInfrastructure": {
+          "n": 41,
+          "min": 25,
+          "p50": 26.568,
+          "p95NearestRank": 27.016000000000002,
+          "max": 27.016000000000002,
+          "first": 25,
+          "last": 27.016000000000002
+        },
+        "monsterPopulation": {
+          "n": 41,
+          "min": 1.02,
+          "p50": 1.5299999999999998,
+          "p95NearestRank": 2.5499999999999994,
+          "max": 12,
+          "first": 12,
+          "last": 2.5499999999999994
+        },
+        "threatLevel": {
+          "n": 41,
+          "min": 1,
+          "p50": 1,
+          "p95NearestRank": 1,
+          "max": 1,
+          "first": 1,
+          "last": 1
+        },
+        "goblinBossProgress": {
+          "n": 41,
+          "min": 0,
+          "p50": 1.1700000000000002,
+          "p95NearestRank": 1.9500000000000004,
+          "max": 1.9500000000000004,
+          "first": 0,
+          "last": 1.9500000000000004
+        },
+        "wolfBossDefeatedAt": {
+          "n": 39,
+          "min": 5967,
+          "p50": 5967,
+          "p95NearestRank": 5967,
+          "max": 5967,
+          "first": 5967,
+          "last": 5967
+        },
+        "eventRing": {
+          "n": 41,
+          "min": 1,
+          "p50": 150,
+          "p95NearestRank": 150,
+          "max": 150,
+          "first": 1,
+          "last": 150
+        },
+        "majorHistory": {
+          "n": 41,
+          "min": 1,
+          "p50": 2,
+          "p95NearestRank": 2,
+          "max": 2,
+          "first": 1,
+          "last": 2
+        },
+        "journalPending": {
+          "n": 41,
+          "min": 0,
+          "p50": 0,
+          "p95NearestRank": 0,
+          "max": 1,
+          "first": 0,
+          "last": 0
+        },
+        "saveBytes": {
+          "n": 41,
+          "min": 78928,
+          "p50": 102939,
+          "p95NearestRank": 103595,
+          "max": 104869,
+          "first": 78928,
+          "last": 103002
+        },
+        "originStorageEstimateBytes": {
+          "n": 41,
+          "min": 2398,
+          "p50": 426521,
+          "p95NearestRank": 767701,
+          "max": 794592,
+          "first": 2398,
+          "last": 794592
+        },
+        "cdpNodes": {
+          "n": 41,
+          "min": 2174,
+          "p50": 2747,
+          "p95NearestRank": 3219,
+          "max": 3354,
+          "first": 2174,
+          "last": 2786
+        },
+        "documents": {
+          "n": 41,
+          "min": 1,
+          "p50": 1,
+          "p95NearestRank": 1,
+          "max": 4,
+          "first": 4,
+          "last": 1
+        },
+        "actualJsListeners": {
+          "n": 41,
+          "min": 449,
+          "p50": 529,
+          "p95NearestRank": 593,
+          "max": 609,
+          "first": 449,
+          "last": 529
+        },
+        "jsHeapUsedBytes": {
+          "n": 41,
+          "min": 6242428,
+          "p50": 19843392,
+          "p95NearestRank": 37117628,
+          "max": 40564800,
+          "first": 6242428,
+          "last": 18189164
+        },
+        "embedderHeapBytes": {
+          "n": 41,
+          "min": 5456272,
+          "p50": 9411872,
+          "p95NearestRank": 13780736,
+          "max": 14205336,
+          "first": 7463640,
+          "last": 8653152
+        },
+        "backingStorageBytes": {
+          "n": 41,
+          "min": 342287,
+          "p50": 552465,
+          "p95NearestRank": 849622,
+          "max": 1244145,
+          "first": 342287,
+          "last": 552368
+        },
+        "resourceEntries": {
+          "n": 41,
+          "min": 2,
+          "p50": 2,
+          "p95NearestRank": 2,
+          "max": 3,
+          "first": 3,
+          "last": 2
+        },
+        "settlementGold": {
+          "status": "not exposed by checkpoint schema",
+          "sampledValue": null
+        },
+        "settlementStages": [
+          "hamlet"
+        ],
+        "saveLatencyMs_finalRollingWindow": {
+          "n": 100,
+          "min": 0,
+          "p50": 0.19999999925494194,
+          "p95NearestRank": 0.4000000022351742,
+          "max": 0.5,
+          "first": 0.19999999925494194,
+          "last": 0.10000000149011612
+        },
+        "automationClickResponseWallMs": {
+          "n": 3001,
+          "min": 6.085568998969393,
+          "p50": 33.93660100118723,
+          "p95NearestRank": 49.54175699822372,
+          "max": 75.03594299851102,
+          "first": 33.959157997742295,
+          "last": 8.050690001255134
+        },
+        "automationClickResponseCount": 3001
+      },
+      "reloadRegimes": [
+        {
+          "label": "first-boss-midfight",
+          "worldTimeStartInclusive": 5786,
+          "worldTimeEndExclusive": 9386,
+          "checkpointCount": 6,
+          "elapsedSecondsRange": [
+            30.547,
+            181.549
+          ],
+          "cdpNodesFirstLast": [
+            2809,
+            2747
+          ],
+          "listenersFirstLast": [
+            536,
+            533
+          ],
+          "heapUsedBytesFirstLast": [
+            25854804,
+            23647720
+          ],
+          "grouping": "approximate; checkpoints lack reload ordinal; heap uses natural GC only"
+        },
+        {
+          "label": "periodic-2",
+          "worldTimeStartInclusive": 9386,
+          "worldTimeEndExclusive": 10157,
+          "checkpointCount": 6,
+          "elapsedSecondsRange": [
+            211.664,
+            362.668
+          ],
+          "cdpNodesFirstLast": [
+            3055,
+            2229
+          ],
+          "listenersFirstLast": [
+            574,
+            458
+          ],
+          "heapUsedBytesFirstLast": [
+            33688956,
+            6567616
+          ],
+          "grouping": "approximate; checkpoints lack reload ordinal; heap uses natural GC only"
+        },
+        {
+          "label": "periodic-3",
+          "worldTimeStartInclusive": 10157,
+          "worldTimeEndExclusive": 10920,
+          "checkpointCount": 6,
+          "elapsedSecondsRange": [
+            392.757,
+            543.799
+          ],
+          "cdpNodesFirstLast": [
+            2795,
+            3055
+          ],
+          "listenersFirstLast": [
+            535,
+            574
+          ],
+          "heapUsedBytesFirstLast": [
+            25002312,
+            30726936
+          ],
+          "grouping": "approximate; checkpoints lack reload ordinal; heap uses natural GC only"
+        },
+        {
+          "label": "periodic-4",
+          "worldTimeStartInclusive": 10920,
+          "worldTimeEndExclusive": 11671,
+          "checkpointCount": 6,
+          "elapsedSecondsRange": [
+            573.876,
+            724.318
+          ],
+          "cdpNodesFirstLast": [
+            2782,
+            2817
+          ],
+          "listenersFirstLast": [
+            530,
+            539
+          ],
+          "heapUsedBytesFirstLast": [
+            19098612,
+            27797484
+          ],
+          "grouping": "approximate; checkpoints lack reload ordinal; heap uses natural GC only"
+        },
+        {
+          "label": "periodic-5",
+          "worldTimeStartInclusive": 11671,
+          "worldTimeEndExclusive": 12417,
+          "checkpointCount": 6,
+          "elapsedSecondsRange": [
+            754.407,
+            904.895
+          ],
+          "cdpNodesFirstLast": [
+            2228,
+            2931
+          ],
+          "listenersFirstLast": [
+            458,
+            556
+          ],
+          "heapUsedBytesFirstLast": [
+            7380600,
+            28332624
+          ],
+          "grouping": "approximate; checkpoints lack reload ordinal; heap uses natural GC only"
+        },
+        {
+          "label": "periodic-6",
+          "worldTimeStartInclusive": 12417,
+          "worldTimeEndExclusive": 13034,
+          "checkpointCount": 6,
+          "elapsedSecondsRange": [
+            934.976,
+            1085.644
+          ],
+          "cdpNodesFirstLast": [
+            2393,
+            3060
+          ],
+          "listenersFirstLast": [
+            482,
+            573
+          ],
+          "heapUsedBytesFirstLast": [
+            16521336,
+            30896180
+          ],
+          "grouping": "approximate; checkpoints lack reload ordinal; heap uses natural GC only"
+        },
+        {
+          "label": "periodic-7",
+          "worldTimeStartInclusive": 13034,
+          "worldTimeEndExclusive": null,
+          "checkpointCount": 3,
+          "elapsedSecondsRange": [
+            1116.041,
+            1176.29
+          ],
+          "cdpNodesFirstLast": [
+            3059,
+            2786
+          ],
+          "listenersFirstLast": [
+            573,
+            529
+          ],
+          "heapUsedBytesFirstLast": [
+            32721680,
+            18189164
+          ],
+          "grouping": "approximate; checkpoints lack reload ordinal; heap uses natural GC only"
+        }
+      ],
+      "evidence": [
+        "stress-browser.json",
+        "browser-stress-fixed-status.json",
+        "browser-stress-fixed-20261006T070601108979Z-in-progress-stdout.log",
+        "browser-stress-fixed-20261006T070601108979Z-in-progress-stderr.log"
+      ],
+      "sourceStableDuringRun": true,
+      "harnessStableDuringRun": true,
+      "harnessSha256": "1423a3638721e7866feb78b3e863d4723f60d8d4a9228d44ec84a34347e47280",
+      "limitations": [
+        "about 20-minute stress run, not two-hour soak",
+        "automation click-response timing is not FPS or browser-frame latency",
+        "natural-GC samples do not prove no leak"
+      ],
+      "consoleErrorDetails": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+          "url": "http://127.0.0.1:5202/favicon.ico"
+        }
+      ],
+      "growthObservation": "No clear monotonic DOM-node/listener increase across reload regimes in this 20-minute sample; values rose and fell, and C03 remains open because no long-term detached-node/retainer analysis was run.",
+      "metricEndpointSemantics": "first and last preserve chronological input order; min, p50, p95NearestRank, and max use sorted observation values.",
+      "checkpointSnapshots": {
+        "initial": {
+          "atUTC": "2026-10-06T07:06:02.677255+00:00",
+          "elapsedSeconds": 0.46740795799996704,
+          "state": {
+            "worldTime": 480,
+            "player": {
+              "id": "alden",
+              "level": 1,
+              "hp": 100,
+              "maxHp": 100
+            },
+            "livingPopulationIncludingPlayer": 30,
+            "npcPopulation": {
+              "total": 29,
+              "living": 29,
+              "dead": 0
+            },
+            "settlement": {
+              "name": "橡谷",
+              "stage": "hamlet",
+              "food": 78,
+              "prosperity": 52,
+              "safety": 88,
+              "infrastructure": 25
+            },
+            "threat": {
+              "monsterPopulation": 12,
+              "threatLevel": 1,
+              "growthRate": 0.65,
+              "bossProgress": 0,
+              "campLevel": 1,
+              "bossAlive": false,
+              "warningLevel": 0
+            },
+            "boss": {
+              "wolfBossDefeatedAt": null,
+              "goblinBossAlive": false,
+              "goblinBossProgress": 0
+            },
+            "eventRingEntries": 1,
+            "eventSequence": 1,
+            "majorHistoryEntries": 1,
+            "pendingJournalEntries": 0,
+            "rewardItems": 0,
+            "serializedStateBytesEstimate": 78928,
+            "serializedStateBytesEstimateMethod": "UTF-8 byte length of compact JSON serialization of captured state; estimated from artifact, not a stored browser byte counter"
+          }
+        },
+        "lastCheckpoint": {
+          "index": 40,
+          "atUTC": "2026-10-06T07:25:38.499464+00:00",
+          "elapsedSeconds": 1176.289617841001,
+          "worldTime": 13341,
+          "livingPopulation": 30,
+          "livingNPC": 29,
+          "deadNPC": 0,
+          "monsterPopulation": 2.5499999999999994,
+          "goblinBossProgress": 1.9500000000000004,
+          "eventRingEntries": 150,
+          "majorHistoryEntries": 2,
+          "pendingJournalEntries": 0,
+          "saveBytes": 103002,
+          "originStorageEstimateBytes": 794592,
+          "cdpNodes": 2786,
+          "actualJsListeners": 529,
+          "jsHeapUsedBytes": 18189164
+        }
+      },
+      "actualFinalBrowserState": {
+        "capturedAtUTC": "2026-10-06T07:26:02.820006+00:00",
+        "worldTime": 13390,
+        "elapsedGameMinutesFromInitial": 12910,
+        "elapsedGameTime": "8 days 23 hours 10 minutes",
+        "state": {
+          "worldTime": 13390,
+          "player": {
+            "id": "alden",
+            "level": 7,
+            "hp": 136,
+            "maxHp": 136
+          },
+          "livingPopulationIncludingPlayer": 30,
+          "npcPopulation": {
+            "total": 29,
+            "living": 29,
+            "dead": 0
+          },
+          "settlement": {
+            "name": "橡谷",
+            "stage": "hamlet",
+            "food": 100,
+            "prosperity": 59.23599999999997,
+            "safety": 90.25,
+            "infrastructure": 27.016000000000002
+          },
+          "threat": {
+            "monsterPopulation": 2.5499999999999994,
+            "threatLevel": 1,
+            "growthRate": 0.65,
+            "bossProgress": 1.9500000000000004,
+            "campLevel": 1,
+            "bossAlive": false,
+            "warningLevel": 0
+          },
+          "boss": {
+            "wolfBossDefeatedAt": 5967,
+            "goblinBossAlive": false,
+            "goblinBossProgress": 1.9500000000000004
+          },
+          "eventRingEntries": 150,
+          "eventSequence": 1658,
+          "majorHistoryEntries": 2,
+          "pendingJournalEntries": 0,
+          "rewardItems": 4,
+          "serializedStateBytesEstimate": 103036,
+          "serializedStateBytesEstimateMethod": "UTF-8 byte length of compact JSON serialization of captured state; estimated from artifact, not a stored browser byte counter"
+        },
+        "instrumentationNote": "Captured after checkpoint 41; DOM, heap and listener counters are reported from checkpoint 41 separately."
+      }
+    },
+    "earlierShortAttempt": {
+      "status": "FAIL; separate prior attempt",
+      "runId": "20261006T065612Z",
+      "durationSeconds": 13.163,
+      "wrapperStartUTC": "2026-10-06T06:56:12.870602+00:00",
+      "wrapperEndUTC": "2026-10-06T06:56:27.201097+00:00",
+      "exitCode": 1,
+      "archivedVersions": [
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 64,
+          "recordedAt": "2026-10-06T06:56:13.891+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 65,
+          "recordedAt": "2026-10-06T06:56:14.330+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 66,
+          "recordedAt": "2026-10-06T06:56:14.355+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 67,
+          "recordedAt": "2026-10-06T06:56:14.813+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 68,
+          "recordedAt": "2026-10-06T06:56:15.261+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 69,
+          "recordedAt": "2026-10-06T06:56:16.051+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 70,
+          "recordedAt": "2026-10-06T06:56:16.504+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 71,
+          "recordedAt": "2026-10-06T06:56:17.127+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 72,
+          "recordedAt": "2026-10-06T06:56:18.333+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 73,
+          "recordedAt": "2026-10-06T06:56:21.170+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 74,
+          "recordedAt": "2026-10-06T06:56:21.227+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 75,
+          "recordedAt": "2026-10-06T06:56:24.748+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": null,
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": null,
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 76,
+          "recordedAt": "2026-10-06T06:56:25.316+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": "FAIL",
+          "durationSeconds": null,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": null,
+          "cycles": null,
+          "failure": "AssertionError()",
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 78,
+          "recordedAt": "2026-10-06T06:56:27.048+00:00"
+        },
+        {
+          "runId": "20261006T065612Z",
+          "status": "FAIL",
+          "durationSeconds": 13.16307967100147,
+          "actualStartUTC": "2026-10-06T06:56:13.890999+00:00",
+          "startUTC": "2026-10-06T06:56:12.976064+00:00",
+          "endUTC": "2026-10-06T06:56:27.054079+00:00",
+          "cycles": null,
+          "failure": "AssertionError()",
+          "screenshots": [
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-wolf-track-390-reduced-motion.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-desktop.png",
+            "reports/v2/20261006-reward-core/phase-03/20261006T065612Z-gray-rush-cue-390-reduced-motion.png"
+          ],
+          "archive": "reports/v2/20261006-reward-core/phase-03/playlog.jsonl",
+          "line": 79,
+          "recordedAt": "2026-10-06T06:56:27.066+00:00"
+        }
+      ],
+      "rawEvidence": [
+        "browser-stress-20261006T065612870602Z-in-progress-stdout.log",
+        "browser-stress-20261006T065612870602Z-in-progress-stderr.log",
+        "20261006T065612Z-failure-screen.png"
+      ],
+      "note": "Never combine its start or elapsed time with the successful run."
+    }
+  },
+  "engineeringFindings": [
+    {
+      "id": "C01",
+      "status": "OPEN",
+      "summary": "Existing export/interleaving concern remains open."
+    },
+    {
+      "id": "C02",
+      "status": "OPEN",
+      "summary": "Unbounded full journal retention remains open; this short run cannot close legacy retention."
+    },
+    {
+      "id": "C03",
+      "status": "OPEN",
+      "summary": "Detached DOM/listener retention observation remains open; short run cannot prove absence of long-term retention."
+    },
+    {
+      "id": "optional-family-marker-tamper",
+      "status": "OUT OF SCOPE",
+      "summary": "Root classified marker removal from edited save as file-tamper hardening, not fresh normal-runtime defect."
+    }
+  ],
+  "humanValidation": {
+    "status": "DEFERRED / NOT APPLICABLE AT THIS STAGE",
+    "blocksEngineeringQA": false,
+    "humanProductReadinessClaim": false,
+    "note": "Browser automation does not substitute for human Fun/Retention feedback."
+  },
+  "gateOwnership": "Evidence aggregation only; root owns formal acceptance, TODO/final review and commit."
+}

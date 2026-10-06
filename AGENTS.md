@@ -2,7 +2,7 @@
 
 <!-- Based on project-standards: <commit-or-release>. 複製後由目前專案版本負責實際執行。 -->
 
-本文件是目前專案永遠載入的 AI 工程底線。Orchestrator 負責決策、協調與驗收，`luna_worker` 負責受委派的明確施工；角色與模型對應以 README 為準。更接近目標檔案的 scoped `AGENTS.md` 可以增加限制，或以具備相同保障效果的流程取代細節，但不得降低正確性、資料安全、可接續性與驗證要求。
+本文件是目前專案永遠載入的 AI 工程底線。Sol Medium 負責 Spec／產品架構與 Scope／Phase 決策、整合及 Gate；Luna Medium 是一般工程預設；Luna Low 負責機械探索、資料／內容、bug reproduction 與 QA runner；Luna Max 只接手複雜／高風險核心問題與深度審查。直接選最低總成本且可靠足夠的角色，不採固定逐級 pipeline，也不重做 Subagent 已可靠完成的工作。詳見 [Agent Routing & Naming Rules](docs/agents/agent-routing.md)。工具 task name 使用小寫英數與底線，但須反映實際請求的 model／effort／role；名稱不證明後端 runtime。更接近目標檔案的 scoped `AGENTS.md` 可以增加限制，或以具備相同保障效果的流程取代細節，但不得降低正確性、資料安全、可接續性與驗證要求。
 
 ## 1. 溝通與狀態
 
@@ -69,7 +69,7 @@
 - 明確簡化、依賴取捨或過度設計審查：`ponytail` 系列；不要求每個 coding 任務載入。
 - 準備交付：讀取 [Review 規範](docs/agents/review.md)選擇範圍與風險相稱的 review；不是固定雙 Agent 流程。
 
-準備委派時讀取 [Subagent 規則](docs/SUBAGENTS.md)，依實際工具支援明確選擇符合專案 `luna_worker` profile 模型與推理設定的執行入口。涉及 L2／L3、Owner 正式核准、多人施工或獨立稽核時讀取 [AI 治理規範](docs/governance/ai-governance.md)。
+準備委派時讀取 [Subagent 規則](docs/SUBAGENTS.md)及其中連結的 [Agent Routing & Naming Rules](docs/agents/agent-routing.md)，依實際工具支援選擇角色與最低足夠模型／推理設定。涉及 L2／L3、Owner 正式核准、多人施工或獨立稽核時讀取 [AI 治理規範](docs/governance/ai-governance.md)。
 
 ## 6. 驗證與完成
 
@@ -87,4 +87,4 @@
 
 ## 8. Codex 工具適配
 
-Agent 設定、steering、fileMatch 或 manual 設定只負責角色與路由，並指向本文件、scoped `AGENTS.md` 與適用的 `docs/`；不維護第二份完整規範。模型版本與推理設定由目前環境或 `.codex/agents/` profile 決定，GPT-6.1 Sol 選用見 [README](README.md#gpt-61-sol-使用設定)；本文件不自動切換模型。共通保障適用於 Astra、Sol、Luna，不因單一模型的推測能力而刪除。
+Agent 設定、steering、fileMatch 或 manual 設定只負責角色與路由，並指向本文件、scoped `AGENTS.md` 與適用的 `docs/`；不維護第二份完整規範。模型版本與推理設定由目前環境或已配置的 profile 決定，GPT-6.1 Sol 的專案目標設定見 [README](README.md#gpt-61-sol-使用設定)；文件不代表 runtime 已切換，也不宣稱未配置的 profile 已生效。共通保障適用於 Astra、Sol、Luna，不因單一模型的推測能力而刪除。

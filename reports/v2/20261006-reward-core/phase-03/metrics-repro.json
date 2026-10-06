@@ -1,0 +1,55 @@
+{
+  "issue": "Endpoint fields were taken after sorting values instead of from chronological checkpoints.",
+  "fixture": {
+    "values": [
+      12,
+      1.02,
+      2.55
+    ],
+    "incorrect": {
+      "first": 1.02,
+      "last": 12
+    },
+    "expected": {
+      "first": 12,
+      "last": 2.55,
+      "min": 1.02,
+      "max": 12
+    }
+  },
+  "production": {
+    "monsterPopulation": {
+      "published": {
+        "first": 1.02,
+        "last": 12
+      },
+      "chronological": {
+        "first": 12,
+        "last": 2.5499999999999994
+      }
+    }
+  },
+  "additional_failing_examples": {
+    "jsHeapUsedBytes": {
+      "published": {
+        "first": 6242428,
+        "last": 40564800
+      },
+      "raw_checkpoints": {
+        "first": 6242428,
+        "last": 18189164
+      }
+    },
+    "cdpNodes": {
+      "published": {
+        "first": 2174,
+        "last": 3354
+      },
+      "raw_checkpoints": {
+        "first": 2174,
+        "last": 2786
+      }
+    }
+  },
+  "source": "stress-browser.json checkpoints in original chronological order"
+}

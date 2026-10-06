@@ -1,0 +1,34 @@
+{
+  "owner": "gpt6luna_max_browser_harness",
+  "artifact": "reports/v2/20261006-reward-core/phase-03/stress_browser.py",
+  "sha256": "074fc944335e049f06c9b900b56b216e96d308190d5c0472a9cd2ecd4ddde5eb",
+  "bytes": 47715,
+  "status": "STATIC_READY_FOR_INDEPENDENT_REVIEW",
+  "authorProfile": {
+    "requestedModel": "GPT-6 Luna",
+    "requestedEffort": "max",
+    "runtimeVerified": false
+  },
+  "runnerProfile": {
+    "requestedModel": "GPT-6 Luna",
+    "requestedEffort": "low",
+    "runtimeVerified": false
+  },
+  "staticChecks": {
+    "pythonCompile": "PASS",
+    "buildStatusAllSourceFingerprint": "PASS: all 74 current src files match phase-03/build-status.json",
+    "browserExecution": "NOT RUN by harness author; root/Luna runner owns the 1200+ second run",
+    "appSourceChangesByOwner": false,
+    "browserOrFakeClockUsedByOwner": false,
+    "humanValidation": "DEFERRED / NOT APPLICABLE AT THIS STAGE"
+  },
+  "reviewedCoverage": [
+    "Default URL is http://127.0.0.1:5202; minimum real duration is 1200 seconds and build source SHA is checked before launch.",
+    "All five wolf definitions are reached through visible UI and require collection evidence plus a current-encounter combat.won event scoped by monotonic eventSequence; every rankWins record, including a first-attempt gray win, has won=true.",
+    "Boss flow records first form, normal turns, explicit UI save, first native storage checkpoint after reload, UI pause, normal flee, legal capped rest, RNG-stable retrack, victory, MoonStone, cooldown, and goblin deltas around the winning command.",
+    "Combat choices read rendered cues; healing, rest, purchases, equipment and modal actions use visible UI. No game-state injection or debug clock.",
+    "CDP DOM/listener counters and JS heap, resource count separately labeled, save size/latency, origin estimate, journal pending, world/population/NPC/settlement/threat/events/history, UI wall times and errors are profiled."
+  ],
+  "auditGap": "Root confirmed the earlier unrun preflight draft had no playlog entry before its first overwrite. Its exact original is unrecoverable and is not reconstructed; later archived versions and this final SHA are writer-recorded.",
+  "nextOwnerAction": "Independent review, then run the production Chromium stress harness for at least 1200 real seconds."
+}
