@@ -1,0 +1,15 @@
+{
+  "label": "test",
+  "command": [
+    "npm",
+    "run",
+    "test",
+    "--",
+    "--maxWorkers=1"
+  ],
+  "exitCode": 0,
+  "stdoutBytes": 262,
+  "stderrBytes": 208,
+  "stdoutTail": "\n> plw-rpg@0.1.0 test\n> vitest run --maxWorkers=1\n\n\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  14 passed (14)\n      Tests  229 passed (229)\n   Start at  00:51:31\n   Duration  30.47s (transform 691ms, setup 0ms, import 1.43s, tests 26.33s, environment 5ms)\n\n",
+  "stderrTail": "npm notice\nnpm notice New major version of npm available! 11.9.0 -> 12.2.0\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0\nnpm notice To update run: npm install -g npm@12.2.0\nnpm notice\n"
+}

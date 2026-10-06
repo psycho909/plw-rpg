@@ -8,7 +8,7 @@
 
 ## Now
 
-<!-- 此階段沒有進行中的工程工作；真人驗收見 Blocked。 -->
+- [ ] V2.x Phase 1 Reward Data Model — Ticket: [20261006-v2x-01-data-model](tickets/20261006-v2x-01-data-model.md)
 
 
 ## Next

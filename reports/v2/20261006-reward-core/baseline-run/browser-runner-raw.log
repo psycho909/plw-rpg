@@ -1,0 +1,21 @@
+PASS opening freezes time and resists Escape/resume
+PASS modal retains Active Idle and pause flushes elapsed time
+PASS real x5 clock advances without fake timers
+PASS real x20 clock advances without fake timers
+PASS single modal: 這一生
+PASS single modal: 住所與產業
+PASS single modal: 地方消息與委託
+PASS reload never awards offline advancement
+
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/baseline-run/verify_browser.py", line 111, in <module>
+    native = json.loads(Path(native_path).read_text())
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/plw-rpg/reports/v2/20261006-reward-core/baseline-run/fixtures/native-v1.json'
+

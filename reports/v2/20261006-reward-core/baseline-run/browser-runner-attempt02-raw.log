@@ -1,0 +1,14 @@
+PASS opening freezes time and resists Escape/resume
+PASS modal retains Active Idle and pause flushes elapsed time
+PASS real x5 clock advances without fake timers
+PASS real x20 clock advances without fake timers
+PASS single modal: 這一生
+PASS single modal: 住所與產業
+PASS single modal: 地方消息與委託
+
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/baseline-run/verify_browser.py", line 105, in <module>
+    assert raw(reloaded)['worldTime'] == saved['worldTime']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+

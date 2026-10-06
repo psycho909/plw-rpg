@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-06T00:55:02.746567+00:00",
+  "processes": [
+    {
+      "pid": 143318,
+      "action": "SIGSTOP reversible; completed old interactive QA busy-loop",
+      "command": "python3 -i reports/playtests/20261004-v2-final-qa/life/session.py "
+    },
+    {
+      "pid": 158705,
+      "action": "SIGSTOP reversible; completed old interactive QA busy-loop",
+      "command": "python3 -i /tmp/life-run3.py "
+    },
+    {
+      "pid": 158769,
+      "action": "SIGSTOP reversible; completed old interactive QA busy-loop",
+      "command": "python3 -i /tmp/life-run3.py "
+    }
+  ]
+}

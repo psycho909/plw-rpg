@@ -1,0 +1,13 @@
+{
+  "label": "build",
+  "command": [
+    "npm",
+    "run",
+    "build"
+  ],
+  "exitCode": 0,
+  "stdoutBytes": 404,
+  "stderrBytes": 208,
+  "stdoutTail": "\n> plw-rpg@0.1.0 build\n> vue-tsc --noEmit && vite build\n\nvite v7.3.6 building client environment for production...\ntransforming...\n✓ 69 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.45 kB │ gzip:  0.31 kB\ndist/assets/index-CEjw7W01.css   25.85 kB │ gzip:  5.84 kB\ndist/assets/index-DJZsen7F.js   222.81 kB │ gzip: 81.36 kB\n✓ built in 2.76s\n",
+  "stderrTail": "npm notice\nnpm notice New major version of npm available! 11.9.0 -> 12.2.0\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0\nnpm notice To update run: npm install -g npm@12.2.0\nnpm notice\n"
+}
