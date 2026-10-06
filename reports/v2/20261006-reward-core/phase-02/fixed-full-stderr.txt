@@ -1,0 +1,27 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/combatStats.test.ts > equipment stats and damage > adds only legacy wolf drops and makes a gear reward visible in the victory message
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ src/engine/combatStats.test.ts:90:43
+     88|     wolf.combat = { monsterId: 'wolf', hp: 1, maxHp: 1, attack: 0, def…
+     89|     expect(combatTurn(wolf, 'attack')).toBe('')
+     90|     expect(wolfPlayer.inventory.material).toBe(1)
+       |                                           ^
+     91|     expect(wolf.reward.collection.defeated).toContain('grayWolf')
+     92|     expect(wolf.reward.materials[wolfPlayer.id]?.wolfFang).toBe(1)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

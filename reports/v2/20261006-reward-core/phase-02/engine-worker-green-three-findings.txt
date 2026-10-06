@@ -1,0 +1,53 @@
+Phase 2 narrow follow-up GREEN evidence
+
+Scope: three blocking findings only.
+- Outdoor wolf family payout now skips the legacy generic material increment; the existing inventory stack remains unchanged. A non-wolf goblin still increments its legacy generic stack.
+- Successful procedural instance equip and unequip emit a factual player.equipped event with the current action; the game-store regression confirms the saved action journal message and event no longer reuse an earlier combat message.
+- Generated wolf armor uses wolfHide affinity; wolf weapons use wolfFang. Existing boss loot assertion continues to verify moonStone.
+
+RED evidence retained at reports/v2/20261006-reward-core/phase-02/engine-worker-red-three-findings.txt.
+
+Verification:
+Command: npm test -- --maxWorkers=1 src/engine/actions.test.ts src/engine/itemGeneration.test.ts src/stores/gameStore.test.ts
+Exit code: 0
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/actions.test.ts src/engine/itemGeneration.test.ts src/stores/gameStore.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  3 passed (3)
+      Tests  75 passed (75)
+   Start at  02:03:46
+   Duration  2.70s (transform 609ms, setup 0ms, import 892ms, tests 1.33s, environment 1ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+Command: npx vue-tsc --noEmit
+Exit code: 0
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+Command: git diff --check
+Exit code: 0
+
+
+Current owned-file hashes:
+284f0d21b8aef1f0ee55275d291c250339938c98fb21fab113fd5fe20ff89382  src/engine/actions.ts
+01d7e4d2b3b0e461b9bd7d014dd4a6d81e1b26c5079815861e896c8a12315741  src/engine/actions.test.ts
+f71bd64a5ac6a3b0ca59d7dbbb84a2a18ca14dff36e8177541700f665cdd09b2  src/engine/rewardActions.ts
+8b0b23f8c36b67530ebe2f8fd85ef672f4b7428a1982676b70191ac3d66e9b46  src/engine/itemGeneration.ts
+0c5e03b0637dca5a0dadc5db7a6f2fcfe457ccaf1597068ac97b1f7c9b039a59  src/engine/itemGeneration.test.ts
+50255cc94697246a979569e39a13166d77ea303390e958e7746b606a4b5cd29f  src/stores/gameStore.test.ts
+
+
+Scope limit: no full suite, build, or browser run was performed after these changes. Root's preceding 602.503-second browser PASS predates this narrow patch; updated full/build/browser gate remains pending at the root. Source is frozen for independent reruns.

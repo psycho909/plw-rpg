@@ -1,0 +1,62 @@
+# Engine RED — material sales use the existing store
+
+Command: `npm test -- --maxWorkers=1 src/engine/rewardActions.test.ts`
+Exit code: 1
+
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/rewardActions.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/rewardActions.test.ts (15 tests | 2 failed) 55ms
+     × sells one owned material through the smith with a safe payout and five-minute activity event 4ms
+     × does not sell materials at the blacksmith when the store is closed or unavailable 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/rewardActions.test.ts > procedural equipment sales > sells one owned material through the smith with a safe payout and five-minute activity event
+AssertionError: expected '請在營業時間前往鐵匠鋪旁。' to be '' // Object.is equality
+
+- Expected
++ Received
+
++ 請在營業時間前往鐵匠鋪旁。
+
+ ❯ src/engine/rewardActions.test.ts:101:44
+     99|     state.reward.materials[character.id] = { wolfFang: 2, wolfHide: 0,…
+    100|     const startingGold = character.gold, startingTime = state.worldTime
+    101|     expect(tradeMaterial(state, material)).toBe('')
+       |                                            ^
+    102|     expect(state.reward.materials[character.id]!.wolfFang).toBe(1)
+    103|     expect(character.gold).toBe(startingGold + MATERIALS[material].sel…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/engine/rewardActions.test.ts > procedural equipment sales > does not sell materials at the blacksmith when the store is closed or unavailable
+AssertionError: expected '' not to be '' // Object.is equality
+ ❯ src/engine/rewardActions.test.ts:127:50
+    125|     state.reward.materials[character.id] = { wolfFang: 1, wolfHide: 0,…
+    126|     const before = structuredClone(state)
+    127|     expect(tradeMaterial(state, 'wolfFang')).not.toBe('')
+       |                                                  ^
+    128|     expect(state).toEqual(before)
+    129|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 13 passed (15)
+   Start at  01:36:10
+   Duration  470ms (transform 239ms, setup 0ms, import 283ms, tests 55ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+```

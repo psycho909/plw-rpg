@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "title": "Phase 2 Reward Core — Fixed-Source Independent Delta Review",
+  "disposition": "DELTA_FIXES_ACCEPTED_GATE_PENDING_TARGETED_BROWSER",
+  "scope": {
+    "ticket": "tickets/20261006-v2x-02-equipment-slice.md",
+    "baseCommit": "f89c2c292aaadb6c22bc0453188661f22e4f15b2",
+    "head": "f89c2c292aaadb6c22bc0453188661f22e4f15b2",
+    "reviewType": "read-only authorized delta review",
+    "priorReviewPreserved": [
+      "reports/v2/20261006-reward-core/phase-02/full-independent-review.md",
+      "reports/v2/20261006-reward-core/phase-02/full-independent-review.json"
+    ],
+    "reviewerSourceOrGitMutations": false,
+    "reviewedFilesSha256": {
+      "src/engine/actions.ts": "284f0d21b8aef1f0ee55275d291c250339938c98fb21fab113fd5fe20ff89382",
+      "src/engine/actions.test.ts": "01d7e4d2b3b0e461b9bd7d014dd4a6d81e1b26c5079815861e896c8a12315741",
+      "src/engine/itemGeneration.ts": "8b0b23f8c36b67530ebe2f8fd85ef672f4b7428a1982676b70191ac3d66e9b46",
+      "src/engine/itemGeneration.test.ts": "0c5e03b0637dca5a0dadc5db7a6f2fcfe457ccaf1597068ac97b1f7c9b039a59",
+      "src/engine/rewardActions.ts": "f71bd64a5ac6a3b0ca59d7dbbb84a2a18ca14dff36e8177541700f665cdd09b2",
+      "src/stores/gameStore.test.ts": "50255cc94697246a979569e39a13166d77ea303390e958e7746b606a4b5cd29f",
+      "src/engine/combatStats.test.ts": "4c683baf554b8ee396a1ccc1cee913dde791c8a7a43ffead31064ae993e6d2bb"
+    }
+  },
+  "reviewer": {
+    "role": "independent read-only reviewer",
+    "requestedModel": "gpt-6-luna",
+    "requestedReasoningEffort": "max",
+    "forkTurns": "none",
+    "modelTelemetryAvailable": false,
+    "axisSubreviews": {
+      "spec": "PASS for the authorized delta; no new spec defect",
+      "standards": "PASS_WITH_FOLLOW_UP; STD-P3-01 remains non-blocking"
+    }
+  },
+  "findings": [
+    {
+      "id": "P2-01",
+      "originalSeverity": "P2",
+      "axis": "spec",
+      "status": "CLOSED",
+      "blocking": false,
+      "title": "New wolf reward path no longer adds a duplicate generic material",
+      "evidence": [
+        "src/engine/actions.ts:175-182",
+        "src/engine/actions.test.ts:165-182",
+        "src/engine/combatStats.test.ts:84-126"
+      ],
+      "checks": [
+        "Existing generic stack remains unchanged for non-dungeon wolf payout",
+        "Wolf family material reward is retained",
+        "Non-wolf goblin keeps generic +1",
+        "Dungeon wolf legacy +1 remains unchanged"
+      ]
+    },
+    {
+      "id": "P3-02",
+      "originalSeverity": "P3",
+      "axis": "spec",
+      "status": "CLOSED",
+      "blocking": false,
+      "title": "Awarded armor and weapons now use slot-appropriate wolf materials",
+      "evidence": [
+        "src/engine/itemGeneration.ts:148-153",
+        "src/engine/itemGeneration.test.ts:99-105",
+        "src/engine/itemGeneration.test.ts:124-135"
+      ],
+      "checks": [
+        "Wolf armor uses wolfHide",
+        "Wolf weapons use wolfFang",
+        "Boss reward retains MoonStone"
+      ]
+    },
+    {
+      "id": "P3-03",
+      "originalSeverity": "P3",
+      "axis": "spec",
+      "status": "CLOSED",
+      "blocking": false,
+      "title": "Equip and unequip journal entries now describe the current action",
+      "evidence": [
+        "src/engine/rewardActions.ts:33-40",
+        "src/stores/gameStore.test.ts:45-66"
+      ],
+      "checks": [
+        "Both toggle directions emit player.equipped with factual action text",
+        "Stored journal message matches the emitted action event",
+        "Previous combat message is not reused"
+      ]
+    },
+    {
+      "id": "STD-P3-01",
+      "originalSeverity": "P3",
+      "axis": "standards",
+      "status": "OPEN_NON_BLOCKING_FOLLOW_UP",
+      "blocking": false,
+      "title": "Generic building-access predicate remains owned by rewardActions",
+      "evidence": [
+        "src/engine/rewardActions.ts:14-18",
+        "src/engine/actions.ts"
+      ],
+      "disposition": "No broad refactor recommended for this delta."
+    }
+  ],
+  "phase3R1": "acknowledged pending; excluded from Phase 2 disposition",
+  "verification": {
+    "reviewerReranTests": false,
+    "reviewerRanBuild": false,
+    "reviewerRanBrowser": false,
+    "reviewerDiffCheck": "PASS",
+    "rootEvidence": {
+      "focusedFollowup": {
+        "result": "PASS",
+        "files": 3,
+        "tests": 75,
+        "vueTsc": "PASS",
+        "artifact": "reports/v2/20261006-reward-core/phase-02/engine-worker-green-three-findings.txt"
+      },
+      "historicalFailedFullRun": {
+        "result": "FAIL, 283/284 tests before stale expectation correction",
+        "failedLocation": "src/engine/combatStats.test.ts:90",
+        "expected": 1,
+        "received": 0,
+        "oldTestSha256": "cae0b085f1f7c77d9be64074072372f47d28c078ed2266832bc08eeb1c66486b",
+        "rawArtifact": "reports/v2/20261006-reward-core/phase-02/fixed-full-stderr.txt"
+      },
+      "currentFullRegression": {
+        "result": "PASS, 19 files / 284 tests",
+        "exitCode": 0,
+        "sourceStableDuringRun": true,
+        "harnessStableDuringRun": true,
+        "currentCombatStatsTestSha256": "4c683baf554b8ee396a1ccc1cee913dde791c8a7a43ffead31064ae993e6d2bb",
+        "artifact": "reports/v2/20261006-reward-core/phase-02/fixed-full-final-status.json"
+      },
+      "build": {
+        "result": "PASS, vue-tsc and Vite 77 modules",
+        "exitCode": 0,
+        "sourceStableDuringRun": true,
+        "harnessStableDuringRun": true,
+        "artifact": "reports/v2/20261006-reward-core/phase-02/build-status.json"
+      },
+      "strictPremiumAudit": {
+        "result": "PASS, 0 findings",
+        "exitCode": 0,
+        "sourceStableDuringRun": true,
+        "artifact": "reports/v2/20261006-reward-core/phase-02/premium-audit-final-status.json"
+      },
+      "seededLootWorld": {
+        "result": "PASS, 4/4",
+        "exitCode": 0,
+        "sourceStableDuringRun": true,
+        "note": "Run predates combatStats.test.ts-only correction; reviewed production code hashes match, and the correction is included in the later full test pass.",
+        "artifact": "reports/v2/20261006-reward-core/phase-02/fixed-loot-world-status.json"
+      },
+      "browserRegression": {
+        "result": "PASS, 20 checks",
+        "exitCode": 0,
+        "sourceStableDuringRun": true,
+        "harnessStableDuringRun": true,
+        "artifact": "reports/v2/20261006-reward-core/phase-02/fixed-browser-regression-status.json"
+      },
+      "targetedBrowser": {
+        "result": "IN_PROGRESS_AT_REPORT_TIME",
+        "finalDurationPass": false,
+        "note": "Initial interaction sequence checkpoints were passing; the planned 600-second run had not completed.",
+        "artifactStem": "reports/v2/20261006-reward-core/phase-02/fixed-targeted-browser-20261006T020722784611Z-in-progress-stdout.log"
+      }
+    },
+    "sourceOrGitMutationsByReviewer": false
+  },
+  "phaseGateDisposition": "PENDING_FRESH_TARGETED_BROWSER_COMPLETION"
+}

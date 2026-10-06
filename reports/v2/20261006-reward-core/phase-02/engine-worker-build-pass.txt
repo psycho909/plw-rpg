@@ -1,0 +1,16 @@
+$ npm run build
+
+> plw-rpg@0.1.0 build
+> vue-tsc --noEmit && vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 77 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.45 kB │ gzip:  0.31 kB
+dist/assets/index-OsLqimh5.css   26.57 kB │ gzip:  5.98 kB
+dist/assets/index-JKcrBp-H.js   250.83 kB │ gzip: 90.65 kB
+✓ built in 1.64s
+
+Exit code: 0

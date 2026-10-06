@@ -1,0 +1,50 @@
+# Engine GREEN — item generation and wolf loot
+
+Command: `npm test -- --maxWorkers=1 src/engine/itemGeneration.test.ts`
+Exit code: 1
+
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/itemGeneration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/itemGeneration.test.ts (13 tests | 1 failed) 201ms
+     × awards guaranteed family materials and an instance for elite and boss kills 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > wolf loot awards > awards guaranteed family materials and an instance for elite and boss kills
+AssertionError: expected undefined to be 'wolfKing' // Object.is equality
+
+- Expected:
+"wolfKing"
+
++ Received:
+undefined
+
+ ❯ src/engine/itemGeneration.test.ts:96:55
+     94|     expect(elite.reward.instances).toContainEqual(eliteLoot.instance)
+     95|     expect(bossLoot.instance?.rarity).toMatch(/^(rare|epic|legendary)$…
+     96|     expect(bossLoot.instance?.provenance?.bossSource).toBe('wolfKing')
+       |                                                       ^
+     97|     expect(bossLoot.materials).toMatchObject({ wolfFang: 1, moonStone:…
+     98|     expect(boss.reward.collection.bosses).toEqual(['wolfKing'])
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed (13)
+   Start at  01:30:16
+   Duration  667ms (transform 263ms, setup 0ms, import 309ms, tests 201ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+```

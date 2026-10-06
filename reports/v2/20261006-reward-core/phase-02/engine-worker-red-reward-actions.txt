@@ -1,0 +1,120 @@
+# Engine RED — procedural reward actions
+
+Command: `npm test -- --maxWorkers=1 src/engine/rewardActions.test.ts`
+Exit code: 1
+
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/rewardActions.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/rewardActions.test.ts (14 tests | 4 failed) 66ms
+     × equips by active owner, clears legacy gear in that slot and supports unequipping 7ms
+     × never sums legacy and procedural gear and resolves an owner-specific equipped instance 3ms
+     × sells owned un-equipped gear at the smith for its rarity-adjusted price and records the trade 2ms
+     × sells one owned material through the smith with a safe payout and five-minute activity event 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/rewardActions.test.ts > procedural equipment actions > equips by active owner, clears legacy gear in that slot and supports unequipping
+AssertionError: expected '目前無法更換裝備。' to be '' // Object.is equality
+
+- Expected
++ Received
+
++ 目前無法更換裝備。
+
+ ❯ src/engine/rewardActions.test.ts:32:53
+     30|     character.equipment.armor = 'armor'
+     31|
+     32|     expect(equipInstance(state, weapon.instanceId)).toBe('')
+       |                                                     ^
+     33|     expect(equippedInstance(state, 'weapon')).toEqual(weapon)
+     34|     expect(character.equipment.weapon).toBeNull()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/engine/rewardActions.test.ts > procedural equipment actions > never sums legacy and procedural gear and resolves an owner-specific equipped instance
+AssertionError: expected undefined to deeply equal { instanceId: 'item-1', …(9) }
+
+- Expected:
+{
+  "affixes": [],
+  "baseId": "shortSword",
+  "instanceId": "item-1",
+  "level": 1,
+  "material": null,
+  "ownerId": "alden",
+  "provenance": null,
+  "rarity": "common",
+  "rolledStats": {
+    "attack": 4,
+    "bleed": 0,
+    "block": 0,
+    "critical": 0,
+    "defense": 0,
+    "penetration": 0,
+    "reduction": 0,
+  },
+  "specialTrait": null,
+}
+
++ Received:
+undefined
+
+ ❯ src/engine/rewardActions.test.ts:59:61
+     57|     state.reward.equipped[character.id] = { weapon: item.instanceId, a…
+     58|     character.equipment.weapon = 'sword'
+     59|     expect(equippedInstance(state, 'weapon', character.id)).toEqual(it…
+       |                                                             ^
+     60|   })
+     61| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/engine/rewardActions.test.ts > procedural equipment sales > sells owned un-equipped gear at the smith for its rarity-adjusted price and records the trade
+AssertionError: expected 0 to be greater than 0
+ ❯ src/engine/rewardActions.test.ts:69:19
+     67|     const price = itemSellPrice(item), startingGold = character.gold, …
+     68|
+     69|     expect(price).toBeGreaterThan(0)
+       |                   ^
+     70|     expect(sellInstance(state, item.instanceId)).toBe('')
+     71|     expect(character.gold).toBe(startingGold + price)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/engine/rewardActions.test.ts > procedural equipment sales > sells one owned material through the smith with a safe payout and five-minute activity event
+AssertionError: expected '目前無法交易素材。' to be '' // Object.is equality
+
+- Expected
++ Received
+
++ 目前無法交易素材。
+
+ ❯ src/engine/rewardActions.test.ts:94:44
+     92|     state.reward.materials[character.id] = { wolfFang: 2, wolfHide: 0,…
+     93|     const startingGold = character.gold, startingTime = state.worldTime
+     94|     expect(tradeMaterial(state, material)).toBe('')
+       |                                            ^
+     95|     expect(state.reward.materials[character.id]!.wolfFang).toBe(1)
+     96|     expect(character.gold).toBe(startingGold + MATERIALS[material].sel…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 10 passed (14)
+   Start at  01:31:38
+   Duration  481ms (transform 218ms, setup 0ms, import 253ms, tests 66ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+```

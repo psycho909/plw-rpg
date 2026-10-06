@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "worker": "v2x_contract_review",
+  "phase": "phase-02",
+  "status": "source-frozen; build passed",
+  "fixes": [
+    "Replaced six inline template map lookups with typed script helpers.",
+    "Typed material affix bias as MaterialDefinition['bias'] before keyed lookup; no assertion/cast."
+  ],
+  "validation": {
+    "directedCommand": "npm test -- --maxWorkers=1 src/engine/itemGeneration.test.ts src/engine/rewardActions.test.ts src/engine/combatStats.test.ts src/engine/actions.test.ts",
+    "directedResult": {
+      "filesPassed": 4,
+      "testsPassed": 64,
+      "exitCode": 0
+    },
+    "rootReportedFullSuiteBeforeCompileFixes": {
+      "filesPassed": 19,
+      "testsPassed": 281
+    },
+    "rootReportedSimulationBeforeCompileFixes": {
+      "reportsPassed": 4,
+      "normalWolfAwards": 10000,
+      "bossGearRolls": 10000,
+      "longWorldSeeds": 3,
+      "yearsPerSeed": 100,
+      "durationSeconds": 5.18,
+      "sourceStable": true
+    },
+    "buildAfterCompileFixes": {
+      "command": "npm run build",
+      "exitCode": 0,
+      "vueTsc": "pass",
+      "viteModules": 77
+    },
+    "diffCheck": "pass",
+    "minimalChromiumDomCheck": {
+      "status": "pass",
+      "saleFocus": "gear-item",
+      "cancelFallbackFocus": "gear-tab",
+      "noGearFallbackFocus": "gear-tab"
+    },
+    "notRerunAfterCompileFixes": [
+      "full suite",
+      "10,000-sample loot QA",
+      "long-world QA"
+    ]
+  },
+  "evidence": {
+    "preservedFailingBuild": "build-stdout.txt",
+    "passingBuild": "engine-worker-build-pass.txt",
+    "canonicalDirectedOutput": "engine-worker-green-final-directed.txt",
+    "uiFocusRepro": "engine-worker-ui-focus-repro.json",
+    "uiFocusFixed": "engine-worker-ui-focus-fixed.json",
+    "uiFollowupReview": [
+      "ui-followup-review.md",
+      "ui-followup-review.json"
+    ],
+    "preservedRedEvidence": [
+      "engine-worker-red-high-defense-extras.txt",
+      "engine-worker-red-material-store.txt",
+      "engine-worker-red-provenance.txt",
+      "engine-worker-red-wolf-loot.txt",
+      "engine-worker-red-actions-integration.txt",
+      "engine-worker-red-item-generation.txt",
+      "engine-worker-red-item-generation-behavior.txt",
+      "engine-worker-red-reward-actions.txt",
+      "engine-worker-red-combat-stats.txt"
+    ]
+  },
+  "sourceSha256": {
+    "src/engine/itemGeneration.ts": "11496a9554a0a44f7945ed20ca77bbaac984e64eacc36c1991b3f4cf3ce9a208",
+    "src/engine/rewardActions.ts": "be7716debca9b7b141b2e45edf84711596239d33965cca57a4039dbf20f9d3e0",
+    "src/engine/combatStats.ts": "1c7f81284abb68d6e1a68e047368f3cc89a6c0f29328eb257d3a8f02c7891b3b",
+    "src/engine/actions.ts": "45175664de3aec5d10985341a9f2d0c69c342952eb11c7bf1aed614e0c656f19",
+    "src/data/rewards.ts": "e194112f1ef9eaec9624b5f09cd6362612632d7e4829174439bec7b28417b9bf",
+    "src/engine/itemGeneration.test.ts": "d12dd70af13e60dceb12e9f781ad5005bbd01c3d17204df3796582a28de7d918",
+    "src/engine/rewardActions.test.ts": "ff32e05eab73c66114b579a0857d32d3682e4540d8744bced9f4ca77037d8fd4",
+    "src/engine/combatStats.test.ts": "cae0b085f1f7c77d9be64074072372f47d28c078ed2266832bc08eeb1c66486b",
+    "src/components/InventoryWindow.vue": "98dea84a2e24aeebd44fc7304665580be410dfb432a44444ff5427ffca2bdec9"
+  }
+}

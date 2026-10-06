@@ -1,0 +1,26 @@
+# Engine GREEN — item generation
+
+Command: `npm test -- --maxWorkers=1 src/engine/itemGeneration.test.ts`
+Exit code: 0
+
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/itemGeneration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  01:28:53
+   Duration  724ms (transform 304ms, setup 0ms, import 367ms, tests 204ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+```

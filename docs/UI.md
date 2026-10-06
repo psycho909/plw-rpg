@@ -32,6 +32,7 @@
 | Property | PropertyWindow.vue | `state.life.properties`、`PROPERTY_DEFINITIONS` | 自宅、農地、農場事業及手動供糧 | `ownership.test.ts`、`lifeIntegration.test.ts` |
 | Living news／requests | LifeNewsWindow.vue | `projectLivingNews`、`state.life.requests` | 地方／區域／傳聞／重大消息、近期委託 | `livingEvents.test.ts`、`lifeIntegration.test.ts` |
 | World First map | WorldMap.vue + `projectWorld` | `GameState` 經 `worldProjection.ts`／`worldUI.ts` 投影 | 已探索圖格、居民、產業、作物和威脅標記 | `worldProjection.test.ts`、瀏覽器遊玩流程 |
+| Procedural gear / discovery | InventoryWindow.vue、CharacterSheet.vue + `rewardProjection` | `state.reward`、rewards catalog、rewardActions / combatStats | 原生分類／部位／品質按鈕、20 件分頁、同部位比較、穿戴、出售確認、素材交易、有限見聞收藏 | `rewardProjection.test.ts`、Phase2 engine tests、reward-core production Browser 流程 |
 
 本機遊戲無表格選取、日期輸入、表單或 single-select；不建立無用 UI primitive。PixelWindow 是所有 modal 唯一 owner，PixelMeter 是生命／體力／熟練度／作物進度唯一 owner。清單篩選用原生按鈕群組，保持 aria-pressed。
 
@@ -63,6 +64,10 @@
 
 物品清單＋選取詳情，裝備／藥水呼叫原 actions；沒有引擎背包容量，不顯示假的容量。日誌最新 100 筆、歷史最新 100 筆，居民最多 80，全部 render 有界資料。空分類有中文空狀態。
 
+V2.x 物品視窗預設仍為「日常物品」，新增獵獲裝備、狼族素材與見聞收藏；沿用原生 aria-pressed 分類／篩選按鈕及同一 PixelWindow。程序裝備每頁最多 20 件，顯示持有且符合篩選的數量，換篩選回第一頁，物品變動後夾限有效頁碼；不刪除未顯示的物品。選取／分頁不寫入存檔。品質用中文文字，詳情列出實際能力、詞綴階級與同部位穿戴能力，不靠顏色或重新擲值。
+
+固定與獵獲裝備共用武器／防具兩個部位，替換會留下原物品。穿戴呼叫引擎 action，自動保存並保留原視窗；戰鬥中停用。出售獨立裝備先在同一視窗內明示名稱、金額與永久移出背包的結果，預設聚焦「保留這件裝備」；取消回到原出售按鈕。實際出售仍受鐵匠鋪距離／營業與不得出售已穿戴物品限制，失敗保留原選取並顯示共用訊息。狼族素材在既有雜貨店出售，每次一份／5 分鐘，非新工坊。見聞只投影已知 catalog IDs，跨角色保留，不儲存每件普通物品的完整歷史。這些 UI 描述不代表 Phase2/3 工程 gate 或真人留存驗收已完成。
+
 儲存世界成功後保留目前位置與視窗，顯示「世界已儲存」。每次有效操作與時間推進立即保存，選單顯示「已存於此瀏覽器 · 操作後立即保存」。進度與待補寫紀錄保存在當前 origin 的 localStorage，完整紀錄追加至 IndexedDB，沒有網路同步。選單的「匯出遊玩紀錄」下載 JSON，包含歷次紀錄、待補寫內容及目前進度；不提供編輯、匯入紀錄或回退。
 
 讀取失敗保留原始存檔並持續顯示保護提醒；進度保存失敗暫停時間，復原提示不自動消失，提供重試與匯出。已知進度保存失敗後，移動、操作、等待與恢復時間先重試保存目前進度，成功才繼續；首次失敗時已發生的操作留在記憶體與待補寫資料中。紀錄庫寫入失敗另提示待補寫，進度仍可保存時允許繼續遊玩；重試存檔或重載後補寫，兩項同時失敗時都顯示。紀錄庫無法讀取時，匯出明示舊紀錄尚未包含。重建不可逆覆蓋目前進度，保留舊遊玩紀錄；必須在 app-owned 視窗確認，預設聚焦「保留目前世界」。沒有可用的 Undo。多分頁保存防護依下段的單一使用權規則。
@@ -75,4 +80,4 @@
 
 桌機保留完整大地圖；平板與手機仍先呈現世界，窄螢幕用可捲動世界視野並跟隨玩家，M 地圖視窗可看全圖。手機底部簡短選單與方向鍵提供移動／互動。視窗受 viewport 與 safe-area 約束，長內容於視窗內捲動，關閉與操作可達。
 
-驗證入口：`npm.cmd run check`、`npm.cmd run test -- src/presentation/worldProjection.test.ts`，以及 `reports/v2/20261004-life-emergence/verify_browser.py` 的本機 production Chromium 流程。Chromium 流程需 Playwright、Chromium 與已啟動的本機 build 靜態服務（預設 5194，可用 PLW_V2_URL 指定），不能以 build 或單元測試代替。無 DOM runner／Storybook／lint／formatter；本文件列出驗證入口，不表示這些檢查或 V2 真人 Fun Gate 已執行／通過。
+驗證入口：`npm run check`、`npm run test -- src/presentation/worldProjection.test.ts`，以及 `reports/v2/20261006-reward-core/phase-02/targeted_browser.py` 的至少 10 分鐘 production Chromium 裝備閉環。V2 核心與保存失敗保護另由同階段 `browser-run/verify_browser.py` 驗證，使用 `PLW_NATIVE_V1` 指向已提交的原生 V1 fixture。Chromium 流程需 Playwright、Chromium 與已啟動的最新 build 靜態服務（預設 5202，可用 PLW_V2_URL 指定），不能以 build 或單元測試代替。無 Storybook／lint／formatter；本文件列出驗證入口，不表示這些檢查或 V2 真人 Fun Gate 已執行／通過。

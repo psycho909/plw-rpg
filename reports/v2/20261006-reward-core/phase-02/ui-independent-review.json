@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "title": "Phase 2 Reward UI / Presentation — Independent Review",
+  "disposition": "PASS_WITH_FOLLOW_UP",
+  "phaseGateDisposition": "NOT_FULL_PHASE2_GATE",
+  "currentPhaseBlockers": [],
+  "scope": {
+    "tickets": [
+      "tickets/20261006-v2x-02-equipment-slice.md",
+      "tickets/20261006-v2x-03-monster-slice.md"
+    ],
+    "baseCommit": "f89c2c292aaadb6c22bc0453188661f22e4f15b2",
+    "head": "f89c2c292aaadb6c22bc0453188661f22e4f15b2",
+    "trackedUnstagedChanges": [
+      "src/components/InventoryWindow.vue",
+      "src/components/CharacterSheet.vue",
+      "src/style.scss",
+      "docs/UI.md"
+    ],
+    "stagedDiff": "empty",
+    "newFilesReadInFull": [
+      "src/presentation/rewardProjection.ts",
+      "src/presentation/rewardProjection.test.ts",
+      "reports/v2/20261006-reward-core/ui-plan.md"
+    ],
+    "excludedCurrentWork": [
+      "Engine worker implementation files for generation, reward actions, combat stats, actions, and reward data weights",
+      "Phase 3 AdventureWindow and monster/combat behavior"
+    ],
+    "reviewedCommands": [
+      "git rev-parse HEAD",
+      "git diff --cached -- <reviewed tracked paths>",
+      "git diff -- <reviewed tracked paths>",
+      "git diff f89c2c292aaadb6c22bc0453188661f22e4f15b2...HEAD -- <reviewed paths>",
+      "git ls-files --others --exclude-standard",
+      "sha256sum <seven reviewed files>",
+      "git diff --check -- <reviewed tracked UI paths>"
+    ],
+    "sourceSha256": {
+      "src/components/InventoryWindow.vue": "8f2402400b3f9f87e719dc18d3330be8950db5a425a6ddc62d1b09759586f475",
+      "src/components/CharacterSheet.vue": "db3d94e19d29efe49e33d558d022ca9f3dd3bba621365db9075c7baeb395002b",
+      "src/presentation/rewardProjection.ts": "b83c2a8c5ad438c4bcdef6d220cea6b9a912d91bd63feec532fe627ca1596a3e",
+      "src/presentation/rewardProjection.test.ts": "32099e63ced6b0f3b0f011eebb30eff8e776dfe3ccc6df861e6401a1e718997c",
+      "src/style.scss": "4f176d6604f81bfe0b14a2e590ea0dcc7b79570e9367f7afb868bacfc6f8f605",
+      "docs/UI.md": "e6f02fd9f102878e093463af4e3221a8e85b6a1dbf6e59e8624a4b5cab4c0a46",
+      "reports/v2/20261006-reward-core/ui-plan.md": "61b0f5a9d30d7c0587afe9e6307d1d91160d023ba8b6cf69bb3bc09c6c8c5660"
+    }
+  },
+  "reviewer": {
+    "role": "independent reviewer context",
+    "participatedInImplementation": false,
+    "modelRequestedByOrchestrationTool": "gpt-6-luna",
+    "reasoningEffortRequested": "max",
+    "forkTurns": "none",
+    "runtimeModelTelemetryAvailable": false,
+    "projectLunaProfile": ".codex/agents/luna_worker.toml",
+    "projectLunaProfileExists": false
+  },
+  "standards": {
+    "result": "PASS_WITH_FOLLOW_UP",
+    "evidence": [
+      "AGENTS.md §3 and docs/agents/review.md evidence/disposition contract",
+      "docs/design/DESIGN.md world-first monochrome visual identity",
+      "docs/UI.md:37 and 39–46 native controls, sole modal owner, contained focus, and safe initial focus",
+      "docs/UI.md:67–69 bounded inventory, same-slot display, and sale confirmation contract",
+      "The mobile .inventory-layout one-column override occurs after the new gear layout rules in src/style.scss."
+    ],
+    "findingIds": [
+      "UI-R1",
+      "UI-R2"
+    ]
+  },
+  "spec": {
+    "result": "PASS_FOR_REVIEWED_UI_SLICE",
+    "evidence": [
+      "V2X-REWARD-RETENTION.md Phase 0–3 boundaries; Phase 2 is the equipment vertical slice and Phase 3 is monster variants.",
+      "Phase 2 ticket calls for equipment inspect/equip/save/reload; this review evaluates only presentation scope.",
+      "The UI plan and docs/UI.md explicitly avoid claiming the Phase 2/3 engineering gates or human retention gate have passed."
+    ],
+    "unreviewedAcceptance": [
+      "Engine generation/action/combat/save integration",
+      "Full fresh-browser Phase 2 loop",
+      "Phase 3 monster/combat UI"
+    ]
+  },
+  "findings": [
+    {
+      "id": "UI-R1",
+      "severity": "P3",
+      "axis": "standards",
+      "title": "Successful sale returns keyboard focus to the category selector",
+      "location": [
+        "src/components/InventoryWindow.vue:54",
+        "src/components/InventoryWindow.vue:78-94"
+      ],
+      "evidence": "querySelector with a comma-separated selector returns the first matching element in document order. The .filter-buttons category controls precede .gear-layout .item-list, so after a sale the query focuses the first category button rather than the next gear row.",
+      "impact": "Keyboard users lose their place in the gear list and must traverse the filters again to continue.",
+      "basis": [
+        "docs/UI.md:39-46",
+        "reports/v2/20261006-reward-core/ui-plan.md:11"
+      ],
+      "closure": "Prefer the next gear-list button and use a filter button only if no list item remains; verify both cases."
+    },
+    {
+      "id": "UI-R2",
+      "severity": "P3",
+      "axis": "standards",
+      "title": "Disabled sale help does not explain that the blacksmith is still locked",
+      "location": [
+        "src/components/InventoryWindow.vue:104-105",
+        "README.md:27"
+      ],
+      "evidence": "The UI disables sale and only mentions opening hours/distance when canVisit is false. The README says the blacksmith unlocks after the settlement grows into a village, so a fresh save can have no available blacksmith to visit.",
+      "impact": "Players who find equipment before village growth receive instructions for reaching a service that does not exist yet.",
+      "basis": [
+        "README.md:27",
+        "docs/UI.md:53"
+      ],
+      "closure": "When the building is not unlocked, explain the village unlock condition or otherwise distinguish locked service from closed/distant service; do not change world unlock rules."
+    }
+  ],
+  "verification": {
+    "reviewerReranTests": false,
+    "reviewerRanBuild": false,
+    "reviewerRanBrowser": false,
+    "projectionTestEvidence": {
+      "path": "reports/v2/20261006-reward-core/phase-02/projection-green-status.json",
+      "command": "npm run test -- src/presentation/rewardProjection.test.ts --maxWorkers=1",
+      "result": "PASS, 2 tests",
+      "sourceHashMatchesReview": true
+    },
+    "reviewerRanGitDiffCheck": true,
+    "gitDiffCheck": "PASS",
+    "rootProvidedPhase2GateEvidence": {
+      "fullBuild": "pending global source freeze",
+      "freshBrowser": "pending global source freeze"
+    },
+    "limitation": "The focused projection tests do not exercise the changed Vue components. This is a UI fragment review and does not determine the overall Phase 2 gate."
+  }
+}

@@ -1,0 +1,26 @@
+# Engine GREEN — material sales use the existing store
+
+Command: `npm test -- --maxWorkers=1 src/engine/rewardActions.test.ts`
+Exit code: 0
+
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/rewardActions.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  01:36:50
+   Duration  456ms (transform 221ms, setup 0ms, import 266ms, tests 57ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+```

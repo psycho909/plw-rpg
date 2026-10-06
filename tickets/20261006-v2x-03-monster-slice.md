@@ -31,6 +31,17 @@ Phase 4–10、50 monsters/100 items、V3、server、native Safari/手機實機�
 - 採 matt-skills-curated:to-tickets / implement / tdd；依 docs/agents/skill-workflows.md 調整為 repository tickets 與現有 test seams，不發布外部 issue/PR、不建立 worktree。
 - 單機紀錄以 scripts.recorded_reports.write_recorded 追加版本，原始 failures 永久保留。
 
+### Frozen narrow implementation direction（施工仍待 Phase2 gate）
+
+- 沿用 `combat.monsterId='wolf'`＋optional familyEncounter 作為新家族標記，未標記的legacy wolf／其他怪物／goblin boss／dungeon保留各自相容路徑。
+- 純 `wolfEncounterOptions(state)`／`wolfCombatPresentation(state)` 提供資格、原因、名稱、traits、variant及下一回合提示；不得於render/read消耗RNG或形成boss。
+- `encounterWolf(state,id)` 在合法forest／體力／monsterPopulation及collection進展資格成立後才形成遭遇；依灰狼→傷痕狼→精英→mini→boss提供可理解的追蹤目標。
+- 共用 `resolveWolfCombatStats(snapshot)` 驅動形成與strict save guard；驗證derived stats／hp<=maxHp／active boss與根wolfBossForm的靜態一致性。不得以current world重新推導已保存fight。
+- boss context.hunted使用現有人生combat勝利counter作為玩家介入proxy（不是狼族專屬計數），population/safety與seeded RNG影響形態；不增加schema counter或掃描unbounded journal。
+- boss form首次合法挑戰形成一次，flee／死亡／reload後沿用；active turn/howl從combat保存。勝利才清除form及記defeatedAt；再次挑戰採data-driven7game-days cooldown，與goblin危機獨立。
+- mini固定howl核心＋既有兩traits；boss固定moonCharge核心＋1–2traits及三controlled variants。角色role/trait/core須實際改變節奏，提示來自同一mechanics，不以增HP或改文字取代。
+- root負責既有PlaceWindow／AdventureWindow的最小UI投影；Luna max單一engine/validation/test owner。runner Luna low執行20–30分鐘最新build真Browser，不LLM陪跑，不使用舊snapshot充當修正版gate。
+
 ## Dependencies and Blockers
 Blocked by: [20261006-v2x-02-equipment-slice](20261006-v2x-02-equipment-slice.md)
 

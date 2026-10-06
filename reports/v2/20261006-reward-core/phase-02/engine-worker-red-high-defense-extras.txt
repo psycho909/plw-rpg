@@ -1,0 +1,50 @@
+# Engine RED — extra per-hit damage through high defense
+
+Command: `npm test -- --maxWorkers=1 src/engine/combatStats.test.ts`
+Exit code: 1
+
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/combatStats.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/combatStats.test.ts (5 tests | 1 failed) 26ms
+     × keeps bleed and Moon Hunter as extra per-hit damage through very high defense 13ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/combatStats.test.ts > equipment stats and damage > keeps bleed and Moon Hunter as extra per-hit damage through very high defense
+AssertionError: expected 1 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 1
+
+ ❯ src/engine/combatStats.test.ts:60:44
+     58|     state.reward.instances.push(bleeding)
+     59|     state.reward.equipped[character.id] = { weapon: bleeding.instanceI…
+     60|     expect(playerAttackDamage(state, 100)).toBe(4)
+       |                                            ^
+     61|
+     62|     const hunter = gear(character.id, 'item-2', 'shortSword', {}, 'moo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  01:40:21
+   Duration  412ms (transform 204ms, setup 0ms, import 248ms, tests 26ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+```

@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/combatStats.test.ts (7 tests | 1 failed) 18ms
+     × adds only legacy wolf drops and makes a gear reward visible in the victory message 7ms
+
+ Test Files  1 failed | 18 passed (19)
+      Tests  1 failed | 283 passed (284)
+   Start at  02:04:19
+   Duration  23.43s (transform 1.04s, setup 0ms, import 1.80s, tests 19.04s, environment 7ms)
+

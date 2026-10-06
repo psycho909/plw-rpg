@@ -1,0 +1,20 @@
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/presentation/rewardProjection.test.ts [ src/presentation/rewardProjection.test.ts ]
+Error: Cannot find module './rewardProjection' imported from /workspace/plw-rpg/src/presentation/rewardProjection.test.ts
+ ❯ src/presentation/rewardProjection.test.ts:4:1
+      2| import type { ItemInstance } from '../domain/reward'
+      3| import { createGame } from '../engine/simulation'
+      4| import { projectEquipmentSlot, projectGearPage } from './rewardProject…
+       | ^
+      5|
+      6| const gear = (id: number, ownerId = 'alden'): ItemInstance => ({ insta…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

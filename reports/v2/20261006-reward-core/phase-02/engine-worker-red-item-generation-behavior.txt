@@ -1,0 +1,86 @@
+# Engine RED — item generation behavior
+
+Command: `npm test -- --maxWorkers=1 src/engine/itemGeneration.test.ts`
+Exit code: 1
+
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/itemGeneration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/itemGeneration.test.ts (9 tests | 4 failed) 37ms
+     × returns a deterministic unique instance without awarding it to the reward state 7ms
+     × keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact 1ms
+     × biases wolf fang rolls toward bleed or penetration affixes 1ms
+     × uses the rare-plus boss rarity pool and preserves generated rolls across save and reload 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > procedural item generation > returns a deterministic unique instance without awarding it to the reward state
+Error: Item generation is not implemented.
+ ❯ generateItem src/engine/itemGeneration.ts:12:9
+     10|
+     11| export function generateItem(_state: GameState, _options: GenerateItem…
+     12|   throw new Error('Item generation is not implemented.')
+       |         ^
+     13| }
+     14|
+ ❯ src/engine/itemGeneration.test.ts:14:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > procedural item generation > keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact
+Error: Item generation is not implemented.
+ ❯ generateItem src/engine/itemGeneration.ts:12:9
+     10|
+     11| export function generateItem(_state: GameState, _options: GenerateItem…
+     12|   throw new Error('Item generation is not implemented.')
+       |         ^
+     13| }
+     14|
+ ❯ src/engine/itemGeneration.test.ts:41:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > procedural item generation > biases wolf fang rolls toward bleed or penetration affixes
+Error: Item generation is not implemented.
+ ❯ generateItem src/engine/itemGeneration.ts:12:9
+     10|
+     11| export function generateItem(_state: GameState, _options: GenerateItem…
+     12|   throw new Error('Item generation is not implemented.')
+       |         ^
+     13| }
+     14|
+ ❯ src/engine/itemGeneration.test.ts:62:24
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > procedural item generation > uses the rare-plus boss rarity pool and preserves generated rolls across save and reload
+Error: Item generation is not implemented.
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 5 passed (9)
+   Start at  01:27:53
+   Duration  444ms (transform 244ms, setup 0ms, import 279ms, tests 37ms, environment 0ms)
+
+ ❯ generateItem src/engine/itemGeneration.ts:12:9
+     10|
+     11| export function generateItem(_state: GameState, _options: GenerateItem…
+     12|   throw new Error('Item generation is not implemented.')
+       |         ^
+     13| }
+     14|
+ ❯ src/engine/itemGeneration.test.ts:71:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+```

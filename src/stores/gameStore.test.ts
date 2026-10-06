@@ -4,6 +4,8 @@ import { createPinia, setActivePinia } from 'pinia'
 import { createGame, player, simulate, walkTo } from '../engine/simulation'
 import { BUILDINGS } from '../data/config'
 import { equip, rest, usePotion } from '../engine/actions'
+import { equipInstance } from '../engine/rewardActions'
+import { generateItem } from '../engine/itemGeneration'
 import { calendar } from '../engine/calendar'
 import { SAVE_KEY, serialize } from '../services/saveService'
 import { movePlayer } from '../engine/simulation'
@@ -40,6 +42,28 @@ function versionOneFixture(lastSavedAt = 1000) {
 }
 
 describe('safe browser persistence', () => {
+  it('records factual equip and unequip messages in the stored action journal', () => {
+    const game = startedGame()
+    const item = generateItem(game.state, { baseId: 'shortSword', level: 1 })
+    game.state.reward.instances.push(item)
+    emit(game.state, 'combat.won', 'player', '前一次戰鬥勝利。')
+
+    game.act(() => equipInstance(game.state, item.instanceId))
+    const equipped = unpackCheckpoint(saved!).journal.pending.at(-1)!
+    const equipEvent = equipped.events.find(event => event.type === 'player.equipped')
+    expect(equipEvent).toBeDefined()
+    expect(equipped.message).toBe(equipEvent!.message)
+    expect(equipped.message).not.toBe('前一次戰鬥勝利。')
+    expect(equipped.message).toContain('穿戴')
+
+    game.act(() => equipInstance(game.state, item.instanceId))
+    const unequipped = unpackCheckpoint(saved!).journal.pending.at(-1)!
+    const unequipEvent = unequipped.events.find(event => event.type === 'player.equipped')
+    expect(unequipEvent).toBeDefined()
+    expect(unequipped.message).toBe(unequipEvent!.message)
+    expect(unequipped.message).toContain('卸下')
+  })
+
   it('preserves corrupt saves and blocks automatic and manual overwrite', () => {
     saved = '{broken'
     const game = useGameStore()

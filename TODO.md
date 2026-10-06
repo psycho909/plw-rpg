@@ -8,7 +8,7 @@
 
 ## Now
 
-- [ ] V2.x Phase 2 Procedural Equipment — Ticket: [20261006-v2x-02-equipment-slice](tickets/20261006-v2x-02-equipment-slice.md)
+- [ ] V2.x Phase 3 Wolf Family — Ticket: [20261006-v2x-03-monster-slice](tickets/20261006-v2x-03-monster-slice.md)
 
 
 ## Next

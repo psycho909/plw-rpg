@@ -1,0 +1,120 @@
+# Engine RED — combat stats and legacy-preserving damage
+
+Command: `npm test -- --maxWorkers=1 src/engine/combatStats.test.ts`
+Exit code: 1
+
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/combatStats.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/combatStats.test.ts (4 tests | 4 failed) 23ms
+     × preserves legacy damage results and consumes no RNG with zero proc chances 17ms
+     × uses one source per physical slot while combining different legacy and instance slots 3ms
+     × applies penetration, per-hit bleed, critical chance and wolf-only Moon Hunter damage 1ms
+     × halves blocked hits and applies percentage reduction without drawing when chances are zero 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/combatStats.test.ts > equipment stats and damage > preserves legacy damage results and consumes no RNG with zero proc chances
+AssertionError: expected +0 to be 11 // Object.is equality
+
+- Expected
++ Received
+
+- 11
++ 0
+
+ ❯ src/engine/combatStats.test.ts:24:42
+     22|     const rawIncoming = Math.max(1, 25 - Math.floor(character.stats.vi…
+     23|
+     24|     expect(playerAttackDamage(state, 5)).toBe(attack)
+       |                                          ^
+     25|     expect(incomingDamage(state, 25, false, 2)).toBe(rawIncoming)
+     26|     expect(incomingDamage(state, 25, true, 2)).toBe(Math.max(1, Math.f…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/engine/combatStats.test.ts > equipment stats and damage > uses one source per physical slot while combining different legacy and instance slots
+AssertionError: expected { attack: +0, defense: +0, …(5) } to deeply equal { attack: 4, defense: 5, …(5) }
+
+- Expected
++ Received
+
+  {
+-   "attack": 4,
++   "attack": 0,
+    "bleed": 0,
+    "block": 0,
+    "critical": 0,
+-   "defense": 5,
+-   "penetration": 2,
++   "defense": 0,
++   "penetration": 0,
+    "reduction": 0,
+  }
+
+ ❯ src/engine/combatStats.test.ts:37:35
+     35|     character.equipment.armor = 'armor'
+     36|
+     37|     expect(equipmentStats(state)).toEqual({ attack: 4, defense: 5, cri…
+       |                                   ^
+     38|     expect(playerAttackDamage(state, 5)).toBe(Math.max(1, character.st…
+     39|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/engine/combatStats.test.ts > equipment stats and damage > applies penetration, per-hit bleed, critical chance and wolf-only Moon Hunter damage
+AssertionError: expected +0 to be 24 // Object.is equality
+
+- Expected
++ Received
+
+- 24
++ 0
+
+ ❯ src/engine/combatStats.test.ts:49:42
+     47|     const beforeCritRng = state.rngState
+     48|
+     49|     expect(playerAttackDamage(state, 7)).toBe(withoutWolfBonus * 2)
+       |                                          ^
+     50|     expect(state.rngState).not.toBe(beforeCritRng)
+     51|     state.rngState = 53
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/engine/combatStats.test.ts > equipment stats and damage > halves blocked hits and applies percentage reduction without drawing when chances are zero
+AssertionError: expected +0 to be 9 // Object.is equality
+
+- Expected
++ Received
+
+- 9
++ 0
+
+ ❯ src/engine/combatStats.test.ts:63:49
+     61|     const beforeBlockRng = state.rngState
+     62|
+     63|     expect(incomingDamage(state, 30, false, 3)).toBe(Math.max(1, Math.…
+       |                                                 ^
+     64|     expect(state.rngState).not.toBe(beforeBlockRng)
+     65|     armor.rolledStats.block = 0
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed (4)
+   Start at  01:38:37
+   Duration  378ms (transform 198ms, setup 0ms, import 227ms, tests 23ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+```

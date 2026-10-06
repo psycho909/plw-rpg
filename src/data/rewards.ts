@@ -55,3 +55,13 @@ export const BOSS_VARIANTS = {
 export const LOOT_TABLES = {
   wolf: { id: 'wolf', guaranteed: ['wolfFang'], weighted: [{ baseId: 'shortSword', weight: 3 }, { baseId: 'axe', weight: 2 }, { baseId: 'spear', weight: 2 }, { baseId: 'hideArmor', weight: 3 }, { baseId: 'chainArmor', weight: 1 }], rare: { materialId: 'moonStone', chance: .03 }, bossGuaranteed: 'moonStone' },
 } satisfies Record<string, LootTableDefinition>
+
+export const WOLF_LOOT_RULES = {
+  normalGearChance: .65,
+  hideChance: .25,
+  bossRarityWeights: { rare: 85, epic: 14, legendary: 1 },
+} as const
+
+export const ITEM_GENERATION_RULES = {
+  legendaryWeaponSpecialChance: .1,
+} as const

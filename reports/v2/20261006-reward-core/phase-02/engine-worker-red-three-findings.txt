@@ -1,0 +1,78 @@
+Phase 2 narrow follow-up RED evidence
+Command: npm test -- --maxWorkers=1 src/engine/actions.test.ts src/engine/itemGeneration.test.ts src/stores/gameStore.test.ts
+Exit code: 1
+
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/actions.test.ts src/engine/itemGeneration.test.ts src/stores/gameStore.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/stores/gameStore.test.ts (32 tests | 1 failed) 508ms
+     × records factual equip and unequip messages in the stored action journal 31ms
+ ❯ src/engine/actions.test.ts (29 tests | 1 failed) 437ms
+     × uses the wolf family material payout without adding the legacy generic stack 7ms
+ ❯ src/engine/itemGeneration.test.ts (14 tests | 1 failed) 249ms
+     × biases armor drops with wolf hide and weapon drops with wolf fang 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/actions.test.ts > combat and exploration > uses the wolf family material payout without adding the legacy generic stack
+AssertionError: expected 8 to be 7 // Object.is equality
+
+- Expected
++ Received
+
+- 7
++ 8
+
+ ❯ src/engine/actions.test.ts:172:46
+    170|     wolfCharacter.stats.strength = 500
+    171|     expect(combatTurn(wolf, 'attack')).toBe('')
+    172|     expect(wolfCharacter.inventory.material).toBe(7)
+       |                                              ^
+    173|     expect(wolf.reward.materials[wolf.activeCharacterId]?.wolfFang).to…
+    174|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > wolf loot awards > biases armor drops with wolf hide and weapon drops with wolf fang
+AssertionError: expected 'wolfFang' to be 'wolfHide' // Object.is equality
+
+Expected: "wolfHide"
+Received: "wolfFang"
+
+ ❯ src/engine/itemGeneration.test.ts:132:29
+    130|       const slot = ITEM_BASES[item.baseId].slot
+    131|       slots.add(slot)
+    132|       expect(item.material).toBe(slot === 'armor' ? 'wolfHide' : 'wolf…
+       |                             ^
+    133|     }
+    134|     expect(slots).toEqual(new Set(['weapon', 'armor']))
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > records factual equip and unequip messages in the stored action journal
+AssertionError: expected undefined to be defined
+ ❯ src/stores/gameStore.test.ts:54:24
+     52|     const equipped = unpackCheckpoint(saved!).journal.pending.at(-1)!
+     53|     const equipEvent = equipped.events.find(event => event.type === 'p…
+     54|     expect(equipEvent).toBeDefined()
+       |                        ^
+     55|     expect(equipped.message).toBe(equipEvent!.message)
+     56|     expect(equipped.message).not.toBe('前一次戰鬥勝利。')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  3 failed | 72 passed (75)
+   Start at  02:02:56
+   Duration  2.19s (transform 396ms, setup 0ms, import 583ms, tests 1.19s, environment 2ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

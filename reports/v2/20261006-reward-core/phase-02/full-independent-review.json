@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "title": "Phase 2 Reward Core — Independent Full Review",
+  "disposition": "FAIL",
+  "phaseGateDisposition": "BLOCKED_PENDING_P2_01",
+  "currentPhaseBlockers": [
+    "P2-01"
+  ],
+  "scope": {
+    "ticket": "tickets/20261006-v2x-02-equipment-slice.md",
+    "baseCommit": "f89c2c292aaadb6c22bc0453188661f22e4f15b2",
+    "head": "f89c2c292aaadb6c22bc0453188661f22e4f15b2",
+    "stagedDiff": "empty",
+    "trackedUnstagedPaths": [
+      "src/components/InventoryWindow.vue",
+      "src/components/CharacterSheet.vue",
+      "src/data/rewards.ts",
+      "src/engine/actions.ts",
+      "src/style.scss",
+      "docs/UI.md"
+    ],
+    "newFilesReviewed": [
+      "src/engine/itemGeneration.ts",
+      "src/engine/itemGeneration.test.ts",
+      "src/engine/rewardActions.ts",
+      "src/engine/rewardActions.test.ts",
+      "src/engine/combatStats.ts",
+      "src/engine/combatStats.test.ts",
+      "src/presentation/rewardProjection.ts",
+      "src/presentation/rewardProjection.test.ts"
+    ],
+    "readOnlyCommands": [
+      "git rev-parse HEAD",
+      "git status --short",
+      "git diff --cached -- <review paths>",
+      "git diff -- <review paths>",
+      "git ls-files --others --exclude-standard",
+      "git diff --check -- <tracked review paths>",
+      "sha256sum <review files>"
+    ],
+    "trackedDiffCheck": "PASS",
+    "sha256": {
+      "src/engine/actions.ts": "45175664de3aec5d10985341a9f2d0c69c342952eb11c7bf1aed614e0c656f19",
+      "src/engine/actions.test.ts": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+      "src/engine/itemGeneration.ts": "11496a9554a0a44f7945ed20ca77bbaac984e64eacc36c1991b3f4cf3ce9a208",
+      "src/engine/itemGeneration.test.ts": "d12dd70af13e60dceb12e9f781ad5005bbd01c3d17204df3796582a28de7d918",
+      "src/engine/rewardActions.ts": "be7716debca9b7b141b2e45edf84711596239d33965cca57a4039dbf20f9d3e0",
+      "src/engine/rewardActions.test.ts": "ff32e05eab73c66114b579a0857d32d3682e4540d8744bced9f4ca77037d8fd4",
+      "src/engine/combatStats.ts": "1c7f81284abb68d6e1a68e047368f3cc89a6c0f29328eb257d3a8f02c7891b3b",
+      "src/engine/combatStats.test.ts": "cae0b085f1f7c77d9be64074072372f47d28c078ed2266832bc08eeb1c66486b",
+      "src/data/rewards.ts": "e194112f1ef9eaec9624b5f09cd6362612632d7e4829174439bec7b28417b9bf",
+      "src/presentation/rewardProjection.ts": "b83c2a8c5ad438c4bcdef6d220cea6b9a912d91bd63feec532fe627ca1596a3e",
+      "src/presentation/rewardProjection.test.ts": "32099e63ced6b0f3b0f011eebb30eff8e776dfe3ccc6df861e6401a1e718997c",
+      "src/components/InventoryWindow.vue": "98dea84a2e24aeebd44fc7304665580be410dfb432a44444ff5427ffca2bdec9",
+      "src/components/CharacterSheet.vue": "db3d94e19d29efe49e33d558d022ca9f3dd3bba621365db9075c7baeb395002b",
+      "src/style.scss": "4f176d6604f81bfe0b14a2e590ea0dcc7b79570e9367f7afb868bacfc6f8f605",
+      "docs/UI.md": "cfe20f98ea725a9b22d41458874c93de1c701ebcfc13b0d4c0d0c1b5bccd57bc"
+    }
+  },
+  "reviewer": {
+    "role": "independent read-only reviewer",
+    "participatedInImplementation": false,
+    "requestedModel": "gpt-6-luna",
+    "requestedReasoningEffort": "max",
+    "forkTurns": "none",
+    "runtimeModelTelemetryAvailable": false,
+    "projectLunaProfileExists": false,
+    "axisSubreviews": [
+      {
+        "axis": "spec",
+        "requestedModel": "gpt-6-luna",
+        "reasoningEffort": "max",
+        "disposition": "FAIL"
+      },
+      {
+        "axis": "standards",
+        "requestedModel": "gpt-6-luna",
+        "reasoningEffort": "max",
+        "disposition": "PASS_WITH_FOLLOW_UP"
+      }
+    ]
+  },
+  "standards": {
+    "result": "PASS_WITH_FOLLOW_UP",
+    "findingIds": [
+      "STD-P3-01"
+    ],
+    "noProductionCycleFound": true
+  },
+  "spec": {
+    "result": "FAIL",
+    "phase3R1": "acknowledged pending; excluded from Phase 2 findings"
+  },
+  "findings": [
+    {
+      "id": "P2-01",
+      "severity": "P2",
+      "axis": "spec",
+      "blocking": true,
+      "title": "Generic material remains an extra reward on new wolf kills",
+      "locations": [
+        "src/engine/actions.ts:175-180",
+        "src/data/config.ts:33-37",
+        "src/engine/combatStats.test.ts:84-92",
+        "src/engine/actions.test.ts:165-175"
+      ],
+      "basis": "docs/specs/V2X-REWARD-RETENTION.md:745-776",
+      "narrowRemediation": "Skip the legacy generic increment on the new wolf reward path; preserve saved stacks and defer non-wolf legacy paths."
+    },
+    {
+      "id": "P3-02",
+      "severity": "P3",
+      "axis": "spec",
+      "blocking": false,
+      "title": "Wolf-hide affinity is unused by generated armor drops",
+      "locations": [
+        "src/engine/itemGeneration.ts:143-148",
+        "src/data/rewards.ts:4-8,11-18,30-33,55-57"
+      ],
+      "basis": "tickets/20261006-v2x-02-equipment-slice.md:16,22; docs/specs/V2X-REWARD-RETENTION.md:833-845",
+      "narrowRemediation": "Pass wolfHide for awarded armor and wolfFang for weapons; preserve boss moonStone; add a focused award-path test."
+    },
+    {
+      "id": "P3-03",
+      "severity": "P3",
+      "axis": "spec",
+      "blocking": false,
+      "title": "Equip/unequip action feedback repeats the previous event",
+      "locations": [
+        "src/engine/rewardActions.ts:26-37",
+        "src/stores/gameStore.ts:102-108"
+      ],
+      "basis": "Phase 2 ticket goal kill→drop→inspect→equip→save→reload",
+      "narrowRemediation": "Emit a truthful equip/unequip event or provide an action message and test both toggles."
+    },
+    {
+      "id": "STD-P3-01",
+      "severity": "P3",
+      "axis": "standards",
+      "blocking": false,
+      "title": "Generic building-access predicate is owned by rewardActions",
+      "locations": [
+        "src/engine/rewardActions.ts:14-18",
+        "src/engine/actions.ts:11,15"
+      ],
+      "basis": "reports/v2/20261006-reward-core/architecture.md:13-18",
+      "narrowRemediation": "Consider a neutral owner if this shared predicate boundary is revisited."
+    }
+  ],
+  "verification": {
+    "reviewerReranTests": false,
+    "reviewerRanBuild": false,
+    "reviewerRanBrowser": false,
+    "reviewerDiffCheck": "PASS for tracked scoped paths",
+    "rootEvidence": {
+      "fullRegression": {
+        "result": "PASS, 19 files / 281 tests",
+        "exitCode": 0,
+        "sourceStableDuringRun": true,
+        "artifact": "reports/v2/20261006-reward-core/phase-02/full-regression-final-status.json"
+      },
+      "build": {
+        "result": "PASS, vue-tsc and Vite 77 modules",
+        "exitCode": 0,
+        "sourceStableDuringRun": true,
+        "artifact": "reports/v2/20261006-reward-core/phase-02/build-status.json"
+      },
+      "seededSimulation": {
+        "result": "PASS, 4/4; 10000 normal wolf awards; 10000 boss rolls; 3x100-year seeds",
+        "exitCode": 0,
+        "sourceStableDuringRun": true,
+        "artifact": "reports/v2/20261006-reward-core/phase-02/loot-long-world-final-status.json"
+      },
+      "premiumAudit": {
+        "result": "PASS, 0 findings",
+        "exitCode": 0,
+        "sourceStableDuringRun": true,
+        "artifact": "reports/v2/20261006-reward-core/phase-02/premium-audit-status.json"
+      },
+      "browserRegression": {
+        "result": "PASS, 20 checks",
+        "exitCode": 0,
+        "sourceStableDuringRun": true,
+        "artifact": "reports/v2/20261006-reward-core/phase-02/browser-regression-status.json"
+      },
+      "targetedBrowser": {
+        "result": "PASS, 100+ repeated gear/modal cycles",
+        "exitCode": 0,
+        "startUTC": "2026-10-06T01:50:09.125255+00:00",
+        "endUTC": "2026-10-06T02:00:13.048060+00:00",
+        "durationSeconds": 602.5,
+        "operations": 1025,
+        "reloads": 4,
+        "pageErrors": 0,
+        "rejections": 0,
+        "consoleErrors": [
+          {
+            "url": "http://127.0.0.1:5202/favicon.ico",
+            "text": "404 File not found"
+          }
+        ],
+        "sourceStableDuringRun": true,
+        "harnessStableDuringRun": true,
+        "artifact": "reports/v2/20261006-reward-core/phase-02/targeted-browser-status.json"
+      },
+      "earlierTargetedAttempt": "Failure preserved in reports/v2/20261006-reward-core/phase-02/targeted-original-failure.md",
+      "limitation": "Automated Chromium/runtime review, not a human playtest or native-device validation."
+    },
+    "sourceOrGitMutationsByReviewer": false
+  }
+}

@@ -162,6 +162,25 @@ describe('shop and equipment', () => {
 })
 
 describe('combat and exploration', () => {
+  it('uses the wolf family material payout without adding the legacy generic stack', () => {
+    const wolf = createGame(), wolfCharacter = player(wolf)
+    forest(wolf); expect(encounter(wolf)).toBe('')
+    wolfCharacter.inventory.material = 7
+    wolf.combat!.monsterId = 'wolf'; wolf.combat!.hp = 1; wolf.combat!.maxHp = 1
+    wolfCharacter.stats.strength = 500
+    expect(combatTurn(wolf, 'attack')).toBe('')
+    expect(wolfCharacter.inventory.material).toBe(7)
+    expect(wolf.reward.materials[wolf.activeCharacterId]?.wolfFang).toBe(1)
+
+    const goblin = createGame(), goblinCharacter = player(goblin)
+    forest(goblin); expect(encounter(goblin)).toBe('')
+    goblinCharacter.inventory.material = 7
+    goblin.combat!.monsterId = 'goblin'; goblin.combat!.hp = 1; goblin.combat!.maxHp = 1
+    goblinCharacter.stats.strength = 500
+    expect(combatTurn(goblin, 'attack')).toBe('')
+    expect(goblinCharacter.inventory.material).toBe(8)
+  })
+
   it('earns combat EXP, loot and gold while reducing threat', () => {
     const s = createGame(), c = player(s); forest(s)
     const monsters = s.threat.monsterPopulation, gold = c.gold

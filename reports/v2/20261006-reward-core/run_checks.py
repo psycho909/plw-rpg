@@ -25,7 +25,11 @@ out.mkdir(parents=True, exist_ok=True)
 def fingerprints():
     return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in sorted((ROOT / 'src').rglob('*')) if p.is_file()}
+def harness_fingerprints():
+    return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in sorted(Path(__file__).resolve().parent.rglob('*')) if p.is_file() and p.suffix in {'.py', '.ts'}}
 before = fingerprints()
+harness_before = harness_fingerprints()
 started = datetime.now(timezone.utc)
 start = started.isoformat()
 stamp = started.strftime('%Y%m%dT%H%M%S%fZ')
@@ -38,8 +42,8 @@ with raw_out.open('wb') as stdout, raw_err.open('wb') as stderr:
 for name, path in [('stdout',raw_out),('stderr',raw_err)]:
     write_recorded(out / (args.label + '-' + name + '.txt'), path.read_text(), producer='v2x-check-runner')
 status = {'baseCommit':base_commit,'rawStdout':str(raw_out.relative_to(ROOT)),'rawStderr':str(raw_err.relative_to(ROOT)),
-          'workingTreeSource':True,'sourceSha256':before,'sourceStableDuringRun':before==fingerprints(),
+          'workingTreeSource':True,'harnessSha256':harness_before,'harnessStableDuringRun':harness_before==harness_fingerprints(),'sourceSha256':before,'sourceStableDuringRun':before==fingerprints(),
           'command':command,'startUTC':start,'endUTC':datetime.now(timezone.utc).isoformat(),'exitCode':result.returncode}
 write_recorded(out / (args.label + '-status.json'), json.dumps(status,indent=2)+'\n',producer='v2x-check-runner')
 print(json.dumps({k:status[k] for k in ['baseCommit','sourceStableDuringRun','exitCode','endUTC']}),flush=True)
-sys.exit(result.returncode or (0 if status['sourceStableDuringRun'] else 3))
+sys.exit(result.returncode or (0 if status['sourceStableDuringRun'] and status['harnessStableDuringRun'] else 3))

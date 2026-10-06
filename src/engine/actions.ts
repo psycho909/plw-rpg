@@ -1,6 +1,6 @@
-import { ARCHETYPES, BOSS, BUILDINGS, CONFIG, CROP, DUNGEON, EQUIPMENT, ITEMS, MONSTERS } from '../data/config'
-import type { BuildingId, GameState, ItemId, SkillId } from '../domain/types'
-import { calendar } from './calendar'
+import { ARCHETYPES, BOSS, BUILDINGS, CONFIG, CROP, DUNGEON, ITEMS, MONSTERS } from '../data/config'
+import { ITEM_BASES, RARITIES } from '../data/rewards'
+import type { GameState, ItemId, SkillId } from '../domain/types'
 import { emit } from './events'
 import { random } from './random'
 import { changeReputation, recordLifeAction } from './identity'
@@ -8,11 +8,11 @@ import { MERCENARY_REPUTATION } from '../data/lifeRules'
 import { npcCanWork, rememberNpc } from './npcLife'
 import { recordHunt, recordLivingTrade, tradePriceMultiplier } from './livingEvents'
 import { die, distance, gainExp, player, simulate, stageIndex, threatLevel } from './simulation'
+import { canVisit } from './rewardActions'
+import { awardWolfLoot } from './itemGeneration'
+import { incomingDamage, playerAttackDamage } from './combatStats'
 
-export function canVisit(state: GameState, building: BuildingId) {
-  const c = player(state), b = BUILDINGS[building], hour = calendar(state.worldTime).hour
-  return c.isAlive && !state.combat && !state.dungeon.inDungeon && state.settlement.buildings.includes(building) && distance(c.position, b.position) <= 1 && hour >= b.opens && hour < b.closes
-}
+export { canVisit } from './rewardActions'
 function cost(state: GameState, stamina: number, minutes: number, gold = 0) {
   const c = player(state)
   if (!c.isAlive || state.combat || state.dungeon.inDungeon) return '目前無法進行這項活動。'
@@ -94,6 +94,7 @@ export function equip(state: GameState, item: 'sword' | 'armor') {
   if (!c.isAlive || state.combat) return '目前無法更換裝備。'
   if (!c.inventory[item]) return '背包裡沒有這件裝備。'
   const slot = item === 'sword' ? 'weapon' : 'armor'; c.equipment[slot] = c.equipment[slot] === item ? null : item
+  if (state.reward.equipped[c.id]) state.reward.equipped[c.id]![slot] = null
   state.life.director.lastPlayerActivity = state.worldTime
   return ''
 }
@@ -163,7 +164,7 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
     emit(state, 'combat.ran', 'player', '你撤離了戰鬥。'); return ''
   }
   if (command === 'potion') { const error = usePotion(state); if (error) return error }
-  if (command === 'attack') monster.hp = Math.max(0, monster.hp - Math.max(1, c.stats.strength + c.skills.combat.level + (c.equipment.weapon ? EQUIPMENT.sword.attack : 0) - monster.defense))
+  if (command === 'attack') monster.hp = Math.max(0, monster.hp - playerAttackDamage(state, monster.defense, monster.monsterId === 'wolf'))
   for (const p of state.party) {
     const npc = state.npcs.find(n => n.id === p.npcId && n.isAlive)
     if (!npc) continue
@@ -171,8 +172,13 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
     else if (c.hp > c.maxHp * .25) monster.hp = Math.max(0, monster.hp - Math.max(1, npc.stats.strength / 2 + stageIndex(state) * 2 - monster.defense))
   }
   if (monster.hp <= 0) {
+    const wolfFamilyPayout = !monster.dungeon && monster.monsterId === 'wolf'
+    const wolfLoot = wolfFamilyPayout
+      ? awardWolfLoot(state, { definitionId: 'grayWolf' })
+      : null
     recordHunt(state)
-    c.gold += monster.gold; c.inventory[MONSTERS[monster.monsterId as keyof typeof MONSTERS].loot]++
+    c.gold += monster.gold
+    if (!wolfFamilyPayout) c.inventory[MONSTERS[monster.monsterId as keyof typeof MONSTERS].loot]++
     gainExp(state, c, monster.exp, 'combat'); recordLifeAction(state, 'combat'); state.combat = null; c.status = 'idle'
     if (!monster.dungeon) {
       changeReputation(state, MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss ? 12 : 1, '守護橡谷北方道路')
@@ -196,11 +202,13 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
         emit(state, 'dungeon.cleared', 'world', '廢棄礦坑探索完成，獲得額外鐵礦。', true)
       }
     }
-    emit(state, 'combat.won', 'player', `戰鬥勝利！獲得 ${monster.exp} 經驗與 ${monster.gold} 金幣。`)
+    const gearMessage = wolfLoot?.instance
+      ? ` 另獲得${RARITIES[wolfLoot.instance.rarity].name}${ITEM_BASES[wolfLoot.instance.baseId].name}，可在物品視窗檢視。`
+      : ''
+    emit(state, 'combat.won', 'player', `戰鬥勝利！獲得 ${monster.exp} 經驗與 ${monster.gold} 金幣。${gearMessage}`)
   } else {
     const companionGuard = state.party.some(p => p.archetype === 'fighter') && c.hp <= c.maxHp * .25 ? ARCHETYPES.fighter.guard : 0
-    const damage = Math.max(1, monster.attack - Math.floor(c.stats.vitality / 3) - (c.equipment.armor ? EQUIPMENT.armor.defense : 0) - companionGuard)
-    c.hp = Math.max(0, c.hp - Math.max(1, Math.floor(damage * (command === 'defend' ? .3 : 1))))
+    c.hp = Math.max(0, c.hp - incomingDamage(state, monster.attack, command === 'defend', companionGuard))
     if (!c.hp) die(state, c, '戰鬥傷勢')
   }
   simulate(state, 1)

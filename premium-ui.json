@@ -1,16 +1,25 @@
 {
   "profile": "product-admin",
-  "sourceRoots": ["src"],
+  "sourceRoots": [
+    "src"
+  ],
   "locale": "zh-TW",
   "canonicalMap": "docs/UI.md",
-  "requiredCapabilities": ["Scrollbar", "Toast", "CRUD"],
-  "requiredCommands": ["check", "browser"],
+  "requiredCapabilities": [
+    "Scrollbar",
+    "Toast",
+    "CRUD"
+  ],
+  "requiredCommands": [
+    "check",
+    "browser"
+  ],
   "commands": {
     "check": "npm run check",
-    "browser": "python3 reports/v2/20261004-life-emergence/verify_browser.py"
+    "browser": "python3 reports/v2/20261006-reward-core/phase-02/targeted_browser.py"
   },
   "evidence": {
-    "crudFullFlow": "reports/v2/20261004-life-emergence/verify_browser.py",
-    "failurePaths": "reports/v2/20261004-life-emergence/verify_browser.py"
+    "crudFullFlow": "reports/v2/20261006-reward-core/phase-02/targeted_browser.py",
+    "failurePaths": "reports/v2/20261006-reward-core/phase-02/browser-run/verify_browser.py"
   }
 }

@@ -1,0 +1,70 @@
+# Engine RED — legendary provenance creator semantics
+
+Command: `npm test -- --maxWorkers=1 src/engine/itemGeneration.test.ts`
+Exit code: 1
+
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run --maxWorkers=1 src/engine/itemGeneration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/itemGeneration.test.ts (13 tests | 2 failed) 218ms
+     × keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact 122ms
+     × uses the rare-plus boss rarity pool and preserves generated rolls across save and reload 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > procedural item generation > keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact
+AssertionError: expected 'alden' to be null
+
+- Expected:
+null
+
++ Received:
+"alden"
+
+ ❯ src/engine/itemGeneration.test.ts:54:62
+     52|       expect(item.specialTrait === null || (item.rarity === 'legendary…
+     53|       expect(item.provenance === null || item.rarity === 'legendary').…
+     54|       if (item.provenance) expect(item.provenance.createdBy).toBeNull()
+       |                                                              ^
+     55|     }
+     56|     expect(state.reward.instances).toEqual([])
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ FAIL  src/engine/itemGeneration.test.ts > procedural item generation > uses the rare-plus boss rarity pool and preserves generated rolls across save and reload
+AssertionError: expected 'alden' to be null
+
+- Expected:
+null
+
++ Received:
+"alden"
+
+ ❯ src/engine/itemGeneration.test.ts:78:75
+     76|       const item = generateItem(state, { baseId: 'spear', level: 7, bo…
+     77|       counts[item.rarity as keyof typeof counts]++
+     78|       if (item.rarity === 'legendary') expect(item.provenance?.created…
+       |                                                                           ^
+     79|     }
+     80|     expect(counts.rare).toBeGreaterThan(counts.epic)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 11 passed (13)
+   Start at  01:32:40
+   Duration  659ms (transform 264ms, setup 0ms, import 305ms, tests 218ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+
+```

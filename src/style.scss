@@ -161,6 +161,14 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .item-detail { border: 1px solid var(--border-muted); padding: 18px; }
 .item-portrait { display: block; font-size: 42px; margin-bottom: 12px; }
 .item-detail p { font-size: 12px; margin: 12px 0; }
+.gear-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+.gear-layout > *, .gear-detail { min-width: 0; overflow-wrap: anywhere; }
+.gear-comparison { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-2); margin: var(--space-3) 0; font-size: 12px; }
+.gear-comparison dd { margin: 0; font-family: var(--font-mono); }
+.gear-affixes { margin: var(--space-3) 0; padding-left: var(--space-4); font-size: 12px; line-height: 1.9; }
+.gear-pagination { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); margin: var(--space-4) 0; font-size: 12px; }
+.gear-sale-confirm, .reward-material { border-top: 1px solid var(--border-muted); padding: var(--space-4) 0; }
+.reward-material p { margin: var(--space-3) 0; line-height: 1.9; }
 .action-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .action-buttons button { font-size: 12px; }
 .scene-description { margin-bottom: 16px; }
