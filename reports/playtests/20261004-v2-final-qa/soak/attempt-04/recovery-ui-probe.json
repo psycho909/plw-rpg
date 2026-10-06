@@ -1,0 +1,36 @@
+{
+  "evidenceKind": "supplemental fresh-profile normal-UI save/export probe",
+  "originalAttempt04Profile": "/tmp/plw-rpg-qa-20261004-soak-profile-fay6q2ya",
+  "originalAttempt04ProfileExists": false,
+  "url": "http://127.0.0.1:5195/",
+  "freshProfilePath": "/tmp/plw-rpg-attempt04-ui-probe-lac664tg",
+  "pageAuditBeforeNavigation": [
+    {
+      "url": "about:blank",
+      "title": ""
+    }
+  ],
+  "pageAuditAfterNavigation": [
+    {
+      "url": "http://127.0.0.1:5195/",
+      "title": "在陌生的天空下 — 橡谷"
+    }
+  ],
+  "pageAuditBeforeExport": [],
+  "onlyOneAppPageBeforeInteractions": true,
+  "openingUiCompleted": true,
+  "savedViaUi": true,
+  "exportButtonVisible": false,
+  "downloadCompleted": false,
+  "gameBeforeUiSave": {
+    "worldId": "fef035aa-f0bd-42d7-89a5-32549b24e4c8",
+    "worldTime": 480,
+    "activeCharacterId": "alden"
+  },
+  "gameAfterUiSave": {
+    "worldId": "fef035aa-f0bd-42d7-89a5-32549b24e4c8",
+    "worldTime": 480,
+    "activeCharacterId": "alden"
+  },
+  "error": "TimeoutError: Locator.wait_for: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".pixel-menu\").get_by_role(\"button\", name=\"匯出遊玩紀錄\", exact=True) to be visible\n"
+}

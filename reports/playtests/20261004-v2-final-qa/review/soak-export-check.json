@@ -1,0 +1,60 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "status": "PASS",
+  "exportSha256": "fd1528dd12a60c5007cb6b6f92ce28c06641e9230dd39d46b6250ea17e31cb5a",
+  "archiveRecordCount": 72068,
+  "pendingRecordCount": 5,
+  "totalUniqueExportedRecords": 72073,
+  "pendingDisjointFromArchive": true,
+  "checkpointWorldTime": 290548,
+  "activeCharacterId": "npc-3",
+  "characters": [
+    {
+      "id": "alden",
+      "name": "奧登",
+      "isAlive": false,
+      "deathCause": "戰鬥傷勢",
+      "deathYear": 1,
+      "age": 16,
+      "hp": 0,
+      "status": "dead"
+    },
+    {
+      "id": "npc-1",
+      "name": "米拉 1",
+      "isAlive": false,
+      "deathCause": "戰鬥傷勢",
+      "deathYear": 2,
+      "age": 19,
+      "hp": 0,
+      "status": "dead"
+    },
+    {
+      "id": "npc-2",
+      "name": "羅恩 2",
+      "isAlive": false,
+      "deathCause": "戰鬥傷勢",
+      "deathYear": 2,
+      "age": 21,
+      "hp": 0,
+      "status": "dead"
+    },
+    {
+      "id": "npc-3",
+      "name": "艾妲 3",
+      "isAlive": true,
+      "deathCause": null,
+      "deathYear": null,
+      "age": 23,
+      "hp": 124,
+      "status": "idle"
+    }
+  ],
+  "lifeGenerationByCharacter": {
+    "alden": 1,
+    "npc-1": 2,
+    "npc-2": 3,
+    "npc-3": 4
+  },
+  "note": "Export cutoff differs from final endSnapshot because normal x20 continued. pending records have no assigned ordinal yet; not counted as archive ordinal entries."
+}

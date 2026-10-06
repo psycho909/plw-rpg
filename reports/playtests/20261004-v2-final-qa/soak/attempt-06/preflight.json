@@ -1,0 +1,85 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "sourceManifest": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/build-manifest.json",
+  "url": "http://127.0.0.1:5197/",
+  "startedAtUtc": "2026-10-05T19:03:29.225+00:00",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "normal-ui-start-and-writer-ready",
+      "status": "passed"
+    },
+    {
+      "name": "single-writer-exclusion",
+      "status": "passed",
+      "warning": "另一個遊戲頁面正在使用此存檔，此頁已停止操作。請先關閉其他遊戲頁面，再重新整理此頁以讀取最新進度。\n重新整理",
+      "blockedPageDidNotWrite": true
+    },
+    {
+      "name": "pause-save-reload-continue-core-fields",
+      "status": "passed",
+      "preAppCapturePhase": "loading",
+      "coreFields": [
+        "saveVersion",
+        "worldSeed",
+        "rngState",
+        "worldTime",
+        "activeCharacterId",
+        "characters",
+        "npcs",
+        "tiles",
+        "settlement",
+        "regions",
+        "threat",
+        "dungeon",
+        "life",
+        "history",
+        "party",
+        "crops",
+        "eventSequence"
+      ],
+      "preAppSnapshotPresent": true,
+      "preAppCoreFieldsMatchSaved": true,
+      "preAppCoreFieldDifferences": [],
+      "worldIdMatches": true,
+      "savedActorId": "alden",
+      "loadedActorId": "alden",
+      "sameSavedActor": true,
+      "sameSavedActorEquipment": true,
+      "savedWorldTime": 486,
+      "loadedWorldTime": 486,
+      "foregroundCatchUpMinutes": 0,
+      "reloadElapsedSeconds": 0.709,
+      "foregroundCatchUpLimitMinutes": 3.42
+    },
+    {
+      "name": "normal-ui-play-journal-export",
+      "status": "passed",
+      "suggestedFilename": "oakvale-play-records.json",
+      "archiveAvailable": true,
+      "recordCount": 5,
+      "pendingCount": 0,
+      "exportSha256": "779e815f1db37aa83eea65b729d1d658a2db16644aaa88fc8b18d35a4748d39e"
+    }
+  ],
+  "browserErrors": [
+    {
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+    }
+  ],
+  "method": "Fresh disposable Chromium profile; visible UI actions; localStorage reads only; no state or clock edits.",
+  "manifestCheck": {
+    "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+    "url": "http://127.0.0.1:5197",
+    "buildHashesMatch": true,
+    "servedHashesMatch": true,
+    "assetsSha256": {
+      "assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f",
+      "assets/index-DJZsen7F.js": "a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6",
+      "index.html": "bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a"
+    }
+  },
+  "endedAtUtc": "2026-10-05T19:03:35.996+00:00",
+  "elapsedWallSeconds": 6.771
+}

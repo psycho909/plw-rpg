@@ -1,0 +1,845 @@
+{
+  "sourceCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "expectedAssets": {
+    "assets/index-3j-oQD-G.js": "69f6943b69d9ea376f9d11d4f62277656eea43e0173fa0d24374a76f4f6ff00c",
+    "assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f",
+    "index.html": "4bae8e855ffba8844b2b86db0c9ec18e1ea574feb53f2e35c212b6cb7c0f6d9c"
+  },
+  "diagnostic": "SEPARATE forcedGC context; NOT formal natural-GC soak",
+  "profile": "/tmp/plw-astra-forced-gc-diagnostic-s2h0us8o",
+  "startedAtUtc": "2026-10-05T04:18:17.678+00:00",
+  "status": "completed diagnostic",
+  "steps": [
+    {
+      "atUtc": "2026-10-05T04:18:19.329+00:00",
+      "elapsedSeconds": 1.651,
+      "action": "open fresh isolated profile",
+      "url": "http://127.0.0.1:5195"
+    },
+    {
+      "atUtc": "2026-10-05T04:18:19.481+00:00",
+      "elapsedSeconds": 1.803,
+      "action": "click 起身"
+    },
+    {
+      "atUtc": "2026-10-05T04:18:19.510+00:00",
+      "elapsedSeconds": 1.833,
+      "action": "click ×20"
+    },
+    {
+      "atUtc": "2026-10-05T04:18:49.656+00:00",
+      "elapsedSeconds": 31.979,
+      "action": "open UI",
+      "key": "c",
+      "title": "┤ 角色 ├"
+    },
+    {
+      "atUtc": "2026-10-05T04:18:50.175+00:00",
+      "elapsedSeconds": 32.497,
+      "action": "close UI",
+      "key": "Escape"
+    },
+    {
+      "atUtc": "2026-10-05T04:19:19.669+00:00",
+      "elapsedSeconds": 61.992,
+      "action": "open UI",
+      "key": "i",
+      "title": "┤ 物品 ├"
+    },
+    {
+      "atUtc": "2026-10-05T04:19:20.185+00:00",
+      "elapsedSeconds": 62.507,
+      "action": "close UI",
+      "key": "Escape"
+    },
+    {
+      "atUtc": "2026-10-05T04:19:49.616+00:00",
+      "elapsedSeconds": 91.938,
+      "action": "open UI",
+      "key": "l",
+      "title": "┤ 世界日誌 ├"
+    },
+    {
+      "atUtc": "2026-10-05T04:19:50.135+00:00",
+      "elapsedSeconds": 92.457,
+      "action": "close UI",
+      "key": "Escape"
+    },
+    {
+      "atUtc": "2026-10-05T04:20:19.675+00:00",
+      "elapsedSeconds": 121.997,
+      "action": "open UI",
+      "key": "m",
+      "title": "┤ 地圖與世界 ├"
+    },
+    {
+      "atUtc": "2026-10-05T04:20:20.204+00:00",
+      "elapsedSeconds": 122.526,
+      "action": "close UI",
+      "key": "Escape"
+    },
+    {
+      "atUtc": "2026-10-05T04:20:49.634+00:00",
+      "elapsedSeconds": 151.957,
+      "action": "open UI",
+      "key": "c",
+      "title": "┤ 角色 ├"
+    },
+    {
+      "atUtc": "2026-10-05T04:20:50.170+00:00",
+      "elapsedSeconds": 152.493,
+      "action": "close UI",
+      "key": "Escape"
+    },
+    {
+      "atUtc": "2026-10-05T04:21:19.624+00:00",
+      "elapsedSeconds": 181.946,
+      "action": "open UI",
+      "key": "i",
+      "title": "┤ 物品 ├"
+    },
+    {
+      "atUtc": "2026-10-05T04:21:20.153+00:00",
+      "elapsedSeconds": 182.475,
+      "action": "close UI",
+      "key": "Escape"
+    },
+    {
+      "atUtc": "2026-10-05T04:21:20.214+00:00",
+      "elapsedSeconds": 182.536,
+      "action": "HeapProfiler.collectGarbage requested",
+      "cycle": 1,
+      "scope": "only this isolated diagnostic context"
+    },
+    {
+      "atUtc": "2026-10-05T04:21:20.250+00:00",
+      "elapsedSeconds": 182.573,
+      "action": "HeapProfiler.collectGarbage completed",
+      "cycle": 1
+    },
+    {
+      "atUtc": "2026-10-05T04:21:50.377+00:00",
+      "elapsedSeconds": 212.7,
+      "action": "HeapProfiler.collectGarbage requested",
+      "cycle": 2,
+      "scope": "only this isolated diagnostic context"
+    },
+    {
+      "atUtc": "2026-10-05T04:21:50.399+00:00",
+      "elapsedSeconds": 212.721,
+      "action": "HeapProfiler.collectGarbage completed",
+      "cycle": 2
+    },
+    {
+      "atUtc": "2026-10-05T04:21:50.552+00:00",
+      "elapsedSeconds": 212.874,
+      "action": "closed only diagnostic context"
+    }
+  ],
+  "samples": [
+    {
+      "label": "natural-initial",
+      "atUtc": "2026-10-05T04:18:19.512+00:00",
+      "elapsedSeconds": 1.835,
+      "browser": {
+        "liveElements": 882,
+        "worldTime": 480,
+        "worldId": "5642a6b8-20f5-4893-99f0-9afbbc5d0532",
+        "pending": 0,
+        "activeDialog": null,
+        "speed": "×20"
+      },
+      "cdpHeap": {
+        "usedSize": 5208464,
+        "totalSize": 9027584,
+        "embedderHeapUsedSize": 6989160,
+        "backingStorageSize": 306198
+      },
+      "cdpDom": {
+        "documents": 4,
+        "nodes": 2165,
+        "jsEventListeners": 434
+      },
+      "rss": {
+        "available": true,
+        "rootPid": 160980,
+        "processes": [
+          {
+            "pid": 160980,
+            "rssBytes": 220758016
+          },
+          {
+            "pid": 160997,
+            "rssBytes": 50741248
+          },
+          {
+            "pid": 160998,
+            "rssBytes": 50745344
+          },
+          {
+            "pid": 161035,
+            "rssBytes": 63377408
+          },
+          {
+            "pid": 161036,
+            "rssBytes": 24190976
+          },
+          {
+            "pid": 161069,
+            "rssBytes": 204795904
+          },
+          {
+            "pid": 161078,
+            "rssBytes": 34803712
+          },
+          {
+            "pid": 161079,
+            "rssBytes": 115466240
+          },
+          {
+            "pid": 161019,
+            "rssBytes": 55996416
+          }
+        ],
+        "totalBytes": 820875264,
+        "note": "Process tree sum can double-count shared pages; GC need not return reserved memory to OS."
+      }
+    },
+    {
+      "label": "natural-30s",
+      "atUtc": "2026-10-05T04:18:50.175+00:00",
+      "elapsedSeconds": 32.497,
+      "browser": {
+        "liveElements": 887,
+        "worldTime": 1703,
+        "worldId": "5642a6b8-20f5-4893-99f0-9afbbc5d0532",
+        "pending": 0,
+        "activeDialog": null,
+        "speed": "×20"
+      },
+      "cdpHeap": {
+        "usedSize": 16667328,
+        "totalSize": 32489472,
+        "embedderHeapUsedSize": 5299080,
+        "backingStorageSize": 294486
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 2387,
+        "jsEventListeners": 527
+      },
+      "rss": {
+        "available": true,
+        "rootPid": 160980,
+        "processes": [
+          {
+            "pid": 160980,
+            "rssBytes": 222453760
+          },
+          {
+            "pid": 160997,
+            "rssBytes": 50741248
+          },
+          {
+            "pid": 160998,
+            "rssBytes": 50745344
+          },
+          {
+            "pid": 161035,
+            "rssBytes": 63438848
+          },
+          {
+            "pid": 161036,
+            "rssBytes": 24498176
+          },
+          {
+            "pid": 161069,
+            "rssBytes": 210034688
+          },
+          {
+            "pid": 161078,
+            "rssBytes": 34443264
+          },
+          {
+            "pid": 161079,
+            "rssBytes": 165695488
+          },
+          {
+            "pid": 161019,
+            "rssBytes": 58269696
+          }
+        ],
+        "totalBytes": 880320512,
+        "note": "Process tree sum can double-count shared pages; GC need not return reserved memory to OS."
+      }
+    },
+    {
+      "label": "natural-60s",
+      "atUtc": "2026-10-05T04:19:20.185+00:00",
+      "elapsedSeconds": 62.507,
+      "browser": {
+        "liveElements": 887,
+        "worldTime": 2903,
+        "worldId": "5642a6b8-20f5-4893-99f0-9afbbc5d0532",
+        "pending": 0,
+        "activeDialog": null,
+        "speed": "×20"
+      },
+      "cdpHeap": {
+        "usedSize": 26142728,
+        "totalSize": 44417024,
+        "embedderHeapUsedSize": 9013904,
+        "backingStorageSize": 297550
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 2782,
+        "jsEventListeners": 784
+      },
+      "rss": {
+        "available": true,
+        "rootPid": 160980,
+        "processes": [
+          {
+            "pid": 160980,
+            "rssBytes": 221941760
+          },
+          {
+            "pid": 160997,
+            "rssBytes": 50741248
+          },
+          {
+            "pid": 160998,
+            "rssBytes": 50745344
+          },
+          {
+            "pid": 161035,
+            "rssBytes": 63270912
+          },
+          {
+            "pid": 161036,
+            "rssBytes": 24576000
+          },
+          {
+            "pid": 161069,
+            "rssBytes": 206524416
+          },
+          {
+            "pid": 161078,
+            "rssBytes": 34447360
+          },
+          {
+            "pid": 161079,
+            "rssBytes": 173613056
+          },
+          {
+            "pid": 161019,
+            "rssBytes": 57094144
+          }
+        ],
+        "totalBytes": 882954240,
+        "note": "Process tree sum can double-count shared pages; GC need not return reserved memory to OS."
+      }
+    },
+    {
+      "label": "natural-90s",
+      "atUtc": "2026-10-05T04:19:50.135+00:00",
+      "elapsedSeconds": 92.457,
+      "browser": {
+        "liveElements": 876,
+        "worldTime": 4103,
+        "worldId": "5642a6b8-20f5-4893-99f0-9afbbc5d0532",
+        "pending": 0,
+        "activeDialog": null,
+        "speed": "×20"
+      },
+      "cdpHeap": {
+        "usedSize": 11566908,
+        "totalSize": 37994496,
+        "embedderHeapUsedSize": 10548464,
+        "backingStorageSize": 300840
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 3102,
+        "jsEventListeners": 1048
+      },
+      "rss": {
+        "available": true,
+        "rootPid": 160980,
+        "processes": [
+          {
+            "pid": 160980,
+            "rssBytes": 221966336
+          },
+          {
+            "pid": 160997,
+            "rssBytes": 50741248
+          },
+          {
+            "pid": 160998,
+            "rssBytes": 50745344
+          },
+          {
+            "pid": 161035,
+            "rssBytes": 63270912
+          },
+          {
+            "pid": 161036,
+            "rssBytes": 24576000
+          },
+          {
+            "pid": 161069,
+            "rssBytes": 206524416
+          },
+          {
+            "pid": 161078,
+            "rssBytes": 34447360
+          },
+          {
+            "pid": 161079,
+            "rssBytes": 175108096
+          },
+          {
+            "pid": 161019,
+            "rssBytes": 54562816
+          }
+        ],
+        "totalBytes": 881942528,
+        "note": "Process tree sum can double-count shared pages; GC need not return reserved memory to OS."
+      }
+    },
+    {
+      "label": "natural-120s",
+      "atUtc": "2026-10-05T04:20:20.204+00:00",
+      "elapsedSeconds": 122.526,
+      "browser": {
+        "liveElements": 882,
+        "worldTime": 5307,
+        "worldId": "5642a6b8-20f5-4893-99f0-9afbbc5d0532",
+        "pending": 0,
+        "activeDialog": null,
+        "speed": "×20"
+      },
+      "cdpHeap": {
+        "usedSize": 16697000,
+        "totalSize": 65454080,
+        "embedderHeapUsedSize": 7714328,
+        "backingStorageSize": 294144
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 4549,
+        "jsEventListeners": 886
+      },
+      "rss": {
+        "available": true,
+        "rootPid": 160980,
+        "processes": [
+          {
+            "pid": 160980,
+            "rssBytes": 223584256
+          },
+          {
+            "pid": 160997,
+            "rssBytes": 50741248
+          },
+          {
+            "pid": 160998,
+            "rssBytes": 50745344
+          },
+          {
+            "pid": 161035,
+            "rssBytes": 63508480
+          },
+          {
+            "pid": 161036,
+            "rssBytes": 24920064
+          },
+          {
+            "pid": 161069,
+            "rssBytes": 203321344
+          },
+          {
+            "pid": 161078,
+            "rssBytes": 34951168
+          },
+          {
+            "pid": 161079,
+            "rssBytes": 225366016
+          },
+          {
+            "pid": 161019,
+            "rssBytes": 57229312
+          }
+        ],
+        "totalBytes": 934367232,
+        "note": "Process tree sum can double-count shared pages; GC need not return reserved memory to OS."
+      }
+    },
+    {
+      "label": "natural-150s",
+      "atUtc": "2026-10-05T04:20:50.170+00:00",
+      "elapsedSeconds": 152.493,
+      "browser": {
+        "liveElements": 882,
+        "worldTime": 6503,
+        "worldId": "5642a6b8-20f5-4893-99f0-9afbbc5d0532",
+        "pending": 0,
+        "activeDialog": null,
+        "speed": "×20"
+      },
+      "cdpHeap": {
+        "usedSize": 54718524,
+        "totalSize": 86228992,
+        "embedderHeapUsedSize": 8413496,
+        "backingStorageSize": 296677
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 5083,
+        "jsEventListeners": 1092
+      },
+      "rss": {
+        "available": true,
+        "rootPid": 160980,
+        "processes": [
+          {
+            "pid": 160980,
+            "rssBytes": 223240192
+          },
+          {
+            "pid": 160997,
+            "rssBytes": 50741248
+          },
+          {
+            "pid": 160998,
+            "rssBytes": 50745344
+          },
+          {
+            "pid": 161035,
+            "rssBytes": 63488000
+          },
+          {
+            "pid": 161036,
+            "rssBytes": 24883200
+          },
+          {
+            "pid": 161069,
+            "rssBytes": 203321344
+          },
+          {
+            "pid": 161078,
+            "rssBytes": 34951168
+          },
+          {
+            "pid": 161079,
+            "rssBytes": 226607104
+          },
+          {
+            "pid": 161019,
+            "rssBytes": 58482688
+          }
+        ],
+        "totalBytes": 936460288,
+        "note": "Process tree sum can double-count shared pages; GC need not return reserved memory to OS."
+      }
+    },
+    {
+      "label": "natural-180s",
+      "atUtc": "2026-10-05T04:21:20.153+00:00",
+      "elapsedSeconds": 182.475,
+      "browser": {
+        "liveElements": 882,
+        "worldTime": 7703,
+        "worldId": "5642a6b8-20f5-4893-99f0-9afbbc5d0532",
+        "pending": 0,
+        "activeDialog": null,
+        "speed": "×20"
+      },
+      "cdpHeap": {
+        "usedSize": 12114392,
+        "totalSize": 64995328,
+        "embedderHeapUsedSize": 10690928,
+        "backingStorageSize": 299708
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 5439,
+        "jsEventListeners": 1360
+      },
+      "rss": {
+        "available": true,
+        "rootPid": 160980,
+        "processes": [
+          {
+            "pid": 160980,
+            "rssBytes": 224292864
+          },
+          {
+            "pid": 160997,
+            "rssBytes": 50741248
+          },
+          {
+            "pid": 160998,
+            "rssBytes": 50745344
+          },
+          {
+            "pid": 161035,
+            "rssBytes": 63492096
+          },
+          {
+            "pid": 161036,
+            "rssBytes": 24899584
+          },
+          {
+            "pid": 161069,
+            "rssBytes": 203321344
+          },
+          {
+            "pid": 161078,
+            "rssBytes": 34951168
+          },
+          {
+            "pid": 161079,
+            "rssBytes": 225673216
+          },
+          {
+            "pid": 161019,
+            "rssBytes": 57561088
+          }
+        ],
+        "totalBytes": 935677952,
+        "note": "Process tree sum can double-count shared pages; GC need not return reserved memory to OS."
+      }
+    },
+    {
+      "label": "forced-GC-1-immediate",
+      "atUtc": "2026-10-05T04:21:20.250+00:00",
+      "elapsedSeconds": 182.573,
+      "browser": {
+        "liveElements": 882,
+        "worldTime": 7707,
+        "worldId": "5642a6b8-20f5-4893-99f0-9afbbc5d0532",
+        "pending": 0,
+        "activeDialog": null,
+        "speed": "×20"
+      },
+      "cdpHeap": {
+        "usedSize": 5193668,
+        "totalSize": 5881856,
+        "embedderHeapUsedSize": 4802576,
+        "backingStorageSize": 293796
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 4864,
+        "jsEventListeners": 881
+      },
+      "rss": {
+        "available": true,
+        "rootPid": 160980,
+        "processes": [
+          {
+            "pid": 160980,
+            "rssBytes": 224268288
+          },
+          {
+            "pid": 160997,
+            "rssBytes": 50741248
+          },
+          {
+            "pid": 160998,
+            "rssBytes": 50745344
+          },
+          {
+            "pid": 161035,
+            "rssBytes": 63492096
+          },
+          {
+            "pid": 161036,
+            "rssBytes": 25059328
+          },
+          {
+            "pid": 161069,
+            "rssBytes": 203321344
+          },
+          {
+            "pid": 161078,
+            "rssBytes": 34951168
+          },
+          {
+            "pid": 161079,
+            "rssBytes": 132767744
+          },
+          {
+            "pid": 161019,
+            "rssBytes": 57561088
+          }
+        ],
+        "totalBytes": 842907648,
+        "note": "Process tree sum can double-count shared pages; GC need not return reserved memory to OS."
+      }
+    },
+    {
+      "label": "after-GC-recovery-30s-before-GC2",
+      "atUtc": "2026-10-05T04:21:50.308+00:00",
+      "elapsedSeconds": 212.63,
+      "browser": {
+        "liveElements": 887,
+        "worldTime": 8911,
+        "worldId": "5642a6b8-20f5-4893-99f0-9afbbc5d0532",
+        "pending": 0,
+        "activeDialog": null,
+        "speed": "×20"
+      },
+      "cdpHeap": {
+        "usedSize": 6049280,
+        "totalSize": 27967488,
+        "embedderHeapUsedSize": 5248000,
+        "backingStorageSize": 294560
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 4888,
+        "jsEventListeners": 940
+      },
+      "rss": {
+        "available": true,
+        "rootPid": 160980,
+        "processes": [
+          {
+            "pid": 160980,
+            "rssBytes": 223199232
+          },
+          {
+            "pid": 160997,
+            "rssBytes": 50741248
+          },
+          {
+            "pid": 160998,
+            "rssBytes": 50745344
+          },
+          {
+            "pid": 161035,
+            "rssBytes": 63488000
+          },
+          {
+            "pid": 161036,
+            "rssBytes": 24879104
+          },
+          {
+            "pid": 161069,
+            "rssBytes": 203321344
+          },
+          {
+            "pid": 161078,
+            "rssBytes": 34951168
+          },
+          {
+            "pid": 161079,
+            "rssBytes": 151650304
+          },
+          {
+            "pid": 161019,
+            "rssBytes": 48877568
+          }
+        ],
+        "totalBytes": 851853312,
+        "note": "Process tree sum can double-count shared pages; GC need not return reserved memory to OS."
+      }
+    },
+    {
+      "label": "forced-GC-2-immediate",
+      "atUtc": "2026-10-05T04:21:50.399+00:00",
+      "elapsedSeconds": 212.721,
+      "browser": {
+        "liveElements": 887,
+        "worldTime": 8915,
+        "worldId": "5642a6b8-20f5-4893-99f0-9afbbc5d0532",
+        "pending": 1,
+        "activeDialog": null,
+        "speed": "×20"
+      },
+      "cdpHeap": {
+        "usedSize": 6574356,
+        "totalSize": 7585792,
+        "embedderHeapUsedSize": 5141320,
+        "backingStorageSize": 294081
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 4870,
+        "jsEventListeners": 884
+      },
+      "rss": {
+        "available": true,
+        "rootPid": 160980,
+        "processes": [
+          {
+            "pid": 160980,
+            "rssBytes": 223203328
+          },
+          {
+            "pid": 160997,
+            "rssBytes": 50741248
+          },
+          {
+            "pid": 160998,
+            "rssBytes": 50745344
+          },
+          {
+            "pid": 161035,
+            "rssBytes": 63488000
+          },
+          {
+            "pid": 161036,
+            "rssBytes": 24879104
+          },
+          {
+            "pid": 161069,
+            "rssBytes": 203321344
+          },
+          {
+            "pid": 161078,
+            "rssBytes": 34951168
+          },
+          {
+            "pid": 161079,
+            "rssBytes": 123613184
+          },
+          {
+            "pid": 161019,
+            "rssBytes": 48898048
+          }
+        ],
+        "totalBytes": 823840768,
+        "note": "Process tree sum can double-count shared pages; GC need not return reserved memory to OS."
+      }
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "atUtc": "2026-10-05T04:18:19.107+00:00",
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+    }
+  ],
+  "requestFailures": [],
+  "limitations": [
+    "Only 210 seconds; cannot establish two-hour stability, eventual leaks, or prove formal-soak retention source.",
+    "No heap snapshot/retainer analysis; post-GC recovery only establishes reclaimability in this profile."
+  ],
+  "servedAssetsStart": {
+    "index.html": "4bae8e855ffba8844b2b86db0c9ec18e1ea574feb53f2e35c212b6cb7c0f6d9c",
+    "assets/index-3j-oQD-G.js": "69f6943b69d9ea376f9d11d4f62277656eea43e0173fa0d24374a76f4f6ff00c",
+    "assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f"
+  },
+  "servedAssetsEnd": {
+    "index.html": "4bae8e855ffba8844b2b86db0c9ec18e1ea574feb53f2e35c212b6cb7c0f6d9c",
+    "assets/index-3j-oQD-G.js": "69f6943b69d9ea376f9d11d4f62277656eea43e0173fa0d24374a76f4f6ff00c",
+    "assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f"
+  },
+  "endedAtUtc": "2026-10-05T04:21:50.573+00:00",
+  "elapsedSeconds": 212.895
+}

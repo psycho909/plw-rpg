@@ -1,0 +1,57 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "sourceSha256": {
+    "src/engine/actions.ts": "38ee7e0e014606f07880fbdf5227c071a5974248cce489f24a234e1671fd84d6",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+    "src/engine/identity.ts": "d1038f5f21d107ec87a0398afe7bcd4062e465b5cb815652ca014fd0cccf7fc8",
+    "src/engine/lifeState.ts": "45526f4bc5bb3d560e6b404c6e142f6624d2e40b201c61ea43c8166404faa6d7",
+    "src/engine/livingEvents.ts": "afd535e634752a328d7ae3e0daa3d93cf07c4f7c2473705ed64d3058f02867f4",
+    "src/engine/npcLife.ts": "892a5be0f0d3bfa9f7fea7b962d6d37e3dea567c9551a3c1f16f715456bddb91",
+    "src/engine/ownership.ts": "fef2361be0a18221e7d50d17d97c82b64df360c257cc0598684842c9295f5526",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/simulation.ts": "431f465f34f2dee208a18eddace103b266ae1ac3ca29e82318d53d5cc71c12bc",
+    "src/services/saveService.ts": "bdba6d781a8ec9a04fac5e2904ca82bec14a7612f08aed9031907908b3308d8d",
+    "src/domain/life.ts": "7144387d09afd98abf2b825231fe6278b3e4ec0162f2cd33f7fb80c89e952b4b",
+    "src/domain/types.ts": "08cfe05dede9a7e4a2d8dfeeed3c7dbf910cd0acb7bc1d839a633882e6752c79",
+    "src/data/config.ts": "eefe62b9bf0e05ad6925bd996ec1d64c00665de08135af91c32d94e26277535b",
+    "src/data/identity.ts": "ac9f7c5ff096f3328e2c98e6cc4298204bbb327a231a2c40d22ef24dbd26504a",
+    "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+    "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+    "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2"
+  },
+  "runnerSha256": "e6c3f7c467f26fed40b77ad062c4591c4ffb0b31ecd0cd869d228ec96d0d79f3",
+  "executedAt": "2026-10-05T14:23:22.315Z",
+  "runner": "reports/playtests/20261004-v2-final-qa/engine/extended-engine-validation.mjs",
+  "status": "PASS",
+  "staticScan": {
+    "searchedExtensions": [
+      ".ts",
+      ".tsx",
+      ".js",
+      ".jsx",
+      ".vue"
+    ],
+    "filesSearched": 57,
+    "pattern": "Math.random(",
+    "matchCount": 0,
+    "matches": [],
+    "conclusion": "No Math.random call sites found under src."
+  },
+  "identicalSeedActions": {
+    "seed": 2026,
+    "actions": {
+      "farm.prepare": 1,
+      "farm.plant": 1,
+      "farm.harvest": 1,
+      "gather.iron": 1
+    },
+    "saveReloadBeforeContinuation": true,
+    "stateSha256RunA": "c12244a14e136cd736230beb69ac4a0d004acd2136ace4813535b873507e0a76",
+    "stateSha256RunB": "c12244a14e136cd736230beb69ac4a0d004acd2136ace4813535b873507e0a76",
+    "rngStateRunA": 924864733,
+    "rngStateRunB": 924864733,
+    "exactFullStateEqual": true,
+    "headlessSaveBytes": 82820
+  }
+}

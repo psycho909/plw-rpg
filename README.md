@@ -168,6 +168,8 @@ AGENTS.md
 - [TODO.md](TODO.md)／[CHANGELOG.md](CHANGELOG.md)：backlog 與已完成的重要變更
 - [Design](docs/design/DESIGN.md)／[UI Contract](docs/UI.md)：世界優先設計與實際元件、操作、token 契約
 - [V2 Life & Emergence Spec](docs/specs/V2-LIFE-EMERGENCE.md)：V2 產品規則、系統切片與 Fun Gate 驗收條件
+- [V2 最終 QA](reports/playtests/20261004-v2-final-qa/README.md)：229 tests、最新2小時Chromium、三路Agent探索與長期世界驗證；工程／Browser／Agent PASS WITH FINDINGS，真人Fun Gate仍PENDING
+- [真人 Fun Gate 測試包](reports/playtests/20261004-v2-final-qa/human-fun-gate.md)：1～2小時自由遊玩、八題及觀察欄；不以Agent代填
 - [UI 驗收紀錄](reports/ui/20261003-world-first/README.md)：桌機／平板／手機截圖、遊玩流程與限制
 - [完整遊玩測試](reports/playtests/20261003-comprehensive/README.md)：生活、Boss、世界演化、存檔故障與長時間驗證
 - [單機保存驗證](reports/playtests/20261003-local-autosave/README.md)：即時保存、補寫、匯出與瀏覽器故障恢復

@@ -1,0 +1,2373 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "sourceSha256": {
+    "src/engine/actions.ts": "38ee7e0e014606f07880fbdf5227c071a5974248cce489f24a234e1671fd84d6",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+    "src/engine/identity.ts": "d1038f5f21d107ec87a0398afe7bcd4062e465b5cb815652ca014fd0cccf7fc8",
+    "src/engine/lifeState.ts": "45526f4bc5bb3d560e6b404c6e142f6624d2e40b201c61ea43c8166404faa6d7",
+    "src/engine/livingEvents.ts": "afd535e634752a328d7ae3e0daa3d93cf07c4f7c2473705ed64d3058f02867f4",
+    "src/engine/npcLife.ts": "892a5be0f0d3bfa9f7fea7b962d6d37e3dea567c9551a3c1f16f715456bddb91",
+    "src/engine/ownership.ts": "fef2361be0a18221e7d50d17d97c82b64df360c257cc0598684842c9295f5526",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/simulation.ts": "431f465f34f2dee208a18eddace103b266ae1ac3ca29e82318d53d5cc71c12bc",
+    "src/services/saveService.ts": "bdba6d781a8ec9a04fac5e2904ca82bec14a7612f08aed9031907908b3308d8d",
+    "src/domain/life.ts": "7144387d09afd98abf2b825231fe6278b3e4ec0162f2cd33f7fb80c89e952b4b",
+    "src/domain/types.ts": "08cfe05dede9a7e4a2d8dfeeed3c7dbf910cd0acb7bc1d839a633882e6752c79",
+    "src/data/config.ts": "eefe62b9bf0e05ad6925bd996ec1d64c00665de08135af91c32d94e26277535b",
+    "src/data/identity.ts": "ac9f7c5ff096f3328e2c98e6cc4298204bbb327a231a2c40d22ef24dbd26504a",
+    "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+    "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+    "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2"
+  },
+  "runnerSha256": "e6c3f7c467f26fed40b77ad062c4591c4ffb0b31ecd0cd869d228ec96d0d79f3",
+  "executedAt": "2026-10-05T14:23:22.315Z",
+  "runner": "reports/playtests/20261004-v2-final-qa/engine/extended-engine-validation.mjs",
+  "status": "PASS",
+  "road": {
+    "trigger": "natural createGame(17) + public simulate; no overridden world values",
+    "seed": 17,
+    "startedAt": 84960,
+    "reactionWorldTime": 90720,
+    "startingMetrics": {
+      "worldTime": 90720,
+      "stage": "hamlet",
+      "settlement": {
+        "food": 100,
+        "safety": 100,
+        "prosperity": 100,
+        "infrastructure": 39.92799999999998
+      },
+      "ironReserve": 40,
+      "tradePenalty": 0,
+      "ironBuyPrice": 16,
+      "foodBuyPrice": 10,
+      "tradePriceMultiplier": 1,
+      "activeCharacter": {
+        "id": "alden",
+        "alive": true,
+        "age": 16,
+        "hp": 100,
+        "stamina": 84,
+        "gold": 45,
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 3,
+          "material": 0,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "identity": {
+          "origin": "OTHER_WORLD",
+          "generation": 1,
+          "identities": [
+            "resident"
+          ],
+          "actions": {
+            "combat": 0,
+            "farming": 0,
+            "mining": 0,
+            "woodcutting": 0
+          },
+          "reputation": 0,
+          "reputationHistory": [],
+          "milestones": []
+        }
+      },
+      "properties": []
+    },
+    "branches": [
+      {
+        "label": "Life",
+        "style": "life",
+        "trigger": "Naturally triggered by createGame(17) and daily public simulation; no initial world state was edited.",
+        "startingCheckpointSha256": "c08cf482136f1cc5428ea767cef303120e629fa15789d99553721e816b3e09c3",
+        "startingCheckpointWorldTime": 90720,
+        "stages": [
+          {
+            "worldTime": 84960,
+            "day": 59,
+            "stage": "signal",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "北方道路附近的獸群活動增加，往來的人開始繞路。",
+            "request": null
+          },
+          {
+            "worldTime": 87840,
+            "day": 61,
+            "stage": "development",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "商人回報貨車遭到襲擊，橡谷的北路供應變得不穩。",
+            "request": null
+          },
+          {
+            "worldTime": 90720,
+            "day": 63,
+            "stage": "reaction",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "守衛與樵夫希望有人清理道路周圍的獸群。",
+            "request": {
+              "id": "request-4",
+              "kind": "hunt",
+              "npcId": "npc-3",
+              "arcId": "arc-1",
+              "createdAt": 90720,
+              "expiresAt": 97920,
+              "status": "open",
+              "amount": 2,
+              "progress": 0
+            }
+          },
+          {
+            "worldTime": 98015,
+            "day": 68,
+            "stage": "outcome",
+            "outcome": "ignored",
+            "resolved": false,
+            "narrative": "沒有人處理北方道路的威脅，商隊開始避開橡谷。",
+            "request": {
+              "id": "request-4",
+              "kind": "hunt",
+              "npcId": "npc-3",
+              "arcId": "arc-1",
+              "createdAt": 90720,
+              "expiresAt": 97920,
+              "status": "expired",
+              "amount": 2,
+              "progress": 0
+            }
+          },
+          {
+            "worldTime": 100895,
+            "day": 70,
+            "stage": "consequence",
+            "outcome": "ignored",
+            "resolved": true,
+            "narrative": "北方商路長期受阻，橡谷的安全與交易供應下滑。",
+            "request": {
+              "id": "request-4",
+              "kind": "hunt",
+              "npcId": "npc-3",
+              "arcId": "arc-1",
+              "createdAt": 90720,
+              "expiresAt": 97920,
+              "status": "expired",
+              "amount": 2,
+              "progress": 0
+            }
+          }
+        ],
+        "publicActions": {
+          "farm.prepare": 1,
+          "farm.plant": 1,
+          "farm.harvest": 1
+        },
+        "fights": [],
+        "finalArc": {
+          "id": "arc-1",
+          "kind": "road",
+          "stage": "consequence",
+          "startedAt": 84960,
+          "stageAt": 100800,
+          "resolved": true,
+          "outcome": "ignored",
+          "participants": [
+            "npc-3"
+          ]
+        },
+        "survived": true,
+        "meaningfulRoadIntervention": false,
+        "metricsBefore": {
+          "worldTime": 90720,
+          "stage": "hamlet",
+          "settlement": {
+            "food": 100,
+            "safety": 100,
+            "prosperity": 100,
+            "infrastructure": 39.92799999999998
+          },
+          "ironReserve": 40,
+          "tradePenalty": 0,
+          "ironBuyPrice": 16,
+          "foodBuyPrice": 10,
+          "tradePriceMultiplier": 1,
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 16,
+            "hp": 100,
+            "stamina": 84,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "identity": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": []
+            }
+          },
+          "properties": []
+        },
+        "metricsAfterConsequence": {
+          "worldTime": 100895,
+          "stage": "village",
+          "settlement": {
+            "food": 100,
+            "safety": 92,
+            "prosperity": 97,
+            "infrastructure": 41.719999999999985
+          },
+          "ironReserve": 40,
+          "tradePenalty": 0.2475,
+          "ironBuyPrice": 20,
+          "foodBuyPrice": 13,
+          "tradePriceMultiplier": 1.25,
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 16,
+            "hp": 100,
+            "stamina": 70,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 8,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "identity": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 3,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 1,
+              "reputationHistory": [
+                {
+                  "at": 93695,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                }
+              ],
+              "milestones": []
+            }
+          },
+          "properties": []
+        },
+        "actualWorldDeltas": {
+          "food": 0,
+          "safety": -8,
+          "prosperity": -3,
+          "infrastructure": 1.7920000000000016,
+          "ironReserve": 0,
+          "tradePenalty": 0.2475,
+          "ironBuyPrice": 4,
+          "tradePriceMultiplier": 0.25
+        }
+      },
+      {
+        "label": "Combat",
+        "style": "combat",
+        "trigger": "Naturally triggered by createGame(17) and daily public simulation; no initial world state was edited.",
+        "startingCheckpointSha256": "c08cf482136f1cc5428ea767cef303120e629fa15789d99553721e816b3e09c3",
+        "startingCheckpointWorldTime": 90720,
+        "stages": [
+          {
+            "worldTime": 84960,
+            "day": 59,
+            "stage": "signal",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "北方道路附近的獸群活動增加，往來的人開始繞路。",
+            "request": null
+          },
+          {
+            "worldTime": 87840,
+            "day": 61,
+            "stage": "development",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "商人回報貨車遭到襲擊，橡谷的北路供應變得不穩。",
+            "request": null
+          },
+          {
+            "worldTime": 90720,
+            "day": 63,
+            "stage": "reaction",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "守衛與樵夫希望有人清理道路周圍的獸群。",
+            "request": {
+              "id": "request-4",
+              "kind": "hunt",
+              "npcId": "npc-3",
+              "arcId": "arc-1",
+              "createdAt": 90720,
+              "expiresAt": 97920,
+              "status": "open",
+              "amount": 2,
+              "progress": 0
+            }
+          },
+          {
+            "worldTime": 90808,
+            "day": 63,
+            "stage": "outcome",
+            "outcome": "helped",
+            "resolved": false,
+            "narrative": "幾次成功的狩獵讓北方道路重新安全一些。",
+            "request": {
+              "id": "request-4",
+              "kind": "hunt",
+              "npcId": "npc-3",
+              "arcId": "arc-1",
+              "createdAt": 90720,
+              "expiresAt": 97920,
+              "status": "completed",
+              "amount": 2,
+              "progress": 2
+            }
+          },
+          {
+            "worldTime": 95128,
+            "day": 66,
+            "stage": "consequence",
+            "outcome": "helped",
+            "resolved": true,
+            "narrative": "北方商路逐漸恢復往來，聚落安全與交易供應改善。",
+            "request": {
+              "id": "request-4",
+              "kind": "hunt",
+              "npcId": "npc-3",
+              "arcId": "arc-1",
+              "createdAt": 90720,
+              "expiresAt": 97920,
+              "status": "completed",
+              "amount": 2,
+              "progress": 2
+            }
+          }
+        ],
+        "publicActions": {
+          "encounter": 2,
+          "combatTurn.attack": 8,
+          "fulfillRequest(hunt)": 1
+        },
+        "fights": [
+          {
+            "monsterId": "slime",
+            "turns": 3,
+            "hpAfter": 92,
+            "huntProgress": 1
+          },
+          {
+            "monsterId": "wolf",
+            "turns": 5,
+            "hpAfter": 66,
+            "huntProgress": 2
+          }
+        ],
+        "finalArc": {
+          "id": "arc-1",
+          "kind": "road",
+          "stage": "consequence",
+          "startedAt": 84960,
+          "stageAt": 95040,
+          "resolved": true,
+          "outcome": "helped",
+          "participants": [
+            "npc-3"
+          ]
+        },
+        "survived": true,
+        "meaningfulRoadIntervention": true,
+        "metricsBefore": {
+          "worldTime": 90720,
+          "stage": "hamlet",
+          "settlement": {
+            "food": 100,
+            "safety": 100,
+            "prosperity": 100,
+            "infrastructure": 39.92799999999998
+          },
+          "ironReserve": 40,
+          "tradePenalty": 0,
+          "ironBuyPrice": 16,
+          "foodBuyPrice": 10,
+          "tradePriceMultiplier": 1,
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 16,
+            "hp": 100,
+            "stamina": 84,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "identity": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": []
+            }
+          },
+          "properties": []
+        },
+        "metricsAfterConsequence": {
+          "worldTime": 95128,
+          "stage": "hamlet",
+          "settlement": {
+            "food": 100,
+            "safety": 100,
+            "prosperity": 100,
+            "infrastructure": 40.695999999999984
+          },
+          "ironReserve": 40,
+          "tradePenalty": 0,
+          "ironBuyPrice": 16,
+          "foodBuyPrice": 10,
+          "tradePriceMultiplier": 1,
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 16,
+            "hp": 66,
+            "stamina": 68,
+            "gold": 70,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 2,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "identity": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 2,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 7,
+              "reputationHistory": [
+                {
+                  "at": 90752,
+                  "delta": 1,
+                  "reason": "守護橡谷北方道路"
+                },
+                {
+                  "at": 90757,
+                  "delta": 1,
+                  "reason": "守護橡谷北方道路"
+                },
+                {
+                  "at": 90808,
+                  "delta": 5,
+                  "reason": "完成橡谷生活請求"
+                }
+              ],
+              "milestones": []
+            }
+          },
+          "properties": []
+        },
+        "actualWorldDeltas": {
+          "food": 0,
+          "safety": 0,
+          "prosperity": 0,
+          "infrastructure": 0.7680000000000007,
+          "ironReserve": 0,
+          "tradePenalty": 0,
+          "ironBuyPrice": 0,
+          "tradePriceMultiplier": 0
+        }
+      },
+      {
+        "label": "Mixed",
+        "style": "mixed",
+        "trigger": "Naturally triggered by createGame(17) and daily public simulation; no initial world state was edited.",
+        "startingCheckpointSha256": "c08cf482136f1cc5428ea767cef303120e629fa15789d99553721e816b3e09c3",
+        "startingCheckpointWorldTime": 90720,
+        "stages": [
+          {
+            "worldTime": 84960,
+            "day": 59,
+            "stage": "signal",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "北方道路附近的獸群活動增加，往來的人開始繞路。",
+            "request": null
+          },
+          {
+            "worldTime": 87840,
+            "day": 61,
+            "stage": "development",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "商人回報貨車遭到襲擊，橡谷的北路供應變得不穩。",
+            "request": null
+          },
+          {
+            "worldTime": 90720,
+            "day": 63,
+            "stage": "reaction",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "守衛與樵夫希望有人清理道路周圍的獸群。",
+            "request": {
+              "id": "request-4",
+              "kind": "hunt",
+              "npcId": "npc-3",
+              "arcId": "arc-1",
+              "createdAt": 90720,
+              "expiresAt": 97920,
+              "status": "open",
+              "amount": 2,
+              "progress": 0
+            }
+          },
+          {
+            "worldTime": 93832,
+            "day": 65,
+            "stage": "outcome",
+            "outcome": "helped",
+            "resolved": false,
+            "narrative": "幾次成功的狩獵讓北方道路重新安全一些。",
+            "request": {
+              "id": "request-4",
+              "kind": "hunt",
+              "npcId": "npc-3",
+              "arcId": "arc-1",
+              "createdAt": 90720,
+              "expiresAt": 97920,
+              "status": "completed",
+              "amount": 2,
+              "progress": 2
+            }
+          },
+          {
+            "worldTime": 98152,
+            "day": 68,
+            "stage": "consequence",
+            "outcome": "helped",
+            "resolved": true,
+            "narrative": "北方商路逐漸恢復往來，聚落安全與交易供應改善。",
+            "request": {
+              "id": "request-4",
+              "kind": "hunt",
+              "npcId": "npc-3",
+              "arcId": "arc-1",
+              "createdAt": 90720,
+              "expiresAt": 97920,
+              "status": "completed",
+              "amount": 2,
+              "progress": 2
+            }
+          }
+        ],
+        "publicActions": {
+          "farm.prepare": 1,
+          "farm.plant": 1,
+          "farm.harvest": 1,
+          "encounter": 2,
+          "combatTurn.attack": 7,
+          "fulfillRequest(hunt)": 1
+        },
+        "fights": [
+          {
+            "monsterId": "slime",
+            "turns": 3,
+            "hpAfter": 98,
+            "huntProgress": 1
+          },
+          {
+            "monsterId": "wolf",
+            "turns": 4,
+            "hpAfter": 77,
+            "huntProgress": 2
+          }
+        ],
+        "finalArc": {
+          "id": "arc-1",
+          "kind": "road",
+          "stage": "consequence",
+          "startedAt": 84960,
+          "stageAt": 97920,
+          "resolved": true,
+          "outcome": "helped",
+          "participants": [
+            "npc-3"
+          ]
+        },
+        "survived": true,
+        "meaningfulRoadIntervention": true,
+        "metricsBefore": {
+          "worldTime": 90720,
+          "stage": "hamlet",
+          "settlement": {
+            "food": 100,
+            "safety": 100,
+            "prosperity": 100,
+            "infrastructure": 39.92799999999998
+          },
+          "ironReserve": 40,
+          "tradePenalty": 0,
+          "ironBuyPrice": 16,
+          "foodBuyPrice": 10,
+          "tradePriceMultiplier": 1,
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 16,
+            "hp": 100,
+            "stamina": 84,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "identity": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": []
+            }
+          },
+          "properties": []
+        },
+        "metricsAfterConsequence": {
+          "worldTime": 98152,
+          "stage": "hamlet",
+          "settlement": {
+            "food": 100,
+            "safety": 100,
+            "prosperity": 100,
+            "infrastructure": 41.207999999999984
+          },
+          "ironReserve": 40,
+          "tradePenalty": 0,
+          "ironBuyPrice": 16,
+          "foodBuyPrice": 10,
+          "tradePriceMultiplier": 1,
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 16,
+            "hp": 77,
+            "stamina": 54,
+            "gold": 70,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 8,
+              "material": 2,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "identity": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 2,
+                "farming": 3,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 8,
+              "reputationHistory": [
+                {
+                  "at": 93695,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 93777,
+                  "delta": 1,
+                  "reason": "守護橡谷北方道路"
+                },
+                {
+                  "at": 93781,
+                  "delta": 1,
+                  "reason": "守護橡谷北方道路"
+                },
+                {
+                  "at": 93832,
+                  "delta": 5,
+                  "reason": "完成橡谷生活請求"
+                }
+              ],
+              "milestones": []
+            }
+          },
+          "properties": []
+        },
+        "actualWorldDeltas": {
+          "food": 0,
+          "safety": 0,
+          "prosperity": 0,
+          "infrastructure": 1.2800000000000011,
+          "ironReserve": 0,
+          "tradePenalty": 0,
+          "ironBuyPrice": 0,
+          "tradePriceMultiplier": 0
+        }
+      }
+    ],
+    "interpretation": {
+      "lifeVsMeaningfulIntervention": "Life survives and performs normal farming but does not satisfy the road hunt request; the world resolves it as ignored. Combat and Mixed satisfy that same checkpoint request with public outdoor combat and delivery APIs.",
+      "cappedWorldEffects": "The natural reaction checkpoint had safety and prosperity at 100. Help therefore stayed at the cap; ignore produced observable -8 safety, -3 prosperity and a higher iron purchase price. This is the measured result at this seed, not evidence that helping always has no effect.",
+      "unsupportedActions": [
+        "fund defense",
+        "organize defense",
+        "evacuate residents"
+      ]
+    }
+  },
+  "iron": {
+    "trigger": "player-induced shortage through ten ordinary trade(iron, true) calls after earning gold from public farming and food sales; subsequent arc selection and every stage transition are natural.",
+    "reserveBeforePurchases": 40,
+    "reserveAfterPurchases": 20,
+    "inventoryAfterPurchases": 10,
+    "setupActions": {
+      "trade(iron,buy)": 10
+    },
+    "candidateWeightsAfterPurchases": {
+      "quiet": 228.43332,
+      "arc:road": 7.197894573135983,
+      "arc:iron": 5.160633749759999,
+      "minor:market_bustle": 3.54,
+      "rare:elf": 0.354,
+      "rare:mage": 0.354,
+      "rare:knight": 0.354
+    },
+    "searchElapsedGameDays": 52,
+    "reactionWorldTime": 172280,
+    "startingMetrics": {
+      "worldTime": 172280,
+      "stage": "village",
+      "settlement": {
+        "food": 100,
+        "safety": 98.35000000000005,
+        "prosperity": 100,
+        "infrastructure": 54.96000000000002
+      },
+      "ironReserve": 20,
+      "tradePenalty": 0.1474999999999999,
+      "ironBuyPrice": 19,
+      "foodBuyPrice": 12,
+      "tradePriceMultiplier": 1.15,
+      "activeCharacter": {
+        "id": "alden",
+        "alive": true,
+        "age": 16,
+        "hp": 130,
+        "stamina": 28,
+        "gold": 725,
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 10,
+          "food": 1,
+          "material": 0,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "identity": {
+          "origin": "OTHER_WORLD",
+          "generation": 1,
+          "identities": [
+            "resident",
+            "farmer",
+            "skilledFarmer",
+            "farmOwner"
+          ],
+          "actions": {
+            "combat": 0,
+            "farming": 84,
+            "mining": 0,
+            "woodcutting": 0
+          },
+          "reputation": 28,
+          "reputationHistory": [
+            {
+              "at": 3545,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 3560,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 3575,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 3590,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 7360,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 7375,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 7390,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 7405,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 11395,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 11410,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 11425,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 11440,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 15735,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 15750,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 15765,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 15780,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 20070,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 20085,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 20100,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 20115,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 24405,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 24420,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 24435,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 24450,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 28745,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 28760,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 28775,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            },
+            {
+              "at": 28790,
+              "delta": 1,
+              "reason": "收成補充橡谷糧食"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "identity:farmer",
+              "at": 3560,
+              "text": "成為農夫"
+            },
+            {
+              "id": "ownership:home",
+              "at": 3815,
+              "text": "取得自宅"
+            },
+            {
+              "id": "identity:skilledFarmer",
+              "at": 12780,
+              "text": "成為熟練農夫"
+            },
+            {
+              "id": "reputation:familiar",
+              "at": 28745,
+              "text": "在橡谷的名聲成為熟面孔"
+            },
+            {
+              "id": "ownership:land",
+              "at": 97250,
+              "text": "取得農地"
+            },
+            {
+              "id": "ownership:farmBusiness",
+              "at": 97310,
+              "text": "取得農場事業"
+            },
+            {
+              "id": "identity:farmOwner",
+              "at": 97310,
+              "text": "成為農場主人"
+            }
+          ]
+        }
+      },
+      "properties": [
+        {
+          "id": "property:home:alden",
+          "kind": "home",
+          "ownerId": "alden"
+        },
+        {
+          "id": "property:land:alden",
+          "kind": "land",
+          "ownerId": "alden"
+        },
+        {
+          "id": "property:farmBusiness:alden",
+          "kind": "farmBusiness",
+          "ownerId": "alden"
+        }
+      ]
+    },
+    "branches": [
+      {
+        "outcome": "helped",
+        "startingCheckpointSha256": "9ade853b94203c3de03f03f6e025d2760d38f6c7d71eb716d4a8c1481e335da4",
+        "startingCheckpointWorldTime": 172280,
+        "stages": [
+          {
+            "worldTime": 166520,
+            "day": 115,
+            "stage": "signal",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "鐵匠鋪的鐵料存量下降，常用工具與修理都得排隊。",
+            "request": null
+          },
+          {
+            "worldTime": 169400,
+            "day": 117,
+            "stage": "development",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "鐵料不足開始拖慢橡谷的維修與日常工事。",
+            "request": null
+          },
+          {
+            "worldTime": 172280,
+            "day": 119,
+            "stage": "reaction",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "鐵匠正在尋找能補上存料的人。",
+            "request": {
+              "id": "request-11",
+              "kind": "iron",
+              "npcId": "npc-2",
+              "arcId": "arc-8",
+              "createdAt": 171360,
+              "expiresAt": 178560,
+              "status": "open",
+              "amount": 3,
+              "progress": 0
+            }
+          },
+          {
+            "worldTime": 172290,
+            "day": 119,
+            "stage": "outcome",
+            "outcome": "helped",
+            "resolved": false,
+            "narrative": "送來的鐵料讓鐵匠鋪能繼續修理工具。",
+            "request": {
+              "id": "request-11",
+              "kind": "iron",
+              "npcId": "npc-2",
+              "arcId": "arc-8",
+              "createdAt": 171360,
+              "expiresAt": 178560,
+              "status": "completed",
+              "amount": 3,
+              "progress": 0
+            }
+          },
+          {
+            "worldTime": 176610,
+            "day": 122,
+            "stage": "consequence",
+            "outcome": "helped",
+            "resolved": true,
+            "narrative": "鐵匠鋪恢復工作，橡谷的基礎設施獲得改善。",
+            "request": {
+              "id": "request-11",
+              "kind": "iron",
+              "npcId": "npc-2",
+              "arcId": "arc-8",
+              "createdAt": 171360,
+              "expiresAt": 178560,
+              "status": "completed",
+              "amount": 3,
+              "progress": 0
+            }
+          }
+        ],
+        "publicActions": {
+          "fulfillRequest(iron)": 1
+        },
+        "request": {
+          "id": "request-11",
+          "kind": "iron",
+          "npcId": "npc-2",
+          "arcId": "arc-8",
+          "createdAt": 171360,
+          "expiresAt": 178560,
+          "status": "completed",
+          "amount": 3,
+          "progress": 0
+        },
+        "finalArc": {
+          "id": "arc-8",
+          "kind": "iron",
+          "stage": "consequence",
+          "startedAt": 165600,
+          "stageAt": 175680,
+          "resolved": true,
+          "outcome": "helped",
+          "participants": [
+            "npc-2"
+          ]
+        },
+        "metricsBefore": {
+          "worldTime": 172280,
+          "stage": "village",
+          "settlement": {
+            "food": 100,
+            "safety": 98.35000000000005,
+            "prosperity": 100,
+            "infrastructure": 54.96000000000002
+          },
+          "ironReserve": 20,
+          "tradePenalty": 0.1474999999999999,
+          "ironBuyPrice": 19,
+          "foodBuyPrice": 12,
+          "tradePriceMultiplier": 1.15,
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 16,
+            "hp": 130,
+            "stamina": 28,
+            "gold": 725,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 10,
+              "food": 1,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "identity": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident",
+                "farmer",
+                "skilledFarmer",
+                "farmOwner"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 84,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 28,
+              "reputationHistory": [
+                {
+                  "at": 3545,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3560,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3575,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3590,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7360,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7375,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7390,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7405,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11395,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11410,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11425,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11440,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15735,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15750,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15765,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15780,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20070,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20085,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20100,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20115,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24405,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24420,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24435,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24450,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28745,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28760,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28775,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28790,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "identity:farmer",
+                  "at": 3560,
+                  "text": "成為農夫"
+                },
+                {
+                  "id": "ownership:home",
+                  "at": 3815,
+                  "text": "取得自宅"
+                },
+                {
+                  "id": "identity:skilledFarmer",
+                  "at": 12780,
+                  "text": "成為熟練農夫"
+                },
+                {
+                  "id": "reputation:familiar",
+                  "at": 28745,
+                  "text": "在橡谷的名聲成為熟面孔"
+                },
+                {
+                  "id": "ownership:land",
+                  "at": 97250,
+                  "text": "取得農地"
+                },
+                {
+                  "id": "ownership:farmBusiness",
+                  "at": 97310,
+                  "text": "取得農場事業"
+                },
+                {
+                  "id": "identity:farmOwner",
+                  "at": 97310,
+                  "text": "成為農場主人"
+                }
+              ]
+            }
+          },
+          "properties": [
+            {
+              "id": "property:home:alden",
+              "kind": "home",
+              "ownerId": "alden"
+            },
+            {
+              "id": "property:land:alden",
+              "kind": "land",
+              "ownerId": "alden"
+            },
+            {
+              "id": "property:farmBusiness:alden",
+              "kind": "farmBusiness",
+              "ownerId": "alden"
+            }
+          ]
+        },
+        "metricsAfterConsequence": {
+          "worldTime": 176610,
+          "stage": "village",
+          "settlement": {
+            "food": 100,
+            "safety": 98.50000000000004,
+            "prosperity": 100,
+            "infrastructure": 58.81600000000002
+          },
+          "ironReserve": 38,
+          "tradePenalty": 0.0399999999999999,
+          "ironBuyPrice": 17,
+          "foodBuyPrice": 11,
+          "tradePriceMultiplier": 1.04,
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 17,
+            "hp": 130,
+            "stamina": 28,
+            "gold": 725,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 7,
+              "food": 1,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "identity": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident",
+                "farmer",
+                "skilledFarmer",
+                "farmOwner"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 84,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 33,
+              "reputationHistory": [
+                {
+                  "at": 3545,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3560,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3575,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3590,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7360,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7375,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7390,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7405,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11395,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11410,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11425,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11440,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15735,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15750,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15765,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15780,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20070,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20085,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20100,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20115,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24405,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24420,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24435,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24450,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28745,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28760,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28775,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28790,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 172290,
+                  "delta": 5,
+                  "reason": "完成橡谷生活請求"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "identity:farmer",
+                  "at": 3560,
+                  "text": "成為農夫"
+                },
+                {
+                  "id": "ownership:home",
+                  "at": 3815,
+                  "text": "取得自宅"
+                },
+                {
+                  "id": "identity:skilledFarmer",
+                  "at": 12780,
+                  "text": "成為熟練農夫"
+                },
+                {
+                  "id": "reputation:familiar",
+                  "at": 28745,
+                  "text": "在橡谷的名聲成為熟面孔"
+                },
+                {
+                  "id": "ownership:land",
+                  "at": 97250,
+                  "text": "取得農地"
+                },
+                {
+                  "id": "ownership:farmBusiness",
+                  "at": 97310,
+                  "text": "取得農場事業"
+                },
+                {
+                  "id": "identity:farmOwner",
+                  "at": 97310,
+                  "text": "成為農場主人"
+                }
+              ]
+            }
+          },
+          "properties": [
+            {
+              "id": "property:home:alden",
+              "kind": "home",
+              "ownerId": "alden"
+            },
+            {
+              "id": "property:land:alden",
+              "kind": "land",
+              "ownerId": "alden"
+            },
+            {
+              "id": "property:farmBusiness:alden",
+              "kind": "farmBusiness",
+              "ownerId": "alden"
+            }
+          ]
+        },
+        "actualWorldDeltas": {
+          "food": 0,
+          "safety": 0.14999999999999147,
+          "prosperity": 0,
+          "infrastructure": 3.8559999999999945,
+          "ironReserve": 18,
+          "tradePenalty": -0.10750000000000001,
+          "ironBuyPrice": -2,
+          "tradePriceMultiplier": -0.10999999999999988
+        }
+      },
+      {
+        "outcome": "ignored",
+        "startingCheckpointSha256": "9ade853b94203c3de03f03f6e025d2760d38f6c7d71eb716d4a8c1481e335da4",
+        "startingCheckpointWorldTime": 172280,
+        "stages": [
+          {
+            "worldTime": 166520,
+            "day": 115,
+            "stage": "signal",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "鐵匠鋪的鐵料存量下降，常用工具與修理都得排隊。",
+            "request": null
+          },
+          {
+            "worldTime": 169400,
+            "day": 117,
+            "stage": "development",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "鐵料不足開始拖慢橡谷的維修與日常工事。",
+            "request": null
+          },
+          {
+            "worldTime": 172280,
+            "day": 119,
+            "stage": "reaction",
+            "outcome": "pending",
+            "resolved": false,
+            "narrative": "鐵匠正在尋找能補上存料的人。",
+            "request": {
+              "id": "request-11",
+              "kind": "iron",
+              "npcId": "npc-2",
+              "arcId": "arc-8",
+              "createdAt": 171360,
+              "expiresAt": 178560,
+              "status": "open",
+              "amount": 3,
+              "progress": 0
+            }
+          },
+          {
+            "worldTime": 179480,
+            "day": 124,
+            "stage": "outcome",
+            "outcome": "ignored",
+            "resolved": false,
+            "narrative": "鐵料一直沒有補上，工事與修理只好繼續延後。",
+            "request": {
+              "id": "request-11",
+              "kind": "iron",
+              "npcId": "npc-2",
+              "arcId": "arc-8",
+              "createdAt": 171360,
+              "expiresAt": 178560,
+              "status": "expired",
+              "amount": 3,
+              "progress": 0
+            }
+          },
+          {
+            "worldTime": 182360,
+            "day": 126,
+            "stage": "consequence",
+            "outcome": "ignored",
+            "resolved": true,
+            "narrative": "鐵料短缺留下長期維修欠帳，交易供應也更緊張。",
+            "request": {
+              "id": "request-11",
+              "kind": "iron",
+              "npcId": "npc-2",
+              "arcId": "arc-8",
+              "createdAt": 171360,
+              "expiresAt": 178560,
+              "status": "expired",
+              "amount": 3,
+              "progress": 0
+            }
+          }
+        ],
+        "publicActions": {},
+        "request": {
+          "id": "request-11",
+          "kind": "iron",
+          "npcId": "npc-2",
+          "arcId": "arc-8",
+          "createdAt": 171360,
+          "expiresAt": 178560,
+          "status": "expired",
+          "amount": 3,
+          "progress": 0
+        },
+        "finalArc": {
+          "id": "arc-8",
+          "kind": "iron",
+          "stage": "consequence",
+          "startedAt": 165600,
+          "stageAt": 181440,
+          "resolved": true,
+          "outcome": "ignored",
+          "participants": [
+            "npc-2"
+          ]
+        },
+        "metricsBefore": {
+          "worldTime": 172280,
+          "stage": "village",
+          "settlement": {
+            "food": 100,
+            "safety": 98.35000000000005,
+            "prosperity": 100,
+            "infrastructure": 54.96000000000002
+          },
+          "ironReserve": 20,
+          "tradePenalty": 0.1474999999999999,
+          "ironBuyPrice": 19,
+          "foodBuyPrice": 12,
+          "tradePriceMultiplier": 1.15,
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 16,
+            "hp": 130,
+            "stamina": 28,
+            "gold": 725,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 10,
+              "food": 1,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "identity": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident",
+                "farmer",
+                "skilledFarmer",
+                "farmOwner"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 84,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 28,
+              "reputationHistory": [
+                {
+                  "at": 3545,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3560,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3575,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3590,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7360,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7375,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7390,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7405,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11395,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11410,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11425,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11440,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15735,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15750,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15765,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15780,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20070,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20085,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20100,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20115,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24405,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24420,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24435,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24450,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28745,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28760,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28775,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28790,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "identity:farmer",
+                  "at": 3560,
+                  "text": "成為農夫"
+                },
+                {
+                  "id": "ownership:home",
+                  "at": 3815,
+                  "text": "取得自宅"
+                },
+                {
+                  "id": "identity:skilledFarmer",
+                  "at": 12780,
+                  "text": "成為熟練農夫"
+                },
+                {
+                  "id": "reputation:familiar",
+                  "at": 28745,
+                  "text": "在橡谷的名聲成為熟面孔"
+                },
+                {
+                  "id": "ownership:land",
+                  "at": 97250,
+                  "text": "取得農地"
+                },
+                {
+                  "id": "ownership:farmBusiness",
+                  "at": 97310,
+                  "text": "取得農場事業"
+                },
+                {
+                  "id": "identity:farmOwner",
+                  "at": 97310,
+                  "text": "成為農場主人"
+                }
+              ]
+            }
+          },
+          "properties": [
+            {
+              "id": "property:home:alden",
+              "kind": "home",
+              "ownerId": "alden"
+            },
+            {
+              "id": "property:land:alden",
+              "kind": "land",
+              "ownerId": "alden"
+            },
+            {
+              "id": "property:farmBusiness:alden",
+              "kind": "farmBusiness",
+              "ownerId": "alden"
+            }
+          ]
+        },
+        "metricsAfterConsequence": {
+          "worldTime": 182360,
+          "stage": "village",
+          "settlement": {
+            "food": 100,
+            "safety": 97.10000000000001,
+            "prosperity": 98,
+            "infrastructure": 53.968
+          },
+          "ironReserve": 16,
+          "tradePenalty": 0.3099999999999999,
+          "ironBuyPrice": 21,
+          "foodBuyPrice": 14,
+          "tradePriceMultiplier": 1.31,
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 17,
+            "hp": 130,
+            "stamina": 28,
+            "gold": 725,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 10,
+              "food": 1,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "identity": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident",
+                "farmer",
+                "skilledFarmer",
+                "farmOwner"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 84,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 28,
+              "reputationHistory": [
+                {
+                  "at": 3545,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3560,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3575,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 3590,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7360,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7375,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7390,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 7405,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11395,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11410,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11425,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 11440,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15735,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15750,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15765,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 15780,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20070,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20085,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20100,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 20115,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24405,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24420,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24435,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 24450,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28745,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28760,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28775,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                },
+                {
+                  "at": 28790,
+                  "delta": 1,
+                  "reason": "收成補充橡谷糧食"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "identity:farmer",
+                  "at": 3560,
+                  "text": "成為農夫"
+                },
+                {
+                  "id": "ownership:home",
+                  "at": 3815,
+                  "text": "取得自宅"
+                },
+                {
+                  "id": "identity:skilledFarmer",
+                  "at": 12780,
+                  "text": "成為熟練農夫"
+                },
+                {
+                  "id": "reputation:familiar",
+                  "at": 28745,
+                  "text": "在橡谷的名聲成為熟面孔"
+                },
+                {
+                  "id": "ownership:land",
+                  "at": 97250,
+                  "text": "取得農地"
+                },
+                {
+                  "id": "ownership:farmBusiness",
+                  "at": 97310,
+                  "text": "取得農場事業"
+                },
+                {
+                  "id": "identity:farmOwner",
+                  "at": 97310,
+                  "text": "成為農場主人"
+                }
+              ]
+            }
+          },
+          "properties": [
+            {
+              "id": "property:home:alden",
+              "kind": "home",
+              "ownerId": "alden"
+            },
+            {
+              "id": "property:land:alden",
+              "kind": "land",
+              "ownerId": "alden"
+            },
+            {
+              "id": "property:farmBusiness:alden",
+              "kind": "farmBusiness",
+              "ownerId": "alden"
+            }
+          ]
+        },
+        "actualWorldDeltas": {
+          "food": 0,
+          "safety": -1.2500000000000426,
+          "prosperity": -2,
+          "infrastructure": -0.9920000000000186,
+          "ironReserve": -4,
+          "tradePenalty": 0.16249999999999998,
+          "ironBuyPrice": 2,
+          "tradePriceMultiplier": 0.16000000000000014
+        }
+      }
+    ],
+    "unsupportedActions": [
+      "fund defense",
+      "evacuate residents"
+    ]
+  },
+  "food": {
+    "normalOwnershipRouteSupplyAttempt": {
+      "method": "supplyFarmFood(state, 1)",
+      "settlementFood": 100,
+      "inventoryFood": 1,
+      "result": "聚落糧倉空間不足。",
+      "stateUnchanged": true,
+      "finding": "The full natural granary blocks the contribution; this normal route did not lower food to manufacture an eligible supply."
+    },
+    "passiveNaturalObservation": {
+      "seeds": [
+        {
+          "seed": 17,
+          "simulatedGameYears": 100,
+          "minimumObservedFood": 78,
+          "naturalArcStartsObserved": {
+            "road": 202,
+            "food": 0,
+            "iron": 0
+          },
+          "naturalArcOutcomesObserved": {
+            "road:ignored": 202
+          },
+          "foodArcStartDays": [],
+          "settlementFoodAtEnd": 100,
+          "arcObservationMethod": "Observe the bounded arc collection after every canonical simulated day and retain IDs/outcomes across the full 100-year run."
+        },
+        {
+          "seed": 909,
+          "simulatedGameYears": 100,
+          "minimumObservedFood": 78,
+          "naturalArcStartsObserved": {
+            "road": 204,
+            "food": 0,
+            "iron": 0
+          },
+          "naturalArcOutcomesObserved": {
+            "road:ignored": 203
+          },
+          "foodArcStartDays": [],
+          "settlementFoodAtEnd": 100,
+          "arcObservationMethod": "Observe the bounded arc collection after every canonical simulated day and retain IDs/outcomes across the full 100-year run."
+        },
+        {
+          "seed": 2026,
+          "simulatedGameYears": 100,
+          "minimumObservedFood": 78,
+          "naturalArcStartsObserved": {
+            "road": 201,
+            "food": 0,
+            "iron": 0
+          },
+          "naturalArcOutcomesObserved": {
+            "road:ignored": 201
+          },
+          "foodArcStartDays": [],
+          "settlementFoodAtEnd": 100,
+          "arcObservationMethod": "Observe the bounded arc collection after every canonical simulated day and retain IDs/outcomes across the full 100-year run."
+        }
+      ],
+      "classification": "No food threshold was injected. A food crisis was not produced by passive normal simulation in these seeded worlds."
+    },
+    "finding": "The ordinary world replenishes its granary to capacity, so the supply action is blocked and passive food-crisis eligibility is not reached in the checked seeds. No low-food state was injected for the normal route.",
+    "publicDeliveryApiAvailable": "fulfillRequest(state, requestId) supports a food request when one exists and the actor carries its required amount.",
+    "unsupportedActions": [
+      "fund defense",
+      "evacuate residents"
+    ]
+  },
+  "crossArcLimitations": "No public API funds a defense or evacuates residents. Road help is a public hunt request fulfilled through real outdoor combat; food and iron help use real carried inventory and fulfillRequest."
+}

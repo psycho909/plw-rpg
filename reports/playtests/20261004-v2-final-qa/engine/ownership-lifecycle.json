@@ -1,0 +1,2255 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "sourceSha256": {
+    "src/engine/actions.ts": "38ee7e0e014606f07880fbdf5227c071a5974248cce489f24a234e1671fd84d6",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+    "src/engine/identity.ts": "d1038f5f21d107ec87a0398afe7bcd4062e465b5cb815652ca014fd0cccf7fc8",
+    "src/engine/lifeState.ts": "45526f4bc5bb3d560e6b404c6e142f6624d2e40b201c61ea43c8166404faa6d7",
+    "src/engine/livingEvents.ts": "afd535e634752a328d7ae3e0daa3d93cf07c4f7c2473705ed64d3058f02867f4",
+    "src/engine/npcLife.ts": "892a5be0f0d3bfa9f7fea7b962d6d37e3dea567c9551a3c1f16f715456bddb91",
+    "src/engine/ownership.ts": "fef2361be0a18221e7d50d17d97c82b64df360c257cc0598684842c9295f5526",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/simulation.ts": "431f465f34f2dee208a18eddace103b266ae1ac3ca29e82318d53d5cc71c12bc",
+    "src/services/saveService.ts": "bdba6d781a8ec9a04fac5e2904ca82bec14a7612f08aed9031907908b3308d8d",
+    "src/domain/life.ts": "7144387d09afd98abf2b825231fe6278b3e4ec0162f2cd33f7fb80c89e952b4b",
+    "src/domain/types.ts": "08cfe05dede9a7e4a2d8dfeeed3c7dbf910cd0acb7bc1d839a633882e6752c79",
+    "src/data/config.ts": "eefe62b9bf0e05ad6925bd996ec1d64c00665de08135af91c32d94e26277535b",
+    "src/data/identity.ts": "ac9f7c5ff096f3328e2c98e6cc4298204bbb327a231a2c40d22ef24dbd26504a",
+    "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+    "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+    "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2"
+  },
+  "runnerSha256": "e6c3f7c467f26fed40b77ad062c4591c4ffb0b31ecd0cd869d228ec96d0d79f3",
+  "executedAt": "2026-10-05T14:23:22.315Z",
+  "runner": "reports/playtests/20261004-v2-final-qa/engine/extended-engine-validation.mjs",
+  "status": "PASS",
+  "ownerRoute": {
+    "seed": 909,
+    "fixture": "Normal createGame(seed); no world-time, gold, inventory, food, identity, reputation, age, or settlement-state injection.",
+    "publicRoute": [
+      {
+        "action": "buyProperty(home)",
+        "at": 3815,
+        "gold": 100
+      },
+      {
+        "action": "buyProperty(land)",
+        "at": 97250,
+        "gold": 1105,
+        "identity": [
+          "resident",
+          "farmer",
+          "skilledFarmer"
+        ],
+        "reputation": 28
+      },
+      {
+        "action": "buyProperty(farmBusiness)",
+        "at": 97310,
+        "gold": 885,
+        "identity": [
+          "resident",
+          "farmer",
+          "skilledFarmer",
+          "farmOwner"
+        ],
+        "reputation": 28
+      }
+    ],
+    "actionCounts": {
+      "farm.prepare": 28,
+      "farm.plant": 28,
+      "farm.harvest": 28,
+      "sellFood": 256,
+      "property.home": 1,
+      "homeRest": 6,
+      "property.land": 1,
+      "property.farmBusiness": 1
+    },
+    "checkpoints": [],
+    "propertyOwnerId": "alden",
+    "startedAtWorldTime": 480,
+    "foodSupplyAttempt": {
+      "method": "supplyFarmFood(state, 1)",
+      "settlementFood": 100,
+      "inventoryFood": 1,
+      "result": "聚落糧倉空間不足。",
+      "stateUnchanged": true,
+      "finding": "The full natural granary blocks the contribution; this normal route did not lower food to manufacture an eligible supply."
+    },
+    "acquisition": {
+      "worldTime": 97310,
+      "elapsedGameDaysFromNewWorld": 67,
+      "settlementStage": "village",
+      "daysWaitingForNaturalVillageGrowth": 47,
+      "gold": 885,
+      "identity": [
+        "resident",
+        "farmer",
+        "skilledFarmer",
+        "farmOwner"
+      ],
+      "reputation": 28,
+      "reputationHistory": [
+        {
+          "at": 3545,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 3560,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 3575,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 3590,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 7360,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 7375,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 7390,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 7405,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 11395,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 11410,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 11425,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 11440,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 15735,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 15750,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 15765,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 15780,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 20070,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 20085,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 20100,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 20115,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 24405,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 24420,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 24435,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 24450,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 28745,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 28760,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 28775,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        },
+        {
+          "at": 28790,
+          "delta": 1,
+          "reason": "收成補充橡谷糧食"
+        }
+      ],
+      "properties": [
+        {
+          "id": "property:home:alden",
+          "kind": "home",
+          "ownerId": "alden",
+          "acquiredAt": 3815,
+          "position": {
+            "x": 7,
+            "y": 10
+          },
+          "storage": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 0,
+            "food": 0,
+            "material": 0,
+            "potion": 0,
+            "sword": 0,
+            "armor": 0
+          },
+          "foodSupplied": 0,
+          "suppliedDay": 2,
+          "suppliedToday": 0
+        },
+        {
+          "id": "property:land:alden",
+          "kind": "land",
+          "ownerId": "alden",
+          "acquiredAt": 97250,
+          "position": {
+            "x": 16,
+            "y": 9
+          },
+          "storage": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 0,
+            "food": 0,
+            "material": 0,
+            "potion": 0,
+            "sword": 0,
+            "armor": 0
+          },
+          "foodSupplied": 0,
+          "suppliedDay": 67,
+          "suppliedToday": 0
+        },
+        {
+          "id": "property:farmBusiness:alden",
+          "kind": "farmBusiness",
+          "ownerId": "alden",
+          "acquiredAt": 97310,
+          "position": {
+            "x": 17,
+            "y": 10
+          },
+          "storage": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 0,
+            "food": 0,
+            "material": 0,
+            "potion": 0,
+            "sword": 0,
+            "armor": 0
+          },
+          "foodSupplied": 0,
+          "suppliedDay": 67,
+          "suppliedToday": 0
+        }
+      ],
+      "settlement": {
+        "food": 100,
+        "prosperity": 100,
+        "safety": 100
+      },
+      "actionCounts": {
+        "farm.prepare": 28,
+        "farm.plant": 28,
+        "farm.harvest": 28,
+        "sellFood": 256,
+        "property.home": 1,
+        "homeRest": 6,
+        "property.land": 1,
+        "property.farmBusiness": 1
+      }
+    },
+    "status": "PASS"
+  },
+  "longTerm": {
+    "status": "PASS",
+    "startWorldTime": 97310,
+    "ownerId": "alden",
+    "properties": [
+      {
+        "id": "property:home:alden",
+        "kind": "home",
+        "ownerId": "alden"
+      },
+      {
+        "id": "property:land:alden",
+        "kind": "land",
+        "ownerId": "alden"
+      },
+      {
+        "id": "property:farmBusiness:alden",
+        "kind": "farmBusiness",
+        "ownerId": "alden"
+      }
+    ],
+    "saveMode": "headless SaveService.serialize/deserialize only; no browser IndexedDB playJournal is present in these engine measurements.",
+    "yearsStepped": 100,
+    "reloads": 100,
+    "successionEvents": [
+      {
+        "at": 11156510,
+        "elapsedGameYears": 64,
+        "deceasedId": "alden",
+        "deceasedAge": 80,
+        "successorId": "npc-105",
+        "successorAge": 15,
+        "legacyPropertyOwners": [
+          {
+            "kind": "home",
+            "ownerId": "alden"
+          },
+          {
+            "kind": "land",
+            "ownerId": "alden"
+          },
+          {
+            "kind": "farmBusiness",
+            "ownerId": "alden"
+          }
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "elapsedGameYear": 10,
+        "worldTime": 1825310,
+        "activeCharacter": {
+          "id": "alden",
+          "alive": true,
+          "age": 26,
+          "life": {
+            "origin": "OTHER_WORLD",
+            "generation": 1,
+            "identities": [
+              "resident",
+              "farmer",
+              "skilledFarmer",
+              "farmOwner"
+            ],
+            "actions": {
+              "combat": 0,
+              "farming": 84,
+              "mining": 0,
+              "woodcutting": 0
+            },
+            "reputation": 28,
+            "reputationHistory": [
+              {
+                "at": 3545,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3560,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3575,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3590,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7360,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7375,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7390,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7405,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11395,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11410,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11425,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11440,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15735,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15750,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15765,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15780,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20070,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20085,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20100,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20115,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24405,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24420,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24435,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24450,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28745,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28760,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28775,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28790,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "identity:farmer",
+                "at": 3560,
+                "text": "成為農夫"
+              },
+              {
+                "id": "ownership:home",
+                "at": 3815,
+                "text": "取得自宅"
+              },
+              {
+                "id": "identity:skilledFarmer",
+                "at": 12780,
+                "text": "成為熟練農夫"
+              },
+              {
+                "id": "reputation:familiar",
+                "at": 28745,
+                "text": "在橡谷的名聲成為熟面孔"
+              },
+              {
+                "id": "ownership:land",
+                "at": 97250,
+                "text": "取得農地"
+              },
+              {
+                "id": "ownership:farmBusiness",
+                "at": 97310,
+                "text": "取得農場事業"
+              },
+              {
+                "id": "identity:farmOwner",
+                "at": 97310,
+                "text": "成為農場主人"
+              }
+            ]
+          },
+          "skills": {
+            "combat": {
+              "level": 1,
+              "exp": 0
+            },
+            "farming": {
+              "level": 8,
+              "exp": 0
+            },
+            "mining": {
+              "level": 1,
+              "exp": 0
+            },
+            "woodcutting": {
+              "level": 1,
+              "exp": 0
+            }
+          }
+        },
+        "originalOwner": {
+          "id": "alden",
+          "alive": true,
+          "age": 26,
+          "identity": {
+            "origin": "OTHER_WORLD",
+            "generation": 1,
+            "identities": [
+              "resident",
+              "farmer",
+              "skilledFarmer",
+              "farmOwner"
+            ],
+            "actions": {
+              "combat": 0,
+              "farming": 84,
+              "mining": 0,
+              "woodcutting": 0
+            },
+            "reputation": 28,
+            "reputationHistory": [
+              {
+                "at": 3545,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3560,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3575,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3590,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7360,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7375,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7390,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7405,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11395,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11410,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11425,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11440,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15735,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15750,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15765,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15780,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20070,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20085,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20100,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20115,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24405,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24420,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24435,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24450,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28745,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28760,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28775,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28790,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "identity:farmer",
+                "at": 3560,
+                "text": "成為農夫"
+              },
+              {
+                "id": "ownership:home",
+                "at": 3815,
+                "text": "取得自宅"
+              },
+              {
+                "id": "identity:skilledFarmer",
+                "at": 12780,
+                "text": "成為熟練農夫"
+              },
+              {
+                "id": "reputation:familiar",
+                "at": 28745,
+                "text": "在橡谷的名聲成為熟面孔"
+              },
+              {
+                "id": "ownership:land",
+                "at": 97250,
+                "text": "取得農地"
+              },
+              {
+                "id": "ownership:farmBusiness",
+                "at": 97310,
+                "text": "取得農場事業"
+              },
+              {
+                "id": "identity:farmOwner",
+                "at": 97310,
+                "text": "成為農場主人"
+              }
+            ]
+          }
+        },
+        "properties": [
+          {
+            "id": "property:home:alden",
+            "kind": "home",
+            "ownerId": "alden"
+          },
+          {
+            "id": "property:land:alden",
+            "kind": "land",
+            "ownerId": "alden"
+          },
+          {
+            "id": "property:farmBusiness:alden",
+            "kind": "farmBusiness",
+            "ownerId": "alden"
+          }
+        ],
+        "originalOwnerRetained": true,
+        "successorHasInheritedOwnership": true,
+        "propertyOwnerIdsUnchanged": true,
+        "settlement": {
+          "name": "橡谷",
+          "stage": "town",
+          "capacity": 80,
+          "food": 100,
+          "prosperity": 100,
+          "safety": 25,
+          "infrastructure": 100,
+          "growth": 1722.0568503466286,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn",
+            "tavern",
+            "blacksmith"
+          ]
+        },
+        "population": 80,
+        "worldHistory": 99,
+        "eventList": 150,
+        "featuredNpcLifeRecords": 6,
+        "memoryCounts": {
+          "world": 1,
+          "settlement": 0
+        },
+        "arcCounts": {
+          "arcs": 12,
+          "requests": 12,
+          "news": 60
+        },
+        "headlessSaveBytes": 220380,
+        "saveReloadMs": 4.120478000000276,
+        "lastYearSimulationMs": 22.158312000000024,
+        "elapsedRunnerMs": 686.6931150000003
+      },
+      {
+        "elapsedGameYear": 50,
+        "worldTime": 8737310,
+        "activeCharacter": {
+          "id": "alden",
+          "alive": true,
+          "age": 66,
+          "life": {
+            "origin": "OTHER_WORLD",
+            "generation": 1,
+            "identities": [
+              "resident",
+              "farmer",
+              "skilledFarmer",
+              "farmOwner"
+            ],
+            "actions": {
+              "combat": 0,
+              "farming": 84,
+              "mining": 0,
+              "woodcutting": 0
+            },
+            "reputation": 28,
+            "reputationHistory": [
+              {
+                "at": 3545,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3560,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3575,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3590,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7360,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7375,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7390,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7405,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11395,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11410,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11425,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11440,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15735,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15750,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15765,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15780,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20070,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20085,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20100,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20115,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24405,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24420,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24435,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24450,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28745,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28760,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28775,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28790,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "identity:farmer",
+                "at": 3560,
+                "text": "成為農夫"
+              },
+              {
+                "id": "ownership:home",
+                "at": 3815,
+                "text": "取得自宅"
+              },
+              {
+                "id": "identity:skilledFarmer",
+                "at": 12780,
+                "text": "成為熟練農夫"
+              },
+              {
+                "id": "reputation:familiar",
+                "at": 28745,
+                "text": "在橡谷的名聲成為熟面孔"
+              },
+              {
+                "id": "ownership:land",
+                "at": 97250,
+                "text": "取得農地"
+              },
+              {
+                "id": "ownership:farmBusiness",
+                "at": 97310,
+                "text": "取得農場事業"
+              },
+              {
+                "id": "identity:farmOwner",
+                "at": 97310,
+                "text": "成為農場主人"
+              }
+            ]
+          },
+          "skills": {
+            "combat": {
+              "level": 1,
+              "exp": 0
+            },
+            "farming": {
+              "level": 8,
+              "exp": 0
+            },
+            "mining": {
+              "level": 1,
+              "exp": 0
+            },
+            "woodcutting": {
+              "level": 1,
+              "exp": 0
+            }
+          }
+        },
+        "originalOwner": {
+          "id": "alden",
+          "alive": true,
+          "age": 66,
+          "identity": {
+            "origin": "OTHER_WORLD",
+            "generation": 1,
+            "identities": [
+              "resident",
+              "farmer",
+              "skilledFarmer",
+              "farmOwner"
+            ],
+            "actions": {
+              "combat": 0,
+              "farming": 84,
+              "mining": 0,
+              "woodcutting": 0
+            },
+            "reputation": 28,
+            "reputationHistory": [
+              {
+                "at": 3545,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3560,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3575,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3590,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7360,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7375,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7390,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7405,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11395,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11410,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11425,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11440,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15735,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15750,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15765,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15780,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20070,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20085,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20100,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20115,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24405,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24420,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24435,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24450,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28745,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28760,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28775,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28790,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "identity:farmer",
+                "at": 3560,
+                "text": "成為農夫"
+              },
+              {
+                "id": "ownership:home",
+                "at": 3815,
+                "text": "取得自宅"
+              },
+              {
+                "id": "identity:skilledFarmer",
+                "at": 12780,
+                "text": "成為熟練農夫"
+              },
+              {
+                "id": "reputation:familiar",
+                "at": 28745,
+                "text": "在橡谷的名聲成為熟面孔"
+              },
+              {
+                "id": "ownership:land",
+                "at": 97250,
+                "text": "取得農地"
+              },
+              {
+                "id": "ownership:farmBusiness",
+                "at": 97310,
+                "text": "取得農場事業"
+              },
+              {
+                "id": "identity:farmOwner",
+                "at": 97310,
+                "text": "成為農場主人"
+              }
+            ]
+          }
+        },
+        "properties": [
+          {
+            "id": "property:home:alden",
+            "kind": "home",
+            "ownerId": "alden"
+          },
+          {
+            "id": "property:land:alden",
+            "kind": "land",
+            "ownerId": "alden"
+          },
+          {
+            "id": "property:farmBusiness:alden",
+            "kind": "farmBusiness",
+            "ownerId": "alden"
+          }
+        ],
+        "originalOwnerRetained": true,
+        "successorHasInheritedOwnership": true,
+        "propertyOwnerIdsUnchanged": true,
+        "settlement": {
+          "name": "橡谷",
+          "stage": "town",
+          "capacity": 80,
+          "food": 100,
+          "prosperity": 100,
+          "safety": 25,
+          "infrastructure": 100,
+          "growth": 8855.478872746873,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn",
+            "tavern",
+            "blacksmith"
+          ]
+        },
+        "population": 80,
+        "worldHistory": 306,
+        "eventList": 150,
+        "featuredNpcLifeRecords": 8,
+        "memoryCounts": {
+          "world": 9,
+          "settlement": 0
+        },
+        "arcCounts": {
+          "arcs": 12,
+          "requests": 12,
+          "news": 60
+        },
+        "headlessSaveBytes": 293264,
+        "saveReloadMs": 22.375926000000618,
+        "lastYearSimulationMs": 35.28886700000021,
+        "elapsedRunnerMs": 2755.136875
+      },
+      {
+        "elapsedGameYear": 100,
+        "worldTime": 17377310,
+        "activeCharacter": {
+          "id": "npc-105",
+          "alive": true,
+          "age": 51,
+          "life": {
+            "origin": "LOCAL_WORLD",
+            "generation": 2,
+            "identities": [
+              "resident",
+              "farmer"
+            ],
+            "actions": {
+              "combat": 0,
+              "farming": 0,
+              "mining": 0,
+              "woodcutting": 0
+            },
+            "reputation": 0,
+            "reputationHistory": [],
+            "milestones": [
+              {
+                "id": "identity:farmer",
+                "at": 11156510,
+                "text": "成為農夫"
+              }
+            ]
+          },
+          "skills": {
+            "combat": {
+              "level": 1,
+              "exp": 0
+            },
+            "farming": {
+              "level": 4,
+              "exp": 16
+            },
+            "mining": {
+              "level": 1,
+              "exp": 0
+            },
+            "woodcutting": {
+              "level": 1,
+              "exp": 0
+            }
+          }
+        },
+        "originalOwner": {
+          "id": "alden",
+          "alive": false,
+          "age": 80,
+          "identity": {
+            "origin": "OTHER_WORLD",
+            "generation": 1,
+            "identities": [
+              "resident",
+              "farmer",
+              "skilledFarmer",
+              "farmOwner"
+            ],
+            "actions": {
+              "combat": 0,
+              "farming": 84,
+              "mining": 0,
+              "woodcutting": 0
+            },
+            "reputation": 28,
+            "reputationHistory": [
+              {
+                "at": 3545,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3560,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3575,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 3590,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7360,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7375,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7390,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 7405,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11395,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11410,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11425,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 11440,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15735,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15750,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15765,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 15780,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20070,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20085,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20100,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 20115,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24405,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24420,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24435,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 24450,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28745,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28760,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28775,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              },
+              {
+                "at": 28790,
+                "delta": 1,
+                "reason": "收成補充橡谷糧食"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "identity:farmer",
+                "at": 3560,
+                "text": "成為農夫"
+              },
+              {
+                "id": "ownership:home",
+                "at": 3815,
+                "text": "取得自宅"
+              },
+              {
+                "id": "identity:skilledFarmer",
+                "at": 12780,
+                "text": "成為熟練農夫"
+              },
+              {
+                "id": "reputation:familiar",
+                "at": 28745,
+                "text": "在橡谷的名聲成為熟面孔"
+              },
+              {
+                "id": "ownership:land",
+                "at": 97250,
+                "text": "取得農地"
+              },
+              {
+                "id": "ownership:farmBusiness",
+                "at": 97310,
+                "text": "取得農場事業"
+              },
+              {
+                "id": "identity:farmOwner",
+                "at": 97310,
+                "text": "成為農場主人"
+              },
+              {
+                "id": "death-alden",
+                "at": 11059200,
+                "text": "奧登 因自然老化離世，享年80歲。"
+              }
+            ]
+          }
+        },
+        "properties": [
+          {
+            "id": "property:home:alden",
+            "kind": "home",
+            "ownerId": "alden"
+          },
+          {
+            "id": "property:land:alden",
+            "kind": "land",
+            "ownerId": "alden"
+          },
+          {
+            "id": "property:farmBusiness:alden",
+            "kind": "farmBusiness",
+            "ownerId": "alden"
+          }
+        ],
+        "originalOwnerRetained": true,
+        "successorHasInheritedOwnership": false,
+        "propertyOwnerIdsUnchanged": true,
+        "settlement": {
+          "name": "橡谷",
+          "stage": "town",
+          "capacity": 80,
+          "food": 100,
+          "prosperity": 99.26200000000001,
+          "safety": 25.1,
+          "infrastructure": 100,
+          "growth": 17085.032587948142,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn",
+            "tavern",
+            "blacksmith"
+          ]
+        },
+        "population": 80,
+        "worldHistory": 617,
+        "eventList": 150,
+        "featuredNpcLifeRecords": 14,
+        "memoryCounts": {
+          "world": 13,
+          "settlement": 0
+        },
+        "arcCounts": {
+          "arcs": 12,
+          "requests": 12,
+          "news": 60
+        },
+        "headlessSaveBytes": 329745,
+        "saveReloadMs": 7.222321000000193,
+        "lastYearSimulationMs": 68.44707800000015,
+        "elapsedRunnerMs": 6289.5761760000005
+      }
+    ],
+    "timings": [
+      {
+        "elapsedGameYear": 1,
+        "simMs": 93.03396799999996,
+        "saveReloadMs": 9.116474000000153,
+        "saveBytes": 141868
+      },
+      {
+        "elapsedGameYear": 2,
+        "simMs": 91.155577,
+        "saveReloadMs": 3.652792999999974,
+        "saveBytes": 167430
+      },
+      {
+        "elapsedGameYear": 3,
+        "simMs": 80.62373000000025,
+        "saveReloadMs": 4.903076999999939,
+        "saveBytes": 191677
+      },
+      {
+        "elapsedGameYear": 4,
+        "simMs": 81.51347200000009,
+        "saveReloadMs": 9.137686999999914,
+        "saveBytes": 206072
+      },
+      {
+        "elapsedGameYear": 5,
+        "simMs": 86.17663600000014,
+        "saveReloadMs": 8.927188999999998,
+        "saveBytes": 216188
+      },
+      {
+        "elapsedGameYear": 6,
+        "simMs": 20.933054999999968,
+        "saveReloadMs": 3.7158180000001266,
+        "saveBytes": 217599
+      },
+      {
+        "elapsedGameYear": 7,
+        "simMs": 51.50471199999993,
+        "saveReloadMs": 7.652037000000291,
+        "saveBytes": 218894
+      },
+      {
+        "elapsedGameYear": 8,
+        "simMs": 22.401256999999987,
+        "saveReloadMs": 7.276231999999709,
+        "saveBytes": 219604
+      },
+      {
+        "elapsedGameYear": 9,
+        "simMs": 52.41476300000022,
+        "saveReloadMs": 8.00290700000005,
+        "saveBytes": 220116
+      },
+      {
+        "elapsedGameYear": 10,
+        "simMs": 22.158312000000024,
+        "saveReloadMs": 4.120478000000276,
+        "saveBytes": 220380
+      },
+      {
+        "elapsedGameYear": 11,
+        "simMs": 25.385153000000173,
+        "saveReloadMs": 3.248923999999988,
+        "saveBytes": 220776
+      },
+      {
+        "elapsedGameYear": 12,
+        "simMs": 16.54924200000005,
+        "saveReloadMs": 5.813096999999743,
+        "saveBytes": 221293
+      },
+      {
+        "elapsedGameYear": 13,
+        "simMs": 43.39041899999984,
+        "saveReloadMs": 4.370734000000084,
+        "saveBytes": 221922
+      },
+      {
+        "elapsedGameYear": 14,
+        "simMs": 32.82576300000028,
+        "saveReloadMs": 6.477427999999691,
+        "saveBytes": 222277
+      },
+      {
+        "elapsedGameYear": 15,
+        "simMs": 78.69768400000021,
+        "saveReloadMs": 6.286449999999604,
+        "saveBytes": 223629
+      },
+      {
+        "elapsedGameYear": 16,
+        "simMs": 96.64696000000004,
+        "saveReloadMs": 5.876263000000108,
+        "saveBytes": 233101
+      },
+      {
+        "elapsedGameYear": 17,
+        "simMs": 75.45967199999996,
+        "saveReloadMs": 9.423395999999684,
+        "saveBytes": 234345
+      },
+      {
+        "elapsedGameYear": 18,
+        "simMs": 34.04442900000004,
+        "saveReloadMs": 8.566706000000067,
+        "saveBytes": 235220
+      },
+      {
+        "elapsedGameYear": 19,
+        "simMs": 28.67648199999985,
+        "saveReloadMs": 6.809318000000076,
+        "saveBytes": 236153
+      },
+      {
+        "elapsedGameYear": 20,
+        "simMs": 26.498115000000325,
+        "saveReloadMs": 33.66717599999993,
+        "saveBytes": 236696
+      },
+      {
+        "elapsedGameYear": 21,
+        "simMs": 21.122801999999865,
+        "saveReloadMs": 4.818370000000414,
+        "saveBytes": 246961
+      },
+      {
+        "elapsedGameYear": 22,
+        "simMs": 20.843159999999898,
+        "saveReloadMs": 5.828190000000177,
+        "saveBytes": 248487
+      },
+      {
+        "elapsedGameYear": 23,
+        "simMs": 63.73943499999996,
+        "saveReloadMs": 9.110314000000017,
+        "saveBytes": 249215
+      },
+      {
+        "elapsedGameYear": 24,
+        "simMs": 26.9860349999999,
+        "saveReloadMs": 5.472584000000097,
+        "saveBytes": 250168
+      },
+      {
+        "elapsedGameYear": 25,
+        "simMs": 26.33982100000003,
+        "saveReloadMs": 9.546322000000146,
+        "saveBytes": 251050
+      },
+      {
+        "elapsedGameYear": 26,
+        "simMs": 29.222925000000032,
+        "saveReloadMs": 31.033081999999922,
+        "saveBytes": 260981
+      },
+      {
+        "elapsedGameYear": 27,
+        "simMs": 29.367302999999993,
+        "saveReloadMs": 8.241445999999996,
+        "saveBytes": 261461
+      },
+      {
+        "elapsedGameYear": 28,
+        "simMs": 26.523177999999916,
+        "saveReloadMs": 4.165234000000055,
+        "saveBytes": 271330
+      },
+      {
+        "elapsedGameYear": 29,
+        "simMs": 40.8816039999997,
+        "saveReloadMs": 13.672739000000092,
+        "saveBytes": 271473
+      },
+      {
+        "elapsedGameYear": 30,
+        "simMs": 22.39974600000005,
+        "saveReloadMs": 12.54787400000032,
+        "saveBytes": 271794
+      },
+      {
+        "elapsedGameYear": 31,
+        "simMs": 49.42578000000003,
+        "saveReloadMs": 6.248243000000002,
+        "saveBytes": 272554
+      },
+      {
+        "elapsedGameYear": 32,
+        "simMs": 13.622914000000037,
+        "saveReloadMs": 3.6231379999999263,
+        "saveBytes": 272381
+      },
+      {
+        "elapsedGameYear": 33,
+        "simMs": 17.745214000000033,
+        "saveReloadMs": 4.515713000000233,
+        "saveBytes": 273043
+      },
+      {
+        "elapsedGameYear": 34,
+        "simMs": 51.48565299999973,
+        "saveReloadMs": 5.078340000000026,
+        "saveBytes": 273122
+      },
+      {
+        "elapsedGameYear": 35,
+        "simMs": 13.725828999999976,
+        "saveReloadMs": 5.71341799999982,
+        "saveBytes": 273706
+      },
+      {
+        "elapsedGameYear": 36,
+        "simMs": 57.06761400000005,
+        "saveReloadMs": 9.323777000000064,
+        "saveBytes": 281654
+      },
+      {
+        "elapsedGameYear": 37,
+        "simMs": 14.826376000000437,
+        "saveReloadMs": 4.858450000000175,
+        "saveBytes": 281985
+      },
+      {
+        "elapsedGameYear": 38,
+        "simMs": 56.65093100000013,
+        "saveReloadMs": 18.584428000000116,
+        "saveBytes": 282039
+      },
+      {
+        "elapsedGameYear": 39,
+        "simMs": 29.124956999999995,
+        "saveReloadMs": 15.014028999999937,
+        "saveBytes": 282211
+      },
+      {
+        "elapsedGameYear": 40,
+        "simMs": 60.72229000000016,
+        "saveReloadMs": 4.462723000000551,
+        "saveBytes": 281523
+      },
+      {
+        "elapsedGameYear": 41,
+        "simMs": 16.261387999999897,
+        "saveReloadMs": 3.956930999999713,
+        "saveBytes": 289620
+      },
+      {
+        "elapsedGameYear": 42,
+        "simMs": 48.94238300000052,
+        "saveReloadMs": 7.4681799999998475,
+        "saveBytes": 289217
+      },
+      {
+        "elapsedGameYear": 43,
+        "simMs": 15.755506000000423,
+        "saveReloadMs": 3.70462199999929,
+        "saveBytes": 288945
+      },
+      {
+        "elapsedGameYear": 44,
+        "simMs": 15.420812000000296,
+        "saveReloadMs": 3.516045999999733,
+        "saveBytes": 287163
+      },
+      {
+        "elapsedGameYear": 45,
+        "simMs": 53.98295699999926,
+        "saveReloadMs": 7.778788000000532,
+        "saveBytes": 286760
+      },
+      {
+        "elapsedGameYear": 46,
+        "simMs": 27.569263999999748,
+        "saveReloadMs": 6.218798999999308,
+        "saveBytes": 286164
+      },
+      {
+        "elapsedGameYear": 47,
+        "simMs": 53.557906,
+        "saveReloadMs": 7.927091999999902,
+        "saveBytes": 285139
+      },
+      {
+        "elapsedGameYear": 48,
+        "simMs": 25.882612000000336,
+        "saveReloadMs": 12.879009000000224,
+        "saveBytes": 284882
+      },
+      {
+        "elapsedGameYear": 49,
+        "simMs": 65.67413599999963,
+        "saveReloadMs": 9.985474000000067,
+        "saveBytes": 294133
+      },
+      {
+        "elapsedGameYear": 50,
+        "simMs": 35.28886700000021,
+        "saveReloadMs": 22.375926000000618,
+        "saveBytes": 293264
+      },
+      {
+        "elapsedGameYear": 51,
+        "simMs": 41.14289800000006,
+        "saveReloadMs": 3.9739049999998315,
+        "saveBytes": 293269
+      },
+      {
+        "elapsedGameYear": 52,
+        "simMs": 13.61399899999924,
+        "saveReloadMs": 4.902746000000661,
+        "saveBytes": 294183
+      },
+      {
+        "elapsedGameYear": 53,
+        "simMs": 21.896684000000278,
+        "saveReloadMs": 41.09794099999999,
+        "saveBytes": 303752
+      },
+      {
+        "elapsedGameYear": 54,
+        "simMs": 31.168080999999802,
+        "saveReloadMs": 7.11330100000032,
+        "saveBytes": 300494
+      },
+      {
+        "elapsedGameYear": 55,
+        "simMs": 31.001218000000335,
+        "saveReloadMs": 3.9862139999995634,
+        "saveBytes": 301446
+      },
+      {
+        "elapsedGameYear": 56,
+        "simMs": 21.816823999999542,
+        "saveReloadMs": 4.188939000000573,
+        "saveBytes": 302594
+      },
+      {
+        "elapsedGameYear": 57,
+        "simMs": 14.012298999999985,
+        "saveReloadMs": 6.8435239999998885,
+        "saveBytes": 302417
+      },
+      {
+        "elapsedGameYear": 58,
+        "simMs": 61.11261899999954,
+        "saveReloadMs": 13.01832000000013,
+        "saveBytes": 300783
+      },
+      {
+        "elapsedGameYear": 59,
+        "simMs": 52.81088,
+        "saveReloadMs": 7.632534999999734,
+        "saveBytes": 299927
+      },
+      {
+        "elapsedGameYear": 60,
+        "simMs": 20.69434999999976,
+        "saveReloadMs": 7.145860000000539,
+        "saveBytes": 300078
+      },
+      {
+        "elapsedGameYear": 61,
+        "simMs": 68.11079299999983,
+        "saveReloadMs": 9.560942999999497,
+        "saveBytes": 309094
+      },
+      {
+        "elapsedGameYear": 62,
+        "simMs": 22.645283000000745,
+        "saveReloadMs": 4.27902499999982,
+        "saveBytes": 309990
+      },
+      {
+        "elapsedGameYear": 63,
+        "simMs": 28.673107000000527,
+        "saveReloadMs": 30.88789699999961,
+        "saveBytes": 310225
+      },
+      {
+        "elapsedGameYear": 64,
+        "simMs": 49.62318199999936,
+        "saveReloadMs": 10.338316000000304,
+        "saveBytes": 312367
+      },
+      {
+        "elapsedGameYear": 65,
+        "simMs": 152.0502349999997,
+        "saveReloadMs": 11.082029000000148,
+        "saveBytes": 314584
+      },
+      {
+        "elapsedGameYear": 66,
+        "simMs": 78.85995900000034,
+        "saveReloadMs": 12.451906000000236,
+        "saveBytes": 309563
+      },
+      {
+        "elapsedGameYear": 67,
+        "simMs": 85.02184000000034,
+        "saveReloadMs": 17.731861000000208,
+        "saveBytes": 308770
+      },
+      {
+        "elapsedGameYear": 68,
+        "simMs": 26.382510999999795,
+        "saveReloadMs": 16.887316000000283,
+        "saveBytes": 308497
+      },
+      {
+        "elapsedGameYear": 69,
+        "simMs": 68.37176100000033,
+        "saveReloadMs": 12.74699099999998,
+        "saveBytes": 308516
+      },
+      {
+        "elapsedGameYear": 70,
+        "simMs": 65.40985300000011,
+        "saveReloadMs": 7.705815000000257,
+        "saveBytes": 308701
+      },
+      {
+        "elapsedGameYear": 71,
+        "simMs": 82.46006000000034,
+        "saveReloadMs": 8.670399999999972,
+        "saveBytes": 308317
+      },
+      {
+        "elapsedGameYear": 72,
+        "simMs": 40.24989100000039,
+        "saveReloadMs": 37.18467700000019,
+        "saveBytes": 308410
+      },
+      {
+        "elapsedGameYear": 73,
+        "simMs": 47.547710000000734,
+        "saveReloadMs": 46.903951000000234,
+        "saveBytes": 308614
+      },
+      {
+        "elapsedGameYear": 74,
+        "simMs": 88.00143899999966,
+        "saveReloadMs": 9.62999899999977,
+        "saveBytes": 308906
+      },
+      {
+        "elapsedGameYear": 75,
+        "simMs": 33.01040899999953,
+        "saveReloadMs": 12.53499499999998,
+        "saveBytes": 310059
+      },
+      {
+        "elapsedGameYear": 76,
+        "simMs": 66.27427199999966,
+        "saveReloadMs": 20.002456000000166,
+        "saveBytes": 315467
+      },
+      {
+        "elapsedGameYear": 77,
+        "simMs": 92.16356799999994,
+        "saveReloadMs": 60.70303699999931,
+        "saveBytes": 314625
+      },
+      {
+        "elapsedGameYear": 78,
+        "simMs": 62.454399000000194,
+        "saveReloadMs": 6.935222000000067,
+        "saveBytes": 314029
+      },
+      {
+        "elapsedGameYear": 79,
+        "simMs": 27.245472999999947,
+        "saveReloadMs": 4.452588000000105,
+        "saveBytes": 315010
+      },
+      {
+        "elapsedGameYear": 80,
+        "simMs": 13.746478000000025,
+        "saveReloadMs": 4.073355000000447,
+        "saveBytes": 311970
+      },
+      {
+        "elapsedGameYear": 81,
+        "simMs": 15.05974900000001,
+        "saveReloadMs": 9.57274099999995,
+        "saveBytes": 312457
+      },
+      {
+        "elapsedGameYear": 82,
+        "simMs": 50.83205600000019,
+        "saveReloadMs": 4.403723999999784,
+        "saveBytes": 313177
+      },
+      {
+        "elapsedGameYear": 83,
+        "simMs": 54.2701219999999,
+        "saveReloadMs": 6.730464000000211,
+        "saveBytes": 314073
+      },
+      {
+        "elapsedGameYear": 84,
+        "simMs": 13.068124000000353,
+        "saveReloadMs": 5.004259000000275,
+        "saveBytes": 315206
+      },
+      {
+        "elapsedGameYear": 85,
+        "simMs": 68.54045099999985,
+        "saveReloadMs": 13.582621000000472,
+        "saveBytes": 314722
+      },
+      {
+        "elapsedGameYear": 86,
+        "simMs": 43.47127099999943,
+        "saveReloadMs": 39.84768499999973,
+        "saveBytes": 315358
+      },
+      {
+        "elapsedGameYear": 87,
+        "simMs": 37.01784500000031,
+        "saveReloadMs": 9.841427000000294,
+        "saveBytes": 314921
+      },
+      {
+        "elapsedGameYear": 88,
+        "simMs": 69.89994200000001,
+        "saveReloadMs": 10.280158999999912,
+        "saveBytes": 315405
+      },
+      {
+        "elapsedGameYear": 89,
+        "simMs": 64.55831400000079,
+        "saveReloadMs": 15.104317000000265,
+        "saveBytes": 315855
+      },
+      {
+        "elapsedGameYear": 90,
+        "simMs": 63.24362000000019,
+        "saveReloadMs": 23.457738000000063,
+        "saveBytes": 326452
+      },
+      {
+        "elapsedGameYear": 91,
+        "simMs": 36.529458999999406,
+        "saveReloadMs": 7.8643440000005285,
+        "saveBytes": 326768
+      },
+      {
+        "elapsedGameYear": 92,
+        "simMs": 39.260669000000235,
+        "saveReloadMs": 14.497770999999375,
+        "saveBytes": 327780
+      },
+      {
+        "elapsedGameYear": 93,
+        "simMs": 27.28230799999983,
+        "saveReloadMs": 34.72417500000029,
+        "saveBytes": 327891
+      },
+      {
+        "elapsedGameYear": 94,
+        "simMs": 30.714865999999347,
+        "saveReloadMs": 6.307074999999713,
+        "saveBytes": 327676
+      },
+      {
+        "elapsedGameYear": 95,
+        "simMs": 22.58950999999979,
+        "saveReloadMs": 47.947595999999976,
+        "saveBytes": 327543
+      },
+      {
+        "elapsedGameYear": 96,
+        "simMs": 26.711451999999554,
+        "saveReloadMs": 5.453585999999632,
+        "saveBytes": 327998
+      },
+      {
+        "elapsedGameYear": 97,
+        "simMs": 53.87126999999964,
+        "saveReloadMs": 39.38800000000083,
+        "saveBytes": 327963
+      },
+      {
+        "elapsedGameYear": 98,
+        "simMs": 101.6039409999994,
+        "saveReloadMs": 11.344911999999567,
+        "saveBytes": 328235
+      },
+      {
+        "elapsedGameYear": 99,
+        "simMs": 56.38786100000016,
+        "saveReloadMs": 23.594676000000618,
+        "saveBytes": 327987
+      },
+      {
+        "elapsedGameYear": 100,
+        "simMs": 68.44707800000015,
+        "saveReloadMs": 7.222321000000193,
+        "saveBytes": 329745
+      }
+    ],
+    "totalRunnerMs": 6555.025391,
+    "headlessSaveBytes": {
+      "at10Years": 220380,
+      "at50Years": 293264,
+      "at100Years": 329745,
+      "p95SaveReloadMs": 39.38800000000083,
+      "limitation": "These byte counts cover the GameState JSON serialized by SaveService. They exclude the browser IndexedDB playJournal, request metadata, and storage-engine overhead; those belong to the Chromium soak evidence."
+    }
+  }
+}

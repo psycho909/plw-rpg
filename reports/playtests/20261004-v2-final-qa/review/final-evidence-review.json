@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "independent-final-evidence-reviewer",
+  "reviewedAtUtc": "2026-10-05T20:46:49Z",
+  "status": "PRELIMINARY",
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "scope": "Read-only independent evidence review; no app, Git, browser, soak, or harness mutation.",
+  "verified": [
+    {
+      "id": "source-fingerprint",
+      "status": "PASS",
+      "sourceFiles": 58,
+      "sourceHashesMatched": 58,
+      "assets": 3,
+      "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593"
+    },
+    {
+      "id": "regression-build",
+      "status": "PASS",
+      "unitTests": 229,
+      "unitFiles": 14,
+      "typecheckAndBuildExitCode": 0
+    },
+    {
+      "id": "v1-migration",
+      "status": "PASS",
+      "fixtures": 7,
+      "preservationDefaultsReloadIdempotenceAndContinuation": "all recorded true"
+    },
+    {
+      "id": "engine-long-term",
+      "status": "PASS",
+      "seeds": [
+        17,
+        909,
+        2026
+      ],
+      "gameYearCheckpoints": [
+        10,
+        50,
+        100
+      ],
+      "browserSoakEquivalent": false
+    },
+    {
+      "id": "active-dungeon-party-reload",
+      "status": "PASS",
+      "countsTowardAgentOrSoakTime": false,
+      "simulationRootFieldsMatched": 21,
+      "onlyFullRootDifference": "lastSavedAt",
+      "pageErrors": 0,
+      "consoleErrors": 0,
+      "priorPreflightFailuresPreserved": 2
+    },
+    {
+      "id": "adventure-time",
+      "status": "RECOMPUTED",
+      "directWindowSeconds": 3956.66,
+      "harnessUnionSeconds": 143.229,
+      "explicitUnobservedSeconds": 67.9,
+      "creditedSeconds": 3745.531,
+      "preservedLegacyCaptureClockSeconds": 3956.92,
+      "supersededPriorCreditSeconds": 3745.791
+    },
+    {
+      "id": "hybrid-time",
+      "status": "RECOMPUTED",
+      "segment1FormalCreditSeconds": 0.0,
+      "segment02CreditSeconds": 706.055,
+      "segment03CreditSeconds": 451.136,
+      "segment04DirectWindowSeconds": 3603.209,
+      "segment04HarnessUnionSeconds": 241.843,
+      "segment04ExplicitUnobservedSeconds": 133.956,
+      "segment04CreditSeconds": 3227.41,
+      "formalTotalSeconds": 4384.601,
+      "minimumSeconds": 3600.0,
+      "segment04TargetSeconds": 3000.0,
+      "minimumMet": true,
+      "segment04TargetMet": true
+    },
+    {
+      "id": "human-product-gates",
+      "status": "PENDING",
+      "humanFunGate": "PENDING",
+      "v2ProductGate": "NOT YET APPROVED",
+      "q1ToQ8Blank": true
+    },
+    {
+      "id": "failures-open-findings",
+      "status": "PRESERVED_AND_CLASSIFIED",
+      "attempt05BrokenPipeRetained": true,
+      "isolatedExpectedRedSeparateFrom229DefaultPass": true,
+      "productFindingsSeparateFromEngineeringBugs": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "browser-soak06",
+      "status": "PENDING",
+      "lastCoordinatorSnapshotUtc": "2026-10-05T20:44:00Z",
+      "elapsedSeconds": 5940,
+      "checkpoints": 99,
+      "requiredSeconds": 7200,
+      "requiredCheckpoints": 120,
+      "terminalArtifactsPending": true
+    },
+    {
+      "id": "archive-terminal-validation",
+      "status": "PENDING",
+      "requires": [
+        "collection SHA/provenance",
+        "unique journal export IDs/ordinals",
+        "plain and gzip archives",
+        "fresh-clone lossless verification"
+      ]
+    },
+    {
+      "id": "supplement-screenshot-links",
+      "status": "OPEN_LOW",
+      "brokenRelativeLinks": 7,
+      "targetsExistRootRelative": true,
+      "ownerNotified": true
+    },
+    {
+      "id": "hybrid-intersegment-worldtime-gap",
+      "status": "LIMITATION_DISCLOSED",
+      "segment03LastWorldTime": 162409,
+      "segment04ExpectedResumeWorldTime": 164545,
+      "segment04FirstObservationWorldTime": 164547,
+      "deltaWorldMinutesToExpectedResume": 2136,
+      "segment03LastRngState": 3886205941,
+      "segment04FirstRngState": 3886205941,
+      "creditedTimeIncludesGap": false
+    }
+  ],
+  "gates": {
+    "engineeringFinal": "PENDING",
+    "browserStability": "RUNNING_AT_LAST_COORDINATOR_SNAPSHOT",
+    "agentExploratory": "READY_FOR_FINAL_EVIDENCE_REVIEW",
+    "humanFun": "PENDING",
+    "v2Product": "NOT_YET_APPROVED"
+  },
+  "terminalReviewStillRequired": true,
+  "notes": [
+    "No claim of human or product approval.",
+    "No attempt05 or prior-source soak time added to attempt06.",
+    "Hybrid segment01 conditional reserve estimate excluded from formal time.",
+    "Hybrid intersegment world-time jump is unobserved and excluded; its cause is unknown."
+  ]
+}

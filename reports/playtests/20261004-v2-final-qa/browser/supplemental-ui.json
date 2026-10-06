@@ -1,0 +1,310 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "manifestPath": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/build-manifest.json",
+  "url": "http://127.0.0.1:5197/",
+  "startedAtUtc": "2026-10-05T14:34:45.340+00:00",
+  "status": "passed",
+  "method": "Fresh isolated Chromium user-data profiles; rendered UI only for normal-world tests; canonical createGame(seed)->serialize fixtures are used only for the separate controlled reload check. No clock/state/resource injection or direct engine calls.",
+  "checks": [
+    {
+      "name": "frozen source and served build match manifest",
+      "status": "PASS",
+      "sourceFiles": 58,
+      "assets": 3
+    },
+    {
+      "name": "fresh UI-created world has canonical seed-909 defaults",
+      "status": "PASS",
+      "defaults": {
+        "worldSeed": 909,
+        "worldTime": 480,
+        "age": 16,
+        "gold": 45,
+        "food": 3,
+        "potions": 2,
+        "properties": 0,
+        "openingSeen": false
+      }
+    },
+    {
+      "name": "life starts and is paused using visible UI",
+      "status": "PASS",
+      "seed": 909,
+      "openingSeen": true
+    },
+    {
+      "name": "Active Idle / Pause / Resume in Life News window",
+      "status": "PASS",
+      "windowTitle": "┤ 地方消息與委託 ├",
+      "selectedSpeed": "×20",
+      "realActiveWaitSeconds": 1.378,
+      "worldTimeBefore": 488,
+      "worldTimeAfterActive": 543,
+      "activeGameMinutes": 55,
+      "worldTimeAfterPausedWait": 543,
+      "pausedWorldTimeStable": true,
+      "resumeGameMinutes": 26,
+      "pausedAtEnd": true
+    },
+    {
+      "name": "Active Idle / Pause / Resume in Place window",
+      "status": "PASS",
+      "windowTitle": "┤ 家 ├",
+      "selectedSpeed": "×20",
+      "realActiveWaitSeconds": 1.409,
+      "worldTimeBefore": 576,
+      "worldTimeAfterActive": 633,
+      "activeGameMinutes": 57,
+      "worldTimeAfterPausedWait": 633,
+      "pausedWorldTimeStable": true,
+      "resumeGameMinutes": 34,
+      "pausedAtEnd": true
+    },
+    {
+      "name": "reached forest by normal rendered map travel",
+      "status": "PASS",
+      "position": {
+        "x": 5,
+        "y": 4
+      },
+      "worldTime": 702
+    },
+    {
+      "name": "forest search triggers combat through visible PlaceWindow UI",
+      "status": "PASS",
+      "monsterId": "slime",
+      "staminaBefore": 84,
+      "staminaAfter": 76,
+      "worldTime": 739
+    },
+    {
+      "name": "Active Idle / Pause / Resume in Combat window",
+      "status": "PASS",
+      "windowTitle": "┤ 戰鬥 ├",
+      "selectedSpeed": "×20",
+      "realActiveWaitSeconds": 1.788,
+      "worldTimeBefore": 751,
+      "worldTimeAfterActive": 807,
+      "activeGameMinutes": 56,
+      "worldTimeAfterPausedWait": 807,
+      "pausedWorldTimeStable": true,
+      "resumeGameMinutes": 28,
+      "pausedAtEnd": true,
+      "combatStateUnchangedWhileIdling": true
+    },
+    {
+      "name": "combat exited with visible Escape action",
+      "status": "PASS",
+      "combatCleared": true
+    },
+    {
+      "name": "controlled opening seed 17: app startup-save and actual app reload checkpoint match 17 fields",
+      "status": "PASS",
+      "fixture": "seed-17.json",
+      "fixtureProvenance": "canonical public createGame(seed)->serialize V2 fixture; no field edited",
+      "coreFieldsCompared": [
+        "saveVersion",
+        "worldSeed",
+        "rngState",
+        "worldTime",
+        "activeCharacterId",
+        "characters",
+        "npcs",
+        "tiles",
+        "settlement",
+        "regions",
+        "threat",
+        "dungeon",
+        "life",
+        "history",
+        "party",
+        "crops",
+        "eventSequence"
+      ],
+      "startupDiffs": [],
+      "reloadDiffs": [],
+      "startupFieldSha256": {
+        "saveVersion": "2f40a74a403d6eaeafa352bb75637b8f585251ba73b03bdacace3d2f236db64d",
+        "worldSeed": "efd497711f6fe793f428cd1cb18508cbcd5663da6fa619522e979958682e7525",
+        "rngState": "363aa0f20bd2935ae31aacb668944c0eb6461a2e4638e00d9f55826dda56b57d",
+        "worldTime": "ba933949bc395de9f07e70c76dcbaa0942340488028b20e0f6735dc32bf91ad2",
+        "activeCharacterId": "202a9931e2d05edf2c5cb17b3d430096d12660185070e336f1934151e0e4e69c",
+        "characters": "ffacf9524bb69ebb15469aab8386ba9c0f9aa8a4f197358416b6251567a3601a",
+        "npcs": "f3dea271bf1bb7255daf31f9ba3d9abaf05262f91e7017bd89b14ae39a93de0e",
+        "tiles": "49f3434a44c0046f2075b0d96c56b9c53cc9f333a7aedffebc655819baf9a21b",
+        "settlement": "d1a01cd19bfb73128806ac259d0ab5c6a8afa9cc2c4351ac3b85d37f19fb7bbe",
+        "regions": "c1283014351abc31df30f93e794783753899359805d9e43cbf521d6cd1e4ee95",
+        "threat": "ec4172b31a645e7bdaef7799f1edc8415af31d2a4115bb4f4cc07e9133daf1d0",
+        "dungeon": "e96a16b1c1b79239951de2ea8056f13ddd06f3c090c469fd357847b69f9bfc5e",
+        "life": "db8213ed844bc6cafefbddc5f908e8666b19e71859270f761ae1e7f8335a9b29",
+        "history": "173160df46576e721e8958be71e5d2975119bc52b9e21d1bab4dabbac05a3732",
+        "party": "044fac51c36081662955b836ad0affe71fdda39a23ee72612bc650c662aefc4d",
+        "crops": "044fac51c36081662955b836ad0affe71fdda39a23ee72612bc650c662aefc4d",
+        "eventSequence": "ff0735732dde2768b6790ed5bcf4658d7cca88000891d8fc440c5e9b4a034bc4"
+      },
+      "reloadedFieldSha256": {
+        "saveVersion": "2f40a74a403d6eaeafa352bb75637b8f585251ba73b03bdacace3d2f236db64d",
+        "worldSeed": "efd497711f6fe793f428cd1cb18508cbcd5663da6fa619522e979958682e7525",
+        "rngState": "363aa0f20bd2935ae31aacb668944c0eb6461a2e4638e00d9f55826dda56b57d",
+        "worldTime": "ba933949bc395de9f07e70c76dcbaa0942340488028b20e0f6735dc32bf91ad2",
+        "activeCharacterId": "202a9931e2d05edf2c5cb17b3d430096d12660185070e336f1934151e0e4e69c",
+        "characters": "ffacf9524bb69ebb15469aab8386ba9c0f9aa8a4f197358416b6251567a3601a",
+        "npcs": "f3dea271bf1bb7255daf31f9ba3d9abaf05262f91e7017bd89b14ae39a93de0e",
+        "tiles": "49f3434a44c0046f2075b0d96c56b9c53cc9f333a7aedffebc655819baf9a21b",
+        "settlement": "d1a01cd19bfb73128806ac259d0ab5c6a8afa9cc2c4351ac3b85d37f19fb7bbe",
+        "regions": "c1283014351abc31df30f93e794783753899359805d9e43cbf521d6cd1e4ee95",
+        "threat": "ec4172b31a645e7bdaef7799f1edc8415af31d2a4115bb4f4cc07e9133daf1d0",
+        "dungeon": "e96a16b1c1b79239951de2ea8056f13ddd06f3c090c469fd357847b69f9bfc5e",
+        "life": "db8213ed844bc6cafefbddc5f908e8666b19e71859270f761ae1e7f8335a9b29",
+        "history": "173160df46576e721e8958be71e5d2975119bc52b9e21d1bab4dabbac05a3732",
+        "party": "044fac51c36081662955b836ad0affe71fdda39a23ee72612bc650c662aefc4d",
+        "crops": "044fac51c36081662955b836ad0affe71fdda39a23ee72612bc650c662aefc4d",
+        "eventSequence": "ff0735732dde2768b6790ed5bcf4658d7cca88000891d8fc440c5e9b4a034bc4"
+      },
+      "startupLastSavedAt": 1791210906898,
+      "reloadedLastSavedAt": 1791210907957,
+      "openingSeenBeforeAndAfter": false,
+      "worldTimeBeforeAndAfter": 480,
+      "speedBeforeAndAfter": "暫停",
+      "actualRenderedSeedNpcNamesBefore": [
+        "米拉 1",
+        "羅恩 2",
+        "艾妲 3",
+        "芬恩 4",
+        "諾拉 5"
+      ],
+      "actualRenderedSeedNpcNamesAfter": [
+        "米拉 1",
+        "羅恩 2",
+        "艾妲 3",
+        "芬恩 4",
+        "諾拉 5"
+      ],
+      "actualMapNpcTileCountBefore": 7,
+      "actualMapNpcTileCountAfter": 7
+    },
+    {
+      "name": "controlled opening seed 2026: app startup-save and actual app reload checkpoint match 17 fields",
+      "status": "PASS",
+      "fixture": "seed-2026.json",
+      "fixtureProvenance": "canonical public createGame(seed)->serialize V2 fixture; no field edited",
+      "coreFieldsCompared": [
+        "saveVersion",
+        "worldSeed",
+        "rngState",
+        "worldTime",
+        "activeCharacterId",
+        "characters",
+        "npcs",
+        "tiles",
+        "settlement",
+        "regions",
+        "threat",
+        "dungeon",
+        "life",
+        "history",
+        "party",
+        "crops",
+        "eventSequence"
+      ],
+      "startupDiffs": [],
+      "reloadDiffs": [],
+      "startupFieldSha256": {
+        "saveVersion": "2f40a74a403d6eaeafa352bb75637b8f585251ba73b03bdacace3d2f236db64d",
+        "worldSeed": "c0e32c80058ccebbe036d810ca1c4f51b677169d6d2510d49de5d8d5ae58b9f5",
+        "rngState": "3f5d86823872638022d2e4044322fef555dbc1ede09d3db8b5c95a3a75440e77",
+        "worldTime": "ba933949bc395de9f07e70c76dcbaa0942340488028b20e0f6735dc32bf91ad2",
+        "activeCharacterId": "202a9931e2d05edf2c5cb17b3d430096d12660185070e336f1934151e0e4e69c",
+        "characters": "ffacf9524bb69ebb15469aab8386ba9c0f9aa8a4f197358416b6251567a3601a",
+        "npcs": "3962bd3a43775f07a53ab2ea31e837ca112a7c250f7040f13b46a195ea837356",
+        "tiles": "49f3434a44c0046f2075b0d96c56b9c53cc9f333a7aedffebc655819baf9a21b",
+        "settlement": "d1a01cd19bfb73128806ac259d0ab5c6a8afa9cc2c4351ac3b85d37f19fb7bbe",
+        "regions": "c1283014351abc31df30f93e794783753899359805d9e43cbf521d6cd1e4ee95",
+        "threat": "ec4172b31a645e7bdaef7799f1edc8415af31d2a4115bb4f4cc07e9133daf1d0",
+        "dungeon": "e96a16b1c1b79239951de2ea8056f13ddd06f3c090c469fd357847b69f9bfc5e",
+        "life": "bcdb1cefac41659993ba38da21c014d3e6bd8582387a55a6a05071c3d294e768",
+        "history": "173160df46576e721e8958be71e5d2975119bc52b9e21d1bab4dabbac05a3732",
+        "party": "044fac51c36081662955b836ad0affe71fdda39a23ee72612bc650c662aefc4d",
+        "crops": "044fac51c36081662955b836ad0affe71fdda39a23ee72612bc650c662aefc4d",
+        "eventSequence": "ff0735732dde2768b6790ed5bcf4658d7cca88000891d8fc440c5e9b4a034bc4"
+      },
+      "reloadedFieldSha256": {
+        "saveVersion": "2f40a74a403d6eaeafa352bb75637b8f585251ba73b03bdacace3d2f236db64d",
+        "worldSeed": "c0e32c80058ccebbe036d810ca1c4f51b677169d6d2510d49de5d8d5ae58b9f5",
+        "rngState": "3f5d86823872638022d2e4044322fef555dbc1ede09d3db8b5c95a3a75440e77",
+        "worldTime": "ba933949bc395de9f07e70c76dcbaa0942340488028b20e0f6735dc32bf91ad2",
+        "activeCharacterId": "202a9931e2d05edf2c5cb17b3d430096d12660185070e336f1934151e0e4e69c",
+        "characters": "ffacf9524bb69ebb15469aab8386ba9c0f9aa8a4f197358416b6251567a3601a",
+        "npcs": "3962bd3a43775f07a53ab2ea31e837ca112a7c250f7040f13b46a195ea837356",
+        "tiles": "49f3434a44c0046f2075b0d96c56b9c53cc9f333a7aedffebc655819baf9a21b",
+        "settlement": "d1a01cd19bfb73128806ac259d0ab5c6a8afa9cc2c4351ac3b85d37f19fb7bbe",
+        "regions": "c1283014351abc31df30f93e794783753899359805d9e43cbf521d6cd1e4ee95",
+        "threat": "ec4172b31a645e7bdaef7799f1edc8415af31d2a4115bb4f4cc07e9133daf1d0",
+        "dungeon": "e96a16b1c1b79239951de2ea8056f13ddd06f3c090c469fd357847b69f9bfc5e",
+        "life": "bcdb1cefac41659993ba38da21c014d3e6bd8582387a55a6a05071c3d294e768",
+        "history": "173160df46576e721e8958be71e5d2975119bc52b9e21d1bab4dabbac05a3732",
+        "party": "044fac51c36081662955b836ad0affe71fdda39a23ee72612bc650c662aefc4d",
+        "crops": "044fac51c36081662955b836ad0affe71fdda39a23ee72612bc650c662aefc4d",
+        "eventSequence": "ff0735732dde2768b6790ed5bcf4658d7cca88000891d8fc440c5e9b4a034bc4"
+      },
+      "startupLastSavedAt": 1791210911518,
+      "reloadedLastSavedAt": 1791210912028,
+      "openingSeenBeforeAndAfter": false,
+      "worldTimeBeforeAndAfter": 480,
+      "speedBeforeAndAfter": "暫停",
+      "actualRenderedSeedNpcNamesBefore": [
+        "米拉 1",
+        "羅恩 2",
+        "艾妲 3",
+        "芬恩 4",
+        "諾拉 5"
+      ],
+      "actualRenderedSeedNpcNamesAfter": [
+        "米拉 1",
+        "羅恩 2",
+        "艾妲 3",
+        "芬恩 4",
+        "諾拉 5"
+      ],
+      "actualMapNpcTileCountBefore": 7,
+      "actualMapNpcTileCountAfter": 7
+    }
+  ],
+  "failures": [],
+  "browserPageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ],
+  "sourceFingerprint": {
+    "head": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+    "filesCompared": 58,
+    "allMatch": true
+  },
+  "assetFingerprint": {
+    "local": {
+      "assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f",
+      "assets/index-DJZsen7F.js": "a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6",
+      "index.html": "bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a"
+    },
+    "served": {
+      "assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f",
+      "assets/index-DJZsen7F.js": "a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6",
+      "index.html": "bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a"
+    },
+    "allMatch": true
+  },
+  "normalProfile": "/tmp/oakvale-v2-supplemental-ui-normal-_29thvqh",
+  "controlledProfiles": [
+    {
+      "seed": 17,
+      "profile": "/tmp/oakvale-v2-controlled-seed-17-sllusdyj",
+      "fixture": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/seeds/seed-17.json"
+    },
+    {
+      "seed": 2026,
+      "profile": "/tmp/oakvale-v2-controlled-seed-2026-r80p7i9w",
+      "fixture": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/seeds/seed-2026.json"
+    }
+  ],
+  "endedAtUtc": "2026-10-05T14:35:12.595+00:00"
+}

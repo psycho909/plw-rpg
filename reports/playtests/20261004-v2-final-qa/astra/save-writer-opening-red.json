@@ -1,0 +1,43 @@
+{
+  "atUtc": "2026-10-05T09:06:13.311967+00:00",
+  "url": "http://127.0.0.1:5196",
+  "method": "Fresh profiles, UI only; unsupported and delayed Web Locks API capability probes; no injected game state.",
+  "checks": [
+    {
+      "name": "fresh loser opening start is disabled",
+      "pass": false
+    },
+    {
+      "name": "fresh loser opening has reachable reload recovery",
+      "pass": false
+    },
+    {
+      "name": "footer reload after owner closes permits starting unchanged fresh world",
+      "pass": false
+    },
+    {
+      "name": "unsupported fresh opening start is disabled",
+      "pass": false
+    },
+    {
+      "name": "unsupported fresh opening exposes reload",
+      "pass": false
+    },
+    {
+      "name": "unsupported does not create a save",
+      "pass": true
+    },
+    {
+      "name": "pending acquisition disables opening start",
+      "pass": false
+    },
+    {
+      "name": "pending acquisition recovery cannot reload-loop",
+      "pass": false
+    },
+    {
+      "name": "start becomes enabled once lease is acquired",
+      "pass": true
+    }
+  ]
+}

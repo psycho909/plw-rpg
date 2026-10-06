@@ -1,0 +1,48 @@
+{
+  "baselineCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "sourceLabel": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "sourceStatus": "clean-baseline",
+  "sourceManifest": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/build-manifest.json",
+  "sourceHashes": null,
+  "buildHashes": null,
+  "changedSinceBaseline": null,
+  "buildPath": "/tmp/plw-v2-final-qa-dist",
+  "url": "http://127.0.0.1:5195/",
+  "targetElapsedSeconds": 7200,
+  "status": "failed",
+  "startedAtUtc": null,
+  "targetEndUtc": null,
+  "endedAtUtc": "2026-10-04T23:54:57.971+00:00",
+  "elapsedSeconds": null,
+  "fingerprintStart": {
+    "assets": {
+      "/": "4bae8e855ffba8844b2b86db0c9ec18e1ea574feb53f2e35c212b6cb7c0f6d9c",
+      "/assets/index-3j-oQD-G.js": "69f6943b69d9ea376f9d11d4f62277656eea43e0173fa0d24374a76f4f6ff00c",
+      "/assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f"
+    },
+    "asset_count": 3
+  },
+  "fingerprintEnd": null,
+  "observations": [],
+  "uiLatenciesMs": [],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "atUtc": "2026-10-04T23:54:53.629+00:00",
+      "elapsed": null,
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:5195/favicon.ico"
+    }
+  ],
+  "resourceFailures": [],
+  "droppedDiagnostics": {
+    "consoleErrors": 1
+  },
+  "interruptions": [],
+  "limitations": [
+    "Single disposable Chromium profile and local build; no forced GC.",
+    "Per-checkpoint IndexedDB uses count() only. Final UI export reads the archive once.",
+    "Chromium RSS is summed over the process tree; shared pages may be counted more than once."
+  ],
+  "failure": "TimeoutError: Locator.click: Timeout 4000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"×20\", exact=True)\n    - locator resolved to <button class=\"\" aria-pressed=\"false\">×20</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <dialog open=\"\" tabindex=\"-1\" class=\"pixel-window\" aria-labelledby=\"window-title\">…</dialog> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <dialog open=\"\" tabindex=\"-1\" class=\"pixel-window\" aria-labelledby=\"window-title\">…</dialog> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    8 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <dialog open=\"\" tabindex=\"-1\" class=\"pixel-window\" aria-labelledby=\"window-title\">…</dialog> intercepts pointer events\n    - retrying click action\n      - waiting 500ms\n"
+}

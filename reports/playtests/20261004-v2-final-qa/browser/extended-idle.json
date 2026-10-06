@@ -1,0 +1,50 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "startedAtUtc": "2026-10-05T13:56:13.421704+00:00",
+  "evidenceClass": "Supplemental real browser Active Idle; independent from the formal 2h soak",
+  "checks": [
+    {
+      "name": "55s actual page lifecycle freeze catches in-session x20 elapsed time",
+      "realElapsedSeconds": 55.040102050988935,
+      "gameMinutesCaughtUp": 2214,
+      "expectedGameMinutesPerRealSecond": 40,
+      "noFakeClock": true
+    },
+    {
+      "name": "actual Chromium closed 55s then same profile reopens without offline progress",
+      "realClosedSeconds": 57.15893542100093,
+      "savedWorldTime": 2727,
+      "loadedWorldTime": 2727,
+      "fieldsCompared": [
+        "worldTime",
+        "worldSeed",
+        "rngState",
+        "activeCharacterId",
+        "characters",
+        "npcs",
+        "history",
+        "threat",
+        "regions",
+        "settlement",
+        "life",
+        "dungeon",
+        "party"
+      ],
+      "foregroundProgressBeforePause": 0
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ],
+  "status": "PASS",
+  "profile": "/tmp/oakvale-v2-extended-idle-4iwn4p7j",
+  "browser": "151.0.7922.173",
+  "servedAssetsSha256": {
+    "assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f",
+    "assets/index-DJZsen7F.js": "a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6",
+    "index.html": "bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a"
+  },
+  "endedAtUtc": "2026-10-05T13:58:12.095782+00:00"
+}

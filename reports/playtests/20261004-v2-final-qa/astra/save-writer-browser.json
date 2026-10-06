@@ -1,0 +1,62 @@
+{
+  "startedAtUtc": "2026-10-05T09:07:52.877662+00:00",
+  "buildManifest": "save-writer-build.json",
+  "url": "http://127.0.0.1:5196",
+  "method": "UI-only mutations. CDP freezes/resumes owner document solely to test retained lease. Read-only localStorage observations.",
+  "checks": [
+    {
+      "name": "second tab has explicit persistent conflict warning",
+      "pass": true
+    },
+    {
+      "name": "second tab paused",
+      "pass": true
+    },
+    {
+      "name": "frozen owner retains exclusive lease and blocked tab cannot move/run/save",
+      "pass": true
+    },
+    {
+      "name": "narrow viewport no document horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "closing owner does not silently activate stale blocked page",
+      "pass": true
+    },
+    {
+      "name": "reload reads latest complete state without offline progression",
+      "pass": true
+    },
+    {
+      "name": "new owner may move and save",
+      "pass": true
+    },
+    {
+      "name": "persistent relaunch restores exactly one existing game page",
+      "pass": true
+    },
+    {
+      "name": "normal persistent close/reopen retains complete state",
+      "pass": true
+    },
+    {
+      "name": "driver reuses restored app page rather than navigating blank into duplicate",
+      "pass": true
+    },
+    {
+      "name": "reopened single app page remains playable",
+      "pass": true
+    },
+    {
+      "name": "unsupported browser visibly blocks and does not create a save",
+      "pass": true
+    }
+  ],
+  "profile": "/tmp/plw-astra-writer-lifecycle-kfe_s833",
+  "restoredPages": [
+    "http://127.0.0.1:5196/",
+    "about:blank"
+  ],
+  "endedAtUtc": "2026-10-05T09:08:04.196894+00:00"
+}

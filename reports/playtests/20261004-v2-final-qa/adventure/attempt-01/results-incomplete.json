@@ -1,0 +1,134 @@
+{
+  "route": "adventure",
+  "status": "running",
+  "sourceCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "buildManifest": "../build-manifest.json",
+  "url": "http://127.0.0.1:5195",
+  "browser": "Playwright Chromium /usr/bin/chromium, headless real browser runtime",
+  "profile": "/tmp/plw-v2-final-adventure-profile",
+  "seed": 17,
+  "seedSetup": "one-time canonical initial state from native createGame(17); no progress/resource/stat/time modifications; subsequent changes through rendered UI",
+  "startedAtUtc": "2026-10-05T00:00:37.738661+00:00",
+  "updatedAtUtc": "2026-10-05T00:00:44.128+00:00",
+  "elapsedSeconds": 6.39,
+  "targetSeconds": 3600,
+  "observations": [
+    {
+      "atUtc": "2026-10-05T00:00:42.801+00:00",
+      "elapsedSeconds": 5.1,
+      "kind": "00-initial",
+      "reason": "Started seed 17 through ordinary 起身 UI; normal x20 world loop selected.",
+      "clock": "第 1 年 春 1 日\n08:28",
+      "worldTime": 508,
+      "worldSeed": 17,
+      "character": {
+        "id": "alden",
+        "name": "奧登",
+        "age": 16,
+        "level": 1,
+        "exp": 0,
+        "hp": 100,
+        "maxHp": 100,
+        "stamina": 84,
+        "gold": 45,
+        "position": {
+          "x": 7,
+          "y": 9
+        },
+        "currentRegion": "village",
+        "skills": {
+          "combat": {
+            "level": 1,
+            "exp": 0
+          },
+          "farming": {
+            "level": 1,
+            "exp": 0
+          },
+          "mining": {
+            "level": 1,
+            "exp": 0
+          },
+          "woodcutting": {
+            "level": 1,
+            "exp": 0
+          }
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 3,
+          "material": 0,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "isAlive": true
+      },
+      "settlement": {
+        "name": "橡谷",
+        "stage": "hamlet",
+        "capacity": 40,
+        "food": 78,
+        "prosperity": 52,
+        "safety": 88,
+        "infrastructure": 25,
+        "growth": 0,
+        "buildings": [
+          "house",
+          "farm",
+          "store",
+          "inn"
+        ]
+      },
+      "party": [],
+      "threat": {
+        "monsterPopulation": 12,
+        "threatLevel": 1,
+        "growthRate": 0.65,
+        "bossProgress": 0,
+        "campLevel": 1,
+        "bossAlive": false,
+        "warningLevel": 0
+      },
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 0,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "combat": null,
+      "eventCount": 1,
+      "historyCount": 1,
+      "recentEvents": [
+        "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。"
+      ],
+      "recentHistory": [
+        "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。"
+      ],
+      "visibleText": "橡谷\n持續演化的世界\n第 1 年 春 1 日\n08:28\n暫停\n×1\n×5\n×20\n存檔\n選單 Esc\n世界已儲存。\n×\n🏘️ 橡谷聚落 7, 9\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n🪓\n4\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n⛏️\n4\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n🛡️\n4\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n4\n·\n⚒️\n4\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🙂\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n5\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n·\n·\n·\n⚔️\n4\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田\n未知之地\n🏠 家\nEnter 互動\n附近還有 1 個互動 ›\n↑\n←\n↓\n→\nWASD／方向鍵移動　Enter 互動　點地圖步行\n查看地圖 M\n🙂\n奧登 Lv.1\n生命\n100/100\n體力\n84/84\n🪙 45\n› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L\n物品 I\n旅人筆記"
+    }
+  ],
+  "actions": [
+    {
+      "atUtc": "2026-10-05T00:00:39.182+00:00",
+      "action": "one-time canonical seed initialization before app first boot",
+      "seed": 17,
+      "readback": 17,
+      "file": "../seeds/seed-17.json"
+    }
+  ],
+  "errors": {
+    "page": [],
+    "console": [
+      "Failed to load resource: the server responded with a status of 404 (File not found)"
+    ]
+  }
+}

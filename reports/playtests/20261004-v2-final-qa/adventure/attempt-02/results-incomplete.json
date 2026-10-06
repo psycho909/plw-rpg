@@ -1,0 +1,858 @@
+{
+  "route": "adventure",
+  "status": "running",
+  "sourceCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "buildManifest": "../build-manifest.json",
+  "url": "http://127.0.0.1:5195",
+  "browser": "Playwright Chromium /usr/bin/chromium, headless real browser runtime",
+  "profile": "/tmp/plw-v2-final-adventure-profile-02",
+  "seed": 17,
+  "seedSetup": "one-time canonical initial state from native createGame(17); no progress/resource/stat/time modifications; subsequent changes through rendered UI",
+  "startedAtUtc": "2026-10-05T00:07:07.307350+00:00",
+  "updatedAtUtc": "2026-10-05T00:10:09.656+00:00",
+  "elapsedSeconds": 182.35,
+  "targetSeconds": 3600,
+  "priorAttempts": [
+    "attempt-01/results-incomplete.json: fresh seed17 initial checkpoint succeeded; loop stopped after about two minutes to replace 10-minute idle intervals with active minute-by-minute exploration."
+  ],
+  "observations": [
+    {
+      "atUtc": "2026-10-05T00:07:09.805+00:00",
+      "elapsedSeconds": 2.5,
+      "kind": "00-initial",
+      "reason": "Started seed 17 through ordinary 起身 UI; normal x20 world loop selected.",
+      "clock": "第 1 年 春 1 日\n08:14",
+      "worldTime": 490,
+      "worldSeed": 17,
+      "character": {
+        "id": "alden",
+        "name": "奧登",
+        "age": 16,
+        "level": 1,
+        "exp": 0,
+        "hp": 100,
+        "maxHp": 100,
+        "stamina": 84,
+        "gold": 45,
+        "position": {
+          "x": 7,
+          "y": 9
+        },
+        "currentRegion": "village",
+        "skills": {
+          "combat": {
+            "level": 1,
+            "exp": 0
+          },
+          "farming": {
+            "level": 1,
+            "exp": 0
+          },
+          "mining": {
+            "level": 1,
+            "exp": 0
+          },
+          "woodcutting": {
+            "level": 1,
+            "exp": 0
+          }
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 3,
+          "material": 0,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "isAlive": true
+      },
+      "settlement": {
+        "name": "橡谷",
+        "stage": "hamlet",
+        "capacity": 40,
+        "food": 78,
+        "prosperity": 52,
+        "safety": 88,
+        "infrastructure": 25,
+        "growth": 0,
+        "buildings": [
+          "house",
+          "farm",
+          "store",
+          "inn"
+        ]
+      },
+      "party": [],
+      "threat": {
+        "monsterPopulation": 12,
+        "threatLevel": 1,
+        "growthRate": 0.65,
+        "bossProgress": 0,
+        "campLevel": 1,
+        "bossAlive": false,
+        "warningLevel": 0
+      },
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 0,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "combat": null,
+      "eventCount": 1,
+      "historyCount": 1,
+      "selectedSpeed": "×20",
+      "recentEvents": [
+        "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。"
+      ],
+      "recentHistory": [
+        "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。"
+      ],
+      "visibleText": "橡谷\n持續演化的世界\n第 1 年 春 1 日\n08:14\n暫停\n×1\n×5\n×20\n存檔\n選單 Esc\n世界已儲存。\n×\n🏘️ 橡谷聚落 7, 9\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n🪓\n4\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n⛏️\n4\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n🛡️\n4\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n4\n·\n⚒️\n4\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🙂\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n5\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n·\n·\n·\n⚔️\n4\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田\n未知之地\n🏠 家\nEnter 互動\n附近還有 1 個互動 ›\n↑\n←\n↓\n→\nWASD／方向鍵移動　Enter 互動　點地圖步行\n查看地圖 M\n🙂\n奧登 Lv.1\n生命\n100/100\n體力\n84/84\n🪙 45\n› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L\n物品 I\n旅人筆記"
+    },
+    {
+      "atUtc": "2026-10-05T00:08:07.531+00:00",
+      "elapsedSeconds": 60.2,
+      "kind": "01-minute-before",
+      "reason": "Open observation: reviewed the current rendered world, resources, event, threat and progression before choosing the next action.",
+      "clock": "第 1 年 春 2 日\n22:42",
+      "worldTime": 2802,
+      "worldSeed": 17,
+      "character": {
+        "id": "alden",
+        "name": "奧登",
+        "age": 16,
+        "level": 1,
+        "exp": 0,
+        "hp": 100,
+        "maxHp": 100,
+        "stamina": 84,
+        "gold": 45,
+        "position": {
+          "x": 7,
+          "y": 9
+        },
+        "currentRegion": "village",
+        "skills": {
+          "combat": {
+            "level": 1,
+            "exp": 0
+          },
+          "farming": {
+            "level": 1,
+            "exp": 0
+          },
+          "mining": {
+            "level": 1,
+            "exp": 0
+          },
+          "woodcutting": {
+            "level": 1,
+            "exp": 0
+          }
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 3,
+          "material": 0,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "isAlive": true
+      },
+      "settlement": {
+        "name": "橡谷",
+        "stage": "hamlet",
+        "capacity": 40,
+        "food": 83.2,
+        "prosperity": 52.7656,
+        "safety": 88.25,
+        "infrastructure": 25.224,
+        "growth": 1.03820672,
+        "buildings": [
+          "house",
+          "farm",
+          "store",
+          "inn"
+        ]
+      },
+      "party": [],
+      "threat": {
+        "monsterPopulation": 12.51,
+        "threatLevel": 1,
+        "growthRate": 0.65,
+        "bossProgress": 0.39,
+        "campLevel": 1,
+        "bossAlive": false,
+        "warningLevel": 0
+      },
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 0.4,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "combat": null,
+      "eventCount": 7,
+      "historyCount": 1,
+      "selectedSpeed": "×20",
+      "recentEvents": [
+        "米拉 1成為工作者。",
+        "羅恩 2成為工作者。",
+        "艾妲 3成為工作者。",
+        "芬恩 4成為工作者。",
+        "諾拉 5成為工作者。",
+        "雨果 6成為工作者。"
+      ],
+      "recentHistory": [
+        "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。"
+      ],
+      "visibleText": "橡谷\n持續演化的世界\n第 1 年 春 2 日\n22:42\n暫停\n×1\n×5\n×20\n存檔\n選單 Esc\n世界已儲存。\n×\n🏘️ 橡谷聚落 7, 9\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n·\n·\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n🧺\n2\n🙂\n家\n2\n🛡️\n2\n🪓\n3\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n⚒️\n3\n👨‍🌾\n3\n🪓\n2\n⚔️\n2\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n👨‍🌾\n2\n🛏️\n旅店\n3\n⛏️\n3\n⚒️\n2\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田\n未知之地\n🏠 家\nEnter 互動\n附近還有 10 個互動 ›\n↑\n←\n↓\n→\nWASD／方向鍵移動　Enter 互動　點地圖步行\n查看地圖 M\n🙂\n奧登 Lv.1\n生命\n100/100\n體力\n84/84\n🪙 45\n› 雨果 6成為工作者。 L\n物品 I\n旅人筆記"
+    },
+    {
+      "atUtc": "2026-10-05T00:08:09.731+00:00",
+      "elapsedSeconds": 62.4,
+      "kind": "01-minute-after",
+      "reason": "After the chosen UI action: seek and resolve a normal forest encounter",
+      "clock": "第 1 年 春 3 日\n00:49",
+      "worldTime": 2929,
+      "worldSeed": 17,
+      "character": {
+        "id": "alden",
+        "name": "奧登",
+        "age": 16,
+        "level": 1,
+        "exp": 25,
+        "hp": 82,
+        "maxHp": 100,
+        "stamina": 76,
+        "gold": 57,
+        "position": {
+          "x": 6,
+          "y": 3
+        },
+        "currentRegion": "forest",
+        "skills": {
+          "combat": {
+            "level": 2,
+            "exp": 5
+          },
+          "farming": {
+            "level": 1,
+            "exp": 0
+          },
+          "mining": {
+            "level": 1,
+            "exp": 0
+          },
+          "woodcutting": {
+            "level": 1,
+            "exp": 0
+          }
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 3,
+          "material": 1,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "isAlive": true
+      },
+      "settlement": {
+        "name": "橡谷",
+        "stage": "hamlet",
+        "capacity": 40,
+        "food": 88.4,
+        "prosperity": 53.5468,
+        "safety": 88.5,
+        "infrastructure": 25.448,
+        "growth": 2.09707008,
+        "buildings": [
+          "house",
+          "farm",
+          "store",
+          "inn"
+        ]
+      },
+      "party": [],
+      "threat": {
+        "monsterPopulation": 8.02,
+        "threatLevel": 1,
+        "growthRate": 0.65,
+        "bossProgress": 0,
+        "campLevel": 1,
+        "bossAlive": false,
+        "warningLevel": 0
+      },
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 0.8,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "combat": null,
+      "eventCount": 10,
+      "historyCount": 1,
+      "selectedSpeed": "×20",
+      "recentEvents": [
+        "芬恩 4成為工作者。",
+        "諾拉 5成為工作者。",
+        "雨果 6成為工作者。",
+        "遭遇灰狼。",
+        "戰鬥熟練度升到 Lv.2。",
+        "戰鬥勝利！獲得 25 經驗與 12 金幣。"
+      ],
+      "recentHistory": [
+        "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。"
+      ],
+      "visibleText": "橡谷\n持續演化的世界\n第 1 年 春 3 日\n00:49\n暫停\n×1\n×5\n×20\n存檔\n選單 Esc\n世界已儲存。\n×\n🌲 北方森林 6, 3\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🙂\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n·\n·\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n🧺\n2\n🏠\n家\n2\n🛡️\n2\n🪓\n3\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n⚒️\n3\n👨‍🌾\n3\n🪓\n2\n⚔️\n2\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n👨‍🌾\n2\n🛏️\n旅店\n3\n⛏️\n3\n⚒️\n2\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田\n未知之地\n🌲 北方森林\nEnter 互動\n↑\n←\n↓\n→\nWASD／方向鍵移動　Enter 互動　點地圖步行\n查看地圖 M\n🙂\n奧登 Lv.1\n生命\n82/100\n體力\n76/84\n🪙 57\n› 戰鬥勝利！獲得 25 經驗與 12 金幣。 L\n物品 I\n旅人筆記"
+    },
+    {
+      "atUtc": "2026-10-05T00:09:07.550+00:00",
+      "elapsedSeconds": 120.2,
+      "kind": "02-minute-before",
+      "reason": "Open observation: reviewed the current rendered world, resources, event, threat and progression before choosing the next action.",
+      "clock": "第 1 年 春 4 日\n15:21",
+      "worldTime": 5241,
+      "worldSeed": 17,
+      "character": {
+        "id": "alden",
+        "name": "奧登",
+        "age": 16,
+        "level": 1,
+        "exp": 25,
+        "hp": 82,
+        "maxHp": 100,
+        "stamina": 76,
+        "gold": 57,
+        "position": {
+          "x": 6,
+          "y": 3
+        },
+        "currentRegion": "forest",
+        "skills": {
+          "combat": {
+            "level": 2,
+            "exp": 5
+          },
+          "farming": {
+            "level": 1,
+            "exp": 0
+          },
+          "mining": {
+            "level": 1,
+            "exp": 0
+          },
+          "woodcutting": {
+            "level": 1,
+            "exp": 0
+          }
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 3,
+          "material": 1,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "isAlive": true
+      },
+      "settlement": {
+        "name": "橡谷",
+        "stage": "hamlet",
+        "capacity": 40,
+        "food": 93.60000000000001,
+        "prosperity": 54.343599999999995,
+        "safety": 88.75,
+        "infrastructure": 25.672,
+        "growth": 3.17664,
+        "buildings": [
+          "house",
+          "farm",
+          "store",
+          "inn"
+        ]
+      },
+      "party": [],
+      "threat": {
+        "monsterPopulation": 8.53,
+        "threatLevel": 1,
+        "growthRate": 0.65,
+        "bossProgress": 0.39,
+        "campLevel": 1,
+        "bossAlive": false,
+        "warningLevel": 0
+      },
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 1.2000000000000002,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "combat": null,
+      "eventCount": 10,
+      "historyCount": 1,
+      "selectedSpeed": "×20",
+      "recentEvents": [
+        "芬恩 4成為工作者。",
+        "諾拉 5成為工作者。",
+        "雨果 6成為工作者。",
+        "遭遇灰狼。",
+        "戰鬥熟練度升到 Lv.2。",
+        "戰鬥勝利！獲得 25 經驗與 12 金幣。"
+      ],
+      "recentHistory": [
+        "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。"
+      ],
+      "visibleText": "橡谷\n持續演化的世界\n第 1 年 春 4 日\n15:21\n暫停\n×1\n×5\n×20\n存檔\n選單 Esc\n世界已儲存。\n×\n🌲 北方森林 6, 3\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🙂\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n🪓\n4\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n⛏️\n4\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n🛡️\n4\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n3\n·\n⚒️\n4\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🏠\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n5\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n🧺\n·\n·\n⚔️\n4\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田\n未知之地\n🌲 北方森林\nEnter 互動\n↑\n←\n↓\n→\nWASD／方向鍵移動　Enter 互動　點地圖步行\n查看地圖 M\n🙂\n奧登 Lv.1\n生命\n82/100\n體力\n76/84\n🪙 57\n› 戰鬥勝利！獲得 25 經驗與 12 金幣。 L\n物品 I\n旅人筆記"
+    },
+    {
+      "atUtc": "2026-10-05T00:09:09.528+00:00",
+      "elapsedSeconds": 122.2,
+      "kind": "02-minute-after",
+      "reason": "After the chosen UI action: seek and resolve a normal forest encounter",
+      "clock": "第 1 年 春 4 日\n16:43",
+      "worldTime": 5323,
+      "worldSeed": 17,
+      "character": {
+        "id": "alden",
+        "name": "奧登",
+        "age": 16,
+        "level": 2,
+        "exp": 10,
+        "hp": 85,
+        "maxHp": 106,
+        "stamina": 68,
+        "gold": 65,
+        "position": {
+          "x": 6,
+          "y": 3
+        },
+        "currentRegion": "forest",
+        "skills": {
+          "combat": {
+            "level": 2,
+            "exp": 20
+          },
+          "farming": {
+            "level": 1,
+            "exp": 0
+          },
+          "mining": {
+            "level": 1,
+            "exp": 0
+          },
+          "woodcutting": {
+            "level": 1,
+            "exp": 0
+          }
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 3,
+          "material": 2,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "isAlive": true
+      },
+      "settlement": {
+        "name": "橡谷",
+        "stage": "hamlet",
+        "capacity": 40,
+        "food": 93.60000000000001,
+        "prosperity": 54.343599999999995,
+        "safety": 88.75,
+        "infrastructure": 25.672,
+        "growth": 3.17664,
+        "buildings": [
+          "house",
+          "farm",
+          "store",
+          "inn"
+        ]
+      },
+      "party": [],
+      "threat": {
+        "monsterPopulation": 3.5299999999999994,
+        "threatLevel": 1,
+        "growthRate": 0.65,
+        "bossProgress": 0,
+        "campLevel": 1,
+        "bossAlive": false,
+        "warningLevel": 0
+      },
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 1.2000000000000002,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "combat": null,
+      "eventCount": 13,
+      "historyCount": 1,
+      "selectedSpeed": "×20",
+      "recentEvents": [
+        "遭遇灰狼。",
+        "戰鬥熟練度升到 Lv.2。",
+        "戰鬥勝利！獲得 25 經驗與 12 金幣。",
+        "遭遇史萊姆。",
+        "奧登 升到 Lv.2。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。"
+      ],
+      "recentHistory": [
+        "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。"
+      ],
+      "visibleText": "橡谷\n持續演化的世界\n第 1 年 春 4 日\n16:43\n暫停\n×1\n×5\n×20\n存檔\n選單 Esc\n世界已儲存。\n×\n🌲 北方森林 6, 3\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🙂\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n🪓\n4\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n⛏️\n4\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n🛡️\n4\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n3\n·\n⚒️\n4\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🏠\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n5\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n🧺\n·\n·\n⚔️\n4\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田\n未知之地\n🌲 北方森林\nEnter 互動\n↑\n←\n↓\n→\nWASD／方向鍵移動　Enter 互動　點地圖步行\n查看地圖 M\n🙂\n奧登 Lv.2\n生命\n85/106\n體力\n68/84\n🪙 65\n› 戰鬥勝利！獲得 15 經驗與 8 金幣。 L\n物品 I\n旅人筆記"
+    },
+    {
+      "atUtc": "2026-10-05T00:10:07.522+00:00",
+      "elapsedSeconds": 180.2,
+      "kind": "03-minute-before",
+      "reason": "Open observation: reviewed the current rendered world, resources, event, threat and progression before choosing the next action.",
+      "clock": "第 1 年 春 6 日\n07:23",
+      "worldTime": 7643,
+      "worldSeed": 17,
+      "character": {
+        "id": "alden",
+        "name": "奧登",
+        "age": 16,
+        "level": 2,
+        "exp": 10,
+        "hp": 85,
+        "maxHp": 106,
+        "stamina": 68,
+        "gold": 65,
+        "position": {
+          "x": 6,
+          "y": 3
+        },
+        "currentRegion": "forest",
+        "skills": {
+          "combat": {
+            "level": 2,
+            "exp": 20
+          },
+          "farming": {
+            "level": 1,
+            "exp": 0
+          },
+          "mining": {
+            "level": 1,
+            "exp": 0
+          },
+          "woodcutting": {
+            "level": 1,
+            "exp": 0
+          }
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 3,
+          "material": 2,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "isAlive": true
+      },
+      "settlement": {
+        "name": "橡谷",
+        "stage": "hamlet",
+        "capacity": 40,
+        "food": 100,
+        "prosperity": 55.97199999999999,
+        "safety": 89.25,
+        "infrastructure": 26.12,
+        "growth": 5.3852608,
+        "buildings": [
+          "house",
+          "farm",
+          "store",
+          "inn"
+        ]
+      },
+      "party": [],
+      "threat": {
+        "monsterPopulation": 4.550000000000001,
+        "threatLevel": 1,
+        "growthRate": 0.65,
+        "bossProgress": 0.78,
+        "campLevel": 1,
+        "bossAlive": false,
+        "warningLevel": 0
+      },
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 2,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "combat": null,
+      "eventCount": 13,
+      "historyCount": 1,
+      "selectedSpeed": "×20",
+      "recentEvents": [
+        "遭遇灰狼。",
+        "戰鬥熟練度升到 Lv.2。",
+        "戰鬥勝利！獲得 25 經驗與 12 金幣。",
+        "遭遇史萊姆。",
+        "奧登 升到 Lv.2。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。"
+      ],
+      "recentHistory": [
+        "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。"
+      ],
+      "visibleText": "橡谷\n持續演化的世界\n第 1 年 春 6 日\n07:23\n暫停\n×1\n×5\n×20\n存檔\n選單 Esc\n世界已儲存。\n×\n🌲 北方森林 6, 3\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🙂\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n🪓\n·\n·\n🛡️\n·\n🏪\n雜貨店\n·\n·\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n🪓\n🏠\n家\n1\n🛡️\n⚒️\n2\n·\n·\n👨‍🌾\n⛏️\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n🪓\n2\n─\n─\n🛡️\n2\n⚒️\n2\n👨‍🌾\n3\n👨‍🌾\n⛏️\n┼\n≋\n≋\n≋\n農田\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n🛡️\n2\n🧺\n2\n👨‍🌾\n2\n⚒️\n·\n│\n⛏️\n⛏️\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田\n未知之地\n🌲 北方森林\nEnter 互動\n↑\n←\n↓\n→\nWASD／方向鍵移動　Enter 互動　點地圖步行\n查看地圖 M\n🙂\n奧登 Lv.2\n生命\n85/106\n體力\n68/84\n🪙 65\n› 戰鬥勝利！獲得 15 經驗與 8 金幣。 L\n物品 I\n旅人筆記"
+    },
+    {
+      "atUtc": "2026-10-05T00:10:09.632+00:00",
+      "elapsedSeconds": 182.3,
+      "kind": "03-minute-after",
+      "reason": "After the chosen UI action: seek and resolve a normal forest encounter",
+      "clock": "第 1 年 春 6 日\n08:50",
+      "worldTime": 7730,
+      "worldSeed": 17,
+      "character": {
+        "id": "alden",
+        "name": "奧登",
+        "age": 16,
+        "level": 2,
+        "exp": 35,
+        "hp": 75,
+        "maxHp": 106,
+        "stamina": 60,
+        "gold": 77,
+        "position": {
+          "x": 6,
+          "y": 3
+        },
+        "currentRegion": "forest",
+        "skills": {
+          "combat": {
+            "level": 3,
+            "exp": 5
+          },
+          "farming": {
+            "level": 1,
+            "exp": 0
+          },
+          "mining": {
+            "level": 1,
+            "exp": 0
+          },
+          "woodcutting": {
+            "level": 1,
+            "exp": 0
+          }
+        },
+        "equipment": {
+          "weapon": null,
+          "armor": null
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "iron": 0,
+          "food": 3,
+          "material": 3,
+          "potion": 2,
+          "sword": 0,
+          "armor": 0
+        },
+        "isAlive": true
+      },
+      "settlement": {
+        "name": "橡谷",
+        "stage": "hamlet",
+        "capacity": 40,
+        "food": 100,
+        "prosperity": 55.97199999999999,
+        "safety": 89.25,
+        "infrastructure": 26.12,
+        "growth": 5.3852608,
+        "buildings": [
+          "house",
+          "farm",
+          "store",
+          "inn"
+        ]
+      },
+      "party": [],
+      "threat": {
+        "monsterPopulation": 0,
+        "threatLevel": 1,
+        "growthRate": 0.65,
+        "bossProgress": 0,
+        "campLevel": 1,
+        "bossAlive": false,
+        "warningLevel": 0
+      },
+      "dungeon": {
+        "discovered": false,
+        "threat": 1,
+        "progress": 2,
+        "runs": 0,
+        "stage": 0,
+        "inDungeon": false
+      },
+      "combat": null,
+      "eventCount": 16,
+      "historyCount": 1,
+      "selectedSpeed": "×20",
+      "recentEvents": [
+        "遭遇史萊姆。",
+        "奧登 升到 Lv.2。",
+        "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+        "遭遇灰狼。",
+        "戰鬥熟練度升到 Lv.3。",
+        "戰鬥勝利！獲得 25 經驗與 12 金幣。"
+      ],
+      "recentHistory": [
+        "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。"
+      ],
+      "visibleText": "橡谷\n持續演化的世界\n第 1 年 春 6 日\n08:50\n暫停\n×1\n×5\n×20\n存檔\n選單 Esc\n世界已儲存。\n×\n🌲 北方森林 6, 3\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🙂\n♣\n♣\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n🪓\n4\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n⛏️\n4\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n🛡️\n4\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n3\n·\n⚒️\n4\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🏠\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n5\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n🧺\n·\n·\n⚔️\n4\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田\n未知之地\n🌲 北方森林\nEnter 互動\n↑\n←\n↓\n→\nWASD／方向鍵移動　Enter 互動　點地圖步行\n查看地圖 M\n🙂\n奧登 Lv.2\n生命\n75/106\n體力\n60/84\n🪙 77\n› 戰鬥勝利！獲得 25 經驗與 12 金幣。 L\n物品 I\n旅人筆記"
+    }
+  ],
+  "actions": [
+    {
+      "atUtc": "2026-10-05T00:07:08.847+00:00",
+      "action": "one-time canonical seed initialization before app first boot",
+      "seed": 17,
+      "readback": 17,
+      "file": "../seeds/seed-17.json"
+    },
+    {
+      "atUtc": "2026-10-05T00:08:08.955+00:00",
+      "action": "combat UI turn",
+      "command": "攻擊",
+      "enemyExcerpt": "┤ 戰鬥 ├\n× Esc\n🐺\n灰狼 · Lv.2\n怪物生命\n30/30\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.1\n\n主角生命\n100/100\n主角體力\n76/84\n\n回合制戰鬥 ·"
+    },
+    {
+      "atUtc": "2026-10-05T00:08:09.094+00:00",
+      "action": "combat UI turn",
+      "command": "攻擊",
+      "enemyExcerpt": "┤ 戰鬥 ├\n× Esc\n🐺\n灰狼 · Lv.2\n怪物生命\n30/30\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.1\n\n主角生命\n100/100\n主角體力\n76/84\n\n回合制戰鬥 ·"
+    },
+    {
+      "atUtc": "2026-10-05T00:08:09.244+00:00",
+      "action": "combat UI turn",
+      "command": "攻擊",
+      "enemyExcerpt": "┤ 戰鬥 ├\n× Esc\n🐺\n灰狼 · Lv.2\n怪物生命\n30/30\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.1\n\n主角生命\n100/100\n主角體力\n76/84\n\n回合制戰鬥 ·"
+    },
+    {
+      "atUtc": "2026-10-05T00:08:09.391+00:00",
+      "action": "combat UI turn",
+      "command": "攻擊",
+      "enemyExcerpt": "┤ 戰鬥 ├\n× Esc\n🐺\n灰狼 · Lv.2\n怪物生命\n30/30\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.1\n\n主角生命\n100/100\n主角體力\n76/84\n\n回合制戰鬥 ·"
+    },
+    {
+      "atUtc": "2026-10-05T00:08:09.496+00:00",
+      "action": "exploratory route choice",
+      "minute": 1,
+      "reason": "seek and resolve a normal forest encounter"
+    },
+    {
+      "atUtc": "2026-10-05T00:09:09.043+00:00",
+      "action": "combat UI turn",
+      "command": "攻擊",
+      "enemyExcerpt": "┤ 戰鬥 ├\n× Esc\n🟢\n史萊姆 · Lv.1\n怪物生命\n18/18\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.1\n\n主角生命\n82/100\n主角體力\n68/84\n\n回合制戰鬥 ·"
+    },
+    {
+      "atUtc": "2026-10-05T00:09:09.190+00:00",
+      "action": "combat UI turn",
+      "command": "攻擊",
+      "enemyExcerpt": "┤ 戰鬥 ├\n× Esc\n🟢\n史萊姆 · Lv.1\n怪物生命\n18/18\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.1\n\n主角生命\n82/100\n主角體力\n68/84\n\n回合制戰鬥 ·"
+    },
+    {
+      "atUtc": "2026-10-05T00:09:09.296+00:00",
+      "action": "exploratory route choice",
+      "minute": 2,
+      "reason": "seek and resolve a normal forest encounter"
+    },
+    {
+      "atUtc": "2026-10-05T00:10:08.987+00:00",
+      "action": "combat UI turn",
+      "command": "攻擊",
+      "enemyExcerpt": "┤ 戰鬥 ├\n× Esc\n🐺\n灰狼 · Lv.2\n怪物生命\n30/30\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.2\n\n主角生命\n85/106\n主角體力\n60/84\n\n回合制戰鬥 · "
+    },
+    {
+      "atUtc": "2026-10-05T00:10:09.144+00:00",
+      "action": "combat UI turn",
+      "command": "攻擊",
+      "enemyExcerpt": "┤ 戰鬥 ├\n× Esc\n🐺\n灰狼 · Lv.2\n怪物生命\n30/30\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.2\n\n主角生命\n85/106\n主角體力\n60/84\n\n回合制戰鬥 · "
+    },
+    {
+      "atUtc": "2026-10-05T00:10:09.294+00:00",
+      "action": "combat UI turn",
+      "command": "攻擊",
+      "enemyExcerpt": "┤ 戰鬥 ├\n× Esc\n🐺\n灰狼 · Lv.2\n怪物生命\n30/30\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.2\n\n主角生命\n85/106\n主角體力\n60/84\n\n回合制戰鬥 · "
+    },
+    {
+      "atUtc": "2026-10-05T00:10:09.406+00:00",
+      "action": "exploratory route choice",
+      "minute": 3,
+      "reason": "seek and resolve a normal forest encounter"
+    }
+  ],
+  "errors": {
+    "page": [],
+    "console": [
+      "Failed to load resource: the server responded with a status of 404 (File not found)"
+    ]
+  }
+}

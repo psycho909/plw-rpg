@@ -1,0 +1,7 @@
+# Frozen-source Chromium soak launch
+
+The attempt-05 runtime is frozen at commit `441e3c2b435f199a50cb78ee5b19521bcc084593`, served on `http://127.0.0.1:5197`, with assets in `/tmp/oakvale-v2-final-441e3c2-dist`. Its manifest is `reports/playtests/20261004-v2-final-qa/build-manifest.json`. The harness refuses to start if the configured source SHA, runtime URL, frozen build assets, or served assets differ from that manifest.
+
+Preparation is complete. A 7,200-second soak is not running. Start it only after receiving the exact operator token `START 441e3c2b435f199a50cb78ee5b19521bcc084593`, then run the command in [attempt-05/README.md](reports/playtests/20261004-v2-final-qa/soak/attempt-05/README.md). It uses a new profile and one app tab. Do not reuse the disposable preflight profile or artifacts from attempt 04.
+
+The short preflight passed against the frozen runtime: writer readiness, second-tab fail-closed behavior, all 17 core save fields compared from read-only pre-app storage, saved actor/equipment continuity after reload, 1 minute of foreground catch-up within a 5.17-minute measured bound, and successful menu-driven archive export. The formal reload allowance uses measured elapsed time × 2 plus a two-minute sampling tolerance while requiring exact saved-to-pre-app world time. See [attempt-05/preflight.json](reports/playtests/20261004-v2-final-qa/soak/attempt-05/preflight.json).

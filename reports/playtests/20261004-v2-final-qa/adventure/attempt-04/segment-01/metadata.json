@@ -1,0 +1,37 @@
+{
+  "segment": 1,
+  "status": "stopped-short",
+  "runStartedAtUtc": "2026-10-05T03:49:32.782+00:00",
+  "segmentStartedAtUtc": "2026-10-05T03:49:32.782+00:00",
+  "segmentEndedAtUtc": "2026-10-05T04:15:45.227+00:00",
+  "activeElapsedSeconds": 1572.45,
+  "profile": "/tmp/plw-v2-final-adventure-profile-04",
+  "worldSeed": 17,
+  "worldTimeAtBoundary": 65211,
+  "runRestartUtc": null,
+  "sourceCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "buildFingerprint": {
+    "sourceCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+    "manifestPath": "../build-manifest.json",
+    "served": {
+      "/": {
+        "httpStatus": 200,
+        "bytes": 448,
+        "sha256": "4bae8e855ffba8844b2b86db0c9ec18e1ea574feb53f2e35c212b6cb7c0f6d9c"
+      },
+      "/assets/index-3j-oQD-G.js": {
+        "httpStatus": 200,
+        "bytes": 221160,
+        "sha256": "69f6943b69d9ea376f9d11d4f62277656eea43e0173fa0d24374a76f4f6ff00c"
+      },
+      "/assets/index-CEjw7W01.css": {
+        "httpStatus": 200,
+        "bytes": 25850,
+        "sha256": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f"
+      }
+    },
+    "assetHashesMatchManifest": true
+  },
+  "interactivePySha256Before": "91a5bdc2b09de943418287a158511873b95e56e015ed5a9ec6d478902e630832",
+  "boundaryReason": "Save/reload through UI, pause through UI, then close cleanly to add missing visible-button controls; same profile/save resumes in segment 2."
+}

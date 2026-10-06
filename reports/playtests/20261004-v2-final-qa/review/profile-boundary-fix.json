@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "profile-boundary-fix-verification",
+  "status": "VERIFIED",
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "sourceFileCount": 58,
+  "scope": "Profile summary helper and its derived outputs only; no app or raw soak data changes.",
+  "readOrderFinding": {
+    "harness": "attempt-06/harness.py reload block executes before construction of each checkpoint sample.",
+    "rawCheckpoints": {
+      "30": {
+        "cdpDocuments": 2,
+        "cdpDomNodes": 32399
+      },
+      "31": {
+        "cdpDocuments": 2,
+        "cdpDomNodes": 34063
+      },
+      "32": {
+        "cdpDocuments": 1,
+        "cdpDomNodes": 4637
+      },
+      "60": {
+        "cdpDocuments": 1,
+        "cdpDomNodes": 2127
+      },
+      "90": {
+        "cdpDocuments": 1,
+        "cdpDomNodes": 2123
+      }
+    },
+    "reloadCheckpoints": [
+      30,
+      60,
+      90
+    ],
+    "interpretation": "CP30 and CP31 retain two CDP documents during the CP30 reload transition; CP32 settles to one. CP60 and CP90 are already single-document samples."
+  },
+  "documentSegments": [
+    {
+      "firstCheckpoint": 1,
+      "lastCheckpoint": 29,
+      "checkpointCount": 29
+    },
+    {
+      "firstCheckpoint": 32,
+      "lastCheckpoint": 59,
+      "checkpointCount": 28
+    },
+    {
+      "firstCheckpoint": 60,
+      "lastCheckpoint": 89,
+      "checkpointCount": 30
+    },
+    {
+      "firstCheckpoint": 90,
+      "lastCheckpoint": 120,
+      "checkpointCount": 31
+    }
+  ],
+  "excludedCheckpoints": [
+    {
+      "checkpoint": 30,
+      "cdpDocuments": 2,
+      "cdpDomNodes": 32399,
+      "reloadCheckpoint": 30,
+      "reason": "Transitional sample during/after reload checkpoint 30; CDP still reports 2 documents."
+    },
+    {
+      "checkpoint": 31,
+      "cdpDocuments": 2,
+      "cdpDomNodes": 34063,
+      "reloadCheckpoint": 30,
+      "reason": "Transitional sample during/after reload checkpoint 30; CDP still reports 2 documents."
+    }
+  ],
+  "overallRun": {
+    "elapsedSeconds": 7204.975,
+    "checkpointCount": 120,
+    "previousOverallMetricsIdentical": true,
+    "all120CheckpointsRemainInCsv": true,
+    "csvByteIdenticalToPreviousRecordedOutput": true,
+    "previousSummarySha256": "3485245b730d88f05ad9e843d9bacaff11155ca5f15ee7e7624aa27501fa4e53",
+    "currentSummarySha256": "6c525229ef7c77443af4c4e1545d08f03d161e39eb71134b5916790f495eedb0",
+    "previousCsvSha256": "a7521265b6da8920a794be65de93fee6e0300a21510c21a8019431d26ba4e9cb",
+    "currentCsvSha256": "a7521265b6da8920a794be65de93fee6e0300a21510c21a8019431d26ba4e9cb"
+  },
+  "helper": {
+    "sha256": "382249434235513e12b428fd9bd262520fa1da70084be6f44094fb9ef174a4f3",
+    "publishedBeforeDerivedOutputs": true,
+    "archiveRecordSha256": "382249434235513e12b428fd9bd262520fa1da70084be6f44094fb9ef174a4f3"
+  },
+  "figure": {
+    "path": "profiling/trends.png",
+    "validPng": true,
+    "dimensions": [
+      1920,
+      1600
+    ],
+    "softwareMetadata": "Matplotlib version3.10.8, https://matplotlib.org/",
+    "sha256": "a4b715214c82fc2a35bb8552026784dc0994075365f029e2663300594a7f4bed",
+    "previousFigurePreservedAt": "profiling/trends-before-boundary-correction.png",
+    "previousFigureSha256": "deced4f28a51d19dda6670427919fb5bb1ab104f72e255d6a289b09bf3ed6397",
+    "previousFigureMatchesPreservationRecord": true,
+    "dottedReloadMarkers": "Control checkpoints only; not proof of GC or absence of leaks."
+  },
+  "limitations": [
+    "Natural GC sampling only; no retained-object or forced-GC proof.",
+    "The exclusions affect per-document segments only; whole-run summary metrics and CSV retain all 120 checkpoints."
+  ]
+}

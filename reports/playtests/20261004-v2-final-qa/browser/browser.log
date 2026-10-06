@@ -1,0 +1,28 @@
+PASS opening freezes time and resists Escape/resume
+PASS modal retains Active Idle and pause flushes elapsed time
+PASS real x5 clock advances without fake timers
+PASS real x20 clock advances without fake timers
+PASS single modal: 這一生
+PASS single modal: 住所與產業
+PASS single modal: 地方消息與委託
+PASS reload never awards offline advancement
+PASS native committed V1 world migrates with every legacy field/RNG/time preserved
+PASS detached character projection updates potion/equipment in an open modal
+PASS home purchase/storage update live and conserve real items
+PASS NPC life details render from actual resident projections
+PASS responsive browser viewport
+PASS responsive browser viewport
+PASS NPC career refreshes in a live modal across midnight
+PASS quota preserves disk/pending, blocks x20, and recovers before the next action
+PASS controlled real Chromium page freeze/resume catches in-session elapsed time
+PASS invalid save remains protected from movement and speed controls
+PASS full journal export includes V2 checkpoint and unique append-only records
+PASS no uncaught browser exceptions
+PASS Active Idle continues in window: 角色
+PASS Active Idle continues in window: 物品
+PASS Active Idle continues in window: 地圖與世界
+PASS Active Idle continues in window: 這一生
+PASS Active Idle continues in window: 住所與產業
+PASS Active Idle continues in window: 世界歷史
+PASS Active Idle continues in NPC window
+PASS full close then real wait then load retains checkpoint worldTime

@@ -1,0 +1,538 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "resultArtifact": "soak/attempt-06/results.json",
+  "runStartedAt": "2026-10-05T19:04:08.048+00:00",
+  "runEndedAt": "2026-10-05T21:04:13.023+00:00",
+  "elapsedSeconds": 7204.975,
+  "checkpointCount": 120,
+  "metrics": {
+    "worldTime": {
+      "available": true,
+      "count": 120,
+      "first": 2897.0,
+      "last": 290516.0,
+      "minimum": 2897.0,
+      "maximum": 290516.0,
+      "median": 146695.5,
+      "p95": 276020.2,
+      "delta": 287619.0
+    },
+    "rawNpcOnlyPopulation": {
+      "available": true,
+      "count": 120,
+      "first": 29.0,
+      "last": 45.0,
+      "minimum": 29.0,
+      "maximum": 45.0,
+      "median": 37.0,
+      "p95": 44.0,
+      "delta": 16.0
+    },
+    "populationIncludingActiveCharacter": {
+      "available": true,
+      "count": 120,
+      "first": 30.0,
+      "last": 46.0,
+      "minimum": 30.0,
+      "maximum": 46.0,
+      "median": 38.0,
+      "p95": 45.0,
+      "delta": 16.0
+    },
+    "livingNpcCount": {
+      "available": true,
+      "count": 120,
+      "first": 29.0,
+      "last": 45.0,
+      "minimum": 29.0,
+      "maximum": 45.0,
+      "median": 37.0,
+      "p95": 44.0,
+      "delta": 16.0
+    },
+    "retainedDeadNpcCount": {
+      "available": true,
+      "count": 120,
+      "first": 0.0,
+      "last": 0.0,
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "delta": 0.0
+    },
+    "gold": {
+      "available": true,
+      "count": 120,
+      "first": 45.0,
+      "last": 49.0,
+      "minimum": 45.0,
+      "maximum": 101.0,
+      "median": 49.0,
+      "p95": 57.54999999999997,
+      "delta": 4.0
+    },
+    "eventCount": {
+      "available": true,
+      "count": 120,
+      "first": 7.0,
+      "last": 126.0,
+      "minimum": 7.0,
+      "maximum": 126.0,
+      "median": 52.0,
+      "p95": 121.0,
+      "delta": 119.0
+    },
+    "historyCount": {
+      "available": true,
+      "count": 120,
+      "first": 1.0,
+      "last": 41.0,
+      "minimum": 1.0,
+      "maximum": 41.0,
+      "median": 19.0,
+      "p95": 40.0,
+      "delta": 40.0
+    },
+    "liveDomElements": {
+      "available": true,
+      "count": 120,
+      "first": 887.0,
+      "last": 886.0,
+      "minimum": 879.0,
+      "maximum": 944.0,
+      "median": 890.0,
+      "p95": 893.0,
+      "delta": -1.0
+    },
+    "cdpDomNodes": {
+      "available": true,
+      "count": 120,
+      "first": 2577.0,
+      "last": 34417.0,
+      "minimum": 2123.0,
+      "maximum": 35643.0,
+      "median": 16790.0,
+      "p95": 32717.449999999997,
+      "delta": 31840.0
+    },
+    "cdpDocuments": {
+      "available": true,
+      "count": 120,
+      "first": 1.0,
+      "last": 1.0,
+      "minimum": 1.0,
+      "maximum": 2.0,
+      "median": 1.0,
+      "p95": 1.0,
+      "delta": 0.0
+    },
+    "cdpListeners": {
+      "available": true,
+      "count": 120,
+      "first": 757.0,
+      "last": 5996.0,
+      "minimum": 456.0,
+      "maximum": 7381.0,
+      "median": 3393.0,
+      "p95": 6423.849999999999,
+      "delta": 5239.0
+    },
+    "heapUsedBytes": {
+      "available": true,
+      "count": 120,
+      "first": 14933996.0,
+      "last": 16911592.0,
+      "minimum": 6450224.0,
+      "maximum": 65551796.0,
+      "median": 27862572.0,
+      "p95": 57049622.199999996,
+      "delta": 1977596.0
+    },
+    "heapAllocatedBytes": {
+      "available": true,
+      "count": 120,
+      "first": 38780928.0,
+      "last": 56664064.0,
+      "minimum": 25272320.0,
+      "maximum": 99672064.0,
+      "median": 74536960.0,
+      "p95": 93645414.4,
+      "delta": 17883136.0
+    },
+    "embedderHeapUsedBytes": {
+      "available": true,
+      "count": 120,
+      "first": 7693928.0,
+      "last": 11799008.0,
+      "minimum": 4632888.0,
+      "maximum": 35137440.0,
+      "median": 11901692.0,
+      "p95": 27842602.8,
+      "delta": 4105080.0
+    },
+    "backingStorageBytes": {
+      "available": true,
+      "count": 120,
+      "first": 384760.0,
+      "last": 500194.0,
+      "minimum": 302243.0,
+      "maximum": 806726.0,
+      "median": 445095.0,
+      "p95": 685085.7,
+      "delta": 115434.0
+    },
+    "localStorageBytes": {
+      "available": true,
+      "count": 120,
+      "first": 81587.0,
+      "last": 144945.0,
+      "minimum": 81587.0,
+      "maximum": 144945.0,
+      "median": 110418.5,
+      "p95": 142248.15,
+      "delta": 63358.0
+    },
+    "storageEstimateBytes": {
+      "available": true,
+      "count": 120,
+      "first": 523382.0,
+      "last": 13482616.0,
+      "minimum": 523382.0,
+      "maximum": 21405099.0,
+      "median": 7010597.5,
+      "p95": 18921023.75,
+      "delta": 12959234.0
+    },
+    "journalRecordCount": {
+      "available": true,
+      "count": 120,
+      "first": 605.0,
+      "last": 72065.0,
+      "minimum": 605.0,
+      "maximum": 72065.0,
+      "median": 36335.0,
+      "p95": 68481.05,
+      "delta": 71460.0
+    },
+    "chromiumProcessTreeRssBytes": {
+      "available": true,
+      "count": 120,
+      "first": 879263744.0,
+      "last": 972259328.0,
+      "minimum": 879263744.0,
+      "maximum": 1003753472.0,
+      "median": 981460992.0,
+      "p95": 998576947.2,
+      "delta": 92995584.0
+    },
+    "pageErrorCount": {
+      "available": true,
+      "count": 120,
+      "first": 0.0,
+      "last": 0.0,
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "delta": 0.0
+    },
+    "consoleErrorCount": {
+      "available": true,
+      "count": 120,
+      "first": 1.0,
+      "last": 1.0,
+      "minimum": 1.0,
+      "maximum": 1.0,
+      "median": 1.0,
+      "p95": 1.0,
+      "delta": 0.0
+    }
+  },
+  "storageEstimateLinearSlopeBytesPerRealHour": 7364641.03504935,
+  "uiRoundTripLatencyMs": {
+    "closeModal": {
+      "available": true,
+      "count": 117,
+      "first": 161.6,
+      "last": 45.5,
+      "minimum": 34.3,
+      "maximum": 361.0,
+      "median": 69.7,
+      "p95": 138.7199999999997,
+      "delta": -116.1
+    },
+    "manualSave": {
+      "available": true,
+      "count": 24,
+      "first": 178.4,
+      "last": 83.8,
+      "minimum": 63.1,
+      "maximum": 215.2,
+      "median": 96.45,
+      "p95": 175.99999999999997,
+      "delta": -94.60000000000001
+    },
+    "move": {
+      "available": true,
+      "count": 12,
+      "first": 120.5,
+      "last": 75.6,
+      "minimum": 75.6,
+      "maximum": 389.6,
+      "median": 124.75,
+      "p95": 273.1099999999999,
+      "delta": -44.900000000000006
+    },
+    "openModal": {
+      "available": true,
+      "count": 117,
+      "first": 218.5,
+      "last": 130.0,
+      "minimum": 48.3,
+      "maximum": 536.6,
+      "median": 98.3,
+      "p95": 226.45999999999987,
+      "delta": -88.5
+    },
+    "saveReloadContinue": {
+      "available": true,
+      "count": 3,
+      "first": 1159.9,
+      "last": 1720.0,
+      "minimum": 1159.9,
+      "maximum": 1720.0,
+      "median": 1503.7,
+      "p95": 1698.37,
+      "delta": 560.0999999999999
+    }
+  },
+  "documentSegmentsBetweenReloads": [
+    {
+      "firstCheckpoint": 1,
+      "lastCheckpoint": 29,
+      "heapUsedBytes": {
+        "available": true,
+        "count": 29,
+        "first": 14933996.0,
+        "last": 63349728.0,
+        "minimum": 6450224.0,
+        "maximum": 63349728.0,
+        "median": 27968080.0,
+        "p95": 56805680.8,
+        "delta": 48415732.0
+      },
+      "embedderHeapUsedBytes": {
+        "available": true,
+        "count": 29,
+        "first": 7693928.0,
+        "last": 29425344.0,
+        "minimum": 6768280.0,
+        "maximum": 31388064.0,
+        "median": 11728096.0,
+        "p95": 30554150.399999995,
+        "delta": 21731416.0
+      },
+      "liveDomElements": {
+        "available": true,
+        "count": 29,
+        "first": 887.0,
+        "last": 890.0,
+        "minimum": 880.0,
+        "maximum": 891.0,
+        "median": 886.0,
+        "p95": 891.0,
+        "delta": 3.0
+      },
+      "cdpDomNodes": {
+        "available": true,
+        "count": 29,
+        "first": 2577.0,
+        "last": 31702.0,
+        "minimum": 2577.0,
+        "maximum": 31702.0,
+        "median": 16612.0,
+        "p95": 29144.599999999995,
+        "delta": 29125.0
+      }
+    },
+    {
+      "firstCheckpoint": 32,
+      "lastCheckpoint": 59,
+      "heapUsedBytes": {
+        "available": true,
+        "count": 28,
+        "first": 8425684.0,
+        "last": 17166468.0,
+        "minimum": 8027916.0,
+        "maximum": 64383764.0,
+        "median": 30161434.0,
+        "p95": 50361885.8,
+        "delta": 8740784.0
+      },
+      "embedderHeapUsedBytes": {
+        "available": true,
+        "count": 28,
+        "first": 8480968.0,
+        "last": 10952360.0,
+        "minimum": 6607680.0,
+        "maximum": 15647560.0,
+        "median": 12142392.0,
+        "p95": 14334216.399999999,
+        "delta": 2471392.0
+      },
+      "liveDomElements": {
+        "available": true,
+        "count": 28,
+        "first": 890.0,
+        "last": 889.0,
+        "minimum": 879.0,
+        "maximum": 938.0,
+        "median": 888.5,
+        "p95": 893.0,
+        "delta": -1.0
+      },
+      "cdpDomNodes": {
+        "available": true,
+        "count": 28,
+        "first": 4637.0,
+        "last": 28837.0,
+        "minimum": 4637.0,
+        "maximum": 28837.0,
+        "median": 14953.0,
+        "p95": 28609.45,
+        "delta": 24200.0
+      }
+    },
+    {
+      "firstCheckpoint": 60,
+      "lastCheckpoint": 89,
+      "heapUsedBytes": {
+        "available": true,
+        "count": 30,
+        "first": 24476988.0,
+        "last": 33015456.0,
+        "minimum": 8548592.0,
+        "maximum": 65551796.0,
+        "median": 26739048.0,
+        "p95": 56942039.39999996,
+        "delta": 8538468.0
+      },
+      "embedderHeapUsedBytes": {
+        "available": true,
+        "count": 30,
+        "first": 4691704.0,
+        "last": 12982576.0,
+        "minimum": 4691704.0,
+        "maximum": 28082360.0,
+        "median": 11262516.0,
+        "p95": 21124574.399999976,
+        "delta": 8290872.0
+      },
+      "liveDomElements": {
+        "available": true,
+        "count": 30,
+        "first": 888.0,
+        "last": 890.0,
+        "minimum": 882.0,
+        "maximum": 944.0,
+        "median": 890.0,
+        "p95": 893.55,
+        "delta": 2.0
+      },
+      "cdpDomNodes": {
+        "available": true,
+        "count": 30,
+        "first": 2127.0,
+        "last": 35459.0,
+        "minimum": 2127.0,
+        "maximum": 35643.0,
+        "median": 16734.5,
+        "p95": 34451.45,
+        "delta": 33332.0
+      }
+    },
+    {
+      "firstCheckpoint": 90,
+      "lastCheckpoint": 120,
+      "heapUsedBytes": {
+        "available": true,
+        "count": 31,
+        "first": 12834612.0,
+        "last": 16911592.0,
+        "minimum": 10033500.0,
+        "maximum": 61259052.0,
+        "median": 27995096.0,
+        "p95": 56563772.0,
+        "delta": 4076980.0
+      },
+      "embedderHeapUsedBytes": {
+        "available": true,
+        "count": 31,
+        "first": 4632888.0,
+        "last": 11799008.0,
+        "minimum": 4632888.0,
+        "maximum": 35137440.0,
+        "median": 13124680.0,
+        "p95": 29853548.0,
+        "delta": 7166120.0
+      },
+      "liveDomElements": {
+        "available": true,
+        "count": 31,
+        "first": 887.0,
+        "last": 886.0,
+        "minimum": 884.0,
+        "maximum": 938.0,
+        "median": 892.0,
+        "p95": 894.5,
+        "delta": -1.0
+      },
+      "cdpDomNodes": {
+        "available": true,
+        "count": 31,
+        "first": 2123.0,
+        "last": 34417.0,
+        "minimum": 2123.0,
+        "maximum": 34417.0,
+        "median": 17772.0,
+        "p95": 33080.0,
+        "delta": 32294.0
+      }
+    }
+  ],
+  "documentSegmentPolicy": {
+    "reloadCheckpoints": [
+      30,
+      60,
+      90
+    ],
+    "excludedCheckpoints": [
+      {
+        "checkpoint": 30,
+        "cdpDocuments": 2,
+        "cdpDomNodes": 32399,
+        "reloadCheckpoint": 30,
+        "reason": "Transitional sample during/after reload checkpoint 30; CDP still reports 2 documents."
+      },
+      {
+        "checkpoint": 31,
+        "cdpDocuments": 2,
+        "cdpDomNodes": 34063,
+        "reloadCheckpoint": 30,
+        "reason": "Transitional sample during/after reload checkpoint 30; CDP still reports 2 documents."
+      }
+    ],
+    "exclusionsApplyOnlyToDocumentSegments": true,
+    "overallMetricsAndCsvIncludeAllCheckpoints": true
+  },
+  "limitations": [
+    "Natural GC only; no retained-object/forced-GC proof. Dotted reload markers are control checkpoints, not proof of GC or absence of leaks.",
+    "Raw soak population counts living NPCs only. Derived population adds the active living character under the normal single-living-character lifecycle; it is not an independently sampled characters[] count.",
+    "Retained dead NPC count is not cumulative deaths: the world prunes dead NPC entities.",
+    "Storage estimate is browser-reported usage, not exact serialized journal bytes.",
+    "RSS sums the Chromium process tree and can double count shared pages.",
+    "UI round-trip latency includes Playwright and two animation frames; not direct storage API timing.",
+    "First and last profile values refer to checkpoints, not the instant of initial creation."
+  ]
+}

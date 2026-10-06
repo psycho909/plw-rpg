@@ -1,0 +1,27 @@
+{
+  "sourceCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "manifest": "../build-manifest.json",
+  "captureUTC": "2026-10-05T00:33:41.992Z",
+  "sessionStartedUTC": "2026-10-05T00:00:49Z",
+  "elapsedSeconds": 1972.992,
+  "url": "http://127.0.0.1:5195/",
+  "pageResources": [
+    {
+      "tag": "SCRIPT",
+      "url": "http://127.0.0.1:5195/assets/index-3j-oQD-G.js",
+      "status": 200,
+      "bytes": 221160,
+      "sha256": "69f6943b69d9ea376f9d11d4f62277656eea43e0173fa0d24374a76f4f6ff00c",
+      "manifestMatch": true
+    },
+    {
+      "tag": "LINK",
+      "url": "http://127.0.0.1:5195/assets/index-CEjw7W01.css",
+      "status": 200,
+      "bytes": 25850,
+      "sha256": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f",
+      "manifestMatch": true
+    }
+  ],
+  "limitations": "First observed at 32m53s; no min-zero runtime asset capture, so this is not called a start fingerprint."
+}

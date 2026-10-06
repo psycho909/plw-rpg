@@ -1,0 +1,78 @@
+{
+  "attempt": "attempt-06",
+  "status": "launched",
+  "metadataRecoveredAfterLauncherImportError": true,
+  "metadataRecoveryReason": "The detached Popen succeeded and the child emitted SOAK_START. The wrapper then failed while importing scripts.recorded_reports because its script directory, not the repository root, was on sys.path. The child process remained detached; the sys.path defect is fixed in launch_attempt_06.py. Do not relaunch this attempt.",
+  "launcherError": "ModuleNotFoundError: No module named scripts (wrapper post-spawn report import)",
+  "launcherPid": null,
+  "harnessPid": 201841,
+  "createdAtUtc": "2026-10-05T19:04:08.048+00:00",
+  "metadataRecoveredAtUtc": "2026-10-05T19:05:28.534+00:00",
+  "harnessStartedAtUtc": "2026-10-05T19:04:08.048+00:00",
+  "targetEndUtc": "2026-10-05T21:04:08.048+00:00",
+  "targetElapsedSeconds": 7200,
+  "harnessStatusAtMetadataRecovery": "running",
+  "elapsedSecondsAtMetadataRecovery": 60.772,
+  "initialGameState": {
+    "worldTime": 481,
+    "worldId": "eb385147-06c2-40ca-8cb3-b059167440f4",
+    "activeCharacterId": "alden",
+    "selectedSpeed": "×20"
+  },
+  "chromiumProfile": "/tmp/plw-rpg-qa-20261005-soak-attempt06-profile-p8oa_63w",
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "baselineCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "sourceManifest": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/build-manifest.json",
+  "manifestSha256": "eeecc773a520c4f00949926c9cfb293c0d5529ea0e5e8624e1a4827cbbf703b5",
+  "runtimeManifestVerification": {
+    "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+    "url": "http://127.0.0.1:5197",
+    "assetCount": 3,
+    "assetNames": [
+      "assets/index-CEjw7W01.css",
+      "assets/index-DJZsen7F.js",
+      "index.html"
+    ],
+    "buildAssetsMatch": true,
+    "servedAssetsMatch": true,
+    "servedFingerprint": {
+      "assets": {
+        "/": "bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a",
+        "/assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f",
+        "/assets/index-DJZsen7F.js": "a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6"
+      },
+      "asset_count": 3
+    }
+  },
+  "immutableBuild": "/tmp/oakvale-v2-final-441e3c2-dist",
+  "harness": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/soak/attempt-06/harness.py",
+  "harnessSha256": "e706da92c3cd60d8433c984ae90da135859b3d9fcc27b63c18e50b8bdf153c64",
+  "attempt05HarnessSha256": "a4b4f853e862d7ce4ae2479b2b8e953433b96fa90db4323f48781b62446562e0",
+  "attempt06HarnessDiff": "Only OUT.name guard/error label and unique tempfile profile prefix changed from attempt-05. App interaction and sampling logic otherwise copied byte-for-byte.",
+  "workingDirectory": "/workspace/plw-rpg",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/soak/attempt-06/harness.py"
+  ],
+  "stdin": "DEVNULL",
+  "stdout": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/soak/attempt-06/harness.stdout.log",
+  "stderr": "STDOUT",
+  "startNewSession": true,
+  "environment": {
+    "PLW_SOAK_URL": "http://127.0.0.1:5197",
+    "PLW_SOAK_BASELINE": "c02b600c6f5f1533374d671b707d333c86d852d7",
+    "PLW_SOAK_BUILD": "/tmp/oakvale-v2-final-441e3c2-dist",
+    "PLW_SOAK_TARGET_SECONDS": "7200",
+    "PLW_SOAK_OUT": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/soak/attempt-06",
+    "PLW_SOAK_SOURCE_LABEL": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+    "PLW_SOAK_SOURCE_STATUS": "frozen post-Web-Locks source; final browser QA",
+    "PLW_SOAK_MANIFEST": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/build-manifest.json"
+  },
+  "preflightSha256": "16323de7611d926a626e166208eb4210980c2363ea32a525521388fdc624e34f",
+  "preflightStatus": "passed",
+  "logAtMetadataRecovery": "{\"event\": \"CHECKPOINT\", \"n\": 1, \"elapsed\": 60.459, \"worldTime\": 2897, \"clock\": \"第 1 年 春 3 日 00:17\", \"heap\": {\"usedSize\": 14933996, \"totalSize\": 38780928, \"embedderHeapUsedSize\": 7693928, \"backingStorageSize\": 384760}, \"dom\": {\"documents\": 1, \"nodes\": 2577, \"jsEventListeners\": 757}, \"idbCount\": 605, \"speed\": \"×20\", \"saveError\": null}",
+  "logIsPermanentFile": true,
+  "logContinuationIndependentOfModelTerminal": true,
+  "launcherPidUnavailableReason": "The wrapper terminated immediately after its post-spawn import error; the PID was not persisted. The child is independently verified by SOAK_START, the permanent log, checkpoints.json, and live ps, so no wrapper PID is inferred.",
+  "metadataCorrection": "This latest launcher.json version supersedes the initial recovery record, which had an unverified launcherPid estimate. Child PID 201841 is independently confirmed."
+}

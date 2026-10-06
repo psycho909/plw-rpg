@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "collectionSourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "collectionSourceCommitMeaning": "The latest QA collection/build-manifest source. It does not relabel each historical report's actual app source.",
+  "archives": [
+    {
+      "originalRawPath": "hybrid-final/resumed-segment-04/attempt-02/playlog.jsonl",
+      "originalRawBytes": 112436289,
+      "originalRawSha256": "c6f2d83955fe4ba656795f0725fb3bcb78570933b260b2fe6d2d5af439d3e8d0",
+      "compressedRepresentation": "gzip",
+      "compressedBytes": 74734533,
+      "compressedSha256": "d2d4601a3be8db106cf7ed27c5a449026755be40a872ecde4c761306a2732530",
+      "compressedParts": [
+        {
+          "path": "hybrid-final/resumed-segment-04/attempt-02/playlog.jsonl.gz",
+          "bytes": 74734533,
+          "sha256": "d2d4601a3be8db106cf7ed27c5a449026755be40a872ecde4c761306a2732530"
+        }
+      ],
+      "writerClosedAssertion": "root reported H04 accounting and report publications complete; no future writes to this path",
+      "sourceStability": "source identity/size/mtime and full SHA-256 were unchanged during packaging",
+      "byteEquality": "decompressing the published gzip representation reproduces the original raw bytes exactly",
+      "collectionSourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found",
+      "provenanceScanErrorCount": 0,
+      "provenanceScanErrorsSample": []
+    }
+  ]
+}

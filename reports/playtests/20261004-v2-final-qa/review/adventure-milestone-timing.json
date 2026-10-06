@@ -1,0 +1,1030 @@
+{
+  "schemaVersion": 1,
+  "route": "adventure",
+  "classification": "Agent Exploratory Playtest; humanPlaytest=false.",
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "sourceArtifacts": {
+    "runnerResults": "adventure-final/run-01/results.json",
+    "finalCore": "adventure-final/run-01/final-core-readonly.json",
+    "manifest": "build-manifest.json"
+  },
+  "runStartedAtUtc": "2026-10-05T13:56:40.485+00:00",
+  "rawWindowBasis": "Use the recorded action/observation raw elapsed value to place each milestone into a table bin. For the final credit cutoff, use lastDirectObservationUtc minus runStartedAtUtc, because the stored elapsed value is rounded to tenths.",
+  "tableWindows": [
+    {
+      "label": "0–15m",
+      "startSecondsInclusive": 0,
+      "endSecondsExclusive": 900
+    },
+    {
+      "label": "15–30m",
+      "startSecondsInclusive": 900,
+      "endSecondsExclusive": 1800
+    },
+    {
+      "label": "30–45m",
+      "startSecondsInclusive": 1800,
+      "endSecondsExclusive": 2700
+    },
+    {
+      "label": "45–60m",
+      "startSecondsInclusive": 2700,
+      "endSecondsExclusive": 3600
+    },
+    {
+      "label": "60m–last direct observation",
+      "startSecondsInclusive": 3600,
+      "endSecondsInclusive": 3956.66
+    }
+  ],
+  "milestones": [
+    {
+      "id": "home-purchased",
+      "tableWindow": "0–15m",
+      "rawElapsedSeconds": 480.0,
+      "action": {
+        "index": 61,
+        "kind": "visible UI button click",
+        "rawElapsedSeconds": 480.0,
+        "atUtc": "2026-10-05T14:04:40.480+00:00",
+        "detail": {
+          "before": {
+            "worldTime": 3813,
+            "label": "取得自宅",
+            "scope": "dialog"
+          },
+          "afterWorldTime": 3844,
+          "visibleButtonsBefore": [
+            {
+              "label": "關閉視窗",
+              "disabled": false
+            },
+            {
+              "label": "取得自宅",
+              "disabled": false
+            },
+            {
+              "label": "取得農地",
+              "disabled": true
+            },
+            {
+              "label": "前往農田",
+              "disabled": false
+            },
+            {
+              "label": "取得農場事業",
+              "disabled": true
+            },
+            {
+              "label": "前往農田",
+              "disabled": false
+            },
+            {
+              "label": "前往農田",
+              "disabled": false
+            },
+            {
+              "label": "關閉訊息",
+              "disabled": false
+            },
+            {
+              "label": "暫停時間",
+              "disabled": false
+            }
+          ]
+        }
+      },
+      "confirmation": {
+        "index": 53,
+        "label": "bought-home",
+        "rawElapsedSecondsStored": 480.0,
+        "atUtc": "2026-10-05T14:04:40.520+00:00",
+        "character": {
+          "id": "alden",
+          "name": "奧登",
+          "age": 16,
+          "level": 3,
+          "exp": 79,
+          "hp": 106,
+          "maxHp": 112,
+          "stamina": 84,
+          "maxStamina": 84,
+          "gold": 50,
+          "position": {
+            "x": 7,
+            "y": 9
+          },
+          "currentRegion": "village",
+          "skills": {
+            "combat": {
+              "level": 3,
+              "exp": 44
+            },
+            "farming": {
+              "level": 1,
+              "exp": 0
+            },
+            "mining": {
+              "level": 2,
+              "exp": 0
+            },
+            "woodcutting": {
+              "level": 2,
+              "exp": 0
+            }
+          },
+          "equipment": {
+            "weapon": null,
+            "armor": null
+          },
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 4,
+            "food": 3,
+            "material": 4,
+            "potion": 2,
+            "sword": 0,
+            "armor": 0
+          },
+          "isAlive": true
+        },
+        "recentEvents": [
+          "遭遇精英哥布林。",
+          "戰鬥熟練度升到 Lv.3。",
+          "戰鬥勝利！獲得 49 經驗與 25 金幣。",
+          "休息後，你恢復了生命與體力。",
+          "休息後，你恢復了生命與體力。",
+          "休息後，你恢復了生命與體力。",
+          "休息後，你恢復了生命與體力。",
+          "奧登取得自宅。"
+        ],
+        "recentHistory": [
+          "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。",
+          "迷霧散開。你發現了山谷中的廢棄礦坑。",
+          "奧登取得自宅。"
+        ]
+      },
+      "interpretation": "The UI click selected 取得自宅; the same raw-second checkpoint is labeled bought-home and recent event/history record 奧登取得自宅. The home purchase belongs in the first 15-minute bin."
+    },
+    {
+      "id": "first-mine-boss-victory",
+      "tableWindow": "30–45m",
+      "rawElapsedSeconds": 2086.6,
+      "finalStrike": {
+        "index": 179,
+        "kind": "combat UI turn",
+        "rawElapsedSeconds": 2086.6,
+        "atUtc": "2026-10-05T14:31:27.078+00:00",
+        "detail": {
+          "command": "attack",
+          "before": "┤ 戰鬥 ├\n× Esc\n👹\n哥布林酋長 · Lv.8\n怪物生命\n8/110\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.5\n\n主角生命\n48/124\n主角體力\n55/84\n\n回合制戰鬥 · 藥水 1 · 防禦減少本回合傷害，逃跑會離開地下城。\n\n攻擊\n防禦\n使用藥水\n逃跑\n遭遇哥布林酋長。\n×\n第 1 年 夏 12 日 09:03 · 生命 48 · 體力 55 · 145 金\n暫停時間",
+          "after": "battle scene closed"
+        }
+      },
+      "precedingObservation": {
+        "index": 141,
+        "label": "agent open-world checkpoint",
+        "rawElapsedSecondsStored": 2081.5,
+        "atUtc": "2026-10-05T14:31:22.018+00:00",
+        "combat": {
+          "monsterId": "chief",
+          "hp": 8,
+          "maxHp": 110,
+          "attack": 17,
+          "defense": 5,
+          "exp": 150,
+          "gold": 100,
+          "elite": false,
+          "dungeon": true
+        },
+        "dungeon": {
+          "discovered": true,
+          "threat": 1,
+          "progress": 16.400000000000006,
+          "runs": 0,
+          "stage": 2,
+          "inDungeon": true
+        },
+        "character": {
+          "id": "alden",
+          "name": "奧登",
+          "age": 16,
+          "level": 5,
+          "exp": 96,
+          "hp": 48,
+          "maxHp": 124,
+          "stamina": 55,
+          "maxStamina": 84,
+          "gold": 145,
+          "position": {
+            "x": 19,
+            "y": 3
+          },
+          "currentRegion": "unknown",
+          "skills": {
+            "combat": {
+              "level": 6,
+              "exp": 21
+            },
+            "farming": {
+              "level": 1,
+              "exp": 0
+            },
+            "mining": {
+              "level": 2,
+              "exp": 10
+            },
+            "woodcutting": {
+              "level": 2,
+              "exp": 0
+            }
+          },
+          "equipment": {
+            "weapon": null,
+            "armor": null
+          },
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 6,
+            "food": 3,
+            "material": 11,
+            "potion": 1,
+            "sword": 0,
+            "armor": 0
+          },
+          "isAlive": true
+        }
+      },
+      "postBattleObservation": {
+        "index": 142,
+        "label": "agent open-world checkpoint",
+        "rawElapsedSecondsStored": 2086.7,
+        "atUtc": "2026-10-05T14:31:27.172+00:00",
+        "combat": null,
+        "dungeon": {
+          "discovered": true,
+          "threat": 1,
+          "progress": 0,
+          "runs": 1,
+          "stage": 3,
+          "inDungeon": false
+        },
+        "character": {
+          "id": "alden",
+          "name": "奧登",
+          "age": 16,
+          "level": 6,
+          "exp": 96,
+          "hp": 54,
+          "maxHp": 130,
+          "stamina": 55,
+          "maxStamina": 84,
+          "gold": 245,
+          "position": {
+            "x": 19,
+            "y": 3
+          },
+          "currentRegion": "unknown",
+          "skills": {
+            "combat": {
+              "level": 7,
+              "exp": 51
+            },
+            "farming": {
+              "level": 1,
+              "exp": 0
+            },
+            "mining": {
+              "level": 2,
+              "exp": 10
+            },
+            "woodcutting": {
+              "level": 2,
+              "exp": 0
+            }
+          },
+          "equipment": {
+            "weapon": null,
+            "armor": null
+          },
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 9,
+            "food": 3,
+            "material": 12,
+            "potion": 1,
+            "sword": 0,
+            "armor": 0
+          },
+          "isAlive": true
+        },
+        "recentEvents": [
+          "遭遇精英哥布林。",
+          "戰鬥熟練度升到 Lv.6。",
+          "戰鬥勝利！獲得 49 經驗與 25 金幣。",
+          "遭遇哥布林酋長。",
+          "奧登 升到 Lv.6。",
+          "戰鬥熟練度升到 Lv.7。",
+          "廢棄礦坑探索完成，獲得額外鐵礦。",
+          "戰鬥勝利！獲得 150 經驗與 100 金幣。"
+        ],
+        "recentHistory": [
+          "陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。",
+          "迷霧散開。你發現了山谷中的廢棄礦坑。",
+          "奧登取得自宅。",
+          "奧斯卡 30 搬進橡谷，成為礦工。",
+          "米拉 31 搬進橡谷，成為樵夫。",
+          "羅恩 32 出生了。",
+          "奧登成為冒險者。",
+          "廢棄礦坑探索完成，獲得額外鐵礦。"
+        ]
+      },
+      "victoryConfirmation": {
+        "postBattleCombatIsNull": true,
+        "dungeonRuns": 1,
+        "dungeonStage": 3,
+        "inDungeon": false,
+        "goldAfter": 245,
+        "goldBeforeBossObservation": 145,
+        "mineClearPresentInRecentEvents": true,
+        "mineClearPresentInRecentHistory": true
+      },
+      "interpretation": "The boss had 8/110 HP before the final attack. The subsequent observation confirms battle ended in a completed first mine run, with +100g/+150XP and mine-clear/extra-iron history; scene closure alone is not the victory criterion."
+    },
+    {
+      "id": "village-stage-first-observed",
+      "tableWindow": "45–60m",
+      "transitionBound": {
+        "lastHamletObservation": {
+          "index": 164,
+          "label": "agent open-world checkpoint",
+          "rawElapsedSecondsStored": 3018.0,
+          "atUtc": "2026-10-05T14:46:58.518+00:00",
+          "settlement": {
+            "name": "橡谷",
+            "stage": "hamlet",
+            "capacity": 40,
+            "food": 100,
+            "prosperity": 100,
+            "safety": 100,
+            "infrastructure": 40.951999999999984,
+            "growth": 83.50896639999996,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn"
+            ]
+          },
+          "recentEvents": [
+            "小麥已成熟，可以前往農田收割。",
+            "耕作熟練度升到 Lv.2。",
+            "收穫 5 份食物，耕作經驗增加。",
+            "休息後，你恢復了生命與體力。",
+            "芬恩 34 搬進橡谷，成為守衛。",
+            "諾拉 35 出生了。",
+            "遭遇史萊姆。",
+            "戰鬥勝利！獲得 15 經驗與 8 金幣。"
+          ],
+          "recentHistory": [
+            "奧斯卡 30 搬進橡谷，成為礦工。",
+            "米拉 31 搬進橡谷，成為樵夫。",
+            "羅恩 32 出生了。",
+            "奧登成為冒險者。",
+            "廢棄礦坑探索完成，獲得額外鐵礦。",
+            "艾妲 33 搬進橡谷，成為店主。",
+            "芬恩 34 搬進橡谷，成為守衛。",
+            "諾拉 35 出生了。"
+          ]
+        },
+        "firstVillageObservation": {
+          "index": 165,
+          "label": "agent open-world checkpoint",
+          "rawElapsedSecondsStored": 3124.3,
+          "atUtc": "2026-10-05T14:48:44.816+00:00",
+          "settlement": {
+            "name": "橡谷",
+            "stage": "village",
+            "capacity": 60,
+            "food": 100,
+            "prosperity": 100,
+            "safety": 100,
+            "infrastructure": 41.719999999999985,
+            "growth": 87.55502079999997,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn",
+              "tavern",
+              "blacksmith"
+            ]
+          },
+          "recentEvents": [
+            "耕作熟練度升到 Lv.2。",
+            "收穫 5 份食物，耕作經驗增加。",
+            "休息後，你恢復了生命與體力。",
+            "芬恩 34 搬進橡谷，成為守衛。",
+            "諾拉 35 出生了。",
+            "遭遇史萊姆。",
+            "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+            "橡谷成長為村莊。酒館與鐵匠鋪開始營業。"
+          ],
+          "recentHistory": [
+            "米拉 31 搬進橡谷，成為樵夫。",
+            "羅恩 32 出生了。",
+            "奧登成為冒險者。",
+            "廢棄礦坑探索完成，獲得額外鐵礦。",
+            "艾妲 33 搬進橡谷，成為店主。",
+            "芬恩 34 搬進橡谷，成為守衛。",
+            "諾拉 35 出生了。",
+            "橡谷成長為村莊。酒館與鐵匠鋪開始營業。"
+          ]
+        },
+        "firstObservedAtUtc": "2026-10-05T14:48:44.816+00:00",
+        "firstObservedRawElapsedSeconds": 3124.3,
+        "exactNaturalTransitionTimestampClaimed": false
+      },
+      "interpretation": "The stage change occurred after the 3018.0s hamlet checkpoint and was first directly observed at 3124.3s (52m04.3s). At that observation, stage=village/capacity=60 and recent events/history record the tavern and blacksmith opening. Do not present 3124.3s as an exact simulation transition time."
+    },
+    {
+      "id": "gear-purchased-and-equipped",
+      "tableWindow": "45–60m",
+      "purchaseActions": [
+        {
+          "index": 258,
+          "kind": "visible UI button click",
+          "rawElapsedSeconds": 3338.2,
+          "atUtc": "2026-10-05T14:52:18.707+00:00",
+          "detail": {
+            "before": {
+              "worldTime": 110108,
+              "label": "買 70 金",
+              "scope": "dialog"
+            },
+            "afterWorldTime": 110116,
+            "visibleButtonsBefore": [
+              {
+                "label": "關閉視窗",
+                "disabled": false
+              },
+              {
+                "label": "買 70 金",
+                "disabled": false
+              },
+              {
+                "label": "賣 35 金",
+                "disabled": true
+              },
+              {
+                "label": "買 55 金",
+                "disabled": false
+              },
+              {
+                "label": "賣 27 金",
+                "disabled": true
+              },
+              {
+                "label": "關閉訊息",
+                "disabled": false
+              },
+              {
+                "label": "暫停時間",
+                "disabled": false
+              }
+            ]
+          }
+        },
+        {
+          "index": 259,
+          "kind": "visible UI button click",
+          "rawElapsedSeconds": 3338.6,
+          "atUtc": "2026-10-05T14:52:19.105+00:00",
+          "detail": {
+            "before": {
+              "worldTime": 110117,
+              "label": "買 55 金",
+              "scope": "dialog"
+            },
+            "afterWorldTime": 110125,
+            "visibleButtonsBefore": [
+              {
+                "label": "關閉視窗",
+                "disabled": false
+              },
+              {
+                "label": "買 70 金",
+                "disabled": false
+              },
+              {
+                "label": "賣 35 金",
+                "disabled": false
+              },
+              {
+                "label": "買 55 金",
+                "disabled": false
+              },
+              {
+                "label": "賣 27 金",
+                "disabled": true
+              },
+              {
+                "label": "關閉訊息",
+                "disabled": false
+              },
+              {
+                "label": "暫停時間",
+                "disabled": false
+              }
+            ]
+          }
+        }
+      ],
+      "purchaseConfirmation": {
+        "index": 175,
+        "label": "agent open-world checkpoint",
+        "rawElapsedSecondsStored": 3338.8,
+        "atUtc": "2026-10-05T14:52:19.308+00:00",
+        "character": {
+          "id": "alden",
+          "name": "奧登",
+          "age": 16,
+          "level": 6,
+          "exp": 161,
+          "hp": 130,
+          "maxHp": 130,
+          "stamina": 84,
+          "maxStamina": 84,
+          "gold": 144,
+          "position": {
+            "x": 12,
+            "y": 8
+          },
+          "currentRegion": "village",
+          "skills": {
+            "combat": {
+              "level": 7,
+              "exp": 96
+            },
+            "farming": {
+              "level": 2,
+              "exp": 0
+            },
+            "mining": {
+              "level": 2,
+              "exp": 10
+            },
+            "woodcutting": {
+              "level": 2,
+              "exp": 0
+            }
+          },
+          "equipment": {
+            "weapon": null,
+            "armor": null
+          },
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 9,
+            "food": 8,
+            "material": 15,
+            "potion": 1,
+            "sword": 1,
+            "armor": 1
+          },
+          "isAlive": true
+        },
+        "recentEvents": [
+          "諾拉 35 出生了。",
+          "遭遇史萊姆。",
+          "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+          "橡谷成長為村莊。酒館與鐵匠鋪開始營業。",
+          "休息後，你恢復了生命與體力。",
+          "雨果 36 搬進橡谷，成為農夫。",
+          "購買一份鐵劍。",
+          "購買一份皮甲。"
+        ],
+        "recentHistory": [
+          "羅恩 32 出生了。",
+          "奧登成為冒險者。",
+          "廢棄礦坑探索完成，獲得額外鐵礦。",
+          "艾妲 33 搬進橡谷，成為店主。",
+          "芬恩 34 搬進橡谷，成為守衛。",
+          "諾拉 35 出生了。",
+          "橡谷成長為村莊。酒館與鐵匠鋪開始營業。",
+          "雨果 36 搬進橡谷，成為農夫。"
+        ]
+      },
+      "equippedConfirmation": {
+        "index": 176,
+        "label": "agent open-world checkpoint",
+        "rawElapsedSecondsStored": 3373.4,
+        "atUtc": "2026-10-05T14:52:53.894+00:00",
+        "character": {
+          "id": "alden",
+          "name": "奧登",
+          "age": 16,
+          "level": 6,
+          "exp": 161,
+          "hp": 130,
+          "maxHp": 130,
+          "stamina": 84,
+          "maxStamina": 84,
+          "gold": 144,
+          "position": {
+            "x": 12,
+            "y": 8
+          },
+          "currentRegion": "village",
+          "skills": {
+            "combat": {
+              "level": 7,
+              "exp": 96
+            },
+            "farming": {
+              "level": 2,
+              "exp": 0
+            },
+            "mining": {
+              "level": 2,
+              "exp": 10
+            },
+            "woodcutting": {
+              "level": 2,
+              "exp": 0
+            }
+          },
+          "equipment": {
+            "weapon": "sword",
+            "armor": "armor"
+          },
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 9,
+            "food": 8,
+            "material": 15,
+            "potion": 1,
+            "sword": 1,
+            "armor": 1
+          },
+          "isAlive": true
+        },
+        "recentEvents": [
+          "諾拉 35 出生了。",
+          "遭遇史萊姆。",
+          "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+          "橡谷成長為村莊。酒館與鐵匠鋪開始營業。",
+          "休息後，你恢復了生命與體力。",
+          "雨果 36 搬進橡谷，成為農夫。",
+          "購買一份鐵劍。",
+          "購買一份皮甲。"
+        ],
+        "recentHistory": [
+          "羅恩 32 出生了。",
+          "奧登成為冒險者。",
+          "廢棄礦坑探索完成，獲得額外鐵礦。",
+          "艾妲 33 搬進橡谷，成為店主。",
+          "芬恩 34 搬進橡谷，成為守衛。",
+          "諾拉 35 出生了。",
+          "橡谷成長為村莊。酒館與鐵匠鋪開始營業。",
+          "雨果 36 搬進橡谷，成為農夫。"
+        ]
+      },
+      "interpretation": "The enabled 70g iron-sword and 55g leather-armor buttons were clicked at 3338.2s and 3338.6s (55m38.2s/55m38.6s); the 3338.8s checkpoint shows one of each and 144g remaining. The 3373.4s checkpoint confirms both equipped."
+    },
+    {
+      "id": "lucy-hired",
+      "tableWindow": "45–60m",
+      "rawElapsedSeconds": 3560.8,
+      "action": {
+        "index": 279,
+        "kind": "hire companion UI action",
+        "rawElapsedSeconds": 3560.8,
+        "atUtc": "2026-10-05T14:56:01.239+00:00",
+        "detail": [
+          {
+            "candidate": "⚔️ 露西 7\n30 歲 · Lv.3 · 可同行\n聘請",
+            "disabled": false
+          },
+          {
+            "candidate": "⚔️ 芬恩 14\n44 歲 · Lv.3 · 可同行\n聘請",
+            "disabled": false
+          },
+          {
+            "candidate": "⚔️ 米拉 21\n58 歲 · Lv.3 · 可同行\n聘請",
+            "disabled": false
+          },
+          {
+            "candidate": "⚔️ 西蒙 28\n21 歲 · Lv.3 · 可同行\n聘請",
+            "disabled": false
+          }
+        ]
+      },
+      "confirmation": {
+        "index": 181,
+        "label": "agent open-world checkpoint",
+        "rawElapsedSecondsStored": 3560.9,
+        "atUtc": "2026-10-05T14:56:01.393+00:00",
+        "character": {
+          "id": "alden",
+          "name": "奧登",
+          "age": 16,
+          "level": 6,
+          "exp": 161,
+          "hp": 130,
+          "maxHp": 130,
+          "stamina": 84,
+          "maxStamina": 84,
+          "gold": 119,
+          "position": {
+            "x": 11,
+            "y": 11
+          },
+          "currentRegion": "village",
+          "skills": {
+            "combat": {
+              "level": 7,
+              "exp": 96
+            },
+            "farming": {
+              "level": 2,
+              "exp": 0
+            },
+            "mining": {
+              "level": 2,
+              "exp": 10
+            },
+            "woodcutting": {
+              "level": 2,
+              "exp": 0
+            }
+          },
+          "equipment": {
+            "weapon": "sword",
+            "armor": "armor"
+          },
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 9,
+            "food": 8,
+            "material": 15,
+            "potion": 1,
+            "sword": 1,
+            "armor": 1
+          },
+          "isAlive": true
+        },
+        "party": [
+          {
+            "npcId": "npc-7",
+            "hireCost": 25,
+            "dailyWage": 4,
+            "contractEnd": 116640,
+            "archetype": "fighter"
+          }
+        ],
+        "recentEvents": [
+          "遭遇史萊姆。",
+          "戰鬥勝利！獲得 15 經驗與 8 金幣。",
+          "橡谷成長為村莊。酒館與鐵匠鋪開始營業。",
+          "休息後，你恢復了生命與體力。",
+          "雨果 36 搬進橡谷，成為農夫。",
+          "購買一份鐵劍。",
+          "購買一份皮甲。",
+          "露西 7 加入同行，日薪 4 金幣，契約 3 日。"
+        ],
+        "recentHistory": [
+          "羅恩 32 出生了。",
+          "奧登成為冒險者。",
+          "廢棄礦坑探索完成，獲得額外鐵礦。",
+          "艾妲 33 搬進橡谷，成為店主。",
+          "芬恩 34 搬進橡谷，成為守衛。",
+          "諾拉 35 出生了。",
+          "橡谷成長為村莊。酒館與鐵匠鋪開始營業。",
+          "雨果 36 搬進橡谷，成為農夫。"
+        ]
+      },
+      "interpretation": "The following checkpoint records Lucy 7 joining, at 4g/day on a three-day contract."
+    },
+    {
+      "id": "second-mine-boss-victory",
+      "tableWindow": "60m–last direct observation",
+      "rawElapsedSeconds": 3814.4,
+      "finalStrike": {
+        "index": 296,
+        "kind": "combat UI turn",
+        "rawElapsedSeconds": 3814.4,
+        "atUtc": "2026-10-05T15:00:14.867+00:00",
+        "detail": {
+          "command": "attack",
+          "before": "┤ 戰鬥 ├\n× Esc\n👹\n哥布林酋長 · Lv.8\n怪物生命\n11/110\n─────── ⚔ ───────\n\n🙂 奧登 · Lv.7\n\n主角生命\n107/136\n主角體力\n55/84\n\n回合制戰鬥 · 藥水 1 · 防禦減少本回合傷害，逃跑會離開地下城。\n\n攻擊\n防禦\n使用藥水\n逃跑\n遭遇哥布林酋長。\n×\n第 1 年 秋 20 日 04:28 · 生命 107 · 體力 55 · 148 金\n暫停時間",
+          "after": "battle scene closed"
+        }
+      },
+      "precedingObservation": {
+        "index": 192,
+        "label": "agent open-world checkpoint",
+        "rawElapsedSecondsStored": 3802.6,
+        "atUtc": "2026-10-05T15:00:03.117+00:00",
+        "combat": {
+          "monsterId": "chief",
+          "hp": 11,
+          "maxHp": 110,
+          "attack": 17,
+          "defense": 5,
+          "exp": 150,
+          "gold": 100,
+          "elite": false,
+          "dungeon": true
+        },
+        "dungeon": {
+          "discovered": true,
+          "threat": 1,
+          "progress": 15.200000000000008,
+          "runs": 1,
+          "stage": 2,
+          "inDungeon": true
+        },
+        "character": {
+          "id": "alden",
+          "name": "奧登",
+          "age": 16,
+          "level": 7,
+          "exp": 45,
+          "hp": 107,
+          "maxHp": 136,
+          "stamina": 55,
+          "maxStamina": 84,
+          "gold": 148,
+          "position": {
+            "x": 20,
+            "y": 3
+          },
+          "currentRegion": "unknown",
+          "skills": {
+            "combat": {
+              "level": 8,
+              "exp": 20
+            },
+            "farming": {
+              "level": 2,
+              "exp": 0
+            },
+            "mining": {
+              "level": 2,
+              "exp": 10
+            },
+            "woodcutting": {
+              "level": 2,
+              "exp": 0
+            }
+          },
+          "equipment": {
+            "weapon": "sword",
+            "armor": "armor"
+          },
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 9,
+            "food": 8,
+            "material": 17,
+            "potion": 1,
+            "sword": 1,
+            "armor": 1
+          },
+          "isAlive": true
+        }
+      },
+      "postBattleObservation": {
+        "index": 193,
+        "label": "agent open-world checkpoint",
+        "rawElapsedSecondsStored": 3814.6,
+        "atUtc": "2026-10-05T15:00:15.060+00:00",
+        "combat": null,
+        "dungeon": {
+          "discovered": true,
+          "threat": 1,
+          "progress": 0,
+          "runs": 2,
+          "stage": 3,
+          "inDungeon": false
+        },
+        "character": {
+          "id": "alden",
+          "name": "奧登",
+          "age": 16,
+          "level": 7,
+          "exp": 195,
+          "hp": 107,
+          "maxHp": 136,
+          "stamina": 55,
+          "maxStamina": 84,
+          "gold": 248,
+          "position": {
+            "x": 20,
+            "y": 3
+          },
+          "currentRegion": "unknown",
+          "skills": {
+            "combat": {
+              "level": 9,
+              "exp": 10
+            },
+            "farming": {
+              "level": 2,
+              "exp": 0
+            },
+            "mining": {
+              "level": 2,
+              "exp": 10
+            },
+            "woodcutting": {
+              "level": 2,
+              "exp": 0
+            }
+          },
+          "equipment": {
+            "weapon": "sword",
+            "armor": "armor"
+          },
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "iron": 12,
+            "food": 8,
+            "material": 18,
+            "potion": 1,
+            "sword": 1,
+            "armor": 1
+          },
+          "isAlive": true
+        },
+        "recentEvents": [
+          "遭遇精英哥布林。",
+          "奧登 升到 Lv.7。",
+          "戰鬥熟練度升到 Lv.8。",
+          "戰鬥勝利！獲得 49 經驗與 25 金幣。",
+          "遭遇哥布林酋長。",
+          "戰鬥熟練度升到 Lv.9。",
+          "廢棄礦坑探索完成，獲得額外鐵礦。",
+          "戰鬥勝利！獲得 150 經驗與 100 金幣。"
+        ],
+        "recentHistory": [
+          "奧登成為冒險者。",
+          "廢棄礦坑探索完成，獲得額外鐵礦。",
+          "艾妲 33 搬進橡谷，成為店主。",
+          "芬恩 34 搬進橡谷，成為守衛。",
+          "諾拉 35 出生了。",
+          "橡谷成長為村莊。酒館與鐵匠鋪開始營業。",
+          "雨果 36 搬進橡谷，成為農夫。",
+          "廢棄礦坑探索完成，獲得額外鐵礦。"
+        ]
+      },
+      "victoryConfirmation": {
+        "postBattleCombatIsNull": true,
+        "dungeonRuns": 2,
+        "dungeonStage": 3,
+        "inDungeon": false,
+        "goldAfter": 248,
+        "goldBeforeBossObservation": 148,
+        "inventoryAfter": {
+          "iron": 12,
+          "material": 18
+        },
+        "mineClearPresentInRecentEvents": true,
+        "mineClearPresentInRecentHistory": true
+      },
+      "interpretation": "The boss had 11/110 HP before the final attack. The next observation confirms combat ended in completed mine run 2/stage 3, +100g/+150XP, +3 iron/+1 material and mine-clear history."
+    }
+  ],
+  "lastDirectObservation": {
+    "index": 195,
+    "label": "agent open-world checkpoint",
+    "atUtc": "2026-10-05T15:02:37.145+00:00",
+    "storedElapsedSecondsRoundedToTenth": 3956.7,
+    "timestampDerivedElapsedSeconds": 3956.66,
+    "sourceJsonPointer": "/observations/195",
+    "legacyReadOnlyCaptureRunnerClockSeconds": 3956.92,
+    "pauseCommandRecordedAsActionAfterThisObservation": false,
+    "interpretation": "The later capture clock is preserved as historical evidence but is not the direct-observation cutoff."
+  },
+  "creditAccounting": {
+    "supersededValue": 3745.791,
+    "source": "Previously published sessionAccounting in adventure-final/run-01/results.json and final-core-readonly.json; archived in each append-only playlog.",
+    "supersededCalculation": "3956.920 - 143.229 - 67.900 = 3745.791 seconds.",
+    "canonicalLastDirectObservationElapsedSeconds": 3956.66,
+    "harnessFailureUnionSeconds": 143.229,
+    "explicitUnobservedPostBossReviewSeconds": 67.9,
+    "calculation": "3956.660 - 143.229 - 67.900 = 3745.531 seconds.",
+    "creditedSeconds": 3745.531,
+    "meets3600Seconds": true
+  },
+  "scopeNote": "The timestamps locate observed milestones; they do not change the excluded-interval calculation. The original observations/actions and prior snapshot runner clock remain unchanged."
+}

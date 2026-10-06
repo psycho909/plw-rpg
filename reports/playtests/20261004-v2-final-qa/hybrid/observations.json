@@ -1,0 +1,191 @@
+{
+  "sourceCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "session": "Hybrid Life → Adventure exploratory playtest; Agent/Chromium, not a human play session",
+  "startedUTC": "2026-10-05T00:00:49Z",
+  "minimumDurationSeconds": 3600,
+  "deadlineUTC": "2026-10-05T01:00:49Z",
+  "seed": 2026,
+  "seedRngInitial": 924864733,
+  "seedMethod": "Native createGame(2026) state from seed-2026.json. Immediately before first navigation in the accepted fresh Chromium profile, wrapper replaced lastSavedAt with Date.now() (approximately 2026-10-05T00:00:48Z; exact milliseconds were not logged and later autosave overwrote it) and added playJournal {version:1, worldId:'hybrid-life-adventure-2026', pending:[]}. This wrapper was my initialization choice, not required by the app; the app accepts a raw save and creates an empty journal. It added route-specific journal provenance; worldSeed=2026, rngState=924864733, worldTime=480 and character/NPC/resources/gameplay fields were otherwise unchanged. Readback verified seed/RNG/time before UI 起身. All subsequent mutations were through normal UI.",
+  "preflight": "A first attempted profile was overwritten by old pagehide autosave after localStorage initialization. That run was stopped before exploration and excluded from the 60-minute clock. The successful profile used a fresh userdata directory and verified seed 2026 before opening.",
+  "checkpoints": [
+    {
+      "realElapsedSeconds": 690,
+      "observedUTC": "2026-10-05T00:12:18Z",
+      "worldTime": 3435,
+      "place": "Northern forest; heading back to Oakvale",
+      "state": {
+        "level": 2,
+        "hp": 103,
+        "stamina": 71,
+        "gold": 65,
+        "wood": 4,
+        "crops": 2,
+        "homeOwned": false,
+        "reputation": 0,
+        "identity": [
+          "resident"
+        ],
+        "events": 15
+      },
+      "shortReward": "Two planted plots; two logs of wood plus 4 gold per chop; first gray wolf victory paid 12 gold/25 XP and level-up.",
+      "midGoal": "Earn 80 gold and buy a home. Initial 45 gold → 61 after wolf → 65 after one more harvest; gathered materials can cover the remaining gap.",
+      "longGoal": "Earn enough reputation and settlement growth to qualify for farm land/business; unclear at this point how those unlocks will be reached.",
+      "unexpectedEvent": "A 'seek monster' UI choice triggered a level-2 gray wolf while the opening goal was farming and home ownership.",
+      "meaningfulChoice": "Fight rather than flee; accepted an 8-stamina cost and took damage for 12 gold, 25 XP, a monster material, and a level-up.",
+      "newInformation": "Home costs 80 gold; farmland requires 140 gold + 10 reputation + a village. Property panel states farm business is manually worked, not automatic income.",
+      "progress": "Life actions farming=2; two live crop growth timers, 4 wood, combat level 2, home still a tangible near-term goal.",
+      "signals": {
+        "rewardDrought": "No new event or harvest reward in the first plot growth interval; rewards were small action feedback and the combat spike.",
+        "goalDrought": "No—the 80-gold home goal remained legible.",
+        "repetitionWall": "Not yet, although repeated harvesting/collecting is the visible way to close the home price gap.",
+        "meaninglessReward": "No evidence yet: wood can be sold for 4 each; combat drops directly improved gold/XP."
+      },
+      "retentionHole": "Identity stayed only 'resident' after farming and combat, and reputation remained 0 before ownership. Whether daily activity becomes a memorable role needs later observation."
+    },
+    {
+      "realElapsedSeconds": 1298,
+      "observedUTC": "2026-10-05T00:22:27Z",
+      "worldTime": 4764,
+      "place": "At own home in Oakvale, reading identity and local news",
+      "state": {
+        "level": 2,
+        "hp": 103,
+        "stamina": 67,
+        "gold": 1,
+        "homeOwned": true,
+        "storedFood": 5,
+        "carriedFood": 3,
+        "reputation": 2,
+        "identity": [
+          "resident"
+        ],
+        "settlementStage": "hamlet",
+        "threatLevel": 1,
+        "bossProgress": 0.78,
+        "crops": [
+          {
+            "id": 3,
+            "status": "harvested",
+            "yield": 5,
+            "plantedAt": 668,
+            "harvestAt": 4135
+          },
+          {
+            "id": 12,
+            "status": "growing",
+            "matureAt": 5090
+          }
+        ],
+        "events": 32,
+        "arcs": 0,
+        "requests": 0
+      },
+      "shortReward": "First crop harvested for 5 food and farming XP. Home storage can hold food separately; deposited 5 while keeping 3 carried.",
+      "midGoal": "Build toward farmland/business ownership. The property screen shows this blocked by three distinct conditions: village stage, 10 reputation, and 140 gold.",
+      "longGoal": "Become recognized as a farmer/owner and establish a farm business; UI does not explain an actionable path to village/10 reputation yet.",
+      "unexpectedEvent": "After one gray wolf fight, Hugo 16 knew 'I heard you once protected Oakvale'; speaking to him gave a village thank-you response. Seed baseline life record for Hugo 16 had no memories. This ties the adventure action into NPC memory/identity continuity.",
+      "meaningfulChoice": "Fight Wolf rather than flee; later sold all four wood (16 gold) to reach 81, bought home for 80, then stored five crop foods in it. Home creates actual rest/storage utility but no income.",
+      "newInformation": "The home is recorded in the Life ledger and reputation went 1→2; however visible player identity remained only 'resident'. No pending request, news, or living-event arc appeared by day four; World History remained at one foundation entry.",
+      "progress": "Home acquired; 5 foods safely stored, 3 retained; reputation 2; first life harvest, a battle-driven NPC memory, and combat level 2. Second plot has 17h left at in-game day3 20:20, then about 16h by day3 20:56.",
+      "signals": {
+        "rewardDrought": "Between early crop planting and maturity, little new life feedback; combat supplied the largest surprise/reward. After home buy, first harvest and NPC thank-you arrived within the next few minutes.",
+        "goalDrought": "No immediate goal drought. Next threshold is visible but appears far: 140g/10 reputation/village.",
+        "repetitionWall": "Repeated two-click preparation/planting and four identical sales enabled home; the loop took several routine interactions.",
+        "meaninglessReward": "Wood and food had explicit sale value; stored food has visible capacity/ownership utility. Home currently yields no income or new identity label.",
+        "eventConsequence": "Combat victory created/triggered a durable Hugo memory and gratitude line; local-news page itself remained empty."
+      },
+      "retentionHole": "Life/adventure state crosses via history, property, reputation and Hugo's memory, but the player stays 'resident' after 5 farming actions, home ownership, trade and combat; reaching land/business looks gated behind slow settlement/reputation progression. Mira 1, an 18-year-old farmer, had worker career and focus on farming but no shared memory with the player; dialogue was generic and did not change her familiarity or memory visibly."
+    }
+  ],
+  "npcEvidence": {
+    "hugo16": {
+      "seedBaseline": {
+        "id": "npc-16",
+        "age": 48,
+        "job": "miner",
+        "traits": [
+          "brave",
+          "content",
+          "hardworking",
+          "social"
+        ],
+        "concern": "在橡谷安穩生活",
+        "memories": []
+      },
+      "postUI": {
+        "age": 48,
+        "adult": true,
+        "careerLabel": "熟練工作者",
+        "recognizedAs": "熟練工作者 · 礦工",
+        "currentConcern": "專心做好礦工的工作",
+        "memory": "我聽說你曾守住橡谷",
+        "dialogue": "有人替橡谷擋下了危險，大家都鬆了一口氣。"
+      },
+      "screenshots": [
+        "artifacts/npc-hugo-first.png",
+        "artifacts/npc-hugo-after-talk.png"
+      ]
+    },
+    "mira1": {
+      "seedBaseline": {
+        "id": "npc-1",
+        "age": 18,
+        "job": "farmer",
+        "traits": [
+          "cautious",
+          "ambitious",
+          "wanderer",
+          "solitary"
+        ],
+        "concern": "在橡谷安穩生活",
+        "memories": []
+      },
+      "postUI": {
+        "age": 18,
+        "adult": "youth",
+        "career": "worker",
+        "recognizedAs": "工作者 · 農夫",
+        "currentConcern": "專心做好農夫的工作",
+        "memory": "你們之間還沒有留下共同回憶。",
+        "dialogue": "今天得先去做農夫，生活總得一步步來。"
+      },
+      "screenshots": [
+        "artifacts/npc-mira-first.png"
+      ]
+    }
+  },
+  "reloadEvidence": {
+    "firstReload": {
+      "savedWorldTime": 2763,
+      "loadedWorldTime": 2764,
+      "worldSeed": 2026,
+      "rngState": 3470793880,
+      "gold": 61,
+      "hp": 88,
+      "level": 2,
+      "cropTimersPreserved": true,
+      "interpretation": "one active loop minute crossed during UI reload; no offline catch-up"
+    },
+    "pausedReload": {
+      "savedWorldTime": 4317,
+      "loadedWorldTime": 4317,
+      "worldTimeEqual": true,
+      "worldSeed": 2026,
+      "interpretation": "world paused via UI, manually saved, then reloaded; no offline progression"
+    }
+  },
+  "console": [
+    "One browser-console 404 (static resource, likely favicon); no pageerror observed in attached session."
+  ],
+  "status": "IN_PROGRESS; observations cover only first 21m38s, not a completed gate.",
+  "seedMetadataOverrides": {
+    "lastSavedAt": "Date.now() immediately before launch/navigation; approx 2026-10-05T00:00:48Z, exact ms unavailable after first UI save",
+    "playJournal": {
+      "version": 1,
+      "worldId": "hybrid-life-adventure-2026",
+      "pending": []
+    },
+    "reason": "My chosen checkpoint wrapper to attach a route-specific journal ID and current save timestamp; not required by the app (raw saves are accepted and assigned an empty journal). These are journal/save metadata, not simulated world state."
+  }
+}

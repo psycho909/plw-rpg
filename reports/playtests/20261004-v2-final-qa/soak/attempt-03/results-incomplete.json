@@ -1,0 +1,3877 @@
+{
+  "baselineCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "sourceCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "sourceLabel": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "sourceStatus": "clean-baseline",
+  "sourceManifest": "/workspace/plw-rpg/reports/playtests/20261004-v2-final-qa/build-manifest.json",
+  "sourceHashes": {
+    "src/App.vue": "cde3f59a0927904a3217a5421240f806c4f2cc8fc8b88f4e3e61800d4a7c1d79",
+    "src/components/AdventureWindow.vue": "e39a7afc4c34a820fe043130de0a05f95eea08ebaf981bf621c9397cb5fddb54",
+    "src/components/CharacterSheet.vue": "81c0849b48a96a5328841318871262c82695141e459f417e4d08c77450380e1c",
+    "src/components/IdentityWindow.vue": "8af6030805a92095b004cbfe3765f0b796ead51acc10842c95975557db397fc8",
+    "src/components/InventoryWindow.vue": "d0cfb3fac41ca4621ae2de14618d490031f4c292a612565526de71f5e9560a3b",
+    "src/components/LifeNewsWindow.vue": "deeade4eb492f3ac846d5de7755254f6dea86687f136426c888f14b4379bd322",
+    "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+    "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+    "src/components/PixelWindow.vue": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+    "src/components/PlaceWindow.vue": "c05a2b719f1ecfec40b92408cf449d6147a9c5d382abe47b76b0de7784af7717",
+    "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+    "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+    "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+    "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+    "src/data/config.ts": "eefe62b9bf0e05ad6925bd996ec1d64c00665de08135af91c32d94e26277535b",
+    "src/data/identity.ts": "ac9f7c5ff096f3328e2c98e6cc4298204bbb327a231a2c40d22ef24dbd26504a",
+    "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+    "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+    "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+    "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+    "src/domain/life.ts": "7144387d09afd98abf2b825231fe6278b3e4ec0162f2cd33f7fb80c89e952b4b",
+    "src/domain/types.ts": "08cfe05dede9a7e4a2d8dfeeed3c7dbf910cd0acb7bc1d839a633882e6752c79",
+    "src/engine/actions.test.ts": "3aff2bf73da6044dc271a8285dbeaaaf354f11a3f8262716b9b4600c32b4b1b8",
+    "src/engine/actions.ts": "38ee7e0e014606f07880fbdf5227c071a5974248cce489f24a234e1671fd84d6",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+    "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+    "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+    "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+    "src/engine/identity.ts": "d1038f5f21d107ec87a0398afe7bcd4062e465b5cb815652ca014fd0cccf7fc8",
+    "src/engine/lifeIntegration.test.ts": "c9e702a8819e0d372aff7411f45a85ebc1e829dfc6f1e753b728863a21f56a16",
+    "src/engine/lifeState.ts": "45526f4bc5bb3d560e6b404c6e142f6624d2e40b201c61ea43c8166404faa6d7",
+    "src/engine/livingEvents.test.ts": "cfbb5b99724fe0de53428c80378249b1063084f2dee6f9d85652b950979c10c0",
+    "src/engine/livingEvents.ts": "afd535e634752a328d7ae3e0daa3d93cf07c4f7c2473705ed64d3058f02867f4",
+    "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+    "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+    "src/engine/npcLife.ts": "892a5be0f0d3bfa9f7fea7b962d6d37e3dea567c9551a3c1f16f715456bddb91",
+    "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+    "src/engine/ownership.ts": "fef2361be0a18221e7d50d17d97c82b64df360c257cc0598684842c9295f5526",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+    "src/engine/simulation.ts": "431f465f34f2dee208a18eddace103b266ae1ac3ca29e82318d53d5cc71c12bc",
+    "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+    "src/presentation/icons.ts": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+    "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+    "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+    "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+    "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+    "src/presentation/worldUI.test.ts": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+    "src/presentation/worldUI.ts": "a0abdb1cc227cf4d60e7bb3c1531fc555dff800d462b74be312f67c562e6c91e",
+    "src/services/playJournal.test.ts": "ecabfe2d73bb3a2f1a4eb0776d4aed4a663c183ef04e13811c89b8864909c71a",
+    "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+    "src/services/saveService.test.ts": "f0486035d13afe6132d4c48e5add47839e2857fb8408326898bc9d78a32ddfca",
+    "src/services/saveService.ts": "bdba6d781a8ec9a04fac5e2904ca82bec14a7612f08aed9031907908b3308d8d",
+    "src/stores/gameStore.test.ts": "4f2535e8dd1642786658a3dc390e8eb842dc3691a4fa32a6d1db633e9e3ede0e",
+    "src/stores/gameStore.ts": "36f59e0115d64ae729eda42dce3767563a419d70ebad8abde35e024f0a5ae2da",
+    "src/style.scss": "c6db56e1c8e6bb9382f6a482b0a067417ec734cb7b34db925789affd0b1ddd45"
+  },
+  "buildHashes": {
+    "assets/index-3j-oQD-G.js": "69f6943b69d9ea376f9d11d4f62277656eea43e0173fa0d24374a76f4f6ff00c",
+    "assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f",
+    "index.html": "4bae8e855ffba8844b2b86db0c9ec18e1ea574feb53f2e35c212b6cb7c0f6d9c"
+  },
+  "changedSinceBaseline": null,
+  "buildPath": "/tmp/plw-v2-final-qa-dist",
+  "url": "http://127.0.0.1:5195/",
+  "targetElapsedSeconds": 7200,
+  "status": "incomplete",
+  "startedAtUtc": "2026-10-05T00:04:10.717+00:00",
+  "targetEndUtc": "2026-10-05T02:04:10.717+00:00",
+  "endedAtUtc": "2026-10-05T00:21:17.438+00:00",
+  "elapsedSeconds": 1026.725,
+  "fingerprintStart": {
+    "assets": {
+      "/": "4bae8e855ffba8844b2b86db0c9ec18e1ea574feb53f2e35c212b6cb7c0f6d9c",
+      "/assets/index-3j-oQD-G.js": "69f6943b69d9ea376f9d11d4f62277656eea43e0173fa0d24374a76f4f6ff00c",
+      "/assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f"
+    },
+    "asset_count": 3
+  },
+  "fingerprintEnd": {
+    "assets": {
+      "/": "4bae8e855ffba8844b2b86db0c9ec18e1ea574feb53f2e35c212b6cb7c0f6d9c",
+      "/assets/index-3j-oQD-G.js": "69f6943b69d9ea376f9d11d4f62277656eea43e0173fa0d24374a76f4f6ff00c",
+      "/assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f"
+    },
+    "asset_count": 3
+  },
+  "observations": [
+    {
+      "checkpoint": 1,
+      "scheduledElapsedSeconds": 60,
+      "sampledAtUtc": "2026-10-05T00:05:10.847+00:00",
+      "elapsedSeconds": 60.131,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 2885,
+        "population": 29,
+        "livingNpcCount": 29,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 88.4,
+          "prosperity": 53.5468,
+          "safety": 88.5,
+          "infrastructure": 25.448,
+          "growth": 2.09707008,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 13.02,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 0.78,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 0.78
+        },
+        "eventCount": 7,
+        "historyCount": 1,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791158710835,
+        "localStorageBytes": 81587,
+        "indexedDbRecordCount": 603,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 521630,
+          "quota": 10737939870,
+          "usageDetails": {
+            "indexedDB": 521630
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 3 日 00:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 887,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 886153216,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": [
+          {
+            "startTime": 40.10000002384186,
+            "duration": 179,
+            "name": "self"
+          }
+        ]
+      },
+      "cdpHeap": {
+        "usedSize": 8795544,
+        "totalSize": 35504128,
+        "embedderHeapUsedSize": 7831968,
+        "backingStorageSize": 383174
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 2542,
+        "jsEventListeners": 741
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 2,
+      "scheduledElapsedSeconds": 120,
+      "sampledAtUtc": "2026-10-05T00:06:10.828+00:00",
+      "elapsedSeconds": 120.111,
+      "action": {
+        "route": "i",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 5281,
+        "population": 29,
+        "livingNpcCount": 29,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 93.60000000000001,
+          "prosperity": 54.343599999999995,
+          "safety": 88.75,
+          "infrastructure": 25.672,
+          "growth": 3.17664,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 13.53,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 1.1700000000000002,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 1.1700000000000002
+        },
+        "eventCount": 7,
+        "historyCount": 1,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791158770752,
+        "localStorageBytes": 81608,
+        "indexedDbRecordCount": 1202,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1040473,
+          "quota": 10738458713,
+          "usageDetails": {
+            "indexedDB": 1040473
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 4 日 16:05",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 882,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 927170560,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 5442508,
+        "totalSize": 61456384,
+        "embedderHeapUsedSize": 10170760,
+        "backingStorageSize": 385463
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 2981,
+        "jsEventListeners": 928
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 3,
+      "scheduledElapsedSeconds": 180,
+      "sampledAtUtc": "2026-10-05T00:07:10.825+00:00",
+      "elapsedSeconds": 180.109,
+      "action": {
+        "route": "l",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 7681,
+        "population": 29,
+        "livingNpcCount": 29,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 55.97199999999999,
+          "safety": 89.25,
+          "infrastructure": 26.12,
+          "growth": 5.3852608,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 14.549999999999999,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 1.9500000000000004,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 1.9500000000000004
+        },
+        "eventCount": 7,
+        "historyCount": 1,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791158830746,
+        "localStorageBytes": 81645,
+        "indexedDbRecordCount": 1802,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1560185,
+          "quota": 10738978425,
+          "usageDetails": {
+            "indexedDB": 1560185
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 6 日 08:01",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 882,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 931708928,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 21161816,
+        "totalSize": 69255168,
+        "embedderHeapUsedSize": 7526712,
+        "backingStorageSize": 380522
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 2827,
+        "jsEventListeners": 509
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 4,
+      "scheduledElapsedSeconds": 240,
+      "sampledAtUtc": "2026-10-05T00:08:11.423+00:00",
+      "elapsedSeconds": 240.706,
+      "action": {
+        "route": "m",
+        "opened": true,
+        "closed": true,
+        "errors": [],
+        "decision": {
+          "checkpoint": 4,
+          "decision": "farm",
+          "outcome": "farm UI: 整地 · 體力 6／20 分"
+        }
+      },
+      "browser": {
+        "worldTime": 10175,
+        "population": 29,
+        "livingNpcCount": 29,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 57.60399999999998,
+          "safety": 89.75,
+          "infrastructure": 26.568,
+          "growth": 7.6142336,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 15.569999999999999,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 2.7300000000000004,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 2.7300000000000004
+        },
+        "eventCount": 8,
+        "historyCount": 1,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791158891413,
+        "localStorageBytes": 81819,
+        "indexedDbRecordCount": 2410,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2087897,
+          "quota": 10739506137,
+          "usageDetails": {
+            "indexedDB": 2087897
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 8 日 01:35",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 890,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 944599040,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 23569772,
+        "totalSize": 67354624,
+        "embedderHeapUsedSize": 15297912,
+        "backingStorageSize": 381507
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 6759,
+        "jsEventListeners": 1323
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 5,
+      "scheduledElapsedSeconds": 300,
+      "sampledAtUtc": "2026-10-05T00:09:10.941+00:00",
+      "elapsedSeconds": 300.224,
+      "action": {
+        "route": "Escape",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 12559,
+        "population": 29,
+        "livingNpcCount": 29,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 58.41999999999997,
+          "safety": 90,
+          "infrastructure": 26.792,
+          "growth": 8.734912,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 16.08,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 3.12,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 3.12
+        },
+        "eventCount": 8,
+        "historyCount": 1,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791158950940,
+        "localStorageBytes": 81846,
+        "indexedDbRecordCount": 3006,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2605337,
+          "quota": 10740023577,
+          "usageDetails": {
+            "indexedDB": 2605337
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 9 日 17:19",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 943640576,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 48263388,
+        "totalSize": 83083264,
+        "embedderHeapUsedSize": 7732920,
+        "backingStorageSize": 383428
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 6875,
+        "jsEventListeners": 1501
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 6,
+      "scheduledElapsedSeconds": 360,
+      "sampledAtUtc": "2026-10-05T00:10:10.822+00:00",
+      "elapsedSeconds": 360.105,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 14951,
+        "population": 29,
+        "livingNpcCount": 29,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 60.051999999999964,
+          "safety": 90.5,
+          "infrastructure": 27.240000000000002,
+          "growth": 10.9886528,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 17.099999999999994,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 3.8999999999999995,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 3.8999999999999995
+        },
+        "eventCount": 8,
+        "historyCount": 1,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159010743,
+        "localStorageBytes": 81788,
+        "indexedDbRecordCount": 3604,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1633079,
+          "quota": 10739051319,
+          "usageDetails": {
+            "indexedDB": 1633079
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 11 日 09:11",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 942313472,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 10754472,
+        "totalSize": 64405504,
+        "embedderHeapUsedSize": 11361720,
+        "backingStorageSize": 386402
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 7513,
+        "jsEventListeners": 1771
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 7,
+      "scheduledElapsedSeconds": 420,
+      "sampledAtUtc": "2026-10-05T00:11:10.832+00:00",
+      "elapsedSeconds": 420.116,
+      "action": {
+        "route": "m",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 17355,
+        "population": 29,
+        "livingNpcCount": 29,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 61.683999999999955,
+          "safety": 91,
+          "infrastructure": 27.688000000000002,
+          "growth": 13.2589056,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 18.11999999999999,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 4.679999999999999,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 4.679999999999999
+        },
+        "eventCount": 8,
+        "historyCount": 1,
+        "ownershipCount": 0,
+        "journalBytesApprox": 300,
+        "activeCharacterId": "alden",
+        "pendingRecords": 1,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159070832,
+        "localStorageBytes": 82025,
+        "indexedDbRecordCount": 4205,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2154859,
+          "quota": 10739573099,
+          "usageDetails": {
+            "indexedDB": 2154859
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 13 日 01:15",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 890,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 942178304,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 8811020,
+        "totalSize": 63946752,
+        "embedderHeapUsedSize": 9273464,
+        "backingStorageSize": 381479
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 8993,
+        "jsEventListeners": 1703
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 8,
+      "scheduledElapsedSeconds": 480,
+      "sampledAtUtc": "2026-10-05T00:12:11.381+00:00",
+      "elapsedSeconds": 480.664,
+      "action": {
+        "route": "i",
+        "opened": true,
+        "closed": true,
+        "errors": [],
+        "decision": {
+          "checkpoint": 8,
+          "decision": "home_rest",
+          "outcome": "rested at home via UI"
+        }
+      },
+      "browser": {
+        "worldTime": 19885,
+        "population": 29,
+        "livingNpcCount": 29,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 62.49999999999995,
+          "safety": 91.25,
+          "infrastructure": 27.912000000000003,
+          "growth": 14.400224,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 18.62999999999999,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 5.0699999999999985,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 5.0699999999999985
+        },
+        "eventCount": 9,
+        "historyCount": 1,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159131370,
+        "localStorageBytes": 82040,
+        "indexedDbRecordCount": 4812,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2681963,
+          "quota": 10740100203,
+          "usageDetails": {
+            "indexedDB": 2681963
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 14 日 19:25",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 880,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 950059008,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 16578420,
+        "totalSize": 66502656,
+        "embedderHeapUsedSize": 7994728,
+        "backingStorageSize": 381616
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 11158,
+        "jsEventListeners": 2131
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 9,
+      "scheduledElapsedSeconds": 540,
+      "sampledAtUtc": "2026-10-05T00:13:10.817+00:00",
+      "elapsedSeconds": 540.1,
+      "action": {
+        "route": "l",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 22261,
+        "population": 30,
+        "livingNpcCount": 30,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 64.13199999999995,
+          "safety": 91.75,
+          "infrastructure": 28.360000000000003,
+          "growth": 16.695244799999998,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 19.649999999999984,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 5.849999999999998,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 5.849999999999998
+        },
+        "eventCount": 10,
+        "historyCount": 2,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159190745,
+        "localStorageBytes": 83675,
+        "indexedDbRecordCount": 5406,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3197774,
+          "quota": 10740616014,
+          "usageDetails": {
+            "indexedDB": 3197774
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 16 日 11:01",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 948236288,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 40148036,
+        "totalSize": 80125952,
+        "embedderHeapUsedSize": 11122456,
+        "backingStorageSize": 386727
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 11710,
+        "jsEventListeners": 2309
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 10,
+      "scheduledElapsedSeconds": 600,
+      "sampledAtUtc": "2026-10-05T00:14:10.975+00:00",
+      "elapsedSeconds": 600.259,
+      "action": {
+        "route": "Escape",
+        "opened": true,
+        "closed": true,
+        "errors": [],
+        "moved": true
+      },
+      "browser": {
+        "worldTime": 24674,
+        "population": 30,
+        "livingNpcCount": 30,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 65.80799999999996,
+          "safety": 92.25,
+          "infrastructure": 28.824,
+          "growth": 19.023065599999995,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 20.66999999999998,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 6.629999999999997,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 6.629999999999997
+        },
+        "eventCount": 10,
+        "historyCount": 2,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159250941,
+        "localStorageBytes": 83689,
+        "indexedDbRecordCount": 6009,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3721282,
+          "quota": 10741139522,
+          "usageDetails": {
+            "indexedDB": 3721282
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 18 日 03:14",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 891,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 936890368,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 36105308,
+        "totalSize": 77512704,
+        "embedderHeapUsedSize": 12958032,
+        "backingStorageSize": 392336
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 11816,
+        "jsEventListeners": 2773
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 11,
+      "scheduledElapsedSeconds": 660,
+      "sampledAtUtc": "2026-10-05T00:15:10.827+00:00",
+      "elapsedSeconds": 660.111,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 27066,
+        "population": 30,
+        "livingNpcCount": 30,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 66.64599999999997,
+          "safety": 92.5,
+          "infrastructure": 29.056,
+          "growth": 20.193311999999995,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 21.17999999999998,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 7.019999999999997,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 7.019999999999997
+        },
+        "eventCount": 10,
+        "historyCount": 2,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159310743,
+        "localStorageBytes": 83800,
+        "indexedDbRecordCount": 6607,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1444834,
+          "quota": 10738863074,
+          "usageDetails": {
+            "indexedDB": 1444834
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 19 日 19:10",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 880,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 949669888,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 42668596,
+        "totalSize": 80609280,
+        "embedderHeapUsedSize": 8376256,
+        "backingStorageSize": 385739
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 11675,
+        "jsEventListeners": 2226
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 12,
+      "scheduledElapsedSeconds": 720,
+      "sampledAtUtc": "2026-10-05T00:16:11.388+00:00",
+      "elapsedSeconds": 720.672,
+      "action": {
+        "route": "i",
+        "opened": true,
+        "closed": true,
+        "errors": [],
+        "decision": {
+          "checkpoint": 12,
+          "decision": "mine",
+          "outcome": "attempted"
+        }
+      },
+      "browser": {
+        "worldTime": 29565,
+        "population": 30,
+        "livingNpcCount": 30,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 68.32199999999999,
+          "safety": 93,
+          "infrastructure": 29.52,
+          "growth": 22.546476799999997,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 22.199999999999974,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 7.799999999999996,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 7.799999999999996
+        },
+        "eventCount": 10,
+        "historyCount": 2,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159371337,
+        "localStorageBytes": 83770,
+        "indexedDbRecordCount": 7214,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1971814,
+          "quota": 10739390054,
+          "usageDetails": {
+            "indexedDB": 1971814
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 21 日 12:45",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 953872384,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 15986160,
+        "totalSize": 66502656,
+        "embedderHeapUsedSize": 8545200,
+        "backingStorageSize": 385029
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 13759,
+        "jsEventListeners": 2580
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 13,
+      "scheduledElapsedSeconds": 780,
+      "sampledAtUtc": "2026-10-05T00:17:10.818+00:00",
+      "elapsedSeconds": 780.101,
+      "action": {
+        "route": "l",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 31941,
+        "population": 30,
+        "livingNpcCount": 30,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 69.998,
+          "safety": 93.5,
+          "infrastructure": 29.983999999999998,
+          "growth": 24.916537599999995,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 23.21999999999997,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 8.579999999999997,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 8.579999999999997
+        },
+        "eventCount": 10,
+        "historyCount": 2,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159430739,
+        "localStorageBytes": 83719,
+        "indexedDbRecordCount": 7808,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2487518,
+          "quota": 10739905758,
+          "usageDetails": {
+            "indexedDB": 2487518
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 23 日 04:21",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 890,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 951496704,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 16375164,
+        "totalSize": 68296704,
+        "embedderHeapUsedSize": 10373744,
+        "backingStorageSize": 389029
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 14052,
+        "jsEventListeners": 2940
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 14,
+      "scheduledElapsedSeconds": 840,
+      "sampledAtUtc": "2026-10-05T00:18:10.831+00:00",
+      "elapsedSeconds": 840.115,
+      "action": {
+        "route": "m",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 34345,
+        "population": 30,
+        "livingNpcCount": 30,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 70.83600000000001,
+          "safety": 93.75,
+          "infrastructure": 30.215999999999998,
+          "growth": 26.107903999999994,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 23.72999999999997,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 8.969999999999997,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 8.969999999999997
+        },
+        "eventCount": 10,
+        "historyCount": 2,
+        "ownershipCount": 0,
+        "journalBytesApprox": 300,
+        "activeCharacterId": "alden",
+        "pendingRecords": 1,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159490831,
+        "localStorageBytes": 84066,
+        "indexedDbRecordCount": 8409,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3009293,
+          "quota": 10740427533,
+          "usageDetails": {
+            "indexedDB": 3009293
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 24 日 20:25",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 879,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 955514880,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 10478804,
+        "totalSize": 65536000,
+        "embedderHeapUsedSize": 10566368,
+        "backingStorageSize": 385607
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 15850,
+        "jsEventListeners": 2982
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 15,
+      "scheduledElapsedSeconds": 900,
+      "sampledAtUtc": "2026-10-05T00:19:10.896+00:00",
+      "elapsedSeconds": 900.18,
+      "action": {
+        "route": "Escape",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 36745,
+        "population": 30,
+        "livingNpcCount": 30,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 72.51200000000003,
+          "safety": 94.25,
+          "infrastructure": 30.679999999999996,
+          "growth": 28.503308799999996,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 24.749999999999964,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 9.749999999999998,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 9.749999999999998
+        },
+        "eventCount": 10,
+        "historyCount": 2,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159550862,
+        "localStorageBytes": 83795,
+        "indexedDbRecordCount": 9009,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 3530205,
+          "quota": 10740948445,
+          "usageDetails": {
+            "indexedDB": 3530205
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 26 日 12:25",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 886,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 971276288,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 43477888,
+        "totalSize": 82706432,
+        "embedderHeapUsedSize": 29598752,
+        "backingStorageSize": 573752
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 17609,
+        "jsEventListeners": 4811
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 16,
+      "scheduledElapsedSeconds": 960,
+      "sampledAtUtc": "2026-10-05T00:20:11.305+00:00",
+      "elapsedSeconds": 960.588,
+      "action": {
+        "route": "c",
+        "opened": true,
+        "closed": true,
+        "errors": [],
+        "decision": {
+          "checkpoint": 16,
+          "decision": "shop",
+          "outcome": "shop inspected; closed/price/resource gate"
+        }
+      },
+      "browser": {
+        "worldTime": 39221,
+        "population": 30,
+        "livingNpcCount": 30,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 74.18800000000005,
+          "safety": 94.75,
+          "infrastructure": 31.143999999999995,
+          "growth": 30.915609599999993,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 25.76999999999996,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 10.53,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 10.53
+        },
+        "eventCount": 10,
+        "historyCount": 2,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159611235,
+        "localStorageBytes": 83733,
+        "indexedDbRecordCount": 9614,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 1913308,
+          "quota": 10739331548,
+          "usageDetails": {
+            "indexedDB": 1913308
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 28 日 05:41",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 891,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 896139264,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 16255020,
+        "totalSize": 27033600,
+        "embedderHeapUsedSize": 9716872,
+        "backingStorageSize": 385034
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 18318,
+        "jsEventListeners": 3423
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    },
+    {
+      "checkpoint": 17,
+      "scheduledElapsedSeconds": 1020,
+      "sampledAtUtc": "2026-10-05T00:21:10.843+00:00",
+      "elapsedSeconds": 1020.126,
+      "action": {
+        "route": "m",
+        "opened": true,
+        "closed": true,
+        "errors": []
+      },
+      "browser": {
+        "worldTime": 41605,
+        "population": 30,
+        "livingNpcCount": 30,
+        "deadNpcCount": 0,
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好農夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好礦工的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好樵夫的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "hardworking",
+              "solitary"
+            ],
+            "concern": "專心做好鐵匠的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "專心做好店主的工作",
+            "memories": []
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "traits": [
+              "brave",
+              "ambitious",
+              "wanderer",
+              "solitary"
+            ],
+            "concern": "留意聚落周遭的動靜",
+            "memories": []
+          }
+        ],
+        "settlement": {
+          "name": "橡谷",
+          "stage": "hamlet",
+          "capacity": 40,
+          "food": 100,
+          "prosperity": 75.02600000000005,
+          "safety": 95,
+          "infrastructure": 31.375999999999994,
+          "growth": 32.12809599999999,
+          "buildings": [
+            "house",
+            "farm",
+            "store",
+            "inn"
+          ]
+        },
+        "gold": 45,
+        "threat": {
+          "monsterPopulation": 26.27999999999996,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 10.92,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        },
+        "boss": {
+          "alive": false,
+          "progress": 10.92
+        },
+        "eventCount": 10,
+        "historyCount": 2,
+        "ownershipCount": 0,
+        "journalBytesApprox": 75,
+        "activeCharacterId": "alden",
+        "pendingRecords": 0,
+        "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+        "saveVersion": 2,
+        "lastSavedAt": 1791159670837,
+        "localStorageBytes": 83779,
+        "indexedDbRecordCount": 10210,
+        "indexedDbError": null,
+        "storageEstimate": {
+          "usage": 2430748,
+          "quota": 10739848988,
+          "usageDetails": {
+            "indexedDB": 2430748
+          }
+        },
+        "storageEstimateError": null,
+        "storageParseError": null,
+        "visibleClock": "第 1 年 春 29 日 21:25",
+        "selectedSpeed": "×20",
+        "alive": true,
+        "saveError": null,
+        "domNodes": 882,
+        "activeDialog": null
+      },
+      "unhandledRejections": [],
+      "rss": {
+        "rss_bytes": 919183360,
+        "process_count": 9,
+        "root_pid": 146109,
+        "pids": [
+          146109,
+          146126,
+          146127,
+          146147,
+          146163,
+          146164,
+          146196,
+          146206,
+          146207
+        ],
+        "available": true,
+        "note": "RSS is summed over the Chromium process tree; shared pages may be counted more than once."
+      },
+      "longTasks": {
+        "available": true,
+        "error": null,
+        "total": 1,
+        "dropped": 0,
+        "newEntries": []
+      },
+      "cdpHeap": {
+        "usedSize": 11463024,
+        "totalSize": 38797312,
+        "embedderHeapUsedSize": 11702472,
+        "backingStorageSize": 384928
+      },
+      "cdpDom": {
+        "documents": 1,
+        "nodes": 20307,
+        "jsEventListeners": 3818
+      },
+      "worldTimeAdvanced": true,
+      "pageErrorCount": 0,
+      "consoleErrorCount": 1,
+      "resourceFailureCount": 0
+    }
+  ],
+  "uiLatenciesMs": [
+    {
+      "kind": "openModal",
+      "ms": 69.0
+    },
+    {
+      "kind": "closeModal",
+      "ms": 50.3
+    },
+    {
+      "kind": "openModal",
+      "ms": 66.2
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.4
+    },
+    {
+      "kind": "openModal",
+      "ms": 64.3
+    },
+    {
+      "kind": "closeModal",
+      "ms": 34.1
+    },
+    {
+      "kind": "openModal",
+      "ms": 92.7
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.2
+    },
+    {
+      "kind": "openModal",
+      "ms": 88.9
+    },
+    {
+      "kind": "closeModal",
+      "ms": 54.0
+    },
+    {
+      "kind": "manualSave",
+      "ms": 65.7
+    },
+    {
+      "kind": "openModal",
+      "ms": 57.5
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.8
+    },
+    {
+      "kind": "openModal",
+      "ms": 71.3
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.9
+    },
+    {
+      "kind": "openModal",
+      "ms": 51.9
+    },
+    {
+      "kind": "closeModal",
+      "ms": 34.0
+    },
+    {
+      "kind": "openModal",
+      "ms": 50.8
+    },
+    {
+      "kind": "closeModal",
+      "ms": 35.7
+    },
+    {
+      "kind": "openModal",
+      "ms": 64.7
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.4
+    },
+    {
+      "kind": "move",
+      "ms": 80.1
+    },
+    {
+      "kind": "manualSave",
+      "ms": 58.8
+    },
+    {
+      "kind": "openModal",
+      "ms": 62.8
+    },
+    {
+      "kind": "closeModal",
+      "ms": 36.6
+    },
+    {
+      "kind": "openModal",
+      "ms": 59.5
+    },
+    {
+      "kind": "closeModal",
+      "ms": 50.7
+    },
+    {
+      "kind": "openModal",
+      "ms": 58.1
+    },
+    {
+      "kind": "closeModal",
+      "ms": 32.9
+    },
+    {
+      "kind": "openModal",
+      "ms": 71.8
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.8
+    },
+    {
+      "kind": "openModal",
+      "ms": 70.0
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.4
+    },
+    {
+      "kind": "manualSave",
+      "ms": 64.8
+    },
+    {
+      "kind": "openModal",
+      "ms": 49.5
+    },
+    {
+      "kind": "closeModal",
+      "ms": 35.2
+    },
+    {
+      "kind": "openModal",
+      "ms": 81.4
+    },
+    {
+      "kind": "closeModal",
+      "ms": 33.5
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "atUtc": "2026-10-05T00:04:10.252+00:00",
+      "elapsed": null,
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "url": "http://127.0.0.1:5195/favicon.ico"
+    }
+  ],
+  "resourceFailures": [],
+  "unhandledRejections": [],
+  "droppedDiagnostics": {
+    "consoleErrors": 1
+  },
+  "interruptions": [],
+  "limitations": [
+    "Single disposable Chromium profile and local build; no forced GC.",
+    "Per-checkpoint IndexedDB uses count() only. Final UI export reads the archive once.",
+    "Chromium RSS is summed over the process tree; shared pages may be counted more than once."
+  ],
+  "startMonotonic": 197991.438228846,
+  "chromiumProfile": "/tmp/plw-rpg-qa-20261004-soak-profile-qi7t8ndq",
+  "initialGameState": {
+    "worldTime": 480,
+    "worldId": "daba1752-4534-46da-b29a-091e895bd679",
+    "activeCharacterId": "alden",
+    "selectedSpeed": "×20"
+  },
+  "reloadChecks": [],
+  "uiCoverage": {
+    "windows": [
+      "地圖與世界",
+      "地圖與世界",
+      "地圖與世界",
+      "地圖與世界"
+    ],
+    "attempts": [
+      {
+        "checkpoint": 4,
+        "decision": "farm",
+        "outcome": "farm UI: 整地 · 體力 6／20 分"
+      },
+      {
+        "checkpoint": 8,
+        "decision": "home_rest",
+        "outcome": "rested at home via UI"
+      },
+      {
+        "checkpoint": 12,
+        "decision": "mine",
+        "outcome": "attempted"
+      },
+      {
+        "checkpoint": 16,
+        "decision": "shop",
+        "outcome": "shop inspected; closed/price/resource gate"
+      }
+    ],
+    "completed": []
+  },
+  "actualElapsedSeconds": 1026.722,
+  "terminationReason": "signal 2"
+}

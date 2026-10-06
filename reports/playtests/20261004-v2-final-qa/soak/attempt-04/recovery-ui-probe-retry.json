@@ -1,0 +1,51 @@
+{
+  "evidenceKind": "supplemental fresh-profile normal-UI save/export probe",
+  "originalAttempt04Profile": "/tmp/plw-rpg-qa-20261004-soak-profile-fay6q2ya",
+  "originalAttempt04ProfileExists": false,
+  "url": "http://127.0.0.1:5195/",
+  "freshProfilePath": "/tmp/plw-rpg-attempt04-ui-probe-x27sqx8i",
+  "pageAuditBeforeNavigation": [
+    {
+      "url": "about:blank",
+      "title": ""
+    }
+  ],
+  "pageAuditAfterNavigation": [
+    {
+      "url": "http://127.0.0.1:5195/",
+      "title": "在陌生的天空下 — 橡谷"
+    }
+  ],
+  "pageAuditBeforeExport": [],
+  "onlyOneAppPageBeforeInteractions": true,
+  "openingUiCompleted": true,
+  "savedViaUi": true,
+  "exportButtonVisible": false,
+  "downloadCompleted": false,
+  "gameBeforeUiSave": {
+    "worldId": "4e44c56b-fa37-4c99-9969-8b5102336392",
+    "worldTime": 480,
+    "activeCharacterId": "alden"
+  },
+  "gameAfterUiSave": {
+    "worldId": "4e44c56b-fa37-4c99-9969-8b5102336392",
+    "worldTime": 480,
+    "activeCharacterId": "alden"
+  },
+  "visibleMenuButtonTexts": [
+    "這一生",
+    "住所與產業",
+    "地方消息與委託",
+    "角色\nC",
+    "物品\nI",
+    "日誌\nL",
+    "地圖與世界\nM",
+    "世界歷史",
+    "旅人筆記",
+    "儲存世界\n已存於此瀏覽器 · 操作後立即保存",
+    "匯出遊玩紀錄\n紀錄只能追加",
+    "重建世界"
+  ],
+  "exactButtonMatchCount": 0,
+  "error": "TimeoutError: Locator.wait_for: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".pixel-menu\").get_by_role(\"button\", name=re.compile(r\"^匯出遊玩紀錄\")) to be visible\n"
+}

@@ -1,0 +1,868 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "status": "PASS",
+  "frozenSourceFileCount": 58,
+  "changedSourceFiles": [],
+  "requiredDocuments": {
+    "README.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "baseline.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "regression.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "browser-soak.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "agent-playtest-life.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "agent-playtest-adventure.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "agent-playtest-hybrid.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "long-term.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "performance.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "fun-signal-audit.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "human-fun-gate.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    },
+    "final-review.md": {
+      "exists": true,
+      "sourceCommitPresent": true
+    }
+  },
+  "archives": [
+    {
+      "file": "adventure-final/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "adventure-final/playlog.jsonl",
+          "bytes": 4125,
+          "sha256": "24d3353855176aae05a67fcec99b4daa0927c3109e8f9a9ec558478dc8434774"
+        }
+      ],
+      "versions": 2,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {},
+      "actualSourceCommitStatus": "not-established-by-record-content"
+    },
+    {
+      "file": "adventure-final/run-01/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "adventure-final/run-01/playlog.jsonl",
+          "bytes": 40032641,
+          "sha256": "951e24877563b731106dd25373b5b6c7e0f7c02f55d9d6551812282df41e57d2"
+        }
+      ],
+      "versions": 513,
+      "latestProjectionsMatched": 2,
+      "actualSourceCommitsByReport": {
+        "final-core-readonly.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "adventure/attempt-04/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "adventure/attempt-04/playlog.jsonl",
+          "bytes": 2294540,
+          "sha256": "25e3243ed5442c3e714a1ccabda455989f61920083bc4e205798416273323c97"
+        }
+      ],
+      "versions": 135,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "adventure/attempt-04/previous-incomplete/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "adventure/attempt-04/previous-incomplete/playlog.jsonl",
+          "bytes": 880365,
+          "sha256": "6d1ff83a7b79718dad176f7d0f605900244378f08de8dc597f2fe9d3d31b2f20"
+        }
+      ],
+      "versions": 105,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "adventure/attempt-04/segment-01/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "adventure/attempt-04/segment-01/playlog.jsonl",
+          "bytes": 2294540,
+          "sha256": "25e3243ed5442c3e714a1ccabda455989f61920083bc4e205798416273323c97"
+        }
+      ],
+      "versions": 135,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "adventure/attempt-04/segment-02/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "adventure/attempt-04/segment-02/playlog.jsonl",
+          "bytes": 2239135,
+          "sha256": "00fa87f15619a6d6f55c32ad41b588ef8ca9e0de303a39b7b936825007ec9f72"
+        }
+      ],
+      "versions": 99,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "adventure/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "adventure/playlog.jsonl",
+          "bytes": 880365,
+          "sha256": "6d1ff83a7b79718dad176f7d0f605900244378f08de8dc597f2fe9d3d31b2f20"
+        }
+      ],
+      "versions": 105,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "astra/forensic-20261005-0846/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "astra/forensic-20261005-0846/playlog.jsonl",
+          "bytes": 21890,
+          "sha256": "faeb5f0e9fb3e5ceb7127652d3c6114e105f7b446a4fbf939b82874f0bfb811c"
+        }
+      ],
+      "versions": 4,
+      "latestProjectionsMatched": 4,
+      "actualSourceCommitsByReport": {},
+      "actualSourceCommitStatus": "not-established-by-record-content"
+    },
+    {
+      "file": "astra/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "astra/playlog.jsonl",
+          "bytes": 308548,
+          "sha256": "17ddea13419b2a29676c57d58915ed2ec564d929e58e56d1a597f4c8248ac4fb"
+        }
+      ],
+      "versions": 58,
+      "latestProjectionsMatched": 23,
+      "actualSourceCommitsByReport": {
+        "forced-gc-diagnostic.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "hybrid-restored-tab-repro.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "hybrid-rollback-evidence.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "baseline-old/browser-harness/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "baseline-old/browser-harness/playlog.jsonl",
+          "bytes": 15521,
+          "sha256": "d99390f518a9e47e8b0d7b560f77817a4dc7d3a293c8903b935c574daa2a644f"
+        }
+      ],
+      "versions": 4,
+      "latestProjectionsMatched": 4,
+      "actualSourceCommitsByReport": {},
+      "actualSourceCommitStatus": "not-established-by-record-content"
+    },
+    {
+      "file": "baseline-old/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "baseline-old/playlog.jsonl",
+          "bytes": 26731,
+          "sha256": "a5aedbf64d0a3ca93d6c2098deed201b4bffa3cc698bb09c29966c0cb26fd07b"
+        }
+      ],
+      "versions": 7,
+      "latestProjectionsMatched": 7,
+      "actualSourceCommitsByReport": {
+        "baseline-c02.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "build-manifest-c02.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "browser/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "browser/playlog.jsonl",
+          "bytes": 364919,
+          "sha256": "c525c96a12e2bce53df95a91d9cf581090d59a759c2d97e103ec6b7a6b7ff9d4"
+        }
+      ],
+      "versions": 97,
+      "latestProjectionsMatched": 9,
+      "actualSourceCommitsByReport": {
+        "browser.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "extended-idle.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "firefox.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "persistent-idle.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "supplemental-ui.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "engine/fixtures/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "engine/fixtures/playlog.jsonl",
+          "bytes": 7933,
+          "sha256": "939e8e64472335c85429e15ad6e47bcefab3f6a7bb93dda9290950ecc0dd9231"
+        }
+      ],
+      "versions": 3,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {
+        "manifest.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "engine/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "engine/playlog.jsonl",
+          "bytes": 2035352,
+          "sha256": "e50227f0be3894be9d330f098d015e1539a3257078f95d146feca584045a28aa"
+        }
+      ],
+      "versions": 138,
+      "latestProjectionsMatched": 8,
+      "actualSourceCommitsByReport": {
+        "arc-counterfactuals.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "featured-npc-lifecycle.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "long-term-results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "migration-results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "ownership-lifecycle.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "rng-determinism.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "hybrid-final/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "hybrid-final/playlog.jsonl",
+          "bytes": 100837503,
+          "sha256": "c12abce0815fdbd6f959d6ae3c410ab20ab2172c16b4507f57ba5a3b2888203d"
+        }
+      ],
+      "versions": 331,
+      "latestProjectionsMatched": 2,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "hybrid-final/resumed-segment-02/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "hybrid-final/resumed-segment-02/playlog.jsonl",
+          "bytes": 10853665,
+          "sha256": "b4c9859863e0cfba273c8c81d9d5f18b31c6b65f87cd85d0a24267562fc357e2"
+        }
+      ],
+      "versions": 95,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "hybrid-final/resumed-segment-03/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "hybrid-final/resumed-segment-03/playlog.jsonl",
+          "bytes": 5955488,
+          "sha256": "25a1cb65b3eddf43050ade0e439bc11999c8276bdbbb3f49714ac68d19ab0d1c"
+        }
+      ],
+      "versions": 77,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "hybrid-final/resumed-segment-04/attempt-01/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "hybrid-final/resumed-segment-04/attempt-01/playlog.jsonl",
+          "bytes": 14767,
+          "sha256": "13ea07e954ee86e1428ff06f1825abc4e3974150e05ea54d090fe58775d08ba0"
+        }
+      ],
+      "versions": 1,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "hybrid-final/resumed-segment-04/attempt-02/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "hybrid-final/resumed-segment-04/attempt-02/playlog.jsonl",
+          "bytes": 112436289,
+          "sha256": "c6f2d83955fe4ba656795f0725fb3bcb78570933b260b2fe6d2d5af439d3e8d0"
+        },
+        {
+          "paths": [
+            "hybrid-final/resumed-segment-04/attempt-02/playlog.jsonl.gz"
+          ],
+          "compressedBytes": 74734533,
+          "compressedSha256": "d2d4601a3be8db106cf7ed27c5a449026755be40a872ecde4c761306a2732530",
+          "expandedBytes": 112436289,
+          "expandedSha256": "c6f2d83955fe4ba656795f0725fb3bcb78570933b260b2fe6d2d5af439d3e8d0"
+        }
+      ],
+      "versions": 335,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "hybrid-final/resumed-segment-04/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "hybrid-final/resumed-segment-04/playlog.jsonl",
+          "bytes": 80501,
+          "sha256": "9f68aa1465a90aeb7705debb38626ca88ade9ae7b420cf8ec9259310f1009dda"
+        }
+      ],
+      "versions": 8,
+      "latestProjectionsMatched": 2,
+      "actualSourceCommitsByReport": {
+        "failed-stdin-eof-start.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "hybrid/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "hybrid/playlog.jsonl",
+          "bytes": 4464523,
+          "sha256": "7f1dcc5d2704f35b57bc45d7e0f694bba4f7be77d2cb85cbd0771012458262ed"
+        }
+      ],
+      "versions": 142,
+      "latestProjectionsMatched": 3,
+      "actualSourceCommitsByReport": {
+        "browser-build-proof.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "observations.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "results.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "life-final/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "life-final/playlog.jsonl",
+          "bytes": 2984744,
+          "sha256": "379ac333f0a3f6c95244d7d3a3f4702a3e2accff0cb1488ceda61f2c10beb84f"
+        }
+      ],
+      "versions": 155,
+      "latestProjectionsMatched": 2,
+      "actualSourceCommitsByReport": {
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "life/ownerlife/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "life/ownerlife/playlog.jsonl",
+          "bytes": 817565,
+          "sha256": "43d57324c5dd5d0bcdd7e9cdcbe91b04d3d6ea9f7aa26146f36c53e77f93eb2d"
+        }
+      ],
+      "versions": 103,
+      "latestProjectionsMatched": 6,
+      "actualSourceCommitsByReport": {},
+      "actualSourceCommitStatus": "not-established-by-record-content"
+    },
+    {
+      "file": "life/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "life/playlog.jsonl",
+          "bytes": 34690,
+          "sha256": "f02e413599b1340e1ac684bd6babd0f15d2d9dcc2381cdfc301720323368d4e0"
+        }
+      ],
+      "versions": 12,
+      "latestProjectionsMatched": 7,
+      "actualSourceCommitsByReport": {},
+      "actualSourceCommitStatus": "not-established-by-record-content"
+    },
+    {
+      "file": "playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "playlog.jsonl",
+          "bytes": 486940,
+          "sha256": "88d6c5c0e42a5a9dfb979537768ea81fa3eec059bb1ec3bbc1236ee9c6985708"
+        }
+      ],
+      "versions": 91,
+      "latestProjectionsMatched": 24,
+      "actualSourceCommitsByReport": {
+        "artifact-integrity.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "artifact-manifest.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "baseline.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "build-manifest.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "server-resume.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "profiling/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "profiling/playlog.jsonl",
+          "bytes": 63034,
+          "sha256": "20354bd28a8cc8d472d3fce133dbf3e264a55b445ae221d6a05d3c4604f2c2ce"
+        }
+      ],
+      "versions": 15,
+      "latestProjectionsMatched": 3,
+      "actualSourceCommitsByReport": {
+        "forced-gc-diagnostic.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "summary.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "review/original-review/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "review/original-review/playlog.jsonl",
+          "bytes": 5455,
+          "sha256": "01eafaef811d1c31af02b6922eed9518d1c76e15a51535efc5999c8b124c4fef"
+        }
+      ],
+      "versions": 1,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {},
+      "actualSourceCommitStatus": "not-established-by-record-content"
+    },
+    {
+      "file": "review/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "review/playlog.jsonl",
+          "bytes": 3520294,
+          "sha256": "94d0d04747cdbc5a141236849ff719124774e55b6f11c4afcc4059a387bf0132"
+        }
+      ],
+      "versions": 102,
+      "latestProjectionsMatched": 29,
+      "actualSourceCommitsByReport": {
+        "active-dungeon-party-reload.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "adventure-milestone-timing.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "agent-timing-audit.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "final-evidence-review.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "gzip-only-verification.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "interim-archive-integrity.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "premium-audit.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "profile-boundary-fix.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "profile-boundary-original.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "raw-whitespace-disposition.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "server-recovery.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "soak-export-check.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "terminal-evidence-review.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "seeds/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "seeds/playlog.jsonl",
+          "bytes": 27296,
+          "sha256": "fd1b2fc06a7f7f5fddadceddf67ff24ea97464ecab9071cf5fe80c085e3ffd38"
+        }
+      ],
+      "versions": 6,
+      "latestProjectionsMatched": 3,
+      "actualSourceCommitsByReport": {
+        "provenance.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593",
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "soak/attempt-01/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "soak/attempt-01/playlog.jsonl",
+          "bytes": 1942,
+          "sha256": "b2f0ae196bf89012f18fecfd86cf9fadb86e87e2bd6dc909da9a3a712604b2b9"
+        }
+      ],
+      "versions": 1,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {},
+      "actualSourceCommitStatus": "not-established-by-record-content"
+    },
+    {
+      "file": "soak/attempt-02/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "soak/attempt-02/playlog.jsonl",
+          "bytes": 2990,
+          "sha256": "cc3ca14d5db668a9876760e32c8b0d2f33167caacb47a1553f43399b60e511a5"
+        }
+      ],
+      "versions": 1,
+      "latestProjectionsMatched": 1,
+      "actualSourceCommitsByReport": {},
+      "actualSourceCommitStatus": "not-established-by-record-content"
+    },
+    {
+      "file": "soak/attempt-03/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "soak/attempt-03/playlog.jsonl",
+          "bytes": 27465,
+          "sha256": "fc25e0dd3ee6560dc49f74038742a91164db01d8cc84abab18254195f3e0eb02"
+        }
+      ],
+      "versions": 2,
+      "latestProjectionsMatched": 2,
+      "actualSourceCommitsByReport": {
+        "checkpoints.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "results-incomplete.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "soak/attempt-04/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "soak/attempt-04/playlog.jsonl",
+          "bytes": 3971670,
+          "sha256": "85dd286323e9b1ccc84983b5ac0d820c01ca1064b4ed9c4ac42f1a29e2dcdd38"
+        }
+      ],
+      "versions": 132,
+      "latestProjectionsMatched": 9,
+      "actualSourceCommitsByReport": {
+        "checkpoints.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "results.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "soak/attempt-05/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "soak/attempt-05/playlog.jsonl",
+          "bytes": 2026193,
+          "sha256": "0b47e928cd0d2dc321ff15fea8b34537a106b4ddb7e262046762cba622aac6ac"
+        }
+      ],
+      "versions": 77,
+      "latestProjectionsMatched": 4,
+      "actualSourceCommitsByReport": {
+        "checkpoints.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "preflight.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "soak/attempt-06/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "soak/attempt-06/playlog.jsonl",
+          "bytes": 8231386,
+          "sha256": "2cb1a4f0464ac45947e543a22b59b0c05ffe7050f636d5b092aba33cfefeb467"
+        }
+      ],
+      "versions": 130,
+      "latestProjectionsMatched": 7,
+      "actualSourceCommitsByReport": {
+        "checkpoints.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "launcher.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "preflight.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ],
+        "results.json": [
+          "441e3c2b435f199a50cb78ee5b19521bcc084593"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    },
+    {
+      "file": "soak/playlog.jsonl",
+      "rawPresent": true,
+      "representations": [
+        {
+          "path": "soak/playlog.jsonl",
+          "bytes": 272425,
+          "sha256": "fd37d5fb35e1d57c768af3cea542ef43192d48e6e2824bd3d9140e156d00739c"
+        }
+      ],
+      "versions": 34,
+      "latestProjectionsMatched": 6,
+      "actualSourceCommitsByReport": {
+        "checkpoints.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "preflight-ui-attempt01-failures.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "preflight-ui.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ],
+        "results.json": [
+          "c02b600c6f5f1533374d671b707d333c86d852d7"
+        ]
+      },
+      "actualSourceCommitStatus": "explicit-report-labels-found"
+    }
+  ],
+  "archivePackagingMetadata": {
+    "present": true,
+    "archiveCount": 1
+  },
+  "errors": [],
+  "scope": "Frozen app source and each logical report archive (plain or gzip); raw+gzip copies count once after exact SHA/byte comparison. Fresh clones can validate gzip-only representations and latest projections. Subjective fun remains a separate human gate."
+}

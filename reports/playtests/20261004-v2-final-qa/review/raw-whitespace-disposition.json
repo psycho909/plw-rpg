@@ -1,0 +1,10 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "fullCommand": "git diff --cached --check",
+  "fullExitCode": 2,
+  "rawEvidence": "raw-whitespace-check.log",
+  "reason": "All flagged lines are RFC4180 CRLF CSV rows or original raw logs with blank EOF. Preserve raw bytes; do not trim authenticated evidence. This is a formatting-check finding, not a game or test failure.",
+  "scopedCommand": "git diff --cached --check -- '*.md' '*.py' '*.ts' '*.json' '.gitignore'",
+  "scopedExitCode": 0,
+  "equivalentControl": "Authored docs/code/JSON whitespace checked; raw CSV/logs retain their exact bytes and are separately checksum/archive validated."
+}

@@ -1,0 +1,29 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "status": "PASS",
+  "scope": "Real completed H04 gzip only, same logical read path as fresh clone; local original raw excluded from reader without modifying it. Every version checksum/latest projection verified. Not a full Git clone test.",
+  "summary": {
+    "file": "hybrid-final/resumed-segment-04/attempt-02/playlog.jsonl",
+    "rawPresent": false,
+    "representations": [
+      {
+        "paths": [
+          "hybrid-final/resumed-segment-04/attempt-02/playlog.jsonl.gz"
+        ],
+        "compressedBytes": 74734533,
+        "compressedSha256": "d2d4601a3be8db106cf7ed27c5a449026755be40a872ecde4c761306a2732530",
+        "expandedBytes": 112436289,
+        "expandedSha256": "c6f2d83955fe4ba656795f0725fb3bcb78570933b260b2fe6d2d5af439d3e8d0"
+      }
+    ],
+    "versions": 335,
+    "latestProjectionsMatched": 1,
+    "actualSourceCommitsByReport": {
+      "results.json": [
+        "441e3c2b435f199a50cb78ee5b19521bcc084593"
+      ]
+    },
+    "actualSourceCommitStatus": "explicit-report-labels-found"
+  },
+  "errors": []
+}

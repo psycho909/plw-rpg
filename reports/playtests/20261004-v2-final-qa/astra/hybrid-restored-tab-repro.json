@@ -1,0 +1,108 @@
+{
+  "sourceCommit": "c02b600c6f5f1533374d671b707d333c86d852d7",
+  "startedAtUtc": "2026-10-05T04:31:27.195595+00:00",
+  "profile": "/tmp/plw-astra-restored-tab-probe-wziyo71y",
+  "method": "Separate fresh disposable profile, UI-only start/x20/pause/save; normal persistent-context close/relaunch. Never touches Hybrid profile.",
+  "steps": [
+    {
+      "atUtc": "2026-10-05T04:31:28.241975+00:00",
+      "label": "launch-1-before-navigation",
+      "pages": [
+        {
+          "url": "about:blank"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-05T04:31:32.002952+00:00",
+      "label": "run-1-x20",
+      "pages": [
+        {
+          "url": "http://127.0.0.1:5195/",
+          "state": {
+            "worldTime": 596,
+            "clock": "第 1 年 春 1 日\n09:56",
+            "speed": "×20"
+          }
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-05T04:31:32.311372+00:00",
+      "label": "run-1-paused-saved",
+      "pages": [
+        {
+          "url": "http://127.0.0.1:5195/",
+          "state": {
+            "worldTime": 602,
+            "clock": "第 1 年 春 1 日\n10:02",
+            "speed": "暫停"
+          }
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-05T04:31:33.290216+00:00",
+      "label": "launch-2-before-navigation",
+      "pages": [
+        {
+          "url": "about:blank"
+        },
+        {
+          "url": "http://127.0.0.1:5195/",
+          "state": {
+            "worldTime": 602,
+            "clock": "第 1 年 春 1 日\n10:02",
+            "speed": "×1"
+          }
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-05T04:31:37.067787+00:00",
+      "label": "run-2-x20",
+      "pages": [
+        {
+          "url": "http://127.0.0.1:5195/",
+          "state": {
+            "worldTime": 721,
+            "clock": "第 1 年 春 1 日\n12:01",
+            "speed": "×20"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:5195/",
+          "state": {
+            "worldTime": 721,
+            "clock": "第 1 年 春 1 日\n10:09",
+            "speed": "×1"
+          }
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-05T04:31:37.389114+00:00",
+      "label": "run-2-paused-saved",
+      "pages": [
+        {
+          "url": "http://127.0.0.1:5195/",
+          "state": {
+            "worldTime": 725,
+            "clock": "第 1 年 春 1 日\n12:05",
+            "speed": "暫停"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:5195/",
+          "state": {
+            "worldTime": 725,
+            "clock": "第 1 年 春 1 日\n10:10",
+            "speed": "×1"
+          }
+        }
+      ]
+    }
+  ],
+  "status": "completed",
+  "endedAtUtc": "2026-10-05T04:31:37.517773+00:00"
+}

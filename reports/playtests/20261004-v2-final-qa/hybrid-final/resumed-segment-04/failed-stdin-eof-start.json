@@ -1,0 +1,3534 @@
+{
+  "route": "hybrid",
+  "status": "stopped-short",
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "buildManifest": "../build-manifest.json",
+  "url": "http://127.0.0.1:5197",
+  "browser": "Playwright Chromium 151 /usr/bin/chromium (real browser runtime)",
+  "profile": "/tmp/plw-v2-final-hybrid-final-441e3c2b435f-attempt4",
+  "worldSeed": 2026,
+  "seedSetup": "resumed existing canonical seed 2026 save from segment 1; no seed/state injection; all changes through rendered UI",
+  "segmentNumber": 4,
+  "priorActiveSeconds": 0.0,
+  "cumulativeActiveSeconds": 0.32,
+  "initialization": {
+    "mode": "resumed existing persistent profile, single app tab",
+    "expectedWorldTimeAtResume": 162409,
+    "seedInjectedOnlyWhenLocalStorageEmpty": false
+  },
+  "startedAtUtc": "2026-10-05T19:37:19.806+00:00",
+  "updatedAtUtc": "2026-10-05T19:37:20.128+00:00",
+  "elapsedSeconds": 0.32,
+  "targetSeconds": 3600,
+  "humanPlaytest": false,
+  "observations": [
+    {
+      "atUtc": "2026-10-05T19:37:19.814+00:00",
+      "elapsedSeconds": 0.0,
+      "label": "active-session-start",
+      "clock": "第 1 年 冬 23 日\n18:50",
+      "worldTime": 162410,
+      "worldSeed": 2026,
+      "rngState": 3886205941,
+      "character": {
+        "id": "alden",
+        "name": "奧登",
+        "age": 16,
+        "level": 5,
+        "exp": 131,
+        "hp": 124,
+        "maxHp": 124,
+        "stamina": 70,
+        "maxStamina": 84,
+        "gold": 23,
+        "position": {
+          "x": 16,
+          "y": 10
+        },
+        "currentRegion": "farmland",
+        "skills": {
+          "combat": {
+            "level": 4,
+            "exp": 66
+          },
+          "farming": {
+            "level": 3,
+            "exp": 20
+          },
+          "mining": {
+            "level": 3,
+            "exp": 0
+          },
+          "woodcutting": {
+            "level": 3,
+            "exp": 20
+          }
+        },
+        "equipment": {
+          "weapon": "sword",
+          "armor": null
+        },
+        "inventory": {
+          "wood": 17,
+          "stone": 2,
+          "iron": 4,
+          "food": 27,
+          "material": 8,
+          "potion": 2,
+          "sword": 1,
+          "armor": 0
+        },
+        "isAlive": true
+      },
+      "life": {
+        "identity": [
+          "resident",
+          "farmer"
+        ],
+        "reputation": 10,
+        "reputationHistory": [
+          {
+            "at": 8042,
+            "delta": 1,
+            "reason": "收成補充橡谷糧食"
+          },
+          {
+            "at": 10861,
+            "delta": 1,
+            "reason": "守護橡谷北方道路"
+          },
+          {
+            "at": 50733,
+            "delta": 1,
+            "reason": "收成補充橡谷糧食"
+          },
+          {
+            "at": 79082,
+            "delta": 1,
+            "reason": "守護橡谷北方道路"
+          },
+          {
+            "at": 80720,
+            "delta": 1,
+            "reason": "守護橡谷北方道路"
+          },
+          {
+            "at": 117262,
+            "delta": 1,
+            "reason": "守護橡谷北方道路"
+          },
+          {
+            "at": 119468,
+            "delta": 1,
+            "reason": "守護橡谷北方道路"
+          },
+          {
+            "at": 140038,
+            "delta": 1,
+            "reason": "守護橡谷北方道路"
+          },
+          {
+            "at": 154784,
+            "delta": 1,
+            "reason": "收成補充橡谷糧食"
+          },
+          {
+            "at": 161153,
+            "delta": 1,
+            "reason": "收成補充橡谷糧食"
+          }
+        ],
+        "actions": {
+          "combat": 8,
+          "farming": 12,
+          "mining": 6,
+          "woodcutting": 8
+        },
+        "milestones": [
+          {
+            "id": "ownership:home",
+            "at": 44045,
+            "text": "取得自宅"
+          },
+          {
+            "id": "identity:farmer",
+            "at": 157216,
+            "text": "成為農夫"
+          }
+        ],
+        "featuredNpcs": [
+          {
+            "id": "npc-1",
+            "name": "米拉 1",
+            "age": 18,
+            "job": "farmer",
+            "career": "worker",
+            "careerJob": "farmer",
+            "concern": "專心做好農夫的工作",
+            "memories": [
+              {
+                "kind": "DUNGEON_DISCOVERED",
+                "actorId": "alden",
+                "at": 11869,
+                "detail": "山谷中的廢棄礦坑重新被發現。"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "career:worker",
+                "at": 1440,
+                "text": "米拉 1成為工作者。"
+              }
+            ]
+          },
+          {
+            "id": "npc-2",
+            "name": "羅恩 2",
+            "age": 20,
+            "job": "miner",
+            "career": "worker",
+            "careerJob": "miner",
+            "concern": "專心做好礦工的工作",
+            "memories": [
+              {
+                "kind": "DUNGEON_DISCOVERED",
+                "actorId": "alden",
+                "at": 11869,
+                "detail": "山谷中的廢棄礦坑重新被發現。"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "career:worker",
+                "at": 1440,
+                "text": "羅恩 2成為工作者。"
+              }
+            ]
+          },
+          {
+            "id": "npc-3",
+            "name": "艾妲 3",
+            "age": 22,
+            "job": "woodcutter",
+            "career": "worker",
+            "careerJob": "woodcutter",
+            "concern": "專心做好樵夫的工作",
+            "memories": [
+              {
+                "kind": "PLAYER_DEFENDED_OAKVALE",
+                "actorId": "alden",
+                "at": 10861,
+                "detail": "奧登擊退北方道路的威脅。"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "career:worker",
+                "at": 1440,
+                "text": "艾妲 3成為工作者。"
+              }
+            ]
+          },
+          {
+            "id": "npc-4",
+            "name": "芬恩 4",
+            "age": 24,
+            "job": "blacksmith",
+            "career": "worker",
+            "careerJob": "blacksmith",
+            "concern": "專心做好鐵匠的工作",
+            "memories": [
+              {
+                "kind": "PLAYER_DEFENDED_OAKVALE",
+                "actorId": "alden",
+                "at": 10861,
+                "detail": "奧登擊退北方道路的威脅。"
+              },
+              {
+                "kind": "DUNGEON_DISCOVERED",
+                "actorId": "alden",
+                "at": 11869,
+                "detail": "山谷中的廢棄礦坑重新被發現。"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "career:worker",
+                "at": 1440,
+                "text": "芬恩 4成為工作者。"
+              }
+            ]
+          },
+          {
+            "id": "npc-5",
+            "name": "諾拉 5",
+            "age": 26,
+            "job": "shopkeeper",
+            "career": "worker",
+            "careerJob": "shopkeeper",
+            "concern": "專心做好店主的工作",
+            "memories": [
+              {
+                "kind": "PLAYER_DEFENDED_OAKVALE",
+                "actorId": "alden",
+                "at": 10861,
+                "detail": "奧登擊退北方道路的威脅。"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "career:worker",
+                "at": 1440,
+                "text": "諾拉 5成為工作者。"
+              }
+            ]
+          },
+          {
+            "id": "npc-6",
+            "name": "雨果 6",
+            "age": 28,
+            "job": "guard",
+            "career": "worker",
+            "careerJob": "guard",
+            "concern": "留意聚落周遭的動靜",
+            "memories": [
+              {
+                "kind": "PLAYER_DEFENDED_OAKVALE",
+                "actorId": "alden",
+                "at": 10861,
+                "detail": "奧登擊退北方道路的威脅。"
+              },
+              {
+                "kind": "DUNGEON_DISCOVERED",
+                "actorId": "alden",
+                "at": 11869,
+                "detail": "山谷中的廢棄礦坑重新被發現。"
+              }
+            ],
+            "milestones": [
+              {
+                "id": "career:worker",
+                "at": 1440,
+                "text": "雨果 6成為工作者。"
+              }
+            ]
+          }
+        ]
+      },
+      "crops": [],
+      "preparedPlots": 0,
+      "tiles": [
+        {
+          "x": 0,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 8,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 9,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 11,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 12,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 13,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 14,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 15,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 16,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 17,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 18,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 19,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 20,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 21,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 22,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 23,
+          "y": 0,
+          "terrain": "water",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 1,
+          "terrain": "road",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 1,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 1,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 1,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 1,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 1,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 1,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 1,
+          "terrain": "water",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 2,
+          "terrain": "road",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 2,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 2,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 2,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 2,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 2,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 2,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 2,
+          "terrain": "water",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 3,
+          "terrain": "road",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 3,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 3,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 3,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 3,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 3,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 3,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 3,
+          "terrain": "water",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 4,
+          "terrain": "road",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 4,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 4,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 4,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 4,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 4,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 4,
+          "terrain": "grass",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 4,
+          "terrain": "water",
+          "regionId": "unknown",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 5,
+          "terrain": "road",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 5,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 5,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 5,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 5,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 5,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 5,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 5,
+          "terrain": "water",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "terrain": "water",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 6,
+          "terrain": "road",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 6,
+          "terrain": "forest",
+          "regionId": "forest",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 6,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 6,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 6,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 6,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 6,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 6,
+          "terrain": "water",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 7,
+          "terrain": "road",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 7,
+          "terrain": "water",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 8,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true,
+          "building": "store"
+        },
+        {
+          "x": 11,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 8,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true,
+          "building": "blacksmith"
+        },
+        {
+          "x": 13,
+          "y": 8,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 8,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 8,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 8,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 8,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 8,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 8,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 8,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 8,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 8,
+          "terrain": "mountain",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 8,
+          "terrain": "water",
+          "regionId": "mine",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 9,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true,
+          "building": "house"
+        },
+        {
+          "x": 8,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 9,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 9,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 9,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 9,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 9,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 9,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 9,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 9,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 9,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 9,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 9,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 9,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 10,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 10,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 10,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 10,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 10,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true,
+          "building": "farm"
+        },
+        {
+          "x": 17,
+          "y": 10,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 10,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 10,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 10,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 10,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 10,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 10,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 11,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true,
+          "building": "inn"
+        },
+        {
+          "x": 8,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true,
+          "building": "tavern"
+        },
+        {
+          "x": 12,
+          "y": 11,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 11,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 11,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 11,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 11,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 11,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 11,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 11,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 11,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 11,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 11,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 11,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 12,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 12,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 12,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 12,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 12,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 12,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 12,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 12,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 12,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 12,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 12,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 12,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 12,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 13,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 13,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 13,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 13,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 13,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 13,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 13,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 13,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 13,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 13,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 13,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 13,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 13,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 14,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 2,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 3,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 4,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 5,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 6,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 7,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 8,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 9,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 10,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 11,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 12,
+          "y": 14,
+          "terrain": "grass",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 13,
+          "y": 14,
+          "terrain": "road",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 14,
+          "y": 14,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 15,
+          "y": 14,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 16,
+          "y": 14,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 17,
+          "y": 14,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 18,
+          "y": 14,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 19,
+          "y": 14,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 20,
+          "y": 14,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 21,
+          "y": 14,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 22,
+          "y": 14,
+          "terrain": "field",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": true
+        },
+        {
+          "x": 23,
+          "y": 14,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 0,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 1,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 2,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 3,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 4,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 5,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 6,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 7,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 8,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 9,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 10,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 11,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 12,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 13,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "village",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 14,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 15,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 16,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 17,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 18,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 19,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 20,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 21,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 22,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        },
+        {
+          "x": 23,
+          "y": 15,
+          "terrain": "water",
+          "regionId": "farmland",
+          "discovered": true,
+          "walkable": false
+        }
+      ],
+      "settlement": {
+        "name": "橡谷",
+        "stage": "village",
+        "capacity": 60,
+        "food": 100,
+        "prosperity": 100,
+        "safety": 100,
+        "infrastructure": 53.871999999999964,
+        "growth": 142.5629909333334,
+        "buildings": [
+          "house",
+          "farm",
+          "store",
+          "inn",
+          "tavern",
+          "blacksmith"
+        ]
+      },
+      "party": [],
+      "threat": {
+        "monsterPopulation": 36.299999999999905,
+        "threatLevel": 2,
+        "growthRate": 0.65,
+        "bossProgress": 14.170000000000034,
+        "campLevel": 2,
+        "bossAlive": false,
+        "warningLevel": 0
+      },
+      "dungeon": {
+        "discovered": true,
+        "threat": 2,
+        "progress": 44.799999999999905,
+        "runs": 0,
+        "stage": 1,
+        "inDungeon": false
+      },
+      "combat": null,
+      "eventCount": 121,
+      "historyCount": 22,
+      "recentEvents": [
+        "收穫 6 份食物，耕作經驗增加。",
+        "守衛與樵夫希望有人清理道路周圍的獸群。",
+        "在旅店睡了一覺，生命與體力完全恢復。",
+        "翻整了一塊田，可以播種了。",
+        "奧登成為農夫。",
+        "播下小麥。兩日後即可收割。",
+        "小麥已成熟，可以前往農田收割。",
+        "收穫 7 份食物，耕作經驗增加。"
+      ],
+      "recentHistory": [
+        "雨果 36 搬進橡谷，成為農夫。",
+        "廢棄礦坑的威脅升到 Lv.2。",
+        "北方森林威脅升到 Lv.2；哥布林營地擴張了。",
+        "露西 37 搬進橡谷，成為礦工。",
+        "西蒙 38 出生了。",
+        "北方森林威脅升到 Lv.2；哥布林營地擴張了。",
+        "艾琳 39 搬進橡谷，成為鐵匠。",
+        "奧登成為農夫。"
+      ],
+      "selectedSpeed": "×20",
+      "visibleText": "橡谷\n持續演化的世界\n第 1 年 冬 23 日\n18:54\n暫停\n×1\n×5\n×20\n存檔\n選單 Esc\n🌾 東方農田 16, 10\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n·\n·\n·\n·\n≈\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n🐺\n│\n♣\n♣\n♣\n♣\n▲\n·\n·\n·\n·\n≈\n≈\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n🐺\n♣\n♣\n🏕️\n♣\n│\n♣\n♣\n♣\n♣\n▲\n·\n🕳️\n·\n·\n≈\n≈\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n🐺\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n·\n·\n·\n·\n≈\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n·\n⚒️\n鐵匠鋪\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🏠\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n🏠\n─\n─\n👨‍🌾\n36\n─\n─\n┼\n≋\n≋\n🙂\n農田\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n🏠\n·\n·\n👨‍🌾\n🛏️\n旅店\n👨‍🌾\n👨‍🌾\n·\n🍺\n酒館\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n🏠\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n🏠\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 村莊\n東方農田\n迷霧山谷\n🌾 農田\nEnter 互動\n↑\n←\n↓\n→\nWASD／方向鍵移動　Enter 互動　點地圖步行\n查看地圖 M\n🙂\n奧登 Lv.5\n生命\n124/124\n體力\n70/84\n🪙 23\n› 收穫 7 份食物，耕作經驗增加。 L\n物品 I\n旅人筆記"
+    }
+  ],
+  "actions": [
+    {
+      "atUtc": "2026-10-05T19:37:19.806+00:00",
+      "kind": "active browser play started",
+      "productionFingerprint": {
+        "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+        "manifestPath": "../../build-manifest.json",
+        "served": {
+          "/": {
+            "httpStatus": 200,
+            "bytes": 448,
+            "sha256": "bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a"
+          },
+          "/assets/index-CEjw7W01.css": {
+            "httpStatus": 200,
+            "bytes": 25850,
+            "sha256": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f"
+          },
+          "/assets/index-DJZsen7F.js": {
+            "httpStatus": 200,
+            "bytes": 222814,
+            "sha256": "a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6"
+          }
+        },
+        "assetHashesMatchManifest": true
+      },
+      "readOnlyPreflight": {
+        "seed": 2026,
+        "routes": [
+          "前往家",
+          "前往農田",
+          "前往森林",
+          "前往礦場",
+          "前往探索迷霧"
+        ],
+        "pauseResumeUI": "pass"
+      },
+      "statusBefore": {
+        "worldTime": 162409,
+        "level": 5,
+        "position": {
+          "x": 16,
+          "y": 10
+        },
+        "modalAtResume": null,
+        "tabs": 1
+      }
+    },
+    {
+      "atUtc": "2026-10-05T19:37:20.123+00:00",
+      "elapsedSeconds": 0.3,
+      "kind": "fresh canonical UI session started",
+      "detail": {
+        "segmentNumber": 4,
+        "priorActiveSeconds": 0.0,
+        "worldTime": 162409,
+        "seed": 2026,
+        "position": {
+          "x": 16,
+          "y": 10
+        }
+      }
+    }
+  ],
+  "errors": {
+    "page": [],
+    "console": [
+      "Failed to load resource: the server responded with a status of 404 (File not found)"
+    ],
+    "harness": []
+  }
+}

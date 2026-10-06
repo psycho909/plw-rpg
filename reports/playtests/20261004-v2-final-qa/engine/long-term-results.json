@@ -1,0 +1,3189 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "sourceSha256": {
+    "src/engine/actions.ts": "38ee7e0e014606f07880fbdf5227c071a5974248cce489f24a234e1671fd84d6",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+    "src/engine/identity.ts": "d1038f5f21d107ec87a0398afe7bcd4062e465b5cb815652ca014fd0cccf7fc8",
+    "src/engine/lifeState.ts": "45526f4bc5bb3d560e6b404c6e142f6624d2e40b201c61ea43c8166404faa6d7",
+    "src/engine/livingEvents.ts": "afd535e634752a328d7ae3e0daa3d93cf07c4f7c2473705ed64d3058f02867f4",
+    "src/engine/npcLife.ts": "892a5be0f0d3bfa9f7fea7b962d6d37e3dea567c9551a3c1f16f715456bddb91",
+    "src/engine/ownership.ts": "fef2361be0a18221e7d50d17d97c82b64df360c257cc0598684842c9295f5526",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/simulation.ts": "431f465f34f2dee208a18eddace103b266ae1ac3ca29e82318d53d5cc71c12bc",
+    "src/services/saveService.ts": "bdba6d781a8ec9a04fac5e2904ca82bec14a7612f08aed9031907908b3308d8d",
+    "src/domain/types.ts": "08cfe05dede9a7e4a2d8dfeeed3c7dbf910cd0acb7bc1d839a633882e6752c79",
+    "src/domain/life.ts": "7144387d09afd98abf2b825231fe6278b3e4ec0162f2cd33f7fb80c89e952b4b",
+    "src/data/config.ts": "eefe62b9bf0e05ad6925bd996ec1d64c00665de08135af91c32d94e26277535b",
+    "src/data/identity.ts": "ac9f7c5ff096f3328e2c98e6cc4298204bbb327a231a2c40d22ef24dbd26504a",
+    "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+    "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+    "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2"
+  },
+  "runnerSha256": "599c4e85072d4a1e8bb1ad8d78f2f91af91aaa554ba8bda35ed49d21fa387c96",
+  "executedAt": "2026-10-05T14:00:04.847Z",
+  "method": "3 normal V2 seeds; 10/50/100 game-year checkpoints; yearly single-call run compared exactly with a daily-call run which serializes and reloads at every year; the active character is succeeded only through chooseSuccessor after natural death.",
+  "seedRuns": [
+    {
+      "seed": 17,
+      "checkpoints": [
+        {
+          "gameYear": 10,
+          "worldTime": 1728480,
+          "population": 80,
+          "livingNpcCount": 79,
+          "deadCharacterCount": 0,
+          "retainedFeaturedNpcMetadata": 6,
+          "careerMetadataCounts": {
+            "experienced": 48,
+            "owner": 2,
+            "senior": 9,
+            "retired": 4,
+            "resident": 16
+          },
+          "activeNpcJobCounts": {
+            "blacksmith": 6,
+            "guard": 9,
+            "mercenary": 9,
+            "farmer": 30,
+            "miner": 9,
+            "woodcutter": 9,
+            "shopkeeper": 7
+          },
+          "settlement": {
+            "name": "橡谷",
+            "stage": "town",
+            "capacity": 80,
+            "food": 100,
+            "prosperity": 100,
+            "safety": 27.20000000000004,
+            "infrastructure": 100,
+            "growth": 1612.1413525333369,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn",
+              "tavern",
+              "blacksmith"
+            ]
+          },
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 26,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "life": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": []
+            }
+          },
+          "worldMemories": 1,
+          "settlementMemories": 0,
+          "properties": 0,
+          "reputationRecords": 0,
+          "identityCounts": {
+            "resident": 1
+          },
+          "threat": {
+            "monsterPopulation": 100,
+            "threatLevel": 3,
+            "growthRate": 0.65,
+            "bossProgress": 100,
+            "campLevel": 3,
+            "bossAlive": true,
+            "warningLevel": 2
+          },
+          "dungeon": {
+            "discovered": false,
+            "threat": 3,
+            "progress": 100,
+            "runs": 0,
+            "stage": 0,
+            "inDungeon": false
+          },
+          "arcSummary": {
+            "road:ignored:consequence": 12
+          },
+          "eventsCount": 492,
+          "eventTypes": {
+            "npc.life.milestone": 12,
+            "npc.immigrated": 35,
+            "npc.born": 16,
+            "monster.threatIncreased": 2,
+            "boss.warning": 4,
+            "living.news": 240,
+            "settlement.grew": 2,
+            "living.major": 22,
+            "dungeon.threatIncreased": 2,
+            "world.newYear": 10,
+            "boss.spawned": 2,
+            "npc.injured": 144,
+            "npc.died": 1
+          },
+          "eventList": 150,
+          "historySize": 97,
+          "newsSize": 60,
+          "arcSize": 12,
+          "requestSize": 12,
+          "npcLifeSize": 79,
+          "saveBytes": 212808,
+          "saveLatencyP95Ms": 25.78922200000011,
+          "lastYearBatchMs": 81.29616099999976,
+          "lastYearDailyMs": 72.53179799999998,
+          "elapsedSinceSeedStartMs": 2192.152897,
+          "cumulativeBatchSimMs": 682.8097319999995,
+          "cumulativeDailySimMs": 1227.2762699999996,
+          "reloads": 10,
+          "successorCount": 0,
+          "stateSha256": "b11fdbdc244f1a6e249e6731213b7a6ccc576fa598d334d563c2182e2ac790b3",
+          "naturalArcObservation": {
+            "naturalTriggerCounts": {
+              "road": 21,
+              "food": 0,
+              "iron": 0
+            },
+            "naturalOutcomeCounts": {
+              "road:ignored": 21
+            }
+          },
+          "independentBossAttemptObservation": {
+            "detection": "Each captured WorldEvent ID is counted once. Attempt outcome uses exact equality to MEDIUM_LIVING_EVENTS success/failure message; boss spawn uses event.type === boss.spawned.",
+            "bossSpawnedCount": 2,
+            "attemptSuccessCount": 1,
+            "attemptFailureCount": 3,
+            "attemptCount": 4,
+            "observedSuccessRate": 0.25,
+            "sampleInterpretation": "Observed from this seed’s emitted attempts only; not an estimate of the configured chance.",
+            "bossSpawnedEvents": [
+              {
+                "id": 36,
+                "at": 175680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 73,
+                "at": 326880,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              }
+            ],
+            "attempts": [
+              {
+                "id": 56,
+                "at": 228960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 169,
+                "at": 594720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 352,
+                "at": 1215360,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 457,
+                "at": 1585440,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              }
+            ]
+          }
+        },
+        {
+          "gameYear": 50,
+          "worldTime": 8640480,
+          "population": 80,
+          "livingNpcCount": 79,
+          "deadCharacterCount": 0,
+          "retainedFeaturedNpcMetadata": 7,
+          "careerMetadataCounts": {
+            "retired": 34,
+            "senior": 16,
+            "owner": 5,
+            "experienced": 17,
+            "resident": 5,
+            "worker": 3
+          },
+          "activeNpcJobCounts": {
+            "farmer": 21,
+            "miner": 10,
+            "mercenary": 10,
+            "woodcutter": 10,
+            "blacksmith": 9,
+            "guard": 12,
+            "shopkeeper": 7
+          },
+          "settlement": {
+            "name": "橡谷",
+            "stage": "town",
+            "capacity": 80,
+            "food": 100,
+            "prosperity": 100,
+            "safety": 25,
+            "infrastructure": 100,
+            "growth": 8774.451003733635,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn",
+              "tavern",
+              "blacksmith"
+            ]
+          },
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 66,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "life": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": []
+            }
+          },
+          "worldMemories": 10,
+          "settlementMemories": 0,
+          "properties": 0,
+          "reputationRecords": 0,
+          "identityCounts": {
+            "resident": 1
+          },
+          "threat": {
+            "monsterPopulation": 100,
+            "threatLevel": 3,
+            "growthRate": 0.65,
+            "bossProgress": 100,
+            "campLevel": 3,
+            "bossAlive": true,
+            "warningLevel": 2
+          },
+          "dungeon": {
+            "discovered": false,
+            "threat": 3,
+            "progress": 100,
+            "runs": 0,
+            "stage": 0,
+            "inDungeon": false
+          },
+          "arcSummary": {
+            "road:ignored:consequence": 12
+          },
+          "eventsCount": 2234,
+          "eventTypes": {
+            "npc.life.milestone": 28,
+            "npc.immigrated": 59,
+            "npc.born": 20,
+            "monster.threatIncreased": 2,
+            "boss.warning": 22,
+            "living.news": 1169,
+            "settlement.grew": 2,
+            "living.major": 109,
+            "dungeon.threatIncreased": 2,
+            "world.newYear": 50,
+            "boss.spawned": 11,
+            "npc.injured": 731,
+            "npc.died": 29
+          },
+          "eventList": 150,
+          "historySize": 307,
+          "newsSize": 60,
+          "arcSize": 12,
+          "requestSize": 12,
+          "npcLifeSize": 80,
+          "saveBytes": 314316,
+          "saveLatencyP95Ms": 30.49576199999956,
+          "lastYearBatchMs": 50.173046000001705,
+          "lastYearDailyMs": 46.48616199999924,
+          "elapsedSinceSeedStartMs": 7234.273585999999,
+          "cumulativeBatchSimMs": 2132.1801600000017,
+          "cumulativeDailySimMs": 3440.515024999996,
+          "reloads": 50,
+          "successorCount": 0,
+          "stateSha256": "647b9c87cb62cdc98a98c4dc2cf3348aa509df67873d244c3f9955b99fccecfa",
+          "naturalArcObservation": {
+            "naturalTriggerCounts": {
+              "road": 99,
+              "food": 0,
+              "iron": 0
+            },
+            "naturalOutcomeCounts": {
+              "road:ignored": 99
+            }
+          },
+          "independentBossAttemptObservation": {
+            "detection": "Each captured WorldEvent ID is counted once. Attempt outcome uses exact equality to MEDIUM_LIVING_EVENTS success/failure message; boss spawn uses event.type === boss.spawned.",
+            "bossSpawnedCount": 11,
+            "attemptSuccessCount": 10,
+            "attemptFailureCount": 10,
+            "attemptCount": 20,
+            "observedSuccessRate": 0.5,
+            "sampleInterpretation": "Observed from this seed’s emitted attempts only; not an estimate of the configured chance.",
+            "bossSpawnedEvents": [
+              {
+                "id": 36,
+                "at": 175680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 73,
+                "at": 326880,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 907,
+                "at": 3291840,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1000,
+                "at": 3764160,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1120,
+                "at": 4276800,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1463,
+                "at": 5597280,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1539,
+                "at": 5974560,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1675,
+                "at": 6546240,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1778,
+                "at": 6973920,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1878,
+                "at": 7378560,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2084,
+                "at": 8138880,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              }
+            ],
+            "attempts": [
+              {
+                "id": 56,
+                "at": 228960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 169,
+                "at": 594720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 352,
+                "at": 1215360,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 457,
+                "at": 1585440,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 570,
+                "at": 1997280,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 678,
+                "at": 2417760,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 788,
+                "at": 2802240,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 898,
+                "at": 3172320,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 997,
+                "at": 3644640,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1111,
+                "at": 4164480,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1214,
+                "at": 4618080,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1335,
+                "at": 5071680,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1449,
+                "at": 5477760,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1530,
+                "at": 5857920,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1666,
+                "at": 6436800,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1766,
+                "at": 6864480,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1865,
+                "at": 7269120,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1949,
+                "at": 7629120,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2073,
+                "at": 8036640,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 2195,
+                "at": 8504640,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              }
+            ]
+          }
+        },
+        {
+          "gameYear": 100,
+          "worldTime": 17280480,
+          "population": 80,
+          "livingNpcCount": 79,
+          "deadCharacterCount": 1,
+          "retainedFeaturedNpcMetadata": 13,
+          "careerMetadataCounts": {
+            "retired": 21,
+            "owner": 12,
+            "senior": 18,
+            "apprentice": 3,
+            "experienced": 24,
+            "worker": 6,
+            "resident": 3
+          },
+          "activeNpcJobCounts": {
+            "miner": 13,
+            "guard": 12,
+            "farmer": 18,
+            "woodcutter": 12,
+            "mercenary": 10,
+            "shopkeeper": 7,
+            "blacksmith": 7
+          },
+          "settlement": {
+            "name": "橡谷",
+            "stage": "town",
+            "capacity": 80,
+            "food": 100,
+            "prosperity": 100,
+            "safety": 25.70000000000001,
+            "infrastructure": 100,
+            "growth": 17057.505026134902,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn",
+              "tavern",
+              "blacksmith"
+            ]
+          },
+          "activeCharacter": {
+            "id": "npc-106",
+            "alive": true,
+            "age": 51,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "life": {
+              "origin": "LOCAL_WORLD",
+              "generation": 2,
+              "identities": [
+                "resident",
+                "farmer"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": [
+                {
+                  "id": "identity:farmer",
+                  "at": 11059680,
+                  "text": "成為農夫"
+                }
+              ]
+            }
+          },
+          "worldMemories": 17,
+          "settlementMemories": 0,
+          "properties": 0,
+          "reputationRecords": 0,
+          "identityCounts": {
+            "resident": 2,
+            "farmer": 1
+          },
+          "threat": {
+            "monsterPopulation": 100,
+            "threatLevel": 3,
+            "growthRate": 0.65,
+            "bossProgress": 100,
+            "campLevel": 3,
+            "bossAlive": true,
+            "warningLevel": 2
+          },
+          "dungeon": {
+            "discovered": false,
+            "threat": 3,
+            "progress": 100,
+            "runs": 0,
+            "stage": 0,
+            "inDungeon": false
+          },
+          "arcSummary": {
+            "road:ignored:consequence": 12
+          },
+          "eventsCount": 4600,
+          "eventTypes": {
+            "npc.life.milestone": 49,
+            "npc.immigrated": 105,
+            "npc.born": 43,
+            "monster.threatIncreased": 2,
+            "boss.warning": 36,
+            "living.news": 2413,
+            "settlement.grew": 2,
+            "living.major": 218,
+            "dungeon.threatIncreased": 2,
+            "world.newYear": 100,
+            "boss.spawned": 18,
+            "npc.injured": 1512,
+            "npc.died": 98,
+            "identity.formed": 1,
+            "character.successor": 1
+          },
+          "eventList": 150,
+          "historySize": 627,
+          "newsSize": 60,
+          "arcSize": 12,
+          "requestSize": 12,
+          "npcLifeSize": 87,
+          "saveBytes": 361136,
+          "saveLatencyP95Ms": 34.275306,
+          "lastYearBatchMs": 23.804621999999654,
+          "lastYearDailyMs": 73.16794800000025,
+          "elapsedSinceSeedStartMs": 13204.557001,
+          "cumulativeBatchSimMs": 3921.740636999997,
+          "cumulativeDailySimMs": 5887.602750000003,
+          "reloads": 100,
+          "successorCount": 1,
+          "stateSha256": "c6cb187645b8511e75677e42de7742690b35476427e459a5ca3e0fdd4c8707bb",
+          "naturalArcObservation": {
+            "naturalTriggerCounts": {
+              "road": 201,
+              "food": 0,
+              "iron": 0
+            },
+            "naturalOutcomeCounts": {
+              "road:ignored": 201
+            }
+          },
+          "independentBossAttemptObservation": {
+            "detection": "Each captured WorldEvent ID is counted once. Attempt outcome uses exact equality to MEDIUM_LIVING_EVENTS success/failure message; boss spawn uses event.type === boss.spawned.",
+            "bossSpawnedCount": 18,
+            "attemptSuccessCount": 17,
+            "attemptFailureCount": 25,
+            "attemptCount": 42,
+            "observedSuccessRate": 0.40476190476190477,
+            "sampleInterpretation": "Observed from this seed’s emitted attempts only; not an estimate of the configured chance.",
+            "bossSpawnedEvents": [
+              {
+                "id": 36,
+                "at": 175680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 73,
+                "at": 326880,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 907,
+                "at": 3291840,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1000,
+                "at": 3764160,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1120,
+                "at": 4276800,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1463,
+                "at": 5597280,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1539,
+                "at": 5974560,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1675,
+                "at": 6546240,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1778,
+                "at": 6973920,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1878,
+                "at": 7378560,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2084,
+                "at": 8138880,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2461,
+                "at": 9496800,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2907,
+                "at": 11008800,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 3116,
+                "at": 11779200,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 3447,
+                "at": 12998880,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 4164,
+                "at": 15589440,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 4272,
+                "at": 16045920,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 4361,
+                "at": 16423200,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              }
+            ],
+            "attempts": [
+              {
+                "id": 56,
+                "at": 228960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 169,
+                "at": 594720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 352,
+                "at": 1215360,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 457,
+                "at": 1585440,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 570,
+                "at": 1997280,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 678,
+                "at": 2417760,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 788,
+                "at": 2802240,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 898,
+                "at": 3172320,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 997,
+                "at": 3644640,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1111,
+                "at": 4164480,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1214,
+                "at": 4618080,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1335,
+                "at": 5071680,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1449,
+                "at": 5477760,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1530,
+                "at": 5857920,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1666,
+                "at": 6436800,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1766,
+                "at": 6864480,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1865,
+                "at": 7269120,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1949,
+                "at": 7629120,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2073,
+                "at": 8036640,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 2195,
+                "at": 8504640,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2327,
+                "at": 8979840,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2453,
+                "at": 9394560,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 2547,
+                "at": 9770400,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2667,
+                "at": 10146240,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2762,
+                "at": 10497600,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2893,
+                "at": 10896480,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 2983,
+                "at": 11252160,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3104,
+                "at": 11666880,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 3194,
+                "at": 12049920,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3313,
+                "at": 12447360,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3437,
+                "at": 12889440,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 3521,
+                "at": 13269600,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3618,
+                "at": 13616640,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3731,
+                "at": 13989600,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3834,
+                "at": 14336640,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3944,
+                "at": 14699520,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4048,
+                "at": 15079680,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4152,
+                "at": 15480000,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 4264,
+                "at": 15933600,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 4346,
+                "at": 16310880,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 4465,
+                "at": 16800480,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4562,
+                "at": 17173440,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              }
+            ]
+          }
+        }
+      ],
+      "initiallySelectedSuccessors": [
+        {
+          "at": 11059680,
+          "id": "npc-106",
+          "age": 15
+        }
+      ]
+    },
+    {
+      "seed": 909,
+      "checkpoints": [
+        {
+          "gameYear": 10,
+          "worldTime": 1728480,
+          "population": 80,
+          "livingNpcCount": 79,
+          "deadCharacterCount": 0,
+          "retainedFeaturedNpcMetadata": 6,
+          "careerMetadataCounts": {
+            "experienced": 47,
+            "owner": 3,
+            "senior": 6,
+            "retired": 7,
+            "resident": 16
+          },
+          "activeNpcJobCounts": {
+            "farmer": 29,
+            "woodcutter": 9,
+            "mercenary": 9,
+            "shopkeeper": 8,
+            "guard": 9,
+            "miner": 10,
+            "blacksmith": 5
+          },
+          "settlement": {
+            "name": "橡谷",
+            "stage": "town",
+            "capacity": 80,
+            "food": 100,
+            "prosperity": 97,
+            "safety": 17,
+            "infrastructure": 100,
+            "growth": 1628.2058709333012,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn",
+              "tavern",
+              "blacksmith"
+            ]
+          },
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 26,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "life": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": []
+            }
+          },
+          "worldMemories": 1,
+          "settlementMemories": 0,
+          "properties": 0,
+          "reputationRecords": 0,
+          "identityCounts": {
+            "resident": 1
+          },
+          "threat": {
+            "monsterPopulation": 100,
+            "threatLevel": 3,
+            "growthRate": 0.65,
+            "bossProgress": 100,
+            "campLevel": 3,
+            "bossAlive": true,
+            "warningLevel": 2
+          },
+          "dungeon": {
+            "discovered": false,
+            "threat": 3,
+            "progress": 100,
+            "runs": 0,
+            "stage": 0,
+            "inDungeon": false
+          },
+          "arcSummary": {
+            "road:ignored:consequence": 12
+          },
+          "eventsCount": 469,
+          "eventTypes": {
+            "npc.life.milestone": 12,
+            "npc.immigrated": 34,
+            "npc.born": 16,
+            "monster.threatIncreased": 2,
+            "boss.warning": 4,
+            "settlement.grew": 2,
+            "dungeon.threatIncreased": 2,
+            "living.news": 224,
+            "living.major": 18,
+            "world.newYear": 10,
+            "boss.spawned": 2,
+            "npc.injured": 143
+          },
+          "eventList": 150,
+          "historySize": 91,
+          "newsSize": 60,
+          "arcSize": 12,
+          "requestSize": 12,
+          "npcLifeSize": 79,
+          "saveBytes": 215865,
+          "saveLatencyP95Ms": 8.773576999999932,
+          "lastYearBatchMs": 32.39332099999956,
+          "lastYearDailyMs": 36.86686000000009,
+          "elapsedSinceSeedStartMs": 905.181783,
+          "cumulativeBatchSimMs": 243.48073400000249,
+          "cumulativeDailySimMs": 536.8741040000023,
+          "reloads": 10,
+          "successorCount": 0,
+          "stateSha256": "6544122b5c033767f4b0ee035158aaa15a34a37157052c224bb009cad333f188",
+          "naturalArcObservation": {
+            "naturalTriggerCounts": {
+              "road": 17,
+              "food": 0,
+              "iron": 0
+            },
+            "naturalOutcomeCounts": {
+              "road:ignored": 17
+            }
+          },
+          "independentBossAttemptObservation": {
+            "detection": "Each captured WorldEvent ID is counted once. Attempt outcome uses exact equality to MEDIUM_LIVING_EVENTS success/failure message; boss spawn uses event.type === boss.spawned.",
+            "bossSpawnedCount": 2,
+            "attemptSuccessCount": 1,
+            "attemptFailureCount": 3,
+            "attemptCount": 4,
+            "observedSuccessRate": 0.25,
+            "sampleInterpretation": "Observed from this seed’s emitted attempts only; not an estimate of the configured chance.",
+            "bossSpawnedEvents": [
+              {
+                "id": 35,
+                "at": 175680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 253,
+                "at": 931680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              }
+            ],
+            "attempts": [
+              {
+                "id": 51,
+                "at": 230400,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 244,
+                "at": 819360,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 359,
+                "at": 1337760,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 455,
+                "at": 1684800,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              }
+            ]
+          }
+        },
+        {
+          "gameYear": 50,
+          "worldTime": 8640480,
+          "population": 80,
+          "livingNpcCount": 79,
+          "deadCharacterCount": 0,
+          "retainedFeaturedNpcMetadata": 8,
+          "careerMetadataCounts": {
+            "retired": 32,
+            "senior": 13,
+            "owner": 7,
+            "experienced": 17,
+            "worker": 5,
+            "resident": 7
+          },
+          "activeNpcJobCounts": {
+            "farmer": 23,
+            "woodcutter": 12,
+            "mercenary": 8,
+            "blacksmith": 6,
+            "miner": 13,
+            "guard": 9,
+            "shopkeeper": 8
+          },
+          "settlement": {
+            "name": "橡谷",
+            "stage": "town",
+            "capacity": 80,
+            "food": 100,
+            "prosperity": 100,
+            "safety": 25,
+            "infrastructure": 100,
+            "growth": 8761.625710933504,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn",
+              "tavern",
+              "blacksmith"
+            ]
+          },
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 66,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "life": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": []
+            }
+          },
+          "worldMemories": 9,
+          "settlementMemories": 0,
+          "properties": 0,
+          "reputationRecords": 0,
+          "identityCounts": {
+            "resident": 1
+          },
+          "threat": {
+            "monsterPopulation": 100,
+            "threatLevel": 3,
+            "growthRate": 0.65,
+            "bossProgress": 100,
+            "campLevel": 3,
+            "bossAlive": true,
+            "warningLevel": 2
+          },
+          "dungeon": {
+            "discovered": false,
+            "threat": 3,
+            "progress": 100,
+            "runs": 0,
+            "stage": 0,
+            "inDungeon": false
+          },
+          "arcSummary": {
+            "road:ignored:consequence": 12
+          },
+          "eventsCount": 2236,
+          "eventTypes": {
+            "npc.life.milestone": 26,
+            "npc.immigrated": 54,
+            "npc.born": 25,
+            "monster.threatIncreased": 2,
+            "boss.warning": 20,
+            "settlement.grew": 2,
+            "dungeon.threatIncreased": 2,
+            "living.news": 1174,
+            "living.major": 103,
+            "world.newYear": 50,
+            "boss.spawned": 10,
+            "npc.injured": 739,
+            "npc.died": 29
+          },
+          "eventList": 150,
+          "historySize": 298,
+          "newsSize": 60,
+          "arcSize": 12,
+          "requestSize": 12,
+          "npcLifeSize": 81,
+          "saveBytes": 300383,
+          "saveLatencyP95Ms": 9.777139999998326,
+          "lastYearBatchMs": 11.700097000000824,
+          "lastYearDailyMs": 27.388292000003275,
+          "elapsedSinceSeedStartMs": 4058.589985999999,
+          "cumulativeBatchSimMs": 1046.2896110000038,
+          "cumulativeDailySimMs": 2058.636958999994,
+          "reloads": 50,
+          "successorCount": 0,
+          "stateSha256": "c8fc8f183c3ddf32c448c7927485209a0c9495c96f72212574fb4b40a0b8f537",
+          "naturalArcObservation": {
+            "naturalTriggerCounts": {
+              "road": 94,
+              "food": 0,
+              "iron": 0
+            },
+            "naturalOutcomeCounts": {
+              "road:ignored": 94
+            }
+          },
+          "independentBossAttemptObservation": {
+            "detection": "Each captured WorldEvent ID is counted once. Attempt outcome uses exact equality to MEDIUM_LIVING_EVENTS success/failure message; boss spawn uses event.type === boss.spawned.",
+            "bossSpawnedCount": 10,
+            "attemptSuccessCount": 9,
+            "attemptFailureCount": 11,
+            "attemptCount": 20,
+            "observedSuccessRate": 0.45,
+            "sampleInterpretation": "Observed from this seed’s emitted attempts only; not an estimate of the configured chance.",
+            "bossSpawnedEvents": [
+              {
+                "id": 35,
+                "at": 175680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 253,
+                "at": 931680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 789,
+                "at": 2946240,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 968,
+                "at": 3683520,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1200,
+                "at": 4603680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1301,
+                "at": 5024160,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1626,
+                "at": 6304320,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1706,
+                "at": 6671520,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1823,
+                "at": 7171200,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2195,
+                "at": 8526240,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              }
+            ],
+            "attempts": [
+              {
+                "id": 51,
+                "at": 230400,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 244,
+                "at": 819360,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 359,
+                "at": 1337760,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 455,
+                "at": 1684800,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 547,
+                "at": 2034720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 676,
+                "at": 2478240,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 780,
+                "at": 2833920,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 859,
+                "at": 3214080,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 952,
+                "at": 3564000,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1093,
+                "at": 4128480,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1189,
+                "at": 4484160,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1290,
+                "at": 4906080,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1385,
+                "at": 5339520,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1507,
+                "at": 5783040,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1618,
+                "at": 6192000,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1693,
+                "at": 6559200,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1817,
+                "at": 7061760,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1922,
+                "at": 7541280,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2073,
+                "at": 8055360,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2178,
+                "at": 8421120,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              }
+            ]
+          }
+        },
+        {
+          "gameYear": 100,
+          "worldTime": 17280480,
+          "population": 80,
+          "livingNpcCount": 79,
+          "deadCharacterCount": 1,
+          "retainedFeaturedNpcMetadata": 14,
+          "careerMetadataCounts": {
+            "retired": 27,
+            "senior": 15,
+            "apprentice": 2,
+            "owner": 10,
+            "experienced": 23,
+            "worker": 7,
+            "resident": 3
+          },
+          "activeNpcJobCounts": {
+            "farmer": 17,
+            "shopkeeper": 8,
+            "woodcutter": 9,
+            "miner": 15,
+            "mercenary": 12,
+            "guard": 12,
+            "blacksmith": 6
+          },
+          "settlement": {
+            "name": "橡谷",
+            "stage": "town",
+            "capacity": 80,
+            "food": 100,
+            "prosperity": 100,
+            "safety": 25,
+            "infrastructure": 100,
+            "growth": 16990.965448534782,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn",
+              "tavern",
+              "blacksmith"
+            ]
+          },
+          "activeCharacter": {
+            "id": "npc-105",
+            "alive": true,
+            "age": 51,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "life": {
+              "origin": "LOCAL_WORLD",
+              "generation": 2,
+              "identities": [
+                "resident",
+                "farmer"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": [
+                {
+                  "id": "identity:farmer",
+                  "at": 11059680,
+                  "text": "成為農夫"
+                }
+              ]
+            }
+          },
+          "worldMemories": 13,
+          "settlementMemories": 0,
+          "properties": 0,
+          "reputationRecords": 0,
+          "identityCounts": {
+            "resident": 2,
+            "farmer": 1
+          },
+          "threat": {
+            "monsterPopulation": 100,
+            "threatLevel": 3,
+            "growthRate": 0.65,
+            "bossProgress": 100,
+            "campLevel": 3,
+            "bossAlive": true,
+            "warningLevel": 2
+          },
+          "dungeon": {
+            "discovered": false,
+            "threat": 3,
+            "progress": 100,
+            "runs": 0,
+            "stage": 0,
+            "inDungeon": false
+          },
+          "arcSummary": {
+            "road:ignored:consequence": 12
+          },
+          "eventsCount": 4690,
+          "eventTypes": {
+            "npc.life.milestone": 47,
+            "npc.immigrated": 100,
+            "npc.born": 45,
+            "monster.threatIncreased": 2,
+            "boss.warning": 28,
+            "settlement.grew": 2,
+            "dungeon.threatIncreased": 2,
+            "living.news": 2483,
+            "living.major": 217,
+            "world.newYear": 100,
+            "boss.spawned": 14,
+            "npc.injured": 1553,
+            "npc.died": 95,
+            "identity.formed": 1,
+            "character.successor": 1
+          },
+          "eventList": 150,
+          "historySize": 608,
+          "newsSize": 60,
+          "arcSize": 12,
+          "requestSize": 12,
+          "npcLifeSize": 87,
+          "saveBytes": 326261,
+          "saveLatencyP95Ms": 22.47786300000007,
+          "lastYearBatchMs": 24.302011000003404,
+          "lastYearDailyMs": 55.12718899999891,
+          "elapsedSinceSeedStartMs": 8089.857748999999,
+          "cumulativeBatchSimMs": 2181.6025890000055,
+          "cumulativeDailySimMs": 3797.845158999995,
+          "reloads": 100,
+          "successorCount": 1,
+          "stateSha256": "e746a452ccc4848f69350e474ed1c1437b9b523881df914893d50b0967909d80",
+          "naturalArcObservation": {
+            "naturalTriggerCounts": {
+              "road": 204,
+              "food": 0,
+              "iron": 0
+            },
+            "naturalOutcomeCounts": {
+              "road:ignored": 204
+            }
+          },
+          "independentBossAttemptObservation": {
+            "detection": "Each captured WorldEvent ID is counted once. Attempt outcome uses exact equality to MEDIUM_LIVING_EVENTS success/failure message; boss spawn uses event.type === boss.spawned.",
+            "bossSpawnedCount": 14,
+            "attemptSuccessCount": 13,
+            "attemptFailureCount": 26,
+            "attemptCount": 39,
+            "observedSuccessRate": 0.3333333333333333,
+            "sampleInterpretation": "Observed from this seed’s emitted attempts only; not an estimate of the configured chance.",
+            "bossSpawnedEvents": [
+              {
+                "id": 35,
+                "at": 175680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 253,
+                "at": 931680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 789,
+                "at": 2946240,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 968,
+                "at": 3683520,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1200,
+                "at": 4603680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1301,
+                "at": 5024160,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1626,
+                "at": 6304320,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1706,
+                "at": 6671520,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1823,
+                "at": 7171200,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2195,
+                "at": 8526240,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2387,
+                "at": 9249120,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2768,
+                "at": 10581120,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 3565,
+                "at": 13330080,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 4269,
+                "at": 15756480,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              }
+            ],
+            "attempts": [
+              {
+                "id": 51,
+                "at": 230400,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 244,
+                "at": 819360,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 359,
+                "at": 1337760,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 455,
+                "at": 1684800,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 547,
+                "at": 2034720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 676,
+                "at": 2478240,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 780,
+                "at": 2833920,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 859,
+                "at": 3214080,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 952,
+                "at": 3564000,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1093,
+                "at": 4128480,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1189,
+                "at": 4484160,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1290,
+                "at": 4906080,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1385,
+                "at": 5339520,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1507,
+                "at": 5783040,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1618,
+                "at": 6192000,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1693,
+                "at": 6559200,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1817,
+                "at": 7061760,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1922,
+                "at": 7541280,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2073,
+                "at": 8055360,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2178,
+                "at": 8421120,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 2267,
+                "at": 8768160,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2368,
+                "at": 9144000,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 2475,
+                "at": 9522720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2633,
+                "at": 10055520,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2757,
+                "at": 10468800,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 2866,
+                "at": 10913760,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3100,
+                "at": 11625120,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3201,
+                "at": 11983680,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3305,
+                "at": 12371040,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3408,
+                "at": 12739680,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3548,
+                "at": 13220640,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 3755,
+                "at": 13957920,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3868,
+                "at": 14328000,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4033,
+                "at": 14909760,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4140,
+                "at": 15268320,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4252,
+                "at": 15644160,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 4357,
+                "at": 16079040,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4529,
+                "at": 16712640,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4625,
+                "at": 17064000,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              }
+            ]
+          }
+        }
+      ],
+      "initiallySelectedSuccessors": [
+        {
+          "at": 11059680,
+          "id": "npc-105",
+          "age": 15
+        }
+      ]
+    },
+    {
+      "seed": 2026,
+      "checkpoints": [
+        {
+          "gameYear": 10,
+          "worldTime": 1728480,
+          "population": 80,
+          "livingNpcCount": 79,
+          "deadCharacterCount": 0,
+          "retainedFeaturedNpcMetadata": 6,
+          "careerMetadataCounts": {
+            "experienced": 47,
+            "owner": 3,
+            "senior": 8,
+            "retired": 4,
+            "resident": 17
+          },
+          "activeNpcJobCounts": {
+            "farmer": 31,
+            "miner": 8,
+            "guard": 9,
+            "mercenary": 8,
+            "woodcutter": 11,
+            "blacksmith": 5,
+            "shopkeeper": 7
+          },
+          "settlement": {
+            "name": "橡谷",
+            "stage": "town",
+            "capacity": 80,
+            "food": 100,
+            "prosperity": 100,
+            "safety": 53.249999999997165,
+            "infrastructure": 100,
+            "growth": 1709.7289834666608,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn",
+              "tavern",
+              "blacksmith"
+            ]
+          },
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 26,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "life": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": []
+            }
+          },
+          "worldMemories": 3,
+          "settlementMemories": 0,
+          "properties": 0,
+          "reputationRecords": 0,
+          "identityCounts": {
+            "resident": 1
+          },
+          "threat": {
+            "monsterPopulation": 100,
+            "threatLevel": 3,
+            "growthRate": 0.65,
+            "bossProgress": 100,
+            "campLevel": 3,
+            "bossAlive": true,
+            "warningLevel": 2
+          },
+          "dungeon": {
+            "discovered": false,
+            "threat": 3,
+            "progress": 100,
+            "runs": 0,
+            "stage": 0,
+            "inDungeon": false
+          },
+          "arcSummary": {
+            "road:ignored:consequence": 12
+          },
+          "eventsCount": 437,
+          "eventTypes": {
+            "npc.life.milestone": 12,
+            "npc.immigrated": 35,
+            "npc.born": 16,
+            "monster.threatIncreased": 3,
+            "living.news": 202,
+            "living.major": 21,
+            "boss.warning": 8,
+            "settlement.grew": 2,
+            "dungeon.threatIncreased": 2,
+            "world.newYear": 10,
+            "boss.spawned": 4,
+            "npc.injured": 121,
+            "npc.died": 1
+          },
+          "eventList": 150,
+          "historySize": 103,
+          "newsSize": 60,
+          "arcSize": 12,
+          "requestSize": 12,
+          "npcLifeSize": 79,
+          "saveBytes": 232932,
+          "saveLatencyP95Ms": 17.32441900000049,
+          "lastYearBatchMs": 42.43226499999946,
+          "lastYearDailyMs": 29.69123000000036,
+          "elapsedSinceSeedStartMs": 1481.7091760000003,
+          "cumulativeBatchSimMs": 303.429334000004,
+          "cumulativeDailySimMs": 992.7990469999932,
+          "reloads": 10,
+          "successorCount": 0,
+          "stateSha256": "a39f58797067291f10ee173a6523e7d70815d66c19334c2f2a3428daae433630",
+          "naturalArcObservation": {
+            "naturalTriggerCounts": {
+              "road": 18,
+              "food": 0,
+              "iron": 0
+            },
+            "naturalOutcomeCounts": {
+              "road:ignored": 18
+            }
+          },
+          "independentBossAttemptObservation": {
+            "detection": "Each captured WorldEvent ID is counted once. Attempt outcome uses exact equality to MEDIUM_LIVING_EVENTS success/failure message; boss spawn uses event.type === boss.spawned.",
+            "bossSpawnedCount": 4,
+            "attemptSuccessCount": 3,
+            "attemptFailureCount": 1,
+            "attemptCount": 4,
+            "observedSuccessRate": 0.75,
+            "sampleInterpretation": "Observed from this seed’s emitted attempts only; not an estimate of the configured chance.",
+            "bossSpawnedEvents": [
+              {
+                "id": 39,
+                "at": 175680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 62,
+                "at": 312480,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 306,
+                "at": 1169280,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 392,
+                "at": 1565280,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              }
+            ],
+            "attempts": [
+              {
+                "id": 48,
+                "at": 200160,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 184,
+                "at": 666720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 297,
+                "at": 1056960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 383,
+                "at": 1452960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              }
+            ]
+          }
+        },
+        {
+          "gameYear": 50,
+          "worldTime": 8640480,
+          "population": 80,
+          "livingNpcCount": 79,
+          "deadCharacterCount": 0,
+          "retainedFeaturedNpcMetadata": 7,
+          "careerMetadataCounts": {
+            "retired": 36,
+            "senior": 10,
+            "owner": 11,
+            "experienced": 16,
+            "worker": 4,
+            "resident": 3
+          },
+          "activeNpcJobCounts": {
+            "shopkeeper": 9,
+            "miner": 15,
+            "farmer": 16,
+            "blacksmith": 8,
+            "mercenary": 10,
+            "guard": 13,
+            "woodcutter": 8
+          },
+          "settlement": {
+            "name": "橡谷",
+            "stage": "town",
+            "capacity": 80,
+            "food": 100,
+            "prosperity": 98.84999999999998,
+            "safety": 25,
+            "infrastructure": 100,
+            "growth": 8929.54738986729,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn",
+              "tavern",
+              "blacksmith"
+            ]
+          },
+          "activeCharacter": {
+            "id": "alden",
+            "alive": true,
+            "age": 66,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "life": {
+              "origin": "OTHER_WORLD",
+              "generation": 1,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": []
+            }
+          },
+          "worldMemories": 12,
+          "settlementMemories": 0,
+          "properties": 0,
+          "reputationRecords": 0,
+          "identityCounts": {
+            "resident": 1
+          },
+          "threat": {
+            "monsterPopulation": 100,
+            "threatLevel": 3,
+            "growthRate": 0.65,
+            "bossProgress": 100,
+            "campLevel": 3,
+            "bossAlive": true,
+            "warningLevel": 2
+          },
+          "dungeon": {
+            "discovered": false,
+            "threat": 3,
+            "progress": 100,
+            "runs": 0,
+            "stage": 0,
+            "inDungeon": false
+          },
+          "arcSummary": {
+            "road:ignored:consequence": 12
+          },
+          "eventsCount": 2171,
+          "eventTypes": {
+            "npc.life.milestone": 24,
+            "npc.immigrated": 54,
+            "npc.born": 20,
+            "monster.threatIncreased": 3,
+            "living.news": 1138,
+            "living.major": 108,
+            "boss.warning": 26,
+            "settlement.grew": 2,
+            "dungeon.threatIncreased": 2,
+            "world.newYear": 50,
+            "boss.spawned": 13,
+            "npc.injured": 707,
+            "npc.died": 24
+          },
+          "eventList": 150,
+          "historySize": 303,
+          "newsSize": 60,
+          "arcSize": 12,
+          "requestSize": 12,
+          "npcLifeSize": 80,
+          "saveBytes": 322209,
+          "saveLatencyP95Ms": 27.43508700000166,
+          "lastYearBatchMs": 20.156565999997838,
+          "lastYearDailyMs": 41.08063799999945,
+          "elapsedSinceSeedStartMs": 5862.581147000001,
+          "cumulativeBatchSimMs": 1596.1021439999968,
+          "cumulativeDailySimMs": 2854.710218999997,
+          "reloads": 50,
+          "successorCount": 0,
+          "stateSha256": "f4de581d9bb539e08e848df07f5a1060629cd3cae49d7ef36540a0ae05b812d3",
+          "naturalArcObservation": {
+            "naturalTriggerCounts": {
+              "road": 96,
+              "food": 0,
+              "iron": 0
+            },
+            "naturalOutcomeCounts": {
+              "road:ignored": 96
+            }
+          },
+          "independentBossAttemptObservation": {
+            "detection": "Each captured WorldEvent ID is counted once. Attempt outcome uses exact equality to MEDIUM_LIVING_EVENTS success/failure message; boss spawn uses event.type === boss.spawned.",
+            "bossSpawnedCount": 13,
+            "attemptSuccessCount": 12,
+            "attemptFailureCount": 9,
+            "attemptCount": 21,
+            "observedSuccessRate": 0.5714285714285714,
+            "sampleInterpretation": "Observed from this seed’s emitted attempts only; not an estimate of the configured chance.",
+            "bossSpawnedEvents": [
+              {
+                "id": 39,
+                "at": 175680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 62,
+                "at": 312480,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 306,
+                "at": 1169280,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 392,
+                "at": 1565280,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 488,
+                "at": 2008800,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 731,
+                "at": 2944800,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 922,
+                "at": 3697920,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1200,
+                "at": 4790880,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1283,
+                "at": 5165280,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1394,
+                "at": 5654880,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1585,
+                "at": 6448320,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1665,
+                "at": 6832800,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2050,
+                "at": 8254080,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              }
+            ],
+            "attempts": [
+              {
+                "id": 48,
+                "at": 200160,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 184,
+                "at": 666720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 297,
+                "at": 1056960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 383,
+                "at": 1452960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 478,
+                "at": 1896480,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 613,
+                "at": 2463840,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 718,
+                "at": 2838240,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 805,
+                "at": 3212640,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 908,
+                "at": 3582720,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 987,
+                "at": 3929760,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1087,
+                "at": 4288320,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1191,
+                "at": 4671360,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1270,
+                "at": 5045760,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1386,
+                "at": 5539680,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1483,
+                "at": 5988960,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1575,
+                "at": 6334560,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1658,
+                "at": 6717600,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1743,
+                "at": 7119360,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1878,
+                "at": 7591680,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2037,
+                "at": 8148960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 2137,
+                "at": 8550720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              }
+            ]
+          }
+        },
+        {
+          "gameYear": 100,
+          "worldTime": 17280480,
+          "population": 80,
+          "livingNpcCount": 79,
+          "deadCharacterCount": 1,
+          "retainedFeaturedNpcMetadata": 13,
+          "careerMetadataCounts": {
+            "retired": 28,
+            "worker": 4,
+            "owner": 8,
+            "senior": 12,
+            "experienced": 31,
+            "apprentice": 1,
+            "resident": 3
+          },
+          "activeNpcJobCounts": {
+            "guard": 11,
+            "mercenary": 11,
+            "woodcutter": 13,
+            "farmer": 19,
+            "shopkeeper": 7,
+            "miner": 11,
+            "blacksmith": 7
+          },
+          "settlement": {
+            "name": "橡谷",
+            "stage": "town",
+            "capacity": 80,
+            "food": 100,
+            "prosperity": 100,
+            "safety": 92.29999999999998,
+            "infrastructure": 100,
+            "growth": 17448.849505708404,
+            "buildings": [
+              "house",
+              "farm",
+              "store",
+              "inn",
+              "tavern",
+              "blacksmith"
+            ]
+          },
+          "activeCharacter": {
+            "id": "npc-100",
+            "alive": true,
+            "age": 54,
+            "gold": 45,
+            "inventory": {
+              "wood": 0,
+              "stone": 0,
+              "iron": 0,
+              "food": 3,
+              "material": 0,
+              "potion": 2,
+              "sword": 0,
+              "armor": 0
+            },
+            "life": {
+              "origin": "LOCAL_WORLD",
+              "generation": 2,
+              "identities": [
+                "resident"
+              ],
+              "actions": {
+                "combat": 0,
+                "farming": 0,
+                "mining": 0,
+                "woodcutting": 0
+              },
+              "reputation": 0,
+              "reputationHistory": [],
+              "milestones": []
+            }
+          },
+          "worldMemories": 17,
+          "settlementMemories": 0,
+          "properties": 0,
+          "reputationRecords": 0,
+          "identityCounts": {
+            "resident": 2
+          },
+          "threat": {
+            "monsterPopulation": 100,
+            "threatLevel": 3,
+            "growthRate": 0.65,
+            "bossProgress": 100,
+            "campLevel": 3,
+            "bossAlive": true,
+            "warningLevel": 2
+          },
+          "dungeon": {
+            "discovered": false,
+            "threat": 3,
+            "progress": 100,
+            "runs": 0,
+            "stage": 0,
+            "inDungeon": false
+          },
+          "arcSummary": {
+            "road:ignored:consequence": 12
+          },
+          "eventsCount": 4592,
+          "eventTypes": {
+            "npc.life.milestone": 49,
+            "npc.immigrated": 108,
+            "npc.born": 38,
+            "monster.threatIncreased": 3,
+            "living.news": 2412,
+            "living.major": 217,
+            "boss.warning": 36,
+            "settlement.grew": 2,
+            "dungeon.threatIncreased": 2,
+            "world.newYear": 100,
+            "boss.spawned": 18,
+            "npc.injured": 1510,
+            "npc.died": 96,
+            "character.successor": 1
+          },
+          "eventList": 150,
+          "historySize": 622,
+          "newsSize": 60,
+          "arcSize": 12,
+          "requestSize": 12,
+          "npcLifeSize": 87,
+          "saveBytes": 348663,
+          "saveLatencyP95Ms": 40.55443499999819,
+          "lastYearBatchMs": 30.93685600000026,
+          "lastYearDailyMs": 63.325284999998985,
+          "elapsedSinceSeedStartMs": 13679.368208999997,
+          "cumulativeBatchSimMs": 3931.1603819999873,
+          "cumulativeDailySimMs": 5959.804725999988,
+          "reloads": 100,
+          "successorCount": 1,
+          "stateSha256": "fae97b794d1e9c7abf790db32382737d595fa2ba4d9cf5cbc09be28b47dd42e8",
+          "naturalArcObservation": {
+            "naturalTriggerCounts": {
+              "road": 200,
+              "food": 0,
+              "iron": 0
+            },
+            "naturalOutcomeCounts": {
+              "road:ignored": 200
+            }
+          },
+          "independentBossAttemptObservation": {
+            "detection": "Each captured WorldEvent ID is counted once. Attempt outcome uses exact equality to MEDIUM_LIVING_EVENTS success/failure message; boss spawn uses event.type === boss.spawned.",
+            "bossSpawnedCount": 18,
+            "attemptSuccessCount": 17,
+            "attemptFailureCount": 25,
+            "attemptCount": 42,
+            "observedSuccessRate": 0.40476190476190477,
+            "sampleInterpretation": "Observed from this seed’s emitted attempts only; not an estimate of the configured chance.",
+            "bossSpawnedEvents": [
+              {
+                "id": 39,
+                "at": 175680,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 62,
+                "at": 312480,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 306,
+                "at": 1169280,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 392,
+                "at": 1565280,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 488,
+                "at": 2008800,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 731,
+                "at": 2944800,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 922,
+                "at": 3697920,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1200,
+                "at": 4790880,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1283,
+                "at": 5165280,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1394,
+                "at": 5654880,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1585,
+                "at": 6448320,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 1665,
+                "at": 6832800,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2050,
+                "at": 8254080,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 2267,
+                "at": 9030240,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 4013,
+                "at": 15009120,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 4096,
+                "at": 15372000,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 4244,
+                "at": 15956640,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              },
+              {
+                "id": 4573,
+                "at": 17220960,
+                "message": "哥布林酋長出現。商路受阻，聚落的安全與收入開始下降。"
+              }
+            ],
+            "attempts": [
+              {
+                "id": 48,
+                "at": 200160,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 184,
+                "at": 666720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 297,
+                "at": 1056960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 383,
+                "at": 1452960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 478,
+                "at": 1896480,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 613,
+                "at": 2463840,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 718,
+                "at": 2838240,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 805,
+                "at": 3212640,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 908,
+                "at": 3582720,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 987,
+                "at": 3929760,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1087,
+                "at": 4288320,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1191,
+                "at": 4671360,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1270,
+                "at": 5045760,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1386,
+                "at": 5539680,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1483,
+                "at": 5988960,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1575,
+                "at": 6334560,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1658,
+                "at": 6717600,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 1743,
+                "at": 7119360,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 1878,
+                "at": 7591680,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2037,
+                "at": 8148960,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 2137,
+                "at": 8550720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2253,
+                "at": 8925120,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 2351,
+                "at": 9306720,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2477,
+                "at": 9691200,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2620,
+                "at": 10156320,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2740,
+                "at": 10542240,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2857,
+                "at": 10952640,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 2968,
+                "at": 11316960,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3069,
+                "at": 11662560,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3223,
+                "at": 12191040,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3339,
+                "at": 12600000,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3460,
+                "at": 13032000,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3561,
+                "at": 13379040,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3656,
+                "at": 13726080,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3776,
+                "at": 14150880,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 3890,
+                "at": 14529600,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4004,
+                "at": 14893920,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 4088,
+                "at": 15256800,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 4231,
+                "at": 15842880,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              },
+              {
+                "id": 4324,
+                "at": 16246080,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4452,
+                "at": 16712640,
+                "outcome": "failure",
+                "message": "一名橡谷守衛嘗試阻止哥布林酋長，受傷後被同伴帶回聚落。"
+              },
+              {
+                "id": 4565,
+                "at": 17108640,
+                "outcome": "success",
+                "message": "一名橡谷守衛帶領巡守隊擊退了哥布林酋長，北方的威脅暫時減弱。"
+              }
+            ]
+          }
+        }
+      ],
+      "initiallySelectedSuccessors": [
+        {
+          "at": 11059680,
+          "id": "npc-100",
+          "age": 18
+        }
+      ]
+    }
+  ],
+  "batching": [
+    {
+      "stepMinutes": 1,
+      "stateSha256": "b5e0d2cf6b87fe4ec0ce7b69c3c235151684417f698bbf3c06c47ea4306360e8",
+      "exactlyEqual": true
+    },
+    {
+      "stepMinutes": 60,
+      "stateSha256": "b5e0d2cf6b87fe4ec0ce7b69c3c235151684417f698bbf3c06c47ea4306360e8",
+      "exactlyEqual": true
+    },
+    {
+      "stepMinutes": 1440,
+      "stateSha256": "b5e0d2cf6b87fe4ec0ce7b69c3c235151684417f698bbf3c06c47ea4306360e8",
+      "exactlyEqual": true
+    },
+    {
+      "stepMinutes": 4320,
+      "stateSha256": "b5e0d2cf6b87fe4ec0ce7b69c3c235151684417f698bbf3c06c47ea4306360e8",
+      "exactlyEqual": true
+    }
+  ],
+  "status": "PASS",
+  "preservedHarnessFailures": [
+    {
+      "attempt": "boss evidence snapshot",
+      "scope": "QA instrumentation only",
+      "failure": "10/50-year boss counters were sampled at the checkpoint, but arrays were retained by reference and later contained 100-year events.",
+      "correction": "Copy event arrays per checkpoint; previous projections preserved in playlog; rerun full 3-seed matrix, no app source modification."
+    },
+    {
+      "attempt": 1,
+      "at": "2026-10-05T00:17:41.515Z",
+      "scope": "long-term runner harness; no product source was exercised to completion",
+      "failure": "At the first 10-year checkpoint, summarize() referenced serialize outside the function scope and stopped with ReferenceError: serialize is not defined.",
+      "artifactWriterFailure": "The QA writer CLI reads report content from stdin. The first attempt supplied only the output path, so the writer recorded and projected an empty 0-byte artifact. The zero-byte playlog version is retained as the original failed artifact attempt.",
+      "corrected": "serialize is now passed into summarize; the report writer receives the exact just-written bytes on stdin. This result is re-executed from fresh normal seeds."
+    },
+    {
+      "attempt": 2,
+      "at": "2026-10-05T00:20:48.527Z",
+      "scope": "long-term runner harness; seed 17 before the first checkpoint was emitted",
+      "failure": "The 10-year summarize() helper referenced player outside the helper scope and stopped with ReferenceError: player is not defined.",
+      "artifactWriter": "The report body was correctly supplied on stdin and the complete failing report (including stack and active run) is preserved in playlog.jsonl.",
+      "correction": "player is now passed into summarize; the year number is written to activeRun before each yearly step."
+    },
+    {
+      "attempt": 3,
+      "at": "2026-10-05T00:21:50.034Z",
+      "scope": "first complete long-term report, measurement fields only",
+      "failure": "The first completed report passed all state assertions but labeled performance.now() minus an elapsed duration as annualSimMs. That value is not a valid elapsed measurement.",
+      "evidence": "Original complete report version is preserved in playlog.jsonl. Its test status is PASS, but every annualSimMs field is withdrawn from performance interpretation.",
+      "correction": "The rerun records direct per-year elapsed durations and accumulated yearly/daily runner time from monotonic start marks."
+    }
+  ],
+  "failingTest": null
+}

@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run --config reports/playtests/20261004-v2-final-qa/review/vitest-export-probe.config.mjs --maxWorkers=1 --reporter=verbose reports/playtests/20261004-v2-final-qa/review/save-export-race.probe.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ × reports/playtests/20261004-v2-final-qa/review/save-export-race.probe.ts > blocked-tab export snapshot boundary > includes a record when the archive read snapshot precedes owner ACK 95ms
+   → expected false to be true // Object.is equality
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  14:05:21
+   Duration  1.23s (transform 456ms, setup 0ms, import 720ms, tests 97ms, environment 0ms)
+

@@ -1,0 +1,712 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "routes": {
+    "life": {
+      "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+      "route": "life",
+      "runnerStatus": "completed",
+      "sourceArtifact": "life-final/results.json",
+      "startedAtUtc": "2026-10-05T13:53:57.146000+00:00",
+      "lastDirectObservationUtc": "2026-10-05T14:59:31.002000+00:00",
+      "observedWindowSeconds": 3933.856,
+      "driverErrors": 8,
+      "excludedRecoveryUnionSeconds": 324.214,
+      "conservativeObservedSecondsBeforeAdditionalKnownDebug": 3609.6420000000003,
+      "meets3600SecondsBeforeAdditionalKnownDebug": true,
+      "errorBounds": [
+        {
+          "errorAtUtc": "2026-10-05T13:55:00.211+00:00",
+          "command": "status",
+          "excludedStartUtc": "2026-10-05T13:54:53.466000+00:00",
+          "excludedEndUtc": "2026-10-05T13:55:17.135000+00:00",
+          "seconds": 23.669
+        },
+        {
+          "errorAtUtc": "2026-10-05T13:58:39.004+00:00",
+          "command": "speed ×20",
+          "excludedStartUtc": "2026-10-05T13:58:19.637000+00:00",
+          "excludedEndUtc": "2026-10-05T13:59:14.278000+00:00",
+          "seconds": 54.641
+        },
+        {
+          "errorAtUtc": "2026-10-05T13:59:12.314+00:00",
+          "command": "speed ×20",
+          "excludedStartUtc": "2026-10-05T13:58:19.637000+00:00",
+          "excludedEndUtc": "2026-10-05T13:59:14.278000+00:00",
+          "seconds": 54.641
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:04:29.044+00:00",
+          "command": "status",
+          "excludedStartUtc": "2026-10-05T14:04:11.213000+00:00",
+          "excludedEndUtc": "2026-10-05T14:05:01.576000+00:00",
+          "seconds": 50.363
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:06:02.234+00:00",
+          "command": "save-reload",
+          "excludedStartUtc": "2026-10-05T14:05:59.684000+00:00",
+          "excludedEndUtc": "2026-10-05T14:06:14.117000+00:00",
+          "seconds": 14.433
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:46:16.793+00:00",
+          "command": "nearby",
+          "excludedStartUtc": "2026-10-05T14:45:55.211000+00:00",
+          "excludedEndUtc": "2026-10-05T14:47:18.165000+00:00",
+          "seconds": 82.954
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:49:04.932+00:00",
+          "command": "open 旅人筆記",
+          "excludedStartUtc": "2026-10-05T14:49:03.646000+00:00",
+          "excludedEndUtc": "2026-10-05T14:50:06.568000+00:00",
+          "seconds": 62.922
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:53:42.790+00:00",
+          "command": "save-reload",
+          "excludedStartUtc": "2026-10-05T14:53:19.813000+00:00",
+          "excludedEndUtc": "2026-10-05T14:53:55.045000+00:00",
+          "seconds": 35.232
+        }
+      ],
+      "mergedBounds": [
+        {
+          "startUtc": "2026-10-05T13:54:53.466000+00:00",
+          "endUtc": "2026-10-05T13:55:17.135000+00:00",
+          "seconds": 23.669
+        },
+        {
+          "startUtc": "2026-10-05T13:58:19.637000+00:00",
+          "endUtc": "2026-10-05T13:59:14.278000+00:00",
+          "seconds": 54.641
+        },
+        {
+          "startUtc": "2026-10-05T14:04:11.213000+00:00",
+          "endUtc": "2026-10-05T14:05:01.576000+00:00",
+          "seconds": 50.363
+        },
+        {
+          "startUtc": "2026-10-05T14:05:59.684000+00:00",
+          "endUtc": "2026-10-05T14:06:14.117000+00:00",
+          "seconds": 14.433
+        },
+        {
+          "startUtc": "2026-10-05T14:45:55.211000+00:00",
+          "endUtc": "2026-10-05T14:47:18.165000+00:00",
+          "seconds": 82.954
+        },
+        {
+          "startUtc": "2026-10-05T14:49:03.646000+00:00",
+          "endUtc": "2026-10-05T14:50:06.568000+00:00",
+          "seconds": 62.922
+        },
+        {
+          "startUtc": "2026-10-05T14:53:19.813000+00:00",
+          "endUtc": "2026-10-05T14:53:55.045000+00:00",
+          "seconds": 35.232
+        }
+      ],
+      "limitation": "Conservatively excludes the full preceding-action to following-action interval around each harness error. Stops at the last direct observation, not process exit. External CDP/debug work and unobserved intervals require separate exclusions; console errors alone do not consume playtest time."
+    },
+    "adventure": {
+      "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+      "route": "adventure",
+      "runnerStatus": "completed",
+      "sourceArtifact": "adventure-final/run-01/results.json",
+      "startedAtUtc": "2026-10-05T13:56:40.485000+00:00",
+      "lastDirectObservationUtc": "2026-10-05T15:02:37.145000+00:00",
+      "observedWindowSeconds": 3956.66,
+      "driverErrors": 8,
+      "excludedRecoveryUnionSeconds": 143.229,
+      "errorBounds": [
+        {
+          "errorAtUtc": "2026-10-05T14:00:08.455+00:00",
+          "command": "turn attack",
+          "excludedStartUtc": "2026-10-05T14:00:08.392000+00:00",
+          "excludedEndUtc": "2026-10-05T14:00:23.047000+00:00",
+          "seconds": 14.655
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:02:57.192+00:00",
+          "command": "rest 家",
+          "excludedStartUtc": "2026-10-05T14:02:54.923000+00:00",
+          "excludedEndUtc": "2026-10-05T14:03:16.433000+00:00",
+          "seconds": 21.51
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:02:59.604+00:00",
+          "command": "rest 家",
+          "excludedStartUtc": "2026-10-05T14:02:54.923000+00:00",
+          "excludedEndUtc": "2026-10-05T14:03:16.433000+00:00",
+          "seconds": 21.51
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:03:01.990+00:00",
+          "command": "rest 家",
+          "excludedStartUtc": "2026-10-05T14:02:54.923000+00:00",
+          "excludedEndUtc": "2026-10-05T14:03:16.433000+00:00",
+          "seconds": 21.51
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:23:40.940+00:00",
+          "command": "rest 家",
+          "excludedStartUtc": "2026-10-05T14:23:29.225000+00:00",
+          "excludedEndUtc": "2026-10-05T14:23:56.800000+00:00",
+          "seconds": 27.575
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:23:45.165+00:00",
+          "command": "rest 家",
+          "excludedStartUtc": "2026-10-05T14:23:29.225000+00:00",
+          "excludedEndUtc": "2026-10-05T14:23:56.800000+00:00",
+          "seconds": 27.575
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:50:44.650+00:00",
+          "command": "rest 家",
+          "excludedStartUtc": "2026-10-05T14:50:42.241000+00:00",
+          "excludedEndUtc": "2026-10-05T14:52:01.730000+00:00",
+          "seconds": 79.489
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:51:27.914+00:00",
+          "command": "click-page ×5",
+          "excludedStartUtc": "2026-10-05T14:50:42.241000+00:00",
+          "excludedEndUtc": "2026-10-05T14:52:01.730000+00:00",
+          "seconds": 79.489
+        }
+      ],
+      "mergedBounds": [
+        {
+          "startUtc": "2026-10-05T14:00:08.392000+00:00",
+          "endUtc": "2026-10-05T14:00:23.047000+00:00",
+          "seconds": 14.655
+        },
+        {
+          "startUtc": "2026-10-05T14:02:54.923000+00:00",
+          "endUtc": "2026-10-05T14:03:16.433000+00:00",
+          "seconds": 21.51
+        },
+        {
+          "startUtc": "2026-10-05T14:23:29.225000+00:00",
+          "endUtc": "2026-10-05T14:23:56.800000+00:00",
+          "seconds": 27.575
+        },
+        {
+          "startUtc": "2026-10-05T14:50:42.241000+00:00",
+          "endUtc": "2026-10-05T14:52:01.730000+00:00",
+          "seconds": 79.489
+        }
+      ],
+      "limitation": "Conservatively excludes the full preceding-action to following-action interval around each harness error. Stops at the last direct observation, not process exit. External CDP/debug work and unobserved intervals require separate exclusions; console errors alone do not consume playtest time.",
+      "helperObservedWindowCreditBeforeCanonicalPostBossExclusion": 3813.431,
+      "parentReviewedSessionAccounting": {
+        "completedRawElapsedSeconds": 4149.63,
+        "status": "completed",
+        "harnessFailureCount": 8,
+        "mergedHarnessFailureExclusionSeconds": 143.229,
+        "explicitUnobservedPostBossReviewIntervalSeconds": 67.9,
+        "activeObservedCreditedSeconds": 3745.531,
+        "creditedThroughFormalElapsedSeconds": 3956.66,
+        "postPauseReadOnlyReportTimeCredited": false,
+        "calculation": "3956.660 seconds from runStartedAtUtc to the last direct observation at 2026-10-05T15:02:37.145+00:00 - 143.229s merged harness-error intervals - 67.900s unobserved post-boss review = 3745.531s. The later read-only capture runner clock is not direct-observation evidence.",
+        "finalWorldSnapshotElapsedSeconds": 3956.66,
+        "canonicalCutoffEvidence": {
+          "sourceArtifact": "adventure-final/run-01/results.json",
+          "jsonPointer": "/observations/195",
+          "lastDirectObservationUtc": "2026-10-05T15:02:37.145+00:00",
+          "timestampDerivedElapsedSeconds": 3956.66,
+          "storedElapsedSecondsRoundedToTenth": 3956.7,
+          "runStartedAtUtc": "2026-10-05T13:56:40.485+00:00",
+          "legacyReadOnlyCaptureRunnerClockSeconds": 3956.92,
+          "legacyClockSupersededAsCreditCutoff": true,
+          "pauseCommandRecordedAsAction": false
+        },
+        "supersededPriorAccounting": {
+          "supersededValue": 3745.791,
+          "supersededCreditedThroughFormalElapsedSeconds": 3956.92,
+          "source": "Previously published /sessionAccounting in final-core-readonly.json and results.json; the originals are preserved in their append-only playlogs.",
+          "calculation": "3956.920 - 143.229 - 67.900 = 3745.791",
+          "supersededReason": "The old cutoff used a later read-only capture's printed runner clock; no recorded direct observation or pause action establishes the interval from the last observation to that clock."
+        },
+        "sourceArtifact": "adventure-final/run-01/final-core-readonly.json",
+        "sourceJsonPointer": "/sessionAccounting",
+        "sourceCapturedAtUtc": "2026-10-05T15:05:44.077+00:00"
+      },
+      "activeObservedCreditedSeconds": 3745.531,
+      "conservativeObservedSecondsAfterAllReviewedExclusions": 3745.531,
+      "creditedThroughFormalElapsedSeconds": 3956.66,
+      "completedRawElapsedSecondsNotCredited": 4149.63,
+      "explicitUnobservedPostBossReviewIntervalSeconds": 67.9,
+      "meets3600SecondsAfterAllReviewedExclusions": true
+    },
+    "hybrid": {
+      "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+      "route": "hybrid",
+      "runnerStatus": "running",
+      "sourceArtifact": "hybrid-final/results.json",
+      "startedAtUtc": "2026-10-05T13:58:07.810000+00:00",
+      "lastDirectObservationUtc": "2026-10-05T15:16:05.980000+00:00",
+      "observedWindowSeconds": 4678.17,
+      "driverErrors": 11,
+      "excludedRecoveryUnionSeconds": 731.216,
+      "errorBounds": [
+        {
+          "errorAtUtc": "2026-10-05T14:10:17.213+00:00",
+          "command": "click-dialog-regex 艾妲",
+          "excludedStartUtc": "2026-10-05T14:09:57.665000+00:00",
+          "excludedEndUtc": "2026-10-05T14:10:41.403000+00:00",
+          "seconds": 43.738
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:10:31.199+00:00",
+          "command": "click-dialog-regex 諾拉",
+          "excludedStartUtc": "2026-10-05T14:09:57.665000+00:00",
+          "excludedEndUtc": "2026-10-05T14:10:41.403000+00:00",
+          "seconds": 43.738
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:11:26.248+00:00",
+          "command": "click-dialog-regex 芬恩 4",
+          "excludedStartUtc": "2026-10-05T14:10:53.413000+00:00",
+          "excludedEndUtc": "2026-10-05T14:11:52.703000+00:00",
+          "seconds": 59.29
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:18:50.536+00:00",
+          "command": "travel home",
+          "excludedStartUtc": "2026-10-05T14:18:49.998000+00:00",
+          "excludedEndUtc": "2026-10-05T14:18:58.397000+00:00",
+          "seconds": 8.399
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:21:22.011+00:00",
+          "command": "click-dialog-exact 🏠 家",
+          "excludedStartUtc": "2026-10-05T14:21:21.800000+00:00",
+          "excludedEndUtc": "2026-10-05T14:21:39.469000+00:00",
+          "seconds": 17.669
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:25:37.273+00:00",
+          "command": "click-menu-exact 住所與產業",
+          "excludedStartUtc": "2026-10-05T14:25:12.728000+00:00",
+          "excludedEndUtc": "2026-10-05T14:25:44.651000+00:00",
+          "seconds": 31.923
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:53:21.401+00:00",
+          "command": "click-dialog-exact ⚒️ 芬恩 4",
+          "excludedStartUtc": "2026-10-05T14:49:40.994000+00:00",
+          "excludedEndUtc": "2026-10-05T14:56:07.496000+00:00",
+          "seconds": 386.502
+        },
+        {
+          "errorAtUtc": "2026-10-05T14:55:22.583+00:00",
+          "command": "resume ×1",
+          "excludedStartUtc": "2026-10-05T14:49:40.994000+00:00",
+          "excludedEndUtc": "2026-10-05T14:56:07.496000+00:00",
+          "seconds": 386.502
+        },
+        {
+          "errorAtUtc": "2026-10-05T15:06:50.571+00:00",
+          "command": "turn attack",
+          "excludedStartUtc": "2026-10-05T15:06:46.673000+00:00",
+          "excludedEndUtc": "2026-10-05T15:07:06.277000+00:00",
+          "seconds": 19.604
+        },
+        {
+          "errorAtUtc": "2026-10-05T15:07:49.234+00:00",
+          "command": "interact 聚落",
+          "excludedStartUtc": "2026-10-05T15:07:07.310000+00:00",
+          "excludedEndUtc": "2026-10-05T15:09:51.401000+00:00",
+          "seconds": 164.091
+        },
+        {
+          "errorAtUtc": "2026-10-05T15:08:02.038+00:00",
+          "command": "click-dialog-exact 完成狩獵請求",
+          "excludedStartUtc": "2026-10-05T15:07:07.310000+00:00",
+          "excludedEndUtc": "2026-10-05T15:09:51.401000+00:00",
+          "seconds": 164.091
+        }
+      ],
+      "mergedBounds": [
+        {
+          "startUtc": "2026-10-05T14:09:57.665000+00:00",
+          "endUtc": "2026-10-05T14:10:41.403000+00:00",
+          "seconds": 43.738
+        },
+        {
+          "startUtc": "2026-10-05T14:10:53.413000+00:00",
+          "endUtc": "2026-10-05T14:11:52.703000+00:00",
+          "seconds": 59.29
+        },
+        {
+          "startUtc": "2026-10-05T14:18:49.998000+00:00",
+          "endUtc": "2026-10-05T14:18:58.397000+00:00",
+          "seconds": 8.399
+        },
+        {
+          "startUtc": "2026-10-05T14:21:21.800000+00:00",
+          "endUtc": "2026-10-05T14:21:39.469000+00:00",
+          "seconds": 17.669
+        },
+        {
+          "startUtc": "2026-10-05T14:25:12.728000+00:00",
+          "endUtc": "2026-10-05T14:25:44.651000+00:00",
+          "seconds": 31.923
+        },
+        {
+          "startUtc": "2026-10-05T14:49:40.994000+00:00",
+          "endUtc": "2026-10-05T14:56:07.496000+00:00",
+          "seconds": 386.502
+        },
+        {
+          "startUtc": "2026-10-05T15:06:46.673000+00:00",
+          "endUtc": "2026-10-05T15:07:06.277000+00:00",
+          "seconds": 19.604
+        },
+        {
+          "startUtc": "2026-10-05T15:07:07.310000+00:00",
+          "endUtc": "2026-10-05T15:09:51.401000+00:00",
+          "seconds": 164.091
+        }
+      ],
+      "limitation": "Conservatively excludes the full preceding-action to following-action interval around each harness error. Stops at the last direct observation, not process exit. External CDP/debug work and unobserved intervals require separate exclusions; console errors alone do not consume playtest time.",
+      "directObservationSecondsBeforeEstimatedDebugReserve": 3946.954,
+      "reviewedSegmentAccounting": {
+        "accountingStatus": "ready_for_final_review",
+        "segment1": {
+          "segment": 1,
+          "sourceArtifact": "hybrid-final/results.json",
+          "runnerStatus": "running",
+          "directObservationWindowSeconds": 4678.17,
+          "harnessRecoveryUnionSeconds": 731.216,
+          "lowerBoundBeforeEstimatedExternalDebugReserveSeconds": 3946.954,
+          "estimatedConservativeExternalDebugReserveSeconds": 600.0,
+          "reserveIsMeasuredInterval": false,
+          "reserveProvenance": "Coordinator review steering: retain an estimated conservative 600-second reserve for incompletely logged external CDP/debug work in segment 1. This is not a measured interval.",
+          "recordedTimestampGapReview": {
+            "maximumObservationToObservationGap": {
+              "seconds": 157.165,
+              "startUtc": "2026-10-05T14:08:57.772000+00:00",
+              "endUtc": "2026-10-05T14:11:34.937000+00:00",
+              "startLabel": "smith-area",
+              "endLabel": "paused-at-village"
+            },
+            "maximumGapAcrossRecordedObservationsAndActions": {
+              "seconds": 128.598,
+              "startUtc": "2026-10-05T15:07:30.303000+00:00",
+              "endUtc": "2026-10-05T15:09:38.901000+00:00",
+              "startLabel": "quest-ready",
+              "endLabel": "autumn"
+            },
+            "interpretation": "No recorded consecutive event gap exceeds the 600-second estimated reserve. This does not measure or rule out unrecorded external CDP/debug activity; the reserve remains."
+          },
+          "formalActiveObservedCreditedSeconds": 0.0,
+          "formalCreditEligible": false,
+          "conditionalHistoricalEstimateSeconds": 3346.954,
+          "formalCreditExclusionReason": "The estimated 600-second reserve is not proven to upper-bound all unrecorded external CDP/debug work; segment 1 receives zero formal credit."
+        },
+        "additionalSegments": [
+          {
+            "segment": "segment-02",
+            "sourceArtifact": "hybrid-final/resumed-segment-02/results.json",
+            "runnerStatus": "stopped-short",
+            "rawElapsedSecondsReported": 933.19,
+            "priorActiveSecondsReportedButNotCredited": 731.0,
+            "cumulativeActiveSecondsReportedButNotCredited": 1664.19,
+            "directObservationWindowSeconds": 932.685,
+            "harnessRecoveryUnionSeconds": 1.169,
+            "status": "accounted",
+            "explicitUnobservedIntervals": [
+              {
+                "startUtc": "2026-10-05T19:00:20.121+00:00",
+                "endUtc": "2026-10-05T19:00:55.928+00:00",
+                "reason": "Unobserved operator review gap after the hired-companion checkpoint; no recorded UI action or observation occurs until the next agent decision.",
+                "sourceEvidence": "source JSON: observations[label=hired-companion] then actions[kind=agent decision]; corroborated by /tmp/hybrid-resume-segment-02-driver.log timestamps."
+              },
+              {
+                "startUtc": "2026-10-05T19:01:20.542+00:00",
+                "endUtc": "2026-10-05T19:02:17.339+00:00",
+                "reason": "Unobserved operator/tool gap between the post-hire checkpoint and the next recorded UI hire action.",
+                "sourceEvidence": "source JSON: observations[label=after-hire] then actions[kind=hire companion UI action]; no intervening recorded action or observation."
+              },
+              {
+                "startUtc": "2026-10-05T19:06:33.573+00:00",
+                "endUtc": "2026-10-05T19:07:47.714+00:00",
+                "reason": "Unobserved accelerated-time wait at the closed store between recorded status checkpoints; excluded until the next direct observation.",
+                "sourceEvidence": "source JSON: observations[label=store-offer] and observations[label=store-morning]; driver log shows no UI action between them."
+              },
+              {
+                "startUtc": "2026-10-05T19:07:47.714+00:00",
+                "endUtc": "2026-10-05T19:08:46.430+00:00",
+                "reason": "Unobserved accelerated-time wait for the store opening between recorded status checkpoints.",
+                "sourceEvidence": "source JSON: observations[label=store-morning] and observations[label=store-open-check]; driver log shows no UI action between them."
+              }
+            ],
+            "explicitUnobservedUnionSeconds": 225.461,
+            "combinedExclusionUnionSeconds": 226.63,
+            "activeObservedCreditedSeconds": 706.055,
+            "validActiveObservedSeconds": 706.055,
+            "reviewedSessionAccounting": {
+              "accountingStatus": "complete",
+              "runnerStatus": "stopped-short",
+              "observedStartUtc": "2026-10-05T18:58:53.041+00:00",
+              "lastDirectObservationUtc": "2026-10-05T19:14:25.726+00:00",
+              "observedWindowSeconds": 932.685,
+              "explicitUnobservedIntervals": [
+                {
+                  "startUtc": "2026-10-05T19:00:20.121+00:00",
+                  "endUtc": "2026-10-05T19:00:55.928+00:00",
+                  "reason": "Unobserved operator review gap after the hired-companion checkpoint; no recorded UI action or observation occurs until the next agent decision.",
+                  "sourceEvidence": "source JSON: observations[label=hired-companion] then actions[kind=agent decision]; corroborated by /tmp/hybrid-resume-segment-02-driver.log timestamps."
+                },
+                {
+                  "startUtc": "2026-10-05T19:01:20.542+00:00",
+                  "endUtc": "2026-10-05T19:02:17.339+00:00",
+                  "reason": "Unobserved operator/tool gap between the post-hire checkpoint and the next recorded UI hire action.",
+                  "sourceEvidence": "source JSON: observations[label=after-hire] then actions[kind=hire companion UI action]; no intervening recorded action or observation."
+                },
+                {
+                  "startUtc": "2026-10-05T19:06:33.573+00:00",
+                  "endUtc": "2026-10-05T19:07:47.714+00:00",
+                  "reason": "Unobserved accelerated-time wait at the closed store between recorded status checkpoints; excluded until the next direct observation.",
+                  "sourceEvidence": "source JSON: observations[label=store-offer] and observations[label=store-morning]; driver log shows no UI action between them."
+                },
+                {
+                  "startUtc": "2026-10-05T19:07:47.714+00:00",
+                  "endUtc": "2026-10-05T19:08:46.430+00:00",
+                  "reason": "Unobserved accelerated-time wait for the store opening between recorded status checkpoints.",
+                  "sourceEvidence": "source JSON: observations[label=store-morning] and observations[label=store-open-check]; driver log shows no UI action between them."
+                }
+              ],
+              "accountingMethod": "Direct observation window from startedAtUtc through the last directly recorded UI observation, minus the merged harness-recovery union that the timing audit recomputes from errors/actions, and minus the explicit unobserved intervals above. Interval unions are merged to avoid double counting. elapsedSeconds, cumulativeActiveSeconds, and priorActiveSeconds are not credited.",
+              "harnessRecoveryIntervalsRecomputedByAudit": true,
+              "activeObservedCreditedSeconds": 706.055,
+              "continuationProvenance": {
+                "samePersistentProfile": "/tmp/plw-v2-final-hybrid-final-441e3c2b435f-attempt4",
+                "sameNormalWorldSeed": 2026,
+                "sameFrozenSourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+                "startReadOnlyFingerprint": {
+                  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+                  "manifestPath": "../../build-manifest.json",
+                  "served": {
+                    "/": {
+                      "httpStatus": 200,
+                      "bytes": 448,
+                      "sha256": "bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a"
+                    },
+                    "/assets/index-CEjw7W01.css": {
+                      "httpStatus": 200,
+                      "bytes": 25850,
+                      "sha256": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f"
+                    },
+                    "/assets/index-DJZsen7F.js": {
+                      "httpStatus": 200,
+                      "bytes": 222814,
+                      "sha256": "a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6"
+                    }
+                  },
+                  "assetHashesMatchManifest": true
+                },
+                "endServedFingerprint": {
+                  "url": "http://127.0.0.1:5197",
+                  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+                  "servedAssetsMatchFrozenManifest": true,
+                  "verification": "Read-only HTTP 200 SHA-256 checks after this segment: index bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a; JS a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6; CSS 08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f."
+                }
+              }
+            },
+            "creditedFromDirectWindowAndMergedExclusions": true
+          },
+          {
+            "segment": "segment-03",
+            "sourceArtifact": "hybrid-final/resumed-segment-03/results.json",
+            "runnerStatus": "completed",
+            "rawElapsedSecondsReported": 618.78,
+            "priorActiveSecondsReportedButNotCredited": 0.0,
+            "cumulativeActiveSecondsReportedButNotCredited": 618.78,
+            "directObservationWindowSeconds": 601.068,
+            "harnessRecoveryUnionSeconds": 50.574,
+            "status": "accounted",
+            "explicitUnobservedIntervals": [
+              {
+                "startUtc": "2026-10-05T19:18:53.901+00:00",
+                "endUtc": "2026-10-05T19:20:11.147+00:00",
+                "reason": "Unobserved operator/tool delay after the first mine encounter appeared and before the first combat turn was submitted; no UI action or direct observation was recorded in this interval.",
+                "sourceEvidence": "source JSON: observations[label=first-mine-step] then actions[kind=combat UI turn]; /tmp/hybrid-resume-segment-03-driver.log timestamps corroborate."
+              },
+              {
+                "startUtc": "2026-10-05T19:25:59.601+00:00",
+                "endUtc": "2026-10-05T19:26:21.713+00:00",
+                "reason": "Unobserved report review before the final pre-pause checkpoint; excluded conservatively.",
+                "sourceEvidence": "source JSON: observations[label=second-harvest] to observations[label=final-pre-pause]; no structured UI action or observation between."
+              }
+            ],
+            "explicitUnobservedUnionSeconds": 99.35799999999999,
+            "combinedExclusionUnionSeconds": 149.932,
+            "activeObservedCreditedSeconds": 451.13599999999997,
+            "validActiveObservedSeconds": 451.13599999999997,
+            "reviewedSessionAccounting": {
+              "accountingStatus": "complete",
+              "runnerStatus": "completed",
+              "observedStartUtc": "2026-10-05T19:16:29.655+00:00",
+              "lastDirectObservationUtc": "2026-10-05T19:26:30.723+00:00",
+              "observedWindowSeconds": 601.068,
+              "explicitUnobservedIntervals": [
+                {
+                  "startUtc": "2026-10-05T19:18:53.901+00:00",
+                  "endUtc": "2026-10-05T19:20:11.147+00:00",
+                  "reason": "Unobserved operator/tool delay after the first mine encounter appeared and before the first combat turn was submitted; no UI action or direct observation was recorded in this interval.",
+                  "sourceEvidence": "source JSON: observations[label=first-mine-step] then actions[kind=combat UI turn]; /tmp/hybrid-resume-segment-03-driver.log timestamps corroborate."
+                },
+                {
+                  "startUtc": "2026-10-05T19:25:59.601+00:00",
+                  "endUtc": "2026-10-05T19:26:21.713+00:00",
+                  "reason": "Unobserved report review before the final pre-pause checkpoint; excluded conservatively.",
+                  "sourceEvidence": "source JSON: observations[label=second-harvest] to observations[label=final-pre-pause]; no structured UI action or observation between."
+                }
+              ],
+              "accountingMethod": "Direct observation window from startedAtUtc through the last directly recorded UI observation, minus the merged harness-recovery union that the timing audit recomputes from errors/actions, and minus the explicit unobserved intervals above. Interval unions are merged to avoid double counting. elapsedSeconds, cumulativeActiveSeconds, and priorActiveSeconds are not credited.",
+              "harnessRecoveryIntervalsRecomputedByAudit": true,
+              "activeObservedCreditedSeconds": 451.136,
+              "continuationProvenance": {
+                "samePersistentProfile": "/tmp/plw-v2-final-hybrid-final-441e3c2b435f-attempt4",
+                "sameNormalWorldSeed": 2026,
+                "sameFrozenSourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+                "startReadOnlyFingerprint": {
+                  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+                  "manifestPath": "../../build-manifest.json",
+                  "served": {
+                    "/": {
+                      "httpStatus": 200,
+                      "bytes": 448,
+                      "sha256": "bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a"
+                    },
+                    "/assets/index-CEjw7W01.css": {
+                      "httpStatus": 200,
+                      "bytes": 25850,
+                      "sha256": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f"
+                    },
+                    "/assets/index-DJZsen7F.js": {
+                      "httpStatus": 200,
+                      "bytes": 222814,
+                      "sha256": "a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6"
+                    }
+                  },
+                  "assetHashesMatchManifest": true
+                },
+                "endServedFingerprint": {
+                  "url": "http://127.0.0.1:5197",
+                  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+                  "servedAssetsMatchFrozenManifest": true,
+                  "verification": "Read-only HTTP 200 SHA-256 checks after this segment: index bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a; JS a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6; CSS 08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f."
+                }
+              }
+            },
+            "creditedFromDirectWindowAndMergedExclusions": true
+          },
+          {
+            "segment": "segment-04",
+            "sourceArtifact": "hybrid-final/resumed-segment-04/attempt-02/results.json",
+            "runnerStatus": "completed",
+            "rawElapsedSecondsReported": 3712.68,
+            "priorActiveSecondsReportedButNotCredited": 0.0,
+            "cumulativeActiveSecondsReportedButNotCredited": 3712.68,
+            "directObservationWindowSeconds": 3603.209,
+            "harnessRecoveryUnionSeconds": 241.843,
+            "status": "accounted",
+            "explicitUnobservedIntervals": [
+              {
+                "startUtc": "2026-10-05T20:35:09.925+00:00",
+                "endUtc": "2026-10-05T20:37:23.881+00:00",
+                "reason": "Agent report/review work; no direct UI observation or gameplay action during this interval.",
+                "sourceEvidence": "/observations/87 spring-end-news at 20:35:09.925Z to /observations/88 after-review-gap at 20:37:23.881Z; world clock advanced from Year 2 Spring 30 21:12 to Summer 4 14:28, so exclude full interval."
+              }
+            ],
+            "explicitUnobservedUnionSeconds": 133.956,
+            "combinedExclusionUnionSeconds": 375.799,
+            "activeObservedCreditedSeconds": 3227.41,
+            "validActiveObservedSeconds": 3227.41,
+            "reviewedSessionAccounting": {
+              "accountingStatus": "complete",
+              "runnerStatus": "completed",
+              "observedStartUtc": "2026-10-05T19:40:50.050+00:00",
+              "lastDirectObservationUtc": "2026-10-05T20:40:53.259+00:00",
+              "observedWindowSeconds": 3603.209,
+              "harnessRecoveryUnionSeconds": 241.843,
+              "harnessRecoveryIntervals": [
+                {
+                  "startUtc": "2026-10-05T19:43:22.530+00:00",
+                  "endUtc": "2026-10-05T19:43:54.299+00:00",
+                  "seconds": 31.769,
+                  "reason": "Disabled shop sale locator recovery; no sale occurred.",
+                  "sourceEvidence": "/errors/harness/0 at 2026-10-05T19:43:34.602+00:00; bounded by preceding/succeeding recorded UI actions."
+                },
+                {
+                  "startUtc": "2026-10-05T19:46:19.731+00:00",
+                  "endUtc": "2026-10-05T19:48:48.701+00:00",
+                  "seconds": 148.97,
+                  "reason": "Second disabled shop sale locator recovery; no sale occurred.",
+                  "sourceEvidence": "/errors/harness/1 at 2026-10-05T19:46:34.093+00:00; bounded by preceding/succeeding recorded UI actions."
+                },
+                {
+                  "startUtc": "2026-10-05T20:15:42.314+00:00",
+                  "endUtc": "2026-10-05T20:16:43.418+00:00",
+                  "seconds": 61.104,
+                  "reason": "A broad rest locator timed out after matching the recent-event control; game state remained unchanged.",
+                  "sourceEvidence": "/errors/harness/2 at 2026-10-05T20:15:47.909+00:00; bounded by preceding/succeeding recorded UI actions."
+                }
+              ],
+              "explicitUnobservedIntervals": [
+                {
+                  "startUtc": "2026-10-05T20:35:09.925+00:00",
+                  "endUtc": "2026-10-05T20:37:23.881+00:00",
+                  "reason": "Agent report/review work; no direct UI observation or gameplay action during this interval.",
+                  "sourceEvidence": "/observations/87 spring-end-news at 20:35:09.925Z to /observations/88 after-review-gap at 20:37:23.881Z; world clock advanced from Year 2 Spring 30 21:12 to Summer 4 14:28, so exclude full interval."
+                }
+              ],
+              "explicitUnobservedUnionSeconds": 133.956,
+              "combinedExclusionUnionSeconds": 375.799,
+              "activeObservedCreditedSeconds": 3227.41,
+              "creditCalculation": "3603.209s from run start to last direct observation - 241.843s merged harness-recovery intervals - 133.956s explicit unobserved report/review interval = 3227.410s. The intervals are disjoint; raw elapsed after the last observation, priorActiveSeconds, and cumulativeActiveSeconds are not credited.",
+              "accountingMethod": "Timestamp-derived start-to-last-direct-observation window less the union of agent-timing-audit.py harness recovery bounds and explicitly recorded unobserved intervals; intersecting exclusions are deduplicated.",
+              "creditedThroughLastDirectObservationOnly": true,
+              "runStartedAtUtc": "2026-10-05T19:40:50.050+00:00",
+              "directObservationSource": "/observations/92",
+              "directObservationLabel": "after-food-sales",
+              "gamePausedAtLastObservation": true
+            },
+            "creditedFromDirectWindowAndMergedExclusions": true
+          }
+        ],
+        "segment1ConditionalHistoricalEstimateSeconds": 3346.954,
+        "segment1FormalCreditedSeconds": 0.0,
+        "formalCreditedResumedSegmentsSeconds": 4384.601,
+        "formalPendingRemainingSeconds": 0.0,
+        "historicalConditionalCumulativeEstimateSeconds": 7731.555,
+        "supersededPriorConditionalCumulativeEstimate": {
+          "supersededValue": 4504.145,
+          "source": "Previously published review/agent-timing-audit.json and its append-only playlog.",
+          "calculation": "3346.954 conditional segment-1 estimate + 706.055 segment 2 + 451.136 segment 3 = 4504.145",
+          "status": "Historical conditional estimate only; not a formal gate pass."
+        },
+        "minimumRequirementSeconds": 3600.0,
+        "minimumRequirementMet": true,
+        "segment04ValidTimeTargetSeconds": 3000.0,
+        "segment04ValidTimeTargetMet": true,
+        "pendingSegments": [],
+        "remainingSecondsToMinimum": 0.0,
+        "priorActiveSecondsAndCumulativeActiveSecondsUsedForCredit": false,
+        "classification": "Agent Exploratory Playtest; not human playtest or Drought Matrix agent.",
+        "policy": "Segment 1 receives zero formal credit because the estimated reserve is not proven to bound all unrecorded external debug. Count only resumed segments after their explicit exclusions reconcile with direct-observation windows and harness-recovery unions. Formal completion requires at least 3,600 resumed-segment seconds and at least 3,000 valid seconds in segment 04. Do not use raw elapsed or cumulativeActiveSeconds as credit."
+      },
+      "formalCreditedResumedSegmentsSeconds": 4384.601,
+      "formalPendingRemainingSeconds": 0.0,
+      "historicalConditionalEstimateSeconds": 7731.555,
+      "meets3600SecondsAfterAllReviewedExclusions": true
+    }
+  }
+}

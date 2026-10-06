@@ -1,0 +1,42 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/stores/gameStore.test.ts -t prevents a second tab
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/stores/gameStore.test.ts (24 tests | 1 failed | 23 skipped) 54ms
+     × prevents a second tab from overwriting newer progress or appending its own journal 51ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/stores/gameStore.test.ts > exclusive checkpoint writer > prevents a second tab from overwriting newer progress or appending its own journal
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/stores/gameStore.test.ts:394:31
+    392|     await Promise.resolve(); await Promise.resolve()
+    393|     const latest = saved, pending = appendBatch.mock.calls.length
+    394|     expect(second.save(true)).toBe(false)
+       |                               ^
+    395|     const action = vi.fn(() => true)
+    396|     second.act(action); second.advance(60); second.setSpeed(20); secon…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 23 skipped (24)
+   Start at  08:51:40
+   Duration  672ms (transform 298ms, setup 0ms, import 445ms, tests 54ms, environment 1ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

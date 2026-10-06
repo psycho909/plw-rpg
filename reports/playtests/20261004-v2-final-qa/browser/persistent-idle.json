@@ -1,0 +1,48 @@
+{
+  "sourceCommit": "441e3c2b435f199a50cb78ee5b19521bcc084593",
+  "evidenceClass": "real browser UI regression; normal newly created save",
+  "startedAt": "2026-10-05T13:56:13.412492+00:00",
+  "checks": [
+    {
+      "name": "pause stops normal foreground runtime",
+      "worldTime": 534
+    },
+    {
+      "name": "actual persistent Chromium close, real wait, same-profile reopen retains saved state",
+      "realClosedSeconds": 5.7198130110045895,
+      "savedWorldTime": 534,
+      "loadedWorldTime": 534,
+      "fieldsCompared": [
+        "worldSeed",
+        "rngState",
+        "npcs",
+        "characters",
+        "history",
+        "regions",
+        "settlement",
+        "life"
+      ]
+    },
+    {
+      "name": "real page lifecycle freeze/resume retains in-session x20 elapsed time",
+      "realElapsedSeconds": 3.0719371899904218,
+      "gameMinutesCaughtUp": 123,
+      "expectedMinutesPerSecond": 40,
+      "method": "CDP frozen/active lifecycle; no fake time"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ],
+  "profile": "/tmp/oakvale-v2-persistent-idle-m98478q1",
+  "browser": "151.0.7922.173",
+  "servedAssetsSha256": {
+    "assets/index-CEjw7W01.css": "08f388b87104e268347571f8969f37e208908089fadf7f0bdd939866d76f569f",
+    "assets/index-DJZsen7F.js": "a8a8505d9d0e092fe1a63dd07831685105496bbd9f9fa801a4ac5dffa20b1bb6",
+    "index.html": "bba153bd804c514084c8cd7735c0b678c9db75a6f7534998017a35ed3d7df01a"
+  },
+  "endedAt": "2026-10-05T13:56:29.423602+00:00",
+  "status": "PASS"
+}
