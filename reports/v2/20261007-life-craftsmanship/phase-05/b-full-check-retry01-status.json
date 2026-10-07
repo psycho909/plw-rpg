@@ -1,0 +1,75 @@
+{
+  "phase": "Phase5-B frozen full regression retry01",
+  "command": "npm run check",
+  "status": "PASS",
+  "exitCode": 0,
+  "startUTC": "2026-10-07T02:27:04.290+00:00",
+  "endUTC": "2026-10-07T02:27:18.388+00:00",
+  "headBefore": "1a56cd3eeb2ea65114a5dcf03c0e00504b69239f",
+  "headAfter": "1a56cd3eeb2ea65114a5dcf03c0e00504b69239f",
+  "headStable": true,
+  "sourceFileCountBefore": 75,
+  "sourceFileCountAfter": 75,
+  "sourceMapStable": true,
+  "sourceMapBefore": "b-full-check-retry01-20261007T022704Z/source-before.json",
+  "sourceMapAfter": "b-full-check-retry01-20261007T022704Z/source-after.json",
+  "srcIncludesUntrackedFiles": true,
+  "untrackedCraftingRegistryIncluded": "src/data/crafting.ts",
+  "buildInputManifestSha256Before": "4c92404611800fd2c8872bc4b21f44e79b3e1f19d0c70fe89f2f3469159fb203",
+  "buildInputManifestSha256After": "4c92404611800fd2c8872bc4b21f44e79b3e1f19d0c70fe89f2f3469159fb203",
+  "buildInputsStable": true,
+  "buildInputs": "all recursive src/** files, package.json, package-lock.json, index.html, tsconfig.json, top-level *config.*",
+  "runnerHarnessSha256Before": "6ce5a003c98b741b3d288ce764918c4a77d9d2a23378fb9399254ca09b70fa92",
+  "runnerHarnessSha256After": "6ce5a003c98b741b3d288ce764918c4a77d9d2a23378fb9399254ca09b70fa92",
+  "runnerHarnessStable": true,
+  "addendumPinnedHashesVerified": true,
+  "environment": {
+    "capturedUTC": "2026-10-07T02:27:04.389+00:00",
+    "cwd": "/workspace/plw-rpg",
+    "versions": {
+      "node": {
+        "returncode": 0,
+        "stdout": "v24.19.0",
+        "stderr": ""
+      },
+      "npm": {
+        "returncode": 0,
+        "stdout": "11.9.0",
+        "stderr": ""
+      },
+      "python": {
+        "returncode": 0,
+        "stdout": "Python 3.12.14",
+        "stderr": ""
+      }
+    },
+    "selectedEnvironment": {
+      "CI": {
+        "present": false,
+        "value": null
+      },
+      "NODE_ENV": {
+        "present": false,
+        "value": null
+      },
+      "npm_config_cache": {
+        "present": false,
+        "value": null
+      }
+    },
+    "fixAddendumSHA256": "f03ed22afa34744018f0f9119a3b34ac421067d28a79057d6a9b80f4a76712f3"
+  },
+  "results": {
+    "testFilesPassed": 20,
+    "testFilesFailed": 0,
+    "testsPassed": 341,
+    "testsFailed": 0,
+    "typecheck": "passed (vue-tsc --noEmit)",
+    "productionBuild": "passed (vite build; 79 modules transformed)"
+  },
+  "rawStdout": "b-full-check-retry01-20261007T022704Z/stdout.log",
+  "rawStderr": "b-full-check-retry01-20261007T022704Z/stderr.log",
+  "rawExitCode": "b-full-check-retry01-20261007T022704Z/exit-code.txt",
+  "priorFailurePreserved": "b-full-check-status.json and b-full-check-20261007T022236Z/ unchanged; this retry is a separate run after documented fixes.",
+  "scope": "No source/Git edits, migration execution, or simulations; one full-check retry only."
+}

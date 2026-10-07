@@ -1,0 +1,24 @@
+
+> plw-rpg@0.1.0 check
+> npm run test && npm run build
+
+
+> plw-rpg@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/stores/gameStore.test.ts (32 tests | 3 failed) 420ms
+     × migrates V1 without offline advancement and retains the historical world checkpoint 18ms
+     × keeps historical offline journal records but adds no offline load record 11ms
+     × allows explicit reset to replace corrupt data after the UI confirmation 5ms
+ ❯ src/services/playJournal.test.ts (6 tests | 2 failed) 48ms
+     × migrates a real V1 world and starts a separate journal 12ms
+     × preserves historical offline journal entries unchanged during V1 migration 13ms
+
+ Test Files  2 failed | 18 passed (20)
+      Tests  5 failed | 335 passed (340)
+   Start at  02:22:37
+   Duration  8.05s (transform 889ms, setup 0ms, import 1.63s, tests 15.59s, environment 7ms)
+

@@ -1,0 +1,45 @@
+Command: npm test -- src/services/saveService.test.ts -t 'crafted legendary'
+Exit code: 1
+
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/saveService.test.ts -t crafted legendary
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (83 tests | 1 failed | 82 skipped) 27ms
+     × rejects a crafted legendary with a legacy boss source while keeping both generated paths valid 25ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a crafted legendary with a legacy boss source while keeping both generated paths valid
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ src/services/saveService.test.ts:206:55
+    204|     const forged = JSON.parse(serialize(craftedState, 0))
+    205|     forged.reward.instances[0].provenance.bossSource = 'wolfKing'
+    206|     expect(() => deserialize(JSON.stringify(forged))).toThrow('原始存檔已保留…
+       |                                                       ^
+    207|
+    208|     const bossState = createGame(916)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 82 skipped (83)
+   Start at  02:30:10
+   Duration  445ms (transform 243ms, setup 0ms, import 292ms, tests 27ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

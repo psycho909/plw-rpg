@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (37 tests | 1 failed) 122ms
+     × records a seeded Smithing 6 masterpiece as a saved, important crafter milestone 7ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 36 passed (37)
+   Start at  04:41:33
+   Duration  491ms (transform 202ms, setup 0ms, import 258ms, tests 122ms, environment 0ms)
+

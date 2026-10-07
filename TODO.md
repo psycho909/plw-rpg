@@ -8,8 +8,6 @@
 
 ## Now
 
-- [ ] Phase5 Life Reward & Craftsmanship — Ticket: [20261007-v2x-05-life-craftsmanship](tickets/20261007-v2x-05-life-craftsmanship.md)
-
 <!-- 本輪工程已完成；驗收證據保存在正式 Ticket。 -->
 
 ## Next

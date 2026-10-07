@@ -1,0 +1,23 @@
+{
+  "invocation": "20261007T091316Z-stress-rerun",
+  "mode": "stress",
+  "durationSeconds": 1200,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_launcher.py",
+    "--mode",
+    "stress",
+    "--seconds",
+    "1200",
+    "--go",
+    "--execution-model",
+    "gpt-6-luna",
+    "--execution-effort",
+    "low"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedAtUTC": "2026-10-07T09:13:32.739706+00:00",
+  "releaseSha256": "cd195e0aae85255f9fbf1569b15c1eb5a6693622492d027e497817321969c251",
+  "sourceCommit": "f9f969c9d3dfa3cbf1c379bec98eafab765b11cc",
+  "launcherPid": 999
+}\n

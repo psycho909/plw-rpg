@@ -1,0 +1,53 @@
+{
+  "status": "GREEN_FOCUSED_REGRESSION_AND_CDP_SMOKE",
+  "authorship": {
+    "requestedModel": "GPT-6 Luna",
+    "requestedEffort": "medium",
+    "backendRuntimeVerified": false
+  },
+  "policyExecution": {
+    "controller": "deterministic runner-driven policy",
+    "modelInference": "none"
+  },
+  "checks": [
+    {
+      "command": "py_compile on 3 QA scripts and 2 focused test files",
+      "result": "passed"
+    },
+    {
+      "command": "helper + driver unittest suites",
+      "result": "9 tests passed"
+    },
+    {
+      "command": "actual Chromium CDP smoke on about:blank using driver profiling setup; no product navigation or gameplay",
+      "result": "passed on Chromium 151.0.7922.173"
+    }
+  ],
+  "cdpCapabilities": {
+    "Performance.enable": true,
+    "Memory.getDOMCounters": true,
+    "Runtime.getHeapUsage": true,
+    "Performance.getMetrics": true
+  },
+  "cdpFallbackPolicy": "Profile metrics are optional; unsupported commands append a profilingLimitation and do not fail run status or suppress page/console/request/storage error reporting.",
+  "regressions": {
+    "lifeNotes": "two sequential 10-minute notes use actual timed_note method with a fake page and evolving state snapshots",
+    "hybridDisposition": "normal successful return promotes IN_PROGRESS to PASS, blockers remain blocked",
+    "recipeSkillPolicy": "actual planner copy parsed and locked/unlocked scoring tested",
+    "hybridReturn": "requires no active combat and post-start combat.won event",
+    "profileFallback": "unsupported metrics recorded without changing IN_PROGRESS status"
+  },
+  "preservedRedEvidence": [
+    "browser-driver-life-note-red.json",
+    "browser-driver-hybrid-combat-red.json",
+    "browser-driver-cdp-compat-red.json",
+    "browser-runs/hybrid-short-20261007T050755Z-pid73650/"
+  ],
+  "currentPins": {
+    "reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_launcher.py": "84c7f4429196180787be2de52b6cf05817078e41faac984813c6472125823297",
+    "reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_driver.py": "5c15bb9f1c4b1673fbdc3a84f3cf697be162b9c80ccf5f984e47beb81bdd0458",
+    "reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_support.py": "8572bdf613f7840d5818e7ec0de844c3f4501ce70fe66df71986c0a1e1f6572c"
+  },
+  "productionBuildExecuted": false,
+  "productGameplayExecuted": false
+}

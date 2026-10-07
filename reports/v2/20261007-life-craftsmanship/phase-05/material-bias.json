@@ -1,0 +1,1799 @@
+{
+  "schemaVersion": 1,
+  "phase": "Phase5-I",
+  "ticket": "20261007-v2x-05",
+  "runId": "20261007T085736Z-fdeec6dd",
+  "sourceCommit": "f9f969c9d3dfa3cbf1c379bec98eafab765b11cc",
+  "sourceFingerprint": "b25f8119203c9c0dc9000f2b2bd34540e9ea62dd2642998eb8a6bf4a0af3e8cf",
+  "resultPath": "i-20261007T085736Z-fdeec6dd-results.json",
+  "resultSha256": "7b6de2655b2ff670eb2500bc817df4756ae2ae2e728f48f153636e0395c92ef8",
+  "releaseSha256": "4873be88bc34a4f44148bedce35a0587c21281a17909378b2d4b857a12e6edd9",
+  "harnessSha256": "b65b55cbdb725fb9e7dc3952bbc4e84860e3af1507f1718c954dcad728bee401",
+  "scope": {
+    "distributionBudget": 100000,
+    "outputsGenerated": 100000,
+    "profileCount": 30,
+    "transactions": 0,
+    "combatMatrixRows": 6624,
+    "combatRuns": 13248,
+    "materialProfilesUseMatchedPerSampleSeeds": true,
+    "controlledScope": "Deterministic seeded craft-context generation profiles and detached controlled combat fixtures; no legal resource/gold/stamina transactions or human/browser play."
+  },
+  "rawArtifact": {
+    "path": "i-runs/20261007T085736Z-fdeec6dd/craft-observations.jsonl",
+    "sha256": "37451e2c0a0c8b6e63be5d4dad6b3d89e16bb97a24a77d201c941ccaaad53629"
+  },
+  "materialContrastScope": "Matched material arms compare the same recipe/Smithing stratum and paired deterministic per-sample seeds; confidence intervals are descriptive seeded-simulation intervals.",
+  "matchedMaterialContrasts": {
+    "starterSpear|1": {
+      "wolfFang": {
+        "pairs": 3334,
+        "targetBiasedAffix": {
+          "biasedHits": 1147,
+          "controlHits": 821,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0.09778044391121789,
+            "low95": 0.08769691484067821,
+            "high95": 0.10786397298175757
+          }
+        },
+        "special": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 1997,
+            "controlHits": 1997,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 916,
+            "controlHits": 916,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 327,
+            "controlHits": 327,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 83,
+            "controlHits": 83,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 11,
+            "controlHits": 11,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3334,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      },
+      "moonStone": {
+        "pairs": 3334,
+        "targetBiasedAffix": {
+          "biasedHits": 942,
+          "controlHits": 473,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0.14067186562687425,
+            "low95": 0.12886829037350264,
+            "high95": 0.15247544088024587
+          }
+        },
+        "special": {
+          "biasedHits": 1,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0.0002999400119976021,
+            "low95": -0.00028793160904020646,
+            "high95": 0.0008878116330354106
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 1997,
+            "controlHits": 1997,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 916,
+            "controlHits": 916,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 327,
+            "controlHits": 327,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 83,
+            "controlHits": 83,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 11,
+            "controlHits": 11,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3334,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    },
+    "starterSpear|3": {
+      "wolfFang": {
+        "pairs": 3334,
+        "targetBiasedAffix": {
+          "biasedHits": 2754,
+          "controlHits": 1837,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0.2750449910018003,
+            "low95": 0.2598853878759726,
+            "high95": 0.290204594127628
+          }
+        },
+        "special": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 2885,
+            "controlHits": 2885,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 366,
+            "controlHits": 366,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 78,
+            "controlHits": 78,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 5,
+            "controlHits": 5,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3334,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      },
+      "moonStone": {
+        "pairs": 3334,
+        "targetBiasedAffix": {
+          "biasedHits": 2198,
+          "controlHits": 983,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0.3644271145770846,
+            "low95": 0.3480883785587955,
+            "high95": 0.3807658505953737
+          }
+        },
+        "special": {
+          "biasedHits": 1,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0.0002999400119976021,
+            "low95": -0.00028793160904020646,
+            "high95": 0.0008878116330354106
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 2885,
+            "controlHits": 2885,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 366,
+            "controlHits": 366,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 78,
+            "controlHits": 78,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 5,
+            "controlHits": 5,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3334,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    },
+    "starterSpear|6": {
+      "wolfFang": {
+        "pairs": 3334,
+        "targetBiasedAffix": {
+          "biasedHits": 2691,
+          "controlHits": 1799,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0.26754649070185904,
+            "low95": 0.25251783636443553,
+            "high95": 0.28257514503928255
+          }
+        },
+        "special": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 2920,
+            "controlHits": 2920,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 315,
+            "controlHits": 315,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 92,
+            "controlHits": 92,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 7,
+            "controlHits": 7,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3334,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      },
+      "moonStone": {
+        "pairs": 3334,
+        "targetBiasedAffix": {
+          "biasedHits": 2194,
+          "controlHits": 932,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0.3785242951409717,
+            "low95": 0.3620582465872685,
+            "high95": 0.3949903436946749
+          }
+        },
+        "special": {
+          "biasedHits": 1,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0.0002999400119976012,
+            "low95": -0.0002879316090402073,
+            "high95": 0.0008878116330354098
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3334,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 2920,
+            "controlHits": 2920,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 315,
+            "controlHits": 315,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 92,
+            "controlHits": 92,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 7,
+            "controlHits": 7,
+            "pairedRateDifference95": {
+              "n": 3334,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3334,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    },
+    "fieldSpear|2": {
+      "wolfFang": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 1162,
+          "controlHits": 862,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.09000900090009004,
+            "low95": 0.08029144352490374,
+            "high95": 0.09972655827527634
+          }
+        },
+        "special": {
+          "biasedHits": 1,
+          "controlHits": 1,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 1968,
+            "controlHits": 1968,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 892,
+            "controlHits": 892,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 345,
+            "controlHits": 345,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 121,
+            "controlHits": 121,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 7,
+            "controlHits": 7,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      },
+      "moonStone": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 974,
+          "controlHits": 462,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.15361536153615366,
+            "low95": 0.14137210908535255,
+            "high95": 0.16585861398695476
+          }
+        },
+        "special": {
+          "biasedHits": 2,
+          "controlHits": 1,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.00030003000300029994,
+            "low95": -0.0002880179971617324,
+            "high95": 0.0008880780031623323
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 1968,
+            "controlHits": 1968,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 892,
+            "controlHits": 892,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 345,
+            "controlHits": 345,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 121,
+            "controlHits": 121,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 7,
+            "controlHits": 7,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    },
+    "fieldSpear|3": {
+      "wolfFang": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 2727,
+          "controlHits": 1808,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.27572757275727594,
+            "low95": 0.2605540412934111,
+            "high95": 0.2909011042211408
+          }
+        },
+        "special": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 2889,
+            "controlHits": 2889,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 350,
+            "controlHits": 350,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 86,
+            "controlHits": 86,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 8,
+            "controlHits": 8,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      },
+      "moonStone": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 2236,
+          "controlHits": 947,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.3867386738673875,
+            "low95": 0.3702027986868969,
+            "high95": 0.4032745490478781
+          }
+        },
+        "special": {
+          "biasedHits": 1,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.00030003000300030005,
+            "low95": -0.0002880179971617323,
+            "high95": 0.0008880780031623324
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 2889,
+            "controlHits": 2889,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 350,
+            "controlHits": 350,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 86,
+            "controlHits": 86,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 8,
+            "controlHits": 8,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    },
+    "fieldSpear|6": {
+      "wolfFang": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 2748,
+          "controlHits": 1831,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.2751275127512757,
+            "low95": 0.2599642237006983,
+            "high95": 0.2902908018018531
+          }
+        },
+        "special": {
+          "biasedHits": 1,
+          "controlHits": 1,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 2906,
+            "controlHits": 2906,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 333,
+            "controlHits": 333,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 89,
+            "controlHits": 89,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 5,
+            "controlHits": 5,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      },
+      "moonStone": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 2231,
+          "controlHits": 950,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.3843384338433842,
+            "low95": 0.3678217245825614,
+            "high95": 0.40085514310420695
+          }
+        },
+        "special": {
+          "biasedHits": 1,
+          "controlHits": 1,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 2906,
+            "controlHits": 2906,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 333,
+            "controlHits": 333,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 89,
+            "controlHits": 89,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 5,
+            "controlHits": 5,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    },
+    "fieldArmor|2": {
+      "wolfHide": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 1277,
+          "controlHits": 1075,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.0606060606060607,
+            "low95": 0.05250433557150031,
+            "high95": 0.06870778564062108
+          }
+        },
+        "special": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 1937,
+            "controlHits": 1937,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 978,
+            "controlHits": 978,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 322,
+            "controlHits": 322,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 87,
+            "controlHits": 87,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 9,
+            "controlHits": 9,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    },
+    "fieldArmor|3": {
+      "wolfHide": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 2951,
+          "controlHits": 2352,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.17971797179718066,
+            "low95": 0.16668111343182648,
+            "high95": 0.19275483016253483
+          }
+        },
+        "special": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 2903,
+            "controlHits": 2903,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 331,
+            "controlHits": 331,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 88,
+            "controlHits": 88,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 11,
+            "controlHits": 11,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    },
+    "fieldArmor|6": {
+      "wolfHide": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 2965,
+          "controlHits": 2410,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.16651665166516663,
+            "low95": 0.15386716524187202,
+            "high95": 0.17916613808846124
+          }
+        },
+        "special": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 2908,
+            "controlHits": 2908,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 327,
+            "controlHits": 327,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 91,
+            "controlHits": 91,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 7,
+            "controlHits": 7,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    },
+    "ironShortSword|5": {
+      "wolfFang": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 3258,
+          "controlHits": 2820,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.13141314131413165,
+            "low95": 0.1199416040485173,
+            "high95": 0.14288467857974602
+          }
+        },
+        "special": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 3244,
+            "controlHits": 3244,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 85,
+            "controlHits": 85,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 4,
+            "controlHits": 4,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      },
+      "moonStone": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 2972,
+          "controlHits": 1706,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.3798379837983795,
+            "low95": 0.36335835700712915,
+            "high95": 0.3963176105896299
+          }
+        },
+        "special": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 3244,
+            "controlHits": 3244,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 85,
+            "controlHits": 85,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 4,
+            "controlHits": 4,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    },
+    "ironShortSword|6": {
+      "wolfFang": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 3271,
+          "controlHits": 2771,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.15001500150015015,
+            "low95": 0.13789036937709942,
+            "high95": 0.16213963362320089
+          }
+        },
+        "special": {
+          "biasedHits": 0,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 809,
+          "controlHits": 809,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 3240,
+            "controlHits": 3240,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 90,
+            "controlHits": 90,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 3,
+            "controlHits": 3,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      },
+      "moonStone": {
+        "pairs": 3333,
+        "targetBiasedAffix": {
+          "biasedHits": 2996,
+          "controlHits": 1686,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.3930393039303936,
+            "low95": 0.37645512899450756,
+            "high95": 0.40962347886627964
+          }
+        },
+        "special": {
+          "biasedHits": 1,
+          "controlHits": 0,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0.0003000300030003003,
+            "low95": -0.00028801799716173193,
+            "high95": 0.0008880780031623326
+          }
+        },
+        "masterpiece": {
+          "biasedHits": 809,
+          "controlHits": 809,
+          "pairedRateDifference95": {
+            "n": 3333,
+            "mean": 0,
+            "low95": 0,
+            "high95": 0
+          }
+        },
+        "rarity": {
+          "common": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "uncommon": {
+            "biasedHits": 0,
+            "controlHits": 0,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "rare": {
+            "biasedHits": 3240,
+            "controlHits": 3240,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "epic": {
+            "biasedHits": 90,
+            "controlHits": 90,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          },
+          "legendary": {
+            "biasedHits": 3,
+            "controlHits": 3,
+            "pairedRateDifference95": {
+              "n": 3333,
+              "mean": 0,
+              "low95": 0,
+              "high95": 0
+            }
+          }
+        },
+        "saleGoldDifference95": {
+          "n": 3333,
+          "mean": 0,
+          "low95": 0,
+          "high95": 0
+        },
+        "rarityChangedPairs": 0
+      }
+    }
+  }
+}

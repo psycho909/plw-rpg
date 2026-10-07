@@ -1,0 +1,6 @@
+G living-event ID allocator RED — pre-fix daily medicine reproduction
+
+Command: npm test -- src/engine/crafting.test.ts -t "living-event id allocator"
+Observed at 2026-10-07 05:33:05 UTC, before the allocator-capacity fix: the round-tripped V3 state passes setup, then planner/craft both succeed. A due medicine request and its news advance `life.director.sequence` from 9007199254740990 to 9007199254740992; save reload rejects and the state mutates.
+
+Setup: starter craft crosses day 15 at a nearby owned home; one resident remains injured at the daily boundary, population is at capacity to suppress immigration/birth, quietUntil suppresses a follow-up living candidate, and `life.director.sequence = Number.MAX_SAFE_INTEGER - 1`. The two existing sequence allocations for the medicine request and news exceed safe integer range. Expected behavior is atomic `event_capacity` rejection.

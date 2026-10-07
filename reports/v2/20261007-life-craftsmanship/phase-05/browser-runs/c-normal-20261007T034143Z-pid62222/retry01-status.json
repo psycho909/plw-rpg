@@ -1,0 +1,75 @@
+{
+  "attemptLabel": "retry01",
+  "runId": "20261007T034143Z-pid62222",
+  "status": "FAILED_RUNNER_FRESH_CONTEXT_GUARD",
+  "productFailureClaimed": false,
+  "startedUTC": "2026-10-07T03:41:43.443505+00:00",
+  "endedUTC": "2026-10-07T03:41:44.631252+00:00",
+  "durationSeconds": 1.19,
+  "command": [
+    "python",
+    "reports/v2/20261007-life-craftsmanship/phase-05/phase05_c_normal_pilot.py",
+    "--go"
+  ],
+  "head": "1a56cd3eeb2ea65114a5dcf03c0e00504b69239f",
+  "sourceFingerprint": "16b862ee6acd1090010cdedc17fbd22a658ad11fc87a1258fbcaaea5655ea287",
+  "sourceFileCount": 79,
+  "sourceStableDuringRun": true,
+  "productionBuildStatusPath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/build-status.json",
+  "productionBuildStatusSha256": "e8fff3c60cec112686bc587ae1ca71285e7f555e2401126178967e0aac4b057f",
+  "productionDist": {
+    "dist/assets/index-DInOYyPD.css": "46974fe4010d8397ee906f7a36a0424908d7cc2e2620a8c078dda8a2cf137784",
+    "dist/assets/index-DuGo8NbL.js": "fa112722498ab0f052c9586a783ab13cc966de1879a67ef6e15a291c04e7aa0a",
+    "dist/index.html": "8376f04c3d0873c0e65f03e9d3af1ef9336125b731d40eb93a892ab049efb77e"
+  },
+  "harnessSha256": "a43bb8c6c4fe9cb168adb75175e1c90460996cbd4370bad82c179142fec5d385",
+  "servedProductionAssets": {
+    "indexBytes": 448,
+    "indexSha256": "8376f04c3d0873c0e65f03e9d3af1ef9336125b731d40eb93a892ab049efb77e",
+    "assets": [
+      {
+        "path": "assets/index-DuGo8NbL.js",
+        "bytes": 282119,
+        "sha256": "fa112722498ab0f052c9586a783ab13cc966de1879a67ef6e15a291c04e7aa0a"
+      },
+      {
+        "path": "assets/index-DInOYyPD.css",
+        "bytes": 28892,
+        "sha256": "46974fe4010d8397ee906f7a36a0424908d7cc2e2620a8c078dda8a2cf137784"
+      }
+    ]
+  },
+  "pilotResultPath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/browser-runs/c-normal-20261007T034143Z-pid62222/pilot-result.json",
+  "pilotResultSha256": "a32bd0fda6daf4d583e85e0a58e00f2f48b2a6f05ce1cbee84cd4226702470ea",
+  "failureSavePath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/browser-runs/c-normal-20261007T034143Z-pid62222/failure-save.json",
+  "failureSaveSha256": "dad03ffdaa373b4dcadbd823ba6b8902f3fa2ca93e76ab0612f11a837fe0087c",
+  "serverLogPath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/browser-runs/c-normal-20261007T034143Z-pid62222/server.log",
+  "serverLogSha256": "d50f10504f9d1310d775b65b0a9cdff7de7dd18759eca9bdcd72e8bf25bfc521",
+  "failure": "AssertionError: New isolated context unexpectedly contains an existing game save",
+  "contextEvidence": {
+    "openingSeen": false,
+    "worldTime": 480,
+    "eventSequence": 1,
+    "gold": 45,
+    "stamina": 84,
+    "wood": 0,
+    "stone": 0,
+    "rewardInstances": 0
+  },
+  "interpretation": "The isolated browser context appears to have started empty, but the application had already initialized and saved its normal opening baseline by the time page.goto returned. The runner checks for a null oakvale-v1 key after navigation and fails on this newly created initial save (openingSeen=false, 45G, worldTime 480, no crafted instances). This is a runner readiness assertion/timing issue, not evidence of contaminated state or a product defect.",
+  "cleanupErrors": [
+    "AttributeError: 'PlaywrightContextManager' object has no attribute 'stop'"
+  ],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ],
+  "pageErrors": [],
+  "unverified": [
+    "visible store purchase",
+    "craft",
+    "inspect/equip",
+    "save/reload",
+    "end-to-end console/storage checks"
+  ],
+  "nextAction": "Fix the pre-navigation fresh-context assertion and Playwright manager shutdown; any further attempt requires a separate Root release."
+}

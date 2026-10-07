@@ -1,0 +1,45 @@
+Command: npm test -- src/services/saveService.test.ts -t migrates a complete V2 world
+Exit code: 1
+
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/saveService.test.ts -t migrates a complete V2 world
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (77 tests | 1 failed | 76 skipped) 25ms
+     × migrates a complete V2 world and its rolled items once without consuming RNG or changing world state 24ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates a complete V2 world and its rolled items once without consuming RNG or changing world state
+AssertionError: expected 2 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 2
+
+ ❯ src/services/saveService.test.ts:46:38
+     44|     for (const item of legacyProjection.reward.instances) delete item.…
+     45|
+     46|     expect(loaded.state.saveVersion).toBe(3)
+       |                                      ^
+     47|     expect(loaded.state.reward.schemaVersion).toBe(2)
+     48|     expect(loaded.state.reward.instances[0]?.craftProvenance).toBeNull…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 76 skipped (77)
+   Start at  02:12:56
+   Duration  534ms (transform 309ms, setup 0ms, import 367ms, tests 25ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

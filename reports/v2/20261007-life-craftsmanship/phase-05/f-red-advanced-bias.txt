@@ -1,0 +1,17 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (39 tests | 3 failed) 151ms
+     × defines the four approved recipes with their exact costs, outputs, unlocks, stations and practice caps 10ms
+     × consumes one wolfFang for the advanced sword without changing its seeded masterpiece or rarity odds 4ms
+     × consumes one moonStone for the advanced sword without changing its seeded masterpiece or rarity odds 2ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 36 passed (39)
+   Start at  04:42:58
+   Duration  497ms (transform 196ms, setup 0ms, import 236ms, tests 151ms, environment 0ms)
+

@@ -1,0 +1,211 @@
+{
+  "title": "Phase5 G/I economy baseline bounds and Phase4 combat matrix reuse",
+  "capturedUTC": "2026-10-07T02:37:30.661275+00:00",
+  "basis": "Static configured values and existing recorded simulation output only; no source changes, tuning, economy runner or Monte Carlo rerun.",
+  "starterSpear": {
+    "meaning": "Crafting recipe id starterSpear outputs ITEM_BASES.spear (item/base ID spear; sell base 14). Sale values use only currently implemented itemSellPrice.",
+    "baseSell": 14,
+    "rarityWeightsNormalWolfProfile": {
+      "common": 60,
+      "uncommon": 27,
+      "rare": 10,
+      "epic": 2.8,
+      "legendary": 0.2
+    },
+    "rarityMultiplier": {
+      "common": 1,
+      "uncommon": 1.5,
+      "rare": 2,
+      "epic": 3,
+      "legendary": 5
+    },
+    "saleValueByRarity": {
+      "common": 14,
+      "uncommon": 21,
+      "rare": 28,
+      "epic": 42,
+      "legendary": 70
+    },
+    "legalSaleValueLowerBound": 14,
+    "conditionalExpectedSaleIfSpearItemGenerated": 18.186,
+    "rareOutcomeValue": 28,
+    "rareChanceNormalWolfProfile": 0.1,
+    "legendaryHighRollValue": 70,
+    "legendaryChanceNormalWolfProfile": 0.002,
+    "spearDropChancePerNormalWolfKill": 0.11818181818181818,
+    "expectedSpearSaleGoldPerNormalWolfKillIfEverySpearIsSold": 2.1492545454545455,
+    "conditions": "These are item value bounds conditional on the item being owned, unequipped and sold at a legally accessible blacksmith while open. The sale path is not guaranteed in normal play; Phase4 fresh-save runner remained at hamlet without blacksmith.",
+    "excludedPremiums": "No affix, quality, provenance, crafter, or masterpiece premium exists in current itemSellPrice.",
+    "registeredRecipe": {
+      "recipeId": "starterSpear",
+      "inputs": {
+        "wood": 3,
+        "stone": 2
+      },
+      "goldCost": 4,
+      "staminaCost": 10,
+      "durationMinutes": 45,
+      "outputBase": "spear",
+      "outputLevel": 2,
+      "requiredSmithing": 1,
+      "station": "store",
+      "source": "src/data/crafting.ts:4-17"
+    },
+    "investmentBaseline": {
+      "hamletPurchasedInputsAndFee": {
+        "woodCost": 24,
+        "stoneCost": 12,
+        "goldFee": 4,
+        "total": 40,
+        "expectedSale": 18.186,
+        "expectedSaleMinusInvestment": -21.814
+      },
+      "bestTownPurchasedInputsAndFee": {
+        "woodCost": 21,
+        "stoneCost": 10,
+        "goldFee": 4,
+        "total": 35,
+        "expectedSale": 18.186,
+        "expectedSaleMinusInvestment": -16.814
+      },
+      "gatheredMaterialLiquidationOpportunityCost": {
+        "woodSaleValue": 12,
+        "stoneSaleValue": 6,
+        "goldFee": 4,
+        "total": 22,
+        "expectedSale": 18.186,
+        "expectedSaleMinusOpportunityCost": -3.814,
+        "note": "The 18 gold material amount is foregone liquidation value; +4 gold work pay per gather action is a separate acquisition inflow and is not included in this direct item-versus-item opportunity-cost comparison. Stamina and elapsed time are also excluded."
+      },
+      "classification": "Initial investment / gear utility baseline only; not Phase5-G final economy or proof of a profitable/losing stable craft loop. The 18.186 expectation is the unmodified normal wolf rarity profile, not a measured starterSpear craft distribution."
+    }
+  },
+  "ordinaryBulkBuyBounds": {
+    "buyPriceFormula": "ceil(ITEMS[item].price * (townStage ? 0.8 : 1.0) * (1 + clamp(tradePenalty,0,0.75)))",
+    "bestOrdinaryDiscount": {
+      "stage": "town",
+      "tradePenalty": 0,
+      "nominalDiscount": 0.2,
+      "multiplier": 0.8,
+      "note": "Trade/event penalty can raise price to 1.75x but never discounts below 1.0x; no additional positive reputation discount applies to item buys."
+    },
+    "quantityInterface": "Current trade action buys one unit per interaction; 10-unit totals below are arithmetic sums of individual buys, not an existing bulk-buy action.",
+    "rawInputs": {
+      "wood": {
+        "baseUnitPrice": 8,
+        "bestTownUnitPrice": 7,
+        "baseCostFor10": 80,
+        "bestTownCostFor10": 70,
+        "effectiveRoundedDiscountFor10": 0.125,
+        "currentSellUnitPrice": 4
+      },
+      "stone": {
+        "baseUnitPrice": 6,
+        "bestTownUnitPrice": 5,
+        "baseCostFor10": 60,
+        "bestTownCostFor10": 50,
+        "effectiveRoundedDiscountFor10": 0.166667,
+        "currentSellUnitPrice": 3
+      },
+      "iron": {
+        "baseUnitPrice": 16,
+        "bestTownUnitPrice": 13,
+        "baseCostFor10": 160,
+        "bestTownCostFor10": 130,
+        "effectiveRoundedDiscountFor10": 0.1875,
+        "currentSellUnitPrice": 8
+      }
+    },
+    "noBuyResellArbitrage": true,
+    "interpretation": "At the best ordinary price, bought raw material remains above fixed store sell-back value. The registered starterSpear quantities and fee are known (3 wood + 2 stone + 4 gold); direct bought-input totals are recorded in starterSpear.investmentBaseline. This comparison is only an initial investment/resale baseline, not Phase5-G final economics, craft distribution, or a complete stable-loop finding."
+  },
+  "ownershipBuyEffects": "Property purchases use separate fixed PROPERTY_DEFINITIONS costs and buyProperty deduction; they do not provide a discount to shop item buyPrice.",
+  "phase4CombatReuse": {
+    "harness": "../../20261006-reward-core/phase-04/combat_simulation.test.ts",
+    "artifact": "../../20261006-reward-core/phase-04/final-combat-balance.json",
+    "sourceCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+    "sourceFingerprint": "71d8cc68aab5f09579b9c87f74b564b585d4ab792fee10e0712ded73037ec245",
+    "oldPhase4EvidenceOnly": true,
+    "buildCount": 15,
+    "builds": [
+      "legacy",
+      "earlygear",
+      "raw",
+      "crit",
+      "bleed",
+      "penetration",
+      "affixControl",
+      "defense",
+      "common",
+      "rare",
+      "epic",
+      "eliteDrop",
+      "miniBossDrop",
+      "boss",
+      "bossStandardBody"
+    ],
+    "powerbands": {
+      "early": "fresh engine character (Lv1/100 HP); controlled initial forest position",
+      "edge": "engine gainExp(180) progression (Lv4 / combat Lv4); no injected gold/world resources",
+      "ready": "actual engine gainExp(300) progression; assertions require hero Lv5 and combat Lv6; every row records both levels"
+    },
+    "targets": [
+      {
+        "id": "grayWolf"
+      },
+      {
+        "id": "alphaWolf"
+      },
+      {
+        "id": "alphaWolf",
+        "traits": [
+          "armored"
+        ],
+        "fixture": "controlled-armored-elite"
+      },
+      {
+        "id": "wolfKing",
+        "variant": "wellFed"
+      },
+      {
+        "id": "wolfKing",
+        "variant": "starved"
+      },
+      {
+        "id": "wolfKing",
+        "variant": "moonlit"
+      }
+    ],
+    "policies": [
+      "attack",
+      "cue"
+    ],
+    "seeds": [
+      17,
+      42,
+      77,
+      909,
+      2026,
+      2027,
+      8191,
+      9981
+    ],
+    "recordedRows": 4320,
+    "repeatedFightPairs": 4320,
+    "actualFightRuns": 8640,
+    "existingLootArtifact": "../../20261006-reward-core/phase-04/loot-distribution.json",
+    "lootArtifactSourceFingerprint": "71d8cc68aab5f09579b9c87f74b564b585d4ab792fee10e0712ded73037ec245",
+    "lootTotalAwards": 100000,
+    "reuseGuidance": "The test harness exposes reusable builders/progression profiles and source-snapshot guard. For Phase5-I, add the crafted equipment build to a new matrix under current frozen source evidence; do not treat old 15-build data as Phase5 results."
+  },
+  "sourcePaths": {
+    "rewardSale": "src/engine/rewardActions.ts:10-12,43-45",
+    "shopPrice": "src/engine/actions.ts:72-91",
+    "tradePenalty": "src/engine/livingEvents.ts:529-539",
+    "legacyInputPrices": "src/data/config.ts:27-31",
+    "spearAndWolfLoot": "src/data/rewards.ts:3-10,24-30,57-66,69-80",
+    "ownershipPurchases": "src/engine/ownership.ts:63-110",
+    "phase4CombatHarness": "reports/v2/20261006-reward-core/phase-04/combat_simulation.test.ts",
+    "phase4CombatMatrix": "reports/v2/20261006-reward-core/phase-04/final-combat-balance.json"
+  }
+}

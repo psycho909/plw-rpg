@@ -1,0 +1,37 @@
+{
+  "status": "FOCUSED_GREEN_PREPARED_ONLY",
+  "sourceCommit": "f9f969c9d3dfa3cbf1c379bec98eafab765b11cc",
+  "productionSourceFingerprint": "64118ae0a53e69a897ba5bf0611da3d913d75b0861c80d56f95729feebba12cb",
+  "browserReleaseAuthorized": false,
+  "browserRunExecuted": false,
+  "productionBuildExecuted": false,
+  "preFixRedEvidence": {
+    "path": "reports/v2/20261007-life-craftsmanship/phase-05/browser-driver-live-navigation-contract-red.json",
+    "sha256": "7d67fd16c6b57bd7c2e3a73f24c8e8af6fdd533ac776765d05c6299d0247aabf"
+  },
+  "authoredFilesSha256": {
+    "driver": "438080d1749cad35e04dd401f0cb350cb7212fe1a9286b9451e514fc12ab0ab9",
+    "tests": "e5ee8037d9751464ff6d14aeff8a437fe881c1ca1a8f464a67491e356c140ade",
+    "launcher": "84c7f4429196180787be2de52b6cf05817078e41faac984813c6472125823297",
+    "support": "8572bdf613f7840d5818e7ec0de844c3f4501ce70fe66df71986c0a1e1f6572c"
+  },
+  "verification": {
+    "command": "python reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_browser_driver.py",
+    "result": "14 passed",
+    "supportCommand": "python reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_browser_support.py",
+    "supportResult": "3 passed",
+    "pyCompileCommand": "python -m py_compile reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_driver.py reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_launcher.py reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_support.py",
+    "pyCompileResult": "passed"
+  },
+  "validatedContracts": [
+    "Region and building interaction names are resolved from the live accessible map/building labels; icon-prefixed visible actions remain matched without force-click.",
+    "Mine uses the actual current region registry key; farm fallback targets regionId farmland.",
+    "Material planner shortages map wood to forest/伐木, stone to mine/採石, and iron to mine/採鐵礦.",
+    "Actual Vue source exposes the map label, craft-result bridge, focus-instance-id, selected inventory row, equip control, native save, and combat controls expected by the driver.",
+    "The driver only reads localStorage save state and uses visible normal controls for mutations; it contains no direct localStorage write or Playwright force-click.",
+    "First and second ten-minute Life notes, combat terminal-victory guard, and CDP optional-metric fallback remain covered by focused tests."
+  ],
+  "limitations": [
+    "No source-correlated browser pilot was run because the current Root browser-release marker is unauthorized; request a new marker after independent review and hash freeze."
+  ]
+}

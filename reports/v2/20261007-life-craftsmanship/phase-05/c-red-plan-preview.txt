@@ -1,0 +1,34 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crafting.test.ts [ src/engine/crafting.test.ts ]
+Error: Cannot find module './crafting' imported from /workspace/plw-rpg/src/engine/crafting.test.ts
+ ❯ src/engine/crafting.test.ts:4:1
+      2| import { BUILDINGS } from '../data/config'
+      3| import type { GameState } from '../domain/types'
+      4| import { planCraft } from './crafting'
+       | ^
+      5| import { createGame, player } from './simulation'
+      6|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  02:37:28
+   Duration  185ms (transform 39ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

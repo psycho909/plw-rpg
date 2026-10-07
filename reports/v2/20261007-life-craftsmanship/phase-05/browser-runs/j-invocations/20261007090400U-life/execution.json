@@ -1,0 +1,23 @@
+{
+  "invocation": "20261007090400U-life",
+  "mode": "life",
+  "durationSeconds": 1800,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_launcher.py",
+    "--mode",
+    "life",
+    "--seconds",
+    "1800",
+    "--go",
+    "--execution-model",
+    "gpt-6-luna",
+    "--execution-effort",
+    "low"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedAtUTC": "2026-10-07T09:04:00.802504+00:00",
+  "releaseSha256": "d7f633b2a6d83d6c4dc626dc4608028e2bdfd9a4c7692cd180e2f844fcda1460",
+  "sourceCommit": "f9f969c9d3dfa3cbf1c379bec98eafab765b11cc",
+  "launcherPid": 84624
+}

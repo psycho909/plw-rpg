@@ -54,7 +54,7 @@ Phase4 Engineering Gate：**PASS WITH FINDINGS**。330項全量測試、typechec
 
 ## V2.x Phase5：Life Reward & Craftsmanship
 
-依 [Phase5 規格](docs/specs/V2X-PHASE5-LIFE-CRAFTSMANSHIP.md)進行製作與生活獎勵垂直切片，目前施工中。先完成素材經濟 baseline，再逐階接入共用裝備生成、素材選擇、技藝能力、傑作及 Adventure→Life→Adventure；不開始Phase6–10／V3。正式進度以 [Ticket](tickets/20261007-v2x-05-life-craftsmanship.md)與[本輪證據](reports/v2/20261007-life-craftsmanship/phase-05/README.md)為準。Human Gate維持DEFERRED。
+Phase5 Engineering Gate：**PASS WITH FINDINGS**。四種鍛造配方、素材偏向、技藝能力、傑作、鍛造身份與既有住宅工作台已完成；425 項全量測試、typecheck/build、10 萬次裝備生成、13,248 場戰鬥、20 分鐘真 Chromium 壓測與30分鐘 Life Agent 探索通過。原始失敗、產品發現及測試策略限制見 [交付紀錄](reports/v2/20261007-life-craftsmanship/phase-05/final-review.md)；正式進度以 [Ticket](tickets/20261007-v2x-05-life-craftsmanship.md)為準。Human Gate：DEFERRED / NOT APPLICABLE AT THIS STAGE。未開始 Phase6–10／V3。
 
 ## 正式網站與部署
 

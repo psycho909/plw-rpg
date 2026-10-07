@@ -1,0 +1,98 @@
+{
+  "purpose": "Real historical save regression inputs for Phase5 migration work; files are archived as evidence only. No current migration was run.",
+  "sourceBase": {
+    "phase4SourceFingerprint": "71d8cc68aab5f09579b9c87f74b564b585d4ab792fee10e0712ded73037ec245",
+    "phase4DeliveryCommit": "39621ec9b5833f24c4105d5bf705ff2b984da3a2",
+    "phase4TestedBaseCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+    "v2StressRunnerSourceCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+    "v2StressRunnerRunId": "20261007T010452Z",
+    "v2SourceFileCount": 74,
+    "v2SourceSHA256MatchesPhase4Manifest": true
+  },
+  "fixtures": [
+    {
+      "path": "reports/v2/20261007-life-craftsmanship/phase-05/fixtures/legacy-v1-after-boss.save.json",
+      "saveVersion": 1,
+      "sourceArtifact": "reports/playtests/20261003-comprehensive/adventure/after-boss-save.json",
+      "sourceArtifactBytes": 195137,
+      "sourceArtifactSHA256": "25cc063a3a5850bdeb9fcb37301811d9f5f0be34b07470a9919bab33296ce4ba",
+      "sourceField": "root object (entire source file)",
+      "transformation": "UTF-8 text copied verbatim through write_recorded; parsed JSON equality and output SHA256 checked",
+      "fixtureBytes": 195137,
+      "fixtureSHA256": "25cc063a3a5850bdeb9fcb37301811d9f5f0be34b07470a9919bab33296ce4ba",
+      "perFileSourceContext": {
+        "playtestReport": "reports/playtests/20261003-comprehensive/adventure/report.md",
+        "reportedSourceBaselineCommit": "694c6d76df67e3d3dd4da5aa98feba8581ecc2ba",
+        "sourceCommitEmbeddedInSave": false
+      },
+      "stateSummary": {
+        "saveVersion": 1,
+        "worldSeed": 909,
+        "rngState": 3986041481,
+        "worldTime": 224382,
+        "characters": 1,
+        "npcs": 44,
+        "inventoryItemUnits": 17,
+        "proceduralRewardInstances": 0,
+        "typedMaterialUnits": 0,
+        "historyEntries": 28,
+        "threat": {
+          "monsterPopulation": 72.72500000000028,
+          "threatLevel": 3,
+          "growthRate": 0.65,
+          "bossProgress": 1.4500000000000002,
+          "campLevel": 3,
+          "bossAlive": false,
+          "warningLevel": 0
+        }
+      }
+    },
+    {
+      "path": "reports/v2/20261007-life-craftsmanship/phase-05/fixtures/phase4-v2-stress-final.save.json",
+      "saveVersion": 2,
+      "sourceArtifact": "reports/v2/20261006-reward-core/phase-04/archive/stress-browser-retry01.json",
+      "sourceArtifactBytes": 3284053,
+      "sourceArtifactSHA256": "2fa04185773ce182eaac6f90c201aa6cefd67b12854f92cb5855f979d9ac3a50",
+      "sourceField": "root.final",
+      "transformation": "Extract exact JSON value at root.final and serialize as standalone UTF-8 JSON with 2-space indentation and trailing newline; no fields removed or synthesized",
+      "fixtureBytes": 181139,
+      "fixtureSHA256": "68e73778a33b8ab158a214f1614b385535ea386a7cc3851b08cc9e33c5ad77b0",
+      "perFileSourceContext": {
+        "runnerProducer": "v2x-phase4-stress-browser-retry01",
+        "runnerRunId": "20261007T010452Z",
+        "sourceCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+        "sourceFileCount": 74,
+        "sourceSHA256MapMatchesPhase4DeliveryManifest": true,
+        "sourceFingerprint": "71d8cc68aab5f09579b9c87f74b564b585d4ab792fee10e0712ded73037ec245"
+      },
+      "stateSummary": {
+        "saveVersion": 2,
+        "worldSeed": 909,
+        "rngState": 2910134963,
+        "worldTime": 13376,
+        "characters": 1,
+        "npcs": 29,
+        "inventoryItemUnits": 137,
+        "proceduralRewardInstances": 4,
+        "typedMaterialUnits": 9,
+        "historyEntries": 2,
+        "threat": {
+          "monsterPopulation": 2.5499999999999994,
+          "threatLevel": 1,
+          "growthRate": 0.65,
+          "bossProgress": 1.9500000000000004,
+          "campLevel": 1,
+          "bossAlive": false,
+          "warningLevel": 0
+        }
+      }
+    }
+  ],
+  "integrityChecks": {
+    "v1FixtureBytesEqualOriginalArtifact": true,
+    "v1ParsedStateEqualsOriginal": true,
+    "v2ParsedStateEqualsSelectedRootFinal": true,
+    "bothAreActualHistoricalSaves": true,
+    "currentMigrationExecuted": false
+  }
+}

@@ -1,0 +1,33 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts src/engine/itemGeneration.test.ts src/services/saveService.test.ts src/presentation/craftingProjection.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/presentation/craftingProjection.test.ts (7 tests | 1 failed) 75ms
+     × projects the selected fang as one owned-material input and describes its exact affix weight changes 19ms
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/presentation/craftingProjection.test.ts > crafting UI projection > projects the selected fang as one owned-material input and describes its exact affix weight changes
+AssertionError: expected '詞綴抽選權重增加：裂傷 +4、穿透 +2。素材不改變品質權重或稀有度機率，也不保證指定結果。' to contain '不改變稀有度機率'
+
+Expected: "不改變稀有度機率"
+Received: "詞綴抽選權重增加：裂傷 +4、穿透 +2。素材不改變品質權重或稀有度機率，也不保證指定結果。"
+
+ ❯ src/presentation/craftingProjection.test.ts:47:57
+     45|     })
+     46|     expect(projection.selectedInfluence?.influenceText).toContain('裂傷 +4、穿透 +2')
+     47|     expect(projection.selectedInfluence?.influenceText).toContain('不改變稀有度機率')
+       |                                                         ^
+     48|     expect(state).toEqual(before)
+     49|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 153 passed (154)
+   Start at  04:31:55
+   Duration  8.47s (transform 927ms, setup 0ms, import 1.40s, tests 8.53s, environment 6ms)

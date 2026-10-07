@@ -1,0 +1,36 @@
+Focused QA lifecycle/guard/navigation GREEN
+{
+  "recordedAtUTC": "2026-10-07T04:00:04.785104+00:00",
+  "result": "PASS",
+  "commands": [
+    {
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_c_normal_pilot.py",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 1.340s\n\nOK\n"
+    },
+    {
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -m py_compile reports/v2/20261007-life-craftsmanship/phase-05/phase05_c_normal_pilot.py reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_c_normal_pilot.py",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python reports/v2/20261007-life-craftsmanship/phase-05/phase05_c_normal_pilot.py",
+      "exitCode": 0,
+      "stdout": "PREPARED ONLY: pass --go after source freeze, matching production build, and Root release.\n",
+      "stderr": ""
+    }
+  ],
+  "harnessSha256": "2d4de2a11c7360d60214f587f771f9eec34afe1d275def8c2821427598c64b08",
+  "testSha256": "ad1b14449f30049a3107a4557d9b0db90f436957788d7f6ec650b952280f925e",
+  "buildStatusSha256": "e8fff3c60cec112686bc587ae1ca71285e7f555e2401126178967e0aac4b057f",
+  "sourceFileCount": 79,
+  "sourceFingerprint": "16b862ee6acd1090010cdedc17fbd22a658ad11fc87a1258fbcaaea5655ea287",
+  "productionAssets": {
+    "dist/assets/index-DInOYyPD.css": "46974fe4010d8397ee906f7a36a0424908d7cc2e2620a8c078dda8a2cf137784",
+    "dist/assets/index-DuGo8NbL.js": "fa112722498ab0f052c9586a783ab13cc966de1879a67ef6e15a291c04e7aa0a",
+    "dist/index.html": "8376f04c3d0873c0e65f03e9d3af1ef9336125b731d40eb93a892ab049efb77e"
+  },
+  "fullPilotRun": "c-normal-20261007T035615Z-pid63323 remains FAILED before store entry; no retry was run here"
+}

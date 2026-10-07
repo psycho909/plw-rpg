@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (40 tests | 1 failed) 143ms
+     × rejects 'with invalid existing milestone metad…' without changing state, RNG, ids, resources, time, or events 9ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 39 passed (40)
+   Start at  04:44:12
+   Duration  555ms (transform 239ms, setup 0ms, import 291ms, tests 143ms, environment 0ms)
+

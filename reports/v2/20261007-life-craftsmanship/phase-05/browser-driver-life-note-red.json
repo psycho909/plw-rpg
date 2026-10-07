@@ -1,0 +1,11 @@
+{
+  "status": "RED_REPRODUCED_BEFORE_FIX",
+  "driverSha256BeforeFix": "ce801ace1972e9b05b362028a9e04307a00ae05f2e117156b8d666be8f7f425c",
+  "minimalState": "One active hero with inventory, smithing level, reward.materials and instances, worldTime, events, history.",
+  "firstNoteFailure": "Traceback (most recent call last):\n  File \"<stdin>\", line 29, in <module>\n  File \"/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_driver.py\", line 696, in timed_note\n    current_recipe = self.last_recipe_choice\n                     ^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'BrowserDriver' object has no attribute 'last_recipe_choice'\n",
+  "secondNoteFailureAfterTemporarilyProvidingMissingAttribute": null,
+  "productionBrowserExecuted": false,
+  "productionBuildExecuted": false,
+  "secondNoteOutcome": "After supplying only a temporary last_recipe_choice=None attribute, both first and second timed notes completed; source line 729 stores the full raw state, so the reviewer’s reported prior-state shape issue does not reproduce in this exact file.",
+  "reviewClarification": "The preserved blocker is the first-note AttributeError for missing last_recipe_choice. No second-note exception was observed before the fix; raw current-state storage is verified by source inspection and reproduction."
+}

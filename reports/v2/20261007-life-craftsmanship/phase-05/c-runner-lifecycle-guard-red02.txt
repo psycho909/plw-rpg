@@ -1,0 +1,15 @@
+Command: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_c_normal_pilot.py FreshContextGuardBrowserTests
+Exit code: 1
+F
+======================================================================
+FAIL: test_guard_observes_empty_context_before_the_app_saves_its_native_opening_baseline (__main__.FreshContextGuardBrowserTests.test_guard_observes_empty_context_before_the_app_saves_its_native_opening_baseline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_c_normal_pilot.py", line 103, in test_guard_observes_empty_context_before_the_app_saves_its_native_opening_baseline
+    self.assertIsNotNone(
+AssertionError: unexpectedly None : the pre-app init script must capture the isolated context before application scripts run
+
+----------------------------------------------------------------------
+Ran 1 test in 1.071s
+
+FAILED (failures=1)

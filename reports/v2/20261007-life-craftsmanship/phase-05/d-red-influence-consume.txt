@@ -1,0 +1,60 @@
+D influence-material craft behavioral RED
+Command: npm test -- src/engine/crafting.test.ts -t "consumes and records the selected influence"
+Exit: 1
+The active-owner fixture is valid; the assertion fails because craft still generates a neutral item and does not consume the selected material.
+
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts -t consumes and records the selected influence
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (22 tests | 1 failed | 21 skipped) 14ms
+     × consumes and records the selected influence material through save and reload 13ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crafting.test.ts > starter crafting preview > consumes and records the selected influence material through save and reload
+AssertionError: expected [ { instanceId: 'item-1', …(10) } ] to deeply equal [ { instanceId: 'item-1', …(10) } ]
+
+- Expected
++ Received
+
+@@ -3,17 +3,17 @@
+      "affixes": [],
+      "baseId": "spear",
+      "craftProvenance": {
+        "createdAt": 480,
+        "createdBy": "alden",
+-       "influenceMaterial": "wolfFang",
++       "influenceMaterial": null,
+        "masterpiece": false,
+        "recipeId": "starterSpear",
+      },
+      "instanceId": "item-1",
+      "level": 2,
+-     "material": "wolfFang",
++     "material": null,
+      "ownerId": "alden",
+      "provenance": null,
+      "rarity": "common",
+      "rolledStats": {
+        "attack": 5,
+
+ ❯ src/engine/crafting.test.ts:113:36
+    111|
+    112|     expect(result).toMatchObject({ ok: true, instanceId: expectedItem.…
+    113|     expect(state.reward.instances).toEqual([expectedItem])
+       |                                    ^
+    114|     expect(state.reward.materials[character.id]?.wolfFang).toBe(1)
+    115|     expect(state.reward.instances[0]?.craftProvenance?.influenceMateri…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 21 skipped (22)
+   Start at  04:07:58
+   Duration  395ms (transform 218ms, setup 0ms, import 259ms, tests 14ms, environment 0ms)
+

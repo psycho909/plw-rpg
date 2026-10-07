@@ -1,0 +1,45 @@
+Command: npm test -- src/services/saveService.test.ts -t rejects fields from the newer schema
+Exit code: 1
+
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/saveService.test.ts -t rejects fields from the newer schema
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (77 tests | 1 failed | 75 skipped) 27ms
+     × rejects fields from the newer schema in a V2 save before adding defaults: smithing-skill-in-v2 18ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects fields from the newer schema in a V2 save before adding defaults: smithing-skill-in-v2
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ src/services/saveService.test.ts:61:54
+     59|       if (kind === 'smithing-skill-in-v2') raw.characters[0].skills.sm…
+     60|       if (kind === 'craft-provenance-in-v1') raw.reward.instances[0].c…
+     61|       expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+       |                                                      ^
+     62|     })
+     63|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed | 75 skipped (77)
+   Start at  02:13:07
+   Duration  516ms (transform 315ms, setup 0ms, import 369ms, tests 27ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

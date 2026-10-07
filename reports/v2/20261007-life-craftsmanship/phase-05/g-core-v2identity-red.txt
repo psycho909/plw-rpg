@@ -1,0 +1,3 @@
+G V2 identity RED — archived V2 save reproduction
+Command: npm test -- src/services/saveService.test.ts -t "G-only identities"
+Result: fails as expected. Starting with the archived Phase4 V2 stress save, adding `masterpieceCrafter` to the saved character identity list is currently accepted by deserialize and migrated to V3. The regression requires rejection before migration because this G-only marker would suppress the first-masterpiece reward.

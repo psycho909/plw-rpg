@@ -1,0 +1,4 @@
+Exact G event-capacity failure reproduction
+Command: npm test -- src/engine/crafting.test.ts -t "crop and XP"
+Reproduction state serializes and deserializes before crafting: four growing crops with plantedAt=0/growthDuration=1/matureAt=1; active character general XP=29 and Smithing XP=19; eventSequence=Number.MAX_SAFE_INTEGER-5; starterSpear at the normal store. The test then calls planCraft and craft, checks event IDs, sequence safety, save reload, and atomicity.
+Observed before fix: planner ok=true, craft ok=true, 7 new events emitted (four crop.matured, character.levelUp, character.skillUp, craft.completed); final sequence delta is 6 because the last two event IDs both equal 9007199254740992. `Number.isSafeInteger(eventSequence)` is false, save reload is rejected, and state changed.

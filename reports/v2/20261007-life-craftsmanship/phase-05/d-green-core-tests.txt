@@ -1,0 +1,17 @@
+D focused engine GREEN
+Command: npm test -- src/engine/crafting.test.ts src/engine/itemGeneration.test.ts
+Exit: 0
+
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts src/engine/itemGeneration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  2 passed (2)
+      Tests  53 passed (53)
+   Start at  04:10:38
+   Duration  630ms (transform 413ms, setup 0ms, import 507ms, tests 378ms, environment 1ms)
+

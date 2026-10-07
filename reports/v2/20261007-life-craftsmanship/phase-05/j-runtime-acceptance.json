@@ -1,0 +1,38 @@
+{
+  "sourceCommit": "f9f969c9d3dfa3cbf1c379bec98eafab765b11cc",
+  "sourceFingerprint": "64118ae0a53e69a897ba5bf0611da3d913d75b0861c80d56f95729feebba12cb",
+  "runs": [
+    {
+      "mode": "stress",
+      "result": "browser-runs/stress-20261007T103239Z-pid7428/stress-result.json",
+      "resultSha256": "66d8bef562d4856f422fa44b2ae3f8a87d7031d35076e9e8e0eb48e454c46608",
+      "execution": "browser-runs/j-invocations/20261007T103239260559Z-stress-a8502ac0/execution.json",
+      "executionSha256": "7d53bf7c38e46ffd58ab6665b55121aaa4778790896e57d595cecd9b85681aa0",
+      "durationSeconds": 1202.14,
+      "operations": 8899,
+      "reloads": 103,
+      "checkpoints": 108,
+      "status": "ACCEPTED_ENGINEERING_RUNTIME"
+    },
+    {
+      "mode": "life",
+      "result": "browser-runs/life-20261007T103239Z-pid7426/life-result.json",
+      "resultSha256": "5f64b3cef9909005c0772d1565f394009b07ec72ad7d749b243f38b46ab9bfce",
+      "execution": "browser-runs/j-invocations/20261007T103239259277Z-life-ea3f9138/execution.json",
+      "executionSha256": "e6a9342887045b855af3fabf12b3a318593345edcfa797afa977bfec1b5b440c",
+      "durationSeconds": 1803.22,
+      "operations": 13936,
+      "reloads": 155,
+      "checkpoints": 158,
+      "status": "ACCEPTED_ENGINEERING_RUNTIME"
+    }
+  ],
+  "humanValidation": "DEFERRED / NOT APPLICABLE AT THIS STAGE",
+  "lifeRewardGate": "pending product-finding synthesis; runtime PASS is not fun proof",
+  "extendedSoak": "not triggered: no major persistence/renderer architecture change and no observed short-stress instability or persistent heap/DOM runaway",
+  "limitations": [
+    "Runner-driven exploratory policy, not human feedback",
+    "20/30-minute runs do not exclude longer-horizon leaks",
+    "Prior failures and interruption remain historical evidence"
+  ]
+}

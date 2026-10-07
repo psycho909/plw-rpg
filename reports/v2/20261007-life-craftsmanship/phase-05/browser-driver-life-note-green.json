@@ -1,0 +1,33 @@
+{
+  "status": "GREEN_FOCUSED_REGRESSION_CHECKS",
+  "authorship": {
+    "requestedModel": "GPT-6 Luna",
+    "requestedEffort": "medium",
+    "backendRuntimeVerified": false
+  },
+  "checks": [
+    {
+      "command": "python -m py_compile phase05_browser_support.py phase05_browser_launcher.py phase05_browser_driver.py test_phase05_browser_support.py test_phase05_browser_driver.py",
+      "result": "passed"
+    },
+    {
+      "command": "python -m unittest reports.v2.20261007-life-craftsmanship.phase-05.test_phase05_browser_support reports.v2.20261007-life-craftsmanship.phase-05.test_phase05_browser_driver",
+      "result": "6 tests passed"
+    }
+  ],
+  "regressions": {
+    "lifeFirstAndSecondTenMinuteNotes": "passed through actual BrowserDriver.timed_note with a non-browser fake page and two evolving normal state snapshots; validates material/inventory/item/world-time deltas",
+    "hybridSuccessDisposition": "passed; normal return changes only IN_PROGRESS to PASS",
+    "hybridBlockerDisposition": "passed; blocked status remains unchanged"
+  },
+  "preservedRedEvidence": "browser-driver-life-note-red.json contains the exact pre-fix driver SHA-256 and first-note AttributeError raw traceback; its archived earlier version is retained in playlog.jsonl.",
+  "currentFilesSha256": {
+    "reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_launcher.py": "7625740df2f7e4e180edc188f671db8601936624f68ebb669b18b9667f708974",
+    "reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_driver.py": "492fd9fbdc6c98f345d315835b7b86bdd7fdc994a5197dbec3b357773762617d",
+    "reports/v2/20261007-life-craftsmanship/phase-05/phase05_browser_support.py": "8572bdf613f7840d5818e7ec0de844c3f4501ce70fe66df71986c0a1e1f6572c",
+    "reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_browser_driver.py": "4073580cc2e527752d5523c78e22906c4869078a79e861139816f4e404426dc5"
+  },
+  "productionBuildExecuted": false,
+  "browserExecuted": false,
+  "fullQAExecuted": false
+}

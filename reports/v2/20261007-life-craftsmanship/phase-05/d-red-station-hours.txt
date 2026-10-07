@@ -1,0 +1,53 @@
+D planner station-hour metadata RED
+Command: npm test -- src/engine/crafting.test.ts -t "returns the exact affordable starter spear plan"
+Exit: 1
+The behavior test now expects station hours sourced from the selected recipe.
+
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts -t returns the exact affordable starter spear plan
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (24 tests | 1 failed | 23 skipped) 14ms
+     × returns the exact affordable starter spear plan without mutating the world 13ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crafting.test.ts > starter crafting preview > returns the exact affordable starter spear plan without mutating the world
+AssertionError: expected { recipeId: 'starterSpear', …(12) } to deeply equal { ok: true, reasonCode: null, …(11) }
+
+- Expected
++ Received
+
+@@ -47,12 +47,10 @@
+      "required": 10,
+    },
+    "station": {
+      "available": true,
+      "built": true,
+-     "closesAtHour": 18,
+      "id": "store",
+      "nearby": true,
+      "open": true,
+-     "opensAtHour": 8,
+    },
+  }
+
+ ❯ src/engine/crafting.test.ts:27:18
+     25|     const plan = planCraft(state, { recipeId: 'starterSpear' })
+     26|
+     27|     expect(plan).toEqual({
+       |                  ^
+     28|       ok: true,
+     29|       reasonCode: null,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 23 skipped (24)
+   Start at  04:08:59
+   Duration  409ms (transform 226ms, setup 0ms, import 275ms, tests 14ms, environment 0ms)
+

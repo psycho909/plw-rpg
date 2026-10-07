@@ -1,0 +1,92 @@
+{
+  "phase": "Phase5-B frozen full regression",
+  "command": "npm run check",
+  "status": "FAIL",
+  "exitCode": 1,
+  "startUTC": "2026-10-07T02:22:36.458+00:00",
+  "endUTC": "2026-10-07T02:22:45.332+00:00",
+  "headBefore": "1a56cd3eeb2ea65114a5dcf03c0e00504b69239f",
+  "headAfter": "1a56cd3eeb2ea65114a5dcf03c0e00504b69239f",
+  "sourceFileCountBefore": 75,
+  "sourceFileCountAfter": 75,
+  "sourceMapStable": true,
+  "sourceMapBefore": "b-full-check-20261007T022236Z/source-before.json",
+  "sourceMapAfter": "b-full-check-20261007T022236Z/source-after.json",
+  "buildInputManifestSha256Before": "3fe1adb41f3dee5eb6881e6806010ed87a5ebf45d0d6a669fea1d506d75c8d5b",
+  "buildInputManifestSha256After": "3fe1adb41f3dee5eb6881e6806010ed87a5ebf45d0d6a669fea1d506d75c8d5b",
+  "buildInputManifestStable": true,
+  "buildInputs": "src/** recursively including untracked files, package.json, package-lock.json, index.html, tsconfig.json, vite.config.ts",
+  "environment": {
+    "capturedUTC": "2026-10-07T02:22:36.555+00:00",
+    "cwd": "/workspace/plw-rpg",
+    "versions": {
+      "node": {
+        "exitCode": 0,
+        "stdout": "v24.19.0",
+        "stderr": ""
+      },
+      "npm": {
+        "exitCode": 0,
+        "stdout": "11.9.0",
+        "stderr": ""
+      },
+      "python": {
+        "exitCode": 0,
+        "stdout": "Python 3.12.14",
+        "stderr": ""
+      }
+    },
+    "selectedEnvironment": {
+      "CI": {
+        "present": false,
+        "value": null
+      },
+      "NODE_ENV": {
+        "present": false,
+        "value": null
+      },
+      "npm_config_cache": {
+        "present": false,
+        "value": ""
+      }
+    }
+  },
+  "rawStdout": "b-full-check-20261007T022236Z/stdout.log",
+  "rawStderr": "b-full-check-20261007T022236Z/stderr.log",
+  "rawExitCode": "b-full-check-20261007T022236Z/exit-code.txt",
+  "testResults": {
+    "testFilesPassed": 18,
+    "testFilesFailed": 2,
+    "testsPassed": 335,
+    "testsFailed": 5,
+    "testsTotal": 340,
+    "productionBuild": "not run; npm run check stopped after vitest failed",
+    "typecheck": "not run; build stage was not reached"
+  },
+  "failingTests": [
+    {
+      "test": "src/services/playJournal.test.ts > atomic local checkpoint envelope > migrates a real V1 world and starts a separate journal",
+      "failure": "deserialize rejects fixture at src/services/saveService.ts:269 with 存檔資料不完整。原始存檔已保留，請確認後重建世界。"
+    },
+    {
+      "test": "src/services/playJournal.test.ts > atomic local checkpoint envelope > preserves historical offline journal entries unchanged during V1 migration",
+      "failure": "deserialize rejects fixture at src/services/saveService.ts:269 with 存檔資料不完整。原始存檔已保留，請確認後重建世界。"
+    },
+    {
+      "test": "src/stores/gameStore.test.ts > safe browser persistence > migrates V1 without offline advancement and retains the historical world checkpoint",
+      "failure": "expected worldSeed 88; received 909"
+    },
+    {
+      "test": "src/stores/gameStore.test.ts > safe browser persistence > keeps historical offline journal records but adds no offline load record",
+      "failure": "deserialize rejects fixture at src/services/saveService.ts:269 with 存檔資料不完整。原始存檔已保留，請確認後重建世界。"
+    },
+    {
+      "test": "src/stores/gameStore.test.ts > safe browser persistence > allows explicit reset to replace corrupt data after the UI confirmation",
+      "failure": "expected saveVersion 2; received 3"
+    }
+  ],
+  "sourceOrGitEditsByRunner": false,
+  "repeatedOrDiagnosedFailure": false,
+  "monteCarloRerun": false,
+  "note": "The original failure is preserved. Per instruction, stopped after this single failed full-check run and notified Root; no diagnosis, retry, migration run, build, source edit, or Git operation was performed."
+}

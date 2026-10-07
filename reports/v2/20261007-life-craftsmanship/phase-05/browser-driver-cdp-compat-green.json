@@ -1,0 +1,175 @@
+{
+  "status": "GREEN_CDP_COMPAT_SMOKE",
+  "scope": "Actual Chromium CDP instrumentation only on about:blank; no app/gameplay/save/UI action.",
+  "chromiumVersion": "151.0.7922.173",
+  "profilingCapabilities": {
+    "Performance.enable": true,
+    "Memory.getDOMCounters": true,
+    "Runtime.getHeapUsage": true,
+    "Performance.getMetrics": true
+  },
+  "profilingLimitations": [],
+  "probeResults": {
+    "Memory.getDOMCounters": {
+      "documents": 4,
+      "nodes": 16,
+      "jsEventListeners": 0
+    },
+    "Runtime.getHeapUsage": {
+      "usedSize": 1078764,
+      "totalSize": 1572864,
+      "embedderHeapUsedSize": 1378744,
+      "backingStorageSize": 14236
+    },
+    "Performance.getMetrics": {
+      "metrics": [
+        {
+          "name": "Timestamp",
+          "value": 95522.303695
+        },
+        {
+          "name": "AudioHandlers",
+          "value": 0
+        },
+        {
+          "name": "AudioWorkletProcessors",
+          "value": 0
+        },
+        {
+          "name": "Documents",
+          "value": 4
+        },
+        {
+          "name": "Frames",
+          "value": 4
+        },
+        {
+          "name": "JSEventListeners",
+          "value": 0
+        },
+        {
+          "name": "LayoutObjects",
+          "value": 8
+        },
+        {
+          "name": "MediaKeySessions",
+          "value": 0
+        },
+        {
+          "name": "MediaKeys",
+          "value": 0
+        },
+        {
+          "name": "Nodes",
+          "value": 16
+        },
+        {
+          "name": "Resources",
+          "value": 0
+        },
+        {
+          "name": "ContextLifecycleStateObservers",
+          "value": 8
+        },
+        {
+          "name": "V8PerContextDatas",
+          "value": 4
+        },
+        {
+          "name": "WorkerGlobalScopes",
+          "value": 0
+        },
+        {
+          "name": "UACSSResources",
+          "value": 0
+        },
+        {
+          "name": "RTCPeerConnections",
+          "value": 0
+        },
+        {
+          "name": "ResourceFetchers",
+          "value": 4
+        },
+        {
+          "name": "AdSubframes",
+          "value": 0
+        },
+        {
+          "name": "DetachedScriptStates",
+          "value": 2
+        },
+        {
+          "name": "ArrayBufferContents",
+          "value": 0
+        },
+        {
+          "name": "LayoutCount",
+          "value": 0
+        },
+        {
+          "name": "RecalcStyleCount",
+          "value": 0
+        },
+        {
+          "name": "LayoutDuration",
+          "value": 0
+        },
+        {
+          "name": "RecalcStyleDuration",
+          "value": 0
+        },
+        {
+          "name": "DevToolsCommandDuration",
+          "value": 0.000392
+        },
+        {
+          "name": "ScriptDuration",
+          "value": 0
+        },
+        {
+          "name": "V8CompileDuration",
+          "value": 0
+        },
+        {
+          "name": "TaskDuration",
+          "value": 0.000479
+        },
+        {
+          "name": "TaskOtherDuration",
+          "value": 8.7e-05
+        },
+        {
+          "name": "ThreadTime",
+          "value": 0.000648
+        },
+        {
+          "name": "ProcessTime",
+          "value": 0.04
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 1078764
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 1572864
+        },
+        {
+          "name": "FirstMeaningfulPaint",
+          "value": 0
+        },
+        {
+          "name": "DomContentLoaded",
+          "value": 95522.284199
+        },
+        {
+          "name": "NavigationStart",
+          "value": 95522.277016
+        }
+      ]
+    }
+  },
+  "productionBuildExecuted": false,
+  "gameplayExecuted": false
+}

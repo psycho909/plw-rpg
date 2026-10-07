@@ -1,0 +1,6 @@
+G daily event-budget RED — pre-fix boundary reproduction
+
+Command: npm test -- src/engine/crafting.test.ts -t "year-boundary event budget"
+Observed at 2026-10-07 05:23:19 UTC, before the crafting preflight fix: the regression failed at the expected public planner assertion. It expected `{ ok: false, reasonCode: "event_capacity" }` and received `{ ok: true, reasonCode: null }`.
+
+The round-tripped V3 state crossed into a new year with 1,000 NPCs, two party contracts, four growing crops due during the 45-minute craft, and eventSequence = Number.MAX_SAFE_INTEGER - 300. The old fixed 256-event day reserve allowed the transaction even though its reachable simulation event budget exceeds the remaining safe IDs. The test also checks craft rejection leaves the entire state unchanged.

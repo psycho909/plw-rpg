@@ -1,0 +1,15 @@
+{
+  "status": "RED",
+  "classification": "browser-harness contract failures reproduced with fake visible UI and current source schema; no product source or browser execution changed",
+  "command": "python reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_browser_driver.py",
+  "preFixDriverSha256": "8a64c37bc58ff60f7db4623e9ed3b3c5e55e3c01cac16bd9377c6eaf0bdbf68b",
+  "testFileSha256AtRed": "79c51630638831bf58622efc5c0298fa934c7b16824c0f0fa66fcc436ddb0e53",
+  "observed": [
+    "mine interaction targeted the region key but compared it literally with visible ⛰️ 灰石礦場",
+    "store interaction targeted the building key but compared it literally with visible 🏪 雜貨店",
+    "farm route fallback searched for regionId farm although current source uses farmland"
+  ],
+  "stdoutAndStderr": "E.....E.E.\n======================================================================\nERROR: test_farm_route_falls_back_to_actual_farmland_region_id (__main__.BrowserDriverLifecycleTest.test_farm_route_falls_back_to_actual_farmland_region_id)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"test_phase05_browser_driver.py\", line 228, in test_farm_route_falls_back_to_actual_farmland_region_id\n    driver.route_to(\"farm\")\n  File \"phase05_browser_driver.py\", line 307, in route_to\n    raise RuntimeError(f\"Current ordinary world map has no walkable target for {target}\")\nRuntimeError: Current ordinary world map has no walkable target for farm\n\n======================================================================\nERROR: test_mine_interaction_uses_live_map_region_name (__main__.BrowserDriverLifecycleTest.test_mine_interaction_uses_live_map_region_name)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"test_phase05_browser_driver.py\", line 186, in test_mine_interaction_uses_live_map_region_name\n    driver.nearby(\"mine\")\n  File \"phase05_browser_driver.py\", line 351, in nearby\n    raise RuntimeError(f\"Primary visible interaction is not {visible_name}: {text}\")\nRuntimeError: Primary visible interaction is not mine: ⛰️ 灰石礦場 Enter 互動\n\n======================================================================\nERROR: test_store_interaction_uses_live_building_name (__main__.BrowserDriverLifecycleTest.test_store_interaction_uses_live_building_name)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"test_phase05_browser_driver.py\", line 208, in test_store_interaction_uses_live_building_name\n    driver.nearby(\"store\")\n  File \"phase05_browser_driver.py\", line 351, in nearby\n    raise RuntimeError(f\"Primary visible interaction is not {visible_name}: {text}\")\nRuntimeError: Primary visible interaction is not store: 🏪 雜貨店 Enter 互動\n\n----------------------------------------------------------------------\nRan 10 tests in 0.002s\n\nFAILED (errors=3)\n",
+  "productionSourceChanged": false,
+  "browserRunExecuted": false
+}

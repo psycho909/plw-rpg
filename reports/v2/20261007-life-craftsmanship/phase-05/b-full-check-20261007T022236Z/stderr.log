@@ -1,0 +1,93 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/playJournal.test.ts > atomic local checkpoint envelope > migrates a real V1 world and starts a separate journal
+Error: 存檔資料不完整。原始存檔已保留，請確認後重建世界。
+ ❯ deserialize src/services/saveService.ts:269:41
+    267|   const { lastSavedAt, ...stateData } = value
+    268|   if (value.saveVersion === 1) {
+    269|     if (!validBase(stateData, 1)) throw new Error('存檔資料不完整。原始存檔已保留，請確認…
+       |                                         ^
+    270|     const state = stateData as unknown as GameState
+    271|     if (Object.hasOwn(stateData, 'reward')) throw new Error('存檔資料不完整。原…
+ ❯ unpackCheckpoint src/services/playJournal.ts:21:18
+ ❯ src/services/playJournal.test.ts:18:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  src/services/playJournal.test.ts > atomic local checkpoint envelope > preserves historical offline journal entries unchanged during V1 migration
+Error: 存檔資料不完整。原始存檔已保留，請確認後重建世界。
+ ❯ deserialize src/services/saveService.ts:269:41
+    267|   const { lastSavedAt, ...stateData } = value
+    268|   if (value.saveVersion === 1) {
+    269|     if (!validBase(stateData, 1)) throw new Error('存檔資料不完整。原始存檔已保留，請確認…
+       |                                         ^
+    270|     const state = stateData as unknown as GameState
+    271|     if (Object.hasOwn(stateData, 'reward')) throw new Error('存檔資料不完整。原…
+ ❯ unpackCheckpoint src/services/playJournal.ts:21:18
+ ❯ src/services/playJournal.test.ts:28:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > migrates V1 without offline advancement and retains the historical world checkpoint
+AssertionError: expected 909 to be 88 // Object.is equality
+
+- Expected
++ Received
+
+- 88
++ 909
+
+ ❯ src/stores/gameStore.test.ts:88:34
+     86|     const state = createGame(88); saved = versionOneFixture(1000)
+     87|     const game = useGameStore()
+     88|     expect(game.state.worldSeed).toBe(88)
+       |                                  ^
+     89|     expect(game.state.worldTime).toBe(state.worldTime)
+     90|     expect(game.state.rngState).toBe(state.rngState)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > keeps historical offline journal records but adds no offline load record
+Error: 存檔資料不完整。原始存檔已保留，請確認後重建世界。
+ ❯ deserialize src/services/saveService.ts:269:41
+    267|   const { lastSavedAt, ...stateData } = value
+    268|   if (value.saveVersion === 1) {
+    269|     if (!validBase(stateData, 1)) throw new Error('存檔資料不完整。原始存檔已保留，請確認…
+       |                                         ^
+    270|     const state = stateData as unknown as GameState
+    271|     if (Object.hasOwn(stateData, 'reward')) throw new Error('存檔資料不完整。原…
+ ❯ unpackCheckpoint src/services/playJournal.ts:21:18
+ ❯ src/stores/gameStore.test.ts:105:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > allows explicit reset to replace corrupt data after the UI confirmation
+AssertionError: expected 3 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 3
+
+ ❯ src/stores/gameStore.test.ts:126:76
+    124|   it('allows explicit reset to replace corrupt data after the UI confi…
+    125|     saved = '{broken'; const game = useGameStore(); game.reset()
+    126|     expect(game.save()).toBe(true); expect(JSON.parse(saved!).saveVers…
+       |                                                                            ^
+    127|     expect(game.speed).toBe(0); expect(game.state.life.openingSeen).to…
+    128|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

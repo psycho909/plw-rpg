@@ -1,0 +1,57 @@
+{
+  "status": "CDP_COMPATIBILITY_REPRODUCED_BEFORE_FIX",
+  "failedRun": "browser-runs/hybrid-short-20261007T050755Z-pid73650/hybrid-short-result.json",
+  "failedRunSummary": {
+    "status": "FAILED",
+    "durationSeconds": 1.07,
+    "operations": 0,
+    "reloads": 0,
+    "error": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found",
+    "freshStorageGuardPassed": true,
+    "servedAssetVerificationPassed": true,
+    "sourceStableDuringRun": true,
+    "pageErrors": []
+  },
+  "driverSha256BeforeFix": "ff87148ac8ddecf37580df9774fee88df31e753b82e654b7c0c8d11433aa1df6",
+  "chromiumVersion": "151.0.7922.173",
+  "smokeScope": "Real headless Chromium CDP session on about:blank only; no app navigation, game save, UI action, or gameplay.",
+  "commands": {
+    "Memory.enable": {
+      "ok": false,
+      "error": "Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    "Memory.getDOMCounters": {
+      "ok": true,
+      "value": {
+        "documents": 4,
+        "nodes": 16,
+        "jsEventListeners": 0
+      }
+    },
+    "Runtime.getHeapUsage": {
+      "ok": true,
+      "value": {
+        "usedSize": 1078764,
+        "totalSize": 1572864,
+        "embedderHeapUsedSize": 1378744,
+        "backingStorageSize": 14236
+      }
+    },
+    "Performance.enable": {
+      "ok": true
+    },
+    "Performance.getMetrics": {
+      "ok": true,
+      "includes": [
+        "Nodes",
+        "JSEventListeners",
+        "JSHeapUsedSize",
+        "JSHeapTotalSize",
+        "LayoutCount",
+        "RecalcStyleCount"
+      ]
+    }
+  },
+  "productionBuildExecuted": false,
+  "gameplayExecuted": false
+}

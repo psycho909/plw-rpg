@@ -1,0 +1,86 @@
+{
+  "recordType": "runner-interruption-diagnosis",
+  "invocation": "20261007T093745Z-life",
+  "runId": "20261007T093801Z-pid3464",
+  "mode": "life",
+  "requestedDurationSeconds": 1800,
+  "requestedExecutionModel": "gpt-6-luna",
+  "requestedExecutionEffort": "low",
+  "sourceCommit": "f9f969c9d3dfa3cbf1c379bec98eafab765b11cc",
+  "startedAtUTC": "2026-10-07T09:38:01.818929+00:00",
+  "diagnosisObservedAtUTC": "2026-10-07T10:12:31Z",
+  "terminalResult": "MISSING",
+  "terminalStatus": null,
+  "actualDurationSeconds": null,
+  "runnerExitCode": null,
+  "launcherExitCode": null,
+  "endUTC": null,
+  "interpretation": "Launcher/browser process exited without a terminal result or captured exit code. Cause is undetermined; do not treat as PASS or as a measured 1800-second run.",
+  "lastObserved": {
+    "lastCheckpointAtUTC": "2026-10-07T09:59:15.091752+00:00",
+    "lastCheckpointElapsedSeconds": 1271.64,
+    "checkpointRecordCount": 133,
+    "lastOperationAtUTC": "2026-10-07T09:59:17.195659+00:00",
+    "lastOperationLoggedElapsedSeconds": 1273.75,
+    "operationLogRawRecordCount": 14343,
+    "canonicalUiOperationCount": null,
+    "reloadCountCanonical": null,
+    "watcherSnapshotAtUTC": "2026-10-07T10:12:16.417118+00:00",
+    "watcherCheckpointElapsedSeconds": 1271.64,
+    "watcherRawOperationRecordCount": 14343,
+    "watcherReloadTelemetry": 131,
+    "watcherNewCraftTelemetry": 129,
+    "watcherStateIsStale": "RUNNING in watcher while launcher and Chromium PIDs are zombies; snapshot values are telemetry only, not terminal totals."
+  },
+  "processEvidence": {
+    "launcherPid": 3464,
+    "launcherObservedState": "Z (defunct)",
+    "launcherPPID": 1,
+    "chromiumPid": 3511,
+    "chromiumObservedState": "Zs (defunct)",
+    "wrapperExitCodeFilePresent": false,
+    "wrapperEndUTCFilePresent": false,
+    "runResultPresent": false,
+    "launcherStatusPresent": true,
+    "launcherStdoutBytes": 0,
+    "launcherStderrBytes": 0,
+    "runnerStdoutBytes": 0,
+    "runnerStderrBytes": 0,
+    "session9011Read": "unavailable: unknown process id from current tool session API",
+    "session6704Read": "unavailable: unknown process id from current tool session API",
+    "launchMode": "not recorded in execution.json; current reparented zombie and expired session handles do not prove nohup/detached versus inherited exec-session termination"
+  },
+  "resourceEvidence": {
+    "cgroupMemoryLimitBytes": 34359738368,
+    "cgroupMemoryCurrentBytesAtDiagnosis": 2854645760,
+    "cgroupMemoryPeakBytesAtDiagnosis": 4582785024,
+    "cgroupMemoryEventsAtDiagnosis": {
+      "low": 0,
+      "high": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    },
+    "systemMemoryAvailableAtDiagnosis": "32 GiB",
+    "dmesg": "permission denied; kernel OOM/event log unavailable",
+    "assessment": "No cgroup OOM evidence at diagnosis. This does not establish the historical exit cause."
+  },
+  "preservedArtifacts": {
+    "operationsRawSha256": "be5f6cef8fb1c88583a5f071ca9a55907bb91669558f4937e0360ffc3392db06",
+    "checkpointsRawSha256": "0f2c248bfe92cab9841f5ddd72a40e02259bdaa97974d7a8741916be2e9afcf1",
+    "runnerStdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runnerStderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "externalWatcherCorrection": {
+    "originalWatcherFilePreserved": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/browser-runs/j-invocations/20261007T093745Z-life/j-health.jsonl",
+    "knownLabelGap": "Older watcher `operations` field is a raw operation-log record count; its `elapsedSeconds` is checkpoint elapsed, not canonical UI operation count or terminal run duration.",
+    "correctFieldNames": [
+      "operationLogRawRecordCount",
+      "checkpointElapsedSeconds",
+      "canonicalUiOperationCount (null without result)",
+      "terminalDurationSeconds (null without result)"
+    ]
+  },
+  "noRetryStarted": true
+}

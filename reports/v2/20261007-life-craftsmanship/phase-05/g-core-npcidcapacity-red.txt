@@ -1,0 +1,6 @@
+G NPC ID allocator RED — pre-fix day-15 immigration reproduction
+
+Command: npm test -- src/engine/crafting.test.ts -t "NPC id allocator"
+Observed at 2026-10-07 05:32:13 UTC, before the allocator-capacity fix: the round-tripped V3 state passes setup, then planner/craft both succeed. The assertion reports NPC count 29→30, `nextNpcId` 9007199254740990→9007199254740991 (Number.MAX_SAFE_INTEGER), save reload rejected, and the state mutated.
+
+Setup: `createGame(7301)` via the existing readyAtStore helper, starter inputs and 80 stamina, crafter adjacent to an owned home, `worldTime = 15 * 1440 - 30`, and `nextNpcId = Number.MAX_SAFE_INTEGER - 1`. Day 15 has room and sufficient food/prosperity for the existing immigration path. Expected behavior is atomic `event_capacity` rejection before time, resources, events, or NPC IDs change.

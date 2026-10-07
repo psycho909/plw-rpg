@@ -1,0 +1,59 @@
+Exit status: 1
+
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/rewardActions.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/rewardActions.test.ts (24 tests | 2 failed) 61ms
+     × adds exactly two gold when the same eligible Rare short sword is a Masterpiece 5ms
+     × bounds affix and Masterpiece premium independently and caps their combined value 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/rewardActions.test.ts > procedural equipment sales > adds exactly two gold when the same eligible Rare short sword is a Masterpiece
+AssertionError: expected 24 to be 25 // Object.is equality
+
+- Expected
++ Received
+
+- 25
++ 24
+
+ ❯ src/engine/rewardActions.test.ts:105:36
+    103|     masterpiece.craftProvenance!.masterpiece = true
+    104|
+    105|     expect(itemSellPrice(crafted)).toBe(25)
+       |                                    ^
+    106|     expect(itemSellPrice(masterpiece)).toBe(itemSellPrice(crafted) + 2)
+    107|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/engine/rewardActions.test.ts > procedural equipment sales > bounds affix and Masterpiece premium independently and caps their combined value
+AssertionError: expected +0 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 0
+
+ ❯ src/engine/rewardActions.test.ts:126:52
+    124|     const maximumPremium = Math.floor(base * 0.25)
+    125|
+    126|     expect(ordinaryCraftPrice - legacyRarityPrice).toBe(Math.floor(bas…
+       |                                                    ^
+    127|     expect(masterpiecePrice - ordinaryCraftPrice).toBe(2)
+    128|     expect(masterpiecePrice - legacyRarityPrice).toBeLessThanOrEqual(m…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 22 passed (24)
+   Start at  04:51:45
+   Duration  404ms (transform 189ms, setup 0ms, import 225ms, tests 61ms, environment 0ms)
+

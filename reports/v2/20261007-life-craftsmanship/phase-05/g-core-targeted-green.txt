@@ -1,0 +1,15 @@
+G Core targeted verification
+
+Core engine, identity, persistence, and dialogue tests:
+`npm test -- src/engine/crafting.test.ts src/engine/identity.test.ts src/services/saveService.test.ts src/engine/npcLife.test.ts`
+Result: 4 files passed, 155 tests passed.
+
+Ownership and life integration tests:
+`npm test -- src/engine/ownership.test.ts src/engine/lifeIntegration.test.ts`
+Result: 2 files passed, 25 tests passed.
+
+Typecheck:
+`npx vue-tsc --noEmit`
+Result: passed.
+
+The G RED evidence is `g-core-home-red.txt` (SHA256 e7a205ff6d3656e69fbde0ea3f604703bb3965e0ba2d7094a04e7afa00daf5cc). It captures the owned-home, all-day, reduced-fee plan expectation failing against the pre-G engine. The implementation then passed the targeted tests above. No browser run or full regression is claimed here.

@@ -1,0 +1,27 @@
+{
+  "status": "GATHER_SELECTOR_FIX_CONFIRMED_LIMITED",
+  "rootCause": "Driver exact accessible-name lookup for 伐木 failed because visible name is icon-prefixed as 🪵 伐木; product gather action itself is available and legal.",
+  "evidence": {
+    "priorRun": "browser-runs/hybrid-short-20261007T052830Z-pid76332/",
+    "preFixSourceHash": "browser-driver-gather-red.json",
+    "smokeRun": "browser-runs/gather-smoke-20261007T053243Z/gather-smoke-result.json",
+    "exactNameMatches": 0,
+    "substringNameMatches": 1,
+    "visibleButtonText": "🪵 伐木",
+    "woodDelta": 2,
+    "browserErrors": {
+      "pageErrors": [],
+      "consoleErrors": [],
+      "requestFailures": [],
+      "httpFailures": [],
+      "storageErrors": []
+    },
+    "sourceStableDuringSmoke": true
+  },
+  "currentSourceBuildMatched": false,
+  "limitation": "Smoke used the existing dist because pending Core J9 source edits do not match the build manifest. It validates only normal-UI gather selector/action behavior and cannot accept H.",
+  "currentDriverSha256": "8a64c37bc58ff60f7db4623e9ed3b3c5e55e3c01cac16bd9377c6eaf0bdbf68b",
+  "focusedChecks": "10 helper/driver tests passed; py_compile passed.",
+  "productionBuildExecuted": false,
+  "fullHybridRunExecuted": false
+}

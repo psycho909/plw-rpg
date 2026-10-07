@@ -1,0 +1,16 @@
+Command: python reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_c_normal_pilot.py
+Exit code: 1
+E
+======================================================================
+ERROR: test_inner_error_survives_close_error_and_failed_result_is_published (__main__.BrowserCleanupFailurePreservationTests.test_inner_error_survives_close_error_and_failed_result_is_published)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_c_normal_pilot.py", line 35, in test_inner_error_survives_close_error_and_failed_result_is_published
+    cleanup_error = pilot.close_browser_resources(context, browser, result, primary_error=original)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'phase05_c_normal_pilot' has no attribute 'close_browser_resources'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

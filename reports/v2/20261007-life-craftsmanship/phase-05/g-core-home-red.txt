@@ -1,0 +1,3 @@
+G Core RED — owned-home planning contract
+Command: npm test -- src/engine/crafting.test.ts -t "owned nearby home"
+Result: 1 failed, 43 skipped. The new test expected an owned nearby home at 23:00 to resolve to site=home, open 00:00–24:00, with the exact 3g reduced fee. Existing planner returned station unavailable/closed at the store (nearby=false, open=false, 08:00–18:00) and raw fee 4g. No implementation changes were made before this failure.

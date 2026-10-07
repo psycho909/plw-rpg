@@ -1,0 +1,40 @@
+Command: npm test -- src/engine/itemGeneration.test.ts -t "keeps the legacy generation stream|adds recipe provenance"
+Exit code: 1
+
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/itemGeneration.test.ts -t keeps the legacy generation stream|adds recipe provenance
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/itemGeneration.test.ts (26 tests | 1 failed | 24 skipped) 11ms
+     × adds recipe provenance through the shared generator without changing its legacy rolls 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > procedural item generation > adds recipe provenance through the shared generator without changing its legacy rolls
+TypeError: 無法產生裝備。
+ ❯ validateInput src/engine/itemGeneration.ts:90:11
+     88|   if (!state || !state.reward || !options || typeof options !== 'objec…
+     89|     || Object.keys(options).some(key => !['baseId', 'level', 'material…
+     90|     throw new TypeError('無法產生裝備。')
+       |           ^
+     91|   }
+     92|   const baseId = options.baseId
+ ❯ generateItem src/engine/itemGeneration.ts:119:17
+ ❯ src/engine/itemGeneration.test.ts:82:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed | 24 skipped (26)
+   Start at  02:15:22
+   Duration  369ms (transform 209ms, setup 0ms, import 252ms, tests 11ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

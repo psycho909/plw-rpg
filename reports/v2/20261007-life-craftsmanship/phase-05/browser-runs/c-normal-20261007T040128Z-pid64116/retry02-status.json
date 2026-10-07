@@ -1,0 +1,89 @@
+{
+  "attemptLabel": "retry02",
+  "runId": "20261007T040128Z-pid64116",
+  "status": "FAILED_SAVE_BUTTON_BLOCKED_BY_OPEN_DIALOG",
+  "productFailureClaimed": false,
+  "startUTC": "2026-10-07T04:01:28.348582+00:00",
+  "endUTC": "2026-10-07T04:01:35.654108+00:00",
+  "durationSeconds": 7.31,
+  "command": [
+    "python",
+    "reports/v2/20261007-life-craftsmanship/phase-05/phase05_c_normal_pilot.py",
+    "--go"
+  ],
+  "head": "1a56cd3eeb2ea65114a5dcf03c0e00504b69239f",
+  "sourceFingerprint": "16b862ee6acd1090010cdedc17fbd22a658ad11fc87a1258fbcaaea5655ea287",
+  "sourceFileCount": 79,
+  "sourceStableDuringRun": true,
+  "buildStatusPath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/build-status.json",
+  "buildStatusSha256": "e8fff3c60cec112686bc587ae1ca71285e7f555e2401126178967e0aac4b057f",
+  "harnessSha256": "2d4de2a11c7360d60214f587f771f9eec34afe1d275def8c2821427598c64b08",
+  "distSha256": {
+    "dist/assets/index-DInOYyPD.css": "46974fe4010d8397ee906f7a36a0424908d7cc2e2620a8c078dda8a2cf137784",
+    "dist/assets/index-DuGo8NbL.js": "fa112722498ab0f052c9586a783ab13cc966de1879a67ef6e15a291c04e7aa0a",
+    "dist/index.html": "8376f04c3d0873c0e65f03e9d3af1ef9336125b731d40eb93a892ab049efb77e"
+  },
+  "servedProductionAssets": {
+    "indexBytes": 448,
+    "indexSha256": "8376f04c3d0873c0e65f03e9d3af1ef9336125b731d40eb93a892ab049efb77e",
+    "assets": [
+      {
+        "path": "assets/index-DuGo8NbL.js",
+        "bytes": 282119,
+        "sha256": "fa112722498ab0f052c9586a783ab13cc966de1879a67ef6e15a291c04e7aa0a"
+      },
+      {
+        "path": "assets/index-DInOYyPD.css",
+        "bytes": 28892,
+        "sha256": "46974fe4010d8397ee906f7a36a0424908d7cc2e2620a8c078dda8a2cf137784"
+      }
+    ],
+    "favicon": {
+      "path": "/favicon.ico",
+      "status": 204,
+      "bytes": 0
+    }
+  },
+  "pilotResultPath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/browser-runs/c-normal-20261007T040128Z-pid64116/pilot-result.json",
+  "pilotResultSha256": "ad591679ae7ec8d5b028a354da396179d347272af1bcf99d83b9c5528180e3fd",
+  "actionsPath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/browser-runs/c-normal-20261007T040128Z-pid64116/actions.jsonl",
+  "actionsSha256": "cd5e7880361af30e4149a62aa3669e2c1cc8cb635409e06433516b5c2a362dae",
+  "failureSavePath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/browser-runs/c-normal-20261007T040128Z-pid64116/failure-save.json",
+  "failureSaveSha256": "f856fd3f6df51b0d3342ae748ad124a5f7e0dc932b90fe53355cd36d99d2d2d2",
+  "serverLogPath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/browser-runs/c-normal-20261007T040128Z-pid64116/server.log",
+  "serverLogSha256": "5e5d50a130d8f6e76b5d4ec483ea814ad2b0303c57ba13de1798da4824bba5eb",
+  "failure": "TimeoutError: Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".save-button\")\n    - locator resolved to <button class=\"save-button\">存檔</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <dialog open=\"\" tabindex=\"-1\" class=\"pixel-window\" aria-labelledby=\"window-title\">…</dialog> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <dialog open=\"\" tabindex=\"-1\" class=\"pixel-window\" aria-labelledby=\"window-title\">…</dialog> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    10 × waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <dialog open=\"\" tabindex=\"-1\" class=\"pixel-window\" aria-labelledby=\"window-title\">…</dialog> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n",
+  "browserCleanupErrors": [],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "storageErrors": [],
+  "rejections": [],
+  "completed": [
+    "fresh normal start: 45G, level 1, Smithing Lv.1, no instances",
+    "visible store purchases: wood x3 and stone x2; 45G to 9G",
+    "visible workbench craft: 4G, 10 stamina, 45 minutes, +10 Smithing XP; one spear instance with starterSpear provenance",
+    "existing compare detail opened and crafted spear equipped as weapon item-1"
+  ],
+  "failurePoint": "save_reload(): click on visible .save-button was intercepted by still-open dialog.pixel-window. Playwright timed out after 5000ms waiting; it reports the save button visible/enabled/stable but the open dialog intercepted pointer events. No explicit save or reload occurred.",
+  "failureState": {
+    "worldTime": 565,
+    "eventSequence": 8,
+    "gold": 5,
+    "stamina": 74,
+    "smithing": {
+      "level": 1,
+      "exp": 10
+    },
+    "craftedInstanceCount": 1,
+    "equipped": {
+      "weapon": "item-1",
+      "armor": null
+    }
+  },
+  "unverified": [
+    "explicit native save",
+    "browser reload",
+    "craft/equip persistence after reload"
+  ],
+  "nextAction": "Runner should close the open detail dialog through a visible UI control or use a semantically available visible save control, then a new run requires explicit Root release."
+}

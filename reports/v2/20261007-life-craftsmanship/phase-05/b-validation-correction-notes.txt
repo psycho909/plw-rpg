@@ -1,0 +1,20 @@
+Phase5-B validation correction record
+
+Initial command: npm test -- src/services/saveService.test.ts
+Exit code: 1
+
+ ❯ src/services/saveService.test.ts (81 tests | 2 failed) 7195ms
+     × migrates a complete V2 world and its rolled items once without consuming RNG or changing world state 85ms
+     × migrates the archived historical V1 save without changing its old world fields or RNG 20ms
+
+Failure 1: expected { …(22) } to deeply equal { …(23) }; the actual legacy projection still carried saveVersion: 3, while the expected old-state projection intentionally omitted it.
+Failure 2: historical V1 round-trip raised “存檔資料不完整。原始存檔已保留，請確認後重建世界。” at validBase/validLife because the comparison template required event tier on old events.
+
+Exact corrections:
+- `src/services/saveService.test.ts`: delete the migration-only `saveVersion` in the comparison projection before checking preserved V2 fields.
+- `src/services/saveService.ts`: remove optional event `tier` from the template for all source versions; the separate event validator still checks a present tier against its allowed values. This allows preserved V1 history to round-trip unchanged.
+
+After the tier correction, the V2 projection still failed because the assertion projection retained saveVersion: 3. The test projection was corrected to omit saveVersion as it does for all legacy-field comparisons. No saved data or product behavior was changed to satisfy the expectation.
+
+Final command: npm test -- src/services/saveService.test.ts
+Exit code: 0; 81/81 tests passed. Full final raw output: `b-green-save-service.txt`.

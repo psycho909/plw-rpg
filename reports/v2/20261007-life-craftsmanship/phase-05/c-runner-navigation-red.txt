@@ -1,0 +1,17 @@
+Command: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_c_normal_pilot.py FreshContextGuardBrowserTests
+Exit code: 1
+F
+======================================================================
+FAIL: test_guard_observes_empty_context_before_the_app_saves_its_native_opening_baseline (__main__.FreshContextGuardBrowserTests.test_guard_observes_empty_context_before_the_app_saves_its_native_opening_baseline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/test_phase05_c_normal_pilot.py", line 141, in test_guard_observes_empty_context_before_the_app_saves_its_native_opening_baseline
+    qa_pilot.route_to_near_store()
+  File "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/phase05_c_normal_pilot.py", line 269, in route_to_near_store
+    raise AssertionError(f"Normal UI navigation did not reach the store: {final}")
+AssertionError: Normal UI navigation did not reach the store: {'x': 8, 'y': 9}
+
+----------------------------------------------------------------------
+Ran 1 test in 1.276s
+
+FAILED (failures=1)

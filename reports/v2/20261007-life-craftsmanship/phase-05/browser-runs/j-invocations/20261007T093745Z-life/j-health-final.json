@@ -1,0 +1,122 @@
+{
+  "observedAtUTC": "2026-10-07T10:13:44.330391+00:00",
+  "kind": "watcher-final",
+  "stopReason": "watcher-max-seconds",
+  "watcherElapsedSeconds": 1900.5,
+  "runs": [
+    {
+      "mode": "stress",
+      "runId": "20261007T093801Z-pid3466",
+      "runPath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/browser-runs/stress-20261007T093801Z-pid3466",
+      "state": "FAILED",
+      "elapsedSeconds": 1089.52,
+      "operations": 12568,
+      "reloads": 118,
+      "newCraftCount": 115,
+      "checkpointCount": 120,
+      "errorCounts": {
+        "page": 0,
+        "console": 0,
+        "request": 0,
+        "http": 0,
+        "rejections": 0,
+        "storage": 0,
+        "cleanup": 0
+      },
+      "heapUsage": {
+        "usedSize": 34786776,
+        "totalSize": 92962816,
+        "embedderHeapUsedSize": 15383464,
+        "backingStorageSize": 2015621
+      },
+      "domCounters": {
+        "documents": 3,
+        "nodes": 5082,
+        "jsEventListeners": 982
+      },
+      "storage": {
+        "saveBytes": 160902,
+        "localStorageBytes": 160902,
+        "originStorage": {
+          "usage": 1185281,
+          "quota": 7517378049
+        },
+        "indexedDBDetails": [
+          {
+            "name": "oakvale-play-journal",
+            "stores": [
+              {
+                "store": "records",
+                "count": 6298
+              }
+            ]
+          }
+        ],
+        "storageErrors": []
+      },
+      "resultStatus": "FAILED",
+      "failure": "TimeoutError: Locator.inner_text: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"dialog.pixel-window[open]\").locator(\".window-body .interaction-list button\").nth(10)\n",
+      "runnerExitCode": 1,
+      "launcherExitCode": 1,
+      "sourceStableDuringRun": true,
+      "terminal": true
+    },
+    {
+      "mode": "life",
+      "runId": "20261007T093801Z-pid3464",
+      "runPath": "/workspace/plw-rpg/reports/v2/20261007-life-craftsmanship/phase-05/browser-runs/life-20261007T093801Z-pid3464",
+      "state": "RUNNING",
+      "elapsedSeconds": 1271.64,
+      "operations": 14343,
+      "reloads": 131,
+      "newCraftCount": 129,
+      "checkpointCount": 133,
+      "errorCounts": {
+        "page": 0,
+        "console": 0,
+        "request": null,
+        "http": null,
+        "rejections": 0,
+        "storage": 0,
+        "cleanup": null
+      },
+      "heapUsage": {
+        "usedSize": 55559012,
+        "totalSize": 101220352,
+        "embedderHeapUsedSize": 13062528,
+        "backingStorageSize": 2265624
+      },
+      "domCounters": {
+        "documents": 3,
+        "nodes": 5035,
+        "jsEventListeners": 973
+      },
+      "storage": {
+        "saveBytes": 168888,
+        "localStorageBytes": 168888,
+        "originStorage": {
+          "usage": 1382762,
+          "quota": 6443833706
+        },
+        "indexedDBDetails": [
+          {
+            "name": "oakvale-play-journal",
+            "stores": [
+              {
+                "store": "records",
+                "count": 7381
+              }
+            ]
+          }
+        ],
+        "storageErrors": []
+      },
+      "resultStatus": null,
+      "failure": null,
+      "runnerExitCode": null,
+      "launcherExitCode": null,
+      "sourceStableDuringRun": null,
+      "terminal": false
+    }
+  ]
+}

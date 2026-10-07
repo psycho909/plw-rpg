@@ -1,6 +1,6 @@
 # V2.x Phase5 — Life Reward & Craftsmanship Vertical Slice
 
-- Status: in_progress
+- Status: accepted
 - Owner: 本專案使用者，沿用 README 2026-10-02 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-07 使用者提供 Phase5 規格，要求「閱讀完Phase5的開發規格，就直接進入開發階段」。
@@ -26,10 +26,10 @@ Phase6–10、V3、crisis、monster/itemmasscontent、automation/offlinecraft、
 - [x] E：practice→skill→capability（2–3項可理解效果），低階XPgraduation不無限刷。
 - [x] F：高skill＋合適material/recipe正常有機會masterpiece；crafter/time/recipeidentity、持久化、重要historyonly。
 - [x] G：費用／素材sink；非無限無風險buycraftsell套利；最小ownership/identity/reputation接入。
-- [ ] H：正常wolf/bossmaterial→targetedcraft→equip→returncombat；actualoutcome差異、death/succession保留item/history/ownership現行規則。
-- [ ] I：100000crafts成本合理時執行、材料control、低中高skill、sell/economy、實際combatmatrix含Legacy/Adventure/Crafted/Boss/Masterpiece。
-- [ ] J：全量tests/typecheck/build/save/migration/determinism/browser；20–30m integratedstress＋30–60m LifeAgent探索＋Hybridplaytest＋獨立coreMax與一般Mediumreview。
-- [ ] 七engineering/systemgates分開，§76五題有實際證據；HumanGate DEFERRED不阻擋；sourcefreeze/deliverycommit精確correlation。
+- [x] H：正常wolf/bossmaterial→targetedcraft→equip→returncombat；actualoutcome差異、death/succession保留item/history/ownership現行規則。
+- [x] I：100000crafts成本合理時執行、材料control、低中高skill、sell/economy、實際combatmatrix含Legacy/Adventure/Crafted/Boss/Masterpiece。
+- [x] J：全量tests/typecheck/build/save/migration/determinism/browser；20–30m integratedstress＋30–60m LifeAgent探索＋Hybridplaytest＋獨立coreMax與一般Mediumreview。
+- [x] 七engineering/systemgates分開，§76五題有實際證據；HumanGate DEFERRED不阻擋；sourcefreeze/deliverycommit精確correlation。
 
 ## Constraints and Decisions
 - 正規規格 [Phase5](../docs/specs/V2X-PHASE5-LIFE-CRAFTSMANSHIP.md)，SHA256 `5deacafc9774361a9a6c8939a641e80fdc19b6eaf1432e96e3c7bf9faf4db6af`。
@@ -41,9 +41,9 @@ Phase6–10、V3、crisis、monster/itemmasscontent、automation/offlinecraft、
 - 短測新regression／明確惡化才處理C01–03；§56條件觸發才延長60/120m。
 
 ## Dependencies and Blockers
-Blocked by: tickets/20261006-v2x-04-adventure-loop.md（accepted）。目前無外部blocker；A–G實作與定向驗證通過。最新425全量tests/type/build與獨立核心review ACCEPT，原始容量／migration及QA失敗保留。H正常Browser因互動名稱契約待Max統一修正；I與J長測尚未通過。
+Dependency: tickets/20261006-v2x-04-adventure-loop.md（accepted）。A–J完成，無外部blocker。425tests/typecheck/build、正常H、I100000生成／13248戰鬥、20mStress1202.14s及30mLife1803.22s均有sourcef9證據與獨立review。原fiveFAIL／Lifeinterrupted／falsePASS完整保留。後段runner低gold／publicbench重複、早期素材回饋及覆蓋限制列ProductFinding，不暗改設計。Engineering Gate PASS WITH FINDINGS；七Gates與§76五題見final-review。Human DEFERRED / NOT APPLICABLE AT THIS STAGE，不開始Phase6–10／V3。
 
 ## Evidence
 - Verification: reports/v2/20261007-life-craftsmanship/phase-05/
-- Review / Audit: pending incremental independent reviews.
-- Commit / PR: pending; commit/push現工作分支，不建立PR。
+- Review / Audit: CORE Max獨立審查 ACCEPT；一般UI／QA helper／正式Stress/Life／最終文件delta Medium獨立審查 ACCEPT，final delta body e80607d47bc734ea0339ca73e1944b19732df5707d86d14a56c1cbde8729c308。
+- Commit / PR: 受測app source f9f969c9d3dfa3cbf1c379bec98eafab765b11cc 已push；QA交付提交以包含本accepted Ticket與final-review的提交識別，Root最終回報其SHA及遠端同步結果。不建立PR／不merge。

@@ -1,0 +1,36 @@
+{
+  "status": "RED_ROOT_CAUSE_CONFIRMED_BEFORE_FIX",
+  "driverSha256BeforeFix": "5c15bb9f1c4b1673fbdc3a84f3cf697be162b9c80ccf5f984e47beb81bdd0458",
+  "originalFailedRun": "browser-runs/hybrid-short-20261007T052830Z-pid76332/",
+  "originalRunStatus": "BLOCKED_HYBRID_INPUT_GATHER",
+  "rawBlocker": {
+    "item": "wood",
+    "region": "forest",
+    "actionVisible": false
+  },
+  "rawPlannerShortage": "wood",
+  "rawPlanner": {
+    "available": true,
+    "text": "工作台 實際工作台 雜貨店 · 服務時間 08:00–18:00。 選擇配方 木石長矛 Smithing Lv.1 已解鎖 進階長矛 Smithing Lv.2 解鎖 鎖甲 Smithing Lv.2 解鎖 鐵短劍 Smithing Lv.5 解鎖 木石長矛 影響素材 素材會消耗 1 份，依選擇調整詞綴權重或條件式特性機率；不保證指定結果。品質機率只依鍛造熟練度能力調整。 不使用素材 🦴 狼牙 · 持有 1 🌙 月石 · 持有 1 詞綴抽選權重增加：裂傷 +4、穿透 +2。素材不改變品質權重或稀有度機率，也不保證指定結果。 成品 獵矛 · 武器 · Lv.2 材料 木材 ×3 ／持有 0 石材 ×2 ／持有 0 狼牙 ×1 ／持有 1 費用 4 金 ／持有 55 體力與時間 體力 10 ／目前 76 · 45 分鐘 鍛造熟練度 需求 Lv.1 ／目前 Lv.1 品質能力 目前使用基礎品質權重 · 普通 60%、精良 27%、稀有 10%、史詩 2.8%、傳說 0.2% 成功練習 成功後鍛造熟練 +10 XP，上限 Lv.3 下一個品質能力：Smithing Lv.3 可達最低精良。 下一項配方目標：Smithing Lv.2 解鎖進階長矛。 鍛造材料不足。 製作木石長矛",
+    "inputRows": [
+      "木材 ×3 ／持有 0",
+      "石材 ×2 ／持有 0",
+      "狼牙 ×1 ／持有 1"
+    ],
+    "recipeControls": 1,
+    "materialControls": 3,
+    "selectedRecipe": "starterSpear",
+    "selectedMaterial": "wolfFang",
+    "recipeLabel": "木石長矛\nSmithing Lv.1 已解鎖",
+    "disabledReason": [
+      "鍛造材料不足。"
+    ]
+  },
+  "sourceEvidence": {
+    "PlaceWindowGatherMarkup": "<div class=\"action-buttons\"><button v-for=\"kind in place === 'forest' ? ['wood' as const] : ['stone' as const, 'iron' as const]\" :key=\"kind\" :disabled=\"blocked || c.stamina < 10 || game.state.regions[place].remainingAmount < 2 + Math.floor((c.skills[place === 'forest' ? 'woodcutting' : 'mining'].level - 1) / 2)\" @click=\"game.act(() => gather(game.state, kind))\">{{ itemIcons[kind] }} {{ kind === 'wood' ? '伐木' : kind === 'stone' ? '採石' : '採鐵礦' }}</button>",
+    "iconMap": "export const itemIcons: Record<ItemId, string> = { wood: '🪵', stone: '🪨', iron: '⛏️', food: '🌾', material: '🦴', potion: '🧪', sword: '⚔️', armor: '🦺' }"
+  },
+  "rootCause": "The UI accessible button name includes the icon plus action label, e.g. \"🪵 伐木\". Driver uses get_by_role(... exact=True) through exact_button(\"伐木\"), so the real visible resource button is missed; no product gather defect indicated.",
+  "productionBuildExecuted": false,
+  "additionalGameplayRunExecuted": false
+}

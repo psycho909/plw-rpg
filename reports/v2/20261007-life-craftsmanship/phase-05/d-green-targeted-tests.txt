@@ -1,0 +1,17 @@
+D focused core and UI projection GREEN
+Command: npm test -- src/engine/crafting.test.ts src/engine/itemGeneration.test.ts src/presentation/craftingProjection.test.ts
+Exit: 0
+
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts src/engine/itemGeneration.test.ts src/presentation/craftingProjection.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  3 passed (3)
+      Tests  57 passed (57)
+   Start at  04:11:14
+   Duration  661ms (transform 555ms, setup 0ms, import 737ms, tests 468ms, environment 2ms)
+

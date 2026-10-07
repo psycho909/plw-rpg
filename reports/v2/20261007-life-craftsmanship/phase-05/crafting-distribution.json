@@ -1,0 +1,5789 @@
+{
+  "schemaVersion": 1,
+  "phase": "Phase5-I",
+  "ticket": "20261007-v2x-05",
+  "runId": "20261007T085736Z-fdeec6dd",
+  "sourceCommit": "f9f969c9d3dfa3cbf1c379bec98eafab765b11cc",
+  "sourceFingerprint": "b25f8119203c9c0dc9000f2b2bd34540e9ea62dd2642998eb8a6bf4a0af3e8cf",
+  "resultPath": "i-20261007T085736Z-fdeec6dd-results.json",
+  "resultSha256": "7b6de2655b2ff670eb2500bc817df4756ae2ae2e728f48f153636e0395c92ef8",
+  "releaseSha256": "4873be88bc34a4f44148bedce35a0587c21281a17909378b2d4b857a12e6edd9",
+  "harnessSha256": "b65b55cbdb725fb9e7dc3952bbc4e84860e3af1507f1718c954dcad728bee401",
+  "scope": {
+    "distributionBudget": 100000,
+    "outputsGenerated": 100000,
+    "profileCount": 30,
+    "transactions": 0,
+    "combatMatrixRows": 6624,
+    "combatRuns": 13248,
+    "materialProfilesUseMatchedPerSampleSeeds": true,
+    "controlledScope": "Deterministic seeded craft-context generation profiles and detached controlled combat fixtures; no legal resource/gold/stamina transactions or human/browser play."
+  },
+  "rawArtifact": {
+    "path": "i-runs/20261007T085736Z-fdeec6dd/craft-observations.jsonl",
+    "sha256": "37451e2c0a0c8b6e63be5d4dad6b3d89e16bb97a24a77d201c941ccaaad53629"
+  },
+  "distribution": {
+    "budget": 100000,
+    "outputsGenerated": 100000,
+    "transactionCount": 0,
+    "transactionOmittedReason": "This runner calls real generateItem in a craft context; it does not execute legal craft transactions that deduct inventory/gold/stamina, advance time, or append events/history.",
+    "rawPath": "reports/v2/20261007-life-craftsmanship/phase-05/i-runs/20261007T085736Z-fdeec6dd/craft-observations.jsonl",
+    "rawSha256": "37451e2c0a0c8b6e63be5d4dad6b3d89e16bb97a24a77d201c941ccaaad53629",
+    "masterSeed": 20261007,
+    "profiles": [
+      {
+        "recipeId": "starterSpear",
+        "smithingLevel": 1,
+        "material": null,
+        "samples": 3334,
+        "rarity": {
+          "common": {
+            "count": 1997,
+            "rate": 0.5989802039592081,
+            "interval95": {
+              "low": 0.58223926365551,
+              "high": 0.6154933153607465
+            },
+            "expectedProbability": 0.6
+          },
+          "uncommon": {
+            "count": 916,
+            "rate": 0.27474505098980206,
+            "interval95": {
+              "low": 0.25985859942357403,
+              "high": 0.29014998590609664
+            },
+            "expectedProbability": 0.27
+          },
+          "rare": {
+            "count": 327,
+            "rate": 0.09808038392321536,
+            "interval95": {
+              "low": 0.08844237010227994,
+              "high": 0.10864352116504185
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 83,
+            "rate": 0.02489502099580084,
+            "interval95": {
+              "low": 0.02012796838479048,
+              "high": 0.03075565233717798
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 11,
+            "rate": 0.0032993401319736052,
+            "interval95": {
+              "low": 0.0018433256755354863,
+              "high": 0.00589864144288609
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "0": {
+            "count": 1997,
+            "rate": 0.5989802039592081,
+            "interval95": {
+              "low": 0.58223926365551,
+              "high": 0.6154933153607465
+            }
+          },
+          "1": {
+            "count": 916,
+            "rate": 0.27474505098980206,
+            "interval95": {
+              "low": 0.25985859942357403,
+              "high": 0.29014998590609664
+            }
+          },
+          "2": {
+            "count": 327,
+            "rate": 0.09808038392321536,
+            "interval95": {
+              "low": 0.08844237010227994,
+              "high": 0.10864352116504185
+            }
+          },
+          "3": {
+            "count": 94,
+            "rate": 0.028194361127774445,
+            "interval95": {
+              "low": 0.023095692366279758,
+              "high": 0.03437901432289725
+            }
+          }
+        },
+        "affixType": {
+          "striking": {
+            "count": 450,
+            "rate": 0.1349730053989202,
+            "interval95": {
+              "low": 0.12379362738577583,
+              "high": 0.14699258878760518
+            }
+          },
+          "keen": {
+            "count": 473,
+            "rate": 0.14187162567486503,
+            "interval95": {
+              "low": 0.13043968354087504,
+              "high": 0.1541278942003057
+            }
+          },
+          "piercing": {
+            "count": 444,
+            "rate": 0.1331733653269346,
+            "interval95": {
+              "low": 0.12206150682990352,
+              "high": 0.14512957154318196
+            }
+          },
+          "bleeding": {
+            "count": 485,
+            "rate": 0.14547090581883623,
+            "interval95": {
+              "low": 0.13391099010125346,
+              "high": 0.15784686324051844
+            }
+          }
+        },
+        "affixTier": {
+          "striking|tier-1": {
+            "count": 450,
+            "rate": 0.1349730053989202,
+            "interval95": {
+              "low": 0.12379362738577583,
+              "high": 0.14699258878760518
+            }
+          },
+          "keen|tier-1": {
+            "count": 473,
+            "rate": 0.14187162567486503,
+            "interval95": {
+              "low": 0.13043968354087504,
+              "high": 0.1541278942003057
+            }
+          },
+          "piercing|tier-1": {
+            "count": 444,
+            "rate": 0.1331733653269346,
+            "interval95": {
+              "low": 0.12206150682990352,
+              "high": 0.14512957154318196
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 485,
+            "rate": 0.14547090581883623,
+            "interval95": {
+              "low": 0.13391099010125346,
+              "high": 0.15784686324051844
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3334,
+          "mean": 18.705458908218365,
+          "low95": 18.45585576754718,
+          "high95": 18.95506204888955,
+          "median": 14,
+          "min": 14,
+          "max": 72,
+          "plannedFeeGold": 3,
+          "plannedSite": "home",
+          "storeFeeGold": 4,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 31,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 34,
+          "expectedMarginAtPlannedCostGold": -15.294541091781642,
+          "minimumObservedMarginAtPlannedCostGold": -20,
+          "maximumObservedMarginAtPlannedCostGold": 38,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -95.29454109178164,
+          "storeTotalInputCostGold": 35,
+          "expectedMarginAtStoreCostGold": -16.294541091781642
+        }
+      },
+      {
+        "recipeId": "starterSpear",
+        "smithingLevel": 1,
+        "material": "wolfFang",
+        "samples": 3334,
+        "rarity": {
+          "common": {
+            "count": 1997,
+            "rate": 0.5989802039592081,
+            "interval95": {
+              "low": 0.58223926365551,
+              "high": 0.6154933153607465
+            },
+            "expectedProbability": 0.6
+          },
+          "uncommon": {
+            "count": 916,
+            "rate": 0.27474505098980206,
+            "interval95": {
+              "low": 0.25985859942357403,
+              "high": 0.29014998590609664
+            },
+            "expectedProbability": 0.27
+          },
+          "rare": {
+            "count": 327,
+            "rate": 0.09808038392321536,
+            "interval95": {
+              "low": 0.08844237010227994,
+              "high": 0.10864352116504185
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 83,
+            "rate": 0.02489502099580084,
+            "interval95": {
+              "low": 0.02012796838479048,
+              "high": 0.03075565233717798
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 11,
+            "rate": 0.0032993401319736052,
+            "interval95": {
+              "low": 0.0018433256755354863,
+              "high": 0.00589864144288609
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "0": {
+            "count": 1997,
+            "rate": 0.5989802039592081,
+            "interval95": {
+              "low": 0.58223926365551,
+              "high": 0.6154933153607465
+            }
+          },
+          "1": {
+            "count": 916,
+            "rate": 0.27474505098980206,
+            "interval95": {
+              "low": 0.25985859942357403,
+              "high": 0.29014998590609664
+            }
+          },
+          "2": {
+            "count": 327,
+            "rate": 0.09808038392321536,
+            "interval95": {
+              "low": 0.08844237010227994,
+              "high": 0.10864352116504185
+            }
+          },
+          "3": {
+            "count": 94,
+            "rate": 0.028194361127774445,
+            "interval95": {
+              "low": 0.023095692366279758,
+              "high": 0.03437901432289725
+            }
+          }
+        },
+        "affixType": {
+          "piercing": {
+            "count": 598,
+            "rate": 0.1793641271745651,
+            "interval95": {
+              "low": 0.1667124880256626,
+              "high": 0.1927537938883426
+            }
+          },
+          "striking": {
+            "count": 229,
+            "rate": 0.06868626274745052,
+            "interval95": {
+              "low": 0.06058809143172847,
+              "high": 0.07777721576409896
+            }
+          },
+          "bleeding": {
+            "count": 818,
+            "rate": 0.2453509298140372,
+            "interval95": {
+              "low": 0.23104345379842026,
+              "high": 0.26024454745975595
+            }
+          },
+          "keen": {
+            "count": 207,
+            "rate": 0.0620875824835033,
+            "interval95": {
+              "low": 0.05438955966751223,
+              "high": 0.07079357559389811
+            }
+          }
+        },
+        "affixTier": {
+          "piercing|tier-1": {
+            "count": 598,
+            "rate": 0.1793641271745651,
+            "interval95": {
+              "low": 0.1667124880256626,
+              "high": 0.1927537938883426
+            }
+          },
+          "striking|tier-1": {
+            "count": 229,
+            "rate": 0.06868626274745052,
+            "interval95": {
+              "low": 0.06058809143172847,
+              "high": 0.07777721576409896
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 818,
+            "rate": 0.2453509298140372,
+            "interval95": {
+              "low": 0.23104345379842026,
+              "high": 0.26024454745975595
+            }
+          },
+          "keen|tier-1": {
+            "count": 207,
+            "rate": 0.0620875824835033,
+            "interval95": {
+              "low": 0.05438955966751223,
+              "high": 0.07079357559389811
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3334,
+          "mean": 18.705458908218365,
+          "low95": 18.45585576754718,
+          "high95": 18.95506204888955,
+          "median": 14,
+          "min": 14,
+          "max": 72,
+          "plannedFeeGold": 3,
+          "plannedSite": "home",
+          "storeFeeGold": 4,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 31,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 39,
+          "expectedMarginAtPlannedCostGold": -20.294541091781642,
+          "minimumObservedMarginAtPlannedCostGold": -25,
+          "maximumObservedMarginAtPlannedCostGold": 33,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -100.29454109178164,
+          "storeTotalInputCostGold": 40,
+          "expectedMarginAtStoreCostGold": -21.294541091781642
+        }
+      },
+      {
+        "recipeId": "starterSpear",
+        "smithingLevel": 1,
+        "material": "moonStone",
+        "samples": 3334,
+        "rarity": {
+          "common": {
+            "count": 1997,
+            "rate": 0.5989802039592081,
+            "interval95": {
+              "low": 0.58223926365551,
+              "high": 0.6154933153607465
+            },
+            "expectedProbability": 0.6
+          },
+          "uncommon": {
+            "count": 916,
+            "rate": 0.27474505098980206,
+            "interval95": {
+              "low": 0.25985859942357403,
+              "high": 0.29014998590609664
+            },
+            "expectedProbability": 0.27
+          },
+          "rare": {
+            "count": 327,
+            "rate": 0.09808038392321536,
+            "interval95": {
+              "low": 0.08844237010227994,
+              "high": 0.10864352116504185
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 83,
+            "rate": 0.02489502099580084,
+            "interval95": {
+              "low": 0.02012796838479048,
+              "high": 0.03075565233717798
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 11,
+            "rate": 0.0032993401319736052,
+            "interval95": {
+              "low": 0.0018433256755354863,
+              "high": 0.00589864144288609
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "0": {
+            "count": 1997,
+            "rate": 0.5989802039592081,
+            "interval95": {
+              "low": 0.58223926365551,
+              "high": 0.6154933153607465
+            }
+          },
+          "1": {
+            "count": 916,
+            "rate": 0.27474505098980206,
+            "interval95": {
+              "low": 0.25985859942357403,
+              "high": 0.29014998590609664
+            }
+          },
+          "2": {
+            "count": 327,
+            "rate": 0.09808038392321536,
+            "interval95": {
+              "low": 0.08844237010227994,
+              "high": 0.10864352116504185
+            }
+          },
+          "3": {
+            "count": 94,
+            "rate": 0.028194361127774445,
+            "interval95": {
+              "low": 0.023095692366279758,
+              "high": 0.03437901432289725
+            }
+          }
+        },
+        "affixType": {
+          "keen": {
+            "count": 942,
+            "rate": 0.28254349130173967,
+            "interval95": {
+              "low": 0.26751760587251805,
+              "high": 0.2980699099251001
+            }
+          },
+          "striking": {
+            "count": 284,
+            "rate": 0.08518296340731854,
+            "interval95": {
+              "low": 0.07617815194856749,
+              "high": 0.09514258508330269
+            }
+          },
+          "piercing": {
+            "count": 326,
+            "rate": 0.09778044391121776,
+            "interval95": {
+              "low": 0.08815650986131314,
+              "high": 0.10833019177262605
+            }
+          },
+          "bleeding": {
+            "count": 300,
+            "rate": 0.08998200359928014,
+            "interval95": {
+              "low": 0.08073468526048495,
+              "high": 0.10017308590550673
+            }
+          }
+        },
+        "affixTier": {
+          "keen|tier-1": {
+            "count": 942,
+            "rate": 0.28254349130173967,
+            "interval95": {
+              "low": 0.26751760587251805,
+              "high": 0.2980699099251001
+            }
+          },
+          "striking|tier-1": {
+            "count": 284,
+            "rate": 0.08518296340731854,
+            "interval95": {
+              "low": 0.07617815194856749,
+              "high": 0.09514258508330269
+            }
+          },
+          "piercing|tier-1": {
+            "count": 326,
+            "rate": 0.09778044391121776,
+            "interval95": {
+              "low": 0.08815650986131314,
+              "high": 0.10833019177262605
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 300,
+            "rate": 0.08998200359928014,
+            "interval95": {
+              "low": 0.08073468526048495,
+              "high": 0.10017308590550673
+            }
+          }
+        },
+        "special": {
+          "count": 1,
+          "rate": 0.00029994001199760045,
+          "interval95": {
+            "low": 5.294873940714579e-05,
+            "high": 0.0016971220451884755
+          },
+          "expectedProbability": 0.0005
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3334,
+          "mean": 18.705458908218365,
+          "low95": 18.45585576754718,
+          "high95": 18.95506204888955,
+          "median": 14,
+          "min": 14,
+          "max": 72,
+          "plannedFeeGold": 3,
+          "plannedSite": "home",
+          "storeFeeGold": 4,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 31,
+          "influenceMaterialOpportunityCostGold": 25,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 59,
+          "expectedMarginAtPlannedCostGold": -40.29454109178164,
+          "minimumObservedMarginAtPlannedCostGold": -45,
+          "maximumObservedMarginAtPlannedCostGold": 13,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -120.29454109178164,
+          "storeTotalInputCostGold": 60,
+          "expectedMarginAtStoreCostGold": -41.29454109178164
+        }
+      },
+      {
+        "recipeId": "starterSpear",
+        "smithingLevel": 3,
+        "material": null,
+        "samples": 3334,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.0011508811512130255
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2885,
+            "rate": 0.8653269346130774,
+            "interval95": {
+              "low": 0.853317866107308,
+              "high": 0.8764951073526934
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 366,
+            "rate": 0.10977804439112178,
+            "interval95": {
+              "low": 0.09961235892385938,
+              "high": 0.12084192804538364
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 78,
+            "rate": 0.023395320935812838,
+            "interval95": {
+              "low": 0.01878668798767441,
+              "high": 0.02910098456738107
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 5,
+            "rate": 0.0014997000599880025,
+            "interval95": {
+              "low": 0.0006407470334089654,
+              "high": 0.0035060822847170388
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2885,
+            "rate": 0.8653269346130774,
+            "interval95": {
+              "low": 0.853317866107308,
+              "high": 0.8764951073526934
+            }
+          },
+          "2": {
+            "count": 366,
+            "rate": 0.10977804439112178,
+            "interval95": {
+              "low": 0.09961235892385938,
+              "high": 0.12084192804538364
+            }
+          },
+          "3": {
+            "count": 83,
+            "rate": 0.02489502099580084,
+            "interval95": {
+              "low": 0.02012796838479048,
+              "high": 0.03075565233717798
+            }
+          }
+        },
+        "affixType": {
+          "piercing": {
+            "count": 960,
+            "rate": 0.28794241151769645,
+            "interval95": {
+              "low": 0.2728233092666575,
+              "high": 0.3035496199318473
+            }
+          },
+          "striking": {
+            "count": 942,
+            "rate": 0.28254349130173967,
+            "interval95": {
+              "low": 0.26751760587251805,
+              "high": 0.2980699099251001
+            }
+          },
+          "bleeding": {
+            "count": 981,
+            "rate": 0.29424115176964605,
+            "interval95": {
+              "low": 0.27901665406712794,
+              "high": 0.30993925743241135
+            }
+          },
+          "keen": {
+            "count": 983,
+            "rate": 0.2948410317936413,
+            "interval95": {
+              "low": 0.27960668265488103,
+              "high": 0.3105476081114235
+            }
+          }
+        },
+        "affixTier": {
+          "piercing|tier-1": {
+            "count": 960,
+            "rate": 0.28794241151769645,
+            "interval95": {
+              "low": 0.2728233092666575,
+              "high": 0.3035496199318473
+            }
+          },
+          "striking|tier-1": {
+            "count": 942,
+            "rate": 0.28254349130173967,
+            "interval95": {
+              "low": 0.26751760587251805,
+              "high": 0.2980699099251001
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 981,
+            "rate": 0.29424115176964605,
+            "interval95": {
+              "low": 0.27901665406712794,
+              "high": 0.30993925743241135
+            }
+          },
+          "keen|tier-1": {
+            "count": 983,
+            "rate": 0.2948410317936413,
+            "interval95": {
+              "low": 0.27960668265488103,
+              "high": 0.3105476081114235
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3334,
+          "mean": 23.467906418716268,
+          "low95": 23.316294777158166,
+          "high95": 23.61951806027437,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 3,
+          "plannedSite": "home",
+          "storeFeeGold": 4,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 31,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 34,
+          "expectedMarginAtPlannedCostGold": -10.532093581283743,
+          "minimumObservedMarginAtPlannedCostGold": -12,
+          "maximumObservedMarginAtPlannedCostGold": 38,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -90.53209358128375,
+          "storeTotalInputCostGold": 35,
+          "expectedMarginAtStoreCostGold": -11.532093581283743
+        }
+      },
+      {
+        "recipeId": "starterSpear",
+        "smithingLevel": 3,
+        "material": "wolfFang",
+        "samples": 3334,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.0011508811512130255
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2885,
+            "rate": 0.8653269346130774,
+            "interval95": {
+              "low": 0.853317866107308,
+              "high": 0.8764951073526934
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 366,
+            "rate": 0.10977804439112178,
+            "interval95": {
+              "low": 0.09961235892385938,
+              "high": 0.12084192804538364
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 78,
+            "rate": 0.023395320935812838,
+            "interval95": {
+              "low": 0.01878668798767441,
+              "high": 0.02910098456738107
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 5,
+            "rate": 0.0014997000599880025,
+            "interval95": {
+              "low": 0.0006407470334089654,
+              "high": 0.0035060822847170388
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2885,
+            "rate": 0.8653269346130774,
+            "interval95": {
+              "low": 0.853317866107308,
+              "high": 0.8764951073526934
+            }
+          },
+          "2": {
+            "count": 366,
+            "rate": 0.10977804439112178,
+            "interval95": {
+              "low": 0.09961235892385938,
+              "high": 0.12084192804538364
+            }
+          },
+          "3": {
+            "count": 83,
+            "rate": 0.02489502099580084,
+            "interval95": {
+              "low": 0.02012796838479048,
+              "high": 0.03075565233717798
+            }
+          }
+        },
+        "affixType": {
+          "bleeding": {
+            "count": 1827,
+            "rate": 0.5479904019196161,
+            "interval95": {
+              "low": 0.5310510725763746,
+              "high": 0.5648192687648408
+            }
+          },
+          "keen": {
+            "count": 442,
+            "rate": 0.13257348530293941,
+            "interval95": {
+              "low": 0.12148428786427148,
+              "high": 0.1445084112420488
+            }
+          },
+          "striking": {
+            "count": 403,
+            "rate": 0.120875824835033,
+            "interval95": {
+              "low": 0.11024469466268784,
+              "high": 0.13237960874171123
+            }
+          },
+          "piercing": {
+            "count": 1194,
+            "rate": 0.35812837432513495,
+            "interval95": {
+              "low": 0.34202565895983245,
+              "high": 0.3745576444501996
+            }
+          }
+        },
+        "affixTier": {
+          "bleeding|tier-1": {
+            "count": 1827,
+            "rate": 0.5479904019196161,
+            "interval95": {
+              "low": 0.5310510725763746,
+              "high": 0.5648192687648408
+            }
+          },
+          "keen|tier-1": {
+            "count": 442,
+            "rate": 0.13257348530293941,
+            "interval95": {
+              "low": 0.12148428786427148,
+              "high": 0.1445084112420488
+            }
+          },
+          "striking|tier-1": {
+            "count": 403,
+            "rate": 0.120875824835033,
+            "interval95": {
+              "low": 0.11024469466268784,
+              "high": 0.13237960874171123
+            }
+          },
+          "piercing|tier-1": {
+            "count": 1194,
+            "rate": 0.35812837432513495,
+            "interval95": {
+              "low": 0.34202565895983245,
+              "high": 0.3745576444501996
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3334,
+          "mean": 23.467906418716268,
+          "low95": 23.316294777158166,
+          "high95": 23.61951806027437,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 3,
+          "plannedSite": "home",
+          "storeFeeGold": 4,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 31,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 39,
+          "expectedMarginAtPlannedCostGold": -15.532093581283743,
+          "minimumObservedMarginAtPlannedCostGold": -17,
+          "maximumObservedMarginAtPlannedCostGold": 33,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -95.53209358128375,
+          "storeTotalInputCostGold": 40,
+          "expectedMarginAtStoreCostGold": -16.532093581283743
+        }
+      },
+      {
+        "recipeId": "starterSpear",
+        "smithingLevel": 3,
+        "material": "moonStone",
+        "samples": 3334,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.0011508811512130255
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2885,
+            "rate": 0.8653269346130774,
+            "interval95": {
+              "low": 0.853317866107308,
+              "high": 0.8764951073526934
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 366,
+            "rate": 0.10977804439112178,
+            "interval95": {
+              "low": 0.09961235892385938,
+              "high": 0.12084192804538364
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 78,
+            "rate": 0.023395320935812838,
+            "interval95": {
+              "low": 0.01878668798767441,
+              "high": 0.02910098456738107
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 5,
+            "rate": 0.0014997000599880025,
+            "interval95": {
+              "low": 0.0006407470334089654,
+              "high": 0.0035060822847170388
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2885,
+            "rate": 0.8653269346130774,
+            "interval95": {
+              "low": 0.853317866107308,
+              "high": 0.8764951073526934
+            }
+          },
+          "2": {
+            "count": 366,
+            "rate": 0.10977804439112178,
+            "interval95": {
+              "low": 0.09961235892385938,
+              "high": 0.12084192804538364
+            }
+          },
+          "3": {
+            "count": 83,
+            "rate": 0.02489502099580084,
+            "interval95": {
+              "low": 0.02012796838479048,
+              "high": 0.03075565233717798
+            }
+          }
+        },
+        "affixType": {
+          "keen": {
+            "count": 2198,
+            "rate": 0.6592681463707258,
+            "interval95": {
+              "low": 0.6430050391809969,
+              "high": 0.6751646561451612
+            }
+          },
+          "piercing": {
+            "count": 559,
+            "rate": 0.16766646670665866,
+            "interval95": {
+              "low": 0.15536995092247458,
+              "high": 0.1807279352896094
+            }
+          },
+          "bleeding": {
+            "count": 574,
+            "rate": 0.17216556688662268,
+            "interval95": {
+              "low": 0.15972993392052187,
+              "high": 0.18535579679230102
+            }
+          },
+          "striking": {
+            "count": 535,
+            "rate": 0.16046790641871625,
+            "interval95": {
+              "low": 0.1484008566158496,
+              "high": 0.17331647839505207
+            }
+          }
+        },
+        "affixTier": {
+          "keen|tier-1": {
+            "count": 2198,
+            "rate": 0.6592681463707258,
+            "interval95": {
+              "low": 0.6430050391809969,
+              "high": 0.6751646561451612
+            }
+          },
+          "piercing|tier-1": {
+            "count": 559,
+            "rate": 0.16766646670665866,
+            "interval95": {
+              "low": 0.15536995092247458,
+              "high": 0.1807279352896094
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 574,
+            "rate": 0.17216556688662268,
+            "interval95": {
+              "low": 0.15972993392052187,
+              "high": 0.18535579679230102
+            }
+          },
+          "striking|tier-1": {
+            "count": 535,
+            "rate": 0.16046790641871625,
+            "interval95": {
+              "low": 0.1484008566158496,
+              "high": 0.17331647839505207
+            }
+          }
+        },
+        "special": {
+          "count": 1,
+          "rate": 0.00029994001199760045,
+          "interval95": {
+            "low": 5.294873940714579e-05,
+            "high": 0.0016971220451884755
+          },
+          "expectedProbability": 0.0005
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3334,
+          "mean": 23.467906418716268,
+          "low95": 23.316294777158166,
+          "high95": 23.61951806027437,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 3,
+          "plannedSite": "home",
+          "storeFeeGold": 4,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 31,
+          "influenceMaterialOpportunityCostGold": 25,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 59,
+          "expectedMarginAtPlannedCostGold": -35.532093581283746,
+          "minimumObservedMarginAtPlannedCostGold": -37,
+          "maximumObservedMarginAtPlannedCostGold": 13,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -115.53209358128375,
+          "storeTotalInputCostGold": 60,
+          "expectedMarginAtStoreCostGold": -36.532093581283746
+        }
+      },
+      {
+        "recipeId": "starterSpear",
+        "smithingLevel": 6,
+        "material": null,
+        "samples": 3334,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.0011508811512130255
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2920,
+            "rate": 0.8758248350329934,
+            "interval95": {
+              "low": 0.8641962363814382,
+              "high": 0.886588374246954
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 315,
+            "rate": 0.09448110377924415,
+            "interval95": {
+              "low": 0.08501398744096758,
+              "high": 0.10488162822576305
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 92,
+            "rate": 0.027594481103779243,
+            "interval95": {
+              "low": 0.022554507713149735,
+              "high": 0.03372181970926208
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 7,
+            "rate": 0.0020995800839832034,
+            "interval95": {
+              "low": 0.0010174153209770525,
+              "high": 0.004327793263914142
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2920,
+            "rate": 0.8758248350329934,
+            "interval95": {
+              "low": 0.8641962363814382,
+              "high": 0.886588374246954
+            }
+          },
+          "2": {
+            "count": 315,
+            "rate": 0.09448110377924415,
+            "interval95": {
+              "low": 0.08501398744096758,
+              "high": 0.10488162822576305
+            }
+          },
+          "3": {
+            "count": 99,
+            "rate": 0.02969406118776245,
+            "interval95": {
+              "low": 0.024451511242975586,
+              "high": 0.0360191436131144
+            }
+          }
+        },
+        "affixType": {
+          "striking": {
+            "count": 1009,
+            "rate": 0.3026394721055789,
+            "interval95": {
+              "low": 0.287279959175505,
+              "high": 0.318453262058747
+            }
+          },
+          "bleeding": {
+            "count": 947,
+            "rate": 0.2840431913617277,
+            "interval95": {
+              "low": 0.2689911430715415,
+              "high": 0.2995923208929896
+            }
+          },
+          "piercing": {
+            "count": 959,
+            "rate": 0.2876424715056989,
+            "interval95": {
+              "low": 0.2725284778003824,
+              "high": 0.3032452617647398
+            }
+          },
+          "keen": {
+            "count": 932,
+            "rate": 0.27954409118176365,
+            "interval95": {
+              "low": 0.26457115851265406,
+              "high": 0.29502446095113805
+            }
+          }
+        },
+        "affixTier": {
+          "striking|tier-1": {
+            "count": 1009,
+            "rate": 0.3026394721055789,
+            "interval95": {
+              "low": 0.287279959175505,
+              "high": 0.318453262058747
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 947,
+            "rate": 0.2840431913617277,
+            "interval95": {
+              "low": 0.2689911430715415,
+              "high": 0.2995923208929896
+            }
+          },
+          "piercing|tier-1": {
+            "count": 959,
+            "rate": 0.2876424715056989,
+            "interval95": {
+              "low": 0.2725284778003824,
+              "high": 0.3032452617647398
+            }
+          },
+          "keen|tier-1": {
+            "count": 932,
+            "rate": 0.27954409118176365,
+            "interval95": {
+              "low": 0.26457115851265406,
+              "high": 0.29502446095113805
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3334,
+          "mean": 23.467906418716208,
+          "low95": 23.30688263031495,
+          "high95": 23.628930207117467,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 3,
+          "plannedSite": "home",
+          "storeFeeGold": 4,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 31,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 34,
+          "expectedMarginAtPlannedCostGold": -10.532093581283743,
+          "minimumObservedMarginAtPlannedCostGold": -12,
+          "maximumObservedMarginAtPlannedCostGold": 38,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -90.53209358128375,
+          "storeTotalInputCostGold": 35,
+          "expectedMarginAtStoreCostGold": -11.532093581283743
+        }
+      },
+      {
+        "recipeId": "starterSpear",
+        "smithingLevel": 6,
+        "material": "wolfFang",
+        "samples": 3334,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.0011508811512130255
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2920,
+            "rate": 0.8758248350329934,
+            "interval95": {
+              "low": 0.8641962363814382,
+              "high": 0.886588374246954
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 315,
+            "rate": 0.09448110377924415,
+            "interval95": {
+              "low": 0.08501398744096758,
+              "high": 0.10488162822576305
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 92,
+            "rate": 0.027594481103779243,
+            "interval95": {
+              "low": 0.022554507713149735,
+              "high": 0.03372181970926208
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 7,
+            "rate": 0.0020995800839832034,
+            "interval95": {
+              "low": 0.0010174153209770525,
+              "high": 0.004327793263914142
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2920,
+            "rate": 0.8758248350329934,
+            "interval95": {
+              "low": 0.8641962363814382,
+              "high": 0.886588374246954
+            }
+          },
+          "2": {
+            "count": 315,
+            "rate": 0.09448110377924415,
+            "interval95": {
+              "low": 0.08501398744096758,
+              "high": 0.10488162822576305
+            }
+          },
+          "3": {
+            "count": 99,
+            "rate": 0.02969406118776245,
+            "interval95": {
+              "low": 0.024451511242975586,
+              "high": 0.0360191436131144
+            }
+          }
+        },
+        "affixType": {
+          "keen": {
+            "count": 477,
+            "rate": 0.14307138572285544,
+            "interval95": {
+              "low": 0.13159650315728985,
+              "high": 0.15536783311742128
+            }
+          },
+          "bleeding": {
+            "count": 1795,
+            "rate": 0.5383923215356928,
+            "interval95": {
+              "low": 0.5214358370056472,
+              "high": 0.5552604360673249
+            }
+          },
+          "striking": {
+            "count": 433,
+            "rate": 0.129874025194961,
+            "interval95": {
+              "low": 0.1188877744851243,
+              "high": 0.1417122179207526
+            }
+          },
+          "piercing": {
+            "count": 1142,
+            "rate": 0.34253149370125974,
+            "interval95": {
+              "low": 0.32661255037279,
+              "high": 0.35881289210134715
+            }
+          }
+        },
+        "affixTier": {
+          "keen|tier-1": {
+            "count": 477,
+            "rate": 0.14307138572285544,
+            "interval95": {
+              "low": 0.13159650315728985,
+              "high": 0.15536783311742128
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 1795,
+            "rate": 0.5383923215356928,
+            "interval95": {
+              "low": 0.5214358370056472,
+              "high": 0.5552604360673249
+            }
+          },
+          "striking|tier-1": {
+            "count": 433,
+            "rate": 0.129874025194961,
+            "interval95": {
+              "low": 0.1188877744851243,
+              "high": 0.1417122179207526
+            }
+          },
+          "piercing|tier-1": {
+            "count": 1142,
+            "rate": 0.34253149370125974,
+            "interval95": {
+              "low": 0.32661255037279,
+              "high": 0.35881289210134715
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3334,
+          "mean": 23.467906418716208,
+          "low95": 23.30688263031495,
+          "high95": 23.628930207117467,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 3,
+          "plannedSite": "home",
+          "storeFeeGold": 4,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 31,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 39,
+          "expectedMarginAtPlannedCostGold": -15.532093581283743,
+          "minimumObservedMarginAtPlannedCostGold": -17,
+          "maximumObservedMarginAtPlannedCostGold": 33,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -95.53209358128375,
+          "storeTotalInputCostGold": 40,
+          "expectedMarginAtStoreCostGold": -16.532093581283743
+        }
+      },
+      {
+        "recipeId": "starterSpear",
+        "smithingLevel": 6,
+        "material": "moonStone",
+        "samples": 3334,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.0011508811512130255
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2920,
+            "rate": 0.8758248350329934,
+            "interval95": {
+              "low": 0.8641962363814382,
+              "high": 0.886588374246954
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 315,
+            "rate": 0.09448110377924415,
+            "interval95": {
+              "low": 0.08501398744096758,
+              "high": 0.10488162822576305
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 92,
+            "rate": 0.027594481103779243,
+            "interval95": {
+              "low": 0.022554507713149735,
+              "high": 0.03372181970926208
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 7,
+            "rate": 0.0020995800839832034,
+            "interval95": {
+              "low": 0.0010174153209770525,
+              "high": 0.004327793263914142
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2920,
+            "rate": 0.8758248350329934,
+            "interval95": {
+              "low": 0.8641962363814382,
+              "high": 0.886588374246954
+            }
+          },
+          "2": {
+            "count": 315,
+            "rate": 0.09448110377924415,
+            "interval95": {
+              "low": 0.08501398744096758,
+              "high": 0.10488162822576305
+            }
+          },
+          "3": {
+            "count": 99,
+            "rate": 0.02969406118776245,
+            "interval95": {
+              "low": 0.024451511242975586,
+              "high": 0.0360191436131144
+            }
+          }
+        },
+        "affixType": {
+          "keen": {
+            "count": 2194,
+            "rate": 0.6580683863227355,
+            "interval95": {
+              "low": 0.6417930564254922,
+              "high": 0.6739798803671356
+            }
+          },
+          "bleeding": {
+            "count": 514,
+            "rate": 0.15416916616676665,
+            "interval95": {
+              "low": 0.14231015776698808,
+              "high": 0.1668241949428791
+            }
+          },
+          "piercing": {
+            "count": 562,
+            "rate": 0.16856628674265148,
+            "interval95": {
+              "low": 0.15624168805897062,
+              "high": 0.1816537670532611
+            }
+          },
+          "striking": {
+            "count": 577,
+            "rate": 0.17306538692261547,
+            "interval95": {
+              "low": 0.1606023156645739,
+              "high": 0.18628098394839676
+            }
+          }
+        },
+        "affixTier": {
+          "keen|tier-1": {
+            "count": 2194,
+            "rate": 0.6580683863227355,
+            "interval95": {
+              "low": 0.6417930564254922,
+              "high": 0.6739798803671356
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 514,
+            "rate": 0.15416916616676665,
+            "interval95": {
+              "low": 0.14231015776698808,
+              "high": 0.1668241949428791
+            }
+          },
+          "piercing|tier-1": {
+            "count": 562,
+            "rate": 0.16856628674265148,
+            "interval95": {
+              "low": 0.15624168805897062,
+              "high": 0.1816537670532611
+            }
+          },
+          "striking|tier-1": {
+            "count": 577,
+            "rate": 0.17306538692261547,
+            "interval95": {
+              "low": 0.1606023156645739,
+              "high": 0.18628098394839676
+            }
+          }
+        },
+        "special": {
+          "count": 1,
+          "rate": 0.00029994001199760045,
+          "interval95": {
+            "low": 5.294873940714579e-05,
+            "high": 0.0016971220451884755
+          },
+          "expectedProbability": 0.0005
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3334,
+          "mean": 23.467906418716208,
+          "low95": 23.30688263031495,
+          "high95": 23.628930207117467,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 3,
+          "plannedSite": "home",
+          "storeFeeGold": 4,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 31,
+          "influenceMaterialOpportunityCostGold": 25,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 59,
+          "expectedMarginAtPlannedCostGold": -35.532093581283746,
+          "minimumObservedMarginAtPlannedCostGold": -37,
+          "maximumObservedMarginAtPlannedCostGold": 13,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -115.53209358128375,
+          "storeTotalInputCostGold": 60,
+          "expectedMarginAtStoreCostGold": -36.532093581283746
+        }
+      },
+      {
+        "recipeId": "fieldSpear",
+        "smithingLevel": 2,
+        "material": null,
+        "samples": 3334,
+        "rarity": {
+          "common": {
+            "count": 1968,
+            "rate": 0.5902819436112777,
+            "interval95": {
+              "low": 0.573494201898006,
+              "high": 0.6068618777501551
+            },
+            "expectedProbability": 0.6
+          },
+          "uncommon": {
+            "count": 892,
+            "rate": 0.26754649070185965,
+            "interval95": {
+              "low": 0.2527938833633821,
+              "high": 0.28283415076510626
+            },
+            "expectedProbability": 0.27
+          },
+          "rare": {
+            "count": 345,
+            "rate": 0.10347930413917217,
+            "interval95": {
+              "low": 0.09359268188703415,
+              "high": 0.11427862278117434
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 122,
+            "rate": 0.03659268146370726,
+            "interval95": {
+              "low": 0.030734043966176572,
+              "high": 0.04351797245771313
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 7,
+            "rate": 0.0020995800839832034,
+            "interval95": {
+              "low": 0.0010174153209770525,
+              "high": 0.004327793263914142
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "0": {
+            "count": 1968,
+            "rate": 0.5902819436112777,
+            "interval95": {
+              "low": 0.573494201898006,
+              "high": 0.6068618777501551
+            }
+          },
+          "1": {
+            "count": 892,
+            "rate": 0.26754649070185965,
+            "interval95": {
+              "low": 0.2527938833633821,
+              "high": 0.28283415076510626
+            }
+          },
+          "2": {
+            "count": 345,
+            "rate": 0.10347930413917217,
+            "interval95": {
+              "low": 0.09359268188703415,
+              "high": 0.11427862278117434
+            }
+          },
+          "3": {
+            "count": 129,
+            "rate": 0.03869226154769046,
+            "interval95": {
+              "low": 0.03265894414381744,
+              "high": 0.045787399713750426
+            }
+          }
+        },
+        "affixType": {
+          "keen": {
+            "count": 462,
+            "rate": 0.13857228554289142,
+            "interval95": {
+              "low": 0.12725991632390765,
+              "high": 0.1507165754500645
+            }
+          },
+          "striking": {
+            "count": 516,
+            "rate": 0.15476904619076184,
+            "interval95": {
+              "low": 0.14288992276774923,
+              "high": 0.16744280920888313
+            }
+          },
+          "bleeding": {
+            "count": 493,
+            "rate": 0.14787042591481703,
+            "interval95": {
+              "low": 0.1362265880658588,
+              "high": 0.16032478234297382
+            }
+          },
+          "piercing": {
+            "count": 498,
+            "rate": 0.14937012597480503,
+            "interval95": {
+              "low": 0.1376743910367726,
+              "high": 0.16187292753897303
+            }
+          }
+        },
+        "affixTier": {
+          "keen|tier-1": {
+            "count": 462,
+            "rate": 0.13857228554289142,
+            "interval95": {
+              "low": 0.12725991632390765,
+              "high": 0.1507165754500645
+            }
+          },
+          "striking|tier-1": {
+            "count": 516,
+            "rate": 0.15476904619076184,
+            "interval95": {
+              "low": 0.14288992276774923,
+              "high": 0.16744280920888313
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 493,
+            "rate": 0.14787042591481703,
+            "interval95": {
+              "low": 0.1362265880658588,
+              "high": 0.16032478234297382
+            }
+          },
+          "piercing|tier-1": {
+            "count": 498,
+            "rate": 0.14937012597480503,
+            "interval95": {
+              "low": 0.1376743910367726,
+              "high": 0.16187292753897303
+            }
+          }
+        },
+        "special": {
+          "count": 1,
+          "rate": 0.00029994001199760045,
+          "interval95": {
+            "low": 5.294873940714579e-05,
+            "high": 0.0016971220451884755
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.0011508811512130255
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3334,
+          "mean": 19.015596880623896,
+          "low95": 18.75603730602746,
+          "high95": 19.275156455220333,
+          "median": 14,
+          "min": 14,
+          "max": 72,
+          "plannedFeeGold": 5,
+          "plannedSite": "home",
+          "storeFeeGold": 6,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 43,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 48,
+          "expectedMarginAtPlannedCostGold": -28.984403119376125,
+          "minimumObservedMarginAtPlannedCostGold": -34,
+          "maximumObservedMarginAtPlannedCostGold": 24,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -108.98440311937613,
+          "storeTotalInputCostGold": 49,
+          "expectedMarginAtStoreCostGold": -29.984403119376125
+        }
+      },
+      {
+        "recipeId": "fieldSpear",
+        "smithingLevel": 2,
+        "material": "wolfFang",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 1968,
+            "rate": 0.5904590459045904,
+            "interval95": {
+              "low": 0.5736696722858982,
+              "high": 0.6070401419026105
+            },
+            "expectedProbability": 0.6
+          },
+          "uncommon": {
+            "count": 892,
+            "rate": 0.2676267626762676,
+            "interval95": {
+              "low": 0.2528704639108861,
+              "high": 0.282918089691104
+            },
+            "expectedProbability": 0.27
+          },
+          "rare": {
+            "count": 345,
+            "rate": 0.1035103510351035,
+            "interval95": {
+              "low": 0.09362090876397507,
+              "high": 0.11431269173315835
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 121,
+            "rate": 0.036303630363036306,
+            "interval95": {
+              "low": 0.030468667585868553,
+              "high": 0.043206231822621594
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 7,
+            "rate": 0.0021002100210021,
+            "interval95": {
+              "low": 0.0010177206841040212,
+              "high": 0.004329089777487297
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "0": {
+            "count": 1968,
+            "rate": 0.5904590459045904,
+            "interval95": {
+              "low": 0.5736696722858982,
+              "high": 0.6070401419026105
+            }
+          },
+          "1": {
+            "count": 892,
+            "rate": 0.2676267626762676,
+            "interval95": {
+              "low": 0.2528704639108861,
+              "high": 0.282918089691104
+            }
+          },
+          "2": {
+            "count": 345,
+            "rate": 0.1035103510351035,
+            "interval95": {
+              "low": 0.09362090876397507,
+              "high": 0.11431269173315835
+            }
+          },
+          "3": {
+            "count": 128,
+            "rate": 0.03840384038403841,
+            "interval95": {
+              "low": 0.032393376907092944,
+              "high": 0.0454771069104173
+            }
+          }
+        },
+        "affixType": {
+          "piercing": {
+            "count": 597,
+            "rate": 0.1791179117911791,
+            "interval95": {
+              "low": 0.16647168967311055,
+              "high": 0.19250294954874658
+            }
+          },
+          "bleeding": {
+            "count": 856,
+            "rate": 0.25682568256825683,
+            "interval95": {
+              "low": 0.24227968863356245,
+              "high": 0.2719315737220385
+            }
+          },
+          "striking": {
+            "count": 272,
+            "rate": 0.0816081608160816,
+            "interval95": {
+              "low": 0.07278851268934501,
+              "high": 0.09139113611372161
+            }
+          },
+          "keen": {
+            "count": 241,
+            "rate": 0.07230723072307231,
+            "interval95": {
+              "low": 0.06399815866775635,
+              "high": 0.08160104489536413
+            }
+          }
+        },
+        "affixTier": {
+          "piercing|tier-1": {
+            "count": 597,
+            "rate": 0.1791179117911791,
+            "interval95": {
+              "low": 0.16647168967311055,
+              "high": 0.19250294954874658
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 856,
+            "rate": 0.25682568256825683,
+            "interval95": {
+              "low": 0.24227968863356245,
+              "high": 0.2719315737220385
+            }
+          },
+          "striking|tier-1": {
+            "count": 272,
+            "rate": 0.0816081608160816,
+            "interval95": {
+              "low": 0.07278851268934501,
+              "high": 0.09139113611372161
+            }
+          },
+          "keen|tier-1": {
+            "count": 241,
+            "rate": 0.07230723072307231,
+            "interval95": {
+              "low": 0.06399815866775635,
+              "high": 0.08160104489536413
+            }
+          }
+        },
+        "special": {
+          "count": 1,
+          "rate": 0.00030003000300030005,
+          "interval95": {
+            "low": 5.296462620655348e-05,
+            "high": 0.0016976306276532487
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 19.00810081008103,
+          "low95": 18.74887961807816,
+          "high95": 19.267322002083898,
+          "median": 14,
+          "min": 14,
+          "max": 72,
+          "plannedFeeGold": 5,
+          "plannedSite": "home",
+          "storeFeeGold": 6,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 43,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 53,
+          "expectedMarginAtPlannedCostGold": -33.991899189918996,
+          "minimumObservedMarginAtPlannedCostGold": -39,
+          "maximumObservedMarginAtPlannedCostGold": 19,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -113.991899189919,
+          "storeTotalInputCostGold": 54,
+          "expectedMarginAtStoreCostGold": -34.991899189918996
+        }
+      },
+      {
+        "recipeId": "fieldSpear",
+        "smithingLevel": 2,
+        "material": "moonStone",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 1968,
+            "rate": 0.5904590459045904,
+            "interval95": {
+              "low": 0.5736696722858982,
+              "high": 0.6070401419026105
+            },
+            "expectedProbability": 0.6
+          },
+          "uncommon": {
+            "count": 892,
+            "rate": 0.2676267626762676,
+            "interval95": {
+              "low": 0.2528704639108861,
+              "high": 0.282918089691104
+            },
+            "expectedProbability": 0.27
+          },
+          "rare": {
+            "count": 345,
+            "rate": 0.1035103510351035,
+            "interval95": {
+              "low": 0.09362090876397507,
+              "high": 0.11431269173315835
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 121,
+            "rate": 0.036303630363036306,
+            "interval95": {
+              "low": 0.030468667585868553,
+              "high": 0.043206231822621594
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 7,
+            "rate": 0.0021002100210021,
+            "interval95": {
+              "low": 0.0010177206841040212,
+              "high": 0.004329089777487297
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "0": {
+            "count": 1968,
+            "rate": 0.5904590459045904,
+            "interval95": {
+              "low": 0.5736696722858982,
+              "high": 0.6070401419026105
+            }
+          },
+          "1": {
+            "count": 892,
+            "rate": 0.2676267626762676,
+            "interval95": {
+              "low": 0.2528704639108861,
+              "high": 0.282918089691104
+            }
+          },
+          "2": {
+            "count": 345,
+            "rate": 0.1035103510351035,
+            "interval95": {
+              "low": 0.09362090876397507,
+              "high": 0.11431269173315835
+            }
+          },
+          "3": {
+            "count": 128,
+            "rate": 0.03840384038403841,
+            "interval95": {
+              "low": 0.032393376907092944,
+              "high": 0.0454771069104173
+            }
+          }
+        },
+        "affixType": {
+          "keen": {
+            "count": 974,
+            "rate": 0.29222922292229225,
+            "interval95": {
+              "low": 0.27703576041710204,
+              "high": 0.3079010676905521
+            }
+          },
+          "striking": {
+            "count": 344,
+            "rate": 0.10321032103210322,
+            "interval95": {
+              "low": 0.09333445938253372,
+              "high": 0.11399977191331113
+            }
+          },
+          "piercing": {
+            "count": 328,
+            "rate": 0.09840984098409841,
+            "interval95": {
+              "low": 0.088755014786451,
+              "high": 0.10898930928877647
+            }
+          },
+          "bleeding": {
+            "count": 320,
+            "rate": 0.096009600960096,
+            "interval95": {
+              "low": 0.08646802566275587,
+              "high": 0.10648134480216288
+            }
+          }
+        },
+        "affixTier": {
+          "keen|tier-1": {
+            "count": 974,
+            "rate": 0.29222922292229225,
+            "interval95": {
+              "low": 0.27703576041710204,
+              "high": 0.3079010676905521
+            }
+          },
+          "striking|tier-1": {
+            "count": 344,
+            "rate": 0.10321032103210322,
+            "interval95": {
+              "low": 0.09333445938253372,
+              "high": 0.11399977191331113
+            }
+          },
+          "piercing|tier-1": {
+            "count": 328,
+            "rate": 0.09840984098409841,
+            "interval95": {
+              "low": 0.088755014786451,
+              "high": 0.10898930928877647
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 320,
+            "rate": 0.096009600960096,
+            "interval95": {
+              "low": 0.08646802566275587,
+              "high": 0.10648134480216288
+            }
+          }
+        },
+        "special": {
+          "count": 2,
+          "rate": 0.0006000600060006001,
+          "interval95": {
+            "low": 0.00016457352383426123,
+            "high": 0.002185390931314127
+          },
+          "expectedProbability": 0.0005
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 19.00810081008103,
+          "low95": 18.74887961807816,
+          "high95": 19.267322002083898,
+          "median": 14,
+          "min": 14,
+          "max": 72,
+          "plannedFeeGold": 5,
+          "plannedSite": "home",
+          "storeFeeGold": 6,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 43,
+          "influenceMaterialOpportunityCostGold": 25,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 73,
+          "expectedMarginAtPlannedCostGold": -53.991899189918996,
+          "minimumObservedMarginAtPlannedCostGold": -59,
+          "maximumObservedMarginAtPlannedCostGold": -1,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -133.991899189919,
+          "storeTotalInputCostGold": 74,
+          "expectedMarginAtStoreCostGold": -54.991899189918996
+        }
+      },
+      {
+        "recipeId": "fieldSpear",
+        "smithingLevel": 3,
+        "material": null,
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2889,
+            "rate": 0.8667866786678667,
+            "interval95": {
+              "low": 0.8548272006081356,
+              "high": 0.877901647967161
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 350,
+            "rate": 0.10501050105010501,
+            "interval95": {
+              "low": 0.09505355715940511,
+              "high": 0.11587688934417123
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 86,
+            "rate": 0.025802580258025804,
+            "interval95": {
+              "low": 0.0209414411296028,
+              "high": 0.031755536233786824
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 8,
+            "rate": 0.0024002400240024004,
+            "interval95": {
+              "low": 0.0012167460833476887,
+              "high": 0.004729433579532217
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2889,
+            "rate": 0.8667866786678667,
+            "interval95": {
+              "low": 0.8548272006081356,
+              "high": 0.877901647967161
+            }
+          },
+          "2": {
+            "count": 350,
+            "rate": 0.10501050105010501,
+            "interval95": {
+              "low": 0.09505355715940511,
+              "high": 0.11587688934417123
+            }
+          },
+          "3": {
+            "count": 94,
+            "rate": 0.028202820282028203,
+            "interval95": {
+              "low": 0.02310263809563233,
+              "high": 0.03438929287806598
+            }
+          }
+        },
+        "affixType": {
+          "striking": {
+            "count": 1016,
+            "rate": 0.30483048304830485,
+            "interval95": {
+              "low": 0.28943449242327063,
+              "high": 0.32067584213850414
+            }
+          },
+          "piercing": {
+            "count": 963,
+            "rate": 0.2889288928892889,
+            "interval95": {
+              "low": 0.2737908148370754,
+              "high": 0.30455295205640426
+            }
+          },
+          "bleeding": {
+            "count": 945,
+            "rate": 0.28352835283528355,
+            "interval95": {
+              "low": 0.2684830454500007,
+              "high": 0.2990720758202845
+            }
+          },
+          "keen": {
+            "count": 947,
+            "rate": 0.28412841284128415,
+            "interval95": {
+              "low": 0.26907266521308576,
+              "high": 0.29968119445977653
+            }
+          }
+        },
+        "affixTier": {
+          "striking|tier-1": {
+            "count": 1016,
+            "rate": 0.30483048304830485,
+            "interval95": {
+              "low": 0.28943449242327063,
+              "high": 0.32067584213850414
+            }
+          },
+          "piercing|tier-1": {
+            "count": 963,
+            "rate": 0.2889288928892889,
+            "interval95": {
+              "low": 0.2737908148370754,
+              "high": 0.30455295205640426
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 945,
+            "rate": 0.28352835283528355,
+            "interval95": {
+              "low": 0.2684830454500007,
+              "high": 0.2990720758202845
+            }
+          },
+          "keen|tier-1": {
+            "count": 947,
+            "rate": 0.28412841284128415,
+            "interval95": {
+              "low": 0.26907266521308576,
+              "high": 0.29968119445977653
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 23.527752775277573,
+          "low95": 23.365354011481497,
+          "high95": 23.69015153907365,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 5,
+          "plannedSite": "home",
+          "storeFeeGold": 6,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 43,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 48,
+          "expectedMarginAtPlannedCostGold": -24.472247224722473,
+          "minimumObservedMarginAtPlannedCostGold": -26,
+          "maximumObservedMarginAtPlannedCostGold": 24,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -104.47224722472248,
+          "storeTotalInputCostGold": 49,
+          "expectedMarginAtStoreCostGold": -25.472247224722473
+        }
+      },
+      {
+        "recipeId": "fieldSpear",
+        "smithingLevel": 3,
+        "material": "wolfFang",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2889,
+            "rate": 0.8667866786678667,
+            "interval95": {
+              "low": 0.8548272006081356,
+              "high": 0.877901647967161
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 350,
+            "rate": 0.10501050105010501,
+            "interval95": {
+              "low": 0.09505355715940511,
+              "high": 0.11587688934417123
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 86,
+            "rate": 0.025802580258025804,
+            "interval95": {
+              "low": 0.0209414411296028,
+              "high": 0.031755536233786824
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 8,
+            "rate": 0.0024002400240024004,
+            "interval95": {
+              "low": 0.0012167460833476887,
+              "high": 0.004729433579532217
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2889,
+            "rate": 0.8667866786678667,
+            "interval95": {
+              "low": 0.8548272006081356,
+              "high": 0.877901647967161
+            }
+          },
+          "2": {
+            "count": 350,
+            "rate": 0.10501050105010501,
+            "interval95": {
+              "low": 0.09505355715940511,
+              "high": 0.11587688934417123
+            }
+          },
+          "3": {
+            "count": 94,
+            "rate": 0.028202820282028203,
+            "interval95": {
+              "low": 0.02310263809563233,
+              "high": 0.03438929287806598
+            }
+          }
+        },
+        "affixType": {
+          "striking": {
+            "count": 440,
+            "rate": 0.132013201320132,
+            "interval95": {
+              "low": 0.12094364241190618,
+              "high": 0.1439300322076429
+            }
+          },
+          "bleeding": {
+            "count": 1801,
+            "rate": 0.5403540354035403,
+            "interval95": {
+              "low": 0.5233979969054389,
+              "high": 0.5572171606678759
+            }
+          },
+          "keen": {
+            "count": 441,
+            "rate": 0.1323132313231323,
+            "interval95": {
+              "low": 0.12123229052308274,
+              "high": 0.14424075329775496
+            }
+          },
+          "piercing": {
+            "count": 1189,
+            "rate": 0.35673567356735675,
+            "interval95": {
+              "low": 0.34064621353015273,
+              "high": 0.3731549928545474
+            }
+          }
+        },
+        "affixTier": {
+          "striking|tier-1": {
+            "count": 440,
+            "rate": 0.132013201320132,
+            "interval95": {
+              "low": 0.12094364241190618,
+              "high": 0.1439300322076429
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 1801,
+            "rate": 0.5403540354035403,
+            "interval95": {
+              "low": 0.5233979969054389,
+              "high": 0.5572171606678759
+            }
+          },
+          "keen|tier-1": {
+            "count": 441,
+            "rate": 0.1323132313231323,
+            "interval95": {
+              "low": 0.12123229052308274,
+              "high": 0.14424075329775496
+            }
+          },
+          "piercing|tier-1": {
+            "count": 1189,
+            "rate": 0.35673567356735675,
+            "interval95": {
+              "low": 0.34064621353015273,
+              "high": 0.3731549928545474
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 23.527752775277573,
+          "low95": 23.365354011481497,
+          "high95": 23.69015153907365,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 5,
+          "plannedSite": "home",
+          "storeFeeGold": 6,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 43,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 53,
+          "expectedMarginAtPlannedCostGold": -29.472247224722473,
+          "minimumObservedMarginAtPlannedCostGold": -31,
+          "maximumObservedMarginAtPlannedCostGold": 19,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -109.47224722472248,
+          "storeTotalInputCostGold": 54,
+          "expectedMarginAtStoreCostGold": -30.472247224722473
+        }
+      },
+      {
+        "recipeId": "fieldSpear",
+        "smithingLevel": 3,
+        "material": "moonStone",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2889,
+            "rate": 0.8667866786678667,
+            "interval95": {
+              "low": 0.8548272006081356,
+              "high": 0.877901647967161
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 350,
+            "rate": 0.10501050105010501,
+            "interval95": {
+              "low": 0.09505355715940511,
+              "high": 0.11587688934417123
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 86,
+            "rate": 0.025802580258025804,
+            "interval95": {
+              "low": 0.0209414411296028,
+              "high": 0.031755536233786824
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 8,
+            "rate": 0.0024002400240024004,
+            "interval95": {
+              "low": 0.0012167460833476887,
+              "high": 0.004729433579532217
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2889,
+            "rate": 0.8667866786678667,
+            "interval95": {
+              "low": 0.8548272006081356,
+              "high": 0.877901647967161
+            }
+          },
+          "2": {
+            "count": 350,
+            "rate": 0.10501050105010501,
+            "interval95": {
+              "low": 0.09505355715940511,
+              "high": 0.11587688934417123
+            }
+          },
+          "3": {
+            "count": 94,
+            "rate": 0.028202820282028203,
+            "interval95": {
+              "low": 0.02310263809563233,
+              "high": 0.03438929287806598
+            }
+          }
+        },
+        "affixType": {
+          "striking": {
+            "count": 553,
+            "rate": 0.16591659165916592,
+            "interval95": {
+              "low": 0.15367328720417606,
+              "high": 0.17892910716098331
+            }
+          },
+          "keen": {
+            "count": 2236,
+            "rate": 0.6708670867086709,
+            "interval95": {
+              "low": 0.6547256468978082,
+              "high": 0.6866151132360416
+            }
+          },
+          "bleeding": {
+            "count": 554,
+            "rate": 0.16621662166216622,
+            "interval95": {
+              "low": 0.15396385176758032,
+              "high": 0.1792379117988676
+            }
+          },
+          "piercing": {
+            "count": 528,
+            "rate": 0.15841584158415842,
+            "interval95": {
+              "low": 0.14641406712276533,
+              "high": 0.17120409721017937
+            }
+          }
+        },
+        "affixTier": {
+          "striking|tier-1": {
+            "count": 553,
+            "rate": 0.16591659165916592,
+            "interval95": {
+              "low": 0.15367328720417606,
+              "high": 0.17892910716098331
+            }
+          },
+          "keen|tier-1": {
+            "count": 2236,
+            "rate": 0.6708670867086709,
+            "interval95": {
+              "low": 0.6547256468978082,
+              "high": 0.6866151132360416
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 554,
+            "rate": 0.16621662166216622,
+            "interval95": {
+              "low": 0.15396385176758032,
+              "high": 0.1792379117988676
+            }
+          },
+          "piercing|tier-1": {
+            "count": 528,
+            "rate": 0.15841584158415842,
+            "interval95": {
+              "low": 0.14641406712276533,
+              "high": 0.17120409721017937
+            }
+          }
+        },
+        "special": {
+          "count": 1,
+          "rate": 0.00030003000300030005,
+          "interval95": {
+            "low": 5.296462620655348e-05,
+            "high": 0.0016976306276532487
+          },
+          "expectedProbability": 0.0005
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 23.527752775277573,
+          "low95": 23.365354011481497,
+          "high95": 23.69015153907365,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 5,
+          "plannedSite": "home",
+          "storeFeeGold": 6,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 43,
+          "influenceMaterialOpportunityCostGold": 25,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 73,
+          "expectedMarginAtPlannedCostGold": -49.47224722472247,
+          "minimumObservedMarginAtPlannedCostGold": -51,
+          "maximumObservedMarginAtPlannedCostGold": -1,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -129.47224722472248,
+          "storeTotalInputCostGold": 74,
+          "expectedMarginAtStoreCostGold": -50.47224722472247
+        }
+      },
+      {
+        "recipeId": "fieldSpear",
+        "smithingLevel": 6,
+        "material": null,
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2906,
+            "rate": 0.8718871887188719,
+            "interval95": {
+              "low": 0.8601111486493511,
+              "high": 0.8828069763478514
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 333,
+            "rate": 0.0999099909990999,
+            "interval95": {
+              "low": 0.09018532187730065,
+              "high": 0.11055584820436971
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 89,
+            "rate": 0.026702670267026704,
+            "interval95": {
+              "low": 0.021750558427593533,
+              "high": 0.03274452653966185
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 5,
+            "rate": 0.0015001500150015,
+            "interval95": {
+              "low": 0.0006409393262339859,
+              "high": 0.00350713273278016
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2906,
+            "rate": 0.8718871887188719,
+            "interval95": {
+              "low": 0.8601111486493511,
+              "high": 0.8828069763478514
+            }
+          },
+          "2": {
+            "count": 333,
+            "rate": 0.0999099909990999,
+            "interval95": {
+              "low": 0.09018532187730065,
+              "high": 0.11055584820436971
+            }
+          },
+          "3": {
+            "count": 94,
+            "rate": 0.028202820282028203,
+            "interval95": {
+              "low": 0.02310263809563233,
+              "high": 0.03438929287806598
+            }
+          }
+        },
+        "affixType": {
+          "piercing": {
+            "count": 988,
+            "rate": 0.2964296429642964,
+            "interval95": {
+              "low": 0.28116710835130365,
+              "high": 0.3121608885743906
+            }
+          },
+          "striking": {
+            "count": 979,
+            "rate": 0.29372937293729373,
+            "interval95": {
+              "low": 0.2785110604843796,
+              "high": 0.3094226136297174
+            }
+          },
+          "keen": {
+            "count": 950,
+            "rate": 0.285028502850285,
+            "interval95": {
+              "low": 0.2699571571704475,
+              "high": 0.3005948101062806
+            }
+          },
+          "bleeding": {
+            "count": 937,
+            "rate": 0.28112811281128114,
+            "interval95": {
+              "low": 0.26612490011572937,
+              "high": 0.2966352675442471
+            }
+          }
+        },
+        "affixTier": {
+          "piercing|tier-1": {
+            "count": 988,
+            "rate": 0.2964296429642964,
+            "interval95": {
+              "low": 0.28116710835130365,
+              "high": 0.3121608885743906
+            }
+          },
+          "striking|tier-1": {
+            "count": 979,
+            "rate": 0.29372937293729373,
+            "interval95": {
+              "low": 0.2785110604843796,
+              "high": 0.3094226136297174
+            }
+          },
+          "keen|tier-1": {
+            "count": 950,
+            "rate": 0.285028502850285,
+            "interval95": {
+              "low": 0.2699571571704475,
+              "high": 0.3005948101062806
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 937,
+            "rate": 0.28112811281128114,
+            "interval95": {
+              "low": 0.26612490011572937,
+              "high": 0.2966352675442471
+            }
+          }
+        },
+        "special": {
+          "count": 1,
+          "rate": 0.00030003000300030005,
+          "interval95": {
+            "low": 5.296462620655348e-05,
+            "high": 0.0016976306276532487
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 23.461746174617495,
+          "low95": 23.30639984039473,
+          "high95": 23.617092508840262,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 5,
+          "plannedSite": "home",
+          "storeFeeGold": 6,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 43,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 48,
+          "expectedMarginAtPlannedCostGold": -24.538253825382537,
+          "minimumObservedMarginAtPlannedCostGold": -26,
+          "maximumObservedMarginAtPlannedCostGold": 24,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -104.53825382538254,
+          "storeTotalInputCostGold": 49,
+          "expectedMarginAtStoreCostGold": -25.538253825382537
+        }
+      },
+      {
+        "recipeId": "fieldSpear",
+        "smithingLevel": 6,
+        "material": "wolfFang",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2906,
+            "rate": 0.8718871887188719,
+            "interval95": {
+              "low": 0.8601111486493511,
+              "high": 0.8828069763478514
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 333,
+            "rate": 0.0999099909990999,
+            "interval95": {
+              "low": 0.09018532187730065,
+              "high": 0.11055584820436971
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 89,
+            "rate": 0.026702670267026704,
+            "interval95": {
+              "low": 0.021750558427593533,
+              "high": 0.03274452653966185
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 5,
+            "rate": 0.0015001500150015,
+            "interval95": {
+              "low": 0.0006409393262339859,
+              "high": 0.00350713273278016
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2906,
+            "rate": 0.8718871887188719,
+            "interval95": {
+              "low": 0.8601111486493511,
+              "high": 0.8828069763478514
+            }
+          },
+          "2": {
+            "count": 333,
+            "rate": 0.0999099909990999,
+            "interval95": {
+              "low": 0.09018532187730065,
+              "high": 0.11055584820436971
+            }
+          },
+          "3": {
+            "count": 94,
+            "rate": 0.028202820282028203,
+            "interval95": {
+              "low": 0.02310263809563233,
+              "high": 0.03438929287806598
+            }
+          }
+        },
+        "affixType": {
+          "bleeding": {
+            "count": 1820,
+            "rate": 0.5460546054605461,
+            "interval95": {
+              "low": 0.529108761005701,
+              "high": 0.5628944113920971
+            }
+          },
+          "piercing": {
+            "count": 1180,
+            "rate": 0.354035403540354,
+            "interval95": {
+              "low": 0.3379767010417499,
+              "high": 0.37043018253135285
+            }
+          },
+          "keen": {
+            "count": 413,
+            "rate": 0.12391239123912391,
+            "interval95": {
+              "low": 0.11315775366113653,
+              "high": 0.13553295252362074
+            }
+          },
+          "striking": {
+            "count": 441,
+            "rate": 0.1323132313231323,
+            "interval95": {
+              "low": 0.12123229052308274,
+              "high": 0.14424075329775496
+            }
+          }
+        },
+        "affixTier": {
+          "bleeding|tier-1": {
+            "count": 1820,
+            "rate": 0.5460546054605461,
+            "interval95": {
+              "low": 0.529108761005701,
+              "high": 0.5628944113920971
+            }
+          },
+          "piercing|tier-1": {
+            "count": 1180,
+            "rate": 0.354035403540354,
+            "interval95": {
+              "low": 0.3379767010417499,
+              "high": 0.37043018253135285
+            }
+          },
+          "keen|tier-1": {
+            "count": 413,
+            "rate": 0.12391239123912391,
+            "interval95": {
+              "low": 0.11315775366113653,
+              "high": 0.13553295252362074
+            }
+          },
+          "striking|tier-1": {
+            "count": 441,
+            "rate": 0.1323132313231323,
+            "interval95": {
+              "low": 0.12123229052308274,
+              "high": 0.14424075329775496
+            }
+          }
+        },
+        "special": {
+          "count": 1,
+          "rate": 0.00030003000300030005,
+          "interval95": {
+            "low": 5.296462620655348e-05,
+            "high": 0.0016976306276532487
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 23.461746174617495,
+          "low95": 23.30639984039473,
+          "high95": 23.617092508840262,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 5,
+          "plannedSite": "home",
+          "storeFeeGold": 6,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 43,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 53,
+          "expectedMarginAtPlannedCostGold": -29.538253825382537,
+          "minimumObservedMarginAtPlannedCostGold": -31,
+          "maximumObservedMarginAtPlannedCostGold": 19,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -109.53825382538254,
+          "storeTotalInputCostGold": 54,
+          "expectedMarginAtStoreCostGold": -30.538253825382537
+        }
+      },
+      {
+        "recipeId": "fieldSpear",
+        "smithingLevel": 6,
+        "material": "moonStone",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2906,
+            "rate": 0.8718871887188719,
+            "interval95": {
+              "low": 0.8601111486493511,
+              "high": 0.8828069763478514
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 333,
+            "rate": 0.0999099909990999,
+            "interval95": {
+              "low": 0.09018532187730065,
+              "high": 0.11055584820436971
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 89,
+            "rate": 0.026702670267026704,
+            "interval95": {
+              "low": 0.021750558427593533,
+              "high": 0.03274452653966185
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 5,
+            "rate": 0.0015001500150015,
+            "interval95": {
+              "low": 0.0006409393262339859,
+              "high": 0.00350713273278016
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2906,
+            "rate": 0.8718871887188719,
+            "interval95": {
+              "low": 0.8601111486493511,
+              "high": 0.8828069763478514
+            }
+          },
+          "2": {
+            "count": 333,
+            "rate": 0.0999099909990999,
+            "interval95": {
+              "low": 0.09018532187730065,
+              "high": 0.11055584820436971
+            }
+          },
+          "3": {
+            "count": 94,
+            "rate": 0.028202820282028203,
+            "interval95": {
+              "low": 0.02310263809563233,
+              "high": 0.03438929287806598
+            }
+          }
+        },
+        "affixType": {
+          "keen": {
+            "count": 2231,
+            "rate": 0.6693669366936693,
+            "interval95": {
+              "low": 0.6532088299404261,
+              "high": 0.6851350841869807
+            }
+          },
+          "piercing": {
+            "count": 560,
+            "rate": 0.16801680168016803,
+            "interval95": {
+              "low": 0.15570754804720502,
+              "high": 0.18109043072697448
+            }
+          },
+          "bleeding": {
+            "count": 524,
+            "rate": 0.1572157215721572,
+            "interval95": {
+              "low": 0.14525348507851296,
+              "high": 0.1699672024492774
+            }
+          },
+          "striking": {
+            "count": 539,
+            "rate": 0.1617161716171617,
+            "interval95": {
+              "low": 0.14960695155561327,
+              "high": 0.17460427399150585
+            }
+          }
+        },
+        "affixTier": {
+          "keen|tier-1": {
+            "count": 2231,
+            "rate": 0.6693669366936693,
+            "interval95": {
+              "low": 0.6532088299404261,
+              "high": 0.6851350841869807
+            }
+          },
+          "piercing|tier-1": {
+            "count": 560,
+            "rate": 0.16801680168016803,
+            "interval95": {
+              "low": 0.15570754804720502,
+              "high": 0.18109043072697448
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 524,
+            "rate": 0.1572157215721572,
+            "interval95": {
+              "low": 0.14525348507851296,
+              "high": 0.1699672024492774
+            }
+          },
+          "striking|tier-1": {
+            "count": 539,
+            "rate": 0.1617161716171617,
+            "interval95": {
+              "low": 0.14960695155561327,
+              "high": 0.17460427399150585
+            }
+          }
+        },
+        "special": {
+          "count": 1,
+          "rate": 0.00030003000300030005,
+          "interval95": {
+            "low": 5.296462620655348e-05,
+            "high": 0.0016976306276532487
+          },
+          "expectedProbability": 0.0005
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 23.461746174617495,
+          "low95": 23.30639984039473,
+          "high95": 23.617092508840262,
+          "median": 22,
+          "min": 22,
+          "max": 72,
+          "plannedFeeGold": 5,
+          "plannedSite": "home",
+          "storeFeeGold": 6,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 43,
+          "influenceMaterialOpportunityCostGold": 25,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 73,
+          "expectedMarginAtPlannedCostGold": -49.53825382538254,
+          "minimumObservedMarginAtPlannedCostGold": -51,
+          "maximumObservedMarginAtPlannedCostGold": -1,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -129.53825382538253,
+          "storeTotalInputCostGold": 74,
+          "expectedMarginAtStoreCostGold": -50.53825382538254
+        }
+      },
+      {
+        "recipeId": "fieldArmor",
+        "smithingLevel": 2,
+        "material": null,
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 1937,
+            "rate": 0.5811581158115812,
+            "interval95": {
+              "low": 0.5643245371850673,
+              "high": 0.5978048317634953
+            },
+            "expectedProbability": 0.6
+          },
+          "uncommon": {
+            "count": 978,
+            "rate": 0.2934293429342934,
+            "interval95": {
+              "low": 0.27821598430403777,
+              "high": 0.3091183206087706
+            },
+            "expectedProbability": 0.27
+          },
+          "rare": {
+            "count": 322,
+            "rate": 0.0966096609660966,
+            "interval95": {
+              "low": 0.08703959699577021,
+              "high": 0.10710851187172571
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 87,
+            "rate": 0.026102610261026102,
+            "interval95": {
+              "low": 0.02121096256224665,
+              "high": 0.03208538400243156
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 9,
+            "rate": 0.0027002700270027003,
+            "interval95": {
+              "low": 0.00142129168000746,
+              "high": 0.005124257184161031
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "0": {
+            "count": 1937,
+            "rate": 0.5811581158115812,
+            "interval95": {
+              "low": 0.5643245371850673,
+              "high": 0.5978048317634953
+            }
+          },
+          "1": {
+            "count": 978,
+            "rate": 0.2934293429342934,
+            "interval95": {
+              "low": 0.27821598430403777,
+              "high": 0.3091183206087706
+            }
+          },
+          "2": {
+            "count": 322,
+            "rate": 0.0966096609660966,
+            "interval95": {
+              "low": 0.08703959699577021,
+              "high": 0.10710851187172571
+            }
+          },
+          "3": {
+            "count": 96,
+            "rate": 0.0288028802880288,
+            "interval95": {
+              "low": 0.023644648851101624,
+              "high": 0.03504602052517385
+            }
+          }
+        },
+        "affixType": {
+          "warding": {
+            "count": 627,
+            "rate": 0.18811881188118812,
+            "interval95": {
+              "low": 0.17521302396435695,
+              "high": 0.2017426912961578
+            }
+          },
+          "blocking": {
+            "count": 675,
+            "rate": 0.20252025202520252,
+            "interval95": {
+              "low": 0.18922281496676124,
+              "high": 0.2165026219556056
+            }
+          },
+          "sturdy": {
+            "count": 608,
+            "rate": 0.18241824182418243,
+            "interval95": {
+              "low": 0.1696754702218833,
+              "high": 0.19589223021414828
+            }
+          }
+        },
+        "affixTier": {
+          "warding|tier-1": {
+            "count": 627,
+            "rate": 0.18811881188118812,
+            "interval95": {
+              "low": 0.17521302396435695,
+              "high": 0.2017426912961578
+            }
+          },
+          "blocking|tier-1": {
+            "count": 675,
+            "rate": 0.20252025202520252,
+            "interval95": {
+              "low": 0.18922281496676124,
+              "high": 0.2165026219556056
+            }
+          },
+          "sturdy|tier-1": {
+            "count": 608,
+            "rate": 0.18241824182418243,
+            "interval95": {
+              "low": 0.1696754702218833,
+              "high": 0.19589223021414828
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 24.058205820582128,
+          "low95": 23.747446794854596,
+          "high95": 24.36896484630966,
+          "median": 18,
+          "min": 18,
+          "max": 92,
+          "plannedFeeGold": 7,
+          "plannedSite": "home",
+          "storeFeeGold": 8,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 33,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 40,
+          "expectedMarginAtPlannedCostGold": -15.941794179417943,
+          "minimumObservedMarginAtPlannedCostGold": -22,
+          "maximumObservedMarginAtPlannedCostGold": 52,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -95.94179417941794,
+          "storeTotalInputCostGold": 41,
+          "expectedMarginAtStoreCostGold": -16.941794179417943
+        }
+      },
+      {
+        "recipeId": "fieldArmor",
+        "smithingLevel": 2,
+        "material": "wolfHide",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 1937,
+            "rate": 0.5811581158115812,
+            "interval95": {
+              "low": 0.5643245371850673,
+              "high": 0.5978048317634953
+            },
+            "expectedProbability": 0.6
+          },
+          "uncommon": {
+            "count": 978,
+            "rate": 0.2934293429342934,
+            "interval95": {
+              "low": 0.27821598430403777,
+              "high": 0.3091183206087706
+            },
+            "expectedProbability": 0.27
+          },
+          "rare": {
+            "count": 322,
+            "rate": 0.0966096609660966,
+            "interval95": {
+              "low": 0.08703959699577021,
+              "high": 0.10710851187172571
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 87,
+            "rate": 0.026102610261026102,
+            "interval95": {
+              "low": 0.02121096256224665,
+              "high": 0.03208538400243156
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 9,
+            "rate": 0.0027002700270027003,
+            "interval95": {
+              "low": 0.00142129168000746,
+              "high": 0.005124257184161031
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "0": {
+            "count": 1937,
+            "rate": 0.5811581158115812,
+            "interval95": {
+              "low": 0.5643245371850673,
+              "high": 0.5978048317634953
+            }
+          },
+          "1": {
+            "count": 978,
+            "rate": 0.2934293429342934,
+            "interval95": {
+              "low": 0.27821598430403777,
+              "high": 0.3091183206087706
+            }
+          },
+          "2": {
+            "count": 322,
+            "rate": 0.0966096609660966,
+            "interval95": {
+              "low": 0.08703959699577021,
+              "high": 0.10710851187172571
+            }
+          },
+          "3": {
+            "count": 96,
+            "rate": 0.0288028802880288,
+            "interval95": {
+              "low": 0.023644648851101624,
+              "high": 0.03504602052517385
+            }
+          }
+        },
+        "affixType": {
+          "warding": {
+            "count": 323,
+            "rate": 0.0969096909690969,
+            "interval95": {
+              "low": 0.08732542695202689,
+              "high": 0.10742205111675762
+            }
+          },
+          "sturdy": {
+            "count": 853,
+            "rate": 0.2559255925592559,
+            "interval95": {
+              "low": 0.2413976522630975,
+              "high": 0.2710155024886376
+            }
+          },
+          "blocking": {
+            "count": 734,
+            "rate": 0.22022202220222023,
+            "interval95": {
+              "low": 0.20648007032680787,
+              "high": 0.2346081494715856
+            }
+          }
+        },
+        "affixTier": {
+          "warding|tier-1": {
+            "count": 323,
+            "rate": 0.0969096909690969,
+            "interval95": {
+              "low": 0.08732542695202689,
+              "high": 0.10742205111675762
+            }
+          },
+          "sturdy|tier-1": {
+            "count": 853,
+            "rate": 0.2559255925592559,
+            "interval95": {
+              "low": 0.2413976522630975,
+              "high": 0.2710155024886376
+            }
+          },
+          "blocking|tier-1": {
+            "count": 734,
+            "rate": 0.22022202220222023,
+            "interval95": {
+              "low": 0.20648007032680787,
+              "high": 0.2346081494715856
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 24.058205820582128,
+          "low95": 23.747446794854596,
+          "high95": 24.36896484630966,
+          "median": 18,
+          "min": 18,
+          "max": 92,
+          "plannedFeeGold": 7,
+          "plannedSite": "home",
+          "storeFeeGold": 8,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 33,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 45,
+          "expectedMarginAtPlannedCostGold": -20.941794179417943,
+          "minimumObservedMarginAtPlannedCostGold": -27,
+          "maximumObservedMarginAtPlannedCostGold": 47,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -100.94179417941794,
+          "storeTotalInputCostGold": 46,
+          "expectedMarginAtStoreCostGold": -21.941794179417943
+        }
+      },
+      {
+        "recipeId": "fieldArmor",
+        "smithingLevel": 3,
+        "material": null,
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2903,
+            "rate": 0.870987098709871,
+            "interval95": {
+              "low": 0.8591782674355,
+              "high": 0.8819417499578368
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 331,
+            "rate": 0.09930993099309932,
+            "interval95": {
+              "low": 0.08961311365963334,
+              "high": 0.10992931801945988
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 88,
+            "rate": 0.026402640264026403,
+            "interval95": {
+              "low": 0.021480669339018762,
+              "high": 0.032415046426948035
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 11,
+            "rate": 0.0033003300330033004,
+            "interval95": {
+              "low": 0.0018438790179478156,
+              "high": 0.005900408248797848
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2903,
+            "rate": 0.870987098709871,
+            "interval95": {
+              "low": 0.8591782674355,
+              "high": 0.8819417499578368
+            }
+          },
+          "2": {
+            "count": 331,
+            "rate": 0.09930993099309932,
+            "interval95": {
+              "low": 0.08961311365963334,
+              "high": 0.10992931801945988
+            }
+          },
+          "3": {
+            "count": 99,
+            "rate": 0.0297029702970297,
+            "interval95": {
+              "low": 0.024458865282246944,
+              "high": 0.036029911697894296
+            }
+          }
+        },
+        "affixType": {
+          "sturdy": {
+            "count": 1244,
+            "rate": 0.3732373237323732,
+            "interval95": {
+              "low": 0.35697200960350245,
+              "high": 0.3897945028520699
+            }
+          },
+          "warding": {
+            "count": 1291,
+            "rate": 0.38733873387338735,
+            "interval95": {
+              "low": 0.3709393269740823,
+              "high": 0.4039975379420536
+            }
+          },
+          "blocking": {
+            "count": 1327,
+            "rate": 0.39813981398139814,
+            "interval95": {
+              "low": 0.3816475711353465,
+              "high": 0.4148665850271785
+            }
+          }
+        },
+        "affixTier": {
+          "sturdy|tier-1": {
+            "count": 1244,
+            "rate": 0.3732373237323732,
+            "interval95": {
+              "low": 0.35697200960350245,
+              "high": 0.3897945028520699
+            }
+          },
+          "warding|tier-1": {
+            "count": 1291,
+            "rate": 0.38733873387338735,
+            "interval95": {
+              "low": 0.3709393269740823,
+              "high": 0.4039975379420536
+            }
+          },
+          "blocking|tier-1": {
+            "count": 1327,
+            "rate": 0.39813981398139814,
+            "interval95": {
+              "low": 0.3816475711353465,
+              "high": 0.4148665850271785
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 29.943594359435917,
+          "low95": 29.727853837854145,
+          "high95": 30.15933488101769,
+          "median": 28,
+          "min": 28,
+          "max": 92,
+          "plannedFeeGold": 7,
+          "plannedSite": "home",
+          "storeFeeGold": 8,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 33,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 40,
+          "expectedMarginAtPlannedCostGold": -10.056405640564055,
+          "minimumObservedMarginAtPlannedCostGold": -12,
+          "maximumObservedMarginAtPlannedCostGold": 52,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -90.05640564056405,
+          "storeTotalInputCostGold": 41,
+          "expectedMarginAtStoreCostGold": -11.056405640564055
+        }
+      },
+      {
+        "recipeId": "fieldArmor",
+        "smithingLevel": 3,
+        "material": "wolfHide",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2903,
+            "rate": 0.870987098709871,
+            "interval95": {
+              "low": 0.8591782674355,
+              "high": 0.8819417499578368
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 331,
+            "rate": 0.09930993099309932,
+            "interval95": {
+              "low": 0.08961311365963334,
+              "high": 0.10992931801945988
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 88,
+            "rate": 0.026402640264026403,
+            "interval95": {
+              "low": 0.021480669339018762,
+              "high": 0.032415046426948035
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 11,
+            "rate": 0.0033003300330033004,
+            "interval95": {
+              "low": 0.0018438790179478156,
+              "high": 0.005900408248797848
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2903,
+            "rate": 0.870987098709871,
+            "interval95": {
+              "low": 0.8591782674355,
+              "high": 0.8819417499578368
+            }
+          },
+          "2": {
+            "count": 331,
+            "rate": 0.09930993099309932,
+            "interval95": {
+              "low": 0.08961311365963334,
+              "high": 0.10992931801945988
+            }
+          },
+          "3": {
+            "count": 99,
+            "rate": 0.0297029702970297,
+            "interval95": {
+              "low": 0.024458865282246944,
+              "high": 0.036029911697894296
+            }
+          }
+        },
+        "affixType": {
+          "sturdy": {
+            "count": 1799,
+            "rate": 0.5397539753975398,
+            "interval95": {
+              "low": 0.5227969933463966,
+              "high": 0.556619425824341
+            }
+          },
+          "blocking": {
+            "count": 1475,
+            "rate": 0.44254425442544254,
+            "interval95": {
+              "low": 0.42575778779196816,
+              "high": 0.45946301016126756
+            }
+          },
+          "warding": {
+            "count": 588,
+            "rate": 0.17641764176417643,
+            "interval95": {
+              "low": 0.163851629185329,
+              "high": 0.1897286872249309
+            }
+          }
+        },
+        "affixTier": {
+          "sturdy|tier-1": {
+            "count": 1799,
+            "rate": 0.5397539753975398,
+            "interval95": {
+              "low": 0.5227969933463966,
+              "high": 0.556619425824341
+            }
+          },
+          "blocking|tier-1": {
+            "count": 1475,
+            "rate": 0.44254425442544254,
+            "interval95": {
+              "low": 0.42575778779196816,
+              "high": 0.45946301016126756
+            }
+          },
+          "warding|tier-1": {
+            "count": 588,
+            "rate": 0.17641764176417643,
+            "interval95": {
+              "low": 0.163851629185329,
+              "high": 0.1897286872249309
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 29.943594359435917,
+          "low95": 29.727853837854145,
+          "high95": 30.15933488101769,
+          "median": 28,
+          "min": 28,
+          "max": 92,
+          "plannedFeeGold": 7,
+          "plannedSite": "home",
+          "storeFeeGold": 8,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 33,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 45,
+          "expectedMarginAtPlannedCostGold": -15.056405640564055,
+          "minimumObservedMarginAtPlannedCostGold": -17,
+          "maximumObservedMarginAtPlannedCostGold": 47,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -95.05640564056405,
+          "storeTotalInputCostGold": 46,
+          "expectedMarginAtStoreCostGold": -16.056405640564055
+        }
+      },
+      {
+        "recipeId": "fieldArmor",
+        "smithingLevel": 6,
+        "material": null,
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2908,
+            "rate": 0.8724872487248725,
+            "interval95": {
+              "low": 0.8607331712904535,
+              "high": 0.8833836921093262
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 327,
+            "rate": 0.09810981098109811,
+            "interval95": {
+              "low": 0.08846903921083285,
+              "high": 0.10867591566310603
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 91,
+            "rate": 0.027302730273027303,
+            "interval95": {
+              "low": 0.022290871825829388,
+              "high": 0.03340295154400316
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 7,
+            "rate": 0.0021002100210021,
+            "interval95": {
+              "low": 0.0010177206841040212,
+              "high": 0.004329089777487297
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2908,
+            "rate": 0.8724872487248725,
+            "interval95": {
+              "low": 0.8607331712904535,
+              "high": 0.8833836921093262
+            }
+          },
+          "2": {
+            "count": 327,
+            "rate": 0.09810981098109811,
+            "interval95": {
+              "low": 0.08846903921083285,
+              "high": 0.10867591566310603
+            }
+          },
+          "3": {
+            "count": 98,
+            "rate": 0.029402940294029404,
+            "interval95": {
+              "low": 0.02418730292314187,
+              "high": 0.035702104855710785
+            }
+          }
+        },
+        "affixType": {
+          "warding": {
+            "count": 1246,
+            "rate": 0.37383738373837383,
+            "interval95": {
+              "low": 0.3575660625548787,
+              "high": 0.39039918830327075
+            }
+          },
+          "blocking": {
+            "count": 1325,
+            "rate": 0.39753975397539754,
+            "interval95": {
+              "low": 0.3810524465225279,
+              "high": 0.41426297123741995
+            }
+          },
+          "sturdy": {
+            "count": 1285,
+            "rate": 0.38553855385538555,
+            "interval95": {
+              "low": 0.36915544739009554,
+              "high": 0.4021852023183089
+            }
+          }
+        },
+        "affixTier": {
+          "warding|tier-1": {
+            "count": 1246,
+            "rate": 0.37383738373837383,
+            "interval95": {
+              "low": 0.3575660625548787,
+              "high": 0.39039918830327075
+            }
+          },
+          "blocking|tier-1": {
+            "count": 1325,
+            "rate": 0.39753975397539754,
+            "interval95": {
+              "low": 0.3810524465225279,
+              "high": 0.41426297123741995
+            }
+          },
+          "sturdy|tier-1": {
+            "count": 1285,
+            "rate": 0.38553855385538555,
+            "interval95": {
+              "low": 0.36915544739009554,
+              "high": 0.4021852023183089
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 29.879987998799887,
+          "low95": 29.675458605905213,
+          "high95": 30.08451739169456,
+          "median": 28,
+          "min": 28,
+          "max": 92,
+          "plannedFeeGold": 7,
+          "plannedSite": "home",
+          "storeFeeGold": 8,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 33,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 40,
+          "expectedMarginAtPlannedCostGold": -10.12001200120012,
+          "minimumObservedMarginAtPlannedCostGold": -12,
+          "maximumObservedMarginAtPlannedCostGold": 52,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -90.12001200120012,
+          "storeTotalInputCostGold": 41,
+          "expectedMarginAtStoreCostGold": -11.12001200120012
+        }
+      },
+      {
+        "recipeId": "fieldArmor",
+        "smithingLevel": 6,
+        "material": "wolfHide",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 2908,
+            "rate": 0.8724872487248725,
+            "interval95": {
+              "low": 0.8607331712904535,
+              "high": 0.8833836921093262
+            },
+            "expectedProbability": 0.87
+          },
+          "rare": {
+            "count": 327,
+            "rate": 0.09810981098109811,
+            "interval95": {
+              "low": 0.08846903921083285,
+              "high": 0.10867591566310603
+            },
+            "expectedProbability": 0.1
+          },
+          "epic": {
+            "count": 91,
+            "rate": 0.027302730273027303,
+            "interval95": {
+              "low": 0.022290871825829388,
+              "high": 0.03340295154400316
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 7,
+            "rate": 0.0021002100210021,
+            "interval95": {
+              "low": 0.0010177206841040212,
+              "high": 0.004329089777487297
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "1": {
+            "count": 2908,
+            "rate": 0.8724872487248725,
+            "interval95": {
+              "low": 0.8607331712904535,
+              "high": 0.8833836921093262
+            }
+          },
+          "2": {
+            "count": 327,
+            "rate": 0.09810981098109811,
+            "interval95": {
+              "low": 0.08846903921083285,
+              "high": 0.10867591566310603
+            }
+          },
+          "3": {
+            "count": 98,
+            "rate": 0.029402940294029404,
+            "interval95": {
+              "low": 0.02418730292314187,
+              "high": 0.035702104855710785
+            }
+          }
+        },
+        "affixType": {
+          "warding": {
+            "count": 588,
+            "rate": 0.17641764176417643,
+            "interval95": {
+              "low": 0.163851629185329,
+              "high": 0.1897286872249309
+            }
+          },
+          "blocking": {
+            "count": 1428,
+            "rate": 0.42844284428442847,
+            "interval95": {
+              "low": 0.41173479300414506,
+              "high": 0.4453156524885272
+            }
+          },
+          "sturdy": {
+            "count": 1840,
+            "rate": 0.5520552055205521,
+            "interval95": {
+              "low": 0.5351225020308782,
+              "high": 0.5688680543926915
+            }
+          }
+        },
+        "affixTier": {
+          "warding|tier-1": {
+            "count": 588,
+            "rate": 0.17641764176417643,
+            "interval95": {
+              "low": 0.163851629185329,
+              "high": 0.1897286872249309
+            }
+          },
+          "blocking|tier-1": {
+            "count": 1428,
+            "rate": 0.42844284428442847,
+            "interval95": {
+              "low": 0.41173479300414506,
+              "high": 0.4453156524885272
+            }
+          },
+          "sturdy|tier-1": {
+            "count": 1840,
+            "rate": 0.5520552055205521,
+            "interval95": {
+              "low": 0.5351225020308782,
+              "high": 0.5688680543926915
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 29.879987998799887,
+          "low95": 29.675458605905213,
+          "high95": 30.08451739169456,
+          "median": 28,
+          "min": 28,
+          "max": 92,
+          "plannedFeeGold": 7,
+          "plannedSite": "home",
+          "storeFeeGold": 8,
+          "storeSite": "store",
+          "purchasedRecipeInputsGold": 33,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 80,
+          "plannedTotalInputCostGold": 45,
+          "expectedMarginAtPlannedCostGold": -15.12001200120012,
+          "minimumObservedMarginAtPlannedCostGold": -17,
+          "maximumObservedMarginAtPlannedCostGold": 47,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -95.12001200120012,
+          "storeTotalInputCostGold": 46,
+          "expectedMarginAtStoreCostGold": -16.12001200120012
+        }
+      },
+      {
+        "recipeId": "ironShortSword",
+        "smithingLevel": 5,
+        "material": null,
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "rare": {
+            "count": 3244,
+            "rate": 0.9732973297329733,
+            "interval95": {
+              "low": 0.9672554734603381,
+              "high": 0.9782494415724065
+            },
+            "expectedProbability": 0.97
+          },
+          "epic": {
+            "count": 85,
+            "rate": 0.025502550255025503,
+            "interval95": {
+              "low": 0.020672108160418038,
+              "high": 0.031425500001682996
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 4,
+            "rate": 0.0012001200120012002,
+            "interval95": {
+              "low": 0.0004667991174732227,
+              "high": 0.003081903740252338
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "2": {
+            "count": 3244,
+            "rate": 0.9732973297329733,
+            "interval95": {
+              "low": 0.9672554734603381,
+              "high": 0.9782494415724065
+            }
+          },
+          "3": {
+            "count": 89,
+            "rate": 0.026702670267026704,
+            "interval95": {
+              "low": 0.021750558427593533,
+              "high": 0.03274452653966185
+            }
+          }
+        },
+        "affixType": {
+          "piercing": {
+            "count": 1710,
+            "rate": 0.513051305130513,
+            "interval95": {
+              "low": 0.496077192799946,
+              "high": 0.5299953674561074
+            }
+          },
+          "striking": {
+            "count": 1647,
+            "rate": 0.49414941494149417,
+            "interval95": {
+              "low": 0.4771924492527754,
+              "high": 0.5111198513220973
+            }
+          },
+          "bleeding": {
+            "count": 1692,
+            "rate": 0.5076507650765076,
+            "interval95": {
+              "low": 0.49067908006590877,
+              "high": 0.5246048345669502
+            }
+          },
+          "keen": {
+            "count": 1706,
+            "rate": 0.5118511851185118,
+            "interval95": {
+              "low": 0.4948774412272758,
+              "high": 0.5287976422236232
+            }
+          }
+        },
+        "affixTier": {
+          "piercing|tier-1": {
+            "count": 872,
+            "rate": 0.26162616261626165,
+            "interval95": {
+              "low": 0.2469852653310969,
+              "high": 0.2768159042451215
+            }
+          },
+          "striking|tier-1": {
+            "count": 818,
+            "rate": 0.24542454245424541,
+            "interval95": {
+              "low": 0.23111340519686757,
+              "high": 0.26032182750976707
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 867,
+            "rate": 0.2601260126012601,
+            "interval95": {
+              "low": 0.24551452376803723,
+              "high": 0.2752897998017381
+            }
+          },
+          "keen|tier-1": {
+            "count": 868,
+            "rate": 0.26042604260426044,
+            "interval95": {
+              "low": 0.24580865406405067,
+              "high": 0.27559503870701335
+            }
+          },
+          "striking|tier-2": {
+            "count": 829,
+            "rate": 0.24872487248724873,
+            "interval95": {
+              "low": 0.23434435784347424,
+              "high": 0.26368393607733487
+            }
+          },
+          "piercing|tier-2": {
+            "count": 838,
+            "rate": 0.2514251425142514,
+            "interval95": {
+              "low": 0.2369887145671667,
+              "high": 0.2664339021652397
+            }
+          },
+          "bleeding|tier-2": {
+            "count": 825,
+            "rate": 0.24752475247524752,
+            "interval95": {
+              "low": 0.23316933305251814,
+              "high": 0.26246148406313663
+            }
+          },
+          "keen|tier-2": {
+            "count": 838,
+            "rate": 0.2514251425142514,
+            "interval95": {
+              "low": 0.2369887145671667,
+              "high": 0.2664339021652397
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 25.34923492349233,
+          "low95": 25.272511902166517,
+          "high95": 25.42595794481814,
+          "median": 25,
+          "min": 25,
+          "max": 61,
+          "plannedFeeGold": 18,
+          "plannedSite": "blacksmith",
+          "storeFeeGold": 18,
+          "storeSite": "blacksmith",
+          "purchasedRecipeInputsGold": 46,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 0,
+          "plannedTotalInputCostGold": 64,
+          "expectedMarginAtPlannedCostGold": -38.65076507650765,
+          "minimumObservedMarginAtPlannedCostGold": -39,
+          "maximumObservedMarginAtPlannedCostGold": -3,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -38.65076507650765,
+          "storeTotalInputCostGold": 64,
+          "expectedMarginAtStoreCostGold": -38.65076507650765
+        }
+      },
+      {
+        "recipeId": "ironShortSword",
+        "smithingLevel": 5,
+        "material": "wolfFang",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "rare": {
+            "count": 3244,
+            "rate": 0.9732973297329733,
+            "interval95": {
+              "low": 0.9672554734603381,
+              "high": 0.9782494415724065
+            },
+            "expectedProbability": 0.97
+          },
+          "epic": {
+            "count": 85,
+            "rate": 0.025502550255025503,
+            "interval95": {
+              "low": 0.020672108160418038,
+              "high": 0.031425500001682996
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 4,
+            "rate": 0.0012001200120012002,
+            "interval95": {
+              "low": 0.0004667991174732227,
+              "high": 0.003081903740252338
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "2": {
+            "count": 3244,
+            "rate": 0.9732973297329733,
+            "interval95": {
+              "low": 0.9672554734603381,
+              "high": 0.9782494415724065
+            }
+          },
+          "3": {
+            "count": 89,
+            "rate": 0.026702670267026704,
+            "interval95": {
+              "low": 0.021750558427593533,
+              "high": 0.03274452653966185
+            }
+          }
+        },
+        "affixType": {
+          "bleeding": {
+            "count": 2796,
+            "rate": 0.8388838883888389,
+            "interval95": {
+              "low": 0.8260138012946283,
+              "high": 0.8509737115608298
+            }
+          },
+          "keen": {
+            "count": 862,
+            "rate": 0.25862586258625864,
+            "interval95": {
+              "low": 0.2440440079177355,
+              "high": 0.27376346964559695
+            }
+          },
+          "piercing": {
+            "count": 2232,
+            "rate": 0.6696669666966697,
+            "interval95": {
+              "low": 0.6535121786640754,
+              "high": 0.6854311046646202
+            }
+          },
+          "striking": {
+            "count": 865,
+            "rate": 0.2595259525952595,
+            "interval95": {
+              "low": 0.24492629027148127,
+              "high": 0.27467929489571696
+            }
+          }
+        },
+        "affixTier": {
+          "bleeding|tier-1": {
+            "count": 1412,
+            "rate": 0.42364236423642365,
+            "interval95": {
+              "low": 0.4069641714950019,
+              "high": 0.4404963667770529
+            }
+          },
+          "keen|tier-1": {
+            "count": 428,
+            "rate": 0.12841284128412842,
+            "interval95": {
+              "low": 0.11748141214320648,
+              "high": 0.14019983206087963
+            }
+          },
+          "piercing|tier-1": {
+            "count": 1162,
+            "rate": 0.34863486348634865,
+            "interval95": {
+              "low": 0.332639373389538,
+              "high": 0.3649788645603703
+            }
+          },
+          "keen|tier-2": {
+            "count": 434,
+            "rate": 0.13021302130213022,
+            "interval95": {
+              "low": 0.11921216782806139,
+              "high": 0.14206529158375622
+            }
+          },
+          "piercing|tier-2": {
+            "count": 1070,
+            "rate": 0.32103210321032105,
+            "interval95": {
+              "low": 0.30539592127508375,
+              "high": 0.3370803501562747
+            }
+          },
+          "bleeding|tier-2": {
+            "count": 1384,
+            "rate": 0.4152415241524152,
+            "interval95": {
+              "low": 0.39861948228473176,
+              "high": 0.43205871835124265
+            }
+          },
+          "striking|tier-2": {
+            "count": 442,
+            "rate": 0.1326132613261326,
+            "interval95": {
+              "low": 0.1215209582009824,
+              "high": 0.14455145482114384
+            }
+          },
+          "striking|tier-1": {
+            "count": 423,
+            "rate": 0.1269126912691269,
+            "interval95": {
+              "low": 0.11603967416591594,
+              "high": 0.1386447240317272
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 25.34923492349233,
+          "low95": 25.272511902166517,
+          "high95": 25.42595794481814,
+          "median": 25,
+          "min": 25,
+          "max": 61,
+          "plannedFeeGold": 18,
+          "plannedSite": "blacksmith",
+          "storeFeeGold": 18,
+          "storeSite": "blacksmith",
+          "purchasedRecipeInputsGold": 46,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 0,
+          "plannedTotalInputCostGold": 69,
+          "expectedMarginAtPlannedCostGold": -43.65076507650765,
+          "minimumObservedMarginAtPlannedCostGold": -44,
+          "maximumObservedMarginAtPlannedCostGold": -8,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -43.65076507650765,
+          "storeTotalInputCostGold": 69,
+          "expectedMarginAtStoreCostGold": -43.65076507650765
+        }
+      },
+      {
+        "recipeId": "ironShortSword",
+        "smithingLevel": 5,
+        "material": "moonStone",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "rare": {
+            "count": 3244,
+            "rate": 0.9732973297329733,
+            "interval95": {
+              "low": 0.9672554734603381,
+              "high": 0.9782494415724065
+            },
+            "expectedProbability": 0.97
+          },
+          "epic": {
+            "count": 85,
+            "rate": 0.025502550255025503,
+            "interval95": {
+              "low": 0.020672108160418038,
+              "high": 0.031425500001682996
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 4,
+            "rate": 0.0012001200120012002,
+            "interval95": {
+              "low": 0.0004667991174732227,
+              "high": 0.003081903740252338
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "2": {
+            "count": 3244,
+            "rate": 0.9732973297329733,
+            "interval95": {
+              "low": 0.9672554734603381,
+              "high": 0.9782494415724065
+            }
+          },
+          "3": {
+            "count": 89,
+            "rate": 0.026702670267026704,
+            "interval95": {
+              "low": 0.021750558427593533,
+              "high": 0.03274452653966185
+            }
+          }
+        },
+        "affixType": {
+          "keen": {
+            "count": 2972,
+            "rate": 0.8916891689168917,
+            "interval95": {
+              "low": 0.8806841816536108,
+              "high": 0.9017923106286383
+            }
+          },
+          "striking": {
+            "count": 1240,
+            "rate": 0.372037203720372,
+            "interval95": {
+              "low": 0.35578398460820904,
+              "high": 0.388585051042209
+            }
+          },
+          "bleeding": {
+            "count": 1239,
+            "rate": 0.37173717371737175,
+            "interval95": {
+              "low": 0.3554869952343662,
+              "high": 0.38828267121476323
+            }
+          },
+          "piercing": {
+            "count": 1304,
+            "rate": 0.39123912391239124,
+            "interval95": {
+              "low": 0.37480521332869565,
+              "high": 0.40792345120419193
+            }
+          }
+        },
+        "affixTier": {
+          "keen|tier-1": {
+            "count": 1504,
+            "rate": 0.45124512451245125,
+            "interval95": {
+              "low": 0.4344171428380219,
+              "high": 0.46818536195258287
+            }
+          },
+          "striking|tier-1": {
+            "count": 613,
+            "rate": 0.18391839183918393,
+            "interval95": {
+              "low": 0.17113226522185532,
+              "high": 0.19743228122061923
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 635,
+            "rate": 0.19051905190519053,
+            "interval95": {
+              "low": 0.17754601355467384,
+              "high": 0.2042046553161496
+            }
+          },
+          "striking|tier-2": {
+            "count": 627,
+            "rate": 0.18811881188118812,
+            "interval95": {
+              "low": 0.17521302396435695,
+              "high": 0.2017426912961578
+            }
+          },
+          "piercing|tier-2": {
+            "count": 631,
+            "rate": 0.18931893189318932,
+            "interval95": {
+              "low": 0.17637941739031365,
+              "high": 0.20297377467535543
+            }
+          },
+          "keen|tier-2": {
+            "count": 1468,
+            "rate": 0.44044404440444046,
+            "interval95": {
+              "low": 0.4236683817493667,
+              "high": 0.457356831794849
+            }
+          },
+          "piercing|tier-1": {
+            "count": 673,
+            "rate": 0.20192019201920192,
+            "interval95": {
+              "low": 0.18863851804546589,
+              "high": 0.2158881804743238
+            }
+          },
+          "bleeding|tier-2": {
+            "count": 604,
+            "rate": 0.18121812181218122,
+            "interval95": {
+              "low": 0.1685102721494715,
+              "high": 0.19465995148140575
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0.0005
+        },
+        "masterpiece": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 25.34923492349233,
+          "low95": 25.272511902166517,
+          "high95": 25.42595794481814,
+          "median": 25,
+          "min": 25,
+          "max": 61,
+          "plannedFeeGold": 18,
+          "plannedSite": "blacksmith",
+          "storeFeeGold": 18,
+          "storeSite": "blacksmith",
+          "purchasedRecipeInputsGold": 46,
+          "influenceMaterialOpportunityCostGold": 25,
+          "homePropertyAcquisitionGoldSeparate": 0,
+          "plannedTotalInputCostGold": 89,
+          "expectedMarginAtPlannedCostGold": -63.65076507650765,
+          "minimumObservedMarginAtPlannedCostGold": -64,
+          "maximumObservedMarginAtPlannedCostGold": -28,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -63.65076507650765,
+          "storeTotalInputCostGold": 89,
+          "expectedMarginAtStoreCostGold": -63.65076507650765
+        }
+      },
+      {
+        "recipeId": "ironShortSword",
+        "smithingLevel": 6,
+        "material": null,
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "rare": {
+            "count": 3240,
+            "rate": 0.9720972097209721,
+            "interval95": {
+              "low": 0.9659393183421104,
+              "high": 0.9771681198854799
+            },
+            "expectedProbability": 0.97
+          },
+          "epic": {
+            "count": 90,
+            "rate": 0.027002700270027002,
+            "interval95": {
+              "low": 0.022020626879282017,
+              "high": 0.03307382728926195
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 3,
+            "rate": 0.0009000900090009,
+            "interval95": {
+              "low": 0.00030615798804058147,
+              "high": 0.0026431756683963923
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "2": {
+            "count": 3240,
+            "rate": 0.9720972097209721,
+            "interval95": {
+              "low": 0.9659393183421104,
+              "high": 0.9771681198854799
+            }
+          },
+          "3": {
+            "count": 93,
+            "rate": 0.0279027902790279,
+            "interval95": {
+              "low": 0.022831880114520166,
+              "high": 0.034060681657889565
+            }
+          }
+        },
+        "affixType": {
+          "keen": {
+            "count": 1686,
+            "rate": 0.5058505850585059,
+            "interval95": {
+              "low": 0.48888014867790286,
+              "high": 0.5228075507472247
+            }
+          },
+          "striking": {
+            "count": 1708,
+            "rate": 0.5124512451245125,
+            "interval95": {
+              "low": 0.49547730479918084,
+              "high": 0.5293965170542955
+            }
+          },
+          "bleeding": {
+            "count": 1667,
+            "rate": 0.5001500150015001,
+            "interval95": {
+              "low": 0.4831849819335268,
+              "high": 0.5171147026671175
+            }
+          },
+          "piercing": {
+            "count": 1698,
+            "rate": 0.5094509450945095,
+            "interval95": {
+              "low": 0.49247823118712014,
+              "high": 0.5264018986534704
+            }
+          }
+        },
+        "affixTier": {
+          "keen|tier-1": {
+            "count": 854,
+            "rate": 0.25622562256225623,
+            "interval95": {
+              "low": 0.24169165522746278,
+              "high": 0.271320868725561
+            }
+          },
+          "striking|tier-1": {
+            "count": 857,
+            "rate": 0.2571257125712571,
+            "interval95": {
+              "low": 0.2425737190542958,
+              "high": 0.27223691250259363
+            }
+          },
+          "bleeding|tier-2": {
+            "count": 828,
+            "rate": 0.24842484248424843,
+            "interval95": {
+              "low": 0.23405058746212454,
+              "high": 0.263378337257396
+            }
+          },
+          "striking|tier-2": {
+            "count": 851,
+            "rate": 0.25532553255325535,
+            "interval95": {
+              "low": 0.24080967386448707,
+              "high": 0.27040474248467106
+            }
+          },
+          "piercing|tier-2": {
+            "count": 894,
+            "rate": 0.2682268226822682,
+            "interval95": {
+              "low": 0.25345917829755665,
+              "high": 0.28352811370701053
+            }
+          },
+          "keen|tier-2": {
+            "count": 832,
+            "rate": 0.24962496249624963,
+            "interval95": {
+              "low": 0.23522572556204893,
+              "high": 0.2646006759626259
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 839,
+            "rate": 0.25172517251725174,
+            "interval95": {
+              "low": 0.23728257880721096,
+              "high": 0.266739407126484
+            }
+          },
+          "piercing|tier-1": {
+            "count": 804,
+            "rate": 0.24122412241224123,
+            "interval95": {
+              "low": 0.22700295956922653,
+              "high": 0.256041104319368
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 809,
+          "rate": 0.24272427242724273,
+          "interval95": {
+            "low": 0.22847075859914814,
+            "high": 0.2575701512958892
+          },
+          "expectedProbability": 0.25
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 25.84188418841879,
+          "low95": 25.761497188581206,
+          "high95": 25.92227118825637,
+          "median": 25,
+          "min": 25,
+          "max": 61,
+          "plannedFeeGold": 18,
+          "plannedSite": "blacksmith",
+          "storeFeeGold": 18,
+          "storeSite": "blacksmith",
+          "purchasedRecipeInputsGold": 46,
+          "influenceMaterialOpportunityCostGold": 0,
+          "homePropertyAcquisitionGoldSeparate": 0,
+          "plannedTotalInputCostGold": 64,
+          "expectedMarginAtPlannedCostGold": -38.158115811581155,
+          "minimumObservedMarginAtPlannedCostGold": -39,
+          "maximumObservedMarginAtPlannedCostGold": -3,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -38.158115811581155,
+          "storeTotalInputCostGold": 64,
+          "expectedMarginAtStoreCostGold": -38.158115811581155
+        }
+      },
+      {
+        "recipeId": "ironShortSword",
+        "smithingLevel": 6,
+        "material": "wolfFang",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "rare": {
+            "count": 3240,
+            "rate": 0.9720972097209721,
+            "interval95": {
+              "low": 0.9659393183421104,
+              "high": 0.9771681198854799
+            },
+            "expectedProbability": 0.97
+          },
+          "epic": {
+            "count": 90,
+            "rate": 0.027002700270027002,
+            "interval95": {
+              "low": 0.022020626879282017,
+              "high": 0.03307382728926195
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 3,
+            "rate": 0.0009000900090009,
+            "interval95": {
+              "low": 0.00030615798804058147,
+              "high": 0.0026431756683963923
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "2": {
+            "count": 3240,
+            "rate": 0.9720972097209721,
+            "interval95": {
+              "low": 0.9659393183421104,
+              "high": 0.9771681198854799
+            }
+          },
+          "3": {
+            "count": 93,
+            "rate": 0.0279027902790279,
+            "interval95": {
+              "low": 0.022831880114520166,
+              "high": 0.034060681657889565
+            }
+          }
+        },
+        "affixType": {
+          "piercing": {
+            "count": 2262,
+            "rate": 0.6786678667866787,
+            "interval95": {
+              "low": 0.6626160715050662,
+              "high": 0.6943082878622868
+            }
+          },
+          "striking": {
+            "count": 860,
+            "rate": 0.25802580258025803,
+            "interval95": {
+              "low": 0.24345586506191555,
+              "high": 0.2731528740988398
+            }
+          },
+          "bleeding": {
+            "count": 2758,
+            "rate": 0.8274827482748275,
+            "interval95": {
+              "low": 0.8142805528621111,
+              "high": 0.8399309303443807
+            }
+          },
+          "keen": {
+            "count": 879,
+            "rate": 0.26372637263726373,
+            "interval95": {
+              "low": 0.24904468033213314,
+              "high": 0.27895207365310537
+            }
+          }
+        },
+        "affixTier": {
+          "piercing|tier-1": {
+            "count": 1137,
+            "rate": 0.34113411341134114,
+            "interval95": {
+              "low": 0.3252302114532852,
+              "high": 0.3574037964644085
+            }
+          },
+          "striking|tier-1": {
+            "count": 425,
+            "rate": 0.1275127512751275,
+            "interval95": {
+              "low": 0.11661630789067376,
+              "high": 0.13926682870954657
+            }
+          },
+          "bleeding|tier-2": {
+            "count": 1422,
+            "rate": 0.42664266426642666,
+            "interval95": {
+              "low": 0.40994562075650054,
+              "high": 0.4435086095284402
+            }
+          },
+          "keen|tier-2": {
+            "count": 423,
+            "rate": 0.1269126912691269,
+            "interval95": {
+              "low": 0.11603967416591594,
+              "high": 0.1386447240317272
+            }
+          },
+          "striking|tier-2": {
+            "count": 435,
+            "rate": 0.13051305130513052,
+            "interval95": {
+              "low": 0.1195006973428202,
+              "high": 0.14237613127028603
+            }
+          },
+          "piercing|tier-2": {
+            "count": 1125,
+            "rate": 0.33753375337533753,
+            "interval95": {
+              "low": 0.32167539813929324,
+              "high": 0.3537661793629374
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 1336,
+            "rate": 0.4008400840084008,
+            "interval95": {
+              "low": 0.38432595343761583,
+              "high": 0.4175825255365064
+            }
+          },
+          "keen|tier-1": {
+            "count": 456,
+            "rate": 0.13681368136813682,
+            "interval95": {
+              "low": 0.12556432933737424,
+              "high": 0.14889925250279226
+            }
+          }
+        },
+        "special": {
+          "count": 0,
+          "rate": 0,
+          "interval95": {
+            "low": 1.0842021724855044e-19,
+            "high": 0.001151226052571216
+          },
+          "expectedProbability": 0.0002
+        },
+        "masterpiece": {
+          "count": 809,
+          "rate": 0.24272427242724273,
+          "interval95": {
+            "low": 0.22847075859914814,
+            "high": 0.2575701512958892
+          },
+          "expectedProbability": 0.25
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 25.84188418841879,
+          "low95": 25.761497188581206,
+          "high95": 25.92227118825637,
+          "median": 25,
+          "min": 25,
+          "max": 61,
+          "plannedFeeGold": 18,
+          "plannedSite": "blacksmith",
+          "storeFeeGold": 18,
+          "storeSite": "blacksmith",
+          "purchasedRecipeInputsGold": 46,
+          "influenceMaterialOpportunityCostGold": 5,
+          "homePropertyAcquisitionGoldSeparate": 0,
+          "plannedTotalInputCostGold": 69,
+          "expectedMarginAtPlannedCostGold": -43.158115811581155,
+          "minimumObservedMarginAtPlannedCostGold": -44,
+          "maximumObservedMarginAtPlannedCostGold": -8,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -43.158115811581155,
+          "storeTotalInputCostGold": 69,
+          "expectedMarginAtStoreCostGold": -43.158115811581155
+        }
+      },
+      {
+        "recipeId": "ironShortSword",
+        "smithingLevel": 6,
+        "material": "moonStone",
+        "samples": 3333,
+        "rarity": {
+          "common": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "uncommon": {
+            "count": 0,
+            "rate": 0,
+            "interval95": {
+              "low": 1.0842021724855044e-19,
+              "high": 0.001151226052571216
+            },
+            "expectedProbability": 0
+          },
+          "rare": {
+            "count": 3240,
+            "rate": 0.9720972097209721,
+            "interval95": {
+              "low": 0.9659393183421104,
+              "high": 0.9771681198854799
+            },
+            "expectedProbability": 0.97
+          },
+          "epic": {
+            "count": 90,
+            "rate": 0.027002700270027002,
+            "interval95": {
+              "low": 0.022020626879282017,
+              "high": 0.03307382728926195
+            },
+            "expectedProbability": 0.027999999999999997
+          },
+          "legendary": {
+            "count": 3,
+            "rate": 0.0009000900090009,
+            "interval95": {
+              "low": 0.00030615798804058147,
+              "high": 0.0026431756683963923
+            },
+            "expectedProbability": 0.002
+          }
+        },
+        "affixCount": {
+          "2": {
+            "count": 3240,
+            "rate": 0.9720972097209721,
+            "interval95": {
+              "low": 0.9659393183421104,
+              "high": 0.9771681198854799
+            }
+          },
+          "3": {
+            "count": 93,
+            "rate": 0.0279027902790279,
+            "interval95": {
+              "low": 0.022831880114520166,
+              "high": 0.034060681657889565
+            }
+          }
+        },
+        "affixType": {
+          "keen": {
+            "count": 2996,
+            "rate": 0.8988898889888989,
+            "interval95": {
+              "low": 0.8881914288765169,
+              "high": 0.9086699242366583
+            }
+          },
+          "striking": {
+            "count": 1277,
+            "rate": 0.38313831383138314,
+            "interval95": {
+              "low": 0.3667773117717742,
+              "high": 0.39976838432632156
+            }
+          },
+          "piercing": {
+            "count": 1249,
+            "rate": 0.37473747374737476,
+            "interval95": {
+              "low": 0.3584571924754048,
+              "high": 0.39130616598661055
+            }
+          },
+          "bleeding": {
+            "count": 1237,
+            "rate": 0.37113711371137115,
+            "interval95": {
+              "low": 0.3548930367599344,
+              "high": 0.38767789128661795
+            }
+          }
+        },
+        "affixTier": {
+          "keen|tier-1": {
+            "count": 1518,
+            "rate": 0.45544554455445546,
+            "interval95": {
+              "low": 0.43859938593810316,
+              "high": 0.47239428767054187
+            }
+          },
+          "striking|tier-1": {
+            "count": 625,
+            "rate": 0.18751875187518752,
+            "interval95": {
+              "low": 0.17462990374194484,
+              "high": 0.20112707311599273
+            }
+          },
+          "piercing|tier-2": {
+            "count": 640,
+            "rate": 0.192019201920192,
+            "interval95": {
+              "low": 0.1790045416342056,
+              "high": 0.20574297324306073
+            }
+          },
+          "keen|tier-2": {
+            "count": 1478,
+            "rate": 0.44344434443444347,
+            "interval95": {
+              "low": 0.4266533409150308,
+              "high": 0.4603655646420708
+            }
+          },
+          "striking|tier-2": {
+            "count": 652,
+            "rate": 0.19561956195619562,
+            "interval95": {
+              "low": 0.18250627547858436,
+              "high": 0.20943366981414505
+            }
+          },
+          "bleeding|tier-2": {
+            "count": 635,
+            "rate": 0.19051905190519053,
+            "interval95": {
+              "low": 0.17754601355467384,
+              "high": 0.2042046553161496
+            }
+          },
+          "piercing|tier-1": {
+            "count": 609,
+            "rate": 0.18271827182718273,
+            "interval95": {
+              "low": 0.169966802869648,
+              "high": 0.19620026676767222
+            }
+          },
+          "bleeding|tier-1": {
+            "count": 602,
+            "rate": 0.18061806180618062,
+            "interval95": {
+              "low": 0.16792775298199716,
+              "high": 0.19404373224630292
+            }
+          }
+        },
+        "special": {
+          "count": 1,
+          "rate": 0.00030003000300030005,
+          "interval95": {
+            "low": 5.296462620655348e-05,
+            "high": 0.0016976306276532487
+          },
+          "expectedProbability": 0.0005
+        },
+        "masterpiece": {
+          "count": 809,
+          "rate": 0.24272427242724273,
+          "interval95": {
+            "low": 0.22847075859914814,
+            "high": 0.2575701512958892
+          },
+          "expectedProbability": 0.25
+        },
+        "sell": {
+          "n": 3333,
+          "mean": 25.84188418841879,
+          "low95": 25.761497188581206,
+          "high95": 25.92227118825637,
+          "median": 25,
+          "min": 25,
+          "max": 61,
+          "plannedFeeGold": 18,
+          "plannedSite": "blacksmith",
+          "storeFeeGold": 18,
+          "storeSite": "blacksmith",
+          "purchasedRecipeInputsGold": 46,
+          "influenceMaterialOpportunityCostGold": 25,
+          "homePropertyAcquisitionGoldSeparate": 0,
+          "plannedTotalInputCostGold": 89,
+          "expectedMarginAtPlannedCostGold": -63.158115811581155,
+          "minimumObservedMarginAtPlannedCostGold": -64,
+          "maximumObservedMarginAtPlannedCostGold": -28,
+          "expectedMarginIncludingOneTimeHomePurchaseOnFirstCraftGold": -63.158115811581155,
+          "storeTotalInputCostGold": 89,
+          "expectedMarginAtStoreCostGold": -63.158115811581155
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "run": "reports/v2/20261007-life-craftsmanship/phase-05/b-full-check-retry01-20261007T022704Z",
+  "startUTC": "2026-10-07T02:27:04.290+00:00",
+  "endUTC": "2026-10-07T02:27:18.388+00:00",
+  "exitCode": 0,
+  "stdoutBytes": 706,
+  "stderrBytes": 624,
+  "headBefore": "1a56cd3eeb2ea65114a5dcf03c0e00504b69239f",
+  "headAfter": "1a56cd3eeb2ea65114a5dcf03c0e00504b69239f",
+  "sourceFileCountBefore": 75,
+  "sourceFileCountAfter": 75,
+  "sourceMapStable": true,
+  "srcGitStatusBefore": "M src/data/config.ts\n M src/domain/reward.ts\n M src/domain/types.ts\n M src/engine/combatStats.test.ts\n M src/engine/itemGeneration.test.ts\n M src/engine/itemGeneration.ts\n M src/engine/lifeState.ts\n M src/engine/rewardActions.test.ts\n M src/engine/rewardState.ts\n M src/engine/simulation.ts\n M src/presentation/rewardProjection.test.ts\n M src/services/playJournal.test.ts\n M src/services/rewardSave.test.ts\n M src/services/rewardValidation.ts\n M src/services/saveService.test.ts\n M src/services/saveService.ts\n M src/stores/gameStore.test.ts\n?? src/data/crafting.ts",
+  "srcGitStatusAfter": "M src/data/config.ts\n M src/domain/reward.ts\n M src/domain/types.ts\n M src/engine/combatStats.test.ts\n M src/engine/itemGeneration.test.ts\n M src/engine/itemGeneration.ts\n M src/engine/lifeState.ts\n M src/engine/rewardActions.test.ts\n M src/engine/rewardState.ts\n M src/engine/simulation.ts\n M src/presentation/rewardProjection.test.ts\n M src/services/playJournal.test.ts\n M src/services/rewardSave.test.ts\n M src/services/rewardValidation.ts\n M src/services/saveService.test.ts\n M src/services/saveService.ts\n M src/stores/gameStore.test.ts\n?? src/data/crafting.ts",
+  "inputManifestSha256Before": "4c92404611800fd2c8872bc4b21f44e79b3e1f19d0c70fe89f2f3469159fb203",
+  "inputManifestSha256After": "4c92404611800fd2c8872bc4b21f44e79b3e1f19d0c70fe89f2f3469159fb203",
+  "buildInputsStable": true,
+  "runnerHarnessSha256Before": "6ce5a003c98b741b3d288ce764918c4a77d9d2a23378fb9399254ca09b70fa92",
+  "runnerHarnessSha256After": "6ce5a003c98b741b3d288ce764918c4a77d9d2a23378fb9399254ca09b70fa92",
+  "versions": {
+    "node": {
+      "returncode": 0,
+      "stdout": "v24.19.0",
+      "stderr": ""
+    },
+    "npm": {
+      "returncode": 0,
+      "stdout": "11.9.0",
+      "stderr": ""
+    },
+    "python": {
+      "returncode": 0,
+      "stdout": "Python 3.12.14",
+      "stderr": ""
+    }
+  },
+  "addendumPinnedHashesVerified": true
+}

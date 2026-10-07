@@ -1,0 +1,3 @@
+G event-capacity RED — exact crop + XP reproduction
+Command: npm test -- src/engine/crafting.test.ts -t "crop and XP"
+Result: fails as expected. The round-tripped V3 state has four already-maturing crops, character XP 29, Smithing XP 19, and eventSequence MAX_SAFE_INTEGER-5. The planner returns ok=true, though the exact action will emit four crop.matured, one character.levelUp, one character.skillUp, and craft.completed; the current fixed reserve of four is insufficient. The assertion requires event_capacity and byte-for-byte unchanged state before RNG/resources/time/events mutate.

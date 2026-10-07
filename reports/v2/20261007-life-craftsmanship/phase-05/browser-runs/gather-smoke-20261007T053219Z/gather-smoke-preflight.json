@@ -1,0 +1,12 @@
+{
+  "status": "BLOCKED_PREFLIGHT_SOURCE_DRIFT",
+  "reason": "Read-only validate_build rejected current recursive src/ because Core J9 edits have not yet been built.",
+  "buildRecordedSourceFingerprint": "d1868bc515380abf7b0e87018c560a3c847be6eb6209ea61d38f321eb33d495d",
+  "buildSourceStableDuringRun": true,
+  "serverStarted": false,
+  "browserStarted": false,
+  "gameplayStarted": false,
+  "nextAttempt": "Use current recorded dist only for the narrow authorized selector/gather smoke, verify HTTP bytes against build-status, and mark source mismatch as a limitation; do not treat as H acceptance.",
+  "currentSourceFingerprint": "ecb0f7dced44b3d3ec856a1b0b0ed953a5edddcfebd0d78aaf10ef94ccc4acee",
+  "currentSourceMatchesBuild": false
+}

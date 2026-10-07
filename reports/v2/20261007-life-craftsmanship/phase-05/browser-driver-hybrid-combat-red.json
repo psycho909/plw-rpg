@@ -1,0 +1,25 @@
+{
+  "status": "RED_REPRODUCED_BEFORE_FIX",
+  "driverSha256BeforeFix": "e351d45df7cbc16db13c96566291fab4ce303d17e30d805035252a986644030f",
+  "minimalScenario": {
+    "deadlineExpired": true,
+    "repeatFightStart": {
+      "combat": {
+        "enemy": "wolf"
+      },
+      "eventSequence": 40
+    },
+    "repeatFightEnd": {
+      "combat": {
+        "enemy": "wolf",
+        "hp": 1
+      },
+      "eventSequence": 41
+    }
+  },
+  "currentControlFlow": "hybrid() returned normally without checking repeatFightEnd.combat; the normal-return status promotion then ran.",
+  "observedCurrentDisposition": "PASS",
+  "expectedDisposition": "BLOCKED or FAILED because return combat is still active and no outcome was observed.",
+  "productionBrowserExecuted": false,
+  "productionBuildExecuted": false
+}

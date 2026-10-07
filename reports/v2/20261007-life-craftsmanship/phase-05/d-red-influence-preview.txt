@@ -1,0 +1,69 @@
+D influence-material preview RED
+Command: npm test -- src/engine/crafting.test.ts -t "previews a selected influence material"
+Exit: 1
+
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts -t previews a selected influence material
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (21 tests | 1 failed | 20 skipped) 16ms
+     × previews a selected influence material as one owned-material input without mutation 14ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crafting.test.ts > starter crafting preview > previews a selected influence material as one owned-material input without mutation
+AssertionError: expected { recipeId: null, output: null, …(10) } to match object { ok: true, …(2) }
+(26 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "influenceMaterial": "wolfFang",
+-   "inputs": [
+-     {
+-       "amount": 3,
+-       "current": 3,
+-       "itemId": "wood",
+-       "required": 3,
+-       "source": "inventory",
+-     },
+-     {
+-       "amount": 2,
+-       "current": 2,
+-       "itemId": "stone",
+-       "required": 2,
+-       "source": "inventory",
+-     },
+-     {
+-       "amount": 1,
+-       "current": 1,
+-       "materialId": "wolfFang",
+-       "required": 1,
+-       "source": "material",
+-     },
+-   ],
+-   "ok": true,
++   "inputs": [],
++   "ok": false,
+  }
+
+ ❯ src/engine/crafting.test.ts:55:18
+     53|     const plan = planCraft(state, { recipeId: 'starterSpear', influenc…
+     54|
+     55|     expect(plan).toMatchObject({
+       |                  ^
+     56|       ok: true,
+     57|       influenceMaterial: 'wolfFang',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 20 skipped (21)
+   Start at  04:07:09
+   Duration  442ms (transform 257ms, setup 0ms, import 303ms, tests 16ms, environment 0ms)
+

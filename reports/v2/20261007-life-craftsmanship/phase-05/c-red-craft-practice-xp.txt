@@ -1,0 +1,42 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts -t creates one shared-pipeline
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (16 tests | 1 failed | 15 skipped) 13ms
+     × creates one shared-pipeline instance, consumes the recipe, advances time, and survives reload/equip 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crafting.test.ts > starter crafting preview > creates one shared-pipeline instance, consumes the recipe, advances time, and survives reload/equip
+AssertionError: expected +0 to be 10 // Object.is equality
+
+- Expected
++ Received
+
+- 10
++ 0
+
+ ❯ src/engine/crafting.test.ts:68:43
+     66|     expect(character.gold).toBe(startingGold - 4)
+     67|     expect(character.stamina).toBe(startingStamina - 10)
+     68|     expect(character.skills.smithing.exp).toBe(10)
+       |                                           ^
+     69|     expect(state.life.characters[character.id]?.actions.smithing).toBe…
+     70|     expect(state.worldTime).toBe(startingTime + 45)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 15 skipped (16)
+   Start at  02:44:21
+   Duration  391ms (transform 226ms, setup 0ms, import 267ms, tests 13ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
