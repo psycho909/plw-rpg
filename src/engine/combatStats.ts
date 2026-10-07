@@ -9,6 +9,10 @@ const empty: GearStats = { attack: 0, defense: 0, critical: 0, penetration: 0, b
 
 const statKeys: (keyof GearStats)[] = ['attack', 'defense', 'critical', 'penetration', 'bleed', 'block', 'reduction']
 
+export interface PlayerAttackContext {
+  wolfArmoredPhase?: boolean
+}
+
 export function equipmentStats(state: GameState, ownerId = state.activeCharacterId): GearStats {
   const character = state.characters.find(candidate => candidate.id === ownerId)
   if (!character) return { ...empty }
@@ -26,10 +30,11 @@ export function equipmentStats(state: GameState, ownerId = state.activeCharacter
   return result
 }
 
-export function playerAttackDamage(state: GameState, monsterDefense: number, againstWolf = false): number {
+export function playerAttackDamage(state: GameState, monsterDefense: number, againstWolf = false, context: PlayerAttackContext = {}): number {
   const character = player(state), gear = equipmentStats(state)
   const weapon = equippedInstance(state, 'weapon')
-  const effectiveDefense = gear.penetration > 0 ? Math.max(0, monsterDefense - gear.penetration) : monsterDefense
+  const penetration = gear.penetration * (context.wolfArmoredPhase ? 2 : 1)
+  const effectiveDefense = penetration > 0 ? Math.max(0, monsterDefense - penetration) : monsterDefense
   const hunterBonus = againstWolf && weapon?.specialTrait === 'moonHunter' ? 3 : 0
   let damage = Math.max(1, character.stats.strength + character.skills.combat.level + gear.attack - effectiveDefense)
   damage += gear.bleed + hunterBonus

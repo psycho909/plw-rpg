@@ -9,7 +9,7 @@ import { canVisit } from '../engine/actions'
 import { calendar } from '../engine/calendar'
 import { equipInstance, itemSellPrice, sellInstance, tradeMaterial } from '../engine/rewardActions'
 import { itemIcons } from '../presentation/icons'
-import { projectEquipmentSlot, projectGearPage, statKeys, statLabels, statText } from '../presentation/rewardProjection'
+import { affixMechanics, projectGearComparison, projectGearPage, projectLatestLootFeedback, statDeltaText, statKeys, statLabels, statText } from '../presentation/rewardProjection'
 import { useGameStore } from '../stores/gameStore'
 const game = useGameStore()
 const selected = ref<ItemId>('potion')
@@ -22,10 +22,11 @@ const rarities = Object.keys(RARITIES) as RarityId[]
 const materials = Object.keys(MATERIALS) as MaterialId[]
 const gearPage = computed(() => projectGearPage(game.state, page.value, slot.value, rarity.value))
 const gear = computed(() => gearPage.value.items.find(item => item.instanceId === selectedGear.value) ?? gearPage.value.items[0] ?? null)
-const comparison = computed(() => gear.value ? projectEquipmentSlot(game.state, ITEM_BASES[gear.value.baseId].slot) : null)
+const comparison = computed(() => gear.value ? projectGearComparison(game.state, gear.value.instanceId) : null)
 const gearEquipped = computed(() => !!gear.value && game.state.reward.equipped[game.state.activeCharacterId]?.[ITEM_BASES[gear.value.baseId].slot] === gear.value.instanceId)
 const materialStacks = computed(() => game.state.reward.materials[game.state.activeCharacterId])
 const collection = computed(() => game.state.reward.collection)
+const lootFeedback = computed(() => projectLatestLootFeedback(game.state))
 function wolfNames(ids: MonsterDefinitionId[]) { return ids.map(monsterId => WOLF_MONSTERS[monsterId].name).join('、') }
 function baseNames(ids: ItemBaseId[]) { return ids.map(baseId => ITEM_BASES[baseId].name).join('、') }
 function materialNames(ids: MaterialId[]) { return ids.map(materialId => MATERIALS[materialId].name).join('、') }
@@ -82,6 +83,7 @@ function useSelected() {
 
 <template>
   <p class="inventory-summary">隨身物品 <span>🪙 {{ game.character.gold }} 金幣</span></p>
+  <p v-if="lootFeedback" class="reward-feedback" role="status" aria-live="polite" :data-loot-feedback="lootFeedback.kind"><strong>{{ lootFeedback.label }}</strong> · {{ lootFeedback.message }}</p>
   <div class="filter-buttons" role="group" aria-label="物品分類"><button v-for="tab in categories" :key="tab.id" :aria-pressed="category === tab.id" :class="{ selected: category === tab.id }" @click="category = tab.id; pendingSale = null">{{ tab.name }}</button></div>
   <div v-if="category === 'supplies'" class="inventory-layout">
     <div class="item-list" role="group" aria-label="選擇物品"><button v-for="item in items" :key="item" :aria-pressed="selected === item" :class="{ selected: selected === item }" @click="selected = item"><span>{{ itemIcons[item] }} {{ ITEMS[item].name }}</span><span>×{{ game.character.inventory[item] }}</span></button></div>
@@ -99,13 +101,14 @@ function useSelected() {
     <p v-if="!gear" class="empty-state">目前沒有符合條件的獵獲裝備。清除篩選，或前往北方森林擊退灰狼，尋找下一件裝備。</p>
     <div v-else class="inventory-layout gear-layout">
       <div class="item-list" role="group" aria-label="選擇獵獲裝備"><button v-for="item in gearPage.items" :key="item.instanceId" :aria-pressed="gear.instanceId === item.instanceId" :class="{ selected: gear.instanceId === item.instanceId }" @click="selectedGear = item.instanceId"><span>{{ RARITIES[item.rarity].name }} {{ ITEM_BASES[item.baseId].name }}</span><span>Lv.{{ item.level }}</span></button></div>
-      <section class="item-detail gear-detail" aria-live="polite">
+      <section class="item-detail gear-detail" aria-live="polite" data-gear-comparison>
         <p class="muted">{{ RARITIES[gear.rarity].name }} · {{ ITEM_BASES[gear.baseId].slot === 'weapon' ? '武器' : '防具' }} · Lv.{{ gear.level }}</p><h3>{{ ITEM_BASES[gear.baseId].name }}{{ gearEquipped ? ' · 已穿戴' : '' }}</h3>
-        <p class="muted">目前同部位：{{ comparison?.name }}</p>
-        <dl class="gear-comparison"><template v-for="key in statKeys" :key="key"><dt>{{ statLabels[key] }}</dt><dd>{{ statText(key, gear.rolledStats[key]) }} <span class="muted">（目前 {{ statText(key, comparison?.stats[key] ?? 0) }}）</span></dd></template></dl>
-        <ul class="gear-affixes"><li v-for="affix in gear.affixes" :key="affix.id">{{ AFFIXES[affix.id].name }} · 階 {{ affix.tier }} · {{ statLabels[AFFIXES[affix.id].stat] }} +{{ statText(AFFIXES[affix.id].stat, affix.value) }}</li></ul>
-        <p v-if="!gear.affixes.length" class="muted">沒有附加詞綴；基本能力仍會參與戰鬥。</p>
-        <p v-if="gear.specialTrait">月下獵手：對狼族每次攻擊額外造成 3 點傷害。</p>
+        <p class="muted">目前同部位：{{ comparison?.current.name }} · {{ comparison?.current.rarity ? RARITIES[comparison.current.rarity].name : '固定裝備' }}</p>
+        <dl class="gear-comparison"><dt>能力</dt><dd>候選裝備 <span class="muted">／目前</span> · 差值</dd><template v-for="key in statKeys" :key="key"><dt>{{ statLabels[key] }}</dt><dd>{{ statText(key, comparison?.candidate.stats[key] ?? gear.rolledStats[key]) }} <span class="muted">／ {{ statText(key, comparison?.current.stats[key] ?? 0) }}</span> · <strong :class="['gear-delta', (comparison?.delta[key] ?? 0) > 0 ? 'positive' : (comparison?.delta[key] ?? 0) < 0 ? 'negative' : 'zero']">{{ statDeltaText(key, comparison?.delta[key] ?? 0) }}</strong></dd></template></dl>
+        <div class="gear-affix-compare">
+          <section><h4>候選裝備詞綴</h4><ul class="gear-affixes"><li v-for="affix in gear.affixes" :key="affix.id">{{ AFFIXES[affix.id].name }} · 階 {{ affix.tier }} · {{ statLabels[AFFIXES[affix.id].stat] }} +{{ statText(AFFIXES[affix.id].stat, affix.value) }}<span class="muted"> {{ affixMechanics[AFFIXES[affix.id].stat] }}</span></li><li v-if="!gear.affixes.length" class="muted">沒有附加詞綴。</li></ul><p v-if="gear.specialTrait" class="gear-special-trait">月下獵手：對狼族每次攻擊額外造成 3 點傷害。</p></section>
+          <section><h4>目前裝備詞綴</h4><ul class="gear-affixes"><li v-for="affix in comparison?.current.affixes ?? []" :key="affix.id">{{ AFFIXES[affix.id].name }} · 階 {{ affix.tier }} · {{ statLabels[AFFIXES[affix.id].stat] }} +{{ statText(AFFIXES[affix.id].stat, affix.value) }}<span class="muted"> {{ affixMechanics[AFFIXES[affix.id].stat] }}</span></li><li v-if="!comparison?.current.affixes.length" class="muted">{{ comparison?.current.specialTrait ? '沒有附加詞綴。' : '沒有附加詞綴或特殊特性。' }}</li></ul><p v-if="comparison?.current.specialTrait === 'moonHunter'" class="gear-special-trait">月下獵手：對狼族每次攻擊額外造成 3 點傷害。</p></section>
+        </div>
         <p v-if="gear.material" class="muted">生成素材：{{ MATERIALS[gear.material].name }}</p>
         <p v-if="gear.provenance" class="muted">留名裝備 · 誕生於第 {{ calendar(gear.provenance.createdAt).year }} 年{{ gear.provenance.bossSource ? ` · 來源：${WOLF_MONSTERS[gear.provenance.bossSource].name}` : '' }}</p>
         <div class="action-buttons"><button class="primary" :disabled="!game.character.isAlive || !!game.state.combat" @click="equipGear">{{ gearEquipped ? '卸下獵獲裝備' : '穿戴獵獲裝備' }}</button><button :disabled="gearEquipped || !canVisit(game.state, 'blacksmith')" @click="requestSale">出售 {{ itemSellPrice(gear) }} 金</button></div>
@@ -114,7 +117,7 @@ function useSelected() {
       </section>
     </div>
     <div class="gear-pagination" role="group" aria-label="裝備分頁"><button :disabled="gearPage.page === 0" @click="page = gearPage.page - 1">上一頁</button><span>第 {{ gearPage.page + 1 }}／{{ gearPage.pages }} 頁</span><button :disabled="gearPage.page + 1 >= gearPage.pages" @click="page = gearPage.page + 1">下一頁</button></div>
-    <p class="muted help-text">每個部位只能穿戴一件；穿戴獵獲裝備會替換同部位的固定裝備，替下的物品仍在背包。暴擊造成雙倍傷害；裂傷是每次攻擊額外傷害；格擋有機率使來襲傷害減半。</p>
+    <p class="muted help-text">每個部位只能穿戴一件；穿戴獵獲裝備會替換同部位的固定裝備，替下的物品仍在背包。比較只列出能力與機制差異，不把不同效果合併成總戰力分數。</p>
   </template>
   <template v-else-if="category === 'materials'">
     <section v-for="id in materials" :key="id" class="reward-material"><h3>{{ MATERIALS[id].name }} · 持有 {{ materialStacks?.[id] ?? 0 }}</h3><p class="muted">{{ MATERIALS[id].description }}</p><button :disabled="!canVisit(game.state, 'store') || !(materialStacks?.[id] ?? 0)" @click="game.act(() => tradeMaterial(game.state, id))">出售一份{{ MATERIALS[id].name }} · {{ MATERIALS[id].sell }} 金</button></section>
@@ -124,7 +127,7 @@ function useSelected() {
     <h3>見聞與收藏</h3><p class="muted">記錄這個世界累積的發現，跨越角色世代保留。只列出已經見過或取得的內容。</p>
     <h4 class="section-title">曾遇見的狼族</h4><p>{{ wolfNames(collection.seen) || '尚未發現。前往北方森林尋找狼族。' }}</p>
     <h4 class="section-title">已擊退</h4><p>{{ wolfNames(collection.defeated) || '尚未擊退狼族。' }}</p>
-    <h4 class="section-title">裝備基底</h4><p>{{ baseNames(collection.bases) || '尚未取得獵獲裝備。' }}</p>
+    <h4 class="section-title">裝備基底 · 收藏已記錄</h4><p>{{ baseNames(collection.bases) || '尚未取得獵獲裝備。' }}</p>
     <h4 class="section-title">已見素材</h4><p>{{ materialNames(collection.materials) || '尚未取得狼族素材。' }}</p>
     <h4 class="section-title">稀有收藏</h4><p>{{ baseNames(collection.rareBases) || '尚未取得稀有以上裝備。' }}</p>
     <h4 class="section-title">首領紀錄</h4><p>{{ wolfNames(collection.bosses) || '尚未擊退狼族首領。' }}</p>

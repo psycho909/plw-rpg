@@ -1,5 +1,5 @@
 import { AFFIXES, ITEM_BASES, ITEM_GENERATION_RULES, LOOT_TABLES, MATERIALS, RARITIES, WOLF_LOOT_RULES, WOLF_MONSTERS } from '../data/rewards'
-import type { AffixId, ItemBaseId, ItemInstance, MaterialDefinition, MaterialId, MonsterDefinitionId, RarityId } from '../domain/reward'
+import type { AffixId, ItemBaseId, ItemInstance, MaterialDefinition, MaterialId, MonsterDefinitionId, MonsterRank, RarityId } from '../domain/reward'
 import type { GameState } from '../domain/types'
 import { emit } from './events'
 import { maximumAffixTier, rolledItemStats } from './gearStats'
@@ -10,10 +10,21 @@ export interface GenerateItemOptions {
   level: number
   material?: MaterialId | null
   bossSource?: MonsterDefinitionId | null
+  dropSource?: MonsterDefinitionId | null
 }
 
 export interface AwardWolfLootOptions { definitionId: MonsterDefinitionId }
 export interface AwardWolfLootResult { instance: ItemInstance | null; materials: Partial<Record<MaterialId, number>> }
+export interface WolfRewardExpectation {
+  definitionId: MonsterDefinitionId
+  rank: MonsterRank
+  exclusiveBase: ItemBaseId | null
+  dropLevel: number
+  gearChance: number
+  rarityChances: Record<RarityId, number>
+  guaranteedMaterials: Partial<Record<MaterialId, number>>
+  chanceMaterials: Partial<Record<MaterialId, number>>
+}
 
 function catalogKey<T extends object>(catalog: T, value: unknown): value is keyof T & string {
   return typeof value === 'string' && Object.hasOwn(catalog, value)
@@ -27,6 +38,38 @@ function weightedChoice<T extends string>(state: GameState, values: { value: T; 
     if (roll < 0) return entry.value
   }
   return values.at(-1)!.value
+}
+
+/** Pure, detached reward expectation for one wolf encounter target. Rates are fractions from 0 to 1. */
+export function wolfRewardExpectation(definitionId: MonsterDefinitionId): WolfRewardExpectation {
+  const definition = WOLF_MONSTERS[definitionId]
+  const profile = WOLF_LOOT_RULES.profiles[definitionId]
+  const table = LOOT_TABLES[definition.lootTable]
+  const totalWeight = Object.values(profile.rarityWeights).reduce((sum, weight) => sum + weight, 0)
+  const rarityChances = Object.fromEntries((Object.keys(RARITIES) as RarityId[])
+    .map(rarity => [rarity, Number((profile.rarityWeights[rarity] / totalWeight).toPrecision(12))])) as Record<RarityId, number>
+  const guaranteedMaterials: Partial<Record<MaterialId, number>> = {}
+  for (const materialId of table.guaranteed) {
+    guaranteedMaterials[materialId] = (guaranteedMaterials[materialId] ?? 0) + 1
+  }
+  if (definition.rank === 'boss') {
+    guaranteedMaterials[table.bossGuaranteed] = (guaranteedMaterials[table.bossGuaranteed] ?? 0) + 1
+  }
+  const chanceMaterials: Partial<Record<MaterialId, number>> = {}
+  if (WOLF_LOOT_RULES.hideChance > 0) chanceMaterials.wolfHide = WOLF_LOOT_RULES.hideChance
+  if (definition.rank !== 'boss' && profile.rareMaterialChance > 0) {
+    chanceMaterials[table.rare.materialId] = profile.rareMaterialChance
+  }
+  return {
+    definitionId,
+    rank: definition.rank,
+    exclusiveBase: definition.rank === 'boss' ? WOLF_LOOT_RULES.bossExclusiveBase : null,
+    dropLevel: profile.dropLevel,
+    gearChance: definition.rank === 'normal' ? WOLF_LOOT_RULES.normalGearChance : 1,
+    rarityChances,
+    guaranteedMaterials,
+    chanceMaterials,
+  }
 }
 
 function availableInstanceSlot(state: GameState) {
@@ -43,7 +86,7 @@ function availableInstanceSlot(state: GameState) {
 
 function validateInput(state: GameState, options: GenerateItemOptions) {
   if (!state || !state.reward || !options || typeof options !== 'object' || Array.isArray(options)
-    || Object.keys(options).some(key => !['baseId', 'level', 'material', 'bossSource'].includes(key))) {
+    || Object.keys(options).some(key => !['baseId', 'level', 'material', 'bossSource', 'dropSource'].includes(key))) {
     throw new TypeError('無法產生裝備。')
   }
   const baseId = options.baseId
@@ -57,18 +100,31 @@ function validateInput(state: GameState, options: GenerateItemOptions) {
     && (!catalogKey(WOLF_MONSTERS, bossSource) || WOLF_MONSTERS[bossSource].rank !== 'boss')) {
     throw new RangeError('首領來源無效。')
   }
+  const dropSource = options.dropSource
+  if (dropSource !== undefined && dropSource !== null && !catalogKey(WOLF_MONSTERS, dropSource)) {
+    throw new RangeError('掉落來源無效。')
+  }
+  if (dropSource && bossSource && dropSource !== bossSource) throw new RangeError('掉落來源與首領來源不符。')
+  if (baseId === WOLF_LOOT_RULES.bossExclusiveBase && dropSource && WOLF_MONSTERS[dropSource].rank !== 'boss') {
+    throw new RangeError('首領專屬底材來源無效。')
+  }
   const slot = availableInstanceSlot(state)
-  return { baseId, level: options.level, material: material ?? null, bossSource: bossSource ?? null,
-    ...slot }
+  const resolvedBossSource = bossSource ?? (dropSource && WOLF_MONSTERS[dropSource].rank === 'boss' ? dropSource : null)
+  return { baseId, level: options.level, material: material ?? null, bossSource: resolvedBossSource,
+    dropSource: dropSource ?? null, ...slot }
 }
 
 export function generateItem(state: GameState, options: GenerateItemOptions): ItemInstance {
   // Check every caller-controlled value and the sequence boundary before the first RNG draw.
   const input = validateInput(state, options)
   const base = ITEM_BASES[input.baseId]
-  const rarity: RarityId = input.bossSource
-    ? weightedChoice(state, Object.entries(WOLF_LOOT_RULES.bossRarityWeights).map(([value, weight]) => ({ value: value as RarityId, weight })))
-    : weightedChoice(state, Object.values(RARITIES).map(definition => ({ value: definition.id, weight: definition.weight })))
+  const rarityWeights = input.dropSource
+    ? WOLF_LOOT_RULES.profiles[input.dropSource].rarityWeights
+    : input.bossSource
+      ? WOLF_LOOT_RULES.bossRarityWeights
+      : Object.fromEntries(Object.values(RARITIES).map(definition => [definition.id, definition.weight]))
+  const rarity: RarityId = weightedChoice(state, Object.entries(rarityWeights)
+    .map(([value, weight]) => ({ value: value as RarityId, weight })))
   const rarityDefinition = RARITIES[rarity]
   const materialBias: MaterialDefinition['bias'] | undefined = input.material ? MATERIALS[input.material].bias : undefined
   const remaining: AffixId[] = base.affixes.filter(id => AFFIXES[id].slots.some(slot => slot === base.slot))
@@ -120,6 +176,7 @@ export function awardWolfLoot(state: GameState, options: AwardWolfLootOptions): 
     || !catalogKey(WOLF_MONSTERS, options.definitionId)) throw new RangeError('狼族掉落來源無效。')
 
   const definition = WOLF_MONSTERS[options.definitionId]
+  const profile = WOLF_LOOT_RULES.profiles[options.definitionId]
   const slot = availableInstanceSlot(state)
   const counts = materialCounts(state, slot.ownerId)
   const table = LOOT_TABLES[definition.lootTable]
@@ -127,7 +184,7 @@ export function awardWolfLoot(state: GameState, options: AwardWolfLootOptions): 
   for (const materialId of table.guaranteed) maximumAdds[materialId] = (maximumAdds[materialId] ?? 0) + 1
   if (definition.rank === 'boss') maximumAdds[table.bossGuaranteed] = (maximumAdds[table.bossGuaranteed] ?? 0) + 1
   if (WOLF_LOOT_RULES.hideChance > 0) maximumAdds.wolfHide = (maximumAdds.wolfHide ?? 0) + 1
-  if (definition.rank !== 'boss' && table.rare.chance > 0) maximumAdds[table.rare.materialId] = (maximumAdds[table.rare.materialId] ?? 0) + 1
+  if (definition.rank !== 'boss' && profile.rareMaterialChance > 0) maximumAdds[table.rare.materialId] = (maximumAdds[table.rare.materialId] ?? 0) + 1
   for (const [materialId, amount] of Object.entries(maximumAdds) as [MaterialId, number][]) {
     if (counts[materialId] > Number.MAX_SAFE_INTEGER - amount) throw new RangeError('素材堆疊已達安全上限。')
   }
@@ -136,13 +193,15 @@ export function awardWolfLoot(state: GameState, options: AwardWolfLootOptions): 
   for (const materialId of table.guaranteed) dropped[materialId] = (dropped[materialId] ?? 0) + 1
   if (definition.rank === 'boss') dropped[table.bossGuaranteed] = (dropped[table.bossGuaranteed] ?? 0) + 1
   if (random(state) < WOLF_LOOT_RULES.hideChance) dropped.wolfHide = (dropped.wolfHide ?? 0) + 1
-  if (definition.rank !== 'boss' && random(state) < table.rare.chance) {
+  if (definition.rank !== 'boss' && profile.rareMaterialChance > 0 && random(state) < profile.rareMaterialChance) {
     dropped[table.rare.materialId] = (dropped[table.rare.materialId] ?? 0) + 1
   }
 
   const gearDropped = definition.rank !== 'normal' || random(state) < WOLF_LOOT_RULES.normalGearChance
   const baseId = gearDropped
-    ? weightedChoice(state, table.weighted.map(entry => ({ value: entry.baseId, weight: entry.weight })))
+    ? definition.rank === 'boss'
+      ? WOLF_LOOT_RULES.bossExclusiveBase
+      : weightedChoice(state, table.weighted.map(entry => ({ value: entry.baseId, weight: entry.weight })))
     : null
   const bossSource: MonsterDefinitionId | null = definition.rank === 'boss' ? definition.id : null
   const itemMaterial = baseId && bossSource
@@ -150,7 +209,9 @@ export function awardWolfLoot(state: GameState, options: AwardWolfLootOptions): 
     : baseId && ITEM_BASES[baseId].slot === 'armor'
       ? 'wolfHide'
       : table.guaranteed[0]!
-  const item = baseId ? generateItem(state, { baseId, level: definition.level, material: itemMaterial, bossSource }) : null
+  const item = baseId ? generateItem(state, { baseId, level: profile.dropLevel, material: itemMaterial, bossSource,
+    dropSource: definition.id }) : null
+  const firstBaseDiscovery = !!item && !state.reward.collection.bases.includes(item.baseId)
 
   const ownerMaterials = state.reward.materials[slot.ownerId] ?? { wolfFang: 0, wolfHide: 0, moonStone: 0 }
   for (const [materialId, amount] of Object.entries(dropped) as [MaterialId, number][]) {
@@ -176,6 +237,6 @@ export function awardWolfLoot(state: GameState, options: AwardWolfLootOptions): 
   for (const [materialId, amount] of Object.entries(dropped) as [MaterialId, number][]) {
     emit(state, 'loot.material', 'player', `獲得${MATERIALS[materialId].name} ×${amount}。`)
   }
-  if (item) emit(state, 'loot.item', 'player', `獲得${RARITIES[item.rarity].name}${ITEM_BASES[item.baseId].name}。`)
+  if (item) emit(state, 'loot.item', 'player', `${firstBaseDiscovery ? '新發現：' : ''}獲得${RARITIES[item.rarity].name}${ITEM_BASES[item.baseId].name}。`)
   return { instance: item, materials: dropped }
 }

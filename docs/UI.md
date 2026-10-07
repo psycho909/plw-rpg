@@ -33,6 +33,7 @@
 | Living news／requests | LifeNewsWindow.vue | `projectLivingNews`、`state.life.requests` | 地方／區域／傳聞／重大消息、近期委託 | `livingEvents.test.ts`、`lifeIntegration.test.ts` |
 | World First map | WorldMap.vue + `projectWorld` | `GameState` 經 `worldProjection.ts`／`worldUI.ts` 投影 | 已探索圖格、居民、產業、作物和威脅標記 | `worldProjection.test.ts`、瀏覽器遊玩流程 |
 | Procedural gear / discovery | InventoryWindow.vue、CharacterSheet.vue + `rewardProjection` | `state.reward`、rewards catalog、rewardActions / combatStats | 原生分類／部位／品質按鈕、20 件分頁、同部位比較、穿戴、出售確認、素材交易、有限見聞收藏 | `rewardProjection.test.ts`、Phase2 engine tests、reward-core production Browser 流程 |
+| Adventure reward / comparison | PlaceWindow.vue + AdventureWindow.vue + `wolfRewardExpectation` / `rewardProjection` | `state.reward`、wolf loot configuration、current slot equipment | 追蹤目標逐列呈現真實 gear/rank/rarity/material/exclusive expectation；單一下一目標提示；戰鬥顯示 reward forecast；同窗比較 rarity、逐項能力差與 affix/special 差異 | `rewardProjection.test.ts`、Phase4 targeted browser、Adventure stress/playtest |
 
 本機遊戲無表格選取、日期輸入、表單或 single-select；不建立無用 UI primitive。PixelWindow 是所有 modal 唯一 owner，PixelMeter 是生命／體力／熟練度／作物進度唯一 owner。清單篩選用原生按鈕群組，保持 aria-pressed。
 
@@ -69,6 +70,10 @@ V2.x 物品視窗預設仍為「日常物品」，新增獵獲裝備、狼族素
 固定與獵獲裝備共用武器／防具兩個部位，替換會留下原物品。穿戴呼叫引擎 action，自動保存並保留原視窗；戰鬥中停用。出售獨立裝備先在同一視窗內明示名稱、金額與永久移出背包的結果，預設聚焦「保留這件裝備」；取消回到原出售按鈕。實際出售仍受鐵匠鋪距離／營業與不得出售已穿戴物品限制，失敗保留原選取並顯示共用訊息。狼族素材在既有雜貨店出售，每次一份／5 分鐘，非新工坊。見聞只投影已知 catalog IDs，跨角色保留，不儲存每件普通物品的完整歷史。這些 UI 描述不代表 Phase2/3 工程 gate 或真人留存驗收已完成。
 
 狼族追蹤沿用森林 `PlaceWindow`，只呈現五種現有狼族定義。`wolfEncounterOptions` 提供名稱、資格及下一個追蹤目標的原因，`encounterWolf` 才能形成遭遇；開視窗不抽 RNG 或生成 Boss。原尋找怪物、哥布林危機與地下城仍有自己的流程。`AdventureWindow` 對帶有 familyEncounter 的戰鬥使用 `wolfCombatPresentation` 顯示等級、階級、特性、Boss 變種與下一回合提示；提示來自引擎的同一機制，UI 不計算傷害。狼王形成時捕捉世界怪物量、安全及玩家既有戰鬥勝利 counter（所有戰鬥的介入 proxy），逃跑、死亡或重載後保留同一形態；勝利後七個遊戲日才能再次追蹤。這是單一狼族核心，不包含製作、其他家族或完整 V2.x content expansion。
+
+Phase4 Adventure reward UI 沿用上述森林與戰鬥視窗：森林列出的每個既有狼族目標都透過 RNG-free `wolfRewardExpectation` 顯示實際掉落等級、裝備機率、各品質機率、保底／機率素材與首領限定底材；UI 不另算機率或重複維護 balance 常數。`data-wolf-track`、`data-wolf-reward-expectation` 和唯一可見的 `data-adventure-goal` 是正式呈現節點，供真實 UI playtest 辨認當前目標與 reward expectation。戰鬥窗在狼族戰鬥顯示依相同投影生成的獎勵預期。下一目標只使用現有追蹤資格、收藏與真實獎勵設定；沒有未解鎖內容時提示已有的高品質追蹤或重挑首領，不建立任務標記海或不存在的新內容。裝備底材第一次進入 collection 時，既有 `loot.item` 事件訊息帶「新發現」；背包只讀目前仍在有界 events buffer 的原始事件。事件離開 buffer 後不重建新發現提示，收藏視窗僅顯示「收藏已記錄」與持久 collection ID。
+
+獵獲裝備詳情在同一個物品視窗比較新裝備與目前同部位裝備，列出雙方稀有度、每項實際能力與帶正負號的差值，再分列雙方詞綴及特殊特性。此比較是部件資訊，不產生整體戰力分數，也不把某一數值較高稱為升級。詞綴說明遵循現有 combat formula：裂傷是每次命中額外固定傷害、不是持續傷害；穿透降低目標防禦，狼族硬皮啟動時穿透效果加倍；暴擊依機率造成雙倍傷害；格擋依機率令來襲傷害減半；減傷依百分比降低來襲傷害。新舊詞綴均保留文字用途，特殊狼族效果標明適用對象。品質始終以繁中名稱表示，不只用顏色區別。原有頁數、篩選、穿戴與出售確認/focus 流程維持原 contract。
 
 儲存世界成功後保留目前位置與視窗，顯示「世界已儲存」。每次有效操作與時間推進立即保存，選單顯示「已存於此瀏覽器 · 操作後立即保存」。進度與待補寫紀錄保存在當前 origin 的 localStorage，完整紀錄追加至 IndexedDB，沒有網路同步。選單的「匯出遊玩紀錄」下載 JSON，包含歷次紀錄、待補寫內容及目前進度；不提供編輯、匯入紀錄或回退。
 

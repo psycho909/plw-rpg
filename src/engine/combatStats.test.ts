@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { ITEM_BASES, RARITIES } from '../data/rewards'
-import type { GearStats, ItemBaseId, ItemInstance, SpecialTraitId } from '../domain/reward'
+import type { GearStats, ItemAffix, ItemBaseId, ItemInstance, MonsterTraitId, SpecialTraitId } from '../domain/reward'
 import { combatTurn } from './actions'
+import { rolledItemStats } from './gearStats'
 import { createGame, player } from './simulation'
 import { equipmentStats, incomingDamage, playerAttackDamage } from './combatStats'
+import { resolveWolfCombatStats } from './wolfFamily'
 
 const zeroStats: GearStats = { attack: 0, defense: 0, critical: 0, penetration: 0, bleed: 0, block: 0, reduction: 0 }
 
@@ -12,6 +14,35 @@ function gear(ownerId: string, instanceId: string, baseId: ItemBaseId, stats: Pa
     instanceId, ownerId, baseId, level: 1, material: null, rarity: specialTrait ? 'legendary' : 'common',
     rolledStats: { ...zeroStats, ...stats }, affixes: [], specialTrait, provenance: null,
   }
+}
+
+function controlledWolfFight(seed: number, affix: 'piercing' | 'bleeding', traits: MonsterTraitId[], turn: number) {
+  const state = createGame(seed), character = player(state)
+  const affixes: ItemAffix[] = [
+    { id: 'striking', tier: 1, value: 1 },
+    { id: affix, tier: 2, value: 2 },
+  ]
+  const weapon: ItemInstance = {
+    instanceId: 'item-1', ownerId: character.id, baseId: 'shortSword', level: 5, material: null, rarity: 'rare',
+    rolledStats: rolledItemStats('shortSword', 5, affixes), affixes, specialTrait: null, provenance: null,
+  }
+  state.reward.instances.push(weapon)
+  state.reward.nextInstanceId = 2
+  state.reward.equipped[character.id] = { weapon: weapon.instanceId, armor: null }
+  const encounter = {
+    definitionId: 'scarredWolf' as const, traits, variant: null, turn,
+    formedAt: state.worldTime - turn, context: { population: 12, hunted: 0, safety: 88 }, howlActive: false,
+  }
+  const combat = resolveWolfCombatStats(encounter)
+  state.combat = { monsterId: 'wolf', ...combat, hp: combat.maxHp, dungeon: false, familyEncounter: structuredClone(encounter) }
+  character.status = 'combat'
+  return state
+}
+
+function combatDamage(state: ReturnType<typeof createGame>) {
+  const before = state.combat!.hp
+  expect(combatTurn(state, 'attack')).toBe('')
+  return before - state.combat!.hp
 }
 
 describe('equipment stats and damage', () => {
@@ -52,6 +83,24 @@ describe('equipment stats and damage', () => {
     state.rngState = 53
     const wolfDamage = playerAttackDamage(state, 7, true)
     expect(wolfDamage).toBe((withoutWolfBonus + 3) * 2)
+  })
+
+  it('doubles penetration only during an active wolf hard-skin phase and preserves other damage formulas', () => {
+    const lowPen = controlledWolfFight(48041, 'piercing', [], 0)
+    const lowBleed = controlledWolfFight(48041, 'bleeding', [], 0)
+    const armoredPen = controlledWolfFight(48041, 'piercing', ['armored'], 2)
+    const armoredBleed = controlledWolfFight(48041, 'bleeding', ['armored'], 2)
+
+    expect(lowPen.combat).toEqual(lowBleed.combat)
+    expect(armoredPen.combat).toEqual(armoredBleed.combat)
+    expect(lowPen.rngState).toBe(lowBleed.rngState)
+    expect(armoredPen.rngState).toBe(armoredBleed.rngState)
+    expect(playerAttackDamage(armoredPen, 5)).toBe(12)
+    expect(playerAttackDamage(armoredPen, 5, false, { wolfArmoredPhase: true })).toBe(14)
+    expect(combatDamage(lowPen)).toBe(15)
+    expect(combatDamage(lowBleed)).toBe(16)
+    expect(combatDamage(armoredPen)).toBe(14)
+    expect(combatDamage(armoredBleed)).toBe(12)
   })
 
   it('keeps bleed and Moon Hunter as extra per-hit damage through very high defense', () => {

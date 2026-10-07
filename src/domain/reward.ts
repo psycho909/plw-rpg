@@ -2,7 +2,7 @@ import type { RegionId } from './types'
 
 export type EquipmentSlot = 'weapon' | 'armor'
 export type RarityId = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary'
-export type ItemBaseId = 'shortSword' | 'axe' | 'spear' | 'hideArmor' | 'chainArmor'
+export type ItemBaseId = 'shortSword' | 'axe' | 'spear' | 'hideArmor' | 'chainArmor' | 'moonFangSpear'
 export type MaterialId = 'wolfFang' | 'wolfHide' | 'moonStone'
 export type AffixId = 'striking' | 'keen' | 'piercing' | 'bleeding' | 'sturdy' | 'blocking' | 'warding'
 export type SpecialTraitId = 'moonHunter'
@@ -20,7 +20,7 @@ export interface ItemInstance {
   rarity: RarityId; rolledStats: GearStats; affixes: ItemAffix[]; specialTrait: SpecialTraitId | null
   provenance: { createdBy: string | null; createdAt: number; bossSource: MonsterDefinitionId | null; materialSource: MaterialId | null } | null
 }
-export interface ItemBaseDefinition { id: ItemBaseId; name: string; slot: EquipmentSlot; attack: number; defense: number; sell: number; affixes: AffixId[] }
+export interface ItemBaseDefinition { id: ItemBaseId; name: string; slot: EquipmentSlot; attack: number; defense: number; sell: number; affixes: AffixId[]; penetration?: number }
 export interface AffixDefinition { id: AffixId; name: string; stat: keyof GearStats; slots: EquipmentSlot[]; tiers: number[] }
 export interface RarityDefinition { id: RarityId; name: string; weight: number; affixCount: number; maxTier: number; specialEligible: boolean }
 export interface MaterialDefinition { id: MaterialId; name: string; sell: number; bias: Partial<Record<AffixId, number>>; specialBonus: number; description: string }

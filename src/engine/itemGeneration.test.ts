@@ -1,12 +1,54 @@
 import { describe, expect, it } from 'vitest'
-import { AFFIXES, ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
+import { AFFIXES, ITEM_BASES, LOOT_TABLES, MATERIALS, RARITIES } from '../data/rewards'
 import type { ItemBaseId } from '../domain/reward'
 import { maximumAffixTier, rolledItemStats } from './gearStats'
 import { createGame } from './simulation'
-import { awardWolfLoot, generateItem } from './itemGeneration'
+import { awardWolfLoot, generateItem, wolfRewardExpectation } from './itemGeneration'
 import { deserialize, serialize } from '../services/saveService'
 
 describe('procedural item generation', () => {
+  it('defines the boss-exclusive moon fang spear without changing the shared base pool or old weapon rolls', () => {
+    expect(Reflect.get(ITEM_BASES, 'moonFangSpear')).toEqual({ id: 'moonFangSpear', name: '月牙獵矛', slot: 'weapon',
+      attack: 5, defense: 0, sell: 20, affixes: ['keen', 'piercing', 'bleeding'], penetration: 2 })
+    expect(LOOT_TABLES.wolf.weighted.map(entry => entry.baseId)).toEqual(['shortSword', 'axe', 'spear', 'hideArmor', 'chainArmor'])
+    expect(rolledItemStats('shortSword', 7, [])).toEqual({ attack: 6, defense: 0, critical: 0, penetration: 0, bleed: 0, block: 0, reduction: 0 })
+    expect(rolledItemStats('moonFangSpear', 7, [{ id: 'keen', tier: 1, value: 3 }])).toEqual({
+      attack: 7, defense: 0, critical: 3, penetration: 2, bleed: 0, block: 0, reduction: 0,
+    })
+  })
+
+  it('projects source-specific reward expectations as detached pure data', () => {
+    expect(wolfRewardExpectation('grayWolf')).toEqual({
+      definitionId: 'grayWolf', rank: 'normal', exclusiveBase: null, dropLevel: 2, gearChance: .65,
+      rarityChances: { common: .6, uncommon: .27, rare: .1, epic: .028, legendary: .002 },
+      guaranteedMaterials: { wolfFang: 1 }, chanceMaterials: { wolfHide: .25, moonStone: .03 },
+    })
+    expect(wolfRewardExpectation('scarredWolf')).toEqual({
+      definitionId: 'scarredWolf', rank: 'normal', exclusiveBase: null, dropLevel: 3, gearChance: .65,
+      rarityChances: { common: .45, uncommon: .35, rare: .16, epic: .036, legendary: .004 },
+      guaranteedMaterials: { wolfFang: 1 }, chanceMaterials: { wolfHide: .25, moonStone: .04 },
+    })
+    expect(wolfRewardExpectation('alphaWolf')).toEqual({
+      definitionId: 'alphaWolf', rank: 'elite', exclusiveBase: null, dropLevel: 5, gearChance: 1,
+      rarityChances: { common: .2, uncommon: .45, rare: .28, epic: .065, legendary: .005 },
+      guaranteedMaterials: { wolfFang: 1 }, chanceMaterials: { wolfHide: .25, moonStone: .08 },
+    })
+    expect(wolfRewardExpectation('packLeader')).toEqual({
+      definitionId: 'packLeader', rank: 'miniBoss', exclusiveBase: null, dropLevel: 7, gearChance: 1,
+      rarityChances: { common: 0, uncommon: .35, rare: .5, epic: .14, legendary: .01 },
+      guaranteedMaterials: { wolfFang: 1 }, chanceMaterials: { wolfHide: .25, moonStone: .15 },
+    })
+    expect(wolfRewardExpectation('wolfKing')).toEqual({
+      definitionId: 'wolfKing', rank: 'boss', exclusiveBase: 'moonFangSpear', dropLevel: 7, gearChance: 1,
+      rarityChances: { common: 0, uncommon: 0, rare: .85, epic: .14, legendary: .01 },
+      guaranteedMaterials: { wolfFang: 1, moonStone: 1 }, chanceMaterials: { wolfHide: .25 },
+    })
+
+    const first = wolfRewardExpectation('alphaWolf')
+    first.rarityChances.rare = 0
+    expect(wolfRewardExpectation('alphaWolf').rarityChances.rare).toBe(.28)
+  })
+
   it('returns a deterministic unique instance without awarding it to the reward state', () => {
     const first = createGame(442), second = createGame(442)
     const beforeRng = first.rngState
@@ -28,6 +70,8 @@ describe('procedural item generation', () => {
     { baseId: 'shortSword', level: 101 },
     { baseId: 'shortSword', level: 1, material: 'iron' },
     { baseId: 'shortSword', level: 1, bossSource: 'grayWolf' },
+    { baseId: 'shortSword', level: 7, dropSource: 'missing' },
+    { baseId: 'shortSword', level: 7, dropSource: 'alphaWolf', bossSource: 'wolfKing' },
   ])('rejects invalid input before consuming state: %o', input => {
     const state = createGame(713), before = structuredClone(state)
     expect(() => generateItem(state, input as unknown as Parameters<typeof generateItem>[1])).toThrow()
@@ -73,6 +117,7 @@ describe('procedural item generation', () => {
   it('uses the rare-plus boss rarity pool and preserves generated rolls across save and reload', () => {
     const state = createGame(81), counts = { rare: 0, epic: 0, legendary: 0 }
     const savedItem = generateItem(state, { baseId: 'shortSword', level: 7, bossSource: 'wolfKing' })
+    expect(savedItem.baseId).toBe('shortSword')
     state.reward.instances.push(savedItem)
     for (let index = 0; index < 2000; index++) {
       const item = generateItem(state, { baseId: 'spear', level: 7, bossSource: 'wolfKing' })
@@ -84,9 +129,92 @@ describe('procedural item generation', () => {
     expect(deserialize(serialize(state, 0)).state.reward.instances[0]).toEqual(savedItem)
     expect(state.reward.instances).toHaveLength(1)
   })
+
+  it('uses source-qualified rarity pools while keeping every roll valid for its level and rarity', () => {
+    const state = createGame(2038)
+    const generated = Array.from({ length: 40 }, () => generateItem(state, {
+      baseId: 'shortSword', level: 7, dropSource: 'packLeader',
+    }))
+
+    expect(generated.every(item => item.rarity !== 'common')).toBe(true)
+    for (const item of generated) {
+      expect(item.affixes).toHaveLength(RARITIES[item.rarity].affixCount)
+      for (const affix of item.affixes) {
+        expect(affix.tier).toBeLessThanOrEqual(maximumAffixTier(item.level, item.rarity))
+        expect(affix.value).toBe(AFFIXES[affix.id].tiers[affix.tier - 1])
+      }
+      expect(item.rolledStats).toEqual(rolledItemStats(item.baseId, item.level, item.affixes))
+    }
+    expect(state.reward.instances).toEqual([])
+  })
 })
 
 describe('wolf loot awards', () => {
+  it('marks only the first award of an equipment base as a new discovery without changing loot state or RNG', () => {
+    const state = createGame(48042), replay = createGame(48042)
+    const first = awardWolfLoot(state, { definitionId: 'wolfKing' })
+    awardWolfLoot(replay, { definitionId: 'wolfKing' })
+    const firstItemEvent = state.events.filter(event => event.type === 'loot.item').at(-1)!
+
+    expect(first.instance?.baseId).toBe('moonFangSpear')
+    expect(firstItemEvent.message).toBe(`新發現：獲得${RARITIES[first.instance!.rarity].name}${ITEM_BASES[first.instance!.baseId].name}。`)
+    expect(state.rngState).toBe(replay.rngState)
+    expect(state.reward).toEqual(replay.reward)
+
+    const second = awardWolfLoot(state, { definitionId: 'wolfKing' })
+    const secondItemEvent = state.events.filter(event => event.type === 'loot.item').at(-1)!
+    expect(second.instance?.baseId).toBe(first.instance?.baseId)
+    expect(secondItemEvent.message).toBe(`獲得${RARITIES[second.instance!.rarity].name}${ITEM_BASES[second.instance!.baseId].name}。`)
+    expect(secondItemEvent.message).not.toContain('新發現')
+    expect(Object.keys(state.reward).sort()).toEqual(['collection', 'equipped', 'instances', 'materials', 'nextInstanceId', 'schemaVersion', 'wolfBossDefeatedAt', 'wolfBossForm'].sort())
+    expect(deserialize(serialize(state)).state.reward).toEqual(state.reward)
+  })
+
+  it('awards the moon fang spear only for the boss and round-trips its intrinsic penetration through strict save validation', () => {
+    const boss = createGame(48042)
+    const loot = awardWolfLoot(boss, { definitionId: 'wolfKing' })
+    const item = loot.instance!
+
+    expect(item.baseId).toBe('moonFangSpear')
+    expect(item.material).toBe('moonStone')
+    expect(item.rolledStats).toEqual(rolledItemStats('moonFangSpear', 7, item.affixes))
+    expect(item.rolledStats.penetration).toBeGreaterThanOrEqual(2)
+    expect(loot.materials).toMatchObject({ wolfFang: 1, moonStone: 1 })
+    expect(deserialize(serialize(boss)).state).toEqual(boss)
+
+    const alpha = createGame(48043), alphaLoot = awardWolfLoot(alpha, { definitionId: 'alphaWolf' })
+    const packLeader = createGame(48044), packLoot = awardWolfLoot(packLeader, { definitionId: 'packLeader' })
+    expect(alphaLoot.instance?.baseId).not.toBe('moonFangSpear')
+    expect(packLoot.instance?.baseId).not.toBe('moonFangSpear')
+  })
+
+  it('rejects the boss-exclusive base for a non-boss source before consuming RNG', () => {
+    const state = createGame(48045), before = structuredClone(state)
+    expect(() => generateItem(state, { baseId: 'moonFangSpear', level: 7, dropSource: 'alphaWolf' })).toThrow()
+    expect(state).toEqual(before)
+  })
+
+  it('uses approved new drop levels and keeps their generated stats reloadable', () => {
+    for (const [seed, definitionId, dropLevel] of [
+      [801, 'alphaWolf', 5],
+      [802, 'packLeader', 7],
+      [803, 'wolfKing', 7],
+    ] as const) {
+      const state = createGame(seed)
+      const loot = awardWolfLoot(state, { definitionId })
+      const item = loot.instance!
+
+      expect(item).toBeDefined()
+      expect(item.level).toBe(dropLevel)
+      expect(item.rolledStats).toEqual(rolledItemStats(item.baseId, dropLevel, item.affixes))
+      for (const affix of item.affixes) {
+        expect(affix.tier).toBeLessThanOrEqual(maximumAffixTier(dropLevel, item.rarity))
+        expect(affix.value).toBe(AFFIXES[affix.id].tiers[affix.tier - 1])
+      }
+      expect(deserialize(serialize(state)).state.reward.instances).toEqual(state.reward.instances)
+    }
+  })
+
   it('awards guaranteed family materials and an instance for elite and boss kills', () => {
     const elite = createGame(301), boss = createGame(302)
     const eliteLoot = awardWolfLoot(elite, { definitionId: 'alphaWolf' })

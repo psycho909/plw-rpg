@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { BOSS_VARIANTS, WOLF_MONSTERS } from '../data/rewards'
+import { BOSS_VARIANTS, MONSTER_TRAITS, WOLF_MONSTERS } from '../data/rewards'
 import type { FamilyEncounter, MonsterDefinitionId, MonsterTraitId } from '../domain/reward'
 import type { GameState } from '../domain/types'
 import { combatTurn } from './actions'
@@ -44,6 +44,10 @@ function installCombat(state: GameState, encounter: FamilyEncounter) {
 }
 
 describe('wolf family encounters', () => {
+  it('explains the active hard-skin penetration effect in the armor trait cue', () => {
+    expect(MONSTER_TRAITS.armored.description).toContain('防線啟動時穿透效力加倍')
+  })
+
   it('projects all five definitions and progression reasons without changing the world', () => {
     const state = createGame(31)
     forest(state)

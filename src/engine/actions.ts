@@ -168,7 +168,8 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
   const family = !monster.dungeon && monster.monsterId === 'wolf' ? monster.familyEncounter : undefined
   const familyPhase = family ? wolfCombatPhase(family, monster.hp, monster.maxHp) : null
   const effectiveDefense = family && familyPhase ? wolfDefenseForTurn(monster.defense, familyPhase) : monster.defense
-  if (command === 'attack') monster.hp = Math.max(0, monster.hp - playerAttackDamage(state, effectiveDefense, monster.monsterId === 'wolf'))
+  const attackContext = familyPhase?.armored ? { wolfArmoredPhase: true } : undefined
+  if (command === 'attack') monster.hp = Math.max(0, monster.hp - playerAttackDamage(state, effectiveDefense, monster.monsterId === 'wolf', attackContext))
   for (const p of state.party) {
     const npc = state.npcs.find(n => n.id === p.npcId && n.isAlive)
     if (!npc) continue

@@ -162,6 +162,12 @@ describe('shop and equipment', () => {
 })
 
 describe('combat and exploration', () => {
+  it('does not advance the world or RNG for an attack without an active encounter', () => {
+    const state = createGame(48041), before = structuredClone(state)
+    expect(combatTurn(state, 'attack')).toBe('目前沒有戰鬥。')
+    expect(state).toEqual(before)
+  })
+
   it('uses the wolf family material payout without adding the legacy generic stack', () => {
     const wolf = createGame(), wolfCharacter = player(wolf)
     forest(wolf); expect(encounter(wolf)).toBe('')

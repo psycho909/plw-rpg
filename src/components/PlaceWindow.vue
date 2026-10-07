@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { BUILDINGS, CONFIG, DUNGEON, ITEMS, REGIONS } from '../data/config'
+import { ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
+import type { MaterialId, MonsterDefinitionId, RarityId } from '../domain/reward'
 import type { ItemId } from '../domain/types'
 import { buyPrice, canVisit, encounter, enterDungeon, farm, gather, hire, hireTerms, rest, trade } from '../engine/actions'
+import { wolfRewardExpectation } from '../engine/itemGeneration'
 import { npcCanWork } from '../engine/npcLife'
 import { encounterWolf, wolfEncounterOptions } from '../engine/wolfFamily'
 import { distance, stageIndex } from '../engine/simulation'
@@ -24,6 +27,32 @@ const price = (item: ItemId) => buyPrice(game.state, item)
 const canSell = (item: ItemId) => c.value.inventory[item] > (c.value.equipment.weapon === item || c.value.equipment.armor === item ? 1 : 0)
 const rumor = computed(() => game.state.threat.bossAlive ? '北方出現了哥布林酋長，商人都不敢出門了。' : game.state.threat.threatLevel >= 2 ? '森林裡的腳步聲愈來愈多，出門記得找個伴。' : '最近林子還算安靜。聽說山谷裡藏著一座舊礦坑。')
 const wolfOptions = computed(() => props.place === 'forest' ? wolfEncounterOptions(game.state) : [])
+const wolfExpectations = computed(() => Object.fromEntries(wolfOptions.value.map(option => [option.definitionId, wolfRewardExpectation(option.definitionId)])))
+const adventureGoal = computed(() => {
+  const defeated = new Set(game.state.reward.collection.defeated)
+  const nextUndiscovered = wolfOptions.value.find(option => !defeated.has(option.definitionId))
+  if (nextUndiscovered) return nextUndiscovered.eligible
+    ? `追蹤${nextUndiscovered.label}，繼續認識北林狼族。`
+    : nextUndiscovered.reason ?? `先完成前一段狼族追蹤，再尋找${nextUndiscovered.label}。`
+
+  const boss = wolfOptions.value.find(option => option.rank === 'boss')
+  if (boss?.eligible) return `再次挑戰${boss.label}，尋找首領限定裝備與不同變種。`
+  const elite = wolfOptions.value.find(option => option.definitionId === 'alphaWolf')
+  if (elite?.eligible) return `追蹤${elite.label}，比較高品質裝備與不同詞綴用途。`
+  return boss?.reason ?? wolfOptions.value.find(option => option.reason)?.reason ?? '狼族蹤跡暫時中斷；探索北方森林，等待新的線索。'
+})
+const percent = (value: number) => new Intl.NumberFormat('zh-TW', { style: 'percent', maximumFractionDigits: 1 }).format(value)
+function rewardExpectationText(definitionId: MonsterDefinitionId) {
+  const expectation = wolfExpectations.value[definitionId]
+  const rarities = (Object.entries(expectation.rarityChances) as [RarityId, number][])
+    .filter(([, chance]) => chance > 0).map(([id, chance]) => `${RARITIES[id].name} ${percent(chance)}`).join('、')
+  const guaranteed = (Object.entries(expectation.guaranteedMaterials) as [MaterialId, number][])
+    .map(([id, amount]) => `${MATERIALS[id].name} ×${amount}`).join('、') || '無'
+  const chance = (Object.entries(expectation.chanceMaterials) as [MaterialId, number][])
+    .map(([id, value]) => `${MATERIALS[id].name} ${percent(value)}`).join('、') || '無'
+  const exclusive = expectation.exclusiveBase ? ` · 首領限定裝備：${ITEM_BASES[expectation.exclusiveBase].name}` : ''
+  return `獵裝 ${percent(expectation.gearChance)} · 掉落 Lv.${expectation.dropLevel} · 品質（掉落裝備時） ${rarities} · 保底 ${guaranteed} · 機率素材 ${chance}${exclusive}`
+}
 </script>
 
 <template>
@@ -49,7 +78,8 @@ const wolfOptions = computed(() => props.place === 'forest' ? wolfEncounterOptio
     <section v-if="place === 'forest'" aria-labelledby="wolf-track-title">
       <h3 id="wolf-track-title" class="section-title">狼族蹤跡</h3>
       <p class="muted help-text">沿著擊退紀錄追蹤更深處的狼群。每次追蹤花費 8 體力；先準備裝備與藥水，再留意戰鬥中的下一回合提示。</p>
-      <div class="wolf-track-list"><div v-for="option in wolfOptions" :key="option.definitionId" class="wolf-track-row"><button :class="{ danger: option.rank === 'boss' }" :disabled="!option.eligible" @click="game.act(() => encounterWolf(game.state, option.definitionId))">{{ option.label }}</button><span v-if="option.reason" class="muted">{{ option.reason }}</span></div></div>
+      <p class="adventure-goal" data-adventure-goal><strong>下一個冒險目標</strong> · {{ adventureGoal }}</p>
+      <div class="wolf-track-list"><div v-for="option in wolfOptions" :key="option.definitionId" class="wolf-track-row" :data-wolf-track="option.definitionId" :data-rank="option.rank"><button :class="{ danger: option.rank === 'boss' }" :disabled="!option.eligible" @click="game.act(() => encounterWolf(game.state, option.definitionId))">{{ option.label }}</button><span v-if="option.reason" class="muted">{{ option.reason }}</span><p class="wolf-track-reward" data-wolf-reward-expectation>{{ rewardExpectationText(option.definitionId) }}</p></div></div>
     </section>
   </template>
   <template v-else-if="place === 'unknown'">

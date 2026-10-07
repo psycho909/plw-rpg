@@ -1,8 +1,9 @@
 import { expect, it } from 'vitest'
-import type { ItemInstance } from '../domain/reward'
-import { encounterWolf } from '../engine/wolfFamily'
+import type { FamilyEncounter, ItemAffix, ItemInstance } from '../domain/reward'
+import { encounterWolf, resolveWolfCombatStats } from '../engine/wolfFamily'
 import { combatTurn } from '../engine/actions'
 import { chooseSuccessor, createGame, walkTo } from '../engine/simulation'
+import { rolledItemStats } from '../engine/gearStats'
 import { deserialize, serialize } from './saveService'
 import nativeV1 from '../../reports/v2/20261004-life-emergence/fixtures/native-v1.json'
 
@@ -73,6 +74,26 @@ function startedWolf(state = createGame(90), definitionId: 'wolfKing' | 'packLea
   return state
 }
 
+function armoredPhaseFight(seed: number, comparedAffix: 'piercing' | 'bleeding') {
+  const state = createGame(seed), character = state.characters[0]!
+  const affixes: ItemAffix[] = [
+    { id: 'striking', tier: 1, value: 1 },
+    { id: comparedAffix, tier: 2, value: 2 },
+  ]
+  const weapon: ItemInstance = { instanceId: 'item-1', ownerId: character.id, baseId: 'shortSword', level: 5,
+    material: null, rarity: 'rare', rolledStats: rolledItemStats('shortSword', 5, affixes), affixes,
+    specialTrait: null, provenance: null }
+  state.reward.instances.push(weapon)
+  state.reward.nextInstanceId = 2
+  state.reward.equipped[character.id] = { weapon: weapon.instanceId, armor: null }
+  const familyEncounter: FamilyEncounter = { definitionId: 'scarredWolf', traits: ['armored'], variant: null,
+    turn: 2, formedAt: state.worldTime - 2, context: { population: 12, hunted: 0, safety: 88 }, howlActive: false }
+  const stats = resolveWolfCombatStats(familyEncounter)
+  state.combat = { monsterId: 'wolf', ...stats, hp: stats.maxHp, dungeon: false, familyEncounter: structuredClone(familyEncounter) }
+  character.status = 'combat'
+  return state
+}
+
 it('round-trips canonical family stats and preserves a boss formation across live turns', () => {
   const state = startedWolf()
   expect(deserialize(serialize(state)).state).toEqual(state)
@@ -81,6 +102,23 @@ it('round-trips canonical family stats and preserves a boss formation across liv
 
   expect(state.combat?.familyEncounter?.turn).toBe(1)
   expect(deserialize(serialize(state)).state).toEqual(state)
+})
+
+it('applies active armor-phase penetration identically after exact save and reload', () => {
+  for (const [affix, expectedDamage] of [['piercing', 14], ['bleeding', 12]] as const) {
+    const original = armoredPhaseFight(48041, affix)
+    const loaded = deserialize(serialize(original, 48041)).state
+    const initialHp = original.combat!.hp
+    const initialRng = original.rngState
+    expect(loaded).toEqual(original)
+
+    expect(combatTurn(original, 'attack')).toBe('')
+    expect(combatTurn(loaded, 'attack')).toBe('')
+    expect(original.combat?.hp).toBe(initialHp - expectedDamage)
+    expect(loaded).toEqual(original)
+    expect(original.rngState).toBe(initialRng)
+    expect(deserialize(serialize(original, 48042)).state).toEqual(original)
+  }
 })
 
 it.each(['hp', 'maxHp', 'attack', 'defense', 'exp', 'gold', 'elite', 'root-traits', 'root-variant', 'root-formedAt', 'root-context', 'root-missing', 'turn', 'howl'] as const)(

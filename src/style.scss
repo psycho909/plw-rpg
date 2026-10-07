@@ -155,6 +155,7 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .skill-line .pixel-meter { grid-template-columns: minmax(70px, 1fr) auto; }
 .help-text { margin: 14px 0; line-height: 1.9; }
 .inventory-summary { display: flex; justify-content: space-between; margin-bottom: 16px; }
+.reward-feedback { border: 1px solid var(--border-muted); border-left: 3px solid var(--border); padding: 10px 12px; margin: 0 0 16px; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
 .inventory-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; }
 .item-list { display: grid; align-content: start; gap: 4px; }
 .item-list button { display: flex; justify-content: space-between; text-align: left; font-size: 12px; min-height: 40px; }
@@ -165,7 +166,14 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .gear-layout > *, .gear-detail { min-width: 0; overflow-wrap: anywhere; }
 .gear-comparison { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-2); margin: var(--space-3) 0; font-size: 12px; }
 .gear-comparison dd { margin: 0; font-family: var(--font-mono); }
+.gear-delta { white-space: nowrap; }
+.gear-delta.positive::before { content: '↑ '; }
+.gear-delta.negative::before { content: '↓ '; }
+.gear-affix-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.gear-affix-compare section { min-width: 0; border-top: 1px solid var(--border-muted); padding-top: var(--space-2); }
+.gear-affix-compare h4 { font-size: 12px; }
 .gear-affixes { margin: var(--space-3) 0; padding-left: var(--space-4); font-size: 12px; line-height: 1.9; }
+.gear-special-trait { border-left: 2px solid var(--border-muted); padding-left: var(--space-2); }
 .gear-pagination { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); margin: var(--space-4) 0; font-size: 12px; }
 .gear-sale-confirm, .reward-material { border-top: 1px solid var(--border-muted); padding: var(--space-4) 0; }
 .reward-material p { margin: var(--space-3) 0; line-height: 1.9; }
@@ -198,9 +206,12 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .battle-commands { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 24px; }
 .wolf-fight-details { margin: 12px 0; font-size: 12px; line-height: 1.7; }
 .wolf-fight-details p { margin: 6px 0; }
+.wolf-reward-forecast { border-top: 1px solid var(--border-muted); border-bottom: 1px solid var(--border-muted); padding: 10px 0; font-size: 12px; line-height: 1.8; }
 .battle-scene > .wolf-turn-cue { text-align: left; }
 .wolf-track-list { display: grid; gap: 8px; }
 .wolf-track-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; align-items: center; font-size: 12px; line-height: 1.7; }
+.wolf-track-reward { grid-column: 1 / -1; margin: 0; border-top: 1px dotted var(--border-muted); padding: 5px 0 9px; color: var(--text-muted); font-size: 11px; line-height: 1.7; overflow-wrap: anywhere; }
+.adventure-goal { border-left: 3px solid var(--border); background: var(--surface-alt); padding: 10px 12px; margin: 12px 0 18px; font-size: 13px; line-height: 1.8; }
 @media (max-width: 560px) { .wolf-track-row { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
 .dungeon-route { display: grid; grid-template-columns: repeat(3, 1fr); margin: 24px 0; border: 2px solid var(--border-muted); }
 .dungeon-route > div { display: grid; justify-items: center; gap: 12px; padding: 18px 8px; }
@@ -287,6 +298,7 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
   .window-world-status small { font-size: 9px; }
   .window-world-status { gap: 8px; }
   .inventory-layout { grid-template-columns: 1fr; gap: 14px; }
+  .gear-affix-compare { grid-template-columns: 1fr; gap: var(--space-2); }
   .item-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .item-list button { flex-wrap: wrap; gap: 4px; font-size: 11px; padding: 8px; }
   .item-detail { min-height: 180px; }

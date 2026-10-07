@@ -1,9 +1,11 @@
-import type { AffixDefinition, BossVariantDefinition, ItemBaseDefinition, LootTableDefinition, MaterialDefinition, MonsterDefinition, MonsterFamilyDefinition, MonsterTraitDefinition, RarityDefinition } from '../domain/reward'
+import type { AffixDefinition, BossVariantDefinition, ItemBaseDefinition, LootTableDefinition, MaterialDefinition, MonsterDefinition, MonsterDefinitionId, MonsterFamilyDefinition, MonsterTraitDefinition, RarityDefinition, RarityId } from '../domain/reward'
 
 export const ITEM_BASES = {
   shortSword: { id: 'shortSword', name: '短劍', slot: 'weapon', attack: 4, defense: 0, sell: 12, affixes: ['striking', 'keen', 'piercing', 'bleeding'] },
   axe: { id: 'axe', name: '獵斧', slot: 'weapon', attack: 6, defense: 0, sell: 16, affixes: ['striking', 'keen', 'piercing', 'bleeding'] },
   spear: { id: 'spear', name: '獵矛', slot: 'weapon', attack: 5, defense: 0, sell: 14, affixes: ['striking', 'keen', 'piercing', 'bleeding'] },
+  moonFangSpear: { id: 'moonFangSpear', name: '月牙獵矛', slot: 'weapon', attack: 5, defense: 0, sell: 20,
+    affixes: ['keen', 'piercing', 'bleeding'], penetration: 2 },
   hideArmor: { id: 'hideArmor', name: '獸皮衣', slot: 'armor', attack: 0, defense: 2, sell: 10, affixes: ['sturdy', 'blocking', 'warding'] },
   chainArmor: { id: 'chainArmor', name: '鎖甲', slot: 'armor', attack: 0, defense: 4, sell: 18, affixes: ['sturdy', 'blocking', 'warding'] },
 } satisfies Record<string, ItemBaseDefinition>
@@ -45,7 +47,7 @@ export const WOLF_MONSTERS = {
 } satisfies Record<string, MonsterDefinition>
 export const MONSTER_TRAITS = {
   swift: { id: 'swift', name: '迅捷', description: '每三回合急襲；防禦可化解急襲加成。' },
-  armored: { id: 'armored', name: '裝甲', description: '每三回合架起硬皮防線；穿透裝備與裂傷可突破。' },
+  armored: { id: 'armored', name: '裝甲', description: '每三回合架起硬皮防線；防線啟動時穿透效力加倍，裂傷仍會造成額外傷害。' },
 } satisfies Record<string, MonsterTraitDefinition>
 export const BOSS_VARIANTS = {
   wellFed: { id: 'wellFed', name: '蓄勢', description: '狼群繁盛；蓄力後的月襲更猛烈。' },
@@ -56,10 +58,26 @@ export const LOOT_TABLES = {
   wolf: { id: 'wolf', guaranteed: ['wolfFang'], weighted: [{ baseId: 'shortSword', weight: 3 }, { baseId: 'axe', weight: 2 }, { baseId: 'spear', weight: 2 }, { baseId: 'hideArmor', weight: 3 }, { baseId: 'chainArmor', weight: 1 }], rare: { materialId: 'moonStone', chance: .03 }, bossGuaranteed: 'moonStone' },
 } satisfies Record<string, LootTableDefinition>
 
+const wolfRarityWeights = {
+  normal: { common: 60, uncommon: 27, rare: 10, epic: 2.8, legendary: .2 },
+  scarred: { common: 45, uncommon: 35, rare: 16, epic: 3.6, legendary: .4 },
+  elite: { common: 20, uncommon: 45, rare: 28, epic: 6.5, legendary: .5 },
+  miniBoss: { common: 0, uncommon: 35, rare: 50, epic: 14, legendary: 1 },
+  boss: { common: 0, uncommon: 0, rare: 85, epic: 14, legendary: 1 },
+} satisfies Record<string, Record<RarityId, number>>
+
 export const WOLF_LOOT_RULES = {
   normalGearChance: .65,
   hideChance: .25,
   bossRarityWeights: { rare: 85, epic: 14, legendary: 1 },
+  bossExclusiveBase: 'moonFangSpear',
+  profiles: {
+    grayWolf: { dropLevel: WOLF_MONSTERS.grayWolf.level, rarityWeights: wolfRarityWeights.normal, rareMaterialChance: LOOT_TABLES.wolf.rare.chance },
+    scarredWolf: { dropLevel: WOLF_MONSTERS.scarredWolf.level, rarityWeights: wolfRarityWeights.scarred, rareMaterialChance: .04 },
+    alphaWolf: { dropLevel: 5, rarityWeights: wolfRarityWeights.elite, rareMaterialChance: .08 },
+    packLeader: { dropLevel: 7, rarityWeights: wolfRarityWeights.miniBoss, rareMaterialChance: .15 },
+    wolfKing: { dropLevel: WOLF_MONSTERS.wolfKing.level, rarityWeights: wolfRarityWeights.boss, rareMaterialChance: 0 },
+  } satisfies Record<MonsterDefinitionId, { dropLevel: number; rarityWeights: Record<RarityId, number>; rareMaterialChance: number }>,
 } as const
 
 export const WOLF_ENCOUNTER_RULES = {
