@@ -1,0 +1,44 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/livingEvents.test.ts -t lets working brave NPCs attempt the boss
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/livingEvents.test.ts (12 tests | 1 failed | 11 skipped) 17ms
+     × lets working brave NPCs attempt the boss without claiming player credit or involving retirees 16ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/livingEvents.test.ts > living news and trade projection > lets working brave NPCs attempt the boss without claiming player credit or involving retirees
+AssertionError: expected { phase: 'warning', …(10) } to match object { phase: 'warning', …(1) }
+(16 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "chiefOutcome": {
+-     "actorId": "npc-6",
+-     "actorKind": "npc",
+-   },
++   "chiefOutcome": null,
+    "phase": "warning",
+  }
+
+ ❯ src/engine/livingEvents.test.ts:273:34
+    271|     expect(guards.some(npc => npc.id === memory.actorId)).toBe(true)
+    272|     expect(memory.actorId).not.toBe(state.activeCharacterId)
+    273|     expect(state.regionalCrisis).toMatchObject({ phase: 'warning', chi…
+       |                                  ^
+    274|     expect(player(state).gold).toBe(gold)
+    275|     expect(state.life.characters[state.activeCharacterId]!.reputation)…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 skipped (12)
+   Start at  17:25:11
+   Duration  449ms (transform 248ms, setup 0ms, import 298ms, tests 17ms, environment 0ms)
+

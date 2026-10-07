@@ -3,6 +3,7 @@ import { CONFIG, ITEMS } from '../data/config'
 import { combatTurn, encounter, equip, farm } from '../engine/actions'
 import { generateItem } from '../engine/itemGeneration'
 import { chooseSuccessor, createGame, die, player, simulate, walkTo } from '../engine/simulation'
+import { tryStartRegionalCrisis } from '../engine/regionalCrisis'
 import { deserialize, serialize } from './saveService'
 import historicalV1 from '../../reports/v2/20261007-life-craftsmanship/phase-05/fixtures/legacy-v1-after-boss.save.json'
 import historicalV2 from '../../reports/v2/20261007-life-craftsmanship/phase-05/fixtures/phase4-v2-stress-final.save.json'
@@ -11,6 +12,7 @@ function versionOneFixture(seed = 88, lastSavedAt = 1000) {
   const raw = JSON.parse(serialize(createGame(seed), lastSavedAt))
   delete raw.life
   delete raw.reward
+  delete raw.regionalCrisis
   raw.saveVersion = 1
   for (const character of [...raw.characters, ...raw.npcs]) delete character.skills.smithing
   for (const event of [...raw.events, ...raw.history]) delete event.tier
@@ -21,6 +23,7 @@ function versionTwoFixture(seed = 88, lastSavedAt = 1000) {
   const state = createGame(seed)
   state.reward.instances.push(generateItem(state, { baseId: 'spear', level: 2 }))
   const raw = JSON.parse(serialize(state, lastSavedAt))
+  delete raw.regionalCrisis
   raw.saveVersion = 2
   for (const character of [...raw.characters, ...raw.npcs]) delete character.skills.smithing
   for (const life of Object.values(raw.life.characters) as Record<string, unknown>[]) delete (life.actions as Record<string, unknown>).smithing
@@ -30,6 +33,78 @@ function versionTwoFixture(seed = 88, lastSavedAt = 1000) {
 }
 
 describe('versioned saves and deterministic continuation', () => {
+  it('migrates a native V3 save to V4 with a dormant crisis and no world or RNG changes', () => {
+    const state = createGame(915)
+    state.worldTime = 14 * CONFIG.minutesPerDay
+    state.rngState = 0x12345678
+    const raw = JSON.parse(serialize(state, 4321)) as Record<string, any>
+    raw.saveVersion = 3
+    delete raw.regionalCrisis
+    const expected = structuredClone(raw)
+    delete expected.lastSavedAt
+    delete expected.saveVersion
+
+    const loaded = deserialize(JSON.stringify(raw))
+
+    expect(loaded.state.saveVersion).toBe(4)
+    expect(loaded.state.regionalCrisis).toEqual({ phase: 'dormant', sequence: 0, cooldownUntil: 0, lastResolvedAt: null })
+    const projection = structuredClone(loaded.state) as unknown as Record<string, any>
+    delete projection.regionalCrisis
+    delete projection.saveVersion
+    expect(projection).toEqual(expected)
+    expect(loaded.state.rngState).toBe(raw.rngState)
+    expect(loaded.state.worldTime).toBe(raw.worldTime)
+    const reloaded = deserialize(serialize(loaded.state, 9876))
+    expect(reloaded.state).toEqual(loaded.state)
+    expect(reloaded.lastSavedAt).toBe(9876)
+  })
+
+  it('rejects a crisis field in V3 and malformed or missing V4 crisis unions', () => {
+    const legacy = JSON.parse(serialize(createGame(916), 1000)) as Record<string, any>
+    legacy.saveVersion = 3
+    delete legacy.regionalCrisis
+    const v3WithNewField = structuredClone(legacy)
+    v3WithNewField.regionalCrisis = { phase: 'dormant', sequence: 0, cooldownUntil: 0, lastResolvedAt: null }
+    expect(() => deserialize(JSON.stringify(v3WithNewField))).toThrow('原始存檔已保留')
+
+    const missingV4Union = JSON.parse(serialize(createGame(916), 1000)) as Record<string, any>
+    delete missingV4Union.regionalCrisis
+    expect(() => deserialize(JSON.stringify(missingV4Union))).toThrow('原始存檔已保留')
+
+    const active = createGame(916)
+    active.threat.monsterPopulation = 30; active.threat.threatLevel = 2; active.threat.campLevel = 2
+    active.settlement.safety = 60
+    expect(tryStartRegionalCrisis(active, () => 0)).toBe(true)
+    const malformedWarning = JSON.parse(serialize(active, 1000)) as Record<string, any>
+    malformedWarning.regionalCrisis.phaseEndsAt++
+    expect(() => deserialize(JSON.stringify(malformedWarning))).toThrow('原始存檔已保留')
+  })
+
+  it.each([
+    ['numeric severity 1', 1, 1],
+    ['numeric severity 2', 2, 2],
+    ['numeric severity 3', 3, 3],
+    ['string severity', '2', 2],
+    ['boolean severity', true, 1],
+    ['array severity', [2], 2],
+  ] as const)('validates crisis severity as a number: %s', (_kind, severity, threatLevel) => {
+    const state = createGame(917)
+    state.threat.monsterPopulation = 30
+    state.threat.threatLevel = 2
+    state.threat.campLevel = 2
+    state.settlement.safety = 60
+    expect(tryStartRegionalCrisis(state, () => 0)).toBe(true)
+    const raw = JSON.parse(serialize(state, 1000)) as Record<string, any>
+    raw.regionalCrisis.severity = severity
+    raw.regionalCrisis.cause.threatLevel = threatLevel
+
+    if (typeof severity === 'number') {
+      expect(deserialize(JSON.stringify(raw)).state.regionalCrisis).toMatchObject({ phase: 'warning', severity })
+    } else {
+      expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+    }
+  })
+
   it('migrates a complete V2 world and its rolled items once without consuming RNG or changing world state', () => {
     const raw = versionTwoFixture(915, 4321)
     raw.nativeExtension = { generation: 2, data: ['kept'] }
@@ -40,12 +115,13 @@ describe('versioned saves and deterministic continuation', () => {
     const loaded = deserialize(JSON.stringify(raw))
     const legacyProjection = structuredClone(loaded.state) as unknown as Record<string, any>
     delete legacyProjection.saveVersion
+    delete legacyProjection.regionalCrisis
     for (const character of [...legacyProjection.characters, ...legacyProjection.npcs]) delete character.skills.smithing
     for (const life of Object.values(legacyProjection.life.characters) as Record<string, any>[]) delete life.actions.smithing
     legacyProjection.reward.schemaVersion = 1
     for (const item of legacyProjection.reward.instances) delete item.craftProvenance
 
-    expect(loaded.state.saveVersion).toBe(3)
+    expect(loaded.state.saveVersion).toBe(4)
     expect(loaded.state.reward.schemaVersion).toBe(2)
     expect(loaded.state.reward.instances[0]?.craftProvenance).toBeNull()
     expect(legacyProjection).toEqual(expected)
@@ -65,10 +141,11 @@ describe('versioned saves and deterministic continuation', () => {
     delete legacyProjection.life
     delete legacyProjection.reward
     delete legacyProjection.saveVersion
+    delete legacyProjection.regionalCrisis
     for (const actor of [...legacyProjection.characters, ...legacyProjection.npcs]) delete actor.skills.smithing
 
     expect(legacyProjection).toEqual(expected)
-    expect(loaded.state.saveVersion).toBe(3)
+    expect(loaded.state.saveVersion).toBe(4)
     expect(loaded.state.rngState).toBe(raw.rngState)
     expect(loaded.state.worldTime).toBe(raw.worldTime)
     expect(deserialize(serialize(loaded.state)).state).toEqual(loaded.state)
@@ -81,13 +158,14 @@ describe('versioned saves and deterministic continuation', () => {
     const loaded = deserialize(JSON.stringify(raw))
     const legacyProjection = structuredClone(loaded.state) as unknown as Record<string, any>
     legacyProjection.saveVersion = 2
+    delete legacyProjection.regionalCrisis
     for (const actor of [...legacyProjection.characters, ...legacyProjection.npcs]) delete actor.skills.smithing
     for (const life of Object.values(legacyProjection.life.characters) as Record<string, any>[]) delete life.actions.smithing
     legacyProjection.reward.schemaVersion = 1
     for (const item of legacyProjection.reward.instances) delete item.craftProvenance
 
     expect(legacyProjection).toEqual(expected)
-    expect(loaded.state.saveVersion).toBe(3)
+    expect(loaded.state.saveVersion).toBe(4)
     expect(loaded.state.reward.schemaVersion).toBe(2)
     expect(loaded.state.reward.instances).toHaveLength(4)
     expect(loaded.state.reward.instances.every(item => item.craftProvenance === null)).toBe(true)
@@ -104,7 +182,7 @@ describe('versioned saves and deterministic continuation', () => {
       expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
     })
 
-  it('rejects G-only identities in a V2 save before migrating it to V3', () => {
+  it('rejects G-only identities in a V2 save before migrating it to V4', () => {
     const raw = structuredClone(historicalV2) as Record<string, any>
     const characterId = Object.keys(raw.life.characters)[0]!
     raw.life.characters[characterId].identities.push('masterpieceCrafter')
@@ -132,9 +210,10 @@ describe('versioned saves and deterministic continuation', () => {
     delete migrated.life
     delete migrated.reward
     delete migrated.saveVersion
+    delete migrated.regionalCrisis
     for (const actor of [...migrated.characters as any[], ...migrated.npcs as any[]]) delete actor.skills.smithing
     expect(migrated).toEqual(expected)
-    expect(loaded.state.saveVersion).toBe(3)
+    expect(loaded.state.saveVersion).toBe(4)
     expect(loaded.state.life.openingSeen).toBe(true)
     expect(loaded.state.rngState).toBe(raw.rngState)
     expect(loaded.state.worldTime).toBe(raw.worldTime)

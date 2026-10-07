@@ -1,0 +1,43 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/regionalCrisis.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/regionalCrisis.test.ts (2 tests | 1 failed) 16ms
+     × starts one warning after an eligible daily threat roll succeeds 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/regionalCrisis.test.ts > regional crisis state > starts one warning after an eligible daily threat roll succeeds
+AssertionError: expected { Object (phase, sequence, ...) } to match object { phase: 'warning', sequence: 1, …(1) }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "phase": "warning",
+-   "sequence": 1,
+-   "type": "goblin_regional",
++   "phase": "dormant",
++   "sequence": 0,
+  }
+
+ ❯ src/engine/regionalCrisis.test.ts:27:34
+     25|     simulate(state, CONFIG.minutesPerDay - state.worldTime % CONFIG.mi…
+     26|
+     27|     expect(state.regionalCrisis).toMatchObject({ phase: 'warning', seq…
+       |                                  ^
+     28|     expect(state.history.filter(event => event.type === 'regional-cris…
+     29|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  17:09:19
+   Duration  357ms (transform 175ms, setup 0ms, import 208ms, tests 16ms, environment 1ms)
+

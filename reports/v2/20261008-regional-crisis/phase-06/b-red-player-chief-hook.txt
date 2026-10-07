@@ -1,0 +1,45 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/actions.test.ts -t records player Chief success
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/actions.test.ts (32 tests | 1 failed | 31 skipped) 13ms
+     × records player Chief success as a bounded crisis fact without resolving the region 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/actions.test.ts > combat and exploration > records player Chief success as a bounded crisis fact without resolving the region
+AssertionError: expected { phase: 'warning', …(10) } to match object { phase: 'warning', …(1) }
+(16 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "chiefOutcome": {
+-     "actorId": "alden",
+-     "actorKind": "player",
+-     "at": 481,
+-   },
++   "chiefOutcome": null,
+    "phase": "warning",
+  }
+
+ ❯ src/engine/actions.test.ts:252:30
+    250|
+    251|     expect(s.history.some(event => event.type === 'boss.defeated')).to…
+    252|     expect(s.regionalCrisis).toMatchObject({
+       |                              ^
+    253|       phase: 'warning', chiefOutcome: { actorKind: 'player', actorId: …
+    254|     })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 31 skipped (32)
+   Start at  17:24:09
+   Duration  457ms (transform 269ms, setup 0ms, import 315ms, tests 13ms, environment 0ms)
+

@@ -12,6 +12,7 @@ import { canVisit } from './rewardActions'
 import { awardWolfLoot } from './itemGeneration'
 import { incomingDamage, playerAttackDamage } from './combatStats'
 import { advanceWolfTurn, wolfAttackForTurn, wolfChargeHealing, wolfCombatPhase, wolfDefenseForTurn } from './wolfFamily'
+import { recordRegionalChiefDefeat } from './regionalCrisis'
 
 export { canVisit } from './rewardActions'
 function cost(state: GameState, stamina: number, minutes: number, gold = 0) {
@@ -200,6 +201,7 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
       state.threat.campLevel = state.threat.threatLevel
       if (goblinBoss) {
         state.threat.bossAlive = false; state.threat.bossProgress = 0; state.threat.warningLevel = 0
+        recordRegionalChiefDefeat(state, 'player', c.id)
         state.life.worldMemories.push({ kind: 'GOBLIN_CHIEF_DEFEATED', actorId: c.id, at: state.worldTime, detail: `${c.name}擊敗哥布林酋長。` })
         if (state.life.worldMemories.length > 100) state.life.worldMemories.shift()
         emit(state, 'boss.defeated', 'monster', `${MONSTERS[BOSS.monsterId].name}被擊敗，北方商路暫時恢復平靜。`, true)

@@ -8,6 +8,8 @@ import { refreshIdentity } from './identity'
 import { dailyNpcLife, npcCanWork, rememberNpc } from './npcLife'
 import { dailyLivingEvents } from './livingEvents'
 import { emptyReward } from './rewardState'
+import { dormantRegionalCrisis } from '../domain/crisis'
+import { advanceRegionalCrisis } from './regionalCrisis'
 
 export const player = (state: GameState) => state.characters.find(c => c.id === state.activeCharacterId)!
 const bound = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n))
@@ -83,6 +85,7 @@ export function createGame(seed = 909): GameState {
     settlement: { name: '橡谷', stage: 'hamlet', capacity: 40, food: 78, prosperity: 52, safety: 88, infrastructure: 25, growth: 0, buildings: ['house', 'farm', 'store', 'inn'] },
     regions: { village: { discovered: true, remainingAmount: 0, regenerationRate: 0 }, farmland: { discovered: true, remainingAmount: 0, regenerationRate: 0 }, forest: { discovered: true, remainingAmount: 100, regenerationRate: 10 }, mine: { discovered: true, remainingAmount: 80, regenerationRate: 8 }, unknown: { discovered: false, remainingAmount: 30, regenerationRate: 2 } },
     threat: { monsterPopulation: 12, threatLevel: 1, growthRate: .65, bossProgress: 0, campLevel: 1, bossAlive: false, warningLevel: 0 },
+    regionalCrisis: dormantRegionalCrisis(),
     dungeon: { discovered: false, threat: 1, progress: 0, runs: 0, stage: 0, inDungeon: false },
     crops: [], preparedPlots: 0, party: [], combat: null, events: [], history: [], eventSequence: 0, nextNpcId: 1,
   }
@@ -209,6 +212,7 @@ function dailyTick(state: GameState) {
     injured.injuredUntil = state.worldTime + 2 * CONFIG.minutesPerDay
     emit(state, 'npc.injured', 'npc', `${injured.name} 在北方道路受傷，需要休養兩日。`)
   }
+  advanceRegionalCrisis(state)
   const oldDungeon = state.dungeon.threat
   state.dungeon.progress = bound(state.dungeon.progress + .4, 0, 100)
   state.dungeon.threat = threatLevel(state.dungeon.progress)

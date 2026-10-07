@@ -4,6 +4,7 @@ import { NPC_LIFE_LIMITS } from '../data/npcLife'
 import { FARM_BUSINESS_DAILY_FOOD_LIMIT, OWNERSHIP_MEMORY_LIMIT, STORAGE_PER_ITEM_LIMIT } from '../data/ownership'
 import type { WorldLife } from '../domain/life'
 import type { GameState, Position } from '../domain/types'
+import { dormantRegionalCrisis, type RegionalCrisisOutcome, type RegionalCrisisState } from '../domain/crisis'
 import { createGame } from '../engine/simulation'
 import { initializeLife } from '../engine/lifeState'
 import { emptyReward, migrateRewardV1 } from '../engine/rewardState'
@@ -39,7 +40,7 @@ function exactShape(value: unknown, required: string[], optional: string[] = [])
   return required.every(key => Object.hasOwn(value, key)) && Object.keys(value).every(key => allowed.has(key))
 }
 
-function validBase(value: unknown, version: 1 | 2 | 3): value is GameState {
+function validBase(value: unknown, version: 1 | 2 | 3 | 4): value is GameState {
   if (!object(value)) return false
   const currentTemplate = createGame()
   // Event tiers remain optional so historical V1 entries survive later-version round trips.
@@ -49,6 +50,8 @@ function validBase(value: unknown, version: 1 | 2 | 3): value is GameState {
   }
   const { life: _life, reward: _reward, ...baseTemplate } = currentTemplate
   const template: Record<string, unknown> = { ...baseTemplate, saveVersion: version }
+  delete template.regionalCrisis
+  if (version < 4 && Object.hasOwn(value, 'regionalCrisis')) return false
   if (version === 1) {
     // Life did not exist in native V1 saves; accepting it could overwrite unknown saved data.
     if (Object.hasOwn(value, 'life')) return false
@@ -105,6 +108,90 @@ function validBase(value: unknown, version: 1 | 2 | 3): value is GameState {
       && ['player', 'npc', 'world', 'monster', 'settlement'].includes(e.category)
       && (e.tier === undefined || enumValue(e.tier, ['transient', 'gameplay', 'major', 'debug'])))
     && s.settlement.buildings.every(b => Object.hasOwn(BUILDINGS, b))
+    && (version < 4 || validRegionalCrisis(s.regionalCrisis, s))
+}
+
+const crisisOutcomes: readonly RegionalCrisisOutcome[] = ['decisive_success', 'costly_success', 'setback', 'local_defeat']
+const crisisConditions = ['low_safety', 'low_food', 'chief_present'] as const
+const crisisDay = CONFIG.minutesPerDay
+
+function validRegionalCrisis(value: unknown, s: GameState): value is RegionalCrisisState {
+  if (!object(value)) return false
+  const phase = value.phase
+  if (phase === 'dormant') {
+    return exactShape(value, ['phase', 'sequence', 'cooldownUntil', 'lastResolvedAt'])
+      && safeInt(value.sequence) && safeInt(value.cooldownUntil)
+      && (value.lastResolvedAt === null || (safeInt(value.lastResolvedAt) && value.lastResolvedAt <= s.worldTime))
+      && (value.sequence === 0 ? value.lastResolvedAt === null && value.cooldownUntil === 0
+        : value.lastResolvedAt !== null && value.cooldownUntil <= s.worldTime)
+      && (value.lastResolvedAt === null || value.cooldownUntil >= value.lastResolvedAt)
+  }
+  if (!enumValue(phase, ['warning', 'preparation', 'active', 'resolution', 'aftermath', 'cooldown'])) return false
+  const baseKeys = ['phase', 'id', 'sequence', 'type', 'region', 'severity', 'triggeredAt', 'cause', 'chiefOutcome', 'phaseStartedAt']
+  const phaseKeys: Record<string, string[]> = {
+    warning: ['phaseEndsAt'],
+    preparation: ['phaseEndsAt'],
+    active: ['phaseEndsAt'],
+    resolution: [],
+    aftermath: ['phaseEndsAt', 'outcome', 'resolvedAt'],
+    cooldown: ['phaseEndsAt', 'cooldownUntil', 'outcome', 'resolvedAt'],
+  }
+  if (!exactShape(value, [...baseKeys, ...phaseKeys[phase]!])
+    || !safeInt(value.sequence, 1) || value.sequence >= Number.MAX_SAFE_INTEGER
+    || value.id !== `goblin-regional:${(s.worldSeed >>> 0).toString(16).padStart(8, '0')}:${value.sequence}`
+    || value.type !== 'goblin_regional' || value.region !== 'forest' || !safeInt(value.severity, 1, 3)
+    || !safeInt(value.triggeredAt) || value.triggeredAt > s.worldTime || !safeInt(value.phaseStartedAt)
+    || value.phaseStartedAt < value.triggeredAt || value.phaseStartedAt > s.worldTime) return false
+
+  const cause = value.cause
+  if (!exactShape(cause, ['threatLevel', 'monsterPopulation', 'campLevel', 'bossAlive', 'settlementSafety', 'settlementFood', 'conditions'])
+    || !safeInt(cause.threatLevel, 1, CONFIG.threatThresholds.length) || !boundedNumber(cause.monsterPopulation, 0, 100)
+    || !safeInt(cause.campLevel, 1, CONFIG.threatThresholds.length) || typeof cause.bossAlive !== 'boolean'
+    || !boundedNumber(cause.settlementSafety, 0, 100) || !boundedNumber(cause.settlementFood, 0, 100)
+    || Number(cause.monsterPopulation) < CONFIG.regionalCrisis.minimumMonsterPopulation
+    || Number(cause.campLevel) < CONFIG.regionalCrisis.minimumCampLevel
+    || !(Number(cause.settlementSafety) <= CONFIG.regionalCrisis.lowSafetyThreshold
+      || Number(cause.settlementFood) <= CONFIG.regionalCrisis.lowFoodThreshold || cause.bossAlive)
+    || value.severity !== Math.min(3, Math.max(1, cause.threatLevel))
+    || !Array.isArray(cause.conditions) || cause.conditions.length < 1 || cause.conditions.length > crisisConditions.length
+    || !cause.conditions.every(condition => enumValue(condition, crisisConditions)) || new Set(cause.conditions).size !== cause.conditions.length
+    || (cause.settlementSafety <= CONFIG.regionalCrisis.lowSafetyThreshold) !== cause.conditions.includes('low_safety')
+    || (cause.settlementFood <= CONFIG.regionalCrisis.lowFoodThreshold) !== cause.conditions.includes('low_food')
+    || (cause.bossAlive === true) !== cause.conditions.includes('chief_present')) return false
+
+  const chief = value.chiefOutcome
+  if (chief !== null) {
+    if (!exactShape(chief, ['actorKind', 'actorId', 'at']) || !enumValue(chief.actorKind, ['player', 'npc'])
+      || !shortString(chief.actorId, 128, 1) || !safeInt(chief.at) || chief.at < value.triggeredAt || chief.at > s.worldTime) return false
+    if (chief.actorKind === 'player' ? !s.characters.some(character => character.id === chief.actorId)
+      : !/^npc-[1-9]\d*$/.test(chief.actorId) || Number(chief.actorId.slice(4)) >= s.nextNpcId) return false
+  }
+
+  const started = value.phaseStartedAt as number
+  const triggered = value.triggeredAt as number
+  const expectedStarts: Record<string, number> = {
+    warning: triggered,
+    preparation: triggered + CONFIG.regionalCrisis.warningDays * crisisDay,
+    active: triggered + (CONFIG.regionalCrisis.warningDays + CONFIG.regionalCrisis.preparationDays) * crisisDay,
+    resolution: triggered + (CONFIG.regionalCrisis.warningDays + CONFIG.regionalCrisis.preparationDays + CONFIG.regionalCrisis.activeDays) * crisisDay,
+  }
+  if (phase in expectedStarts && started !== expectedStarts[phase]) return false
+  if (phase === 'warning' || phase === 'preparation' || phase === 'active') {
+    const duration = phase === 'warning' ? CONFIG.regionalCrisis.warningDays
+      : phase === 'preparation' ? CONFIG.regionalCrisis.preparationDays : CONFIG.regionalCrisis.activeDays
+    return safeInt(value.phaseEndsAt) && value.phaseEndsAt > s.worldTime && value.phaseEndsAt === started + duration * crisisDay
+      && value.chiefOutcome !== undefined
+  }
+  if (phase === 'resolution') return value.chiefOutcome !== undefined
+  if (!enumValue(value.outcome, crisisOutcomes) || !safeInt(value.resolvedAt) || value.resolvedAt < expectedStarts.resolution!
+    || value.resolvedAt > s.worldTime) return false
+  if (phase === 'aftermath') return started === value.resolvedAt && safeInt(value.phaseEndsAt) && value.phaseEndsAt > s.worldTime
+    && value.phaseEndsAt === value.resolvedAt + CONFIG.regionalCrisis.aftermathDays * crisisDay
+  const cooldownDuration = CONFIG.regionalCrisis.baseCooldownDays + value.severity * CONFIG.regionalCrisis.severityCooldownDays
+  return started === value.resolvedAt + CONFIG.regionalCrisis.aftermathDays * crisisDay
+    && safeInt(value.phaseEndsAt) && safeInt(value.cooldownUntil)
+    && value.cooldownUntil > s.worldTime
+    && value.phaseEndsAt === started + cooldownDuration * crisisDay && value.cooldownUntil === value.phaseEndsAt
 }
 
 const originKinds = ['OTHER_WORLD', 'LOCAL_WORLD']
@@ -141,7 +228,7 @@ function validCounts(value: unknown, keys: string[], maximum = Number.MAX_SAFE_I
   return exactShape(value, keys) && Object.values(value).every(count => safeInt(count, 0, maximum))
 }
 
-function validLife(value: unknown, s: GameState, version: 2 | 3): value is WorldLife {
+function validLife(value: unknown, s: GameState, version: 2 | 3 | 4): value is WorldLife {
   if (!exactShape(value, ['canon', 'openingSeen', 'characters', 'npcs', 'properties', 'settlementMemories', 'worldMemories', 'arcs', 'requests', 'news', 'director'])) return false
   if (value.canon !== 'OAKVALE_LIFE_EMERGENCE' || typeof value.openingSeen !== 'boolean' || !object(value.characters) || !object(value.npcs)) return false
   const savedNpcs = value.npcs
@@ -262,7 +349,7 @@ export function serialize(state: GameState, now = Date.now()) {
 
 export function deserialize(raw: string): { state: GameState; lastSavedAt: number } {
   const value: unknown = JSON.parse(raw)
-  if (!object(value) || (value.saveVersion !== 1 && value.saveVersion !== 2 && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
+  if (!object(value) || (value.saveVersion !== 1 && value.saveVersion !== 2 && value.saveVersion !== 3 && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
   if (typeof value.lastSavedAt !== 'number' || !Number.isFinite(value.lastSavedAt) || value.lastSavedAt < 0) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -275,10 +362,11 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
     for (const actor of [...state.characters, ...state.npcs]) actor.skills.smithing = { level: 1, exp: 0 }
     initializeLife(state, true)
     state.reward = emptyReward()
+    state.regionalCrisis = dormantRegionalCrisis()
     state.saveVersion = CONFIG.saveVersion
     return { state, lastSavedAt }
   }
-  const sourceVersion = value.saveVersion as 2 | 3
+  const sourceVersion = value.saveVersion as 2 | 3 | 4
   if (!validBase(stateData, sourceVersion) || !validLife(stateData.life, stateData as unknown as GameState, sourceVersion)) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -290,11 +378,14 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
     for (const actor of [...state.characters, ...state.npcs]) actor.skills.smithing = { level: 1, exp: 0 }
     for (const life of Object.values(state.life.characters)) life.actions.smithing = 0
     state.reward = Object.hasOwn(stateData, 'reward') ? migrateRewardV1(stateData.reward) : emptyReward()
+    state.regionalCrisis = dormantRegionalCrisis()
     state.saveVersion = CONFIG.saveVersion
     return { state, lastSavedAt }
   }
   if (!Object.hasOwn(stateData, 'reward') || !validateReward(stateData.reward, state)) {
     throw new Error('存檔資料不完整。原始存檔已保留。')
   }
+  if (sourceVersion === 3) state.regionalCrisis = dormantRegionalCrisis()
+  state.saveVersion = CONFIG.saveVersion
   return { state, lastSavedAt }
 }

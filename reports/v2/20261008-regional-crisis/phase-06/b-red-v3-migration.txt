@@ -1,0 +1,31 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/saveService.test.ts -t migrates a native V3 save
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (85 tests | 1 failed | 84 skipped) 13ms
+     × migrates a native V3 save to V4 with a dormant crisis and no world or RNG changes 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates a native V3 save to V4 with a dormant crisis and no world or RNG changes
+Error: 存檔版本不支援。原始存檔已保留。
+ ❯ deserialize src/services/saveService.ts:265:129
+    263| export function deserialize(raw: string): { state: GameState; lastSave…
+    264|   const value: unknown = JSON.parse(raw)
+    265|   if (!object(value) || (value.saveVersion !== 1 && value.saveVersion …
+       |                                                                                                                                 ^
+    266|   if (typeof value.lastSavedAt !== 'number' || !Number.isFinite(value.…
+    267|     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
+ ❯ src/services/saveService.test.ts:44:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 84 skipped (85)
+   Start at  17:14:50
+   Duration  510ms (transform 309ms, setup 0ms, import 369ms, tests 13ms, environment 1ms)
+

@@ -4,6 +4,7 @@ import type { ArcKind, EventArc, WorldRequest } from '../domain/life'
 import type { GameState } from '../domain/types'
 import { createGame, player } from './simulation'
 import { dailyLivingEvents, fulfillRequest, livingEventWeights, projectLivingNews, recordHunt, tradePriceMultiplier } from './livingEvents'
+import { tryStartRegionalCrisis } from './regionalCrisis'
 import { deserialize, serialize } from '../services/saveService'
 
 const day = 1440
@@ -252,7 +253,12 @@ describe('living news and trade projection', () => {
   it('lets working brave NPCs attempt the boss without claiming player credit or involving retirees', () => {
     const state = createGame(72)
     state.threat.bossAlive = true
+    state.threat.monsterPopulation = 30; state.threat.threatLevel = 2; state.threat.campLevel = 2
+    state.settlement.safety = 60
     state.life.director.quietUntil = 0
+    expect(tryStartRegionalCrisis(state, () => 0)).toBe(true)
+    state.threat.monsterPopulation = 12; state.threat.threatLevel = 1; state.threat.campLevel = 1
+    state.settlement.safety = 88
     const guards = state.npcs.filter(npc => ['guard', 'mercenary'].includes(npc.job))
     guards.forEach(npc => { state.life.npcs[npc.id]!.traits = ['brave']; state.life.npcs[npc.id]!.career = 'retired' })
     expect(livingEventWeights(state)['medium:independent_boss_attempt']).toBeUndefined()
@@ -264,6 +270,7 @@ describe('living news and trade projection', () => {
     const memory = state.life.worldMemories.find(item => item.kind === 'GOBLIN_CHIEF_DEFEATED')!
     expect(guards.some(npc => npc.id === memory.actorId)).toBe(true)
     expect(memory.actorId).not.toBe(state.activeCharacterId)
+    expect(state.regionalCrisis).toMatchObject({ phase: 'warning', chiefOutcome: { actorKind: 'npc', actorId: memory.actorId } })
     expect(player(state).gold).toBe(gold)
     expect(state.life.characters[state.activeCharacterId]!.reputation).toBe(0)
   })

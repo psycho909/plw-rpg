@@ -5,6 +5,7 @@ import { canVisit, combatTurn, encounter, enterDungeon, equip, farm, gather, hir
 import { deserialize, serialize } from '../services/saveService'
 import { calendar } from './calendar'
 import { createGame, player, simulate, walkTo } from './simulation'
+import { tryStartRegionalCrisis } from './regionalCrisis'
 
 function forest(state: GameState) { walkTo(state, { x: 5, y: 4 }) }
 function tavern(state: GameState) {
@@ -237,6 +238,37 @@ describe('combat and exploration', () => {
     expect(encounter(s, true)).toBe(''); finishFight(s)
     expect(s.threat.bossAlive).toBe(false); expect(s.threat.bossProgress).toBe(0)
     expect(s.history.some(e => e.type === 'boss.defeated')).toBe(true)
+  })
+  it('records player Chief success as a bounded crisis fact without resolving the region', () => {
+    const s = createGame(104), c = player(s)
+    c.currentRegion = 'forest'; c.position = { x: 5, y: 4 }; c.stats.strength = 200
+    s.threat.monsterPopulation = 50; s.threat.threatLevel = 3; s.threat.campLevel = 3; s.threat.bossAlive = true
+    expect(tryStartRegionalCrisis(s, () => 0)).toBe(true)
+
+    expect(encounter(s, true)).toBe('')
+    finishFight(s)
+
+    expect(s.history.some(event => event.type === 'boss.defeated')).toBe(true)
+    expect(s.regionalCrisis).toMatchObject({
+      phase: 'warning', chiefOutcome: { actorKind: 'player', actorId: c.id, at: 480 },
+    })
+  })
+  it('keeps ordinary nonboss hunts outside regional Chief outcome facts', () => {
+    const s = createGame(105), c = player(s)
+    const priorSpawnLevel = MONSTERS.goblin.spawnLevel
+    try {
+      MONSTERS.goblin.spawnLevel = 2
+      c.currentRegion = 'forest'; c.position = { x: 5, y: 4 }; c.stats.strength = 200
+      s.threat.monsterPopulation = 30; s.threat.threatLevel = 2; s.threat.campLevel = 2
+      s.settlement.safety = 60
+      expect(tryStartRegionalCrisis(s, () => 0)).toBe(true)
+      const before = structuredClone(s.regionalCrisis)
+
+      expect(encounter(s)).toBe('')
+      finishFight(s)
+
+      expect(s.regionalCrisis).toEqual(before)
+    } finally { MONSTERS.goblin.spawnLevel = priorSpawnLevel }
   })
 })
 

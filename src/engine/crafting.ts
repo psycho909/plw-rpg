@@ -90,7 +90,8 @@ function canonicalExperience(exp: unknown, level: unknown, threshold: number): b
  * Per day, characters can each die once; every NPC can emit a visitor departure, a death,
  * a career milestone, and one general plus one job-skill XP level. Fixed daily sources are
  * new year (1), settlement growth (2), immigration/birth (2), threat increase (1), boss
- * spawn/injury/dungeon threat (3), and living events (3), plus each warning and party slot.
+ * spawn/injury/dungeon threat (3), living events (3), and one regional-crisis phase event,
+ * plus each warning and party slot.
  * Daily simulation can allocate up to three NPC IDs (immigration, birth, traveler) and four
  * living-director IDs (medicine request/news or arc request/news) per crossed day.
  */
@@ -121,7 +122,7 @@ function craftCapacityBudget(state: GameState, character: GameState['characters'
   // A daily living event can add one traveler; settlement can add an immigrant and a child.
   // Those at most three new NPCs can participate in later crossed days.
   const npcDays = days * npcCount + 3n * days * (days - 1n) / 2n
-  const fixedDailyEvents = 12n + BigInt(BOSS.warnings.length) + partyCount
+  const fixedDailyEvents = 13n + BigInt(BOSS.warnings.length) + partyCount
   budget += days * (characterCount + fixedDailyEvents) + 5n * npcDays
   return { eventIds: budget, npcIds: 3n * days, directorIds: 4n * days }
 }

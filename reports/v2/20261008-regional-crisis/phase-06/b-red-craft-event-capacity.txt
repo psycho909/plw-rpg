@@ -1,0 +1,42 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crafting.test.ts -t reserves one daily event for a crisis phase
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (62 tests | 1 failed | 61 skipped) 21ms
+     × reserves one daily event for a crisis phase and rejects atomically near the event id limit 19ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crafting.test.ts > crafting skill capabilities > reserves one daily event for a crisis phase and rejects atomically near the event id limit
+AssertionError: expected { recipeId: 'starterSpear', …(15) } to match object { ok: false, …(1) }
+(48 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": false,
+-   "reasonCode": "event_capacity",
++   "ok": true,
++   "reasonCode": null,
+  }
+
+ ❯ src/engine/crafting.test.ts:590:21
+    588|     expect(previousDailyBudget).toBe(14 + 1 + 12 + BOSS.warnings.lengt…
+    589|     expect(Object.keys(IDENTITY_RULES)).toHaveLength(9)
+    590|     expect(preview).toMatchObject({ ok: false, reasonCode: 'event_capa…
+       |                     ^
+    591|     expect(result).toMatchObject({ ok: false, reasonCode: 'event_capac…
+    592|     expect(state).toEqual(before)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 61 skipped (62)
+   Start at  17:22:43
+   Duration  493ms (transform 283ms, setup 0ms, import 344ms, tests 21ms, environment 0ms)
+

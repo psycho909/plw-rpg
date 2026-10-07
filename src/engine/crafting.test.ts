@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { BUILDINGS, CONFIG } from '../data/config'
+import { BOSS, BUILDINGS, CONFIG } from '../data/config'
+import { IDENTITY_RULES } from '../data/identity'
 import { CRAFTING_RECIPES } from '../data/crafting'
 import type { GameState } from '../domain/types'
 import { generateItem } from './itemGeneration'
@@ -562,6 +563,32 @@ describe('crafting skill capabilities', () => {
       reloadAccepted: true,
       unchanged: true,
     })
+    expect(state).toEqual(before)
+  })
+
+  it('reserves one daily event for a crisis phase and rejects atomically near the event id limit', () => {
+    const state = readyAtStore()
+    const character = player(state)
+    state.npcs = []
+    state.life.npcs = {}
+    state.life.properties.push({
+      id: `property:home:${character.id}`, kind: 'home', ownerId: character.id, acquiredAt: 0,
+      position: { x: 7, y: 10 }, storage: { wood: 0, stone: 0, iron: 0, food: 0, material: 0, potion: 0, sword: 0, armor: 0 },
+      foodSupplied: 0, suppliedDay: 0, suppliedToday: 0,
+    })
+    character.position = { x: 8, y: 10 }
+    state.worldTime = CONFIG.minutesPerDay - 1
+    const previousDailyBudget = 14 + state.characters.length + 12 + BOSS.warnings.length + state.party.length
+    state.eventSequence = Number.MAX_SAFE_INTEGER - previousDailyBudget - 1
+    const before = structuredClone(state)
+
+    const preview = planCraft(state, { recipeId: 'starterSpear' })
+    const result = craft(state, { recipeId: 'starterSpear' })
+
+    expect(previousDailyBudget).toBe(14 + 1 + 12 + BOSS.warnings.length)
+    expect(Object.keys(IDENTITY_RULES)).toHaveLength(9)
+    expect(preview).toMatchObject({ ok: false, reasonCode: 'event_capacity' })
+    expect(result).toMatchObject({ ok: false, reasonCode: 'event_capacity' })
     expect(state).toEqual(before)
   })
 

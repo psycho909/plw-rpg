@@ -2,12 +2,18 @@ import type { BuildingId, ItemId, JobId, LifeStage, Position, RegionId } from '.
 
 export const CONFIG = {
   daysPerSeason: 30, seasons: ['春', '夏', '秋', '冬'], minutesPerDay: 1440,
-  realSecondMinutes: 2, saveVersion: 3 as const,
+  realSecondMinutes: 2, saveVersion: 4 as const,
   width: 24, height: 16, initialPopulation: 30, maxPopulation: 80,
   stamina: { child: .9, young: 1.05, adult: 1, middleAge: .95, elder: .85 } satisfies Record<LifeStage, number>,
   ages: { young: 15, adult: 25, middleAge: 50, elder: 65 },
   cropMinutes: 2 * 1440, maxPlots: 4, contractDays: 3,
   stageGrowth: { village: 85, town: 230 }, threatThresholds: [0, 30, 65], bossThreshold: 100,
+  regionalCrisis: {
+    minimumMonsterPopulation: 30, minimumCampLevel: 2, dailyTriggerChance: .18,
+    lowSafetyThreshold: 80, lowFoodThreshold: 55,
+    warningDays: 2, preparationDays: 5, activeDays: 2, aftermathDays: 7,
+    baseCooldownDays: 360, severityCooldownDays: 30,
+  },
 }
 export const REGIONS: Record<RegionId, { name: string; subtitle: string }> = {
   village: { name: '橡谷聚落', subtitle: '你的生活，從這裡開始' },

@@ -1,5 +1,6 @@
 import type { WorldLife } from './life'
 import type { FamilyEncounter, RewardState } from './reward'
+import type { RegionalCrisisState } from './crisis'
 export type RegionId = 'village' | 'farmland' | 'forest' | 'mine' | 'unknown'
 export type LifeStage = 'child' | 'young' | 'adult' | 'middleAge' | 'elder'
 export type SkillId = 'combat' | 'farming' | 'mining' | 'woodcutting' | 'smithing'
@@ -33,6 +34,7 @@ export interface GameState {
   settlement: { name: string; stage: 'hamlet' | 'village' | 'town'; capacity: number; food: number; prosperity: number; safety: number; infrastructure: number; growth: number; buildings: BuildingId[] }
   regions: Record<RegionId, { discovered: boolean; remainingAmount: number; regenerationRate: number }>
   threat: { monsterPopulation: number; threatLevel: number; growthRate: number; bossProgress: number; campLevel: number; bossAlive: boolean; warningLevel: number }
+  regionalCrisis: RegionalCrisisState
   dungeon: { discovered: boolean; threat: number; progress: number; runs: number; stage: number; inDungeon: boolean }
   crops: { id: number; plantedAt: number; growthDuration: number; matureAt: number; status: 'growing' | 'mature' }[]; preparedPlots: number
   party: { npcId: string; hireCost: number; dailyWage: number; contractEnd: number; archetype: 'fighter' | 'healer' }[]

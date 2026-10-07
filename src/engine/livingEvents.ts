@@ -7,6 +7,7 @@ import { emit } from './events'
 import { changeReputation } from './identity'
 import { rememberNpc } from './npcLife'
 import { random } from './random'
+import { recordRegionalChiefDefeat } from './regionalCrisis'
 
 const DAY = 1440
 const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value))
@@ -335,6 +336,7 @@ function applyMediumBossAttempt(state: GameState) {
     state.threat.bossAlive = false
     state.threat.bossProgress = 0
     state.threat.warningLevel = 0
+    recordRegionalChiefDefeat(state, 'npc', npc.id)
     state.threat.monsterPopulation = Math.max(0, state.threat.monsterPopulation - 25)
     updateThreatLevel(state)
     state.settlement.safety = clamp(state.settlement.safety + 6, 0, 100)

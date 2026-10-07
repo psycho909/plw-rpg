@@ -15,11 +15,12 @@ it('migrates a native V2 save without reward without consuming world RNG or repl
   const loaded = deserialize(JSON.stringify(legacy))
   const legacyProjection = structuredClone(loaded.state) as unknown as Record<string, any>
   legacyProjection.saveVersion = 2
+  delete legacyProjection.regionalCrisis
   delete legacyProjection.reward
   for (const actor of [...legacyProjection.characters, ...legacyProjection.npcs]) delete actor.skills.smithing
   for (const life of Object.values(legacyProjection.life.characters) as Record<string, any>[]) delete life.actions.smithing
 
-  expect(loaded.state).toMatchObject({ saveVersion: 3, reward: { schemaVersion: 2 } })
+  expect(loaded.state).toMatchObject({ saveVersion: 4, reward: { schemaVersion: 2 } })
   expect(loaded.state.worldSeed).toBe(17)
   expect(loaded.state.rngState).toBe(legacy.rngState)
   expect(loaded.state.worldTime).toBe(legacy.worldTime)
@@ -29,13 +30,14 @@ it('migrates a native V2 save without reward without consuming world RNG or repl
   expect(loaded.lastSavedAt).toBe(legacy.lastSavedAt)
 })
 
-it('migrates the committed native V1 fixture losslessly through the current V2.x save format', () => {
+it('migrates the committed native V1 fixture losslessly through the current V4 save format', () => {
   const loaded = deserialize(JSON.stringify(nativeV1))
   const { saveVersion: _version, lastSavedAt: _at, ...legacyWorld } = nativeV1
   const preservedWorld = structuredClone(loaded.state) as unknown as Record<string, any>
   delete preservedWorld.saveVersion
   delete preservedWorld.life
   delete preservedWorld.reward
+  delete preservedWorld.regionalCrisis
   for (const actor of [...preservedWorld.characters, ...preservedWorld.npcs]) delete actor.skills.smithing
   expect(preservedWorld).toEqual(legacyWorld)
   expect(loaded.state.reward.schemaVersion).toBe(2)
