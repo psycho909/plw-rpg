@@ -9,8 +9,10 @@ import { canVisit } from '../engine/actions'
 import { calendar } from '../engine/calendar'
 import { equipInstance, itemSellPrice, sellInstance, tradeMaterial } from '../engine/rewardActions'
 import { itemIcons } from '../presentation/icons'
-import { affixMechanics, projectGearComparison, projectGearPage, projectLatestLootFeedback, statDeltaText, statKeys, statLabels, statText } from '../presentation/rewardProjection'
+import { affixMechanics, GEAR_PAGE_SIZE, projectCraftProvenance, projectGearComparison, projectGearPage, projectLatestLootFeedback, statDeltaText, statKeys, statLabels, statText } from '../presentation/rewardProjection'
 import { useGameStore } from '../stores/gameStore'
+const props = defineProps<{ focusInstanceId?: string | null }>()
+const emit = defineEmits<{ (event: 'focus-consumed'): void }>()
 const game = useGameStore()
 const selected = ref<ItemId>('potion')
 const items = Object.keys(ITEMS) as ItemId[]
@@ -23,6 +25,7 @@ const materials = Object.keys(MATERIALS) as MaterialId[]
 const gearPage = computed(() => projectGearPage(game.state, page.value, slot.value, rarity.value))
 const gear = computed(() => gearPage.value.items.find(item => item.instanceId === selectedGear.value) ?? gearPage.value.items[0] ?? null)
 const comparison = computed(() => gear.value ? projectGearComparison(game.state, gear.value.instanceId) : null)
+const craftProvenance = computed(() => gear.value ? projectCraftProvenance(game.state, gear.value) : null)
 const gearEquipped = computed(() => !!gear.value && game.state.reward.equipped[game.state.activeCharacterId]?.[ITEM_BASES[gear.value.baseId].slot] === gear.value.instanceId)
 const materialStacks = computed(() => game.state.reward.materials[game.state.activeCharacterId])
 const collection = computed(() => game.state.reward.collection)
@@ -35,6 +38,26 @@ let saleTrigger: HTMLButtonElement | null = null
 watch([slot, rarity], () => { page.value = 0; selectedGear.value = null })
 watch(() => gearPage.value.page, value => { page.value = value })
 watch(() => gear.value?.instanceId, () => { pendingSale.value = null })
+watch(() => props.focusInstanceId, instanceId => {
+  if (!instanceId) return
+  const index = game.state.reward.instances.filter(item => item.ownerId === game.state.activeCharacterId)
+    .findIndex(item => item.instanceId === instanceId)
+  if (index >= 0) {
+    category.value = 'gear'; slot.value = 'all'; rarity.value = 'all'
+    const targetPage = Math.floor(index / GEAR_PAGE_SIZE)
+    void nextTick(() => {
+      page.value = targetPage; selectedGear.value = instanceId
+      void nextTick(() => {
+        const target = Array.from(document.querySelectorAll<HTMLButtonElement>('dialog [data-instance-id]'))
+          .find(button => button.dataset.instanceId === instanceId)
+        target?.focus()
+        emit('focus-consumed')
+      })
+    })
+    return
+  }
+  emit('focus-consumed')
+}, { immediate: true })
 function requestSale(event: Event) {
   if (!gear.value) return
   saleTrigger = event.currentTarget instanceof HTMLButtonElement ? event.currentTarget : null
@@ -100,7 +123,7 @@ function useSelected() {
     <p class="muted">符合條件 {{ gearPage.total }} 件 · 每頁最多 20 件；篩選不會丟棄裝備。</p>
     <p v-if="!gear" class="empty-state">目前沒有符合條件的獵獲裝備。清除篩選，或前往北方森林擊退灰狼，尋找下一件裝備。</p>
     <div v-else class="inventory-layout gear-layout">
-      <div class="item-list" role="group" aria-label="選擇獵獲裝備"><button v-for="item in gearPage.items" :key="item.instanceId" :aria-pressed="gear.instanceId === item.instanceId" :class="{ selected: gear.instanceId === item.instanceId }" @click="selectedGear = item.instanceId"><span>{{ RARITIES[item.rarity].name }} {{ ITEM_BASES[item.baseId].name }}</span><span>Lv.{{ item.level }}</span></button></div>
+      <div class="item-list" role="group" aria-label="選擇獵獲裝備"><button v-for="item in gearPage.items" :key="item.instanceId" :data-instance-id="item.instanceId" :data-craft-masterpiece="item.craftProvenance?.masterpiece ? 'true' : undefined" :aria-pressed="gear.instanceId === item.instanceId" :class="{ selected: gear.instanceId === item.instanceId }" @click="selectedGear = item.instanceId"><span>{{ RARITIES[item.rarity].name }} {{ ITEM_BASES[item.baseId].name }}<small v-if="item.craftProvenance?.masterpiece" class="masterpiece-label"> · 鍛造傑作</small></span><span>Lv.{{ item.level }}</span></button></div>
       <section class="item-detail gear-detail" aria-live="polite" data-gear-comparison>
         <p class="muted">{{ RARITIES[gear.rarity].name }} · {{ ITEM_BASES[gear.baseId].slot === 'weapon' ? '武器' : '防具' }} · Lv.{{ gear.level }}</p><h3>{{ ITEM_BASES[gear.baseId].name }}{{ gearEquipped ? ' · 已穿戴' : '' }}</h3>
         <p class="muted">目前同部位：{{ comparison?.current.name }} · {{ comparison?.current.rarity ? RARITIES[comparison.current.rarity].name : '固定裝備' }}</p>
@@ -111,6 +134,7 @@ function useSelected() {
         </div>
         <p v-if="gear.material" class="muted">生成素材：{{ MATERIALS[gear.material].name }}</p>
         <p v-if="gear.provenance" class="muted">留名裝備 · 誕生於第 {{ calendar(gear.provenance.createdAt).year }} 年{{ gear.provenance.bossSource ? ` · 來源：${WOLF_MONSTERS[gear.provenance.bossSource].name}` : '' }}</p>
+        <p v-if="craftProvenance" class="muted" data-craft-provenance><strong v-if="craftProvenance.masterpiece" class="masterpiece-label">鍛造傑作</strong><span v-else>鍛造裝備</span> · 原製作者 {{ craftProvenance.creatorName }} · {{ craftProvenance.createdAtLabel }} · 配方：{{ craftProvenance.recipeName }}</p>
         <div class="action-buttons"><button class="primary" :disabled="!game.character.isAlive || !!game.state.combat" @click="equipGear">{{ gearEquipped ? '卸下獵獲裝備' : '穿戴獵獲裝備' }}</button><button :disabled="gearEquipped || !canVisit(game.state, 'blacksmith')" @click="requestSale">出售 {{ itemSellPrice(gear) }} 金</button></div>
         <p v-if="game.state.combat" class="muted">戰鬥中無法更換裝備。</p><p v-if="!game.state.settlement.buildings.includes('blacksmith')" class="muted">聚落發展成村莊、開設鐵匠鋪後，才能出售獵獲裝備。</p><p v-else-if="!canVisit(game.state, 'blacksmith')" class="muted">出售請在營業時間靠近鐵匠鋪；已穿戴的裝備請先卸下。</p>
         <section v-if="pendingSale === gear.instanceId" class="gear-sale-confirm" role="group" aria-labelledby="gear-sale-title"><h4 id="gear-sale-title">出售{{ RARITIES[gear.rarity].name }}{{ ITEM_BASES[gear.baseId].name }}？</h4><p>取得 {{ itemSellPrice(gear) }} 金，這件裝備將永久離開背包。</p><div class="action-buttons"><button ref="cancelSale" @click="keepGear">保留這件裝備</button><button class="danger" :disabled="!canVisit(game.state, 'blacksmith') || gearEquipped" @click="confirmSale">確認出售這件裝備</button></div></section>

@@ -4,12 +4,12 @@ import { combatTurn } from '../engine/actions'
 import { emit } from '../engine/events'
 import { encounterWolf } from '../engine/wolfFamily'
 import { createGame } from '../engine/simulation'
-import { affixMechanics, projectEquipmentSlot, projectGearComparison, projectGearPage, projectLatestLootFeedback, statDeltaText } from './rewardProjection'
+import { affixMechanics, projectCraftProvenance, projectEquipmentSlot, projectGearComparison, projectGearPage, projectLatestLootFeedback, statDeltaText } from './rewardProjection'
 
 const gear = (id: number, ownerId = 'alden'): ItemInstance => ({ instanceId: `item-${id}`, ownerId,
   baseId: id % 2 ? 'shortSword' : 'hideArmor', level: 1, material: null, rarity: 'common',
   rolledStats: { attack: id % 2 ? 4 : 0, defense: id % 2 ? 0 : 2, critical: 0, penetration: 0, bleed: 0, block: 0, reduction: 0 },
-  affixes: [], specialTrait: null, provenance: null })
+  affixes: [], specialTrait: null, provenance: null, craftProvenance: null })
 
 it('bounds owned gear pages, clamps stale pages and filters without discarding inventory', () => {
   const state = createGame()
@@ -23,6 +23,21 @@ it('bounds owned gear pages, clamps stale pages and filters without discarding i
   expect(state.reward.instances).toHaveLength(46)
   page.items[0]!.rolledStats.attack = 999
   expect(state.reward.instances[40]!.rolledStats.attack).toBe(4)
+})
+
+it('projects a masterpiece as an identity label with its original maker, creation time, and recipe', () => {
+  const state = createGame()
+  const creator = state.characters[0]!
+  const item = gear(99)
+  item.ownerId = 'later-holder'
+  item.craftProvenance = {
+    recipeId: 'ironShortSword', createdBy: creator.id, createdAt: 0,
+    influenceMaterial: null, masterpiece: true,
+  }
+
+  expect(projectCraftProvenance(state, item)).toMatchObject({
+    masterpiece: true, creatorName: creator.name, createdAtLabel: '第 1 年 春 1 日 00:00', recipeName: '鐵短劍',
+  })
 })
 
 it('projects the actual physical slot and preserves the other slot comparison', () => {

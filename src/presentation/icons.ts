@@ -4,6 +4,7 @@ export const terrainIcons = { water: '≈', grass: '·', forest: '♣', field: '
 export const buildingIcons: Record<BuildingId, string> = { house: '🏠', farm: '🌾', store: '🏪', inn: '🛏️', tavern: '🍺', blacksmith: '⚒️' }
 export const jobIcons: Record<JobId, string> = { farmer: '👨‍🌾', miner: '⛏️', woodcutter: '🪓', blacksmith: '⚒️', shopkeeper: '🧺', guard: '🛡️', mercenary: '⚔️' }
 export const itemIcons: Record<ItemId, string> = { wood: '🪵', stone: '🪨', iron: '⛏️', food: '🌾', material: '🦴', potion: '🧪', sword: '⚔️', armor: '🦺' }
+export const materialIcons = { wolfFang: '🦴', wolfHide: '🐺', moonStone: '🌙' } as const
 export const regionIcons: Record<RegionId, string> = { village: '🏘️', farmland: '🌾', forest: '🌲', mine: '⛰️', unknown: '🕳️' }
 export const monsterIcons = { slime: '🟢', wolf: '🐺', goblin: '👺', chief: '👹' }
 export const stages = { hamlet: '小聚落', village: '村莊', town: '城鎮' }

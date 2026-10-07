@@ -49,13 +49,21 @@ export function refreshIdentity(state: GameState, characterId = state.activeChar
   const added: IdentityId[] = []
   for (const id of Object.keys(IDENTITY_RULES) as Exclude<IdentityId, 'resident'>[]) {
     if (life.identities.includes(id) || !qualifies(state, characterId, id)) continue
-    life.identities.push(id)
-    added.push(id)
-    const label = IDENTITY_RULES[id].label
-    addMilestone(state, characterId, `identity:${id}`, `成為${label}`)
-    emit(state, 'identity.formed', characterId === state.activeCharacterId ? 'player' : 'npc', `${character.name}成為${label}。`, true)
+    if (awardIdentity(state, characterId, id)) added.push(id)
   }
   return added
+}
+
+/** Record one permanent identity through the same bounded milestone/event path. */
+export function awardIdentity(state: GameState, characterId: string, id: Exclude<IdentityId, 'resident'>): boolean {
+  const character = state.characters.find(candidate => candidate.id === characterId)
+  const life = state.life.characters[characterId]
+  if (!character || !life || !character.isAlive || life.identities.includes(id)) return false
+  life.identities.push(id)
+  const label = IDENTITY_RULES[id].label
+  addMilestone(state, characterId, `identity:${id}`, `成為${label}`)
+  emit(state, 'identity.formed', characterId === state.activeCharacterId ? 'player' : 'npc', `${character.name}成為${label}。`, true)
+  return true
 }
 
 export function recordLifeAction(state: GameState, skill: SkillId, amount = 1, characterId = state.activeCharacterId): IdentityId[] {

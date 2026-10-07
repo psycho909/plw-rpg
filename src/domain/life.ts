@@ -3,7 +3,7 @@ import type { ItemId, JobId, Position, SkillId } from './types'
 export type Origin = 'OTHER_WORLD' | 'LOCAL_WORLD'
 export type Trait = 'brave' | 'cautious' | 'ambitious' | 'content' | 'hardworking' | 'wanderer' | 'social' | 'solitary'
 export type CareerStage = 'resident' | 'apprentice' | 'worker' | 'experienced' | 'senior' | 'owner' | 'retired'
-export type IdentityId = 'resident' | 'farmer' | 'skilledFarmer' | 'miner' | 'skilledMiner' | 'adventurer' | 'veteran' | 'farmOwner'
+export type IdentityId = 'resident' | 'farmer' | 'skilledFarmer' | 'miner' | 'skilledMiner' | 'adventurer' | 'veteran' | 'farmOwner' | 'smith' | 'masterpieceCrafter'
 export interface LifeMilestone { id: string; at: number; text: string }
 export interface ImportantMemory {
   kind: 'PLAYER_HELPED_ME' | 'PLAYER_HIRED_ME' | 'PLAYER_SAVED_ME' | 'PLAYER_FAILED_ME' | 'PLAYER_DEFENDED_OAKVALE' | 'PLAYER_OWNS_FARM' | 'PLAYER_SUPPORTED_FOOD' | 'GOBLIN_CHIEF_DEFEATED' | 'DUNGEON_DISCOVERED' | 'MAJOR_DISASTER'

@@ -50,7 +50,11 @@ Esc 開選單／關閉視窗，C 查看角色、I 查看物品、L 查看日誌�
 
 本輪依 [Phase4 規格](docs/specs/V2X-PHASE4-ADVENTURE-REWARD.md)調整新掉落的風險回報、硬皮防線與穿透互動，以及狼王限定月牙獵矛；物品視窗同窗比較能力／詞綴，追蹤與戰鬥視窗顯示實際掉落期待、首次發現及下一個目標。既有裝備存檔數值保留。
 
-Phase4 Engineering Gate：**PASS WITH FINDINGS**。330項全量測試、typecheck/build、10萬次掉落、8,640場戰鬥、20項Chromium回歸、20分鐘正常Browser壓測、30分鐘Agent探索及受控出售補測通過。[本輪交付紀錄](reports/v2/20261006-reward-core/phase-04/final-review.md)保留原始失敗及獨立重試，不將Agent紀錄當作真人產品驗收。Phase5–10／V3尚未開始；Human Gate為DEFERRED。
+Phase4 Engineering Gate：**PASS WITH FINDINGS**。330項全量測試、typecheck/build、10萬次掉落、8,640場戰鬥、20項Chromium回歸、20分鐘正常Browser壓測、30分鐘Agent探索及受控出售補測通過。[本輪交付紀錄](reports/v2/20261006-reward-core/phase-04/final-review.md)保留原始失敗及獨立重試，不將Agent紀錄當作真人產品驗收。此Phase4不包含Phase5–10／V3；Human Gate為DEFERRED。
+
+## V2.x Phase5：Life Reward & Craftsmanship
+
+依 [Phase5 規格](docs/specs/V2X-PHASE5-LIFE-CRAFTSMANSHIP.md)進行製作與生活獎勵垂直切片，目前施工中。先完成素材經濟 baseline，再逐階接入共用裝備生成、素材選擇、技藝能力、傑作及 Adventure→Life→Adventure；不開始Phase6–10／V3。正式進度以 [Ticket](tickets/20261007-v2x-05-life-craftsmanship.md)與[本輪證據](reports/v2/20261007-life-craftsmanship/phase-05/README.md)為準。Human Gate維持DEFERRED。
 
 ## 正式網站與部署
 

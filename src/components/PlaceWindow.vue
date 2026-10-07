@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { BUILDINGS, CONFIG, DUNGEON, ITEMS, REGIONS } from '../data/config'
+import { CRAFTING_RECIPES } from '../data/crafting'
 import { ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
 import type { MaterialId, MonsterDefinitionId, RarityId } from '../domain/reward'
 import type { ItemId } from '../domain/types'
@@ -8,22 +9,55 @@ import { buyPrice, canVisit, encounter, enterDungeon, farm, gather, hire, hireTe
 import { wolfRewardExpectation } from '../engine/itemGeneration'
 import { npcCanWork } from '../engine/npcLife'
 import { encounterWolf, wolfEncounterOptions } from '../engine/wolfFamily'
+import { craft, type CraftResult } from '../engine/crafting'
 import { distance, stageIndex } from '../engine/simulation'
-import { buildingIcons, itemIcons } from '../presentation/icons'
+import { buildingIcons, itemIcons, materialIcons } from '../presentation/icons'
+import { projectCrafting } from '../presentation/craftingProjection'
 import type { PlaceId } from '../presentation/worldUI'
 import { useGameStore } from '../stores/gameStore'
 import PixelMeter from './PixelMeter.vue'
 
 const props = defineProps<{ place: PlaceId }>()
+const emit = defineEmits<{ (event: 'inspect-gear', instanceId: string): void }>()
 const game = useGameStore()
 const c = computed(() => game.character)
 const shop = computed(() => props.place === 'store' || props.place === 'blacksmith' ? props.place : null)
+const workbenchPlace = computed(() => shop.value !== null || props.place === 'house')
+const selectedRecipeId = ref<keyof typeof CRAFTING_RECIPES>('starterSpear')
+const selectedInfluenceMaterial = ref<MaterialId | null>(null)
+const crafting = computed(() => workbenchPlace.value ? projectCrafting(game.state, selectedRecipeId.value, selectedInfluenceMaterial.value) : null)
+const craftingPlan = computed(() => crafting.value?.plan ?? null)
+const lastCraftResult = ref<Extract<CraftResult, { ok: true }> | null>(null)
 const products = computed(() => (Object.keys(ITEMS) as ItemId[]).filter(i => props.place === 'blacksmith' ? ['sword', 'armor'].includes(i) : !['sword', 'armor'].includes(i)))
 const mercenaries = computed(() => game.state.npcs.filter(n => n.job === 'mercenary' && npcCanWork(game.state, n.id) && !game.state.party.some(p => p.npcId === n.id))
   .map(npc => ({ id: npc.id, name: npc.name, age: npc.age, level: npc.level, injuredUntil: npc.injuredUntil })))
 const terms = computed(() => hireTerms(game.state))
 const blocked = computed(() => !c.value.isAlive || !!game.state.combat || game.state.dungeon.inDungeon)
 const price = (item: ItemId) => buyPrice(game.state, item)
+const hourLabel = (hour: number | null) => hour === null ? '—' : `${String(hour).padStart(2, '0')}:00`
+function chooseRecipe(recipeId: keyof typeof CRAFTING_RECIPES) {
+  selectedRecipeId.value = recipeId
+  if (selectedInfluenceMaterial.value && !CRAFTING_RECIPES[recipeId].allowedBiasMaterials.includes(selectedInfluenceMaterial.value)) {
+    selectedInfluenceMaterial.value = null
+  }
+  lastCraftResult.value = null
+}
+function chooseInfluenceMaterial(material: MaterialId | null) {
+  selectedInfluenceMaterial.value = material
+  lastCraftResult.value = null
+}
+function craftSelectedRecipe() {
+  const result = game.act(() => craft(game.state, {
+    recipeId: selectedRecipeId.value,
+    influenceMaterial: selectedInfluenceMaterial.value,
+  }), {
+    message: result => result.ok
+      ? `${result.masterpiece ? '鍛造傑作完成' : '製作完成'}：${ITEM_BASES[result.baseId].name}。`
+      : result.message,
+    succeeded: result => result.ok,
+  })
+  lastCraftResult.value = result?.ok ? result : null
+}
 const canSell = (item: ItemId) => c.value.inventory[item] > (c.value.equipment.weapon === item || c.value.equipment.armor === item ? 1 : 0)
 const rumor = computed(() => game.state.threat.bossAlive ? '北方出現了哥布林酋長，商人都不敢出門了。' : game.state.threat.threatLevel >= 2 ? '森林裡的腳步聲愈來愈多，出門記得找個伴。' : '最近林子還算安靜。聽說山谷裡藏著一座舊礦坑。')
 const wolfOptions = computed(() => props.place === 'forest' ? wolfEncounterOptions(game.state) : [])
@@ -114,4 +148,41 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
     <p>{{ place === 'house' ? '回到家了，歇一會兒吧。' : '橡谷有自己的日常。居民工作，聚落也慢慢成長。' }}</p>
     <div class="action-buttons"><button class="primary" :disabled="blocked || c.currentRegion !== 'village'" @click="game.act(() => rest(game.state, 'rest'))">休息 · 1 小時</button></div><p class="muted help-text">恢復 15 生命與 35 體力，不花金幣。時間會繼續前進。</p>
   </template>
+  <section v-if="crafting && craftingPlan" class="crafting-workbench" aria-labelledby="workbench-title">
+    <h3 id="workbench-title" class="section-title">工作台</h3>
+    <p class="muted">實際工作台 {{ crafting.stationName }} · 服務時間 {{ hourLabel(crafting.opensAtHour) }}–{{ hourLabel(crafting.closesAtHour) }}。</p>
+    <p v-if="place === 'house' && crafting.hasHomeWorkbench" class="muted help-text">在自有住所附近，基礎與進階配方可於家中鍛造並減少服務費；實際站點、時段與費用依下方計畫顯示。高階鐵短劍仍需前往鐵匠鋪。</p>
+    <h4 class="crafting-subheading">選擇配方</h4>
+    <div class="filter-buttons crafting-recipe-options" role="group" aria-label="選擇鍛造配方">
+      <button v-for="recipe in crafting.recipes" :key="recipe.id" :data-craft-recipe="recipe.id"
+        :aria-pressed="selectedRecipeId === recipe.id" :class="{ selected: selectedRecipeId === recipe.id }"
+        @click="chooseRecipe(recipe.id)">{{ recipe.name }}<small>{{ recipe.unlocked ? `Smithing Lv.${recipe.requiredSmithing} 已解鎖` : `Smithing Lv.${recipe.requiredSmithing} 解鎖` }}</small></button>
+    </div>
+    <p class="crafting-recipe-name">{{ crafting.recipeName }}</p>
+    <h4 class="crafting-subheading">影響素材</h4>
+    <p class="muted help-text">素材會消耗 1 份，依選擇調整詞綴權重或條件式特性機率；不保證指定結果。品質機率只依鍛造熟練度能力調整。</p>
+    <div class="filter-buttons crafting-material-options" role="group" aria-label="選擇影響素材">
+      <button data-crafting-material="none" :aria-pressed="selectedInfluenceMaterial === null" :class="{ selected: selectedInfluenceMaterial === null }" @click="chooseInfluenceMaterial(null)">不使用素材</button>
+      <button v-for="option in crafting.influenceMaterials" :key="option.id" :data-crafting-material="option.id" :aria-pressed="selectedInfluenceMaterial === option.id" :class="{ selected: selectedInfluenceMaterial === option.id }" @click="chooseInfluenceMaterial(option.id)">{{ materialIcons[option.id] }} {{ option.name }} · 持有 {{ option.owned }}</button>
+    </div>
+    <p v-if="!crafting.influenceMaterials.length" class="muted help-text">這項配方沒有影響素材選項。</p>
+    <p v-if="crafting.selectedInfluence" class="crafting-influence-copy" data-crafting-influence-copy>{{ crafting.selectedInfluence.influenceText }}</p>
+    <dl class="crafting-preview">
+      <dt>成品</dt><dd>{{ crafting.outputName }} · {{ crafting.outputSlotName }} · Lv.{{ crafting.outputLevel }}</dd>
+      <dt>材料</dt><dd><ul><li v-for="input in crafting.inputs" :key="input.key">{{ input.name }} ×{{ input.required }} <span class="muted">／持有 {{ input.current ?? '—' }}</span></li></ul></dd>
+      <dt>費用</dt><dd>{{ craftingPlan.gold.required }} 金 <span class="muted">／持有 {{ craftingPlan.gold.current ?? '—' }}</span></dd>
+      <dt>體力與時間</dt><dd>體力 {{ craftingPlan.stamina.required }} <span class="muted">／目前 {{ craftingPlan.stamina.current ?? '—' }}</span> · {{ craftingPlan.durationMinutes }} 分鐘</dd>
+      <dt>鍛造熟練度</dt><dd>需求 Lv.{{ craftingPlan.skill.required }} <span class="muted">／目前 Lv.{{ craftingPlan.skill.current ?? '—' }}</span></dd>
+      <dt>品質能力</dt><dd>{{ crafting.quality.floorName ? `目前最低品質：${crafting.quality.floorName}` : '目前使用基礎品質權重' }}<span class="muted"> · {{ crafting.quality.weightsText }}</span></dd>
+      <dt>成功練習</dt><dd>{{ crafting.practice.graduated ? `本配方已達熟練上限 Lv.${crafting.practice.capLevel}` : `成功後鍛造熟練 +${crafting.practice.xpAward} XP，上限 Lv.${crafting.practice.capLevel}` }}</dd>
+    </dl>
+    <p v-if="crafting.quality.nextFloorName && crafting.quality.nextFloorAtSmithing" class="muted help-text">下一個品質能力：Smithing Lv.{{ crafting.quality.nextFloorAtSmithing }} 可達最低{{ crafting.quality.nextFloorName }}。</p>
+    <p v-if="crafting.practice.nextUnlock" class="muted help-text">下一項配方目標：Smithing Lv.{{ crafting.practice.nextUnlock.requiredSmithing }} 解鎖{{ crafting.practice.nextUnlock.name }}。</p>
+    <p v-else-if="craftingPlan.practice.graduated" class="muted help-text">此配方已完成熟練；可製作其他配方或追求更高品質能力。</p>
+    <p v-if="!craftingPlan.ok" class="inline-warning" role="status">{{ craftingPlan.message }}</p>
+    <button class="primary" data-craft-submit :disabled="!craftingPlan.ok" @click="craftSelectedRecipe">製作{{ crafting.recipeName }}</button>
+    <p v-if="lastCraftResult" class="reward-feedback" role="status" aria-live="polite" data-craft-result>
+      <strong v-if="lastCraftResult.masterpiece" class="masterpiece-label">鍛造傑作 · </strong>已製作：{{ ITEM_BASES[lastCraftResult.baseId].name }} · <button @click="emit('inspect-gear', lastCraftResult.instanceId)">檢視裝備</button>
+    </p>
+  </section>
 </template>

@@ -41,7 +41,15 @@ export function equipInstance(state: GameState, instanceId: string): string {
 }
 
 export function itemSellPrice(item: ItemInstance): number {
-  return Math.max(1, Math.floor(ITEM_BASES[item.baseId].sell * SELL_MULTIPLIER[item.rarity]))
+  const base = ITEM_BASES[item.baseId].sell
+  const rarityPrice = Math.floor(base * SELL_MULTIPLIER[item.rarity])
+  if (!item.craftProvenance) return Math.max(1, rarityPrice)
+
+  const affixValue = item.affixes.reduce((sum, affix) => sum + 1 + Math.max(0, affix.tier - 1), 0)
+  const affixPremium = Math.min(Math.floor(base * 0.15), affixValue)
+  const masterpiecePremium = item.craftProvenance.masterpiece ? Math.ceil(base * 0.15) : 0
+  const premium = Math.min(Math.floor(base * 0.25), affixPremium + masterpiecePremium)
+  return Math.max(1, rarityPrice + premium)
 }
 
 function safePayout(gold: number, price: number) {

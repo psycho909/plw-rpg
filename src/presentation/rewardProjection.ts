@@ -1,7 +1,9 @@
 import { EQUIPMENT, ITEMS } from '../data/config'
+import { CRAFTING_RECIPES } from '../data/crafting'
 import { ITEM_BASES, RARITIES } from '../data/rewards'
 import type { EquipmentSlot, GearStats, ItemInstance, RarityId } from '../domain/reward'
 import type { GameState } from '../domain/types'
+import { clockLabel } from '../engine/calendar'
 
 export const GEAR_PAGE_SIZE = 20
 export const statLabels: Record<keyof GearStats, string> = {
@@ -19,6 +21,19 @@ export function projectGearPage(state: GameState, requestedPage: number, slot: E
   const pages = Math.max(1, Math.ceil(owned.length / GEAR_PAGE_SIZE))
   const page = Math.max(0, Math.min(pages - 1, Number.isFinite(requestedPage) ? Math.floor(requestedPage) : 0))
   return { items: structuredClone(owned.slice(page * GEAR_PAGE_SIZE, (page + 1) * GEAR_PAGE_SIZE)), total: owned.length, page, pages }
+}
+
+/** Original maker and recipe stay attached to the physical crafted instance, independent of its current owner. */
+export function projectCraftProvenance(state: GameState, item: ItemInstance) {
+  const provenance = item.craftProvenance
+  if (!provenance) return null
+  const creator = state.characters.find(character => character.id === provenance.createdBy)
+  return {
+    masterpiece: provenance.masterpiece,
+    creatorName: creator?.name ?? '不詳',
+    createdAtLabel: clockLabel(provenance.createdAt),
+    recipeName: CRAFTING_RECIPES[provenance.recipeId].name,
+  }
 }
 
 /** Comparison describes one physical slot, including existing fixed equipment. */

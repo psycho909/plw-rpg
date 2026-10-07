@@ -27,13 +27,14 @@
 | Scrollbar | src/style.scss 全域規則 | 本文件 token 映射 | 地圖／視窗內部捲動 | 瀏覽器 computed style、窄螢幕 |
 | Toast | src/components/StatusNotice.vue + gameStore.message | gameStore.act／save | 探索上方訊息、modal 內訊息 | 成功／失敗／dismiss／live region |
 | CRUD | gameStore.save／reset + App.vue 確認流程 | SPEC 53、saveService | 手動存檔、自動存檔、重建確認 | 存檔重載、失敗保護、取消 |
-| Identity／Reputation | App.vue + IdentityWindow.vue | `state.life.characters[activeCharacterId]` | 身分、聲望稱號、人生記事、名下產業 | `identity.test.ts`、`lifeIntegration.test.ts` |
+| Identity／Reputation | App.vue + IdentityWindow.vue | `state.life.characters[activeCharacterId]` | 身分、聲望稱號、人生記事、名下產業；鍛造身分與傑作匠師稱號由 engine 身分投影形成，UI 只顯示 label | `identity.test.ts`、`lifeIntegration.test.ts` |
 | NPC life | NpcWindow.vue | `state.life.npcs[npcId]` 與目前居民 state | 職涯、熟悉度、掛心事項、旅人狀態、記得與玩家有關的事 | `npcLife.test.ts`、`lifeIntegration.test.ts` |
 | Property | PropertyWindow.vue | `state.life.properties`、`PROPERTY_DEFINITIONS` | 自宅、農地、農場事業及手動供糧 | `ownership.test.ts`、`lifeIntegration.test.ts` |
 | Living news／requests | LifeNewsWindow.vue | `projectLivingNews`、`state.life.requests` | 地方／區域／傳聞／重大消息、近期委託 | `livingEvents.test.ts`、`lifeIntegration.test.ts` |
 | World First map | WorldMap.vue + `projectWorld` | `GameState` 經 `worldProjection.ts`／`worldUI.ts` 投影 | 已探索圖格、居民、產業、作物和威脅標記 | `worldProjection.test.ts`、瀏覽器遊玩流程 |
 | Procedural gear / discovery | InventoryWindow.vue、CharacterSheet.vue + `rewardProjection` | `state.reward`、rewards catalog、rewardActions / combatStats | 原生分類／部位／品質按鈕、20 件分頁、同部位比較、穿戴、出售確認、素材交易、有限見聞收藏 | `rewardProjection.test.ts`、Phase2 engine tests、reward-core production Browser 流程 |
 | Adventure reward / comparison | PlaceWindow.vue + AdventureWindow.vue + `wolfRewardExpectation` / `rewardProjection` | `state.reward`、wolf loot configuration、current slot equipment | 追蹤目標逐列呈現真實 gear/rank/rarity/material/exclusive expectation；單一下一目標提示；戰鬥顯示 reward forecast；同窗比較 rarity、逐項能力差與 affix/special 差異 | `rewardProjection.test.ts`、Phase4 targeted browser、Adventure stress/playtest |
+| Crafting / craftsmanship | Home／雜貨店／鐵匠鋪 `PlaceWindow.vue` 共用工作台 + `InventoryWindow.vue` gear detail + `CharacterSheet.vue` Smithing | `CRAFTING_RECIPES`、`planCraft` / `craft`、`state.reward.instances`、角色技能與持有素材、既有 life identity projection | 配方選取、合法性／成本／拒絕原因／實際站點與時段均由 engine plan 提供；可在既有 Home 檢視基礎／中階 recipe，所有服務費、站點與營業時間只讀 plan；仍由同一工作台互動。解鎖、熟練 XP 上限、畢業狀態、品質下限／機率與下一目標讀取 plan；鍛造能力不增加裝備原始數值。預設不加影響素材，只有 registry allowlist 會顯示為選項。F masterpiece 是既有裝備身分標記，不是新稀有度或通用戰力保證；現有 gear row/detail 與成功回饋呈現傑作、原製作者、時間及配方。G 鍛造師／傑作匠師標籤由 engine lifetime identity 投影形成，UI 不重算門檻；不新增 inspector 或 ownership panel | `craftingProjection.test.ts`、`rewardProjection.test.ts`、`gameStore.test.ts`、engine crafting tests、C fresh-save browser pilot；E/F/G UI browser flow；save/reload |
 
 本機遊戲無表格選取、日期輸入、表單或 single-select；不建立無用 UI primitive。PixelWindow 是所有 modal 唯一 owner，PixelMeter 是生命／體力／熟練度／作物進度唯一 owner。清單篩選用原生按鈕群組，保持 aria-pressed。
 

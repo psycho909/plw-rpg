@@ -1,11 +1,13 @@
 import { AFFIXES, BOSS_VARIANTS, ITEM_BASES, MATERIALS, MONSTER_TRAITS, RARITIES, WOLF_ENCOUNTER_RULES, WOLF_MONSTERS } from '../data/rewards'
+import { CRAFTING_RECIPES } from '../data/crafting'
 import type { FamilyEncounter, ItemAffix, ItemBaseId, ItemInstance, RewardState } from '../domain/reward'
 import type { GameState } from '../domain/types'
 import { maximumAffixTier, rolledItemStats } from '../engine/gearStats'
 import { resolveWolfCombatStats } from '../engine/wolfFamily'
 
 const rewardKeys = ['schemaVersion', 'nextInstanceId', 'instances', 'equipped', 'materials', 'collection', 'wolfBossDefeatedAt', 'wolfBossForm']
-const instanceKeys = ['instanceId', 'ownerId', 'baseId', 'level', 'material', 'rarity', 'rolledStats', 'affixes', 'specialTrait', 'provenance']
+const legacyInstanceKeys = ['instanceId', 'ownerId', 'baseId', 'level', 'material', 'rarity', 'rolledStats', 'affixes', 'specialTrait', 'provenance']
+const instanceKeys = [...legacyInstanceKeys, 'craftProvenance']
 const statsKeys = ['attack', 'defense', 'critical', 'penetration', 'bleed', 'block', 'reduction']
 const collectionKeys = ['seen', 'defeated', 'bases', 'materials', 'bosses', 'rareBases']
 const encounterKeys = ['definitionId', 'traits', 'variant', 'turn', 'formedAt', 'context', 'howlActive']
@@ -68,13 +70,27 @@ function validProvenance(value: unknown, rarityId: keyof typeof RARITIES, charac
   return creatorValid && safeInt(value.createdAt) && value.createdAt <= worldTime && bossValid && materialValid
 }
 
+function validCraftProvenance(value: unknown, item: Record<string, unknown>, characters: Map<string, Record<string, unknown>>, worldTime: number): boolean {
+  if (value === null) return true
+  if (!exactKeys(value, ['recipeId', 'createdBy', 'createdAt', 'influenceMaterial', 'masterpiece'])
+    || !catalogKey(CRAFTING_RECIPES, value.recipeId)) return false
+  const recipe = CRAFTING_RECIPES[value.recipeId]
+  const creatorValid = typeof value.createdBy === 'string' && characters.has(value.createdBy)
+  const influenceValid = value.influenceMaterial === null
+    || (catalogKey(MATERIALS, value.influenceMaterial) && recipe.allowedBiasMaterials.includes(value.influenceMaterial))
+  return creatorValid && safeInt(value.createdAt) && value.createdAt <= worldTime && influenceValid && value.influenceMaterial === item.material
+    && (value.masterpiece === false || (value.masterpiece === true && recipe.masterpieceRules !== undefined))
+    && item.baseId === recipe.outputBase && item.level === recipe.outputLevel
+}
+
 function validInstance(
   value: unknown,
   characters: Map<string, Record<string, unknown>>,
   nextInstanceNumber: number,
   worldTime: number,
-): value is ItemInstance {
-  if (!exactKeys(value, instanceKeys) || typeof value.instanceId !== 'string' || typeof value.ownerId !== 'string'
+  version: 1 | 2,
+): boolean {
+  if (!exactKeys(value, version === 1 ? legacyInstanceKeys : instanceKeys) || typeof value.instanceId !== 'string' || typeof value.ownerId !== 'string'
     || !characters.has(value.ownerId) || !catalogKey(ITEM_BASES, value.baseId) || !catalogKey(RARITIES, value.rarity)
     || !safeInt(value.level, 1, 100) || !(value.material === null || catalogKey(MATERIALS, value.material))) return false
 
@@ -88,6 +104,9 @@ function validInstance(
     || base.slot !== 'weapon' || !RARITIES[value.rarity].specialEligible)) return false
   if (value.provenance !== null && value.rarity !== 'legendary') return false
   if (!validProvenance(value.provenance, value.rarity, characters, worldTime)) return false
+  if (version === 2 && !validCraftProvenance(value.craftProvenance, value, characters, worldTime)) return false
+  if (version === 2 && value.craftProvenance !== null && value.provenance !== null
+    && (!record(value.provenance) || value.provenance.bossSource !== null)) return false
   if (!validAffixes(value.affixes, value.baseId, value.rarity, value.level)) return false
   const stats = value.rolledStats
   if (!exactKeys(stats, statsKeys) || !statsKeys.every(key => safeInt(stats[key], 0))) return false
@@ -141,9 +160,8 @@ function validEncounterShape(value: unknown, worldTime: number): value is Family
     && safeInt(value.context.hunted) && bounded(value.context.safety, 0, 100)
 }
 
-/** Strict guard for a persisted reward extension. It never mutates state or throws on malformed values. */
-export function validateReward(value: unknown, state: GameState): value is RewardState {
-  if (!exactKeys(value, rewardKeys) || value.schemaVersion !== 1 || !safeInt(value.nextInstanceId, 1, Number.MAX_SAFE_INTEGER - 1)
+function validateRewardVersion(value: unknown, state: GameState, version: 1 | 2): boolean {
+  if (!exactKeys(value, rewardKeys) || value.schemaVersion !== version || !safeInt(value.nextInstanceId, 1, Number.MAX_SAFE_INTEGER - 1)
     || !Array.isArray(value.instances) || !record(value.equipped) || !record(value.materials)
     || !exactKeys(value.collection, collectionKeys)) return false
 
@@ -155,9 +173,10 @@ export function validateReward(value: unknown, state: GameState): value is Rewar
   if (!safeInt(worldTime)) return false
 
   const seenInstanceIds = new Set<string>()
-  const instanceById = new Map<string, ItemInstance>()
+  const instanceById = new Map<string, Record<string, unknown>>()
   for (const candidate of value.instances) {
-    if (!validInstance(candidate, characters, value.nextInstanceId, worldTime) || seenInstanceIds.has(candidate.instanceId)) return false
+    if (!record(candidate) || !validInstance(candidate, characters, value.nextInstanceId, worldTime, version)
+      || typeof candidate.instanceId !== 'string' || seenInstanceIds.has(candidate.instanceId)) return false
     seenInstanceIds.add(candidate.instanceId)
     instanceById.set(candidate.instanceId, candidate)
   }
@@ -176,7 +195,7 @@ export function validateReward(value: unknown, state: GameState): value is Rewar
       if (instanceId === null) continue
       if (typeof instanceId !== 'string' || equippedInstanceIds.has(instanceId)) return false
       const instance = instanceById.get(instanceId)
-      if (!instance || instance.ownerId !== ownerId || ITEM_BASES[instance.baseId].slot !== slot
+      if (!instance || instance.ownerId !== ownerId || !catalogKey(ITEM_BASES, instance.baseId) || ITEM_BASES[instance.baseId].slot !== slot
         || character.equipment[slot] !== null) return false
       equippedInstanceIds.add(instanceId)
     }
@@ -194,6 +213,16 @@ export function validateReward(value: unknown, state: GameState): value is Rewar
   if (value.wolfBossForm === null) return true
   if (!validEncounterShape(value.wolfBossForm, worldTime)) return false
   return value.wolfBossForm.definitionId === 'wolfKing' && value.wolfBossForm.turn === 0 && !value.wolfBossForm.howlActive
+}
+
+/** Strict guard for a persisted V1 reward extension. It never mutates state or throws. */
+export function validateRewardV1(value: unknown, state: GameState): boolean {
+  return validateRewardVersion(value, state, 1)
+}
+
+/** Strict guard for the current V2 reward extension. It never mutates state or throws. */
+export function validateReward(value: unknown, state: GameState): value is RewardState {
+  return validateRewardVersion(value, state, 2)
 }
 
 /** Validates a family snapshot against its containing combat without re-forming it. */

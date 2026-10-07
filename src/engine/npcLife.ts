@@ -3,7 +3,7 @@ import {
   NPC_CAREER_DIALOGUE, NPC_CAREER_LABELS, NPC_CONTEXT_DIALOGUE, NPC_JOB_DIALOGUE, NPC_JOB_PROFILES,
   NPC_LIFE_LIMITS, NPC_MEMORY_DIALOGUE, NPC_TRAIT_DIALOGUE,
 } from '../data/npcLife'
-import type { CareerStage, IdentityId, ImportantMemory, NpcLife } from '../domain/life'
+import type { CareerStage, ImportantMemory, NpcLife } from '../domain/life'
 import type { GameState, JobId, NPC } from '../domain/types'
 import { calendar } from './calendar'
 import { emit } from './events'
@@ -247,7 +247,7 @@ function dialogueChoices(state: GameState, life: NpcLife): DialogueChoice[] {
   if (reputation >= 30) add('reputation', NPC_CONTEXT_DIALOGUE.reputation.known, 3)
   else if (reputation >= 10) add('reputation', NPC_CONTEXT_DIALOGUE.reputation.familiar, 2)
   const identities = playerLife?.identities ?? []
-  const identity = (['farmOwner', 'veteran', 'skilledFarmer', 'skilledMiner', 'adventurer', 'farmer', 'miner'] as IdentityId[])
+  const identity = (['farmOwner', 'veteran', 'skilledFarmer', 'skilledMiner', 'adventurer', 'farmer', 'miner'] as (keyof typeof NPC_CONTEXT_DIALOGUE.identity)[])
     .find(candidate => identities.includes(candidate))
   if (identity) add(`identity:${identity}`, NPC_CONTEXT_DIALOGUE.identity[identity] ?? [], 2.5)
   return choices

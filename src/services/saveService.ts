@@ -6,8 +6,8 @@ import type { WorldLife } from '../domain/life'
 import type { GameState, Position } from '../domain/types'
 import { createGame } from '../engine/simulation'
 import { initializeLife } from '../engine/lifeState'
-import { emptyReward } from '../engine/rewardState'
-import { validFamilyEncounter, validateReward } from './rewardValidation'
+import { emptyReward, migrateRewardV1 } from '../engine/rewardState'
+import { validFamilyEncounter, validateReward, validateRewardV1 } from './rewardValidation'
 
 export const SAVE_KEY = 'oakvale-v1'
 
@@ -39,11 +39,14 @@ function exactShape(value: unknown, required: string[], optional: string[] = [])
   return required.every(key => Object.hasOwn(value, key)) && Object.keys(value).every(key => allowed.has(key))
 }
 
-function validBase(value: unknown, version: 1 | 2): value is GameState {
+function validBase(value: unknown, version: 1 | 2 | 3): value is GameState {
   if (!object(value)) return false
   const currentTemplate = createGame()
-  // Event tiers were introduced in V2; native V1 history must retain its original shape.
+  // Event tiers remain optional so historical V1 entries survive later-version round trips.
   for (const event of [...currentTemplate.events, ...currentTemplate.history]) delete event.tier
+  if (version < 3) for (const actor of [...currentTemplate.characters, ...currentTemplate.npcs]) {
+    delete (actor.skills as Record<string, unknown>).smithing
+  }
   const { life: _life, reward: _reward, ...baseTemplate } = currentTemplate
   const template: Record<string, unknown> = { ...baseTemplate, saveVersion: version }
   if (version === 1) {
@@ -63,6 +66,7 @@ function validBase(value: unknown, version: 1 | 2): value is GameState {
     && Number.isSafeInteger(s.nextNpcId) && s.nextNpcId > 0 && s.nextNpcId < Number.MAX_SAFE_INTEGER
     && s.characters.some(c => c.id === s.activeCharacterId)
     && [...s.characters, ...s.npcs].every(c => safeInt(c.age) && Number.isSafeInteger(c.level) && c.level >= 1 && c.exp >= 0 && c.exp < c.level * 30
+      && exactShape(c.skills, version < 3 ? ['combat', 'farming', 'mining', 'woodcutting'] : ['combat', 'farming', 'mining', 'woodcutting', 'smithing'])
       && Object.values(c.skills).every(skill => Number.isSafeInteger(skill.level) && skill.level >= 1 && skill.exp >= 0 && skill.exp < skill.level * 20)
       && c.maxHp > 0 && c.maxStamina > 0 && c.gold >= 0 && regions.includes(c.currentRegion)
       && ['child', 'young', 'adult', 'middleAge', 'elder'].includes(c.lifeStage) && ['idle', 'combat', 'dead'].includes(c.status)
@@ -104,13 +108,15 @@ function validBase(value: unknown, version: 1 | 2): value is GameState {
 }
 
 const originKinds = ['OTHER_WORLD', 'LOCAL_WORLD']
-const identityKinds = ['resident', 'farmer', 'skilledFarmer', 'miner', 'skilledMiner', 'adventurer', 'veteran', 'farmOwner']
+const legacyIdentityKinds = ['resident', 'farmer', 'skilledFarmer', 'miner', 'skilledMiner', 'adventurer', 'veteran', 'farmOwner']
+const identityKinds = [...legacyIdentityKinds, 'smith', 'masterpieceCrafter']
 const traitKinds = ['brave', 'cautious', 'ambitious', 'content', 'hardworking', 'wanderer', 'social', 'solitary']
 const careerKinds = ['resident', 'apprentice', 'worker', 'experienced', 'senior', 'owner', 'retired']
 const memoryKinds = ['PLAYER_HELPED_ME', 'PLAYER_HIRED_ME', 'PLAYER_SAVED_ME', 'PLAYER_FAILED_ME', 'PLAYER_DEFENDED_OAKVALE',
   'PLAYER_OWNS_FARM', 'PLAYER_SUPPORTED_FOOD', 'GOBLIN_CHIEF_DEFEATED', 'DUNGEON_DISCOVERED', 'MAJOR_DISASTER']
 const visitorKinds = ['elf', 'mage', 'knight', 'adventurer', 'merchant']
-const skillIds = ['combat', 'farming', 'mining', 'woodcutting']
+const legacySkillIds = ['combat', 'farming', 'mining', 'woodcutting']
+const skillIds = [...legacySkillIds, 'smithing']
 const itemIds = Object.keys(ITEMS)
 const npcIdNumber = (id: string) => /^npc-([1-9]\d*)$/.exec(id)?.[1]
 
@@ -135,7 +141,7 @@ function validCounts(value: unknown, keys: string[], maximum = Number.MAX_SAFE_I
   return exactShape(value, keys) && Object.values(value).every(count => safeInt(count, 0, maximum))
 }
 
-function validLife(value: unknown, s: GameState): value is WorldLife {
+function validLife(value: unknown, s: GameState, version: 2 | 3): value is WorldLife {
   if (!exactShape(value, ['canon', 'openingSeen', 'characters', 'npcs', 'properties', 'settlementMemories', 'worldMemories', 'arcs', 'requests', 'news', 'director'])) return false
   if (value.canon !== 'OAKVALE_LIFE_EMERGENCE' || typeof value.openingSeen !== 'boolean' || !object(value.characters) || !object(value.npcs)) return false
   const savedNpcs = value.npcs
@@ -152,12 +158,13 @@ function validLife(value: unknown, s: GameState): value is WorldLife {
   }
 
   const actorExists = (id: string) => validWorldEntityId(id, characterIds, value.npcs as Record<string, unknown>, s.nextNpcId)
+  const allowedIdentityKinds = version === 2 ? legacyIdentityKinds : identityKinds
   const characterShape = ['origin', 'generation', 'identities', 'actions', 'reputation', 'reputationHistory', 'milestones']
   for (const [id, life] of characterEntries) {
     if (!exactShape(life, characterShape) || !enumValue(life.origin, originKinds)
-      || !safeInt(life.generation, 1, s.characters.length) || !Array.isArray(life.identities) || life.identities.length < 1 || life.identities.length > identityKinds.length
-      || !life.identities.every(identity => enumValue(identity, identityKinds)) || new Set(life.identities).size !== life.identities.length
-      || !validCounts(life.actions, skillIds) || !boundedNumber(life.reputation, REPUTATION_BOUNDS.min, REPUTATION_BOUNDS.max)
+      || !safeInt(life.generation, 1, s.characters.length) || !Array.isArray(life.identities) || life.identities.length < 1 || life.identities.length > allowedIdentityKinds.length
+      || !life.identities.every(identity => enumValue(identity, allowedIdentityKinds)) || new Set(life.identities).size !== life.identities.length
+      || !validCounts(life.actions, version === 2 ? legacySkillIds : skillIds) || !boundedNumber(life.reputation, REPUTATION_BOUNDS.min, REPUTATION_BOUNDS.max)
       || !Array.isArray(life.reputationHistory) || life.reputationHistory.length > IDENTITY_LIMITS.reputationHistory
       || !life.reputationHistory.every(record => exactShape(record, ['at', 'delta', 'reason']) && safeInt(record.at) && record.at <= s.worldTime
         && boundedNumber(record.delta, -200, 200) && shortString(record.reason, 500, 1))
@@ -255,7 +262,7 @@ export function serialize(state: GameState, now = Date.now()) {
 
 export function deserialize(raw: string): { state: GameState; lastSavedAt: number } {
   const value: unknown = JSON.parse(raw)
-  if (!object(value) || (value.saveVersion !== 1 && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
+  if (!object(value) || (value.saveVersion !== 1 && value.saveVersion !== 2 && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
   if (typeof value.lastSavedAt !== 'number' || !Number.isFinite(value.lastSavedAt) || value.lastSavedAt < 0) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -265,16 +272,29 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
     const state = stateData as unknown as GameState
     if (Object.hasOwn(stateData, 'reward')) throw new Error('存檔資料不完整。原始存檔已保留。')
     // initializeLife uses a dedicated stream and must not consume the preserved V1 RNG.
+    for (const actor of [...state.characters, ...state.npcs]) actor.skills.smithing = { level: 1, exp: 0 }
     initializeLife(state, true)
     state.reward = emptyReward()
     state.saveVersion = CONFIG.saveVersion
     return { state, lastSavedAt }
   }
-  if (!validBase(stateData, CONFIG.saveVersion) || !validLife(stateData.life, stateData as unknown as GameState)) {
+  const sourceVersion = value.saveVersion as 2 | 3
+  if (!validBase(stateData, sourceVersion) || !validLife(stateData.life, stateData as unknown as GameState, sourceVersion)) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
   const state = stateData as unknown as GameState
-  if (!Object.hasOwn(stateData, 'reward')) state.reward = emptyReward()
-  else if (!validateReward(stateData.reward, state)) throw new Error('存檔資料不完整。原始存檔已保留。')
+  if (sourceVersion === 2) {
+    if (Object.hasOwn(stateData, 'reward') && !validateRewardV1(stateData.reward, state)) {
+      throw new Error('存檔資料不完整。原始存檔已保留。')
+    }
+    for (const actor of [...state.characters, ...state.npcs]) actor.skills.smithing = { level: 1, exp: 0 }
+    for (const life of Object.values(state.life.characters)) life.actions.smithing = 0
+    state.reward = Object.hasOwn(stateData, 'reward') ? migrateRewardV1(stateData.reward) : emptyReward()
+    state.saveVersion = CONFIG.saveVersion
+    return { state, lastSavedAt }
+  }
+  if (!Object.hasOwn(stateData, 'reward') || !validateReward(stateData.reward, state)) {
+    throw new Error('存檔資料不完整。原始存檔已保留。')
+  }
   return { state, lastSavedAt }
 }

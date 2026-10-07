@@ -9,7 +9,7 @@ export function emptyLife(worldTime: number, openingSeen = false): WorldLife {
       lastPlayerActivity: worldTime, stability: 80, tradePenalty: 0, ironReserve: 40, sequence: 0 } }
 }
 export function newCharacterLife(generation = 1, origin: CharacterLife['origin'] = 'OTHER_WORLD'): CharacterLife {
-  return { origin, generation, identities: ['resident'], actions: { combat: 0, farming: 0, mining: 0, woodcutting: 0 }, reputation: 0, reputationHistory: [], milestones: [] }
+  return { origin, generation, identities: ['resident'], actions: { combat: 0, farming: 0, mining: 0, woodcutting: 0, smithing: 0 }, reputation: 0, reputationHistory: [], milestones: [] }
 }
 export function newNpcLife(state: Pick<GameState, 'worldSeed'>, id: string, job: NpcLife['careerJob'], index: number): NpcLife {
   // A dedicated seeded stream assigns stable traits without consuming a V1 world's RNG during migration.

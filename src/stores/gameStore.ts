@@ -99,14 +99,21 @@ export const useGameStore = defineStore('game', () => {
     triggerRef(state)
     if (state.value.worldTime !== before) { record('time', before, captured.events, '世界時間繼續前進。'); save() }
   }
-  function act(action: () => string | boolean) {
-    if (!state.value.life.openingSeen || !canProgress()) return
+  type ActPolicy<T> = { message: (result: T, events: WorldEvent[]) => string; succeeded: (result: T) => boolean }
+  function act<T extends string | boolean>(action: () => T): T | undefined
+  function act<T>(action: () => T, policy: ActPolicy<T>): T | undefined
+  function act<T>(action: () => T, policy?: ActPolicy<T>): T | undefined {
+    if (!state.value.life.openingSeen || !canProgress()) return undefined
     const before = state.value.worldTime, sequence = state.value.eventSequence, captured = captureEvents(state.value, action), result = captured.result
     triggerRef(state)
-    message.value = typeof result === 'string' ? result || state.value.events.at(-1)?.message || '完成。' : result ? '已到達。' : '目前無法移動。'
-    if (result === '' || result === true || before !== state.value.worldTime || sequence !== state.value.eventSequence) {
+    message.value = policy
+      ? policy.message(result, captured.events)
+      : typeof result === 'string' ? result || state.value.events.at(-1)?.message || '完成。' : result ? '已到達。' : '目前無法移動。'
+    const succeeded = policy ? policy.succeeded(result) : result === '' || result === true
+    if (succeeded || before !== state.value.worldTime || sequence !== state.value.eventSequence) {
       record('action', before, captured.events, message.value); save()
     }
+    return result
   }
   async function exportJournal() {
     let records: Awaited<ReturnType<typeof repository.readAll>> = [], archiveAvailable = true

@@ -38,10 +38,45 @@ function versionOneFixture(lastSavedAt = 1000) {
   delete raw.life
   delete raw.reward
   raw.saveVersion = 1
+  for (const actor of [...raw.characters, ...raw.npcs]) delete actor.skills.smithing
+  for (const event of [...raw.events, ...raw.history]) delete event.tier
   return JSON.stringify(raw)
 }
 
 describe('safe browser persistence', () => {
+  it('returns a typed action result once and does not persist a denied no-op', () => {
+    const game = startedGame(), result = { ok: false as const, message: '材料不足。' }
+    storage.setItem.mockClear()
+    let calls = 0
+    const returned = game.act(() => { calls++; return result }, {
+      message: value => value.message,
+      succeeded: value => value.ok,
+    })
+    expect(returned).toBe(result)
+    expect(calls).toBe(1)
+    expect(game.message).toBe('材料不足。')
+    expect(storage.setItem).not.toHaveBeenCalled()
+  })
+
+  it('persists a typed successful action and journals its mapped message', () => {
+    const game = startedGame()
+    storage.setItem.mockClear()
+    let calls = 0
+    const returned = game.act(() => {
+      calls++
+      emit(game.state, 'craft.completed', 'player', '完成木石長矛。')
+      return { ok: true as const, instanceId: 'gear-1' }
+    }, {
+      message: value => `已製作裝備 ${value.instanceId}。`,
+      succeeded: value => value.ok,
+    })
+    expect(returned).toEqual({ ok: true, instanceId: 'gear-1' })
+    expect(calls).toBe(1)
+    expect(storage.setItem).toHaveBeenCalledTimes(1)
+    expect(unpackCheckpoint(saved!).journal.pending.at(-1)?.message).toBe('已製作裝備 gear-1。')
+    expect(unpackCheckpoint(saved!).journal.pending.at(-1)?.events.map(event => event.type)).toContain('craft.completed')
+  })
+
   it('records factual equip and unequip messages in the stored action journal', () => {
     const game = startedGame()
     const item = generateItem(game.state, { baseId: 'shortSword', level: 1 })
@@ -88,10 +123,10 @@ describe('safe browser persistence', () => {
     expect(game.state.worldSeed).toBe(88)
     expect(game.state.worldTime).toBe(state.worldTime)
     expect(game.state.rngState).toBe(state.rngState)
-    expect(game.state.saveVersion).toBe(2)
+    expect(game.state.saveVersion).toBe(3)
     expect(game.speed).toBe(1)
     expect(game.offline).toBe(null)
-    expect(JSON.parse(saved!).saveVersion).toBe(2)
+    expect(JSON.parse(saved!).saveVersion).toBe(3)
     expect(game.savedAt).toBe(100000)
   })
   it('keeps historical offline journal records but adds no offline load record', () => {
@@ -123,7 +158,7 @@ describe('safe browser persistence', () => {
   })
   it('allows explicit reset to replace corrupt data after the UI confirmation', () => {
     saved = '{broken'; const game = useGameStore(); game.reset()
-    expect(game.save()).toBe(true); expect(JSON.parse(saved!).saveVersion).toBe(2)
+    expect(game.save()).toBe(true); expect(JSON.parse(saved!).saveVersion).toBe(3)
     expect(game.speed).toBe(0); expect(game.state.life.openingSeen).toBe(false)
   })
   it('keeps a new world paused until startLife and triggers shallow world updates', () => {

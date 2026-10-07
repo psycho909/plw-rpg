@@ -1,5 +1,6 @@
 import { AFFIXES, ITEM_BASES, ITEM_GENERATION_RULES, LOOT_TABLES, MATERIALS, RARITIES, WOLF_LOOT_RULES, WOLF_MONSTERS } from '../data/rewards'
-import type { AffixId, ItemBaseId, ItemInstance, MaterialDefinition, MaterialId, MonsterDefinitionId, MonsterRank, RarityId } from '../domain/reward'
+import { CRAFTING_RECIPES } from '../data/crafting'
+import type { AffixId, CraftGenerationContext, CraftRecipeId, ItemBaseId, ItemInstance, MaterialDefinition, MaterialId, MonsterDefinitionId, MonsterRank, RarityId } from '../domain/reward'
 import type { GameState } from '../domain/types'
 import { emit } from './events'
 import { maximumAffixTier, rolledItemStats } from './gearStats'
@@ -11,6 +12,7 @@ export interface GenerateItemOptions {
   material?: MaterialId | null
   bossSource?: MonsterDefinitionId | null
   dropSource?: MonsterDefinitionId | null
+  context?: CraftGenerationContext
 }
 
 export interface AwardWolfLootOptions { definitionId: MonsterDefinitionId }
@@ -24,6 +26,31 @@ export interface WolfRewardExpectation {
   rarityChances: Record<RarityId, number>
   guaranteedMaterials: Partial<Record<MaterialId, number>>
   chanceMaterials: Partial<Record<MaterialId, number>>
+}
+
+export interface CraftQualityProfile {
+  floor: RarityId | null
+  rarityWeights: Record<RarityId, number>
+  nextFloor: RarityId | null
+  nextFloorAtSmithing: number | null
+}
+
+/** Shared read-only craft preview and generation rule; ordinary loot keeps its existing pools. */
+export function craftQualityProfile(recipeId: CraftRecipeId, smithingLevel: number | null): CraftQualityProfile {
+  const recipe = CRAFTING_RECIPES[recipeId]
+  const rarityIds = Object.keys(RARITIES) as RarityId[]
+  const rarityWeights = Object.fromEntries(rarityIds.map(id => [id, RARITIES[id].weight])) as Record<RarityId, number>
+  const { floorAtSmithing, minimumRarity } = recipe.qualityRules
+  if (smithingLevel === null || smithingLevel < floorAtSmithing) {
+    return { floor: null, rarityWeights, nextFloor: minimumRarity, nextFloorAtSmithing: floorAtSmithing }
+  }
+
+  const floorIndex = rarityIds.indexOf(minimumRarity)
+  for (let index = 0; index < floorIndex; index++) {
+    rarityWeights[minimumRarity] += rarityWeights[rarityIds[index]!]!
+    rarityWeights[rarityIds[index]!] = 0
+  }
+  return { floor: minimumRarity, rarityWeights, nextFloor: null, nextFloorAtSmithing: null }
 }
 
 function catalogKey<T extends object>(catalog: T, value: unknown): value is keyof T & string {
@@ -86,7 +113,7 @@ function availableInstanceSlot(state: GameState) {
 
 function validateInput(state: GameState, options: GenerateItemOptions) {
   if (!state || !state.reward || !options || typeof options !== 'object' || Array.isArray(options)
-    || Object.keys(options).some(key => !['baseId', 'level', 'material', 'bossSource', 'dropSource'].includes(key))) {
+    || Object.keys(options).some(key => !['baseId', 'level', 'material', 'bossSource', 'dropSource', 'context'].includes(key))) {
     throw new TypeError('無法產生裝備。')
   }
   const baseId = options.baseId
@@ -108,10 +135,41 @@ function validateInput(state: GameState, options: GenerateItemOptions) {
   if (baseId === WOLF_LOOT_RULES.bossExclusiveBase && dropSource && WOLF_MONSTERS[dropSource].rank !== 'boss') {
     throw new RangeError('首領專屬底材來源無效。')
   }
+  const hasContext = Object.hasOwn(options, 'context')
+  let craftProvenance: ItemInstance['craftProvenance'] = null
+  let craftRecipeId: CraftRecipeId | null = null
+  let craftSmithingLevel: number | null = null
+  let craftMasterpieceChance = 0
+  if (hasContext) {
+    const context = options.context
+    if (!context || typeof context !== 'object' || Array.isArray(context)
+      || Object.keys(context).length !== 2 || !Object.hasOwn(context, 'kind') || !Object.hasOwn(context, 'recipeId')
+      || context.kind !== 'craft' || typeof context.recipeId !== 'string' || !Object.hasOwn(CRAFTING_RECIPES, context.recipeId)) {
+      throw new TypeError('鍛造來源無效。')
+    }
+    const recipe = CRAFTING_RECIPES[context.recipeId]
+    if (recipe.outputBase !== baseId || recipe.outputLevel !== options.level || recipe.category !== ITEM_BASES[baseId].slot
+      || (material !== undefined && material !== null && !recipe.allowedBiasMaterials.includes(material))
+      || (bossSource !== undefined && bossSource !== null) || (dropSource !== undefined && dropSource !== null)) {
+      throw new RangeError('鍛造配方與裝備來源不符。')
+    }
+    const crafter = state.characters.find(character => character.id === state.activeCharacterId)
+    const smithingLevel = crafter?.skills?.smithing?.level
+    if (!Number.isSafeInteger(smithingLevel) || smithingLevel! < recipe.requiredSmithing) {
+      throw new RangeError('鍛造熟練度不足。')
+    }
+    craftRecipeId = recipe.id
+    craftSmithingLevel = smithingLevel as number
+    craftMasterpieceChance = recipe.masterpieceRules && craftSmithingLevel >= recipe.masterpieceRules.requiredSmithing
+      ? recipe.masterpieceRules.chance
+      : 0
+    craftProvenance = { recipeId: recipe.id, createdBy: state.activeCharacterId, createdAt: state.worldTime,
+      influenceMaterial: material ?? null, masterpiece: false }
+  }
   const slot = availableInstanceSlot(state)
   const resolvedBossSource = bossSource ?? (dropSource && WOLF_MONSTERS[dropSource].rank === 'boss' ? dropSource : null)
   return { baseId, level: options.level, material: material ?? null, bossSource: resolvedBossSource,
-    dropSource: dropSource ?? null, ...slot }
+    dropSource: dropSource ?? null, craftProvenance, craftRecipeId, craftSmithingLevel, craftMasterpieceChance, ...slot }
 }
 
 export function generateItem(state: GameState, options: GenerateItemOptions): ItemInstance {
@@ -122,7 +180,9 @@ export function generateItem(state: GameState, options: GenerateItemOptions): It
     ? WOLF_LOOT_RULES.profiles[input.dropSource].rarityWeights
     : input.bossSource
       ? WOLF_LOOT_RULES.bossRarityWeights
-      : Object.fromEntries(Object.values(RARITIES).map(definition => [definition.id, definition.weight]))
+      : input.craftRecipeId
+        ? craftQualityProfile(input.craftRecipeId, input.craftSmithingLevel).rarityWeights
+        : Object.fromEntries(Object.values(RARITIES).map(definition => [definition.id, definition.weight]))
   const rarity: RarityId = weightedChoice(state, Object.entries(rarityWeights)
     .map(([value, weight]) => ({ value: value as RarityId, weight })))
   const rarityDefinition = RARITIES[rarity]
@@ -143,6 +203,9 @@ export function generateItem(state: GameState, options: GenerateItemOptions): It
   const specialTrait = rarityDefinition.specialEligible && base.slot === 'weapon' && random(state) < specialChance
     ? 'moonHunter' as const
     : null
+  if (input.craftProvenance && input.craftMasterpieceChance > 0) {
+    input.craftProvenance.masterpiece = random(state) < input.craftMasterpieceChance
+  }
   const item: ItemInstance = {
     instanceId: input.instanceId, ownerId: input.ownerId, baseId: input.baseId, level: input.level,
     material: input.material, rarity, affixes, rolledStats: rolledItemStats(input.baseId, input.level, affixes),
@@ -150,6 +213,7 @@ export function generateItem(state: GameState, options: GenerateItemOptions): It
     provenance: rarity === 'legendary' ? {
       createdBy: null, createdAt: state.worldTime, bossSource: input.bossSource, materialSource: input.material,
     } : null,
+    craftProvenance: input.craftProvenance,
   }
   state.reward.nextInstanceId = input.nextInstanceId + 1
   return item

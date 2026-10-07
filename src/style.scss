@@ -191,6 +191,21 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .plot .meter-blocks { gap: 1px; }
 .rumor, .dialogue { padding: 16px; border-left: 3px solid var(--text); background: var(--surface-alt); margin: 20px 0; font-size: 13px; line-height: 1.9; }
 .shop-list { margin-top: 18px; }
+.crafting-workbench { margin-top: 24px; padding-top: 16px; border-top: 2px solid var(--border); }
+.crafting-subheading { margin: 14px 0 4px; font-size: 12px; }
+.crafting-recipe-name { margin: 8px 0 12px; padding-left: 8px; border-left: 2px solid var(--border); font-size: 13px; }
+.crafting-material-options button { min-height: 40px; line-height: 1.5; overflow-wrap: anywhere; }
+.crafting-recipe-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.crafting-recipe-options button { min-height: 44px; display: grid; align-content: center; gap: 3px; text-align: left; overflow-wrap: anywhere; }
+.crafting-recipe-options small { color: var(--text-muted); font-size: 10px; font-weight: 400; }
+.masterpiece-label { color: var(--text); font-size: 11px; font-weight: 700; }
+.crafting-influence-copy { margin: -10px 0 14px; padding: 8px 10px; border-left: 2px solid var(--border-muted); background: var(--surface-alt); color: var(--text-muted); font-size: 11px; line-height: 1.7; }
+.crafting-preview { display: grid; grid-template-columns: minmax(90px, .55fr) minmax(0, 1.45fr); gap: 8px 12px; margin: 14px 0; padding: 12px; border: 1px solid var(--border-muted); background: var(--surface-alt); font-size: 12px; line-height: 1.7; }
+.crafting-preview dt { color: var(--text-muted); }
+.crafting-preview dd { min-width: 0; margin: 0; overflow-wrap: anywhere; }
+.crafting-preview ul { margin: 0; padding-left: 18px; }
+.crafting-workbench > .primary { min-width: 180px; }
+.crafting-workbench [data-craft-result] { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
 .shop-item, .mercenary { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--border-muted); font-size: 13px; }
 .shop-item small, .mercenary small { display: block; font-size: 10px; margin-top: 4px; }
 .shop-item button, .mercenary button { font-size: 11px; padding: 5px 9px; }
@@ -213,6 +228,7 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .wolf-track-reward { grid-column: 1 / -1; margin: 0; border-top: 1px dotted var(--border-muted); padding: 5px 0 9px; color: var(--text-muted); font-size: 11px; line-height: 1.7; overflow-wrap: anywhere; }
 .adventure-goal { border-left: 3px solid var(--border); background: var(--surface-alt); padding: 10px 12px; margin: 12px 0 18px; font-size: 13px; line-height: 1.8; }
 @media (max-width: 560px) { .wolf-track-row { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
+@media (max-width: 560px) { .crafting-preview { grid-template-columns: minmax(0, 1fr); gap: 2px; } .crafting-preview dd + dt { margin-top: 8px; } .crafting-recipe-options { grid-template-columns: minmax(0, 1fr); } }
 .dungeon-route { display: grid; grid-template-columns: repeat(3, 1fr); margin: 24px 0; border: 2px solid var(--border-muted); }
 .dungeon-route > div { display: grid; justify-items: center; gap: 12px; padding: 18px 8px; }
 .dungeon-route > div + div { border-left: 1px solid var(--border-muted); }

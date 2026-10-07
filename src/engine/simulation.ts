@@ -23,7 +23,7 @@ function character(id: string, name: string, age: number, year: number): Charact
   return {
     id, name, birthYear: year - age, age, lifeStage: stage, level: 1, exp: 0, hp: 100, maxHp: 100,
     stamina: maxStamina, maxStamina, stats: { strength: 8, vitality: 8, dexterity: 6, intelligence: 5 },
-    skills: { combat: { level: 1, exp: 0 }, farming: { level: 1, exp: 0 }, mining: { level: 1, exp: 0 }, woodcutting: { level: 1, exp: 0 } },
+    skills: { combat: { level: 1, exp: 0 }, farming: { level: 1, exp: 0 }, mining: { level: 1, exp: 0 }, woodcutting: { level: 1, exp: 0 }, smithing: { level: 1, exp: 0 } },
     gold: 45, inventory: { wood: 0, stone: 0, iron: 0, food: 3, material: 0, potion: 2, sword: 0, armor: 0 },
     equipment: { weapon: null, armor: null }, position: { ...BUILDINGS.house.position }, currentRegion: 'village', status: 'idle',
     isAlive: true, deathYear: null, deathCause: null, lifespan: 80,
@@ -112,7 +112,7 @@ export function gainExp(state: GameState, c: Character, amount: number, skill?: 
     const s = c.skills[skill]; s.exp += amount
     while (s.exp >= s.level * 20) {
       s.exp -= s.level * 20; s.level++
-      if (c.id === state.activeCharacterId) emit(state, 'character.skillUp', 'player', `${{ combat: '戰鬥', farming: '耕作', mining: '採礦', woodcutting: '伐木' }[skill]}熟練度升到 Lv.${s.level}。`)
+      if (c.id === state.activeCharacterId) emit(state, 'character.skillUp', 'player', `${{ combat: '戰鬥', farming: '耕作', mining: '採礦', woodcutting: '伐木', smithing: '鍛造' }[skill]}熟練度升到 Lv.${s.level}。`)
     }
   }
 }
@@ -290,7 +290,8 @@ export function chooseSuccessor(state: GameState, npcId: string) {
   if (player(state).isAlive) return false
   const npc = state.npcs.find(n => n.id === npcId && n.isAlive && n.age >= 15)
   if (!npc) return false
-  state.characters.push({ ...npc, position: { ...npc.position }, currentRegion: tileAt(state, npc.position)!.regionId, inventory: { ...npc.inventory }, skills: { combat: { ...npc.skills.combat }, farming: { ...npc.skills.farming }, mining: { ...npc.skills.mining }, woodcutting: { ...npc.skills.woodcutting } }, status: 'idle' })
+  state.characters.push({ ...npc, position: { ...npc.position }, currentRegion: tileAt(state, npc.position)!.regionId, inventory: { ...npc.inventory },
+    skills: { combat: { ...npc.skills.combat }, farming: { ...npc.skills.farming }, mining: { ...npc.skills.mining }, woodcutting: { ...npc.skills.woodcutting }, smithing: { ...npc.skills.smithing } }, status: 'idle' })
   state.npcs = state.npcs.filter(n => n.id !== npcId); state.activeCharacterId = npcId; state.party = []; state.combat = null
   const generation = Math.max(...Object.values(state.life.characters).map(life => life.generation)) + 1
   state.life.characters[npcId] = newCharacterLife(generation, 'LOCAL_WORLD')

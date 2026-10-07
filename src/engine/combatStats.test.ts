@@ -12,7 +12,7 @@ const zeroStats: GearStats = { attack: 0, defense: 0, critical: 0, penetration: 
 function gear(ownerId: string, instanceId: string, baseId: ItemBaseId, stats: Partial<GearStats>, specialTrait: SpecialTraitId | null = null): ItemInstance {
   return {
     instanceId, ownerId, baseId, level: 1, material: null, rarity: specialTrait ? 'legendary' : 'common',
-    rolledStats: { ...zeroStats, ...stats }, affixes: [], specialTrait, provenance: null,
+    rolledStats: { ...zeroStats, ...stats }, affixes: [], specialTrait, provenance: null, craftProvenance: null,
   }
 }
 
@@ -24,7 +24,7 @@ function controlledWolfFight(seed: number, affix: 'piercing' | 'bleeding', trait
   ]
   const weapon: ItemInstance = {
     instanceId: 'item-1', ownerId: character.id, baseId: 'shortSword', level: 5, material: null, rarity: 'rare',
-    rolledStats: rolledItemStats('shortSword', 5, affixes), affixes, specialTrait: null, provenance: null,
+    rolledStats: rolledItemStats('shortSword', 5, affixes), affixes, specialTrait: null, provenance: null, craftProvenance: null,
   }
   state.reward.instances.push(weapon)
   state.reward.nextInstanceId = 2

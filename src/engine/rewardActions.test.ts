@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { BUILDINGS } from '../data/config'
-import { MATERIALS } from '../data/rewards'
+import { BUILDINGS, ITEMS } from '../data/config'
+import { CRAFTING_RECIPES } from '../data/crafting'
+import { ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
 import type { ItemInstance, MaterialId } from '../domain/reward'
 import { equip } from './actions'
 import { createGame, player } from './simulation'
@@ -11,7 +12,7 @@ function instance(instanceId: string, ownerId: string, slot: 'weapon' | 'armor' 
   return {
     instanceId, ownerId, baseId: armor ? 'hideArmor' : 'shortSword', level: 1, material: null, rarity: 'common',
     rolledStats: { attack: armor ? 0 : 4, defense: armor ? 2 : 0, critical: 0, penetration: 0, bleed: 0, block: 0, reduction: 0 },
-    affixes: [], specialTrait: null, provenance: null,
+    affixes: [], specialTrait: null, provenance: null, craftProvenance: null,
   }
 }
 
@@ -81,8 +82,83 @@ describe('procedural equipment actions', () => {
 })
 
 describe('procedural equipment sales', () => {
+  it.each([
+    ['common', 12], ['uncommon', 18], ['rare', 24], ['epic', 36], ['legendary', 60],
+  ] as const)('preserves the legacy %s sale price exactly', (rarity, expected) => {
+    const item = { ...instance('legacy', 'owner'), rarity, craftProvenance: null } satisfies ItemInstance
+    expect(itemSellPrice(item)).toBe(expected)
+  })
+
+  it('adds exactly two gold when the same eligible Rare short sword is a Masterpiece', () => {
+    const crafted: ItemInstance = {
+      ...instance('crafted', 'owner'), rarity: 'rare', baseId: 'shortSword',
+      affixes: [
+        { id: 'striking', tier: 2, value: 2 },
+        { id: 'keen', tier: 3, value: 10 },
+      ],
+      craftProvenance: { recipeId: 'ironShortSword', createdBy: 'owner', createdAt: 0, influenceMaterial: null, masterpiece: false },
+    }
+    const masterpiece = structuredClone(crafted)
+    masterpiece.craftProvenance!.masterpiece = true
+
+    expect(itemSellPrice(crafted)).toBe(25)
+    expect(itemSellPrice(masterpiece)).toBe(itemSellPrice(crafted) + 2)
+  })
+
+  it('bounds affix and Masterpiece premium independently and caps their combined value', () => {
+    const item: ItemInstance = {
+      ...instance('crafted', 'owner', 'armor'), rarity: 'legendary', baseId: 'chainArmor',
+      affixes: [
+        { id: 'sturdy', tier: 3, value: 3 },
+        { id: 'blocking', tier: 3, value: 12 },
+        { id: 'warding', tier: 3, value: 9 },
+      ],
+      craftProvenance: { recipeId: 'fieldArmor', createdBy: 'owner', createdAt: 0, influenceMaterial: null, masterpiece: false },
+    }
+    const ordinaryCraftPrice = itemSellPrice(item)
+    item.craftProvenance!.masterpiece = true
+    const masterpiecePrice = itemSellPrice(item)
+    const base = ITEM_BASES[item.baseId].sell
+    const legacyRarityPrice = Math.floor(base * 5)
+    const maximumPremium = Math.floor(base * 0.25)
+
+    expect(ordinaryCraftPrice - legacyRarityPrice).toBe(Math.floor(base * 0.15))
+    expect(masterpiecePrice - ordinaryCraftPrice).toBe(2)
+    expect(masterpiecePrice - legacyRarityPrice).toBeLessThanOrEqual(maximumPremium)
+  })
+
+  it('keeps maximum-premium expected proceeds below bought-input costs for all recipes and material modes', () => {
+    const rarityMultiplier = { common: 1, uncommon: 1.5, rare: 2, epic: 3, legendary: 5 } as const
+    for (const recipe of Object.values(CRAFTING_RECIPES)) {
+      const base = ITEM_BASES[recipe.outputBase].sell
+      const weights = Object.fromEntries(Object.entries(RARITIES).map(([id, rarity]) => [id, rarity.weight])) as Record<keyof typeof RARITIES, number>
+      const rarityIds = Object.keys(RARITIES) as (keyof typeof RARITIES)[]
+      const floorIndex = rarityIds.indexOf(recipe.qualityRules.minimumRarity)
+      for (let index = 0; index < floorIndex; index++) {
+        weights[recipe.qualityRules.minimumRarity] += weights[rarityIds[index]!]!
+        weights[rarityIds[index]!] = 0
+      }
+      const expectedMultiplier = Object.entries(weights).reduce((sum, [rarity, weight]) => sum + weight * rarityMultiplier[rarity as keyof typeof RARITIES], 0) / 100
+      const expectedAtMaximumPremium = base * expectedMultiplier + Math.floor(base * 0.25)
+      const boughtInputCost = recipe.inputs.reduce((sum, input) => {
+        if (input.source !== 'inventory') return sum
+        const unitPrice = Math.ceil(ITEMS[input.itemId].price * 0.8)
+        return sum + unitPrice * input.amount
+      }, 0) + recipe.goldCost - 1
+      const modes = [null, ...recipe.allowedBiasMaterials]
+      for (const material of modes) {
+        const materialOpportunityCost = material ? MATERIALS[material].sell : 0
+        expect(expectedAtMaximumPremium).toBeLessThan(boughtInputCost + materialOpportunityCost)
+      }
+    }
+  })
+
   it('sells owned un-equipped gear at the smith for its rarity-adjusted price and records the trade', () => {
-    const state = createGame(), character = atSmith(state), item = instance('item-1', player(state).id)
+    const state = createGame(), character = atSmith(state), item: ItemInstance = {
+      ...instance('item-1', player(state).id), rarity: 'rare',
+      affixes: [{ id: 'striking', tier: 1, value: 1 }],
+      craftProvenance: { recipeId: 'ironShortSword', createdBy: character.id, createdAt: state.worldTime, influenceMaterial: null, masterpiece: false },
+    }
     state.reward.instances.push(item)
     const price = itemSellPrice(item), startingGold = character.gold, startingTime = state.worldTime
 

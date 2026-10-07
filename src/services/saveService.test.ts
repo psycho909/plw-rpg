@@ -1,19 +1,117 @@
 import { describe, expect, it } from 'vitest'
 import { CONFIG, ITEMS } from '../data/config'
 import { combatTurn, encounter, equip, farm } from '../engine/actions'
+import { generateItem } from '../engine/itemGeneration'
 import { chooseSuccessor, createGame, die, player, simulate, walkTo } from '../engine/simulation'
 import { deserialize, serialize } from './saveService'
+import historicalV1 from '../../reports/v2/20261007-life-craftsmanship/phase-05/fixtures/legacy-v1-after-boss.save.json'
+import historicalV2 from '../../reports/v2/20261007-life-craftsmanship/phase-05/fixtures/phase4-v2-stress-final.save.json'
 
 function versionOneFixture(seed = 88, lastSavedAt = 1000) {
   const raw = JSON.parse(serialize(createGame(seed), lastSavedAt))
   delete raw.life
   delete raw.reward
   raw.saveVersion = 1
+  for (const character of [...raw.characters, ...raw.npcs]) delete character.skills.smithing
   for (const event of [...raw.events, ...raw.history]) delete event.tier
   return raw
 }
 
+function versionTwoFixture(seed = 88, lastSavedAt = 1000) {
+  const state = createGame(seed)
+  state.reward.instances.push(generateItem(state, { baseId: 'spear', level: 2 }))
+  const raw = JSON.parse(serialize(state, lastSavedAt))
+  raw.saveVersion = 2
+  for (const character of [...raw.characters, ...raw.npcs]) delete character.skills.smithing
+  for (const life of Object.values(raw.life.characters) as Record<string, unknown>[]) delete (life.actions as Record<string, unknown>).smithing
+  raw.reward.schemaVersion = 1
+  for (const item of raw.reward.instances) delete item.craftProvenance
+  return raw
+}
+
 describe('versioned saves and deterministic continuation', () => {
+  it('migrates a complete V2 world and its rolled items once without consuming RNG or changing world state', () => {
+    const raw = versionTwoFixture(915, 4321)
+    raw.nativeExtension = { generation: 2, data: ['kept'] }
+    const expected = structuredClone(raw)
+    delete expected.lastSavedAt
+    delete expected.saveVersion
+
+    const loaded = deserialize(JSON.stringify(raw))
+    const legacyProjection = structuredClone(loaded.state) as unknown as Record<string, any>
+    delete legacyProjection.saveVersion
+    for (const character of [...legacyProjection.characters, ...legacyProjection.npcs]) delete character.skills.smithing
+    for (const life of Object.values(legacyProjection.life.characters) as Record<string, any>[]) delete life.actions.smithing
+    legacyProjection.reward.schemaVersion = 1
+    for (const item of legacyProjection.reward.instances) delete item.craftProvenance
+
+    expect(loaded.state.saveVersion).toBe(3)
+    expect(loaded.state.reward.schemaVersion).toBe(2)
+    expect(loaded.state.reward.instances[0]?.craftProvenance).toBeNull()
+    expect(legacyProjection).toEqual(expected)
+    expect(loaded.state.rngState).toBe(raw.rngState)
+    expect(loaded.state.worldTime).toBe(raw.worldTime)
+    expect(loaded.lastSavedAt).toBe(4321)
+    expect(deserialize(serialize(loaded.state, 5678)).state).toEqual(loaded.state)
+  })
+
+  it('migrates the archived historical V1 save without changing its old world fields or RNG', () => {
+    const raw = structuredClone(historicalV1) as Record<string, any>
+    const expected = structuredClone(raw)
+    delete expected.lastSavedAt
+    delete expected.saveVersion
+    const loaded = deserialize(JSON.stringify(raw))
+    const legacyProjection = structuredClone(loaded.state) as unknown as Record<string, any>
+    delete legacyProjection.life
+    delete legacyProjection.reward
+    delete legacyProjection.saveVersion
+    for (const actor of [...legacyProjection.characters, ...legacyProjection.npcs]) delete actor.skills.smithing
+
+    expect(legacyProjection).toEqual(expected)
+    expect(loaded.state.saveVersion).toBe(3)
+    expect(loaded.state.rngState).toBe(raw.rngState)
+    expect(loaded.state.worldTime).toBe(raw.worldTime)
+    expect(deserialize(serialize(loaded.state)).state).toEqual(loaded.state)
+  })
+
+  it('migrates the archived Phase4 V2 stress save while preserving every old item roll', () => {
+    const raw = structuredClone(historicalV2) as Record<string, any>
+    const expected = structuredClone(raw)
+    delete expected.lastSavedAt
+    const loaded = deserialize(JSON.stringify(raw))
+    const legacyProjection = structuredClone(loaded.state) as unknown as Record<string, any>
+    legacyProjection.saveVersion = 2
+    for (const actor of [...legacyProjection.characters, ...legacyProjection.npcs]) delete actor.skills.smithing
+    for (const life of Object.values(legacyProjection.life.characters) as Record<string, any>[]) delete life.actions.smithing
+    legacyProjection.reward.schemaVersion = 1
+    for (const item of legacyProjection.reward.instances) delete item.craftProvenance
+
+    expect(legacyProjection).toEqual(expected)
+    expect(loaded.state.saveVersion).toBe(3)
+    expect(loaded.state.reward.schemaVersion).toBe(2)
+    expect(loaded.state.reward.instances).toHaveLength(4)
+    expect(loaded.state.reward.instances.every(item => item.craftProvenance === null)).toBe(true)
+    expect(loaded.state.rngState).toBe(raw.rngState)
+    expect(loaded.state.worldTime).toBe(raw.worldTime)
+    expect(deserialize(serialize(loaded.state)).state).toEqual(loaded.state)
+  })
+
+  it.each(['smithing-skill-in-v2', 'craft-provenance-in-v1'] as const)(
+    'rejects fields from the newer schema in a V2 save before adding defaults: %s', kind => {
+      const raw = versionTwoFixture()
+      if (kind === 'smithing-skill-in-v2') raw.characters[0].skills.smithing = { level: 1, exp: 0 }
+      if (kind === 'craft-provenance-in-v1') raw.reward.instances[0].craftProvenance = { forged: true }
+      expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+    })
+
+  it('rejects G-only identities in a V2 save before migrating it to V3', () => {
+    const raw = structuredClone(historicalV2) as Record<string, any>
+    const characterId = Object.keys(raw.life.characters)[0]!
+    raw.life.characters[characterId].identities.push('masterpieceCrafter')
+
+    expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+  })
+
   it.each(['origin', 'identity', 'trait', 'career'] as const)('rejects coercible arrays where a V2 %s enum string is required', kind => {
     const raw = JSON.parse(serialize(createGame(), 1000))
     const life = raw.life.characters[raw.activeCharacterId], npcLife = raw.life.npcs[raw.npcs[0].id]
@@ -34,8 +132,9 @@ describe('versioned saves and deterministic continuation', () => {
     delete migrated.life
     delete migrated.reward
     delete migrated.saveVersion
+    for (const actor of [...migrated.characters as any[], ...migrated.npcs as any[]]) delete actor.skills.smithing
     expect(migrated).toEqual(expected)
-    expect(loaded.state.saveVersion).toBe(2)
+    expect(loaded.state.saveVersion).toBe(3)
     expect(loaded.state.life.openingSeen).toBe(true)
     expect(loaded.state.rngState).toBe(raw.rngState)
     expect(loaded.state.worldTime).toBe(raw.worldTime)
@@ -87,6 +186,58 @@ describe('versioned saves and deterministic continuation', () => {
     const raw = JSON.parse(serialize(createGame(), 0))
     raw.crops = [null]
     expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+  })
+
+  it.each(['creator', 'recipe-output'] as const)('rejects forged crafted-item provenance: %s', kind => {
+    const state = createGame(915)
+    state.reward.instances.push(generateItem(state, { baseId: 'spear', level: 2,
+      context: { kind: 'craft', recipeId: 'starterSpear' } }))
+    const raw = JSON.parse(serialize(state, 0))
+    if (kind === 'creator') raw.reward.instances[0].craftProvenance.createdBy = 'missing'
+    if (kind === 'recipe-output') raw.reward.instances[0].craftProvenance.recipeId = 'unknown-recipe'
+    expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+  })
+
+  it('rejects a crafted legendary with a legacy boss source while keeping both generated paths valid', () => {
+    const craftedState = createGame(915)
+    // This predecessor makes the next seeded LCG draw land in the default Legendary bucket.
+    craftedState.rngState = 653637408
+    const crafted = generateItem(craftedState, { baseId: 'spear', level: 2,
+      context: { kind: 'craft', recipeId: 'starterSpear' } })
+    expect(crafted.rarity).toBe('legendary')
+    expect(crafted.provenance?.bossSource).toBeNull()
+    craftedState.reward.instances.push(crafted)
+    expect(deserialize(serialize(craftedState, 0)).state).toEqual(craftedState)
+
+    const forged = JSON.parse(serialize(craftedState, 0))
+    forged.reward.instances[0].provenance.bossSource = 'wolfKing'
+    expect(() => deserialize(JSON.stringify(forged))).toThrow('原始存檔已保留')
+
+    const bossState = createGame(916)
+    bossState.rngState = 653637408
+    const bossDrop = generateItem(bossState, { baseId: 'spear', level: 2, bossSource: 'wolfKing' })
+    expect(bossDrop.rarity).toBe('legendary')
+    expect(bossDrop.provenance?.bossSource).toBe('wolfKing')
+    bossState.reward.instances.push(bossDrop)
+    expect(deserialize(serialize(bossState, 0)).state).toEqual(bossState)
+  })
+
+  it('preserves the original crafter separately from the current item owner', () => {
+    const state = createGame(915)
+    const item = generateItem(state, { baseId: 'spear', level: 2,
+      context: { kind: 'craft', recipeId: 'starterSpear' } })
+    state.reward.instances.push(item)
+    const originalCrafter = item.craftProvenance!.createdBy
+    die(state, player(state), '測試交接')
+    const heir = state.npcs.find(candidate => candidate.isAlive && candidate.age >= 15)!
+    expect(chooseSuccessor(state, heir.id)).toBe(true)
+    item.ownerId = heir.id
+
+    const loaded = deserialize(serialize(state, 0)).state
+    const loadedItem = loaded.reward.instances[0]!
+    expect(loadedItem.ownerId).toBe(heir.id)
+    expect(loadedItem.craftProvenance?.createdBy).toBe(originalCrafter)
+    expect(loadedItem.craftProvenance?.createdBy).toBe(state.characters[0]!.id)
   })
 
   it.each([-1, 0, 1.5, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER + 1])('rejects unsafe nextNpcId %s', value => {

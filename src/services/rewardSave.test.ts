@@ -6,34 +6,45 @@ import { chooseSuccessor, createGame, walkTo } from '../engine/simulation'
 import { rolledItemStats } from '../engine/gearStats'
 import { deserialize, serialize } from './saveService'
 import nativeV1 from '../../reports/v2/20261004-life-emergence/fixtures/native-v1.json'
+import noRewardV2 from '../../reports/playtests/20261004-v2-final-qa/seeds/seed-17.json'
 
-it('adds a reward extension to a native V2 save without consuming world RNG or replacing its world', () => {
-  const legacy = JSON.parse(serialize(createGame(42), 1000))
-  delete legacy.reward
+it('migrates a native V2 save without reward without consuming world RNG or replacing its world', () => {
+  const legacy = structuredClone(noRewardV2) as Record<string, any>
+  const expected = structuredClone(legacy)
+  delete expected.lastSavedAt
   const loaded = deserialize(JSON.stringify(legacy))
-  expect(loaded.state).toMatchObject({ reward: { schemaVersion: 1 } })
-  expect(loaded.state.worldSeed).toBe(42)
+  const legacyProjection = structuredClone(loaded.state) as unknown as Record<string, any>
+  legacyProjection.saveVersion = 2
+  delete legacyProjection.reward
+  for (const actor of [...legacyProjection.characters, ...legacyProjection.npcs]) delete actor.skills.smithing
+  for (const life of Object.values(legacyProjection.life.characters) as Record<string, any>[]) delete life.actions.smithing
+
+  expect(loaded.state).toMatchObject({ saveVersion: 3, reward: { schemaVersion: 2 } })
+  expect(loaded.state.worldSeed).toBe(17)
   expect(loaded.state.rngState).toBe(legacy.rngState)
   expect(loaded.state.worldTime).toBe(legacy.worldTime)
-  expect(loaded.state.characters).toEqual(legacy.characters)
-  expect(loaded.state.npcs).toEqual(legacy.npcs)
-  expect(loaded.state.life).toEqual(legacy.life)
-  expect(loaded.state.history).toEqual(legacy.history)
-  expect(loaded.lastSavedAt).toBe(1000)
+  expect(legacyProjection).toEqual(expected)
+  expect(loaded.state.characters[0]?.skills.smithing).toEqual({ level: 1, exp: 0 })
+  expect(loaded.state.life.characters.alden?.actions.smithing).toBe(0)
+  expect(loaded.lastSavedAt).toBe(legacy.lastSavedAt)
 })
 
-it('migrates the committed native V1 fixture losslessly through V2.x save and reload', () => {
+it('migrates the committed native V1 fixture losslessly through the current V2.x save format', () => {
   const loaded = deserialize(JSON.stringify(nativeV1))
   const { saveVersion: _version, lastSavedAt: _at, ...legacyWorld } = nativeV1
-  const { saveVersion: _newVersion, life: _life, reward: _reward, ...preservedWorld } = loaded.state
+  const preservedWorld = structuredClone(loaded.state) as unknown as Record<string, any>
+  delete preservedWorld.saveVersion
+  delete preservedWorld.life
+  delete preservedWorld.reward
+  for (const actor of [...preservedWorld.characters, ...preservedWorld.npcs]) delete actor.skills.smithing
   expect(preservedWorld).toEqual(legacyWorld)
-  expect(loaded.state.reward.schemaVersion).toBe(1)
+  expect(loaded.state.reward.schemaVersion).toBe(2)
   expect(deserialize(serialize(loaded.state, 456)).state).toEqual(loaded.state)
 })
 
 const instance = (): ItemInstance => ({ instanceId: 'item-1', ownerId: 'alden', baseId: 'shortSword', level: 1,
   material: null, rarity: 'uncommon', rolledStats: { attack: 4, defense: 0, critical: 3, penetration: 0, bleed: 0, block: 0, reduction: 0 },
-  affixes: [{ id: 'keen', tier: 1, value: 3 }], specialTrait: null, provenance: null })
+  affixes: [{ id: 'keen', tier: 1, value: 3 }], specialTrait: null, provenance: null, craftProvenance: null })
 
 it('persists separate equipment instances and stackable materials without replacing fixed legacy gear', () => {
   const s = createGame(17)
@@ -82,7 +93,7 @@ function armoredPhaseFight(seed: number, comparedAffix: 'piercing' | 'bleeding')
   ]
   const weapon: ItemInstance = { instanceId: 'item-1', ownerId: character.id, baseId: 'shortSword', level: 5,
     material: null, rarity: 'rare', rolledStats: rolledItemStats('shortSword', 5, affixes), affixes,
-    specialTrait: null, provenance: null }
+    specialTrait: null, provenance: null, craftProvenance: null }
   state.reward.instances.push(weapon)
   state.reward.nextInstanceId = 2
   state.reward.equipped[character.id] = { weapon: weapon.instanceId, armor: null }

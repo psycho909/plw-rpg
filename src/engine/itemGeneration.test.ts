@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { AFFIXES, ITEM_BASES, LOOT_TABLES, MATERIALS, RARITIES } from '../data/rewards'
+import { AFFIXES, ITEM_BASES, ITEM_GENERATION_RULES, LOOT_TABLES, MATERIALS, RARITIES } from '../data/rewards'
 import type { ItemBaseId } from '../domain/reward'
 import { maximumAffixTier, rolledItemStats } from './gearStats'
 import { createGame } from './simulation'
@@ -64,6 +64,66 @@ describe('procedural item generation', () => {
     expect(first.rngState).not.toBe(beforeRng)
   })
 
+  it('keeps the legacy generation stream and rolled stats fixed', () => {
+    const state = createGame(442)
+    const item = generateItem(state, { baseId: 'shortSword', level: 1 })
+
+    expect(item.rarity).toBe('epic')
+    expect(item.affixes).toEqual([{ id: 'striking', tier: 1, value: 1 }, { id: 'keen', tier: 1, value: 3 }, { id: 'bleeding', tier: 1, value: 1 }])
+    expect(item.rolledStats).toEqual({ attack: 5, defense: 0, critical: 3, penetration: 0, bleed: 1, block: 0, reduction: 0 })
+    expect(state.rngState).toBe(2063202094)
+    expect(state.reward.nextInstanceId).toBe(2)
+  })
+
+  it('adds recipe provenance through the shared generator without changing its legacy rolls', () => {
+    const legacy = createGame(442), crafted = createGame(442)
+    const expectedRoll = generateItem(legacy, { baseId: 'spear', level: 2 })
+    const generateWithContext = generateItem as unknown as (state: typeof crafted, options: unknown) => ReturnType<typeof generateItem>
+    const item = generateWithContext(crafted, {
+      baseId: 'spear', level: 2, context: { kind: 'craft', recipeId: 'starterSpear' },
+    })
+
+    expect(item.craftProvenance).toEqual({ recipeId: 'starterSpear', createdBy: crafted.activeCharacterId,
+      createdAt: crafted.worldTime, influenceMaterial: null, masterpiece: false })
+    expect(item.rarity).toBe(expectedRoll.rarity)
+    expect(item.affixes).toEqual(expectedRoll.affixes)
+    expect(item.rolledStats).toEqual(expectedRoll.rolledStats)
+    expect(crafted.rngState).toBe(legacy.rngState)
+    expect(crafted.reward.nextInstanceId).toBe(legacy.reward.nextInstanceId)
+  })
+
+  it('rejects invalid craft context before changing RNG or item identity sequence', () => {
+    const invalidContexts = [
+      { kind: 'craft', recipeId: 'missing' },
+      { kind: 'other', recipeId: 'starterSpear' },
+      { kind: 'craft', recipeId: 'starterSpear', forged: true },
+    ]
+    for (const context of invalidContexts) {
+      const state = createGame(442), before = structuredClone(state)
+      const generateWithContext = generateItem as unknown as (state: ReturnType<typeof createGame>, options: unknown) => unknown
+      expect(() => generateWithContext(state, { baseId: 'spear', level: 2, context })).toThrow()
+      expect(state).toEqual(before)
+    }
+  })
+
+  it('rejects a locked or output-mismatched recipe context before changing RNG or item identity sequence', () => {
+    const locked = createGame(442)
+    const beforeLocked = structuredClone(locked)
+    const generateWithContext = generateItem as unknown as (state: typeof locked, options: unknown) => unknown
+    expect(() => generateWithContext(locked, {
+      baseId: 'spear', level: 3, context: { kind: 'craft', recipeId: 'fieldSpear' },
+    })).toThrow()
+    expect(locked).toEqual(beforeLocked)
+
+    const mismatch = createGame(442)
+    mismatch.characters.find(character => character.id === mismatch.activeCharacterId)!.skills.smithing.level = 2
+    const beforeMismatch = structuredClone(mismatch)
+    expect(() => generateWithContext(mismatch, {
+      baseId: 'shortSword', level: 6, context: { kind: 'craft', recipeId: 'fieldSpear' },
+    })).toThrow()
+    expect(mismatch).toEqual(beforeMismatch)
+  })
+
   it.each([
     { baseId: 'missing', level: 1 },
     { baseId: 'shortSword', level: 0 },
@@ -112,6 +172,33 @@ describe('procedural item generation', () => {
     }
     expect(fangAffinity).toBeGreaterThan(plainAffinity)
     expect(MATERIALS.wolfFang.bias).toMatchObject({ bleeding: 4, piercing: 2 })
+  })
+
+  it('biases the starter spear affixes without changing its rarity pool', () => {
+    const plain = createGame(7301), fang = createGame(7301), moon = createGame(7301)
+    const plainRarities: string[] = [], fangRarities: string[] = [], moonRarities: string[] = []
+    let plainTargetAffixes = 0, fangTargetAffixes = 0, plainKeenAffixes = 0, moonKeenAffixes = 0
+    for (let index = 0; index < 1500; index++) {
+      const neutralItem = generateItem(plain, { baseId: 'spear', level: 2, context: { kind: 'craft', recipeId: 'starterSpear' } })
+      const fangItem = generateItem(fang, { baseId: 'spear', level: 2, material: 'wolfFang', context: { kind: 'craft', recipeId: 'starterSpear' } })
+      const moonItem = generateItem(moon, { baseId: 'spear', level: 2, material: 'moonStone', context: { kind: 'craft', recipeId: 'starterSpear' } })
+      plainRarities.push(neutralItem.rarity)
+      fangRarities.push(fangItem.rarity)
+      moonRarities.push(moonItem.rarity)
+      plainTargetAffixes += neutralItem.affixes.filter(affix => affix.id === 'bleeding' || affix.id === 'piercing').length
+      fangTargetAffixes += fangItem.affixes.filter(affix => affix.id === 'bleeding' || affix.id === 'piercing').length
+      plainKeenAffixes += neutralItem.affixes.filter(affix => affix.id === 'keen').length
+      moonKeenAffixes += moonItem.affixes.filter(affix => affix.id === 'keen').length
+    }
+    expect(fangRarities).toEqual(plainRarities)
+    expect(moonRarities).toEqual(plainRarities)
+    expect(fangTargetAffixes).toBeGreaterThan(plainTargetAffixes)
+    expect(moonKeenAffixes).toBeGreaterThan(plainKeenAffixes)
+    expect(MATERIALS.wolfFang.bias).toEqual({ bleeding: 4, piercing: 2 })
+    expect(MATERIALS.moonStone.bias).toEqual({ keen: 4 })
+    expect(ITEM_GENERATION_RULES.legendaryWeaponSpecialChance).toBe(.1)
+    expect(MATERIALS.moonStone.specialBonus).toBe(.15)
+    expect(ITEM_GENERATION_RULES.legendaryWeaponSpecialChance + MATERIALS.moonStone.specialBonus).toBe(.25)
   })
 
   it('uses the rare-plus boss rarity pool and preserves generated rolls across save and reload', () => {

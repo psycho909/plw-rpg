@@ -18,6 +18,8 @@ export const IDENTITY_RULES: Record<Exclude<IdentityId, 'resident'>, IdentityRul
   adventurer: { label: '冒險者', skill: 'combat', careerJobs: ['guard', 'mercenary'], minActions: 10, minSkillLevel: 2 },
   veteran: { label: '資深冒險者', skill: 'combat', minActions: 50, minSkillLevel: 5 },
   farmOwner: { label: '農場主人', property: 'farmBusiness' },
+  smith: { label: '鍛造師', skill: 'smithing', minActions: 10, minSkillLevel: 3 },
+  masterpieceCrafter: { label: '傑作匠師' },
 }
 
 export const IDENTITY_LIMITS = { milestones: 32, reputationHistory: 64 } as const

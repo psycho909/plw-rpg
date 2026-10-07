@@ -18,6 +18,8 @@ const identities: Record<IdentityId, string> = {
   adventurer: '冒險者',
   veteran: '資深冒險者',
   farmOwner: '農場主人',
+  smith: '鍛造師',
+  masterpieceCrafter: '傑作匠師',
 }
 const knownIdentities = computed(() => (life.value?.identities ?? []).map(id => identities[id]))
 const recentMilestones = computed(() => (life.value?.milestones ?? []).slice(-8).reverse())

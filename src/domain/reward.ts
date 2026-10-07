@@ -1,9 +1,12 @@
-import type { RegionId } from './types'
+import type { ItemId, RegionId } from './types'
 
 export type EquipmentSlot = 'weapon' | 'armor'
 export type RarityId = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary'
 export type ItemBaseId = 'shortSword' | 'axe' | 'spear' | 'hideArmor' | 'chainArmor' | 'moonFangSpear'
 export type MaterialId = 'wolfFang' | 'wolfHide' | 'moonStone'
+export type CraftRecipeId = 'starterSpear' | 'fieldSpear' | 'fieldArmor' | 'ironShortSword'
+export type CraftStationId = 'store' | 'blacksmith'
+export type CraftInventoryItemId = Extract<ItemId, 'wood' | 'stone' | 'iron'>
 export type AffixId = 'striking' | 'keen' | 'piercing' | 'bleeding' | 'sturdy' | 'blocking' | 'warding'
 export type SpecialTraitId = 'moonHunter'
 export type MonsterTraitId = 'swift' | 'armored'
@@ -15,10 +18,45 @@ export interface GearStats {
   bleed: number; block: number; reduction: number
 }
 export interface ItemAffix { id: AffixId; tier: number; value: number }
+export type CraftingInput =
+  | { source: 'inventory'; itemId: CraftInventoryItemId; amount: number }
+  | { source: 'material'; materialId: MaterialId; amount: number }
+export interface CraftingRecipeDefinition {
+  id: CraftRecipeId
+  name: string
+  category: EquipmentSlot
+  inputs: readonly CraftingInput[]
+  goldCost: number
+  staminaCost: number
+  durationMinutes: number
+  outputBase: ItemBaseId
+  outputLevel: number
+  requiredSmithing: number
+  practiceCap: number
+  station: CraftStationId
+  opensAtHour: number
+  closesAtHour: number
+  allowedBiasMaterials: readonly MaterialId[]
+  qualityRules: { floorAtSmithing: number; minimumRarity: RarityId }
+  masterpieceRules?: { requiredSmithing: number; chance: number }
+  affixRules: 'default'
+}
+export interface CraftGenerationContext {
+  kind: 'craft'
+  recipeId: CraftRecipeId
+}
+export interface CraftProvenance {
+  recipeId: CraftRecipeId
+  createdBy: string
+  createdAt: number
+  influenceMaterial: MaterialId | null
+  masterpiece: boolean
+}
 export interface ItemInstance {
   instanceId: string; ownerId: string; baseId: ItemBaseId; level: number; material: MaterialId | null
   rarity: RarityId; rolledStats: GearStats; affixes: ItemAffix[]; specialTrait: SpecialTraitId | null
   provenance: { createdBy: string | null; createdAt: number; bossSource: MonsterDefinitionId | null; materialSource: MaterialId | null } | null
+  craftProvenance: CraftProvenance | null
 }
 export interface ItemBaseDefinition { id: ItemBaseId; name: string; slot: EquipmentSlot; attack: number; defense: number; sell: number; affixes: AffixId[]; penetration?: number }
 export interface AffixDefinition { id: AffixId; name: string; stat: keyof GearStats; slots: EquipmentSlot[]; tiers: number[] }
@@ -34,7 +72,7 @@ export interface FamilyEncounter {
   turn: number; formedAt: number; context: { population: number; hunted: number; safety: number }; howlActive: boolean
 }
 export interface RewardState {
-  schemaVersion: 1; nextInstanceId: number; instances: ItemInstance[]
+  schemaVersion: 2; nextInstanceId: number; instances: ItemInstance[]
   equipped: Record<string, { weapon: string | null; armor: string | null }>
   materials: Record<string, Record<MaterialId, number>>
   collection: { seen: MonsterDefinitionId[]; defeated: MonsterDefinitionId[]; bases: ItemBaseId[]; materials: MaterialId[]; bosses: MonsterDefinitionId[]; rareBases: ItemBaseId[] }

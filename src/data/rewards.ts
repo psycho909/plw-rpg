@@ -30,9 +30,9 @@ export const RARITIES = {
 } satisfies Record<string, RarityDefinition>
 
 export const MATERIALS = {
-  wolfFang: { id: 'wolfFang', name: '狼牙', sell: 5, bias: { bleeding: 4, piercing: 2 }, specialBonus: 0, description: '可出售；作為生成素材偏向裂傷與穿透。工坊製作將於後續階段開放。' },
-  wolfHide: { id: 'wolfHide', name: '狼皮', sell: 5, bias: { sturdy: 3, blocking: 2 }, specialBonus: 0, description: '可出售；作為生成素材偏向堅固與格擋。工坊製作將於後續階段開放。' },
-  moonStone: { id: 'moonStone', name: '月石', sell: 25, bias: { keen: 4 }, specialBonus: .15, description: '狼族首領的特殊素材；可出售，偏向銳利與傳說特性。' },
+  wolfFang: { id: 'wolfFang', name: '狼牙', sell: 5, bias: { bleeding: 4, piercing: 2 }, specialBonus: 0, description: '可出售；作為獵矛或鐵短劍影響素材時偏向裂傷與穿透詞綴。' },
+  wolfHide: { id: 'wolfHide', name: '狼皮', sell: 5, bias: { sturdy: 3, blocking: 2 }, specialBonus: 0, description: '可出售；鍛造鎖甲時作為影響素材，偏向堅固與格擋詞綴。' },
+  moonStone: { id: 'moonStone', name: '月石', sell: 25, bias: { keen: 4 }, specialBonus: .15, description: '狼族首領的特殊素材；可出售；作為獵矛或鐵短劍影響素材時偏向銳利，並提高傳說武器的月狩特性機率。' },
 } satisfies Record<string, MaterialDefinition>
 
 export const MONSTER_FAMILIES = {

@@ -8,15 +8,17 @@ function versionOneFixture(lastSavedAt = 100000) {
   delete raw.life
   delete raw.reward
   raw.saveVersion = 1
+  for (const actor of [...raw.characters, ...raw.npcs]) delete actor.skills.smithing
+  for (const event of [...raw.events, ...raw.history]) delete event.tier
   return JSON.stringify(raw)
 }
 
 afterEach(() => vi.unstubAllGlobals())
 
 describe('atomic local checkpoint envelope', () => {
-  it('migrates a real V1 world and starts a separate journal', () => {
+  it('migrates a valid V1 world and starts a separate journal', () => {
     const loaded = unpackCheckpoint(versionOneFixture())
-    expect(loaded.state.saveVersion).toBe(2); expect(loaded.state.life.openingSeen).toBe(true); expect(loaded.imported).toBe(true)
+    expect(loaded.state.saveVersion).toBe(3); expect(loaded.state.life.openingSeen).toBe(true); expect(loaded.imported).toBe(true)
     expect(loaded.journal.pending).toEqual([])
   })
   it('preserves historical offline journal entries unchanged during V1 migration', () => {

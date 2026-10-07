@@ -27,6 +27,7 @@ const game = useGameStore()
 const pane = ref<WindowId | null>(!game.state.life.openingSeen && !game.saveBlocked ? 'opening' : null)
 const place = ref<PlaceId>('house')
 const selectedNpc = ref('')
+const craftedGearFocus = ref<string | null>(null)
 const lastSpeed = ref(1)
 const c = computed(() => game.character)
 const time = computed(() => calendar(game.state.worldTime))
@@ -49,6 +50,7 @@ function openWindow(id: WindowId) { if (!game.state.life.openingSeen && !game.sa
 function closeWindow() { if (c.value.isAlive && pane.value !== 'opening') pane.value = null }
 function setSpeed(speed: number) { stop?.flush(); game.setSpeed(speed); if (game.speed) lastSpeed.value = game.speed }
 function openNpc(id: string) { selectedNpc.value = id; openWindow('npc') }
+function inspectCraftedGear(instanceId: string) { craftedGearFocus.value = instanceId; openWindow('inventory') }
 function selectInteraction(target: Interaction) {
   if (target.npcId) openNpc(target.npcId)
   else if (target.place) { place.value = target.place; openWindow('place') }
@@ -143,10 +145,10 @@ onUnmounted(() => {
       <PropertyWindow v-else-if="pane === 'property'" @travel="go" />
       <LifeNewsWindow v-else-if="pane === 'news'" @travel="go" />
       <CharacterSheet v-else-if="pane === 'character'" />
-      <InventoryWindow v-else-if="pane === 'inventory'" />
+      <InventoryWindow v-else-if="pane === 'inventory'" :focus-instance-id="craftedGearFocus" @focus-consumed="craftedGearFocus = null" />
       <WorldRecords v-else-if="records" :kind="records" @travel="go" @npc="openNpc" @wait="wait" />
       <div v-else-if="pane === 'interact'" class="interaction-list"><p class="muted">你附近的人與地方。選一個，看看能做什麼。</p><button v-for="target in nearby" :key="target.id" @click="selectInteraction(target)">{{ target.icon }} {{ target.label }} <span aria-hidden="true">›</span></button><p v-if="!nearby.length" class="empty-state">目前沒有附近互動。請先完成戰鬥或接續旅程。</p></div>
-      <PlaceWindow v-else-if="pane === 'place'" :place="place" />
+      <PlaceWindow v-else-if="pane === 'place'" :place="place" @inspect-gear="inspectCraftedGear" />
       <NpcWindow v-else-if="pane === 'npc'" :npc-id="selectedNpc" @travel="go" />
       <AdventureWindow v-else-if="pane === 'battle' || pane === 'dungeon'" />
       <section v-else-if="pane === 'reset'"><h3>從頭開始一個世界？</h3><p class="help-text">目前世界的角色、田地、同行者與世界歷史會重新開始。已累積的遊玩紀錄會保留，可匯出查看；進度無法回退。</p><div class="action-buttons"><button class="primary" data-autofocus @click="closeWindow">保留目前世界</button><button class="danger" @click="rebuild">覆蓋存檔並重建世界</button></div></section>
