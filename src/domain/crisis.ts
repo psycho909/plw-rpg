@@ -1,6 +1,9 @@
 import type { EquipmentSlot, ItemInstance } from './reward'
 
 export type RegionalCrisisOutcome = 'decisive_success' | 'costly_success' | 'setback' | 'local_defeat'
+export const REGIONAL_CRISIS_OUTCOME_COOLDOWN_DAYS: Record<RegionalCrisisOutcome, number> = {
+  decisive_success: 0, costly_success: 30, setback: 60, local_defeat: 90,
+}
 export type RegionalCrisisTriggerCondition = 'low_safety' | 'low_food' | 'chief_present'
 
 export interface RegionalCrisisCause {
@@ -26,6 +29,26 @@ export interface CrisisContributionCredit {
 
 export interface RegionalCrisisAdventure {
   campRaidAt: number | null
+}
+
+export interface RegionalCrisisResolutionSummary {
+  readiness: number
+  threatDemand: number
+  successChance: number
+  pressureDays: number
+  applied: {
+    monsterPopulation: number
+    bossProgress: number
+    food: number
+    safety: number
+    prosperity: number
+  }
+  injuries: { npcId: string; durationDays: 2 | 3 | 5; injuredUntil: number }[]
+  recovery: {
+    status: 'not_required' | 'pending' | 'granted' | 'cancelled'
+    dueAt: number | null
+    npcId: string | null
+  }
 }
 
 export interface CrisisEquipmentAllocation {
@@ -74,8 +97,8 @@ export type RegionalCrisisState =
   | (CrisisInstance & { phase: 'preparation'; phaseStartedAt: number; phaseEndsAt: number })
   | (CrisisInstance & { phase: 'active'; phaseStartedAt: number; phaseEndsAt: number })
   | (CrisisInstance & { phase: 'resolution'; phaseStartedAt: number })
-  | (CrisisInstance & { phase: 'aftermath'; phaseStartedAt: number; phaseEndsAt: number; outcome: RegionalCrisisOutcome; resolvedAt: number })
-  | (CrisisInstance & { phase: 'cooldown'; phaseStartedAt: number; phaseEndsAt: number; cooldownUntil: number; outcome: RegionalCrisisOutcome; resolvedAt: number })
+  | (CrisisInstance & { phase: 'aftermath'; phaseStartedAt: number; phaseEndsAt: number; outcome: RegionalCrisisOutcome; resolvedAt: number; resolutionSummary: RegionalCrisisResolutionSummary | null })
+  | (CrisisInstance & { phase: 'cooldown'; phaseStartedAt: number; phaseEndsAt: number; cooldownUntil: number; outcome: RegionalCrisisOutcome; resolvedAt: number; resolutionSummary: RegionalCrisisResolutionSummary | null })
 
 export function dormantRegionalCrisis(sequence = 0, cooldownUntil = 0, lastResolvedAt: number | null = null): RegionalCrisisState {
   return { phase: 'dormant', sequence, cooldownUntil, lastResolvedAt }

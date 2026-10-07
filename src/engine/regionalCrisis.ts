@@ -1,5 +1,8 @@
 import { CONFIG } from '../data/config'
-import type { RegionalCrisisOutcome, RegionalCrisisState } from '../domain/crisis'
+import {
+  REGIONAL_CRISIS_OUTCOME_COOLDOWN_DAYS, type RegionalCrisisOutcome,
+  type RegionalCrisisResolutionSummary, type RegionalCrisisState,
+} from '../domain/crisis'
 import { emptyRegionalCrisisContributions } from '../domain/crisis'
 import type { GameState } from '../domain/types'
 import { emit } from './events'
@@ -95,21 +98,29 @@ export function advanceRegionalCrisisState(crisis: RegionalCrisisState, at: numb
       }
     case 'aftermath':
       if (at < crisis.phaseEndsAt) return crisis
-      if (!Number.isSafeInteger(crisis.phaseEndsAt + (rules.baseCooldownDays + crisis.severity * rules.severityCooldownDays) * DAY)) return crisis
+      {
+        const outcomeExtra = crisis.resolutionSummary === null ? 0 : REGIONAL_CRISIS_OUTCOME_COOLDOWN_DAYS[crisis.outcome]
+        const pressureDays = crisis.resolutionSummary?.pressureDays ?? 0
+        const cooldownDuration = rules.baseCooldownDays + crisis.severity * rules.severityCooldownDays + outcomeExtra + pressureDays
+        if (!Number.isSafeInteger(crisis.phaseEndsAt + cooldownDuration * DAY)) return crisis
       return { ...crisis, phase: 'cooldown', phaseStartedAt: crisis.phaseEndsAt,
-        phaseEndsAt: crisis.phaseEndsAt + (rules.baseCooldownDays + crisis.severity * rules.severityCooldownDays) * DAY,
-        cooldownUntil: crisis.phaseEndsAt + (rules.baseCooldownDays + crisis.severity * rules.severityCooldownDays) * DAY }
+          phaseEndsAt: crisis.phaseEndsAt + cooldownDuration * DAY,
+          cooldownUntil: crisis.phaseEndsAt + cooldownDuration * DAY }
+      }
     case 'cooldown':
       if (at < crisis.cooldownUntil) return crisis
       return { phase: 'dormant', sequence: crisis.sequence, cooldownUntil: crisis.cooldownUntil, lastResolvedAt: crisis.resolvedAt }
   }
 }
 
-export function completeRegionalCrisisTransition(crisis: RegionalCrisisState, outcome: RegionalCrisisOutcome, at: number): RegionalCrisisState {
+export function completeRegionalCrisisTransition(
+  crisis: RegionalCrisisState, outcome: RegionalCrisisOutcome, at: number,
+  resolutionSummary: RegionalCrisisResolutionSummary | null = null,
+): RegionalCrisisState {
   if (crisis.phase !== 'resolution' || !Number.isSafeInteger(at) || at < crisis.phaseStartedAt) return crisis
   const phaseEndsAt = at + rules.aftermathDays * DAY
   if (!Number.isSafeInteger(phaseEndsAt)) return crisis
-  return { ...crisis, phase: 'aftermath', outcome, resolvedAt: at, phaseStartedAt: at, phaseEndsAt }
+  return { ...crisis, phase: 'aftermath', outcome, resolvedAt: at, phaseStartedAt: at, phaseEndsAt, resolutionSummary }
 }
 
 export function recordRegionalChiefOutcome(

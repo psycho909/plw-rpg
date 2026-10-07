@@ -1,0 +1,37 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/saveService.test.ts -t authentic archived V6
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (99 tests | 1 failed | 98 skipped) 21ms
+     × migrates the authentic archived V6 D and camp-raid save to V7 without changing world, RNG, or crisis facts 17ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates the authentic archived V6 D and camp-raid save to V7 without changing world, RNG, or crisis facts
+AssertionError: expected 6 to be 7 // Object.is equality
+
+- Expected
++ Received
+
+- 7
++ 6
+
+ ❯ src/services/saveService.test.ts:53:38
+     51|     const loaded = deserialize(JSON.stringify(archived))
+     52|
+     53|     expect(loaded.state.saveVersion).toBe(7)
+       |                                      ^
+     54|     const projection = structuredClone(loaded.state) as unknown as Rec…
+     55|     delete projection.saveVersion
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 98 skipped (99)
+   Start at  20:10:47
+   Duration  501ms (transform 294ms, setup 0ms, import 362ms, tests 21ms, environment 0ms)
+

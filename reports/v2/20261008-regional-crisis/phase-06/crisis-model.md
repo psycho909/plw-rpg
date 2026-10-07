@@ -15,6 +15,8 @@ Source commit `c449930520c4ef47a60de7c8f3c14867b69355f8`；base b82de85。Origin
 
 ## 尚待後續slice
 
-C純Civil Defense/needs/likelihood已驗收，source `bd4901c28ed3fb8469d6fe5c82354b4e1128691e`，16focused/typecheck/independentreviewPASS；D裝備/食物/金幣施工中；E2–3Adventureleverage；F持久分級後果/恢復；G既有UI訊號與選擇；H重大history/reputation；I多路線/長期simulation；J真Browser/獨立review/Gates。
+C純Civil Defense/needs/likelihood已驗收，source `bd4901c28ed3fb8469d6fe5c82354b4e1128691e`，16focused/typecheck/independentreviewPASS；D生活貢獻、E camp/Chief介入及F分級後果/恢復均已限定驗收，最新F 411定向tests/typecheck/build與獨立Review PASS；G既有UI訊號與選擇施工中；H重大history/reputation；I多路線/長期simulation；J真Browser/獨立review/Gates。
 
 Human DEFERRED / NOT APPLICABLE AT THIS STAGE。B測試中的forcedroll／手動phase/outcome為CONTROLLED FIXTURE，不是正常fresh-save遊玩。
+
+F最新細節與原始證據見contribution-analysis.md/F章及f-core-independent-review.md；B停止resolution敘述僅歷史B scope，最新F canonicalruntime已自動結算，不代表I/J完成。

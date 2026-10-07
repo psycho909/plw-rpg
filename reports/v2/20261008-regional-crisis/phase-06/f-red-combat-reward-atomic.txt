@@ -1,0 +1,767 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisResolution.test.ts -t keeps paid rest atomic|keeps a lethal combat turn
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisResolution.test.ts (11 tests | 2 failed | 9 skipped) 181ms
+     × keeps paid rest atomic when resolution capacity rejects its daily boundary 79ms
+     × keeps a lethal combat turn and its rewards atomic when resolution capacity rejects 101ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > keeps paid rest atomic when resolution capacity rejects its daily boundary
+AssertionError: expected { …(23) } to deeply equal { …(23) }
+
+- Expected
++ Received
+
+@@ -10,11 +10,11 @@
+        "equipment": {
+          "armor": null,
+          "weapon": null,
+        },
+        "exp": 0,
+-       "gold": 20,
++       "gold": 12,
+        "hp": 100,
+        "id": "alden",
+        "inventory": {
+          "armor": 0,
+          "food": 3,
+
+ ❯ src/engine/crisisResolution.test.ts:213:19
+    211|
+    212|     expect(() => rest(state, 'inn')).toThrow()
+    213|     expect(state).toEqual(before)
+       |                   ^
+    214|   })
+    215|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > keeps a lethal combat turn and its rewards atomic when resolution capacity rejects
+AssertionError: expected { …(23) } to deeply equal { …(23) }
+
+- Expected
++ Received
+
+@@ -9,39 +9,39 @@
+        "deathYear": null,
+        "equipment": {
+          "armor": null,
+          "weapon": null,
+        },
+-       "exp": 0,
+-       "gold": 45,
+-       "hp": 100,
++       "exp": 5,
++       "gold": 63,
++       "hp": 106,
+        "id": "alden",
+        "inventory": {
+          "armor": 0,
+          "food": 3,
+          "iron": 0,
+-         "material": 0,
++         "material": 1,
+          "potion": 2,
+          "stone": 0,
+          "sword": 0,
+          "wood": 0,
+        },
+        "isAlive": true,
+-       "level": 1,
++       "level": 2,
+        "lifeStage": "young",
+        "lifespan": 80,
+-       "maxHp": 100,
++       "maxHp": 106,
+        "maxStamina": 84,
+        "name": "奧登",
+        "position": {
+          "x": 7,
+          "y": 9,
+        },
+        "skills": {
+          "combat": {
+-           "exp": 0,
+-           "level": 1,
++           "exp": 15,
++           "level": 2,
+          },
+          "farming": {
+            "exp": 0,
+            "level": 1,
+          },
+@@ -60,37 +60,27 @@
+        },
+        "stamina": 84,
+        "stats": {
+          "dexterity": 6,
+          "intelligence": 5,
+-         "strength": 8,
+-         "vitality": 8,
++         "strength": 10,
++         "vitality": 9,
+        },
+-       "status": "combat",
++       "status": "idle",
+      },
+    ],
+-   "combat": {
+-     "attack": 10,
+-     "defense": 2,
+-     "dungeon": false,
+-     "elite": false,
+-     "exp": 35,
+-     "gold": 18,
+-     "hp": 1,
+-     "maxHp": 42,
+-     "monsterId": "goblin",
+-   },
++   "combat": null,
+    "crops": [],
+    "dungeon": {
+      "discovered": false,
+      "inDungeon": false,
+      "progress": 0,
+      "runs": 0,
+      "stage": 0,
+      "threat": 1,
+    },
+-   "eventSequence": 9007199254740989,
++   "eventSequence": 9007199254740992,
+    "events": [
+      {
+        "at": 480,
+        "category": "world",
+        "id": 1,
+@@ -103,10 +93,34 @@
+        "category": "monster",
+        "id": 2,
+        "message": "北方哥布林活動升高，橡谷居民開始為可能的危機做準備。",
+        "tier": "major",
+        "type": "regional-crisis.warning",
++     },
++     {
++       "at": 14399,
++       "category": "player",
++       "id": 9007199254740990,
++       "message": "奧登 升到 Lv.2。",
++       "tier": "gameplay",
++       "type": "character.levelUp",
++     },
++     {
++       "at": 14399,
++       "category": "player",
++       "id": 9007199254740991,
++       "message": "戰鬥熟練度升到 Lv.2。",
++       "tier": "gameplay",
++       "type": "character.skillUp",
++     },
++     {
++       "at": 14399,
++       "category": "player",
++       "id": 9007199254740992,
++       "message": "戰鬥勝利！獲得 35 經驗與 18 金幣。",
++       "tier": "gameplay",
++       "type": "combat.won",
+      },
+    ],
+    "history": [
+      {
+        "at": 480,
+@@ -129,11 +143,11 @@
+      "arcs": [],
+      "canon": "OAKVALE_LIFE_EMERGENCE",
+      "characters": {
+        "alden": {
+          "actions": {
+-           "combat": 0,
++           "combat": 1,
+            "farming": 0,
+            "mining": 0,
+            "smithing": 0,
+            "woodcutting": 0,
+          },
+@@ -141,13 +155,19 @@
+          "identities": [
+            "resident",
+          ],
+          "milestones": [],
+          "origin": "OTHER_WORLD",
+-         "reputation": 0,
+-         "reputationHistory": [],
++         "reputation": 1,
++         "reputationHistory": [
++           {
++             "at": 14399,
++             "delta": 1,
++             "reason": "守護橡谷北方道路",
+            },
++         ],
++       },
+      },
+      "director": {
+        "cooldowns": {},
+        "ironReserve": 40,
+        "lastEventAt": 480,
+@@ -164,11 +184,18 @@
+        "npc-1": {
+          "career": "resident",
+          "careerJob": "farmer",
+          "concern": "在橡谷安穩生活",
+          "featured": true,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "wanderer",
+@@ -178,11 +205,18 @@
+        "npc-10": {
+          "career": "resident",
+          "careerJob": "woodcutter",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "wanderer",
+@@ -192,11 +226,18 @@
+        "npc-11": {
+          "career": "resident",
+          "careerJob": "blacksmith",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "wanderer",
+@@ -206,11 +247,18 @@
+        "npc-12": {
+          "career": "resident",
+          "careerJob": "shopkeeper",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "hardworking",
+@@ -220,11 +268,18 @@
+        "npc-13": {
+          "career": "resident",
+          "careerJob": "guard",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "wanderer",
+@@ -234,11 +289,18 @@
+        "npc-14": {
+          "career": "resident",
+          "careerJob": "mercenary",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "wanderer",
+@@ -248,11 +310,18 @@
+        "npc-15": {
+          "career": "resident",
+          "careerJob": "farmer",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "hardworking",
+@@ -262,11 +331,18 @@
+        "npc-16": {
+          "career": "resident",
+          "careerJob": "miner",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "wanderer",
+@@ -276,11 +352,18 @@
+        "npc-17": {
+          "career": "resident",
+          "careerJob": "woodcutter",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "wanderer",
+@@ -290,11 +373,18 @@
+        "npc-18": {
+          "career": "resident",
+          "careerJob": "blacksmith",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "hardworking",
+@@ -304,11 +394,18 @@
+        "npc-19": {
+          "career": "resident",
+          "careerJob": "shopkeeper",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "wanderer",
+@@ -318,11 +415,18 @@
+        "npc-2": {
+          "career": "resident",
+          "careerJob": "miner",
+          "concern": "在橡谷安穩生活",
+          "featured": true,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "hardworking",
+@@ -332,11 +436,18 @@
+        "npc-20": {
+          "career": "resident",
+          "careerJob": "guard",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "hardworking",
+@@ -346,11 +457,18 @@
+        "npc-21": {
+          "career": "resident",
+          "careerJob": "mercenary",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "wanderer",
+@@ -360,11 +478,18 @@
+        "npc-22": {
+          "career": "resident",
+          "careerJob": "farmer",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "hardworking",
+@@ -374,11 +499,18 @@
+        "npc-23": {
+          "career": "resident",
+          "careerJob": "miner",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "hardworking",
+@@ -388,11 +520,18 @@
+        "npc-24": {
+          "career": "resident",
+          "careerJob": "woodcutter",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "wanderer",
+@@ -402,11 +541,18 @@
+        "npc-25": {
+          "career": "resident",
+          "careerJob": "blacksmith",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "hardworking",
+@@ -416,11 +562,18 @@
+        "npc-26": {
+          "career": "resident",
+          "careerJob": "shopkeeper",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "hardworking",
+@@ -430,11 +583,18 @@
+        "npc-27": {
+          "career": "resident",
+          "careerJob": "guard",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "wanderer",
+@@ -444,11 +604,18 @@
+        "npc-28": {
+          "career": "resident",
+          "careerJob": "mercenary",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "wanderer",
+@@ -472,11 +639,18 @@
+        "npc-3": {
+          "career": "resident",
+          "careerJob": "woodcutter",
+          "concern": "在橡谷安穩生活",
+          "featured": true,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "hardworking",
+@@ -486,11 +660,18 @@
+        "npc-4": {
+          "career": "resident",
+          "careerJob": "blacksmith",
+          "concern": "在橡谷安穩生活",
+          "featured": true,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "wanderer",
+@@ -500,11 +681,18 @@
+        "npc-5": {
+          "career": "resident",
+          "careerJob": "shopkeeper",
+          "concern": "在橡谷安穩生活",
+          "featured": true,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "hardworking",
+@@ -514,11 +702,18 @@
+        "npc-6": {
+          "career": "resident",
+          "careerJob": "guard",
+          "concern": "在橡谷安穩生活",
+          "featured": true,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "ambitious",
+            "hardworking",
+@@ -528,11 +723,18 @@
+        "npc-7": {
+          "career": "resident",
+          "careerJob": "mercenary",
+          "concern": "在橡谷安穩生活",
+          "featured": false,
+-         "memories": [],
++         "memories": [
++           {
++             "actorId": "alden",
++             "at": 14399,
++             "detail": "奧登擊退北方道路的威脅。",
++             "kind": "PLAYER_DEFENDED_OAKVALE",
++           },
++         ],
+          "milestones": [],
+          "traits": [
+            "brave",
+            "content",
+            "wanderer",
+@@ -4274,15 +4476,15 @@
+      "safety": 60,
+      "stage": "hamlet",
+    },
+    "threat": {
+      "bossAlive": false,
+-     "bossProgress": 50,
+-     "campLevel": 2,
++     "bossProgress": 40,
++     "campLevel": 1,
+      "growthRate": 0.65,
+-     "monsterPopulation": 30,
+-     "threatLevel": 2,
++     "monsterPopulation": 25,
++     "threatLevel": 1,
+      "warningLevel": 0,
+    },
+    "tiles": [
+      {
+        "discovered": true,
+
+ ❯ src/engine/crisisResolution.test.ts:227:19
+    225|
+    226|     expect(() => combatTurn(state, 'attack')).toThrow()
+    227|     expect(state).toEqual(before)
+       |                   ^
+    228|   })
+    229|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 9 skipped (11)
+   Start at  22:56:47
+   Duration  677ms (transform 299ms, setup 0ms, import 352ms, tests 181ms, environment 0ms)
+

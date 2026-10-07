@@ -1,0 +1,32 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisResolution.test.ts src/engine/regionalCrisis.test.ts src/engine/civilDefense.test.ts src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts src/engine/crafting.test.ts src/engine/ownership.test.ts src/engine/actions.test.ts src/engine/rewardActions.test.ts src/engine/simulation.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/stores/gameStore.test.ts --testTimeout=30000
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (62 tests | 1 failed) 544ms
+     × rejects 'with invalid world time' without changing state, RNG, ids, resources, time, or events 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crafting.test.ts > starter crafting transaction > rejects 'with invalid world time' without changing state, RNG, ids, resources, time, or events
+Error: 模擬時間超出安全範圍。
+ ❯ preflightRegionalCrisisAction src/engine/simulation.ts:379:75
+    377| export function preflightRegionalCrisisAction<T>(state: GameState, min…
+    378|   if (!Number.isFinite(minutes) || minutes < 0) throw new Error('模擬時間必…
+    379|   if (!Number.isSafeInteger(state.worldTime + Math.floor(minutes))) th…
+       |                                                                           ^
+    380|   if (!hasRegionalCrisisActionBoundary(state, minutes)) return
+    381|   const preview = structuredClone(state)
+ ❯ craft src/engine/crafting.ts:423:30
+ ❯ src/engine/crafting.test.ts:870:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 13 passed (14)
+      Tests  1 failed | 410 passed (411)
+   Start at  23:09:21
+   Duration  17.49s (transform 1.14s, setup 0ms, import 1.92s, tests 20.80s, environment 5ms)
+

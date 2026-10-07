@@ -10,7 +10,7 @@ import { calendar } from './calendar'
 import { emit } from './events'
 import { awardIdentity, changeReputation, recordLifeAction } from './identity'
 import { craftQualityProfile, generateItem } from './itemGeneration'
-import { gainExp, simulate } from './simulation'
+import { gainExp, preflightRegionalCrisisAction, simulate } from './simulation'
 
 export interface CraftRequest { recipeId: CraftRecipeId; influenceMaterial?: MaterialId | null }
 
@@ -90,9 +90,10 @@ function canonicalExperience(exp: unknown, level: unknown, threshold: number): b
  * Per day, characters can each die once; every NPC can emit a visitor departure, a death,
  * a career milestone, and one general plus one job-skill XP level. Fixed daily sources are
  * new year (1), settlement growth (2), immigration/birth (2), threat increase (1), boss
- * spawn/injury/dungeon threat (3), living events (3), and one regional-crisis phase event,
+ * spawn/injury/dungeon threat (3), living events (3), regional-crisis phase/resolution (2), up to three
+ * crisis-injury events, and one zero-population relief immigrant,
  * plus each warning and party slot.
- * Daily simulation can allocate up to three NPC IDs (immigration, birth, traveler) and four
+ * Daily simulation can allocate up to four NPC IDs (immigration, birth, traveler, crisis relief) and four
  * living-director IDs (medicine request/news or arc request/news) per crossed day.
  */
 function craftCapacityBudget(state: GameState, character: GameState['characters'][number], endTime: number): CraftCapacityBudget | null {
@@ -119,12 +120,12 @@ function craftCapacityBudget(state: GameState, character: GameState['characters'
   const npcCount = BigInt(state.npcs.length)
   const characterCount = BigInt(state.characters.length)
   const partyCount = BigInt(state.party.length)
-  // A daily living event can add one traveler; settlement can add an immigrant and a child.
-  // Those at most three new NPCs can participate in later crossed days.
-  const npcDays = days * npcCount + 3n * days * (days - 1n) / 2n
-  const fixedDailyEvents = 13n + BigInt(BOSS.warnings.length) + partyCount
+  // A daily living event can add one traveler; settlement can add an immigrant and a child,
+  // and a zero-population crisis recovery can add one adult. Their later daily events are budgeted too.
+  const npcDays = days * npcCount + 4n * days * (days - 1n) / 2n
+  const fixedDailyEvents = 18n + BigInt(BOSS.warnings.length) + partyCount
   budget += days * (characterCount + fixedDailyEvents) + 5n * npcDays
-  return { eventIds: budget, npcIds: 3n * days, directorIds: 4n * days }
+  return { eventIds: budget, npcIds: 4n * days, directorIds: 4n * days }
 }
 
 function catalogKey<T extends object>(catalog: T, value: unknown): value is keyof T & string {
@@ -417,7 +418,16 @@ export function planCraft(state: GameState, request: CraftRequest): CraftPlan {
 
 /** Execute one validated recipe through the shared item generator. */
 export function craft(state: GameState, request: CraftRequest): CraftResult {
-  const result = plan(state, request)
+  const parsed = parsedRequest(request)
+  const validation = plan(state, request)
+  if (!validation.ok) return { ok: false, reasonCode: validation.reasonCode, message: validation.message }
+  const minutes = parsed.valid && parsed.recipeId ? CRAFTING_RECIPES[parsed.recipeId].durationMinutes : undefined
+  if (minutes !== undefined) preflightRegionalCrisisAction(state, minutes, preview => craftInternal(preview, request))
+  return craftInternal(state, request, validation)
+}
+
+function craftInternal(state: GameState, request: CraftRequest, planned: CraftPlan = plan(state, request)): CraftResult {
+  const result = planned
   if (!result.ok) return { ok: false, reasonCode: result.reasonCode, message: result.message }
 
   const recipe = CRAFTING_RECIPES[result.recipeId!]

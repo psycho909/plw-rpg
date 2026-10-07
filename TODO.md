@@ -8,7 +8,7 @@
 
 ## Now
 
-- [ ] Phase6-F Resolution / Consequences — Ticket: [20261008-v2x-06f-resolution](tickets/20261008-v2x-06f-resolution.md)
+- [ ] Phase6-G Crisis UI — Ticket: [20261008-v2x-06g-crisis-ui](tickets/20261008-v2x-06g-crisis-ui.md)
 
 <!-- 本輪工程已完成；驗收證據保存在正式 Ticket。 -->
 

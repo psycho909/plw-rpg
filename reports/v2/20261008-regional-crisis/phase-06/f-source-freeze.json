@@ -1,0 +1,156 @@
+{
+  "status": "F source candidate frozen after safe-world-time and craft-validation follow-ups; final 411-test focused suite, current typecheck, and production build pass; independent review pending",
+  "baseCommit": "6583db9ba0da1e31df6af2f4583771bc54a38e6e",
+  "sourceFingerprint": "d0ff4e64ab667ca5ade5e7fe914f25e5d4c9cdc1e33822b0b46313e52e3e52e7",
+  "sourceFingerprintAlgorithm": "SHA-256 over sorted source path, NUL byte, lowercase source SHA-256 text, LF; repeated for each path",
+  "sourceFilesSha256": {
+    "src/data/config.ts": "c81505557ccadf66b8046b1f1976c90bb63165804502dce770c468deb9cb6984",
+    "src/domain/crisis.ts": "03ef61f00c08ea84cdd6126d64009e3032fb38a5662db8a736519045f00ad14c",
+    "src/engine/actions.ts": "a2ce83f2235faaf3fa65390fb0296ddc92c8ce395704e5e108547019d5002fac",
+    "src/engine/civilDefense.ts": "9a6988658e62df485f85f69d0c1f0a0626078eeec43f0934ad2298e6cdcfe77d",
+    "src/engine/crafting.ts": "04ed1724b723b78221ee31811b46171bb9e8d2fbb029a777dda5a12449378a88",
+    "src/engine/crisisResolution.test.ts": "8d289cce7b38e55494b3198c3da986a36d14d7c776f32aac776179c5a8685bb8",
+    "src/engine/ownership.ts": "50b5bef7df35778c95ddbf0dd0951a22f46517842a224bee1552cd2dd18ff6db",
+    "src/engine/regionalCrisis.test.ts": "2eef285818c781d60dda7120bf6f3cd89c65084c1ac4345674010976830912f4",
+    "src/engine/regionalCrisis.ts": "3fe8139a9677ae925c1f8ee63c5763b12fd03036d2cf651893a09874e3783bf3",
+    "src/engine/rewardActions.ts": "799acb63db633179829613db2dc4ca6066226846ec0c6c0c885c7b6c13ce717d",
+    "src/engine/simulation.ts": "c0c83c8f9e6de55e09ea78fa1489015c6bcf35c066a06aa1f95daecd600ac907",
+    "src/services/playJournal.test.ts": "90fa0dbf1b5a928728e4100eb4b5e5b2f7eb1f3944b1a559455713e8b155610a",
+    "src/services/rewardSave.test.ts": "a27b2e1566755e16eabb9ced931a2c38898bfca10f3812e9be485e156603c3aa",
+    "src/services/saveService.test.ts": "f1d85b9ad0a24e1c662864219da4cce053d38337b9afc2298a7a4cee0a4d27c8",
+    "src/services/saveService.ts": "5d8ce05621c8be0dba81ec594d61de23bc40826faa7acf0a7c260876f9251bf1",
+    "src/stores/gameStore.test.ts": "a182469258b05a83d305dac07c2450847436a19cc7528362a149d8b07df0064f"
+  },
+  "evidenceSha256": {
+    "bugs.md": "35231baeffa213b0f643ab0a38734ec9b43c0c448a990410a5bdc65e9f0332b1",
+    "contribution-analysis.md": "599eb31266e873863ea62f9bc1294c4787fbc4d93d22862dc8a4c5fad89f54fa",
+    "f-attempt-public-action-parallel-timeout.txt": "db56899f16ccd4056b55a4be500eaeac2d55864305b2ff5747cea4f2d788c230",
+    "f-attempt-safe-world-time-focused-craft-validation.txt": "ab0c5bbca60adb85965c97aa6d1e15be2757c55773413f53319a3aacf2a4123f",
+    "f-build-final.txt": "9a301db4562c53ac4700c51a8da0e9b114384ecd7cebd0689ce14d2aafe962f1",
+    "f-build-green.txt": "29af630482dfebfec036aef5004607471723363aa8ad142ee3817c22e868b940",
+    "f-development-regressions.md": "53f1cb40b57b804ee835c83624de004cbfa6fd143d6376352b5515e1ad106f13",
+    "f-green-craft-validation-followup.txt": "0e644c1f25979ac0a6a151b650a8025396432d509b4c367979d4925fb8703249",
+    "f-green-focused.txt": "79ec5ea7b7cdf25fb604efa045bde1529c68724039e9cf94b57970f8f3f4d8b9",
+    "f-green-public-action-focused.txt": "d9d0ff4d519ac94f701b6bcb27d67f0c49eadc335ba88bac49a6061a7578f73f",
+    "f-green-safe-world-time-focused.txt": "f4c5f707e8a53c1b590dc916d4ba5b91658cff8ea64c1372e1e9fa0d8ca48eb0",
+    "f-green-safe-world-time-followup.txt": "5639edc07fc588d5d58acfcacc1abc6bc383a17723cdbd70ce3f7e6567613c8a",
+    "f-red-combat-reward-atomic.txt": "2f05353a0031cfd4d0fcf242909ae90f8e76096bdef974f0cc70db1b080aec37",
+    "f-red-craft-invalid-time-source-hashes.txt": "d6abd40f3a08c9539fb4732b712d1896ec7a6644dcdf4eb5f2066570b0148e04",
+    "f-red-event-capacity.txt": "8d4a18cb2d4873c23078d7792bb033904a57476071c613ecb685b4347118ba84",
+    "f-red-home-rest-trailing-event.txt": "f4555f39614020665c79ee6a7e33b9e7ff80dc59b9cc650a25dbb30561d718ec",
+    "f-red-legacy-resolution-atomic.txt": "e4f1565077281b8974044fe1e951e4d7084a7972d64c7fd7387c4a89df45c668",
+    "f-red-public-action-atomic.txt": "d29a58cc60792599485c34b29c56eecd97af3d78c80b3466add9e463b9375df0",
+    "f-red-public-action-source-hashes.txt": "c4197398136f4a15d41a5c8f7e49759ba1183e8c8dd27a2c84fa0c35bfff92ec",
+    "f-red-resolution-recovery.txt": "fa76f6f2b5a0b8b0c163b878b35d98bb91db45637336832ff5600d7bcf270267",
+    "f-red-v6-v7-migration.txt": "9ec16c86052ff398c006381039bb832bda3477c12af96b0bf317d40900c0aac6",
+    "f-red-walkto-atomic.txt": "a896769b78200914c8a77338e66328bf5ff4432608f399f4e2ff651be5a4fb7c",
+    "f-red-world-time-atomic.txt": "2d026295b123c4cde196116e39aeecc3406412f41c244b2d3ef29b092ce1fe0b",
+    "f-red-world-time-source-hashes.txt": "9c88f13662683c6a9d530bd1168399056df317a1c256f0ec59545acf37aff999",
+    "f-typecheck-final.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "f-typecheck-safe-world-time-followup.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "f-typecheck.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "f-v6-fixtures/crisis-v6-preparation-d-life-adventure.json": "316cd0d5edfcee3214acc95f633c39b8d118bdddced97951e701dbb32de8ebc5",
+    "f-v6-fixtures/manifest.json": "28cf83b0e8347120d7ca949f1adddeb4a2b71b57b7d4d439fa77c3718f03522c"
+  },
+  "focusedRegression": {
+    "command": "npm test -- src/engine/crisisResolution.test.ts src/engine/regionalCrisis.test.ts src/engine/civilDefense.test.ts src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts src/engine/crafting.test.ts src/engine/ownership.test.ts src/engine/actions.test.ts src/engine/rewardActions.test.ts src/engine/simulation.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/stores/gameStore.test.ts --testTimeout=30000",
+    "testFilesPassed": 14,
+    "testsPassed": 411,
+    "evidence": "f-green-safe-world-time-focused.txt",
+    "sourceScope": "Current final source candidate after safe-world-time atomicity and craft validation-order fixes."
+  },
+  "typecheck": {
+    "command": "npx vue-tsc --noEmit",
+    "status": "PASS",
+    "evidence": "f-typecheck-final.txt"
+  },
+  "productionBuild": {
+    "command": "npm run build",
+    "status": "PASS",
+    "evidence": "f-build-final.txt",
+    "sourceScope": "Current final source candidate."
+  },
+  "migrationFixture": {
+    "path": "f-v6-fixtures/crisis-v6-preparation-d-life-adventure.json",
+    "sha256": "316cd0d5edfcee3214acc95f633c39b8d118bdddced97951e701dbb32de8ebc5",
+    "sourceCommit": "6583db9ba0da1e31df6af2f4583771bc54a38e6e",
+    "manifest": "f-v6-fixtures/manifest.json",
+    "manifestSha256": "28cf83b0e8347120d7ca949f1adddeb4a2b71b57b7d4d439fa77c3718f03522c",
+    "verification": "Archived V6 public engine round trip; preserved nonempty D equipment, food, and gold ledgers, E camp-raid fact, world time, and RNG; fixture reused unchanged."
+  },
+  "eventAndTimeCapacity": {
+    "preFixRed": [
+      "f-red-event-capacity.txt",
+      "f-red-public-action-atomic.txt",
+      "f-red-combat-reward-atomic.txt",
+      "f-red-walkto-atomic.txt",
+      "f-red-home-rest-trailing-event.txt",
+      "f-red-legacy-resolution-atomic.txt",
+      "f-red-world-time-atomic.txt",
+      "f-red-world-time-source-hashes.txt"
+    ],
+    "preflight": "At actual scheduled active-resolution, legacy resolution, or due-recovery daily boundaries, an isolated canonical boundary preview protects simulate. Public time-advancing actions that reach such a boundary first execute their complete internal action on an isolated full-state clone, including pre-simulation mutations and trailing events; final event/NPC/director counters are checked before the live action runs once. Normal non-boundary actions do not clone. Clone RNG/events are isolated.",
+    "tradeoff": "Full-state action clones include bounded history up to 20,000 events; camp-raid combat also runs its existing E clone preview during an F-boundary preview. Measure this combined cost during I/J; no guessed fast path was added.",
+    "safeWorldTimeGuard": "The action preflight rejects non-finite/negative durations and unsafe resulting worldTime before checking whether a crisis boundary is present; this O(1) check leaves normal actions clone-free."
+  },
+  "recovery": {
+    "dueDays": 30,
+    "preFixRed": "f-red-resolution-recovery.txt",
+    "behavior": "At the due boundary, grant one adult canonical immigration NPC only if living population remains zero and the Goblin Chief remains alive; otherwise persist cancellation."
+  },
+  "preservedReds": [
+    "f-red-combat-reward-atomic.txt",
+    "f-red-event-capacity.txt",
+    "f-red-home-rest-trailing-event.txt",
+    "f-red-legacy-resolution-atomic.txt",
+    "f-red-public-action-atomic.txt",
+    "f-red-public-action-source-hashes.txt",
+    "f-red-resolution-recovery.txt",
+    "f-red-v6-v7-migration.txt",
+    "f-red-walkto-atomic.txt",
+    "f-red-world-time-atomic.txt",
+    "f-red-world-time-source-hashes.txt"
+  ],
+  "review": "pending independent review; no self-acceptance or G release",
+  "reporting": {
+    "method": "scripts.recorded_reports.write_recorded/capture_existing",
+    "playlog": "playlog.jsonl",
+    "evidencePublished": true
+  },
+  "validationAttempt": {
+    "evidence": "f-attempt-public-action-parallel-timeout.txt",
+    "result": "Earlier concurrent run passed 409 tests but the existing 500-year save regression exceeded its 15-second timeout under concurrent test/build load; the original 14-file set passed alone with a 30-second timeout. Current final sequential run is green at 411/411."
+  },
+  "capturedAtUtc": "2026-10-07T23:12:10+00:00",
+  "targetedFollowup": {
+    "command": "npm test -- src/engine/crafting.test.ts src/engine/crisisResolution.test.ts",
+    "testFilesPassed": 2,
+    "testsPassed": 75,
+    "evidence": "f-green-craft-validation-followup.txt",
+    "sourceScope": "Current final source candidate."
+  },
+  "safeWorldTimeAtomicity": {
+    "preFixRed": "f-red-world-time-atomic.txt",
+    "preFixSourceHashes": "f-red-world-time-source-hashes.txt",
+    "finding": "Paid inn rest deducted 8 gold before simulate rejected an unsafe resulting worldTime near MAX_SAFE_INTEGER.",
+    "severity": "P2 extreme integrity edge; not a normal progression issue.",
+    "fix": "Validate safe resulting worldTime before invoking any complete internal public action, including when no crisis boundary is due.",
+    "currentRegression": "f-green-safe-world-time-focused.txt",
+    "currentTypecheck": "f-typecheck-final.txt",
+    "craftValidationOrder": "The craft wrapper obtains its existing read-only plan first and returns stable validation failures; only valid craft requests enter the generic safe-time and F-boundary preflights."
+  },
+  "previousFocusedRegression": {
+    "command": "npm test -- src/engine/crisisResolution.test.ts src/engine/regionalCrisis.test.ts src/engine/civilDefense.test.ts src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts src/engine/crafting.test.ts src/engine/ownership.test.ts src/engine/actions.test.ts src/engine/rewardActions.test.ts src/engine/simulation.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/stores/gameStore.test.ts --testTimeout=30000",
+    "testFilesPassed": 14,
+    "testsPassed": 410,
+    "evidence": "f-green-public-action-focused.txt",
+    "sourceScope": "Previous frozen candidate before the safe-world-time guard; preserved as historical 410-test evidence."
+  },
+  "developmentRegressions": {
+    "craftInvalidTime": {
+      "failedAttempt": "f-attempt-safe-world-time-focused-craft-validation.txt",
+      "preFixSourceHashes": "f-red-craft-invalid-time-source-hashes.txt",
+      "result": "410 passed / 1 failed before the plan-before-preflight fix; current targeted 75/75 and final directed 411/411 pass."
+    }
+  }
+}

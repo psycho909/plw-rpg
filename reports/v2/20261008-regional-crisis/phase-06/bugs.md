@@ -39,3 +39,28 @@ Oversized food submission with a negative raw forecast that could become positiv
 ## P2-E01 — Camp victory exceeds valid event-sequence budget
 
 E uncommitted snapshot on source parent `dfdc816`. Controlled public startRegionalCampRaid at MAX_SAFE_INTEGER−2 then successful combatTurn produced a save rejected by deserialize; original `e-red-event-capacity.txt` SHA256 `68e72137d92e6b5d0e20b7118f7839b1f667c5231d9b285aafd9a324fde8ccf1` records exact pre-fix source/test hashes and failure. Source test hash `5b3c72ed449f7f2b29e56cf511f1cc2bab07680be7dcf2e0aba3fc8a0268f59f`. Natural play cannot practically reach this counter; classified P2 integrity edge, not P1 normal-save loss. FIXED / INDEPENDENTLY VERIFIED / E ACCEPTED. Exact isolated camp-combat clone preflight rejects before real state changes; 505 full tests and independent 29 tests PASS. Original RED retained. Full-history clone cost remains an I/J profiling risk.
+
+
+## P2-F01 — Canonical resolution, recovery, and V7 migration incomplete before F
+
+- Public REDs: `f-red-resolution-recovery.txt` shows that the active crisis never reached a measured outcome and a zero-population world with the Goblin Chief alive had no recovery immigrant after 31 days; `f-red-v6-v7-migration.txt` shows an authentic V6 save remained at V6; `f-red-event-capacity.txt` shows a near-limit resolution boundary changed state without rejecting atomically.
+- Fix in frozen F candidate: one canonical world-RNG outcome draw with bounded consequences and a measured summary; due-date recovery rechecks population/Chief and uses one adult immigration; validated V6 migration to V7 adds nullable legacy summaries; exact isolated daily-boundary preflight rejects unsafe capacity/time before mutating the public state. Craft event/NPC allowance includes these bounded effects.
+- Additional transient implementation/test issues and fixture corrections are preserved in `f-development-regressions.md`; the original three RED files remain unchanged. Final focused tests, typecheck, and production build pass as recorded in `f-source-freeze.json`.
+- Status: FIX IMPLEMENTED / INDEPENDENT REVIEW PENDING. This is not an F acceptance or G-release claim.
+
+
+## P2-F02 — Public action can partially apply before a crisis boundary rejects
+
+- Reproduction: at the active-crisis resolution boundary with near-maximum event capacity, paid inn rest deducted gold before `simulate` rejected; a lethal ordinary combat turn applied XP, gold, loot, world changes, and events before the same rejection. A multi-step `walkTo` committed its first step before its later step failed. At due recovery, `homeRest` could emit its final event after simulation and leave `eventSequence` unsaveable. Retained REDs: `f-red-public-action-atomic.txt`, `f-red-combat-reward-atomic.txt`, `f-red-walkto-atomic.txt`, `f-red-home-rest-trailing-event.txt`, and `f-red-legacy-resolution-atomic.txt`.
+- Root cause: canonical simulation preflight ran after public wrappers had already mutated costs/rewards, and the boundary preflight did not include action effects that followed `simulate` or historical V6 saves already in `resolution`.
+- Fix: at only the scheduled crisis resolution/legacy-resolution/recovery days inside an action’s duration, run the complete internal action on a cloned state before live mutation. Check the clone after trailing action effects; then execute the live action once. Composite walking previews its full path. The original rest RED source hashes are retained in `f-red-public-action-source-hashes.txt`.
+- Severity: P2 integrity edge around counters practically unreachable through normal play; the affected output is a partially changed or unsaveable world, not routine player progression.
+- Status: FIXED IN CANDIDATE / INDEPENDENT REVIEW PENDING.
+
+## P2-F03 — Unsafe world-time end can charge a public action before rejection
+
+- Reproduction: with a paid inn rest beginning at `Number.MAX_SAFE_INTEGER - 100`, the public action deducted 8 gold before `simulate` rejected the unsafe resulting time. The retained RED is `f-red-world-time-atomic.txt`; pre-fix source/test hashes are in `f-red-world-time-source-hashes.txt`.
+- Fix: `preflightRegionalCrisisAction` now validates the requested duration and safe resulting world time before checking for a crisis boundary or running any action body. This is an O(1) guard and does not add a clone on normal actions.
+- Severity: P2 integrity edge at an impractical world-time limit; it is distinct from ordinary progression.
+- Verification: the current 14-file directed set passes 411/411, `vue-tsc --noEmit` passes, and the production build passes (`f-green-safe-world-time-focused.txt`, `f-typecheck-final.txt`, `f-build-final.txt`). A transient craft validation-order regression found by that run is preserved and fixed in `f-development-regressions.md`.
+- Status: FIXED IN CANDIDATE / INDEPENDENT REVIEW PENDING.

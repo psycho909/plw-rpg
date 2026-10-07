@@ -1,0 +1,48 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisResolution.test.ts -t resulting world time is outside the safe integer range
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisResolution.test.ts (13 tests | 1 failed | 12 skipped) 84ms
+     × keeps paid rest atomic when its resulting world time is outside the safe integer range 82ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > keeps paid rest atomic when its resulting world time is outside the safe integer range
+AssertionError: expected { …(23) } to deeply equal { …(23) }
+
+- Expected
++ Received
+
+@@ -10,11 +10,11 @@
+        "equipment": {
+          "armor": null,
+          "weapon": null,
+        },
+        "exp": 0,
+-       "gold": 20,
++       "gold": 12,
+        "hp": 100,
+        "id": "alden",
+        "inventory": {
+          "armor": 0,
+          "food": 3,
+
+ ❯ src/engine/crisisResolution.test.ts:320:19
+    318|
+    319|     expect(() => rest(state, 'inn')).toThrow()
+    320|     expect(state).toEqual(before)
+       |                   ^
+    321|   })
+    322|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 skipped (13)
+   Start at  23:06:19
+   Duration  646ms (transform 357ms, setup 0ms, import 430ms, tests 84ms, environment 0ms)
+

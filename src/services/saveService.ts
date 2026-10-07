@@ -7,7 +7,8 @@ import type { WorldLife } from '../domain/life'
 import type { GameState, Position } from '../domain/types'
 import {
   dormantRegionalCrisis, emptyRegionalCrisisContributions, REGIONAL_CRISIS_CONTRIBUTION_LIMITS,
-  type RegionalCrisisOutcome, type RegionalCrisisState,
+  REGIONAL_CRISIS_OUTCOME_COOLDOWN_DAYS,
+  type RegionalCrisisOutcome, type RegionalCrisisResolutionSummary, type RegionalCrisisState,
 } from '../domain/crisis'
 import { createGame } from '../engine/simulation'
 import { initializeLife } from '../engine/lifeState'
@@ -44,7 +45,7 @@ function exactShape(value: unknown, required: string[], optional: string[] = [])
   return required.every(key => Object.hasOwn(value, key)) && Object.keys(value).every(key => allowed.has(key))
 }
 
-function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5 | 6): value is GameState {
+function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5 | 6 | 7): value is GameState {
   if (!object(value)) return false
   const currentTemplate = createGame()
   // Event tiers remain optional so historical V1 entries survive later-version round trips.
@@ -115,7 +116,7 @@ function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5 | 6): value is Gam
       && ['player', 'npc', 'world', 'monster', 'settlement'].includes(e.category)
       && (e.tier === undefined || enumValue(e.tier, ['transient', 'gameplay', 'major', 'debug'])))
     && s.settlement.buildings.every(b => Object.hasOwn(BUILDINGS, b))
-    && (version < 4 || validRegionalCrisis(s.regionalCrisis, s, version as 4 | 5 | 6))
+    && (version < 4 || validRegionalCrisis(s.regionalCrisis, s, version as 4 | 5 | 6 | 7))
 }
 
 const crisisOutcomes: readonly RegionalCrisisOutcome[] = ['decisive_success', 'costly_success', 'setback', 'local_defeat']
@@ -181,7 +182,46 @@ function validRegionalCrisisCombatObjective(value: unknown, s: GameState) {
   return safeInt(sequence, 1, s.regionalCrisis.sequence) && value.crisisId === `${prefix}${sequence}`
 }
 
-function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5 | 6): value is RegionalCrisisState {
+function validCrisisSummary(value: unknown, s: GameState, resolvedAt: number, outcome: RegionalCrisisOutcome) {
+  if (value === null) return true
+  if (!exactShape(value, ['readiness', 'threatDemand', 'successChance', 'pressureDays', 'applied', 'injuries', 'recovery'])
+    || !boundedNumber(value.readiness, 0, 100) || !boundedNumber(value.threatDemand, 20, 100)
+    || !boundedNumber(value.successChance, 0.1, 0.9) || !safeInt(value.pressureDays, 0, 30)
+    || !exactShape(value.applied, ['monsterPopulation', 'bossProgress', 'food', 'safety', 'prosperity'])
+    || !Array.isArray(value.injuries) || !exactShape(value.recovery, ['status', 'dueAt', 'npcId'])) return false
+
+  const ranges: Record<RegionalCrisisOutcome, { population: [number, number]; boss: [number, number]; food: [number, number]; safety: [number, number]; prosperity: [number, number]; injuryDays: number; injuries: number }> = {
+    decisive_success: { population: [-12, 0], boss: [-18, 0], food: [-4, 0], safety: [0, 4], prosperity: [0, 2], injuryDays: 0, injuries: 0 },
+    costly_success: { population: [-6, 0], boss: [-8, 0], food: [-8, 0], safety: [-2, 0], prosperity: [-2, 0], injuryDays: 2, injuries: 1 },
+    setback: { population: [0, 4], boss: [0, 8], food: [-8, 0], safety: [-5, 0], prosperity: [-4, 0], injuryDays: 3, injuries: 2 },
+    local_defeat: { population: [0, 10], boss: [0, 16], food: [-12, 0], safety: [-8, 0], prosperity: [-6, 0], injuryDays: 5, injuries: 3 },
+  }
+  const expected = ranges[outcome]
+  const delta = value.applied
+  if (!boundedNumber(delta.monsterPopulation, ...expected.population) || !boundedNumber(delta.bossProgress, ...expected.boss)
+    || !boundedNumber(delta.food, ...expected.food) || !boundedNumber(delta.safety, ...expected.safety)
+    || !boundedNumber(delta.prosperity, ...expected.prosperity) || value.injuries.length > expected.injuries) return false
+
+  const injuryIds = new Set<string>()
+  for (const injury of value.injuries) {
+    if (!exactShape(injury, ['npcId', 'durationDays', 'injuredUntil']) || typeof injury.npcId !== 'string'
+      || !/^npc-[1-9]\d*$/.test(injury.npcId) || Number(injury.npcId.slice(4)) >= s.nextNpcId
+      || injuryIds.has(injury.npcId) || injury.durationDays !== expected.injuryDays
+      || !safeInt(injury.injuredUntil) || injury.injuredUntil !== resolvedAt + expected.injuryDays * crisisDay) return false
+    injuryIds.add(injury.npcId)
+  }
+
+  const recovery = value.recovery
+  if (!enumValue(recovery.status, ['not_required', 'pending', 'granted', 'cancelled'])) return false
+  if (recovery.status === 'not_required') return recovery.dueAt === null && recovery.npcId === null
+  const dueAt = resolvedAt + 30 * crisisDay
+  if (!safeInt(recovery.dueAt) || recovery.dueAt !== dueAt) return false
+  if (recovery.status === 'granted') return typeof recovery.npcId === 'string'
+    && /^npc-[1-9]\d*$/.test(recovery.npcId) && Number(recovery.npcId.slice(4)) < s.nextNpcId
+  return recovery.npcId === null
+}
+
+function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5 | 6 | 7): value is RegionalCrisisState {
   if (!object(value)) return false
   const phase = value.phase
   if (phase === 'dormant') {
@@ -201,8 +241,8 @@ function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5 | 6): 
     preparation: ['phaseEndsAt'],
     active: ['phaseEndsAt'],
     resolution: [],
-    aftermath: ['phaseEndsAt', 'outcome', 'resolvedAt'],
-    cooldown: ['phaseEndsAt', 'cooldownUntil', 'outcome', 'resolvedAt'],
+    aftermath: ['phaseEndsAt', 'outcome', 'resolvedAt', ...(version >= 7 ? ['resolutionSummary'] : [])],
+    cooldown: ['phaseEndsAt', 'cooldownUntil', 'outcome', 'resolvedAt', ...(version >= 7 ? ['resolutionSummary'] : [])],
   }
   if (!exactShape(value, [...baseKeys, ...phaseKeys[phase]!])
     || !safeInt(value.sequence, 1) || value.sequence >= Number.MAX_SAFE_INTEGER
@@ -257,9 +297,13 @@ function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5 | 6): 
   if (phase === 'resolution') return value.chiefOutcome !== undefined
   if (!enumValue(value.outcome, crisisOutcomes) || !safeInt(value.resolvedAt) || value.resolvedAt < expectedStarts.resolution!
     || value.resolvedAt > s.worldTime) return false
+  if (version < 7 ? Object.hasOwn(value, 'resolutionSummary')
+    : !validCrisisSummary(value.resolutionSummary, s, value.resolvedAt as number, value.outcome as RegionalCrisisOutcome)) return false
+  const summary = version >= 7 ? value.resolutionSummary as RegionalCrisisResolutionSummary | null : null
+  const cooldownDuration = CONFIG.regionalCrisis.baseCooldownDays + value.severity * CONFIG.regionalCrisis.severityCooldownDays
+    + (summary === null ? 0 : REGIONAL_CRISIS_OUTCOME_COOLDOWN_DAYS[value.outcome as RegionalCrisisOutcome] + summary.pressureDays)
   if (phase === 'aftermath') return started === value.resolvedAt && safeInt(value.phaseEndsAt) && value.phaseEndsAt > s.worldTime
     && value.phaseEndsAt === value.resolvedAt + CONFIG.regionalCrisis.aftermathDays * crisisDay
-  const cooldownDuration = CONFIG.regionalCrisis.baseCooldownDays + value.severity * CONFIG.regionalCrisis.severityCooldownDays
   return started === value.resolvedAt + CONFIG.regionalCrisis.aftermathDays * crisisDay
     && safeInt(value.phaseEndsAt) && safeInt(value.cooldownUntil)
     && value.cooldownUntil > s.worldTime
@@ -300,7 +344,7 @@ function validCounts(value: unknown, keys: string[], maximum = Number.MAX_SAFE_I
   return exactShape(value, keys) && Object.values(value).every(count => safeInt(count, 0, maximum))
 }
 
-function validLife(value: unknown, s: GameState, version: 2 | 3 | 4 | 5 | 6): value is WorldLife {
+function validLife(value: unknown, s: GameState, version: 2 | 3 | 4 | 5 | 6 | 7): value is WorldLife {
   if (!exactShape(value, ['canon', 'openingSeen', 'characters', 'npcs', 'properties', 'settlementMemories', 'worldMemories', 'arcs', 'requests', 'news', 'director'])) return false
   if (value.canon !== 'OAKVALE_LIFE_EMERGENCE' || typeof value.openingSeen !== 'boolean' || !object(value.characters) || !object(value.npcs)) return false
   const savedNpcs = value.npcs
@@ -429,10 +473,17 @@ function migrateRegionalCrisisV5(crisis: RegionalCrisisState): RegionalCrisisSta
   return crisis.phase === 'dormant' ? crisis : { ...crisis, adventure: { campRaidAt: null } }
 }
 
+function migrateRegionalCrisisV6(crisis: RegionalCrisisState): RegionalCrisisState {
+  return crisis.phase === 'aftermath' || crisis.phase === 'cooldown'
+    ? { ...crisis, resolutionSummary: null }
+    : crisis
+}
+
 export function deserialize(raw: string): { state: GameState; lastSavedAt: number } {
   const value: unknown = JSON.parse(raw)
   if (!object(value) || (value.saveVersion !== 1 && value.saveVersion !== 2 && value.saveVersion !== 3
-    && value.saveVersion !== 4 && value.saveVersion !== 5 && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
+    && value.saveVersion !== 4 && value.saveVersion !== 5 && value.saveVersion !== 6
+    && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
   if (typeof value.lastSavedAt !== 'number' || !Number.isFinite(value.lastSavedAt) || value.lastSavedAt < 0) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -449,7 +500,7 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
     state.saveVersion = CONFIG.saveVersion
     return { state, lastSavedAt }
   }
-  const sourceVersion = value.saveVersion as 2 | 3 | 4 | 5 | 6
+  const sourceVersion = value.saveVersion as 2 | 3 | 4 | 5 | 6 | 7
   if (!validBase(stateData, sourceVersion) || !validLife(stateData.life, stateData as unknown as GameState, sourceVersion)) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -471,6 +522,7 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
   if (sourceVersion === 3) state.regionalCrisis = dormantRegionalCrisis()
   if (sourceVersion === 4) state.regionalCrisis = migrateRegionalCrisisV4(state.regionalCrisis)
   if (sourceVersion === 5) state.regionalCrisis = migrateRegionalCrisisV5(state.regionalCrisis)
+  if (sourceVersion <= 6) state.regionalCrisis = migrateRegionalCrisisV6(state.regionalCrisis)
   state.saveVersion = CONFIG.saveVersion
   return { state, lastSavedAt }
 }

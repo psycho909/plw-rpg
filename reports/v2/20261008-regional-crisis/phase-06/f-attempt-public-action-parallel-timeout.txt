@@ -1,0 +1,31 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisResolution.test.ts src/engine/regionalCrisis.test.ts src/engine/civilDefense.test.ts src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts src/engine/crafting.test.ts src/engine/ownership.test.ts src/engine/actions.test.ts src/engine/rewardActions.test.ts src/engine/simulation.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/stores/gameStore.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (102 tests | 1 failed) 19163ms
+     × round trips 500 years of history, natural deaths and successors and continues deterministically 17685ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 500 years of history, natural deaths and successors and continues deterministically
+Error: Test timed out in 15000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/services/saveService.test.ts:576:3
+    574|     }
+    575|   })
+    576|   it('round trips 500 years of history, natural deaths and successors …
+       |   ^
+    577|     const s = createGame(909)
+    578|     for (let year = 0; year < 500; year++) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 13 passed (14)
+      Tests  1 failed | 409 passed (410)
+   Start at  23:01:56
+   Duration  20.63s (transform 2.70s, setup 0ms, import 4.41s, tests 31.67s, environment 11ms)
+

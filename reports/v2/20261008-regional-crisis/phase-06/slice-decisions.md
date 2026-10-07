@@ -21,3 +21,11 @@ Root接受D限定工程：475fulltests/typecheck/build，170focused，独立4tar
 ## E accepted / F contract planning
 
 Root接受E限定工程：505full/297focused/獨立29 tests、typecheck/build、Standards/Spec PASS。12 source hashes匹配；fingerprint編碼錯誤僅metadata更正，舊版本保存於playlog。P2-E01原始RED保留且修復。Exact clone preflight獲准，20k history成本須I/J量測。F須精確bounded consequences/recovery/save-summary契約後才施工；G–J仍依序。Human DEFERRED，非整體Phase6 PASS。
+
+## F released
+
+Root批准F精確graded table/summary/recovery契約，正本06f ticket。Aggregate成功率維持C；七日aftermath、long cooldown含world pressure；zero-pop/liveChief 30day單次成人救援必須先RED再fix，非戰鬥繼承可继续。Save7不重施legacy結果。G–J仍未release。
+
+## F accepted / G released
+
+411currentsource tests/typecheck/build，16 source hashesmatch，獨立Standards/Spec PASS。原始failures保留；晚於resolution的人口歸零未觸發救援為scope finding，historyclone效能待I/J。G按既有world-firstUI契約release；H–J未release。Human DEFERRED，非總體Gate。

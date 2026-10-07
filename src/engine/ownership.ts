@@ -9,7 +9,7 @@ import { IDENTITY_LIMITS } from '../data/identity'
 import { emit } from './events'
 import { changeReputation, meetsSettlementReputation, refreshIdentity } from './identity'
 import { rememberNpc } from './npcLife'
-import { distance, player, simulate, tileAt } from './simulation'
+import { distance, player, preflightRegionalCrisisAction, simulate, tileAt } from './simulation'
 
 export type { PropertyKind } from '../data/ownership'
 
@@ -81,6 +81,10 @@ export function propertyEligibility(state: GameState, kind: PropertyKind): Prope
 }
 
 export function buyProperty(state: GameState, kind: PropertyKind) {
+  preflightRegionalCrisisAction(state, PROPERTY_DEFINITIONS[kind].acquisitionMinutes, preview => buyPropertyInternal(preview, kind))
+  return buyPropertyInternal(state, kind)
+}
+function buyPropertyInternal(state: GameState, kind: PropertyKind) {
   const eligibility = propertyEligibility(state, kind)
   if (!eligibility.eligible) return eligibility.reasons[0] ?? blockedMessage
 
@@ -111,6 +115,10 @@ export function buyProperty(state: GameState, kind: PropertyKind) {
 }
 
 export function homeRest(state: GameState) {
+  preflightRegionalCrisisAction(state, HOME_REST_MINUTES, preview => homeRestInternal(preview))
+  return homeRestInternal(state)
+}
+function homeRestInternal(state: GameState) {
   const blocker = actionBlocker(state)
   if (blocker) return blocker
   const c = player(state)

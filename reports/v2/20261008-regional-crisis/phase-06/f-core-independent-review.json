@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "title": "Phase6-F core independent review",
+  "reviewedAt": "2026-10-07T23:13:59+00:00",
+  "ticket": "tickets/20261008-v2x-06f-resolution.md",
+  "scope": [
+    "F canonical crisis resolution and persistent consequences; RNG, once-only phase transition, bounded event/time capacity",
+    "Public action atomicity at resolution/recovery boundaries and safe resulting world time, including resource, combat, crafting, and trailing-event paths",
+    "V6-to-V7 migration, authentic V6 fixture, strict new summary validation, and legacy null summaries",
+    "30-day zero-population recovery marker, cancellation/grant, save/reload, and succession behavior",
+    "Current F frozen source snapshot and evidence; no UI, browser, human, I/J balance or product acceptance"
+  ],
+  "excluded": [
+    "Root product acceptance and G release decision",
+    "Browser/performance profiling; full-history clone cost remains for I/J",
+    "Human validation, which remains DEFERRED / NOT APPLICABLE AT THIS STAGE",
+    "A full-suite reviewer rerun; engineer evidence for the frozen candidate was hash-verified instead"
+  ],
+  "git": {
+    "branch": "v2x/reward-core",
+    "baseCommit": "6583db9ba0da1e31df6af2f4583771bc54a38e6e",
+    "headCommit": "6583db9ba0da1e31df6af2f4583771bc54a38e6e",
+    "reviewedObject": "uncommitted F working-tree source snapshot; final source freeze and per-file hashes verified",
+    "freezePath": "reports/v2/20261008-regional-crisis/phase-06/f-source-freeze.json",
+    "freezeManifestSha256": "a552c41bf0fb049dc80f19de71cf9e9ee8fe5ff3f81b1407300fdc7713cad70d",
+    "sourceFingerprintAlgorithm": "SHA-256 over sorted source path, NUL byte, lowercase source SHA-256 text, LF; repeated for each path",
+    "sourceFingerprint": "d0ff4e64ab667ca5ade5e7fe914f25e5d4c9cdc1e33822b0b46313e52e3e52e7",
+    "sourceFileCount": 16,
+    "sourceSha256": {
+      "src/data/config.ts": "c81505557ccadf66b8046b1f1976c90bb63165804502dce770c468deb9cb6984",
+      "src/domain/crisis.ts": "03ef61f00c08ea84cdd6126d64009e3032fb38a5662db8a736519045f00ad14c",
+      "src/engine/actions.ts": "a2ce83f2235faaf3fa65390fb0296ddc92c8ce395704e5e108547019d5002fac",
+      "src/engine/civilDefense.ts": "9a6988658e62df485f85f69d0c1f0a0626078eeec43f0934ad2298e6cdcfe77d",
+      "src/engine/crafting.ts": "04ed1724b723b78221ee31811b46171bb9e8d2fbb029a777dda5a12449378a88",
+      "src/engine/crisisResolution.test.ts": "8d289cce7b38e55494b3198c3da986a36d14d7c776f32aac776179c5a8685bb8",
+      "src/engine/ownership.ts": "50b5bef7df35778c95ddbf0dd0951a22f46517842a224bee1552cd2dd18ff6db",
+      "src/engine/regionalCrisis.test.ts": "2eef285818c781d60dda7120bf6f3cd89c65084c1ac4345674010976830912f4",
+      "src/engine/regionalCrisis.ts": "3fe8139a9677ae925c1f8ee63c5763b12fd03036d2cf651893a09874e3783bf3",
+      "src/engine/rewardActions.ts": "799acb63db633179829613db2dc4ca6066226846ec0c6c0c885c7b6c13ce717d",
+      "src/engine/simulation.ts": "c0c83c8f9e6de55e09ea78fa1489015c6bcf35c066a06aa1f95daecd600ac907",
+      "src/services/playJournal.test.ts": "90fa0dbf1b5a928728e4100eb4b5e5b2f7eb1f3944b1a559455713e8b155610a",
+      "src/services/rewardSave.test.ts": "a27b2e1566755e16eabb9ced931a2c38898bfca10f3812e9be485e156603c3aa",
+      "src/services/saveService.test.ts": "f1d85b9ad0a24e1c662864219da4cce053d38337b9afc2298a7a4cee0a4d27c8",
+      "src/services/saveService.ts": "5d8ce05621c8be0dba81ec594d61de23bc40826faa7acf0a7c260876f9251bf1",
+      "src/stores/gameStore.test.ts": "a182469258b05a83d305dac07c2450847436a19cc7528362a149d8b07df0064f"
+    },
+    "allSourceHashesMatchFreeze": true,
+    "evidenceFileCount": 29,
+    "evidenceSha256": {
+      "bugs.md": "35231baeffa213b0f643ab0a38734ec9b43c0c448a990410a5bdc65e9f0332b1",
+      "contribution-analysis.md": "599eb31266e873863ea62f9bc1294c4787fbc4d93d22862dc8a4c5fad89f54fa",
+      "f-attempt-public-action-parallel-timeout.txt": "db56899f16ccd4056b55a4be500eaeac2d55864305b2ff5747cea4f2d788c230",
+      "f-attempt-safe-world-time-focused-craft-validation.txt": "ab0c5bbca60adb85965c97aa6d1e15be2757c55773413f53319a3aacf2a4123f",
+      "f-build-final.txt": "9a301db4562c53ac4700c51a8da0e9b114384ecd7cebd0689ce14d2aafe962f1",
+      "f-build-green.txt": "29af630482dfebfec036aef5004607471723363aa8ad142ee3817c22e868b940",
+      "f-development-regressions.md": "53f1cb40b57b804ee835c83624de004cbfa6fd143d6376352b5515e1ad106f13",
+      "f-green-craft-validation-followup.txt": "0e644c1f25979ac0a6a151b650a8025396432d509b4c367979d4925fb8703249",
+      "f-green-focused.txt": "79ec5ea7b7cdf25fb604efa045bde1529c68724039e9cf94b57970f8f3f4d8b9",
+      "f-green-public-action-focused.txt": "d9d0ff4d519ac94f701b6bcb27d67f0c49eadc335ba88bac49a6061a7578f73f",
+      "f-green-safe-world-time-focused.txt": "f4c5f707e8a53c1b590dc916d4ba5b91658cff8ea64c1372e1e9fa0d8ca48eb0",
+      "f-green-safe-world-time-followup.txt": "5639edc07fc588d5d58acfcacc1abc6bc383a17723cdbd70ce3f7e6567613c8a",
+      "f-red-combat-reward-atomic.txt": "2f05353a0031cfd4d0fcf242909ae90f8e76096bdef974f0cc70db1b080aec37",
+      "f-red-craft-invalid-time-source-hashes.txt": "d6abd40f3a08c9539fb4732b712d1896ec7a6644dcdf4eb5f2066570b0148e04",
+      "f-red-event-capacity.txt": "8d4a18cb2d4873c23078d7792bb033904a57476071c613ecb685b4347118ba84",
+      "f-red-home-rest-trailing-event.txt": "f4555f39614020665c79ee6a7e33b9e7ff80dc59b9cc650a25dbb30561d718ec",
+      "f-red-legacy-resolution-atomic.txt": "e4f1565077281b8974044fe1e951e4d7084a7972d64c7fd7387c4a89df45c668",
+      "f-red-public-action-atomic.txt": "d29a58cc60792599485c34b29c56eecd97af3d78c80b3466add9e463b9375df0",
+      "f-red-public-action-source-hashes.txt": "c4197398136f4a15d41a5c8f7e49759ba1183e8c8dd27a2c84fa0c35bfff92ec",
+      "f-red-resolution-recovery.txt": "fa76f6f2b5a0b8b0c163b878b35d98bb91db45637336832ff5600d7bcf270267",
+      "f-red-v6-v7-migration.txt": "9ec16c86052ff398c006381039bb832bda3477c12af96b0bf317d40900c0aac6",
+      "f-red-walkto-atomic.txt": "a896769b78200914c8a77338e66328bf5ff4432608f399f4e2ff651be5a4fb7c",
+      "f-red-world-time-atomic.txt": "2d026295b123c4cde196116e39aeecc3406412f41c244b2d3ef29b092ce1fe0b",
+      "f-red-world-time-source-hashes.txt": "9c88f13662683c6a9d530bd1168399056df317a1c256f0ec59545acf37aff999",
+      "f-typecheck-final.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "f-typecheck-safe-world-time-followup.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "f-typecheck.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "f-v6-fixtures/crisis-v6-preparation-d-life-adventure.json": "316cd0d5edfcee3214acc95f633c39b8d118bdddced97951e701dbb32de8ebc5",
+      "f-v6-fixtures/manifest.json": "28cf83b0e8347120d7ca949f1adddeb4a2b71b57b7d4d439fa77c3718f03522c"
+    },
+    "allEvidenceHashesMatchFreeze": true,
+    "stagedDiffCommand": "git diff --cached --name-status -- src (empty)",
+    "workingTreeDiffCommands": [
+      "git diff --name-status HEAD -- <15 tracked F source paths> (15 modified)",
+      "git diff 6583db9ba0da1e31df6af2f4583771bc54a38e6e -- src/engine/crafting.ts src/engine/crafting.test.ts (final craft validation-order delta)",
+      "git diff --check HEAD -- <16 frozen F source paths> (no output / PASS)"
+    ],
+    "untrackedSourceCommand": "git ls-files --others --exclude-standard -- src/engine/crisisResolution.test.ts (new test listed separately)"
+  },
+  "reviewer": {
+    "taskRole": "g6_luna_max_phase6_core_reviewer_e",
+    "implementationContributor": false,
+    "runtimeModelVerified": false,
+    "reviewAxes": "Standards and Spec evaluated separately by one independent reviewer per repository review contract; no review subagents used."
+  },
+  "standards": {
+    "result": "PASS",
+    "basis": [
+      "AGENTS.md §§3–6",
+      "docs/agents/review.md §§1–3",
+      "docs/agents/skill-workflows.md general-review adaptation",
+      "matt-skills-curated:code-review, adapted to repository review contract"
+    ],
+    "findings": [],
+    "notes": [
+      "All 16 final source hashes and 29 evidence hashes match the frozen manifest; canonical fingerprint and manifest digest independently recomputed.",
+      "The final delta restores existing stable plan validation before public action preflight; malformed craft requests do not pay costs or throw the generic unsafe-time error.",
+      "Boundary previews use isolated structured clones and internal action functions. Cloned RNG and emitted events stay on clone state; no global or external dry-run side effect or recursive public wrapper path was found.",
+      "Clone cost includes bounded history up to 20,000 events and can include the E camp combat preview. Root approved the architecture; profile in I/J, with no browser performance claim."
+    ]
+  },
+  "spec": {
+    "result": "PASS FOR F ENGINEERING CORE WITH SCOPED PRODUCT LIMITATION",
+    "basis": [
+      "tickets/20261008-v2x-06f-resolution.md: Root F release / precise contract and Acceptance",
+      "docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md §§41, 88, 93–97",
+      "accepted Phase6-E source and save contracts"
+    ],
+    "findings": [
+      {
+        "id": "F-PL-RECOVERY-01",
+        "type": "product limitation",
+        "status": "documented within Root-approved scope",
+        "location": "src/engine/simulation.ts:64–66, 93–95, 118–136",
+        "description": "The 30-day pending relief marker is created only if population is zero and the Chief is alive at resolution. The due handler rechecks both conditions. If population is nonzero at resolution but falls to zero later during aftermath, no relief marker is scheduled. Root scoped the approved safety valve to zero-at-resolution; this boundary is documented and no unapproved scope expansion is requested."
+      },
+      {
+        "id": "F-RISK-PERF-01",
+        "type": "performance risk",
+        "status": "pending I/J profiling; not a correctness blocker",
+        "location": "src/engine/simulation.ts:376–384 and public boundary action wrappers",
+        "description": "Rare boundary-reaching actions clone full state including history capped at 20,000 events. Goblin camp combat can add its accepted E clone preview. Measure during I/J; no performance/browser PASS is claimed."
+      }
+    ],
+    "notes": [
+      "Resolution is phase-guarded and consumes one RandomService outcome roll only after time/event checks; applied world deltas and injuries are bounded and measured in the persisted summary.",
+      "V6-to-V7 migration preserves the authentic archived V6 fixture; legacy aftermath/cooldown summaries remain null and consequences are not replayed.",
+      "At a crisis/recovery boundary the complete public action is previewed on a clone before live mutation; normal non-boundary calls stay clone-free. The safe-time guard checks resulting time before action costs."
+    ]
+  },
+  "verification": {
+    "reviewerChecks": {
+      "sourceAndEvidenceHashVerification": "PASS; 16 source and 29 evidence digests match; source fingerprint matches manifest",
+      "freezeManifestSha256": "a552c41bf0fb049dc80f19de71cf9e9ee8fe5ff3f81b1407300fdc7713cad70d",
+      "gitDiffCheck": "PASS; no whitespace diagnostics on frozen source paths",
+      "largeSuiteRerun": false
+    },
+    "engineerFocusedRun": {
+      "command": "npm test -- src/engine/crisisResolution.test.ts src/engine/regionalCrisis.test.ts src/engine/civilDefense.test.ts src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts src/engine/crafting.test.ts src/engine/ownership.test.ts src/engine/actions.test.ts src/engine/rewardActions.test.ts src/engine/simulation.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/stores/gameStore.test.ts --testTimeout=30000",
+      "result": "PASS; 14 files, 411 tests",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/f-green-safe-world-time-focused.txt",
+      "evidenceSha256": "f4c5f707e8a53c1b590dc916d4ba5b91658cff8ea64c1372e1e9fa0d8ca48eb0"
+    },
+    "craftResolutionFollowup": {
+      "command": "npm test -- src/engine/crafting.test.ts src/engine/crisisResolution.test.ts",
+      "result": "PASS; 2 files, 75 tests",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/f-green-craft-validation-followup.txt",
+      "evidenceSha256": "0e644c1f25979ac0a6a151b650a8025396432d509b4c367979d4925fb8703249"
+    },
+    "typecheck": {
+      "command": "npx vue-tsc --noEmit",
+      "result": "PASS on current frozen source",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/f-typecheck-final.txt",
+      "evidenceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "productionBuild": {
+      "command": "npm run build",
+      "result": "PASS on current frozen source",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/f-build-final.txt",
+      "evidenceSha256": "9a301db4562c53ac4700c51a8da0e9b114384ecd7cebd0689ce14d2aafe962f1"
+    },
+    "preservedDevelopmentRegression": {
+      "craftInvalidWorldTime": "f-attempt-safe-world-time-focused-craft-validation.txt; failure was 410 passed / 1 failed before the plan-before-preflight fix; current focused GREEN is 411/411.",
+      "safeWorldTimeAtomicity": "f-red-world-time-atomic.txt plus source-hash sidecar; paid inn rest previously mutated gold before unsafe-time error; fixed by preflight-before-action."
+    },
+    "authenticV6Fixture": {
+      "path": "f-v6-fixtures/crisis-v6-preparation-d-life-adventure.json",
+      "sha256": "316cd0d5edfcee3214acc95f633c39b8d118bdddced97951e701dbb32de8ebc5",
+      "sourceCommit": "6583db9ba0da1e31df6af2f4583771bc54a38e6e",
+      "verification": "Archived V6 public engine round trip; preserved nonempty D equipment, food, and gold ledgers, E camp-raid fact, world time, and RNG; fixture reused unchanged."
+    }
+  },
+  "disposition": {
+    "result": "RECOMMEND ROOT ACCEPT F CORE WITH ZERO-AT-RESOLUTION RECOVERY BOUNDARY DOCUMENTED",
+    "unresolvedCodeBlockers": [],
+    "productLimitation": "A later drop to zero population during aftermath does not schedule recovery; current approved scope schedules only when zero at resolution.",
+    "remainingRisk": "Full-history clone preflight cost remains unprofiled; profile during Phase6-I/J. No browser or human validation is claimed.",
+    "phaseGate": "G remains blocked until Root accepts F. This is not an overall Phase6/product PASS; Human remains DEFERRED / NOT APPLICABLE AT THIS STAGE."
+  }
+}

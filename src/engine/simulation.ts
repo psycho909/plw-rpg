@@ -8,16 +8,133 @@ import { refreshIdentity } from './identity'
 import { dailyNpcLife, npcCanWork, rememberNpc } from './npcLife'
 import { dailyLivingEvents } from './livingEvents'
 import { emptyReward } from './rewardState'
-import { dormantRegionalCrisis } from '../domain/crisis'
-import { advanceRegionalCrisis } from './regionalCrisis'
+import {
+  REGIONAL_CRISIS_OUTCOME_COOLDOWN_DAYS, dormantRegionalCrisis,
+  type RegionalCrisisOutcome, type RegionalCrisisResolutionSummary,
+} from '../domain/crisis'
+import { advanceRegionalCrisis, completeRegionalCrisisTransition } from './regionalCrisis'
+import { availableCivilDefenseDefenders, deriveCivilDefense } from './civilDefense'
 
 export const player = (state: GameState) => state.characters.find(c => c.id === state.activeCharacterId)!
 const bound = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n))
+function appliedBoundedDelta(value: number, requested: number, min: number, max: number) {
+  const target = value + requested
+  const next = bound(target, min, max)
+  return { value: next, delta: next === target ? requested : next - value }
+}
 export const population = (state: GameState) => state.npcs.filter(n => n.isAlive).length + state.characters.filter(c => c.isAlive).length
 export const stageIndex = (state: GameState) => ['hamlet', 'village', 'town'].indexOf(state.settlement.stage)
 export const distance = (a: Position, b: Position) => Math.abs(a.x - b.x) + Math.abs(a.y - b.y)
 export const tileAt = (state: GameState, p: Position) => state.tiles.find(t => t.x === p.x && t.y === p.y)
 export const threatLevel = (amount: number) => CONFIG.threatThresholds.reduce((level, minimum, i) => amount >= minimum ? i + 1 : level, 1)
+
+const CRISIS_CONSEQUENCES: Record<RegionalCrisisOutcome, {
+  population: number; bossProgress: number; food: number; safety: number; prosperity: number; injuries: number; injuryDays: 2 | 3 | 5 | 0
+}> = {
+  decisive_success: { population: -12, bossProgress: -18, food: -4, safety: 4, prosperity: 2, injuries: 0, injuryDays: 0 },
+  costly_success: { population: -6, bossProgress: -8, food: -8, safety: -2, prosperity: -2, injuries: 1, injuryDays: 2 },
+  setback: { population: 4, bossProgress: 8, food: -8, safety: -5, prosperity: -4, injuries: 2, injuryDays: 3 },
+  local_defeat: { population: 10, bossProgress: 16, food: -12, safety: -8, prosperity: -6, injuries: 3, injuryDays: 5 },
+}
+
+function outcomeFromRoll(successChance: number, roll: number): RegionalCrisisOutcome {
+  if (roll < .60 * successChance) return 'decisive_success'
+  if (roll < successChance) return 'costly_success'
+  if (roll < successChance + .70 * (1 - successChance)) return 'setback'
+  return 'local_defeat'
+}
+
+function pressureCooldownDays(state: GameState) {
+  const populationPressure = 15 * bound((state.threat.monsterPopulation - 30) / 70, 0, 1)
+  const safetyPressure = 15 * bound((80 - state.settlement.safety) / 55, 0, 1)
+  return Math.round(populationPressure + safetyPressure)
+}
+
+function resolveRegionalCrisis(state: GameState) {
+  const crisis = state.regionalCrisis
+  if (crisis.phase !== 'resolution') return false
+  const defense = deriveCivilDefense(state, crisis)
+  if (!defense || !Number.isSafeInteger(state.worldTime + CONFIG.regionalCrisis.aftermathDays * CONFIG.minutesPerDay)) return false
+
+  const defenders = availableCivilDefenseDefenders(state).sort((left, right) => left.id.localeCompare(right.id))
+  const maximumInjuries = Math.min(CRISIS_CONSEQUENCES.local_defeat.injuries, defenders.length)
+  const additionalEvents = 1 + maximumInjuries
+  if (!Number.isSafeInteger(state.eventSequence)
+    || BigInt(state.eventSequence) + BigInt(additionalEvents) >= BigInt(Number.MAX_SAFE_INTEGER)) return false
+  const recoveryDueAt = population(state) === 0 && state.threat.bossAlive
+    ? state.worldTime + 30 * CONFIG.minutesPerDay : null
+  if (recoveryDueAt !== null && !Number.isSafeInteger(recoveryDueAt)) return false
+  if (maximumInjuries > 0 && !Number.isSafeInteger(state.worldTime + 5 * CONFIG.minutesPerDay)) return false
+
+  const outcome = outcomeFromRoll(defense.successChance, random(state))
+  const effect = CRISIS_CONSEQUENCES[outcome]
+  const injuryCount = Math.min(effect.injuries, defenders.length)
+  const { threat, settlement } = state
+  const monsterPopulation = appliedBoundedDelta(threat.monsterPopulation, effect.population, 0, 100)
+  const bossProgress = appliedBoundedDelta(threat.bossProgress, effect.bossProgress, 0, CONFIG.bossThreshold)
+  const food = appliedBoundedDelta(settlement.food, effect.food, 0, 100)
+  const safety = appliedBoundedDelta(settlement.safety, effect.safety, 25, 100)
+  const prosperity = appliedBoundedDelta(settlement.prosperity, effect.prosperity, 18, 100)
+  threat.monsterPopulation = monsterPopulation.value
+  threat.threatLevel = threatLevel(threat.monsterPopulation)
+  threat.campLevel = threat.threatLevel
+  threat.bossProgress = bossProgress.value
+  settlement.food = food.value
+  settlement.safety = safety.value
+  settlement.prosperity = prosperity.value
+
+  const injuries: RegionalCrisisResolutionSummary['injuries'] = []
+  for (const npc of defenders.slice(0, injuryCount)) {
+    npc.injuredUntil = state.worldTime + effect.injuryDays * CONFIG.minutesPerDay
+    injuries.push({ npcId: npc.id, durationDays: effect.injuryDays as 2 | 3 | 5, injuredUntil: npc.injuredUntil })
+    emit(state, 'npc.injured', 'npc', `${npc.name} 在危機中受傷，需要休養 ${effect.injuryDays} 日。`)
+  }
+
+  const recovery: RegionalCrisisResolutionSummary['recovery'] = recoveryDueAt === null
+    ? { status: 'not_required', dueAt: null, npcId: null }
+    : { status: 'pending', dueAt: recoveryDueAt, npcId: null }
+  const summary: RegionalCrisisResolutionSummary = {
+    readiness: defense.readiness,
+    threatDemand: defense.threatDemand,
+    successChance: defense.successChance,
+    pressureDays: pressureCooldownDays(state),
+    applied: {
+      monsterPopulation: monsterPopulation.delta,
+      bossProgress: bossProgress.delta,
+      food: food.delta,
+      safety: safety.delta,
+      prosperity: prosperity.delta,
+    },
+    injuries,
+    recovery,
+  }
+  const next = completeRegionalCrisisTransition(crisis, outcome, state.worldTime, summary)
+  if (next === crisis) return false
+  state.regionalCrisis = next
+  emit(state, 'regional-crisis.resolved', 'settlement', `北方危機以「${outcome}」告終，聚落承受了持續影響。`, true)
+  return true
+}
+
+function processRegionalCrisisRecovery(state: GameState) {
+  const crisis = state.regionalCrisis
+  if (crisis.phase !== 'aftermath' && crisis.phase !== 'cooldown') return false
+  const summary = crisis.resolutionSummary
+  if (!summary || summary.recovery.status !== 'pending' || summary.recovery.dueAt === null) return false
+  if (state.worldTime < summary.recovery.dueAt) return false
+  if (population(state) > 0 || !state.threat.bossAlive) {
+    summary.recovery.status = 'cancelled'
+    return true
+  }
+  if (state.npcs.length >= 1000 || Object.keys(state.life.npcs).length >= 1000
+    || population(state) >= state.settlement.capacity || !Number.isSafeInteger(state.nextNpcId)
+    || BigInt(state.nextNpcId) + 1n >= BigInt(Number.MAX_SAFE_INTEGER)
+    || !Number.isSafeInteger(state.eventSequence)
+    || BigInt(state.eventSequence) + 1n >= BigInt(Number.MAX_SAFE_INTEGER)) return false
+  const npc = addNpc(state, 18, 'immigration')
+  summary.recovery.status = 'granted'
+  summary.recovery.npcId = npc.id
+  return true
+}
 
 function character(id: string, name: string, age: number, year: number): Character {
   const stage = lifeStage(age)
@@ -213,6 +330,7 @@ function dailyTick(state: GameState) {
     emit(state, 'npc.injured', 'npc', `${injured.name} 在北方道路受傷，需要休養兩日。`)
   }
   advanceRegionalCrisis(state)
+  resolveRegionalCrisis(state)
   const oldDungeon = state.dungeon.threat
   state.dungeon.progress = bound(state.dungeon.progress + .4, 0, 100)
   state.dungeon.threat = threatLevel(state.dungeon.progress)
@@ -225,6 +343,72 @@ function dailyTick(state: GameState) {
     else { state.party = state.party.filter(p => p !== contract); emit(state, 'party.unpaid', 'player', '無法支付日薪，傭兵結束了契約。') }
   }
   dailyLivingEvents(state, { spawnTraveler })
+  processRegionalCrisisRecovery(state)
+}
+
+function advanceCanonicalBoundary(state: GameState, at: number) {
+  state.worldTime = at
+  for (const crop of state.crops) if (crop.status === 'growing' && crop.matureAt <= at) {
+    crop.status = 'mature'; emit(state, 'crop.matured', 'player', '小麥已成熟，可以前往農田收割。')
+  }
+  if (at % CONFIG.minutesPerDay === 0) { syncNpcs(state); dailyTick(state) }
+}
+
+function needsRegionalCrisisBoundaryPreflight(state: GameState, at: number) {
+  const crisis = state.regionalCrisis
+  if (crisis.phase === 'active' && at >= crisis.phaseEndsAt) return true
+  if (crisis.phase === 'resolution') return true
+  return (crisis.phase === 'aftermath' || crisis.phase === 'cooldown')
+    && crisis.resolutionSummary?.recovery.status === 'pending'
+    && crisis.resolutionSummary.recovery.dueAt !== null
+    && at >= crisis.resolutionSummary.recovery.dueAt
+}
+
+function hasRegionalCrisisActionBoundary(state: GameState, minutes: number) {
+  const end = state.worldTime + Math.floor(minutes)
+  if (!Number.isSafeInteger(end) || end <= state.worldTime) return false
+  for (let at = (Math.floor(state.worldTime / CONFIG.minutesPerDay) + 1) * CONFIG.minutesPerDay; at <= end; at += CONFIG.minutesPerDay) {
+    if (needsRegionalCrisisBoundaryPreflight(state, at)) return true
+  }
+  return false
+}
+
+/** Preview the complete public action only when it can reach a crisis resolution or recovery day. */
+export function preflightRegionalCrisisAction<T>(state: GameState, minutes: number, action: (preview: GameState) => T) {
+  if (!Number.isFinite(minutes) || minutes < 0) throw new Error('模擬時間必須是非負有限數值。')
+  if (!Number.isSafeInteger(state.worldTime + Math.floor(minutes))) throw new Error('模擬時間超出安全範圍。')
+  if (!hasRegionalCrisisActionBoundary(state, minutes)) return
+  const preview = structuredClone(state)
+  action(preview)
+  if (preview.eventSequence >= Number.MAX_SAFE_INTEGER || preview.nextNpcId >= Number.MAX_SAFE_INTEGER
+    || !Number.isSafeInteger(preview.life.director.sequence)) throw new Error('危機結算或恢復超出安全容量。')
+}
+
+function preflightRegionalCrisisBoundary(state: GameState, at: number) {
+  const initial = state.regionalCrisis
+  const resolving = initial.phase === 'resolution' || (initial.phase === 'active' && at >= initial.phaseEndsAt)
+  const recoveryDue = (initial.phase === 'aftermath' || initial.phase === 'cooldown')
+    && initial.resolutionSummary?.recovery.status === 'pending'
+    && initial.resolutionSummary.recovery.dueAt !== null
+    && at >= initial.resolutionSummary.recovery.dueAt
+  const preview = structuredClone(state)
+  advanceCanonicalBoundary(preview, at)
+
+  if (preview.eventSequence >= Number.MAX_SAFE_INTEGER || preview.nextNpcId >= Number.MAX_SAFE_INTEGER
+    || !Number.isSafeInteger(preview.life.director.sequence)) throw new Error('危機結算或恢復超出安全容量。')
+  if (resolving && preview.regionalCrisis.phase === 'resolution') throw new Error('危機結算超出安全容量或時間範圍。')
+  if (recoveryDue && (preview.regionalCrisis.phase === 'aftermath' || preview.regionalCrisis.phase === 'cooldown')
+    && preview.regionalCrisis.resolutionSummary?.recovery.status === 'pending') {
+    throw new Error('危機恢復超出安全容量。')
+  }
+  const resolved = preview.regionalCrisis
+  if ((resolved.phase === 'aftermath' || resolved.phase === 'cooldown') && resolved.resolutionSummary) {
+    const cooldownDays = CONFIG.regionalCrisis.baseCooldownDays + resolved.severity * CONFIG.regionalCrisis.severityCooldownDays
+      + REGIONAL_CRISIS_OUTCOME_COOLDOWN_DAYS[resolved.outcome] + resolved.resolutionSummary.pressureDays
+    if (!Number.isSafeInteger(resolved.phaseEndsAt + cooldownDays * CONFIG.minutesPerDay)) {
+      throw new Error('危機休整時間超出安全範圍。')
+    }
+  }
 }
 
 export function simulate(state: GameState, gameMinutes: number) {
@@ -234,11 +418,11 @@ export function simulate(state: GameState, gameMinutes: number) {
   // Canonical daily boundaries keep live and headless simulation deterministic.
   while (state.worldTime < end) {
     const cropBoundary = Math.min(...state.crops.filter(c => c.status === 'growing').map(c => Math.max(state.worldTime + 1, c.matureAt)))
-    state.worldTime = Math.min(end, cropBoundary, (Math.floor(state.worldTime / CONFIG.minutesPerDay) + 1) * CONFIG.minutesPerDay)
-    for (const crop of state.crops) if (crop.status === 'growing' && crop.matureAt <= state.worldTime) {
-      crop.status = 'mature'; emit(state, 'crop.matured', 'player', '小麥已成熟，可以前往農田收割。')
+    const nextTime = Math.min(end, cropBoundary, (Math.floor(state.worldTime / CONFIG.minutesPerDay) + 1) * CONFIG.minutesPerDay)
+    if (nextTime % CONFIG.minutesPerDay === 0 && needsRegionalCrisisBoundaryPreflight(state, nextTime)) {
+      preflightRegionalCrisisBoundary(state, nextTime)
     }
-    if (state.worldTime % CONFIG.minutesPerDay === 0) { syncNpcs(state); dailyTick(state) }
+    advanceCanonicalBoundary(state, nextTime)
   }
   syncNpcs(state)
 }
@@ -257,6 +441,11 @@ export function reveal(state: GameState, region: RegionId) {
 }
 
 export function movePlayer(state: GameState, dx: number, dy: number) {
+  preflightRegionalCrisisAction(state, 5, preview => movePlayerInternal(preview, dx, dy))
+  return movePlayerInternal(state, dx, dy)
+}
+
+function movePlayerInternal(state: GameState, dx: number, dy: number) {
   const c = player(state)
   if (!c.isAlive || state.combat || state.dungeon.inDungeon || Math.abs(dx) + Math.abs(dy) !== 1) return false
   const destination = { x: c.position.x + dx, y: c.position.y + dy }
@@ -269,9 +458,9 @@ export function movePlayer(state: GameState, dx: number, dy: number) {
   return true
 }
 
-export function walkTo(state: GameState, destination: Position) {
+function pathTo(state: GameState, destination: Position) {
   const c = player(state)
-  if (!c.isAlive || state.combat || state.dungeon.inDungeon || !tileAt(state, destination)?.walkable) return false
+  if (!c.isAlive || state.combat || state.dungeon.inDungeon || !tileAt(state, destination)?.walkable) return null
   const key = (p: Position) => `${p.x},${p.y}`
   const queue: Position[] = [c.position], previous = new Map<string, Position | null>([[key(c.position), null]])
   let found: Position | undefined
@@ -283,10 +472,24 @@ export function walkTo(state: GameState, destination: Position) {
       if (!previous.has(key(next)) && tileAt(state, next)?.walkable) { previous.set(key(next), current); queue.push(next) }
     }
   }
-  if (!found) return false
+  if (!found) return null
   const path: Position[] = []
   while (previous.get(key(found))) { path.unshift(found); found = previous.get(key(found))! }
-  for (const step of path) if (!movePlayer(state, step.x - c.position.x, step.y - c.position.y)) return false
+  return path
+}
+
+export function walkTo(state: GameState, destination: Position) {
+  const path = pathTo(state, destination)
+  if (!path) return false
+  preflightRegionalCrisisAction(state, path.length * 5, preview => walkToInternal(preview, destination))
+  return walkToInternal(state, destination)
+}
+
+function walkToInternal(state: GameState, destination: Position) {
+  const path = pathTo(state, destination)
+  if (!path) return false
+  const c = player(state)
+  for (const step of path) if (!movePlayerInternal(state, step.x - c.position.x, step.y - c.position.y)) return false
   return true
 }
 

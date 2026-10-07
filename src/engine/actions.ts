@@ -7,7 +7,7 @@ import { changeReputation, recordLifeAction } from './identity'
 import { MERCENARY_REPUTATION } from '../data/lifeRules'
 import { npcCanWork, rememberNpc } from './npcLife'
 import { recordHunt, recordLivingTrade, tradePriceMultiplier } from './livingEvents'
-import { die, distance, gainExp, player, simulate, stageIndex, threatLevel, tileAt } from './simulation'
+import { die, distance, gainExp, player, preflightRegionalCrisisAction, simulate, stageIndex, threatLevel, tileAt } from './simulation'
 import { canVisit } from './rewardActions'
 import { awardWolfLoot } from './itemGeneration'
 import { incomingDamage, playerAttackDamage } from './combatStats'
@@ -26,6 +26,11 @@ function cost(state: GameState, stamina: number, minutes: number, gold = 0) {
   return c.isAlive ? '' : '角色已離世，請選擇繼任者。'
 }
 export function farm(state: GameState, action: 'prepare' | 'plant' | 'harvest') {
+  const minutes = action === 'prepare' ? 20 : action === 'plant' ? 10 : 15
+  preflightRegionalCrisisAction(state, minutes, preview => farmInternal(preview, action))
+  return farmInternal(state, action)
+}
+function farmInternal(state: GameState, action: 'prepare' | 'plant' | 'harvest') {
   if (player(state).currentRegion !== 'farmland') return '請先前往東方農田。'
   if (action === 'prepare') {
     if (state.preparedPlots + state.crops.length >= CONFIG.maxPlots) return '四塊田都已使用，請先收割。'
@@ -50,6 +55,12 @@ export function farm(state: GameState, action: 'prepare' | 'plant' | 'harvest') 
   return ''
 }
 export function gather(state: GameState, kind: 'wood' | 'stone' | 'iron') {
+  const skill: SkillId = kind === 'wood' ? 'woodcutting' : 'mining'
+  const minutes = Math.max(15, 45 - player(state).skills[skill].level * 2)
+  preflightRegionalCrisisAction(state, minutes, preview => gatherInternal(preview, kind))
+  return gatherInternal(state, kind)
+}
+function gatherInternal(state: GameState, kind: 'wood' | 'stone' | 'iron') {
   const c = player(state), region = kind === 'wood' ? 'forest' : 'mine', skill: SkillId = kind === 'wood' ? 'woodcutting' : 'mining'
   if (c.currentRegion !== region) return kind === 'wood' ? '請先前往北方森林。' : '請先前往灰石礦場。'
   const amount = 2 + Math.floor((c.skills[skill].level - 1) / 2)
@@ -61,6 +72,11 @@ export function gather(state: GameState, kind: 'wood' | 'stone' | 'iron') {
   return ''
 }
 export function rest(state: GameState, kind: 'rest' | 'inn' | 'tavern') {
+  const minutes = kind === 'inn' ? 480 : 60
+  preflightRegionalCrisisAction(state, minutes, preview => restInternal(preview, kind))
+  return restInternal(state, kind)
+}
+function restInternal(state: GameState, kind: 'rest' | 'inn' | 'tavern') {
   const c = player(state)
   if (kind === 'rest' && c.currentRegion !== 'village') return '請回聚落休息。'
   if (kind !== 'rest' && !canVisit(state, kind)) return '請在營業時間前往建築旁。'
@@ -71,6 +87,10 @@ export function rest(state: GameState, kind: 'rest' | 'inn' | 'tavern') {
   return ''
 }
 export function trade(state: GameState, item: ItemId, buying: boolean) {
+  preflightRegionalCrisisAction(state, 5, preview => tradeInternal(preview, item, buying))
+  return tradeInternal(state, item, buying)
+}
+function tradeInternal(state: GameState, item: ItemId, buying: boolean) {
   const c = player(state), equipment = item === 'sword' || item === 'armor', shop = equipment ? 'blacksmith' : 'store'
   if (!canVisit(state, shop)) return `請在營業時間前往${BUILDINGS[shop].name}旁。`
   const definition = ITEMS[item], price = buyPrice(state, item)
@@ -108,6 +128,10 @@ export function hireTerms(state: GameState) {
   }
 }
 export function hire(state: GameState, npcId: string) {
+  preflightRegionalCrisisAction(state, 10, preview => hireInternal(preview, npcId))
+  return hireInternal(state, npcId)
+}
+function hireInternal(state: GameState, npcId: string) {
   if (!canVisit(state, 'tavern')) return '請在 17:00–24:00 前往酒館旁。'
   if (state.party.length >= 2) return '最多只能聘請兩名同行者。'
   const npc = state.npcs.find(n => n.id === npcId && n.job === 'mercenary' && n.isAlive && n.age >= 15 && n.injuredUntil <= state.worldTime)
@@ -123,6 +147,10 @@ export function hire(state: GameState, npcId: string) {
   return ''
 }
 export function enterDungeon(state: GameState) {
+  preflightRegionalCrisisAction(state, 10, preview => enterDungeonInternal(preview))
+  return enterDungeonInternal(state)
+}
+function enterDungeonInternal(state: GameState) {
   if (!player(state).isAlive || state.combat || state.dungeon.inDungeon || !state.dungeon.discovered || distance(player(state).position, DUNGEON.position) > 1) return '請先探索山谷，前往廢棄礦坑入口。'
   const error = cost(state, 5, 10); if (error) return error
   state.dungeon.inDungeon = true; state.dungeon.stage = 0
@@ -314,6 +342,10 @@ function resolveCombatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
 }
 
 export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'potion' | 'run') {
+  preflightRegionalCrisisAction(state, command === 'run' ? 10 : 1, preview => combatTurnInternal(preview, command))
+  return combatTurnInternal(state, command)
+}
+function combatTurnInternal(state: GameState, command: 'attack' | 'defend' | 'potion' | 'run') {
   if (state.combat?.regionalCrisisObjective?.kind === 'camp_raid') {
     const capacity = safeEventSequenceAfterCampRaidTurn(state, command)
     if (capacity !== true) return typeof capacity === 'string' ? capacity : CAMP_RAID_EVENT_CAPACITY_ERROR

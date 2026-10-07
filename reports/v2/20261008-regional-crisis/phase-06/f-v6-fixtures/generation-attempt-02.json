@@ -1,0 +1,8 @@
+{
+  "command": "archived V6 fixture runner, followed by manifest publication and summary",
+  "runnerExitStatus": 0,
+  "runnerResult": "PASS; serialize/deserialize assertions passed and fixture was published",
+  "postRunnerExitStatus": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"generate_v6_fixture.py\", line 192, in <module>\n    'saveVersion': manifest['fixture']['save']['saveVersion'],\nKeyError: 'save'\n",
+  "classification": "manifest summary bug after successful archived runner; original fixture preserved and manifest repaired from exact fixture bytes"
+}

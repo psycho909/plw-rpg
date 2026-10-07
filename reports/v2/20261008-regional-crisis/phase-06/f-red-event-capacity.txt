@@ -1,0 +1,30 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisResolution.test.ts -t event-capacity-exhausted
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisResolution.test.ts (3 tests | 1 failed | 2 skipped) 12ms
+     × rejects an event-capacity-exhausted resolution boundary before changing time or state 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > rejects an event-capacity-exhausted resolution boundary before changing time or state
+AssertionError: expected [Function] to throw an error
+ ❯ src/engine/crisisResolution.test.ts:82:38
+     80|     const before = structuredClone(state)
+     81|
+     82|     expect(() => simulate(state, 1)).toThrow()
+       |                                      ^
+     83|     expect(state).toEqual(before)
+     84|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 skipped (3)
+   Start at  20:11:50
+   Duration  336ms (transform 164ms, setup 0ms, import 196ms, tests 12ms, environment 0ms)
+

@@ -1,0 +1,62 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisResolution.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisResolution.test.ts (2 tests | 2 failed) 93ms
+     × settles all four outcomes during canonical simulation with only the world RNG 88ms
+     × provides one persisted adult relief immigrant after 30 days at zero population with a live Chief 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > settles all four outcomes during canonical simulation with only the world RNG
+AssertionError: expected Set{ 'unresolved' } to deeply equal Set{ 'decisive_success', …(3) }
+
+- Expected
++ Received
+
+  Set {
+-   "costly_success",
+-   "decisive_success",
+-   "local_defeat",
+-   "setback",
++   "unresolved",
+  }
+
+ ❯ src/engine/crisisResolution.test.ts:44:22
+     42|     }
+     43|
+     44|     expect(outcomes).toEqual(new Set(['decisive_success', 'costly_succ…
+       |                      ^
+     45|   })
+     46|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > provides one persisted adult relief immigrant after 30 days at zero population with a live Chief
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ src/engine/crisisResolution.test.ts:67:68
+     65|     simulate(state, 31 * DAY)
+     66|
+     67|     expect(state.npcs.filter(npc => npc.isAlive && npc.age >= 15)).toH…
+       |                                                                    ^
+     68|     expect(state.npcs.filter(npc => npc.isAlive)).toHaveLength(1)
+     69|     expect(state.settlement.prosperity).toBe(18)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  20:10:16
+   Duration  436ms (transform 184ms, setup 0ms, import 217ms, tests 93ms, environment 0ms)
+

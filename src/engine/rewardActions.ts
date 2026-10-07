@@ -5,7 +5,7 @@ import type { EquipmentSlot, ItemInstance, MaterialId } from '../domain/reward'
 import type { GameState } from '../domain/types'
 import { calendar } from './calendar'
 import { emit } from './events'
-import { distance, player, simulate } from './simulation'
+import { distance, player, preflightRegionalCrisisAction, simulate } from './simulation'
 
 const SELL_MULTIPLIER: Record<keyof typeof RARITIES, number> = {
   common: 1, uncommon: 1.5, rare: 2, epic: 3, legendary: 5,
@@ -64,6 +64,10 @@ function finishTrade(state: GameState, message: string) {
 }
 
 export function sellInstance(state: GameState, instanceId: string): string {
+  preflightRegionalCrisisAction(state, 5, preview => sellInstanceInternal(preview, instanceId))
+  return sellInstanceInternal(state, instanceId)
+}
+function sellInstanceInternal(state: GameState, instanceId: string): string {
   const character = player(state)
   if (!canVisit(state, 'blacksmith')) return `請在營業時間前往${BUILDINGS.blacksmith.name}旁。`
   const index = state.reward.instances.findIndex(item => item.instanceId === instanceId)
@@ -82,6 +86,10 @@ export function sellInstance(state: GameState, instanceId: string): string {
 }
 
 export function tradeMaterial(state: GameState, materialId: MaterialId): string {
+  preflightRegionalCrisisAction(state, 5, preview => tradeMaterialInternal(preview, materialId))
+  return tradeMaterialInternal(state, materialId)
+}
+function tradeMaterialInternal(state: GameState, materialId: MaterialId): string {
   if (!Object.hasOwn(MATERIALS, materialId)) return '沒有這項可出售的素材。'
   const character = player(state)
   if (!canVisit(state, 'store')) return `請在營業時間前往${BUILDINGS.store.name}旁。`

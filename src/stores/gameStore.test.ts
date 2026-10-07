@@ -124,10 +124,10 @@ describe('safe browser persistence', () => {
     expect(game.state.worldSeed).toBe(88)
     expect(game.state.worldTime).toBe(state.worldTime)
     expect(game.state.rngState).toBe(state.rngState)
-    expect(game.state.saveVersion).toBe(6)
+    expect(game.state.saveVersion).toBe(7)
     expect(game.speed).toBe(1)
     expect(game.offline).toBe(null)
-    expect(JSON.parse(saved!).saveVersion).toBe(6)
+    expect(JSON.parse(saved!).saveVersion).toBe(7)
     expect(game.savedAt).toBe(100000)
   })
   it('keeps historical offline journal records but adds no offline load record', () => {
@@ -159,7 +159,7 @@ describe('safe browser persistence', () => {
   })
   it('allows explicit reset to replace corrupt data after the UI confirmation', () => {
     saved = '{broken'; const game = useGameStore(); game.reset()
-    expect(game.save()).toBe(true); expect(JSON.parse(saved!).saveVersion).toBe(6)
+    expect(game.save()).toBe(true); expect(JSON.parse(saved!).saveVersion).toBe(7)
     expect(game.speed).toBe(0); expect(game.state.life.openingSeen).toBe(false)
   })
   it('keeps a new world paused until startLife and triggers shallow world updates', () => {

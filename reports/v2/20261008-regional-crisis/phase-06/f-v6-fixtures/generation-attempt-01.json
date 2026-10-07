@@ -1,0 +1,6 @@
+{
+  "command": "python reports/v2/20261008-regional-crisis/phase-06/f-v6-fixtures/generate_v6_fixture.py",
+  "exitStatus": 1,
+  "stderr": "  File \"generate_v6_fixture.py\", line 199\n    ensure_ascii=False, indent=2))\n                                ^\nSyntaxError: closing parenthesis ')' does not match opening parenthesis '{' on line 189\n",
+  "classification": "generator syntax error; archived runtime runner was not started"
+}

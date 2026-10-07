@@ -3,7 +3,6 @@ import { REGIONAL_CRISIS_CONTRIBUTION_LIMITS, type RegionalCrisisState } from '.
 import type { EquipmentSlot, GearStats } from '../domain/reward'
 import type { GameState, NPC } from '../domain/types'
 import { npcCanWork } from './npcLife'
-import { population } from './simulation'
 
 const DAY = CONFIG.minutesPerDay
 const FOOD_THRESHOLD = CONFIG.regionalCrisis.lowFoodThreshold
@@ -162,7 +161,7 @@ export function deriveCivilDefense(state: GameState, crisis: RegionalCrisisState
     total + clamp(npc.skills.combat.level, 1, 10), 0) / defenders.length
   const otherWorkers = Math.max(0, workers.length - defenders.length)
   const days = phaseDays(state, crisis)
-  const foodPopulation = population(state)
+  const foodPopulation = state.npcs.filter(npc => npc.isAlive).length + state.characters.filter(character => character.isAlive).length
   const farmers = workers.filter(npc => npc.job === 'farmer').length
   const dailyFoodNet = 1.8 + farmers * 1.4 - foodPopulation * 0.12 - (state.threat.bossAlive ? 1 : 0)
   const rawProjectedFood = state.settlement.food + dailyFoodNet * days.foodForecastDays

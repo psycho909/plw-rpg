@@ -83,12 +83,17 @@ describe('regional crisis state', () => {
     expect(resolution.phase).toBe('resolution')
     if (resolution.phase !== 'resolution') throw new Error('expected resolution')
     expect(advanceRegionalCrisisState(resolution, resolution.phaseStartedAt)).toBe(resolution)
-    const aftermath = completeRegionalCrisisTransition(resolution, 'costly_success', resolution.phaseStartedAt)
+    const summary = {
+      readiness: 60, threatDemand: 60, successChance: 0.5, pressureDays: 17,
+      applied: { monsterPopulation: -6, bossProgress: -8, food: -8, safety: -2, prosperity: -2 },
+      injuries: [], recovery: { status: 'not_required' as const, dueAt: null, npcId: null },
+    }
+    const aftermath = completeRegionalCrisisTransition(resolution, 'costly_success', resolution.phaseStartedAt, summary)
     expect(aftermath).toMatchObject({ phase: 'aftermath', outcome: 'costly_success' })
     if (aftermath.phase !== 'aftermath') throw new Error('expected aftermath')
     expect(completeRegionalCrisisTransition(aftermath, 'decisive_success', resolution.phaseStartedAt)).toBe(aftermath)
     const cooldown = advanceRegionalCrisisState(aftermath, aftermath.phaseEndsAt)
-    expect(cooldown).toMatchObject({ phase: 'cooldown', cooldownUntil: aftermath.phaseEndsAt + (360 + 2 * 30) * CONFIG.minutesPerDay })
+    expect(cooldown).toMatchObject({ phase: 'cooldown', cooldownUntil: aftermath.phaseEndsAt + (360 + 2 * 30 + 30 + 17) * CONFIG.minutesPerDay })
     if (cooldown.phase !== 'cooldown') throw new Error('expected cooldown')
     expect(advanceRegionalCrisisState(cooldown, cooldown.cooldownUntil)).toMatchObject({
       phase: 'dormant', sequence: 1, lastResolvedAt: resolution.phaseStartedAt,
@@ -114,17 +119,21 @@ describe('regional crisis state', () => {
     expect(chunked.regionalCrisis.phase).toBe('active')
     expect(hourly).toEqual(chunked)
     assertReload()
+    const active = chunked.regionalCrisis
+    if (active.phase !== 'active') throw new Error('expected active crisis')
+    const resolutionProbe = structuredClone(chunked)
+    resolutionProbe.worldTime = active.phaseEndsAt
+    resolutionProbe.regionalCrisis = advanceRegionalCrisisState(active, active.phaseEndsAt)
+    expect(resolutionProbe.regionalCrisis.phase).toBe('resolution')
+    expect(deserialize(serialize(resolutionProbe)).state).toEqual(resolutionProbe)
+
     simulate(chunked, 2 * CONFIG.minutesPerDay)
     for (let index = 0; index < 2 * 24; index++) simulate(hourly, 60)
-    expect(chunked.regionalCrisis.phase).toBe('resolution')
+    expect(chunked.regionalCrisis.phase).toBe('aftermath')
     expect(hourly).toEqual(chunked)
     assertReload()
 
-    const resolution = chunked.regionalCrisis
-    if (resolution.phase !== 'resolution') throw new Error('expected resolution')
-    const aftermath = completeRegionalCrisisTransition(resolution, 'setback', chunked.worldTime)
-    chunked.regionalCrisis = aftermath
-    assertReload()
+    const aftermath = chunked.regionalCrisis
     if (aftermath.phase !== 'aftermath') throw new Error('expected aftermath')
     const cooldown = advanceRegionalCrisisState(aftermath, aftermath.phaseEndsAt)
     chunked.worldTime = aftermath.phaseEndsAt

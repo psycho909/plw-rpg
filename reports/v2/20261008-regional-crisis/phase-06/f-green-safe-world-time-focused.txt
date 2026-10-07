@@ -1,0 +1,13 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisResolution.test.ts src/engine/regionalCrisis.test.ts src/engine/civilDefense.test.ts src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts src/engine/crafting.test.ts src/engine/ownership.test.ts src/engine/actions.test.ts src/engine/rewardActions.test.ts src/engine/simulation.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/stores/gameStore.test.ts --testTimeout=30000
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  14 passed (14)
+      Tests  411 passed (411)
+   Start at  23:10:48
+   Duration  14.95s (transform 1.12s, setup 0ms, import 1.89s, tests 20.26s, environment 6ms)
+

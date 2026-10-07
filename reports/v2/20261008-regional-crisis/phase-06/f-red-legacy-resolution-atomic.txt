@@ -1,0 +1,30 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisResolution.test.ts -t preflights a legacy resolution-phase save
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisResolution.test.ts (12 tests | 1 failed | 11 skipped) 23ms
+     × preflights a legacy resolution-phase save before paid action costs 21ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > preflights a legacy resolution-phase save before paid action costs
+AssertionError: expected [Function] to throw an error
+ ❯ src/engine/crisisResolution.test.ts:307:38
+    305|     const before = structuredClone(state)
+    306|
+    307|     expect(() => rest(state, 'inn')).toThrow()
+       |                                      ^
+    308|     expect(state).toEqual(before)
+    309|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 skipped (12)
+   Start at  23:01:40
+   Duration  577ms (transform 312ms, setup 0ms, import 379ms, tests 23ms, environment 1ms)
+
