@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-regional-crisis/phase-06/g_browser_runner.py", line 195, in <module>
+    if __name__ == "__main__": raise SystemExit(main())
+                                                ^^^^^^
+  File "/workspace/plw-rpg/reports/v2/20261008-regional-crisis/phase-06/g_browser_runner.py", line 146, in main
+    release, evidence = release_gate(args.mode)
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/plw-rpg/reports/v2/20261008-regional-crisis/phase-06/g_browser_runner.py", line 43, in release_gate
+    if marker.get(key) != current.get(key): raise RuntimeError(f"Root release {key} does not match current frozen evidence")
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Root release qaFilesSha256 does not match current frozen evidence

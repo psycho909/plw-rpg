@@ -5,7 +5,7 @@ import { CRAFTING_RECIPES } from '../data/crafting'
 import { ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
 import type { MaterialId, MonsterDefinitionId, RarityId } from '../domain/reward'
 import type { ItemId } from '../domain/types'
-import { buyPrice, canVisit, encounter, enterDungeon, farm, gather, hire, hireTerms, rest, trade } from '../engine/actions'
+import { buyPrice, canVisit, encounter, enterDungeon, farm, gather, hire, hireTerms, rest, trade, startRegionalCampRaid } from '../engine/actions'
 import { wolfRewardExpectation } from '../engine/itemGeneration'
 import { npcCanWork } from '../engine/npcLife'
 import { encounterWolf, wolfEncounterOptions } from '../engine/wolfFamily'
@@ -107,6 +107,10 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
     <div class="action-buttons"><button v-for="kind in place === 'forest' ? ['wood' as const] : ['stone' as const, 'iron' as const]" :key="kind" :disabled="blocked || c.stamina < 10 || game.state.regions[place].remainingAmount < 2 + Math.floor((c.skills[place === 'forest' ? 'woodcutting' : 'mining'].level - 1) / 2)" @click="game.act(() => gather(game.state, kind))">{{ itemIcons[kind] }} {{ kind === 'wood' ? '伐木' : kind === 'stone' ? '採石' : '採鐵礦' }}</button>
       <button v-if="place === 'forest'" class="primary" :disabled="blocked || c.stamina < 8 || game.state.threat.monsterPopulation < 1" @click="game.act(() => encounter(game.state))">尋找怪物 · 體力 8</button>
       <button v-if="place === 'forest' && game.state.threat.bossAlive" class="danger" :disabled="blocked || c.stamina < 8" @click="game.act(() => encounter(game.state, true))">👹 挑戰哥布林酋長</button>
+      <template v-if="place === 'forest' && (game.state.regionalCrisis.phase === 'warning' || game.state.regionalCrisis.phase === 'preparation' || game.state.regionalCrisis.phase === 'active')">
+        <button class="primary" data-camp-raid :disabled="blocked || game.state.regionalCrisis.adventure.campRaidAt !== null" @click="game.act(() => startRegionalCampRaid(game.state, game.state.regionalCrisis.phase === 'dormant' ? '' : game.state.regionalCrisis.id))">{{ game.state.regionalCrisis.adventure.campRaidAt !== null ? '哥布林營地已遭突襲' : '突襲哥布林營地 · 體力 8' }}</button>
+        <p class="muted help-text">突襲只在勝利後記錄成果；錯過時機仍可繼續森林生活。世界時間照常流動。</p>
+      </template>
     </div>
     <p v-if="place === 'forest'" class="rumor">{{ rumor }}</p>
     <section v-if="place === 'forest'" aria-labelledby="wolf-track-title">

@@ -72,6 +72,8 @@ V2.x 物品視窗預設仍為「日常物品」，新增獵獲裝備、狼族素
 
 狼族追蹤沿用森林 `PlaceWindow`，只呈現五種現有狼族定義。`wolfEncounterOptions` 提供名稱、資格及下一個追蹤目標的原因，`encounterWolf` 才能形成遭遇；開視窗不抽 RNG 或生成 Boss。原尋找怪物、哥布林危機與地下城仍有自己的流程。`AdventureWindow` 對帶有 familyEncounter 的戰鬥使用 `wolfCombatPresentation` 顯示等級、階級、特性、Boss 變種與下一回合提示；提示來自引擎的同一機制，UI 不計算傷害。狼王形成時捕捉世界怪物量、安全及玩家既有戰鬥勝利 counter（所有戰鬥的介入 proxy），逃跑、死亡或重載後保留同一形態；勝利後七個遊戲日才能再次追蹤。這是單一狼族核心，不包含製作、其他家族或完整 V2.x content expansion。
 
+Phase6-G 危機顯示沿用 `LifeNewsWindow` 地方消息作為唯一總覽，純函式 `projectCrisis` 讀取 `deriveCivilDefense` 與已保存的 `resolutionSummary`，不抽 RNG 或改世界。畫面以「吃緊／尚可／穩固」和逐項需求呈現防衛狀況，不顯示 readiness 原始分數；缺少舊版 summary 明確標成結果未知。危機警訊保留在探索畫面既有最近事件入口，備戰用品依序由 `contributeCrisisEquipment`、`contributeCrisisFood`、`contributeCrisisGold` 實際處理；不可回收裝備在同一視窗先確認保留或交付。酋長沿用現有戰鬥路徑，森林 `PlaceWindow` 使用 `startRegionalCampRaid` 開始真實營地遭遇，成果仍只由引擎於勝利時記錄。所有操作經 `gameStore.act`，PixelWindow 焦點／Escape 與背景世界時鐘維持原契約。
+
 Phase4 Adventure reward UI 沿用上述森林與戰鬥視窗：森林列出的每個既有狼族目標都透過 RNG-free `wolfRewardExpectation` 顯示實際掉落等級、裝備機率、各品質機率、保底／機率素材與首領限定底材；UI 不另算機率或重複維護 balance 常數。`data-wolf-track`、`data-wolf-reward-expectation` 和唯一可見的 `data-adventure-goal` 是正式呈現節點，供真實 UI playtest 辨認當前目標與 reward expectation。戰鬥窗在狼族戰鬥顯示依相同投影生成的獎勵預期。下一目標只使用現有追蹤資格、收藏與真實獎勵設定；沒有未解鎖內容時提示已有的高品質追蹤或重挑首領，不建立任務標記海或不存在的新內容。裝備底材第一次進入 collection 時，既有 `loot.item` 事件訊息帶「新發現」；背包只讀目前仍在有界 events buffer 的原始事件。事件離開 buffer 後不重建新發現提示，收藏視窗僅顯示「收藏已記錄」與持久 collection ID。
 
 獵獲裝備詳情在同一個物品視窗比較新裝備與目前同部位裝備，列出雙方稀有度、每項實際能力與帶正負號的差值，再分列雙方詞綴及特殊特性。此比較是部件資訊，不產生整體戰力分數，也不把某一數值較高稱為升級。詞綴說明遵循現有 combat formula：裂傷是每次命中額外固定傷害、不是持續傷害；穿透降低目標防禦，狼族硬皮啟動時穿透效果加倍；暴擊依機率造成雙倍傷害；格擋依機率令來襲傷害減半；減傷依百分比降低來襲傷害。新舊詞綴均保留文字用途，特殊狼族效果標明適用對象。品質始終以繁中名稱表示，不只用顏色區別。原有頁數、篩選、穿戴與出售確認/focus 流程維持原 contract。

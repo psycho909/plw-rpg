@@ -1,0 +1,194 @@
+{
+  "disposition": "PASS_G_FOCUSED_WITH_NATURAL_WARNING_UNREACHED",
+  "producer": "g6-luna-low-phase6-g-browser-qa-final-report",
+  "basedOnRunId": "20261007T234011Z-pid40559",
+  "rawRunStatus": "PARTIAL_NORMAL_WARNING_UNREACHED",
+  "rawRunError": null,
+  "rawRunExitCode": 1,
+  "scopeInterpretation": "The normal fresh opening and bounded clock/save checks passed; the natural warning did not occur in the focused window. The warning UI was independently verified with a clearly labeled controlled warning save. The natural-warning UNREACHED marker is not treated as a G product failure or as a normal-path crisis pass.",
+  "provenance": {
+    "head": "9a23a5df2130aec03f76e5eaaababae1f5e9e72b",
+    "sourceFingerprint": "6da838a94190a1db12469cce59a1acbaf8d736ef979f2d43fca15621c7e04867",
+    "sourceFiles": 90,
+    "sourceStableDuringRun": true,
+    "buildStatusSha256": "d3e717bf095d4b47d11fa233b1ac0ac24964c1e06bf0392b769dfa5b265eebe8",
+    "buildExitCode": 0,
+    "distFingerprint": "b484255444e942a501aeb2930ecf96445f062506994a6e1f7a71ccf329a37880",
+    "servedAssets": {
+      "index": {
+        "status": 200,
+        "bytes": 448,
+        "sha256": "f20667e2ecac6d3bb29684ed9be8f33f97e97570e61d06bed3c1d42feec57e53"
+      },
+      "assets": [
+        {
+          "path": "assets/index-SZG6VC8j.js",
+          "status": 200,
+          "bytes": 334860,
+          "sha256": "70081aa3960cc6ebc009ec6bab27d846aadfd4b8e8ce1b1ac89051c3c41d3d15"
+        },
+        {
+          "path": "assets/index-DmiWzmoy.css",
+          "status": 200,
+          "bytes": 30795,
+          "sha256": "b76cc82a4d2fccd3ef0737700963ccae4aba6a3fedda8c26cc82eb30e7f86870"
+        }
+      ]
+    },
+    "fixtureManifestSha256": "c77b5eead3f20aa3c7f9eb8190dbcd4432a67c2bbabc43b60a506ae3ffe0439b"
+  },
+  "normalFresh": {
+    "status": "OPENING_CLOCK_SAVE_RELOAD_PASS; NATURAL_WARNING_UNREACHED",
+    "openingAction": "Visible 起身 clicked in clean isolated storage.",
+    "visibleLifeNewsClockBeforeAfter": {
+      "before": "第 1 年 春 1 日 08:04 · 生命 100 · 體力 84 · 45 金\n繼續時間",
+      "after": "第 1 年 春 1 日 08:52 · 生命 100 · 體力 84 · 45 金\n暫停時間",
+      "verified": true
+    },
+    "saveReloadClock": {
+      "atUTC": "2026-10-07T23:40:14.161514+00:00",
+      "lane": "NORMAL_FRESH",
+      "label": "visible save and full page reload preserved world clock",
+      "url": "http://127.0.0.1:57531/",
+      "saved": "第 1 年 春 1 日\n08:54",
+      "restored": "第 1 年 春 1 日\n08:54"
+    },
+    "checkpointCount": 161,
+    "checkpointMetricCorrection": "The raw run also serialized a misleading `normalDaysAdvanced` alias equal to checkpoint count. It did not mean game-days: 161 checkpoints moved the visible clock from Year 1 Spring Day 1 08:00 through 21:59; the modal interval was 08:04–08:52 and visible save/reload preserved 08:54. The maintained runner now records checkpoints only.",
+    "naturalWarning": {
+      "status": "UNREACHED",
+      "stateInjected": false,
+      "debugTimeOrStateInjection": false,
+      "elapsedRealSeconds": 29.7,
+      "warningObserved": false,
+      "limitation": "No natural warning reached within the focused browser budget; no controlled fixture substituted for this claim."
+    }
+  },
+  "controlledUiCases": {
+    "CONTROLLED_WARNING_UI_FIXTURE": {
+      "status": "PASS_WARNING_AND_NEEDS",
+      "fixturePath": "g-fixture-warning.json",
+      "normalFreshEquivalent": false
+    },
+    "CONTROLLED_UI_FIXTURE": {
+      "status": "PASS_UI_ACTIONS",
+      "fixturePath": "g-fixture-preparation.json",
+      "normalFreshEquivalent": false
+    },
+    "CONTROLLED_FOREST_CAMP_RAID": {
+      "status": "PASS_VISIBLE_ACTION_COMBAT",
+      "fixturePath": "g-fixture-forestCampChief.json",
+      "normalFreshEquivalent": false
+    },
+    "CONTROLLED_FOREST_CHIEF": {
+      "status": "PASS_VISIBLE_ACTION_COMBAT",
+      "fixturePath": "g-fixture-forestCampChief.json",
+      "normalFreshEquivalent": false
+    },
+    "CONTROLLED_UI_FIXTURE_KNOWN_AFTERMATH": {
+      "status": "PASS_RESULT_RELOAD",
+      "fixturePath": "g-fixture-knownAftermath.json",
+      "normalFreshEquivalent": false
+    },
+    "LEGACY_UNKNOWN_FIXTURE": {
+      "status": "PASS_RESULT_RELOAD",
+      "fixturePath": "g-fixture-legacyUnknown.json",
+      "normalFreshEquivalent": false
+    }
+  },
+  "warningAndViewport": {
+    "worldWarningBadge": "Visible `.crisis-warning-event` / 危機警訊 clicked; corresponding world log entry inspected.",
+    "lifeNewsNeeds": 4,
+    "keyboardEscape": "Verified that Escape closed the warning log dialog.",
+    "narrowViewport": "390x844; no page-level horizontal overflow on Life News."
+  },
+  "contributions": {
+    "food": {
+      "initialLedgerSupplied": 0,
+      "visibleButton": "支援食物 · 10 份",
+      "assertion": "After click, ledger supplied > initial value (passed).",
+      "expectedExactDelta": 40,
+      "deltaBasis": "Initial fixture ledger is 0; the pre-action screenshot shows 10 inventory food units; current contribution rule is 4 supplied points per inventory unit. The runner did not persist the exact post-action counter, so +40 is a deterministic derivation, not a separately serialized browser readback."
+    },
+    "gold": {
+      "initialLedgerSpent": 0,
+      "visibleButton": "支援後勤 · 100 金",
+      "assertion": "After click, ledger spent > initial value (passed).",
+      "expectedExactDelta": 100,
+      "deltaBasis": "Initial fixture ledger is 0; the pre-action screenshot shows 100 gold; current contribution action credits the requested amount. The runner did not persist the exact post-action counter, so +100 is a deterministic derivation, not a separately serialized browser readback."
+    },
+    "gear": {
+      "visibleInlineConfirmation": true,
+      "confirmedItem": "Moonfang spear (月牙獵矛)",
+      "allocationDeltaAssertion": "Exactly +1 equipment allocation (passed).",
+      "inventoryAssertion": "Delivered instance removed from reward inventory (passed).",
+      "reloadPreservedLedger": true,
+      "visibleMessage": "交付月牙獵矛，支援米拉 1 的防衛裝備。"
+    },
+    "uiStaleBeforeConfirm": "UNTESTED. After successful delivery the component clears the inline confirmation, so a repeat-confirm attempt was a helper selector failure, not a stale-guard result. Existing engine stale-crisis-ID rejection coverage is in src/engine/crisisContributions.test.ts."
+  },
+  "forestActions": {
+    "campRaid": {
+      "status": "visible button clicked; actual combat object opened",
+      "monsterId": "goblin",
+      "objective": "camp_raid",
+      "combatOutcome": "not tested"
+    },
+    "chief": {
+      "status": "visible 挑戰哥布林酋長 button clicked; actual combat object opened",
+      "monsterId": "chief",
+      "combatOutcome": "not tested"
+    }
+  },
+  "persistence": {
+    "knownAftermath": "Visible measured result and recovery text persisted after reload from canonical-simulation aftermath fixture.",
+    "legacyUnknown": "Explicit unknown-result text persisted after reload from fixture with null resolution summary."
+  },
+  "browserRuntime": {
+    "pageErrors": [],
+    "consoleErrors": [],
+    "requestFailures": [],
+    "httpFailures": [],
+    "browserErrors": false
+  },
+  "screenshots": [
+    "normal-narrow-life-news.png",
+    "controlled-warning-world.png",
+    "controlled-warning-life-news-narrow.png",
+    "controlled-preparation-before.png",
+    "controlled-gear-confirm.png",
+    "controlled-gear-delivered.png",
+    "controlled_forest_camp_raid.png",
+    "controlled_forest_chief.png",
+    "controlled_ui_fixture_known_aftermath-before-reload.png",
+    "legacy_unknown_fixture-before-reload.png"
+  ],
+  "preservedFailures": [
+    "g-browser-runs/20261007T232551Z-pid38414",
+    "g-browser-runs/20261007T232601Z-pid38437",
+    "g-browser-runs/20261007T232609Z-pid38467",
+    "g-browser-runs/20261007T232626Z-pid38643",
+    "g-browser-runs/20261007T233101Z-pid39128",
+    "g-browser-runs/20261007T233211Z-pid39391",
+    "g-browser-runs/20261007T233920Z-pid40344",
+    "g-browser-runs/20261007T234220Z-pid41085",
+    "g-fixture-generation-failure.json"
+  ],
+  "limitations": [
+    "Runner-driven evidence only; human validation deferred.",
+    "No natural warning or normal fresh complete crisis arc in this G run.",
+    "Controlled preparation, forest, measured aftermath, and legacy contexts are not normal-fresh play.",
+    "Forest combat was entered but not won or completed.",
+    "UI stale-before-confirm race and full focus-trap/keyboard-navigation coverage were not tested.",
+    "Exact food/gold post-action counters were not serialized; deterministic deltas are derived from displayed amounts, initial ledgers, and current action rules.",
+    "The final run evidences current frozen app source/build. Runner-only metric/status/checklist corrections made after the successful run were py_compile checked but not followed by another Chromium run at Root direction."
+  ],
+  "humanValidation": {
+    "status": "DEFERRED / NOT CLAIMED"
+  },
+  "artifactProvenance": {
+    "successfulRawRunJsonSha256": "abca6092ab775989f360a8b5ecd0c7dcaf7e70058a12f8f7a313ed03ce3be64c",
+    "successfulRawRunFile": "reports/v2/20261008-regional-crisis/phase-06/g-browser-runs/20261007T234011Z-pid40559/g-browser-result.json",
+    "currentBuildHead": "9a23a5df2130aec03f76e5eaaababae1f5e9e72b"
+  }
+}

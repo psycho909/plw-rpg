@@ -40,6 +40,8 @@ const records = computed(() => pane.value === 'world' || pane.value === 'log' ||
 const successors = computed(() => game.state.npcs.filter(n => n.isAlive && n.age >= 15)
   .map(npc => ({ id: npc.id, name: npc.name, age: npc.age, job: npc.job, level: npc.level })))
 const saveWarning = computed(() => game.saveBlocked ? '原始存檔已保留。現在的世界不會覆蓋它；確認後可從選單重建世界。' : [game.saveError, game.journalError].filter(Boolean).join(' '))
+const crisisWarning = computed(() => game.state.regionalCrisis.phase === 'warning'
+  ? [...game.state.history].reverse().find(event => event.type === 'regional-crisis.warning') ?? null : null)
 function recoverSave() {
   if (game.writerPending) return
   if (!game.writerReady) window.location.reload()
@@ -135,7 +137,7 @@ onUnmounted(() => {
       <div class="exploration-hint"><span><kbd>WASD</kbd>／方向鍵移動　<kbd>Enter</kbd> 互動　點地圖步行</span><button @click="openWindow('world')">查看地圖 <kbd>M</kbd></button></div>
     </main>
     <footer class="player-hud" aria-label="主角狀態"><button class="player-identity" @click="openWindow('character')"><span aria-hidden="true">🙂</span><span>{{ c.name }} <b>Lv.{{ c.level }}</b></span></button><PixelMeter label="生命" :value="c.hp" :max="c.maxHp" compact /><PixelMeter label="體力" :value="c.stamina" :max="c.maxStamina" compact /><span class="gold">🪙 {{ c.gold }}</span><span v-if="game.state.party.length" class="party-strip">同行 {{ game.state.party.map(p => game.state.npcs.find(n => n.id === p.npcId)?.name).join('、') }}</span></footer>
-    <div class="world-bottom"><button class="recent-event" @click="openWindow('log')"><span aria-hidden="true">›</span> {{ game.state.events.at(-1)?.message ?? '今天，想去哪裡？' }} <kbd>L</kbd></button><span class="desktop-shortcuts"><button @click="openWindow('inventory')">物品 <kbd>I</kbd></button><button @click="openWindow('notes')">旅人筆記</button></span></div>
+    <div class="world-bottom"><button class="recent-event" :class="{ 'crisis-warning-event': !!crisisWarning }" @click="openWindow('log')"><span v-if="crisisWarning" class="warning-label">危機警訊</span><span aria-hidden="true">›</span> {{ crisisWarning?.message ?? game.state.events.at(-1)?.message ?? '今天，想去哪裡？' }} <kbd>L</kbd></button><span class="desktop-shortcuts"><button @click="openWindow('inventory')">物品 <kbd>I</kbd></button><button @click="openWindow('notes')">旅人筆記</button></span></div>
     <nav class="mobile-nav" aria-label="遊戲選單"><button @click="openWindow('world')">地圖</button><button @click="openWindow('character')">角色</button><button @click="openWindow('inventory')">物品</button><button @click="openWindow('log')">日誌</button></nav>
 
     <PixelWindow v-if="pane" :title="title" :dismissible="pane !== 'successor' && pane !== 'opening'" @close="closeWindow">

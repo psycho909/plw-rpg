@@ -4,6 +4,10 @@ import type { Position } from '../domain/types'
 import type { WorldRequest, WorldNews } from '../domain/life'
 import { clockLabel } from '../engine/calendar'
 import { fulfillRequest, projectLivingNews } from '../engine/livingEvents'
+import { contributeCrisisEquipment, contributeCrisisFood, contributeCrisisGold } from '../engine/crisisContributions'
+import { availableCivilDefenseDefenders, deriveCivilDefense } from '../engine/civilDefense'
+import { ITEM_BASES } from '../data/rewards'
+import { projectCrisis } from '../presentation/crisisProjection'
 import { useGameStore } from '../stores/gameStore'
 
 const emit = defineEmits<{ travel: [position: Position] }>()
@@ -38,6 +42,46 @@ const northernNews = computed(() => {
   return '林間暫時安靜，偶爾仍能看見野狼的蹤跡。'
 })
 const blocked = computed(() => !game.character.isAlive || !!game.state.combat || game.state.dungeon.inDungeon)
+const crisis = computed(() => projectCrisis(game.state))
+const defense = computed(() => deriveCivilDefense(game.state, game.state.regionalCrisis))
+const canPrepare = computed(() => !blocked.value && (game.state.regionalCrisis.phase === 'warning' || game.state.regionalCrisis.phase === 'preparation'))
+const gearToConfirm = ref<string | null>(null)
+const supportDefenders = computed(() => {
+  if (!defense.value) return []
+  const allocations = game.state.regionalCrisis.phase === 'dormant' ? [] : game.state.regionalCrisis.contributions.equipment
+  return availableCivilDefenseDefenders(game.state).slice(0, defense.value.targetDefenders).filter(npc =>
+    (npc.equipment.weapon === null && !allocations.some(entry => entry.defenderNpcId === npc.id && entry.slot === 'weapon'))
+      || (npc.equipment.armor === null && !allocations.some(entry => entry.defenderNpcId === npc.id && entry.slot === 'armor')))
+})
+const supportGear = computed(() => {
+  const crisis = game.state.regionalCrisis
+  if (crisis.phase === 'dormant') return []
+  return game.state.reward.instances.filter(item => item.ownerId === game.character.id
+    && Object.hasOwn(ITEM_BASES, item.baseId)
+    && game.state.reward.equipped[game.character.id]?.weapon !== item.instanceId
+    && game.state.reward.equipped[game.character.id]?.armor !== item.instanceId
+    && supportDefenders.value.some(npc => ITEM_BASES[item.baseId].slot === 'weapon'
+      ? npc.equipment.weapon === null && !crisis.contributions.equipment.some(entry => entry.defenderNpcId === npc.id && entry.slot === 'weapon')
+      : npc.equipment.armor === null && !crisis.contributions.equipment.some(entry => entry.defenderNpcId === npc.id && entry.slot === 'armor')))
+})
+const goldSupport = computed(() => Math.min(game.character.gold, defense.value?.needs.find(item => item.id === 'gold')?.shortage ?? 0))
+const foodSupport = computed(() => {
+  const shortage = defense.value?.needs.find(item => item.id === 'food')?.shortage ?? 0
+  return Math.min(game.character.inventory.food, Math.floor(shortage / 4))
+})
+
+function contributeGear() {
+  const crisis = game.state.regionalCrisis
+  const item = supportGear.value.find(candidate => candidate.instanceId === gearToConfirm.value)
+  if (!item || crisis.phase === 'dormant') return
+  const slot = ITEM_BASES[item.baseId].slot
+  const defender = supportDefenders.value.find(npc => slot === 'weapon'
+    ? npc.equipment.weapon === null && !crisis.contributions.equipment.some(entry => entry.defenderNpcId === npc.id && entry.slot === slot)
+    : npc.equipment.armor === null && !crisis.contributions.equipment.some(entry => entry.defenderNpcId === npc.id && entry.slot === slot))
+  if (!defender) { game.message = '目前沒有可用的對應防衛裝備欄位。'; gearToConfirm.value = null; return }
+  game.act(() => contributeCrisisEquipment(game.state, crisis.id, defender.id, item.instanceId))
+  gearToConfirm.value = null
+}
 
 function deliverRequest(id: string) {
   game.act(() => fulfillRequest(game.state, id))
@@ -76,6 +120,33 @@ function fulfill(request: WorldRequest) {
     <section class="life-news-threat" aria-labelledby="life-news-north-heading">
       <h4 id="life-news-north-heading">北方近況</h4>
       <p>{{ northernNews }}</p>
+    </section>
+
+    <section v-if="crisis" class="crisis-report" aria-labelledby="crisis-heading" data-crisis-report>
+      <p class="life-news-kicker">北方森林 · {{ crisis.phaseLabel }}</p>
+      <h4 id="crisis-heading">哥布林危機</h4>
+      <p v-if="crisis.result" class="crisis-result" role="status">{{ crisis.result }}</p>
+      <p v-if="crisis.recovery" class="muted">{{ crisis.recovery }}</p>
+      <template v-else>
+        <p>橡谷目前的防衛準備：<strong>{{ crisis.readiness === 'poor' ? '吃緊' : crisis.readiness === 'adequate' ? '尚可' : '穩固' }}</strong></p>
+        <ul class="crisis-needs"><li v-for="need in crisis.needs" :key="need.id" :data-state="need.state" :data-need="need.id">{{ need.state === 'needed' ? '□' : '✓' }} {{ need.label }}</li></ul>
+        <p class="muted">營地突襲：{{ crisis.campRaidComplete ? '已成功破壞' : '尚未完成' }} · 哥布林酋長：{{ crisis.chiefDefeated ? '已擊敗' : game.state.threat.bossAlive ? '仍在北方' : '未現身' }}</p>
+        <section v-if="canPrepare" class="crisis-actions" aria-label="支援橡谷">
+          <h5>你可以提供的支援</h5>
+          <p v-if="!supportDefenders.length" class="muted">目前沒有可補充裝備的防衛者。</p>
+          <template v-else>
+            <div v-for="item in supportGear" :key="item.instanceId" class="crisis-gear-row">
+              <span>{{ ITEM_BASES[item.baseId].name }}</span><button :disabled="!canPrepare || !defense?.needs.find(need => need.id === 'equipment')?.shortage" @click="gearToConfirm = item.instanceId">選擇交付</button>
+            </div>
+            <div v-if="gearToConfirm" class="crisis-gear-confirm" role="group" aria-label="確認交付裝備">
+              <p>交付後會永久移出背包：{{ supportGear.find(item => item.instanceId === gearToConfirm) ? ITEM_BASES[supportGear.find(item => item.instanceId === gearToConfirm)!.baseId].name : '這件裝備' }}。</p>
+              <button class="primary" data-crisis-gear-confirm @click="contributeGear">確認交付</button><button data-autofocus @click="gearToConfirm = null">保留裝備</button>
+            </div>
+          </template>
+          <button v-if="foodSupport > 0" @click="game.act(() => contributeCrisisFood(game.state, game.state.regionalCrisis.phase === 'dormant' ? '' : game.state.regionalCrisis.id, foodSupport))">支援食物 · {{ foodSupport }} 份</button>
+          <button v-if="goldSupport > 0" @click="game.act(() => contributeCrisisGold(game.state, game.state.regionalCrisis.phase === 'dormant' ? '' : game.state.regionalCrisis.id, goldSupport))">支援後勤 · {{ goldSupport }} 金</button>
+        </section>
+      </template>
     </section>
 
     <section class="life-news-requests" aria-labelledby="life-news-requests-heading">

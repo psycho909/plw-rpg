@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-regional-crisis/phase-06/g_browser_runner.py", line 196, in <module>
+    if __name__ == "__main__": raise SystemExit(main())
+                                                ^^^^^^
+  File "/workspace/plw-rpg/reports/v2/20261008-regional-crisis/phase-06/g_browser_runner.py", line 148, in main
+    run_dir = args.run_dir.resolve(); run_dir.mkdir(parents=True, exist_ok=False)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/workspace/plw-rpg/reports/v2/20261008-regional-crisis/phase-06/g-browser-runs/20261007T232601Z-pid38437'

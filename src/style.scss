@@ -401,6 +401,20 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .life-news-meta time { font-family: var(--font-mono); }
 .life-news-meta span { padding-left: 8px; border-left: 1px solid var(--border-muted); }
 .life-news-list li > p { margin-top: 6px; font-size: 13px; line-height: 1.8; }
+.crisis-report { display: grid; gap: 10px; padding: 14px 16px; border: 2px solid var(--border); background: var(--surface); }
+.crisis-report h4, .crisis-actions h5 { margin: 0; font-size: 14px; }
+.crisis-report > p, .crisis-actions > p { margin: 0; line-height: 1.7; }
+.crisis-result { font-weight: 700; }
+.crisis-needs { display: grid; gap: 5px; list-style: none; margin: 0; padding: 0; }
+.crisis-needs li { padding: 5px 0; border-top: 1px dotted var(--border-muted); }
+.crisis-needs li[data-state='covered'] { color: var(--text-muted); }
+.crisis-needs li[data-state='needed'] { font-weight: 700; }
+.crisis-actions { display: grid; gap: 8px; padding-top: 10px; border-top: 1px solid var(--border-muted); }
+.crisis-gear-row { display: flex; justify-content: space-between; gap: 10px; align-items: center; padding: 6px 0; border-top: 1px dotted var(--border-muted); }
+.crisis-gear-confirm { display: grid; gap: 8px; padding: 10px; border: 1px solid var(--border); }
+.crisis-gear-confirm p { margin: 0; }
+.recent-event.crisis-warning-event { font-weight: 700; }
+.warning-label { display: inline-block; padding: 2px 5px; margin-right: 7px; border: 1px solid currentColor; }
 .npc-life-facts { grid-template-columns: minmax(90px, 110px) minmax(0, 1fr); margin: 0 0 16px; }
 .npc-concern { margin: 16px 0; padding: 14px 16px; border-left: 3px solid var(--text); background: var(--surface-alt); }
 .npc-concern h4 { color: var(--text-muted); font-weight: 400; }

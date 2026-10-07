@@ -1,0 +1,10 @@
+
+> plw-rpg@0.1.0 build
+> vue-tsc --noEmit && vite build
+
+src/components/LifeNewsWindow.vue(61,67): error TS2339: Property 'contributions' does not exist on type 'RegionalCrisisState'.
+  Property 'contributions' does not exist on type '{ phase: "dormant"; sequence: number; cooldownUntil: number; lastResolvedAt: number | null; }'.
+src/components/LifeNewsWindow.vue(61,96): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/components/LifeNewsWindow.vue(62,66): error TS2339: Property 'contributions' does not exist on type 'RegionalCrisisState'.
+  Property 'contributions' does not exist on type '{ phase: "dormant"; sequence: number; cooldownUntil: number; lastResolvedAt: number | null; }'.
+src/components/LifeNewsWindow.vue(62,95): error TS7006: Parameter 'entry' implicitly has an 'any' type.

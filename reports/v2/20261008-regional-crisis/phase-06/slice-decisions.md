@@ -29,3 +29,7 @@ Root批准F精確graded table/summary/recovery契約，正本06f ticket。Aggreg
 ## F accepted / G released
 
 411currentsource tests/typecheck/build，16 source hashesmatch，獨立Standards/Spec PASS。原始failures保留；晚於resolution的人口歸零未觸發救援為scope finding，historyclone效能待I/J。G按既有world-firstUI契約release；H–J未release。Human DEFERRED，非總體Gate。
+
+## G accepted / H released
+
+G scoped PASS WITH FINDINGS：49tests/build，獨立MediumReview，Chromium currentbuild90sourcehashesstable/e0，normalopening/modalclock/saveReload+controlledUIcases。Naturalwarning/normalfullarc/combatwin/UIstalerace未由G完成；exactfoodgold仅ledgerincrease非exactcounter。Harness failures保留，時間metric修正checkpoint非days。H精確threshold/eventtier/既有identity契約已release；I–J未release。
