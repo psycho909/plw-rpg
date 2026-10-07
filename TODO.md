@@ -8,7 +8,7 @@
 
 ## Now
 
-- [ ] Phase6-C Regional Crisis State — Ticket: [20261008-v2x-06b-crisis-state](tickets/20261008-v2x-06c-civil-defense.md)
+- [ ] Phase6-D Regional Crisis State — Ticket: [20261008-v2x-06b-crisis-state](tickets/20261008-v2x-06d-life-contributions.md)
 
 <!-- 本輪工程已完成；驗收證據保存在正式 Ticket。 -->
 

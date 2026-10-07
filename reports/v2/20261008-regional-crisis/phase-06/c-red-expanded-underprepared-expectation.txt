@@ -1,0 +1,30 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/civilDefense.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/civilDefense.test.ts (7 tests | 1 failed) 23ms
+     × allows a naturally prepared town to outperform an underprepared hamlet without player aid 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/civilDefense.test.ts > civil defense derivation > allows a naturally prepared town to outperform an underprepared hamlet without player aid
+AssertionError: expected 20 to be less than 5
+ ❯ src/engine/civilDefense.test.ts:215:31
+    213|     expect(ready.successChance).toBe(0.9)
+    214|     expect(unready.availableDefenders).toBe(0)
+    215|     expect(unready.readiness).toBeLessThan(5)
+       |                               ^
+    216|     expect(unready.successChance).toBe(0.1)
+    217|     expect(ready.successChance - unready.successChance).toBeGreaterTha…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  18:38:33
+   Duration  352ms (transform 173ms, setup 0ms, import 207ms, tests 23ms, environment 0ms)
+

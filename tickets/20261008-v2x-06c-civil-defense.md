@@ -1,6 +1,6 @@
 # Phase6-C — Civil Defense Model
 
-- Status: in_progress
+- Status: accepted
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-08 使用者上傳 Phase6 規格，要求「閱讀完後，直接進入Phase6開發環節」。
@@ -19,12 +19,12 @@ Civil Defense Model；世界危機連結 Adventure/Life/NPC/Settlement，維持�
 Phase7–10／V3、多新monsterfamilies、完整RTS/tactical/caravan/稅制／reconstruction／property destruction、server、nativeSafari/實機。不藉Phase6補完Phase5產品finding。
 
 ## Acceptance
-- [ ] 純 deriveCivilDefense 不修改 state/RNG；factor trace、readiness、needs、threat demand、likelihood 全為有界 finite values。
-- [ ] 守衛／傭兵只計存活、可工作、未退休／受傷且非玩家 party；其他居民與供給鏡像既有 simulation 語義。
-- [ ] 無玩家自然prepared與underprepared世界皆具合理不同成敗機率，玩家不是必要來源。
-- [ ] Food needs依人口、可用農夫、boss耗糧與至resolution剩餘時間推導；裝備需求僅實際可用防衛者槽位，無每日固定捐獻任務。
-- [ ] Threat retains persisted cause floor；普通hunt不能無限消除危機，特殊Chief/camp/intel留待後續明確bounded contribution。
-- [ ] public-seam pure/determinism/availability/shortage/edge tests與typecheck有實際原始證據；Root接受才releaseD。
+- [x] 純 deriveCivilDefense 不修改 state/RNG；factor trace、readiness、needs、threat demand、likelihood 全為有界 finite values。
+- [x] 守衛／傭兵只計存活、可工作、未退休／受傷且非玩家 party；其他居民與供給鏡像既有 simulation 語義。
+- [x] 無玩家自然prepared與underprepared世界皆具合理不同成敗機率，玩家不是必要來源。
+- [x] Food needs依人口、可用農夫、boss耗糧與至resolution剩餘時間推導；裝備需求僅實際可用防衛者槽位，無每日固定捐獻任務。
+- [x] Threat retains persisted cause floor；普通hunt不能無限消除危機，特殊Chief/camp/intel留待後續明確bounded contribution。
+- [x] public-seam pure/determinism/availability/shortage/edge tests與typecheck有實際原始證據；Root接受才releaseD。
 
 ## Constraints and Decisions
 正式 [Phase6 spec](../docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md)（原文CRLF保留，SHA256 `4e7d8533181a43f66c2d51dce056407a38be34797900ed875898e4470adde640`）；A→B→C→D→E→F→G→H→I→J逐段施工，不提前水平擴張。Goblin現有Threat/Chief優先，單一crisis canonical slice，RandomService-only。Human DEFERRED / NOT APPLICABLE AT THIS STAGE，不阻擋工程QA。Low機械、Medium一般工程、Max核心／save／determinism／獨立deepreview、Root產品決策。matt-skills-curated:implement／to-tickets按docs/agents/skill-workflows.md適配既有tickets、已批准順序與驗證工作單位，不另tracker／granularity批准。QA沿用recorded_reports/原始JSONL，不新建平行framework。
@@ -38,7 +38,7 @@ Blocked by: [前置Ticket](20261008-v2x-06b-crisis-state.md)；前置B已accepte
 
 ## Evidence
 - Verification: reports/v2/20261008-regional-crisis/phase-06/
-- Review / Audit: pending applicable review.
+- Review / Audit: independent C Standards/Spec ACCEPT recommendation, Root accepted; c-core-independent-review.md / civil-defense.md, 16/16 focused and typecheckPASS.
 - Commit / PR: base b82de85fb251697fca3e4331c5bb44945349a387，Phase5 app f9f969c；交付待本slice驗證，不建立PR。
 
 ### Root accepted C proposal (implementation released after B acceptance)

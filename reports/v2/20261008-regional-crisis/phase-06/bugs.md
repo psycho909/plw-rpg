@@ -8,8 +8,8 @@ Source base: `b82de85fb251697fca3e4331c5bb44945349a387`; uncommitted Phase6 sour
 - Root cause: `Number(value.severity)` membership check. Boolean true rejected in original severity-2 fixture; matching severity-1 regression demonstrates its coercion acceptance separately.
 - Impact: malformed saves cross numeric schema boundary; not proof of spontaneous corruption during normal play.
 - Fix: strict safe integer range 1–3; numeric controls preserved, coercible types rejected.
-- Evidence: original bug RED, subsequent test RED, six-case GREEN, 92 save tests and typecheck preserved in `b-fix-*`; independent review PENDING.
-- Status: FIX IMPLEMENTED / INDEPENDENT REVIEW PENDING.
+- Evidence: original bug RED, subsequent test RED, six-case GREEN, 92 save tests and typecheck preserved in `b-fix-*`; independent Standards/Spec review PASS, 207 focused tests; `b-core-independent-review.md/json`.
+- Status: FIXED / INDEPENDENTLY VERIFIED / B ACCEPTED.
 
 ## Harness failures (not product bugs)
 

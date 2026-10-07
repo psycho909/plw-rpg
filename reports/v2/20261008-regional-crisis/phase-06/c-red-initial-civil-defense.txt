@@ -1,0 +1,30 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/civilDefense.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/civilDefense.test.ts (1 test | 1 failed) 9ms
+     × returns bounded deterministic readiness without mutating world state or RNG 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/civilDefense.test.ts > civil defense derivation > returns bounded deterministic readiness without mutating world state or RNG
+AssertionError: expected null not to be null
+ ❯ src/engine/civilDefense.test.ts:25:23
+     23|     const second = deriveCivilDefense(state, crisis)
+     24|
+     25|     expect(first).not.toBeNull()
+       |                       ^
+     26|     if (!first) return
+     27|     expect(second).toEqual(first)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  18:33:35
+   Duration  330ms (transform 168ms, setup 0ms, import 199ms, tests 9ms, environment 0ms)
+
