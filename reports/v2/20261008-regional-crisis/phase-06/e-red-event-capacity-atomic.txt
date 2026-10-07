@@ -1,0 +1,11 @@
+E event-capacity atomicity RED (preserved before the fix)
+
+Command: npm test -- src/engine/crisisAdventure.test.ts -t 'rejects a camp victory|preflights daily-boundary'
+Result: exit 1; both targeted tests failed.
+- A MAX-2 public camp-raid start advances to MAX-1; the winning combat turn incorrectly returns success instead of rejecting the event sequence overflow and leaves an unsaveable state.
+- With two crops maturing at the next canonical day boundary, a camp-raid defend turn incorrectly returns success instead of rejecting before HP/time/RNG mutation when daily events exceed safe capacity.
+
+Pre-fix hashes:
+- src/engine/actions.ts 863a2d29c87b37919535e527e3e9de2660ab8acf385dffadd685bb8d36426c10
+- src/engine/crisisAdventure.test.ts 73aa199460113494973163eafd38de98a5d6e15940b895b079f4cf86cc5b0840
+- src/engine/crafting.ts 43050249c4ab9740bb646ba8795f3374debaf39286545d3865427a1a9576c332

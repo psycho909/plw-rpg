@@ -1,13 +1,13 @@
 import { ARCHETYPES, BOSS, BUILDINGS, CONFIG, CROP, DUNGEON, ITEMS, MONSTERS } from '../data/config'
 import { ITEM_BASES, RARITIES, WOLF_MONSTERS } from '../data/rewards'
-import type { GameState, ItemId, SkillId } from '../domain/types'
+import type { GameState, ItemId, RegionalCrisisCombatObjective, SkillId } from '../domain/types'
 import { emit } from './events'
 import { random } from './random'
 import { changeReputation, recordLifeAction } from './identity'
 import { MERCENARY_REPUTATION } from '../data/lifeRules'
 import { npcCanWork, rememberNpc } from './npcLife'
 import { recordHunt, recordLivingTrade, tradePriceMultiplier } from './livingEvents'
-import { die, distance, gainExp, player, simulate, stageIndex, threatLevel } from './simulation'
+import { die, distance, gainExp, player, simulate, stageIndex, threatLevel, tileAt } from './simulation'
 import { canVisit } from './rewardActions'
 import { awardWolfLoot } from './itemGeneration'
 import { incomingDamage, playerAttackDamage } from './combatStats'
@@ -133,6 +133,23 @@ export function leaveDungeon(state: GameState) {
   if (state.combat) return '戰鬥中請先逃跑。'
   state.dungeon.inDungeon = false; return ''
 }
+
+function startEncounter(state: GameState, monsterId: keyof typeof MONSTERS, dungeon: boolean, elite: boolean,
+  regionalCrisisObjective?: RegionalCrisisCombatObjective) {
+  const character = player(state)
+  const monster = MONSTERS[monsterId]
+  const scale = 1 + ((dungeon ? state.dungeon.threat : state.threat.threatLevel) - 1) * .25 + (elite ? .4 : 0)
+  state.combat = {
+    monsterId, hp: Math.round(monster.hp * scale), maxHp: Math.round(monster.hp * scale),
+    attack: Math.round(monster.attack * scale), defense: monster.defense, exp: Math.round(monster.exp * scale),
+    gold: Math.round(monster.gold * scale), elite, dungeon,
+    ...(regionalCrisisObjective ? { regionalCrisisObjective } : {}),
+  }
+  character.status = 'combat'
+  emit(state, 'combat.started', 'player', `遭遇${elite ? '精英' : ''}${monster.name}。`)
+  state.life.director.lastPlayerActivity = state.worldTime
+}
+
 export function encounter(state: GameState, boss = false) {
   const c = player(state), d = state.dungeon
   if (!c.isAlive || state.combat) return '目前無法開始戰鬥。'
@@ -145,12 +162,49 @@ export function encounter(state: GameState, boss = false) {
   const highest = Math.max(...eligible.map(([, m]) => m.spawnLevel))
   const candidates = eligible.filter(([, m]) => m.spawnLevel === highest)
   const id = (d.inDungeon ? DUNGEON.encounters[d.stage]! : boss ? BOSS.monsterId : candidates[candidates.length === 1 ? 0 : Math.floor(random(state) * candidates.length)]![0]) as keyof typeof MONSTERS
-  const m = MONSTERS[id], elite = d.inDungeon && d.stage === 1
-  const scale = 1 + ((d.inDungeon ? d.threat : state.threat.threatLevel) - 1) * .25 + (elite ? .4 : 0)
-  state.combat = { monsterId: id, hp: Math.round(m.hp * scale), maxHp: Math.round(m.hp * scale), attack: Math.round(m.attack * scale), defense: m.defense, exp: Math.round(m.exp * scale), gold: Math.round(m.gold * scale), elite, dungeon: d.inDungeon }
-  c.status = 'combat'; emit(state, 'combat.started', 'player', `遭遇${elite ? '精英' : ''}${m.name}。`)
-  state.life.director.lastPlayerActivity = state.worldTime
+  startEncounter(state, id, d.inDungeon, d.inDungeon && d.stage === 1)
   return ''
+}
+
+/** Starts one bounded, real Goblin encounter that can count for the matching live crisis. */
+export function startRegionalCampRaid(state: GameState, crisisId: string) {
+  const crisis = state.regionalCrisis
+  const character = player(state)
+  if ((crisis.phase !== 'warning' && crisis.phase !== 'preparation' && crisis.phase !== 'active')
+    || crisis.id !== crisisId || !Number.isSafeInteger(state.worldTime) || state.worldTime < crisis.triggeredAt
+    || state.worldTime >= crisis.phaseEndsAt || crisis.adventure.campRaidAt !== null) {
+    return '這場危機目前無法開始營地突襲。'
+  }
+  if (!character.isAlive || character.status !== 'idle' || state.combat || state.dungeon.inDungeon) {
+    return '請以存活且空閒的角色前往森林後再出發。'
+  }
+  if (character.currentRegion !== 'forest' || tileAt(state, character.position)?.regionId !== 'forest') {
+    return '請先前往北方森林。'
+  }
+  if (character.stamina < 8) return '體力不足，請先休息。'
+  if (!Number.isSafeInteger(state.eventSequence) || state.eventSequence >= Number.MAX_SAFE_INTEGER - 1) {
+    return '世界事件記錄已達安全上限，目前無法登記突襲。'
+  }
+
+  if (!campRaidVictoryFitsEventSequence(state, crisisId)) {
+    return '世界事件記錄已達安全上限，目前無法登記突襲。'
+  }
+
+  character.stamina -= 8
+  startEncounter(state, 'goblin', false, false, {
+    kind: 'camp_raid', crisisId, startedAt: state.worldTime,
+  })
+  return ''
+}
+
+function recordCampRaidVictory(state: GameState, objective: RegionalCrisisCombatObjective | undefined) {
+  if (!objective || objective.kind !== 'camp_raid') return
+  const crisis = state.regionalCrisis
+  if ((crisis.phase === 'warning' || crisis.phase === 'preparation' || crisis.phase === 'active')
+    && crisis.id === objective.crisisId && state.worldTime >= objective.startedAt && state.worldTime < crisis.phaseEndsAt
+    && crisis.adventure.campRaidAt === null) {
+    crisis.adventure.campRaidAt = state.worldTime
+  }
 }
 export function usePotion(state: GameState) {
   const c = player(state)
@@ -158,7 +212,26 @@ export function usePotion(state: GameState) {
   c.inventory.potion--; c.hp = Math.min(c.maxHp, c.hp + 45)
   return ''
 }
-export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'potion' | 'run') {
+const CAMP_RAID_EVENT_CAPACITY_ERROR = '世界事件記錄已達安全上限，這回合尚未執行。'
+
+function safeEventSequenceAfterCampRaidTurn(state: GameState, command: 'attack' | 'defend' | 'potion' | 'run') {
+  const preview = structuredClone(state)
+  const error = resolveCombatTurn(preview, command)
+  return error !== '' ? error : Number.isSafeInteger(preview.eventSequence) && preview.eventSequence < Number.MAX_SAFE_INTEGER
+}
+
+function campRaidVictoryFitsEventSequence(state: GameState, crisisId: string) {
+  const preview = structuredClone(state)
+  player(preview).stamina -= 8
+  startEncounter(preview, 'goblin', false, false, { kind: 'camp_raid', crisisId, startedAt: state.worldTime })
+  if (!preview.combat) return false
+  // A one-hit projected win bounds the start event plus the complete reward and time-step path.
+  preview.combat.hp = 1
+  const error = resolveCombatTurn(preview, 'attack')
+  return error === '' && Number.isSafeInteger(preview.eventSequence) && preview.eventSequence < Number.MAX_SAFE_INTEGER
+}
+
+function resolveCombatTurn(state: GameState, command: 'attack' | 'defend' | 'potion' | 'run') {
   const c = player(state), monster = state.combat
   if (!c.isAlive || !monster) return '目前沒有戰鬥。'
   if (command === 'run') {
@@ -184,6 +257,7 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
       : null
     const wolfBoss = !!family && WOLF_MONSTERS[family.definitionId].rank === 'boss'
     const goblinBoss = !family && MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss
+    const regionalCrisisObjective = monster.regionalCrisisObjective
     recordHunt(state)
     c.gold += monster.gold
     if (!wolfFamilyPayout) c.inventory[MONSTERS[monster.monsterId as keyof typeof MONSTERS].loot]++
@@ -219,6 +293,7 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
     const gearMessage = wolfLoot?.instance
       ? ` 另獲得${RARITIES[wolfLoot.instance.rarity].name}${ITEM_BASES[wolfLoot.instance.baseId].name}，可在物品視窗檢視。`
       : ''
+    recordCampRaidVictory(state, regionalCrisisObjective)
     emit(state, 'combat.won', 'player', `戰鬥勝利！獲得 ${monster.exp} 經驗與 ${monster.gold} 金幣。${gearMessage}`)
   } else {
     const companionGuard = state.party.some(p => p.archetype === 'fighter') && c.hp <= c.maxHp * .25 ? ARCHETYPES.fighter.guard : 0
@@ -236,4 +311,12 @@ export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
   simulate(state, 1)
   state.life.director.lastPlayerActivity = state.worldTime
   return ''
+}
+
+export function combatTurn(state: GameState, command: 'attack' | 'defend' | 'potion' | 'run') {
+  if (state.combat?.regionalCrisisObjective?.kind === 'camp_raid') {
+    const capacity = safeEventSequenceAfterCampRaidTurn(state, command)
+    if (capacity !== true) return typeof capacity === 'string' ? capacity : CAMP_RAID_EVENT_CAPACITY_ERROR
+  }
+  return resolveCombatTurn(state, command)
 }

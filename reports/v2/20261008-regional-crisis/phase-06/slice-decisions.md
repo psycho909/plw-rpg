@@ -17,3 +17,7 @@ Root接受C純derive限定工程範圍，独立Standards/Spec recommendation ACC
 ## D accepted / E released
 
 Root接受D限定工程：475fulltests/typecheck/build，170focused，独立4targeted authenticV4/prunecases与actualcrafted-item effect/reload，12-sourcefreeze match且Standards/Spec PASS。P1-D01与P2-D02保留RED并已修復。E依兩個選項／boundedselected-demandrelief／stalecombatmarker與save6契約release；F–J不提前。Human DEFERRED；並非完整危機或產品PASS。
+
+## E accepted / F contract planning
+
+Root接受E限定工程：505full/297focused/獨立29 tests、typecheck/build、Standards/Spec PASS。12 source hashes匹配；fingerprint編碼錯誤僅metadata更正，舊版本保存於playlog。P2-E01原始RED保留且修復。Exact clone preflight獲准，20k history成本須I/J量測。F須精確bounded consequences/recovery/save-summary契約後才施工；G–J仍依序。Human DEFERRED，非整體Phase6 PASS。

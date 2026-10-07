@@ -1,0 +1,37 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/saveService.test.ts -t migrates a V5 D-contribution
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (98 tests | 1 failed | 97 skipped) 28ms
+     × migrates a V5 D-contribution save to V6 without losing the ledger, crisis, world, time or RNG 26ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates a V5 D-contribution save to V6 without losing the ledger, crisis, world, time or RNG
+AssertionError: expected 5 to be 6 // Object.is equality
+
+- Expected
++ Received
+
+- 6
++ 5
+
+ ❯ src/services/saveService.test.ts:141:38
+    139|     const loaded = deserialize(JSON.stringify(savedV6))
+    140|
+    141|     expect(loaded.state.saveVersion).toBe(6)
+       |                                      ^
+    142|     expect(loaded.state.regionalCrisis).toEqual({ ...crisisBefore, adv…
+    143|     if (loaded.state.regionalCrisis.phase === 'dormant') throw new Err…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 97 skipped (98)
+   Start at  19:16:05
+   Duration  631ms (transform 381ms, setup 0ms, import 458ms, tests 28ms, environment 0ms)
+

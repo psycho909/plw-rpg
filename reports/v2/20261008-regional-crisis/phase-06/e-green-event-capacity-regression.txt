@@ -1,0 +1,5 @@
+E focused post-fix regression
+
+Command: npm test -- src/engine/crisisAdventure.test.ts src/engine/actions.test.ts src/engine/combatStats.test.ts src/engine/wolfFamily.test.ts src/engine/lifeIntegration.test.ts src/engine/civilDefense.test.ts src/engine/regionalCrisis.test.ts src/engine/crisisContributions.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/stores/gameStore.test.ts
+Result: exit 0; 12 test files passed, 297 tests passed.
+Coverage includes actual camp-only odds improvement while current pressure dominates, the MAX_SAFE_INTEGER - 2 start→win capacity regression, atomic start/turn rejection, and a two-crop canonical daily-boundary rejection before damage/time/RNG mutation.

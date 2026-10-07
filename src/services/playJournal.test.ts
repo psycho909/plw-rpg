@@ -19,7 +19,7 @@ afterEach(() => vi.unstubAllGlobals())
 describe('atomic local checkpoint envelope', () => {
   it('migrates a valid V1 world and starts a separate journal', () => {
     const loaded = unpackCheckpoint(versionOneFixture())
-    expect(loaded.state.saveVersion).toBe(5); expect(loaded.state.life.openingSeen).toBe(true); expect(loaded.imported).toBe(true)
+    expect(loaded.state.saveVersion).toBe(6); expect(loaded.state.life.openingSeen).toBe(true); expect(loaded.imported).toBe(true)
     expect(loaded.journal.pending).toEqual([])
   })
   it('preserves historical offline journal entries unchanged during V1 migration', () => {

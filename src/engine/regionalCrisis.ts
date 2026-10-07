@@ -52,6 +52,7 @@ function crisisSnapshot(state: GameState, sequence: number): RegionalCrisisState
     },
     chiefOutcome: null,
     contributions: emptyRegionalCrisisContributions(),
+    adventure: { campRaidAt: null },
   }
 }
 

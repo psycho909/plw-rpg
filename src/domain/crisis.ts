@@ -24,6 +24,10 @@ export interface CrisisContributionCredit {
   amount: number
 }
 
+export interface RegionalCrisisAdventure {
+  campRaidAt: number | null
+}
+
 export interface CrisisEquipmentAllocation {
   defenderNpcId: string
   slot: EquipmentSlot
@@ -61,6 +65,7 @@ interface CrisisInstance {
   cause: RegionalCrisisCause
   chiefOutcome: RegionalCrisisChiefOutcome | null
   contributions: RegionalCrisisContributions
+  adventure: RegionalCrisisAdventure
 }
 
 export type RegionalCrisisState =

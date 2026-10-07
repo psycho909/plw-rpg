@@ -8,7 +8,7 @@
 
 ## Now
 
-- [ ] Phase6-E Regional Crisis State — Ticket: [20261008-v2x-06b-crisis-state](tickets/20261008-v2x-06e-adventure-contributions.md)
+- [ ] Phase6-F Resolution / Consequences — Ticket: [20261008-v2x-06f-resolution](tickets/20261008-v2x-06f-resolution.md)
 
 <!-- 本輪工程已完成；驗收證據保存在正式 Ticket。 -->
 

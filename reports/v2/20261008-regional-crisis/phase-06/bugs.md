@@ -35,3 +35,7 @@ Oversized food submission with a negative raw forecast that could become positiv
 
 - Authentic archivedV4 fixture runner emitted a Vite log before JSON. Parser failure retained in d-v4-fixtures/generation-failure.json; corrected parsing produced authenticatedsame-sourceV4 fixtures.
 - FirstD fullcheck: 473/475 passed, two testfailures from staleV4 version expectations; three assertions corrected toV5. Originald-fullcheck.txt kept, separategreen475/typecheck/build.
+
+## P2-E01 — Camp victory exceeds valid event-sequence budget
+
+E uncommitted snapshot on source parent `dfdc816`. Controlled public startRegionalCampRaid at MAX_SAFE_INTEGER−2 then successful combatTurn produced a save rejected by deserialize; original `e-red-event-capacity.txt` SHA256 `68e72137d92e6b5d0e20b7118f7839b1f667c5231d9b285aafd9a324fde8ccf1` records exact pre-fix source/test hashes and failure. Source test hash `5b3c72ed449f7f2b29e56cf511f1cc2bab07680be7dcf2e0aba3fc8a0268f59f`. Natural play cannot practically reach this counter; classified P2 integrity edge, not P1 normal-save loss. FIXED / INDEPENDENTLY VERIFIED / E ACCEPTED. Exact isolated camp-combat clone preflight rejects before real state changes; 505 full tests and independent 29 tests PASS. Original RED retained. Full-history clone cost remains an I/J profiling risk.

@@ -26,6 +26,15 @@ export interface NPC extends Character {
 }
 export interface Tile extends Position { terrain: 'water' | 'grass' | 'forest' | 'field' | 'mountain' | 'road'; regionId: RegionId; discovered: boolean; walkable: boolean; building?: BuildingId }
 export interface WorldEvent { id: number; at: number; type: string; category: Category; message: string; tier?: 'transient' | 'gameplay' | 'major' | 'debug' }
+export interface RegionalCrisisCombatObjective {
+  kind: 'camp_raid'
+  crisisId: string
+  startedAt: number
+}
+export interface CombatState {
+  monsterId: string; hp: number; maxHp: number; attack: number; defense: number; exp: number; gold: number
+  elite: boolean; dungeon: boolean; familyEncounter?: FamilyEncounter; regionalCrisisObjective?: RegionalCrisisCombatObjective
+}
 export interface GameState {
   reward: RewardState
   life: WorldLife
@@ -38,6 +47,6 @@ export interface GameState {
   dungeon: { discovered: boolean; threat: number; progress: number; runs: number; stage: number; inDungeon: boolean }
   crops: { id: number; plantedAt: number; growthDuration: number; matureAt: number; status: 'growing' | 'mature' }[]; preparedPlots: number
   party: { npcId: string; hireCost: number; dailyWage: number; contractEnd: number; archetype: 'fighter' | 'healer' }[]
-  combat: { monsterId: string; hp: number; maxHp: number; attack: number; defense: number; exp: number; gold: number; elite: boolean; dungeon: boolean; familyEncounter?: FamilyEncounter } | null
+  combat: CombatState | null
   events: WorldEvent[]; history: WorldEvent[]; eventSequence: number; nextNpcId: number
 }

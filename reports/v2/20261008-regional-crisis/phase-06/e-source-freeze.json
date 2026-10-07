@@ -1,0 +1,71 @@
+{
+  "status": "source frozen; schema-wide check passed; pending independent review",
+  "baseCommit": "dfdc81636bb68f83ee87c4046199dcbaaf11e192",
+  "sourceFingerprint": "a298dde9e3a59c5adac8f234cc823cd57d7f6d0fbb9414421b1be1942018e739",
+  "sourceFilesSha256": {
+    "src/data/config.ts": "4cdd9b781565e3ad0ddf4babee149bfeadc97bd5dc1dfc8126875abbbc776760",
+    "src/domain/crisis.ts": "0258ae631b362f5c2fe16423365fb87bb7cd313fbe7e558d23d91ce6925668d1",
+    "src/domain/types.ts": "c90703ac043a4e3310ed695155a0dba02763d56fb06b0f3bd6833cfe32f34564",
+    "src/engine/actions.ts": "7fe2e09c0d82c5eef0ab95d581fd760b2fd1c36482be1f2d5d2ba99802501baa",
+    "src/engine/civilDefense.ts": "6d0b68b96460a5dedf0a5c4682aa8ea3e083594565fbadeb9f7fceb65a3a746a",
+    "src/engine/crisisAdventure.test.ts": "b0d2536b476331b31ddf40a900ec3e6e0024491022f3fd186992697914edbf30",
+    "src/engine/regionalCrisis.ts": "15f039edadb9b5c025b623f7643da3402384eaf1872394b26a9966fc877ff81b",
+    "src/services/playJournal.test.ts": "58aac5abb18e0a5df41cc9444b16a14097664e9642c409acdf74682e89348f17",
+    "src/services/rewardSave.test.ts": "7f29d60a23a81d715bd9b1d50bd93515ffb06736a36c85c5d16323e35e55234e",
+    "src/services/saveService.test.ts": "56120bcbac8b21dcdf60f3d6ce1ed2ef134af43ad4e7238b504a35503d9d1193",
+    "src/services/saveService.ts": "153916207989009b524211ff3dd4506aba70a012662566960041e5006ebc44e4",
+    "src/stores/gameStore.test.ts": "defffbda0579e9b79c0c04e023cb6a5c889a78ef195c222339372f4381b979d2"
+  },
+  "evidenceSha256": {
+    "contribution-analysis.md": "60862e486d9475072f11203bfd7a068f988fa5159206891024925181c041dd85",
+    "e-red-camp-action.txt": "7ca33efe845238174a774a5498de7b262ccf14867cfda49fe33d773b858fc59b",
+    "e-red-v5-v6-migration.txt": "72a61aab2719b6ce53e98baba28e445e65a733aa8a78cec6acaa75dee78eb7d5",
+    "e-red-adventure-acceptance.txt": "a42936648e625d3f7e1953aa69584ad1a1156086a152a89333dcea6ed114ea5a",
+    "e-red-event-capacity.txt": "68e72137d92e6b5d0e20b7118f7839b1f667c5231d9b285aafd9a324fde8ccf1",
+    "e-red-event-capacity-atomic.txt": "e2a0115c23f5a0ce30740b12b0c844b303220eba6faad24eff40d0bde7c08849",
+    "e-green-adventure-targeted.txt": "c5135b6138612100f889afa282e955dcfb25a1bba202e9591bfc54f35058b111",
+    "e-green-adventure-targeted-final.txt": "54804cd65a2301a588697e24c0bf96f76b490ce0c686739c99e455e627f7b9b5",
+    "e-green-adventure-regression.txt": "adc1aad49ea73fef1442873e04aa5c7bf55ef1a64d84e3a3adda84150e06a3d8",
+    "e-green-event-capacity-regression.txt": "8187b844f88980874634a50d189003e753470bb7c3cb2dea4647f3f6cd7d819e",
+    "e-typecheck.txt": "63581012a16cc215a53f3206aa4345f65a6a8bdd6fad0b0a1787a1cd0060434c",
+    "e-typecheck-final.txt": "410265b3ad2302b03bf1316e75aa69a9a9dfac10d22bbcf410dc69daf2558efa",
+    "e-typecheck-event-capacity.txt": "6160d5bc8f0a1e5dc08ba504142cdebaa4d18b18777de7fc7910bdd38fcb76e6",
+    "e-fullcheck-green.txt": "5de37e200e59e07c14edf58c74a0d0b374820536bfdd9140eccb2e258cae4580",
+    "e-v5-fixtures/manifest.json": "6efb52cd60b00f9caf81e3bebe2e5b941020657873d07b73cbd91a4d12d17511",
+    "e-v5-fixtures/generate_v5_fixture.py": "3725bf006dbb1dcfd99e86eb86f2aaad842227a4ba513527b28f0fdba12f252c",
+    "e-v5-fixtures/crisis-v5-preparation-d-ledger.json": "b06eeb743cbd941c20c0b54e42f13120a1366b7b166da03c18ebfea6f5b03a25"
+  },
+  "focusedRegression": {
+    "command": "npm test -- src/engine/crisisAdventure.test.ts src/engine/actions.test.ts src/engine/combatStats.test.ts src/engine/wolfFamily.test.ts src/engine/lifeIntegration.test.ts src/engine/civilDefense.test.ts src/engine/regionalCrisis.test.ts src/engine/crisisContributions.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/stores/gameStore.test.ts",
+    "testFilesPassed": 12,
+    "testsPassed": 297,
+    "evidence": "e-green-event-capacity-regression.txt"
+  },
+  "typecheck": {
+    "command": "npx vue-tsc --noEmit",
+    "status": "PASS",
+    "evidence": "e-typecheck-event-capacity.txt"
+  },
+  "fullCheck": {
+    "command": "npm run check",
+    "testFilesPassed": 26,
+    "testsPassed": 505,
+    "typecheck": "PASS",
+    "productionBuild": "PASS",
+    "evidence": "e-fullcheck-green.txt"
+  },
+  "migrationFixture": {
+    "path": "e-v5-fixtures/crisis-v5-preparation-d-ledger.json",
+    "sha256": "b06eeb743cbd941c20c0b54e42f13120a1366b7b166da03c18ebfea6f5b03a25",
+    "sourceCommit": "dfdc81636bb68f83ee87c4046199dcbaaf11e192",
+    "manifestSha256": "6efb52cd60b00f9caf81e3bebe2e5b941020657873d07b73cbd91a4d12d17511",
+    "verification": "archived V5 public engine round trip; nonempty equipment, food, and gold D ledgers; fixture reused unchanged"
+  },
+  "eventCapacity": {
+    "preFixRed": "e-red-event-capacity.txt",
+    "atomicityRed": "e-red-event-capacity-atomic.txt",
+    "decision": "Exact isolated camp-only command projection before real mutation; start projection forces one-hit Goblin victory. Full-history clone cost can reach 20,000 event records; no fast path without a conservative proven bound."
+  },
+  "review": "pending independent review; no self-acceptance or release",
+  "sourceFingerprintAlgorithm": "SHA-256 over sorted source path, NUL byte, lowercase source SHA-256, LF; repeated for each path"
+}

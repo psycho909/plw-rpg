@@ -1,0 +1,9 @@
+COMMAND: ./node_modules/.bin/vue-tsc --noEmit
+EXIT: 2
+src/engine/crisisAdventure.test.ts(6,65): error TS2724: '"./regionalCrisis"' has no exported member named 'dormantRegionalCrisis'. Did you mean 'advanceRegionalCrisis'?
+src/engine/crisisAdventure.test.ts(129,52): error TS2339: Property 'phaseEndsAt' does not exist on type '(CrisisInstance & { phase: "warning"; phaseStartedAt: number; phaseEndsAt: number; }) | (CrisisInstance & { phase: "preparation"; phaseStartedAt: number; phaseEndsAt: number; }) | (CrisisInstance & { ...; }) | (CrisisInstance & { ...; }) | (CrisisInstance & { ...; }) | (CrisisInstance & { ...; })'.
+  Property 'phaseEndsAt' does not exist on type 'CrisisInstance & { phase: "resolution"; phaseStartedAt: number; }'.
+src/engine/crisisAdventure.test.ts(131,38): error TS2367: This comparison appears to be unintentional because the types '"warning" | "preparation" | "active" | "resolution" | "aftermath" | "cooldown"' and '"dormant"' have no overlap.
+src/engine/crisisAdventure.test.ts(189,28): error TS2339: Property 'phaseEndsAt' does not exist on type '(CrisisInstance & { phase: "warning"; phaseStartedAt: number; phaseEndsAt: number; }) | (CrisisInstance & { phase: "preparation"; phaseStartedAt: number; phaseEndsAt: number; }) | (CrisisInstance & { ...; }) | (CrisisInstance & { ...; }) | (CrisisInstance & { ...; }) | (CrisisInstance & { ...; })'.
+  Property 'phaseEndsAt' does not exist on type 'CrisisInstance & { phase: "resolution"; phaseStartedAt: number; }'.
+src/engine/crisisAdventure.test.ts(226,7): error TS2367: This comparison appears to be unintentional because the types '"warning" | "preparation" | "active" | "resolution" | "aftermath" | "cooldown"' and '"dormant"' have no overlap.

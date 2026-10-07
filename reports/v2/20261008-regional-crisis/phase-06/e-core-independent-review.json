@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "title": "Phase6-E core independent review",
+  "reviewedAt": "2026-10-07T20:00:25+00:00",
+  "ticket": "tickets/20261008-v2x-06e-adventure-contributions.md",
+  "scope": [
+    "E adventure contributions: existing Goblin camp raid and Chief, bounded actual-fact relief, success-only/current-crisis credit",
+    "camp encounter creation and combat resolution event capacity, atomicity, RNG/events, save/reload, flee/death/succession",
+    "Save V5-to-V6 migration, in-flight objective validation, and authentic archived V5 D-ledger fixture",
+    "E ticket acceptance and Phase6 spec §87; no F-J implementation, UI, browser, or human playtest"
+  ],
+  "excluded": [
+    "Root product acceptance/release decision and Phase6-F authorization",
+    "Browser or human validation; Human remains DEFERRED / NOT APPLICABLE AT THIS STAGE",
+    "Unchanged full suite rerun by reviewer; engineer full-check evidence was hash-verified instead"
+  ],
+  "git": {
+    "branch": "v2x/reward-core",
+    "baseCommit": "dfdc81636bb68f83ee87c4046199dcbaaf11e192",
+    "headCommit": "dfdc81636bb68f83ee87c4046199dcbaaf11e192",
+    "reviewedObject": "uncommitted E working-tree source snapshot; source freeze and per-file hashes verified",
+    "freezePath": "reports/v2/20261008-regional-crisis/phase-06/e-source-freeze.json",
+    "freezeManifestSha256": "74d049096da396028ed83650b81d6791787b6c3aa1bb1fbfb3579a44789cabef",
+    "sourceFingerprintAlgorithm": "SHA-256 over sorted `path NUL lowercase SHA-256 LF` records",
+    "sourceFingerprint": "a298dde9e3a59c5adac8f234cc823cd57d7f6d0fbb9414421b1be1942018e739",
+    "sourceFileCount": 12,
+    "sourceSha256": {
+      "src/data/config.ts": "4cdd9b781565e3ad0ddf4babee149bfeadc97bd5dc1dfc8126875abbbc776760",
+      "src/domain/crisis.ts": "0258ae631b362f5c2fe16423365fb87bb7cd313fbe7e558d23d91ce6925668d1",
+      "src/domain/types.ts": "c90703ac043a4e3310ed695155a0dba02763d56fb06b0f3bd6833cfe32f34564",
+      "src/engine/actions.ts": "7fe2e09c0d82c5eef0ab95d581fd760b2fd1c36482be1f2d5d2ba99802501baa",
+      "src/engine/civilDefense.ts": "6d0b68b96460a5dedf0a5c4682aa8ea3e083594565fbadeb9f7fceb65a3a746a",
+      "src/engine/crisisAdventure.test.ts": "b0d2536b476331b31ddf40a900ec3e6e0024491022f3fd186992697914edbf30",
+      "src/engine/regionalCrisis.ts": "15f039edadb9b5c025b623f7643da3402384eaf1872394b26a9966fc877ff81b",
+      "src/services/playJournal.test.ts": "58aac5abb18e0a5df41cc9444b16a14097664e9642c409acdf74682e89348f17",
+      "src/services/rewardSave.test.ts": "7f29d60a23a81d715bd9b1d50bd93515ffb06736a36c85c5d16323e35e55234e",
+      "src/services/saveService.test.ts": "56120bcbac8b21dcdf60f3d6ce1ed2ef134af43ad4e7238b504a35503d9d1193",
+      "src/services/saveService.ts": "153916207989009b524211ff3dd4506aba70a012662566960041e5006ebc44e4",
+      "src/stores/gameStore.test.ts": "defffbda0579e9b79c0c04e023cb6a5c889a78ef195c222339372f4381b979d2"
+    },
+    "allSourceHashesMatchFreeze": true,
+    "stagedDiffCommand": "git diff --cached --name-status -- src (empty)",
+    "workingTreeDiffCommand": "git diff HEAD -- src/<12 frozen paths>; new src/engine/crisisAdventure.test.ts read separately",
+    "untrackedSourceCommand": "git ls-files --others --exclude-standard -- src (src/engine/crisisAdventure.test.ts)",
+    "whitespaceCheck": {
+      "command": "git diff --check HEAD -- src",
+      "result": "PASS"
+    }
+  },
+  "reviewer": {
+    "taskRole": "g6_luna_max_phase6_core_reviewer_e",
+    "implementationContributor": false,
+    "runtimeModelVerified": false,
+    "reviewAxes": "Standards and Spec evaluated separately by one independent reviewer per repository review contract; no review subagents used."
+  },
+  "standards": {
+    "result": "PASS",
+    "basis": [
+      "AGENTS.md and docs/agents/review.md §§1–3",
+      "docs/agents/skill-workflows.md general-review adaptation",
+      "docs/agents/agent-routing.md §§1–4",
+      "matt-skills-curated:code-review, adapted to repository review contract"
+    ],
+    "findings": [],
+    "notes": [
+      "Reviewed the tracked E diffs and separately read the untracked crisisAdventure test; all 12 frozen source-path hashes match the final manifest.",
+      "The clone preflight invokes the internal combat resolver directly, so it does not recurse; emit capture uses a WeakMap keyed by the real state, while the clone is a distinct key. RNG and simulated state mutations are confined to the clone. No global dry-run effects were found.",
+      "The shared encounter constructor preserves ordinary encounter behavior while adding the optional objective; no temporary boss-flag or fabricated-world-state path was introduced.",
+      "Exact clone preflight cost scales with full state/history, with history capped at 20,000 records. Root approved retaining this design; performance remains for Phase6-I/J profiling and is not represented as browser-tested."
+    ]
+  },
+  "spec": {
+    "result": "PASS for E core",
+    "basis": [
+      "tickets/20261008-v2x-06e-adventure-contributions.md: Acceptance and Root-approved E contract",
+      "docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md §87",
+      "accepted Phase6-D contract and handoff"
+    ],
+    "findings": [
+      {
+        "id": "P2-E01",
+        "severity": "P2",
+        "status": "RESOLVED in final frozen snapshot",
+        "location": "src/engine/actions.ts: startRegionalCampRaid, campRaidVictoryFitsEventSequence, safeEventSequenceAfterCampRaidTurn",
+        "description": "The preserved public RED showed a MAX_SAFE_INTEGER-2 event sequence could accept camp start, then produce an unsaveable victory. Final code projects the one-hit start-to-victory path on an isolated clone before real start mutation and projects each camp combat turn before applying it; rejected operations leave real state unchanged.",
+        "evidence": [
+          {
+            "path": "reports/v2/20261008-regional-crisis/phase-06/e-red-event-capacity.txt",
+            "sha256": "68e72137d92e6b5d0e20b7118f7839b1f667c5231d9b285aafd9a324fde8ccf1"
+          },
+          {
+            "path": "reports/v2/20261008-regional-crisis/phase-06/e-red-event-capacity-atomic.txt",
+            "sha256": "e2a0115c23f5a0ce30740b12b0c844b303220eba6faad24eff40d0bde7c08849"
+          },
+          {
+            "path": "reports/v2/20261008-regional-crisis/phase-06/e-green-event-capacity-regression.txt",
+            "sha256": "8187b844f88980874634a50d189003e753470bb7c3cb2dea4647f3f6cd7d819e"
+          }
+        ]
+      }
+    ],
+    "notes": [
+      "Both available levers are actual existing Goblin actions: a Chief defeat and a successful bounded Goblin camp raid. Civil Defense uses specialRelief=min(14, actual Chief 8 + actual camp success 6), subtracts it from max(causeFloor,currentPressure), and keeps a floor of 20; ordinary hunts cannot set the camp marker.",
+      "Raid start is restricted to a matching warning/preparation/active crisis before its deadline, a living idle player in the forest, non-dungeon state, and sufficient stamina. Only actual victory credits a marker, and current crisis ID/phase/deadline are checked at completion. Flee and death/succession provide no camp credit; a failed raid can be retried.",
+      "The V5-to-V6 migration adds the adventure default while preserving prior world, time, RNG, D contribution ledger, and save timestamp. The archived V5 fixture is from the exact base commit and is reused unchanged; it has nonempty equipment, food, and gold ledger entries.",
+      "Malformed in-flight objectives are rejected for wrong seed/sequence/time/monster/dungeon/kind. A legitimate old-crisis objective remains loadable across phase/new-crisis changes, but current-ID checks prevent late credit."
+    ]
+  },
+  "verification": {
+    "reviewerRun": {
+      "command": "npm test -- src/engine/crisisAdventure.test.ts",
+      "result": "PASS; 1 file, 29 tests",
+      "scope": "E-specific public engine regression suite"
+    },
+    "engineerFocusedRun": {
+      "command": "npm test -- src/engine/crisisAdventure.test.ts src/engine/actions.test.ts src/engine/combatStats.test.ts src/engine/wolfFamily.test.ts src/engine/lifeIntegration.test.ts src/engine/civilDefense.test.ts src/engine/regionalCrisis.test.ts src/engine/crisisContributions.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/stores/gameStore.test.ts",
+      "result": "PASS; 12 files, 297 tests",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/e-green-event-capacity-regression.txt",
+      "evidenceSha256": "8187b844f88980874634a50d189003e753470bb7c3cb2dea4647f3f6cd7d819e"
+    },
+    "typecheck": {
+      "command": "npx vue-tsc --noEmit",
+      "result": "PASS",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/e-typecheck-event-capacity.txt",
+      "evidenceSha256": "6160d5bc8f0a1e5dc08ba504142cdebaa4d18b18777de7fc7910bdd38fcb76e6"
+    },
+    "engineerFullCheck": {
+      "command": "npm run check",
+      "result": "PASS; 26 files, 505 tests; vue-tsc and production build passed",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/e-fullcheck-green.txt",
+      "evidenceSha256": "5de37e200e59e07c14edf58c74a0d0b374820536bfdd9140eccb2e258cae4580",
+      "reviewerRerun": false
+    },
+    "authenticV5Fixture": {
+      "path": "reports/v2/20261008-regional-crisis/phase-06/e-v5-fixtures/crisis-v5-preparation-d-ledger.json",
+      "sha256": "b06eeb743cbd941c20c0b54e42f13120a1366b7b166da03c18ebfea6f5b03a25",
+      "manifestSha256": "6efb52cd60b00f9caf81e3bebe2e5b941020657873d07b73cbd91a4d12d17511",
+      "sourceCommit": "dfdc81636bb68f83ee87c4046199dcbaaf11e192",
+      "verification": "archived V5 public engine round trip; nonempty equipment, food, and gold D ledgers; fixture reused unchanged"
+    },
+    "evidenceHashesMatchFreeze": true,
+    "sourceChangesAfterFullCheck": "None; all source hashes still match the frozen source map."
+  },
+  "disposition": {
+    "result": "RECOMMEND ROOT ACCEPT E CORE",
+    "unresolvedBlockers": [],
+    "remainingRisk": "Full-history clone preflight performance at the 20,000-record bound is unprofiled; profile during Phase6-I/J. No browser or human validation is claimed.",
+    "phaseGate": "F remains blocked until Root accepts E; this report is not an overall Phase6/product PASS."
+  }
+}

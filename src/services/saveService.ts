@@ -44,7 +44,7 @@ function exactShape(value: unknown, required: string[], optional: string[] = [])
   return required.every(key => Object.hasOwn(value, key)) && Object.keys(value).every(key => allowed.has(key))
 }
 
-function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5): value is GameState {
+function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5 | 6): value is GameState {
   if (!object(value)) return false
   const currentTemplate = createGame()
   // Event tiers remain optional so historical V1 entries survive later-version round trips.
@@ -97,11 +97,14 @@ function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5): value is GameSta
     && s.party.length <= 2 && s.party.every(p => exactShape(p, ['npcId', 'hireCost', 'dailyWage', 'contractEnd', 'archetype'])
       && ['fighter', 'healer'].includes(p.archetype) && s.npcs.some(n => n.id === p.npcId)
       && safeInt(p.hireCost) && safeInt(p.dailyWage) && safeInt(p.contractEnd))
-    && (s.combat === null || (exactShape(s.combat, ['monsterId', 'hp', 'maxHp', 'attack', 'defense', 'exp', 'gold', 'elite', 'dungeon'], ['familyEncounter'])
+    && (s.combat === null || (exactShape(s.combat, ['monsterId', 'hp', 'maxHp', 'attack', 'defense', 'exp', 'gold', 'elite', 'dungeon'],
+      version >= 6 ? ['familyEncounter', 'regionalCrisisObjective'] : ['familyEncounter'])
       && Object.hasOwn(MONSTERS, s.combat.monsterId) && boundedNumber(s.combat.hp, 0, Number.MAX_SAFE_INTEGER)
       && boundedNumber(s.combat.maxHp, 1, Number.MAX_SAFE_INTEGER) && safeInt(s.combat.attack) && safeInt(s.combat.defense)
       && safeInt(s.combat.exp) && safeInt(s.combat.gold) && typeof s.combat.elite === 'boolean' && typeof s.combat.dungeon === 'boolean'
-      && (!Object.hasOwn(s.combat, 'familyEncounter') || (Object.hasOwn(value, 'reward') && validFamilyEncounter(s.combat.familyEncounter, s)))))
+      && (!Object.hasOwn(s.combat, 'familyEncounter') || (Object.hasOwn(value, 'reward') && validFamilyEncounter(s.combat.familyEncounter, s)))
+      && (!Object.hasOwn(s.combat, 'regionalCrisisObjective') || (version >= 6 && s.combat.monsterId === 'goblin'
+        && !s.combat.dungeon && validRegionalCrisisCombatObjective(s.combat.regionalCrisisObjective, s)))))
     && safeInt(s.eventSequence) && s.eventSequence < Number.MAX_SAFE_INTEGER
     && [...s.events, ...s.history, ...s.crops].every(entry => object(entry) && safeInt(entry.id, 1) && entry.id <= s.eventSequence)
     && s.events.length <= 150 && s.history.length <= 20000 && Number.isInteger(s.dungeon.stage) && s.dungeon.stage >= 0 && s.dungeon.stage <= DUNGEON.encounters.length
@@ -112,7 +115,7 @@ function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5): value is GameSta
       && ['player', 'npc', 'world', 'monster', 'settlement'].includes(e.category)
       && (e.tier === undefined || enumValue(e.tier, ['transient', 'gameplay', 'major', 'debug'])))
     && s.settlement.buildings.every(b => Object.hasOwn(BUILDINGS, b))
-    && (version < 4 || validRegionalCrisis(s.regionalCrisis, s, version as 4 | 5))
+    && (version < 4 || validRegionalCrisis(s.regionalCrisis, s, version as 4 | 5 | 6))
 }
 
 const crisisOutcomes: readonly RegionalCrisisOutcome[] = ['decisive_success', 'costly_success', 'setback', 'local_defeat']
@@ -162,7 +165,23 @@ function validRegionalCrisisContributions(value: unknown, s: GameState, triggere
   return true
 }
 
-function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5): value is RegionalCrisisState {
+function validRegionalCrisisAdventure(value: unknown, triggeredAt: number, worldTime: number) {
+  return exactShape(value, ['campRaidAt'])
+    && (value.campRaidAt === null || safeInt(value.campRaidAt, triggeredAt, worldTime))
+}
+
+function validRegionalCrisisCombatObjective(value: unknown, s: GameState) {
+  if (!exactShape(value, ['kind', 'crisisId', 'startedAt']) || value.kind !== 'camp_raid'
+    || !shortString(value.crisisId, 128, 1) || !safeInt(value.startedAt) || value.startedAt > s.worldTime
+    || !object(s.regionalCrisis) || !safeInt(s.regionalCrisis.sequence)) return false
+  const prefix = `goblin-regional:${(s.worldSeed >>> 0).toString(16).padStart(8, '0')}:`
+  if (!value.crisisId.startsWith(prefix)) return false
+  const sequenceText = value.crisisId.slice(prefix.length)
+  const sequence = Number(sequenceText)
+  return safeInt(sequence, 1, s.regionalCrisis.sequence) && value.crisisId === `${prefix}${sequence}`
+}
+
+function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5 | 6): value is RegionalCrisisState {
   if (!object(value)) return false
   const phase = value.phase
   if (phase === 'dormant') {
@@ -176,6 +195,7 @@ function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5): valu
   if (!enumValue(phase, ['warning', 'preparation', 'active', 'resolution', 'aftermath', 'cooldown'])) return false
   const baseKeys = ['phase', 'id', 'sequence', 'type', 'region', 'severity', 'triggeredAt', 'cause', 'chiefOutcome', 'phaseStartedAt']
   if (version >= 5) baseKeys.push('contributions')
+  if (version >= 6) baseKeys.push('adventure')
   const phaseKeys: Record<string, string[]> = {
     warning: ['phaseEndsAt'],
     preparation: ['phaseEndsAt'],
@@ -190,7 +210,8 @@ function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5): valu
     || value.type !== 'goblin_regional' || value.region !== 'forest' || !safeInt(value.severity, 1, 3)
     || !safeInt(value.triggeredAt) || value.triggeredAt > s.worldTime || !safeInt(value.phaseStartedAt)
     || value.phaseStartedAt < value.triggeredAt || value.phaseStartedAt > s.worldTime
-    || (version === 4 && Object.hasOwn(value, 'contributions'))) return false
+    || (version === 4 && Object.hasOwn(value, 'contributions'))
+    || (version < 6 && Object.hasOwn(value, 'adventure'))) return false
 
   const cause = value.cause
   if (!exactShape(cause, ['threatLevel', 'monsterPopulation', 'campLevel', 'bossAlive', 'settlementSafety', 'settlementFood', 'conditions'])
@@ -219,6 +240,7 @@ function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5): valu
   const started = value.phaseStartedAt as number
   const triggered = value.triggeredAt as number
   if (version >= 5 && !validRegionalCrisisContributions(value.contributions, s, triggered)) return false
+  if (version >= 6 && !validRegionalCrisisAdventure(value.adventure, triggered, s.worldTime)) return false
   const expectedStarts: Record<string, number> = {
     warning: triggered,
     preparation: triggered + CONFIG.regionalCrisis.warningDays * crisisDay,
@@ -278,7 +300,7 @@ function validCounts(value: unknown, keys: string[], maximum = Number.MAX_SAFE_I
   return exactShape(value, keys) && Object.values(value).every(count => safeInt(count, 0, maximum))
 }
 
-function validLife(value: unknown, s: GameState, version: 2 | 3 | 4 | 5): value is WorldLife {
+function validLife(value: unknown, s: GameState, version: 2 | 3 | 4 | 5 | 6): value is WorldLife {
   if (!exactShape(value, ['canon', 'openingSeen', 'characters', 'npcs', 'properties', 'settlementMemories', 'worldMemories', 'arcs', 'requests', 'news', 'director'])) return false
   if (value.canon !== 'OAKVALE_LIFE_EMERGENCE' || typeof value.openingSeen !== 'boolean' || !object(value.characters) || !object(value.npcs)) return false
   const savedNpcs = value.npcs
@@ -398,13 +420,19 @@ export function serialize(state: GameState, now = Date.now()) {
 }
 
 function migrateRegionalCrisisV4(crisis: RegionalCrisisState): RegionalCrisisState {
-  return crisis.phase === 'dormant' ? crisis : { ...crisis, contributions: emptyRegionalCrisisContributions() }
+  return crisis.phase === 'dormant' ? crisis : {
+    ...crisis, contributions: emptyRegionalCrisisContributions(), adventure: { campRaidAt: null },
+  }
+}
+
+function migrateRegionalCrisisV5(crisis: RegionalCrisisState): RegionalCrisisState {
+  return crisis.phase === 'dormant' ? crisis : { ...crisis, adventure: { campRaidAt: null } }
 }
 
 export function deserialize(raw: string): { state: GameState; lastSavedAt: number } {
   const value: unknown = JSON.parse(raw)
   if (!object(value) || (value.saveVersion !== 1 && value.saveVersion !== 2 && value.saveVersion !== 3
-    && value.saveVersion !== 4 && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
+    && value.saveVersion !== 4 && value.saveVersion !== 5 && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
   if (typeof value.lastSavedAt !== 'number' || !Number.isFinite(value.lastSavedAt) || value.lastSavedAt < 0) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -421,7 +449,7 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
     state.saveVersion = CONFIG.saveVersion
     return { state, lastSavedAt }
   }
-  const sourceVersion = value.saveVersion as 2 | 3 | 4 | 5
+  const sourceVersion = value.saveVersion as 2 | 3 | 4 | 5 | 6
   if (!validBase(stateData, sourceVersion) || !validLife(stateData.life, stateData as unknown as GameState, sourceVersion)) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -442,6 +470,7 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
   }
   if (sourceVersion === 3) state.regionalCrisis = dormantRegionalCrisis()
   if (sourceVersion === 4) state.regionalCrisis = migrateRegionalCrisisV4(state.regionalCrisis)
+  if (sourceVersion === 5) state.regionalCrisis = migrateRegionalCrisisV5(state.regionalCrisis)
   state.saveVersion = CONFIG.saveVersion
   return { state, lastSavedAt }
 }

@@ -1,0 +1,11 @@
+E near-maximum event-sequence capacity regression RED (preserved before the fix)
+
+Command: npm test -- src/engine/crisisAdventure.test.ts -t 'reproduces an unsaveable win'
+Result: exit 1; one targeted test failed (26 skipped).
+Public path: startRegionalCampRaid at eventSequence MAX_SAFE_INTEGER - 2 emitted combat.started at MAX_SAFE_INTEGER - 1; the immediate winning combatTurn emitted additional events; deserialize(serialize(state)) rejected the result with “存檔資料不完整。原始存檔已保留，請確認後重建世界。”
+
+Pre-fix source hashes:
+- src/engine/actions.ts 863a2d29c87b37919535e527e3e9de2660ab8acf385dffadd685bb8d36426c10
+- src/engine/crisisAdventure.test.ts 5b3c72ed449f7f2b29e56cf511f1cc2bab07680be7dcf2e0aba3fc8a0268f59f
+- src/engine/crafting.ts 43050249c4ab9740bb646ba8795f3374debaf39286545d3865427a1a9576c332
+- src/services/saveService.ts 153916207989009b524211ff3dd4506aba70a012662566960041e5006ebc44e4

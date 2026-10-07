@@ -54,6 +54,7 @@ export interface CivilDefenseReadiness {
   threatTrace: {
     causeFloor: number
     currentPressure: number
+    specialRelief: number
     selected: 'cause' | 'current'
   }
   factors: CivilDefenseFactor[]
@@ -195,7 +196,8 @@ export function deriveCivilDefense(state: GameState, crisis: RegionalCrisisState
   const readiness = clamp(factors.reduce((total, item) => total + item.points, 0), 0, 100)
   const causeFloor = pressure(crisis.cause.threatLevel, crisis.cause.monsterPopulation, crisis.cause.bossAlive)
   const currentPressure = pressure(state.threat.threatLevel, state.threat.monsterPopulation, state.threat.bossAlive)
-  const threatDemand = Math.max(causeFloor, currentPressure)
+  const specialRelief = Math.min(14, (crisis.chiefOutcome ? 8 : 0) + (crisis.adventure.campRaidAt === null ? 0 : 6))
+  const threatDemand = Math.max(20, Math.max(causeFloor, currentPressure) - specialRelief)
   const margin = readiness - threatDemand
   const successChance = clamp(1 / (1 + Math.exp(-margin / 18)), 0.1, 0.9)
   const defenderShortage = Math.max(0, targetDefenders - defenders.length)
@@ -221,6 +223,7 @@ export function deriveCivilDefense(state: GameState, crisis: RegionalCrisisState
     threatTrace: {
       causeFloor,
       currentPressure,
+      specialRelief,
       selected: currentPressure > causeFloor ? 'current' : 'cause',
     },
     factors,

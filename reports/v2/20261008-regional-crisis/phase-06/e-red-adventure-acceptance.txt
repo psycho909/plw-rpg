@@ -1,0 +1,51 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisAdventure.test.ts src/services/saveService.test.ts -t records a real Goblin camp victory|migrates the authentic archived V5 D ledger
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisAdventure.test.ts (20 tests | 1 failed | 19 skipped) 12ms
+   × records a real Goblin camp victory once and improves odds when current pressure dominates 9ms
+ ❯ src/services/saveService.test.ts (98 tests | 1 failed | 97 skipped) 21ms
+     × migrates the authentic archived V5 D ledger to V6 without changing world, time or RNG 19ms
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 116 skipped (118)
+   Start at  19:35:29
+   Duration  547ms (transform 571ms, setup 0ms, import 712ms, tests 33ms, environment 1ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisAdventure.test.ts > records a real Goblin camp victory once and improves odds when current pressure dominates
+TypeError: startRegionalCampRaid is not a function
+ ❯ src/engine/crisisAdventure.test.ts:73:10
+     71|   const rngBefore = state.rngState
+     72|
+     73|   expect(startRegionalCampRaid(state, crisis.id)).toBe('')
+       |          ^
+     74|   expect(state.combat).toMatchObject({
+     75|     monsterId: 'goblin', dungeon: false,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates the authentic archived V5 D ledger to V6 without changing world, time or RNG
+AssertionError: expected 5 to be 6 // Object.is equality
+
+- Expected
++ Received
+
+- 6
++ 5
+
+ ❯ src/services/saveService.test.ts:139:38
+    137|     const loaded = deserialize(JSON.stringify(archived))
+    138|
+    139|     expect(loaded.state.saveVersion).toBe(6)
+       |                                      ^
+    140|     expect(loaded.state.regionalCrisis).toEqual({ ...crisisBefore, adv…
+    141|     const v6Projection = structuredClone(loaded.state) as unknown as R…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

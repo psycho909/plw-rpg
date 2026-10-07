@@ -1,0 +1,4 @@
+COMMAND: ./node_modules/.bin/vue-tsc --noEmit
+EXIT: 2
+src/engine/crisisAdventure.test.ts(91,31): error TS2339: Property 'adventure' does not exist on type 'RegionalCrisisState'.
+  Property 'adventure' does not exist on type '{ phase: "dormant"; sequence: number; cooldownUntil: number; lastResolvedAt: number | null; }'.
