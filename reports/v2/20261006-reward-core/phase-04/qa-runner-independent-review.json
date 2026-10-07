@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "review": "Phase 4 QA runner independent review, initial frozen scope",
+  "disposition": "STATIC FINDINGS QA-1 THROUGH QA-5/UI-1 CLOSED; QA-R1 STARTUP FIX REVIEWED; QA-R2 PORT CONFLICT MITIGATED SAFELY; FULL QA RUNTIME PENDING",
+  "reviewer": {
+    "taskRole": "g6-luna-med-phase4-qa-reviewer",
+    "requestedModelEffort": "GPT-6 Luna / medium",
+    "runtimeVerified": false,
+    "implementationParticipant": false
+  },
+  "scope": {
+    "headCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+    "files": [
+      "reports/v2/20261006-reward-core/phase-04/archive/verify_browser.py",
+      "reports/v2/20261006-reward-core/phase-04/archive/phase04_stress_browser.py",
+      "reports/v2/20261006-reward-core/phase-04/archive/phase04_adventure_playtest.py",
+      "reports/v2/20261006-reward-core/phase-04/archive/adventure_policy.py",
+      "reports/v2/20261006-reward-core/phase-04/archive/runner_paths.py",
+      "reports/v2/20261006-reward-core/phase-04/archive/test_adventure_policy.py",
+      "reports/v2/20261006-reward-core/phase-04/archive/test_runner_paths.py",
+      "reports/v2/20261006-reward-core/phase-04/loot_monte_carlo.test.ts",
+      "reports/v2/20261006-reward-core/phase-04/combat_simulation.test.ts",
+      "reports/v2/20261006-reward-core/phase-04/simulation.config.ts",
+      "reports/v2/20261006-reward-core/phase-04/metric-contract.md",
+      "tickets/20261006-v2x-04-adventure-loop.md",
+      "docs/specs/V2X-PHASE4-ADVENTURE-REWARD.md",
+      "reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py",
+      "src/components/InventoryWindow.vue",
+      "src/components/AdventureWindow.vue",
+      "src/components/PlaceWindow.vue",
+      "src/presentation/rewardProjection.ts",
+      "src/presentation/rewardProjection.test.ts",
+      "src/style.scss",
+      "docs/UI.md",
+      "premium-ui.json",
+      "reports/v2/20261006-reward-core/phase-04/archive/test_final_runtime_driver_validation.py",
+      "reports/v2/20261006-reward-core/phase-04/archive/runtime-driver-validation.md",
+      "reports/v2/20261006-reward-core/phase-04/ui-plan.md",
+      "reports/v2/20261006-reward-core/phase-04/archive/phase04_adventure_playtest.py",
+      "reports/v2/20261006-reward-core/phase-04/archive/phase04_stress_browser.py",
+      "reports/v2/20261006-reward-core/phase-04/archive/verify_browser.py",
+      "reports/v2/20261006-reward-core/phase-04/archive/test_final_runtime_driver_startup.py",
+      "reports/v2/20261006-reward-core/phase-04/final-runs/launch-20261006T124811917080Z/launcher-output.log",
+      "reports/v2/20261006-reward-core/phase-04/final-runs/launch-20261006T124811917080Z/launcher-status.json",
+      "reports/v2/20261006-reward-core/phase-04/archive/test_final_runtime_driver_port.py",
+      "reports/v2/20261006-reward-core/phase-04/final-runs/final-qa-20261006T125323945890Z-738fb3a5/production-server-stderr.log"
+    ],
+    "excluded": [
+      "all runtime evidence; no tests/build/browser/driver commands executed"
+    ],
+    "filesAreUntrackedWhereApplicable": true,
+    "sha256": {
+      "archive/verify_browser.py": "cb872c53961200a507405010f69e4eaca2e77f3c364595513f80b69fbe4209e8",
+      "archive/final-runtime-driver.py": "ab97b1afdf0868280160e272661e8afab9fd377ad5ef19f403837d3f2d25cb06",
+      "archive/phase04_stress_browser.py": "3970a59c0789d02efe58cfd8faf3e8a4b79d7adcd012310315e15aa6bd587f8c",
+      "archive/phase04_adventure_playtest.py": "7278814b4ccc8ff1e2ac00d173e71400c6d27ff5ec33d5938d701cfd38bc4a6e",
+      "archive/adventure_policy.py": "928b3e105b921b5bb96aefca3e02069dee4f406f8c2ea58d9ebabc5e5c849704",
+      "archive/runner_paths.py": "8b823117dab98c4dad35f7da12f236cd6d06c6fd05b10bf8635cca5d54486491",
+      "archive/test_adventure_policy.py": "3811bbbd7b101d857af3e40151b6964ebf4e79a47b9a6a6a71cdca1e224908b3",
+      "archive/test_runner_paths.py": "71fe3a52810e2632e6f4c3ca4f9f3be3972b67366ea979ae216ec0bae7fd711f",
+      "loot_monte_carlo.test.ts": "34219d07d7c6d09e95f5a981028f403f8c4b5319ee07c58698d5f9a76c2a46d3",
+      "combat_simulation.test.ts": "96681f07ced48109c92db14a54d194ac282073ed4b1024137429b5edd0607160",
+      "simulation.config.ts": "39ec78ab200ef30c3693a71b597a3301ac95ab30f3ad8688d4173fbacdead6ad",
+      "metric-contract.md": "e08a8eb218490ac1c124c3feb5842c00244c2948f5a2ac478741f92c3533fa64",
+      "ticket": "d76b0a5238fc152bd0ed8e501356f44d44e98aea8d56ff60717f0435c294006d",
+      "spec": "9e5cced00eb8db215f27e88fc7494db6efc3d0c69d918039d897aa28666f0a25",
+      "src/components/InventoryWindow.vue": "7852a1fedce6ac6a1c3aea4652ec8248ba0827d878358da0455e3417f8ca1f68",
+      "src/components/AdventureWindow.vue": "eb6167f033c2c871d0719fb3742319df591feace02bffabe8af5a4802ebfc087",
+      "src/components/PlaceWindow.vue": "ba31a984e6936a940d8086ee14bd6e1387b2bba0112cf5940f5373bd3096f6d2",
+      "src/presentation/rewardProjection.ts": "daed466cfa4de21067f56eb2450f3c68fe0b5bf8f1b7435b3dde6717b2b05d69",
+      "src/presentation/rewardProjection.test.ts": "0951dfc9dd456e0038818215aefc37e5f1e6ba6e31adc47a5a7b4b7679961309",
+      "src/style.scss": "75010f723d2597f2dfcb88a24ce63ddae090eb53c786fe4b8b19b080f94c7500",
+      "docs/UI.md": "7e761cff7c9d92307944d144ebd3ba12235245a54e16d0c9ac2184da43fa6aa7",
+      "premium-ui.json": "45dad140657a92c867c21dde2090ff102c0a25afa80ea72d326a82664a05ddf2",
+      "archive/test_final_runtime_driver_validation.py": "3e11c7e11643c20000cc2b9c7ced304406d59ecc224612281b5e887732827113",
+      "archive/runtime-driver-validation.md": "ef0035a23a8a29a8b3410542a4652bba8c45dec6cf5da61d90368b0456709f37",
+      "ui-plan.md": "c6cd318b930f8a4d4c0d58ff53f411378e2469b70ea3d60913276b564189aeb7",
+      "scripts/recorded_reports.py": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+      "archive/test_final_runtime_driver_startup.py": "6b00d5d96d4351afb8d365126cbe00c9b65c4d64d71bb3bcc6eb55f68455e2d8",
+      "launch-failure-output.log": "de817b704ff1401c15e25cce3ae013ec766660bebb5a4c748c67e2fb6f34686d",
+      "launch-failure-status.json": "1ff6c04b4a14d00f12de1df0857148c7d47cf8df2b003b69d82370b85f70af2d",
+      "archive/test_final_runtime_driver_port.py": "fcb471d9d7d44f6f0355007699ce2d9799e3c8cc1745fd84f0c9e5b59d669103",
+      "port-failure-production-server-stderr.log": "a00dbe9e5a885108499a82bc344c664b2fa0ea9196e1c87584266a744b620d51"
+    }
+  },
+  "standards": "QA-1 through QA-5 and UI-1 are closed by static delta review. Final browser helper provenance and E selectors/policy were statically rechecked at the recorded hashes; runtime remains unverified.",
+  "spec": "Static pass including the conditional rarity copy clarification. Catalog/matrix scope remains five reward wolves versus six combat scenarios. All current runner/UI deltas reviewed statically; runtime and raw reports remain unverified.",
+  "actionableFindings": [
+    {
+      "id": "QA-1",
+      "severity": "P2",
+      "status": "closed-by-static-delta-review",
+      "file": "reports/v2/20261006-reward-core/phase-04/archive/verify_browser.py",
+      "lines": "20-28, 74-75",
+      "rootCause": "The targeted browser runner hashes current source but has no successful build-status/source-fingerprint preflight, so it can check a stale or wrong local build and attribute its result to current source.",
+      "spec": "Phase 4 metric-contract.md requires runtime evidence against a matching frozen production build.",
+      "fix": "Require PLW_BUILD_STATUS exitCode=0 and sourceSha256 equal to the current full src hash before opening Chromium; record the matched build path/fingerprint."
+    },
+    {
+      "id": "QA-2",
+      "severity": "P2",
+      "status": "closed-by-static-delta-review",
+      "file": "reports/v2/20261006-reward-core/phase-04/loot_monte_carlo.test.ts; reports/v2/20261006-reward-core/phase-04/combat_simulation.test.ts",
+      "lines": "19-24; 33-38",
+      "rootCause": "The source manifest is captured once from git ls-files src, excluding untracked files and any files added during a run; endpoint checks only rehash this original path set.",
+      "spec": "Phase 4 README evidence rules require a full src fingerprint and source stability throughout runtime evidence.",
+      "fix": "Enumerate all on-disk src files at start and end, compare path membership and hashes, and retain pinned expected commit/fingerprint guards for formal runs."
+    },
+    {
+      "id": "QA-3",
+      "severity": "P2",
+      "status": "closed-by-static-delta-review",
+      "file": "reports/v2/20261006-reward-core/phase-04/archive/phase04_stress_browser.py; reports/v2/20261006-reward-core/phase-04/archive/phase04_adventure_playtest.py",
+      "lines": "stress 15-19, 41-42, 1052-1055; adventure 16-19, 40-43, 508-510",
+      "rootCause": "Both long browser runners record their main file hash at startup but do not record/recheck helper dependencies. The shared path helper is used by both; Adventure also depends on adventure_policy.py; all publish through scripts/recorded_reports.py.",
+      "spec": "Phase 4 runtime provenance requires evidence to identify frozen runner/import behavior; a main-file hash does not identify the imported policy and publisher helpers.",
+      "fix": "Resolved: stress, adventure, and targeted browser helpers compare all source files, their harness, imported helper hashes, build-status bytes, and commit at run endpoints. Selector review found no P2 mismatch against the frozen UI."
+    },
+    {
+      "id": "QA-4",
+      "severity": "P2",
+      "status": "closed-by-static-delta-review",
+      "file": "reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py",
+      "lines": "498-513, 542-567",
+      "rootCause": "Final simulation validation requires nonempty combat rows and correctly relates actualFightRuns to row count, but does not assert the approved dimensions or exact 4,320 metric rows / 8,640 actual fight executions.",
+      "spec": "Phase 4 metric contract and accepted matrix define 15 builds, 3 powerbands, 6 target scenarios, 2 policies, and 8 seeds for the final combat denominator.",
+      "fix": "Resolved in final-runtime-driver.py at SHA-256 4fa911a46a92056946fd1dd6c68607821279a9239bdc5b1487dba9903d4108c0: assert exact full unique Cartesian matrix and per-rank denominators; require all 15 named core checks plus nonempty modal/responsive groups."
+    },
+    {
+      "id": "QA-5",
+      "severity": "P2",
+      "status": "closed-by-static-delta-review",
+      "file": "reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py",
+      "lines": "787-800",
+      "rootCause": "Targeted browser helper result is accepted with zero errors and stable inputs even if its checks list is missing or empty.",
+      "spec": "Phase 4 browser regression evidence must demonstrate that required regressions actually executed; exit zero and matching hashes alone do not demonstrate execution.",
+      "fix": "Resolved in final-runtime-driver.py at SHA-256 4fa911a46a92056946fd1dd6c68607821279a9239bdc5b1487dba9903d4108c0: reject absent/empty/missing core checks and require modal/responsive groups while allowing extra checks."
+    },
+    {
+      "id": "UI-1",
+      "severity": "P3",
+      "status": "closed-by-static-delta-review",
+      "file": "src/components/PlaceWindow.vue; src/components/AdventureWindow.vue",
+      "lines": "PlaceWindow.vue 47-54; AdventureWindow.vue 20-27",
+      "rootCause": "Gear-drop chance and rarity shares are adjacent, but the rarity label does not state that rarity shares are conditional on a gear drop. The rarity API normalizes weights to 100%, while ordinary gearChance can be below 100%.",
+      "spec": "Probability copy should distinguish encounter-level gear chance from conditional rarity distribution without changing rates.",
+      "fix": "Resolved copy-only in PlaceWindow.vue and AdventureWindow.vue: rarity now says “品質（掉落裝備時）”; rates/projection are unchanged."
+    },
+    {
+      "id": "QA-R1",
+      "severity": "P2",
+      "status": "closed-by-static-fix-and-isolated-startup-smoke; formal-retry-pending",
+      "file": "reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py; reports/v2/20261006-reward-core/phase-04/archive/test_final_runtime_driver_startup.py",
+      "lines": "final-runtime-driver.py:144-186, 830-831; test_final_runtime_driver_startup.py:12-38",
+      "rootCause": "The first absolute-entrypoint --go invocation ran from repository cwd, but Python placed the archive directory rather than the repository root on sys.path. FinalRunner.__init__ immediately published status and could not import scripts.recorded_reports, so the driver stopped before npm/build/browser/runtime stages.",
+      "spec": "The final QA orchestration must reliably import its status writer when launched by its documented absolute archived entrypoint, while confirming it is operating in the expected repository.",
+      "fix": "After cwd and Git-root confirmation, repo_preflight validates the writer path and inserts confirmed ROOT into sys.path before FinalRunner is constructed. An isolated startup smoke loads the absolute entrypoint from a temp cwd after removing ROOT from sys.path, then verifies writer import. Full driver retry remains pending; this fix is not a runtime pass."
+    },
+    {
+      "id": "QA-R2",
+      "severity": "P2",
+      "status": "environment-conflict-recorded; port-delta-static-review-accepted; full-retry-pending",
+      "file": "reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py; reports/v2/20261006-reward-core/phase-04/archive/test_final_runtime_driver_port.py",
+      "lines": "final-runtime-driver.py:32-37, 222-247, 323-353, 752-759, 943-946",
+      "rootCause": "After npm check and build passed, the previous production server could not bind TCP port 5202 (EADDRINUSE). `ss` did not disclose a PID and `/proc/4506/cwd` could not be read, so ownership could not be verified. The driver correctly left it untouched; no simulation or browser phase began.",
+      "spec": "The QA retry must use one consistent local origin across readiness and browser runners and must not stop an unverified listener.",
+      "fix": "Use PORT=5214 as the single source for URL, HTTP Host, listener query and server command; all three browser helpers receive the derived PLW_V2_URL. The stale-server allowlist is empty, so the old listener cannot be signaled. Static review accepts this narrow retry change; fresh full QA on 5214 remains pending."
+    }
+  ],
+  "verification": {
+    "executed": "Focused static review of PORT=5214 propagation, listener cleanup guard, and recorded 5202 failure/logs. Author-reported port/startup/validation pure tests inspected but not rerun. One formal attempt passed check/build and failed HTTP server bind; simulations/browser/long runs were not reached.",
+    "notExecuted": [
+      "unit tests",
+      "build",
+      "simulations",
+      "browser regression",
+      "stress",
+      "adventure",
+      "full checks"
+    ],
+    "reason": "The 5202 conflict could not be assigned to an owner and was left untouched. The reviewed change makes 5214 the consistent local port with no PID cleanup allowance. Root has not yet authorized the fresh full retry.",
+    "runtimePassClaimed": false
+  },
+  "nextReview": [
+    "After Root authorizes the 5214 retry, inspect status at every phase and preserve its raw output; a check/build pass is not a simulation or browser pass.",
+    "Review sanity/formal metrics, browser results, stress/adventure durations, source/build/helper stability, and final raw reports."
+  ],
+  "runtimeAttempts": [
+    {
+      "runId": "launch-20261006T124811917080Z",
+      "command": "python reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py --go",
+      "outcome": "FAIL_PRECHECK_STARTUP",
+      "failure": "ModuleNotFoundError: No module named scripts from FinalRunner.publish during __init__",
+      "stagesReached": [
+        "Python driver startup",
+        "repository preflight",
+        "FinalRunner construction/status publish"
+      ],
+      "stagesNotReached": [
+        "npm run check",
+        "build",
+        "server",
+        "simulation",
+        "browser",
+        "stress",
+        "adventure"
+      ],
+      "rawLog": "reports/v2/20261006-reward-core/phase-04/final-runs/launch-20261006T124811917080Z/launcher-output.log",
+      "rawStatus": "reports/v2/20261006-reward-core/phase-04/final-runs/launch-20261006T124811917080Z/launcher-status.json",
+      "preserved": true
+    },
+    {
+      "runId": "final-qa-20261006T125323945890Z-738fb3a5",
+      "outcome": "ENVIRONMENT_READINESS_FAILURE_PORT_OCCUPIED",
+      "completedStages": [
+        "npm run check (330 tests / 20 files)",
+        "TypeScript check",
+        "Vite production build"
+      ],
+      "failedStage": "production server bind on 127.0.0.1:5202 (OSError 98, address already in use)",
+      "listenerOwnership": "not verified; ss had no PID details and /proc/4506/cwd was inaccessible; no process stopped or signaled",
+      "stagesNotReached": [
+        "simulation sanity",
+        "formal simulation",
+        "targeted browser",
+        "stress",
+        "adventure"
+      ],
+      "rawServerStderr": "reports/v2/20261006-reward-core/phase-04/final-runs/final-qa-20261006T125323945890Z-738fb3a5/production-server-stderr.log",
+      "rawRunDirectory": "reports/v2/20261006-reward-core/phase-04/final-runs/final-qa-20261006T125323945890Z-738fb3a5",
+      "preserved": true
+    }
+  ]
+}

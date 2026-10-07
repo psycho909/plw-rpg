@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "producer": "g6-luna-low-phase4-qa-runner",
+  "runId": "launch-retry3-20261006T131724680782Z",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py",
+    "--go"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "pid": 33797,
+  "startUTC": "2026-10-06T13:17:24.681+00:00",
+  "launcherLog": "reports/v2/20261006-reward-core/phase-04/final-runs/launch-retry3-20261006T131724680782Z/launcher-output.log",
+  "driverStatusPath": "reports/v2/20261006-reward-core/phase-04/final-runtime-status.json",
+  "preservedPriorRuns": [
+    "final-runs/launch-20261006T124811917080Z",
+    "final-runs/final-qa-20261006T125323945890Z-738fb3a5",
+    "final-runs/final-qa-20261006T125931691915Z-15b87f3a"
+  ]
+}

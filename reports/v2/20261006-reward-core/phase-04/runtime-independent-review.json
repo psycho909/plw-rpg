@@ -1,0 +1,115 @@
+{
+  "reviewId": "phase4-final-runtime-independent-review",
+  "version": 1,
+  "reviewedAt": "2026-10-06",
+  "reviewer": {
+    "taskName": "g6_luna_max_phase4_deep_reviewer",
+    "requestedModel": "GPT-6 Luna",
+    "requestedEffort": "max",
+    "implementationParticipation": false,
+    "runtimeTelemetryAvailable": false
+  },
+  "baselineHead": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+  "finalDriverSha256": "8412261b32ce1b1cb02a509b820d50916f90b701b1e6ded5f29f90e3dbda6555",
+  "reviewedHashes": {
+    "archive/final-runtime-driver.py": "8412261b32ce1b1cb02a509b820d50916f90b701b1e6ded5f29f90e3dbda6555",
+    "archive/verify_browser.py": "cb872c53961200a507405010f69e4eaca2e77f3c364595513f80b69fbe4209e8",
+    "archive/phase04_stress_browser.py": "3970a59c0789d02efe58cfd8faf3e8a4b79d7adcd012310315e15aa6bd587f8c",
+    "archive/phase04_adventure_playtest.py": "7278814b4ccc8ff1e2ac00d173e71400c6d27ff5ec33d5938d701cfd38bc4a6e",
+    "archive/adventure_policy.py": "928b3e105b921b5bb96aefca3e02069dee4f406f8c2ea58d9ebabc5e5c849704",
+    "archive/runner_paths.py": "8b823117dab98c4dad35f7da12f236cd6d06c6fd05b10bf8635cca5d54486491",
+    "archive/test_final_runtime_driver_helper_reports.py": "b53c3d208d9e281ee833c60459ba1184310b6b44d046b076bf5e9734a060d777",
+    "archive/test_final_runtime_driver_decision_log.py": "ae8e17485a2b069a516cbf4e32f106a4b6fa34feceedaa074b3892dc55345bb0",
+    "archive/test_final_runtime_driver_validation.py": "3e11c7e11643c20000cc2b9c7ced304406d59ecc224612281b5e887732827113"
+  },
+  "disposition": "STATICALLY_ACCEPTED_WITH_P3_TEST_COVERAGE_NOTE; FINAL_RUNTIME_NOT_YET_VERIFIED",
+  "standards": {
+    "status": "PASS_WITH_NONBLOCKING_P3",
+    "findings": [
+      {
+        "id": "RUNTIME-P3-1",
+        "severity": "P3",
+        "status": "non-blocking",
+        "file": "archive/test_final_runtime_driver_helper_reports.py",
+        "lines": "41-54",
+        "rootCause": "The test checks producer names and joins expected report paths from BROWSER_REPORT_DIR, but does not assert run_parallel_long_tests reportPath values.",
+        "impact": "A future long-run consumer path regression could evade this test; current frozen driver paths were manually checked and are correct.",
+        "releaseCondition": "None for this runtime attempt."
+      }
+    ]
+  },
+  "spec": {
+    "status": "PASS_AFTER_STATIC_DELTA",
+    "findings": [
+      {
+        "id": "RUNTIME-P2-1",
+        "severity": "P2",
+        "status": "closed-by-static-delta",
+        "file": "archive/final-runtime-driver.py",
+        "lines": "738-750, 1008-1012",
+        "rootCause": "The earlier frozen consumer counted but did not require Agent Adventure decision evidence.",
+        "resolution": "Rejects missing or empty decisionLog, malformed entries, and blank/non-string wanted/why/decision fields; focused tests cover invalid and valid inputs.",
+        "evidence": "Spec §44 asks the exploratory playtest to record what the agent wanted next, why, and when reward altered behavior."
+      }
+    ]
+  },
+  "artifacts": {
+    "buildStatus": {
+      "path": "build-status.json",
+      "sha256": "3291459be69589b5b1e85db539c1218717fc7242fde397ac1fe99db863fb4986",
+      "exitCode": 0,
+      "head": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+      "sourceFileCount": 74,
+      "sourceFingerprint": "71d8cc68aab5f09579b9c87f74b564b585d4ab792fee10e0712ded73037ec245"
+    },
+    "fullSimulation": {
+      "path": "final-simulation-status.json",
+      "sha256": "c267345e6b63c386da9509096b6dbdc53a3847476c26c2cb858034aee6b6510c",
+      "status": "PASS",
+      "lootAwards": 100000,
+      "combatRows": 4320,
+      "expectedRows": 4320,
+      "actualFightRuns": 8640,
+      "seeds": 8
+    },
+    "targetedBrowser": {
+      "path": "archive/browser.json",
+      "sha256": "3148865f5ad8a44e1b4b899ba83b8b83a5027a0e930b707a7c0e01f40861b80b",
+      "status": "PASS",
+      "checks": 20,
+      "errors": 0,
+      "sourceBuildCommitMatch": true,
+      "buildStatusSha256MatchesFile": true,
+      "currentHelperSha256Matches": true
+    },
+    "lastFinalRuntimeAttempt": {
+      "path": "final-runtime-status.json",
+      "sha256": "fc823abeb2e96bb63612c90e6aa9178c3d6cb32baf7639c3d7540086f94c159b",
+      "status": "FAILED",
+      "driverSha256": "ab97b1afdf0868280160e272661e8afab9fd377ad5ef19f403837d3f2d25cb06",
+      "failure": "Browser helper did not produce its report: phase-04/browser.json",
+      "stressStarted": false,
+      "adventureStarted": false
+    },
+    "longRunReportsPresentAtReviewSnapshot": false
+  },
+  "verification": {
+    "performed": [
+      "Read-only source/document review of the frozen runner/helper contracts",
+      "Correlated build, final simulation, targeted browser, and final-runtime status artifacts by source maps, commit, helper hash, and build-status digest",
+      "Inspected the decision-log guard and three focused pure tests without rerunning them"
+    ],
+    "notPerformed": [
+      "npm check",
+      "build",
+      "simulations",
+      "browser",
+      "stress",
+      "adventure",
+      "full QA"
+    ],
+    "authorReported": "Three new decision-log tests plus six existing pure tests passed; not independently rerun.",
+    "runtimePassClaimed": false,
+    "remaining": "Run the frozen final driver and review the actual stress/adventure output reports, operation and decision evidence, elapsed time, source stability, and cleanup."
+  }
+}

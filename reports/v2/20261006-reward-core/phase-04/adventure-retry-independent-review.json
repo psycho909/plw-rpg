@@ -1,0 +1,40 @@
+{
+  "review": "phase4-adventure-policy-retry01-independent-review",
+  "status": "accepted_for_rootgo_low_runtime_retry",
+  "scope": "ordinary_policy_bug_and_retry_launcher_static_review",
+  "artifacts": {
+    "originalPolicySha256": "928b3e105b921b5bb96aefca3e02069dee4f406f8c2ea58d9ebabc5e5c849704",
+    "originalRunnerSha256": "7278814b4ccc8ff1e2ac00d173e71400c6d27ff5ec33d5938d701cfd38bc4a6e",
+    "retryPolicySha256": "7fb84e751ce04a223a26fa488a55727dd66f26e7b0c0116df40f375741418e7d",
+    "retryRunnerSha256": "f7a07237ce9712285723e687544943d8cce94eada6b115faa942edcb2a6d536e",
+    "retryPureTestSha256": "4a6925dd2c58ef14d3153c72064a96b2c6077602739393f5931d30551d69a606",
+    "retryLauncherSha256": "8609d6f8c6546a010496c37f208af00e5253891fdca9efe0a2fc40ac1dc81175"
+  },
+  "checks": {
+    "longestEligibleLabelWinsVisibleGoal": true,
+    "targetChoiceRemainsGoalAndOptionDriven": true,
+    "noHardcodedRankMarch": true,
+    "decisionLogCapturesReadonlyExactGoalAndEligibleOptions": true,
+    "newRunnerProducerOutputAndRetryHelperIdentity": true,
+    "originalRunnerPolicyAndStressHelperUnchanged": true,
+    "freshSaveNoInjectionSourceBuildAndErrorDurationGuardsRetained": true,
+    "launcherPinsHeadAnd74FileSourceMap": true,
+    "launcherVerifiesServedHttpsAgainstStoredRuntimeStatus": true,
+    "launcherOwnsPort5216ServerAndCleanup": true
+  },
+  "pureTests": {"passed": 2, "failed": 0},
+  "redGreenAndCompileArtifacts": "author archived RED reproduction, GREEN verification, and compile pass; reviewer independently reran the 2 pure tests",
+  "originalTrace": {
+    "decisionLogIndex": 91,
+    "elapsedSeconds": 40.60368871200626,
+    "recordedTarget": "灰狼",
+    "population": 1.02,
+    "hp": 106,
+    "stamina": 84,
+    "exactGoalAndEligibleOptionsPersisted": false,
+    "reconstruction": "deterministic from trace state and frozen source, but indirect"
+  },
+  "runtimeExecuted": false,
+  "retryRuntimePassClaimed": false,
+  "priorReportOrAggregateChanged": false
+}

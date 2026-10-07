@@ -1,0 +1,30 @@
+{
+  "review": "phase4-stress-browser-retry01-independent-review",
+  "status": "accepted_for_low_runtime_retry",
+  "scope": "static_candidate_patch_and_pure_tests_only",
+  "candidate": "archive/phase04_stress_browser_retry01.py",
+  "candidateSha256": "9c3524bed787729051e79a0d08e23950943e1637b09cdbfa38440b3fb2a78218",
+  "original": "archive/phase04_stress_browser.py",
+  "originalSha256": "3970a59c0789d02efe58cfd8faf3e8a4b79d7adcd012310315e15aa6bd587f8c",
+  "checks": {
+    "captureRewardBeforeDialogClose": true,
+    "semanticRenderedBossRowAndCanonicalAttributes": true,
+    "retryProducerAndOutputIdentityMatch": true,
+    "freshSaveSourceBuildUrlAndStressGatesUnchanged": true,
+    "noStateInjectionOrSourceHelperConfigurationDelta": true,
+    "originalRunnerUnchanged": true,
+    "currentSourceMapMatchesCanonical74Files": true
+  },
+  "pureTests": {
+    "selector": {"passed": 3, "failed": 0},
+    "lifecycle": {"passed": 2, "failed": 0}
+  },
+  "runtimeReportPresent": false,
+  "runtimeExecuted": false,
+  "aggregateFailureRewritten": false,
+  "notes": [
+    "Runtime output stress-browser-retry01.json was not present at review time.",
+    "Static patch acceptance only; subsequent raw runtime report requires separate review.",
+    "The preserved original aggregate failure remains unchanged."
+  ]
+}

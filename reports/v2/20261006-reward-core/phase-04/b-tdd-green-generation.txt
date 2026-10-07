@@ -1,0 +1,33 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > projects source-specific reward expectations as detached pure data 2ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > returns a deterministic unique instance without awarding it to the reward state 3ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'missing', level: 1 } 6ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: +0 } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 101 } 8ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, material: 'iron' } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, bossSource: 'grayWolf' } 3ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 7, dropSource: 'missing' } 3ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 7, dropSource: 'alphaWolf', bossSource: 'wolfKing' } 3ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact 115ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > biases wolf fang rolls toward bleed or penetration affixes 16ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > uses the rare-plus boss rarity pool and preserves generated rolls across save and reload 16ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > uses source-qualified rarity pools while keeping every roll valid for its level and rarity 3ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > uses approved new drop levels and keeps their generated stats reloadable 15ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > awards guaranteed family materials and an instance for elite and boss kills 1ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > uses a deterministic seeded normal gear chance and weighted base table 31ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > biases armor drops with wolf hide and weapon drops with wolf fang 2ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unsafe material capacity and item sequence before any reward mutation or RNG draw 6ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unknown definitions without changing state 3ms
+
+ Test Files  1 passed (1)
+      Tests  19 passed (19)
+   Start at  11:58:10
+   Duration  642ms (transform 226ms, setup 0ms, import 269ms, tests 249ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

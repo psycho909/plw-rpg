@@ -1,0 +1,63 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ × src/engine/itemGeneration.test.ts > procedural item generation > projects source-specific reward expectations as detached pure data 8ms
+   → expected { definitionId: 'grayWolf', …(6) } to deeply equal { definitionId: 'grayWolf', …(6) }
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > returns a deterministic unique instance without awarding it to the reward state 4ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'missing', level: 1 } 6ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: +0 } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 101 } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, material: 'iron' } 4ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, bossSource: 'grayWolf' } 3ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact 108ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > biases wolf fang rolls toward bleed or penetration affixes 8ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > uses the rare-plus boss rarity pool and preserves generated rolls across save and reload 15ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > awards guaranteed family materials and an instance for elite and boss kills 2ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > uses a deterministic seeded normal gear chance and weighted base table 25ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > biases armor drops with wolf hide and weapon drops with wolf fang 1ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unsafe material capacity and item sequence before any reward mutation or RNG draw 6ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unknown definitions without changing state 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > procedural item generation > projects source-specific reward expectations as detached pure data
+AssertionError: expected { definitionId: 'grayWolf', …(6) } to deeply equal { definitionId: 'grayWolf', …(6) }
+
+- Expected
++ Received
+
+@@ -10,11 +10,11 @@
+      "wolfFang": 1,
+    },
+    "rank": "normal",
+    "rarityChances": {
+      "common": 0.6,
+-     "epic": 0.028,
++     "epic": 0.027999999999999997,
+      "legendary": 0.002,
+      "rare": 0.1,
+      "uncommon": 0.27,
+    },
+  }
+
+ ❯ src/engine/itemGeneration.test.ts:11:47
+      9| describe('procedural item generation', () => {
+     10|   it('projects source-specific reward expectations as detached pure da…
+     11|     expect(wolfRewardExpectation('grayWolf')).toEqual({
+       |                                               ^
+     12|       definitionId: 'grayWolf', rank: 'normal', dropLevel: 2, gearChan…
+     13|       rarityChances: { common: .6, uncommon: .27, rare: .1, epic: .028…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 passed (15)
+   Start at  11:54:24
+   Duration  582ms (transform 215ms, setup 0ms, import 258ms, tests 209ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

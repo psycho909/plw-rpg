@@ -44,7 +44,13 @@ Esc 開選單／關閉視窗，C 查看角色、I 查看物品、L 查看日誌�
 
 依 [V2.x 規格](docs/specs/V2X-REWARD-RETENTION.md) §77 完成 Phase0–3：程序裝備的掉落／比較／穿戴／保存流程，以及森林五種狼族遭遇、實際戰鬥提示、traits與持久化狼王變種。狼族由灰狼逐步解鎖；未解鎖或暫不可挑戰時顯示原因。狼王逃跑／重載不重抽形態，勝利後冷卻7個遊戲日。
 
-首輪 Engineering Gate：**PASS WITH FINDINGS**。314tests、typecheck/build、20項Chromium回歸、20分鐘正常UI壓力測試與多seed10/50/100年模擬通過；[交付報告](reports/v2/20261006-reward-core/final-review.md)保存原始失敗及限制。Phase4–10、完整內容預算與產品／retention驗收未宣告完成；真人驗證在本開發階段為DEFERRED，不阻擋工程。
+首輪 Engineering Gate：**PASS WITH FINDINGS**。314tests、typecheck/build、20項Chromium回歸、20分鐘正常UI壓力測試與多seed10/50/100年模擬通過；[交付報告](reports/v2/20261006-reward-core/final-review.md)保存原始失敗及限制。此首輪範圍只到Phase3；完整內容預算與產品／retention驗收未宣告完成；真人驗證在本開發階段為DEFERRED，不阻擋工程。
+
+## V2.x Phase4：Adventure Reward Loop
+
+本輪依 [Phase4 規格](docs/specs/V2X-PHASE4-ADVENTURE-REWARD.md)調整新掉落的風險回報、硬皮防線與穿透互動，以及狼王限定月牙獵矛；物品視窗同窗比較能力／詞綴，追蹤與戰鬥視窗顯示實際掉落期待、首次發現及下一個目標。既有裝備存檔數值保留。
+
+Phase4 Engineering Gate：**PASS WITH FINDINGS**。330項全量測試、typecheck/build、10萬次掉落、8,640場戰鬥、20項Chromium回歸、20分鐘正常Browser壓測、30分鐘Agent探索及受控出售補測通過。[本輪交付紀錄](reports/v2/20261006-reward-core/phase-04/final-review.md)保留原始失敗及獨立重試，不將Agent紀錄當作真人產品驗收。Phase5–10／V3尚未開始；Human Gate為DEFERRED。
 
 ## 正式網站與部署
 

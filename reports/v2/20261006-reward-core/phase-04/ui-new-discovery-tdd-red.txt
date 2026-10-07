@@ -1,0 +1,39 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/itemGeneration.test.ts -t marks only the first award
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/itemGeneration.test.ts (23 tests | 1 failed | 22 skipped) 12ms
+     × marks only the first award of an equipment base as a new discovery without changing loot state or RNG 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > wolf loot awards > marks only the first award of an equipment base as a new discovery without changing loot state or RNG
+AssertionError: expected '獲得稀有月牙獵矛。' to be '新發現：獲得稀有月牙獵矛。' // Object.is equality
+
+Expected: "新發現：獲得稀有月牙獵矛。"
+Received: "獲得稀有月牙獵矛。"
+
+ ❯ src/engine/itemGeneration.test.ts:160:36
+    158|
+    159|     expect(first.instance?.baseId).toBe('moonFangSpear')
+    160|     expect(firstItemEvent.message).toBe(`新發現：獲得${RARITIES[first.instan…
+       |                                    ^
+    161|     expect(state.rngState).toBe(replay.rngState)
+    162|     expect(state.reward).toEqual(replay.reward)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 22 skipped (23)
+   Start at  12:32:35
+   Duration  435ms (transform 233ms, setup 0ms, import 299ms, tests 12ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

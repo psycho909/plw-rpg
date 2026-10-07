@@ -1,0 +1,27 @@
+ ❯ reports/v2/20261006-reward-core/phase-04/combat_simulation.test.ts (1 test | 1 failed) 9915ms
+   × compares public wolf combat with generation-profile and canonical boss gear under exact replay 9914ms
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261006-reward-core/phase-04/combat_simulation.test.ts > compares public wolf combat with generation-profile and canonical boss gear under exact replay
+AssertionError: expected { …(3) } to deeply equal { …(3) }
+
+- Expected
++ Received
+
+@@ -1,19 +1,19 @@
+  {
+    "commit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+-   "fingerprint": "d8480c5fc48717eabae218621f77b15c7b4725d486007de4ce4344cfdc6a1819",
++   "fingerprint": "e995a5965f3b934de5f166dff8c281ed0ce284f32d375209406a9961604ac88b",
+    "sourceSha256": {
+      "src/App.vue": "f5cdc05df85713c36dbdb27e88ad47f3e4127d8579dd637d5d075d8b096fcf1f",
+      "src/components/AdventureWindow.vue": "69fc5aef756c1402dbbf45c8b85f44631239a0ba94479db6ecbeabca57fdc1b6",
+      "src/components/CharacterSheet.vue": "db3d94e19d29efe49e33d558d022ca9f3dd3bba621365db9075c7baeb395002b",
+      "src/components/IdentityWindow.vue": "8af6030805a92095b004cbfe3765f0b796ead51acc10842c95975557db397fc8",
+      "src/components/InventoryWindow.vue": "613bc80fbc506a56f60e371c3b82919b12ef6af9b3aa3dd77c99406b0cbb9bde",
+      "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+      "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+      "src/components/PixelWindow.vue": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+      "src/components/PlaceWindow.vue": "375bd0b4b392c3a1680a16ec9b7d4ae734ee6d0305c2cfe090d386f930fb6a13",
++     "src/components/PlaceWindow.vue": "46c761635ac960fc5b88a629c5940d6af842c8bc18aa19e6424c3594b069173e",

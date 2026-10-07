@@ -1,0 +1,8 @@
+PASS current production app accepts migrated village fixture and preserves legal boss/procedural gear
+PASS 390px same-window stats and affix comparison renders without horizontal overflow
+PASS cancel sale leaves gold, inventory, equipment, and collection unchanged
+PASS Escape dismisses pending sale and reopening retains the gear and controlled save state
+PASS non-worn procedural gear sale pays displayed price, removes instance, and retains collection
+PASS currently worn boss-exclusive gear follows implemented rule and cannot be sold
+PASS legal non-worn moonFangSpear sale pays displayed price with no ghost equipment reference
+PASS native save/reload retains both sales, gold, collection history, and no equipped ghost

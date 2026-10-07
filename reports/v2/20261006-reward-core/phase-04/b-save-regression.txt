@@ -1,0 +1,139 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects coercible arrays where a V2 origin enum string is required 12ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects coercible arrays where a V2 identity enum string is required 9ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects coercible arrays where a V2 trait enum string is required 7ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects coercible arrays where a V2 career enum string is required 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > validates a complete V1 world before migration and preserves every legacy world field and RNG 17ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt V1 world before migration: world-time 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt V1 world before migration: missing-world-field 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt V1 world before migration: bad-reference 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a V1 payload that already contains life metadata instead of overwriting it 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: canon 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: extra-life-field 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: origin 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: reputation 9ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: character-reference 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: npc-reference 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: property-owner 4ms
+ ✓ src/services/rewardSave.test.ts > adds a reward extension to a native V2 save without consuming world RNG or replacing its world 17ms
+ ✓ src/services/rewardSave.test.ts > migrates the committed native V1 fixture losslessly through V2.x save and reload 29ms
+ ✓ src/services/rewardSave.test.ts > persists separate equipment instances and stackable materials without replacing fixed legacy gear 16ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward schema without recreating a world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward duplicate without recreating a world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward owner without recreating a world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward reference without recreating a world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward dual-gear without recreating a world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward stats without recreating a world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward affix-slot without recreating a world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward affix-value without recreating a world 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: property-bounds 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: property-day 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: property-daily-total 7ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: milestone-bound 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a null crop with the standard preserved-save error 7ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe nextNpcId -1 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe nextNpcId 0 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe nextNpcId 1.5 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe nextNpcId 9007199254740991 8ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe nextNpcId 9007199254740992 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe eventSequence -1 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe eventSequence 0.5 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe eventSequence 9007199254740991 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe eventSequence 9007199254740992 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a sequence behind an ID in events 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a sequence behind an ID in history 7ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a sequence behind an ID in crops 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe crop ID 0 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe crop ID -1 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe crop ID 0.5 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe crop ID 9007199254740992 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > checks the NPC counter against inherited characters as well as remaining NPCs 10ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward materials without recreating a world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward collection without recreating a world 4ms
+ ✓ src/services/rewardSave.test.ts > round-trips canonical family stats and preserves a boss formation across live turns 22ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged hp before loading the world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged maxHp before loading the world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged attack before loading the world 7ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged defense before loading the world 8ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged exp before loading the world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged gold before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged elite before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-traits before loading the world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-variant before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-formedAt before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-context before loading the world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-missing before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged turn before loading the world 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > projects source-specific reward expectations as detached pure data 2ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > returns a deterministic unique instance without awarding it to the reward state 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'missing', level: 1 } 9ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: +0 } 6ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 101 } 4ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, material: 'iron' } 7ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, bossSource: 'grayWolf' } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 7, dropSource: 'missing' } 4ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 7, dropSource: 'alphaWolf', bossSource: 'wolfKing' } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact 178ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged howl before loading the world 6ms
+ ✓ src/services/rewardSave.test.ts > accepts the fixed howl phase and rejects impossible turn/howl combinations 17ms
+ ✓ src/services/rewardSave.test.ts > round-trips a fractional wolf HP caused by companion damage 9ms
+ ✓ src/services/rewardSave.test.ts > keeps a boss form after death and lets a successor reuse it without another formation draw 14ms
+ ✓ src/services/rewardSave.test.ts > keeps legacy untagged wolf and dungeon fights loadable 14ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > biases wolf fang rolls toward bleed or penetration affixes 17ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > uses the rare-plus boss rarity pool and preserves generated rolls across save and reload 36ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > uses source-qualified rarity pools while keeping every roll valid for its level and rarity 13ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > uses approved new drop levels and keeps their generated stats reloadable 17ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > awards guaranteed family materials and an instance for elite and boss kills 2ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > uses a deterministic seeded normal gear chance and weighted base table 38ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > biases armor drops with wolf hide and weapon drops with wolf fang 1ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unsafe material capacity and item sequence before any reward mutation or RNG draw 7ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unknown definitions without changing state 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips four normally planted crops and harvests exactly one at a time 44ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 500 years of history, natural deaths and successors and continues deterministically 7703ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a rolled-back event sequence before planting duplicates a crop ID 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects duplicate crop IDs before harvesting can remove an extra plot 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects an NPC counter that would collide with an existing resident 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips a living world and preserves future simulation 22ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips a deceased character instead of discarding the world 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips an equipped character in active combat and continues the encounter 7ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsupported versions, missing fields and invalid JSON 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects fractional prepared plots on the first load (PT-001) 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 0 whole prepared plots 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 1 whole prepared plots 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 2 whole prepared plots 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 3 whole prepared plots 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 4 whole prepared plots 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips normal farming at capacity and continues planting 9ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt invalid-calendar save 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt invalid-character-stage save 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt invalid-event save 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt invalid-combat save 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > matures crops at the same instant in batch and minute-by-minute simulation 127ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: character-exp 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: npc-skill-exp 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: skill-level 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: schedule-midnight 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: schedule-order 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: schedule-start 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: dungeon-stage 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: dungeon-combat 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects an incomplete grid caused by tile x=24 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects an incomplete grid caused by tile x=0.5 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects invalid world locations or encounter levels: player 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects invalid world locations or encounter levels: npc 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects invalid world locations or encounter levels: home 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects invalid world locations or encounter levels: workplace 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects invalid world locations or encounter levels: threat 3ms
+
+ Test Files  3 passed (3)
+      Tests  125 passed (125)
+   Start at  11:59:13
+   Duration  8.65s (transform 688ms, setup 0ms, import 880ms, tests 8.84s, environment 1ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "status": "VALIDATED_AND_COMPRESSED",
+  "createdAtUTC": "2026-10-07T01:51:31.776124+00:00",
+  "source": "archive/playlog.jsonl",
+  "validation": "Each JSONL line parsed and checked with scripts.recorded_reports.decode_record; compressed bytes retain original JSONL bytes.",
+  "rawBytes": 1046545043,
+  "rawSha256": "fe8539bb6d9b49d57cb28e2cabb0b5d758c00d28bd712f6984c54e50874ec7bf",
+  "rawBytesAfter": 1046545043,
+  "rawSha256After": "fe8539bb6d9b49d57cb28e2cabb0b5d758c00d28bd712f6984c54e50874ec7bf",
+  "recordCount": 4263,
+  "latestProjectionCheck": {
+    "publishedFileCount": 28,
+    "matchingProjectionCount": 27,
+    "matchingProjections": [
+      "20261006T131931Z-failure-raw-save.json",
+      "adventure-agent-playtest-retry01.json",
+      "adventure-agent-playtest.json",
+      "adventure-policy-retry01-red.json",
+      "adventure-policy-retry01-verification.json",
+      "browser.json",
+      "decision-log-guard-final-runtime-driver.py",
+      "free-port-final-runtime-driver.py",
+      "helper-report-path-final-runtime-driver.py",
+      "phase04_stress_browser_retry01.py",
+      "phase4-a-baseline-combat-balance.json",
+      "phase4-a-baseline-loot-distribution.json",
+      "phase4-a-baseline-run-status.json",
+      "phase4-a-combat_simulation.test.ts",
+      "phase4-a-loot_monte_carlo.test.ts",
+      "phase4-a-simulation.config.ts",
+      "pre-browser-report-path-driver.py",
+      "pre-decision-log-guard-final-runtime-driver.py",
+      "pre-free-port-driver.py",
+      "pre-startup-fix-final-runtime-driver.py",
+      "runtime-driver-validation.md",
+      "startup-fixed-final-runtime-driver.py",
+      "stress-browser-retry01-lifecycle-verification.json",
+      "stress-browser-retry01.json",
+      "stress-browser.json",
+      "test_final_runtime_driver_validation.py",
+      "test_phase04_stress_retry01_lifecycle.py"
+    ],
+    "absentProjectionCount": 0,
+    "absentProjections": [],
+    "mismatchCount": 1,
+    "mismatches": [
+      {
+        "file": "final-runtime-driver.py",
+        "recordLine": 11,
+        "expectedSha256": "4fa911a46a92056946fd1dd6c68607821279a9239bdc5b1487dba9903d4108c0",
+        "actualSha256": "8412261b32ce1b1cb02a509b820d50916f90b701b1e6ded5f29f90e3dbda6555",
+        "expectedBytes": 55565,
+        "actualBytes": 57124
+      }
+    ],
+    "interpretation": "Archive record integrity and current-projection matching are separate checks; absent historical projections are reported, not treated as corruption."
+  },
+  "sourceSizeBefore": 1046545043,
+  "sourceSizeAfter": 1046545043,
+  "sourceMtimeNsBefore": 1791337494813271153,
+  "sourceMtimeNsAfter": 1791337494813271153,
+  "xzBytes": 102145656,
+  "xzSha256": "81efa7ce0a641324ce57ac73b893d7eb0982570f7ca5ede945ba004a9eb2ac2d",
+  "xzFormat": "XZ",
+  "xzPresetBasis": 6,
+  "xzPresetNote": "preset 6 tuning with the dictionary explicitly raised to 32 MiB",
+  "xzDictionaryBytes": 33554432,
+  "xzCheck": "SHA-256",
+  "roundTripVerified": true,
+  "artifactMode": "split-xz-concatenation",
+  "partBytesLimit": 50000000,
+  "artifacts": [
+    {
+      "path": "evidence-archive/phase04-playlog-20261007T014622Z.part-001.xzpart",
+      "bytes": 50000000,
+      "sha256": "5b34159e5b7d4b7bb0c3a8d0ad3c66566fc770b681e07723e5fd4b8ff54ee150"
+    },
+    {
+      "path": "evidence-archive/phase04-playlog-20261007T014622Z.part-002.xzpart",
+      "bytes": 50000000,
+      "sha256": "6694ceb43ca9dc51a01ce7aa3681568ab3b50973488d8221382796a7fc804083"
+    },
+    {
+      "path": "evidence-archive/phase04-playlog-20261007T014622Z.part-003.xzpart",
+      "bytes": 2145656,
+      "sha256": "f6a1a2b7d10eabf0cec75543e982c73af1121b68fd5ec3a361e7f4a8ebcfd26e"
+    }
+  ],
+  "concatenatedXzSha256": "81efa7ce0a641324ce57ac73b893d7eb0982570f7ca5ede945ba004a9eb2ac2d",
+  "concatenatedXzBytes": 102145656
+}

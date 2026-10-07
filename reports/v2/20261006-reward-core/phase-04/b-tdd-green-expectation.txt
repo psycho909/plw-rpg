@@ -1,0 +1,29 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > projects source-specific reward expectations as detached pure data 2ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > returns a deterministic unique instance without awarding it to the reward state 4ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'missing', level: 1 } 6ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: +0 } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 101 } 4ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, material: 'iron' } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, bossSource: 'grayWolf' } 3ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact 115ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > biases wolf fang rolls toward bleed or penetration affixes 11ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > uses the rare-plus boss rarity pool and preserves generated rolls across save and reload 18ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > awards guaranteed family materials and an instance for elite and boss kills 3ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > uses a deterministic seeded normal gear chance and weighted base table 33ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > biases armor drops with wolf hide and weapon drops with wolf fang 1ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unsafe material capacity and item sequence before any reward mutation or RNG draw 9ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unknown definitions without changing state 3ms
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  11:55:04
+   Duration  619ms (transform 226ms, setup 0ms, import 274ms, tests 224ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

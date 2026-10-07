@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py", line 1025, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py", line 830, in main
+    runner = FinalRunner(ROOT, run_id, logs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py", line 407, in __init__
+    self.publish()
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-04/archive/final-runtime-driver.py", line 410, in publish
+    from scripts.recorded_reports import write_recorded
+ModuleNotFoundError: No module named 'scripts'

@@ -1,0 +1,21 @@
+# Phase 4 boss reward analysis
+
+## Evidence
+
+The loot evidence is the final 100,000-award run: 20,000 Wolf King award calls, 20,000 actual `moonFangSpear` exclusive bases, 218 Legendary boss-source items, and 42 `moonHunter` special traits among exactly 218 eligible Legendary weapon rolls. The profile config is Rare 85%, Epic 14%, Legendary 1%, guaranteed wolf fang and moonstone, 25% `moonHunter` chance with the award material, and a 25% wolf-hide chance. Observed rarity was 84.905% Rare / 14.005% Epic / 1.090% Legendary.
+
+The source fingerprint is `71d8cc68aab5f09579b9c87f74b564b585d4ab792fee10e0712ded73037ec245`; all 74 `src` paths are in the final artifact manifest. Baseline remains separately archived. Loot awards are direct reward calls, not a sample conditioned on defeating the boss.
+
+## Findings
+
+- **Severity: informational; exclusive base confirmed:** `moonFangSpear` appeared in 20,000 / 20,000 Wolf King awards (100%); all 218 observed Legendary boss drops carried boss-source provenance. This confirms the configured boss-exclusive output for the sampled cohort.
+- **Severity: low / inconclusive; special rate uses its true denominator:** `moonHunter` appeared 42 / 218 eligible Legendary weapon rolls = 19.27%; configuration is 25%. Keep these as separate configured and observed values. The denominator is modest, so this run alone does not demonstrate a rate defect or justify a chance change.
+- **Severity: medium; boss gear has tested combat utility:** 96 matched combat scenarios per band compared the actual detached level-7 `moonFangSpear` award with a same-roll standard-spear counterfactual. The exclusive base dominates in 49/96 Early, 46/96 Edge and 45/96 Ready cells; all remaining cases are equivalent. Early wins are 67/96 versus 52/96. This isolates the base effect for the sampled item, not the full distribution of boss rewards.
+- **Severity: medium; risk depends on boss variant and hero power:** In Early, the actual boss gear profile won 2/16 well-fed, 10/16 starved and 7/16 moonlit fights; the matched standard body won 0/16, 4/16 and 0/16. Both profiles won 16/16 per variant at Edge and Ready. These outcomes do not test how often a player can access the boss or earn the drop.
+- **Economy:** each direct boss award yields nominal 75 gold (3.75 potion prices at 20 gold each), guaranteed one wolf fang and one moonstone, and has mean sale-value projections of 43.46 gold for dropped equipment and 31.26 gold for materials if everything is sold. Moonstone currently sells for 25 gold and has special/affix-generation bias; crafting is not available. These sale totals are potential liquidation, not observed player income or intended value.
+
+## Limitations and decision notes
+
+Combat boss profiles sample one actual detached award per seed/powerband and reuse it across scenarios. This is not a Monte Carlo distribution of combat outcomes over the full loot table. The boss standard-body comparison is a controlled base substitution, not a player-choice, progression-acquisition or economy test. The 20,000 direct award calls are not 20,000 successful real boss fights. No conclusion is established about drop accessibility, long-term scarcity, special trait desirability, human fun or retention.
+
+Current evidence supports keeping the measured exclusive base as the comparison anchor while Root reviews the conditional Moon Hunter denominator and risk curve. It does not independently warrant changing the 25% configured special chance, boss rarity table, gold payout, or base stats. The original aggregate final-runtime remains FAILED for its separate browser-report-consumption/orchestration error. The fresh component run passed npm check, sanity, formal simulation and targeted browser with stable inputs. The independent current-source stress retry then passed its 20-minute scope, and the corrected-policy normal-save Adventure retry passed 1,800.857 seconds; these component results do not overwrite the aggregate failure. The original Adventure artifact remains policy-confounded and is superseded for target-progression inference by the corrected retry. See `browser-stress.md` and `agent-adventure.md` for exact evidence. No human, retention or product gate is claimed by this analysis.

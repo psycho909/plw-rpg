@@ -1,0 +1,319 @@
+{
+  "producer": "v2x-phase4-targeted-browser-regression",
+  "sourceCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+  "workingTreeSource": true,
+  "limitation": "Targeted browser regression only; controlled fixture cases are individually marked and do not count as normal fresh-save gameplay, stress, or Human Fun Gate.",
+  "checks": [
+    {
+      "name": "opening freezes time and resists Escape/resume",
+      "controlledFixture": false,
+      "worldTime": 480
+    },
+    {
+      "name": "modal retains Active Idle and pause flushes elapsed time",
+      "controlledFixture": false,
+      "before": 480,
+      "after": 482
+    },
+    {
+      "name": "real x5 clock advances without fake timers",
+      "controlledFixture": false,
+      "minutes": 11
+    },
+    {
+      "name": "real x20 clock advances without fake timers",
+      "controlledFixture": false,
+      "minutes": 58
+    },
+    {
+      "name": "single modal: 這一生",
+      "controlledFixture": false
+    },
+    {
+      "name": "single modal: 住所與產業",
+      "controlledFixture": false
+    },
+    {
+      "name": "single modal: 地方消息與委託",
+      "controlledFixture": false
+    },
+    {
+      "name": "reload never awards offline advancement",
+      "controlledFixture": true,
+      "worldTime": 551
+    },
+    {
+      "name": "native committed V1 world migrates with every legacy field/RNG/time preserved",
+      "controlledFixture": true,
+      "nativeSource": "2e8ad94"
+    },
+    {
+      "name": "detached character projection updates potion/equipment in an open modal",
+      "controlledFixture": true
+    },
+    {
+      "name": "home purchase/storage update live and conserve real items",
+      "controlledFixture": true
+    },
+    {
+      "name": "NPC life details render from actual resident projections",
+      "controlledFixture": true
+    },
+    {
+      "name": "responsive browser viewport",
+      "controlledFixture": true,
+      "width": 768,
+      "height": 1024,
+      "physicalDevice": false
+    },
+    {
+      "name": "responsive browser viewport",
+      "controlledFixture": true,
+      "width": 390,
+      "height": 844,
+      "physicalDevice": false
+    },
+    {
+      "name": "NPC career refreshes in a live modal across midnight",
+      "controlledFixture": true
+    },
+    {
+      "name": "quota preserves disk/pending, blocks x20, and recovers before the next action",
+      "controlledFixture": true
+    },
+    {
+      "name": "controlled real Chromium page freeze/resume catches in-session elapsed time",
+      "controlledFixture": true,
+      "minutes": 45,
+      "fakeClock": false
+    },
+    {
+      "name": "invalid save remains protected from movement and speed controls",
+      "controlledFixture": true
+    },
+    {
+      "name": "full journal export includes V2 checkpoint and unique append-only records",
+      "controlledFixture": true,
+      "records": 31
+    },
+    {
+      "name": "no uncaught browser exceptions",
+      "controlledFixture": true
+    }
+  ],
+  "errors": [],
+  "fixtures": [
+    "lastSavedAt 30 real days ago, same valid V2 checkpoint",
+    "village, gold1000, reputation80, hp10, carried sword for reachable property/equipment UI",
+    "68-year-old content/solitary NPC, ten minutes before midnight retirement review"
+  ],
+  "profiles": [
+    {
+      "label": "after-window-actions",
+      "usedSize": 4435344,
+      "totalSize": 4833280,
+      "embedderHeapUsedSize": 4721808,
+      "backingStorageSize": 257326,
+      "dom": {
+        "documents": 1,
+        "nodes": 2125,
+        "jsEventListeners": 441
+      },
+      "saveBytes": 91107
+    },
+    {
+      "label": "short-session-storage-and-latency",
+      "estimate": {
+        "quota": 6442478706,
+        "usage": 27762,
+        "usageDetails": {
+          "indexedDB": 27762
+        }
+      },
+      "records": 31,
+      "journalJsonBytes": 7425,
+      "checkpointWriteMs": [
+        0.19999999552965164,
+        0.20000000298023224,
+        0.10000000149011612,
+        0.20000000298023224
+      ],
+      "exportDownloadMs": 57.39259099937044,
+      "exportBytes": 165186,
+      "frameIntervalP95Ms": 16.700000000000728,
+      "measurementLimit": "short session; checkpointWriteMs measures setItem only; export includes browser automation/download overhead; JSON bytes are logical journal size, storage estimate is origin-wide"
+    }
+  ],
+  "source_sha256": {
+    "src/App.vue": "f5cdc05df85713c36dbdb27e88ad47f3e4127d8579dd637d5d075d8b096fcf1f",
+    "src/components/AdventureWindow.vue": "eb6167f033c2c871d0719fb3742319df591feace02bffabe8af5a4802ebfc087",
+    "src/components/CharacterSheet.vue": "db3d94e19d29efe49e33d558d022ca9f3dd3bba621365db9075c7baeb395002b",
+    "src/components/IdentityWindow.vue": "8af6030805a92095b004cbfe3765f0b796ead51acc10842c95975557db397fc8",
+    "src/components/InventoryWindow.vue": "7852a1fedce6ac6a1c3aea4652ec8248ba0827d878358da0455e3417f8ca1f68",
+    "src/components/LifeNewsWindow.vue": "deeade4eb492f3ac846d5de7755254f6dea86687f136426c888f14b4379bd322",
+    "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+    "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+    "src/components/PixelWindow.vue": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+    "src/components/PlaceWindow.vue": "ba31a984e6936a940d8086ee14bd6e1387b2bba0112cf5940f5373bd3096f6d2",
+    "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+    "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+    "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+    "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+    "src/data/config.ts": "eefe62b9bf0e05ad6925bd996ec1d64c00665de08135af91c32d94e26277535b",
+    "src/data/identity.ts": "ac9f7c5ff096f3328e2c98e6cc4298204bbb327a231a2c40d22ef24dbd26504a",
+    "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+    "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+    "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+    "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+    "src/data/rewards.ts": "a5838a2288164c867e0b3e38daf309dbe8cbcb21dd59c1960c5eea2b7b7c4007",
+    "src/domain/life.ts": "7144387d09afd98abf2b825231fe6278b3e4ec0162f2cd33f7fb80c89e952b4b",
+    "src/domain/reward.ts": "0374b9d9c3a31f252c8c2c358cbbdd6698f0182ea47c1c9242470b287dbba634",
+    "src/domain/types.ts": "d91ba10e135abfcda060fdfddb31125a3eb19fb0cc6b6d1b14b7d4068a475705",
+    "src/engine/actions.test.ts": "81b2f116cb18daf5525fd79a2246863bc3e4e36214f9caac466e4f820d9e37ba",
+    "src/engine/actions.ts": "96146f525b5f87cc1ecd394594c46fbf7da2a76c265d3344e17f6feec3e6e100",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/combatStats.test.ts": "668044028bb452f30c394d30e1fb4b1c2b2d03b71067184b07306e69b9e04953",
+    "src/engine/combatStats.ts": "d7235e4c59edc77aec368f940e8825712672cc3fcd49e83c7c901c5f049db34f",
+    "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+    "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+    "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+    "src/engine/gearStats.ts": "66fa786c0c3e81cc317033181a0f11d9ef987c15f943e0960ec20a668eff0702",
+    "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+    "src/engine/identity.ts": "d1038f5f21d107ec87a0398afe7bcd4062e465b5cb815652ca014fd0cccf7fc8",
+    "src/engine/itemGeneration.test.ts": "6261aefe2ad022e944e069655c11aefb947c2cf52a148176fdb046072a03e592",
+    "src/engine/itemGeneration.ts": "8c08001e5ee5c45602e7b84f879469e9ea52e38389da5c42620d2c4097e30a3f",
+    "src/engine/lifeIntegration.test.ts": "c9e702a8819e0d372aff7411f45a85ebc1e829dfc6f1e753b728863a21f56a16",
+    "src/engine/lifeState.ts": "45526f4bc5bb3d560e6b404c6e142f6624d2e40b201c61ea43c8166404faa6d7",
+    "src/engine/livingEvents.test.ts": "cfbb5b99724fe0de53428c80378249b1063084f2dee6f9d85652b950979c10c0",
+    "src/engine/livingEvents.ts": "afd535e634752a328d7ae3e0daa3d93cf07c4f7c2473705ed64d3058f02867f4",
+    "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+    "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+    "src/engine/npcLife.ts": "892a5be0f0d3bfa9f7fea7b962d6d37e3dea567c9551a3c1f16f715456bddb91",
+    "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+    "src/engine/ownership.ts": "fef2361be0a18221e7d50d17d97c82b64df360c257cc0598684842c9295f5526",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/rewardActions.test.ts": "ff32e05eab73c66114b579a0857d32d3682e4540d8744bced9f4ca77037d8fd4",
+    "src/engine/rewardActions.ts": "f71bd64a5ac6a3b0ca59d7dbbb84a2a18ca14dff36e8177541700f665cdd09b2",
+    "src/engine/rewardState.ts": "0544a7fe955cd1965985e2f99c8fb4ef5ff38c6094bf41068186a06b267c5d1f",
+    "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+    "src/engine/simulation.ts": "e85e143a23a9130df8b68a62fdd3a9c06d09cc9a1c7a2af2bdde8ec8395a2484",
+    "src/engine/wolfFamily.test.ts": "9d1aa4f13c4582c317dd4e91b6a3cf32db1ea33e8adeef4a54097ecf4355716f",
+    "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+    "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+    "src/presentation/icons.ts": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+    "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+    "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+    "src/presentation/rewardProjection.test.ts": "0951dfc9dd456e0038818215aefc37e5f1e6ba6e31adc47a5a7b4b7679961309",
+    "src/presentation/rewardProjection.ts": "daed466cfa4de21067f56eb2450f3c68fe0b5bf8f1b7435b3dde6717b2b05d69",
+    "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+    "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+    "src/presentation/worldUI.test.ts": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+    "src/presentation/worldUI.ts": "a0abdb1cc227cf4d60e7bb3c1531fc555dff800d462b74be312f67c562e6c91e",
+    "src/services/playJournal.test.ts": "a874387c07de1194d3d3b5583e3de6c77f1ff34196c6a0dc08ea75053e537994",
+    "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+    "src/services/rewardSave.test.ts": "1d893cbc1bdb52944f14061516cafcb5a15bcf9f26e7a54d7ec68f99572f4b32",
+    "src/services/rewardValidation.ts": "ee5a658aa6664baceb34cce9714d8d186e7201b6a2861766760bcadc5ee48f84",
+    "src/services/saveService.test.ts": "21901b38dc5390cd203bcb14eddbd6c67143d8c224549e6823fff6e587ab4d7d",
+    "src/services/saveService.ts": "371b59e7b13228e0b7fdae5b6e7bd62e4d538ff1223013c8c708fb1c0cf05850",
+    "src/services/saveWriter.ts": "0703016eb96d12bb843f0b04b6e21b6568bf7f9b44defc59e340896c675ff43b",
+    "src/stores/gameStore.test.ts": "50255cc94697246a979569e39a13166d77ea303390e958e7746b606a4b5cd29f",
+    "src/stores/gameStore.ts": "6ad3c0b49b3b7007ca72bdd90aaf1cc9caf4530b8f084c92c3351e5168b0c9b9",
+    "src/style.scss": "75010f723d2597f2dfcb88a24ce63ddae090eb53c786fe4b8b19b080f94c7500"
+  },
+  "controlledFixture": true,
+  "buildStatus": "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-04/build-status.json",
+  "buildStatusSha256": "14bc6d8d34628f28bfba714922bb0070225ab661f51c52c7ace6aabc62dbe987",
+  "buildFreezeCheck": true,
+  "startUTC": "2026-10-06T13:19:14.065693+00:00",
+  "harnessPath": "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-04/archive/verify_browser.py",
+  "harnessSha256": "cb872c53961200a507405010f69e4eaca2e77f3c364595513f80b69fbe4209e8",
+  "helperSha256": {
+    "runner_paths.py": "8b823117dab98c4dad35f7da12f236cd6d06c6fd05b10bf8635cca5d54486491",
+    "scripts.recorded_reports.py": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b"
+  },
+  "browser": "151.0.7922.173",
+  "endUTC": "2026-10-06T13:19:29.959529+00:00",
+  "sourceStableDuringRun": true,
+  "harnessStableDuringRun": true,
+  "helpersStableDuringRun": true,
+  "endSourceCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+  "endBuildStatusSha256": "14bc6d8d34628f28bfba714922bb0070225ab661f51c52c7ace6aabc62dbe987",
+  "sourceCommitStableDuringRun": true,
+  "finalSourceSha256": {
+    "src/App.vue": "f5cdc05df85713c36dbdb27e88ad47f3e4127d8579dd637d5d075d8b096fcf1f",
+    "src/components/AdventureWindow.vue": "eb6167f033c2c871d0719fb3742319df591feace02bffabe8af5a4802ebfc087",
+    "src/components/CharacterSheet.vue": "db3d94e19d29efe49e33d558d022ca9f3dd3bba621365db9075c7baeb395002b",
+    "src/components/IdentityWindow.vue": "8af6030805a92095b004cbfe3765f0b796ead51acc10842c95975557db397fc8",
+    "src/components/InventoryWindow.vue": "7852a1fedce6ac6a1c3aea4652ec8248ba0827d878358da0455e3417f8ca1f68",
+    "src/components/LifeNewsWindow.vue": "deeade4eb492f3ac846d5de7755254f6dea86687f136426c888f14b4379bd322",
+    "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+    "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+    "src/components/PixelWindow.vue": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+    "src/components/PlaceWindow.vue": "ba31a984e6936a940d8086ee14bd6e1387b2bba0112cf5940f5373bd3096f6d2",
+    "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+    "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+    "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+    "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+    "src/data/config.ts": "eefe62b9bf0e05ad6925bd996ec1d64c00665de08135af91c32d94e26277535b",
+    "src/data/identity.ts": "ac9f7c5ff096f3328e2c98e6cc4298204bbb327a231a2c40d22ef24dbd26504a",
+    "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+    "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+    "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+    "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+    "src/data/rewards.ts": "a5838a2288164c867e0b3e38daf309dbe8cbcb21dd59c1960c5eea2b7b7c4007",
+    "src/domain/life.ts": "7144387d09afd98abf2b825231fe6278b3e4ec0162f2cd33f7fb80c89e952b4b",
+    "src/domain/reward.ts": "0374b9d9c3a31f252c8c2c358cbbdd6698f0182ea47c1c9242470b287dbba634",
+    "src/domain/types.ts": "d91ba10e135abfcda060fdfddb31125a3eb19fb0cc6b6d1b14b7d4068a475705",
+    "src/engine/actions.test.ts": "81b2f116cb18daf5525fd79a2246863bc3e4e36214f9caac466e4f820d9e37ba",
+    "src/engine/actions.ts": "96146f525b5f87cc1ecd394594c46fbf7da2a76c265d3344e17f6feec3e6e100",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/combatStats.test.ts": "668044028bb452f30c394d30e1fb4b1c2b2d03b71067184b07306e69b9e04953",
+    "src/engine/combatStats.ts": "d7235e4c59edc77aec368f940e8825712672cc3fcd49e83c7c901c5f049db34f",
+    "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+    "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+    "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+    "src/engine/gearStats.ts": "66fa786c0c3e81cc317033181a0f11d9ef987c15f943e0960ec20a668eff0702",
+    "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+    "src/engine/identity.ts": "d1038f5f21d107ec87a0398afe7bcd4062e465b5cb815652ca014fd0cccf7fc8",
+    "src/engine/itemGeneration.test.ts": "6261aefe2ad022e944e069655c11aefb947c2cf52a148176fdb046072a03e592",
+    "src/engine/itemGeneration.ts": "8c08001e5ee5c45602e7b84f879469e9ea52e38389da5c42620d2c4097e30a3f",
+    "src/engine/lifeIntegration.test.ts": "c9e702a8819e0d372aff7411f45a85ebc1e829dfc6f1e753b728863a21f56a16",
+    "src/engine/lifeState.ts": "45526f4bc5bb3d560e6b404c6e142f6624d2e40b201c61ea43c8166404faa6d7",
+    "src/engine/livingEvents.test.ts": "cfbb5b99724fe0de53428c80378249b1063084f2dee6f9d85652b950979c10c0",
+    "src/engine/livingEvents.ts": "afd535e634752a328d7ae3e0daa3d93cf07c4f7c2473705ed64d3058f02867f4",
+    "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+    "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+    "src/engine/npcLife.ts": "892a5be0f0d3bfa9f7fea7b962d6d37e3dea567c9551a3c1f16f715456bddb91",
+    "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+    "src/engine/ownership.ts": "fef2361be0a18221e7d50d17d97c82b64df360c257cc0598684842c9295f5526",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/rewardActions.test.ts": "ff32e05eab73c66114b579a0857d32d3682e4540d8744bced9f4ca77037d8fd4",
+    "src/engine/rewardActions.ts": "f71bd64a5ac6a3b0ca59d7dbbb84a2a18ca14dff36e8177541700f665cdd09b2",
+    "src/engine/rewardState.ts": "0544a7fe955cd1965985e2f99c8fb4ef5ff38c6094bf41068186a06b267c5d1f",
+    "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+    "src/engine/simulation.ts": "e85e143a23a9130df8b68a62fdd3a9c06d09cc9a1c7a2af2bdde8ec8395a2484",
+    "src/engine/wolfFamily.test.ts": "9d1aa4f13c4582c317dd4e91b6a3cf32db1ea33e8adeef4a54097ecf4355716f",
+    "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+    "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+    "src/presentation/icons.ts": "b81fa3c2d90bd6d86f60962a00ba76120eed3da3f1420849802ea066d0c55896",
+    "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+    "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+    "src/presentation/rewardProjection.test.ts": "0951dfc9dd456e0038818215aefc37e5f1e6ba6e31adc47a5a7b4b7679961309",
+    "src/presentation/rewardProjection.ts": "daed466cfa4de21067f56eb2450f3c68fe0b5bf8f1b7435b3dde6717b2b05d69",
+    "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+    "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+    "src/presentation/worldUI.test.ts": "2f3df8b838778eabfb17e3364c37905b3a2ab043ebba3ad1500c911cce7e4e6e",
+    "src/presentation/worldUI.ts": "a0abdb1cc227cf4d60e7bb3c1531fc555dff800d462b74be312f67c562e6c91e",
+    "src/services/playJournal.test.ts": "a874387c07de1194d3d3b5583e3de6c77f1ff34196c6a0dc08ea75053e537994",
+    "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+    "src/services/rewardSave.test.ts": "1d893cbc1bdb52944f14061516cafcb5a15bcf9f26e7a54d7ec68f99572f4b32",
+    "src/services/rewardValidation.ts": "ee5a658aa6664baceb34cce9714d8d186e7201b6a2861766760bcadc5ee48f84",
+    "src/services/saveService.test.ts": "21901b38dc5390cd203bcb14eddbd6c67143d8c224549e6823fff6e587ab4d7d",
+    "src/services/saveService.ts": "371b59e7b13228e0b7fdae5b6e7bd62e4d538ff1223013c8c708fb1c0cf05850",
+    "src/services/saveWriter.ts": "0703016eb96d12bb843f0b04b6e21b6568bf7f9b44defc59e340896c675ff43b",
+    "src/stores/gameStore.test.ts": "50255cc94697246a979569e39a13166d77ea303390e958e7746b606a4b5cd29f",
+    "src/stores/gameStore.ts": "6ad3c0b49b3b7007ca72bdd90aaf1cc9caf4530b8f084c92c3351e5168b0c9b9",
+    "src/style.scss": "75010f723d2597f2dfcb88a24ce63ddae090eb53c786fe4b8b19b080f94c7500"
+  },
+  "status": "PASS"
+}

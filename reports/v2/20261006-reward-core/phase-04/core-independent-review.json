@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "review": "Phase4 Adventure Reward Loop core B/C/D independent review",
+  "disposition": "ACCEPT WITH LIMITATIONS",
+  "actionableFindings": [],
+  "reviewer": {
+    "taskRole": "g6-luna-max-phase4-deep-reviewer",
+    "requestedModelEffort": "GPT-6 Luna Max / max",
+    "runtimeVerified": false,
+    "implementationParticipant": false
+  },
+  "scope": {
+    "baseCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+    "headCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+    "files": [
+      "src/data/rewards.ts",
+      "src/domain/reward.ts",
+      "src/engine/actions.ts",
+      "src/engine/actions.test.ts",
+      "src/engine/combatStats.ts",
+      "src/engine/combatStats.test.ts",
+      "src/engine/gearStats.ts",
+      "src/engine/itemGeneration.ts",
+      "src/engine/itemGeneration.test.ts",
+      "src/engine/wolfFamily.test.ts",
+      "src/services/rewardSave.test.ts"
+    ],
+    "stagedDiff": "empty",
+    "unstagedDiff": "11 tracked core files; see corePatchSha256",
+    "committedDiff": "empty; HEAD equals base",
+    "newCoreFiles": [],
+    "excludedConcurrentScope": [
+      "UI E component/projection/style work",
+      "other untracked docs, reports, runners, and ticket files"
+    ],
+    "corePatchSha256": "b0cdc97bd3a7c7a532d0549eaf9bb5cc4f90be4b71e662c730b19c5e134e48f0",
+    "fileSha256": {
+      "src/data/rewards.ts": "a5838a2288164c867e0b3e38daf309dbe8cbcb21dd59c1960c5eea2b7b7c4007",
+      "src/domain/reward.ts": "0374b9d9c3a31f252c8c2c358cbbdd6698f0182ea47c1c9242470b287dbba634",
+      "src/engine/actions.ts": "96146f525b5f87cc1ecd394594c46fbf7da2a76c265d3344e17f6feec3e6e100",
+      "src/engine/actions.test.ts": "81b2f116cb18daf5525fd79a2246863bc3e4e36214f9caac466e4f820d9e37ba",
+      "src/engine/combatStats.ts": "d7235e4c59edc77aec368f940e8825712672cc3fcd49e83c7c901c5f049db34f",
+      "src/engine/combatStats.test.ts": "668044028bb452f30c394d30e1fb4b1c2b2d03b71067184b07306e69b9e04953",
+      "src/engine/gearStats.ts": "66fa786c0c3e81cc317033181a0f11d9ef987c15f943e0960ec20a668eff0702",
+      "src/engine/itemGeneration.ts": "8c08001e5ee5c45602e7b84f879469e9ea52e38389da5c42620d2c4097e30a3f",
+      "src/engine/itemGeneration.test.ts": "6261aefe2ad022e944e069655c11aefb947c2cf52a148176fdb046072a03e592",
+      "src/engine/wolfFamily.test.ts": "9d1aa4f13c4582c317dd4e91b6a3cf32db1ea33e8adeef4a54097ecf4355716f",
+      "src/services/rewardSave.test.ts": "1d893cbc1bdb52944f14061516cafcb5a15bcf9f26e7a54d7ec68f99572f4b32"
+    },
+    "previousReviewFileSha256": {
+      "src/data/rewards.ts": "a5838a2288164c867e0b3e38daf309dbe8cbcb21dd59c1960c5eea2b7b7c4007",
+      "src/domain/reward.ts": "0374b9d9c3a31f252c8c2c358cbbdd6698f0182ea47c1c9242470b287dbba634",
+      "src/engine/actions.ts": "96146f525b5f87cc1ecd394594c46fbf7da2a76c265d3344e17f6feec3e6e100",
+      "src/engine/actions.test.ts": "81b2f116cb18daf5525fd79a2246863bc3e4e36214f9caac466e4f820d9e37ba",
+      "src/engine/combatStats.ts": "d7235e4c59edc77aec368f940e8825712672cc3fcd49e83c7c901c5f049db34f",
+      "src/engine/combatStats.test.ts": "668044028bb452f30c394d30e1fb4b1c2b2d03b71067184b07306e69b9e04953",
+      "src/engine/gearStats.ts": "66fa786c0c3e81cc317033181a0f11d9ef987c15f943e0960ec20a668eff0702",
+      "src/engine/itemGeneration.ts": "9a9ea7b1fd30f5ae552862d266a7825019bbeaef1a3fb759a9d687fbf03538a4",
+      "src/engine/itemGeneration.test.ts": "b027b1462d7428001beb9d52706ef7672784eb9ccff5f7292a4f055ade5f0601",
+      "src/engine/wolfFamily.test.ts": "9d1aa4f13c4582c317dd4e91b6a3cf32db1ea33e8adeef4a54097ecf4355716f",
+      "src/services/rewardSave.test.ts": "1d893cbc1bdb52944f14061516cafcb5a15bcf9f26e7a54d7ec68f99572f4b32"
+    },
+    "changedSincePreviousReview": [
+      "src/engine/itemGeneration.ts",
+      "src/engine/itemGeneration.test.ts"
+    ],
+    "unchangedSincePreviousReview": [
+      "src/data/rewards.ts",
+      "src/domain/reward.ts",
+      "src/engine/actions.ts",
+      "src/engine/actions.test.ts",
+      "src/engine/combatStats.ts",
+      "src/engine/combatStats.test.ts",
+      "src/engine/gearStats.ts",
+      "src/engine/wolfFamily.test.ts",
+      "src/services/rewardSave.test.ts"
+    ],
+    "deltaPatchPaths": [
+      "src/engine/itemGeneration.ts",
+      "src/engine/itemGeneration.test.ts"
+    ],
+    "deltaPatchSha256": "11f663652ab05da949a804fdc05e6fd4c0acafb69d2437217c4ca422e2e79062"
+  },
+  "axes": {
+    "standards": {
+      "result": "PASS",
+      "findingIds": []
+    },
+    "spec": {
+      "result": "PASS for B/C/D core scope",
+      "findingIds": []
+    }
+  },
+  "specChecks": [
+    {
+      "requirement": "B source-specific rarity/material/drop-level profiles and shared-pool preservation",
+      "result": "PASS",
+      "evidence": [
+        "src/data/rewards.ts:57-81",
+        "src/engine/itemGeneration.ts:43-72,178-213",
+        "src/engine/itemGeneration.test.ts:20-50,133-195"
+      ],
+      "limitation": "Measured final balance remains Phase4-F."
+    },
+    {
+      "requirement": "C penetration ×2 only in active wolf armored phase, while preserving legacy formula otherwise",
+      "result": "PASS",
+      "evidence": [
+        "src/engine/actions.ts:168-172",
+        "src/engine/combatStats.ts:33-42",
+        "src/engine/combatStats.test.ts",
+        "src/services/rewardSave.test.ts:77-122"
+      ]
+    },
+    {
+      "requirement": "D Wolf King exclusive base and intrinsic stat with old snapshot/save compatibility",
+      "result": "PASS",
+      "evidence": [
+        "src/data/rewards.ts:3-10,69-80",
+        "src/engine/itemGeneration.ts:200-213",
+        "src/engine/gearStats.ts:6-11",
+        "src/services/rewardValidation.ts:71-100",
+        "src/engine/itemGeneration.test.ts:10-18,153-195"
+      ]
+    },
+    {
+      "requirement": "RandomService, invalid-input-before-RNG, and legacy save behavior",
+      "result": "PASS",
+      "evidence": [
+        "src/engine/itemGeneration.ts:87-127,173-213",
+        "src/services/rewardSave.test.ts:10-32",
+        "src/services/rewardValidation.ts:91-98"
+      ]
+    }
+  ],
+  "verificationReviewed": [
+    {
+      "artifact": "reports/v2/20261006-reward-core/phase-04/b-engineering-verification.json",
+      "result": "B slice: 125 targeted generation/save tests, 319-test full check, build exit 0; RED/diagnostic failures preserved"
+    },
+    {
+      "artifact": "reports/v2/20261006-reward-core/phase-04/c-engineering-verification.json",
+      "result": "C slice: 83 targeted tests and build exit 0; controlled comparison and exact save/reload evidence recorded"
+    },
+    {
+      "artifact": "reports/v2/20261006-reward-core/phase-04/d-engineering-verification.json",
+      "result": "Cumulative D slice: 105 targeted tests and final build exit 0; expected RED and initial corrected type error preserved"
+    },
+    {
+      "artifact": "reports/v2/20261006-reward-core/phase-04/ui-plan.md and ui-new-discovery-tdd-red.txt",
+      "result": "Reviewed recorded E first-discovery RED and owner-reported 28-test/two-file plus vue-tsc passes; not rerun by this reviewer."
+    }
+  ],
+  "reviewerVerification": {
+    "testsRun": false,
+    "reason": "Existing recorded tests cover the reviewed scope; no new reproduction hypothesis was found.",
+    "deltaFilesInspected": [
+      "src/engine/itemGeneration.ts",
+      "src/engine/itemGeneration.test.ts"
+    ],
+    "deltaTestsRun": false,
+    "deltaReason": "Owner-recorded RED/GREEN and vue-tsc evidence was available; this review found no new reproduction hypothesis."
+  },
+  "limitations": [
+    "This delta review covers only the E engine loot.item first-discovery message; UI components, reward projection, style, browser runtime, and exploratory play remain excluded.",
+    "Phase4-F measured balance and Phase4-G final QA and full gates remain pending.",
+    "Original B/C/D review and verification evidence are preserved; B full-check evidence predates C/D, while D targeted tests plus final build are the cumulative core evidence reviewed."
+  ],
+  "reviewVersion": 2,
+  "deltaReview": {
+    "version": 2,
+    "disposition": "ACCEPT; no new actionable finding",
+    "changedFilesSincePreviousReview": [
+      "src/engine/itemGeneration.ts",
+      "src/engine/itemGeneration.test.ts"
+    ],
+    "unchangedFilesSincePreviousReview": [
+      "src/data/rewards.ts",
+      "src/domain/reward.ts",
+      "src/engine/actions.ts",
+      "src/engine/actions.test.ts",
+      "src/engine/combatStats.ts",
+      "src/engine/combatStats.test.ts",
+      "src/engine/gearStats.ts",
+      "src/engine/wolfFamily.test.ts",
+      "src/services/rewardSave.test.ts"
+    ],
+    "behavior": "Captures firstBaseDiscovery after generateItem and before collection.bases insertion; prefixes the existing loot.item message only for a first base discovery.",
+    "stateAndDeterminism": {
+      "rngCallsAdded": 0,
+      "lootOrCombatRulesChanged": false,
+      "rewardSchemaKeysChanged": false,
+      "collectionSemanticsChanged": false,
+      "eventCallsAdded": 0,
+      "eventTypeCategoryAndSequence": "Same conditional emit call, type, category, and count; only message text changes. emit increments eventSequence once per call."
+    },
+    "evidence": [
+      {
+        "artifact": "reports/v2/20261006-reward-core/phase-04/ui-new-discovery-tdd-red.txt",
+        "result": "Expected RED: the first Wolf King item message lacked 新發現： before the implementation."
+      },
+      {
+        "artifact": "reports/v2/20261006-reward-core/phase-04/ui-plan.md",
+        "result": "Owner records npm run test -- src/presentation/rewardProjection.test.ts src/engine/itemGeneration.test.ts passed 2 files / 28 tests and npx vue-tsc --noEmit passed; reviewer inspected this report and did not rerun."
+      }
+    ],
+    "reviewerTestsRun": false,
+    "findingIds": []
+  }
+}

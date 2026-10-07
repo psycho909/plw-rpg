@@ -1,0 +1,11 @@
+
+> plw-rpg@0.1.0 build
+> vue-tsc --noEmit && vite build
+
+src/engine/gearStats.ts(9,36): error TS2339: Property 'penetration' does not exist on type '{ id: "shortSword"; name: string; slot: "weapon"; attack: number; defense: number; sell: number; affixes: ("striking" | "keen" | "piercing" | "bleeding")[]; } | { id: "axe"; name: string; slot: "weapon"; attack: number; defense: number; sell: number; affixes: ("striking" | ... 2 more ... | "bleeding")[]; } | { ...; ...'.
+  Property 'penetration' does not exist on type '{ id: "shortSword"; name: string; slot: "weapon"; attack: number; defense: number; sell: number; affixes: ("striking" | "keen" | "piercing" | "bleeding")[]; }'.
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,78 @@
+{
+  "review": "phase4-controlled-gear-sale-independent-review",
+  "status": "selector_delta_accepted_for_one_controlled_retry_prior_attempt_failed",
+  "scope": "controlled_fixture_builder_metadata_save_and_browser_entrypoint_static_review",
+  "runtimeExecuted": false,
+  "delta": {
+    "preFixRunnerSha256": "cb6436d8ead7150cc708b2ded87de9f217b03596daa3a387f376809b0d1dfd12",
+    "currentRunnerSha256": "d964901414495b45f9ef5e327ee95e63a1292b65700ab6ed63f907a0819494f5",
+    "servedIndexAndBundlesMatchDistAndStoredRuntimeManifest": true,
+    "runtimeErrorsBlockPass": true,
+    "authorReadOnlyHTTPCheck": "5216 index, JS and CSS hashes match expected manifest; no browser run",
+    "priorFindingsClosed": true,
+    "lowGateCleared": true
+  },
+  "selectorRetry": {
+    "runnerSha256": "b21064241eda23eace7c6c27d2e0cabcd2454ae5085bd6f3d5d3c879e86605a2",
+    "selectorTestsSha256": "5dbc2f568a1446f9c6691f21456ea663e736dbf1e52a0e78e5a6c36ebf3c7f9a",
+    "changedSelectors": 3,
+    "strictWhitespaceReplacedByOptionalWhitespace": true,
+    "testPatternIsCopiedInsteadOfExtractedFromRunner": true,
+    "firstAttempt": {
+      "status": "FAIL",
+      "runId": "20261007T014036Z",
+      "failureStage": "first spear locator, before 390px screenshot or sale assertions",
+      "rawSha256": "a26d954ab48ac834f030866c548d4b7b0ef1d1c22d67ace8a01bdbe7905c19bc",
+      "rawCopiesByteIdentical": true,
+      "preserved": true
+    },
+    "authorReports": {"selectorTestsPassed": 2, "pyCompilePassed": true},
+    "reviewerReranTestsOrBrowser": false,
+    "oneRetryCleared": true
+  },
+  "fixture": {
+    "classification": "controlled fixture only",
+    "sourceCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+    "sourceFingerprint": "71d8cc68aab5f09579b9c87f74b564b585d4ab792fee10e0712ded73037ec245",
+    "sourceFileCount": 74,
+    "sourceMapMatchesMetadataAndBuild": true,
+    "sourceSaveHashMatchesMetadata": true,
+    "fixtureHashMatchesMetadata": true,
+    "nativeV1MigrationAndCurrentV2RoundTripDeclared": true,
+    "publicAwardApiForAlphaAndBossGear": true,
+    "manuallyControlledPositionClockAndRngExplicitlyListed": true,
+    "controlledTileWalkableAndVillageRegion": true
+  },
+  "assertionCoverage": {
+    "displayedPriceAndConfirmation": true,
+    "cancelStatePreservation": true,
+    "escapeStatePreservation": true,
+    "390pxOverflowAndScreenshot": true,
+    "wornGearDisabledRule": true,
+    "salePayoutAndInstanceRemoval": true,
+    "collectionRetention": true,
+    "noSoldItemV2OrLegacyEquipmentReference": true,
+    "explicitSaveReloadEquality": true
+  },
+  "findings": [
+    {
+      "severity": "P2",
+      "title": "Visited app assets are not matched to the frozen build",
+      "file": "controlled_gear_sale.py",
+      "lines": [45, 53, 153, 157],
+      "evidence": "Source/build status is checked locally; the URL is only checked for a visible world map, with no HTTP index or bundle comparison to dist or final-runtime-status.",
+      "requiredChange": "Bind the served app to the known production asset manifest or an owner-controlled server readiness record."
+    },
+    {
+      "severity": "P2",
+      "title": "Captured page errors do not block PASS",
+      "file": "controlled_gear_sale.py",
+      "lines": [150, 261],
+      "evidence": "pageerror callbacks append to result.errors, but the success path sets PASS without requiring that list to be empty.",
+      "requiredChange": "Raise before PASS if captured runtime errors exist, preserving their detail in the failure record."
+    }
+  ],
+  "originalSourceConfigHelpersModified": false,
+  "rawArtifactsModified": false,
+  "classificationClaimsNormalPlayOrSoak": false
+}

@@ -1,0 +1,520 @@
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-04/controlled-gear-sale/controlled_gear_sale.py", line 354, in <module>
+    main()
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-04/controlled-gear-sale/controlled_gear_sale.py", line 237, in main
+    select_gear(page, r"^(?:普通|精良|稀有|史詩|傳說) 獵矛\s+Lv\.")
+  File "/workspace/plw-rpg/reports/v2/20261006-reward-core/phase-04/controlled-gear-sale/controlled_gear_sale.py", line 200, in select_gear
+    expect(button).to_be_visible()
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 23332, in to_be_visible
+    self._sync(
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_assertions.py", line 852, in to_be_visible
+    await self._expect_impl(
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_assertions.py", line 128, in _expect_impl
+    _record_soft_or_raise(
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_assertions.py", line 60, in _record_soft_or_raise
+    raise error
+AssertionError: Locator expected to be visible
+Actual value: None
+Error: element(s) not found 
+Call log:
+  - Expect "to_be_visible" with timeout 5000ms
+  - waiting for locator(".gear-layout .item-list button").filter(has_text=re.compile(r"^(?:普通|精良|稀有|史詩|傳說) 獵矛\s+Lv\."))
+
+Aria snapshot:
+- banner:
+  - text: 橡谷 持續演化的世界 第 2 年 夏 7 日
+  - strong: 08:09
+  - group "世界時間速度":
+    - button "暫停"
+    - button "×1" [pressed]
+    - button "×5"
+    - button "×20"
+  - button "存檔"
+  - button "選單 Esc"
+- main "探索世界":
+  - text: 🏘️ 橡谷聚落 11, 8 世界正在流動
+  - region "橡谷與周邊":
+    - button "0, 0：北方森林" [disabled]
+    - button "1, 0：北方森林" [disabled]
+    - button "2, 0：北方森林" [disabled]
+    - button "3, 0：北方森林" [disabled]
+    - button "4, 0：北方森林" [disabled]
+    - button "5, 0：北方森林" [disabled]
+    - button "6, 0：北方森林" [disabled]
+    - button "7, 0：北方森林" [disabled]
+    - button "8, 0：北方森林" [disabled]
+    - button "9, 0：北方森林" [disabled]
+    - button "10, 0：北方森林" [disabled]
+    - button "11, 0：北方森林" [disabled]
+    - button "12, 0：北方森林" [disabled]
+    - button "13, 0：北方森林" [disabled]
+    - button "14, 0：北方森林" [disabled]
+    - button "15, 0：北方森林" [disabled]
+    - button "16, 0：北方森林" [disabled]
+    - button "17, 0：北方森林" [disabled]
+    - button "18, 0：灰石礦場" [disabled]
+    - button "19, 0：迷霧山谷" [disabled]
+    - button "20, 0：迷霧山谷" [disabled]
+    - button "21, 0：迷霧山谷" [disabled]
+    - button "22, 0：迷霧山谷" [disabled]
+    - button "23, 0：迷霧山谷" [disabled]
+    - button "0, 1：北方森林" [disabled]
+    - button "1, 1：北方森林"
+    - button "2, 1：北方森林"
+    - button "3, 1：北方森林"
+    - button "4, 1：北方森林"
+    - button "5, 1：北方森林"
+    - button "6, 1：北方森林"
+    - button "7, 1：北方森林"
+    - button "8, 1：北方森林"
+    - button "9, 1：北方森林"
+    - button "10, 1：北方森林"
+    - button "11, 1：北方森林"
+    - button "12, 1：北方森林"
+    - button "13, 1：北方森林"
+    - button "14, 1：北方森林"
+    - button "15, 1：北方森林"
+    - button "16, 1：北方森林"
+    - button "17, 1：北方森林"
+    - button "18, 1：灰石礦場"
+    - button "19, 1：迷霧山谷"
+    - button "20, 1：迷霧山谷"
+    - button "21, 1：迷霧山谷"
+    - button "22, 1：迷霧山谷"
+    - button "23, 1：迷霧山谷" [disabled]
+    - button "0, 2：北方森林" [disabled]
+    - button "1, 2：北方森林"
+    - button "2, 2：北方森林"
+    - button "3, 2：北方森林"
+    - button "4, 2：北方森林"
+    - button "5, 2：北方森林"
+    - button "6, 2：北方森林"
+    - button "7, 2：北方森林"
+    - button "8, 2：北方森林"
+    - button "9, 2：北方森林"
+    - button "10, 2：北方森林"
+    - button "11, 2：北方森林"
+    - button "12, 2：北方森林，哥布林蹤跡"
+    - button "13, 2：北方森林"
+    - button "14, 2：北方森林"
+    - button "15, 2：北方森林"
+    - button "16, 2：北方森林"
+    - button "17, 2：北方森林"
+    - button "18, 2：灰石礦場"
+    - button "19, 2：迷霧山谷"
+    - button "20, 2：迷霧山谷"
+    - button "21, 2：迷霧山谷"
+    - button "22, 2：迷霧山谷"
+    - button "23, 2：迷霧山谷" [disabled]
+    - button "0, 3：北方森林" [disabled]
+    - button "1, 3：北方森林"
+    - button "2, 3：北方森林"
+    - button "3, 3：北方森林"
+    - button "4, 3：北方森林"
+    - button "5, 3：北方森林"
+    - button "6, 3：北方森林"
+    - button "7, 3：北方森林"
+    - button "8, 3：北方森林，哥布林蹤跡"
+    - button "9, 3：北方森林"
+    - button "10, 3：北方森林"
+    - button "11, 3：北方森林，哥布林營地"
+    - button "12, 3：北方森林"
+    - button "13, 3：北方森林"
+    - button "14, 3：北方森林"
+    - button "15, 3：北方森林"
+    - button "16, 3：北方森林"
+    - button "17, 3：北方森林"
+    - button "18, 3：灰石礦場"
+    - button "19, 3：迷霧山谷"
+    - button "20, 3：迷霧山谷，廢棄礦坑"
+    - button "21, 3：迷霧山谷"
+    - button "22, 3：迷霧山谷"
+    - button "23, 3：迷霧山谷" [disabled]
+    - button "0, 4：北方森林" [disabled]
+    - button "1, 4：北方森林"
+    - button "2, 4：北方森林"
+    - button "3, 4：北方森林"
+    - button "4, 4：北方森林"
+    - button "5, 4：北方森林，艾妲 3、奧斯卡 10、露西 17、芬恩 24、米拉 31"
+    - button "6, 4：北方森林"
+    - button "7, 4：北方森林"
+    - button "8, 4：北方森林"
+    - button "9, 4：北方森林"
+    - button "10, 4：北方森林，哥布林蹤跡"
+    - button "11, 4：北方森林"
+    - button "12, 4：北方森林"
+    - button "13, 4：北方森林"
+    - button "14, 4：北方森林"
+    - button "15, 4：北方森林"
+    - button "16, 4：北方森林"
+    - button "17, 4：北方森林"
+    - button "18, 4：灰石礦場"
+    - button "19, 4：迷霧山谷"
+    - button "20, 4：迷霧山谷"
+    - button "21, 4：迷霧山谷"
+    - button "22, 4：迷霧山谷"
+    - button "23, 4：迷霧山谷" [disabled]
+    - button "0, 5：北方森林" [disabled]
+    - button "1, 5：北方森林"
+    - button "2, 5：北方森林"
+    - button "3, 5：北方森林"
+    - button "4, 5：北方森林"
+    - button "5, 5：北方森林"
+    - button "6, 5：北方森林"
+    - button "7, 5：北方森林，哥布林蹤跡"
+    - button "8, 5：北方森林"
+    - button "9, 5：北方森林"
+    - button "10, 5：北方森林"
+    - button "11, 5：北方森林，哥布林蹤跡"
+    - button "12, 5：北方森林"
+    - button "13, 5：北方森林"
+    - button "14, 5：北方森林"
+    - button "15, 5：北方森林"
+    - button "16, 5：北方森林"
+    - button "17, 5：北方森林"
+    - button "18, 5：灰石礦場"
+    - button "19, 5：灰石礦場，羅恩 2、艾琳 9、雨果 16、艾妲 23、奧斯卡 30、露西 37"
+    - button "20, 5：灰石礦場"
+    - button "21, 5：灰石礦場"
+    - button "22, 5：灰石礦場"
+    - button "23, 5：灰石礦場" [disabled]
+    - button "0, 6：北方森林" [disabled]
+    - button "1, 6：北方森林"
+    - button "2, 6：北方森林"
+    - button "3, 6：北方森林"
+    - button "4, 6：北方森林"
+    - button "5, 6：北方森林"
+    - button "6, 6：北方森林"
+    - button "7, 6：北方森林"
+    - button "8, 6：北方森林，雨果 6、艾妲 13、奧斯卡 20、露西 27、芬恩 34"
+    - button "9, 6：北方森林"
+    - button "10, 6：北方森林"
+    - button "11, 6：北方森林"
+    - button "12, 6：北方森林"
+    - button "13, 6：北方森林"
+    - button "14, 6：北方森林"
+    - button "15, 6：北方森林"
+    - button "16, 6：北方森林"
+    - button "17, 6：北方森林"
+    - button "18, 6：灰石礦場"
+    - button "19, 6：灰石礦場"
+    - button "20, 6：灰石礦場"
+    - button "21, 6：灰石礦場"
+    - button "22, 6：灰石礦場"
+    - button "23, 6：灰石礦場" [disabled]
+    - button "0, 7：橡谷聚落" [disabled]
+    - button "1, 7：橡谷聚落"
+    - button "2, 7：橡谷聚落"
+    - button "3, 7：橡谷聚落"
+    - button "4, 7：橡谷聚落"
+    - button "5, 7：橡谷聚落"
+    - button "6, 7：橡谷聚落"
+    - button "7, 7：橡谷聚落"
+    - button "8, 7：橡谷聚落"
+    - button "9, 7：橡谷聚落"
+    - button "10, 7：橡谷聚落"
+    - button "11, 7：橡谷聚落"
+    - button "12, 7：橡谷聚落"
+    - button "13, 7：橡谷聚落"
+    - button "14, 7：東方農田"
+    - button "15, 7：東方農田"
+    - button "16, 7：東方農田"
+    - button "17, 7：東方農田"
+    - button "18, 7：灰石礦場"
+    - button "19, 7：灰石礦場"
+    - button "20, 7：灰石礦場"
+    - button "21, 7：灰石礦場"
+    - button "22, 7：灰石礦場"
+    - button "23, 7：灰石礦場" [disabled]
+    - button "0, 8：橡谷聚落" [disabled]
+    - button "1, 8：橡谷聚落"
+    - button "2, 8：橡谷聚落"
+    - button "3, 8：橡谷聚落"
+    - button "4, 8：橡谷聚落"
+    - button "5, 8：橡谷聚落"
+    - button "6, 8：橡谷聚落"
+    - button "7, 8：橡谷聚落"
+    - button "8, 8：橡谷聚落"
+    - button "9, 8：橡谷聚落"
+    - button "10, 8：橡谷聚落，雜貨店，諾拉 5、羅恩 12、艾琳 19、雨果 26、艾妲 33、奧斯卡 40"
+    - button "11, 8：橡谷聚落，你在這裡，露西 7、芬恩 14"
+    - button "12, 8：橡谷聚落，鐵匠鋪，芬恩 4、米拉 11、西蒙 18、諾拉 25、艾琳 39"
+    - button "13, 8：橡谷聚落"
+    - button "14, 8：東方農田"
+    - button "15, 8：東方農田"
+    - button "16, 8：東方農田"
+    - button "17, 8：東方農田"
+    - button "18, 8：灰石礦場"
+    - button "19, 8：灰石礦場"
+    - button "20, 8：灰石礦場"
+    - button "21, 8：灰石礦場"
+    - button "22, 8：灰石礦場"
+    - button "23, 8：灰石礦場" [disabled]
+    - button "0, 9：橡谷聚落" [disabled]
+    - button "1, 9：橡谷聚落"
+    - button "2, 9：橡谷聚落"
+    - button "3, 9：橡谷聚落"
+    - button "4, 9：橡谷聚落，橡谷民居"
+    - button "5, 9：橡谷聚落"
+    - button "6, 9：橡谷聚落"
+    - button "7, 9：橡谷聚落，家"
+    - button "8, 9：橡谷聚落"
+    - button "9, 9：橡谷聚落"
+    - button "10, 9：橡谷聚落"
+    - button "11, 9：橡谷聚落"
+    - button "12, 9：橡谷聚落"
+    - button "13, 9：橡谷聚落"
+    - button "14, 9：東方農田"
+    - button "15, 9：東方農田"
+    - button "16, 9：東方農田"
+    - button "17, 9：東方農田"
+    - button "18, 9：東方農田"
+    - button "19, 9：東方農田"
+    - button "20, 9：東方農田"
+    - button "21, 9：東方農田"
+    - button "22, 9：東方農田"
+    - button "23, 9：東方農田" [disabled]
+    - button "0, 10：橡谷聚落" [disabled]
+    - button "1, 10：橡谷聚落"
+    - button "2, 10：橡谷聚落"
+    - button "3, 10：橡谷聚落"
+    - button "4, 10：橡谷聚落"
+    - button "5, 10：橡谷聚落"
+    - button "6, 10：橡谷聚落"
+    - button "7, 10：橡谷聚落"
+    - button "8, 10：橡谷聚落"
+    - button "9, 10：橡谷聚落"
+    - button "10, 10：橡谷聚落"
+    - button "11, 10：橡谷聚落"
+    - button "12, 10：橡谷聚落"
+    - button "13, 10：橡谷聚落"
+    - button "14, 10：東方農田"
+    - button "15, 10：東方農田"
+    - button "16, 10：東方農田，未整地的田，米拉 1、西蒙 8、諾拉 15、羅恩 22、艾琳 29、雨果 36、艾妲 43"
+    - button "17, 10：東方農田，未整地的田"
+    - button "18, 10：東方農田"
+    - button "19, 10：東方農田"
+    - button "20, 10：東方農田"
+    - button "21, 10：東方農田"
+    - button "22, 10：東方農田"
+    - button "23, 10：東方農田" [disabled]
+    - button "0, 11：橡谷聚落" [disabled]
+    - button "1, 11：橡谷聚落"
+    - button "2, 11：橡谷聚落"
+    - button "3, 11：橡谷聚落，橡谷民居"
+    - button "4, 11：橡谷聚落"
+    - button "5, 11：橡谷聚落"
+    - button "6, 11：橡谷聚落，羅恩 32、芬恩 44"
+    - button "7, 11：橡谷聚落，旅店，米拉 41"
+    - button "8, 11：橡谷聚落，西蒙 38"
+    - button "9, 11：橡谷聚落，諾拉 35"
+    - button "10, 11：橡谷聚落"
+    - button "11, 11：橡谷聚落，酒館，米拉 21、西蒙 28、羅恩 42"
+    - button "12, 11：橡谷聚落"
+    - button "13, 11：橡谷聚落"
+    - button "14, 11：東方農田"
+    - button "15, 11：東方農田"
+    - button "16, 11：東方農田，未整地的田"
+    - button "17, 11：東方農田，未整地的田"
+    - button "18, 11：東方農田"
+    - button "19, 11：東方農田"
+    - button "20, 11：東方農田"
+    - button "21, 11：東方農田"
+    - button "22, 11：東方農田"
+    - button "23, 11：東方農田" [disabled]
+    - button "0, 12：橡谷聚落" [disabled]
+    - button "1, 12：橡谷聚落"
+    - button "2, 12：橡谷聚落"
+    - button "3, 12：橡谷聚落"
+    - button "4, 12：橡谷聚落"
+    - button "5, 12：橡谷聚落，橡谷民居"
+    - button "6, 12：橡谷聚落"
+    - button "7, 12：橡谷聚落"
+    - button "8, 12：橡谷聚落"
+    - button "9, 12：橡谷聚落，橡谷民居"
+    - button "10, 12：橡谷聚落"
+    - button "11, 12：橡谷聚落"
+    - button "12, 12：橡谷聚落"
+    - button "13, 12：橡谷聚落"
+    - button "14, 12：東方農田"
+    - button "15, 12：東方農田"
+    - button "16, 12：東方農田"
+    - button "17, 12：東方農田"
+    - button "18, 12：東方農田"
+    - button "19, 12：東方農田"
+    - button "20, 12：東方農田"
+    - button "21, 12：東方農田"
+    - button "22, 12：東方農田"
+    - button "23, 12：東方農田" [disabled]
+    - button "0, 13：橡谷聚落" [disabled]
+    - button "1, 13：橡谷聚落"
+    - button "2, 13：橡谷聚落"
+    - button "3, 13：橡谷聚落"
+    - button "4, 13：橡谷聚落，橡谷民居"
+    - button "5, 13：橡谷聚落"
+    - button "6, 13：橡谷聚落"
+    - button "7, 13：橡谷聚落"
+    - button "8, 13：橡谷聚落"
+    - button "9, 13：橡谷聚落"
+    - button "10, 13：橡谷聚落，橡谷民居"
+    - button "11, 13：橡谷聚落"
+    - button "12, 13：橡谷聚落"
+    - button "13, 13：橡谷聚落"
+    - button "14, 13：東方農田"
+    - button "15, 13：東方農田"
+    - button "16, 13：東方農田"
+    - button "17, 13：東方農田"
+    - button "18, 13：東方農田"
+    - button "19, 13：東方農田"
+    - button "20, 13：東方農田"
+    - button "21, 13：東方農田"
+    - button "22, 13：東方農田"
+    - button "23, 13：東方農田" [disabled]
+    - button "0, 14：橡谷聚落" [disabled]
+    - button "1, 14：橡谷聚落"
+    - button "2, 14：橡谷聚落"
+    - button "3, 14：橡谷聚落"
+    - button "4, 14：橡谷聚落"
+    - button "5, 14：橡谷聚落"
+    - button "6, 14：橡谷聚落"
+    - button "7, 14：橡谷聚落"
+    - button "8, 14：橡谷聚落"
+    - button "9, 14：橡谷聚落"
+    - button "10, 14：橡谷聚落"
+    - button "11, 14：橡谷聚落"
+    - button "12, 14：橡谷聚落"
+    - button "13, 14：橡谷聚落"
+    - button "14, 14：東方農田"
+    - button "15, 14：東方農田"
+    - button "16, 14：東方農田"
+    - button "17, 14：東方農田"
+    - button "18, 14：東方農田"
+    - button "19, 14：東方農田"
+    - button "20, 14：東方農田"
+    - button "21, 14：東方農田"
+    - button "22, 14：東方農田"
+    - button "23, 14：東方農田" [disabled]
+    - button "0, 15：橡谷聚落" [disabled]
+    - button "1, 15：橡谷聚落" [disabled]
+    - button "2, 15：橡谷聚落" [disabled]
+    - button "3, 15：橡谷聚落" [disabled]
+    - button "4, 15：橡谷聚落" [disabled]
+    - button "5, 15：橡谷聚落" [disabled]
+    - button "6, 15：橡谷聚落" [disabled]
+    - button "7, 15：橡谷聚落" [disabled]
+    - button "8, 15：橡谷聚落" [disabled]
+    - button "9, 15：橡谷聚落" [disabled]
+    - button "10, 15：橡谷聚落" [disabled]
+    - button "11, 15：橡谷聚落" [disabled]
+    - button "12, 15：橡谷聚落" [disabled]
+    - button "13, 15：橡谷聚落" [disabled]
+    - button "14, 15：東方農田" [disabled]
+    - button "15, 15：東方農田" [disabled]
+    - button "16, 15：東方農田" [disabled]
+    - button "17, 15：東方農田" [disabled]
+    - button "18, 15：東方農田" [disabled]
+    - button "19, 15：東方農田" [disabled]
+    - button "20, 15：東方農田" [disabled]
+    - button "21, 15：東方農田" [disabled]
+    - button "22, 15：東方農田" [disabled]
+    - button "23, 15：東方農田" [disabled]
+    - text: 北方森林 橡谷 · 村莊 東方農田 迷霧山谷
+    - button "🏪 雜貨店 Enter 互動"
+    - button "附近還有 15 個互動 ›"
+    - group "移動方向":
+      - button "往上": ↑
+      - button "往左": ←
+      - button "往下": ↓
+      - button "往右": →
+  - text: WASD ／方向鍵移動 Enter 互動 點地圖步行
+  - button "查看地圖 M"
+- contentinfo "主角狀態":
+  - button "奧登 Lv.7"
+  - meter "生命": 生命 82/136
+  - meter "體力": 體力 76/84
+  - text: 🪙 341 同行 露西 7、芬恩 14
+- button "新發現：獲得稀有月牙獵矛。 L"
+- button "物品 I"
+- button "旅人筆記"
+- dialog "物品":
+  - banner:
+    - heading "物品" [level=2]
+    - button "關閉視窗": × Esc
+  - paragraph: 隨身物品 🪙 341 金幣
+  - status:
+    - strong: 稀有獵裝 · 新發現
+    - text: · 獲得稀有月牙獵矛。
+  - group "物品分類":
+    - button "日常物品"
+    - button "獵獲裝備" [pressed]
+    - button "狼族素材"
+    - button "見聞收藏"
+  - group "裝備部位":
+    - button "全部" [pressed]
+    - button "武器"
+    - button "防具"
+  - group "裝備品質":
+    - button "全部品質" [pressed]
+    - button "普通"
+    - button "精良"
+    - button "稀有"
+    - button "史詩"
+    - button "傳說"
+  - paragraph: 符合條件 2 件 · 每頁最多 20 件；篩選不會丟棄裝備。
+  - group "選擇獵獲裝備":
+    - button "稀有 獵矛 Lv.5" [pressed]
+    - button "稀有 月牙獵矛 Lv.7"
+  - paragraph: 稀有 · 武器 · Lv.5
+  - heading "獵矛" [level=3]
+  - paragraph: 目前同部位：鐵劍 · 固定裝備
+  - term: 能力
+  - definition: 候選裝備 ／目前 · 差值
+  - term: 攻擊
+  - definition:
+    - text: 7 ／ 7 ·
+    - strong: "0"
+  - term: 防禦
+  - definition:
+    - text: 0 ／ 0 ·
+    - strong: "0"
+  - term: 暴擊率
+  - definition:
+    - text: 0% ／ 0% ·
+    - strong: 0%
+  - term: 穿透
+  - definition:
+    - text: 0 ／ 0 ·
+    - strong: "0"
+  - term: 裂傷傷害
+  - definition:
+    - text: 2 ／ 0 ·
+    - strong: ↑ +2
+  - term: 格擋率
+  - definition:
+    - text: 0% ／ 0% ·
+    - strong: 0%
+  - term: 減傷率
+  - definition:
+    - text: 0% ／ 0% ·
+    - strong: 0%
+  - heading "候選裝備詞綴" [level=4]
+  - list:
+    - listitem: 強擊 · 階 1 · 攻擊 +1每次攻擊直接增加傷害。
+    - listitem: 裂傷 · 階 2 · 裂傷傷害 +2每次命中額外造成固定傷害，不會持續流血。
+  - heading "目前裝備詞綴" [level=4]
+  - list:
+    - listitem: 沒有附加詞綴或特殊特性。
+  - paragraph: 生成素材：狼牙
+  - button "穿戴獵獲裝備"
+  - button "出售 28 金"
+  - group "裝備分頁":
+    - button "上一頁" [disabled]
+    - text: 第 1／1 頁
+    - button "下一頁" [disabled]
+  - paragraph: 每個部位只能穿戴一件；穿戴獵獲裝備會替換同部位的固定裝備，替下的物品仍在背包。比較只列出能力與機制差異，不把不同效果合併成總戰力分數。
+  - contentinfo:
+    - text: 第 2 年 夏 7 日 08:09 · 生命 82 · 體力 76 · 341 金
+    - button "暫停時間"

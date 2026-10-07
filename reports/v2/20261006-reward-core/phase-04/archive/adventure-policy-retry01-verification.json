@@ -1,0 +1,32 @@
+{
+  "status": "PASS_STATIC_AND_PURE_TESTS",
+  "producer": "phase4-adventure-policy-retry01-verification",
+  "testCommand": "python3 -m unittest -v test_adventure_policy_retry01",
+  "testCount": 2,
+  "testResult": "PASS",
+  "compileCommand": "python3 -m py_compile adventure_policy_retry01.py phase04_adventure_playtest_retry01.py test_adventure_policy_retry01.py",
+  "compileResult": "PASS",
+  "guardChecks": {
+    "freshSaveGuard": true,
+    "1800SecondMinimum": true,
+    "sourceBuildGuards": true,
+    "newProducer": true,
+    "newOutput": true,
+    "newPolicyImport": true,
+    "readonlyGoalEvidence": true,
+    "exclusiveFallbackRetained": true,
+    "collectionFallbackRetained": true
+  },
+  "originalArtifactsUnchanged": {
+    "adventure_policy.py": "928b3e105b921b5bb96aefca3e02069dee4f406f8c2ea58d9ebabc5e5c849704",
+    "phase04_adventure_playtest.py": "7278814b4ccc8ff1e2ac00d173e71400c6d27ff5ec33d5938d701cfd38bc4a6e",
+    "matchesOriginalRecordedPolicySha": true,
+    "matchesOriginalRecordedHarnessSha": true
+  },
+  "candidateSha256": {
+    "adventure_policy_retry01.py": "7fb84e751ce04a223a26fa488a55727dd66f26e7b0c0116df40f375741418e7d",
+    "phase04_adventure_playtest_retry01.py": "f7a07237ce9712285723e687544943d8cce94eada6b115faa942edcb2a6d536e",
+    "test_adventure_policy_retry01.py": "4a6925dd2c58ef14d3153c72064a96b2c6077602739393f5931d30551d69a606"
+  },
+  "runtime": "No browser, long playtest, source build, save mutation, or production behavior executed"
+}

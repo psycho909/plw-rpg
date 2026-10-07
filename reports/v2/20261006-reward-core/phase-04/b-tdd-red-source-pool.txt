@@ -1,0 +1,49 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > projects source-specific reward expectations as detached pure data 2ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > returns a deterministic unique instance without awarding it to the reward state 4ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'missing', level: 1 } 6ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: +0 } 6ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 101 } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, material: 'iron' } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, bossSource: 'grayWolf' } 3ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact 109ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > biases wolf fang rolls toward bleed or penetration affixes 11ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > uses the rare-plus boss rarity pool and preserves generated rolls across save and reload 16ms
+ × src/engine/itemGeneration.test.ts > procedural item generation > uses source-qualified rarity pools while keeping every roll valid for its level and rarity 5ms
+   → 無法產生裝備。
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > awards guaranteed family materials and an instance for elite and boss kills 2ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > uses a deterministic seeded normal gear chance and weighted base table 28ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > biases armor drops with wolf hide and weapon drops with wolf fang 1ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unsafe material capacity and item sequence before any reward mutation or RNG draw 8ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unknown definitions without changing state 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > procedural item generation > uses source-qualified rarity pools while keeping every roll valid for its level and rarity
+TypeError: 無法產生裝備。
+ ❯ validateInput src/engine/itemGeneration.ts:87:11
+     85|   if (!state || !state.reward || !options || typeof options !== 'objec…
+     86|     || Object.keys(options).some(key => !['baseId', 'level', 'material…
+     87|     throw new TypeError('無法產生裝備。')
+       |           ^
+     88|   }
+     89|   const baseId = options.baseId
+ ❯ generateItem src/engine/itemGeneration.ts:107:17
+ ❯ src/engine/itemGeneration.test.ts:122:56
+ ❯ src/engine/itemGeneration.test.ts:122:29
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 15 passed (16)
+   Start at  11:55:46
+   Duration  588ms (transform 215ms, setup 0ms, import 255ms, tests 215ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

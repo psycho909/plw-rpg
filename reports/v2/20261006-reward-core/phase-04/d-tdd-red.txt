@@ -1,0 +1,89 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ × src/engine/itemGeneration.test.ts > procedural item generation > defines the boss-exclusive moon fang spear without changing the shared base pool or old weapon rolls 8ms
+   → expected undefined to deeply equal { id: 'moonFangSpear', …(7) }
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > projects source-specific reward expectations as detached pure data
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > returns a deterministic unique instance without awarding it to the reward state
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'missing', level: 1 }
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: +0 }
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 101 }
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, material: 'iron' }
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, bossSource: 'grayWolf' }
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 7, dropSource: 'missing' }
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 7, dropSource: 'alphaWolf', bossSource: 'wolfKing' }
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > biases wolf fang rolls toward bleed or penetration affixes
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > uses the rare-plus boss rarity pool and preserves generated rolls across save and reload
+ ↓ src/engine/itemGeneration.test.ts > procedural item generation > uses source-qualified rarity pools while keeping every roll valid for its level and rarity
+ × src/engine/itemGeneration.test.ts > wolf loot awards > awards the moon fang spear only for the boss and round-trips its intrinsic penetration through strict save validation 7ms
+   → expected 'shortSword' to be 'moonFangSpear' // Object.is equality
+ ↓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects the boss-exclusive base for a non-boss source before consuming RNG
+ ↓ src/engine/itemGeneration.test.ts > wolf loot awards > uses approved new drop levels and keeps their generated stats reloadable
+ ↓ src/engine/itemGeneration.test.ts > wolf loot awards > awards guaranteed family materials and an instance for elite and boss kills
+ ↓ src/engine/itemGeneration.test.ts > wolf loot awards > uses a deterministic seeded normal gear chance and weighted base table
+ ↓ src/engine/itemGeneration.test.ts > wolf loot awards > biases armor drops with wolf hide and weapon drops with wolf fang
+ ↓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unsafe material capacity and item sequence before any reward mutation or RNG draw
+ ↓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unknown definitions without changing state
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > procedural item generation > defines the boss-exclusive moon fang spear without changing the shared base pool or old weapon rolls
+AssertionError: expected undefined to deeply equal { id: 'moonFangSpear', …(7) }
+
+- Expected:
+{
+  "affixes": [
+    "keen",
+    "piercing",
+    "bleeding",
+  ],
+  "attack": 5,
+  "defense": 0,
+  "id": "moonFangSpear",
+  "name": "月牙獵矛",
+  "penetration": 2,
+  "sell": 20,
+  "slot": "weapon",
+}
+
++ Received:
+undefined
+
+ ❯ src/engine/itemGeneration.test.ts:11:54
+      9| describe('procedural item generation', () => {
+     10|   it('defines the boss-exclusive moon fang spear without changing the …
+     11|     expect(Reflect.get(ITEM_BASES, 'moonFangSpear')).toEqual({ id: 'mo…
+       |                                                      ^
+     12|       attack: 5, defense: 0, sell: 20, affixes: ['keen', 'piercing', '…
+     13|     expect(LOOT_TABLES.wolf.weighted.map(entry => entry.baseId)).toEqu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/engine/itemGeneration.test.ts > wolf loot awards > awards the moon fang spear only for the boss and round-trips its intrinsic penetration through strict save validation
+AssertionError: expected 'shortSword' to be 'moonFangSpear' // Object.is equality
+
+Expected: "moonFangSpear"
+Received: "shortSword"
+
+ ❯ src/engine/itemGeneration.test.ts:158:25
+    156|     const item = loot.instance!
+    157|
+    158|     expect(item.baseId).toBe('moonFangSpear')
+       |                         ^
+    159|     expect(item.material).toBe('moonStone')
+    160|     expect(item.rolledStats).toEqual(rolledItemStats('moonFangSpear', …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 20 skipped (22)
+   Start at  12:15:03
+   Duration  440ms (transform 244ms, setup 0ms, import 292ms, tests 17ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,3 @@
+# Phase4 source delivery correlation
+
+Source commit `39621ec9b5833f24c4105d5bf705ff2b984da3a2` on `v2x/reward-core` contains exactly the ALL74 tested application bytes. Tests ran before commit on base HEAD `d3c689985e7e4553a85148ba2a5ea3be7685cb1f` plus the frozen working source; each committed blob SHA256 was compared with source-freeze.json. The source fingerprint remains `71d8cc68aab5f09579b9c87f74b564b585d4ab792fee10e0712ded73037ec245`. QA documentation follows in a separate commit; old runtime JSON is unchanged. This is byte correlation, not a claim that the old base commit contained the new features.

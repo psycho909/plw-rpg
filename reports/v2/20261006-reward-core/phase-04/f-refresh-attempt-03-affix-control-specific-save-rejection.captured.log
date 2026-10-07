@@ -1,0 +1,17 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ reports/v2/20261006-reward-core/phase-04/combat_simulation.test.ts (1 test | 1 failed) 5400ms
+   × compares public wolf combat with generation-profile and canonical boss gear under exact replay 5399ms
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261006-reward-core/phase-04/combat_simulation.test.ts > compares public wolf combat with generation-profile and canonical boss gear under exact replay
+Error: reload failed seed=17 band=edge build=affixControl target=grayWolf/natural turn=2: Error: 存檔資料不完整。原始存檔已保留。
+ ❯ run reports/v2/20261006-reward-core/phase-04/combat_simulation.test.ts:209:29
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  12:25:00
+   Duration  5.97s (transform 353ms, setup 0ms, import 429ms, tests 5.40s, environment 0ms)
+

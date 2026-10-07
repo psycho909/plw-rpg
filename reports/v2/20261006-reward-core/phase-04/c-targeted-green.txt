@@ -1,0 +1,96 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > preserves legacy damage results and consumes no RNG with zero proc chances 4ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > uses one source per physical slot while combining different legacy and instance slots 2ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > applies penetration, per-hit bleed, critical chance and wolf-only Moon Hunter damage 2ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > doubles penetration only during an active wolf hard-skin phase and preserves other damage formulas 4ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > keeps bleed and Moon Hunter as extra per-hit damage through very high defense 1ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > routes player and incoming combat damage through the gear-aware helpers 1ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > keeps wolf family drops separate from legacy payouts and shows gear in victory messages 6ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > halves blocked hits and applies percentage reduction without drawing when chances are zero 1ms
+ ✓ src/services/rewardSave.test.ts > adds a reward extension to a native V2 save without consuming world RNG or replacing its world 15ms
+ ✓ src/services/rewardSave.test.ts > migrates the committed native V1 fixture losslessly through V2.x save and reload 18ms
+ ✓ src/services/rewardSave.test.ts > persists separate equipment instances and stackable materials without replacing fixed legacy gear 22ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward schema without recreating a world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward duplicate without recreating a world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward owner without recreating a world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward reference without recreating a world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward dual-gear without recreating a world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward stats without recreating a world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward affix-slot without recreating a world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward affix-value without recreating a world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward materials without recreating a world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward collection without recreating a world 3ms
+ ✓ src/services/rewardSave.test.ts > round-trips canonical family stats and preserves a boss formation across live turns 15ms
+ ✓ src/engine/actions.test.ts > selects wild encounters from configured spawn levels 6ms
+ ✓ src/engine/actions.test.ts > personal life activities > keeps an overnight stay reloadable when its fee leaves no money for wages 44ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles inn before midnight wages with 8 gold 37ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles inn before midnight wages with 12 gold 39ms
+ ✓ src/services/rewardSave.test.ts > applies active armor-phase penetration identically after exact save and reload 30ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged hp before loading the world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged maxHp before loading the world 7ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged attack before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged defense before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged exp before loading the world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged gold before loading the world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged elite before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-traits before loading the world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-variant before loading the world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-formedAt before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-context before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-missing before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged turn before loading the world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged howl before loading the world 7ms
+ ✓ src/services/rewardSave.test.ts > accepts the fixed howl phase and rejects impossible turn/howl combinations 11ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles tavern before midnight wages with 6 gold 40ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles tavern before midnight wages with 7 gold 30ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles rest before midnight wages with 0 gold 27ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles rest before midnight wages with 4 gold 16ms
+ ✓ src/services/rewardSave.test.ts > round-trips a fractional wolf HP caused by companion damage 12ms
+ ✓ src/services/rewardSave.test.ts > keeps a boss form after death and lets a successor reuse it without another formation draw 7ms
+ ✓ src/services/rewardSave.test.ts > keeps legacy untagged wolf and dungeon fights loadable 9ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > explains the active hard-skin penetration effect in the armor trait cue 1ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > projects all five definitions and progression reasons without changing the world 13ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > blocks invalid starts before spending stamina, advancing time, or drawing RNG 17ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > forms deterministic tagged combat snapshots and records discovery only on a legal start 5ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > keeps trait counts inside each rank contract 6ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > gates wolf king behind the full collection path and a seven game-day defeat cooldown 2ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > uses the actual encounter definition and shared regional-defense effects without goblin-chief side effects 5ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > keeps a formed boss variant across flee, save, reload, and re-challenge 19ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > makes fast rushes and armored turns change combat damage, with cues from those same phases 7ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > uses the boss variant in the next-turn cue and applies moonlit healing before a charge 2ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > makes a starved boss charge at half health a turn early and well-fed charge hit harder 4ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > persists the howl phase only on its legal third-round window 1ms
+ ✓ src/engine/actions.test.ts > personal life activities > rejects unaffordable inn without advancing time or changing state 26ms
+ ✓ src/engine/actions.test.ts > personal life activities > rejects unaffordable tavern without advancing time or changing state 13ms
+ ✓ src/engine/actions.test.ts > personal life activities > charges lodging once when natural death interrupts recovery at the new year 22ms
+ ✓ src/engine/actions.test.ts > personal life activities > does not charge or advance a blocked free rest 5ms
+ ✓ src/engine/actions.test.ts > personal life activities > requires farmland, preparation and exact world-time growth before harvest 4ms
+ ✓ src/engine/actions.test.ts > personal life activities > limits farm plots and blocks work with insufficient stamina 2ms
+ ✓ src/engine/actions.test.ts > personal life activities > gathers wood, stone and iron through regional work and pays gold 5ms
+ ✓ src/engine/actions.test.ts > personal life activities > improves yield and time as skills increase and regenerates depleted nodes 2ms
+ ✓ src/engine/actions.test.ts > personal life activities > restores health and stamina through village rest or paid lodging 2ms
+ ✓ src/engine/actions.test.ts > shop and equipment > respects shop location, opening hours and money 1ms
+ ✓ src/engine/actions.test.ts > shop and equipment > unlocks smith goods, equips items and prevents selling the equipped last copy 16ms
+ ✓ src/engine/actions.test.ts > combat and exploration > uses the wolf family material payout without adding the legacy generic stack 4ms
+ ✓ src/engine/actions.test.ts > combat and exploration > earns combat EXP, loot and gold while reducing threat 2ms
+ ✓ src/engine/actions.test.ts > combat and exploration > reduces incoming damage when defending and uses a potion as a combat turn 3ms
+ ✓ src/engine/actions.test.ts > combat and exploration > clears combat on death while leaving time and history intact 1ms
+ ✓ src/engine/actions.test.ts > combat and exploration > allows retreat without XP or loot and rejects empty potion use 1ms
+ ✓ src/engine/actions.test.ts > combat and exploration > completes normal, elite and boss dungeon encounters with scaled loot 4ms
+ ✓ src/engine/actions.test.ts > combat and exploration > defeats the world boss and resets its threat buildup 71ms
+ ✓ src/engine/actions.test.ts > mercenary contracts and autonomous party > hires at the tavern only, caps party size at two, and expires contracts 17ms
+ ✓ src/engine/actions.test.ts > mercenary contracts and autonomous party > charges wages and ends a contract when the player cannot pay 14ms
+ ✓ src/engine/actions.test.ts > mercenary contracts and autonomous party > lets fighter and healer act autonomously in combat 10ms
+
+ Test Files  4 passed (4)
+      Tests  82 passed (82)
+   Start at  12:11:23
+   Duration  884ms (transform 683ms, setup 0ms, import 873ms, tests 826ms, environment 2ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,16 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+C controlled baseline {"fixture":{"seed":48041,"hero":"alden","baseId":"shortSword","level":5,"rarity":"rare","sharedAffix":{"id":"striking","tier":1,"value":1},"comparedAffixes":[{"id":"piercing","tier":2,"value":2},{"id":"bleeding","tier":2,"value":2}]},"lowDefense":{"target":"scarredWolf","traits":[],"turn":0,"defense":1,"penetrationDamage":15,"bleedDamage":16},"armoredPhase":{"target":"scarredWolf","traits":["armored"],"turn":2,"defense":5,"penetrationDamage":12,"bleedDamage":12},"rng":{"lowPen":{"damage":15,"beforeRng":2588073568,"afterRng":2588073568},"lowBleed":{"damage":16,"beforeRng":2588073568,"afterRng":2588073568},"armoredPen":{"damage":12,"beforeRng":2588073568,"afterRng":2588073568},"armoredBleed":{"damage":12,"beforeRng":2588073568,"afterRng":2588073568}}}
+ ✓ src/engine/cPenetrationBaseline.test.ts > C controlled penetration baseline before armor-phase change > compares canonical equal-tier rare weapons against identical low-defense and active-armored snapshots 37ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  12:08:58
+   Duration  492ms (transform 269ms, setup 0ms, import 328ms, tests 38ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,57 @@
+{
+  "status": "RED_REPRODUCED",
+  "producer": "phase4-adventure-policy-retry01-pure-red",
+  "case": {
+    "visibleGoal": "追蹤傷痕灰狼，繼續認識北林狼族。",
+    "eligibleOptions": [
+      {
+        "label": "灰狼",
+        "definitionId": "grayWolf"
+      },
+      {
+        "label": "傷痕灰狼",
+        "definitionId": "scarredWolf"
+      }
+    ],
+    "collection": {
+      "seen": [
+        "grayWolf"
+      ],
+      "defeated": [
+        "grayWolf"
+      ]
+    },
+    "expectedDefinitionId": "scarredWolf",
+    "observedDefinitionId": "grayWolf",
+    "observedReason": "matches the target or exclusive reward named in the current visible goal/plan"
+  },
+  "pureTestCommand": "python3 -m unittest -v test_adventure_policy_retry01",
+  "pureTestOutcome": {
+    "failed": true,
+    "failure": "expected scarredWolf, observed grayWolf"
+  },
+  "actualPlaytestEvidence": {
+    "artifact": "archive/adventure-agent-playtest.json",
+    "runId": "20261006T131931Z",
+    "sourceCommit": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+    "decisionLogIndex": 91,
+    "elapsedSeconds": 40.60368871200626,
+    "target": "灰狼",
+    "population": 1.02,
+    "stamina": 84,
+    "hp": 106,
+    "formedDefinitionId": "grayWolf",
+    "defeated": [
+      "grayWolf"
+    ],
+    "why": "matches the target or exclusive reward named in the current visible goal/plan",
+    "recordedGoalAndOptionRows": false
+  },
+  "reconstruction": {
+    "visibleGoalFrom": "src/components/PlaceWindow.vue adventureGoal projection after grayWolf defeat",
+    "exactGoal": "追蹤傷痕灰狼，繼續認識北林狼族。",
+    "labelsFrom": "src/data/rewards.ts WOLF_MONSTERS",
+    "eligibilityFrom": "src/engine/wolfFamily.ts wolfEncounterOptions; trace state at forest, alive, no combat, outside dungeon, stamina 84, population 1.02, grayWolf defeated, so grayWolf and scarredWolf eligible",
+    "confidence": "source-and-trace deterministic reconstruction; exact goal and option rows were not persisted in the original report"
+  }
+}

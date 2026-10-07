@@ -1,0 +1,45 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ↓ src/engine/combatStats.test.ts > equipment stats and damage > preserves legacy damage results and consumes no RNG with zero proc chances
+ ↓ src/engine/combatStats.test.ts > equipment stats and damage > uses one source per physical slot while combining different legacy and instance slots
+ ↓ src/engine/combatStats.test.ts > equipment stats and damage > applies penetration, per-hit bleed, critical chance and wolf-only Moon Hunter damage
+ × src/engine/combatStats.test.ts > equipment stats and damage > doubles penetration only during an active wolf hard-skin phase and preserves other damage formulas 12ms
+   → expected 12 to be 14 // Object.is equality
+ ↓ src/engine/combatStats.test.ts > equipment stats and damage > keeps bleed and Moon Hunter as extra per-hit damage through very high defense
+ ↓ src/engine/combatStats.test.ts > equipment stats and damage > routes player and incoming combat damage through the gear-aware helpers
+ ↓ src/engine/combatStats.test.ts > equipment stats and damage > keeps wolf family drops separate from legacy payouts and shows gear in victory messages
+ ↓ src/engine/combatStats.test.ts > equipment stats and damage > halves blocked hits and applies percentage reduction without drawing when chances are zero
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/combatStats.test.ts > equipment stats and damage > doubles penetration only during an active wolf hard-skin phase and preserves other damage formulas
+AssertionError: expected 12 to be 14 // Object.is equality
+
+- Expected
++ Received
+
+- 14
++ 12
+
+ ❯ src/engine/combatStats.test.ts:95:82
+     93|
+     94|     expect(playerAttackDamage(armoredPen, 5)).toBe(12)
+     95|     expect(playerAttackDamage(armoredPen, 5, false, { wolfArmoredPhase…
+       |                                                                                  ^
+     96|     expect(combatDamage(lowPen)).toBe(15)
+     97|     expect(combatDamage(lowBleed)).toBe(16)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  12:10:35
+   Duration  492ms (transform 276ms, setup 0ms, import 324ms, tests 14ms, environment 0ms)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

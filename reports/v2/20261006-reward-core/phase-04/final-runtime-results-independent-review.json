@@ -1,0 +1,107 @@
+{
+  "producer": "g6-luna-med-phase4-final-runtime-results-independent-review",
+  "disposition": "ACCEPT_COMPONENT_RETRIES; ORIGINAL_AGGREGATE_REMAINS_FAILED",
+  "source": {
+    "head": "d3c689985e7e4553a85148ba2a5ea3be7685cb1f",
+    "files": 74,
+    "fingerprint": "71d8cc68aab5f09579b9c87f74b564b585d4ab792fee10e0712ded73037ec245",
+    "three_artifact_maps_identical": true
+  },
+  "stress": {
+    "artifact": "archive/stress-browser-retry01.json",
+    "status": "PASS",
+    "duration_seconds": 1200.6909227150027,
+    "cycles": 1499,
+    "operations": 17043,
+    "reloads": 7,
+    "named_checks": 19,
+    "normal_fresh_save": true,
+    "controlled_fixture": false,
+    "page_errors": 0,
+    "rejections": 0,
+    "storage_errors": 0,
+    "console_favicon_404": 1,
+    "launcher_complete_exit0_provenance_stable_owned_server_cleaned": true
+  },
+  "adventure": {
+    "artifact": "archive/adventure-agent-playtest-retry01.json",
+    "status": "PASS",
+    "duration_seconds": 1800.8572973939881,
+    "decisions": 1918,
+    "operations": 20229,
+    "checkpoints": 30,
+    "reloads": 0,
+    "normal_fresh_level": 1,
+    "normal_fresh_gold": 45,
+    "save_injected": false,
+    "track_decisions": 27,
+    "page_errors": 0,
+    "rejections": 0,
+    "storage_errors": 0,
+    "console_favicon_404": 1,
+    "launcher_complete_exit0_provenance_stable_owned_server_cleaned": true,
+    "explicit_goal_and_eligible_options_present": true,
+    "final_world_time": 70887,
+    "final_level": 11,
+    "final_gold": 989,
+    "final_gear_instances": 26,
+    "all_five_ranks_defeated": true,
+    "procedural_equipped": {
+      "weapon": "item-16",
+      "armor": "item-14"
+    }
+  },
+  "controlled_sale": {
+    "artifact": "controlled-gear-sale/controlled-gear-sale.json",
+    "status": "PASS",
+    "checks": 8,
+    "reloads": 1,
+    "errors": 0,
+    "served_build_assets_match_dist_and_runtime_manifest": true,
+    "classification": "controlled fixture; not normal play or soak",
+    "initial_locator_failure_preserved": true
+  },
+  "original_aggregate": "FAILED",
+  "section_41": {
+    "new_extension_trigger": false,
+    "inherited_C01_C02_C03_closed": false
+  },
+  "section_61": {
+    "systemic_agent_progression_supported": true,
+    "human_preference_fun_retention_product_readiness_established": false,
+    "human_gate": "DEFERRED"
+  },
+  "limits": [
+    "Agent choices are scripted and do not establish human risk preference.",
+    "No causal claim that an equip caused later target selection.",
+    "Adventure trace does not compare alternate builds on the same later encounter.",
+    "Controlled sale evidence does not establish normal-play access/frequency or soak.",
+    "Checkpoint resource counters are not final-state telemetry."
+  ],
+  "archive_traceability_delta": {
+    "finding": "QA4-R8",
+    "severity": "P3",
+    "disposition": "ACCEPT_WITH_NONBLOCKING_HISTORICAL_TRACEABILITY_FINDING",
+    "frozen_record_count": 4263,
+    "manifest_projection_matches": 27,
+    "manifest_projection_count": 28,
+    "mismatch": {
+      "path": "final-runtime-driver.py",
+      "recorded_sha256": "4fa911a46a92056946fd1dd6c68607821279a9239bdc5b1487dba9903d4108c0",
+      "current_reviewed_sha256": "8412261b32ce1b1cb02a509b820d50916f90b701b1e6ded5f29f90e3dbda6555",
+      "recorded_bytes": 55565,
+      "current_bytes": 57124
+    },
+    "current_driver_hash_corroboration": [
+      "final-runtime-status.json",
+      "independent runtime review",
+      "archive/final-runtime-driver.py"
+    ],
+    "post_freeze_capture_matches_current_driver": true,
+    "post_freeze_capture_sha256": "8412261b32ce1b1cb02a509b820d50916f90b701b1e6ded5f29f90e3dbda6555",
+    "capture_is_retroactive_history": false,
+    "raw_archive_redecoded_or_rehashed_in_delta_review": false,
+    "raw_archive_integrity_basis": "existing frozen manifest reports all 4263 records valid, byte/hash-preserved raw, and successful XZ roundtrip; the large raw archive was not re-read or re-decoded during this delta review",
+    "aggregate_status_unchanged": "FAILED"
+  }
+}
