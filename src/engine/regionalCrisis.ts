@@ -1,5 +1,6 @@
 import { CONFIG } from '../data/config'
 import type { RegionalCrisisOutcome, RegionalCrisisState } from '../domain/crisis'
+import { emptyRegionalCrisisContributions } from '../domain/crisis'
 import type { GameState } from '../domain/types'
 import { emit } from './events'
 import { random } from './random'
@@ -50,6 +51,7 @@ function crisisSnapshot(state: GameState, sequence: number): RegionalCrisisState
       conditions: triggerConditions(state),
     },
     chiefOutcome: null,
+    contributions: emptyRegionalCrisisContributions(),
   }
 }
 

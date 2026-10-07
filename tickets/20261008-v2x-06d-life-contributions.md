@@ -1,6 +1,6 @@
 # Phase6-D — Life Contributions
 
-- Status: in_progress
+- Status: accepted
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-08 使用者上傳 Phase6 規格，要求「閱讀完後，直接進入Phase6開發環節」。
@@ -19,12 +19,12 @@ equipment effectiveness/food endurance/gold logistics，合法原子消耗與nee
 Phase7–10／V3、多新monsterfamilies、完整RTS/tactical/caravan/稅制／reconstruction／property destruction、server、nativeSafari/實機。不藉Phase6補完Phase5產品finding。
 
 ## Acceptance
-- [ ] Equipment/food/gold以正常角色資產原子扣除，僅合法phase/location/status/needs允許，失敗不改資產/RNG/events。
-- [ ] 捐贈gear必須owned且unequipped，真實stats/suitability/shortage導出有界防衛效益；品質/rarity差異不得同一item-count score。
-- [ ] 依實際defender slots、人口/食物預測短缺及有限logistics建立容量／diminishing return；spam cheap gear/food/gold不得無限堆疊。
-- [ ] 存檔保留bounded contribution ledger／allocations，不新增非法NPC reward owner，不遺失舊V4危機；重載/繼承不重複扣款或貢獻。
-- [ ] Life完全不需Combat；支持Phase5 crafted item實際民防用途，不以Crisis擴充craft系統。
-- [ ] Public-seam RED/GREEN、atomic rejection/save/reload/value contrast tests與typecheck有原始證據；Root接受才releaseE。
+- [x] Equipment/food/gold以正常角色資產原子扣除，僅合法phase/location/status/needs允許，失敗不改資產/RNG/events。
+- [x] 捐贈gear必須owned且unequipped，真實stats/suitability/shortage導出有界防衛效益；品質/rarity差異不得同一item-count score。
+- [x] 依實際defender slots、人口/食物預測短缺及有限logistics建立容量／diminishing return；spam cheap gear/food/gold不得無限堆疊。
+- [x] 存檔保留bounded contribution ledger／allocations，不新增非法NPC reward owner，不遺失舊V4危機；重載/繼承不重複扣款或貢獻。
+- [x] Life完全不需Combat；支持Phase5 crafted item實際民防用途，不以Crisis擴充craft系統。
+- [x] Public-seam RED/GREEN、atomic rejection/save/reload/value contrast tests與typecheck有原始證據；Root接受才releaseE。
 
 ## Constraints and Decisions
 正式 [Phase6 spec](../docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md)（原文CRLF保留，SHA256 `4e7d8533181a43f66c2d51dce056407a38be34797900ed875898e4470adde640`）；A→B→C→D→E→F→G→H→I→J逐段施工，不提前水平擴張。Goblin現有Threat/Chief優先，單一crisis canonical slice，RandomService-only。Human DEFERRED / NOT APPLICABLE AT THIS STAGE，不阻擋工程QA。Low機械、Medium一般工程、Max核心／save／determinism／獨立deepreview、Root產品決策。matt-skills-curated:implement／to-tickets按docs/agents/skill-workflows.md適配既有tickets、已批准順序與驗證工作單位，不另tracker／granularity批准。QA沿用recorded_reports/原始JSONL，不新建平行framework。
@@ -34,7 +34,7 @@ Blocked by: [前置Ticket](20261008-v2x-06c-civil-defense.md)；C已accepted，R
 
 ## Evidence
 - Verification: reports/v2/20261008-regional-crisis/phase-06/
-- Review / Audit: pending applicable review.
+- Review / Audit: independent Max Standards/Spec ACCEPT, Rootaccepted; d-core-independent-review.md/json, full475/typecheck/buildPASS, P1prunedNPCreloadfixed, authenticV4phase migrationsPASS.
 - Commit / PR: base b82de85fb251697fca3e4331c5bb44945349a387，Phase5 app f9f969c；交付待本slice驗證，不建立PR。
 
 ### Root approved D contract proposal (implementation released after C acceptance)

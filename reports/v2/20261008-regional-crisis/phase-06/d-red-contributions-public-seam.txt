@@ -1,0 +1,29 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisContributions.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisContributions.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisContributions.test.ts [ src/engine/crisisContributions.test.ts ]
+Error: Cannot find module './crisisContributions' imported from /workspace/plw-rpg/src/engine/crisisContributions.test.ts
+ ❯ src/engine/crisisContributions.test.ts:6:1
+      4| import { createGame } from './simulation'
+      5| import { tryStartRegionalCrisis } from './regionalCrisis'
+      6| import { contributeCrisisEquipment } from './crisisContributions'
+       | ^
+      7|
+      8| function crisisWorld() {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  18:50:41
+   Duration  336ms (transform 172ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

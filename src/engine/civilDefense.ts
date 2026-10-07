@@ -1,6 +1,7 @@
-import { CONFIG } from '../data/config'
-import type { RegionalCrisisState } from '../domain/crisis'
-import type { GameState } from '../domain/types'
+import { CONFIG, EQUIPMENT } from '../data/config'
+import { REGIONAL_CRISIS_CONTRIBUTION_LIMITS, type RegionalCrisisState } from '../domain/crisis'
+import type { EquipmentSlot, GearStats } from '../domain/reward'
+import type { GameState, NPC } from '../domain/types'
 import { npcCanWork } from './npcLife'
 import { population } from './simulation'
 
@@ -11,7 +12,7 @@ type CivilDefensePhase = 'warning' | 'preparation' | 'active' | 'resolution'
 type ActiveCrisis = Extract<RegionalCrisisState, { phase: CivilDefensePhase }>
 type FactorId = 'defenders' | 'combat' | 'equipment' | 'supply' | 'safety' | 'adult_logistics'
   | 'stage' | 'prosperity' | 'infrastructure'
-type NeedId = 'defenders' | 'food' | 'equipment'
+type NeedId = 'defenders' | 'food' | 'equipment' | 'gold'
 
 export interface CivilDefenseFactor {
   id: FactorId
@@ -45,6 +46,7 @@ export interface CivilDefenseReadiness {
   }
   food: {
     dailyNet: number
+    rawProjectedAtResolution: number
     projectedAtResolution: number
     shortage: number
     coverage: number
@@ -60,6 +62,7 @@ export interface CivilDefenseReadiness {
     defenderSlots: number
     equipmentSlots: number
     foodPoints: number
+    gold: number
   }
 }
 
@@ -77,6 +80,11 @@ function eligibleWorkers(state: GameState) {
   return state.npcs.filter(npc => npcCanWork(state, npc.id)
     && npc.injuredUntil <= state.worldTime
     && !state.party.some(contract => contract.npcId === npc.id))
+}
+
+/** Exposes the same current workforce predicate to atomic contribution actions. */
+export function availableCivilDefenseDefenders(state: GameState): NPC[] {
+  return eligibleWorkers(state).filter(npc => npc.job === 'guard' || npc.job === 'mercenary')
 }
 
 function phaseDays(state: GameState, crisis: ActiveCrisis) {
@@ -112,18 +120,43 @@ function factor(id: FactorId, observed: number, points: number, maximum: number)
   return { id, observed, points: clamp(points, 0, maximum), maximum }
 }
 
+export function civilDefenseGearEffect(stats: GearStats, slot: EquipmentSlot, combatSkill: number) {
+  const core = slot === 'weapon'
+    ? stats.attack + stats.penetration * 0.5 + stats.bleed * 0.25 + stats.critical * 0.1
+    : stats.defense + stats.block * 0.25 + stats.reduction * 0.5
+  const benchmark = slot === 'weapon' ? EQUIPMENT.sword.attack : EQUIPMENT.armor.defense
+  const suitability = clamp(0.5 + clamp(combatSkill, 1, 10) / 20, 0.55, 1)
+  return clamp(core / benchmark * suitability, 0, 1)
+}
+
 /** Derive current world readiness for an in-progress crisis without changing state or RNG. */
 export function deriveCivilDefense(state: GameState, crisis: RegionalCrisisState): CivilDefenseReadiness | null {
   if (!isActiveCrisis(crisis)) return null
 
   const workers = eligibleWorkers(state)
-  const defenders = workers.filter(npc => npc.job === 'guard' || npc.job === 'mercenary')
+  const defenders = availableCivilDefenseDefenders(state)
   const targetDefenders = Math.min(8, 2 + 2 * clamp(crisis.severity, 1, 3))
-  const defenderCapacity = Math.min(defenders.length, targetDefenders)
+  const activeDefenders = defenders.slice(0, targetDefenders)
+  const defenderCapacity = activeDefenders.length
   const equipmentCapacity = defenderCapacity * 2
-  const equippedSlots = Math.min(equipmentCapacity, defenders.reduce((count, npc) => count
-    + (npc.equipment.weapon === 'sword' ? 1 : 0)
-    + (npc.equipment.armor === 'armor' ? 1 : 0), 0))
+  let equippedSlots = 0
+  let equipmentEffect = 0
+  for (const npc of activeDefenders) {
+    for (const slot of ['weapon', 'armor'] as const) {
+      const allocation = crisis.contributions.equipment.find(entry => entry.defenderNpcId === npc.id && entry.slot === slot)
+      const legacyItem = slot === 'weapon' ? npc.equipment.weapon : npc.equipment.armor
+      if (allocation) {
+        equippedSlots++
+        equipmentEffect += civilDefenseGearEffect(allocation.sourceItem.rolledStats, slot, npc.skills.combat.level)
+      } else if (legacyItem !== null) {
+        equippedSlots++
+        const legacyStats: GearStats = { attack: 0, defense: 0, critical: 0, penetration: 0, bleed: 0, block: 0, reduction: 0 }
+        if (slot === 'weapon') legacyStats.attack = EQUIPMENT.sword.attack
+        else legacyStats.defense = EQUIPMENT.armor.defense
+        equipmentEffect += civilDefenseGearEffect(legacyStats, slot, npc.skills.combat.level)
+      }
+    }
+  }
   const averageCombatSkill = defenders.length === 0 ? 0 : defenders.reduce((total, npc) =>
     total + clamp(npc.skills.combat.level, 1, 10), 0) / defenders.length
   const otherWorkers = Math.max(0, workers.length - defenders.length)
@@ -131,24 +164,30 @@ export function deriveCivilDefense(state: GameState, crisis: RegionalCrisisState
   const foodPopulation = population(state)
   const farmers = workers.filter(npc => npc.job === 'farmer').length
   const dailyFoodNet = 1.8 + farmers * 1.4 - foodPopulation * 0.12 - (state.threat.bossAlive ? 1 : 0)
-  const projectedFood = clamp(state.settlement.food + dailyFoodNet * days.foodForecastDays, 0, 100)
+  const rawProjectedFood = state.settlement.food + dailyFoodNet * days.foodForecastDays
+  const projectedFood = clamp(rawProjectedFood, 0, 100)
   const foodShortage = clamp(Math.max(0, FOOD_THRESHOLD - projectedFood), 0, FOOD_THRESHOLD)
   const foodCoverage = FOOD_THRESHOLD === 0 ? 1 : clamp((FOOD_THRESHOLD - foodShortage) / FOOD_THRESHOLD, 0, 1)
   const supplyCapacity = 12
-  const equipmentCoverage = equipmentCapacity === 0 ? 0 : equippedSlots / equipmentCapacity
+  const equipmentCoverage = equipmentCapacity === 0 ? 0 : clamp(equipmentEffect / equipmentCapacity, 0, 1)
   const safety = clamp(state.settlement.safety, 0, 100)
   const stagePoints = state.settlement.stage === 'town' ? 5 : state.settlement.stage === 'village' ? 2.5 : 0
   const defenderPoints = 30 * clamp(defenders.length / targetDefenders, 0, 1)
   const combatPoints = 15 * clamp((averageCombatSkill - 1) / 9, 0, 1)
   const equipmentPoints = 10 * equipmentCoverage
-  const logisticsPoints = 8 * clamp(otherWorkers / 20, 0, 1)
+  const goldCapacity = Math.min(REGIONAL_CRISIS_CONTRIBUTION_LIMITS.gold,
+    Math.max(0, REGIONAL_CRISIS_CONTRIBUTION_LIMITS.logisticsWorkers - otherWorkers)
+      * REGIONAL_CRISIS_CONTRIBUTION_LIMITS.goldPerLogisticsWorker)
+  const effectiveGold = Math.min(crisis.contributions.gold.spent, goldCapacity)
+  const logisticsEquivalent = otherWorkers + effectiveGold / REGIONAL_CRISIS_CONTRIBUTION_LIMITS.goldPerLogisticsWorker
+  const logisticsPoints = 8 * clamp(logisticsEquivalent / REGIONAL_CRISIS_CONTRIBUTION_LIMITS.logisticsWorkers, 0, 1)
   const factors = [
     factor('defenders', defenders.length, defenderPoints, 30),
     factor('combat', averageCombatSkill, combatPoints, 15),
-    factor('equipment', equippedSlots, equipmentPoints, 10),
+    factor('equipment', equipmentEffect, equipmentPoints, 10),
     factor('supply', foodCoverage, supplyCapacity * foodCoverage, supplyCapacity),
     factor('safety', safety, safety * 0.1, 10),
-    factor('adult_logistics', otherWorkers, logisticsPoints, 8),
+    factor('adult_logistics', logisticsEquivalent, logisticsPoints, 8),
     factor('stage', stagePoints, stagePoints, 5),
     factor('prosperity', clamp(state.settlement.prosperity, 0, 100), clamp(state.settlement.prosperity, 0, 100) * 0.05, 5),
     factor('infrastructure', clamp(state.settlement.infrastructure, 0, 100), clamp(state.settlement.infrastructure, 0, 100) * 0.05, 5),
@@ -174,6 +213,7 @@ export function deriveCivilDefense(state: GameState, crisis: RegionalCrisisState
     timeline: days,
     food: {
       dailyNet: dailyFoodNet,
+      rawProjectedAtResolution: rawProjectedFood,
       projectedAtResolution: projectedFood,
       shortage: foodShortage,
       coverage: foodCoverage,
@@ -188,11 +228,14 @@ export function deriveCivilDefense(state: GameState, crisis: RegionalCrisisState
       { id: 'defenders', current: defenders.length, required: targetDefenders, shortage: defenderShortage },
       { id: 'food', current: projectedFood, required: FOOD_THRESHOLD, shortage: foodShortage },
       { id: 'equipment', current: equippedSlots, required: equipmentCapacity, shortage: equipmentShortage },
+      { id: 'gold', current: crisis.contributions.gold.spent, required: goldCapacity,
+        shortage: Math.max(0, goldCapacity - crisis.contributions.gold.spent) },
     ],
     capacity: {
       defenderSlots: targetDefenders,
       equipmentSlots: equipmentCapacity,
       foodPoints: FOOD_THRESHOLD,
+      gold: goldCapacity,
     },
   }
 }

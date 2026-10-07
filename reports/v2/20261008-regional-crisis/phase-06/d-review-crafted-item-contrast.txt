@@ -1,0 +1,25 @@
+Independent D crafted-item runtime contrast
+
+Base / HEAD: bd4901c28ed3fb8469d6fe5c82354b4e1128691e
+Source freeze manifest SHA-256: 1f221ac850211a7f32166c8125178fc995f6ca21aeb615e9876aa4ad876b4d55
+Source paths checked before run: 12; all hashes matched the frozen manifest.
+
+Harness used Vite SSR and the public `createGame`, `craft`, `tryStartRegionalCrisis`, `contributeCrisisEquipment`, `deriveCivilDefense`, `serialize`, and `deserialize` APIs. It crafted `ironShortSword` with an actual `craftProvenance` object, opened a controlled WARNING crisis, contributed the crafted item to an available guard, and checked stat effect, ownership removal, provenance retention, time/RNG invariance, and exact save/reload.
+
+Raw runtime result:
+
+{
+  "craftResult": { "ok": true, "instanceId": "item-1", "recipeId": "ironShortSword", "baseId": "shortSword", "masterpiece": true },
+  "craftedItem": {
+    "instanceId": "item-1", "baseId": "shortSword", "level": 6,
+    "rolledStats": { "attack": 5, "defense": 0, "critical": 6, "penetration": 2, "bleed": 0, "block": 0, "reduction": 0 },
+    "craftProvenance": { "recipeId": "ironShortSword", "createdBy": "alden", "createdAt": 480, "influenceMaterial": null, "masterpiece": true }
+  },
+  "accepted": true,
+  "inventoryRemoved": true,
+  "ledgerPreservedCraftProvenance": true,
+  "equipmentReadinessBefore": 0,
+  "equipmentReadinessAfter": 0.4321428571428571,
+  "contributionDidNotAdvanceTimeOrRng": true,
+  "saveReloadEqual": true
+}

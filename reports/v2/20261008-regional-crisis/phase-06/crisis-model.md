@@ -1,8 +1,8 @@
 # Phase6 — Regional Crisis model
 
-## B implemented scope（獨立審查中）
+## B implemented scope（已限定驗收）
 
-Base commit b82de85；post-test freeze82src，fingerprint85b0cdb5eb05a9ab650b083e6d962bbd44554e18f5ba79e7af87a091b5a6b663。全439tests/23files/typecheck/build通過，見b-check-status.txt與b-source-freeze.json。Post-test snapshot不冒充pre/postrunmanifest。
+Source commit `c449930520c4ef47a60de7c8f3c14867b69355f8`；base b82de85。Original post-test82src fingerprint85b0cdb5…的439tests/23files/typecheck/build證據保留於b-check-status.txt/b-source-freeze.json；隨後修復P2 severity coercion，獨立post-fix207tests與typecheckPASS，reviewed fingerprint12a3497858e3f654be2279fd97066e66cb05178e51cb0a9264faaf38e55a62fb。不能把original439fullrun冒充post-fixfullrun，不能把post-test snapshot冒充pre/postmanifest。
 
 - Root GameState.regionalCrisis，單一Goblin/forest實例，seed+monotonicsequence ID。
 - Phase union：dormant → warning → preparation → active → resolution → aftermath → cooldown → dormant。B正常runtime到resolution等待F的真實resolver；目前不宣告完整危機處理、consequence或民防貢獻已完成。
@@ -15,6 +15,6 @@ Base commit b82de85；post-test freeze82src，fingerprint85b0cdb5eb05a9ab650b083
 
 ## 尚待後續slice
 
-C純Civil Defense/needs/outcome；D裝備/食物/金幣；E2–3Adventureleverage；F持久分級後果/恢復；G既有UI訊號與選擇；H重大history/reputation；I多路線/長期simulation；J真Browser/獨立review/Gates。
+C純Civil Defense/needs/likelihood已驗收，source `bd4901c28ed3fb8469d6fe5c82354b4e1128691e`，16focused/typecheck/independentreviewPASS；D裝備/食物/金幣施工中；E2–3Adventureleverage；F持久分級後果/恢復；G既有UI訊號與選擇；H重大history/reputation；I多路線/長期simulation；J真Browser/獨立review/Gates。
 
 Human DEFERRED / NOT APPLICABLE AT THIS STAGE。B測試中的forcedroll／手動phase/outcome為CONTROLLED FIXTURE，不是正常fresh-save遊玩。

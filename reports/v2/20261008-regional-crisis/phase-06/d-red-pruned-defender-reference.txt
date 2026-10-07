@@ -1,0 +1,31 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisContributions.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisContributions.test.ts (18 tests | 1 failed) 102ms
+   × retains an allocated defender reference after daily simulation prunes its dead nonfeatured NPC record 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisContributions.test.ts > retains an allocated defender reference after daily simulation prunes its dead nonfeatured NPC record
+Error: 存檔資料不完整。原始存檔已保留，請確認後重建世界。
+ ❯ deserialize src/services/saveService.ts:427:11
+    425|   const sourceVersion = value.saveVersion as 2 | 3 | 4 | 5
+    426|   if (!validBase(stateData, sourceVersion) || !validLife(stateData.lif…
+    427|     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
+       |           ^
+    428|   }
+    429|   const state = stateData as unknown as GameState
+ ❯ src/engine/crisisContributions.test.ts:246:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 17 passed (18)
+   Start at  19:03:12
+   Duration  487ms (transform 215ms, setup 0ms, import 257ms, tests 102ms, environment 0ms)
+

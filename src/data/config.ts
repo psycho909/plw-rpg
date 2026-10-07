@@ -2,7 +2,7 @@ import type { BuildingId, ItemId, JobId, LifeStage, Position, RegionId } from '.
 
 export const CONFIG = {
   daysPerSeason: 30, seasons: ['春', '夏', '秋', '冬'], minutesPerDay: 1440,
-  realSecondMinutes: 2, saveVersion: 4 as const,
+  realSecondMinutes: 2, saveVersion: 5 as const,
   width: 24, height: 16, initialPopulation: 30, maxPopulation: 80,
   stamina: { child: .9, young: 1.05, adult: 1, middleAge: .95, elder: .85 } satisfies Record<LifeStage, number>,
   ages: { young: 15, adult: 25, middleAge: 50, elder: 65 },

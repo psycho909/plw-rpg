@@ -1,0 +1,37 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisContributions.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisContributions.test.ts (18 tests | 1 failed) 121ms
+   × rejects a contribution ledger reference to a defender NPC that never existed 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisContributions.test.ts > rejects a contribution ledger reference to a defender NPC that never existed
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ src/engine/crisisContributions.test.ts:243:50
+    241|   raw.nextNpcId = missingId + 10
+    242|
+    243|   expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+       |                                                  ^
+    244| })
+    245|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 17 passed (18)
+   Start at  19:00:38
+   Duration  546ms (transform 249ms, setup 0ms, import 295ms, tests 121ms, environment 0ms)
+

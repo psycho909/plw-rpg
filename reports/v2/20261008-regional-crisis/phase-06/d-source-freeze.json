@@ -1,0 +1,54 @@
+{
+  "status": "source frozen for independent review",
+  "baseCommit": "bd4901c28ed3fb8469d6fe5c82354b4e1128691e",
+  "sourceFilesSha256": {
+    "src/domain/crisis.ts": "16ce56fc594e8de09a59676545b4d99afcd82a09403a149f9cfb9afdedcfc389",
+    "src/data/config.ts": "d83516689dbfc6f625557af0eea400d3f07723ed6b21d31e4c8f89ab45b111ef",
+    "src/engine/civilDefense.ts": "3ef49398a1442f51510cc2a79c8f4f373a1c86dbdc80527d13d6bcc4a37fa76a",
+    "src/engine/regionalCrisis.ts": "c990f9dff8af3a3b2f64668c78d45c145725c17d9956382207cbd33d795a1fa4",
+    "src/engine/crisisContributions.ts": "9b4dd4ac464bd21059484aeb6c2daa26cae08aa247b07ff2c9e4b48bf66ec635",
+    "src/engine/crisisContributions.test.ts": "22ef965349c409de4f0423f9db09ac7da40a53065a52c0af424b1b4c4c6f4611",
+    "src/services/rewardValidation.ts": "3b229fe371f38df3cb6ab75dabf90973b94c1249b9d557ed747d736851f25ba1",
+    "src/services/saveService.ts": "e070b1225da1e3f3815e861b5b5ee27c508d4eb132c2e446c55eb1f691815be3",
+    "src/services/saveService.test.ts": "81a58679a07054a6f60b6a5df30ccb1339aa9ee0db14feda6348136bad9b7a55",
+    "src/services/rewardSave.test.ts": "75afaaf37c2e4b5d084f4f042d8fcd32d451af169afc8600e4f029f62dbaf2b1",
+    "src/services/playJournal.test.ts": "8943e8d32ce7620672c5f4000e11e81951e9277b69fc8eccea57686cf3c4f56e",
+    "src/stores/gameStore.test.ts": "127cfc7abc609c9457aa51654ed156bc5a607b717e6777c61fc90dfbb8e87aae"
+  },
+  "evidenceSha256": {
+    "d-red-contributions-public-seam.txt": "cef92572bd88af5c67c0281b31f4001d5fad898ece1a1c107691d6342883c26b",
+    "d-green-contributions-initial.txt": "8527fb3207291dd2f5aeccc7fff6c42e744a75860867ac74c4a910e19c2a8524",
+    "d-red-v4-v5-migration.txt": "e3a60ac045687128ceeb5a865fa5c17cd28fc0b482f231382426db2e2ed54edb",
+    "d-green-v4-authentic-migration.txt": "e599755fd9dad69f70292c3e02349f86308892a4263b7562997478bafe3a2395",
+    "d-red-food-feedback.txt": "6a843095745d10791f41dbfa7a14e0deb08188587ea58fd33a8286014ec5f781",
+    "d-green-food-feedback.txt": "ca0c705afb68503277587b4c518792827cea4dc953a0b0950f9eed5f74593d69",
+    "d-red-pruned-defender-reference.txt": "654503e39a596e3378b98d558fa4df0c30f00d5da2e82073d23070a72d54d04d",
+    "d-red-pruned-defender-source-hashes.txt": "b4b88c0f6950f46a96973c97389ce8e3dfd752e35db7f77a1e9a4fdf4df580fa",
+    "d-green-pruned-defender-reference.txt": "e0fd14c5019395b4813b42c1c9b3c4360d5c87e4219f6719a08e8e1696a9a7cb",
+    "d-regression-final.txt": "6fde8385b095d840f291b5908072074567e1900f4e58741685bcbabc5933c5c4",
+    "d-typecheck-final.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "d-fullcheck.txt": "ef9ac4477b4aca0f8bad3fd711878489f5983fd8bf00018f54569354d2e0f92a",
+    "d-fullcheck-green.txt": "884991ad530fadcc165e683e0d94e7fa48b7e40c59c31424abfaa42b03e6e23c",
+    "d-v4-fixtures/manifest.json": "bc07f9ac342b5e10886279ca60d3856e28690d39b3207f874c3e1d9c9c0c6ab8",
+    "d-v4-fixtures/crisis-v4-warning.json": "4d4e2bdc4767bc6652cadff98bb1d943b59dcf32775f9a0975d36033a2ebb10b",
+    "d-v4-fixtures/crisis-v4-preparation.json": "1b77345d364ca4dea182cc90154dff471a6ebafb101c297d0122f115693ae0ef",
+    "d-v4-fixtures/crisis-v4-active.json": "28c3a3daf0f0d46c75f34c9e8b5c6a1de9add141a7a8ad72437360e5b16a0c3c"
+  },
+  "focusedRegression": {
+    "command": "npm run test -- src/engine/crisisContributions.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/engine/civilDefense.test.ts src/engine/regionalCrisis.test.ts",
+    "filesPassed": 6,
+    "testsPassed": 170
+  },
+  "fullCheck": {
+    "command": "npm run check",
+    "testFilesPassed": 25,
+    "testsPassed": 475,
+    "typecheck": "PASS",
+    "productionBuild": "PASS"
+  },
+  "migrationFixtureSource": {
+    "commit": "bd4901c28ed3fb8469d6fe5c82354b4e1128691e",
+    "fingerprint": "ea7c30c1b6872bcb92f3f5f7c68ad216e0fdf4e0929679ed7d876fab25c7dc5b"
+  },
+  "review": "pending independent review; no self-acceptance"
+}

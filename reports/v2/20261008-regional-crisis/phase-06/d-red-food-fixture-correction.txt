@@ -1,0 +1,33 @@
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisContributions.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisContributions.test.ts (11 tests | 1 failed) 81ms
+   × accepts food only when it improves the raw forecast and bounded supply need 12ms
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisContributions.test.ts > accepts food only when it improves the raw forecast and bounded supply need
+AssertionError: expected '背包裡沒有足夠的食物。' to be '' // Object.is equality
+
+- Expected
++ Received
+
++ 背包裡沒有足夠的食物。
+
+ ❯ src/engine/crisisContributions.test.ts:153:54
+    151|   expect(contributeCrisisFood(state, crisis.id, 6)).not.toBe('')
+    152|   expect(state).toEqual(noEffect)
+    153|   expect(contributeCrisisFood(state, crisis.id, 25)).toBe('')
+       |                                                      ^
+    154|   expect(player(state).inventory.food).toBe(0)
+    155|   expect(state.settlement.food).toBe(100)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+ Test Files  1 failed (1)
+      Tests  10 passed | 1 failed (11)
+   Start at  18:55:15
+   Duration  596ms (transform 333ms, setup 0ms, import 385ms, tests 81ms, environment 0ms)

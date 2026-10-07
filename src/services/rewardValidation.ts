@@ -225,6 +225,15 @@ export function validateReward(value: unknown, state: GameState): value is Rewar
   return validateRewardVersion(value, state, 2)
 }
 
+/** Validates a consumed item snapshot with the same strict facts as a live reward instance. */
+export function validateRewardInstanceSnapshot(value: unknown, state: GameState): value is ItemInstance {
+  const characters = characterMap(state)
+  const rawState: unknown = state
+  if (!characters || !record(rawState) || !record(rawState.reward) || !safeInt(rawState.worldTime)
+    || !safeInt(rawState.reward.nextInstanceId, 1, Number.MAX_SAFE_INTEGER - 1)) return false
+  return validInstance(value, characters, rawState.reward.nextInstanceId, rawState.worldTime, 2)
+}
+
 /** Validates a family snapshot against its containing combat without re-forming it. */
 export function validFamilyEncounter(snapshot: unknown, state: GameState): snapshot is FamilyEncounter {
   const stateRecord: unknown = state

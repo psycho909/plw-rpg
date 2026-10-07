@@ -1,0 +1,19 @@
+Independent D targeted verification
+
+Base commit: bd4901c28ed3fb8469d6fe5c82354b4e1128691e
+Frozen source manifest: d-source-freeze.json
+Command: npm run test -- src/engine/crisisContributions.test.ts src/services/saveService.test.ts -t 'retains an allocated defender reference|migrates authentic archived V4'
+Exit: 0
+Source hash check before this run: all 12 source paths matched d-source-freeze.json.
+
+Raw output:
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisContributions.test.ts src/services/saveService.test.ts -t retains an allocated defender reference|migrates authentic archived V4
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ Test Files  2 passed (2)
+      Tests  4 passed | 111 skipped (115)
+   Start at  19:07:39
+   Duration  481ms (transform 446ms, setup 0ms, import 586ms, tests 54ms, environment 1ms)

@@ -58,7 +58,7 @@ Phase5 Engineering Gate：**PASS WITH FINDINGS**。四種鍛造配方、素材�
 
 ## V2.x Phase6：Regional Crisis & Civil Defense
 
-依 [Phase6 規格](docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md)逐段開發單一 Goblin 區域危機。A baseline 已通過425項測試、typecheck/build；B危機生命週期與存檔相容已完成限定驗收，P2存檔型別問題已修復且獨立207項定向測試通過；C純民防模型已通過16項定向測試與獨立審查；D生活貢獻施工中。正式進度以 [當前Ticket](tickets/20261008-v2x-06d-life-contributions.md)與[baseline](reports/v2/20261008-regional-crisis/phase-06/baseline.md)為準。生活與冒險皆須有真實影響，失敗後世界仍繼續；不開始Phase7–10／V3，Human Gate維持DEFERRED。
+依 [Phase6 規格](docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md)逐段開發單一 Goblin 區域危機。A baseline 已通過425項測試、typecheck/build；B危機生命週期與存檔相容已完成限定驗收，P2存檔型別問題已修復且獨立207項定向測試通過；C純民防模型已通過16項定向測試與獨立審查；D裝備／食物／金幣貢獻已通過475項全量測試、typecheck/build與獨立審查，P1歷史NPC存讀問題已修復；E冒險介入施工中。正式進度以 [當前Ticket](tickets/20261008-v2x-06e-adventure-contributions.md)與[baseline](reports/v2/20261008-regional-crisis/phase-06/baseline.md)為準。生活與冒險皆須有真實影響，失敗後世界仍繼續；不開始Phase7–10／V3，Human Gate維持DEFERRED。
 
 
 ## 正式網站與部署

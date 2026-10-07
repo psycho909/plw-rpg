@@ -13,3 +13,7 @@ Root接受B限定工程範圍：獨立Max Standards/Spec PASS，post-fix207 test
 ## C accepted / D released
 
 Root接受C純derive限定工程範圍，独立Standards/Spec recommendation ACCEPT，16/16 focused/typecheck PASS；兩sourcehash4680ef90…/c05afe2a…，完整c-core-independent-review與civil-defense.md保存。D依ticket完整契約release，V4→V5保留midcrisis，bounded gear/food/gold與原子preflight；E–J不提前。C readiness不等於已完成player contribution或outcome，Human DEFERRED。
+
+## D accepted / E released
+
+Root接受D限定工程：475fulltests/typecheck/build，170focused，独立4targeted authenticV4/prunecases与actualcrafted-item effect/reload，12-sourcefreeze match且Standards/Spec PASS。P1-D01与P2-D02保留RED并已修復。E依兩個選項／boundedselected-demandrelief／stalecombatmarker與save6契約release；F–J不提前。Human DEFERRED；並非完整危機或產品PASS。

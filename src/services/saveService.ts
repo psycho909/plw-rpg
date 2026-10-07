@@ -1,14 +1,18 @@
 import { BUILDINGS, CONFIG, DUNGEON, ITEMS, JOBS, MONSTERS } from '../data/config'
+import { ITEM_BASES } from '../data/rewards'
 import { IDENTITY_LIMITS, REPUTATION_BOUNDS } from '../data/identity'
 import { NPC_LIFE_LIMITS } from '../data/npcLife'
 import { FARM_BUSINESS_DAILY_FOOD_LIMIT, OWNERSHIP_MEMORY_LIMIT, STORAGE_PER_ITEM_LIMIT } from '../data/ownership'
 import type { WorldLife } from '../domain/life'
 import type { GameState, Position } from '../domain/types'
-import { dormantRegionalCrisis, type RegionalCrisisOutcome, type RegionalCrisisState } from '../domain/crisis'
+import {
+  dormantRegionalCrisis, emptyRegionalCrisisContributions, REGIONAL_CRISIS_CONTRIBUTION_LIMITS,
+  type RegionalCrisisOutcome, type RegionalCrisisState,
+} from '../domain/crisis'
 import { createGame } from '../engine/simulation'
 import { initializeLife } from '../engine/lifeState'
 import { emptyReward, migrateRewardV1 } from '../engine/rewardState'
-import { validFamilyEncounter, validateReward, validateRewardV1 } from './rewardValidation'
+import { validFamilyEncounter, validateReward, validateRewardInstanceSnapshot, validateRewardV1 } from './rewardValidation'
 
 export const SAVE_KEY = 'oakvale-v1'
 
@@ -40,7 +44,7 @@ function exactShape(value: unknown, required: string[], optional: string[] = [])
   return required.every(key => Object.hasOwn(value, key)) && Object.keys(value).every(key => allowed.has(key))
 }
 
-function validBase(value: unknown, version: 1 | 2 | 3 | 4): value is GameState {
+function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5): value is GameState {
   if (!object(value)) return false
   const currentTemplate = createGame()
   // Event tiers remain optional so historical V1 entries survive later-version round trips.
@@ -108,14 +112,57 @@ function validBase(value: unknown, version: 1 | 2 | 3 | 4): value is GameState {
       && ['player', 'npc', 'world', 'monster', 'settlement'].includes(e.category)
       && (e.tier === undefined || enumValue(e.tier, ['transient', 'gameplay', 'major', 'debug'])))
     && s.settlement.buildings.every(b => Object.hasOwn(BUILDINGS, b))
-    && (version < 4 || validRegionalCrisis(s.regionalCrisis, s))
+    && (version < 4 || validRegionalCrisis(s.regionalCrisis, s, version as 4 | 5))
 }
 
 const crisisOutcomes: readonly RegionalCrisisOutcome[] = ['decisive_success', 'costly_success', 'setback', 'local_defeat']
 const crisisConditions = ['low_safety', 'low_food', 'chief_present'] as const
 const crisisDay = CONFIG.minutesPerDay
 
-function validRegionalCrisis(value: unknown, s: GameState): value is RegionalCrisisState {
+function validContributionCredits(value: unknown, s: GameState, total: number, maximum: number, step = 1) {
+  if (!Array.isArray(value) || value.length > maximum) return false
+  const donors = new Set<string>()
+  let sum = 0
+  for (const credit of value) {
+    if (!exactShape(credit, ['donorId', 'amount']) || !shortString(credit.donorId, 128, 1)
+      || !s.characters.some(character => character.id === credit.donorId) || donors.has(credit.donorId)
+      || !safeInt(credit.amount, 1, maximum) || credit.amount % step !== 0 || sum > maximum - credit.amount) return false
+    donors.add(credit.donorId)
+    sum += credit.amount
+  }
+  return sum === total
+}
+
+function validRegionalCrisisContributions(value: unknown, s: GameState, triggeredAt: number) {
+  if (!exactShape(value, ['equipment', 'food', 'gold']) || !Array.isArray(value.equipment)
+    || value.equipment.length > REGIONAL_CRISIS_CONTRIBUTION_LIMITS.equipmentAllocations
+    || !exactShape(value.food, ['supplied', 'credits']) || !safeInt(value.food.supplied, 0, REGIONAL_CRISIS_CONTRIBUTION_LIMITS.foodSupply)
+    || value.food.supplied % REGIONAL_CRISIS_CONTRIBUTION_LIMITS.foodPerInventoryItem !== 0
+    || !validContributionCredits(value.food.credits, s, value.food.supplied,
+      REGIONAL_CRISIS_CONTRIBUTION_LIMITS.foodSupply, REGIONAL_CRISIS_CONTRIBUTION_LIMITS.foodPerInventoryItem)
+    || !exactShape(value.gold, ['spent', 'credits']) || !safeInt(value.gold.spent, 0, REGIONAL_CRISIS_CONTRIBUTION_LIMITS.gold)
+    || !validContributionCredits(value.gold.credits, s, value.gold.spent, REGIONAL_CRISIS_CONTRIBUTION_LIMITS.gold)) return false
+
+  const defenders = new Set<string>(), sourceItems = new Set<string>()
+  for (const allocation of value.equipment) {
+    if (!exactShape(allocation, ['defenderNpcId', 'slot', 'donorId', 'contributedAt', 'sourceItem'])
+      || !shortString(allocation.defenderNpcId, 128, 1) || !/^npc-[1-9]\d*$/.test(allocation.defenderNpcId)
+      || Number(allocation.defenderNpcId.slice(4)) >= s.nextNpcId
+      || !enumValue(allocation.slot, ['weapon', 'armor']) || !shortString(allocation.donorId, 128, 1)
+      || !s.characters.some(character => character.id === allocation.donorId)
+      || !safeInt(allocation.contributedAt, triggeredAt) || allocation.contributedAt > s.worldTime) return false
+    const sourceItem = allocation.sourceItem
+    if (!validateRewardInstanceSnapshot(sourceItem, s) || sourceItem.ownerId !== allocation.donorId
+      || ITEM_BASES[sourceItem.baseId].slot !== allocation.slot
+      || defenders.has(`${allocation.defenderNpcId}:${allocation.slot}`) || sourceItems.has(sourceItem.instanceId)
+      || (Array.isArray(s.reward.instances) && s.reward.instances.some(item => object(item) && item.instanceId === sourceItem.instanceId))) return false
+    defenders.add(`${allocation.defenderNpcId}:${allocation.slot}`)
+    sourceItems.add(sourceItem.instanceId)
+  }
+  return true
+}
+
+function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5): value is RegionalCrisisState {
   if (!object(value)) return false
   const phase = value.phase
   if (phase === 'dormant') {
@@ -128,6 +175,7 @@ function validRegionalCrisis(value: unknown, s: GameState): value is RegionalCri
   }
   if (!enumValue(phase, ['warning', 'preparation', 'active', 'resolution', 'aftermath', 'cooldown'])) return false
   const baseKeys = ['phase', 'id', 'sequence', 'type', 'region', 'severity', 'triggeredAt', 'cause', 'chiefOutcome', 'phaseStartedAt']
+  if (version >= 5) baseKeys.push('contributions')
   const phaseKeys: Record<string, string[]> = {
     warning: ['phaseEndsAt'],
     preparation: ['phaseEndsAt'],
@@ -141,7 +189,8 @@ function validRegionalCrisis(value: unknown, s: GameState): value is RegionalCri
     || value.id !== `goblin-regional:${(s.worldSeed >>> 0).toString(16).padStart(8, '0')}:${value.sequence}`
     || value.type !== 'goblin_regional' || value.region !== 'forest' || !safeInt(value.severity, 1, 3)
     || !safeInt(value.triggeredAt) || value.triggeredAt > s.worldTime || !safeInt(value.phaseStartedAt)
-    || value.phaseStartedAt < value.triggeredAt || value.phaseStartedAt > s.worldTime) return false
+    || value.phaseStartedAt < value.triggeredAt || value.phaseStartedAt > s.worldTime
+    || (version === 4 && Object.hasOwn(value, 'contributions'))) return false
 
   const cause = value.cause
   if (!exactShape(cause, ['threatLevel', 'monsterPopulation', 'campLevel', 'bossAlive', 'settlementSafety', 'settlementFood', 'conditions'])
@@ -169,6 +218,7 @@ function validRegionalCrisis(value: unknown, s: GameState): value is RegionalCri
 
   const started = value.phaseStartedAt as number
   const triggered = value.triggeredAt as number
+  if (version >= 5 && !validRegionalCrisisContributions(value.contributions, s, triggered)) return false
   const expectedStarts: Record<string, number> = {
     warning: triggered,
     preparation: triggered + CONFIG.regionalCrisis.warningDays * crisisDay,
@@ -228,7 +278,7 @@ function validCounts(value: unknown, keys: string[], maximum = Number.MAX_SAFE_I
   return exactShape(value, keys) && Object.values(value).every(count => safeInt(count, 0, maximum))
 }
 
-function validLife(value: unknown, s: GameState, version: 2 | 3 | 4): value is WorldLife {
+function validLife(value: unknown, s: GameState, version: 2 | 3 | 4 | 5): value is WorldLife {
   if (!exactShape(value, ['canon', 'openingSeen', 'characters', 'npcs', 'properties', 'settlementMemories', 'worldMemories', 'arcs', 'requests', 'news', 'director'])) return false
   if (value.canon !== 'OAKVALE_LIFE_EMERGENCE' || typeof value.openingSeen !== 'boolean' || !object(value.characters) || !object(value.npcs)) return false
   const savedNpcs = value.npcs
@@ -347,9 +397,14 @@ export function serialize(state: GameState, now = Date.now()) {
   return JSON.stringify({ ...state, lastSavedAt: now })
 }
 
+function migrateRegionalCrisisV4(crisis: RegionalCrisisState): RegionalCrisisState {
+  return crisis.phase === 'dormant' ? crisis : { ...crisis, contributions: emptyRegionalCrisisContributions() }
+}
+
 export function deserialize(raw: string): { state: GameState; lastSavedAt: number } {
   const value: unknown = JSON.parse(raw)
-  if (!object(value) || (value.saveVersion !== 1 && value.saveVersion !== 2 && value.saveVersion !== 3 && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
+  if (!object(value) || (value.saveVersion !== 1 && value.saveVersion !== 2 && value.saveVersion !== 3
+    && value.saveVersion !== 4 && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
   if (typeof value.lastSavedAt !== 'number' || !Number.isFinite(value.lastSavedAt) || value.lastSavedAt < 0) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -366,7 +421,7 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
     state.saveVersion = CONFIG.saveVersion
     return { state, lastSavedAt }
   }
-  const sourceVersion = value.saveVersion as 2 | 3 | 4
+  const sourceVersion = value.saveVersion as 2 | 3 | 4 | 5
   if (!validBase(stateData, sourceVersion) || !validLife(stateData.life, stateData as unknown as GameState, sourceVersion)) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -386,6 +441,7 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
     throw new Error('存檔資料不完整。原始存檔已保留。')
   }
   if (sourceVersion === 3) state.regionalCrisis = dormantRegionalCrisis()
+  if (sourceVersion === 4) state.regionalCrisis = migrateRegionalCrisisV4(state.regionalCrisis)
   state.saveVersion = CONFIG.saveVersion
   return { state, lastSavedAt }
 }

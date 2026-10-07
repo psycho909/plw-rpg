@@ -1,0 +1,34 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisContributions.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisContributions.test.ts (17 tests | 1 failed) 98ms
+   × does not tell the player to add farmers when a negative forecast can reach need but the request is oversized 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisContributions.test.ts > does not tell the player to add farmers when a negative forecast can reach need but the request is oversized
+AssertionError: expected '目前糧食消耗快於補給；需要更多農夫或防衛協助，單靠存糧無法補足需求。' not to contain '農夫'
+
+Expected: "農夫"
+Received: "目前糧食消耗快於補給；需要更多農夫或防衛協助，單靠存糧無法補足需求。"
+
+ ❯ src/engine/crisisContributions.test.ts:197:21
+    195|   const error = contributeCrisisFood(state, crisis.id, 15)
+    196|
+    197|   expect(error).not.toContain('農夫')
+       |                     ^
+    198|   expect(state).toEqual(before)
+    199| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 16 passed (17)
+   Start at  18:58:39
+   Duration  578ms (transform 289ms, setup 0ms, import 342ms, tests 98ms, environment 0ms)
+

@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "title": "Phase6-D core independent review",
+  "reviewedAt": "2026-10-07T19:09:59Z",
+  "ticket": "tickets/20261008-v2x-06d-life-contributions.md",
+  "scope": [
+    "bounded D equipment, food and gold contribution actions and Civil Defense effects",
+    "V4-to-V5 contribution ledger schema validation and migration, plus V1-V3 regression expectations",
+    "atomic preflight, event/time/RNG behavior, save/reload and historical NPC/donor/item references",
+    "D ticket and relevant Phase6 spec clauses; no E/F product implementation or UI"
+  ],
+  "excluded": [
+    "Phase6 E-J implementation/acceptance and overall Phase6 product PASS",
+    "browser or human playtest; Human validation remains DEFERRED / NOT APPLICABLE AT THIS STAGE",
+    "source or Git mutation; reviewed only the frozen uncommitted working-tree snapshot"
+  ],
+  "git": {
+    "branch": "v2x/reward-core",
+    "baseCommit": "bd4901c28ed3fb8469d6fe5c82354b4e1128691e",
+    "headCommit": "bd4901c28ed3fb8469d6fe5c82354b4e1128691e",
+    "reviewedObject": "uncommitted D working-tree snapshot frozen for independent review",
+    "freezePath": "reports/v2/20261008-regional-crisis/phase-06/d-source-freeze.json",
+    "freezeManifestSha256": "1f221ac850211a7f32166c8125178fc995f6ca21aeb615e9876aa4ad876b4d55",
+    "sourceFileCount": 12,
+    "sourceHashesMatchFreezeBeforeAndAfterIndependentRuns": true,
+    "sourceFingerprintAlgorithm": "SHA-256 over sorted `path NUL sha256 LF` records",
+    "sourceFingerprint": "7262a7598830129e1c89dac1a7918a206b40a034945e074aea1ac2e7e835d136",
+    "sourceSha256": {
+      "src/domain/crisis.ts": "16ce56fc594e8de09a59676545b4d99afcd82a09403a149f9cfb9afdedcfc389",
+      "src/data/config.ts": "d83516689dbfc6f625557af0eea400d3f07723ed6b21d31e4c8f89ab45b111ef",
+      "src/engine/civilDefense.ts": "3ef49398a1442f51510cc2a79c8f4f373a1c86dbdc80527d13d6bcc4a37fa76a",
+      "src/engine/regionalCrisis.ts": "c990f9dff8af3a3b2f64668c78d45c145725c17d9956382207cbd33d795a1fa4",
+      "src/engine/crisisContributions.ts": "9b4dd4ac464bd21059484aeb6c2daa26cae08aa247b07ff2c9e4b48bf66ec635",
+      "src/engine/crisisContributions.test.ts": "22ef965349c409de4f0423f9db09ac7da40a53065a52c0af424b1b4c4c6f4611",
+      "src/services/rewardValidation.ts": "3b229fe371f38df3cb6ab75dabf90973b94c1249b9d557ed747d736851f25ba1",
+      "src/services/saveService.ts": "e070b1225da1e3f3815e861b5b5ee27c508d4eb132c2e446c55eb1f691815be3",
+      "src/services/saveService.test.ts": "81a58679a07054a6f60b6a5df30ccb1339aa9ee0db14feda6348136bad9b7a55",
+      "src/services/rewardSave.test.ts": "75afaaf37c2e4b5d084f4f042d8fcd32d451af169afc8600e4f029f62dbaf2b1",
+      "src/services/playJournal.test.ts": "8943e8d32ce7620672c5f4000e11e81951e9277b69fc8eccea57686cf3c4f56e",
+      "src/stores/gameStore.test.ts": "127cfc7abc609c9457aa51654ed156bc5a607b717e6777c61fc90dfbb8e87aae"
+    },
+    "reviewerCreatedEvidence": {
+      "targetedTests": {
+        "path": "reports/v2/20261008-regional-crisis/phase-06/d-review-targeted-tests.txt",
+        "sha256": "729d8db1d9abb83cd4a86de82817473374f945c18dd072062065d911e5246719"
+      },
+      "craftedItemContrast": {
+        "path": "reports/v2/20261008-regional-crisis/phase-06/d-review-crafted-item-contrast.txt",
+        "sha256": "d7979ad11ed2b30f9a3d1b3397f1a4b474e333ce824dd52c2d34a683c94d2a7d"
+      }
+    }
+  },
+  "reviewer": {
+    "taskRole": "g6_luna_max_phase6_core_reviewer",
+    "requestedModelEffortRole": "GPT-6 Luna Max, deep reviewer",
+    "runtimeModelVerified": false,
+    "implementationContributor": false,
+    "reviewAxes": "Standards and Spec evaluated separately by one independent reviewer, following repository review contract; no review subagents used."
+  },
+  "standards": {
+    "result": "PASS",
+    "basis": [
+      "AGENTS.md §§3–6",
+      "docs/agents/review.md",
+      "docs/agents/skill-workflows.md",
+      "docs/agents/agent-routing.md",
+      "docs/governance/ai-governance.md",
+      "matt-skills-curated:code-review (adapted to repository review contract)"
+    ],
+    "findings": [],
+    "notes": [
+      "No standalone CODING_STANDARDS.md or CONTRIBUTING file was found; the project instructions and review contract supply the applicable standards.",
+      "Contribution actions are centralized in a narrow engine module; save-shape validation remains at the persistence boundary, and Civil Defense effects derive from current world facts plus bounded ledger entries.",
+      "The reviewed D source/test snapshot contains 12 frozen paths; every SHA-256 matched the engineer freeze before and after independent runtime checks.",
+      "No presentation or UI source changed in this D slice; the changed E/F files are ticket text only, not E/F product implementation."
+    ]
+  },
+  "spec": {
+    "result": "PASS for D core",
+    "basis": [
+      "tickets/20261008-v2x-06d-life-contributions.md: Acceptance and Root-approved D contract",
+      "docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md §§20–23, 39, 55–65, 71",
+      "reports/v2/20261008-regional-crisis/phase-06/civil-defense.md (accepted C handoff and raw-food forecast contract)"
+    ],
+    "findings": [
+      {
+        "id": "P1-D01",
+        "severity": "P1",
+        "status": "RESOLVED in frozen reviewed snapshot",
+        "location": "src/services/saveService.ts:147–153 (current historical defender validation); pre-fix code required current s.npcs membership.",
+        "priorBehavior": "A valid contribution to a nonfeatured defender became unloadable after die() and normal simulate() crossed a day boundary: daily pruning removed that dead NPC and life record while the crisis ledger retained its historical reference. The generated save then failed deserialize().",
+        "reproductionEvidence": {
+          "raw": "reports/v2/20261008-regional-crisis/phase-06/d-red-pruned-defender-reference.txt",
+          "rawSha256": "654503e39a596e3378b98d558fa4df0c30f00d5da2e82073d23070a72d54d04d",
+          "preFixSourceHashes": "reports/v2/20261008-regional-crisis/phase-06/d-red-pruned-defender-source-hashes.txt",
+          "preFixSourceHashesSha256": "b4b88c0f6950f46a96973c97389ce8e3dfd752e35db7f77a1e9a4fdf4df580fa"
+        },
+        "resolution": "The validator accepts a canonical npc-<positive integer> reference below monotonic nextNpcId without requiring the NPC to remain in the current roster, while retaining strict bounds, donor character validity, unique allocation slots/source items and strict consumed-item snapshot validation. This preserves legitimate lifecycle history without granting an NPC reward owner.",
+        "resolutionEvidence": {
+          "regression": "src/engine/crisisContributions.test.ts:233–250; action → death → daily simulate/prune → save/reload",
+          "green": "reports/v2/20261008-regional-crisis/phase-06/d-green-pruned-defender-reference.txt",
+          "greenSha256": "e0fd14c5019395b4813b42c1c9b3c4360d5c87e4219f6719a08e8e1696a9a7cb",
+          "independentTargetedRun": "reports/v2/20261008-regional-crisis/phase-06/d-review-targeted-tests.txt"
+        }
+      },
+      {
+        "id": "D-FOOD-FEEDBACK-01",
+        "severity": "P2",
+        "status": "RESOLVED in frozen reviewed snapshot",
+        "location": "src/engine/crisisContributions.ts:125–135",
+        "priorBehavior": "An oversized food request that would lift a negative forecast above zero could return advice to add farmers, although the actual rejection reason was request size.",
+        "resolution": "The action distinguishes a genuinely zero-effect request from an over-request that would improve the raw forecast, and keeps both rejection paths mutation-free.",
+        "reproductionEvidence": {
+          "path": "reports/v2/20261008-regional-crisis/phase-06/d-red-food-feedback.txt",
+          "sha256": "6a843095745d10791f41dbfa7a14e0deb08188587ea58fd33a8286014ec5f781"
+        },
+        "resolutionEvidence": {
+          "path": "reports/v2/20261008-regional-crisis/phase-06/d-green-food-feedback.txt",
+          "sha256": "ca0c705afb68503277587b4c518792827cea4dc953a0b0950f9eed5f74593d69"
+        }
+      }
+    ],
+    "noUnresolvedFindings": true,
+    "observations": [
+      "All contribution actions preflight current crisis id/phase, living idle player, no combat/dungeon, village handoff location and safe event capacity before mutation. Invalid state, asset, slot, physical capacity, forecast or need rejects without changing state.",
+      "Equipment consumes only owned unequipped reward inventory, fills an actual free slot on a current eligible defender, caps at 16 allocations, snapshots rolled stats and provenance, and uses actual stat/suitability-derived per-slot effect. A reviewer-run public crafting path produced a real ironShortSword with craftProvenance; donation raised equipment readiness from 0 to 0.4321428571, removed the live reward item, preserved provenance in the ledger, did not advance time/RNG, and round-tripped exactly.",
+      "Food changes real settlement.food only within the physical 100 stockroom, per-crisis cap, raw resolution forecast and zero-marginal guard. Food contrast and over-request feedback RED/GREEN evidence is retained.",
+      "Gold consumes character gold only within a derived finite logistics shortage/cap and credits are exact-shaped, unique by donor, safe-integer bounded and sum-checked.",
+      "V4 validation occurs before migration; the V5 migration adds an empty bounded ledger while preserving the crisis snapshot, world time, RNG and lastSavedAt. Authenticated WARNING/PREPARATION/ACTIVE saves were generated and round-tripped using the committed V4 checkpoint, not relabeled V5 output.",
+      "The earlier synthetic V4 migration test failure was a stale-fixture issue; final archived V4 fixtures and three phase-specific migration cases pass. No V4 migration blocker remains.",
+      "No E/F UI, action, resolver or consequence implementation is part of this D change."
+    ]
+  },
+  "verification": {
+    "independentTargetedCommand": "npm run test -- src/engine/crisisContributions.test.ts src/services/saveService.test.ts -t 'retains an allocated defender reference|migrates authentic archived V4'",
+    "independentTargetedResult": {
+      "exitStatus": 0,
+      "testFilesPassed": 2,
+      "testsPassed": 4,
+      "testsSkipped": 111,
+      "testsFailed": 0,
+      "artifact": "reports/v2/20261008-regional-crisis/phase-06/d-review-targeted-tests.txt",
+      "sha256": "729d8db1d9abb83cd4a86de82817473374f945c18dd072062065d911e5246719"
+    },
+    "independentCraftedItemRuntime": {
+      "result": "PASS",
+      "artifact": "reports/v2/20261008-regional-crisis/phase-06/d-review-crafted-item-contrast.txt",
+      "sha256": "d7979ad11ed2b30f9a3d1b3397f1a4b474e333ce824dd52c2d34a683c94d2a7d"
+    },
+    "engineerFocusedRegression": {
+      "command": "npm run test -- src/engine/crisisContributions.test.ts src/services/saveService.test.ts src/services/rewardSave.test.ts src/services/playJournal.test.ts src/engine/civilDefense.test.ts src/engine/regionalCrisis.test.ts",
+      "testFilesPassed": 6,
+      "testsPassed": 170,
+      "artifact": "reports/v2/20261008-regional-crisis/phase-06/d-regression-final.txt",
+      "sha256": "6fde8385b095d840f291b5908072074567e1900f4e58741685bcbabc5933c5c4"
+    },
+    "engineerFullCheck": {
+      "command": "npm run check",
+      "testFilesPassed": 25,
+      "testsPassed": 475,
+      "typecheck": "PASS",
+      "productionBuild": "PASS",
+      "artifact": "reports/v2/20261008-regional-crisis/phase-06/d-fullcheck-green.txt",
+      "sha256": "884991ad530fadcc165e683e0d94e7fa48b7e40c59c31424abfaa42b03e6e23c"
+    },
+    "v4Fixtures": {
+      "sourceCommit": "bd4901c28ed3fb8469d6fe5c82354b4e1128691e",
+      "sourceFingerprint": "ea7c30c1b6872bcb92f3f5f7c68ad216e0fdf4e0929679ed7d876fab25c7dc5b",
+      "manifest": "reports/v2/20261008-regional-crisis/phase-06/d-v4-fixtures/manifest.json",
+      "manifestSha256": "bc07f9ac342b5e10886279ca60d3856e28690d39b3207f874c3e1d9c9c0c6ab8",
+      "fixtureSha256": {
+        "d-v4-fixtures/crisis-v4-warning.json": "4d4e2bdc4767bc6652cadff98bb1d943b59dcf32775f9a0975d36033a2ebb10b",
+        "d-v4-fixtures/crisis-v4-preparation.json": "1b77345d364ca4dea182cc90154dff471a6ebafb101c297d0122f115693ae0ef",
+        "d-v4-fixtures/crisis-v4-active.json": "28c3a3daf0f0d46c75f34c9e8b5c6a1de9add141a7a8ad72437360e5b16a0c3c"
+      }
+    },
+    "fullEvidenceSha256": {
+      "d-red-pruned-defender-reference.txt": "654503e39a596e3378b98d558fa4df0c30f00d5da2e82073d23070a72d54d04d",
+      "d-red-pruned-defender-source-hashes.txt": "b4b88c0f6950f46a96973c97389ce8e3dfd752e35db7f77a1e9a4fdf4df580fa",
+      "d-green-pruned-defender-reference.txt": "e0fd14c5019395b4813b42c1c9b3c4360d5c87e4219f6719a08e8e1696a9a7cb",
+      "d-red-food-feedback.txt": "6a843095745d10791f41dbfa7a14e0deb08188587ea58fd33a8286014ec5f781",
+      "d-green-food-feedback.txt": "ca0c705afb68503277587b4c518792827cea4dc953a0b0950f9eed5f74593d69",
+      "d-red-v4-v5-migration.txt": "e3a60ac045687128ceeb5a865fa5c17cd28fc0b482f231382426db2e2ed54edb",
+      "d-green-v4-authentic-migration.txt": "e599755fd9dad69f70292c3e02349f86308892a4263b7562997478bafe3a2395",
+      "d-regression-final.txt": "6fde8385b095d840f291b5908072074567e1900f4e58741685bcbabc5933c5c4",
+      "d-fullcheck-green.txt": "884991ad530fadcc165e683e0d94e7fa48b7e40c59c31424abfaa42b03e6e23c",
+      "d-v4-fixtures/manifest.json": "bc07f9ac342b5e10886279ca60d3856e28690d39b3207f874c3e1d9c9c0c6ab8",
+      "d-v4-fixtures/crisis-v4-warning.json": "4d4e2bdc4767bc6652cadff98bb1d943b59dcf32775f9a0975d36033a2ebb10b",
+      "d-v4-fixtures/crisis-v4-preparation.json": "1b77345d364ca4dea182cc90154dff471a6ebafb101c297d0122f115693ae0ef",
+      "d-v4-fixtures/crisis-v4-active.json": "28c3a3daf0f0d46c75f34c9e8b5c6a1de9add141a7a8ad72437360e5b16a0c3c",
+      "d-review-targeted-tests.txt": "729d8db1d9abb83cd4a86de82817473374f945c18dd072062065d911e5246719",
+      "d-review-crafted-item-contrast.txt": "d7979ad11ed2b30f9a3d1b3397f1a4b474e333ce824dd52c2d34a683c94d2a7d"
+    },
+    "sourceDriftAfterIndependentRuns": false
+  },
+  "disposition": {
+    "recommendation": "ACCEPT D core",
+    "unresolvedBlockers": [],
+    "rootAcceptanceStillRequired": true,
+    "overallPhase6ProductPass": false
+  }
+}

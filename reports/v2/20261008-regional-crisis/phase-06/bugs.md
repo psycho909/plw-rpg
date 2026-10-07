@@ -17,3 +17,21 @@ Source base: `b82de85fb251697fca3e4331c5bb44945349a387`; uncommitted Phase6 sour
 - Added regression first failed typecheck because union severity access lacked narrowing. Original `b-fix-typecheck.txt` retained; test assertion corrected, green typecheck recorded separately.
 
 No P0/P1 claim; later slices and final QA not yet executed. Do not interpret this interim register as complete Phase6 bug inventory.
+
+## P1-D01 — Allocated defender death makes generated save unloadable
+
+- Source: D uncommitted development snapshot on parent `bd4901c`; exact pre-fix source/log hashes in `d-red-pruned-defender-source-hashes.txt`.
+- Reproduction (CONTROLLED FIXTURE/public seams): contribute owned equipment → `die` defender → normal `simulate` crosses daily boundary and prunes nonfeatured dead NPC/life records → `deserialize(serialize(state))` rejects generated save. Original failing regression `d-red-pruned-defender-reference.txt` SHA256 `654503e39a596e3378b98d558fa4df0c30f00d5da2e82073d23070a72d54d04d`. Independent reviewer also observed this before patch; its later attempted second capture raced with fix and was not misreported as RED.
+- Root cause: validator required current `s.npcs` membership for retained crisis allocation. Legitimate historical NPC IDs below monotonic nextNpcId must survive lifecycle pruning.
+- Severity: P1, ordinary lifecycle cleanup can render internally generated saves unloadable. Does not claim observation in a normal browser playthrough.
+- Fix underway: accept bounded legitimate historical references and keep actual action→death→daily prune→reload regression. Prior over-strict test/RED/GREEN evidence retained and explicitly superseded.
+- Status: FIXED / INDEPENDENTLY VERIFIED / D ACCEPTED.
+
+## P2-D02 — Over-request incorrectly advises more farmers
+
+Oversized food submission with a negative raw forecast that could become positive gave zero-effect farmer advice. Asset guards still rejected the request atomically. Distinct over-request and actual zero-effect messages now covered by retained `d-red-food-feedback.txt`/`d-green-food-feedback.txt`, independentDreview confirmed; FIXED.
+
+## Additional harness/test failures retained
+
+- Authentic archivedV4 fixture runner emitted a Vite log before JSON. Parser failure retained in d-v4-fixtures/generation-failure.json; corrected parsing produced authenticatedsame-sourceV4 fixtures.
+- FirstD fullcheck: 473/475 passed, two testfailures from staleV4 version expectations; three assertions corrected toV5. Originald-fullcheck.txt kept, separategreen475/typecheck/build.

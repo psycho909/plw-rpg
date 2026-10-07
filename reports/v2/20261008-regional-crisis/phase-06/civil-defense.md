@@ -1,6 +1,8 @@
 # Phase 6C — Civil Defense Model
 
-Status: implementation frozen for independent review; Root has not yet released D implementation.
+Status: C independently reviewed and accepted by Root; D implementation released.
+
+Source commit: `bd4901c28ed3fb8469d6fe5c82354b4e1128691e`. C tests ran against parent `c449930520c4ef47a60de7c8f3c14867b69355f8` plus the two new source files identified below; commit bd4901c captures those exact tested/reviewed file contents. Independent review: `c-core-independent-review.md`. This does not claim a post-commit rerun or full Phase6 acceptance.
 
 ## Derived model
 

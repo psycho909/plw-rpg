@@ -19,9 +19,13 @@ Resolution / Consequences；世界危機連結 Adventure/Life/NPC/Settlement，�
 Phase7–10／V3、多新monsterfamilies、完整RTS/tactical/caravan/稅制／reconstruction／property destruction、server、nativeSafari/實機。不藉Phase6補完Phase5產品finding。
 
 ## Acceptance
-- [ ] 本slice scope具public-seam定向測試／實際evidence，失敗原始紀錄保留。
-- [ ] 各項schema/time/RNG/atomicity/history契約完整，報告不冒充正常遊玩或真人驗證。
-- [ ] Root接受此slice後才解除下一slice blocking edge。
+- [ ] 正常canonical daily runtime自resolution完成四級outcomes，不需debug／人為outcome指定；所有RNG由RandomService，單次結算keyed危機ID/phase。
+- [ ] 同seed/state/actions與跨日chunk/save-reload可重現；reload不reroll、不replay consequence/reward。
+- [ ] Civil Defense與Life/Adventure facts實際改變結果概率/成本/損失，Chief單一勝利不保證regional decisive勝利。
+- [ ] 清楚有界persistent world consequences含若干food/safety/prosperity/NPCinjury，結果有trace；不永久刪property、重建world/character/save、強制GameOver。
+- [ ] Aftermath存在可觀測recover需求與正常世界恢復過程，不能outcome當刻全部復原；cooldown避免recurring tax且後續trigger依threat/world state。
+- [ ] Midcrisis死亡/繼承與合法NPC歷史references保持世界連續；若造成NPC死亡沿用既有lifecycle。
+- [ ] Public-seam四結果/原子capacity/timeguard/recovery/save/chunk/succession定向tests及typecheck/build具實際evidence，Root接受才releaseG。
 
 ## Constraints and Decisions
 正式 [Phase6 spec](../docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md)（原文CRLF保留，SHA256 `4e7d8533181a43f66c2d51dce056407a38be34797900ed875898e4470adde640`）；A→B→C→D→E→F→G→H→I→J逐段施工，不提前水平擴張。Goblin現有Threat/Chief優先，單一crisis canonical slice，RandomService-only。Human DEFERRED / NOT APPLICABLE AT THIS STAGE，不阻擋工程QA。Low機械、Medium一般工程、Max核心／save／determinism／獨立deepreview、Root產品決策。matt-skills-curated:implement／to-tickets按docs/agents/skill-workflows.md適配既有tickets、已批准順序與驗證工作單位，不另tracker／granularity批准。QA沿用recorded_reports/原始JSONL，不新建平行framework。

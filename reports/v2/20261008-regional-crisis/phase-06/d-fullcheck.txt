@@ -1,0 +1,61 @@
+
+> plw-rpg@0.1.0 check
+> npm run test && npm run build
+
+
+> plw-rpg@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/stores/gameStore.test.ts (34 tests | 2 failed) 531ms
+     × migrates V1 without offline advancement and retains the historical world checkpoint 22ms
+     × allows explicit reset to replace corrupt data after the UI confirmation 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > migrates V1 without offline advancement and retains the historical world checkpoint
+AssertionError: expected 5 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 5
+
+ ❯ src/stores/gameStore.test.ts:127:36
+    125|     expect(game.state.worldTime).toBe(state.worldTime)
+    126|     expect(game.state.rngState).toBe(state.rngState)
+    127|     expect(game.state.saveVersion).toBe(4)
+       |                                    ^
+    128|     expect(game.speed).toBe(1)
+    129|     expect(game.offline).toBe(null)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > allows explicit reset to replace corrupt data after the UI confirmation
+AssertionError: expected 5 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 5
+
+ ❯ src/stores/gameStore.test.ts:162:76
+    160|   it('allows explicit reset to replace corrupt data after the UI confi…
+    161|     saved = '{broken'; const game = useGameStore(); game.reset()
+    162|     expect(game.save()).toBe(true); expect(JSON.parse(saved!).saveVers…
+       |                                                                            ^
+    163|     expect(game.speed).toBe(0); expect(game.state.life.openingSeen).to…
+    164|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 24 passed (25)
+      Tests  2 failed | 473 passed (475)
+   Start at  19:05:15
+   Duration  9.44s (transform 1.30s, setup 0ms, import 2.44s, tests 19.24s, environment 12ms)
+

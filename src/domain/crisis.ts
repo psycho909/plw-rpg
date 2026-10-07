@@ -1,3 +1,5 @@
+import type { EquipmentSlot, ItemInstance } from './reward'
+
 export type RegionalCrisisOutcome = 'decisive_success' | 'costly_success' | 'setback' | 'local_defeat'
 export type RegionalCrisisTriggerCondition = 'low_safety' | 'low_food' | 'chief_present'
 
@@ -17,6 +19,38 @@ export interface RegionalCrisisChiefOutcome {
   at: number
 }
 
+export interface CrisisContributionCredit {
+  donorId: string
+  amount: number
+}
+
+export interface CrisisEquipmentAllocation {
+  defenderNpcId: string
+  slot: EquipmentSlot
+  donorId: string
+  contributedAt: number
+  sourceItem: ItemInstance
+}
+
+export interface RegionalCrisisContributions {
+  equipment: CrisisEquipmentAllocation[]
+  food: { supplied: number; credits: CrisisContributionCredit[] }
+  gold: { spent: number; credits: CrisisContributionCredit[] }
+}
+
+export const REGIONAL_CRISIS_CONTRIBUTION_LIMITS = {
+  equipmentAllocations: 16,
+  foodSupply: 100,
+  gold: 100,
+  foodPerInventoryItem: 4,
+  goldPerLogisticsWorker: 5,
+  logisticsWorkers: 20,
+} as const
+
+export function emptyRegionalCrisisContributions(): RegionalCrisisContributions {
+  return { equipment: [], food: { supplied: 0, credits: [] }, gold: { spent: 0, credits: [] } }
+}
+
 interface CrisisInstance {
   id: string
   sequence: number
@@ -26,6 +60,7 @@ interface CrisisInstance {
   triggeredAt: number
   cause: RegionalCrisisCause
   chiefOutcome: RegionalCrisisChiefOutcome | null
+  contributions: RegionalCrisisContributions
 }
 
 export type RegionalCrisisState =

@@ -1,0 +1,37 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/services/saveService.test.ts -t migrates a V4 active crisis
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (93 tests | 1 failed | 92 skipped) 18ms
+     × migrates a V4 active crisis to V5 with an empty ledger and no world, time or RNG replacement 16ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates a V4 active crisis to V5 with an empty ledger and no world, time or RNG replacement
+AssertionError: expected 4 to be 5 // Object.is equality
+
+- Expected
++ Received
+
+- 5
++ 4
+
+ ❯ src/services/saveService.test.ts:51:38
+     49|     const loaded = deserialize(JSON.stringify(legacyV4))
+     50|
+     51|     expect(loaded.state.saveVersion).toBe(5)
+       |                                      ^
+     52|     expect(loaded.state.regionalCrisis).toEqual({ ...crisisBefore, con…
+     53|       equipment: [], food: { supplied: 0, credits: [] }, gold: { spent…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 92 skipped (93)
+   Start at  18:50:51
+   Duration  527ms (transform 301ms, setup 0ms, import 361ms, tests 18ms, environment 0ms)
+
