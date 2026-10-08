@@ -41,3 +41,10 @@ G scoped PASS WITH FINDINGS：49tests/build，獨立MediumReview，Chromium curr
 ## I accepted / J released
 
 11000actualresolutions（10kstratified+500pairLife supplemental）/3seeds100years，all9checkpoint reload/continuationIDs PASS；独立MediumReview PASSWITHFINDINGS。Originalsummary seedaggregation與previewp問題保留separatereanalysis corrected。非IID/normalearning/fullcraft/sharedroll；sourceinspectednocombat非instrumentedcounter。J需 latestfullregression、1200srealStress/1800sAgent、freshnormalcompletearc、journal+20khistorycloneprofiling、finaleightGates。Human DEFERRED。
+
+
+## Root J final acceptance
+
+2026-10-08 Asia/Taipei：J ACCEPTED / PASS WITH FINDINGS。完整 Regression531/type/build、真正1201.08s Stress與1800.20s Agent、20k-history profile、11k canonical resolutions/3seeds100year、六組controlledcase與normal分開、13reports及獨立QA／Root交付文件review齊備。Source bd316cb/c9fd3e未改。
+
+Stress一條正常完整arc和aftermathreload满足pair工程驗收；Agent自身完整arc未達，限制不隱藏。strictID補測rawFAILED與only-lastSavedAt差異保留，另semanticLifecycle/ReloadPASSWITHLIMITATIONS，Life支援NOTEXERCISED。I公共Life配對實際效果獨立已核；不因沒有短缺製造需求、不把等待算捐贈。Human DEFERRED，不宣告真人產品Gate。八Gate／產品finding／性能endpoint限制見final-review.md。

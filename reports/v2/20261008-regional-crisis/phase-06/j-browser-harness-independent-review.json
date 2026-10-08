@@ -1,0 +1,123 @@
+{
+  "review": "J Browser Harness Independent Review",
+  "head": "bd316cb326e5fbc20087c0154d6e3f294a5daac7",
+  "reviewBasis": "Launch-time harness snapshots and recorded outputs; untracked working-tree source at HEAD bd316cb326e5fbc20087c0154d6e3f294a5daac7. Hashes are pinned from each run sourceBefore; later shared-worktree edits are outside this review.",
+  "standards": {
+    "status": "PASS_WITH_LOW_FINDING",
+    "findings": [
+      {
+        "severity": "low",
+        "id": "STD-1",
+        "file": "reports/v2/20261008-regional-crisis/phase-06/j_browser_launcher.py",
+        "lines": [
+          101,
+          101
+        ],
+        "finding": "J launcher evidence is archived with producer phase6-g-browser-launcher.",
+        "recommendation": "Use a J-specific producer label in a later authorized change."
+      }
+    ]
+  },
+  "spec": {
+    "status": "FAIL",
+    "findings": [
+      {
+        "severity": "high",
+        "id": "SPEC-1",
+        "file": "reports/v2/20261008-regional-crisis/phase-06/j_browser_runner.py",
+        "lines": [
+          150,
+          155
+        ],
+        "finding": "Both runs fail because the requested “等待 1 日” control is absent from the live “地圖與世界” UI; the screenshot shows “繼續時間”.",
+        "evidence": [
+          "20261008T004137Z-pid49257: failed after 186.29s, requested 1200s",
+          "20261008T004137Z-pid49256: failed after 186.14s, requested 1800s"
+        ],
+        "recommendation": "Align the action with the visible canonical control and verify it in a new short run before long runs."
+      },
+      {
+        "severity": "high",
+        "id": "SPEC-2",
+        "file": "reports/v2/20261008-regional-crisis/phase-06/j_browser_runner.py",
+        "lines": [
+          467,
+          496
+        ],
+        "finding": "Runner assigns generic PASS_J_BROWSER without requiring requested real duration, all required controlled lanes, or minimum periodic metric checkpoints; it also permits NORMAL_FRESH=UNREACHED under that pass label. Root aggregate can require at least one natural arc across the run set, so this finding concerns the runner pass label, not a requirement that each individual run complete the arc.",
+        "recommendation": "Use an explicit incomplete/non-pass per-run disposition when duration, required controls, or metric checkpoints are missing; require at least one natural fresh arc in the aggregate run set."
+      },
+      {
+        "severity": "medium",
+        "id": "SPEC-3",
+        "file": "reports/v2/20261008-regional-crisis/phase-06/j_browser_runner.py",
+        "lines": [
+          465,
+          481
+        ],
+        "finding": "The checkpoint timer is first invoked after normal_lane returns (up to 180s); periodic save/reload is initialized as 300s from that later point. The first scheduled reload is therefore about 480s from actual normal-run start.",
+        "recommendation": "Anchor periodic checkpoint and save/reload cadence to actual normal-run start, as required by Root clarification."
+      }
+    ],
+    "evidenceGaps": [
+      "Neither run reached requested duration.",
+      "Zero 60-second checkpoints and periodic save/reloads.",
+      "No natural warning-to-aftermath arc or controlled fixture lanes executed.",
+      "20k exact-clone benchmark and browser-journal-growth measurement remain outside this review and pending.",
+      "The first scheduled save/reload is delayed by the 180-second normal warm-up because its timer starts afterward; both runs failed before it could run."
+    ]
+  },
+  "runs": [
+    {
+      "runId": "20261008T004137Z-pid49257",
+      "mode": "stress",
+      "requestedSeconds": 1200,
+      "actualSeconds": 186.29,
+      "status": "FAILED",
+      "failure": "AssertionError: Locator expected to be enabled",
+      "checkpoints": 0,
+      "periodicSaveReloads": 0,
+      "sourceStable": true,
+      "head": "bd316cb326e5fbc20087c0154d6e3f294a5daac7",
+      "servedAssetsVerified": true,
+      "browserErrors": false
+    },
+    {
+      "runId": "20261008T004137Z-pid49256",
+      "mode": "agent-crisis",
+      "requestedSeconds": 1800,
+      "actualSeconds": 186.14,
+      "status": "FAILED",
+      "failure": "AssertionError: Locator expected to be enabled",
+      "checkpoints": 0,
+      "periodicSaveReloads": 0,
+      "sourceStable": true,
+      "head": "bd316cb326e5fbc20087c0154d6e3f294a5daac7",
+      "servedAssetsVerified": true,
+      "browserErrors": false
+    }
+  ],
+  "build": {
+    "head": "bd316cb326e5fbc20087c0154d6e3f294a5daac7",
+    "sourceStableDuringRun": true,
+    "servedDistVerified": true,
+    "checkResults": {
+      "testsPassed": 531,
+      "testFilesPassed": 28,
+      "typecheck": "passed",
+      "productionBuild": "passed"
+    }
+  },
+  "reviewerActions": {
+    "browserRunsStarted": 0,
+    "sourceOrHelperFilesModified": 0,
+    "skill": "matt-skills-curated:code-review (c3/code-review), adapted to repository review contract: separate Standards and Spec axes, one independent reviewer context."
+  },
+  "sourceHashesBasis": "Values below are the sourceBefore hashes recorded by both launch results, not assertions about the current shared working tree.",
+  "sourceHashes": {
+    "reports/v2/20261008-regional-crisis/phase-06/j_browser_launcher.py": "428fbff3f6d35d633d923d8718f5d5456af0de274851aa2ef7baa59069e7c866",
+    "reports/v2/20261008-regional-crisis/phase-06/j_browser_runner.py": "31c650f39bc92487d2a696c88bac42113d56f73b5df28d3044714b020ecaa223",
+    "reports/v2/20261008-regional-crisis/phase-06/j_browser_support.py": "0a5ee7cf4eae755d904bd8330a6e97af574ada6c3ca520d0edd317cd24defb28",
+    "reports/v2/20261008-regional-crisis/phase-06/j_fixture_generator.py": "ad99459003741d3bb9dccccec77f2312e5020042d7f51d40a65403b9550ac84"
+  }
+}

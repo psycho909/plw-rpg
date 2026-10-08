@@ -1,0 +1,20 @@
+{
+  "sourceCommit": "bd316cb326e5fbc20087c0154d6e3f294a5daac7",
+  "finding": "Final current-projection verification found two historical latest-archive differences. Both working files equal pre-existing HEAD bytes. Original archive records retained.",
+  "items": [
+    {
+      "file": "e-source-freeze.json",
+      "previousArchivedSha256": "b234baf0476ba4ef9f0073645af9c71245999535764ef72e14d2c060c1c11506",
+      "currentAndExistingHEADSha256": "74d049096da396028ed83650b81d6791787b6c3aa1bb1fbfb3579a44789cabef",
+      "changedDuringJ": false,
+      "action": "append current already-committed bytes; retain previous archived version; no test rerun"
+    },
+    {
+      "file": "f-green-focused.txt",
+      "previousArchivedSha256": "05516e8a5676a1f2ee42e31c024d0fc9afafdaefa8c9d9788962a1104b62cdf6",
+      "currentAndExistingHEADSha256": "79ec5ea7b7cdf25fb604efa045bde1529c68724039e9cf94b57970f8f3f4d8b9",
+      "changedDuringJ": false,
+      "action": "append current already-committed bytes; retain previous archived version; no test rerun"
+    }
+  ]
+}

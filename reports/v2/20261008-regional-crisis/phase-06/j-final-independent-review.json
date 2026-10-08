@@ -1,0 +1,321 @@
+{
+  "review": "Phase6-J Independent QA Harness & Evidence Review",
+  "revision": 10,
+  "head": "bd316cb326e5fbc20087c0154d6e3f294a5daac7",
+  "sourceFingerprint": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+  "reviewer": {
+    "role": "independent final QA evidence reviewer (g6_luna_med)",
+    "participatedInConstruction": false,
+    "browserRunsStarted": 0
+  },
+  "standards": {
+    "status": "PASS_WITH_LOW_FINDING",
+    "lowFinding": "Prior STD-1 remains: j_browser_launcher.py archives J launcher evidence as producer phase6-g-browser-launcher; preserve and correct only in a separately authorized harness update.",
+    "mainRunnerSha256": "578fec5903bcc5ee8bfec3f6316dd1a1d638e62ff539e784cf116c10d59c61ec",
+    "validatorSha256": "fc1b5423a86d231439514c163ff9ac9496098ccebad40809543b170d09328d39",
+    "mainCheckpointMeasuresIndexedDbCounts": true,
+    "sourceAndBuildFrozenAcrossFormalRuns": true,
+    "runnerStaticReview": "Reviewed existing frozen main runner and acceptance validator. No source or helper edits made.",
+    "normalArcRecorder": {
+      "sha256": "5fda218320bc96536b2267e577c8d20ad035b24a8f954eb84e19391f0f6f55e5",
+      "staticReview": "Reviewed exact current hash: strict same crisis ID across required phase rows; visible UI contribution clicks and ledger before/after assertion; legal wait when no support; visible recovery and low-HP combat escape; active phase waits instead of initiating camp/chief combat. No blocker found; runtime evidence remains needed.",
+      "runtime": "No passing supplemental full-arc run. 20261008T020643Z-pid57797 stalled on unavailable warning-support policy and was intentionally stopped; 20261008T020907Z-pid58138 failed before completion. These runs are supplemental and do not replace formal stress evidence."
+    }
+  },
+  "spec": {
+    "status": "PASS_WITH_FINDINGS",
+    "offlineValidator": "PASS",
+    "formalRuns": [
+      {
+        "runId": "20261008T013358Z-pid56003",
+        "mode": "stress",
+        "requestedSeconds": 1200,
+        "actualSeconds": 1201.08,
+        "totalSeconds": 1207.49,
+        "status": "PASS_J_BROWSER_NORMAL_ARC",
+        "launcher": "COMPLETE",
+        "sourceStable": true,
+        "checkpoints": 20,
+        "maxCheckpointIntervalSeconds": 61.61,
+        "policyRows": 741,
+        "browserStorageRequestAndRejectionErrors": 0,
+        "normalArcComplete": true,
+        "arcIdentity": "inferred uninterrupted monotonic canonical phase chain; crisis ID is absent from frozen main trace",
+        "actionMatchedPhaseTrace": true,
+        "outcomeAndResolutionSummary": true,
+        "aftermathVisibleSaveReload": true,
+        "controlledLanes": "all six pass and remain separate",
+        "normalPeriodicSaveReloads": 3,
+        "crisisUiActionChoiceRows": 19,
+        "crisisUiActionChoiceBreakdown": {
+          "campRaidInitiation": 1,
+          "chiefInitiation": 1,
+          "combatAttack": 11,
+          "combatDefend": 4,
+          "combatPotion": 2
+        }
+      },
+      {
+        "runId": "20261008T013358Z-pid56004",
+        "mode": "agent-crisis",
+        "requestedSeconds": 1800,
+        "actualSeconds": 1800.2,
+        "totalSeconds": 1806.75,
+        "status": "PASS_J_BROWSER_NORMAL_ARC",
+        "launcher": "COMPLETE",
+        "sourceStable": true,
+        "checkpoints": 30,
+        "maxCheckpointIntervalSeconds": 62.09,
+        "policyRows": 1069,
+        "browserStorageRequestAndRejectionErrors": 0,
+        "normalArcComplete": false,
+        "arcIdentity": "inferred uninterrupted monotonic canonical phase chain; crisis ID is absent from frozen main trace",
+        "actionMatchedPhaseTrace": true,
+        "outcomeAndResolutionSummary": true,
+        "aftermathVisibleSaveReload": false,
+        "controlledLanes": "all six pass and remain separate",
+        "normalPeriodicSaveReloads": 5,
+        "crisisUiActionChoiceRows": 19,
+        "crisisUiActionChoiceBreakdown": {
+          "campRaidInitiation": 1,
+          "chiefInitiation": 1,
+          "combatAttack": 11,
+          "combatDefend": 4,
+          "combatPotion": 2
+        }
+      }
+    ],
+    "formalPair": {
+      "sameFrozenHead": "bd316cb326e5fbc20087c0154d6e3f294a5daac7",
+      "sameSourceFingerprint": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+      "distAsset": "C5oR9znA",
+      "atLeastOneCompleteNormalFreshArcAcrossRuns": true,
+      "allPolicyTurnsIncludeVisibleWorldAndReason": true,
+      "allCheckpointsIncludeCDPStorageJournalLatencyAndErrorSamples": true,
+      "crisisUiActionTerminology": "Policy-choice taxonomy rows, not successful contribution count: 2 initiation choices and 17 combat turns in each run.",
+      "traceContributionEvidence": "Stress normal-phase trace includes one regional-crisis.contribution.major event (event 66, Goblin camp raid text) and one resolved event (75); it does not directly establish the saved life contribution ledger or actor identity."
+    },
+    "journalGrowth": {
+      "measurement": "IndexedDB oakvale-play-journal records sampled at formal checkpoints",
+      "stress": [
+        9,
+        1135
+      ],
+      "agent": [
+        10,
+        1601
+      ],
+      "interpretation": "Observed journal record growth across each run; no error callbacks. This is measured growth, not a standalone pass/fail threshold."
+    },
+    "historyProfile": {
+      "status": "PASS",
+      "historyCount": 20000,
+      "historySha256": "171c50e5e5f09f9fdf78e1a2708cb1f75d212153a642dcdab06e1f238ec0bb26",
+      "saveBytes": 2670488,
+      "browserProfiles": 3,
+      "sourceStable": true,
+      "browserTimingsMs": {
+        "boot": [
+          443.97,
+          412.05,
+          357.39
+        ],
+        "bootMedian": 412.05,
+        "uiActions": [
+          108.67,
+          82.27,
+          169.2
+        ],
+        "uiActionMedian": 108.67,
+        "saveWrites": [
+          10.6,
+          10.9,
+          11.1
+        ],
+        "saveWriteMedian": 10.9,
+        "engineMoves": [
+          0.5813289999999824,
+          0.23359900000002654
+        ],
+        "campRaidPreflight": {
+          "elapsedMs": 22.76007500000003,
+          "result": "empty/rejected; not evidence of a successful action"
+        }
+      }
+    },
+    "earlierFailures": "Preserved, including selector/modal failures, 186s/339s SIGKILL, 493s modal-intercepted formal pair, and supplemental normal-arc policy stalls/failure.",
+    "humanValidation": "DEFERRED / NOT APPLICABLE AT THIS STAGE; no product or fun acceptance claimed.",
+    "findings": [
+      {
+        "id": "QA-1",
+        "severity": "low",
+        "evidence": "Frozen main trace omits regionalCrisis.id. The accepted stress arc uses uninterrupted monotonic canonical phases; contribution.major event 66 and resolution event 75 are visible, but exact same-ID and saved life ledger are not directly exposed in the frozen run trace.",
+        "impact": "The formal complete arc is accepted with inferred identity; standalone strict-ID/life-ledger recorder requires its own completed runtime evidence."
+      },
+      {
+        "id": "QA-2",
+        "severity": "low",
+        "evidence": "The agent run records phase/outcome and 19 crisis-phase policy-choice rows (2 initiation choices plus 17 combat turns), but no aftermath save/reload. The validator’s count is not a count of persisted contributions. The paired basic J arc gate is met by the stress run.",
+        "impact": "Agent lane does not independently prove aftermath reload or contribution-ledger state."
+      },
+      {
+        "id": "QA-3",
+        "severity": "low",
+        "evidence": "Stress final checkpoint at ~1201s has 4598 DOM nodes / 922 JS listeners versus 2140 / 442 at the preceding ~1151s checkpoint; openDialogs=0. The single terminal sample has no following checkpoint. Agent final sample returns to 2148 / 441. Heap spikes in both lanes oscillate and repeatedly drop near 6–7 MB; journalPending remains 0 and save/reload latency stays within observed ranges.",
+        "impact": "No persistent §78 symptom is demonstrated; do not infer a leak or automatically require 60–120m. Keep the stress terminal sample unresolved; targeted follow-up can distinguish transient context retention from persistent detached DOM."
+      },
+      {
+        "id": "QA-4",
+        "severity": "low",
+        "evidence": "Supplemental run 20261008T035215Z-pid60577 retains raw FAILED because its strict parsed-save comparator detected lastSavedAt changing 1791431561867→1791431561991. Independent offline semantic comparison verified all other parsed save fields identical, including worldTime, RNG, seed, exact regionalCrisis/contribution ledger, event sequence, and history.",
+        "impact": "Classify lifecycle/reload as PASS WITH LIMITATIONS while preserving raw FAILED as a writer-metadata false negative; this is not world drift."
+      },
+      {
+        "id": "QA-5",
+        "severity": "scope_limitation",
+        "evidence": "Supplemental run ledger remained empty before/after; eligible player-owned unequipped gear count was zero; recorded actions were legal waits through the crisis phases.",
+        "impact": "LifeContribution is NOT EXERCISED for this local scenario. Existing I 500-pair evidence and the normal stress camp arc remain separate evidence; NPC resolution is not player contribution."
+      }
+    ],
+    "performance": {
+      "stress": {
+        "heapUsedBytesFirstLastMax": [
+          4244480,
+          10572900,
+          24641584
+        ],
+        "domNodesFirstLast": [
+          2163,
+          4598
+        ],
+        "listenersFirstLast": [
+          445,
+          922
+        ],
+        "terminalPrecedingCheckpoint": [
+          2140,
+          442
+        ],
+        "terminalOpenDialogs": 0,
+        "observation": "heap oscillates and repeatedly returns near 6–7 MB; terminal DOM/listener spike is one sample with no post-terminal sample to establish persistence"
+      },
+      "agent": {
+        "heapUsedBytesFirstLastMax": [
+          4250488,
+          6970104,
+          33482784
+        ],
+        "domNodesFirstLast": [
+          2163,
+          2148
+        ],
+        "listenersFirstLast": [
+          445,
+          441
+        ],
+        "peakDomListener": [
+          3992,
+          665
+        ],
+        "terminalOpenDialogs": 0,
+        "observation": "heap oscillates with repeated returns near 6–7 MB; DOM/listeners return near baseline"
+      },
+      "indexedDbRecords": {
+        "stress": [
+          9,
+          1135
+        ],
+        "agent": [
+          10,
+          1601
+        ]
+      },
+      "journalPending": "0 in all formal checkpoints",
+      "saveReloadLatencyMs": {
+        "stress": [
+          300.53,
+          315.43,
+          328.57
+        ],
+        "agent": [
+          277.09,
+          301.56,
+          342.76
+        ]
+      },
+      "extensionRecommendation": "No automatic 60–120 minute extension under spec §78: no demonstrated persistent heap rise, monotonic DOM/listener growth, journal backlog, save latency degradation, duplicate crisis, or reload drift. Preserve the stress terminal DOM/listener sample as an unresolved anomaly; a targeted post-reload checkpoint is appropriate if available. A single final sample with openDialogs=0 cannot distinguish transient retained browser context from persistent detached DOM."
+    },
+    "supplementalNormalArc": {
+      "runId": "20261008T035215Z-pid60577",
+      "rawRunStatus": "FAILED (preserved unchanged)",
+      "sourceHead": "bd316cb326e5fbc20087c0154d6e3f294a5daac7",
+      "sourceFingerprint": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+      "normalFresh": true,
+      "fixtureInjected": false,
+      "directMutation": false,
+      "durationSeconds": 26.26,
+      "browserErrors": 0,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phases": [
+        "warning",
+        "preparation",
+        "active",
+        "aftermath"
+      ],
+      "sameCrisisIdAcrossObservedPhases": true,
+      "outcome": "decisive_success",
+      "reloadSemanticComparison": {
+        "status": "PASS_WITH_LIMITATIONS",
+        "rawBeforeSha256": "e9b04299c18236ad97c29b7e44f57c7f7f47e32f7707333b782f4791dfc34e4b",
+        "rawAfterSha256": "9cd37a3736d4c167c15f48eaa777df3655c6a2f9da5685ef1312b1f6fb2a0784",
+        "onlyDifference": "lastSavedAt 1791431561867 → 1791431561991",
+        "allFieldsEqualWhenLastSavedAtExcluded": true,
+        "worldTimeEqual": true,
+        "rngStateEqual": true,
+        "worldSeedEqual": true,
+        "regionalCrisisAndIdEqual": true,
+        "contributionLedgerEqual": true,
+        "historyAndEventSequenceEqual": true,
+        "fullStateCanonicalEqualExceptWriterMetadata": true
+      },
+      "lifeContribution": {
+        "status": "NOT_EXERCISED",
+        "beforeLedger": {
+          "equipment": [],
+          "food": {
+            "supplied": 0,
+            "credits": []
+          },
+          "gold": {
+            "spent": 0,
+            "credits": []
+          }
+        },
+        "afterLedger": {
+          "equipment": [],
+          "food": {
+            "supplied": 0,
+            "credits": []
+          },
+          "gold": {
+            "spent": 0,
+            "credits": []
+          }
+        },
+        "eligiblePlayerOwnedUnequippedGear": 0,
+        "interpretation": "Actions were visible legal day waits through warning/preparation and active; no feasible UI food/gold support or eligible player gear was evidenced. NPC automatic resolution is not player LifeContribution."
+      },
+      "assessment": "Lifecycle/reload PASS WITH LIMITATIONS; LifeContribution NOT EXERCISED; this does not upgrade the raw FAILED status or make the whole product finding a pass."
+    }
+  },
+  "verification": {
+    "command": "python3 reports/v2/20261008-regional-crisis/phase-06/review/j_browser_acceptance_validator.py --stress reports/v2/20261008-regional-crisis/phase-06/j-browser-runs/20261008T013358Z-pid56003 --agent reports/v2/20261008-regional-crisis/phase-06/j-browser-runs/20261008T013358Z-pid56004",
+    "result": "PASS; reviewer ran offline validator only and did not start a browser.",
+    "supplemental": {
+      "method": "Offline decompression and semantic comparison of full-save-policy-trace before/after reload; cross-checked run-status.json, aftermath-save-reload.jsonl, actions.jsonl, and full-save-policy-trace.jsonl.",
+      "result": "Only lastSavedAt differs; all other full-save fields equal. No browser retry or raw artifact edits."
+    }
+  },
+  "disposition": "Accept J engineering QA evidence with findings; this does not authorize product/human acceptance or release beyond the ticket gates."
+}

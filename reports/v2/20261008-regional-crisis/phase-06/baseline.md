@@ -57,3 +57,13 @@ Relevant paths were inspected directly; source remains unchanged.
 ## Limitations / handoff
 
 This is static source/test audit plus full unit/type/build check. It does not establish normal play outcomes, crisis balance, human preference, browser behavior, or Phase 6 implementation readiness by itself. Root must assess the evidence and accept A before the B ticket's blocker is released. All Phase 4/5 raw failed records, corrected runs, and product findings retain their original status.
+
+## J latest source/build baseline — 2026-10-08
+
+This is a new J snapshot; the Phase 6-A baseline and its 425-test historical result above remain unchanged. J ran the full `npm run check` once against current branch `v2x/reward-core`, HEAD `bd316cb326e5fbc20087c0154d6e3f294a5daac7`, from 2026-10-08T00:33:37Z through 00:33:58Z UTC. Exit code 0. Environment: Debian GNU/Linux 13 (trixie), Linux x86_64, kernel `6.18.44`; Node `v24.19.0`, npm `11.9.0`, Python `3.12.14`, Vitest `4.1.11`, Vite `7.3.6`; Chromium `/usr/bin/chromium` version `151.0.7922.173`.
+
+The full suite reported **28/28 files and 531/531 tests passed**, with no failures or skips; `vue-tsc --noEmit` and production Vite build passed. The recursive sorted `src` map contains 91 files and its compact-JSON SHA-256 fingerprint is `c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb` both before and after. Package/lock/spec/ticket/build-input hashes and the per-file source map are preserved in [`j-regression-pre.json`](j-regression-run/j-regression-pre.json) and [`j-build-status.json`](j-build-status.json); exact stdout/stderr and command exit evidence are in `j-regression-run/`.
+
+The current production build generated `dist/index.html` SHA-256 `2e91f5d3576d38eb50b492546391a6a3f0ed513afd93e2c6f79e2971290e6875`, `dist/assets/index-C5oR9znA.js` SHA-256 `b3ad26fd438aaffec0176bfa43faf3f253f66dd00eec98ad119cf0527ee99b9f`, and `dist/assets/index-DmiWzmoy.css` SHA-256 `b76cc82a4d2fccd3ef0737700963ccae4aba6a3fedda8c26cc82eb30e7f86870`. This run executed the production build against the frozen current source; resulting bytes equal the pre-run `dist` contents. Browser-runner helper hashes are in `j-build-status.json`.
+
+The application source and root docs/tickets were unchanged. New J evidence and the Medium-owned browser harness/helper files are expected untracked QA artifacts; this is a regression/build baseline only, not final Phase 6 acceptance. Human validation remains **DEFERRED / NOT APPLICABLE AT THIS STAGE**.

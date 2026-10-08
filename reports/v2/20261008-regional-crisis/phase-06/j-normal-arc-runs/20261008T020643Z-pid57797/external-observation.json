@@ -1,0 +1,37 @@
+{
+  "runId": "20261008T020643Z-pid57797",
+  "recordedAtUTC": "2026-10-08T02:09:00Z",
+  "classification": "INCOMPLETE_QA_POLICY_STALL",
+  "cause": "Normal-arc supplemental policy returned inspect_crisis_report_no_available_support in warning without a legal wait, so worldTime stayed unchanged and the same action repeated. No application error or browser callback was observed.",
+  "observed": {
+    "normalFresh": true,
+    "fixtureInjected": false,
+    "directMutation": false,
+    "worldSeed": 909,
+    "crisisId": "goblin-regional:0000038d:1",
+    "policyTurns": 500,
+    "waitedDays": null,
+    "lastAction": "inspect_crisis_report_no_available_support",
+    "lastPhaseBefore": "warning",
+    "worldTimeBefore": 179040,
+    "worldTimeAfter": 179040,
+    "errors": {
+      "page": [],
+      "console": [],
+      "request": [],
+      "http": []
+    },
+    "lastSupervisor": {
+      "atUTC": "2026-10-08T02:08:03.429394+00:00",
+      "turn": 501,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    }
+  },
+  "termination": "Intentional process-group SIGTERM after no-progress loop was confirmed; the original run-status.json remains IN_PROGRESS and has not been rewritten as a pass/final runner result.",
+  "correction": "The isolated supplemental recorder now follows an unavailable warning/preparation support action with the visible legal one-day Traveler Notes wait; main runner/source were not changed."
+}

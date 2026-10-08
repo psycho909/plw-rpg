@@ -1,0 +1,5056 @@
+{
+  "status": "IN_PROGRESS",
+  "runId": "20261008T020643Z-pid57797",
+  "mode": "arc",
+  "head": "bd316cb326e5fbc20087c0154d6e3f294a5daac7",
+  "sourceFingerprint": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+  "buildStatusSha256": "8e338e86b7bbea441d8c211d871a67fa727db8325b5f535724022d8488814a31",
+  "distFingerprint": "2214607f93c555fe64672f75bca427ad6c0d8fef02a835219a3fcb2a7568a137",
+  "ownedFilesSha256": {
+    "reports/v2/20261008-regional-crisis/phase-06/j_normal_arc_recorder.py": "1a29ffb8450b6275f18003cb33ff466fb5883562e9c5beb720a47b6e2da1788a",
+    "reports/v2/20261008-regional-crisis/phase-06/j_browser_support.py": "0a5ee7cf4eae755d904bd8330a6e97af574ada6c3ca520d0edd317cd24defb28"
+  },
+  "maxDays": 600,
+  "maxSeconds": 900,
+  "startUTC": "2026-10-08T02:06:43.754822+00:00",
+  "normalFresh": true,
+  "fixtureInjected": false,
+  "directMutation": false,
+  "worldSeed": 909,
+  "crisisId": "goblin-regional:0000038d:1",
+  "policyTurns": 500,
+  "crisisActions": [],
+  "pendingChiefChallenge": null,
+  "phaseSequence": [
+    {
+      "atUTC": "2026-10-08T02:06:45.178424+00:00",
+      "turn": 1,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 480,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:45.395716+00:00",
+      "turn": 2,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 1920,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:45.578564+00:00",
+      "turn": 3,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 3360,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:45.776077+00:00",
+      "turn": 4,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 4800,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:45.964394+00:00",
+      "turn": 5,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 6240,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:46.151412+00:00",
+      "turn": 6,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 7680,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:46.351678+00:00",
+      "turn": 7,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 9120,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:46.566997+00:00",
+      "turn": 8,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 10560,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:46.761547+00:00",
+      "turn": 9,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 12000,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:46.945878+00:00",
+      "turn": 10,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 13440,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:47.129805+00:00",
+      "turn": 11,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 14880,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:47.318746+00:00",
+      "turn": 12,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 16320,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:47.514032+00:00",
+      "turn": 13,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 17760,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:47.715216+00:00",
+      "turn": 14,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 19200,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:47.950484+00:00",
+      "turn": 15,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 20640,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:48.197927+00:00",
+      "turn": 16,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 22080,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:48.403981+00:00",
+      "turn": 17,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 23520,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:48.609195+00:00",
+      "turn": 18,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 24960,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:48.802653+00:00",
+      "turn": 19,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 26400,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:48.997391+00:00",
+      "turn": 20,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 27840,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:49.158904+00:00",
+      "turn": 21,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 29280,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:49.345045+00:00",
+      "turn": 22,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 30720,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:49.532311+00:00",
+      "turn": 23,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 32160,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:49.725788+00:00",
+      "turn": 24,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 33600,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:49.913265+00:00",
+      "turn": 25,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 35040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:50.096200+00:00",
+      "turn": 26,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 36480,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:50.258921+00:00",
+      "turn": 27,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 37920,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:50.443304+00:00",
+      "turn": 28,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 39360,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:50.629807+00:00",
+      "turn": 29,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 40800,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:50.812509+00:00",
+      "turn": 30,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 42240,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:50.997478+00:00",
+      "turn": 31,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 43680,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:51.183132+00:00",
+      "turn": 32,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 45120,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:51.377628+00:00",
+      "turn": 33,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 46560,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:51.562167+00:00",
+      "turn": 34,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 48000,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:51.729325+00:00",
+      "turn": 35,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 49440,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:51.919657+00:00",
+      "turn": 36,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 50880,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:52.115408+00:00",
+      "turn": 37,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 52320,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:52.299371+00:00",
+      "turn": 38,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 53760,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:52.480348+00:00",
+      "turn": 39,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 55200,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:52.645528+00:00",
+      "turn": 40,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 56640,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:52.813610+00:00",
+      "turn": 41,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 58080,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:52.993438+00:00",
+      "turn": 42,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 59520,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:53.175387+00:00",
+      "turn": 43,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 60960,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:53.361175+00:00",
+      "turn": 44,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 62400,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:53.554710+00:00",
+      "turn": 45,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 63840,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:53.746487+00:00",
+      "turn": 46,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 65280,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:53.912928+00:00",
+      "turn": 47,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 66720,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:54.077276+00:00",
+      "turn": 48,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 68160,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:54.260937+00:00",
+      "turn": 49,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 69600,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:54.425354+00:00",
+      "turn": 50,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 71040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:54.617792+00:00",
+      "turn": 51,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 72480,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:54.811209+00:00",
+      "turn": 52,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 73920,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:54.981718+00:00",
+      "turn": 53,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 75360,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:55.161501+00:00",
+      "turn": 54,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 76800,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:55.327959+00:00",
+      "turn": 55,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 78240,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:55.520407+00:00",
+      "turn": 56,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 79680,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:55.712394+00:00",
+      "turn": 57,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 81120,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:55.876941+00:00",
+      "turn": 58,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 82560,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:56.061316+00:00",
+      "turn": 59,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 84000,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:56.248906+00:00",
+      "turn": 60,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 85440,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:56.455206+00:00",
+      "turn": 61,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 86880,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:56.651486+00:00",
+      "turn": 62,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 88320,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:56.849687+00:00",
+      "turn": 63,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 89760,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:57.049538+00:00",
+      "turn": 64,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 91200,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:57.215593+00:00",
+      "turn": 65,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 92640,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:57.376610+00:00",
+      "turn": 66,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 94080,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:57.546093+00:00",
+      "turn": 67,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 95520,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:57.710240+00:00",
+      "turn": 68,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 96960,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:57.880447+00:00",
+      "turn": 69,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 98400,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:58.050916+00:00",
+      "turn": 70,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 99840,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:58.232399+00:00",
+      "turn": 71,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 101280,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:58.406447+00:00",
+      "turn": 72,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 102720,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:58.577376+00:00",
+      "turn": 73,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 104160,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:58.741939+00:00",
+      "turn": 74,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 105600,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:58.910530+00:00",
+      "turn": 75,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 107040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:59.077820+00:00",
+      "turn": 76,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 108480,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:59.244442+00:00",
+      "turn": 77,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 109920,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:59.412596+00:00",
+      "turn": 78,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 111360,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:59.580173+00:00",
+      "turn": 79,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 112800,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:59.760357+00:00",
+      "turn": 80,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 114240,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:06:59.928824+00:00",
+      "turn": 81,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 115680,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:00.109888+00:00",
+      "turn": 82,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 117120,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:00.303679+00:00",
+      "turn": 83,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 118560,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:00.507300+00:00",
+      "turn": 84,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 120000,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:00.700383+00:00",
+      "turn": 85,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 121440,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:00.894322+00:00",
+      "turn": 86,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 122880,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:01.063859+00:00",
+      "turn": 87,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 124320,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:01.231621+00:00",
+      "turn": 88,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 125760,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:01.394089+00:00",
+      "turn": 89,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 127200,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:01.576389+00:00",
+      "turn": 90,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 128640,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:01.746136+00:00",
+      "turn": 91,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 130080,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:01.930716+00:00",
+      "turn": 92,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 131520,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:02.096965+00:00",
+      "turn": 93,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 132960,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:02.285495+00:00",
+      "turn": 94,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 134400,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:02.472106+00:00",
+      "turn": 95,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 135840,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:02.673052+00:00",
+      "turn": 96,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 137280,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:02.873288+00:00",
+      "turn": 97,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 138720,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:03.074447+00:00",
+      "turn": 98,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 140160,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:03.275339+00:00",
+      "turn": 99,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 141600,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:03.472111+00:00",
+      "turn": 100,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 143040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:03.690459+00:00",
+      "turn": 101,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 144480,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:03.922111+00:00",
+      "turn": 102,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 145920,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:04.193794+00:00",
+      "turn": 103,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 147360,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:04.424787+00:00",
+      "turn": 104,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 148800,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:04.674652+00:00",
+      "turn": 105,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 150240,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:04.908481+00:00",
+      "turn": 106,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 151680,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:05.144867+00:00",
+      "turn": 107,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 153120,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:05.315594+00:00",
+      "turn": 108,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 154560,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:05.514820+00:00",
+      "turn": 109,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 156000,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:05.677470+00:00",
+      "turn": 110,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 157440,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:05.862524+00:00",
+      "turn": 111,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 158880,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:06.033888+00:00",
+      "turn": 112,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 160320,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:06.219878+00:00",
+      "turn": 113,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 161760,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:06.397106+00:00",
+      "turn": 114,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 163200,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:06.561744+00:00",
+      "turn": 115,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 164640,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:06.729376+00:00",
+      "turn": 116,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 166080,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:06.894252+00:00",
+      "turn": 117,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 167520,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:07.083753+00:00",
+      "turn": 118,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 168960,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:07.280939+00:00",
+      "turn": 119,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 170400,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:07.445026+00:00",
+      "turn": 120,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 171840,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:07.619285+00:00",
+      "turn": 121,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 173280,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:07.814607+00:00",
+      "turn": 122,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 174720,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:07.988579+00:00",
+      "turn": 123,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 176160,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:08.172439+00:00",
+      "turn": 124,
+      "worldSeed": 909,
+      "crisisId": null,
+      "phase": "dormant",
+      "worldTime": 177600,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:08.349581+00:00",
+      "turn": 125,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:08.508443+00:00",
+      "turn": 126,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:08.667082+00:00",
+      "turn": 127,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:08.826762+00:00",
+      "turn": 128,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:08.988444+00:00",
+      "turn": 129,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:09.168532+00:00",
+      "turn": 130,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:09.330489+00:00",
+      "turn": 131,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:09.471796+00:00",
+      "turn": 132,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:09.620519+00:00",
+      "turn": 133,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:09.769266+00:00",
+      "turn": 134,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:09.919085+00:00",
+      "turn": 135,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:10.082976+00:00",
+      "turn": 136,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:10.241181+00:00",
+      "turn": 137,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:10.430552+00:00",
+      "turn": 138,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:10.566270+00:00",
+      "turn": 139,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:10.707853+00:00",
+      "turn": 140,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:10.852216+00:00",
+      "turn": 141,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:11.006570+00:00",
+      "turn": 142,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:11.166454+00:00",
+      "turn": 143,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:11.330496+00:00",
+      "turn": 144,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:11.487714+00:00",
+      "turn": 145,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:11.631250+00:00",
+      "turn": 146,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:11.768818+00:00",
+      "turn": 147,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:11.914255+00:00",
+      "turn": 148,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:12.051300+00:00",
+      "turn": 149,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:12.205579+00:00",
+      "turn": 150,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:12.348128+00:00",
+      "turn": 151,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:12.486256+00:00",
+      "turn": 152,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:12.641532+00:00",
+      "turn": 153,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:12.782995+00:00",
+      "turn": 154,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:12.916315+00:00",
+      "turn": 155,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:13.048541+00:00",
+      "turn": 156,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:13.186910+00:00",
+      "turn": 157,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:13.332169+00:00",
+      "turn": 158,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:13.484313+00:00",
+      "turn": 159,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:13.631713+00:00",
+      "turn": 160,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:13.765378+00:00",
+      "turn": 161,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:13.900757+00:00",
+      "turn": 162,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:14.053366+00:00",
+      "turn": 163,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:14.197862+00:00",
+      "turn": 164,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:14.334829+00:00",
+      "turn": 165,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:14.505538+00:00",
+      "turn": 166,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:14.653491+00:00",
+      "turn": 167,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:14.806429+00:00",
+      "turn": 168,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:14.969469+00:00",
+      "turn": 169,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:15.115720+00:00",
+      "turn": 170,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:15.250475+00:00",
+      "turn": 171,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:15.402571+00:00",
+      "turn": 172,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:15.555665+00:00",
+      "turn": 173,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:15.709934+00:00",
+      "turn": 174,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:15.849961+00:00",
+      "turn": 175,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:15.982664+00:00",
+      "turn": 176,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:16.133224+00:00",
+      "turn": 177,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:16.281898+00:00",
+      "turn": 178,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:16.415527+00:00",
+      "turn": 179,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:16.549121+00:00",
+      "turn": 180,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:16.688890+00:00",
+      "turn": 181,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:16.834676+00:00",
+      "turn": 182,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:16.965885+00:00",
+      "turn": 183,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:17.095761+00:00",
+      "turn": 184,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:17.244580+00:00",
+      "turn": 185,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:17.386894+00:00",
+      "turn": 186,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:17.532430+00:00",
+      "turn": 187,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:17.650493+00:00",
+      "turn": 188,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:17.796518+00:00",
+      "turn": 189,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:17.935224+00:00",
+      "turn": 190,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:18.081032+00:00",
+      "turn": 191,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:18.215321+00:00",
+      "turn": 192,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:18.349706+00:00",
+      "turn": 193,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:18.500266+00:00",
+      "turn": 194,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:18.661030+00:00",
+      "turn": 195,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:18.806598+00:00",
+      "turn": 196,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:18.962284+00:00",
+      "turn": 197,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:19.096532+00:00",
+      "turn": 198,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:19.227365+00:00",
+      "turn": 199,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:19.369040+00:00",
+      "turn": 200,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:19.515752+00:00",
+      "turn": 201,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:19.659277+00:00",
+      "turn": 202,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:19.797449+00:00",
+      "turn": 203,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:19.933366+00:00",
+      "turn": 204,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:20.086112+00:00",
+      "turn": 205,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:20.248945+00:00",
+      "turn": 206,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:20.403943+00:00",
+      "turn": 207,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:20.559825+00:00",
+      "turn": 208,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:20.699566+00:00",
+      "turn": 209,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:20.833123+00:00",
+      "turn": 210,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:20.964180+00:00",
+      "turn": 211,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:21.098250+00:00",
+      "turn": 212,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:21.235228+00:00",
+      "turn": 213,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:21.387413+00:00",
+      "turn": 214,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:21.534596+00:00",
+      "turn": 215,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:21.683410+00:00",
+      "turn": 216,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:21.829761+00:00",
+      "turn": 217,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:21.964880+00:00",
+      "turn": 218,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:22.096910+00:00",
+      "turn": 219,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:22.236396+00:00",
+      "turn": 220,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:22.386575+00:00",
+      "turn": 221,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:22.529210+00:00",
+      "turn": 222,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:22.666238+00:00",
+      "turn": 223,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:22.814151+00:00",
+      "turn": 224,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:22.962539+00:00",
+      "turn": 225,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:23.100453+00:00",
+      "turn": 226,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:23.254721+00:00",
+      "turn": 227,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:23.399156+00:00",
+      "turn": 228,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:23.545872+00:00",
+      "turn": 229,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:23.680992+00:00",
+      "turn": 230,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:23.810997+00:00",
+      "turn": 231,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:23.947945+00:00",
+      "turn": 232,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:24.079803+00:00",
+      "turn": 233,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:24.222164+00:00",
+      "turn": 234,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:24.371888+00:00",
+      "turn": 235,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:24.515973+00:00",
+      "turn": 236,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:24.668349+00:00",
+      "turn": 237,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:24.814153+00:00",
+      "turn": 238,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:24.953950+00:00",
+      "turn": 239,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:25.095753+00:00",
+      "turn": 240,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:25.231666+00:00",
+      "turn": 241,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:25.363725+00:00",
+      "turn": 242,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:25.496039+00:00",
+      "turn": 243,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:25.629726+00:00",
+      "turn": 244,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:25.768333+00:00",
+      "turn": 245,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:25.911439+00:00",
+      "turn": 246,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:26.050117+00:00",
+      "turn": 247,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:26.195528+00:00",
+      "turn": 248,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:26.327839+00:00",
+      "turn": 249,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:26.461719+00:00",
+      "turn": 250,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:26.596567+00:00",
+      "turn": 251,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:26.730830+00:00",
+      "turn": 252,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:26.873488+00:00",
+      "turn": 253,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:27.017164+00:00",
+      "turn": 254,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:27.181954+00:00",
+      "turn": 255,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:27.328307+00:00",
+      "turn": 256,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:27.468681+00:00",
+      "turn": 257,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:27.613563+00:00",
+      "turn": 258,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:27.749978+00:00",
+      "turn": 259,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:27.905909+00:00",
+      "turn": 260,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:28.053536+00:00",
+      "turn": 261,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:28.202836+00:00",
+      "turn": 262,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:28.355437+00:00",
+      "turn": 263,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:28.509591+00:00",
+      "turn": 264,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:28.647647+00:00",
+      "turn": 265,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:28.794101+00:00",
+      "turn": 266,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:28.932422+00:00",
+      "turn": 267,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:29.080712+00:00",
+      "turn": 268,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:29.225610+00:00",
+      "turn": 269,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:29.366122+00:00",
+      "turn": 270,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:29.513188+00:00",
+      "turn": 271,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:29.643737+00:00",
+      "turn": 272,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:29.779470+00:00",
+      "turn": 273,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:29.911135+00:00",
+      "turn": 274,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:30.049254+00:00",
+      "turn": 275,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:30.208969+00:00",
+      "turn": 276,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:30.366713+00:00",
+      "turn": 277,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:30.510722+00:00",
+      "turn": 278,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:30.647296+00:00",
+      "turn": 279,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:30.783807+00:00",
+      "turn": 280,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:30.934123+00:00",
+      "turn": 281,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:31.081125+00:00",
+      "turn": 282,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:31.216536+00:00",
+      "turn": 283,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:31.345978+00:00",
+      "turn": 284,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:31.479577+00:00",
+      "turn": 285,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:31.613844+00:00",
+      "turn": 286,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:31.745917+00:00",
+      "turn": 287,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:31.860809+00:00",
+      "turn": 288,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:31.996379+00:00",
+      "turn": 289,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:32.133547+00:00",
+      "turn": 290,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:32.279772+00:00",
+      "turn": 291,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:32.416126+00:00",
+      "turn": 292,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:32.568028+00:00",
+      "turn": 293,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:32.712855+00:00",
+      "turn": 294,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:32.853646+00:00",
+      "turn": 295,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:33.005976+00:00",
+      "turn": 296,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:33.154812+00:00",
+      "turn": 297,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:33.309011+00:00",
+      "turn": 298,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:33.454763+00:00",
+      "turn": 299,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:33.602648+00:00",
+      "turn": 300,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:33.759364+00:00",
+      "turn": 301,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:33.912994+00:00",
+      "turn": 302,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:34.047483+00:00",
+      "turn": 303,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:34.177865+00:00",
+      "turn": 304,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:34.313842+00:00",
+      "turn": 305,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:34.447811+00:00",
+      "turn": 306,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:34.587218+00:00",
+      "turn": 307,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:34.734112+00:00",
+      "turn": 308,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:34.881355+00:00",
+      "turn": 309,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:35.049968+00:00",
+      "turn": 310,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:35.206239+00:00",
+      "turn": 311,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:35.350096+00:00",
+      "turn": 312,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:35.504077+00:00",
+      "turn": 313,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:35.658560+00:00",
+      "turn": 314,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:35.799078+00:00",
+      "turn": 315,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:35.947345+00:00",
+      "turn": 316,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:36.066038+00:00",
+      "turn": 317,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:36.203703+00:00",
+      "turn": 318,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:36.346540+00:00",
+      "turn": 319,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:36.488841+00:00",
+      "turn": 320,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:36.636843+00:00",
+      "turn": 321,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:36.787828+00:00",
+      "turn": 322,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:36.946989+00:00",
+      "turn": 323,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:37.079944+00:00",
+      "turn": 324,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:37.216857+00:00",
+      "turn": 325,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:37.368552+00:00",
+      "turn": 326,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:37.516099+00:00",
+      "turn": 327,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:37.665095+00:00",
+      "turn": 328,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:37.819194+00:00",
+      "turn": 329,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:37.968743+00:00",
+      "turn": 330,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:38.125716+00:00",
+      "turn": 331,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:38.273299+00:00",
+      "turn": 332,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:38.416320+00:00",
+      "turn": 333,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:38.570154+00:00",
+      "turn": 334,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:38.720667+00:00",
+      "turn": 335,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:38.868825+00:00",
+      "turn": 336,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:39.013551+00:00",
+      "turn": 337,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:39.150990+00:00",
+      "turn": 338,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:39.305140+00:00",
+      "turn": 339,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:39.449786+00:00",
+      "turn": 340,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:39.604867+00:00",
+      "turn": 341,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:39.751344+00:00",
+      "turn": 342,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:39.904182+00:00",
+      "turn": 343,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:40.048354+00:00",
+      "turn": 344,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:40.230281+00:00",
+      "turn": 345,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:40.401520+00:00",
+      "turn": 346,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:40.563391+00:00",
+      "turn": 347,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:40.721863+00:00",
+      "turn": 348,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:40.866153+00:00",
+      "turn": 349,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:41.023677+00:00",
+      "turn": 350,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:41.169853+00:00",
+      "turn": 351,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:41.327936+00:00",
+      "turn": 352,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:41.473558+00:00",
+      "turn": 353,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:41.620319+00:00",
+      "turn": 354,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:41.770746+00:00",
+      "turn": 355,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:41.926620+00:00",
+      "turn": 356,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:42.079415+00:00",
+      "turn": 357,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:42.222247+00:00",
+      "turn": 358,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:42.372815+00:00",
+      "turn": 359,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:42.520434+00:00",
+      "turn": 360,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:42.670249+00:00",
+      "turn": 361,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:42.819402+00:00",
+      "turn": 362,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:42.972972+00:00",
+      "turn": 363,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:43.121878+00:00",
+      "turn": 364,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:43.274717+00:00",
+      "turn": 365,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:43.420978+00:00",
+      "turn": 366,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:43.564993+00:00",
+      "turn": 367,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:43.713594+00:00",
+      "turn": 368,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:43.853502+00:00",
+      "turn": 369,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:44.010487+00:00",
+      "turn": 370,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:44.149584+00:00",
+      "turn": 371,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:44.277191+00:00",
+      "turn": 372,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:44.415081+00:00",
+      "turn": 373,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:44.550503+00:00",
+      "turn": 374,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:44.707169+00:00",
+      "turn": 375,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:44.864453+00:00",
+      "turn": 376,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:45.016840+00:00",
+      "turn": 377,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:45.163280+00:00",
+      "turn": 378,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:45.319861+00:00",
+      "turn": 379,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:45.469924+00:00",
+      "turn": 380,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:45.624594+00:00",
+      "turn": 381,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:45.768383+00:00",
+      "turn": 382,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:45.916140+00:00",
+      "turn": 383,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:46.070072+00:00",
+      "turn": 384,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:46.218014+00:00",
+      "turn": 385,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:46.370244+00:00",
+      "turn": 386,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:46.517206+00:00",
+      "turn": 387,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:46.664742+00:00",
+      "turn": 388,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:46.795112+00:00",
+      "turn": 389,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:46.931486+00:00",
+      "turn": 390,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:47.065599+00:00",
+      "turn": 391,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:47.233890+00:00",
+      "turn": 392,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:47.385780+00:00",
+      "turn": 393,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:47.532645+00:00",
+      "turn": 394,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:47.680659+00:00",
+      "turn": 395,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:47.834773+00:00",
+      "turn": 396,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:47.984447+00:00",
+      "turn": 397,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:48.128955+00:00",
+      "turn": 398,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:48.269102+00:00",
+      "turn": 399,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:48.419328+00:00",
+      "turn": 400,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:48.568267+00:00",
+      "turn": 401,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:48.720063+00:00",
+      "turn": 402,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:48.869679+00:00",
+      "turn": 403,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:49.017762+00:00",
+      "turn": 404,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:49.165640+00:00",
+      "turn": 405,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:49.316658+00:00",
+      "turn": 406,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:49.471169+00:00",
+      "turn": 407,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:49.617840+00:00",
+      "turn": 408,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:49.767606+00:00",
+      "turn": 409,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:49.912137+00:00",
+      "turn": 410,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:50.046486+00:00",
+      "turn": 411,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:50.189713+00:00",
+      "turn": 412,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:50.336075+00:00",
+      "turn": 413,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:50.489449+00:00",
+      "turn": 414,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:50.646746+00:00",
+      "turn": 415,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:50.808098+00:00",
+      "turn": 416,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:50.951826+00:00",
+      "turn": 417,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:51.106788+00:00",
+      "turn": 418,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:51.248499+00:00",
+      "turn": 419,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:51.383510+00:00",
+      "turn": 420,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:51.534762+00:00",
+      "turn": 421,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:51.686522+00:00",
+      "turn": 422,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:51.837827+00:00",
+      "turn": 423,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:51.982390+00:00",
+      "turn": 424,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:52.119881+00:00",
+      "turn": 425,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:52.267701+00:00",
+      "turn": 426,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:52.414810+00:00",
+      "turn": 427,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:52.554315+00:00",
+      "turn": 428,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:52.695707+00:00",
+      "turn": 429,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:52.817219+00:00",
+      "turn": 430,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:52.967939+00:00",
+      "turn": 431,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:53.116692+00:00",
+      "turn": 432,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:53.273968+00:00",
+      "turn": 433,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:53.416530+00:00",
+      "turn": 434,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:53.580759+00:00",
+      "turn": 435,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:53.730702+00:00",
+      "turn": 436,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:53.884323+00:00",
+      "turn": 437,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:54.036327+00:00",
+      "turn": 438,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:54.183574+00:00",
+      "turn": 439,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:54.335317+00:00",
+      "turn": 440,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:54.490683+00:00",
+      "turn": 441,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:54.635831+00:00",
+      "turn": 442,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:54.785919+00:00",
+      "turn": 443,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:54.933325+00:00",
+      "turn": 444,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:55.088964+00:00",
+      "turn": 445,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:55.246251+00:00",
+      "turn": 446,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:55.391116+00:00",
+      "turn": 447,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:55.531123+00:00",
+      "turn": 448,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:55.668469+00:00",
+      "turn": 449,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:55.824202+00:00",
+      "turn": 450,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:55.969752+00:00",
+      "turn": 451,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:56.122141+00:00",
+      "turn": 452,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:56.270348+00:00",
+      "turn": 453,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:56.413700+00:00",
+      "turn": 454,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:56.546662+00:00",
+      "turn": 455,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:56.705859+00:00",
+      "turn": 456,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:56.857554+00:00",
+      "turn": 457,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:57.005195+00:00",
+      "turn": 458,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:57.146672+00:00",
+      "turn": 459,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:57.286456+00:00",
+      "turn": 460,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:57.428791+00:00",
+      "turn": 461,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:57.567611+00:00",
+      "turn": 462,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:57.716796+00:00",
+      "turn": 463,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:57.866783+00:00",
+      "turn": 464,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:58.017064+00:00",
+      "turn": 465,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:58.167783+00:00",
+      "turn": 466,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:58.318519+00:00",
+      "turn": 467,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:58.472521+00:00",
+      "turn": 468,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:58.615589+00:00",
+      "turn": 469,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:58.770887+00:00",
+      "turn": 470,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:58.918105+00:00",
+      "turn": 471,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:59.070759+00:00",
+      "turn": 472,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:59.222889+00:00",
+      "turn": 473,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:59.369712+00:00",
+      "turn": 474,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:59.516419+00:00",
+      "turn": 475,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:59.670422+00:00",
+      "turn": 476,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:59.816648+00:00",
+      "turn": 477,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:07:59.981567+00:00",
+      "turn": 478,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:00.137352+00:00",
+      "turn": 479,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:00.288445+00:00",
+      "turn": 480,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:00.440437+00:00",
+      "turn": 481,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:00.590458+00:00",
+      "turn": 482,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:00.738997+00:00",
+      "turn": 483,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:00.878157+00:00",
+      "turn": 484,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:01.019254+00:00",
+      "turn": 485,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:01.173528+00:00",
+      "turn": 486,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:01.360485+00:00",
+      "turn": 487,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:01.500241+00:00",
+      "turn": 488,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:01.655751+00:00",
+      "turn": 489,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:01.808866+00:00",
+      "turn": 490,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:01.946331+00:00",
+      "turn": 491,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:02.081719+00:00",
+      "turn": 492,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:02.237517+00:00",
+      "turn": 493,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:02.383525+00:00",
+      "turn": 494,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:02.535088+00:00",
+      "turn": 495,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:02.680926+00:00",
+      "turn": 496,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:02.822808+00:00",
+      "turn": 497,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:02.976703+00:00",
+      "turn": 498,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:03.118393+00:00",
+      "turn": 499,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    },
+    {
+      "atUTC": "2026-10-08T02:08:03.266935+00:00",
+      "turn": 500,
+      "worldSeed": 909,
+      "crisisId": "goblin-regional:0000038d:1",
+      "phase": "warning",
+      "worldTime": 179040,
+      "outcome": null,
+      "normalFresh": true
+    }
+  ],
+  "errors": {
+    "page": [],
+    "console": [],
+    "request": [],
+    "http": []
+  },
+  "url": "http://127.0.0.1:38467",
+  "servedAssets": {
+    "index": {
+      "status": 200,
+      "bytes": 448,
+      "sha256": "2e91f5d3576d38eb50b492546391a6a3f0ed513afd93e2c6f79e2971290e6875"
+    },
+    "assets": [
+      {
+        "path": "assets/index-C5oR9znA.js",
+        "status": 200,
+        "bytes": 336845,
+        "sha256": "b3ad26fd438aaffec0176bfa43faf3f253f66dd00eec98ad119cf0527ee99b9f"
+      },
+      {
+        "path": "assets/index-DmiWzmoy.css",
+        "status": 200,
+        "bytes": 30795,
+        "sha256": "b76cc82a4d2fccd3ef0737700963ccae4aba6a3fedda8c26cc82eb30e7f86870"
+      }
+    ]
+  },
+  "normalStartUTC": "2026-10-08T02:06:45.130336+00:00",
+  "crisisStartedAtWorldTime": 179040
+}

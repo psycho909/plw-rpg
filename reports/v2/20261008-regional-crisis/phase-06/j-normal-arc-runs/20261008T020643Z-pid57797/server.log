@@ -1,0 +1,16 @@
+127.0.0.1 - - [08/Oct/2026 02:06:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Oct/2026 02:06:43] "GET /assets/index-C5oR9znA.js HTTP/1.1" 200 -
+127.0.0.1 - - [08/Oct/2026 02:06:43] "GET /assets/index-DmiWzmoy.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Oct/2026 02:06:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Oct/2026 02:06:44] "GET /assets/index-C5oR9znA.js HTTP/1.1" 200 -
+127.0.0.1 - - [08/Oct/2026 02:06:44] "GET /assets/index-DmiWzmoy.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Oct/2026 02:06:44] "GET /favicon.ico HTTP/1.1" 204 -
+Traceback (most recent call last):
+  File "<string>", line 11, in <module>
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

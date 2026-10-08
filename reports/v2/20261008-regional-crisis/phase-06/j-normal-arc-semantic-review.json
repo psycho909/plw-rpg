@@ -1,0 +1,108 @@
+{
+  "runId": "20261008T035215Z-pid60577",
+  "runStatusPreserved": "FAILED",
+  "originalRunStatusUnchanged": true,
+  "sourceHead": "bd316cb326e5fbc20087c0154d6e3f294a5daac7",
+  "sourceFingerprint": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+  "recorderSha256": "5fda218320bc96536b2267e577c8d20ad035b24a8f954eb84e19391f0f6f55e5",
+  "mode": "arc",
+  "durationSeconds": 26.26,
+  "worldSeed": 909,
+  "crisisId": "goblin-regional:0000038d:1",
+  "phases": [
+    {
+      "phase": "dormant",
+      "crisisId": null,
+      "worldTime": 480,
+      "outcome": null
+    },
+    {
+      "phase": "warning",
+      "crisisId": "goblin-regional:0000038d:1",
+      "worldTime": 179040,
+      "outcome": null
+    },
+    {
+      "phase": "preparation",
+      "crisisId": "goblin-regional:0000038d:1",
+      "worldTime": 181920,
+      "outcome": null
+    },
+    {
+      "phase": "active",
+      "crisisId": "goblin-regional:0000038d:1",
+      "worldTime": 189120,
+      "outcome": null
+    },
+    {
+      "phase": "aftermath",
+      "crisisId": "goblin-regional:0000038d:1",
+      "worldTime": 192000,
+      "outcome": "decisive_success"
+    }
+  ],
+  "sameCrisisIdThroughoutObservedArc": true,
+  "aftermathOutcome": "decisive_success",
+  "uiSaveReload": {
+    "rawSha256Before": "e9b04299c18236ad97c29b7e44f57c7f7f47e32f7707333b782f4791dfc34e4b",
+    "rawSha256After": "9cd37a3736d4c167c15f48eaa777df3655c6a2f9da5685ef1312b1f6fb2a0784",
+    "rawSaveChanged": true,
+    "originalRecordedMismatches": {
+      "lastSavedAt": {
+        "before": 1791431561867,
+        "after": 1791431561991
+      }
+    },
+    "onlyExpectedWriterMetadataChanged": true,
+    "metadataOnlySemanticSaveExact": true,
+    "semanticMismatches": {},
+    "worldTimeExact": true,
+    "rngStateExact": true,
+    "crisisExact": true,
+    "contributionLedgerExact": true,
+    "historyExact": true
+  },
+  "lifeContribution": {
+    "status": "NOT_EXERCISED",
+    "beforeLedger": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "afterLedger": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "crisisActions": [],
+    "availablePlayerGearCount": 0,
+    "reason": "The normal UI offered no food/gold contribution or eligible player-owned unequipped gear in this world. The offline comparison does not reinterpret automatic NPC resolution or waiting as player contribution."
+  },
+  "normalFresh": true,
+  "fixtureInjected": false,
+  "directMutation": false,
+  "browserErrors": {
+    "page": [],
+    "console": [],
+    "request": [],
+    "http": []
+  },
+  "assessment": "LIFECYCLE_AND_RELOAD_PASS_WITH_LIMITATIONS",
+  "limitations": [
+    "The original browser run remains FAILED because its strict byte-level parsed-save comparator included lastSavedAt.",
+    "This offline semantic comparison excludes only lastSavedAt and preserves the original raw records unchanged.",
+    "LifeContribution was not exercised; this result is not a full normal-arc contribution pass."
+  ]
+}
