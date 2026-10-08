@@ -8,6 +8,8 @@
 
 ## Now
 
+- [ ] Phase7 Content Expansion — Ticket: [20261008-v2x-07-content-expansion](tickets/20261008-v2x-07-content-expansion.md)
+
 <!-- 本輪工程已完成；驗收證據保存在正式 Ticket。 -->
 
 ## Next

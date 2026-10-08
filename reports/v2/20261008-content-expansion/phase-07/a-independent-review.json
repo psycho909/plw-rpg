@@ -1,0 +1,62 @@
+{
+  "scope": {
+    "phase": "7-A corrected baseline follow-up",
+    "baseline_head_recorded": "2d6af37cb36c9616cb832fc4d839bfd6ea7ef7c9",
+    "artifacts": [
+      "reports/v2/20261008-content-expansion/phase-07/count_content_baseline.py",
+      "reports/v2/20261008-content-expansion/phase-07/ts_registry_counter.mjs",
+      "reports/v2/20261008-content-expansion/phase-07/content-baseline.md",
+      "reports/v2/20261008-content-expansion/phase-07/content-baseline.json",
+      "reports/v2/20261008-content-expansion/phase-07/a-regression-run/baseline-qa.md",
+      "reports/v2/20261008-content-expansion/phase-07/a-regression-run/fullregression.json",
+      "reports/v2/20261008-content-expansion/phase-07/playlog.jsonl"
+    ]
+  },
+  "reviewer": {
+    "requested_role": "g6-luna-med-reviewer",
+    "runtime_model": "unknown",
+    "participated_in_correction": false,
+    "method": "single reviewer; separate Standards and Spec assessment under project fallback"
+  },
+  "standards": {
+    "result": "PASS after correction with archive caveat",
+    "evidence": "Direct AST enumeration matched all current JSON registry IDs/counts; all 91 current source file bytes match saved per-file hashes; canonical fingerprint recomputed to C9.",
+    "resolved_findings": [
+      "S1 count mismatch / same-line property omission",
+      "S2 fingerprint algorithm traceability"
+    ],
+    "caveat": "Original inaccurate Markdown is archived and decodable. No pre-correction inaccurate JSON version is present in playlog; first archived JSON version already contains eight legacy item IDs."
+  },
+  "spec": {
+    "result": "PASS",
+    "evidence": "Corrected inventory keeps legacy/V2 and definitions/generated instances distinct. Planned content budgets remain author targets above the hard gates, not claims of qualified delivery."
+  },
+  "counts": {
+    "item_bases": 6,
+    "affixes": 7,
+    "rarities": 5,
+    "materials": 3,
+    "monster_families": 1,
+    "v2_monster_definitions": 5,
+    "monster_traits": 2,
+    "boss_variants": 3,
+    "loot_tables": 1,
+    "crafting_recipes": 4,
+    "legacy_monsters": 4,
+    "legacy_item_kinds": 8,
+    "living_arcs": 3,
+    "medium_living_events": 1,
+    "rare_travelers": 3,
+    "minor_living_events": 2,
+    "crop_definitions": 1
+  },
+  "verification": {
+    "ast_helper_invoked": true,
+    "counts_and_ids_match_json": true,
+    "current_source_files_matching_stored_hashes": 91,
+    "canonical_source_fingerprint": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+    "product_tests_rerun": false,
+    "recorded_regression": "531/531 tests passed; typecheck and production build passed"
+  },
+  "disposition": "Accept corrected A evidence with archive caveat."
+}

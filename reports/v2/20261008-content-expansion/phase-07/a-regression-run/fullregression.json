@@ -1,0 +1,92 @@
+{
+  "run": {
+    "command": "npm run check",
+    "working_directory": "/workspace/plw-rpg",
+    "started_utc": "2026-10-08T04:09:47Z",
+    "finished_utc": "2026-10-08T04:10:07Z",
+    "exit_code": 0,
+    "stdout": "\n> plw-rpg@0.1.0 check\n> npm run test && npm run build\n\n\n> plw-rpg@0.1.0 test\n> vitest run\n\n\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  28 passed (28)\n      Tests  531 passed (531)\n   Start at  04:09:48\n   Duration  16.28s (transform 1.36s, setup 0ms, import 2.58s, tests 31.38s, environment 11ms)\n\n\n> plw-rpg@0.1.0 build\n> vue-tsc --noEmit && vite build\n\nvite v7.3.6 building client environment for production...\ntransforming...\n✓ 87 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.45 kB │ gzip:   0.31 kB\ndist/assets/index-DmiWzmoy.css   30.80 kB │ gzip:   6.74 kB\ndist/assets/index-C5oR9znA.js   336.85 kB │ gzip: 118.90 kB\n✓ built in 1.59s\n",
+    "stderr": "",
+    "stdout_sha256": "2d847fcc152e4995f23ab6262e6892b429470a404c9132130092c0b16182a5b6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "environment": {
+    "captured_utc": "2026-10-08T04:09:46.293251+00:00",
+    "captured_asia_taipei": "2026-10-08T12:09:46.293251+08:00",
+    "os": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "node": {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v24.19.0",
+      "stderr": ""
+    },
+    "npm": {
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "11.9.0",
+      "stderr": ""
+    },
+    "browser": {
+      "chromium_path": "/usr/bin/chromium",
+      "chromium_version": {
+        "command": [
+          "chromium",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "Chromium 151.0.7922.173 built on Debian GNU/Linux 13 (trixie)",
+        "stderr": ""
+      }
+    },
+    "vitest": {
+      "command": [
+        "./node_modules/.bin/vitest",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "vitest/4.1.11 linux-x64 node-v24.19.0",
+      "stderr": ""
+    },
+    "environment": {
+      "CI": null,
+      "TZ": null,
+      "PLAYWRIGHT_BROWSERS_PATH": null
+    },
+    "dependencies": {
+      "node_modules_exists": true,
+      "package_lock_sha256": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d  package-lock.json"
+    }
+  },
+  "source_after": {
+    "head": "2d6af37cb36c9616cb832fc4d839bfd6ea7ef7c9",
+    "tracked_src_file_count": 91,
+    "tracked_src_fingerprint_sha256": "0779847a7e282d6f3dd6f622833452986c968b8b16fb2fca0b0949d4a5018c65",
+    "working_tree_tracked_src_diff": false,
+    "staged_src_diff": false,
+    "tracked_src_fingerprint_algorithm": "SHA256 of sorted tracked src entries: path UTF-8, NUL, file SHA256 hex ASCII, LF",
+    "canonical_source_fingerprint_algorithm": "SHA256 of compact sorted-key JSON mapping sorted tracked src paths to per-file SHA256 hex; ensure_ascii false; compact separators comma/colon",
+    "canonical_source_fingerprint_sha256": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+    "canonical_source_file_sha256_map": "../content-baseline.json#source_file_sha256",
+    "canonical_source_map_sha256": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+    "canonical_source_map_entries": 91,
+    "canonical_map_matches_head_and_current_tracked_source_bytes": true
+  },
+  "outcomes": {
+    "vitest": {
+      "files_passed": 28,
+      "files_failed": 0,
+      "tests_passed": 531,
+      "tests_failed": 0,
+      "tests_skipped": 0
+    },
+    "typecheck": "PASS (vue-tsc --noEmit)",
+    "production_build": "PASS (Vite 7.3.6; 87 modules; dist/index.html, CSS and JS emitted)"
+  }
+}
