@@ -8,7 +8,7 @@
 
 ## Now
 
-- [ ] Phase6-H History / Identity — Ticket: [20261008-v2x-06h-history-identity](tickets/20261008-v2x-06h-history-identity.md)
+- [ ] Phase6-I Simulation / Balance — Ticket: [20261008-v2x-06i-simulation](tickets/20261008-v2x-06i-simulation.md)
 
 <!-- 本輪工程已完成；驗收證據保存在正式 Ticket。 -->
 

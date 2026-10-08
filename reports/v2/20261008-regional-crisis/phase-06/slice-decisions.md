@@ -33,3 +33,7 @@ Root批准F精確graded table/summary/recovery契約，正本06f ticket。Aggreg
 ## G accepted / H released
 
 G scoped PASS WITH FINDINGS：49tests/build，獨立MediumReview，Chromium currentbuild90sourcehashesstable/e0，normalopening/modalclock/saveReload+controlledUIcases。Naturalwarning/normalfullarc/combatwin/UIstalerace未由G完成；exactfoodgold仅ledgerincrease非exactcounter。Harness failures保留，時間metric修正checkpoint非days。H精確threshold/eventtier/既有identity契約已release；I–J未release。
+
+## H accepted / I released
+
+211focused/build finalunchangedprod、24followup+types、獨立54/54及Standards/Spec PASS，5sourcehashes匹配。H重大貢獻一次性認可、歷史原製作者/noidentityshortcut/V7兼容驗收。I10000actualresolutions+3seeds100yearscheckpoint release，J未release。Human DEFERRED。

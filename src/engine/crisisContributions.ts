@@ -11,6 +11,12 @@ import type { GameState } from '../domain/types'
 import { emit } from './events'
 import { availableCivilDefenseDefenders, deriveCivilDefense } from './civilDefense'
 import { distance, tileAt } from './simulation'
+import {
+  hasRegionalContributionEventCapacity,
+  recordMajorRegionalCrisisContribution,
+  regionalCrisisCraftThresholdCrossed,
+  regionalCrisisSupplyThresholdCrossed,
+} from './regionalCrisisRecognition'
 
 type PreparationCrisis = Extract<RegionalCrisisState, { phase: 'warning' | 'preparation' }>
 
@@ -36,7 +42,7 @@ function contextFor(state: GameState, crisisId: string): ContributionContext | s
     || distance(character.position, handoff) > COMMUNITY_HANDOFF_RADIUS) {
     return '請回到橡谷廣場附近再交付支援。'
   }
-  if (!Number.isSafeInteger(state.eventSequence) || state.eventSequence >= Number.MAX_SAFE_INTEGER - 1) {
+  if (!hasRegionalContributionEventCapacity(state, false)) {
     return '世界事件記錄已達安全上限，目前無法登記支援。'
   }
   const model = deriveCivilDefense(state, crisis)
@@ -96,9 +102,14 @@ export function contributeCrisisEquipment(state: GameState, crisisId: string, de
   const allocation: CrisisEquipmentAllocation = {
     defenderNpcId, slot, donorId: character.id, contributedAt: state.worldTime, sourceItem: sourceSnapshot(item),
   }
+  const majorCraftContribution = regionalCrisisCraftThresholdCrossed(state, allocation.sourceItem, slot)
+  if (!hasRegionalContributionEventCapacity(state, majorCraftContribution)) {
+    return '世界事件記錄已達安全上限，目前無法登記支援。'
+  }
   state.reward.instances.splice(itemIndex, 1)
   allocations.push(allocation)
   emitContribution(state, 'equipment', `交付${ITEM_BASES[item.baseId].name}，支援${defender.name}的防衛裝備。`)
+  if (majorCraftContribution) recordMajorRegionalCrisisContribution(state, item.craftProvenance!.createdBy, 'craft')
   return ''
 }
 
@@ -134,12 +145,17 @@ export function contributeCrisisFood(state: GameState, crisisId: string, invento
       ? '目前糧食消耗快於補給；需要更多農夫或防衛協助，單靠存糧無法補足需求。'
       : '這批食物無法改善危機結束時的供糧預測。'
   }
+  const majorSupplyContribution = regionalCrisisSupplyThresholdCrossed(state, character.id, { food: supply, gold: 0 })
+  if (!hasRegionalContributionEventCapacity(state, majorSupplyContribution)) {
+    return '世界事件記錄已達安全上限，目前無法登記支援。'
+  }
 
   state.settlement.food += supply
   character.inventory.food -= inventoryItems
   ledger.supplied += supply
   addCredit(ledger.credits, character.id, supply)
   emitContribution(state, 'food', `交付 ${inventoryItems} 份食物，橡谷存糧增加 ${supply}。`)
+  if (majorSupplyContribution) recordMajorRegionalCrisisContribution(state, character.id, 'supply')
   return ''
 }
 
@@ -153,10 +169,15 @@ export function contributeCrisisGold(state: GameState, crisisId: string, amount:
   if (!Number.isSafeInteger(amount) || amount < 1) return '請選擇有效的金幣數量。'
   if (!Number.isSafeInteger(character.gold) || character.gold < amount) return '身上沒有足夠的金幣。'
   if (!need || amount > need.shortage) return '目前沒有足夠的後勤缺口接收這筆金幣。'
+  const majorSupplyContribution = regionalCrisisSupplyThresholdCrossed(state, character.id, { food: 0, gold: amount })
+  if (!hasRegionalContributionEventCapacity(state, majorSupplyContribution)) {
+    return '世界事件記錄已達安全上限，目前無法登記支援。'
+  }
 
   character.gold -= amount
   ledger.spent += amount
   addCredit(ledger.credits, character.id, amount)
   emitContribution(state, 'gold', `投入 ${amount} 枚金幣支援危機後勤。`)
+  if (majorSupplyContribution) recordMajorRegionalCrisisContribution(state, character.id, 'supply')
   return ''
 }

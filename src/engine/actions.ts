@@ -13,6 +13,7 @@ import { awardWolfLoot } from './itemGeneration'
 import { incomingDamage, playerAttackDamage } from './combatStats'
 import { advanceWolfTurn, wolfAttackForTurn, wolfChargeHealing, wolfCombatPhase, wolfDefenseForTurn } from './wolfFamily'
 import { recordRegionalChiefDefeat } from './regionalCrisis'
+import { recordMajorRegionalCrisisContribution } from './regionalCrisisRecognition'
 
 export { canVisit } from './rewardActions'
 function cost(state: GameState, stamina: number, minutes: number, gold = 0) {
@@ -226,13 +227,15 @@ export function startRegionalCampRaid(state: GameState, crisisId: string) {
 }
 
 function recordCampRaidVictory(state: GameState, objective: RegionalCrisisCombatObjective | undefined) {
-  if (!objective || objective.kind !== 'camp_raid') return
+  if (!objective || objective.kind !== 'camp_raid') return false
   const crisis = state.regionalCrisis
   if ((crisis.phase === 'warning' || crisis.phase === 'preparation' || crisis.phase === 'active')
     && crisis.id === objective.crisisId && state.worldTime >= objective.startedAt && state.worldTime < crisis.phaseEndsAt
     && crisis.adventure.campRaidAt === null) {
     crisis.adventure.campRaidAt = state.worldTime
+    return true
   }
+  return false
 }
 export function usePotion(state: GameState) {
   const c = player(state)
@@ -321,7 +324,9 @@ function resolveCombatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
     const gearMessage = wolfLoot?.instance
       ? ` 另獲得${RARITIES[wolfLoot.instance.rarity].name}${ITEM_BASES[wolfLoot.instance.baseId].name}，可在物品視窗檢視。`
       : ''
-    recordCampRaidVictory(state, regionalCrisisObjective)
+    if (recordCampRaidVictory(state, regionalCrisisObjective)) {
+      recordMajorRegionalCrisisContribution(state, c.id, 'camp')
+    }
     emit(state, 'combat.won', 'player', `戰鬥勝利！獲得 ${monster.exp} 經驗與 ${monster.gold} 金幣。${gearMessage}`)
   } else {
     const companionGuard = state.party.some(p => p.archetype === 'fighter') && c.hp <= c.maxHp * .25 ? ARCHETYPES.fighter.guard : 0

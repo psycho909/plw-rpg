@@ -88,3 +88,26 @@ The original resolution/recovery, V6→V7, and boundary-capacity REDs remain. Pu
 ## Handoff to Phase 6-G
 
 The resolver is intentionally engine-owned and runs only through canonical `simulate`; UI code must not roll an outcome or mutate a resolution summary. Before resolution, `deriveCivilDefense(state, crisis)` is the exported read-only source for current readiness, demand, probability, needs, and timeline, and can return `null` outside an active crisis phase. After resolution, `state.regionalCrisis.resolutionSummary` is the persisted measured result, including applied changes, injuries, cooldown pressure, and recovery status. Keep the existing `startRegionalCampRaid(state, crisisId)` command and ordinary Chief combat path as the E action seams: the engine checks the current crisis ID/phase and records only an actual objective victory or the existing guarded Chief defeat fact. Do not credit ordinary Goblin hunts or let UI state edits stand in for those guards.
+
+# Phase 6-H History and Identity Analysis
+
+Status: H implementation candidate frozen after focused regressions, typecheck, and production build; independent review pending. Base source is `ec7bd32b5f81c433ecd07bbbcd43c1a51af6ea70`. The approved contract uses only existing monotonic facts; it adds no save field, reward ledger, migration replay, identity, Smithing action, or Save8.
+
+## Once-only contribution crossings
+
+Supply credit is `donor food credits / 4 + donor gold credits / 5` for the current crisis. A donor receives +3 reputation and one major event only on a below-5 to at-least-5 crossing. Food and gold continue to emit their normal gameplay events. A loaded ledger already above threshold does not trigger a retroactive award.
+
+Craft credit sums `civilDefenseGearEffect(sourceItem.rolledStats, allocation.slot, 10)` grouped by the original `craftProvenance.createdBy`. A below-1.0 to at-least-1.0 crossing produces +3 and a major history event for that crafter, regardless of current item owner. Dead creators keep name/ID historical attribution; the established reputation path declines to award a dead character, so no reward transfers to a successor. Existing `smith`, `adventurer`, and `masterpieceCrafter` requirements are untouched.
+
+Adventure credit is added only when E's real current-crisis camp victory changes `campRaidAt` from null to a timestamp. It gives +3 and one major event. Ordinary Goblin hunts and the existing Chief path do not enter H recognition; Chief's existing +12 remains intact. The record is produced in the complete combat resolver, so E's canonical isolated victory preview includes H event usage.
+
+Recognition calls existing `changeReputation` and bounded major history. A threshold-crossing public contribution preflights up to three emits before consuming assets or changing ledgers/reputation. Tests prove atomic rejection at `MAX_SAFE_INTEGER - 3` and a saveable complete gameplay/rank/major event path at `MAX_SAFE_INTEGER - 4`; the same bound is checked before equipment removal. The camp path is tested at its final saveable complete-victory boundary.
+
+## Verification and review
+
+The public red/green evidence is preserved in `h-red-supply.txt`, `h-red-contribution-recognition.txt`, and `h-green-regression.txt`. The craft threshold fixture-calibration attempt remains distinct in `h-attempt-craft-effect-fixture.txt`. Seven relevant files passed 211 tests; `npm run build` passed typecheck and production bundling (`h-build.txt`); `git diff --check` passed. Full per-file and evidence hashes plus the canonical source fingerprint are recorded in `h-source-freeze.json`. Independent review remains pending.
+
+
+### H test-only follow-up
+
+After independent review, supply and craft threshold tests gained explicit assertions that public recognition leaves `worldTime` and `rngState` unchanged, including after save/reload. The affected contribution suite passed 24/24 and `vue-tsc --noEmit` passed (`h-green-rng-followup.txt`, `h-typecheck-rng-followup.txt`). No production source changed after the prior 211-test regression and production build. The source fingerprint is refreshed in `h-source-freeze.json`.

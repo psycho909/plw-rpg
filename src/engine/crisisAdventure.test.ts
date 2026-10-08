@@ -62,6 +62,7 @@ function moveThroughResolutionToNextCrisis(state: ReturnType<typeof createGame>)
 
 it('records a real Goblin camp victory once and improves odds when current pressure dominates', () => {
   const { state, crisis } = crisisWorld()
+  const reputationBefore = state.life.characters[state.activeCharacterId]!.reputation
   state.threat.monsterPopulation = 100
   state.threat.threatLevel = 3
   state.threat.campLevel = 3
@@ -96,6 +97,8 @@ it('records a real Goblin camp victory once and improves odds when current press
   expect(after.successChance).toBeGreaterThan(noCampBenefit.successChance)
   expect(state.rngState).toBe(rngBefore)
   expect(state.events.filter(event => event.type === 'combat.won')).toHaveLength(1)
+  expect(state.life.characters[state.activeCharacterId]!.reputation).toBe(reputationBefore + 4)
+  expect(state.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(1)
   expect(state.characters[0]!.gold).toBeGreaterThan(0)
   expect(deserialize(serialize(state, 7201)).state).toEqual(state)
   expect(startRegionalCampRaid(state, crisis.id)).not.toBe('')
@@ -120,6 +123,27 @@ it('rejects a camp victory turn atomically when its exact outcome would exhaust 
   expect(combatTurn(state, 'attack')).toContain('安全上限')
   expect(state).toEqual(beforeTurn)
   expect(deserialize(serialize(state, 7200)).state).toEqual(state)
+})
+
+it('preflights the camp victory and H recognition at the final saveable event sequence', () => {
+  const measured = crisisWorld()
+  const startingSequence = measured.state.eventSequence
+  expect(startRegionalCampRaid(measured.state, measured.crisis.id)).toBe('')
+  measured.state.combat!.hp = 1
+  expect(combatTurn(measured.state, 'attack')).toBe('')
+  expect(measured.state.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(1)
+  const requiredEvents = measured.state.eventSequence - startingSequence
+  expect(requiredEvents).toBeGreaterThan(3)
+
+  const exactFit = crisisWorld()
+  exactFit.state.eventSequence = Number.MAX_SAFE_INTEGER - 1 - requiredEvents
+  expect(startRegionalCampRaid(exactFit.state, exactFit.crisis.id)).toBe('')
+  exactFit.state.combat!.hp = 1
+  expect(combatTurn(exactFit.state, 'attack')).toBe('')
+
+  expect(exactFit.state.eventSequence).toBe(Number.MAX_SAFE_INTEGER - 1)
+  expect(exactFit.state.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(1)
+  expect(deserialize(serialize(exactFit.state, 7202)).state).toEqual(exactFit.state)
 })
 
 it('preflights daily-boundary combat events before applying damage or advancing time', () => {
@@ -254,21 +278,27 @@ it('does not credit an ordinary Goblin hunt as a camp raid', () => {
 
   if (state.regionalCrisis.phase === 'dormant') throw new Error('expected active crisis record')
   expect(state.regionalCrisis.adventure.campRaidAt).toBeNull()
+  expect(state.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(0)
 })
 
 it('combines actual Chief and camp outcomes with bounded relief instead of guaranteeing victory', () => {
   const { state, crisis } = crisisWorld()
   state.threat.bossAlive = true
+  const reputationBeforeChief = state.life.characters[state.activeCharacterId]!.reputation
   expect(encounter(state, true)).toBe('')
   expect(combatTurn(state, 'attack')).toBe('')
   if (state.regionalCrisis.phase === 'dormant') throw new Error('expected retained crisis')
   expect(state.regionalCrisis.chiefOutcome?.actorId).toBe(state.activeCharacterId)
+  expect(state.life.characters[state.activeCharacterId]!.reputation).toBe(reputationBeforeChief + 12)
+  expect(state.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(0)
   expect(deriveCivilDefense(state, state.regionalCrisis)?.threatTrace.specialRelief).toBe(8)
 
   expect(startRegionalCampRaid(state, crisis.id)).toBe('')
   expect(combatTurn(state, 'attack')).toBe('')
   const after = deriveCivilDefense(state, state.regionalCrisis)!
   expect(state.regionalCrisis.adventure.campRaidAt).toBe(state.worldTime - 1)
+  expect(state.life.characters[state.activeCharacterId]!.reputation).toBe(reputationBeforeChief + 16)
+  expect(state.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(1)
   expect(after.threatTrace.specialRelief).toBe(14)
   expect(after.successChance).toBeLessThan(1)
 })

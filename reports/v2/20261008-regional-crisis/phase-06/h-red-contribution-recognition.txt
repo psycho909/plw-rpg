@@ -1,0 +1,94 @@
+# H public contribution REDs
+
+Base HEAD: ec7bd32b5f81c433ecd07bbbcd43c1a51af6ea70.
+
+Pre-fix source SHA-256:
+- `src/engine/crisisContributions.ts`: `9b4dd4ac464bd21059484aeb6c2daa26cae08aa247b07ff2c9e4b48bf66ec635`
+- `src/engine/crisisContributions.test.ts`: `1039682c72acbcc0e250bda62142f19b7d57ad22536bb9516c3d80ab80d57933`
+- `src/engine/actions.ts`: `a2ce83f2235faaf3fa65390fb0296ddc92c8ce395704e5e108547019d5002fac`
+- `src/engine/crisisAdventure.test.ts`: `906ed3aa0dab5563466e472f624570ef30a5eb4aca6726a5fadd979d9b05cda3`
+- `src/engine/identity.ts`: `2d7596a712c16940a590bdf47edd288fc965f429304889e0be3b09969d61119e`
+
+Command: `npm test -- src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts -t "recognizes a donor|rejects a major supply|records a real Goblin camp victory"`. Exit status: 1. All three targeted expectations fail: no +3 supply reputation, no capacity rejection before donation mutation, and no +3 camp reputation.
+
+Raw output:
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts -t recognizes a donor|rejects a major supply|records a real Goblin camp victory
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisContributions.test.ts (20 tests | 2 failed | 18 skipped) 15ms
+   × recognizes a donor once when combined crisis supply crosses five normalized credits 11ms
+   × rejects a major supply threshold crossing atomically without room for its complete event path 3ms
+ ❯ src/engine/crisisAdventure.test.ts (29 tests | 1 failed | 28 skipped) 46ms
+   × records a real Goblin camp victory once and improves odds when current pressure dominates 45ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisAdventure.test.ts > records a real Goblin camp victory once and improves odds when current pressure dominates
+AssertionError: expected 1 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 1
+
+ ❯ src/engine/crisisAdventure.test.ts:100:70
+     98|   expect(state.rngState).toBe(rngBefore)
+     99|   expect(state.events.filter(event => event.type === 'combat.won')).to…
+    100|   expect(state.life.characters[state.activeCharacterId]!.reputation).t…
+       |                                                                      ^
+    101|   expect(state.history.filter(event => event.type === 'regional-crisis…
+    102|   expect(state.characters[0]!.gold).toBeGreaterThan(0)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/engine/crisisContributions.test.ts > recognizes a donor once when combined crisis supply crosses five normalized credits
+AssertionError: expected +0 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 0
+
+ ❯ src/engine/crisisContributions.test.ts:284:58
+    282|
+    283|   expect(contributeCrisisGold(state, crisis.id, 5)).toBe('')
+    284|   expect(state.life.characters[characterId]!.reputation).toBe(reputati…
+       |                                                          ^
+    285|   expect(state.life.characters[characterId]!.reputationHistory.at(-1))…
+    286|   expect(state.history.filter(event => event.type === 'regional-crisis…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/engine/crisisContributions.test.ts > rejects a major supply threshold crossing atomically without room for its complete event path
+AssertionError: expected '' to contain '安全上限'
+
+- Expected
++ Received
+
+- 安全上限
+
+ ❯ src/engine/crisisContributions.test.ts:303:54
+    301|   const before = structuredClone(state)
+    302|
+    303|   expect(contributeCrisisGold(state, crisis.id, 25)).toContain('安全上限')
+       |                                                      ^
+    304|   expect(state).toEqual(before)
+    305| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  3 failed | 46 skipped (49)
+   Start at  23:51:05
+   Duration  448ms (transform 449ms, setup 0ms, import 576ms, tests 61ms, environment 1ms)
+
+
+```

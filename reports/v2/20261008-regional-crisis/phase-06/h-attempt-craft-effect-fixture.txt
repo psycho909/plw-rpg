@@ -1,0 +1,46 @@
+# H craft-effect fixture calibration
+
+This initial test fixture assumption was incorrect, not an engine regression: two base short swords already exceed one normalized slot effect. The test is being narrowed to verify one item remains below threshold and the second crosses it.
+
+Source SHA-256 at this test run:
+- `src/engine/crisisContributions.ts`: `9354b3ddb288d2cfc5cad639b16bdb1b68c5eaca782101040ee3c9bbe49e1cd6`
+- `src/engine/crisisContributions.test.ts`: `efcffafa0fda4549e8d637aa2627d8903f65383010d8e01dd9a82be7007bee4b`
+- `src/engine/regionalCrisisRecognition.ts`: `6f618544e495540c0eba40b62f1e10ec96c3845255de9fabcf2c8e947ddf2d5f`
+- `src/engine/actions.ts`: `2470daad996be973e130a31fb76fc9ef14ca089a15c2269e797f1598f1df05f7`
+
+Command: `npm test -- src/engine/crisisContributions.test.ts -t "credits summed defense craft"`; exit status 1.
+
+Raw output:
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisContributions.test.ts -t credits summed defense craft
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisContributions.test.ts (21 tests | 1 failed | 20 skipped) 9ms
+   × credits summed defense craft to the deceased original crafter, never the successor item owner 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisContributions.test.ts > credits summed defense craft to the deceased original crafter, never the successor item owner
+AssertionError: expected 1.1428571428571428 to be less than 1
+ ❯ src/engine/crisisContributions.test.ts:338:29
+    336|   const successorReputation = state.life.characters[successor.id]!.rep…
+    337|   const effectPerItem = civilDefenseGearEffect(item().rolledStats, 'we…
+    338|   expect(effectPerItem * 2).toBeLessThan(1)
+       |                             ^
+    339|   expect(effectPerItem * 3).toBeGreaterThanOrEqual(1)
+    340|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 20 skipped (21)
+   Start at  23:53:30
+   Duration  408ms (transform 241ms, setup 0ms, import 283ms, tests 9ms, environment 0ms)
+
+
+```

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "title": "Phase6-H core independent review",
+  "reviewedAt": "2026-10-08T00:03:30+00:00",
+  "ticket": "tickets/20261008-v2x-06h-history-identity.md",
+  "scope": [
+    "H once-only threshold recognition for supply, crafted equipment, and actual Goblin camp victories",
+    "Original crafter attribution through death and succession; donor attribution; unchanged Chief reputation path",
+    "Atomic capacity preflight for gameplay/rank/major events and clone-projected camp victory capacity",
+    "V7 compatibility, save/reload/no-replay, no-RNG/time behavior, and bounded history/identity effects",
+    "Final frozen H source snapshot and its evidence; no I/J, UI, browser, or human product review"
+  ],
+  "excluded": [
+    "Root acceptance and release of Phase6-I",
+    "Changes to V7 save schema or a new reward ledger",
+    "Full Phase6 product and Human gates; Human remains DEFERRED / NOT APPLICABLE AT THIS STAGE"
+  ],
+  "git": {
+    "branch": "v2x/reward-core",
+    "baseCommit": "ec7bd32b5f81c433ecd07bbbcd43c1a51af6ea70",
+    "headCommit": "ec7bd32b5f81c433ecd07bbbcd43c1a51af6ea70",
+    "reviewedObject": "uncommitted final H working-tree source snapshot; source hashes and fingerprint independently verified",
+    "freezePath": "reports/v2/20261008-regional-crisis/phase-06/h-source-freeze.json",
+    "freezeManifestSha256": "69465d6acab257c5a05263293541089cef0656b5afaea92c009ad341db1800bc",
+    "sourceFingerprintAlgorithm": "SHA-256 over sorted source path, NUL byte, lowercase source SHA-256 text, LF; repeated for each path",
+    "sourceFingerprint": "96b0c7d241cd249a71cf6459ab8c9ecd4957afa0ff1b1ea2f686f3fffb6704d1",
+    "sourceFileCount": 5,
+    "sourceSha256": {
+      "src/engine/actions.ts": "2470daad996be973e130a31fb76fc9ef14ca089a15c2269e797f1598f1df05f7",
+      "src/engine/crisisAdventure.test.ts": "56078d5785fef942872e0b4532ebfc6046c34e49f53abde0a7e2606afdc213e3",
+      "src/engine/crisisContributions.test.ts": "2f88fab54f5ceca44570195901077f3f41a421b4c9ff3657b90ddcfe31ca02ce",
+      "src/engine/crisisContributions.ts": "9354b3ddb288d2cfc5cad639b16bdb1b68c5eaca782101040ee3c9bbe49e1cd6",
+      "src/engine/regionalCrisisRecognition.ts": "b6c33d892cbb421b89d84620219bad60c7fe15fa883852bf6dbd0a44658004c0"
+    },
+    "allSourceHashesMatchFreeze": true,
+    "evidenceFileCount": 9,
+    "evidenceSha256": {
+      "h-attempt-craft-effect-fixture.txt": "e8dc287c528379114d7f9471c4531de18d7dde3bd0c2248e4f454e0a7af09f85",
+      "h-red-contribution-recognition.txt": "401a0d2888fcb323d222b0c88d2371027acd5f48b0411b634785aa7cdfab1833",
+      "h-red-supply.txt": "f44a3e0656df7025e545b99aa00bdd5bab3445173e50ce8e90b84c78546f396c",
+      "h-green-regression.txt": "a49485298ac1b39471f4e8ee732fa86793ae1d7788c1450fdbb3b743acc479ab",
+      "h-build.txt": "5c08946c60ac954b2209468eb18ecc80f4da2da622bcf073b319a2cd394ce3d2",
+      "h-green-rng-followup.txt": "3a19424e01dae043b243799f4bb91290c59866901963dfbded0747e9d64a581b",
+      "h-typecheck-rng-followup.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "h-implementation-report.md": "c918abe7a458601f3cee120efcffb241f3f3e3ac56be8b7770869c7fb7aad73c",
+      "contribution-analysis.md": "e8ec9fdd5af251b4b799b39e6d61b182e4bd90ec1895f6d7a2a31b8707b54ec7"
+    },
+    "allEvidenceHashesMatchFreeze": true,
+    "authorityTicketSha256": "fae3ff8b6043be2836e90d350ca0d2777226968231086bf6b2e0f1731c875477",
+    "stagedDiffCommand": "git diff --cached --name-status -- <five frozen H source paths> (empty)",
+    "workingTreeDiffCommand": "git diff ec7bd32b5f81c433ecd07bbbcd43c1a51af6ea70 -- <five frozen H source paths>",
+    "untrackedSourcePath": "src/engine/regionalCrisisRecognition.ts",
+    "whitespaceCheck": {
+      "command": "git diff --check HEAD -- src/engine/actions.ts src/engine/crisisAdventure.test.ts src/engine/crisisContributions.test.ts src/engine/crisisContributions.ts src/engine/regionalCrisisRecognition.ts",
+      "result": "PASS; exit 0"
+    }
+  },
+  "reviewer": {
+    "taskRole": "g6_luna_max_phase6_core_reviewer_e",
+    "implementationContributor": false,
+    "runtimeModelVerified": false,
+    "reviewAxes": "Standards and Spec evaluated separately by one independent reviewer per repository review contract; no review subagents used."
+  },
+  "standards": {
+    "result": "PASS",
+    "basis": [
+      "AGENTS.md §§3–6",
+      "docs/agents/review.md §§1–3",
+      "docs/agents/skill-workflows.md general-review adaptation",
+      "matt-skills-curated:code-review, adapted to repository review contract"
+    ],
+    "findings": [],
+    "notes": [
+      "Final H fingerprint and all 5 source/9 evidence digests match the frozen manifest; H ticket digest also matches.",
+      "The test-only final follow-up added explicit worldTime/rngState assertions for supply and craft threshold actions; no production source hash changed after the 211-test regression and build.",
+      "Recognition uses existing deterministic reputation and event paths; no new RNG, time advancement, identity award, Smithing action, Save8, or reward ledger was added.",
+      "All donation and equipment threshold paths check the complete up-to-three event budget before asset or ledger mutation. Camp recognition is included in E full-combat clone preflight."
+    ]
+  },
+  "spec": {
+    "result": "PASS FOR H ENGINEERING CORE",
+    "basis": [
+      "tickets/20261008-v2x-06h-history-identity.md: Acceptance and Root H release / precise contract",
+      "docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md §§52–60 and §90",
+      "accepted Phase6-E and Phase6-F contribution, combat, V7, and event-capacity contracts"
+    ],
+    "findings": [],
+    "notes": [
+      "Supply crossing is per donor/current crisis using food credits / 4 plus gold credits / 5, threshold 5; only below-to-at-least crossing receives one +3 and one major event.",
+      "Craft crossing sums the approved civilDefenseGearEffect(rolledStats, slot, 10) result by original craftProvenance.createdBy, threshold 1.0; 10 is the combat-skill argument, not a divisor. Owner and creator attribution remain distinct.",
+      "Dead original creator keeps name/ID history attribution without receiving reputation; current successor receives no transfer. Chief remains at existing +12 and is not H-recognized again; ordinary Goblin hunts are excluded.",
+      "Camp recognition occurs only on the guarded current-crisis null-to-timestamp victory fact. Actual E clone previews include the H rank/major emits.",
+      "No schema version or reward ledger change; current V7 ledgers/facts provide once-only and no-retrogrant behavior.",
+      "Craft test uses a save-valid crafted item snapshot with rolled stats and craft provenance; item generation is unchanged and separately tested."
+    ]
+  },
+  "verification": {
+    "reviewerFocusedRun": {
+      "command": "npm test -- src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts",
+      "result": "PASS; 2 files, 54 tests",
+      "sourceScope": "Before the final test-only RNG/time assertion update; production sources match final freeze."
+    },
+    "engineerDirectedRegression": {
+      "command": "npm test -- src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts src/engine/identity.test.ts src/engine/regionalCrisis.test.ts src/engine/simulation.test.ts src/engine/lifeIntegration.test.ts src/services/saveService.test.ts",
+      "result": "PASS; 7 files, 211 tests",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/h-green-regression.txt",
+      "evidenceSha256": "a49485298ac1b39471f4e8ee732fa86793ae1d7788c1450fdbb3b743acc479ab",
+      "sourceScope": "Same production source hashes as final freeze; before final test-only assertion update."
+    },
+    "currentTestOnlyFollowup": {
+      "command": "npm test -- src/engine/crisisContributions.test.ts",
+      "result": "PASS; 1 file, 24 tests",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/h-green-rng-followup.txt",
+      "evidenceSha256": "3a19424e01dae043b243799f4bb91290c59866901963dfbded0747e9d64a581b",
+      "assertions": "Supply and craft public threshold paths preserve worldTime and rngState, including save/reload."
+    },
+    "currentTypecheck": {
+      "command": "npx vue-tsc --noEmit",
+      "result": "PASS after final test-only change",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/h-typecheck-rng-followup.txt",
+      "evidenceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "productionBuild": {
+      "command": "npm run build",
+      "result": "PASS; build was run before the test-only follow-up, and production source hashes did not change afterwards.",
+      "evidencePath": "reports/v2/20261008-regional-crisis/phase-06/h-build.txt",
+      "evidenceSha256": "5c08946c60ac954b2209468eb18ecc80f4da2da622bcf073b319a2cd394ce3d2"
+    },
+    "evidenceArchive": "PASS; current manifest evidence entries decode and match all 9 on-disk evidence files.",
+    "preservedReds": [
+      {
+        "path": "reports/v2/20261008-regional-crisis/phase-06/h-red-supply.txt",
+        "sha256": "f44a3e0656df7025e545b99aa00bdd5bab3445173e50ce8e90b84c78546f396c"
+      },
+      {
+        "path": "reports/v2/20261008-regional-crisis/phase-06/h-red-contribution-recognition.txt",
+        "sha256": "401a0d2888fcb323d222b0c88d2371027acd5f48b0411b634785aa7cdfab1833"
+      }
+    ],
+    "historicalFixtureAttempt": {
+      "path": "reports/v2/20261008-regional-crisis/phase-06/h-attempt-craft-effect-fixture.txt",
+      "sha256": "e8dc287c528379114d7f9471c4531de18d7dde3bd0c2248e4f454e0a7af09f85",
+      "disposition": "Preserved fixture calibration attempt; initial assumed craft effect was wrong, then corrected. Not a production defect."
+    }
+  },
+  "disposition": {
+    "result": "RECOMMEND ROOT ACCEPT H CORE AND RELEASE I",
+    "unresolvedBlockers": [],
+    "remainingRisk": "No H-specific blocker. Build is from the unchanged production source; the final file change was test-only and received a focused rerun plus typecheck.",
+    "phaseGate": "Root acceptance is required before I. Human remains DEFERRED / NOT APPLICABLE AT THIS STAGE; this is not an overall Phase6/product PASS."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "status": "H source candidate frozen after focused regressions, typecheck, and production build; test-only RNG/time assertions reviewed; pending independent review",
+  "baseCommit": "ec7bd32b5f81c433ecd07bbbcd43c1a51af6ea70",
+  "saveVersion": 7,
+  "saveSchemaChanged": false,
+  "sourceFingerprint": "96b0c7d241cd249a71cf6459ab8c9ecd4957afa0ff1b1ea2f686f3fffb6704d1",
+  "sourceFingerprintAlgorithm": "SHA-256 over sorted source path, NUL byte, lowercase source SHA-256 text, LF; repeated for each path",
+  "sourceFilesSha256": {
+    "src/engine/actions.ts": "2470daad996be973e130a31fb76fc9ef14ca089a15c2269e797f1598f1df05f7",
+    "src/engine/crisisAdventure.test.ts": "56078d5785fef942872e0b4532ebfc6046c34e49f53abde0a7e2606afdc213e3",
+    "src/engine/crisisContributions.test.ts": "2f88fab54f5ceca44570195901077f3f41a421b4c9ff3657b90ddcfe31ca02ce",
+    "src/engine/crisisContributions.ts": "9354b3ddb288d2cfc5cad639b16bdb1b68c5eaca782101040ee3c9bbe49e1cd6",
+    "src/engine/regionalCrisisRecognition.ts": "b6c33d892cbb421b89d84620219bad60c7fe15fa883852bf6dbd0a44658004c0"
+  },
+  "authority": {
+    "path": "tickets/20261008-v2x-06h-history-identity.md",
+    "sha256": "fae3ff8b6043be2836e90d350ca0d2777226968231086bf6b2e0f1731c875477"
+  },
+  "evidenceSha256": {
+    "h-attempt-craft-effect-fixture.txt": "e8dc287c528379114d7f9471c4531de18d7dde3bd0c2248e4f454e0a7af09f85",
+    "h-red-contribution-recognition.txt": "401a0d2888fcb323d222b0c88d2371027acd5f48b0411b634785aa7cdfab1833",
+    "h-red-supply.txt": "f44a3e0656df7025e545b99aa00bdd5bab3445173e50ce8e90b84c78546f396c",
+    "h-green-regression.txt": "a49485298ac1b39471f4e8ee732fa86793ae1d7788c1450fdbb3b743acc479ab",
+    "h-build.txt": "5c08946c60ac954b2209468eb18ecc80f4da2da622bcf073b319a2cd394ce3d2",
+    "h-green-rng-followup.txt": "3a19424e01dae043b243799f4bb91290c59866901963dfbded0747e9d64a581b",
+    "h-typecheck-rng-followup.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "h-implementation-report.md": "c918abe7a458601f3cee120efcffb241f3f3e3ac56be8b7770869c7fb7aad73c",
+    "contribution-analysis.md": "e8ec9fdd5af251b4b799b39e6d61b182e4bd90ec1895f6d7a2a31b8707b54ec7"
+  },
+  "focusedRegression": {
+    "command": "npm test -- src/engine/crisisContributions.test.ts src/engine/crisisAdventure.test.ts src/engine/identity.test.ts src/engine/regionalCrisis.test.ts src/engine/simulation.test.ts src/engine/lifeIntegration.test.ts src/services/saveService.test.ts",
+    "testFilesPassed": 7,
+    "testsPassed": 211,
+    "status": "PASS",
+    "evidence": "h-green-regression.txt"
+  },
+  "reviewFollowup": {
+    "command": "npm test -- src/engine/crisisContributions.test.ts",
+    "testFilesPassed": 1,
+    "testsPassed": 24,
+    "assertions": "Supply and craft public threshold paths preserve worldTime and rngState, including save/reload.",
+    "evidence": "h-green-rng-followup.txt",
+    "productionSourceChanged": false
+  },
+  "typecheckAndBuild": {
+    "command": "npm run build",
+    "typecheck": "PASS (vue-tsc --noEmit)",
+    "productionBuild": "PASS (Vite)",
+    "evidence": "h-build.txt",
+    "followupTypecheck": {
+      "command": "npx vue-tsc --noEmit",
+      "status": "PASS",
+      "evidence": "h-typecheck-rng-followup.txt"
+    }
+  },
+  "diffCheck": {
+    "command": "git diff --check",
+    "status": "PASS"
+  },
+  "recognition": {
+    "supplyCrossing": "Per donor/current crisis, food credits / 4 + gold credits / 5: before < 5 and after >= 5; +3 reputation and one major history event.",
+    "craftCrossing": "Per original craftProvenance.createdBy/current crisis, summed civilDefenseGearEffect(sourceItem.rolledStats, slot, 10): before < 1.0 and after >= 1.0; +3 reputation and one major history event.",
+    "campCrossing": "Actual current-crisis campRaidAt null-to-timestamp victory fact only; +3 reputation and one major history event.",
+    "chiefOutcome": "Existing Chief +12 remains unchanged and receives no duplicate H recognition.",
+    "onceOnly": "Uses existing monotonic contribution ledger, equipment allocation snapshots, and E camp fact; no new reward ledger or Save8.",
+    "deadCreator": "Major event retains historical creator name/ID; existing reputation helper makes no award to a dead character; successor receives none."
+  },
+  "eventCapacity": {
+    "preflight": "Contribution crossing reserves up to three event IDs before asset, gold, ledger, or reputation mutation; non-crossing contribution requires one.",
+    "red": [
+      "h-red-supply.txt",
+      "h-red-contribution-recognition.txt"
+    ],
+    "tests": "Supply and crafted equipment reject atomically at MAX_SAFE_INTEGER - 3; supply with gameplay, rank, and major events succeeds at MAX_SAFE_INTEGER - 4 and reloads at MAX_SAFE_INTEGER - 1.",
+    "campClone": "H camp award is part of the E complete combat resolver clone and is covered at the final saveable event sequence."
+  },
+  "review": "Pending independent core review. No self-acceptance claim."
+}

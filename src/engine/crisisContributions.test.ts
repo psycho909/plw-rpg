@@ -5,7 +5,7 @@ import { rolledItemStats } from './gearStats'
 import { chooseSuccessor, createGame, die, player, simulate } from './simulation'
 import { tryStartRegionalCrisis } from './regionalCrisis'
 import { contributeCrisisEquipment, contributeCrisisFood, contributeCrisisGold } from './crisisContributions'
-import { deriveCivilDefense } from './civilDefense'
+import { availableCivilDefenseDefenders, civilDefenseGearEffect, deriveCivilDefense } from './civilDefense'
 import { deserialize, serialize } from '../services/saveService'
 
 function crisisWorld() {
@@ -45,6 +45,17 @@ function strongItem(instanceId = 'item-1', ownerId = 'alden'): ItemInstance {
   ]
   return { instanceId, ownerId, baseId: 'shortSword', level: 10, material: null, rarity: 'legendary',
     rolledStats: rolledItemStats('shortSword', 10, affixes), affixes, specialTrait: null, provenance: null, craftProvenance: null }
+}
+
+function craftedItem(instanceId: string, ownerId: string, creatorId: string): ItemInstance {
+  const affixes: ItemInstance['affixes'] = [{ id: 'piercing', tier: 1, value: 1 }]
+  return {
+    instanceId, ownerId, baseId: 'spear', level: 2, material: null, rarity: 'uncommon',
+    rolledStats: rolledItemStats('spear', 2, affixes), affixes, specialTrait: null, provenance: null,
+    craftProvenance: {
+      recipeId: 'starterSpear', createdBy: creatorId, createdAt: 0, influenceMaterial: null, masterpiece: false,
+    },
+  }
 }
 
 function pointPlayerAtCommunitySquare(state: ReturnType<typeof createGame>) {
@@ -266,4 +277,169 @@ it('adds capped gold to the workforce-derived emergency logistics need', () => {
   expect(contributeCrisisGold(state, crisis.id, 76)).not.toBe('')
   expect(state).toEqual(before)
   expect(deserialize(serialize(state, 701)).state).toEqual(state)
+})
+
+it('recognizes a donor once when combined food and gold supply crosses five normalized credits', () => {
+  const { state, crisis } = crisisWorld()
+  allNpcJobs(state, 'guard')
+  state.threat.bossAlive = true
+  state.settlement.food = 0
+  player(state).gold = 200
+  player(state).inventory.food = 4
+  while (state.npcs.length < 52) {
+    const source = state.npcs[0]!
+    const npc = structuredClone(source)
+    npc.id = `npc-${state.nextNpcId++}`
+    npc.name = `guard-${npc.id}`
+    state.npcs.push(npc)
+    state.life.npcs[npc.id] = { ...structuredClone(state.life.npcs[source.id]!), careerJob: 'guard', career: 'worker' }
+  }
+  for (const farmer of state.npcs.slice(0, 7)) {
+    farmer.job = 'farmer'
+    state.life.npcs[farmer.id]!.careerJob = 'farmer'
+  }
+  const characterId = state.activeCharacterId
+  const reputation = state.life.characters[characterId]!.reputation
+  const worldTime = state.worldTime
+  const rngState = state.rngState
+  const baseline = deriveCivilDefense(state, crisis)!
+  expect(baseline.food.rawProjectedAtResolution).toBeGreaterThan(0)
+  expect(baseline.food.rawProjectedAtResolution).toBeLessThan(55)
+
+  expect(contributeCrisisFood(state, crisis.id, 4)).toBe('')
+  expect(state.life.characters[characterId]!.reputation).toBe(reputation)
+  expect(state.worldTime).toBe(worldTime)
+  expect(state.rngState).toBe(rngState)
+  expect(state.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(0)
+  expect(state.events.at(-1)?.type).toBe('regional-crisis.contribution.food')
+
+  expect(contributeCrisisGold(state, crisis.id, 5)).toBe('')
+  expect(state.life.characters[characterId]!.reputation).toBe(reputation + 3)
+  expect(state.life.characters[characterId]!.reputationHistory.at(-1)).toMatchObject({ delta: 3 })
+  expect(state.worldTime).toBe(worldTime)
+  expect(state.rngState).toBe(rngState)
+  expect(state.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(1)
+  expect(state.events.filter(event => event.type === 'regional-crisis.contribution.food')).toHaveLength(1)
+  expect(state.events.filter(event => event.type === 'regional-crisis.contribution.gold')).toHaveLength(1)
+
+  const loaded = deserialize(serialize(state, 705)).state
+  expect(loaded).toEqual(state)
+  expect(loaded.worldTime).toBe(worldTime)
+  expect(loaded.rngState).toBe(rngState)
+  expect(contributeCrisisGold(loaded, crisis.id, 1)).toBe('')
+  expect(loaded.life.characters[characterId]!.reputation).toBe(reputation + 3)
+  expect(loaded.worldTime).toBe(worldTime)
+  expect(loaded.rngState).toBe(rngState)
+  expect(loaded.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(1)
+})
+
+it('credits summed defense craft by original crafter across creators, never the successor item owner', () => {
+  const { state, crisis } = crisisWorld()
+  allNpcJobs(state, 'guard')
+  for (const npc of state.npcs) npc.age = 30
+  const originalCrafter = player(state)
+  const originalCrafterId = originalCrafter.id
+  const originalCrafterName = originalCrafter.name
+  const originalReputation = state.life.characters[originalCrafterId]!.reputation
+  const successorNpc = state.npcs.find(npc => npc.isAlive && npc.age >= 15)!
+  die(state, originalCrafter, '鍛造測試')
+  expect(chooseSuccessor(state, successorNpc.id)).toBe(true)
+  pointPlayerAtCommunitySquare(state)
+  const successor = player(state)
+  const successorReputation = state.life.characters[successor.id]!.reputation
+  const worldTime = state.worldTime
+  const rngState = state.rngState
+  const effectPerItem = civilDefenseGearEffect(craftedItem('measure', successor.id, originalCrafterId).rolledStats, 'weapon', 10)
+  expect(effectPerItem).toBeLessThan(1)
+  expect(effectPerItem * 2).toBeGreaterThanOrEqual(1)
+
+  const creatorIds = [originalCrafterId, successor.id, originalCrafterId, successor.id]
+  const items = creatorIds.map((creatorId, index) => craftedItem(`item-${index + 1}`, successor.id, creatorId))
+  state.reward.instances.push(...items)
+  state.reward.nextInstanceId = 5
+  const defenders = availableCivilDefenseDefenders(state).slice(0, 4)
+  expect(defenders).toHaveLength(4)
+
+  for (let index = 0; index < items.length; index++) {
+    expect(contributeCrisisEquipment(state, crisis.id, defenders[index]!.id, items[index]!.instanceId)).toBe('')
+    expect(state.life.characters[successor.id]!.reputation).toBe(successorReputation + (index === 3 ? 3 : 0))
+    expect(state.life.characters[originalCrafterId]!.reputation).toBe(originalReputation)
+    expect(state.worldTime).toBe(worldTime)
+    expect(state.rngState).toBe(rngState)
+    expect(state.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(index < 2 ? 0 : index - 1)
+  }
+
+  const craftRecognitions = state.history.filter(event => event.type === 'regional-crisis.contribution.major')
+  expect(craftRecognitions[0]!.message).toContain(originalCrafterName)
+  expect(craftRecognitions[0]!.message).toContain(originalCrafterId)
+  expect(craftRecognitions[1]!.message).toContain(successor.name)
+  expect(craftRecognitions[1]!.message).toContain(successor.id)
+  expect(state.regionalCrisis.phase === 'dormant' ? [] : state.regionalCrisis.contributions.equipment)
+    .toHaveLength(4)
+  const loaded = deserialize(serialize(state, 706)).state
+  expect(loaded).toEqual(state)
+  expect(loaded.worldTime).toBe(worldTime)
+  expect(loaded.rngState).toBe(rngState)
+})
+
+it('rejects a major supply threshold crossing atomically without room for its complete event path', () => {
+  const { state, crisis } = crisisWorld()
+  allNpcJobs(state, 'guard')
+  player(state).gold = 200
+  state.eventSequence = Number.MAX_SAFE_INTEGER - 3
+  const before = structuredClone(state)
+
+  expect(contributeCrisisGold(state, crisis.id, 25)).toContain('安全上限')
+  expect(state).toEqual(before)
+})
+
+it('keeps a threshold-crossing crafted asset and ledger intact when event capacity is short', () => {
+  const { state, crisis } = crisisWorld()
+  allNpcJobs(state, 'guard')
+  for (const npc of state.npcs) npc.age = 30
+  const creatorId = state.activeCharacterId
+  const items = [1, 2].map(index => craftedItem(`item-${index}`, creatorId, creatorId))
+  state.reward.instances.push(...items)
+  state.reward.nextInstanceId = 3
+  const defenders = availableCivilDefenseDefenders(state).slice(0, 2)
+  expect(defenders).toHaveLength(2)
+
+  expect(contributeCrisisEquipment(state, crisis.id, defenders[0]!.id, items[0]!.instanceId)).toBe('')
+  state.eventSequence = Number.MAX_SAFE_INTEGER - 3
+  const before = structuredClone(state)
+
+  expect(contributeCrisisEquipment(state, crisis.id, defenders[1]!.id, items[1]!.instanceId)).toContain('安全上限')
+  expect(state).toEqual(before)
+})
+
+it('admits the full three-event supply path at the last saveable event sequence', () => {
+  const { state, crisis } = crisisWorld()
+  allNpcJobs(state, 'guard')
+  player(state).gold = 200
+  state.life.characters[state.activeCharacterId]!.reputation = 24
+  state.eventSequence = Number.MAX_SAFE_INTEGER - 4
+
+  expect(contributeCrisisGold(state, crisis.id, 25)).toBe('')
+
+  expect(state.eventSequence).toBe(Number.MAX_SAFE_INTEGER - 1)
+  expect(state.events.slice(-3).map(event => event.type)).toEqual([
+    'regional-crisis.contribution.gold', 'reputation.rankChanged', 'regional-crisis.contribution.major',
+  ])
+  expect(deserialize(serialize(state, 707)).state).toEqual(state)
+})
+
+it('does not replay recognition for a loaded ledger already above the supply threshold', () => {
+  const { state, crisis } = crisisWorld()
+  allNpcJobs(state, 'guard')
+  player(state).gold = 200
+  crisis.contributions.gold.spent = 25
+  crisis.contributions.gold.credits = [{ donorId: state.activeCharacterId, amount: 25 }]
+  const loaded = deserialize(serialize(state, 708)).state
+  const characterId = loaded.activeCharacterId
+  const reputation = loaded.life.characters[characterId]!.reputation
+
+  expect(contributeCrisisGold(loaded, crisis.id, 1)).toBe('')
+
+  expect(loaded.life.characters[characterId]!.reputation).toBe(reputation)
+  expect(loaded.history.filter(event => event.type === 'regional-crisis.contribution.major')).toHaveLength(0)
 })

@@ -1,0 +1,54 @@
+# H supply-threshold RED
+
+Base HEAD: ec7bd32b5f81c433ecd07bbbcd43c1a51af6ea70.
+
+Pre-fix source SHA-256:
+- `src/engine/crisisContributions.ts`: `9b4dd4ac464bd21059484aeb6c2daa26cae08aa247b07ff2c9e4b48bf66ec635`
+- `src/engine/crisisContributions.test.ts`: `b3d5968513944edd1d31993481bb6196e13533ae7bd489142620d4510d7fcce9`
+- `src/engine/actions.ts`: `a2ce83f2235faaf3fa65390fb0296ddc92c8ce395704e5e108547019d5002fac`
+- `src/engine/identity.ts`: `2d7596a712c16940a590bdf47edd288fc965f429304889e0be3b09969d61119e`
+
+Command: `npm test -- src/engine/crisisContributions.test.ts -t "recognizes a donor once when combined crisis supply crosses five normalized credits"`.
+Exit status: 1. The threshold crossing was accepted as a regular donation but reputation remained unchanged (`expected +0 to be 3`).
+
+Raw output:
+```text
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crisisContributions.test.ts -t recognizes a donor once when combined crisis supply crosses five normalized credits
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crisisContributions.test.ts (19 tests | 1 failed | 18 skipped) 12ms
+   × recognizes a donor once when combined crisis supply crosses five normalized credits 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crisisContributions.test.ts > recognizes a donor once when combined crisis supply crosses five normalized credits
+AssertionError: expected +0 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 0
+
+ ❯ src/engine/crisisContributions.test.ts:284:58
+    282|
+    283|   expect(contributeCrisisGold(state, crisis.id, 5)).toBe('')
+    284|   expect(state.life.characters[characterId]!.reputation).toBe(reputati…
+       |                                                          ^
+    285|   expect(state.life.characters[characterId]!.reputationHistory.at(-1))…
+    286|   expect(state.history.filter(event => event.type === 'regional-crisis…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 18 skipped (19)
+   Start at  23:49:47
+   Duration  401ms (transform 237ms, setup 0ms, import 279ms, tests 12ms, environment 0ms)
+
+
+```
