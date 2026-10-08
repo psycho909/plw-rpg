@@ -40,3 +40,7 @@
 ## Evidence
 
 Initial HEAD 2d6af37cb36c9616cb832fc4d839bfd6ea7ef7c9，initial working tree clean；reports/v2/20261008-content-expansion/phase-07/；A基線與計畫待完成。
+
+## Current delivery state
+
+C core engineering is implemented and pushed in commits \`9b13e7b\` and \`d531451\`: Slime content is registered through the shared generator, Save8/Reward3 migration is covered, boss forms and director-capacity boundaries are guarded, and the outdoor dungeon payout regression is fixed. The corrective full check passed 30 files / 565 tests, typecheck, and production build. C is not marked accepted yet because the required post-fix independent Max review is pending; the reviewer agent reached its usage limit. D–I content construction remains gated until that review closes.
