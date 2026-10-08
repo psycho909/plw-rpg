@@ -1,5 +1,6 @@
 import { ARCHETYPES, BOSS, BUILDINGS, CONFIG, CROP, DUNGEON, ITEMS, MONSTERS } from '../data/config'
 import { ITEM_BASES, RARITIES, WOLF_MONSTERS } from '../data/rewards'
+import { CONTENT_MONSTERS } from '../data/contentRegistry'
 import type { GameState, ItemId, RegionalCrisisCombatObjective, SkillId } from '../domain/types'
 import { emit } from './events'
 import { random } from './random'
@@ -9,11 +10,15 @@ import { npcCanWork, rememberNpc } from './npcLife'
 import { recordHunt, recordLivingTrade, tradePriceMultiplier } from './livingEvents'
 import { die, distance, gainExp, player, preflightRegionalCrisisAction, simulate, stageIndex, threatLevel, tileAt } from './simulation'
 import { canVisit } from './rewardActions'
-import { awardWolfLoot } from './itemGeneration'
+import { awardContentLoot, awardWolfLoot } from './itemGeneration'
 import { incomingDamage, playerAttackDamage } from './combatStats'
 import { advanceWolfTurn, wolfAttackForTurn, wolfChargeHealing, wolfCombatPhase, wolfDefenseForTurn } from './wolfFamily'
 import { recordRegionalChiefDefeat } from './regionalCrisis'
 import { recordMajorRegionalCrisisContribution } from './regionalCrisisRecognition'
+import {
+  advanceContentTurn, contentAttackForTurn, contentChargeHealing, contentCombatPhase,
+  contentDefenseForTurn, encounterContentMonster, recordContentBossDefeat,
+} from './contentFamilies'
 
 export { canVisit } from './rewardActions'
 function cost(state: GameState, stamina: number, minutes: number, gold = 0) {
@@ -41,7 +46,7 @@ function farmInternal(state: GameState, action: 'prepare' | 'plant' | 'harvest')
     if (!state.preparedPlots) return '請先整地，再播種。'
     const error = cost(state, 4, 10); if (error) return error
     state.preparedPlots--
-    state.crops.push({ id: ++state.eventSequence, plantedAt: state.worldTime, growthDuration: CROP.duration, matureAt: state.worldTime + CROP.duration, status: 'growing' })
+    state.crops.push({ id: ++state.eventSequence, cropId: 'wheat', plantedAt: state.worldTime, growthDuration: CROP.duration, matureAt: state.worldTime + CROP.duration, status: 'growing' })
     gainExp(state, player(state), 5, 'farming'); emit(state, 'crop.planted', 'player', '播下小麥。兩日後即可收割。')
   } else {
     const crop = state.crops.find(c => c.status === 'mature'); if (!crop) return '小麥還沒成熟，讓世界時間繼續前進。'
@@ -195,6 +200,9 @@ export function encounter(state: GameState, boss = false) {
   return ''
 }
 
+/** Starts one authored family target through its canonical, side-effect-free eligibility query. */
+export { encounterContentMonster }
+
 /** Starts one bounded, real Goblin encounter that can count for the matching live crisis. */
 export function startRegionalCampRaid(state: GameState, crisisId: string) {
   const crisis = state.regionalCrisis
@@ -272,7 +280,10 @@ function resolveCombatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
   if (command === 'potion') { const error = usePotion(state); if (error) return error }
   const family = !monster.dungeon && monster.monsterId === 'wolf' ? monster.familyEncounter : undefined
   const familyPhase = family ? wolfCombatPhase(family, monster.hp, monster.maxHp) : null
-  const effectiveDefense = family && familyPhase ? wolfDefenseForTurn(monster.defense, familyPhase) : monster.defense
+  const contentEncounter = !monster.dungeon && monster.monsterId === 'content-family' ? monster.contentEncounter : undefined
+  const contentPhase = contentEncounter ? contentCombatPhase(contentEncounter) : null
+  const effectiveDefense = family && familyPhase ? wolfDefenseForTurn(monster.defense, familyPhase)
+    : contentPhase ? contentDefenseForTurn(monster.defense, contentPhase) : monster.defense
   const attackContext = familyPhase?.armored ? { wolfArmoredPhase: true } : undefined
   if (command === 'attack') monster.hp = Math.max(0, monster.hp - playerAttackDamage(state, effectiveDefense, monster.monsterId === 'wolf', attackContext))
   for (const p of state.party) {
@@ -283,17 +294,23 @@ function resolveCombatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
   }
   if (monster.hp <= 0) {
     const wolfFamilyPayout = !monster.dungeon && monster.monsterId === 'wolf'
+    const contentFamilyPayout = !!contentEncounter
     const wolfLoot = wolfFamilyPayout
       ? awardWolfLoot(state, { definitionId: family?.definitionId ?? 'grayWolf' })
       : null
+    const contentLoot = contentFamilyPayout
+      ? awardContentLoot(state, { definitionId: contentEncounter!.definitionId })
+      : null
     const wolfBoss = !!family && WOLF_MONSTERS[family.definitionId].rank === 'boss'
-    const goblinBoss = !family && MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss
+    const contentBoss = !!contentEncounter && CONTENT_MONSTERS[contentEncounter.definitionId]?.rank === 'boss'
+    const goblinBoss = !family && !contentFamilyPayout && MONSTERS[monster.monsterId as keyof typeof MONSTERS].boss
     const regionalCrisisObjective = monster.regionalCrisisObjective
     recordHunt(state)
     c.gold += monster.gold
-    if (!wolfFamilyPayout) c.inventory[MONSTERS[monster.monsterId as keyof typeof MONSTERS].loot]++
+    if (!wolfFamilyPayout && !contentFamilyPayout) c.inventory[MONSTERS[monster.monsterId as keyof typeof MONSTERS].loot]++
     gainExp(state, c, monster.exp, 'combat'); recordLifeAction(state, 'combat'); state.combat = null; c.status = 'idle'
-    if (!monster.dungeon) {
+    if (contentBoss && contentEncounter) recordContentBossDefeat(state, contentEncounter.definitionId)
+    if (!monster.dungeon && !contentFamilyPayout) {
       changeReputation(state, goblinBoss || wolfBoss ? 12 : 1, '守護橡谷北方道路')
       if (!wolfBoss) {
         const detail = family ? `${c.name}擊退森林裡的威脅。` : `${c.name}擊退北方道路的威脅。`
@@ -312,7 +329,8 @@ function resolveCombatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
         emit(state, 'boss.defeated', 'monster', `${MONSTERS[BOSS.monsterId].name}被擊敗，北方商路暫時恢復平靜。`, true)
       }
       if (wolfBoss) emit(state, 'wolf.boss.defeated', 'monster', `${WOLF_MONSTERS[family.definitionId].name}被擊敗，狼群的威脅暫時減弱。`, true)
-    } else {
+    }
+    if (monster.dungeon) {
       state.dungeon.stage++
       if (state.dungeon.stage >= DUNGEON.encounters.length) {
         state.dungeon.inDungeon = false; state.dungeon.runs++; state.dungeon.progress = Math.max(0, state.dungeon.progress - 30)
@@ -321,8 +339,9 @@ function resolveCombatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
         emit(state, 'dungeon.cleared', 'world', '廢棄礦坑探索完成，獲得額外鐵礦。', true)
       }
     }
-    const gearMessage = wolfLoot?.instance
-      ? ` 另獲得${RARITIES[wolfLoot.instance.rarity].name}${ITEM_BASES[wolfLoot.instance.baseId].name}，可在物品視窗檢視。`
+    const droppedItem = wolfLoot?.instance ?? contentLoot?.instance ?? null
+    const gearMessage = droppedItem
+      ? ` 另獲得${RARITIES[droppedItem.rarity].name}${ITEM_BASES[droppedItem.baseId].name}，可在物品視窗檢視。`
       : ''
     if (recordCampRaidVictory(state, regionalCrisisObjective)) {
       recordMajorRegionalCrisisContribution(state, c.id, 'camp')
@@ -334,12 +353,17 @@ function resolveCombatTurn(state: GameState, command: 'attack' | 'defend' | 'pot
       const healing = wolfChargeHealing(family, monster.hp, monster.maxHp, familyPhase)
       monster.hp = Math.min(monster.maxHp, monster.hp + healing)
     }
+    if (contentEncounter && contentPhase) {
+      const healing = contentChargeHealing(contentEncounter, monster.hp, monster.maxHp, contentPhase)
+      monster.hp = Math.min(monster.maxHp, monster.hp + healing)
+    }
     const incomingAttack = family && familyPhase
       ? wolfAttackForTurn(family, monster.attack, command === 'defend', familyPhase)
-      : monster.attack
+      : contentPhase ? contentAttackForTurn(monster.attack, command === 'defend', contentPhase) : monster.attack
     c.hp = Math.max(0, c.hp - incomingDamage(state, incomingAttack, command === 'defend', companionGuard))
     if (!c.hp) die(state, c, '戰鬥傷勢')
     if (state.combat?.familyEncounter) advanceWolfTurn(state.combat.familyEncounter)
+    if (state.combat?.contentEncounter) advanceContentTurn(state.combat.contentEncounter)
   }
   simulate(state, 1)
   state.life.director.lastPlayerActivity = state.worldTime

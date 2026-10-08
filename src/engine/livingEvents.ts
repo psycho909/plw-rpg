@@ -10,6 +10,7 @@ import { random } from './random'
 import { recordRegionalChiefDefeat } from './regionalCrisis'
 
 const DAY = 1440
+const DIRECTOR_COOLDOWN_LIMIT = 100
 const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value))
 const manhattan = (a: { x: number; y: number }, b: { x: number; y: number }) => Math.abs(a.x - b.x) + Math.abs(a.y - b.y)
 
@@ -40,14 +41,24 @@ function activityFactor(state: GameState) {
   return 1 - (idleFor - 3 * DAY) / (18 * DAY) * 0.46
 }
 
+function pruneExpiredHuntCooldowns(state: GameState) {
+  for (const [key, at] of Object.entries(state.life.director.cooldowns)) {
+    if (key.startsWith('hunt-recorded:') && at < state.worldTime - 2 * DAY) delete state.life.director.cooldowns[key]
+  }
+}
+
+function canWriteCooldowns(state: GameState, keys: readonly string[]) {
+  const cooldowns = state.life.director.cooldowns
+  const missing = new Set(keys.filter(key => !Object.hasOwn(cooldowns, key))).size
+  return Object.keys(cooldowns).length + missing <= DIRECTOR_COOLDOWN_LIMIT
+}
+
 function trimDirectorHistory(state: GameState) {
   const cutoff = state.worldTime - 90 * DAY
   const director = state.life.director
   director.recentMajor = director.recentMajor.filter(at => at >= cutoff).slice(-LIVING_EVENT_LIMITS.recentEvents)
   director.recentCrises = director.recentCrises.filter(at => at >= cutoff).slice(-LIVING_EVENT_LIMITS.recentEvents)
-  for (const [key, at] of Object.entries(director.cooldowns)) {
-    if (key.startsWith('hunt-recorded:') && at < state.worldTime - 2 * DAY) delete director.cooldowns[key]
-  }
+  pruneExpiredHuntCooldowns(state)
 }
 
 function nextId(state: GameState, prefix: string) {
@@ -128,6 +139,7 @@ function createArcRequest(state: GameState, arc: EventArc) {
 }
 
 function startArc(state: GameState, kind: ArcKind) {
+  if (!canWriteCooldowns(state, [kind])) return
   const definition = LIVING_ARCS[kind]
   const arc: EventArc = {
     id: nextId(state, 'arc'), kind, stage: 'signal', startedAt: state.worldTime, stageAt: state.worldTime,
@@ -261,21 +273,23 @@ function candidateWeights(state: GameState) {
   const activity = activityFactor(state)
   for (const kind of ['road', 'food', 'iron'] as const) {
     const weight = arcWeight(state, kind, activity, stable)
-    if (weight > 0) weights[`arc:${kind}`] = weight
+    if (weight > 0 && canWriteCooldowns(state, [kind])) weights[`arc:${kind}`] = weight
   }
 
   if ((director.cooldowns.market_bustle ?? 0) <= now && state.settlement.stage !== 'hamlet' && stable >= 60 && state.settlement.food >= 55 && state.settlement.prosperity >= 55) {
-    weights['minor:market_bustle'] = MINOR_LIVING_EVENTS.find(event => event.id === 'market_bustle')!.weight * activity
+    if (canWriteCooldowns(state, ['market_bustle'])) weights['minor:market_bustle'] = MINOR_LIVING_EVENTS.find(event => event.id === 'market_bustle')!.weight * activity
   }
   if ((director.cooldowns.watch_patrol ?? 0) <= now && state.threat.monsterPopulation >= 20 && state.threat.monsterPopulation < 35 && adultByJob(state, ['guard']).length > 0) {
-    weights['minor:watch_patrol'] = MINOR_LIVING_EVENTS.find(event => event.id === 'watch_patrol')!.weight * activity
+    if (canWriteCooldowns(state, ['watch_patrol'])) weights['minor:watch_patrol'] = MINOR_LIVING_EVENTS.find(event => event.id === 'watch_patrol')!.weight * activity
   }
 
   const braveGuards = adultByJob(state, ['guard', 'mercenary']).filter(npc =>
     !state.party.some(member => member.npcId === npc.id) && npcLife(state, npc.id)?.traits.includes('brave'),
   )
   if ((director.cooldowns.independent_boss_attempt ?? 0) <= now && state.threat.bossAlive && !state.combat && braveGuards.length > 0) {
-    weights['medium:independent_boss_attempt'] = MEDIUM_LIVING_EVENTS.independent_boss_attempt.weight * activity
+    if (canWriteCooldowns(state, ['independent_boss_attempt'])) {
+      weights['medium:independent_boss_attempt'] = MEDIUM_LIVING_EVENTS.independent_boss_attempt.weight * activity
+    }
   }
 
   const capacity = livingPopulation(state) < state.settlement.capacity
@@ -288,7 +302,10 @@ function candidateWeights(state: GameState) {
     (director.cooldowns.traveler ?? 0) <= now
   if (travelerWorldReady) {
     for (const traveler of RARE_TRAVELERS) {
-      if ((director.cooldowns[`traveler:${traveler.kind}`] ?? 0) <= now) weights[`rare:${traveler.kind}`] = traveler.weight * activity
+      if ((director.cooldowns[`traveler:${traveler.kind}`] ?? 0) <= now
+        && canWriteCooldowns(state, ['traveler', `traveler:${traveler.kind}`])) {
+        weights[`rare:${traveler.kind}`] = traveler.weight * activity
+      }
     }
   }
   return weights
@@ -312,7 +329,7 @@ function chooseCandidate(state: GameState, weights: Readonly<Record<string, numb
 
 function applyMinorEvent(state: GameState, eventId: string) {
   const event = MINOR_LIVING_EVENTS.find(candidate => candidate.id === eventId)
-  if (!event) return
+  if (!event || !canWriteCooldowns(state, [event.id])) return
   state.life.director.cooldowns[event.id] = state.worldTime + event.cooldownDays * DAY
   if (event.id === 'market_bustle') state.settlement.prosperity = clamp(state.settlement.prosperity + 0.35, 0, 100)
   else {
@@ -325,6 +342,7 @@ function applyMinorEvent(state: GameState, eventId: string) {
 
 function applyMediumBossAttempt(state: GameState) {
   const definition = MEDIUM_LIVING_EVENTS.independent_boss_attempt
+  if (!canWriteCooldowns(state, ['independent_boss_attempt'])) return
   state.life.director.cooldowns.independent_boss_attempt = state.worldTime + definition.cooldownDays * DAY
   const candidates = adultByJob(state, ['guard', 'mercenary']).filter(npc =>
     !state.party.some(member => member.npcId === npc.id) && npcLife(state, npc.id)?.traits.includes('brave'),
@@ -352,7 +370,7 @@ function applyMediumBossAttempt(state: GameState) {
 
 function applyTraveler(state: GameState, kind: TravelerSpawn['kind'], hooks: LivingEventHooks | undefined) {
   const definition = RARE_TRAVELERS.find(traveler => traveler.kind === kind)
-  if (!definition) return
+  if (!definition || !canWriteCooldowns(state, ['traveler', `traveler:${kind}`])) return
   const visitor: TravelerSpawn = { kind, durationDays: definition.durationDays, rumor: definition.text }
   const spawned = hooks?.spawnTraveler ? hooks.spawnTraveler(state, visitor) : false
   if (hooks?.spawnTraveler && !spawned) return
@@ -411,6 +429,9 @@ export function dailyLivingEvents(state: GameState, hooks?: LivingEventHooks) {
   if (state.worldTime % DAY !== 0) return
   const director = state.life.director
   if (director.cooldowns['director:lastDailyTick'] === state.worldTime) return
+  pruneExpiredHuntCooldowns(state)
+  // A saturated record declines this optional daily pass; it never evicts active keys or writes key 101.
+  if (!canWriteCooldowns(state, ['director:lastDailyTick'])) return
   director.cooldowns['director:lastDailyTick'] = state.worldTime
   director.stability = stability(state)
   trimDirectorHistory(state)
@@ -523,6 +544,7 @@ export function recordHunt(state: GameState): number {
   if (!requests.length) return 0
   const key = `hunt-recorded:${state.worldTime}:${combat.monsterId}`
   if (state.life.director.cooldowns[key] === state.worldTime) return 0
+  if (!canWriteCooldowns(state, [key])) return 0
   state.life.director.cooldowns[key] = state.worldTime
   for (const request of requests) request.progress = Math.min(request.amount, request.progress + 1)
   return requests.length

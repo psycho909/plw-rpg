@@ -1,20 +1,23 @@
-# Phase 7-C Slime Data Pack Validation
+# Phase 7-C Slime Data Pack Validation — Economics Correction
 
-Repository HEAD during prose correction/validation: `21f75524e22238d5f50c10d01a52f7c0d12cf41b`.  
-Tracked plus untracked recursive `src/` snapshot: 97 files; canonical sorted path→SHA-256 JSON fingerprint `3612dbd4f7709e31bb5147957d0f1d7c32f950336df6438ae28786d308b1b634`.  
-Data module: `src/data/content/slime.ts`, SHA-256 `5e6ba41bf54518972b2fba16f6f03f7a73d48e48f57ab4b0b81a4a45addbc14a`.  
-Updated serialized pack SHA-256: `4447318fce02c655744b165e46d0284b0d2085ae427a63fdb95682e749ed5f6a`.
+The previous report version is preserved in `playlog.jsonl`. The source change for this update is limited to `slime_resin_guard_recipe.goldCost`, from 8 to 11, in `src/data/content/slime.ts`. Current data module SHA-256: `0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead`. Current serialized `SLIME_CONTENT` pack SHA-256: `a59fb46f120390a4a37bef4084ffe9c3700ae0c107af79e5cc9e387055cfeb97`.
 
-The isolated `SLIME_CONTENT` pack contains 1 family, all 11 planned monsters (6 normal, 2 elite, 2 mini-boss, 1 boss), 12 loot tables (one family fallback plus 11 monster-selected tables), 8 equipment bases, 8 materials and 4 recipes. Each monster has a finite telegraphed combat mechanic and sourced/useful selected loot; the validator qualified all 11. Eight materials have reachable loot or boss sources and a recipe input or compatible bias consumer. Equipment uses only baseline weapon/armor affixes with matching slots. No crop/crop-good entries are included in this slice. All Slime Heart forms retain the fixed charged-attack/heal core; `stillwater`, `surging`, and `starved` only add guard, rush, and retaliation mechanics respectively. They do not suppress healing or override attack cadence.
+## Original failure and approved resolution
 
-## Validation result
+The core economics check found a genuine small arbitrage for the resin guard recipe. At the prior authored fee of 8, expected premium-item sale value was 32.782 while complete replacement cost was 31: three slime resin at 3 each (9), two wood at the discounted shop price of 7 each (14), and the 8-gold recipe fee. The expected sale margin was 1.782.
 
-After the moss description correction, Vite SSR serialized the current module and directly invoked `validateContentPack` once (no batch runner, tests, or typecheck rerun). Data validation returned **PASS**: 0 errors, 0 warnings; 11 qualifying monsters; 16 unique authoring-qualified item IDs (8 equipment + 8 usable materials); 8 usable materials. All 11 monsters and the family had controlled spawn witnesses within the declared region/level/threat/season/time predicates.
+Root approved changing only the authored fee to 11. Replacement cost is now 34 (9 + 14 + 11), leaving a 1.218 deficit against expected premium sale value 32.782. Recipe stats, material sell values, item sell values, and generator behavior are unchanged. This is the exact bounded correction; no other source field was edited.
 
-The previous pre-correction module version passed the targeted `src/engine/contentValidation.test.ts` (16 tests) and `vue-tsc --noEmit`; these were not rerun because this correction changes only localized prose. No full regression or production build was run.
+## Updated data validation
+
+Vite serialized the current `SLIME_CONTENT` module and directly invoked `validateContentPack` once against the Phase 7 baseline. Result: **PASS**, 0 errors and 0 warnings; 11 qualifying monsters; 16 unique authoring-qualified item IDs (8 equipment + 8 usable materials); 8 usable materials. All 11 monsters and the family have controlled spawn witnesses. Natural exposure remains unmeasured.
+
+The updated serialized pack contains 1 family, 11 monsters (6 normal, 2 elite, 2 mini-boss, 1 boss), 12 loot tables (one family fallback plus 11 monster-selected tables), 8 equipment bases, 8 materials, and 4 recipes. All Slime Heart forms retain the fixed charged-attack/heal core; `stillwater`, `surging`, and `starved` only add guard, rush, and retaliation mechanics respectively. They do not suppress healing or override attack cadence.
+
+No unit tests, typecheck, broad regression, or production build were rerun for this one-number economics change. Max owns the separate targeted crafted-sale bound check, including material sales.
 
 ## Limits
 
-Natural encounter exposure is not measured. Controlled witnesses establish predicate satisfiability only. The Slime Heart selected loot table and `bossRules` both declare `slime_heart_gel` as guaranteed. Validator source evidence treats these as a reachable source, not two runtime awards; C runtime must union/deduplicate the overlapping guarantees and assert exactly one `slime_heart_gel` per boss award. Save compatibility remains a stable-ID-addition authoring claim; runtime save/reload, combat, real loot generation, recipe execution, equipment use and the accepted `food +3` boss consequence still require Max’s core integration and C acceptance. This pack is data only and has not been added to a shared registry/runtime entry point. Cave Insects remains held.
+Natural encounter exposure is not measured; controlled witnesses establish predicate satisfiability only. The Slime Heart selected loot table and `bossRules` both declare `slime_heart_gel` guaranteed; C runtime must union/deduplicate those guarantees and award exactly one. Runtime save/reload, combat, real loot generation, recipe execution, equipment use, the accepted `food +3` boss consequence, and shared-registry integration remain core integration work. This pack remains data-only and is not added to a shared registry/runtime entry point; Cave Insects remains held.
 
-The baseline source fingerprint is `c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb`. Previous full batch runner output SHA was `5ef52bb10d49db7442c83f504a90f6e802fe71e639f77e63551388bb070118a6`; the current prose-only validation result is captured above.
+Baseline source fingerprint recorded in the approved content plan: `c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb`. Prior serialized pack SHA-256 before the economics correction: `4447318fce02c655744b165e46d0284b0d2085ae427a63fdb95682e749ed5f6a`.

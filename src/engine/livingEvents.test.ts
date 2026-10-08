@@ -231,6 +231,67 @@ describe('world-driven requests', () => {
     expect(arc.outcome).toBe('pending')
   })
 
+  it('skips a daily event pass when the cooldown map is full and has no daily marker slot', () => {
+    const state = createGame(1917)
+    state.worldTime = (Math.floor(state.worldTime / day) + 1) * day
+    state.life.director.quietUntil = state.worldTime + 10 * day
+    state.life.director.cooldowns = Object.fromEntries(Array.from({ length: 100 }, (_, index) => [
+      `held:${index}`, state.worldTime + 10 * day,
+    ]))
+
+    dailyLivingEvents(state)
+
+    expect(Object.keys(state.life.director.cooldowns)).toHaveLength(100)
+    expect(state.life.director.cooldowns['director:lastDailyTick']).toBeUndefined()
+    expect(deserialize(serialize(state)).state).toEqual(state)
+  })
+
+  it('filters new daily event candidates when the marker consumes the final cooldown slot', () => {
+    const state = createGame(1919)
+    state.worldTime = (Math.floor(state.worldTime / day) + 1) * day
+    state.threat.monsterPopulation = 80
+    state.threat.threatLevel = 3
+    state.settlement.safety = 35
+    state.life.director.quietUntil = 0
+    state.life.director.cooldowns = Object.fromEntries(Array.from({ length: 99 }, (_, index) => [
+      `held:${index}`, state.worldTime + 10 * day,
+    ]))
+    const rngBefore = state.rngState
+
+    dailyLivingEvents(state)
+
+    expect(state.life.director.cooldowns['director:lastDailyTick']).toBe(state.worldTime)
+    expect(Object.keys(state.life.director.cooldowns)).toHaveLength(100)
+    expect(state.life.arcs.filter(arc => !arc.resolved)).toHaveLength(0)
+    expect(state.rngState).toBe(rngBefore)
+    expect(deserialize(serialize(state)).state).toEqual(state)
+  })
+
+  it('does not add hunt progress when the daily marker used the last cooldown slot', () => {
+    const state = createGame(1918)
+    const arc = startArcAtReaction(state, 'road')
+    const request = requestFor(state, 'road')
+    const beforeProgress = request.progress
+    player(state).currentRegion = 'forest'
+    state.combat = { monsterId: 'wolf', hp: 0, maxHp: 30, attack: 8, defense: 1, exp: 10, gold: 4, elite: false, dungeon: false }
+    state.worldTime = (Math.floor(state.worldTime / day) + 1) * day
+    request.expiresAt = state.worldTime + 10 * day
+    state.life.director.quietUntil = state.worldTime + 10 * day
+    state.life.director.cooldowns = Object.fromEntries(Array.from({ length: 99 }, (_, index) => [
+      `held:${index}`, state.worldTime + 10 * day,
+    ]))
+
+    dailyLivingEvents(state)
+    expect(Object.keys(state.life.director.cooldowns)).toHaveLength(100)
+    expect(state.life.director.cooldowns['director:lastDailyTick']).toBe(state.worldTime)
+
+    expect(recordHunt(state)).toBe(0)
+    expect(request.progress).toBe(beforeProgress)
+    expect(arc.outcome).toBe('pending')
+    expect(Object.keys(state.life.director.cooldowns)).toHaveLength(100)
+    expect(deserialize(serialize(state)).state).toEqual(state)
+  })
+
   it('consumes medicine only beside a currently injured NPC and removes the injury', () => {
     const state = createGame()
     const npc = state.npcs.find(n => n.isAlive)!

@@ -152,7 +152,7 @@ it('preflights daily-boundary combat events before applying damage or advancing 
   state.eventSequence = Number.MAX_SAFE_INTEGER - 2
   state.worldTime = 1439
   state.crops = [1, 2].map(id => ({
-    id, plantedAt: 0, growthDuration: 1440, matureAt: 1440, status: 'growing' as const,
+    id, cropId: 'wheat', plantedAt: 0, growthDuration: 1440, matureAt: 1440, status: 'growing' as const,
   }))
   const before = structuredClone(state)
 

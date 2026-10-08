@@ -1,0 +1,26 @@
+
+> plw-rpg@0.1.0 check
+> npm run test && npm run build
+
+
+> plw-rpg@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/stores/gameStore.test.ts (34 tests | 2 failed) 566ms
+     × migrates V1 without offline advancement and retains the historical world checkpoint 22ms
+     × allows explicit reset to replace corrupt data after the UI confirmation 7ms
+ ❯ src/engine/lifeIntegration.test.ts (11 tests | 1 failed) 8654ms
+     × keeps a 100-year world bounded, serializable and deterministic after save 5013ms
+ ❯ src/presentation/craftingProjection.test.ts (8 tests | 1 failed) 52ms
+     × lists all four engine-planned recipes and keeps locked recipes inspectable with their denial 10ms
+ ❯ src/services/playJournal.test.ts (6 tests | 1 failed) 49ms
+     × migrates a valid V1 world and starts a separate journal 18ms
+
+ Test Files  4 failed | 26 passed (30)
+      Tests  5 failed | 552 passed (557)
+   Start at  05:39:02
+   Duration  16.49s (transform 1.61s, setup 0ms, import 3.17s, tests 32.17s, environment 11ms)
+

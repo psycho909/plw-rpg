@@ -1,5 +1,6 @@
 import { BUILDINGS, CONFIG, DUNGEON, ITEMS, JOBS, MONSTERS } from '../data/config'
 import { ITEM_BASES } from '../data/rewards'
+import { KNOWN_CROP_IDS } from '../data/contentRegistry'
 import { IDENTITY_LIMITS, REPUTATION_BOUNDS } from '../data/identity'
 import { NPC_LIFE_LIMITS } from '../data/npcLife'
 import { FARM_BUSINESS_DAILY_FOOD_LIMIT, OWNERSHIP_MEMORY_LIMIT, STORAGE_PER_ITEM_LIMIT } from '../data/ownership'
@@ -12,8 +13,8 @@ import {
 } from '../domain/crisis'
 import { createGame } from '../engine/simulation'
 import { initializeLife } from '../engine/lifeState'
-import { emptyReward, migrateRewardV1 } from '../engine/rewardState'
-import { validFamilyEncounter, validateReward, validateRewardInstanceSnapshot, validateRewardV1 } from './rewardValidation'
+import { emptyReward, migrateRewardV1, migrateRewardV2, normalizeRewardV3MaterialKeys } from '../engine/rewardState'
+import { validContentFamilyEncounter, validFamilyEncounter, validateReward, validateRewardInstanceSnapshot, validateRewardV1, validateRewardV2 } from './rewardValidation'
 
 export const SAVE_KEY = 'oakvale-v1'
 
@@ -45,7 +46,7 @@ function exactShape(value: unknown, required: string[], optional: string[] = [])
   return required.every(key => Object.hasOwn(value, key)) && Object.keys(value).every(key => allowed.has(key))
 }
 
-function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5 | 6 | 7): value is GameState {
+function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8): value is GameState {
   if (!object(value)) return false
   const currentTemplate = createGame()
   // Event tiers remain optional so historical V1 entries survive later-version round trips.
@@ -68,7 +69,7 @@ function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5 | 6 | 7): value is
   const s = value as unknown as GameState
   const ids = [...s.characters, ...s.npcs].map(c => c.id)
   const regions = Object.keys(currentTemplate.regions)
-  return s.saveVersion === version && safeInt(s.worldTime) && Number.isSafeInteger(s.worldSeed) && Number.isSafeInteger(s.rngState)
+  const result = s.saveVersion === version && safeInt(s.worldTime) && Number.isSafeInteger(s.worldSeed) && Number.isSafeInteger(s.rngState)
     && s.characters.length > 0 && s.characters.length <= 1000 && s.npcs.length <= 1000 && new Set(ids).size === ids.length
     && ids.every(id => shortString(id, 128, 1) && (!/^npc-[1-9]\d*$/.test(id) || Number(id.slice(4)) < s.nextNpcId))
     && Number.isSafeInteger(s.nextNpcId) && s.nextNpcId > 0 && s.nextNpcId < Number.MAX_SAFE_INTEGER
@@ -92,18 +93,25 @@ function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5 | 6 | 7): value is
     && s.tiles.every(t => validPosition(t)
       && regions.includes(t.regionId) && ['water', 'grass', 'forest', 'field', 'mountain', 'road'].includes(t.terrain) && (t.building === undefined || Object.hasOwn(BUILDINGS, t.building)))
     && Number.isSafeInteger(s.preparedPlots) && s.preparedPlots >= 0 && s.crops.length + s.preparedPlots <= CONFIG.maxPlots
-    && s.crops.every(c => exactShape(c, ['id', 'plantedAt', 'growthDuration', 'matureAt', 'status']) && safeInt(c.id, 1)
+    && s.crops.every(c => exactShape(c, version >= 8 ? ['id', 'cropId', 'plantedAt', 'growthDuration', 'matureAt', 'status']
+      : ['id', 'plantedAt', 'growthDuration', 'matureAt', 'status']) && safeInt(c.id, 1)
+      && (version < 8 || (typeof c.cropId === 'string' && (KNOWN_CROP_IDS as readonly string[]).includes(c.cropId)))
       && safeInt(c.plantedAt) && safeInt(c.growthDuration, 1) && safeInt(c.matureAt) && ['growing', 'mature'].includes(c.status))
     && new Set(s.crops.map(c => c.id)).size === s.crops.length
     && s.party.length <= 2 && s.party.every(p => exactShape(p, ['npcId', 'hireCost', 'dailyWage', 'contractEnd', 'archetype'])
       && ['fighter', 'healer'].includes(p.archetype) && s.npcs.some(n => n.id === p.npcId)
       && safeInt(p.hireCost) && safeInt(p.dailyWage) && safeInt(p.contractEnd))
     && (s.combat === null || (exactShape(s.combat, ['monsterId', 'hp', 'maxHp', 'attack', 'defense', 'exp', 'gold', 'elite', 'dungeon'],
-      version >= 6 ? ['familyEncounter', 'regionalCrisisObjective'] : ['familyEncounter'])
-      && Object.hasOwn(MONSTERS, s.combat.monsterId) && boundedNumber(s.combat.hp, 0, Number.MAX_SAFE_INTEGER)
+      version >= 8 ? ['familyEncounter', 'contentEncounter', 'regionalCrisisObjective']
+        : version >= 6 ? ['familyEncounter', 'regionalCrisisObjective'] : ['familyEncounter'])
+      && (Object.hasOwn(MONSTERS, s.combat.monsterId)
+        || (version >= 8 && s.combat.monsterId === 'content-family' && Object.hasOwn(s.combat, 'contentEncounter')
+          && Object.hasOwn(value, 'reward') && validContentFamilyEncounter(s.combat.contentEncounter, s)))
+      && boundedNumber(s.combat.hp, 0, Number.MAX_SAFE_INTEGER)
       && boundedNumber(s.combat.maxHp, 1, Number.MAX_SAFE_INTEGER) && safeInt(s.combat.attack) && safeInt(s.combat.defense)
       && safeInt(s.combat.exp) && safeInt(s.combat.gold) && typeof s.combat.elite === 'boolean' && typeof s.combat.dungeon === 'boolean'
       && (!Object.hasOwn(s.combat, 'familyEncounter') || (Object.hasOwn(value, 'reward') && validFamilyEncounter(s.combat.familyEncounter, s)))
+      && (!Object.hasOwn(s.combat, 'contentEncounter') || (version >= 8 && validContentFamilyEncounter(s.combat.contentEncounter, s)))
       && (!Object.hasOwn(s.combat, 'regionalCrisisObjective') || (version >= 6 && s.combat.monsterId === 'goblin'
         && !s.combat.dungeon && validRegionalCrisisCombatObjective(s.combat.regionalCrisisObjective, s)))))
     && safeInt(s.eventSequence) && s.eventSequence < Number.MAX_SAFE_INTEGER
@@ -116,7 +124,8 @@ function validBase(value: unknown, version: 1 | 2 | 3 | 4 | 5 | 6 | 7): value is
       && ['player', 'npc', 'world', 'monster', 'settlement'].includes(e.category)
       && (e.tier === undefined || enumValue(e.tier, ['transient', 'gameplay', 'major', 'debug'])))
     && s.settlement.buildings.every(b => Object.hasOwn(BUILDINGS, b))
-    && (version < 4 || validRegionalCrisis(s.regionalCrisis, s, version as 4 | 5 | 6 | 7))
+    && (version < 4 || validRegionalCrisis(s.regionalCrisis, s, version as 4 | 5 | 6 | 7 | 8))
+  return result
 }
 
 const crisisOutcomes: readonly RegionalCrisisOutcome[] = ['decisive_success', 'costly_success', 'setback', 'local_defeat']
@@ -221,7 +230,7 @@ function validCrisisSummary(value: unknown, s: GameState, resolvedAt: number, ou
   return recovery.npcId === null
 }
 
-function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5 | 6 | 7): value is RegionalCrisisState {
+function validRegionalCrisis(value: unknown, s: GameState, version: 4 | 5 | 6 | 7 | 8): value is RegionalCrisisState {
   if (!object(value)) return false
   const phase = value.phase
   if (phase === 'dormant') {
@@ -344,7 +353,7 @@ function validCounts(value: unknown, keys: string[], maximum = Number.MAX_SAFE_I
   return exactShape(value, keys) && Object.values(value).every(count => safeInt(count, 0, maximum))
 }
 
-function validLife(value: unknown, s: GameState, version: 2 | 3 | 4 | 5 | 6 | 7): value is WorldLife {
+function validLife(value: unknown, s: GameState, version: 2 | 3 | 4 | 5 | 6 | 7 | 8): value is WorldLife {
   if (!exactShape(value, ['canon', 'openingSeen', 'characters', 'npcs', 'properties', 'settlementMemories', 'worldMemories', 'arcs', 'requests', 'news', 'director'])) return false
   if (value.canon !== 'OAKVALE_LIFE_EMERGENCE' || typeof value.openingSeen !== 'boolean' || !object(value.characters) || !object(value.npcs)) return false
   const savedNpcs = value.npcs
@@ -483,7 +492,7 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
   const value: unknown = JSON.parse(raw)
   if (!object(value) || (value.saveVersion !== 1 && value.saveVersion !== 2 && value.saveVersion !== 3
     && value.saveVersion !== 4 && value.saveVersion !== 5 && value.saveVersion !== 6
-    && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
+    && value.saveVersion !== 7 && value.saveVersion !== CONFIG.saveVersion)) throw new Error('存檔版本不支援。原始存檔已保留。')
   if (typeof value.lastSavedAt !== 'number' || !Number.isFinite(value.lastSavedAt) || value.lastSavedAt < 0) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -497,10 +506,16 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
     initializeLife(state, true)
     state.reward = emptyReward()
     state.regionalCrisis = dormantRegionalCrisis()
+    for (const crop of state.crops) crop.cropId = 'wheat'
     state.saveVersion = CONFIG.saveVersion
     return { state, lastSavedAt }
   }
-  const sourceVersion = value.saveVersion as 2 | 3 | 4 | 5 | 6 | 7
+  const sourceVersion = value.saveVersion as 2 | 3 | 4 | 5 | 6 | 7 | 8
+  const normalizedRewardV3 = sourceVersion === 8 ? normalizeRewardV3MaterialKeys(stateData.reward) : null
+  if (sourceVersion === 8) {
+    if (!normalizedRewardV3) throw new Error('存檔資料不完整。原始存檔已保留。')
+    stateData.reward = normalizedRewardV3
+  }
   if (!validBase(stateData, sourceVersion) || !validLife(stateData.life, stateData as unknown as GameState, sourceVersion)) {
     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
   }
@@ -513,12 +528,19 @@ export function deserialize(raw: string): { state: GameState; lastSavedAt: numbe
     for (const life of Object.values(state.life.characters)) life.actions.smithing = 0
     state.reward = Object.hasOwn(stateData, 'reward') ? migrateRewardV1(stateData.reward) : emptyReward()
     state.regionalCrisis = dormantRegionalCrisis()
+    for (const crop of state.crops) crop.cropId = 'wheat'
     state.saveVersion = CONFIG.saveVersion
     return { state, lastSavedAt }
   }
-  if (!Object.hasOwn(stateData, 'reward') || !validateReward(stateData.reward, state)) {
+  const rewardValid = Object.hasOwn(stateData, 'reward') && (sourceVersion < 8
+    ? validateRewardV2(stateData.reward, state)
+    : validateReward(normalizedRewardV3, state))
+  if (!rewardValid) {
     throw new Error('存檔資料不完整。原始存檔已保留。')
   }
+  if (sourceVersion < 8) state.reward = migrateRewardV2(state.reward)
+  else state.reward = normalizedRewardV3!
+  if (sourceVersion < 8) for (const crop of state.crops) crop.cropId = 'wheat'
   if (sourceVersion === 3) state.regionalCrisis = dormantRegionalCrisis()
   if (sourceVersion === 4) state.regionalCrisis = migrateRegionalCrisisV4(state.regionalCrisis)
   if (sourceVersion === 5) state.regionalCrisis = migrateRegionalCrisisV5(state.regionalCrisis)

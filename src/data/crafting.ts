@@ -1,7 +1,8 @@
 import type { CraftRecipeId, CraftingRecipeDefinition } from '../domain/reward'
+import { CONTENT_RECIPES } from './contentRegistry'
 
 /** Phase5 recipes; crafting consumes these registry inputs through the engine transaction. */
-export const CRAFTING_RECIPES: Record<CraftRecipeId, CraftingRecipeDefinition> = {
+export const LEGACY_CRAFTING_RECIPES: Record<CraftRecipeId, CraftingRecipeDefinition> = {
   starterSpear: {
     id: 'starterSpear',
     name: '木石長矛',
@@ -91,4 +92,32 @@ export const CRAFTING_RECIPES: Record<CraftRecipeId, CraftingRecipeDefinition> =
     masterpieceRules: { requiredSmithing: 6, chance: 0.25 },
     affixRules: 'default',
   },
+}
+
+const contentRecipes = Object.fromEntries(Object.values(CONTENT_RECIPES).map(recipe => [recipe.id, {
+  id: recipe.id,
+  name: recipe.name['zh-TW'],
+  category: recipe.category,
+  inputs: recipe.inputs.map(input => input.source === 'inventory'
+    ? { source: 'inventory' as const, itemId: input.itemId as 'wood' | 'stone' | 'iron', amount: input.amount }
+    : { source: 'material' as const, materialId: input.materialId, amount: input.amount }),
+  goldCost: recipe.goldCost,
+  staminaCost: recipe.staminaCost,
+  durationMinutes: recipe.durationMinutes,
+  outputBase: recipe.outputBase,
+  outputLevel: recipe.outputLevel,
+  requiredSmithing: recipe.requiredSmithing,
+  practiceCap: recipe.practiceCap,
+  station: recipe.station,
+  opensAtHour: recipe.opensAtHour,
+  closesAtHour: recipe.closesAtHour,
+  allowedBiasMaterials: [...recipe.allowedBiasMaterials],
+  qualityRules: { ...recipe.qualityRules },
+  ...(recipe.masterpieceRules ? { masterpieceRules: { ...recipe.masterpieceRules } } : {}),
+  affixRules: recipe.affixRules,
+}])) as Record<string, CraftingRecipeDefinition>
+
+export const CRAFTING_RECIPES: Record<CraftRecipeId, CraftingRecipeDefinition> = {
+  ...LEGACY_CRAFTING_RECIPES,
+  ...contentRecipes,
 }

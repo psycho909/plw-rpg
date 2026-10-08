@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest'
+import { MATERIALS } from '../data/rewards'
 import type { FamilyEncounter, ItemAffix, ItemInstance } from '../domain/reward'
 import { encounterWolf, resolveWolfCombatStats } from '../engine/wolfFamily'
 import { combatTurn } from '../engine/actions'
@@ -8,7 +9,7 @@ import { deserialize, serialize } from './saveService'
 import nativeV1 from '../../reports/v2/20261004-life-emergence/fixtures/native-v1.json'
 import noRewardV2 from '../../reports/playtests/20261004-v2-final-qa/seeds/seed-17.json'
 
-it('migrates a native V2 save without reward without consuming world RNG or replacing its world', () => {
+it('migrates a native V2 save without reward to V8/Reward3 without consuming world RNG or replacing its world', () => {
   const legacy = structuredClone(noRewardV2) as Record<string, any>
   const expected = structuredClone(legacy)
   delete expected.lastSavedAt
@@ -20,7 +21,7 @@ it('migrates a native V2 save without reward without consuming world RNG or repl
   for (const actor of [...legacyProjection.characters, ...legacyProjection.npcs]) delete actor.skills.smithing
   for (const life of Object.values(legacyProjection.life.characters) as Record<string, any>[]) delete life.actions.smithing
 
-  expect(loaded.state).toMatchObject({ saveVersion: 7, reward: { schemaVersion: 2 } })
+  expect(loaded.state).toMatchObject({ saveVersion: 8, reward: { schemaVersion: 3 } })
   expect(loaded.state.worldSeed).toBe(17)
   expect(loaded.state.rngState).toBe(legacy.rngState)
   expect(loaded.state.worldTime).toBe(legacy.worldTime)
@@ -30,9 +31,11 @@ it('migrates a native V2 save without reward without consuming world RNG or repl
   expect(loaded.lastSavedAt).toBe(legacy.lastSavedAt)
 })
 
-it('migrates the committed native V1 fixture losslessly through the current V7 save format', () => {
+it('migrates the committed native V1 fixture through the current V8 save format', () => {
   const loaded = deserialize(JSON.stringify(nativeV1))
-  const { saveVersion: _version, lastSavedAt: _at, ...legacyWorld } = nativeV1
+  const { saveVersion: _version, lastSavedAt: _at, ...nativeWorld } = nativeV1
+  const legacyWorld = structuredClone(nativeWorld) as Record<string, any>
+  for (const crop of legacyWorld.crops) crop.cropId = 'wheat'
   const preservedWorld = structuredClone(loaded.state) as unknown as Record<string, any>
   delete preservedWorld.saveVersion
   delete preservedWorld.life
@@ -40,7 +43,7 @@ it('migrates the committed native V1 fixture losslessly through the current V7 s
   delete preservedWorld.regionalCrisis
   for (const actor of [...preservedWorld.characters, ...preservedWorld.npcs]) delete actor.skills.smithing
   expect(preservedWorld).toEqual(legacyWorld)
-  expect(loaded.state.reward.schemaVersion).toBe(2)
+  expect(loaded.state.reward.schemaVersion).toBe(3)
   expect(deserialize(serialize(loaded.state, 456)).state).toEqual(loaded.state)
 })
 
@@ -54,7 +57,8 @@ it('persists separate equipment instances and stackable materials without replac
   s.characters[0]!.equipment.weapon = 'sword'
   s.reward.nextInstanceId = 2
   s.reward.instances.push(instance())
-  s.reward.materials.alden = { wolfFang: 7, wolfHide: 2, moonStone: 0 }
+  s.reward.materials.alden = Object.fromEntries(Object.keys(MATERIALS).map(id => [id,
+    id === 'wolfFang' ? 7 : id === 'wolfHide' ? 2 : 0]))
   const loaded = deserialize(serialize(s, 42))
   expect(loaded.state).toEqual(s)
   expect(deserialize(serialize(loaded.state, 43)).state).toEqual(s)

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { BUILDINGS, ITEMS } from '../data/config'
-import { CRAFTING_RECIPES } from '../data/crafting'
+import { CRAFTING_RECIPES, LEGACY_CRAFTING_RECIPES } from '../data/crafting'
 import { ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
 import type { ItemInstance, MaterialId } from '../domain/reward'
 import { equip } from './actions'
@@ -127,9 +127,9 @@ describe('procedural equipment sales', () => {
     expect(masterpiecePrice - legacyRarityPrice).toBeLessThanOrEqual(maximumPremium)
   })
 
-  it('keeps maximum-premium expected proceeds below bought-input costs for all recipes and material modes', () => {
+  it('keeps the approved legacy recipe sale bounds unchanged', () => {
     const rarityMultiplier = { common: 1, uncommon: 1.5, rare: 2, epic: 3, legendary: 5 } as const
-    for (const recipe of Object.values(CRAFTING_RECIPES)) {
+    for (const recipe of Object.values(LEGACY_CRAFTING_RECIPES)) {
       const base = ITEM_BASES[recipe.outputBase].sell
       const weights = Object.fromEntries(Object.entries(RARITIES).map(([id, rarity]) => [id, rarity.weight])) as Record<keyof typeof RARITIES, number>
       const rarityIds = Object.keys(RARITIES) as (keyof typeof RARITIES)[]
@@ -141,15 +141,60 @@ describe('procedural equipment sales', () => {
       const expectedMultiplier = Object.entries(weights).reduce((sum, [rarity, weight]) => sum + weight * rarityMultiplier[rarity as keyof typeof RARITIES], 0) / 100
       const expectedAtMaximumPremium = base * expectedMultiplier + Math.floor(base * 0.25)
       const boughtInputCost = recipe.inputs.reduce((sum, input) => {
-        if (input.source !== 'inventory') return sum
+        if (input.source === 'material') return sum + MATERIALS[input.materialId].sell * input.amount
         const unitPrice = Math.ceil(ITEMS[input.itemId].price * 0.8)
         return sum + unitPrice * input.amount
-      }, 0) + recipe.goldCost - 1
+      }, 0) + recipe.goldCost - (recipe.station === 'store' ? 1 : 0)
       const modes = [null, ...recipe.allowedBiasMaterials]
       for (const material of modes) {
         const materialOpportunityCost = material ? MATERIALS[material].sell : 0
-        expect(expectedAtMaximumPremium).toBeLessThan(boughtInputCost + materialOpportunityCost)
+        expect(expectedAtMaximumPremium, `${recipe.id} with influence material ${material ?? 'none'}`)
+          .toBeLessThan(boughtInputCost + materialOpportunityCost)
       }
+    }
+  })
+
+  it('rejects profitable repeatable purchase-to-craft-to-sale cycles', () => {
+    const rarityMultiplier = { common: 1, uncommon: 1.5, rare: 2, epic: 3, legendary: 5 } as const
+    // Material trading is sell-only today. Add a material ID and its actual repeatable buy price here
+    // only when a material shop exposes it; earned-only drops do not close a purchase cycle.
+    const materialShopBuyPrice: Partial<Record<MaterialId, number>> = {}
+    const maximumDiscountedPrice = (itemId: keyof typeof ITEMS) => Math.ceil(ITEMS[itemId].price * 0.8)
+
+    const cycles = Object.values(CRAFTING_RECIPES).flatMap(recipe => {
+      const inputCost = recipe.inputs.reduce<number | null>((sum, input) => {
+        if (sum === null) return null
+        if (input.source === 'inventory') {
+          if (!Object.hasOwn(ITEMS, input.itemId)) return null
+          return sum + maximumDiscountedPrice(input.itemId) * input.amount
+        }
+        const price = materialShopBuyPrice[input.materialId]
+        return price === undefined ? null : sum + price * input.amount
+      }, 0)
+      if (inputCost === null) return []
+
+      const buyableBiases = recipe.allowedBiasMaterials.filter(material => materialShopBuyPrice[material] !== undefined)
+      return [null, ...buyableBiases].map(influenceMaterial => ({ recipe, inputCost, influenceMaterial }))
+    })
+    expect(cycles.length).toBeGreaterThan(0)
+
+    for (const { recipe, inputCost, influenceMaterial } of cycles) {
+      const base = ITEM_BASES[recipe.outputBase].sell
+      const weights = Object.fromEntries(Object.entries(RARITIES).map(([id, rarity]) => [id, rarity.weight])) as Record<keyof typeof RARITIES, number>
+      const rarityIds = Object.keys(RARITIES) as (keyof typeof RARITIES)[]
+      const floorIndex = rarityIds.indexOf(recipe.qualityRules.minimumRarity)
+      for (let index = 0; index < floorIndex; index++) {
+        weights[recipe.qualityRules.minimumRarity] += weights[rarityIds[index]!]!
+        weights[rarityIds[index]!] = 0
+      }
+      const expectedMultiplier = Object.entries(weights).reduce((sum, [rarity, weight]) => sum + weight * rarityMultiplier[rarity as keyof typeof RARITIES], 0) / 100
+      const expectedAtMaximumPremium = base * expectedMultiplier + Math.floor(base * 0.25)
+      const purchasedBiasCost = influenceMaterial === null ? 0 : materialShopBuyPrice[influenceMaterial]!
+      const minimumCraftFee = recipe.station === 'store' ? Math.max(3, recipe.goldCost - 1) : recipe.goldCost
+      const replacementCost = inputCost + purchasedBiasCost + minimumCraftFee
+
+      expect(expectedAtMaximumPremium, `${recipe.id} with purchasable influence material ${influenceMaterial ?? 'none'}`)
+        .toBeLessThan(replacementCost)
     }
   })
 

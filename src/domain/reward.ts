@@ -2,12 +2,12 @@ import type { ItemId, RegionId } from './types'
 
 export type EquipmentSlot = 'weapon' | 'armor'
 export type RarityId = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary'
-export type ItemBaseId = 'shortSword' | 'axe' | 'spear' | 'hideArmor' | 'chainArmor' | 'moonFangSpear'
-export type MaterialId = 'wolfFang' | 'wolfHide' | 'moonStone'
-export type CraftRecipeId = 'starterSpear' | 'fieldSpear' | 'fieldArmor' | 'ironShortSword'
+export type ItemBaseId = string
+export type MaterialId = string
+export type CraftRecipeId = string
 export type CraftStationId = 'store' | 'blacksmith'
 export type CraftInventoryItemId = Extract<ItemId, 'wood' | 'stone' | 'iron'>
-export type AffixId = 'striking' | 'keen' | 'piercing' | 'bleeding' | 'sturdy' | 'blocking' | 'warding'
+export type AffixId = string
 export type SpecialTraitId = 'moonHunter'
 export type MonsterTraitId = 'swift' | 'armored'
 export type MonsterRank = 'normal' | 'elite' | 'miniBoss' | 'boss'
@@ -55,7 +55,7 @@ export interface CraftProvenance {
 export interface ItemInstance {
   instanceId: string; ownerId: string; baseId: ItemBaseId; level: number; material: MaterialId | null
   rarity: RarityId; rolledStats: GearStats; affixes: ItemAffix[]; specialTrait: SpecialTraitId | null
-  provenance: { createdBy: string | null; createdAt: number; bossSource: MonsterDefinitionId | null; materialSource: MaterialId | null } | null
+  provenance: { createdBy: string | null; createdAt: number; bossSource: string | null; materialSource: MaterialId | null } | null
   craftProvenance: CraftProvenance | null
 }
 export interface ItemBaseDefinition { id: ItemBaseId; name: string; slot: EquipmentSlot; attack: number; defense: number; sell: number; affixes: AffixId[]; penetration?: number }
@@ -71,11 +71,24 @@ export interface FamilyEncounter {
   definitionId: MonsterDefinitionId; traits: MonsterTraitId[]; variant: BossVariantId | null
   turn: number; formedAt: number; context: { population: number; hunted: number; safety: number }; howlActive: boolean
 }
+/** Persisted identity for a Phase7-authored family encounter; definitions remain in catalogs. */
+export interface ContentFamilyEncounter {
+  familyId: string
+  definitionId: string
+  variantId: string | null
+  turn: number
+  formedAt: number
+  context: { region: RegionId; population: number; hunted: number; safety: number; threatLevel: number }
+}
+export type ContentBossForm =
+  | { kind: 'frozenEncounter'; encounter: ContentFamilyEncounter }
+  | { kind: 'cooldownUntil'; availableAt: number }
 export interface RewardState {
-  schemaVersion: 2; nextInstanceId: number; instances: ItemInstance[]
+  schemaVersion: 3; nextInstanceId: number; instances: ItemInstance[]
   equipped: Record<string, { weapon: string | null; armor: string | null }>
-  materials: Record<string, Record<MaterialId, number>>
-  collection: { seen: MonsterDefinitionId[]; defeated: MonsterDefinitionId[]; bases: ItemBaseId[]; materials: MaterialId[]; bosses: MonsterDefinitionId[]; rareBases: ItemBaseId[] }
+  materials: Record<string, Record<string, number>>
+  collection: { seen: string[]; defeated: string[]; bases: ItemBaseId[]; materials: MaterialId[]; bosses: string[]; rareBases: ItemBaseId[] }
   wolfBossDefeatedAt: number | null
   wolfBossForm: FamilyEncounter | null
+  bossForms: Record<string, ContentBossForm>
 }

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { CONFIG, ITEMS } from '../data/config'
+import { LEGACY_MATERIALS, MATERIALS } from '../data/rewards'
 import { combatTurn, encounter, equip, farm } from '../engine/actions'
 import { generateItem } from '../engine/itemGeneration'
 import { chooseSuccessor, createGame, die, player, simulate, walkTo } from '../engine/simulation'
@@ -24,6 +25,38 @@ function versionOneFixture(seed = 88, lastSavedAt = 1000) {
   return raw
 }
 
+const phase7MaterialIds = Object.keys(MATERIALS).filter(id => !Object.hasOwn(LEGACY_MATERIALS, id))
+function downgradeRewardToV2(raw: Record<string, any>) {
+  if (!raw.reward) return
+  raw.reward.schemaVersion = 2
+  delete raw.reward.bossForms
+  for (const stacks of Object.values(raw.reward.materials) as Record<string, number>[]) {
+    for (const id of phase7MaterialIds) delete stacks[id]
+  }
+}
+
+function addPhase7MigrationDefaults(raw: Record<string, any>) {
+  if (raw.reward) {
+    raw.reward.schemaVersion = 3
+    raw.reward.bossForms = {}
+    for (const stacks of Object.values(raw.reward.materials) as Record<string, number>[]) {
+      for (const id of phase7MaterialIds) if (!Object.hasOwn(stacks, id)) stacks[id] = 0
+    }
+  }
+  if (Array.isArray(raw.crops)) for (const crop of raw.crops) if (!Object.hasOwn(crop, 'cropId')) crop.cropId = 'wheat'
+}
+
+function stripPhase7MigrationDefaults(raw: Record<string, any>) {
+  if (raw.reward) {
+    raw.reward.schemaVersion = 2
+    delete raw.reward.bossForms
+    for (const stacks of Object.values(raw.reward.materials) as Record<string, number>[]) {
+      for (const id of phase7MaterialIds) delete stacks[id]
+    }
+  }
+  if (Array.isArray(raw.crops)) for (const crop of raw.crops) delete crop.cropId
+}
+
 function versionTwoFixture(seed = 88, lastSavedAt = 1000) {
   const state = createGame(seed)
   state.reward.instances.push(generateItem(state, { baseId: 'spear', level: 2 }))
@@ -33,12 +66,69 @@ function versionTwoFixture(seed = 88, lastSavedAt = 1000) {
   for (const character of [...raw.characters, ...raw.npcs]) delete character.skills.smithing
   for (const life of Object.values(raw.life.characters) as Record<string, unknown>[]) delete (life.actions as Record<string, unknown>).smithing
   raw.reward.schemaVersion = 1
+  delete raw.reward.bossForms
+  for (const stacks of Object.values(raw.reward.materials) as Record<string, number>[]) {
+    for (const id of phase7MaterialIds) delete stacks[id]
+  }
   for (const item of raw.reward.instances) delete item.craftProvenance
   return raw
 }
 
 describe('versioned saves and deterministic continuation', () => {
-  it('rejects malformed measured summaries in new V7 outcome saves', () => {
+  it('migrates V8 crops and reward materials to V8/Reward3 without rebuilding the world or drawing RNG', () => {
+    const state = createGame(74125)
+    const saved = JSON.parse(serialize(state, 812)) as Record<string, any>
+    saved.crops = [{ id: saved.eventSequence, plantedAt: saved.worldTime, growthDuration: CONFIG.cropMinutes,
+      matureAt: saved.worldTime + CONFIG.cropMinutes, status: 'growing' }]
+    saved.saveVersion = 7
+    saved.reward.schemaVersion = 2
+    delete saved.reward.bossForms
+    saved.reward.materials[state.activeCharacterId] = { wolfFang: 0, wolfHide: 0, moonStone: 0 }
+    const rngBefore = saved.rngState
+    const worldTimeBefore = saved.worldTime
+    const worldSeedBefore = saved.worldSeed
+    const threatBefore = structuredClone(saved.threat)
+
+    const loaded = deserialize(JSON.stringify(saved))
+
+    expect(loaded.state.saveVersion).toBe(8)
+    expect(loaded.state.reward.schemaVersion).toBe(3)
+    expect(loaded.state.crops[0]).toMatchObject({ cropId: 'wheat', id: saved.eventSequence })
+    expect(loaded.state.reward.materials[loaded.state.activeCharacterId]?.slime_resin).toBe(0)
+    expect(loaded.state.rngState).toBe(rngBefore)
+    expect(loaded.state.worldTime).toBe(worldTimeBefore)
+    expect(loaded.state.worldSeed).toBe(worldSeedBefore)
+    expect(loaded.state.threat).toEqual(threatBefore)
+    expect(deserialize(serialize(loaded.state, 813)).state).toEqual(loaded.state)
+  })
+
+  it('normalizes only newly registered Phase7 material keys on an older Reward3 save', () => {
+    const state = createGame(74126)
+    const saved = JSON.parse(serialize(state, 814)) as Record<string, any>
+    const ownerId = state.activeCharacterId
+    saved.reward.schemaVersion = 3
+    saved.reward.materials[ownerId] = { wolfFang: 4, wolfHide: 2, moonStone: 1 }
+    saved.saveVersion = 8
+
+    const loaded = deserialize(JSON.stringify(saved)).state
+
+    expect(loaded.reward.materials[ownerId]).toMatchObject({ wolfFang: 4, wolfHide: 2, moonStone: 1, slime_resin: 0 })
+  })
+
+  it('rejects unknown or invalid Reward3 material values instead of repairing them', () => {
+    const state = createGame(74127)
+    const baseline = JSON.parse(serialize(state, 815)) as Record<string, any>
+    baseline.reward.schemaVersion = 3
+    baseline.saveVersion = 8
+    baseline.reward.materials[state.activeCharacterId] = { wolfFang: 0, wolfHide: 0, moonStone: 0 }
+    for (const invalid of [
+      { ...structuredClone(baseline), reward: { ...structuredClone(baseline.reward), materials: { [state.activeCharacterId]: { wolfFang: 0, wolfHide: 0, moonStone: 0, unknown: 1 } } } },
+      { ...structuredClone(baseline), reward: { ...structuredClone(baseline.reward), materials: { [state.activeCharacterId]: { wolfFang: 0.5, wolfHide: 0, moonStone: 0 } } } },
+      { ...structuredClone(baseline), reward: { ...structuredClone(baseline.reward), materials: { [state.activeCharacterId]: { wolfFang: Number.MAX_SAFE_INTEGER + 1, wolfHide: 0, moonStone: 0 } } } },
+    ]) expect(() => deserialize(JSON.stringify(invalid))).toThrow('原始存檔已保留')
+  })
+
+  it('rejects malformed measured summaries in new V8 outcome saves', () => {
     const state = createGame(9171)
     state.threat.monsterPopulation = 30
     state.threat.threatLevel = 2
@@ -69,7 +159,7 @@ describe('versioned saves and deterministic continuation', () => {
     }
   })
 
-  it('migrates the authentic archived V6 D and camp-raid save to V7 without changing world, RNG, or crisis facts', () => {
+  it('migrates the authentic archived V6 D and camp-raid save to V8 without changing world, RNG, or crisis facts', () => {
     const archived = archivedV6Preparation as Record<string, any>
     expect(archived.saveVersion).toBe(6)
     expect(archived.regionalCrisis.contributions.food.supplied).toBe(12)
@@ -78,10 +168,11 @@ describe('versioned saves and deterministic continuation', () => {
     const before = structuredClone(archived)
     delete before.lastSavedAt
     delete before.saveVersion
+    addPhase7MigrationDefaults(before)
 
     const loaded = deserialize(JSON.stringify(archived))
 
-    expect(loaded.state.saveVersion).toBe(7)
+    expect(loaded.state.saveVersion).toBe(8)
     const projection = structuredClone(loaded.state) as unknown as Record<string, any>
     delete projection.saveVersion
     delete projection.regionalCrisis
@@ -111,11 +202,12 @@ describe('versioned saves and deterministic continuation', () => {
     const preservedWorld = structuredClone(legacy)
     delete preservedWorld.saveVersion
     delete preservedWorld.lastSavedAt
+    addPhase7MigrationDefaults(preservedWorld)
     const rngBefore = legacy.rngState
 
     const loaded = deserialize(JSON.stringify(legacy))
 
-    expect(loaded.state.saveVersion).toBe(7)
+    expect(loaded.state.saveVersion).toBe(8)
     expect(loaded.state.regionalCrisis).toMatchObject({ phase, outcome: 'local_defeat', resolutionSummary: null })
     const migratedWorld = structuredClone(loaded.state) as unknown as Record<string, any>
     delete migratedWorld.saveVersion
@@ -128,7 +220,7 @@ describe('versioned saves and deterministic continuation', () => {
     expect(deserialize(serialize(loaded.state, 8124)).state).toEqual(loaded.state)
   })
 
-  it('migrates a V4 active crisis through V5 and V6 to V7 with an empty ledger and adventure default', () => {
+  it('migrates a V4 active crisis through V5 and V6 to V8 with an empty ledger and adventure default', () => {
     const state = createGame(914)
     state.worldTime = 30 * CONFIG.minutesPerDay
     state.rngState = 0x12345678
@@ -137,6 +229,7 @@ describe('versioned saves and deterministic continuation', () => {
     expect(tryStartRegionalCrisis(state, () => 0)).toBe(true)
     const legacyV4 = JSON.parse(serialize(state, 4321)) as Record<string, any>
     legacyV4.saveVersion = 4
+    downgradeRewardToV2(legacyV4)
     delete legacyV4.regionalCrisis.contributions
     delete legacyV4.regionalCrisis.adventure
     const crisisBefore = structuredClone(legacyV4.regionalCrisis)
@@ -144,7 +237,7 @@ describe('versioned saves and deterministic continuation', () => {
 
     const loaded = deserialize(JSON.stringify(legacyV4))
 
-    expect(loaded.state.saveVersion).toBe(7)
+    expect(loaded.state.saveVersion).toBe(8)
     expect(loaded.state.regionalCrisis).toEqual({ ...crisisBefore, contributions: {
       equipment: [], food: { supplied: 0, credits: [] }, gold: { spent: 0, credits: [] },
     }, adventure: { campRaidAt: null } })
@@ -168,7 +261,7 @@ describe('versioned saves and deterministic continuation', () => {
 
     const loaded = deserialize(JSON.stringify(archived))
 
-    expect(loaded.state.saveVersion).toBe(7)
+    expect(loaded.state.saveVersion).toBe(8)
     expect(loaded.state.regionalCrisis).toEqual({ ...crisisBefore, contributions: {
       equipment: [], food: { supplied: 0, credits: [] }, gold: { spent: 0, credits: [] },
     }, adventure: { campRaidAt: null } })
@@ -180,7 +273,7 @@ describe('versioned saves and deterministic continuation', () => {
     expect(deserialize(serialize(loaded.state, 777)).state).toEqual(loaded.state)
   })
 
-  it('validates crisis shapes separately for V4, V5, V6 and V7', () => {
+  it('validates crisis shapes separately for V4, V5, V6 and V8', () => {
     const current = createGame(918)
     current.threat.monsterPopulation = 30
     current.threat.threatLevel = 2
@@ -188,13 +281,14 @@ describe('versioned saves and deterministic continuation', () => {
     current.settlement.safety = 60
     expect(tryStartRegionalCrisis(current, () => 0)).toBe(true)
     const v6 = JSON.parse(serialize(current, 1000)) as Record<string, any>
+    downgradeRewardToV2(v6)
     const v5 = structuredClone(v6)
     v5.saveVersion = 5
     delete v5.regionalCrisis.adventure
     const missingV5Ledger = structuredClone(v5)
     delete missingV5Ledger.regionalCrisis.contributions
     expect(() => deserialize(JSON.stringify(missingV5Ledger))).toThrow('原始存檔已保留')
-    expect(deserialize(JSON.stringify(v5)).state.saveVersion).toBe(7)
+    expect(deserialize(JSON.stringify(v5)).state.saveVersion).toBe(8)
 
     const v5WithUnexpectedAdventure = structuredClone(v5)
     v5WithUnexpectedAdventure.regionalCrisis.adventure = { campRaidAt: null }
@@ -208,11 +302,11 @@ describe('versioned saves and deterministic continuation', () => {
     v4WithUnexpectedLedger.regionalCrisis.contributions = {
       equipment: [], food: { supplied: 0, credits: [] }, gold: { spent: 0, credits: [] },
     }
-    expect(deserialize(JSON.stringify(v4)).state.saveVersion).toBe(7)
+    expect(deserialize(JSON.stringify(v4)).state.saveVersion).toBe(8)
     expect(() => deserialize(JSON.stringify(v4WithUnexpectedLedger))).toThrow('原始存檔已保留')
   })
 
-  it('migrates the authentic archived V5 D ledger through V6 to V7 without changing world, time or RNG', () => {
+  it('migrates the authentic archived V5 D ledger through V6 to V8 without changing world, time or RNG', () => {
     const archived = archivedV5Preparation as Record<string, any>
     expect(archived.saveVersion).toBe(5)
     expect(archived.regionalCrisis.phase).toBe('preparation')
@@ -224,10 +318,11 @@ describe('versioned saves and deterministic continuation', () => {
     delete legacyProjection.lastSavedAt
     delete legacyProjection.saveVersion
     delete legacyProjection.regionalCrisis
+    addPhase7MigrationDefaults(legacyProjection)
 
     const loaded = deserialize(JSON.stringify(archived))
 
-    expect(loaded.state.saveVersion).toBe(7)
+    expect(loaded.state.saveVersion).toBe(8)
     expect(loaded.state.regionalCrisis).toEqual({ ...crisisBefore, adventure: { campRaidAt: null } })
     const v6Projection = structuredClone(loaded.state) as unknown as Record<string, any>
     delete v6Projection.saveVersion
@@ -239,20 +334,22 @@ describe('versioned saves and deterministic continuation', () => {
     expect(deserialize(serialize(loaded.state, 7911)).state).toEqual(loaded.state)
   })
 
-  it('migrates a native V3 save to V7 with a dormant crisis and no world or RNG changes', () => {
+  it('migrates a native V3 save to V8 with a dormant crisis and no world or RNG changes', () => {
     const state = createGame(915)
     state.worldTime = 14 * CONFIG.minutesPerDay
     state.rngState = 0x12345678
     const raw = JSON.parse(serialize(state, 4321)) as Record<string, any>
     raw.saveVersion = 3
+    downgradeRewardToV2(raw)
     delete raw.regionalCrisis
     const expected = structuredClone(raw)
     delete expected.lastSavedAt
     delete expected.saveVersion
+    addPhase7MigrationDefaults(expected)
 
     const loaded = deserialize(JSON.stringify(raw))
 
-    expect(loaded.state.saveVersion).toBe(7)
+    expect(loaded.state.saveVersion).toBe(8)
     expect(loaded.state.regionalCrisis).toEqual({ phase: 'dormant', sequence: 0, cooldownUntil: 0, lastResolvedAt: null })
     const projection = structuredClone(loaded.state) as unknown as Record<string, any>
     delete projection.regionalCrisis
@@ -268,6 +365,7 @@ describe('versioned saves and deterministic continuation', () => {
   it('rejects a crisis field in V3 and malformed or missing V4 crisis unions', () => {
     const legacy = JSON.parse(serialize(createGame(916), 1000)) as Record<string, any>
     legacy.saveVersion = 3
+    downgradeRewardToV2(legacy)
     delete legacy.regionalCrisis
     const v3WithNewField = structuredClone(legacy)
     v3WithNewField.regionalCrisis = { phase: 'dormant', sequence: 0, cooldownUntil: 0, lastResolvedAt: null }
@@ -326,9 +424,11 @@ describe('versioned saves and deterministic continuation', () => {
     for (const life of Object.values(legacyProjection.life.characters) as Record<string, any>[]) delete life.actions.smithing
     legacyProjection.reward.schemaVersion = 1
     for (const item of legacyProjection.reward.instances) delete item.craftProvenance
+    stripPhase7MigrationDefaults(legacyProjection)
+    legacyProjection.reward.schemaVersion = 1
 
-    expect(loaded.state.saveVersion).toBe(7)
-    expect(loaded.state.reward.schemaVersion).toBe(2)
+    expect(loaded.state.saveVersion).toBe(8)
+    expect(loaded.state.reward.schemaVersion).toBe(3)
     expect(loaded.state.reward.instances[0]?.craftProvenance).toBeNull()
     expect(legacyProjection).toEqual(expected)
     expect(loaded.state.rngState).toBe(raw.rngState)
@@ -348,10 +448,11 @@ describe('versioned saves and deterministic continuation', () => {
     delete legacyProjection.reward
     delete legacyProjection.saveVersion
     delete legacyProjection.regionalCrisis
+    stripPhase7MigrationDefaults(legacyProjection)
     for (const actor of [...legacyProjection.characters, ...legacyProjection.npcs]) delete actor.skills.smithing
 
     expect(legacyProjection).toEqual(expected)
-    expect(loaded.state.saveVersion).toBe(7)
+    expect(loaded.state.saveVersion).toBe(8)
     expect(loaded.state.rngState).toBe(raw.rngState)
     expect(loaded.state.worldTime).toBe(raw.worldTime)
     expect(deserialize(serialize(loaded.state)).state).toEqual(loaded.state)
@@ -369,10 +470,12 @@ describe('versioned saves and deterministic continuation', () => {
     for (const life of Object.values(legacyProjection.life.characters) as Record<string, any>[]) delete life.actions.smithing
     legacyProjection.reward.schemaVersion = 1
     for (const item of legacyProjection.reward.instances) delete item.craftProvenance
+    stripPhase7MigrationDefaults(legacyProjection)
+    legacyProjection.reward.schemaVersion = 1
 
     expect(legacyProjection).toEqual(expected)
-    expect(loaded.state.saveVersion).toBe(7)
-    expect(loaded.state.reward.schemaVersion).toBe(2)
+    expect(loaded.state.saveVersion).toBe(8)
+    expect(loaded.state.reward.schemaVersion).toBe(3)
     expect(loaded.state.reward.instances).toHaveLength(4)
     expect(loaded.state.reward.instances.every(item => item.craftProvenance === null)).toBe(true)
     expect(loaded.state.rngState).toBe(raw.rngState)
@@ -388,7 +491,7 @@ describe('versioned saves and deterministic continuation', () => {
       expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
     })
 
-  it('rejects G-only identities in a V2 save before migrating it to V7', () => {
+  it('rejects G-only identities in a V2 save before migrating it to V8', () => {
     const raw = structuredClone(historicalV2) as Record<string, any>
     const characterId = Object.keys(raw.life.characters)[0]!
     raw.life.characters[characterId].identities.push('masterpieceCrafter')
@@ -419,7 +522,7 @@ describe('versioned saves and deterministic continuation', () => {
     delete migrated.regionalCrisis
     for (const actor of [...migrated.characters as any[], ...migrated.npcs as any[]]) delete actor.skills.smithing
     expect(migrated).toEqual(expected)
-    expect(loaded.state.saveVersion).toBe(7)
+    expect(loaded.state.saveVersion).toBe(8)
     expect(loaded.state.life.openingSeen).toBe(true)
     expect(loaded.state.rngState).toBe(raw.rngState)
     expect(loaded.state.worldTime).toBe(raw.worldTime)

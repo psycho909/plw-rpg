@@ -34,3 +34,15 @@ reports/v2/20261008-content-expansion/phase-07/；待驗證。
 ## Root C release
 
 B accepted。Max owns runtime core integration/save8/reward3/migration and related core tests; Low owns Slime first-family isolated data module then Cave Insects after first closure. No mass 66/107 yet. Single generator, wolf wrappers and RNG preserved; loot→craft→equip→save/reload and frozen boss/cooldown prove full chain. Shared query/telegraph/source projections prepared for later UI. Full core independent Max review before wider D expansion.
+
+## Core audit C1/C2 corrective release
+
+Root批准 bossForms discriminated encounter/cooldown-until bounded state supersede shared director boss keys; Save8/Reward3 top-level unchanged、knownIDs/strictmigration/noRNG preservation。Independent原始 C1/C2 保留，Max RED→fix→focused→independent review；C仍in_progress，不releaseD。Canonical repeated combat closure replaces direct loot padding witness。
+
+## C3 bounded director persistence fix
+
+## Corrective engineering result
+
+C1/C2/C3 RED evidence is preserved. The corrective focused gate passed 252 tests across 7 files plus \`vue-tsc --noEmit\`; the subsequent full \`npm run check\` passed 30 files and 565 tests, typecheck, and production build. C remains in progress until a post-fix independent core review is completed. The Max reviewer hit the model usage limit before that follow-up; this is recorded as a review limitation, not as an acceptance claim.
+
+Confirmed preexisting valid100-key missingdaily-marker state becomes101 at midnight, invalidatingreload。Root纳入本輪 integrity修復。既有active/unknowncooldown不得任意丟棄，保留既有expiredhunt pruning；新cooldown要求無容量時 preflight拒絕optional event/hunt feedback、不可部分progress或overflow。full且markerabsent時跳過該dailyLivingEventspass，核心世界時間/NPC/threat仍運作；existingkey可更新。99寫marker占滿後也不得新事件再溢出。明確測試/紀錄saturation邊界，不增加features或放寬100上限。

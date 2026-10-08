@@ -22,7 +22,7 @@ describe('世界情境互動', () => {
     state.threat.threatLevel = 3
     state.threat.campLevel = 3
     state.threat.bossAlive = true
-    state.crops.push({ id: 1, plantedAt: 0, growthDuration: 2880, matureAt: 2880, status: 'mature' })
+    state.crops.push({ id: 1, cropId: 'wheat', plantedAt: 0, growthDuration: 2880, matureAt: 2880, status: 'mature' })
     const grown = worldMarks(state)
     expect(grown.get('16,10')?.label).toBe('成熟小麥，可收割')
     expect(grown.get('8,3')?.label).toBe('哥布林蹤跡')

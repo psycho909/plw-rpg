@@ -225,7 +225,7 @@ describe('starter crafting preview', () => {
 
 describe('crafting skill capabilities', () => {
   it('defines the four approved recipes with their exact costs, outputs, unlocks, stations and practice caps', () => {
-    expect(Object.values(CRAFTING_RECIPES).map(recipe => ({
+    expect(Object.values(CRAFTING_RECIPES).filter(recipe => !recipe.id.startsWith('slime_')).map(recipe => ({
       id: recipe.id, inputs: recipe.inputs, goldCost: recipe.goldCost, staminaCost: recipe.staminaCost,
       durationMinutes: recipe.durationMinutes, outputBase: recipe.outputBase, outputLevel: recipe.outputLevel,
       requiredSmithing: recipe.requiredSmithing, station: recipe.station, practiceCap: recipe.practiceCap,
@@ -530,7 +530,7 @@ describe('crafting skill capabilities', () => {
     const character = player(state)
     state.eventSequence = Number.MAX_SAFE_INTEGER - 5
     state.crops = Array.from({ length: 4 }, (_, index) => ({
-      id: index + 2, plantedAt: 0, growthDuration: 1, matureAt: 1,
+      id: index + 2, cropId: 'wheat', plantedAt: 0, growthDuration: 1, matureAt: 1,
       status: 'growing' as const,
     }))
     character.exp = 29
@@ -613,7 +613,7 @@ describe('crafting skill capabilities', () => {
       { npcId: 'npc-2', hireCost: 20, dailyWage: 4, contractEnd: state.worldTime, archetype: 'healer' },
     ]
     state.crops = Array.from({ length: 4 }, (_, index) => ({
-      id: index + 1, plantedAt: state.worldTime, growthDuration: 10, matureAt: state.worldTime + 10,
+      id: index + 1, cropId: 'wheat', plantedAt: state.worldTime, growthDuration: 10, matureAt: state.worldTime + 10,
       status: 'growing' as const,
     }))
     expect(deserialize(serialize(state)).state).toEqual(state)

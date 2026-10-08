@@ -1,0 +1,156 @@
+{
+  "command": "npx vitest run src/engine/lifeIntegration.test.ts -t \"keeps a 100-year world bounded, serializable and deterministic after save\"",
+  "working_directory": "/workspace/plw-rpg",
+  "start_utc": "2026-10-08T05:40:38.410815121Z",
+  "finish_utc": "2026-10-08T05:40:43.959557150Z",
+  "wall_seconds": 5.548742029,
+  "exit_code": 0,
+  "vitest_reported_start_utc": "2026-10-08T05:40:39Z",
+  "vitest_duration_seconds": 4.91,
+  "test_body_duration_seconds": 4.34,
+  "result": "ISOLATED_PASS",
+  "scope": "one named test only; 1 passed, 10 skipped in the file",
+  "timeout_ms": 5000,
+  "original_full_check_result": {
+    "command": "npm run check",
+    "exit_code": 1,
+    "test_body_reported_ms": 5013,
+    "raw_stdout_sha256": "01ace5985b1b5c4ecaca778a38a3a3c5a119fb626ba02ce93d0b988ee1cff52c",
+    "interpretation": "Original full-run timeout remains preserved; the isolated single run did not reproduce it."
+  },
+  "environment_before": {
+    "captured_utc": "2026-10-08T05:40:32.321811+00:00",
+    "captured_asia_taipei": "2026-10-08T13:40:32.321811+08:00",
+    "os": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "node": {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v24.19.0",
+      "stderr": ""
+    },
+    "npm": {
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "11.9.0",
+      "stderr": ""
+    },
+    "vitest": {
+      "command": [
+        "./node_modules/.bin/vitest",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "vitest/4.1.11 linux-x64 node-v24.19.0",
+      "stderr": ""
+    },
+    "cpu_count": 5,
+    "loadavg": "0.37 0.34 0.21 1/699 70644",
+    "target_test_sha256": "c9e702a8819e0d372aff7411f45a85ebc1e829dfc6f1e753b728863a21f56a16",
+    "target_test_bytes": 6450,
+    "core26_hashes": {
+      "src/components/InventoryWindow.vue": "8a249649509a1b5fbff74e2d9cf2a1af8ee96e00d4da588dbaee2169de33108a",
+      "src/components/PlaceWindow.vue": "ba525fb8a9dcfda93ea064a7381010558d560885a92194bbdca78a92be75a8f0",
+      "src/data/config.ts": "ea56d790207bf13575ee19cbbdf46fa29ad8a03dd374a4613863af33c44e707a",
+      "src/data/contentRegistry.ts": "12dcc921ff7e8014cee9a6a8a320df10ad44dcd29b621bd62e5f8bea17c23384",
+      "src/data/crafting.ts": "e882f58803229c01b4853e44710f5cd1f7b2a56a2c4b058bbebe2fe2141aaa73",
+      "src/data/rewards.ts": "7169a34cfd420ec4a181fa54c03560c5301f7fac666a049e5773d0439d897806",
+      "src/data/content/slime.ts": "0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead",
+      "src/domain/content.ts": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+      "src/domain/reward.ts": "84dcc0abb3a8eb19b9aae3a190766d33c8da3530c761a6bbb8ce8d92bf1641b5",
+      "src/domain/types.ts": "7924e0383ca4f1e5623e95aca5ceb28b5022c03af007dca0d2cb2c1ec0050450",
+      "src/engine/actions.ts": "dfcc8830c17cd2f41727a8fdb195b05b3fb4c9c304312489522d115d4afecd45",
+      "src/engine/contentFamilies.ts": "2fd4c455b9a684331382ca5d742275ad93a3b8e427b0a4396390261195273818",
+      "src/engine/contentFamilies.test.ts": "99b0efff6cd32cff2bcaa714c1c2ae4bdec6790daefe8318e1fc8a0c265fea7e",
+      "src/engine/contentValidation.ts": "1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e",
+      "src/engine/contentValidation.test.ts": "484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226",
+      "src/engine/crafting.test.ts": "11514e5bc8a69f9b0993adcdb41232c692814578dc821389088a4b7048dde00e",
+      "src/engine/crisisAdventure.test.ts": "729e442247d398292bb9bd0a2a6c4f3a2fb3488248859f362a3b700383454624",
+      "src/engine/itemGeneration.ts": "38676a3b5bce1406ea7a4471139b72ee58c9a53f41fb90adba47885d95b7c559",
+      "src/engine/itemGeneration.test.ts": "377f8471b4bc69169d01d969a3c0d443b5ddbe1624f7436851320c0a9b45287f",
+      "src/engine/rewardActions.test.ts": "133b21d4f52de1c4a46e2c4600b214fc56d14f80de45ade78e81b1eebad667f1",
+      "src/engine/rewardState.ts": "ea988c2712fe5d788f6eeba088aee3cfbb08aaa3fa67603cd1b9278044ecb840",
+      "src/presentation/worldUI.test.ts": "8624c052a385e339598ef0954e7f15e79541147fdd1962b17b92b7b946ecaac1",
+      "src/services/rewardSave.test.ts": "9d2841e99d9d9f147aa23d35669b52d831d103915f98fe494df2ddb484f9ec52",
+      "src/services/rewardValidation.ts": "15e981cb265f445adfd5d93a035bfecf9c83dbfea9f914f9cb290dc77c949ca1",
+      "src/services/saveService.ts": "611e654d20884514571736a6798636ee956d59aa1446422303d4c450c5b6ca5e",
+      "src/services/saveService.test.ts": "5204c0264daafd5ba5a8a75229eaac183fa18187958b588562b3d25fbdc76edb"
+    },
+    "core26_match_frozen": true
+  },
+  "environment_after": {
+    "captured_utc": "2026-10-08T05:40:49.342052+00:00",
+    "captured_asia_taipei": "2026-10-08T13:40:49.342052+08:00",
+    "os": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "node": {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "v24.19.0",
+      "stderr": ""
+    },
+    "npm": {
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "11.9.0",
+      "stderr": ""
+    },
+    "vitest": {
+      "command": [
+        "./node_modules/.bin/vitest",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "vitest/4.1.11 linux-x64 node-v24.19.0",
+      "stderr": ""
+    },
+    "cpu_count": 5,
+    "loadavg": "0.42 0.35 0.21 1/703 70801",
+    "target_test_sha256": "c9e702a8819e0d372aff7411f45a85ebc1e829dfc6f1e753b728863a21f56a16",
+    "target_test_bytes": 6450,
+    "core26_hashes": {
+      "src/components/InventoryWindow.vue": "8a249649509a1b5fbff74e2d9cf2a1af8ee96e00d4da588dbaee2169de33108a",
+      "src/components/PlaceWindow.vue": "ba525fb8a9dcfda93ea064a7381010558d560885a92194bbdca78a92be75a8f0",
+      "src/data/config.ts": "ea56d790207bf13575ee19cbbdf46fa29ad8a03dd374a4613863af33c44e707a",
+      "src/data/contentRegistry.ts": "12dcc921ff7e8014cee9a6a8a320df10ad44dcd29b621bd62e5f8bea17c23384",
+      "src/data/crafting.ts": "e882f58803229c01b4853e44710f5cd1f7b2a56a2c4b058bbebe2fe2141aaa73",
+      "src/data/rewards.ts": "7169a34cfd420ec4a181fa54c03560c5301f7fac666a049e5773d0439d897806",
+      "src/data/content/slime.ts": "0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead",
+      "src/domain/content.ts": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+      "src/domain/reward.ts": "84dcc0abb3a8eb19b9aae3a190766d33c8da3530c761a6bbb8ce8d92bf1641b5",
+      "src/domain/types.ts": "7924e0383ca4f1e5623e95aca5ceb28b5022c03af007dca0d2cb2c1ec0050450",
+      "src/engine/actions.ts": "dfcc8830c17cd2f41727a8fdb195b05b3fb4c9c304312489522d115d4afecd45",
+      "src/engine/contentFamilies.ts": "2fd4c455b9a684331382ca5d742275ad93a3b8e427b0a4396390261195273818",
+      "src/engine/contentFamilies.test.ts": "99b0efff6cd32cff2bcaa714c1c2ae4bdec6790daefe8318e1fc8a0c265fea7e",
+      "src/engine/contentValidation.ts": "1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e",
+      "src/engine/contentValidation.test.ts": "484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226",
+      "src/engine/crafting.test.ts": "11514e5bc8a69f9b0993adcdb41232c692814578dc821389088a4b7048dde00e",
+      "src/engine/crisisAdventure.test.ts": "729e442247d398292bb9bd0a2a6c4f3a2fb3488248859f362a3b700383454624",
+      "src/engine/itemGeneration.ts": "38676a3b5bce1406ea7a4471139b72ee58c9a53f41fb90adba47885d95b7c559",
+      "src/engine/itemGeneration.test.ts": "377f8471b4bc69169d01d969a3c0d443b5ddbe1624f7436851320c0a9b45287f",
+      "src/engine/rewardActions.test.ts": "133b21d4f52de1c4a46e2c4600b214fc56d14f80de45ade78e81b1eebad667f1",
+      "src/engine/rewardState.ts": "ea988c2712fe5d788f6eeba088aee3cfbb08aaa3fa67603cd1b9278044ecb840",
+      "src/presentation/worldUI.test.ts": "8624c052a385e339598ef0954e7f15e79541147fdd1962b17b92b7b946ecaac1",
+      "src/services/rewardSave.test.ts": "9d2841e99d9d9f147aa23d35669b52d831d103915f98fe494df2ddb484f9ec52",
+      "src/services/rewardValidation.ts": "15e981cb265f445adfd5d93a035bfecf9c83dbfea9f914f9cb290dc77c949ca1",
+      "src/services/saveService.ts": "611e654d20884514571736a6798636ee956d59aa1446422303d4c450c5b6ca5e",
+      "src/services/saveService.test.ts": "5204c0264daafd5ba5a8a75229eaac183fa18187958b588562b3d25fbdc76edb"
+    },
+    "core26_match_frozen": true
+  },
+  "target_and_core_hash_stable": true,
+  "raw_stdout_sha256": "19eef6f3bbb97521670bff4732c0cf3a4a9c04cbaee9f9c1a7409b0c5903eb4b",
+  "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "raw_exit_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+  "limitations": "One isolated pass does not establish reliable margin under the 5-second default; observed 4.34-second body is close to timeout. No timeout changes, source edits, retries or full regression reruns."
+}

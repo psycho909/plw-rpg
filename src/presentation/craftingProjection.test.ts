@@ -71,17 +71,31 @@ describe('crafting UI projection', () => {
     expect(projection.selectedInfluence?.owned).toBe(0)
   })
 
-  it('lists all four engine-planned recipes and keeps locked recipes inspectable with their denial', () => {
+  it('lists legacy recipes unchanged and projects the exact Slime recipes with their denials', () => {
     const projection = projectCrafting(readyAtStore())
 
-    expect(projection.recipes.map(({ id, name, unlocked }) => ({ id, name, unlocked }))).toEqual([
+    const rows = projection.recipes.map(({ id, name, unlocked }) => ({ id, name, unlocked }))
+    expect(rows.filter(recipe => !recipe.id.startsWith('slime_'))).toEqual([
       { id: 'starterSpear', name: '木石長矛', unlocked: true },
       { id: 'fieldSpear', name: '進階長矛', unlocked: false },
       { id: 'fieldArmor', name: '鎖甲', unlocked: false },
       { id: 'ironShortSword', name: '鐵短劍', unlocked: false },
     ])
+    expect(rows.filter(recipe => recipe.id.startsWith('slime_'))).toEqual([
+      { id: 'slime_resin_guard_recipe', name: '製作樹脂護衣', unlocked: false },
+      { id: 'slime_glass_pike_recipe', name: '鍛造晶刺長槍', unlocked: false },
+      { id: 'slime_moss_coat_recipe', name: '縫製苔池外套', unlocked: false },
+      { id: 'slime_spring_blade_recipe', name: '鍛造泉躍短刃', unlocked: false },
+    ])
     expect(projection.recipes.find(recipe => recipe.id === 'ironShortSword')?.plan.ok).toBe(false)
     expect(projection.recipes.find(recipe => recipe.id === 'ironShortSword')?.plan.message).toBeTruthy()
+    for (const recipe of projection.recipes.filter(recipe => recipe.id.startsWith('slime_'))) {
+      expect(recipe.plan.ok).toBe(false)
+      if (!recipe.plan.ok) {
+        expect(recipe.plan.reasonCode).toBe('station_unavailable')
+        expect(recipe.plan.message).toBe('這項配方的工作台尚未開放。')
+      }
+    }
   })
 
   it('uses the selected recipe plan for exact costs, station, quality floor, and capped practice', () => {

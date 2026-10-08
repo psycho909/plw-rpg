@@ -1,0 +1,117 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/lifeIntegration.test.ts > V2 integrated life rules > keeps a 100-year world bounded, serializable and deterministic after save
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/engine/lifeIntegration.test.ts:102:24
+    100|     states.slice(1).forEach(state => expect(state).toEqual(states[0]))
+    101|   })
+    102|   it.each([10, 50, 100])('keeps a %s-year world bounded, serializable …
+       |                        ^
+    103|     const state = createGame(710), restored = deserialize(serialize(st…
+    104|     simulate(state, years * year); simulate(restored, years * year)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  src/presentation/craftingProjection.test.ts > crafting UI projection > lists all four engine-planned recipes and keeps locked recipes inspectable with their denial
+AssertionError: expected [ { id: 'starterSpear', …(2) }, …(7) ] to deeply equal [ { id: 'starterSpear', …(2) }, …(3) ]
+
+- Expected
++ Received
+
+@@ -17,6 +17,26 @@
+    {
+      "id": "ironShortSword",
+      "name": "鐵短劍",
+      "unlocked": false,
+    },
++   {
++     "id": "slime_resin_guard_recipe",
++     "name": "製作樹脂護衣",
++     "unlocked": false,
++   },
++   {
++     "id": "slime_glass_pike_recipe",
++     "name": "鍛造晶刺長槍",
++     "unlocked": false,
++   },
++   {
++     "id": "slime_moss_coat_recipe",
++     "name": "縫製苔池外套",
++     "unlocked": false,
++   },
++   {
++     "id": "slime_spring_blade_recipe",
++     "name": "鍛造泉躍短刃",
++     "unlocked": false,
++   },
+  ]
+
+ ❯ src/presentation/craftingProjection.test.ts:77:90
+     75|     const projection = projectCrafting(readyAtStore())
+     76|
+     77|     expect(projection.recipes.map(({ id, name, unlocked }) => ({ id, n…
+       |                                                                                          ^
+     78|       { id: 'starterSpear', name: '木石長矛', unlocked: true },
+     79|       { id: 'fieldSpear', name: '進階長矛', unlocked: false },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  src/services/playJournal.test.ts > atomic local checkpoint envelope > migrates a valid V1 world and starts a separate journal
+AssertionError: expected 8 to be 7 // Object.is equality
+
+- Expected
++ Received
+
+- 7
++ 8
+
+ ❯ src/services/playJournal.test.ts:22:38
+     20|   it('migrates a valid V1 world and starts a separate journal', () => {
+     21|     const loaded = unpackCheckpoint(versionOneFixture())
+     22|     expect(loaded.state.saveVersion).toBe(7); expect(loaded.state.life…
+       |                                      ^
+     23|     expect(loaded.journal.pending).toEqual([])
+     24|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > migrates V1 without offline advancement and retains the historical world checkpoint
+AssertionError: expected 8 to be 7 // Object.is equality
+
+- Expected
++ Received
+
+- 7
++ 8
+
+ ❯ src/stores/gameStore.test.ts:127:36
+    125|     expect(game.state.worldTime).toBe(state.worldTime)
+    126|     expect(game.state.rngState).toBe(state.rngState)
+    127|     expect(game.state.saveVersion).toBe(7)
+       |                                    ^
+    128|     expect(game.speed).toBe(1)
+    129|     expect(game.offline).toBe(null)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  src/stores/gameStore.test.ts > safe browser persistence > allows explicit reset to replace corrupt data after the UI confirmation
+AssertionError: expected 8 to be 7 // Object.is equality
+
+- Expected
++ Received
+
+- 7
++ 8
+
+ ❯ src/stores/gameStore.test.ts:162:76
+    160|   it('allows explicit reset to replace corrupt data after the UI confi…
+    161|     saved = '{broken'; const game = useGameStore(); game.reset()
+    162|     expect(game.save()).toBe(true); expect(JSON.parse(saved!).saveVers…
+       |                                                                            ^
+    163|     expect(game.speed).toBe(0); expect(game.state.life.openingSeen).to…
+    164|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+

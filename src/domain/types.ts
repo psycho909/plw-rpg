@@ -1,5 +1,5 @@
 import type { WorldLife } from './life'
-import type { FamilyEncounter, RewardState } from './reward'
+import type { ContentFamilyEncounter, FamilyEncounter, RewardState } from './reward'
 import type { RegionalCrisisState } from './crisis'
 export type RegionId = 'village' | 'farmland' | 'forest' | 'mine' | 'unknown'
 export type LifeStage = 'child' | 'young' | 'adult' | 'middleAge' | 'elder'
@@ -33,7 +33,8 @@ export interface RegionalCrisisCombatObjective {
 }
 export interface CombatState {
   monsterId: string; hp: number; maxHp: number; attack: number; defense: number; exp: number; gold: number
-  elite: boolean; dungeon: boolean; familyEncounter?: FamilyEncounter; regionalCrisisObjective?: RegionalCrisisCombatObjective
+  elite: boolean; dungeon: boolean; familyEncounter?: FamilyEncounter; contentEncounter?: ContentFamilyEncounter
+  regionalCrisisObjective?: RegionalCrisisCombatObjective
 }
 export interface GameState {
   reward: RewardState
@@ -45,7 +46,7 @@ export interface GameState {
   threat: { monsterPopulation: number; threatLevel: number; growthRate: number; bossProgress: number; campLevel: number; bossAlive: boolean; warningLevel: number }
   regionalCrisis: RegionalCrisisState
   dungeon: { discovered: boolean; threat: number; progress: number; runs: number; stage: number; inDungeon: boolean }
-  crops: { id: number; plantedAt: number; growthDuration: number; matureAt: number; status: 'growing' | 'mature' }[]; preparedPlots: number
+  crops: { id: number; cropId: string; plantedAt: number; growthDuration: number; matureAt: number; status: 'growing' | 'mature' }[]; preparedPlots: number
   party: { npcId: string; hireCost: number; dailyWage: number; contractEnd: number; archetype: 'fighter' | 'healer' }[]
   combat: CombatState | null
   events: WorldEvent[]; history: WorldEvent[]; eventSequence: number; nextNpcId: number

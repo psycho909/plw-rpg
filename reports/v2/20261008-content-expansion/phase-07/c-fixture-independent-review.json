@@ -1,0 +1,42 @@
+{
+  "scope": {
+    "phase": "Phase 7-C ordinary test fixture corrections",
+    "base_head": "a1307d220a68213be6465bc40e0a85af8ec605a3",
+    "files": [
+      "src/stores/gameStore.test.ts",
+      "src/services/playJournal.test.ts",
+      "src/presentation/craftingProjection.test.ts",
+      "src/engine/lifeIntegration.test.ts"
+    ],
+    "diff_command": "git diff -- <four listed test paths>"
+  },
+  "reviewer": {
+    "requested_role": "g6-luna-med-reviewer",
+    "runtime_model": "unknown",
+    "participated_in_implementation": false,
+    "tests_rerun": false
+  },
+  "standards": "PASS for test-fixture changes: V1 input remains V1 and expected migrated outputs are 8; exact legacy/Slime recipe rows and expected station denial are asserted; 100-year timeout scoped to that test only.",
+  "spec": "PASS: checks preserve real projection denials and long-world behavior invariants without deriving expected values from CONFIG.",
+  "file_hashes": {
+    "src/stores/gameStore.test.ts": "6c069d44d18f625109885948e546ccdd20a9421ce5d449d6e33910253db7300f",
+    "src/services/playJournal.test.ts": "a974a3238d87282afb2e2321705c406f5264184468bddc801646469eade33f47",
+    "src/presentation/craftingProjection.test.ts": "0673836558f4d3110bcdacd5be754f287286cffadf5f88d029fdc56e475fd117",
+    "src/engine/lifeIntegration.test.ts": "29a8cfbe6e4bc7ee1ffd2ba4dc0404e4ce9698495218c7850ed4fec3a9399b16",
+    "c-fixture-correction.md": "100eea3733165fb8b993d793729b64ff8adaffcb32ff60496164d4ccd12213e7"
+  },
+  "coverage_checks": [
+    "V1 inputs unchanged; migrated/persisted/reset saveVersion is 8.",
+    "Exact 4 legacy and 4 Slime recipe IDs/names/unlocked states retained.",
+    "Each Slime recipe is denied specifically as station_unavailable with exact display message.",
+    "Long-world seed, serialize/deserialize, simulation duration, determinism, bounds, and unique IDs preserved in shared helper.",
+    "10/50 use default timeout; only 100-year case uses 15000 ms."
+  ],
+  "verification": {
+    "recorded_targeted_tests": "48 passed on pre-final-denial-assertion snapshot",
+    "current_final_tests_rerun": false,
+    "full_retry": "pending",
+    "prior_life_timing_observations": "4.34s isolated and 5.013s full run; root cause unknown; Phase 7-J profiling required"
+  },
+  "disposition": "Accept test fixture corrections by review; final test pass remains pending full retry."
+}

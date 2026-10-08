@@ -47,3 +47,7 @@ Legacy ITEMS 正確基線為 8（wood/stone/iron/food/material/potion/sword/armo
 ## B count semantics clarified
 
 Spec §3 明列 Crafting Materials／Rare Materials，因此 usableNewItems 計數 unique equipment + 合格有實際消費用途的 ecology materials + crop goods；usableNewMaterials 是 subset，不能另外重複加總。crop goods 在 runtime MATERIALS 中的 mirror 不可重複計數。107 預算不變。Spawn 採現有 region/discovery 加 level/threat/season/time predicates，不新增 dungeon-depth 系統；Boss 後果採有限小量現有 food/safety/prosperity 增減，具體 bounds 隨核心驗證確立。
+
+## C1 persistence architecture correction approved
+
+Independent core audit proves shared director100-key capacity can be consumed by midnight marker or hunt feedback after accepted boss encounter, leading missingcooldown/reusableform or >100 invalidsave. Root supersedes earlier director-key choice: reuse bounded bossForms map with discriminated frozen-encounter or cooldown-until state for known catalog bosses; no new top-level save field/version beyondSave8/Reward3, no new boss director keys. Defeat removes variant details, installs cooldown state; existing raw frozen Reward3 entries normalize deterministically, unrelatedlife cooldowns preserved. Tests must cover strictknownIDs, migration/idempotence/RNG, midnight/hunt, pendingform/save/reload, expiry and savevalidity. Generic director overflow remains separately inspected; no activecooldown data discarded. C2 outdoorvictory mustnever advanceDungeon. Claimed loot→craft closure mustearn allfamilyinputs through canonical repeatencounters, not directlootpadding.

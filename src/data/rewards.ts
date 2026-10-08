@@ -1,6 +1,7 @@
 import type { AffixDefinition, BossVariantDefinition, ItemBaseDefinition, LootTableDefinition, MaterialDefinition, MonsterDefinition, MonsterDefinitionId, MonsterFamilyDefinition, MonsterTraitDefinition, RarityDefinition, RarityId } from '../domain/reward'
+import { CONTENT_AFFIXES, CONTENT_CROP_GOODS, CONTENT_EQUIPMENT, CONTENT_MATERIALS } from './contentRegistry'
 
-export const ITEM_BASES = {
+export const LEGACY_ITEM_BASES = {
   shortSword: { id: 'shortSword', name: '短劍', slot: 'weapon', attack: 4, defense: 0, sell: 12, affixes: ['striking', 'keen', 'piercing', 'bleeding'] },
   axe: { id: 'axe', name: '獵斧', slot: 'weapon', attack: 6, defense: 0, sell: 16, affixes: ['striking', 'keen', 'piercing', 'bleeding'] },
   spear: { id: 'spear', name: '獵矛', slot: 'weapon', attack: 5, defense: 0, sell: 14, affixes: ['striking', 'keen', 'piercing', 'bleeding'] },
@@ -9,8 +10,13 @@ export const ITEM_BASES = {
   hideArmor: { id: 'hideArmor', name: '獸皮衣', slot: 'armor', attack: 0, defense: 2, sell: 10, affixes: ['sturdy', 'blocking', 'warding'] },
   chainArmor: { id: 'chainArmor', name: '鎖甲', slot: 'armor', attack: 0, defense: 4, sell: 18, affixes: ['sturdy', 'blocking', 'warding'] },
 } satisfies Record<string, ItemBaseDefinition>
+const contentItemBases = Object.fromEntries(Object.values(CONTENT_EQUIPMENT).map(item => [item.id, {
+  id: item.id, name: item.name['zh-TW'], slot: item.slot, attack: item.attack, defense: item.defense,
+  sell: item.sell, affixes: [...item.affixIds], ...(item.penetration === undefined ? {} : { penetration: item.penetration }),
+}])) as Record<string, ItemBaseDefinition>
+export const ITEM_BASES: Record<string, ItemBaseDefinition> = { ...LEGACY_ITEM_BASES, ...contentItemBases }
 
-export const AFFIXES = {
+export const LEGACY_AFFIXES = {
   striking: { id: 'striking', name: '強擊', stat: 'attack', slots: ['weapon'], tiers: [1, 2, 4] },
   keen: { id: 'keen', name: '銳利', stat: 'critical', slots: ['weapon'], tiers: [3, 6, 10] },
   piercing: { id: 'piercing', name: '穿透', stat: 'penetration', slots: ['weapon'], tiers: [1, 2, 3] },
@@ -19,6 +25,10 @@ export const AFFIXES = {
   blocking: { id: 'blocking', name: '格擋', stat: 'block', slots: ['armor'], tiers: [4, 8, 12] },
   warding: { id: 'warding', name: '守護', stat: 'reduction', slots: ['armor'], tiers: [3, 6, 9] },
 } satisfies Record<string, AffixDefinition>
+const contentAffixes = Object.fromEntries(Object.values(CONTENT_AFFIXES).map(affix => [affix.id, {
+  id: affix.id, name: affix.name['zh-TW'], stat: affix.stat, slots: [...affix.slots], tiers: [...affix.tiers],
+}])) as Record<string, AffixDefinition>
+export const AFFIXES: Record<string, AffixDefinition> = { ...LEGACY_AFFIXES, ...contentAffixes }
 
 // Affix counts and tier access distinguish quality; rarity does not multiply raw stats.
 export const RARITIES = {
@@ -29,11 +39,22 @@ export const RARITIES = {
   legendary: { id: 'legendary', name: '傳說', weight: .2, affixCount: 3, maxTier: 3, specialEligible: true },
 } satisfies Record<string, RarityDefinition>
 
-export const MATERIALS = {
+export const LEGACY_MATERIALS = {
   wolfFang: { id: 'wolfFang', name: '狼牙', sell: 5, bias: { bleeding: 4, piercing: 2 }, specialBonus: 0, description: '可出售；作為獵矛或鐵短劍影響素材時偏向裂傷與穿透詞綴。' },
   wolfHide: { id: 'wolfHide', name: '狼皮', sell: 5, bias: { sturdy: 3, blocking: 2 }, specialBonus: 0, description: '可出售；鍛造鎖甲時作為影響素材，偏向堅固與格擋詞綴。' },
   moonStone: { id: 'moonStone', name: '月石', sell: 25, bias: { keen: 4 }, specialBonus: .15, description: '狼族首領的特殊素材；可出售；作為獵矛或鐵短劍影響素材時偏向銳利，並提高傳說武器的月狩特性機率。' },
 } satisfies Record<string, MaterialDefinition>
+const contentMaterials = Object.fromEntries([
+  ...Object.values(CONTENT_MATERIALS).map(material => [material.id, {
+    id: material.id, name: material.name['zh-TW'], sell: material.sell, bias: material.bias,
+    specialBonus: material.specialBonus ?? 0, description: material.description['zh-TW'],
+  }] as const),
+  ...Object.values(CONTENT_CROP_GOODS).map(good => [good.id, {
+    id: good.id, name: good.name['zh-TW'], sell: good.sell, bias: {}, specialBonus: 0,
+    description: good.description['zh-TW'],
+  }] as const),
+]) as Record<string, MaterialDefinition>
+export const MATERIALS: Record<string, MaterialDefinition> = { ...LEGACY_MATERIALS, ...contentMaterials }
 
 export const MONSTER_FAMILIES = {
   wolf: { id: 'wolf', name: '北林狼族', regions: ['forest'], lootTable: 'wolf', themeTags: ['beast', 'forest'], eventHooks: ['wolf.defeated', 'wolf.bossDefeated'] },

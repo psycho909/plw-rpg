@@ -30,7 +30,11 @@ const gearEquipped = computed(() => !!gear.value && game.state.reward.equipped[g
 const materialStacks = computed(() => game.state.reward.materials[game.state.activeCharacterId])
 const collection = computed(() => game.state.reward.collection)
 const lootFeedback = computed(() => projectLatestLootFeedback(game.state))
-function wolfNames(ids: MonsterDefinitionId[]) { return ids.map(monsterId => WOLF_MONSTERS[monsterId].name).join('、') }
+function wolfNames(ids: readonly string[]) {
+  return ids.filter((monsterId): monsterId is MonsterDefinitionId => Object.hasOwn(WOLF_MONSTERS, monsterId))
+    .map(monsterId => WOLF_MONSTERS[monsterId].name).join('、')
+}
+function bossSourceName(id: string) { return Object.hasOwn(WOLF_MONSTERS, id) ? WOLF_MONSTERS[id as MonsterDefinitionId].name : id }
 function baseNames(ids: ItemBaseId[]) { return ids.map(baseId => ITEM_BASES[baseId].name).join('、') }
 function materialNames(ids: MaterialId[]) { return ids.map(materialId => MATERIALS[materialId].name).join('、') }
 const pendingSale = ref<string | null>(null), cancelSale = ref<HTMLButtonElement | null>(null)
@@ -133,7 +137,7 @@ function useSelected() {
           <section><h4>目前裝備詞綴</h4><ul class="gear-affixes"><li v-for="affix in comparison?.current.affixes ?? []" :key="affix.id">{{ AFFIXES[affix.id].name }} · 階 {{ affix.tier }} · {{ statLabels[AFFIXES[affix.id].stat] }} +{{ statText(AFFIXES[affix.id].stat, affix.value) }}<span class="muted"> {{ affixMechanics[AFFIXES[affix.id].stat] }}</span></li><li v-if="!comparison?.current.affixes.length" class="muted">{{ comparison?.current.specialTrait ? '沒有附加詞綴。' : '沒有附加詞綴或特殊特性。' }}</li></ul><p v-if="comparison?.current.specialTrait === 'moonHunter'" class="gear-special-trait">月下獵手：對狼族每次攻擊額外造成 3 點傷害。</p></section>
         </div>
         <p v-if="gear.material" class="muted">生成素材：{{ MATERIALS[gear.material].name }}</p>
-        <p v-if="gear.provenance" class="muted">留名裝備 · 誕生於第 {{ calendar(gear.provenance.createdAt).year }} 年{{ gear.provenance.bossSource ? ` · 來源：${WOLF_MONSTERS[gear.provenance.bossSource].name}` : '' }}</p>
+        <p v-if="gear.provenance" class="muted">留名裝備 · 誕生於第 {{ calendar(gear.provenance.createdAt).year }} 年{{ gear.provenance.bossSource ? ` · 來源：${bossSourceName(gear.provenance.bossSource)}` : '' }}</p>
         <p v-if="craftProvenance" class="muted" data-craft-provenance><strong v-if="craftProvenance.masterpiece" class="masterpiece-label">鍛造傑作</strong><span v-else>鍛造裝備</span> · 原製作者 {{ craftProvenance.creatorName }} · {{ craftProvenance.createdAtLabel }} · 配方：{{ craftProvenance.recipeName }}</p>
         <div class="action-buttons"><button class="primary" :disabled="!game.character.isAlive || !!game.state.combat" @click="equipGear">{{ gearEquipped ? '卸下獵獲裝備' : '穿戴獵獲裝備' }}</button><button :disabled="gearEquipped || !canVisit(game.state, 'blacksmith')" @click="requestSale">出售 {{ itemSellPrice(gear) }} 金</button></div>
         <p v-if="game.state.combat" class="muted">戰鬥中無法更換裝備。</p><p v-if="!game.state.settlement.buildings.includes('blacksmith')" class="muted">聚落發展成村莊、開設鐵匠鋪後，才能出售獵獲裝備。</p><p v-else-if="!canVisit(game.state, 'blacksmith')" class="muted">出售請在營業時間靠近鐵匠鋪；已穿戴的裝備請先卸下。</p>

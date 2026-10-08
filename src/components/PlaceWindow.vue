@@ -34,6 +34,7 @@ const mercenaries = computed(() => game.state.npcs.filter(n => n.job === 'mercen
 const terms = computed(() => hireTerms(game.state))
 const blocked = computed(() => !c.value.isAlive || !!game.state.combat || game.state.dungeon.inDungeon)
 const price = (item: ItemId) => buyPrice(game.state, item)
+const materialIcon = (id: string) => materialIcons[id as keyof typeof materialIcons] ?? '◈'
 const hourLabel = (hour: number | null) => hour === null ? '—' : `${String(hour).padStart(2, '0')}:00`
 function chooseRecipe(recipeId: keyof typeof CRAFTING_RECIPES) {
   selectedRecipeId.value = recipeId
@@ -167,7 +168,7 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
     <p class="muted help-text">素材會消耗 1 份，依選擇調整詞綴權重或條件式特性機率；不保證指定結果。品質機率只依鍛造熟練度能力調整。</p>
     <div class="filter-buttons crafting-material-options" role="group" aria-label="選擇影響素材">
       <button data-crafting-material="none" :aria-pressed="selectedInfluenceMaterial === null" :class="{ selected: selectedInfluenceMaterial === null }" @click="chooseInfluenceMaterial(null)">不使用素材</button>
-      <button v-for="option in crafting.influenceMaterials" :key="option.id" :data-crafting-material="option.id" :aria-pressed="selectedInfluenceMaterial === option.id" :class="{ selected: selectedInfluenceMaterial === option.id }" @click="chooseInfluenceMaterial(option.id)">{{ materialIcons[option.id] }} {{ option.name }} · 持有 {{ option.owned }}</button>
+      <button v-for="option in crafting.influenceMaterials" :key="option.id" :data-crafting-material="option.id" :aria-pressed="selectedInfluenceMaterial === option.id" :class="{ selected: selectedInfluenceMaterial === option.id }" @click="chooseInfluenceMaterial(option.id)">{{ materialIcon(option.id) }} {{ option.name }} · 持有 {{ option.owned }}</button>
     </div>
     <p v-if="!crafting.influenceMaterials.length" class="muted help-text">這項配方沒有影響素材選項。</p>
     <p v-if="crafting.selectedInfluence" class="crafting-influence-copy" data-crafting-influence-copy>{{ crafting.selectedInfluence.influenceText }}</p>

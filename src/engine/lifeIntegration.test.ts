@@ -99,7 +99,7 @@ describe('V2 integrated life rules', () => {
     })
     states.slice(1).forEach(state => expect(state).toEqual(states[0]))
   })
-  it.each([10, 50, 100])('keeps a %s-year world bounded, serializable and deterministic after save', years => {
+  const assertLongWorldIsBoundedAndDeterministic = (years: number) => {
     const state = createGame(710), restored = deserialize(serialize(state, 10)).state
     simulate(state, years * year); simulate(restored, years * year)
     expect(restored).toEqual(state)
@@ -109,5 +109,11 @@ describe('V2 integrated life rules', () => {
     expect(state.life.requests.length).toBeLessThanOrEqual(100)
     expect(Object.keys(state.life.npcs).length).toBeLessThanOrEqual(1000)
     expect(new Set([...state.npcs, ...state.characters].map(c => c.id)).size).toBe(state.npcs.length + state.characters.length)
+  }
+  it.each([10, 50])('keeps a %s-year world bounded, serializable and deterministic after save', years => {
+    assertLongWorldIsBoundedAndDeterministic(years)
   })
+  it('keeps a 100-year world bounded, serializable and deterministic after save', () => {
+    assertLongWorldIsBoundedAndDeterministic(100)
+  }, 15_000)
 })

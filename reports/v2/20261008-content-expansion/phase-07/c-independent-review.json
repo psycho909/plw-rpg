@@ -1,0 +1,85 @@
+{
+  "scope": {
+    "phase": "Phase 7-C core integration",
+    "base_head": "a1307d220a68213be6465bc40e0a85af8ec605a3",
+    "source_hash_report": "reports/v2/20261008-content-expansion/phase-07/c-core.md",
+    "source_hash_report_sha256": "b7c04fbc837c246319016d588a8a94a4ec632ed4e40ab0e0a0ef4ce445791346",
+    "exact_source_files": 26,
+    "exact_source_hashes_reverified": 26,
+    "scope_limit": "Core freeze only; four separately reviewed test-fixture corrections are outside the 26-file map."
+  },
+  "reviewer": {
+    "requested_role": "g6-luna-max-phase7-deep-reviewer",
+    "runtime_model": "unknown",
+    "participated_in_implementation": false,
+    "source_changes_made": false,
+    "tests_rerun": false,
+    "method": "Independent static source review against Phase 7 C authority; focused source-map hash verification."
+  },
+  "standards": {
+    "result": "IN_PROGRESS",
+    "evidence": "No separate code-standard finding identified in audited paths so far; broader core review remains in progress."
+  },
+  "spec": {
+    "result": "BLOCKED",
+    "findings": [
+      {
+        "id": "C1",
+        "severity": "P1",
+        "title": "Boss defeat can omit cooldown and retain reusable form at director cooldown capacity",
+        "locations": [
+          "src/engine/contentFamilies.ts:80-89",
+          "src/engine/contentFamilies.ts:107-115",
+          "src/engine/contentFamilies.ts:225-239",
+          "src/engine/contentFamilies.ts:274-291",
+          "src/engine/actions.ts:295-312",
+          "src/engine/simulation.ts:349-355",
+          "src/engine/simulation.ts:414-426",
+          "src/engine/livingEvents.ts:409-425",
+          "src/services/saveService.ts:455-465",
+          "src/services/rewardValidation.ts:202-223"
+        ],
+        "impact": "A valid 99-key save can form a boss, then reach 100 keys at the next daily tick. Defeat skips cooldown and world consequence after granting victory rewards, while the retained form bypasses cooldown. A defeat immediately before midnight can add key 101 and create a save that reload rejects.",
+        "reproduction_status": "Source-derived, not executed.",
+        "reproduction_steps": [
+          "Create a valid Save 8 / Reward 3 state with 99 unique non-content-boss cooldown keys and quietUntil covering the next daily tick.",
+          "Meet Slime boss predicates and form slime_heart while at 99 keys.",
+          "Preserve the boss form across midnight; director:lastDailyTick becomes key 100. Saving and reloading remains accepted.",
+          "At a later eligible spawn time, defeat the boss; recorder returns false, but combat commits victory and retains bossForms.",
+          "Query/start again; the stored form bypasses cooldown and is reused."
+        ],
+        "recommendation": "Keep the map at or below 100 while guaranteeing a complete boss defeat outcome across intervening daily ticks. Do not commit victory rewards while silently skipping the consequence/cooldown or retaining a reusable form. Cover 99-to-100 persistence, exact-cap defeat, over-cap boundary, and atomicity."
+      },
+      {
+        "id": "C2",
+        "severity": "P1",
+        "title": "Outdoor authored-family wins advance dungeon stage and eventually make the save unloadable",
+        "locations": [
+          "src/engine/actions.ts:295-313",
+          "src/engine/actions.ts:332-339",
+          "src/services/saveService.ts:119-121",
+          "src/engine/contentFamilies.test.ts:51-62"
+        ],
+        "impact": "Each outdoor content victory enters the dungeon progression branch. After three wins it increments dungeon.runs, emits a false dungeon clear, and grants iron. A fourth can put dungeon.stage above the valid maximum; deserialize then rejects the save.",
+        "reproduction_status": "Source-derived, not executed.",
+        "reproduction_steps": [
+          "Start from a normal state with dungeon.stage=0 and dungeon.inDungeon=false.",
+          "Win three forest Slime encounters through encounterContentMonster and combatTurn; each increments dungeon.stage, and the third emits a dungeon clear and grants dungeon iron.",
+          "Win a fourth outdoor content encounter; dungeon.stage becomes DUNGEON.encounters.length+1.",
+          "Serialize and reload; save validation rejects the out-of-range dungeon stage."
+        ],
+        "recommendation": "Keep authored-family outdoor payouts outside both the Goblin-threat branch and the dungeon progression branch; preserve dungeon progression only for actual dungeon combats. Assert all dungeon state and legacy inventory rewards remain unchanged across repeated content victories and verify reload."
+      }
+    ]
+  },
+  "verification": {
+    "source_map_hashes_match": true,
+    "source_map_count": 26,
+    "reviewer_tests": "not run",
+    "implementer_reported": "365 targeted tests and vue-tsc passed on frozen snapshot; not independently rerun",
+    "full_check": "Later recorded npm check 552/557 passed; final retry pending",
+    "long_world_test": "Isolated pass reported at 4.34s body under 5s; full run previously timed out at 5.013s; Phase 7-J profiling remains required"
+  },
+  "disposition": "BLOCK_C_RELEASE_PENDING_C1_C2_FIX_AND_REVIEW_COMPLETION",
+  "status": "Initial blocking findings captured; broader independent core audit in progress."
+}

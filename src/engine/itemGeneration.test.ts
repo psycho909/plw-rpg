@@ -146,7 +146,8 @@ describe('procedural item generation', () => {
       ids.add(item.instanceId)
       const allowed = ITEM_BASES[baseId].affixes
       expect(new Set(item.affixes.map(affix => affix.id)).size).toBe(item.affixes.length)
-      expect(item.affixes).toHaveLength(RARITIES[item.rarity].affixCount)
+      expect(item.affixes).toHaveLength(Math.min(RARITIES[item.rarity].affixCount,
+        allowed.filter(id => AFFIXES[id]!.slots.includes(ITEM_BASES[baseId].slot)).length))
       for (const affix of item.affixes) {
         expect(allowed).toContain(affix.id)
         expect(affix.tier).toBeLessThanOrEqual(AFFIXES[affix.id].tiers.length)
@@ -253,7 +254,7 @@ describe('wolf loot awards', () => {
     expect(second.instance?.baseId).toBe(first.instance?.baseId)
     expect(secondItemEvent.message).toBe(`獲得${RARITIES[second.instance!.rarity].name}${ITEM_BASES[second.instance!.baseId].name}。`)
     expect(secondItemEvent.message).not.toContain('新發現')
-    expect(Object.keys(state.reward).sort()).toEqual(['collection', 'equipped', 'instances', 'materials', 'nextInstanceId', 'schemaVersion', 'wolfBossDefeatedAt', 'wolfBossForm'].sort())
+    expect(Object.keys(state.reward).sort()).toEqual(['bossForms', 'collection', 'equipped', 'instances', 'materials', 'nextInstanceId', 'schemaVersion', 'wolfBossDefeatedAt', 'wolfBossForm'].sort())
     expect(deserialize(serialize(state)).state.reward).toEqual(state.reward)
   })
 

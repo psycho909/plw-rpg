@@ -160,7 +160,7 @@ export const SLIME_CONTENT = {
     {
       id: 'slime_resin_guard_recipe', name: { 'zh-TW': '製作樹脂護衣' }, description: { 'zh-TW': '以黏怪樹脂加固基礎護衣。' }, category: 'armor',
       inputs: [{ source: 'material', materialId: 'slime_resin', amount: 3 }, { source: 'inventory', itemId: 'wood', amount: 2 }],
-      goldCost: 8, staminaCost: 12, durationMinutes: 60, outputBase: 'slime_resin_guard', outputLevel: 3,
+      goldCost: 11, staminaCost: 12, durationMinutes: 60, outputBase: 'slime_resin_guard', outputLevel: 3,
       requiredSmithing: 2, practiceCap: 4, station: 'blacksmith', opensAtHour: 8, closesAtHour: 18,
       allowedBiasMaterials: ['slime_resin', 'slime_amber_gel', 'slime_pool_salt'],
       qualityRules: { floorAtSmithing: 2, minimumRarity: 'uncommon' }, affixRules: 'default',
