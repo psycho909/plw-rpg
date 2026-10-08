@@ -1,6 +1,6 @@
 # Phase7-B — Content Validator & Authoring Contracts
 
-- Status: in_progress
+- Status: accepted
 - Risk: L2
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
@@ -19,9 +19,9 @@ Parent [20261008-v2x-07-content-expansion](20261008-v2x-07-content-expansion.md)
 
 ## Acceptance
 
-- [ ] 本stage完整目標與合法來源／用途閉環達成，validator/targeted/regression按風險驗證。
-- [ ] 原始failure/sourceSHA/fingerprint/report保留；適用Medium/Max獨立review及Root acceptance。
-- [ ] 下一階段僅在Root release後施工；可先唯讀探索不得預先修改核心或大量資料。
+- [x] 本stage完整目標與合法來源／用途閉環達成，validator/targeted/regression按風險驗證。
+- [x] 原始failure/sourceSHA/fingerprint/report保留；適用Medium/Max獨立review及Root acceptance。
+- [x] 下一階段僅在Root release後施工；可先唯讀探索不得預先修改核心或大量資料。
 
 ## Dependencies
 
@@ -42,3 +42,7 @@ A計數審查修正中；B純authoring types已寫入保留，未驗證／未act
 ## B restored
 
 A 修正與獨立審查通過；恢復純 authoring contracts／validator／負向測試。C runtime 仍待 B review 與 Root release。
+
+## B final acceptance
+
+14/14 focused tests、batch validation、vue-tsc PASS；獨立 Medium audit ACCEPT，source fingerprint bc09c3d50f16aa9d7c5c9f56adf28f607f470cbd63735747be60fcd298a03480。B1–B7 與原始 failures 保留。僅 authoring candidate 品質，不宣稱 runtime crop consumer/save migration/natural exposure 已驗證。Root release C。

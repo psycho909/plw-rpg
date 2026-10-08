@@ -1,0 +1,39 @@
+{
+  "scope": {
+    "phase": "Phase 7-B final authoring types, validator, fixtures, runner, and report",
+    "base_head": "11980b796f88173cf05ef83ac41510a0d44a53b1",
+    "reviewed_b_source_fingerprint": "bc09c3d50f16aa9d7c5c9f56adf28f607f470cbd63735747be60fcd298a03480",
+    "fingerprint_method": "SHA-256 over JSON serialization of ordered path-to-source-SHA-256 map."
+  },
+  "reviewer": {
+    "requested_role": "g6-luna-med-reviewer",
+    "runtime_model": "unknown",
+    "participated_in_implementation": false,
+    "method": "single reviewer; separate Standards and Spec axes; no full suite rerun"
+  },
+  "standards": "PASS",
+  "spec": "PASS for Phase 7-B authoring scope; C/G must verify runtime source/use paths and final crop-good qualification.",
+  "resolved_findings": [
+    "B1 malformed nested recipe/loot entries rejected and invalid recipes cannot substantiate consumer paths",
+    "B2 recipe input amounts require positive safe integers",
+    "B3 family region arrays checked before filtering",
+    "B4 baseline affix slots provided and eligibility checked",
+    "B5 material/crop utility bounds enforced and documented",
+    "B6 final report points to exact source snapshot",
+    "B7 required recipe station/category/affixRules and array fields validated before consumer credit"
+  ],
+  "verification": {
+    "source_hashes_match_final_report": true,
+    "focused_tests_reported": "14/14",
+    "batch_reported": "PASS",
+    "typecheck_reported": "PASS",
+    "reviewer_reran_tests": false,
+    "full_suite_rerun": false
+  },
+  "scope_limitations": [
+    "Crop goods are authoring candidates only; runtime food/supply/source integration remains for C/G.",
+    "Controlled witnesses prove bounded satisfiability, not natural exposure.",
+    "Save migration/runtime compatibility is unverified."
+  ],
+  "disposition": "Accept Phase 7-B authoring validator/contracts for Root release decision."
+}

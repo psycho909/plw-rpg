@@ -1,0 +1,37 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentValidation.test.ts > validateContentPack > rejects malformed and fractional recipe inputs and every invalid family region token
+AssertionError: expected [] to deeply equal ArrayContaining{…}
+
+- Expected
++ Received
+
+- ArrayContaining [
+-   ObjectContaining {
+-     "code": "invalid-region",
+-     "id": "bog-beasts",
+-   },
+-   ObjectContaining {
+-     "code": "invalid-recipe",
+-     "id": "mire-hunter",
+-     "path": "inputs",
+-   },
+-   ObjectContaining {
+-     "code": "invalid-range",
+-     "id": "mire-hunter",
+-     "path": "inputs.amount",
+-   },
+- ]
++ []
+
+ ❯ src/engine/contentValidation.test.ts:177:27
+    175|     }
+    176|     const report = validateContentPack(malformed, baseline)
+    177|     expect(report.errors).toEqual(expect.arrayContaining([
+       |                           ^
+    178|       expect.objectContaining({ code: 'invalid-region', id: 'bog-beast…
+    179|       expect.objectContaining({ code: 'invalid-recipe', id: 'mire-hunt…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

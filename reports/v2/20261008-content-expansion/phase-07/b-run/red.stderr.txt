@@ -1,0 +1,14 @@
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentValidation.test.ts [ src/engine/contentValidation.test.ts ]
+Error: Cannot find module './contentValidation' imported from /workspace/plw-rpg/src/engine/contentValidation.test.ts
+ ❯ src/engine/contentValidation.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest'
+      2| import { validateContentPack } from './contentValidation'
+       | ^
+      3| import type { ContentBaselineIds, ContentPack } from '../domain/conten…
+      4|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

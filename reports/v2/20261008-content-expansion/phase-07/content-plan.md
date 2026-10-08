@@ -43,3 +43,7 @@ Phase6自然Life供給及No-Player自治成功率不足、C01 export/C02 journal
 ## Corrected baseline acceptance / B restored
 
 Legacy ITEMS 正確基線為 8（wood/stone/iron/food/material/potion/sword/armor），AST 全 registry enumeration 已獨立核對。91 檔來源指紋 C9 與 fresh 531 項工程基線有效。新增 66/107/24/12 預算不變。原錯誤 Markdown 版本可還原，原錯誤 JSON 沒有初始封存，此限制不隱藏。B contracts/validator 已恢復；C 尚未 release。
+
+## B count semantics clarified
+
+Spec §3 明列 Crafting Materials／Rare Materials，因此 usableNewItems 計數 unique equipment + 合格有實際消費用途的 ecology materials + crop goods；usableNewMaterials 是 subset，不能另外重複加總。crop goods 在 runtime MATERIALS 中的 mirror 不可重複計數。107 預算不變。Spawn 採現有 region/discovery 加 level/threat/season/time predicates，不新增 dungeon-depth 系統；Boss 後果採有限小量現有 food/safety/prosperity 增減，具體 bounds 隨核心驗證確立。

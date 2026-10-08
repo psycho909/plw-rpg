@@ -1,6 +1,6 @@
 # Phase7-C — First Content Batch
 
-- Status: approved
+- Status: in_progress
 - Risk: L3
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
@@ -30,3 +30,7 @@ Blocked by: [Phase7-B](20261008-v2x-07b-content-validator.md)；尚未release。
 ## Evidence
 
 reports/v2/20261008-content-expansion/phase-07/；待驗證。
+
+## Root C release
+
+B accepted。Max owns runtime core integration/save8/reward3/migration and related core tests; Low owns Slime first-family isolated data module then Cave Insects after first closure. No mass 66/107 yet. Single generator, wolf wrappers and RNG preserved; loot→craft→equip→save/reload and frozen boss/cooldown prove full chain. Shared query/telegraph/source projections prepared for later UI. Full core independent Max review before wider D expansion.

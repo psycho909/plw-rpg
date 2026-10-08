@@ -1,0 +1,31 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentValidation.test.ts > validateContentPack > excludes exact legacy and procedural item IDs from item collisions and quality counts
+AssertionError: expected [] to deeply equal ArrayContaining{…}
+
+- Expected
++ Received
+
+- ArrayContaining [
+-   ObjectContaining {
+-     "code": "baseline-id-collision",
+-     "id": "reed-spear",
+-   },
+-   ObjectContaining {
+-     "code": "baseline-id-collision",
+-     "id": "mire-claw",
+-   },
+- ]
++ []
+
+ ❯ src/engine/contentValidation.test.ts:145:27
+    143|       excludedProceduralIds: ['reed-spear'],
+    144|     })
+    145|     expect(report.errors).toEqual(expect.arrayContaining([
+       |                           ^
+    146|       expect.objectContaining({ code: 'baseline-id-collision', id: 're…
+    147|       expect.objectContaining({ code: 'baseline-id-collision', id: 'mi…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

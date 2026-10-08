@@ -1,0 +1,31 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentValidation.test.ts > validateContentPack > rejects missing or unsupported required recipe enums before granting consumer credit
+AssertionError: expected [ { code: 'invalid-schema', …(2) } ] to deep equally contain ObjectContaining{…}
+
+- Expected:
+ObjectContaining {
+  "code": "invalid-recipe",
+  "id": "mire-hunter",
+}
+
++ Received:
+[
+  {
+    "code": "invalid-schema",
+    "message": "Unsupported JSON value type: undefined.",
+    "path": "recipes[0].station",
+  },
+]
+
+ ❯ src/engine/contentValidation.test.ts:228:29
+    226|       } as unknown as ContentPack
+    227|       const report = validateContentPack(malformed, baseline)
+    228|       expect(report.errors).toContainEqual(expect.objectContaining({ c…
+       |                             ^
+    229|       expect(report.qualityCounts.usableNewItems).toBe(0)
+    230|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

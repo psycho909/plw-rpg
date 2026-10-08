@@ -1,0 +1,61 @@
+
+> plw-rpg@0.1.0 validate:content
+> node scripts/validate_content_batch.mjs --pack reports/v2/20261008-content-expansion/phase-07/b-run/minimal-valid-pack.json
+
+# Phase 7-B Content Batch Validation
+
+- Pack: reports/v2/20261008-content-expansion/phase-07/b-run/minimal-valid-pack.json
+- Pack SHA-256: 2f67710c47cbd5a7a548ffc16d852b95005c5a1e4d5e7f6fa4c7adb9bac48161
+- B source revision anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1
+- B source fingerprint (domain + validator + tests + runner): 1a9cfbe21e2bb9bc58bee1d76a1221b7975c4f8486292df9ebf474c473a567cc
+- SHA-256 src/domain/content.ts: dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba
+- SHA-256 src/engine/contentValidation.ts: 54c4677b530b554788154356431e22eb22fb843d968ee191f8f188dbd0fa5ab8
+- SHA-256 src/engine/contentValidation.test.ts: 176cd685e0fe4f421f16da69aa0c5ab6122fead7af9a75b1d2379177e066d85b
+- SHA-256 scripts/validate_content_batch.mjs: 34222e18f9e2d34339a674c240a186ff43e05d9a69967ebca596ce29ec6b361f
+- Baseline source fingerprint: c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb
+- Validation: PASS
+- Targeted tests: PASS
+- Natural spawn exposure: not-measured
+- Crop goods evidence: declared-food-binding-only-runtime-integration-unverified
+- Save compatibility evidence: stable-id-addition-only-runtime-migration-unverified
+
+## Counts
+
+- Qualifying new monsters: 1
+- Authoring-qualified candidate new item IDs: 2 (equipment + usable materials + crop goods; unique IDs)
+- Authoring-qualified usable new materials subset: 1
+- Existing exact monster IDs: 5; excluded legacy monster IDs: 4
+- Existing exact boss variant IDs: 3
+- Existing exact item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0
+- This is a tiny validation fixture. Its IDs never count toward the approved 50-monster / 100-item targets.
+
+## Reachability
+
+- bog-beasts: controlled-witness (forest, level 2, threat 1, 夏, hour 0, safety 0; already-accessible)
+- mire-hunter: controlled-witness (forest, level 2, threat 1, 夏, hour 0, safety 0; already-accessible)
+
+## Diagnostics
+
+- No validation errors.
+- No warnings.
+
+## Authoring bounds and qualification
+
+- Phase 7 validator guardrails: ecosystem material sell is an integer from 1 through 50; each material bias is 0 through 4; crop-good foodValue is an integer from 1 through 4; recipe input amounts are positive safe integers up to 1000.
+- These are conservative Phase 7 authoring and balance bounds informed by current Reward values; they are not runtime formula limits. Raising them requires an explicit balance review.
+- Crop-good qualification records an authored food binding only. Final item qualification still requires C/G verification of runtime food/supply/source consumers.
+
+## Targeted test output
+
+```text
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  04:46:57
+   Duration  245ms (transform 93ms, setup 0ms, import 109ms, tests 22ms, environment 0ms)
+```
+
+Controlled witnesses prove bounded predicate satisfiability only (player level 1..100, threat 1..3, supported stages/seasons, hours 0..23, safety 0..100). This report does not estimate natural encounter rates or assert that all content appears in a long simulation.
