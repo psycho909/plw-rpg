@@ -1,0 +1,34 @@
+{
+  "scope": {
+    "phase": "Phase 7-C final Slime authoring data",
+    "file": "src/data/content/slime.ts",
+    "source_sha256": "5e6ba41bf54518972b2fba16f6f03f7a73d48e48f57ab4b0b81a4a45addbc14a",
+    "serialized_pack_sha256": "4447318fce02c655744b165e46d0284b0d2085ae427a63fdb95682e749ed5f6a"
+  },
+  "reviewer": {
+    "requested_role": "g6-luna-med-reviewer",
+    "runtime_model": "unknown",
+    "participated_in_implementation": false,
+    "method": "read-only serialized pack comparison and report provenance; no tests/typecheck/runtime rerun"
+  },
+  "standards": "PASS: Moss description corrected; recursive pre/post pack comparison found only that localized description field changed.",
+  "spec": "PASS for authoring data; boss gel award remains a C runtime acceptance gate requiring deduplication and exactly-one award proof.",
+  "comparison": {
+    "before": "/tmp/phase7-slime-pack.json",
+    "after": "/tmp/phase7-slime-pack-review2.json",
+    "only_difference": "$.monsters[3].description.zh-TW",
+    "before_value": "苔蘚覆蓋牠的背部；牠蓄勢時附近的黏怪也會躁動。",
+    "after_value": "苔蘚覆蓋牠的背部；牠蓄勢時會聚集自身力量。"
+  },
+  "verification": {
+    "data_validation_reported": "PASS: 0 errors, 0 warnings",
+    "qualifying_monsters": 11,
+    "candidate_items": 16,
+    "usable_materials": 8,
+    "focused_tests": "16 passed before prose-only change; not rerun",
+    "typecheck": "PASS before prose-only change; not rerun",
+    "runtime_reviewed": false
+  },
+  "remaining_gate": "C must deduplicate bossRules and selected loot-table guarantees and test exactly one slime_heart_gel per boss award.",
+  "disposition": "Accept Slime authoring data; retain exact-one boss gel award as required C runtime gate."
+}

@@ -177,7 +177,6 @@ export function validateContentPack(input: unknown, baseline: ContentBaselineIds
     const id = row.id as string
     ref(row.familyId, known.family, id, 'familyId'); ref(row.lootTableId, known.loot, id, 'lootTableId')
     const family = familyMap.get(String(row.familyId))
-    if (family && row.lootTableId !== family.lootTableId) errors.push({ code: 'family-loot-mismatch', id, message: 'Monster loot table must match its family table.' })
     const rank = row.rank
     if (!['normal', 'elite', 'miniBoss', 'boss'].includes(String(rank))) errors.push({ code: 'invalid-rank', id, message: 'Unknown monster rank.' })
     if (!positive(row.level) || !Number.isInteger(row.level)) errors.push({ code: 'invalid-range', id, path: 'level', message: 'Level must be a positive integer.' })
@@ -222,8 +221,10 @@ export function validateContentPack(input: unknown, baseline: ContentBaselineIds
       ...asArray(family.monsterIds), ...asArray(family.eliteIds), ...asArray(family.miniBossIds), ...asArray(family.bossIds),
     ].includes(row.id)) errors.push({ code: 'missing-family-membership', id: String(row.id), reference: familyId, message: 'Every monster must appear in exactly one rank pool of its family.' })
   }
-  const hasReachableMember = (family: UnknownRecord) => [family.monsterIds, family.eliteIds, family.miniBossIds, family.bossIds].some(pool => asArray(pool).some(member => typeof member === 'string' && !hasErrors(member) && reachability.some(w => w.contentId === member && w.status === 'controlled-witness')))
-  const familyReachableLoot = new Set(rows.families.filter(f => nonEmpty(f.id) && !hasErrors(f.id) && hasReachableMember(f)).map(row => row.lootTableId).filter((v): v is string => typeof v === 'string'))
+  // A family table is its default; a reachable monster's selected table is the effective source.
+  const familyReachableLoot = new Set(rows.monsters.filter(monster => nonEmpty(monster.id) && !hasErrors(monster.id) &&
+    !hasErrors(String(monster.familyId)) && reachability.some(w => w.contentId === monster.id && w.status === 'controlled-witness'))
+    .map(monster => monster.lootTableId).filter((v): v is string => typeof v === 'string'))
   const equipmentDropEnabled = new Set(rows.monsters.filter(row => nonEmpty(row.id) && !hasErrors(row.id) && reachability.some(w => w.contentId === row.id && w.status === 'controlled-witness') && isRecord(row.lootProfile) && finite(row.lootProfile.equipmentChance) && row.lootProfile.equipmentChance > 0).map(row => row.lootTableId).filter((v): v is string => typeof v === 'string'))
   for (const row of rows.lootTables) {
     const id = row.id as string
@@ -408,8 +409,11 @@ export function validateContentPack(input: unknown, baseline: ContentBaselineIds
   warnDuplicates('crops', row => ({ regions: [...asArray(row.regions)].sort(), seasons: [...asArray(row.seasons)].sort(), growthMinutes: row.growthMinutes, harvestAmount: row.harvestAmount, good: materialSemantic(String(row.harvestGoodId), materialMap, cropGoodMap) }), 'duplicate-like-crop', 'Crop definitions have the same effective region, season, growth, yield, and harvest good.')
   warnDuplicates('lootTables', row => ({ guaranteed: asArray(row.guaranteedMaterialIds).map(id => materialSemantic(String(id), materialMap, cropGoodMap)).sort((a,b) => stable(a).localeCompare(stable(b))), weighted: asArray(row.weightedEquipment).filter(isRecord).map(item => ({ equipment: equipmentSemantic(String(item.equipmentId), equipmentMap, affixMap), weight: item.weight })).sort((a,b) => stable(a).localeCompare(stable(b))), rare: asArray(row.rareMaterials).filter(isRecord).map(item => ({ material: materialSemantic(String(item.materialId), materialMap, cropGoodMap), chance: item.chance })).sort((a,b) => stable(a).localeCompare(stable(b))) }), 'duplicate-like-loot-table', 'Loot tables have identical effective item and material distribution.')
 
-  const referencedLoot = new Set(rows.families.map(f => f.lootTableId).filter((v): v is string => typeof v === 'string'))
-  for (const row of rows.lootTables) if (nonEmpty(row.id) && !referencedLoot.has(row.id)) warnings.push({ code: 'unused-loot-table', id: row.id, message: 'Loot table is not assigned to a family.' })
+  const referencedLoot = new Set([
+    ...rows.families.map(f => f.lootTableId),
+    ...rows.monsters.map(monster => monster.lootTableId),
+  ].filter((v): v is string => typeof v === 'string'))
+  for (const row of rows.lootTables) if (nonEmpty(row.id) && !referencedLoot.has(row.id)) warnings.push({ code: 'unused-loot-table', id: row.id, message: 'Loot table is neither a family default nor selected by a monster.' })
   for (const row of rows.affixes) if (nonEmpty(row.id) && !rows.equipment.some(e => asArray(e.affixIds).includes(row.id))) warnings.push({ code: 'unused-affix', id: row.id, message: 'Affix is not eligible for any authored equipment.' })
   for (const row of rows.families) if (nonEmpty(row.id) && ![
     ...asArray(row.monsterIds), ...asArray(row.eliteIds), ...asArray(row.miniBossIds), ...asArray(row.bossIds),
@@ -423,7 +427,8 @@ export function validateContentPack(input: unknown, baseline: ContentBaselineIds
     const table = lootMap.get(String(row.lootTableId))
     const combat = asArray(row.mechanics).some(isEffectiveMechanic)
     const graphValid = !hasErrors(id) && family !== undefined && !hasErrors(String(family.id)) && table !== undefined && !hasErrors(String(table.id))
-    const familySpecificTable = rows.families.filter(f => f.lootTableId === row.lootTableId).length === 1
+    const tableFamilies = rows.monsters.filter(monster => monster.lootTableId === row.lootTableId).map(monster => monster.familyId)
+    const familySpecificTable = tableFamilies.length > 0 && tableFamilies.every(familyId => familyId === row.familyId)
     const loot = Boolean(graphValid && familySpecificTable && family && table && (asArray(table.guaranteedMaterialIds).some(m => typeof m === 'string' && ((materialMap.has(m) && sourcedMaterials.has(m) && usedMaterials.has(m)) || cropGoodMap.has(m))) || asArray(table.rareMaterials).some(m => isRecord(m) && finite(m.chance) && m.chance > 0 && typeof m.materialId === 'string' && ((materialMap.has(m.materialId) && sourcedMaterials.has(m.materialId) && usedMaterials.has(m.materialId)) || cropGoodMap.has(m.materialId))) || asArray(table.weightedEquipment).some(e => isRecord(e) && finite(e.weight) && e.weight > 0 && equipmentDropEnabled.has(String(row.lootTableId)) && typeof e.equipmentId === 'string' && usableEquipment.has(e.equipmentId) && !hasErrors(e.equipmentId))))
     const reach = reachability.find(r => r.contentId === id)?.status === 'controlled-witness'
     const familyProfiles = asArray(family?.spawnProfiles).filter(isRecord) as unknown as ContentSpawnPredicate[]

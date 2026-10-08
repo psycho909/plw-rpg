@@ -36,6 +36,7 @@ function markdown(result, testResult, typecheckResult, hashes, baseline, fixture
     '- Phase 7 validator guardrails: ecosystem material and crop-good sell are integers 1..50; each material bias is 0..4; crop-good foodValue is an integer 1..4; recipe input amounts are positive safe integers up to 1000; crop growth is 1..43200 whole minutes and yield is 1..100; recipe gold is 0..1000, stamina 0..100, duration 1..43200 minutes, and output/skill levels 0..100.',
     '- These are conservative Phase 7 authoring and balance bounds informed by current Reward values; they are not runtime formula limits. Raising them requires an explicit balance review.',
     '- Required contract fields and finite enums are checked before reference graphs grant consumer evidence, including recipe station/category/affix rules and inputs, monster loot profiles/mechanics, and boss variant structure.',
+    '- Family lootTableId supplies the family default; the monster’s selected lootTableId supplies actual reachable drop/source evidence. A table shared across families does not establish family-specific loot identity.',
     '- Crop-good qualification records an authored food binding only. Final item qualification still requires C/G verification of runtime food/supply/source consumers.',
     '', '## Targeted test output', '', '```text', testResult.output.trimEnd(), '```', '',
     '## Typecheck output', '', '```text', typecheckResult.output.trimEnd(), '```', '',

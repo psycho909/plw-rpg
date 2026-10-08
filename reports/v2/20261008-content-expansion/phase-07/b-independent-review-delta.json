@@ -1,0 +1,30 @@
+{
+  "scope": {
+    "phase": "Phase 7-B/C loot selection contract delta",
+    "base_head": "11980b796f88173cf05ef83ac41510a0d44a53b1",
+    "reviewed_b_source_fingerprint": "59d1d8b358e2d25e15bb0fec52cb82f1775fa8ffeeff24fc416f20610e6b32de",
+    "fingerprint_method": "SHA-256 over JSON serialization of ordered path-to-source-SHA-256 map."
+  },
+  "reviewer": {
+    "requested_role": "g6-luna-med-reviewer",
+    "runtime_model": "unknown",
+    "participated_in_implementation": false,
+    "method": "targeted read-only delta review; no full suite rerun"
+  },
+  "standards": "PASS: final report provenance matches current sources and includes latest selected-table reference diagnostic.",
+  "spec": "PASS for approved B/C handoff: monster-selected lootTableId governs reachable loot evidence and effective identity; family table remains default; unresolved references fail; cross-family shared tables do not certify family-specific identity.",
+  "evidence": {
+    "selected_table_split_fixture": "PASS: both same-family monsters qualify from distinct selected tables and sourced/used materials; selected table not warned unused.",
+    "missing_selected_table_fixture": "PASS: unknown-reference emitted.",
+    "focused_tests_reported": "16/16",
+    "batch_reported": "PASS",
+    "typecheck_reported": "PASS",
+    "reviewer_reran_tests": false,
+    "full_suite_rerun": false,
+    "source_hashes_match_report": true
+  },
+  "limitations": [
+    "B does not verify runtime loot consumers; C must verify the runtime path."
+  ],
+  "disposition": "Accept this B/C contract delta for Root release decision."
+}

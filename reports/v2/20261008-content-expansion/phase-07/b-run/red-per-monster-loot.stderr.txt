@@ -1,0 +1,38 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentValidation.test.ts > validateContentPack > uses reachable monster-selected loot tables for distinct sourced and useful family loot
+AssertionError: expected [ { …(3) }, { …(3) }, { …(3) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "code": "family-loot-mismatch",
++     "id": "marsh-stalker",
++     "message": "Monster loot table must match its family table.",
++   },
++   {
++     "code": "unreachable-material",
++     "id": "marsh-scale",
++     "message": "Material has no reachable loot or crop source.",
++   },
++   {
++     "code": "insufficient-identity-axes",
++     "id": "marsh-stalker",
++     "message": "Monster has 2 effective identity axes (combat, world) or an invalid source graph; at least two effective axes are required.",
++   },
++ ]
+
+ ❯ src/engine/contentValidation.test.ts:78:27
+     76|     }
+     77|     const report = validateContentPack(separateLoot, baseline)
+     78|     expect(report.errors).toEqual([])
+       |                           ^
+     79|     expect(report.qualifyingMonsterIds).toEqual(['mire-hunter', 'marsh…
+     80|     expect(report.qualityCounts.usableNewMaterials).toBe(2)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

@@ -62,6 +62,31 @@ describe('validateContentPack', () => {
     expect(report.qualityCounts).toEqual({ qualifyingNewMonsters: 0, usableNewItems: 2, usableNewMaterials: 1 })
   })
 
+  it('uses reachable monster-selected loot tables for distinct sourced and useful family loot', () => {
+    const separateLoot: ContentPack = {
+      ...pack,
+      monsters: pack.monsters.map((monster, index) => ({ ...monster, lootTableId: index === 0 ? 'bog-loot' : 'marsh-loot' })),
+      lootTables: [...pack.lootTables, { id: 'marsh-loot', guaranteedMaterialIds: ['marsh-scale'],
+        weightedEquipment: [{ equipmentId: 'reed-spear', weight: 1 }], rareMaterials: [] }],
+      materials: [...pack.materials, { id: 'marsh-scale', name: { 'zh-TW': '濕地鱗片' }, description: { 'zh-TW': '可用於製作' }, sell: 3, bias: {} }],
+      recipes: [{ ...pack.recipes[0]!, inputs: [
+        { source: 'material', materialId: 'mire-claw', amount: 1 },
+        { source: 'material', materialId: 'marsh-scale', amount: 1 },
+      ] }],
+    }
+    const report = validateContentPack(separateLoot, baseline)
+    expect(report.errors).toEqual([])
+    expect(report.warnings).not.toContainEqual(expect.objectContaining({ code: 'unused-loot-table', id: 'marsh-loot' }))
+    expect(report.qualifyingMonsterIds).toEqual(['mire-hunter', 'marsh-stalker'])
+    expect(report.qualityCounts.usableNewMaterials).toBe(2)
+  })
+
+  it('rejects an unresolved monster-selected loot table', () => {
+    const missing = { ...pack, monsters: pack.monsters.map((monster, index) => index === 1 ? { ...monster, lootTableId: 'missing-loot' } : monster) }
+    const report = validateContentPack(missing, baseline)
+    expect(report.errors).toContainEqual(expect.objectContaining({ code: 'unknown-reference', id: 'marsh-stalker', reference: 'missing-loot' }))
+  })
+
   it('rejects unsatisfiable predicates, unknown references, and materials without a real consumer', () => {
     const bad: ContentPack = {
       ...pack,

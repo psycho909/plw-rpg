@@ -17,7 +17,7 @@ Identity: opportunistic wetland/field scavengers that turn damp farmland edges a
 | `slime_slick` normal | `rush`, every 3 turns; telegraphed short lunge | `slime_resin` craft bias for guard/defense gear; common field-edge scavenger |
 | `slime_amber` normal | `guard`, every 3; hardens before impact | `slime_amber_gel` sale/craft input; gathers at warm farmland stones |
 | `slime_bog` normal | `heavyStrike`, every 4; slow bog surge | `slime_bog_mucus` stamina/armor recipe input; wet forest pools only |
-| `slime_moss` normal | `rally`, every 4; nearby slime pressure is telegraphed (effect is self-stat in current schema) | `slime_moss_core` bias for defensive armor; forest shade ecology |
+| `slime_moss` normal | `rally`, every 4; it gathers its own strength before striking | `slime_moss_core` bias for defensive armor; forest shade ecology |
 | `slime_glass` normal | `chargedAttack`, every 4; brittle shard pulse | `slime_glass_shard` bias for piercing/keen-compatible weapon; rare farmland/forest boundary |
 | `slime_spring` normal | `rush`, every 4; high arc telegraph | `slime_spring_ichor` recipe input; spring-season profile and food-route scavenging role |
 | `slime_bulwark` elite | `guard`, every 2; sustained shell | guaranteed useful `slime_amber_gel`; blocks a damp resource pocket |
@@ -26,7 +26,7 @@ Identity: opportunistic wetland/field scavengers that turn damp farmland edges a
 | `slime_tidecaller` mini-boss | `heavyStrike`, every 3; rising-water slam | guaranteed `slime_bog_mucus`; only active under a bounded wet/season predicate |
 | `slime_heart` boss | `chargedAttack`, every 4 with a small bounded heal; fixed core plus controlled variant | exclusive equipment `slime_heartstaff` and guaranteed `slime_heart_gel`; rare optional pool after progression |
 
-Variant proposals (one persisted formed variant): `slime_heart_stillwater` adds periodic guard; `slime_heart_surging` shortens charged-attack interval within the supported range; `slime_heart_starved` has no heal and a weaker strike. Variants must not be extra monster definitions. Boss cooldown: 30 days, separate stable key `slime_heart`, preserved on flee/reload; clear on defeat and re-form only after cooldown. On defeat, bounded `food +3` (field harvest restored), never Goblin threat or crisis. Use supported region + progression proxies only: `farmland` or `forest`, level 7+, threat 3 or town stage, and a bounded season/hour predicate. Do not add depth/pool identifiers or map expansion; confirm the proxy is satisfiable through existing progression.
+Variant proposals (one persisted formed variant) are additive to the fixed `chargedAttack` and its bounded heal, which remain present in every Slime Heart form: `slime_heart_stillwater` adds periodic guard; `slime_heart_surging` adds a distinct rush; `slime_heart_starved` adds a low-bonus retaliation heavy strike. Variants cannot suppress the fixed heal or override its cadence, and are not extra monster definitions. Boss cooldown: 30 days, separate stable key `slime_heart`, preserved on flee/reload; clear on defeat and re-form only after cooldown. On defeat, bounded `food +3` (field harvest restored), never Goblin threat or crisis. Use supported region + progression proxies only: `farmland` or `forest`, level 7+, threat 3 or town stage, and a bounded season/hour predicate. Do not add depth/pool identifiers or map expansion; confirm the proxy is satisfiable through existing progression.
 
 ## Cave Insects — eventual 11-monster family
 
