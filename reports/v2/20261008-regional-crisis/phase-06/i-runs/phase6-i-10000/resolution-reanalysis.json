@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "kind": "Phase6-I post-run resolution reanalysis",
+  "runId": "phase6-i-10000",
+  "classification": "stratified canonical resolver sweep; not iid Monte Carlo",
+  "canonicalResolutionCount": 10000,
+  "profileCounts": {
+    "NoPlayer": 1000,
+    "LifeOnly": 1000,
+    "AdventureOnly": 1000,
+    "Mixed": 1000,
+    "Prepared": 1000,
+    "Underprepared": 1000,
+    "StrongGear": 1000,
+    "WeakGear": 1000,
+    "CheapSpam": 1000,
+    "ChiefOnly": 1000
+  },
+  "outcomeCounts": {
+    "decisive_success": 2338,
+    "costly_success": 1607,
+    "setback": 4238,
+    "local_defeat": 1817
+  },
+  "expectedOutcomeCountsFromRecordedResolverProbabilities": {
+    "decisive_success": 2369.0073484355466,
+    "costly_success": 1579.3382322903612,
+    "setback": 4236.158093491874,
+    "local_defeat": 1815.4963257821958
+  },
+  "preResolutionPreviewVsCanonicalResolutionProbability": {
+    "rowsCompared": 10000,
+    "rowsWithDifferentValues": 9000,
+    "meanSignedCanonicalMinusPreview": -0.011089019587724132,
+    "meanAbsoluteDifference": 0.013671195079070818,
+    "maximumAbsoluteDifference": 0.20615516762004615,
+    "interpretation": "The row-level successChance/outcomeProbabilities are captured before canonical time advance; resolutionSummary.successChance is the probability actually used by the resolver after daily simulation. Expected outcome totals above use the latter."
+  },
+  "baseSeedScheduleGroups": {
+    "399889": {
+      "indexRule": "index % 3 = 0",
+      "sampleCount": 3334,
+      "outcomes": {
+        "decisive_success": 796,
+        "costly_success": 517,
+        "setback": 1407,
+        "local_defeat": 614
+      }
+    },
+    "400162": {
+      "indexRule": "index % 3 = 1",
+      "sampleCount": 3333,
+      "outcomes": {
+        "decisive_success": 774,
+        "costly_success": 529,
+        "setback": 1432,
+        "local_defeat": 598
+      }
+    },
+    "400435": {
+      "indexRule": "index % 3 = 2",
+      "sampleCount": 3333,
+      "outcomes": {
+        "decisive_success": 768,
+        "costly_success": 561,
+        "setback": 1399,
+        "local_defeat": 605
+      }
+    }
+  },
+  "profileResults": {
+    "NoPlayer": {
+      "count": 1000,
+      "outcomes": {
+        "decisive_success": 50,
+        "costly_success": 50,
+        "setback": 625,
+        "local_defeat": 275
+      },
+      "meanPreResolutionPreviewSuccessChance": 0.09999999999999859,
+      "meanCanonicalResolutionSuccessChance": 0.09999999999999859,
+      "maximumPreviewVsCanonicalSuccessChanceDifference": 0,
+      "meanPreResolutionPreviewProbabilities": {
+        "decisive_success": 0.06000000000000076,
+        "costly_success": 0.03999999999999933,
+        "setback": 0.6299999999999961,
+        "local_defeat": 0.2700000000000033
+      },
+      "meanCanonicalResolutionProbabilities": {
+        "decisive_success": 0.06000000000000076,
+        "costly_success": 0.03999999999999933,
+        "setback": 0.6299999999999961,
+        "local_defeat": 0.2700000000000033
+      },
+      "recordedActions": {
+        "canonical die(player) with controlled empty settlement; verifies Chief recovery path": 1000
+      }
+    },
+    "LifeOnly": {
+      "count": 1000,
+      "outcomes": {
+        "decisive_success": 252,
+        "costly_success": 174,
+        "setback": 403,
+        "local_defeat": 171
+      },
+      "meanPreResolutionPreviewSuccessChance": 0.44543272313596527,
+      "meanCanonicalResolutionSuccessChance": 0.4296444790928241,
+      "maximumPreviewVsCanonicalSuccessChanceDifference": 0.19724081303380453,
+      "meanPreResolutionPreviewProbabilities": {
+        "decisive_success": 0.2672596338815797,
+        "costly_success": 0.17817308925438632,
+        "setback": 0.38819709380482453,
+        "local_defeat": 0.16637018305921009
+      },
+      "meanCanonicalResolutionProbabilities": {
+        "decisive_success": 0.2577866874556942,
+        "costly_success": 0.17185779163712944,
+        "setback": 0.399248864635023,
+        "local_defeat": 0.1711066562721524
+      },
+      "recordedActions": {
+        "fixture: assigned guard/farmer jobs": 1000
+      }
+    },
+    "AdventureOnly": {
+      "count": 1000,
+      "outcomes": {
+        "decisive_success": 319,
+        "costly_success": 214,
+        "setback": 327,
+        "local_defeat": 140
+      },
+      "meanPreResolutionPreviewSuccessChance": 0.5466447149114216,
+      "meanCanonicalResolutionSuccessChance": 0.5409805489427642,
+      "maximumPreviewVsCanonicalSuccessChanceDifference": 0.1891724305161342,
+      "meanPreResolutionPreviewProbabilities": {
+        "decisive_success": 0.32798682894685327,
+        "costly_success": 0.21865788596456873,
+        "setback": 0.3173486995620043,
+        "local_defeat": 0.13600658552657377
+      },
+      "meanCanonicalResolutionProbabilities": {
+        "decisive_success": 0.32458832936565885,
+        "costly_success": 0.21639221957710547,
+        "setback": 0.32131361574006473,
+        "local_defeat": 0.13770583531717098
+      },
+      "recordedActions": {
+        "canonical startRegionalCampRaid + combatTurn attack": 1000
+      }
+    },
+    "Mixed": {
+      "count": 1000,
+      "outcomes": {
+        "decisive_success": 316,
+        "costly_success": 200,
+        "setback": 333,
+        "local_defeat": 151
+      },
+      "meanPreResolutionPreviewSuccessChance": 0.5312046104417989,
+      "meanCanonicalResolutionSuccessChance": 0.5303875238270098,
+      "maximumPreviewVsCanonicalSuccessChanceDifference": 0.008958880628773813,
+      "meanPreResolutionPreviewProbabilities": {
+        "decisive_success": 0.31872276626507906,
+        "costly_success": 0.2124818441767194,
+        "setback": 0.32815677269074073,
+        "local_defeat": 0.14063861686746057
+      },
+      "meanCanonicalResolutionProbabilities": {
+        "decisive_success": 0.3182325142962052,
+        "costly_success": 0.21215500953080357,
+        "setback": 0.3287287333210934,
+        "local_defeat": 0.1408837428518972
+      },
+      "recordedActions": {
+        "fixture: assigned guard/farmer jobs": 1000,
+        "canonical startRegionalCampRaid + combatTurn attack": 1000,
+        "detached generateItem craft fixture (ironShortSword, Smithing 6) + canonical contributeCrisisEquipment": 1000,
+        "canonical contributeCrisisFood": 1000,
+        "canonical contributeCrisisGold": 5000
+      }
+    },
+    "Prepared": {
+      "count": 1000,
+      "outcomes": {
+        "decisive_success": 254,
+        "costly_success": 180,
+        "setback": 388,
+        "local_defeat": 178
+      },
+      "meanPreResolutionPreviewSuccessChance": 0.4551152094495589,
+      "meanCanonicalResolutionSuccessChance": 0.4392095185645738,
+      "maximumPreviewVsCanonicalSuccessChanceDifference": 0.1981970534545332,
+      "meanPreResolutionPreviewProbabilities": {
+        "decisive_success": 0.27306912566973524,
+        "costly_success": 0.18204608377982365,
+        "setback": 0.38141935338530814,
+        "local_defeat": 0.16346543716513234
+      },
+      "meanCanonicalResolutionProbabilities": {
+        "decisive_success": 0.2635257111387445,
+        "costly_success": 0.17568380742582973,
+        "setback": 0.39255333700479744,
+        "local_defeat": 0.16823714443062773
+      },
+      "recordedActions": {
+        "fixture: assigned guard/farmer jobs": 1000,
+        "detached generateItem craft fixture (ironShortSword, Smithing 6) + canonical contributeCrisisEquipment": 1000,
+        "canonical contributeCrisisFood": 1000,
+        "canonical contributeCrisisGold": 5000
+      }
+    },
+    "Underprepared": {
+      "count": 1000,
+      "outcomes": {
+        "decisive_success": 92,
+        "costly_success": 72,
+        "setback": 582,
+        "local_defeat": 254
+      },
+      "meanPreResolutionPreviewSuccessChance": 0.16751041542487316,
+      "meanCanonicalResolutionSuccessChance": 0.17162268697298289,
+      "maximumPreviewVsCanonicalSuccessChanceDifference": 0.007924677190757318,
+      "meanPreResolutionPreviewProbabilities": {
+        "decisive_success": 0.10050624925492044,
+        "costly_success": 0.06700416616994753,
+        "setback": 0.5827427092026002,
+        "local_defeat": 0.24974687537253434
+      },
+      "meanCanonicalResolutionProbabilities": {
+        "decisive_success": 0.10297361218378959,
+        "costly_success": 0.06864907478919197,
+        "setback": 0.5798641191189055,
+        "local_defeat": 0.24851319390810728
+      },
+      "recordedActions": {}
+    },
+    "StrongGear": {
+      "count": 1000,
+      "outcomes": {
+        "decisive_success": 278,
+        "costly_success": 189,
+        "setback": 381,
+        "local_defeat": 152
+      },
+      "meanPreResolutionPreviewSuccessChance": 0.4753279865304478,
+      "meanCanonicalResolutionSuccessChance": 0.45248211401044636,
+      "maximumPreviewVsCanonicalSuccessChanceDifference": 0.20360453341844625,
+      "meanPreResolutionPreviewProbabilities": {
+        "decisive_success": 0.28519679191826863,
+        "costly_success": 0.19013119461217892,
+        "setback": 0.36727040942868644,
+        "local_defeat": 0.1574016040408657
+      },
+      "meanCanonicalResolutionProbabilities": {
+        "decisive_success": 0.27148926840626786,
+        "costly_success": 0.18099284560417842,
+        "setback": 0.3832625201926876,
+        "local_defeat": 0.164255365796866
+      },
+      "recordedActions": {
+        "detached generateItem craft fixture (ironShortSword, Smithing 6) + canonical contributeCrisisEquipment": 1000
+      }
+    },
+    "WeakGear": {
+      "count": 1000,
+      "outcomes": {
+        "decisive_success": 275,
+        "costly_success": 190,
+        "setback": 381,
+        "local_defeat": 154
+      },
+      "meanPreResolutionPreviewSuccessChance": 0.47452300051412655,
+      "meanCanonicalResolutionSuccessChance": 0.4516879133907831,
+      "maximumPreviewVsCanonicalSuccessChanceDifference": 0.2034962602893458,
+      "meanPreResolutionPreviewProbabilities": {
+        "decisive_success": 0.28471380030847565,
+        "costly_success": 0.18980920020565098,
+        "setback": 0.36783389964011115,
+        "local_defeat": 0.15764309984576172
+      },
+      "meanCanonicalResolutionProbabilities": {
+        "decisive_success": 0.27101274803446984,
+        "costly_success": 0.1806751653563131,
+        "setback": 0.3838184606264521,
+        "local_defeat": 0.16449362598276518
+      },
+      "recordedActions": {
+        "detached generateItem craft fixture (starterSpear, Smithing 1) + canonical contributeCrisisEquipment": 1000
+      }
+    },
+    "CheapSpam": {
+      "count": 1000,
+      "outcomes": {
+        "decisive_success": 223,
+        "costly_success": 155,
+        "setback": 437,
+        "local_defeat": 185
+      },
+      "meanPreResolutionPreviewSuccessChance": 0.3785807546223755,
+      "meanCanonicalResolutionSuccessChance": 0.37282814049481466,
+      "maximumPreviewVsCanonicalSuccessChanceDifference": 0.17637347425654853,
+      "meanPreResolutionPreviewProbabilities": {
+        "decisive_success": 0.22714845277342507,
+        "costly_success": 0.15143230184895023,
+        "setback": 0.4349934717643371,
+        "local_defeat": 0.1864257736132873
+      },
+      "meanCanonicalResolutionProbabilities": {
+        "decisive_success": 0.22369688429688847,
+        "costly_success": 0.14913125619792586,
+        "setback": 0.4390203016536302,
+        "local_defeat": 0.18815155785155574
+      },
+      "recordedActions": {
+        "fixture: assigned guard/farmer jobs": 1000,
+        "canonical contributeCrisisFood": 6286,
+        "canonical contributeCrisisGold": 5000
+      }
+    },
+    "ChiefOnly": {
+      "count": 1000,
+      "outcomes": {
+        "decisive_success": 279,
+        "costly_success": 183,
+        "setback": 381,
+        "local_defeat": 157
+      },
+      "meanPreResolutionPreviewSuccessChance": 0.4848963615726441,
+      "meanCanonicalResolutionSuccessChance": 0.45950265542977314,
+      "maximumPreviewVsCanonicalSuccessChanceDifference": 0.20615516762004615,
+      "meanPreResolutionPreviewProbabilities": {
+        "decisive_success": 0.2909378169435877,
+        "costly_success": 0.19395854462905857,
+        "setback": 0.3605725468991485,
+        "local_defeat": 0.15453109152820613
+      },
+      "meanCanonicalResolutionProbabilities": {
+        "decisive_success": 0.2757015932578636,
+        "costly_success": 0.183801062171909,
+        "setback": 0.3783481411991583,
+        "local_defeat": 0.16214920337106806
+      },
+      "recordedActions": {
+        "canonical recordRegionalChiefDefeat npc": 1000
+      }
+    }
+  },
+  "baseSeedScheduleGroupByProfile": {
+    "399889|NoPlayer": {
+      "count": 334,
+      "outcomes": {
+        "decisive_success": 17,
+        "costly_success": 17,
+        "setback": 208,
+        "local_defeat": 92
+      }
+    },
+    "399889|LifeOnly": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 80,
+        "costly_success": 61,
+        "setback": 134,
+        "local_defeat": 58
+      }
+    },
+    "399889|AdventureOnly": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 117,
+        "costly_success": 67,
+        "setback": 102,
+        "local_defeat": 47
+      }
+    },
+    "399889|Mixed": {
+      "count": 334,
+      "outcomes": {
+        "decisive_success": 108,
+        "costly_success": 62,
+        "setback": 110,
+        "local_defeat": 54
+      }
+    },
+    "399889|Prepared": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 87,
+        "costly_success": 38,
+        "setback": 151,
+        "local_defeat": 57
+      }
+    },
+    "399889|Underprepared": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 28,
+        "costly_success": 25,
+        "setback": 195,
+        "local_defeat": 85
+      }
+    },
+    "399889|StrongGear": {
+      "count": 334,
+      "outcomes": {
+        "decisive_success": 86,
+        "costly_success": 80,
+        "setback": 118,
+        "local_defeat": 50
+      }
+    },
+    "399889|WeakGear": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 99,
+        "costly_success": 62,
+        "setback": 117,
+        "local_defeat": 55
+      }
+    },
+    "399889|CheapSpam": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 82,
+        "costly_success": 54,
+        "setback": 132,
+        "local_defeat": 65
+      }
+    },
+    "399889|ChiefOnly": {
+      "count": 334,
+      "outcomes": {
+        "decisive_success": 92,
+        "costly_success": 51,
+        "setback": 140,
+        "local_defeat": 51
+      }
+    },
+    "400162|NoPlayer": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 17,
+        "costly_success": 16,
+        "setback": 208,
+        "local_defeat": 92
+      }
+    },
+    "400162|LifeOnly": {
+      "count": 334,
+      "outcomes": {
+        "decisive_success": 91,
+        "costly_success": 64,
+        "setback": 119,
+        "local_defeat": 60
+      }
+    },
+    "400162|AdventureOnly": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 101,
+        "costly_success": 71,
+        "setback": 116,
+        "local_defeat": 45
+      }
+    },
+    "400162|Mixed": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 100,
+        "costly_success": 63,
+        "setback": 123,
+        "local_defeat": 47
+      }
+    },
+    "400162|Prepared": {
+      "count": 334,
+      "outcomes": {
+        "decisive_success": 80,
+        "costly_success": 71,
+        "setback": 127,
+        "local_defeat": 56
+      }
+    },
+    "400162|Underprepared": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 32,
+        "costly_success": 23,
+        "setback": 192,
+        "local_defeat": 86
+      }
+    },
+    "400162|StrongGear": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 101,
+        "costly_success": 55,
+        "setback": 123,
+        "local_defeat": 54
+      }
+    },
+    "400162|WeakGear": {
+      "count": 334,
+      "outcomes": {
+        "decisive_success": 97,
+        "costly_success": 51,
+        "setback": 135,
+        "local_defeat": 51
+      }
+    },
+    "400162|CheapSpam": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 70,
+        "costly_success": 45,
+        "setback": 161,
+        "local_defeat": 57
+      }
+    },
+    "400162|ChiefOnly": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 85,
+        "costly_success": 70,
+        "setback": 128,
+        "local_defeat": 50
+      }
+    },
+    "400435|NoPlayer": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 16,
+        "costly_success": 17,
+        "setback": 209,
+        "local_defeat": 91
+      }
+    },
+    "400435|LifeOnly": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 81,
+        "costly_success": 49,
+        "setback": 150,
+        "local_defeat": 53
+      }
+    },
+    "400435|AdventureOnly": {
+      "count": 334,
+      "outcomes": {
+        "decisive_success": 101,
+        "costly_success": 76,
+        "setback": 109,
+        "local_defeat": 48
+      }
+    },
+    "400435|Mixed": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 108,
+        "costly_success": 75,
+        "setback": 100,
+        "local_defeat": 50
+      }
+    },
+    "400435|Prepared": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 87,
+        "costly_success": 71,
+        "setback": 110,
+        "local_defeat": 65
+      }
+    },
+    "400435|Underprepared": {
+      "count": 334,
+      "outcomes": {
+        "decisive_success": 32,
+        "costly_success": 24,
+        "setback": 195,
+        "local_defeat": 83
+      }
+    },
+    "400435|StrongGear": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 91,
+        "costly_success": 54,
+        "setback": 140,
+        "local_defeat": 48
+      }
+    },
+    "400435|WeakGear": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 79,
+        "costly_success": 77,
+        "setback": 129,
+        "local_defeat": 48
+      }
+    },
+    "400435|CheapSpam": {
+      "count": 334,
+      "outcomes": {
+        "decisive_success": 71,
+        "costly_success": 56,
+        "setback": 144,
+        "local_defeat": 63
+      }
+    },
+    "400435|ChiefOnly": {
+      "count": 333,
+      "outcomes": {
+        "decisive_success": 102,
+        "costly_success": 62,
+        "setback": 113,
+        "local_defeat": 56
+      }
+    }
+  },
+  "actualWorldSeedInterpretation": {
+    "actualWorldSeedsAreUniquePerResolution": true,
+    "rowFormula": "actualWorldSeed = seedCycle[index % 3] + index",
+    "warning": "The three base seeds label the deterministic schedule groups; they are not three repeated world seeds for the 10,000 resolver rows."
+  },
+  "rngDesign": {
+    "startingRngStateRule": "floor((index + 0.5) * 2^32 / sampleCount) >>> 0",
+    "interpretation": "Starting RNG states are stratified across the 32-bit range. Report observed frequencies and per-row resolver probabilities; do not claim iid sampling or binomial confidence intervals."
+  },
+  "verification": {
+    "contiguousUniqueIndexes": true,
+    "worldSeedScheduleVerified": true,
+    "profileScheduleVerified": true,
+    "allRowsHaveFixtureAndActionLog": true,
+    "allRowsHaveCanonicalResolutionSummaryAndSaveChecks": true,
+    "allRowsWorldMetricsWithinRecordedBounds": true,
+    "noPlayerExtinctionRecoveryAndReloadRows": 1000,
+    "originalGlobalCountsMatchRawRows": true,
+    "sourceFingerprintAndHEADStillMatch": true
+  },
+  "controlledScenarioLimits": [
+    "NoPlayer is a controlled player death plus empty-resident settlement fixture that measures Chief-present recovery. It is not evidence of normal-world autonomous survival.",
+    "LifeOnly/Prepared NPC job assignments are controlled initial-state edits, not live life/job gameplay actions.",
+    "Strong/Weak gear is produced by the real generateItem craft-context API with craft provenance, then contributed through the canonical equipment contribution action; the craft transaction itself is not simulated.",
+    "ChiefOnly records the canonical NPC chief-defeat hook directly; it does not run a chief combat encounter."
+  ],
+  "provenance": {
+    "sourceCommit": "4399579ea67703f2f5ea7ac03d3f2c249ce94eef",
+    "sourceFingerprint": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+    "rawJsonlPath": "reports/v2/20261008-regional-crisis/phase-06/i-runs/phase6-i-10000/resolutions.jsonl",
+    "rawJsonlSha256": "68c01fe0bbf3b278b0882b41a894383753e8f92ba5e86e6e5f9718c090d53dee",
+    "originalRunnerSummaryPath": "reports/v2/20261008-regional-crisis/phase-06/i-runs/phase6-i-10000/resolution-summary.json",
+    "originalRunnerSummarySha256": "38be376853938f7a0eaf0aa901e4d335738a2673ca7b637e3628c3b53f8b8382",
+    "runManifestSha256": "549dd6c5782ed705963c0f8dedb46f15a980acb6d1ca825cd39185a48cb1acf4",
+    "originalRunnerSha256": "3e5a625f65f7f77c75c6e26b9553ed7e4a0865db2f5bac28ba4f31beaede4dc7",
+    "reanalysisProducerPath": "reports/v2/20261008-regional-crisis/phase-06/phase06_i_reaggregate.py",
+    "reanalysisProducerSha256": "54dc9df81908504e4438f4e96f1beedfcfcc975dca724f89f8a77941e5026d78",
+    "sourceManifestSha256": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+    "originalSummaryPreservedUnchanged": true,
+    "rawJsonlPreservedUnchanged": true
+  },
+  "reanalysisCompletedAt": "2026-10-08T00:22:45+00:00"
+}

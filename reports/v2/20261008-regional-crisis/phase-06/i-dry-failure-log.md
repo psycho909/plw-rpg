@@ -1,0 +1,19 @@
+# Phase 6-I harness dry-run failures
+
+These are preserved harness-development failures, not production findings. Archived `i-dry-*` directories retain the partial JSONL/manifests from their respective attempts; the final passing run is `i-dry-final/`.
+
+| Failure | Evidence / cause | Resolution |
+| --- | --- | --- |
+| Manifest mismatch while iterating on the runner | `i-dry-harness-iteration-evidence/`; the guard correctly rejected changed helper hashes on resume. | Archived the old run directory and restarted with a new run ID/output directory. |
+| Crisis remained active at world time 13,440 | `i-dry-boundary-failure*`; the fixture phase end was not aligned to the world's absolute midnight, so canonical `dailyTick` had not run. | Resolve at the first canonical day boundary at or after `phaseEndsAt`. |
+| Equipment delivery rejected after Mixed adventure action | `i-dry-fixture-action-failure*`; the real camp raid left the character in the forest. | Return the controlled fixture character to the legal delivery square before the contribution API call. |
+| Save round-trip rejected controlled equipment | `i-dry-save-failure*`; item IDs exceeded the fixture's `nextInstanceId`. | Set a valid next ID above the generated item ID. |
+| Equipment delivery rejected for defender slot | `i-dry-gear-failure*`; selected NPC did not have a valid free defender slot. | Use the fixture's eligible guard with empty equipment slots and a current injury boundary. |
+| One-year long-run smoke asserted nine distinct checkpoints | `i-dry-long-assertion-failure/`; the check was hard-coded to the full 10/50/100 horizon. | Derive expected checkpoint count from selected horizon and seed count. |
+| First correction helper rejected row 1's resolved chance | The original row `successChance` and `outcomeProbabilities` are pre-advance previews. The actual resolver probability is in `resolutionSummary.successChance` after canonical daily simulation. | Reaggregation preserves and labels both; observed outcomes are checked against `rngDraw` and the chance used by the canonical resolver. |
+| Correction helper could not locate the repo root / import `scripts.recorded_reports` | The initial helper parent depth was one level too high, then direct script execution lacked the repo on `sys.path`. | Resolve root from the actual `phase-06` ancestry and add that root for the project report helper import. |
+| Standalone TypeScript invocation could not load `node` type definitions | Direct `tsc` command names `@types/node`, which is absent from this checkout; that first invocation also exposed and helped correct two crisis-union narrowing issues in the harness. | No dependency was added. `npx vue-tsc --noEmit` passed; strict standalone runner checking passed with a temporary `/tmp` Node API declaration shim, and Vitest transformed and executed both runner modes. |
+| Life-supplement first smoke compared the next state RNG value with the resolver roll | `i-dry-life-supplement/`; intervening canonical daily ticks consume RNG before crisis resolution. | Capture the actual resolver call through the imported RNG function while the crisis is in the `resolution` phase; no same-draw assumption is made between matched treatment arms. |
+| Life-supplement manifest guard rejected a changed dry-run helper hash | `i-dry-life-supplement/`; helper iteration changed after the first failure and the durable manifest correctly blocked resume. | Retained the stale attempt and started a new output directory. |
+| Life-supplement food action initially rejected the 25-item request | `i-dry-life-supplement-v2/`; controlled 52-guard shortage fixture omitted the active-boss food demand used by the verified food contribution precondition. | Added the boss-pressure fixture condition and confirmed accepted food, gold, and gear actions in all three matched pairs in `i-dry-life-supplement-v4/`. |
+

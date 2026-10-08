@@ -1,0 +1,23 @@
+{
+  "runId": "phase6-i-life-public-dry",
+  "mode": "dry",
+  "pairCount": 3,
+  "baseSeedSchedule": [
+    465425,
+    465698,
+    465971
+  ],
+  "seedFormula": "BASE_SEEDS[pairIndex % 3] + pairIndex",
+  "treatment": "warning/preparation public crisis food + gold + generated craft-context gear contributions",
+  "comparison": "matched living player with no crisis contribution actions",
+  "sourceFingerprint": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+  "commit": "4399579ea67703f2f5ea7ac03d3f2c249ce94eef",
+  "helperHashes": {
+    "tickets/20261008-v2x-06i-simulation.md": "4e892d9c1aaa880d29b41686e3a7a45a009e5ed7b96bf01d44c9749aa0984102",
+    "reports/v2/20261008-regional-crisis/phase-06/phase06_i_life_supplement.test.ts": "214276747a05b773cc8110618827ba5046a0300e792b339641e671f40a0790ff",
+    "reports/v2/20261008-regional-crisis/phase-06/phase06_i_life_supplement.config.ts": "08581fdcdec3aa58efcd1fb72de804cefcde2e88b8832c714756751178e59a8b",
+    "reports/v2/20261008-regional-crisis/phase-06/phase06_i_simulation.test.ts": "3e5a625f65f7f77c75c6e26b9553ed7e4a0865db2f5bac28ba4f31beaede4dc7",
+    "reports/v2/20261008-regional-crisis/phase-06/phase06_i_simulation.config.ts": "39fb2f864278b9a5cf5b7f556bc1d80474a08cf6edf48435be59e4dc5430e532",
+    "reports/v2/20261008-regional-crisis/phase-06/phase06_i_reaggregate.py": "54dc9df81908504e4438f4e96f1beedfcfcc975dca724f89f8a77941e5026d78"
+  }
+}

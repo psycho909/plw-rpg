@@ -1,0 +1,198 @@
+{
+  "title": "Phase 6-I simulation harness independent review",
+  "reviewStatus": "PASS WITH FINDINGS",
+  "baseCommit": "4399579ea67703f2f5ea7ac03d3f2c249ce94eef",
+  "reviewedAt": "2026-10-08",
+  "reviewer": {
+    "role": "g6-luna-med-phase6-simulation-reviewer",
+    "runtimeModelTelemetry": "unavailable",
+    "constructionParticipation": false,
+    "reviewMethod": "read-only inspection of the complete untracked harness/config, run manifests, raw and summarized evidence, corrected reanalysis, and long-world checkpoints; no app-source review and no simulation rerun"
+  },
+  "scope": {
+    "files": [
+      "reports/v2/20261008-regional-crisis/phase-06/phase06_i_simulation.test.ts",
+      "reports/v2/20261008-regional-crisis/phase-06/phase06_i_simulation.config.ts",
+      "reports/v2/20261008-regional-crisis/phase-06/i-runs/phase6-i-10000/run-manifest.json",
+      "reports/v2/20261008-regional-crisis/phase-06/i-runs/phase6-i-10000/resolutions.jsonl",
+      "reports/v2/20261008-regional-crisis/phase-06/i-runs/phase6-i-10000/resolution-summary.json",
+      "reports/v2/20261008-regional-crisis/phase-06/i-runs/phase6-i-10000/resolution-reanalysis.json",
+      "reports/v2/20261008-regional-crisis/phase-06/i-runs/phase6-i-3x100/long-world-run-manifest.json",
+      "reports/v2/20261008-regional-crisis/phase-06/i-runs/phase6-i-3x100/long-world-summary.json"
+    ],
+    "spec": "tickets/20261008-v2x-06i-simulation.md; docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md sections 67-70",
+    "standards": "AGENTS.md; docs/agents/agent-routing.md; docs/agents/skill-workflows.md; docs/agents/review.md"
+  },
+  "standards": {
+    "result": "PASS WITH FINDING",
+    "finding": {
+      "severity": "medium",
+      "location": "phase06_i_simulation.test.ts:185,216,241-243",
+      "evidence": "Each MC fixture is initialized with seedCycle[index % 3] + index and stores that actual world seed in row.seed, while the runner summary groups rows by equality with the unmodified three seedCycle values. The original summary therefore has incorrect outcomesBySeed buckets.",
+      "disposition": "Mitigated in the published evidence by the recorded resolution-reanalysis.json, which preserves the original summary and raw JSONL, verifies row index and seed schedule, and aggregates by index % 3. The original outcomesBySeed field remains misleading and must not be used as the corrected per-base-seed distribution."
+    },
+    "otherFindings": []
+  },
+  "spec": {
+    "result": "PASS WITH LIMITATIONS",
+    "canonicalResolutionEvidence": {
+      "count": 10000,
+      "outcomes": {
+        "decisive_success": 2338,
+        "costly_success": 1607,
+        "setback": 4238,
+        "local_defeat": 1817
+      },
+      "profileCounts": {
+        "NoPlayer": 1000,
+        "LifeOnly": 1000,
+        "AdventureOnly": 1000,
+        "Mixed": 1000,
+        "Prepared": 1000,
+        "Underprepared": 1000,
+        "StrongGear": 1000,
+        "WeakGear": 1000,
+        "CheapSpam": 1000,
+        "ChiefOnly": 1000
+      },
+      "rawRows": "indices 0-9999 contiguous and unique; every row has a canonical resolutionSummary and true pre/post save round-trip/state-equality checks; all four outcomes occur",
+      "baseSeedScheduleGroups": {
+        "399889": {
+          "indexRule": "index % 3 = 0",
+          "count": 3334,
+          "outcomes": {
+            "decisive_success": 796,
+            "costly_success": 517,
+            "setback": 1407,
+            "local_defeat": 614
+          }
+        },
+        "400162": {
+          "indexRule": "index % 3 = 1",
+          "count": 3333,
+          "outcomes": {
+            "decisive_success": 774,
+            "costly_success": 529,
+            "setback": 1432,
+            "local_defeat": 598
+          }
+        },
+        "400435": {
+          "indexRule": "index % 3 = 2",
+          "count": 3333,
+          "outcomes": {
+            "decisive_success": 768,
+            "costly_success": 561,
+            "setback": 1399,
+            "local_defeat": 605
+          }
+        }
+      },
+      "outcomeSummary": "Counts are actual outcomes after canonical simulate() reaches aftermath, with consequences and injuries recorded. They are stratified deterministic resolver-sweep frequencies, not iid Monte Carlo estimates."
+    },
+    "longWorldEvidence": {
+      "seeds": [
+        399889,
+        400162,
+        400435
+      ],
+      "yearsPerSeed": 100,
+      "daysPerYear": 120,
+      "targets": [
+        10,
+        50,
+        100
+      ],
+      "expectedDays": [
+        1200,
+        6000,
+        12000
+      ],
+      "annualRows": 300,
+      "checkpointRows": 9,
+      "verified": [
+        "unique actor IDs",
+        "active-character existence",
+        "finite worldTime",
+        "safe event sequence",
+        "serialize/deserialize equality",
+        "one-day resumed versus uninterrupted state equality",
+        "population/economy/threat/crisis/history/event/save-size snapshots"
+      ]
+    },
+    "limitations": [
+      "The MC RNG start state is stratified across the 32-bit range using index; report observed frequencies and per-row resolver probabilities, not iid estimates or binomial confidence intervals.",
+      "NoPlayer is a controlled player death plus empty-resident settlement fixture and measures Chief-present recovery, not normal-world autonomous survival. The supplement control label NoPlayerAction means a living player taking no contribution actions.",
+      "LifeOnly/Prepared job assignments are controlled initial-state edits, not live life/job gameplay actions; the matched supplement supplies the public food/gold/equipment contribution route.",
+      "Strong/Weak gear in the 10,000 sweep and the supplement use generateItem with craft context/provenance, then canonical contribution; neither simulates the full crafting transaction.",
+      "ChiefOnly invokes the canonical NPC chief-defeat hook directly and does not simulate a chief combat encounter.",
+      "The 500-pair supplement records combatCalls=0 as a static annotation, not a runtime counter. Source inspection confirms no player combat API import or invocation in that helper.",
+      "The harness records engine history/events, not browser or service journal growth. The 20k-history clone/profile performance benchmark is deferred explicitly to Phase 6-J.",
+      "The run records source and runner/config hashes but no build hash because it runs the engine harness without a built application. Do not claim build-hash verification."
+    ],
+    "noProductionBugFinding": true,
+    "lifePublicSupplement": {
+      "pairCount": 500,
+      "comparison": "NoPlayerAction is a living-player control with no crisis contribution actions; LifePublicSupport performs public engine contribution APIs. It is not the extinction NoPlayer arm.",
+      "matchedState": "500/500 full pre-action state hashes, world times, crisis IDs, and post-action/pre-simulation RNG starts match within each pair. Gear is generated in a detached game; the grant occurs only after the pre-action snapshot.",
+      "actionsAccepted": {
+        "contributeCrisisFood": 500,
+        "contributeCrisisGold": 500,
+        "contributeCrisisEquipment": 500
+      },
+      "resourcePolicy": "25 inventory food + 25 gold + one controlled generateItem craft-context starterSpear, then canonical equipment contribution; full crafting transaction is not simulated.",
+      "resolutionAndSave": "Both arms run canonical simulate() through aftermath, record actual resolutionSummary.successChance and actual resolver draw, and pass pre/post deserialize equality and loaded-resave/no-replay equality in all pairs.",
+      "outcomesControl": {
+        "decisive_success": 96,
+        "costly_success": 62,
+        "setback": 245,
+        "local_defeat": 97
+      },
+      "outcomesTreatment": {
+        "decisive_success": 153,
+        "costly_success": 93,
+        "setback": 182,
+        "local_defeat": 72
+      },
+      "actualProbabilityMean": {
+        "control": 0.3085284895493627,
+        "treatment": 0.4981104422913393,
+        "treatmentMinusControl": 0.1895819527429766,
+        "treatmentHigherInPairs": 500
+      },
+      "rngInterpretation": "Initial state and RNG start match. The later actual resolver draw matches in 463 pairs and differs in 37 after canonical progression. Do not describe this as a shared-roll comparison or IID inference.",
+      "combatReview": "No player combat API is imported or invoked in the helper. combatCalls=0 is a static annotation, not a runtime counter/spy; the review verifies route scope by source inspection."
+    }
+  },
+  "provenance": {
+    "sourceFingerprint": "c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb",
+    "runnerSha256": "3e5a625f65f7f77c75c6e26b9553ed7e4a0865db2f5bac28ba4f31beaede4dc7",
+    "configSha256": "39fb2f864278b9a5cf5b7f556bc1d80474a08cf6edf48435be59e4dc5430e532",
+    "commit": "4399579ea67703f2f5ea7ac03d3f2c249ce94eef",
+    "fullRunExitCode": 0,
+    "runManifestSha256": "549dd6c5782ed705963c0f8dedb46f15a980acb6d1ca825cd39185a48cb1acf4",
+    "rawJsonlSha256": "68c01fe0bbf3b278b0882b41a894383753e8f92ba5e86e6e5f9718c090d53dee",
+    "originalSummarySha256": "38be376853938f7a0eaf0aa901e4d335738a2673ca7b637e3628c3b53f8b8382",
+    "correctedReanalysisSha256": "eaab76cd6fdfb2403b222def1de21e22906525e65aec4292b719114ba3a70571",
+    "longWorldSummarySha256": "fc4cc101a4cf128202928f792f5b90e409917fe52400fbe368a7c5ad75541995",
+    "longWorldManifestSha256": "340219443437c921bd954b12ccda090d69939ed2afc6b4f1dc83e902651b32c6",
+    "lifeSupplementTestSha256": "214276747a05b773cc8110618827ba5046a0300e792b339641e671f40a0790ff",
+    "lifeSupplementConfigSha256": "08581fdcdec3aa58efcd1fb72de804cefcde2e88b8832c714756751178e59a8b",
+    "lifeSupplementRunManifestSha256": "0372c74e4bf13b9abea2806c87a52ee8728e85c7a3411f5ca69a67db011ca2db",
+    "lifeSupplementRawSha256": "8d217954ac13383d0845b80d0c5e5fc61a051e3af1a8d60181e0bb9a5cdc8539",
+    "lifeSupplementSummarySha256": "33a94717f295355287384cd5c93cd5a06e4354d91e4fca2ecd521746720fb336",
+    "lifeSupplementExitCode": 0
+  },
+  "verification": {
+    "commands": [
+      "read-only parsing of run JSON/JSONL and hash verification; no tests or simulation rerun by reviewer"
+    ],
+    "fullRunnerEvidence": "Low runner command and exit-code artifact: npx vitest run --config reports/v2/20261008-regional-crisis/phase-06/phase06_i_simulation.config.ts; exit code 0",
+    "notVerified": [
+      "full application/browser UI behavior",
+      "production build provenance",
+      "journal/service memory growth",
+      "clone/history performance benchmark"
+    ]
+  }
+}

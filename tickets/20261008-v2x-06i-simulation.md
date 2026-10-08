@@ -1,6 +1,6 @@
 # Phase6-I — Simulation / Balance
 
-- Status: in_progress
+- Status: accepted
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-08 使用者上傳 Phase6 規格，要求「閱讀完後，直接進入Phase6開發環節」。
@@ -19,9 +19,9 @@ Simulation / Balance；世界危機連結 Adventure/Life/NPC/Settlement，維持
 Phase7–10／V3、多新monsterfamilies、完整RTS/tactical/caravan/稅制／reconstruction／property destruction、server、nativeSafari/實機。不藉Phase6補完Phase5產品finding。
 
 ## Acceptance
-- [ ] 10000+ actual canonical crisis resolutions，NoPlayer/LifeOnly/AdventureOnly/Mixed/Prepared/Underprepared等路線、弱強craftedgear/foodgoldcheapspam/Chief-only受控對照，四級分布與實際world consequences，不只probability draws。
-- [ ] 三seeds各100年canonicalworld延續並於10/50/100年checkpoint（120days/year=1200/6000/12000days），有效IDs/finite/npcsuccession/economy/crisisfrequency/歷史與存檔成長/saveReload；不得365天誤算。
-- [ ] Runner-driven durableJSON/JSONL與exactsource/build/runner hashes、原始失敗完整保留，deterministicreload對照；控制fixtures與自然世界清楚區分；Root接受I後releaseJ。
+- [x] 10000+ actual canonical crisis resolutions，NoPlayer/LifeOnly/AdventureOnly/Mixed/Prepared/Underprepared等路線、弱強craftedgear/foodgoldcheapspam/Chief-only受控對照，四級分布與實際world consequences，不只probability draws。
+- [x] 三seeds各100年canonicalworld延續並於10/50/100年checkpoint（120days/year=1200/6000/12000days），有效IDs/finite/npcsuccession/economy/crisisfrequency/歷史與存檔成長/saveReload；不得365天誤算。
+- [x] Runner-driven durableJSON/JSONL與exactsource/build/runner hashes、原始失敗完整保留，deterministicreload對照；控制fixtures與自然世界清楚區分；Root接受I後releaseJ。
 
 ## Constraints and Decisions
 正式 [Phase6 spec](../docs/specs/V2X-PHASE6-REGIONAL-CRISIS.md)（原文CRLF保留，SHA256 `4e7d8533181a43f66c2d51dce056407a38be34797900ed875898e4470adde640`）；A→B→C→D→E→F→G→H→I→J逐段施工，不提前水平擴張。Goblin現有Threat/Chief優先，單一crisis canonical slice，RandomService-only。Human DEFERRED / NOT APPLICABLE AT THIS STAGE，不阻擋工程QA。Low機械、Medium一般工程、Max核心／save／determinism／獨立deepreview、Root產品決策。matt-skills-curated:implement／to-tickets按docs/agents/skill-workflows.md適配既有tickets、已批准順序與驗證工作單位，不另tracker／granularity批准。QA沿用recorded_reports/原始JSONL，不新建平行framework。
@@ -41,3 +41,7 @@ Blocked by: [前置Ticket](20261008-v2x-06h-history-identity.md)；H已accepted�
 ## Root I release
 
 H已驗收，I現在release。依上述runnercontract與phase06/qa-runner-plan.md執行，不重新泛化規劃或偷偷平衡。必要Mediumharness/testdesign；Low負責runner啟動/執行/失敗摘要。Sourcefrozen時才開始大量run，每artifactsourceSHA+hashes。10000actualresolutions與3seeds100yearcheckpoints，不Browser替代，不模型陪跑。
+
+## Root acceptance
+
+I PASS WITH FINDINGS：10000actualcanonicalresolutions+500matchedpairs1000supplement，3seeds×100year/12000days，9checkpoint reload/continuation/IDs PASS。10k80sec，supplement17sec，long6.9sec，source4399579/c9fd3e...unchanged。獨立Mediumreview validatesrawcounts/correctedaggregation/realLifeactions。Originalseedsummary及pre-resolutionprobabilitypreview错误保留，由separatereanalysis修正；stratified非IID，不假造CI。原LifeOnly是NPCjobfixture，已另補publicfoodgoldgear500pairs，正向actualpdelta500/500，非sharedroll，37drawlaterdivergent。生成gear資源非normalearning/fullcraft；Chiefdirecthook非完整fight；nocombat為sourceinspection非dynamiccounter。J需測browserjournal/20khistoryclone成本与normalcompletearc，I不冒充这些证据。J release。
