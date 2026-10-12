@@ -59,15 +59,6 @@ function catalogKey<T extends object>(catalog: T, value: unknown): value is keyo
   return typeof value === 'string' && Object.hasOwn(catalog, value)
 }
 
-function contentMonsterIsBoss(id: string) {
-  return Object.hasOwn(CONTENT_MONSTERS, id) && CONTENT_MONSTERS[id]!.rank === 'boss'
-}
-
-function monsterIsBoss(id: string) {
-  return (Object.hasOwn(WOLF_MONSTERS, id) && WOLF_MONSTERS[id as keyof typeof WOLF_MONSTERS]!.rank === 'boss')
-    || contentMonsterIsBoss(id)
-}
-
 function isKnownMonster(id: string) {
   return Object.hasOwn(WOLF_MONSTERS, id) || Object.hasOwn(CONTENT_MONSTERS, id)
 }

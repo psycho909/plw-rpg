@@ -1,13 +1,13 @@
 # Phase7-D — Monster Expansion
 
-- Status: approved
+- Status: in_progress
 - Risk: L2
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-08 使用者上傳 Phase7 規格並明確要求「開始進行Phase7的開發」。
 - Branch: v2x/reward-core
 - Git / Remote authority: 沿用 README 現工作分支 commit/push 授權；Root-only Git。不PR/merge/main/force/deploy。
-- Updated: 2026-10-08（Asia/Taipei）
+- Updated: 2026-10-12（UTC）
 
 ## Goal / Scope
 
@@ -25,8 +25,14 @@ Parent [20261008-v2x-07-content-expansion](20261008-v2x-07-content-expansion.md)
 
 ## Dependencies
 
-Blocked by: [Phase7-C](20261008-v2x-07c-first-content-batch.md)；尚未release。
+Dependency released by Root on 2026-10-12 after local Phase7-C acceptance. D is now in progress; D acceptance remains pending.
 
 ## Evidence
 
-reports/v2/20261008-content-expansion/phase-07/；待驗證。
+`reports/v2/20261008-content-expansion/phase-07/`；D evidence pending.
+
+## Root release — 2026-10-12
+
+- C closeout: `reports/v2/20261008-content-expansion/phase-07/c-c4-closeout.md`.
+- D content ownership is isolated to `src/data/content/caveInsects.ts`; follow the approved Phase7 content plan and existing pack/validator contracts. This stage covers ordinary/Elite expansion only. Do not add Mini Boss/Boss work (E), broaden shared core/runtime architecture, alter the product scope, or edit the shared registry concurrently. If the current schema/validator makes the staged D slice impossible without overlapping E/F or core work, report the exact blocker and stop rather than widening scope.
+- Authoring should preserve two evidenced identity axes (implemented supported combat mechanic and real sourced/useful loot); use reachable existing mine/progression predicates, exclude village/farmland, and do not claim natural encounter frequency from controlled validator witnesses.

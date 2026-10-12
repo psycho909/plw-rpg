@@ -1,13 +1,13 @@
 # Phase7-C — First Content Batch
 
-- Status: in_progress
+- Status: accepted
 - Risk: L3
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-08 使用者上傳 Phase7 規格並明確要求「開始進行Phase7的開發」。
 - Branch: v2x/reward-core
 - Git / Remote authority: 沿用 README 現工作分支 commit/push 授權；Root-only Git。不PR/merge/main/force/deploy。
-- Updated: 2026-10-08（Asia/Taipei）
+- Updated: 2026-10-12（UTC）
 
 ## Goal / Scope
 
@@ -19,17 +19,17 @@ Parent [20261008-v2x-07-content-expansion](20261008-v2x-07-content-expansion.md)
 
 ## Acceptance
 
-- [ ] 本stage完整目標與合法來源／用途閉環達成，validator/targeted/regression按風險驗證。
-- [ ] 原始failure/sourceSHA/fingerprint/report保留；適用Medium/Max獨立review及Root acceptance。
-- [ ] 下一階段僅在Root release後施工；可先唯讀探索不得預先修改核心或大量資料。
+- [x] 本stage完整目標與合法來源／用途閉環達成，validator/targeted/regression按風險驗證。
+- [x] 原始failure/sourceSHA/fingerprint/report保留；適用獨立review及Root acceptance。
+- [x] 下一階段由 Root 明確 release 後才施工；見 D ticket。
 
 ## Dependencies
 
-Blocked by: [Phase7-B](20261008-v2x-07b-content-validator.md)；尚未release。
+Blocked by: none. Phase7-B is accepted; Root accepted C on 2026-10-12 after independent corrective-diff review.
 
 ## Evidence
 
-reports/v2/20261008-content-expansion/phase-07/；待驗證。
+`reports/v2/20261008-content-expansion/phase-07/c-c4-closeout.md`；獨立稽核：`reports/audit/phase7-c-postfix-independent-review.md`、`reports/audit/phase7-c-postfix-followup-review.md`。原始 C1–C4 RED、source SHA/fingerprint 與修復前後記錄均保留在同目錄／`playlog.jsonl`。
 
 ## Root C release
 
@@ -43,6 +43,6 @@ Root批准 bossForms discriminated encounter/cooldown-until bounded state supers
 
 ## Corrective engineering result
 
-C1/C2/C3 RED evidence is preserved. The corrective focused gate passed 252 tests across 7 files plus \`vue-tsc --noEmit\`; the subsequent full \`npm run check\` passed 30 files and 565 tests, typecheck, and production build. C remains in progress until a post-fix independent core review is completed. The Max reviewer hit the model usage limit before that follow-up; this is recorded as a review limitation, not as an acceptance claim.
+C1/C2/C3 RED evidence is preserved. The corrective focused gate passed 252 tests across 7 files plus \`vue-tsc --noEmit\`; the full check then passed 30 files and 565 tests, typecheck, and production build. At that snapshot C remained in progress pending independent review. C4's RED→GREEN correction and independent follow-up subsequently passed; the full check passed 30 files / 567 tests, typecheck, and production build. Root accepted C locally on 2026-10-12. See the linked closeout and independent audit reports; this does not accept Phase7 as a whole.
 
 Confirmed preexisting valid100-key missingdaily-marker state becomes101 at midnight, invalidatingreload。Root纳入本輪 integrity修復。既有active/unknowncooldown不得任意丟棄，保留既有expiredhunt pruning；新cooldown要求無容量時 preflight拒絕optional event/hunt feedback、不可部分progress或overflow。full且markerabsent時跳過該dailyLivingEventspass，核心世界時間/NPC/threat仍運作；existingkey可更新。99寫marker占滿後也不得新事件再溢出。明確測試/紀錄saturation邊界，不增加features或放寬100上限。

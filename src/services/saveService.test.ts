@@ -115,6 +115,35 @@ describe('versioned saves and deterministic continuation', () => {
     expect(loaded.reward.materials[ownerId]).toMatchObject({ wolfFang: 4, wolfHide: 2, moonStone: 1, slime_resin: 0 })
   })
 
+  it('preserves special known material owners during Reward3 normalization and reload', () => {
+    const state = createGame(74128)
+    const knownOwnerSave = JSON.parse(serialize(state, 816)) as Record<string, any>
+    const previousOwnerId = knownOwnerSave.activeCharacterId
+    const specialOwnerId = '__proto__'
+    knownOwnerSave.characters.find((character: Record<string, unknown>) => character.id === previousOwnerId).id = specialOwnerId
+    knownOwnerSave.activeCharacterId = specialOwnerId
+    knownOwnerSave.life.characters = Object.fromEntries([
+      ...Object.entries(knownOwnerSave.life.characters).filter(([ownerId]) => ownerId !== previousOwnerId),
+      [specialOwnerId, knownOwnerSave.life.characters[previousOwnerId]],
+    ])
+    knownOwnerSave.reward.materials = Object.fromEntries([[specialOwnerId, { wolfFang: 7, wolfHide: 2, moonStone: 1 }]])
+
+    const loaded = deserialize(JSON.stringify(knownOwnerSave)).state
+
+    expect(Object.hasOwn(loaded.reward.materials, specialOwnerId)).toBe(true)
+    expect(loaded.reward.materials[specialOwnerId]).toMatchObject({ wolfFang: 7, wolfHide: 2, moonStone: 1, slime_resin: 0 })
+    const reloaded = deserialize(serialize(loaded, 817)).state
+    expect(reloaded.reward.materials[specialOwnerId]).toEqual(loaded.reward.materials[specialOwnerId])
+  })
+
+  it('rejects special unknown material owners during Reward3 normalization', () => {
+    const specialOwnerId = '__proto__'
+    const unknownOwnerSave = JSON.parse(serialize(createGame(74129), 818)) as Record<string, any>
+    unknownOwnerSave.reward.materials = Object.fromEntries([[specialOwnerId, { wolfFang: 7, wolfHide: 2, moonStone: 1 }]])
+
+    expect(() => deserialize(JSON.stringify(unknownOwnerSave))).toThrow('原始存檔已保留')
+  })
+
   it('rejects unknown or invalid Reward3 material values instead of repairing them', () => {
     const state = createGame(74127)
     const baseline = JSON.parse(serialize(state, 815)) as Record<string, any>

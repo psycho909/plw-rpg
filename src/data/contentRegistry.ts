@@ -24,4 +24,3 @@ export const CONTENT_AFFIXES: Record<string, ContentAffix> = catalog(pack => pac
 /** Crops already present before Phase7 stay addressable by their saved stable ID. */
 export const LEGACY_CROP_IDS = ['wheat'] as const
 export const KNOWN_CROP_IDS = [...LEGACY_CROP_IDS, ...Object.keys(CONTENT_CROPS)] as const
-

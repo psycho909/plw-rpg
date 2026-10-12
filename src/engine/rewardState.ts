@@ -62,14 +62,14 @@ export function normalizeRewardV3MaterialKeys(value: unknown): RewardState | nul
   if (reward.schemaVersion !== 3 || !materials || typeof materials !== 'object' || Array.isArray(materials) || !bossForms) return null
   const currentIds = Object.keys(MATERIALS)
   const legacyIds = Object.keys(LEGACY_MATERIALS)
-  const normalized: Record<string, Record<string, number>> = {}
+  const normalized: [string, Record<string, number>][] = []
   for (const [ownerId, rawStacks] of Object.entries(materials)) {
     if (!rawStacks || typeof rawStacks !== 'object' || Array.isArray(rawStacks)) return null
     const stacks = rawStacks as Record<string, unknown>
     if (Object.keys(stacks).some(id => !currentIds.includes(id))
       || legacyIds.some(id => !Object.hasOwn(stacks, id))
       || Object.values(stacks).some(amount => !Number.isSafeInteger(amount) || Number(amount) < 0)) return null
-    normalized[ownerId] = Object.fromEntries(currentIds.map(id => [id, Object.hasOwn(stacks, id) ? stacks[id] as number : 0]))
+    normalized.push([ownerId, Object.fromEntries(currentIds.map(id => [id, Object.hasOwn(stacks, id) ? stacks[id] as number : 0]))])
   }
-  return { ...reward, materials: normalized, bossForms } as unknown as RewardState
+  return { ...reward, materials: Object.fromEntries(normalized), bossForms } as unknown as RewardState
 }
