@@ -1,0 +1,18 @@
+Harness invocation: `node reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/harness/run.mjs`
+Observed runner exit: 1, after extraction and all five validator CLI calls completed.
+Failure stage: markdown summary generation only. All scenario results, manifests, snapshots, outcomes, and report archive entries were written.
+
+Observed terminal error (transcribed from the execution result; no wrapper captured raw outer-process streams):
+
+```text
+file:///workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/harness/run.mjs:148
+  ...(await readFile(join(artifactDirectory, 'cli-runs.json'), 'utf8').then(text => JSON.parse(text)).catch(() => []).map(run => `- ${run.name}: exit ${run.exitCode ?? 'null'}${run.signal ? `, signal ${run.signal}` : ''}${run.error ? `, ${run.error}` : ''}`)),
+                                                                                                                      ^
+
+TypeError: readFile(...).then(...).catch(...).map is not a function
+    at file:///workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/harness/run.mjs:148:119
+
+Node.js v24.19.0
+```
+
+This is the second preserved postprocessing failure. The runner expression is corrected after this run; no validator scenario was repeated.

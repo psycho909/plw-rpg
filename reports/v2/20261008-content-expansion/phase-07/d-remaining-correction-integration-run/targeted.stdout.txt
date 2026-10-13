@@ -1,0 +1,12 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/remainingFamilies.integration.test.ts (13 tests | 2 failed) 66ms
+     × 'frontier_goblin_wire_knife_recipe' crafts from actual selected loot and survives equip/save reload 9ms
+     × keeps the Fog Bellkeeper available by the approved town OR threat-three night routes 3ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  2 failed | 81 passed (83)
+   Start at  02:15:56
+   Duration  1.50s (transform 415ms, setup 0ms, import 593ms, tests 557ms, environment 1ms)
+

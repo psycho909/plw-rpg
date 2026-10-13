@@ -1,0 +1,83 @@
+# Phase 7 Content Batch Validation
+
+- Supplied pack: reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/runs/2026-10-13T02-09-50.620Z-8fe80794-964a-4a4d-b2b7-596c0f2b92a9/packs/mine-constructs.json
+- Captured pack SHA-256: 68c270b48e2cfe51affc37156efbfc0d2859fbd70bfb0cf36803321ee276d672
+- Run evidence: reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/runs/2026-10-13T02-09-50.620Z-8fe80794-964a-4a4d-b2b7-596c0f2b92a9/.qa-runs/2026-10-13T02-10-10.604Z-63a8e709-6829-4517-a8ac-52bcbab26e67
+- Current run HEAD: 75140d1aa0b40bc00e246cec8253daab524720ad
+- Current run branch: v2x/reward-core
+- Current captured-source fingerprint: d4d119ca0a9c0ec7fc67de126e7752e213044beed5b6ab66e16a23e27fd2c602
+- Historical Phase 7-B contract anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1
+- Content validation status: PASS
+- Overall validator + child-check outcome: FAIL
+- targetedTests: PASS (exit 0)
+- typecheck: FAIL (exit 2)
+- Natural spawn exposure: not-measured
+- Crop goods evidence: declared-food-binding-only-runtime-integration-unverified
+- Save compatibility evidence: stable-id-addition-only-runtime-migration-unverified
+- Counts cover unique qualifying IDs in this supplied authoring batch only.
+
+## Counts
+
+- Qualifying new monsters: 8
+- Authoring-qualified candidate new item IDs: 7
+- Authoring-qualified usable new materials: 5
+- Exact baseline monster IDs: 5; excluded legacy monster IDs: 4
+- Exact baseline boss variant IDs: 3
+- Exact baseline item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0
+
+## Reachability
+
+- mine_constructs: controlled-witness (mine, level 4, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_shardling: controlled-witness (mine, level 4, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_sentinel: controlled-witness (mine, level 4, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_pylon: controlled-witness (mine, level 5, threat 2, hamlet, 春, hour 10, safety 0; already-accessible)
+- mine_construct_crawler: controlled-witness (mine, level 5, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_mason: controlled-witness (mine, level 5, threat 2, hamlet, 春, hour 13, safety 0; already-accessible)
+- mine_construct_veinwatcher: controlled-witness (mine, level 6, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_ram: controlled-witness (mine, level 7, threat 3, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_warder: controlled-witness (mine, level 7, threat 3, hamlet, 春, hour 6, safety 0; already-accessible)
+
+## Diagnostics
+
+- WARNING duplicate-like-material [mine_construct_binding, mine_construct_shard]: Material definitions have the same effective economy and generation influence.
+- No validation errors.
+
+## Child checks
+
+### targetedTests
+
+Exit: 0
+
+stdout:
+```text
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  02:10:11
+   Duration  274ms (transform 97ms, setup 0ms, import 116ms, tests 34ms, environment 0ms)
+```
+
+stderr:
+```text
+
+```
+
+### typecheck
+
+Exit: 2
+
+stdout:
+```text
+src/engine/remainingFamilies.integration.test.ts(209,5): error TS2322: Type 'string[]' is not assignable to type 'BuildingId[]'.
+  Type 'string' is not assignable to type 'BuildingId'.
+```
+
+stderr:
+```text
+
+```
+
+Controlled witnesses prove bounded predicate satisfiability only. This report does not estimate natural encounter rates.

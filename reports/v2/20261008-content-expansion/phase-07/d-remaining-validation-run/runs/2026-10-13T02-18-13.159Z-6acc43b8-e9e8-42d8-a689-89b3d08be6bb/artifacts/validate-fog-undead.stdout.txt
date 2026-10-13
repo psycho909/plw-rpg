@@ -1,0 +1,81 @@
+# Phase 7 Content Batch Validation
+
+- Supplied pack: reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/runs/2026-10-13T02-18-13.159Z-6acc43b8-e9e8-42d8-a689-89b3d08be6bb/packs/fog-undead.json
+- Captured pack SHA-256: 64adf29c9b4a59a86a097dcb9c1b1e02263a744025d31da6e0a6263c57536168
+- Run evidence: reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/runs/2026-10-13T02-18-13.159Z-6acc43b8-e9e8-42d8-a689-89b3d08be6bb/.qa-runs/2026-10-13T02-18-27.277Z-bc5d0cc1-7559-425a-a903-0786d9daa2f6
+- Current run HEAD: 75140d1aa0b40bc00e246cec8253daab524720ad
+- Current run branch: v2x/reward-core
+- Current captured-source fingerprint: 3562afdf698a79c17d8b1fa0486536d74b9fcb6cdd5722b80f47727944c20057
+- Historical Phase 7-B contract anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1
+- Content validation status: PASS
+- Overall validator + child-check outcome: PASS
+- targetedTests: PASS (exit 0)
+- typecheck: PASS (exit 0)
+- Natural spawn exposure: not-measured
+- Crop goods evidence: declared-food-binding-only-runtime-integration-unverified
+- Save compatibility evidence: stable-id-addition-only-runtime-migration-unverified
+- Counts cover unique qualifying IDs in this supplied authoring batch only.
+
+## Counts
+
+- Qualifying new monsters: 8
+- Authoring-qualified candidate new item IDs: 9
+- Authoring-qualified usable new materials: 7
+- Exact baseline monster IDs: 5; excluded legacy monster IDs: 4
+- Exact baseline boss variant IDs: 3
+- Exact baseline item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0
+
+## Reachability
+
+- fog_undead: controlled-witness (forest, level 4, threat 2, hamlet, 春, hour 18, safety 0; already-accessible)
+- fog_undead_bonewalker: controlled-witness (forest, level 4, threat 2, hamlet, 春, hour 20, safety 0; already-accessible)
+- fog_undead_lantern_wisp: controlled-witness (unknown, level 5, threat 2, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+- fog_undead_gravehound: controlled-witness (forest, level 5, threat 2, hamlet, 秋, hour 20, safety 0; already-accessible)
+- fog_undead_crypt_guard: controlled-witness (unknown, level 6, threat 2, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+- fog_undead_mourner: controlled-witness (forest, level 5, threat 2, hamlet, 冬, hour 20, safety 0; already-accessible)
+- fog_undead_bellkeeper: controlled-witness (unknown, level 6, threat 2, town, 春, hour 20, safety 0; explore-to-unlock)
+- fog_undead_wight: controlled-witness (forest, level 7, threat 3, hamlet, 春, hour 20, safety 0; already-accessible)
+- fog_undead_blackguard: controlled-witness (unknown, level 7, threat 3, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+
+## Diagnostics
+
+- No validation errors.
+
+## Child checks
+
+### targetedTests
+
+Exit: 0
+
+stdout:
+```text
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  02:18:27
+   Duration  243ms (transform 96ms, setup 0ms, import 112ms, tests 26ms, environment 0ms)
+```
+
+stderr:
+```text
+
+```
+
+### typecheck
+
+Exit: 0
+
+stdout:
+```text
+
+```
+
+stderr:
+```text
+
+```
+
+Controlled witnesses prove bounded predicate satisfiability only. This report does not estimate natural encounter rates.

@@ -1,0 +1,144 @@
+{
+  "generatedAt": "2026-10-13T02:26:34.511Z",
+  "generation": "Vite SSR imports from current TypeScript source; JSON.stringify bytes, no trailing newline",
+  "definitions": [
+    {
+      "id": "slime",
+      "module": "/src/data/content/slime.ts",
+      "exportName": "SLIME_CONTENT"
+    },
+    {
+      "id": "cave-insects",
+      "module": "/src/data/content/caveInsects.ts",
+      "exportName": "CAVE_INSECT_CONTENT"
+    },
+    {
+      "id": "wild-beasts",
+      "module": "/src/data/content/wildBeasts.ts",
+      "exportName": "WILD_BEAST_CONTENT"
+    },
+    {
+      "id": "frontier-goblins",
+      "module": "/src/data/content/frontierGoblins.ts",
+      "exportName": "FRONTIER_GOBLIN_CONTENT"
+    },
+    {
+      "id": "fog-undead",
+      "module": "/src/data/content/fogUndead.ts",
+      "exportName": "FOG_UNDEAD_CONTENT"
+    },
+    {
+      "id": "mine-constructs",
+      "module": "/src/data/content/mineConstructs.ts",
+      "exportName": "MINE_CONSTRUCT_CONTENT"
+    }
+  ],
+  "packArtifacts": {
+    "wild-beasts": {
+      "file": "wild-beasts.json",
+      "bytes": 12838,
+      "sha256": "6a410ed8ab9a7274383d28e7a34a7c908cd787a161923ab356b38ad0d7b9b4de"
+    },
+    "frontier-goblins": {
+      "file": "frontier-goblins.json",
+      "bytes": 14307,
+      "sha256": "8e6ba738f13c7427962108c287a0b9e606d05dc78bd1b4965d74d4c3dbcc2fed"
+    },
+    "fog-undead": {
+      "file": "fog-undead.json",
+      "bytes": 11939,
+      "sha256": "64adf29c9b4a59a86a097dcb9c1b1e02263a744025d31da6e0a6263c57536168"
+    },
+    "mine-constructs": {
+      "file": "mine-constructs.json",
+      "bytes": 12054,
+      "sha256": "68c270b48e2cfe51affc37156efbfc0d2859fbd70bfb0cf36803321ee276d672"
+    },
+    "six-family-combined": {
+      "file": "six-family-combined.json",
+      "bytes": 80136,
+      "sha256": "f0dff4ff5135bb750814fa8535b94d6cdae5a2da99764096381e076875b411bf"
+    }
+  },
+  "packCounts": {
+    "slime": {
+      "families": 1,
+      "monsters": 11,
+      "lootTables": 12,
+      "equipment": 8,
+      "materials": 8,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 4,
+      "affixes": 0
+    },
+    "cave-insects": {
+      "families": 1,
+      "monsters": 8,
+      "lootTables": 9,
+      "equipment": 1,
+      "materials": 7,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 1,
+      "affixes": 0
+    },
+    "wild-beasts": {
+      "families": 1,
+      "monsters": 8,
+      "lootTables": 9,
+      "equipment": 3,
+      "materials": 7,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 3,
+      "affixes": 0
+    },
+    "frontier-goblins": {
+      "families": 1,
+      "monsters": 8,
+      "lootTables": 9,
+      "equipment": 4,
+      "materials": 7,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 4,
+      "affixes": 0
+    },
+    "fog-undead": {
+      "families": 1,
+      "monsters": 8,
+      "lootTables": 9,
+      "equipment": 2,
+      "materials": 7,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 2,
+      "affixes": 0
+    },
+    "mine-constructs": {
+      "families": 1,
+      "monsters": 8,
+      "lootTables": 9,
+      "equipment": 2,
+      "materials": 7,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 2,
+      "affixes": 0
+    }
+  },
+  "combinedCounts": {
+    "families": 6,
+    "monsters": 51,
+    "lootTables": 57,
+    "equipment": 20,
+    "materials": 43,
+    "crops": 0,
+    "cropGoods": 0,
+    "recipes": 16,
+    "affixes": 0
+  },
+  "combinedBytes": 80136,
+  "combinedSha256": "f0dff4ff5135bb750814fa8535b94d6cdae5a2da99764096381e076875b411bf"
+}

@@ -1,6 +1,6 @@
 # Phase7-D — Monster Expansion
 
-- Status: blocked
+- Status: accepted
 - Risk: L2
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
@@ -20,12 +20,15 @@ Parent [20261008-v2x-07-content-expansion](20261008-v2x-07-content-expansion.md)
 ## Acceptance
 
 - [x] 本stage實作與合法來源／用途閉環完成；validator、targeted tests、full regression與build均有證據。2026-10-13測試runner改採單一worker後，正式`npm run check`通過31files/570tests、typecheck/build；先前並行timeout原始紀錄保留，故為PASS WITH FINDINGS。
-- [ ] 原始failure/sourceSHA/fingerprint/report保留；適用Medium/Max獨立review及Root acceptance。
+- [x] 洞穴昆蟲批次採 Owner 核定補救條件：保留原始 failure report／diagnostics／checksum，永久揭露缺失 input bytes／原始 source fingerprint，以完整 current-source revalidation 與獨立審查作為限定替代依據。新批次仍須完整 input／source／failure 保存及獨立 review。
+- [x] 核定計畫其餘四個 Family 的24normal/8Elite接入與逐批驗證完成；六Family共51合格新定義（含C已交付小頭目/Boss）。
 - [x] 下一階段僅在Root release後施工；E尚未release且未開始施工。
 
 ## Dependencies
 
 Dependency released by Root on 2026-10-12 after local Phase7-C acceptance. D implementation/verification is complete with findings, but acceptance is blocked by the missing original failed authored-source SHA/fingerprint. Owner directed on 2026-10-12 to maintain the block without waiver; E remains unreleased.
+
+Current override (2026-10-13): after the completed exact exception proposal was presented, Owner instructed 「繼續把Phase7完成」. Root records this as authority to use that limited compensating-evidence condition and resume Phase7. Cave Insects slice is accepted PASS WITH FINDINGS; historical P2 stays permanent. D is now in progress for the remaining four approved families; E is not released until those D batches pass. Earlier blocked-state sections below are historical, not current authority.
 
 ## Evidence
 
@@ -82,3 +85,29 @@ The prior explicit no-waiver decision remains effective until Owner approves a s
 - Current-source revalidation completed: generated D pack is byte-identical to the retained gate-fixed pack (`18751aff901ae9a6512260ad18accce36c33b7e4971838aec82d2d54a45879fd`), real positive validation PASS, 8 qualifying monsters / 7 usable materials. A clearly new resin/keen negative fixture emits both historical diagnostic types and retains its exact input/source. Before/after source maps are unchanged. See `d-remediation-run/d-remediation-revalidation.md`.
 - Exact proposed exception and completed evidence: `d-remediation-disposition.md`. Root awaits Owner confirmation of that specific replacement clause, not confirmation to execute already-authorized QA. No original historical bytes are claimed recovered.
 - Independent Medium delta review passed the technical evidence/proposal Standards and Spec, confirming current generation linkage, unchanged prior regression inputs and clearly labeled new negative; see `d-remediation-review.md`. Reviewer confirmed only seven raw stdout EOF blank lines justify a scoped invocation-only whitespace exception. D exception is still Owner-pending.
+
+## Root remaining-D release — 2026-10-13
+
+## Latest Root D acceptance — 2026-10-13
+
+WholeD accepted **PASS WITH FINDINGS**: all36normal/12Elite exist, merged51qualifyingmonsters; freshcombinedCLI/content/18targetedtests/typecheckPASS. Freshcanonical `npm run check` **32files/585tests**, typecheck/buildPASS,10:27:05–10:27:48Asia/Taipei, unchangedbefore/aftermaps. IndependentMedium Standards/SpecPASSWITHFINDINGS (`d-remaining-content-review.md`). Exactevidence `d-remaining-validation-run/runs/2026-10-13T02-26-33.804Z-7ce53b35-99fa-4595-bbdc-5f1403d230f6/` and `d-remaining-full-check-run/runs/2026-10-13T02-27-05.314Z-c38536cf-de82-4601-8b75-6f99cb45f9d0/`.
+
+Current20gear43rawmats16recipes:30matsqualify,total50usableitems. Sixrealduplicate-like-material warninggroups remainexcluded; final100itemgate isF/G, notclaimedbyD. HistoricalP2 andallpriorrawfailures/reviewcorrection/emptypublication retained. E releasedinitsformal ticket. Earlierin_progress/blockedrelease text ishistorical.
+
+- Owner latest direction following the explicit proposal supersedes the earlier no-waiver hold for this single historical gap. No further confirmation for this condition is required. Cave Insects slice accepted with findings; do not describe missing history as recovered.
+- Root approves `remaining-family-plan.md` normal/Elite rosters for Wild Beasts, Frontier Goblins, Fog Undead and Mine Constructs: each six normal / two Elite, existing regions/mechanics, two real identity axes, source/use closure. Four isolated authored modules; no shared core changes, no future placeholders or E bosses in D.
+- Each remaining D pack may include its seven normally sourced materials and two planned recipe/equipment bridge outputs (one weapon, one armor) to consume compatible materials; the full eight materials/eight equipment/four recipes remain the later E/F budget. Baseline Slime and Cave Insects stay frozen in this D continuation. Family-local loot and loot-selected material paths follow the roster table. No invented status/summon effects.
+- Low owns isolated data; Medium owns shared registry and public-seam integration tests. One QA runner serializes real pack validation and targeted tests with exact pre/post source maps and raw failure retention. Root alone accepts batches and releases E. General independent Medium review, Max only if actual core state/RNG/save changes are necessary.
+
+## Remaining-D RED and bounded closure correction
+
+- Pre-fix exact pack validation is retained in `d-remaining-validation-run/runs/2026-10-13T02-09-50.620Z-8fe80794-964a-4a4d-b2b7-596c0f2b92a9/`: combined 51 definitions / 43 materials / 17 equipment / 13 recipes. Wild has incompatible striking/keen biases; Frontier has orphan slingcord plus incompatible keen/bleeding/warding biases. All five commands also failed typecheck on the new integration test's string[]→BuildingId[] assignment; raw child output/source/exit is preserved. Fog/Construct content validation itself passed. The QA postprocessing failure is separately retained and repaired without rerunning CLIs.
+- Root preserves the planned material identities and single crafting pipeline. Move already-planned Wild horn-knife and Frontier wire-knife / signal-coat equipment+recipes from F forward into D as the minimum useful consumers. D Wild now has 3 recipe/equipment outputs, Frontier 4; remaining F budget decreases accordingly, full 66/107/24/12 targets unchanged. Selected loot may expose these real current outputs; bias selection lists must match each output. Do not change bias just to bypass eligibility, weaken validation or add unsupported item classes.
+- General Medium fixer owns these data corrections after Low authoring is frozen: Wild/Goblin compatible consumer closure, Wild pounce prose, rare amber-sinew/forgecore probabilistic Elite drops with sensible common guaranteed drops, Fog bellkeeper town OR threat3 profile, integration BuildingId typing. Mine already uses rare Corechip correctly (reviewer's initial contrary reading withdrawn). Root approves Mine resonant-stone striking bias as the legal pike-oriented content choice; the candidate plan's keen wording is superseded, no core feature implied.
+- Preserve reviewer original findings plus correction; one accidental zero-byte review publication is retained in the archive and followed by restoration/correct publication. Do not delete it or treat it as a product bug. Corrections require fresh pack validation and independent review of final hashes.
+
+## Quality-count validator defect — Root bounded fix release
+
+Corrected five CLI runs passed content/tests/typecheck, but combined quality counting reports only 15 usable materials and falsely groups equipment with distinct canonical baseline affix effects. `contentValidation.ts` semantic signatures resolve new authored affix metadata only; baseline effects absent from that map collapse to undefined, so distinct piercing/striking/bleeding/sturdy etc can be treated as identical. This is a validator correctness issue, not authority to lower final quantity/quality thresholds or add filler.
+
+Root authorizes one ordinary Medium test-first correction in `src/engine/contentValidation.ts` / its existing test, with a minimal domain/CLI metadata change only if required. Resolve baseline affix semantics honestly: absent effect metadata must retain stable canonical affix identity instead of collapsing distinct IDs to undefined; if actual metadata is available, compare actual effect/tier semantics. Preserve duplicate detection for genuinely identical effects and all strict reference/usage checks. Retain the current false-positive report/source first, add focused failing coverage, fix, targeted regression, independent review, then recalculate actual qualification. No content stat/price inflation to evade the checker and no generator/save/RNG changes. Stage D remains in progress until this evidence is reliable.

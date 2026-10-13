@@ -27,6 +27,10 @@ Parent [20261008-v2x-07-content-expansion](20261008-v2x-07-content-expansion.md)
 
 Blocked by: [Phase7-J](20261008-v2x-07j-balance-coverage.md)；尚未release。
 
+## Root QA preparation release — 2026-10-13
+
+Owner requests entire Phase7 completion. Independent browser harness preparation may start now in the existing Phase7 report directory only, reusing Phase6 production launcher/telemetry and recorded report writer. No app/persistence/renderer edits during preparation. Formal regression/stress/content-agent runs use the final frozen production build and begin only after Root release; stress minimum1200s, content-focused Agent Exploratory minimum1800s. Agents are never human testers; Human remains DEFERRED. Capture one-minute checkpoints, actual errors/heap/DOM/listeners/save/IndexedDB, separate controlled-context content smoke from ordinary UI play. No raw state/time injection in normal stress/agent runs. Medium adapts action policy; Low runs without model polling.
+
 ## Evidence
 
 reports/v2/20261008-content-expansion/phase-07/；待驗證。

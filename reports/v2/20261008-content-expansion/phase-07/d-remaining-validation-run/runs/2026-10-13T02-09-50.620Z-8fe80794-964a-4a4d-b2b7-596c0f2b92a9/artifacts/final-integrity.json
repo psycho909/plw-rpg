@@ -1,0 +1,177 @@
+{
+  "runId": "2026-10-13T02-09-50.620Z-8fe80794-964a-4a4d-b2b7-596c0f2b92a9",
+  "headBeforeAfterSame": true,
+  "branchBeforeAfterSame": true,
+  "sourceAndConfigMapUnchanged": true,
+  "targetNewPackCounts": {
+    "monsters": 8,
+    "materials": 7,
+    "equipment": 2,
+    "recipes": 2
+  },
+  "targetSixFamilyCounts": {
+    "monsters": 51,
+    "materials": 43,
+    "equipment": 17,
+    "recipes": 13
+  },
+  "actualNewFamilyCounts": {
+    "slime": {
+      "families": 1,
+      "monsters": 11,
+      "lootTables": 12,
+      "equipment": 8,
+      "materials": 8,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 4,
+      "affixes": 0
+    },
+    "cave-insects": {
+      "families": 1,
+      "monsters": 8,
+      "lootTables": 9,
+      "equipment": 1,
+      "materials": 7,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 1,
+      "affixes": 0
+    },
+    "wild-beasts": {
+      "families": 1,
+      "monsters": 8,
+      "lootTables": 9,
+      "equipment": 2,
+      "materials": 7,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 2,
+      "affixes": 0
+    },
+    "frontier-goblins": {
+      "families": 1,
+      "monsters": 8,
+      "lootTables": 9,
+      "equipment": 2,
+      "materials": 7,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 2,
+      "affixes": 0
+    },
+    "fog-undead": {
+      "families": 1,
+      "monsters": 8,
+      "lootTables": 9,
+      "equipment": 2,
+      "materials": 7,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 2,
+      "affixes": 0
+    },
+    "mine-constructs": {
+      "families": 1,
+      "monsters": 8,
+      "lootTables": 9,
+      "equipment": 2,
+      "materials": 7,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 2,
+      "affixes": 0
+    }
+  },
+  "generatedPackArtifacts": {
+    "wild-beasts": {
+      "file": "wild-beasts.json",
+      "bytes": 11930,
+      "sha256": "8dcf9ad3417dc8701043fc72162c4c4e8ddba4f2473e867d5d3505312255b368"
+    },
+    "frontier-goblins": {
+      "file": "frontier-goblins.json",
+      "bytes": 12316,
+      "sha256": "b9cb012bdf1a8e0ee0949e1641c856ae135de1b4289252e8150f63667cf94378"
+    },
+    "fog-undead": {
+      "file": "fog-undead.json",
+      "bytes": 11822,
+      "sha256": "e84c214672539a20ba5c6d5f2bf221402ba7baefd9d914e20f7b5c0dda3459ed"
+    },
+    "mine-constructs": {
+      "file": "mine-constructs.json",
+      "bytes": 12054,
+      "sha256": "68c270b48e2cfe51affc37156efbfc0d2859fbd70bfb0cf36803321ee276d672"
+    },
+    "six-family-combined": {
+      "file": "six-family-combined.json",
+      "bytes": 77120,
+      "sha256": "f6f1c52b7e14f957c21cd36b853452d3bbe48526a88ade7836f2bd55c531e3f7"
+    }
+  },
+  "actualSixFamilyCounts": {
+    "families": 6,
+    "monsters": 51,
+    "lootTables": 57,
+    "equipment": 17,
+    "materials": 43,
+    "crops": 0,
+    "cropGoods": 0,
+    "recipes": 13,
+    "affixes": 0
+  },
+  "allSixCountTargetsMatched": true,
+  "rawRunEvidence": [
+    {
+      "directory": "2026-10-13T02-09-51.537Z-a3dc6734-e803-46c0-9fbd-7eb4248fbf77",
+      "manifestSha256": "0ef25e53ef62a431dd041b0a4dabb56600a8271c5f5cd60e3cb0d666f2f1ca21",
+      "inputSha256": "8dcf9ad3417dc8701043fc72162c4c4e8ddba4f2473e867d5d3505312255b368",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "d4d119ca0a9c0ec7fc67de126e7752e213044beed5b6ab66e16a23e27fd2c602",
+      "sourceMismatches": [],
+      "contentValidationStatus": "FAIL",
+      "overallStatus": "FAIL"
+    },
+    {
+      "directory": "2026-10-13T02-09-57.956Z-5a0dd271-dd3a-40a5-945d-0f86f8bca3d6",
+      "manifestSha256": "db382ab23e06d2f4de09bc0b73a9b37710d8b8f051a6e5529a5dba82340a477a",
+      "inputSha256": "b9cb012bdf1a8e0ee0949e1641c856ae135de1b4289252e8150f63667cf94378",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "d4d119ca0a9c0ec7fc67de126e7752e213044beed5b6ab66e16a23e27fd2c602",
+      "sourceMismatches": [],
+      "contentValidationStatus": "FAIL",
+      "overallStatus": "FAIL"
+    },
+    {
+      "directory": "2026-10-13T02-10-04.392Z-30ba2994-d87e-4d7d-806d-fdbf63fc70c9",
+      "manifestSha256": "62234fb9c8308b1a0c21fa38df2e31679e9918bc5fffbabd26948fd8fe31e643",
+      "inputSha256": "e84c214672539a20ba5c6d5f2bf221402ba7baefd9d914e20f7b5c0dda3459ed",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "d4d119ca0a9c0ec7fc67de126e7752e213044beed5b6ab66e16a23e27fd2c602",
+      "sourceMismatches": [],
+      "contentValidationStatus": "PASS",
+      "overallStatus": "FAIL"
+    },
+    {
+      "directory": "2026-10-13T02-10-10.604Z-63a8e709-6829-4517-a8ac-52bcbab26e67",
+      "manifestSha256": "02442d2b4c16147d19552caf9a7e32c322acefaa620fc9a0098a6c92fe1f47d4",
+      "inputSha256": "68c270b48e2cfe51affc37156efbfc0d2859fbd70bfb0cf36803321ee276d672",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "d4d119ca0a9c0ec7fc67de126e7752e213044beed5b6ab66e16a23e27fd2c602",
+      "sourceMismatches": [],
+      "contentValidationStatus": "PASS",
+      "overallStatus": "FAIL"
+    },
+    {
+      "directory": "2026-10-13T02-10-16.919Z-db89bf02-e8b4-46f6-84e7-73d02e2f725e",
+      "manifestSha256": "86f54bc073912c6f73d05cbc2dd8e873af302f8bd9efd51aab4ebc8e723f0acc",
+      "inputSha256": "f6f1c52b7e14f957c21cd36b853452d3bbe48526a88ade7836f2bd55c531e3f7",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "d4d119ca0a9c0ec7fc67de126e7752e213044beed5b6ab66e16a23e27fd2c602",
+      "sourceMismatches": [],
+      "contentValidationStatus": "FAIL",
+      "overallStatus": "FAIL"
+    }
+  ]
+}

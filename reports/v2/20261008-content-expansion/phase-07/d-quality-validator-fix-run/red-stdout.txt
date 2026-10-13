@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run --run src/engine/contentValidation.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/contentValidation.test.ts (18 tests | 1 failed) 34ms
+     × keeps baseline affix identities distinct when effect metadata is unavailable 7ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 17 passed (18)
+   Start at  02:23:06
+   Duration  286ms (transform 98ms, setup 0ms, import 115ms, tests 34ms, environment 0ms)
+

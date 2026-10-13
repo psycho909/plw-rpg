@@ -1,0 +1,396 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crafting.test.ts > crafting skill capabilities > defines the four approved recipes with their exact costs, outputs, unlocks, stations and practice caps
+AssertionError: expected [ Array(12) ] to deeply equal [ { id: 'starterSpear', …(11) }, …(3) ]
+
+- Expected
++ Received
+
+@@ -108,6 +108,311 @@
+      "practiceCap": 6,
+      "requiredSmithing": 5,
+      "staminaCost": 16,
+      "station": "blacksmith",
+    },
++   {
++     "allowedBiasMaterials": [
++       "wild_beast_hide",
++       "wild_beast_horn",
++       "wild_beast_tendon",
++       "wild_beast_fur",
++       "wild_beast_antler",
++       "wild_beast_resin",
++       "wild_beast_amber_sinew",
++     ],
++     "durationMinutes": 90,
++     "goldCost": 18,
++     "id": "wild_beast_tendon_spear_recipe",
++     "inputs": [
++       {
++         "amount": 2,
++         "materialId": "wild_beast_tendon",
++         "source": "material",
++       },
++       {
++         "amount": 1,
++         "materialId": "wild_beast_antler",
++         "source": "material",
++       },
++       {
++         "amount": 3,
++         "itemId": "wood",
++         "source": "inventory",
++       },
++       {
++         "amount": 1,
++         "itemId": "iron",
++         "source": "inventory",
++       },
++     ],
++     "name": "鍛造韌筋長槍",
++     "outputBase": "wild_beast_tendon_spear",
++     "outputLevel": 5,
++     "practiceCap": 6,
++     "requiredSmithing": 4,
++     "staminaCost": 17,
++     "station": "blacksmith",
++   },
++   {
++     "allowedBiasMaterials": [
++       "wild_beast_hide",
++       "wild_beast_horn",
++       "wild_beast_tendon",
++       "wild_beast_fur",
++       "wild_beast_antler",
++       "wild_beast_resin",
++       "wild_beast_amber_sinew",
++     ],
++     "durationMinutes": 75,
++     "goldCost": 16,
++     "id": "wild_beast_hide_coat_recipe",
++     "inputs": [
++       {
++         "amount": 3,
++         "materialId": "wild_beast_hide",
++         "source": "material",
++       },
++       {
++         "amount": 2,
++         "materialId": "wild_beast_fur",
++         "source": "material",
++       },
++       {
++         "amount": 1,
++         "itemId": "iron",
++         "source": "inventory",
++       },
++     ],
++     "name": "縫製野獸皮衣",
++     "outputBase": "wild_beast_hide_coat",
++     "outputLevel": 4,
++     "practiceCap": 5,
++     "requiredSmithing": 3,
++     "staminaCost": 15,
++     "station": "blacksmith",
++   },
++   {
++     "allowedBiasMaterials": [
++       "frontier_goblin_scrap",
++       "frontier_goblin_slingcord",
++       "frontier_goblin_plate",
++       "frontier_goblin_signalcloth",
++       "frontier_goblin_ironbits",
++       "frontier_goblin_wire",
++       "frontier_goblin_forgecore",
++     ],
++     "durationMinutes": 90,
++     "goldCost": 18,
++     "id": "frontier_goblin_scrap_spear_recipe",
++     "inputs": [
++       {
++         "amount": 3,
++         "materialId": "frontier_goblin_scrap",
++         "source": "material",
++       },
++       {
++         "amount": 3,
++         "itemId": "wood",
++         "source": "inventory",
++       },
++       {
++         "amount": 1,
++         "itemId": "iron",
++         "source": "inventory",
++       },
++     ],
++     "name": "鍛造廢鐵長槍",
++     "outputBase": "frontier_goblin_scrap_spear",
++     "outputLevel": 5,
++     "practiceCap": 6,
++     "requiredSmithing": 4,
++     "staminaCost": 17,
++     "station": "blacksmith",
++   },
++   {
++     "allowedBiasMaterials": [
++       "frontier_goblin_scrap",
++       "frontier_goblin_slingcord",
++       "frontier_goblin_plate",
++       "frontier_goblin_signalcloth",
++       "frontier_goblin_ironbits",
++       "frontier_goblin_wire",
++       "frontier_goblin_forgecore",
++     ],
++     "durationMinutes": 90,
++     "goldCost": 18,
++     "id": "frontier_goblin_plate_vest_recipe",
++     "inputs": [
++       {
++         "amount": 2,
++         "materialId": "frontier_goblin_plate",
++         "source": "material",
++       },
++       {
++         "amount": 2,
++         "materialId": "frontier_goblin_ironbits",
++         "source": "material",
++       },
++       {
++         "amount": 1,
++         "itemId": "iron",
++         "source": "inventory",
++       },
++     ],
++     "name": "製作拼裝板甲背心",
++     "outputBase": "frontier_goblin_plate_vest",
++     "outputLevel": 5,
++     "practiceCap": 6,
++     "requiredSmithing": 4,
++     "staminaCost": 17,
++     "station": "blacksmith",
++   },
++   {
++     "allowedBiasMaterials": [
++       "fog_undead_bone",
++       "fog_undead_wax",
++       "fog_undead_tendon",
++       "fog_undead_cinderbone",
++     ],
++     "durationMinutes": 100,
++     "goldCost": 22,
++     "id": "fog_undead_cryptblade_recipe",
++     "inputs": [
++       {
++         "amount": 2,
++         "materialId": "fog_undead_bone",
++         "source": "material",
++       },
++       {
++         "amount": 1,
++         "materialId": "fog_undead_tendon",
++         "source": "material",
++       },
++       {
++         "amount": 2,
++         "itemId": "wood",
++         "source": "inventory",
++       },
++       {
++         "amount": 1,
++         "itemId": "iron",
++         "source": "inventory",
++       },
++     ],
++     "name": "鍛造墓紋短刃",
++     "outputBase": "fog_undead_cryptblade",
++     "outputLevel": 6,
++     "practiceCap": 7,
++     "requiredSmithing": 5,
++     "staminaCost": 18,
++     "station": "blacksmith",
++   },
++   {
++     "allowedBiasMaterials": [
++       "fog_undead_cryptstone",
++       "fog_undead_shroud",
++       "fog_undead_bellmetal",
++     ],
++     "durationMinutes": 120,
++     "goldCost": 24,
++     "id": "fog_undead_guardmail_recipe",
++     "inputs": [
++       {
++         "amount": 2,
++         "materialId": "fog_undead_cryptstone",
++         "source": "material",
++       },
++       {
++         "amount": 2,
++         "materialId": "fog_undead_shroud",
++         "source": "material",
++       },
++       {
++         "amount": 1,
++         "itemId": "iron",
++         "source": "inventory",
++       },
++     ],
++     "name": "鍛造墓衛鎖甲",
++     "outputBase": "fog_undead_guardmail",
++     "outputLevel": 6,
++     "practiceCap": 7,
++     "requiredSmithing": 5,
++     "staminaCost": 20,
++     "station": "blacksmith",
++   },
++   {
++     "allowedBiasMaterials": [
++       "mine_construct_shard",
++       "mine_construct_resonant_stone",
++       "mine_construct_joint",
++       "mine_construct_corechip",
++     ],
++     "durationMinutes": 100,
++     "goldCost": 22,
++     "id": "mine_construct_shardpike_recipe",
++     "inputs": [
++       {
++         "amount": 2,
++         "materialId": "mine_construct_shard",
++         "source": "material",
++       },
++       {
++         "amount": 1,
++         "materialId": "mine_construct_joint",
++         "source": "material",
++       },
++       {
++         "amount": 2,
++         "itemId": "wood",
++         "source": "inventory",
++       },
++       {
++         "amount": 1,
++         "itemId": "iron",
++         "source": "inventory",
++       },
++     ],
++     "name": "鍛造碎晶穿脈槍",
++     "outputBase": "mine_construct_shardpike",
++     "outputLevel": 6,
++     "practiceCap": 7,
++     "requiredSmithing": 5,
++     "staminaCost": 18,
++     "station": "blacksmith",
++   },
++   {
++     "allowedBiasMaterials": [
++       "mine_construct_plate",
++       "mine_construct_binding",
++       "mine_construct_ironvein",
++     ],
++     "durationMinutes": 120,
++     "goldCost": 24,
++     "id": "mine_construct_plateguard_recipe",
++     "inputs": [
++       {
++         "amount": 2,
++         "materialId": "mine_construct_plate",
++         "source": "material",
++       },
++       {
++         "amount": 2,
++         "materialId": "mine_construct_binding",
++         "source": "material",
++       },
++       {
++         "amount": 1,
++         "itemId": "iron",
++         "source": "inventory",
++       },
++     ],
++     "name": "鍛造石板護甲",
++     "outputBase": "mine_construct_plateguard",
++     "outputLevel": 6,
++     "practiceCap": 7,
++     "requiredSmithing": 5,
++     "staminaCost": 20,
++     "station": "blacksmith",
++   },
+  ]
+
+ ❯ src/engine/crafting.test.ts:233:10
+    231|       requiredSmithing: recipe.requiredSmithing, station: recipe.stati…
+    232|       name: recipe.name, allowedBiasMaterials: recipe.allowedBiasMater…
+    233|     }))).toEqual([
+       |          ^
+    234|       { id: 'starterSpear', inputs: [{ source: 'inventory', itemId: 'w…
+    235|         goldCost: 4, staminaCost: 10, durationMinutes: 45, outputBase:…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/presentation/craftingProjection.test.ts > crafting UI projection > lists legacy recipes unchanged and projects the exact Slime recipes with their denials
+AssertionError: expected [ { id: 'starterSpear', …(2) }, …(11) ] to deeply equal [ { id: 'starterSpear', …(2) }, …(3) ]
+
+- Expected
++ Received
+
+@@ -17,6 +17,46 @@
+    {
+      "id": "ironShortSword",
+      "name": "鐵短劍",
+      "unlocked": false,
+    },
++   {
++     "id": "wild_beast_tendon_spear_recipe",
++     "name": "鍛造韌筋長槍",
++     "unlocked": false,
++   },
++   {
++     "id": "wild_beast_hide_coat_recipe",
++     "name": "縫製野獸皮衣",
++     "unlocked": false,
++   },
++   {
++     "id": "frontier_goblin_scrap_spear_recipe",
++     "name": "鍛造廢鐵長槍",
++     "unlocked": false,
++   },
++   {
++     "id": "frontier_goblin_plate_vest_recipe",
++     "name": "製作拼裝板甲背心",
++     "unlocked": false,
++   },
++   {
++     "id": "fog_undead_cryptblade_recipe",
++     "name": "鍛造墓紋短刃",
++     "unlocked": false,
++   },
++   {
++     "id": "fog_undead_guardmail_recipe",
++     "name": "鍛造墓衛鎖甲",
++     "unlocked": false,
++   },
++   {
++     "id": "mine_construct_shardpike_recipe",
++     "name": "鍛造碎晶穿脈槍",
++     "unlocked": false,
++   },
++   {
++     "id": "mine_construct_plateguard_recipe",
++     "name": "鍛造石板護甲",
++     "unlocked": false,
++   },
+  ]
+
+ ❯ src/presentation/craftingProjection.test.ts:78:109
+     76|
+     77|     const rows = projection.recipes.map(({ id, name, unlocked }) => ({…
+     78|     expect(rows.filter(recipe => !recipe.id.startsWith('slime_') && !r…
+       |                                                                                                             ^
+     79|       { id: 'starterSpear', name: '木石長矛', unlocked: true },
+     80|       { id: 'fieldSpear', name: '進階長矛', unlocked: false },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

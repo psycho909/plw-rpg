@@ -1,0 +1,22 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentValidation.test.ts > validateContentPack > keeps baseline affix identities distinct when effect metadata is unavailable
+AssertionError: expected 4 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 4
+
+ ❯ src/engine/contentValidation.test.ts:304:49
+    302|     expect(report.warnings).not.toContainEqual(expect.objectContaining…
+    303|     expect(report.warnings).not.toContainEqual(expect.objectContaining…
+    304|     expect(report.qualityCounts.usableNewItems).toBe(2)
+       |                                                 ^
+    305|     expect(report.qualityCounts.usableNewMaterials).toBe(2)
+    306|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

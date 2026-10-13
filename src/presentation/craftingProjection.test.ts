@@ -75,7 +75,8 @@ describe('crafting UI projection', () => {
     const projection = projectCrafting(readyAtStore())
 
     const rows = projection.recipes.map(({ id, name, unlocked }) => ({ id, name, unlocked }))
-    expect(rows.filter(recipe => !recipe.id.startsWith('slime_') && !recipe.id.startsWith('cave_insect_'))).toEqual([
+    const legacyRecipeIds = ['starterSpear', 'fieldSpear', 'fieldArmor', 'ironShortSword']
+    expect(rows.filter(recipe => legacyRecipeIds.includes(recipe.id))).toEqual([
       { id: 'starterSpear', name: '木石長矛', unlocked: true },
       { id: 'fieldSpear', name: '進階長矛', unlocked: false },
       { id: 'fieldArmor', name: '鎖甲', unlocked: false },

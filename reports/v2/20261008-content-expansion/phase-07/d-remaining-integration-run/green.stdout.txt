@@ -1,0 +1,13 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crafting.test.ts (62 tests | 1 failed) 516ms
+     × defines the four approved recipes with their exact costs, outputs, unlocks, stations and practice caps 14ms
+ ❯ src/presentation/craftingProjection.test.ts (8 tests | 1 failed) 57ms
+     × lists legacy recipes unchanged and projects the exact Slime recipes with their denials 8ms
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  2 failed | 76 passed (78)
+   Start at  02:07:47
+   Duration  1.54s (transform 419ms, setup 0ms, import 576ms, tests 616ms, environment 1ms)
+

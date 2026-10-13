@@ -225,7 +225,8 @@ describe('starter crafting preview', () => {
 
 describe('crafting skill capabilities', () => {
   it('defines the four approved recipes with their exact costs, outputs, unlocks, stations and practice caps', () => {
-    expect(Object.values(CRAFTING_RECIPES).filter(recipe => !recipe.id.startsWith('slime_') && !recipe.id.startsWith('cave_insect_')).map(recipe => ({
+    const legacyRecipeIds = ['starterSpear', 'fieldSpear', 'fieldArmor', 'ironShortSword']
+    expect(Object.values(CRAFTING_RECIPES).filter(recipe => legacyRecipeIds.includes(recipe.id)).map(recipe => ({
       id: recipe.id, inputs: recipe.inputs, goldCost: recipe.goldCost, staminaCost: recipe.staminaCost,
       durationMinutes: recipe.durationMinutes, outputBase: recipe.outputBase, outputLevel: recipe.outputLevel,
       requiredSmithing: recipe.requiredSmithing, station: recipe.station, practiceCap: recipe.practiceCap,

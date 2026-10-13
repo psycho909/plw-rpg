@@ -2,9 +2,9 @@
 
 ## Identity
 
-- Task: Phase7-D Cave Insects and QA continuation.
+- Task: Phase7 completion, continuing remaining D then E–K.
 - Authority / Ticket: `tickets/20261008-v2x-07d-monster-expansion.md`; parent Phase7 specification/ticket remain the scope authority.
-- Status: blocked.
+- Status: in_progress.
 - Updated: 2026-10-13 (Asia/Taipei).
 - Source environment: `/workspace/plw-rpg`, Linux cloud, Node 24.19.0 / npm 11.9.0.
 - Branch: `v2x/reward-core`.
@@ -13,6 +13,12 @@
 - Latest verified remote checkpoint before the current QA repair: `f026b6b4947d18aadc0f551c642c31750db5768c` (HEAD and explicit work-branch remote matched).
 - Current delivery: completed preventive validator evidence-retention repair and its QA artifacts; D source/tests/config are preserved in the prior checkpoint and unchanged. The next commit preserves this blocked state; it is not D acceptance.
 - Sync target: `origin/v2x/reward-core`.
+
+### Latest authority and execution
+
+Owner instructed 「繼續把Phase7完成」 after the exact limited D compensating-evidence proposal was presented. Root adopts the exception and accepts the Cave Insects slice PASS WITH FINDINGS; original failure report/checksum stay retained and missing historical bytes/fingerprint stay permanently disclosed. Entire D still needs the four absent families' 24 normal/8 Elite. Their isolated authoring and general registry/test integration are released in the D ticket; E stays unreleased until those batches pass. The historical blocked-state sections below remain context and are superseded by this paragraph.
+
+Latest synchronized baseline: `75140d1aa0b40bc00e246cec8253daab524720ad`, clean before current Phase7 work. Low authors Wild Beasts/Frontier Goblins and Fog Undead/Mine Constructs in four isolated modules; Medium owns the shared registry and new integration test. No concurrent shared core edits. Existing full check/source maps are valid baseline; new implementation needs fresh batch and integration validation.
 
 ## Goal and Acceptance
 
@@ -75,6 +81,14 @@ Original failed authored-source SHA/fingerprint and failed pack bytes are unavai
 
 ## Next Action
 
-Obtain Owner's decision on the exact replacement clause in `d-remediation-disposition.md`. If explicitly approved, record that authority in the D ticket, retain the historical P2 finding and mark D accepted with findings, then separately decide E release under the existing plan. If declined, keep D blocked; authentic newly supplied original artifacts remain another route. Do not repeat the already-negative search or completed tests without new evidence/change.
+Currentoverride: wholeD acceptedPASSWITHFINDINGS afterfresh585fulltests/type/build andindependentreview; E RELEASED following `e-content-plan.md`. NextcompleteisolatedBoss/miniboss data+publicbossintegration andserializedpackvalidation,thenEreviewbeforeFrelease. Currentqualifyingcounts51monsters50items; raw43materials only30qualify,6duplicategroups excluded. NeedF/Gsatisfytrue100minwithoutfiller. BelowpreviousDnextstepsarehistorical, don'trerunalreadypassedDchecks.
 
-Exact resume prompt: `Read .scratch/20261013-phase7-d-qa/handoff.md, the D ticket and d-remediation-disposition.md. Technical remediation and current-source validation are complete; verify whether Owner explicitly approved the proposed replacement clause before changing D/E gates.`
+Latest remaining-D correction is complete: four packs plus registry integrated, targeted3files83tests andvue-tsc PASS; corrected5CLI pack/merged validation PASS, arrays51monsters43mats20gear16recipes0crops. Run `d-remaining-validation-run/runs/2026-10-13T02-18-13.159Z-6acc43b8-e9e8-42d8-a689-89b3d08be6bb/` preserves exactinput/source; originalearlierred02-09-50run andintegrationred retained. A quality-validator defect collapsed distinct baseline affixes to undefined; Medium fixed in `src/engine/contentValidation.ts`/test (18/18+typecheckPASS, RED/GREEN `d-quality-validator-fix-run/summary.md`). Next run one serialized recalculation, independent delta review and fresh full D check before Root whole-D acceptance/E release. `e-content-plan.md` ready, E not yet released.
+
+J/K independent QA preparation is authorized in their tickets while product stages remain sequential. `qa_simulation*` and `qa_browser*` new report-directory runners prepared; independent `qa-preparation-review.md` recorded blockers. Simulation guard/input-bias/margin corrections now staticchecked plus1guardtestPASS/1skip; browser control/reload/fixture/boundedtelemetry fixes still running. No formal100K/long/browser runs yet. Owner has no pending D waiver/human decision; preserve historicalP2 and don'taskagain.
+
+WholePhase7 locked66/107/24/12, hard50/100 qualifyingminima. Dclosure moves alreadyplanned Wildhornknife and Frontierwireknife/signalcoat recipes intoD (Wild3gear3recipes,Gob4/4,Fog2/2,Mine2/2); remainingFbudget adjusts accordingly. Mine alreadyrarecorechip (reviewer's contraryfindingwithdrawn), approvedresonantstone strikingbias. Reviewer accidentallypublishedoneemptyversion, restoredfrompriorarchive; retainallversions. LowQApostprocessorfailedtwiceafterCLIcompleted (retained); fixedwithtarget20/16reconciliation, noCLIrerunsforpostprocessing.
+
+Complete D, then approved E–K local gates and final17reports; actual browser20minstress/30mincontentAgent,3Seedcontinuous100y checkpoints10/50/100,100Kloot/matrix/economy/fullcheck/independentreview/externalhandoff. Root-onlycurrentbranchcommitpush, no PR/main/deploy/Phase8/V3; HumanDEFERRED. Do not repeat reliable prior searches/tests without newchanges.
+
+Exact resume prompt: `Read this handoff's Latest authority and execution and the Phase7 parent/D tickets. D historical exception adopted by latest Owner completion instruction; remaining normal/Elite families in progress. Finish D with source-linked QA then proceed E–K, retaining the historical finding and required final gates.`

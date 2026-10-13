@@ -1,0 +1,49 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentValidation.test.ts > validateContentPack > keeps baseline affix identities distinct when effect metadata is unavailable
+AssertionError: expected [ { …(3) }, { …(3) }, { …(3) } ] to not deep equally contain ObjectContaining{…}
+
+- Expected:
+ObjectContaining {
+  "code": "duplicate-like-equipment",
+}
+
++ Received:
+[
+  {
+    "code": "duplicate-like-monster",
+    "ids": [
+      "marsh-stalker",
+      "mire-hunter",
+    ],
+    "message": "Monster definitions have the same effective combat, spawn, and loot profile after ignoring IDs and localized prose.",
+  },
+  {
+    "code": "duplicate-like-equipment",
+    "ids": [
+      "chitin-spear",
+      "tendon-spear",
+    ],
+    "message": "Equipment definitions have the same effective slot, stats, and affix eligibility.",
+  },
+  {
+    "code": "duplicate-like-material",
+    "ids": [
+      "marsh-scale",
+      "mire-claw",
+    ],
+    "message": "Material definitions have the same effective economy and generation influence.",
+  },
+]
+
+ ❯ src/engine/contentValidation.test.ts:302:33
+    300|
+    301|     expect(report.errors).toEqual([])
+    302|     expect(report.warnings).not.toContainEqual(expect.objectContaining…
+       |                                 ^
+    303|     expect(report.warnings).not.toContainEqual(expect.objectContaining…
+    304|     expect(report.qualityCounts.usableNewItems).toBe(2)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

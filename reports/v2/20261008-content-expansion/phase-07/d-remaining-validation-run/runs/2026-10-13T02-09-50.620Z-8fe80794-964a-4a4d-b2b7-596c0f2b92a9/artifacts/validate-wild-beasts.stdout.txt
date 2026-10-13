@@ -1,0 +1,84 @@
+# Phase 7 Content Batch Validation
+
+- Supplied pack: reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/runs/2026-10-13T02-09-50.620Z-8fe80794-964a-4a4d-b2b7-596c0f2b92a9/packs/wild-beasts.json
+- Captured pack SHA-256: 8dcf9ad3417dc8701043fc72162c4c4e8ddba4f2473e867d5d3505312255b368
+- Run evidence: reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/runs/2026-10-13T02-09-50.620Z-8fe80794-964a-4a4d-b2b7-596c0f2b92a9/.qa-runs/2026-10-13T02-09-51.537Z-a3dc6734-e803-46c0-9fbd-7eb4248fbf77
+- Current run HEAD: 75140d1aa0b40bc00e246cec8253daab524720ad
+- Current run branch: v2x/reward-core
+- Current captured-source fingerprint: d4d119ca0a9c0ec7fc67de126e7752e213044beed5b6ab66e16a23e27fd2c602
+- Historical Phase 7-B contract anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1
+- Content validation status: FAIL
+- Overall validator + child-check outcome: FAIL
+- targetedTests: PASS (exit 0)
+- typecheck: FAIL (exit 2)
+- Natural spawn exposure: not-measured
+- Crop goods evidence: declared-food-binding-only-runtime-integration-unverified
+- Save compatibility evidence: stable-id-addition-only-runtime-migration-unverified
+- Counts cover unique qualifying IDs in this supplied authoring batch only.
+
+## Counts
+
+- Qualifying new monsters: 8
+- Authoring-qualified candidate new item IDs: 6
+- Authoring-qualified usable new materials: 4
+- Exact baseline monster IDs: 5; excluded legacy monster IDs: 4
+- Exact baseline boss variant IDs: 3
+- Exact baseline item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0
+
+## Reachability
+
+- wild_beasts: controlled-witness (farmland, level 1, threat 1, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_brush_hare: controlled-witness (farmland, level 1, threat 1, hamlet, 春, hour 5, safety 0; already-accessible)
+- wild_beast_stonehorn: controlled-witness (forest, level 2, threat 1, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_redtail: controlled-witness (forest, level 3, threat 1, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_fernback: controlled-witness (forest, level 3, threat 1, hamlet, 春, hour 15, safety 0; already-accessible)
+- wild_beast_marshstag: controlled-witness (forest, level 3, threat 1, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_amberfox: controlled-witness (farmland, level 4, threat 1, hamlet, 春, hour 12, safety 0; already-accessible)
+- wild_beast_bristleback: controlled-witness (forest, level 5, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_galehorn: controlled-witness (forest, level 6, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+
+## Diagnostics
+
+- ERROR affix-ineligible [wild_beast_antler]: Material biases an affix with no compatible authored equipment.
+- ERROR affix-ineligible [wild_beast_resin]: Material biases an affix with no compatible authored equipment.
+- ERROR affix-ineligible [wild_beast_amber_sinew]: Material biases an affix with no compatible authored equipment.
+
+## Child checks
+
+### targetedTests
+
+Exit: 0
+
+stdout:
+```text
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  02:09:52
+   Duration  253ms (transform 84ms, setup 0ms, import 102ms, tests 26ms, environment 0ms)
+```
+
+stderr:
+```text
+
+```
+
+### typecheck
+
+Exit: 2
+
+stdout:
+```text
+src/engine/remainingFamilies.integration.test.ts(209,5): error TS2322: Type 'string[]' is not assignable to type 'BuildingId[]'.
+  Type 'string' is not assignable to type 'BuildingId'.
+```
+
+stderr:
+```text
+
+```
+
+Controlled witnesses prove bounded predicate satisfiability only. This report does not estimate natural encounter rates.

@@ -1,5 +1,15 @@
 # Phase 7-D Root Closeout — Cave Insects
 
+## Latest entire-D acceptance — 2026-10-13 (Asia/Taipei)
+
+交付檢查：已核對待提交的115個實際程式／設定／套件輸入，均與通過完整檢查的來源雜湊相同。完整環境 map 另含一份忽略的 Python bytecode cache；它是非遊戲來源脈絡，未提交。預設 staged whitespace 檢查只在24份原始 stdout/stderr 的 EOF 空行回報錯誤；保留原始 bytes，其他檔案嚴格檢查及僅針對這24份紀錄的單次 EOF 例外檢查通過。完整診斷保存在 `d-delivery-integrity.json`，沒有修改全域 Git 設定或正規化原始紀錄。
+
+Root accepted wholeD **PASS WITH FINDINGS** afterOwner-adopted limitedhistoricalexception,remainingfourfamilies,independentreview. All36normal/12Elite plannedrostersintegrated. Current51qualifyingnewdefinitions includesC's2mini/1boss;20gear43rawmats16recipes,30matsqualify,total50usableitems. Sixrealduplicate-material warninggroups remainexcluded; nofinal100itemgateclaim. E releasedinitsformal ticket; Phase7inprogress.
+
+Latestcombined validation `d-remaining-validation-run/runs/2026-10-13T02-26-33.804Z-7ce53b35-99fa-4595-bbdc-5f1403d230f6/` content/checksPASS;80,136-bytepackSHA `f0dff4ff5135bb750814fa8535b94d6cdae5a2da99764096381e076875b411bf`. Validatorfixpreservesbaselineaffixidentity insteadofundefined andstilldetectssame-effectauthoredduplicates;18testsPASS withREDretainedin `d-quality-validator-fix-run/`.
+
+Freshcanonical `npm run check`:32files/585tests/typecheck/ViteproductionbuildPASS,10:27:05–10:27:48Asia/Taipei;before/aftersource/config/package hashesunchanged. Raw `d-remaining-full-check-run/runs/2026-10-13T02-27-05.314Z-c38536cf-de82-4601-8b75-6f99cb45f9d0/`. IndependentMedium Standards/SpecPASSWITHFINDINGS `d-remaining-content-review.md`. Originalmaterial-use/type/fixture errors,validatorfalsecounts,QApostprocessingerrors,withdrawnMinefinding andemptyreviewpublication retained. This supersedesearlierblockeddispositionsbelow; neverclaims lostoriginalbytesrecovered.
+
 ## Disposition
 
 **D acceptance: BLOCKED on one P2 evidence gap; no E release.** The implementation and runtime checks pass with findings, but the ticket explicitly requires the original failure, source SHA/fingerprint, and report to be retained. The first authoring failure's report/diagnostics and failing pack SHA were archived; its pack bytes and authored-module SHA/fingerprint were not. Those historical bytes cannot be recreated or substituted with a later successful source version. On 2026-10-12, the Owner directed Root to maintain the block rather than waive this condition; Phase 7-E remains unreleased.

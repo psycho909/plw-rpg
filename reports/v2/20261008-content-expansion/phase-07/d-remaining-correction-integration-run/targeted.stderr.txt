@@ -1,0 +1,36 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > 'frontier_goblin_wire_knife_recipe' crafts from actual selected loot and survives equip/save reload
+Error: 存檔資料不完整。原始存檔已保留，請確認後重建世界。
+ ❯ deserialize src/services/saveService.ts:520:11
+    518|   }
+    519|   if (!validBase(stateData, sourceVersion) || !validLife(stateData.lif…
+    520|     throw new Error('存檔資料不完整。原始存檔已保留，請確認後重建世界。')
+       |           ^
+    521|   }
+    522|   const state = stateData as unknown as GameState
+ ❯ craftAndReloadFromSourcedLoot src/engine/remainingFamilies.integration.test.ts:188:18
+ ❯ src/engine/remainingFamilies.integration.test.ts:250:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > keeps the Fog Bellkeeper available by the approved town OR threat-three night routes
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/engine/remainingFamilies.integration.test.ts:295:132
+    293|     state.threat.threatLevel = 2
+    294|     state.settlement.stage = 'hamlet'
+    295|     expect(contentEncounterOptions(state, 'fog_undead').find(option =>…
+       |                                                                                                                                    ^
+    296|     state.settlement.stage = 'town'
+    297|     expect(contentEncounterOptions(state, 'fog_undead').find(option =>…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

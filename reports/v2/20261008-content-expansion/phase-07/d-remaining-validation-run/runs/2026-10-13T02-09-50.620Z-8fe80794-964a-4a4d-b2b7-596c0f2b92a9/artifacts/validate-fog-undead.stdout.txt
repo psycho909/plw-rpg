@@ -1,0 +1,82 @@
+# Phase 7 Content Batch Validation
+
+- Supplied pack: reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/runs/2026-10-13T02-09-50.620Z-8fe80794-964a-4a4d-b2b7-596c0f2b92a9/packs/fog-undead.json
+- Captured pack SHA-256: e84c214672539a20ba5c6d5f2bf221402ba7baefd9d914e20f7b5c0dda3459ed
+- Run evidence: reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/runs/2026-10-13T02-09-50.620Z-8fe80794-964a-4a4d-b2b7-596c0f2b92a9/.qa-runs/2026-10-13T02-10-04.392Z-30ba2994-d87e-4d7d-806d-fdbf63fc70c9
+- Current run HEAD: 75140d1aa0b40bc00e246cec8253daab524720ad
+- Current run branch: v2x/reward-core
+- Current captured-source fingerprint: d4d119ca0a9c0ec7fc67de126e7752e213044beed5b6ab66e16a23e27fd2c602
+- Historical Phase 7-B contract anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1
+- Content validation status: PASS
+- Overall validator + child-check outcome: FAIL
+- targetedTests: PASS (exit 0)
+- typecheck: FAIL (exit 2)
+- Natural spawn exposure: not-measured
+- Crop goods evidence: declared-food-binding-only-runtime-integration-unverified
+- Save compatibility evidence: stable-id-addition-only-runtime-migration-unverified
+- Counts cover unique qualifying IDs in this supplied authoring batch only.
+
+## Counts
+
+- Qualifying new monsters: 8
+- Authoring-qualified candidate new item IDs: 9
+- Authoring-qualified usable new materials: 7
+- Exact baseline monster IDs: 5; excluded legacy monster IDs: 4
+- Exact baseline boss variant IDs: 3
+- Exact baseline item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0
+
+## Reachability
+
+- fog_undead: controlled-witness (forest, level 4, threat 2, hamlet, 春, hour 18, safety 0; already-accessible)
+- fog_undead_bonewalker: controlled-witness (forest, level 4, threat 2, hamlet, 春, hour 20, safety 0; already-accessible)
+- fog_undead_lantern_wisp: controlled-witness (unknown, level 5, threat 2, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+- fog_undead_gravehound: controlled-witness (forest, level 5, threat 2, hamlet, 秋, hour 20, safety 0; already-accessible)
+- fog_undead_crypt_guard: controlled-witness (unknown, level 6, threat 2, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+- fog_undead_mourner: controlled-witness (forest, level 5, threat 2, hamlet, 冬, hour 20, safety 0; already-accessible)
+- fog_undead_bellkeeper: controlled-witness (unknown, level 6, threat 2, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+- fog_undead_wight: controlled-witness (forest, level 7, threat 3, hamlet, 春, hour 20, safety 0; already-accessible)
+- fog_undead_blackguard: controlled-witness (unknown, level 7, threat 3, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+
+## Diagnostics
+
+- No validation errors.
+
+## Child checks
+
+### targetedTests
+
+Exit: 0
+
+stdout:
+```text
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  02:10:05
+   Duration  259ms (transform 86ms, setup 0ms, import 103ms, tests 27ms, environment 0ms)
+```
+
+stderr:
+```text
+
+```
+
+### typecheck
+
+Exit: 2
+
+stdout:
+```text
+src/engine/remainingFamilies.integration.test.ts(209,5): error TS2322: Type 'string[]' is not assignable to type 'BuildingId[]'.
+  Type 'string' is not assignable to type 'BuildingId'.
+```
+
+stderr:
+```text
+
+```
+
+Controlled witnesses prove bounded predicate satisfiability only. This report does not estimate natural encounter rates.

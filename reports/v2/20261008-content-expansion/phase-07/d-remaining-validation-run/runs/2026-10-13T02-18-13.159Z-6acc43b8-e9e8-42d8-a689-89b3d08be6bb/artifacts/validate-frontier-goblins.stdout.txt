@@ -1,0 +1,82 @@
+# Phase 7 Content Batch Validation
+
+- Supplied pack: reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/runs/2026-10-13T02-18-13.159Z-6acc43b8-e9e8-42d8-a689-89b3d08be6bb/packs/frontier-goblins.json
+- Captured pack SHA-256: 8e6ba738f13c7427962108c287a0b9e606d05dc78bd1b4965d74d4c3dbcc2fed
+- Run evidence: reports/v2/20261008-content-expansion/phase-07/d-remaining-validation-run/runs/2026-10-13T02-18-13.159Z-6acc43b8-e9e8-42d8-a689-89b3d08be6bb/.qa-runs/2026-10-13T02-18-21.211Z-9e6f467f-aa89-4746-be8e-a40ac64021d3
+- Current run HEAD: 75140d1aa0b40bc00e246cec8253daab524720ad
+- Current run branch: v2x/reward-core
+- Current captured-source fingerprint: 3562afdf698a79c17d8b1fa0486536d74b9fcb6cdd5722b80f47727944c20057
+- Historical Phase 7-B contract anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1
+- Content validation status: PASS
+- Overall validator + child-check outcome: PASS
+- targetedTests: PASS (exit 0)
+- typecheck: PASS (exit 0)
+- Natural spawn exposure: not-measured
+- Crop goods evidence: declared-food-binding-only-runtime-integration-unverified
+- Save compatibility evidence: stable-id-addition-only-runtime-migration-unverified
+- Counts cover unique qualifying IDs in this supplied authoring batch only.
+
+## Counts
+
+- Qualifying new monsters: 8
+- Authoring-qualified candidate new item IDs: 9
+- Authoring-qualified usable new materials: 5
+- Exact baseline monster IDs: 5; excluded legacy monster IDs: 4
+- Exact baseline boss variant IDs: 3
+- Exact baseline item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0
+
+## Reachability
+
+- frontier_goblins: controlled-witness (forest, level 3, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_scout: controlled-witness (forest, level 3, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_slinger: controlled-witness (forest, level 4, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- frontier_goblin_tinker: controlled-witness (mine, level 4, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_lookout: controlled-witness (forest, level 4, threat 2, hamlet, 春, hour 15, safety 0; already-accessible)
+- frontier_goblin_hauler: controlled-witness (mine, level 5, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_trapper: controlled-witness (forest, level 5, threat 2, hamlet, 春, hour 17, safety 0; already-accessible)
+- frontier_goblin_breaker: controlled-witness (mine, level 6, threat 3, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_duelist: controlled-witness (forest, level 6, threat 3, hamlet, 春, hour 0, safety 0; already-accessible)
+
+## Diagnostics
+
+- WARNING duplicate-like-material [frontier_goblin_ironbits, frontier_goblin_slingcord]: Material definitions have the same effective economy and generation influence.
+- No validation errors.
+
+## Child checks
+
+### targetedTests
+
+Exit: 0
+
+stdout:
+```text
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  02:18:21
+   Duration  243ms (transform 92ms, setup 0ms, import 110ms, tests 26ms, environment 0ms)
+```
+
+stderr:
+```text
+
+```
+
+### typecheck
+
+Exit: 0
+
+stdout:
+```text
+
+```
+
+stderr:
+```text
+
+```
+
+Controlled witnesses prove bounded predicate satisfiability only. This report does not estimate natural encounter rates.

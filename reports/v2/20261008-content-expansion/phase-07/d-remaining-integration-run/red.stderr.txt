@@ -1,0 +1,18 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime registration > 'wild_beasts' registers its approved normal and Elite roster
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime registration > 'frontier_goblins' registers its approved normal and Elite roster
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime registration > 'fog_undead' registers its approved normal and Elite roster
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime registration > 'mine_constructs' registers its approved normal and Elite roster
+AssertionError: expected undefined to be defined
+ ❯ src/engine/remainingFamilies.integration.test.ts:13:34
+     11| describe('remaining D family runtime registration', () => {
+     12|   it.each(remainingFamilies)('$id registers its approved normal and El…
+     13|     expect(CONTENT_FAMILIES[id]).toBeDefined()
+       |                                  ^
+     14|     for (const monsterId of monsters) expect(CONTENT_MONSTERS[monsterI…
+     15|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+

@@ -2,6 +2,10 @@
 
 Status: technical remediation complete; proposed revised acceptance awaits Owner confirmation. D remains BLOCKED and E remains unreleased. Authority: `tickets/20261008-v2x-07d-monster-expansion.md`; Owner's current request is 「把D的問題解決」, following the earlier explicit instruction to maintain the historical-evidence block without waiver.
 
+## Current Owner disposition — 2026-10-13
+
+After Root presented the completed exact compensating-evidence proposal, Owner instructed 「繼續把Phase7完成」. Root adopts this as authorization to apply the proposed limited exception and proceed. Cave Insects slice is accepted **PASS WITH FINDINGS**; the original missing bytes/fingerprint remain a permanent P2 finding, never recovered or replaced as history. The original proposal and pending-state discussion below are preserved as historical decision context. Whole D continues for the four remaining planned normal/Elite families before E release; this decision does not claim whole Phase7 acceptance or change the 50/100 minimums.
+
 ## Problem and permanent historical finding
 
 The original failed validator report is retained in the top-level `playlog.jsonl`, SHA-256 `5b0062a838404bd4bd59229f795f1fbd60474ac5730345f34ff7d2588dd47d62`. It records the failing input checksum `5a03ea1f19fe78b1b7bd7cc8b96d189f95d36698bc407f9c929d2f7ca84a663d` and `orphan-material` / `affix-ineligible` diagnostics. Its original input bytes and failed authored-source fingerprint were not retained. Bounded searches and one explicitly derived candidate did not recover them. No later run can establish those lost historical bytes.

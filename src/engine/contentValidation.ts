@@ -403,7 +403,7 @@ export function validateContentPack(input: unknown, baseline: ContentBaselineIds
     return duplicates
   }
   const duplicateEquipmentIds = warnDuplicates('equipment', row => equipmentSemantic(String(row.id), equipmentMap, affixMap), 'duplicate-like-equipment', 'Equipment definitions have the same effective slot, stats, and affix eligibility.')
-  const duplicateMaterialIds = warnDuplicates('materials', row => ({ sell: row.sell, bias: Object.entries(isRecord(row.bias) ? row.bias : {}).map(([id, value]) => ({ effect: affixMap.get(id)?.stat, tiers: affixMap.get(id)?.tiers, value })).sort((a,b) => stable(a).localeCompare(stable(b))), specialBonus: row.specialBonus }), 'duplicate-like-material', 'Material definitions have the same effective economy and generation influence.')
+  const duplicateMaterialIds = warnDuplicates('materials', row => ({ sell: row.sell, bias: Object.entries(isRecord(row.bias) ? row.bias : {}).map(([id, value]) => ({ effect: affixSemantic(id, affixMap), value })).sort((a,b) => stable(a).localeCompare(stable(b))), specialBonus: row.specialBonus }), 'duplicate-like-material', 'Material definitions have the same effective economy and generation influence.')
   warnDuplicates('recipes', row => ({ category: row.category, inputs: asArray(row.inputs).map(i => isRecord(i) ? { source: i.source, amount: i.amount, item: i.source === 'material' ? materialSemantic(String(i.materialId), materialMap, cropGoodMap) : equipmentSemantic(String(i.itemId), equipmentMap, affixMap) } : null).sort((a,b) => stable(a).localeCompare(stable(b))), output: equipmentSemantic(String(row.outputBase), equipmentMap, affixMap), params: [row.goldCost,row.staminaCost,row.durationMinutes,row.outputLevel,row.requiredSmithing,row.practiceCap,row.station,row.opensAtHour,row.closesAtHour] }), 'duplicate-like-recipe', 'Recipes have the same effective inputs, output, and crafting conditions.')
   warnDuplicates('affixes', row => ({ stat: row.stat, slots: [...asArray(row.slots)].sort(), tiers: [...asArray(row.tiers)].sort() }), 'duplicate-like-affix', 'Affixes have identical effective stat eligibility and tier values.')
   warnDuplicates('crops', row => ({ regions: [...asArray(row.regions)].sort(), seasons: [...asArray(row.seasons)].sort(), growthMinutes: row.growthMinutes, harvestAmount: row.harvestAmount, good: materialSemantic(String(row.harvestGoodId), materialMap, cropGoodMap) }), 'duplicate-like-crop', 'Crop definitions have the same effective region, season, growth, yield, and harvest good.')
@@ -612,7 +612,13 @@ function equipmentSemantic(id: string, equipment: Map<string, UnknownRecord>, af
   const row = equipment.get(id)
   if (!row) return { unresolved: true }
   return { slot: row.slot, attack: row.attack, defense: row.defense, sell: row.sell, penetration: row.penetration,
-    affixes: asArray(row.affixIds).map(a => { const x = affixes.get(String(a)); return x ? { stat: x.stat, slots: x.slots, tiers: x.tiers } : null }).sort((a,b) => stable(a).localeCompare(stable(b))) }
+    affixes: asArray(row.affixIds).map(a => affixSemantic(String(a), affixes)).sort((a,b) => stable(a).localeCompare(stable(b))) }
+}
+function affixSemantic(id: string, affixes: Map<string, UnknownRecord>): unknown {
+  const affix = affixes.get(id)
+  // Baseline effects are not part of the validator input. Keep their canonical ID so
+  // distinct effects do not collapse; authored metadata still compares by effect.
+  return affix ? { stat: affix.stat, slots: affix.slots, tiers: affix.tiers } : { id }
 }
 function mechanicSemantic(value: unknown): unknown {
   if (!isRecord(value)) return value

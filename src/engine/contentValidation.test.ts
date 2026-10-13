@@ -272,4 +272,56 @@ describe('validateContentPack', () => {
       expect.objectContaining({ code: 'affix-ineligible', id: 'reed-spear', reference: 'sturdy' }),
     ]))
   })
+
+  it('keeps baseline affix identities distinct when effect metadata is unavailable', () => {
+    const baselineEffects: ContentPack = {
+      ...pack,
+      lootTables: [{ ...pack.lootTables[0]!, guaranteedMaterialIds: ['mire-claw', 'marsh-scale'],
+        weightedEquipment: [{ equipmentId: 'chitin-spear', weight: 1 }, { equipmentId: 'tendon-spear', weight: 1 }] }],
+      equipment: [
+        { ...pack.equipment[0]!, id: 'chitin-spear', affixIds: ['piercing', 'striking'] },
+        { ...pack.equipment[0]!, id: 'tendon-spear', affixIds: ['piercing', 'bleeding'] },
+      ],
+      materials: [
+        { ...pack.materials[0]!, id: 'mire-claw', bias: { piercing: 1, striking: 1 } },
+        { ...pack.materials[0]!, id: 'marsh-scale', bias: { piercing: 1, bleeding: 1 } },
+      ],
+      recipes: [
+        { ...pack.recipes[0]!, id: 'chitin-spear-recipe', inputs: [{ source: 'material', materialId: 'mire-claw', amount: 1 }], outputBase: 'chitin-spear', allowedBiasMaterials: ['mire-claw'] },
+        { ...pack.recipes[0]!, id: 'tendon-spear-recipe', inputs: [{ source: 'material', materialId: 'marsh-scale', amount: 1 }], outputBase: 'tendon-spear', allowedBiasMaterials: ['marsh-scale'] },
+      ],
+      affixes: [],
+    }
+    const report = validateContentPack(baselineEffects, {
+      ...baseline,
+      affixIds: ['piercing', 'striking', 'bleeding'],
+      baselineAffixSlots: ['piercing', 'striking', 'bleeding'].map(id => ({ id, slots: ['weapon'] as const })),
+    })
+
+    expect(report.errors).toEqual([])
+    expect(report.warnings).not.toContainEqual(expect.objectContaining({ code: 'duplicate-like-equipment' }))
+    expect(report.warnings).not.toContainEqual(expect.objectContaining({ code: 'duplicate-like-material' }))
+    expect(report.qualityCounts.usableNewItems).toBe(4)
+    expect(report.qualityCounts.usableNewMaterials).toBe(2)
+  })
+
+  it('still detects genuinely identical authored affix effects as duplicate equipment', () => {
+    const identicalEffects: ContentPack = {
+      ...pack,
+      lootTables: [{ ...pack.lootTables[0]!, weightedEquipment: [
+        { equipmentId: 'keen-spear-a', weight: 1 }, { equipmentId: 'keen-spear-b', weight: 1 },
+      ] }],
+      equipment: [
+        { ...pack.equipment[0]!, id: 'keen-spear-a', affixIds: ['keen'] },
+        { ...pack.equipment[0]!, id: 'keen-spear-b', affixIds: ['keen-copy'] },
+      ],
+      affixes: [pack.affixes[0]!, { ...pack.affixes[0]!, id: 'keen-copy' }],
+      recipes: [],
+    }
+    const report = validateContentPack(identicalEffects, baseline)
+    expect(report.warnings).toContainEqual(expect.objectContaining({
+      code: 'duplicate-like-equipment', ids: ['keen-spear-a', 'keen-spear-b'],
+    }))
+    expect(report.qualityCounts.usableNewItems).toBe(0)
+  })
 })

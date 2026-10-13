@@ -1,0 +1,28 @@
+{
+  "source": "Root's fresh-run release message",
+  "harnessConfiguredTargetAtRunTime": {
+    "monsters": 51,
+    "materials": 43,
+    "equipment": 17,
+    "recipes": 13
+  },
+  "harnessRecordedTargetMatched": false,
+  "rootCorrectedTarget": {
+    "monsters": 51,
+    "materials": 43,
+    "equipment": 20,
+    "recipes": 16,
+    "crops": 0,
+    "cropGoods": 0
+  },
+  "measuredCombinedCounts": {
+    "monsters": 51,
+    "materials": 43,
+    "equipment": 20,
+    "recipes": 16,
+    "crops": 0,
+    "cropGoods": 0
+  },
+  "rootCorrectedTargetMatched": true,
+  "note": "The run's original final-integrity.json is preserved verbatim. Its false target comparison reflects the stale pre-run 17/13 harness constants, not a measured-pack mismatch. The harness constants were updated after the run; no validator scenario was rerun."
+}

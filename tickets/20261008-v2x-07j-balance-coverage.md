@@ -27,6 +27,10 @@ Parent [20261008-v2x-07-content-expansion](20261008-v2x-07-content-expansion.md)
 
 Blocked by: [Phase7-I](20261008-v2x-07i-discovery-ux.md)；尚未release。
 
+## Root QA preparation release — 2026-10-13
+
+Owner requests entire Phase7 completion. Root permits independent QA harness preparation now, limited to new files in the existing Phase7 report directory; no core/product/content changes and no formal large-sample run before I's final source is frozen. Reuse existing Phase4 Monte Carlo/combat and Phase6 continuous long-world instrumentation, adapting actual public APIs and current dynamic registry. Medium designs the runner; Low executes once released. Quantities are actual measured definitions/awards, not variants/instances; controlled samples remain separate from natural world/agent observations. Required source maps, raw failure retention and independently reviewable result metadata apply.
+
 ## Evidence
 
 reports/v2/20261008-content-expansion/phase-07/；待驗證。
