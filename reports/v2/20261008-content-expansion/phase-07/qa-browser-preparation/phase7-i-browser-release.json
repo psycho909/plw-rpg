@@ -1,0 +1,17 @@
+{
+  "schema": "phase7-browser-release-v1",
+  "status": "RELEASED",
+  "scope": "Phase7-I short Chromium UX regression only; not Phase7-K final release",
+  "releasedAt": "2026-10-13T09:18:39.621093+00:00",
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "6a320cfcefc529bb06ad7dd815396fdde21097b1f8aab842ac6ec2fe63345ba3",
+  "buildStatusPath": "reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/phase7-build-status-i.json",
+  "buildStatusSha256": "8f953eb9cc2921721233379a7d684960dc90bfe0d8bb5133970b4e949974f985",
+  "distFingerprint": "48acf36483c40a6bb47bf3501e1de891360571f18b11508c3f3ce3a6d11c1f55",
+  "conditions": [
+    "I source fingerprint matched the final full-check before/after source snapshot",
+    "I independent Standards and Spec reviews passed",
+    "Do not treat this short regression as Phase7-K stress/content-agent acceptance",
+    "Human validation remains DEFERRED / NOT APPLICABLE AT THIS STAGE"
+  ]
+}

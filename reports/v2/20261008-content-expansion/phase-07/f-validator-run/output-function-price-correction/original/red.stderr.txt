@@ -1,0 +1,37 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentValidation.test.ts > validateContentPack > does not distinguish material consumers by output equipment sale price
+AssertionError: expected [ { …(3) } ] to deep equally contain ObjectContaining{…}
+
+- Expected:
+ObjectContaining {
+  "code": "duplicate-like-material",
+  "ids": [
+    "marsh-scale",
+    "mire-claw",
+  ],
+}
+
++ Received:
+[
+  {
+    "code": "duplicate-like-monster",
+    "ids": [
+      "marsh-stalker",
+      "mire-hunter",
+    ],
+    "message": "Monster definitions have the same effective combat, spawn, and loot profile after ignoring IDs and localized prose.",
+  },
+]
+
+ ❯ src/engine/contentValidation.test.ts:369:29
+    367|
+    368|     const report = validateContentPack(recipeConsumers, baseline)
+    369|     expect(report.warnings).toContainEqual(expect.objectContaining({ c…
+       |                             ^
+    370|   })
+    371|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

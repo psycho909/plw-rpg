@@ -1,0 +1,7547 @@
+{
+  "schema": "phase7-content-catalog-snapshot-v1",
+  "generatedAtUTC": "2026-10-13T11:00:16.079Z",
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "6a320cfcefc529bb06ad7dd815396fdde21097b1f8aab842ac6ec2fe63345ba3",
+  "sourceFiles": {
+    "src/App.vue": "f3ed979e98946fd747bf7f0508a03a31b50165ff09b4202e5b48753a977fdde8",
+    "src/components/AdventureWindow.vue": "f76abfa1f809d3fd9b341d842c192e3ab02a50d4d7fdf67ad8dd1b4dae2e32e3",
+    "src/components/CharacterSheet.vue": "0905f39da0b3ba52ed2c8c4c852ce08bc96a5e80d925cb64bb1f3dcb5b0d0dbd",
+    "src/components/IdentityWindow.vue": "982afc32143581311c9a014236e3e2a75e1a40b8f04f8fe97796c542966f7f06",
+    "src/components/InventoryWindow.vue": "f6d9f91cbbe2b3617406be32e7d1ebf210956d6cf54c4f8796ed413d22012f5f",
+    "src/components/LifeNewsWindow.vue": "f59e6aef06e4f610b702f09ac45ed64295a4fbeece8bfe9a424e0b2d7975438b",
+    "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+    "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+    "src/components/PixelWindow.vue": "15397996c0984586bd95e6383c647fba88dbb77ec0a9f01e78dc723821e61da4",
+    "src/components/PlaceWindow.vue": "f7894a87ace8c4a7f3022a6c2a7febb19d43c309500a30301abec95538c6553d",
+    "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+    "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+    "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+    "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+    "src/data/config.ts": "ea56d790207bf13575ee19cbbdf46fa29ad8a03dd374a4613863af33c44e707a",
+    "src/data/content/caveInsects.ts": "dcc14c74cfd9ce50803af7645fa0c52beb22288b15d29925cbf801ba1bde3bf3",
+    "src/data/content/farmCrops.ts": "d49418c074d0bb5757db26b40c1342e169e29975caf717095fec668246af30a8",
+    "src/data/content/fogUndead.ts": "ef0d2c7b071193acb26803128c9041874d9f763a4e929a7030c1cd0b68653e5e",
+    "src/data/content/frontierGoblins.ts": "61b109a69611743f6b4d3983fb252a40dc8a8d1758a4154af034fa2d91c9bb13",
+    "src/data/content/mineConstructs.ts": "ac24251494d94acc8a6acdb4d7349372ba9c212c17424d8a58864bb63ee32c00",
+    "src/data/content/slime.ts": "334c031aa75c09e7612dd426d9d58284a1093efb5b773fcf5c8011640739edd2",
+    "src/data/content/wildBeasts.ts": "bbae4d9882708fa77c200f6810db0c02b943d027f186ff5d89af7f62e5de785b",
+    "src/data/contentRegistry.ts": "65593e63bffdfd3c0c20cb3ca780af921ee01e61b550aa4542c69c6e433f9585",
+    "src/data/crafting.ts": "e882f58803229c01b4853e44710f5cd1f7b2a56a2c4b058bbebe2fe2141aaa73",
+    "src/data/identity.ts": "0acc09bbd1f9d9c4e057b2bdca01fa202730e868325cb873286c5c31a809dae0",
+    "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+    "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+    "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+    "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+    "src/data/rewards.ts": "7169a34cfd420ec4a181fa54c03560c5301f7fac666a049e5773d0439d897806",
+    "src/domain/content.ts": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+    "src/domain/crisis.ts": "03ef61f00c08ea84cdd6126d64009e3032fb38a5662db8a736519045f00ad14c",
+    "src/domain/life.ts": "db2eff0c1eb6d3ae310f39d8df5a6bf40b125193741a25b9bbe652c4640de72a",
+    "src/domain/reward.ts": "237c1e6eeb42d4af77d78c24ef7c3b699816459a9b71357acfd57c31810a9aac",
+    "src/domain/types.ts": "7924e0383ca4f1e5623e95aca5ceb28b5022c03af007dca0d2cb2c1ec0050450",
+    "src/engine/actions.test.ts": "813166423bd0b55fd0172eedb1bcf766028a1045588807473c2205f6cec47fa5",
+    "src/engine/actions.ts": "0e998159696dfd89f450b2041cea61792bd10246a05354b6844a4a2d0a4505ff",
+    "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+    "src/engine/caveInsects.integration.test.ts": "db9ba41d196b98f66dab47cd0398122e9e139e02d586a15cd6af8dcb088205fe",
+    "src/engine/civilDefense.test.ts": "c05afe2ab42f334f3284f3b7830ea073db96707995b2336e2b30855d0c84e125",
+    "src/engine/civilDefense.ts": "9a6988658e62df485f85f69d0c1f0a0626078eeec43f0934ad2298e6cdcfe77d",
+    "src/engine/combatStats.test.ts": "896b7517b4a2bcb4671b4d17188f0823edfe290e3826fc21f3bc94fe0f062bea",
+    "src/engine/combatStats.ts": "d7235e4c59edc77aec368f940e8825712672cc3fcd49e83c7c901c5f049db34f",
+    "src/engine/contentBosses.integration.test.ts": "af93da05f87f1684a049c00850e819d7e1e09a93895f994c58f135953aa614c9",
+    "src/engine/contentFamilies.test.ts": "cb019c6119e9776f9955b5fafd276effd931075085285334285417b8bc8fff4c",
+    "src/engine/contentFamilies.ts": "9cc6c32ef154c6562a09a8f328fe3003465ab8265672538445b1d2bf2484716c",
+    "src/engine/contentItems.integration.test.ts": "0be844b6bb8f7dd6c1d762463d48982b0d4402d396dcf10b56ba5cc165f77f64",
+    "src/engine/contentReachability.integration.test.ts": "87ea32c0ab13cd7a5bf5a313ccb6662c5e707764ad05241c52e28949bd07fe54",
+    "src/engine/contentValidation.test.ts": "cf14cadc9459f0e35d0469663160981432986ebeb0c55c5a8e80bbbfa96ea06a",
+    "src/engine/contentValidation.ts": "0b716843cf23664c6bfc057043655b660979ab38ba8be3b3f3fdf7c433ed956f",
+    "src/engine/crafting.test.ts": "b83e272a0a578b192040e26876057cd01bf8901fd687adea9e167a2471d60467",
+    "src/engine/crafting.ts": "04ed1724b723b78221ee31811b46171bb9e8d2fbb029a777dda5a12449378a88",
+    "src/engine/crisisAdventure.test.ts": "729e442247d398292bb9bd0a2a6c4f3a2fb3488248859f362a3b700383454624",
+    "src/engine/crisisContributions.test.ts": "2f88fab54f5ceca44570195901077f3f41a421b4c9ff3657b90ddcfe31ca02ce",
+    "src/engine/crisisContributions.ts": "9354b3ddb288d2cfc5cad639b16bdb1b68c5eaca782101040ee3c9bbe49e1cd6",
+    "src/engine/crisisResolution.test.ts": "8d289cce7b38e55494b3198c3da986a36d14d7c776f32aac776179c5a8685bb8",
+    "src/engine/crops.integration.test.ts": "36e6e8b912b9d3a9d45bc7d6c8668008d842cd4e8de948d1f34ccadc11815674",
+    "src/engine/crops.test.ts": "f2d6b2a939803a4e20ad49a30d5df41b1e6eb8cee803dba971bc11dc50f69690",
+    "src/engine/crops.ts": "308a0488ab376e5b3e6b37cb7ae9a25a6d1a79677d8e01cec547692c57a84e8e",
+    "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+    "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+    "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+    "src/engine/gearStats.ts": "66fa786c0c3e81cc317033181a0f11d9ef987c15f943e0960ec20a668eff0702",
+    "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+    "src/engine/identity.ts": "2d7596a712c16940a590bdf47edd288fc965f429304889e0be3b09969d61119e",
+    "src/engine/itemGeneration.test.ts": "377f8471b4bc69169d01d969a3c0d443b5ddbe1624f7436851320c0a9b45287f",
+    "src/engine/itemGeneration.ts": "d8aa3c510920f44edaa2a6e6b45ab2b013daa56a9e6bfc0cb16c72d23e4bc35b",
+    "src/engine/lifeIntegration.test.ts": "29a8cfbe6e4bc7ee1ffd2ba4dc0404e4ce9698495218c7850ed4fec3a9399b16",
+    "src/engine/lifeState.ts": "bd7697bcb564061cd00ff7fc14373625c30d2a7de06473b8f97bffb4c61b3c58",
+    "src/engine/livingEvents.test.ts": "8570cc1d1a00bd8970237cb469b71ce1b7b21146dd14eb28e2fe0d921677a217",
+    "src/engine/livingEvents.ts": "aba3813377c4940ca192a6275452288c1d10b501c6aad0b693a4205c22900bec",
+    "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+    "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+    "src/engine/npcLife.ts": "7f2fe08b29c5ee145a06c3623b19b663fcd7251bdfa5c3a7bfe19bc393bf5c28",
+    "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+    "src/engine/ownership.ts": "50b5bef7df35778c95ddbf0dd0951a22f46517842a224bee1552cd2dd18ff6db",
+    "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+    "src/engine/regionalCrisis.test.ts": "2eef285818c781d60dda7120bf6f3cd89c65084c1ac4345674010976830912f4",
+    "src/engine/regionalCrisis.ts": "3fe8139a9677ae925c1f8ee63c5763b12fd03036d2cf651893a09874e3783bf3",
+    "src/engine/regionalCrisisRecognition.ts": "b6c33d892cbb421b89d84620219bad60c7fe15fa883852bf6dbd0a44658004c0",
+    "src/engine/remainingFamilies.integration.test.ts": "b65c8f68aad55dff49a75010db3eaea3cdd6760fd49b394a7b32da13068b19d1",
+    "src/engine/rewardActions.test.ts": "133b21d4f52de1c4a46e2c4600b214fc56d14f80de45ade78e81b1eebad667f1",
+    "src/engine/rewardActions.ts": "b1cee65e318adfd0c2632b48a973fbeec9682cb982ace71b9518fe64a498cd5c",
+    "src/engine/rewardState.ts": "58c420a3372a3e8292c07b99f8551d8672df8d024f36a752001d74a26e27e59d",
+    "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+    "src/engine/simulation.ts": "149c2bc120fef9984be6afa6f72db293f16877085211f630d004e49f8db0f3db",
+    "src/engine/wolfFamily.test.ts": "9d1aa4f13c4582c317dd4e91b6a3cf32db1ea33e8adeef4a54097ecf4355716f",
+    "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+    "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+    "src/presentation/craftingProjection.test.ts": "9cc38a0d0b078963be417b6e3c431d0ab063f86afad1fa2e178d956d3e09895a",
+    "src/presentation/craftingProjection.ts": "3fb3afc5704b3e7fc87c365a567729d0655056d0f2594586044bf3e4942cdef8",
+    "src/presentation/crisisProjection.test.ts": "5e0988814fda47f84e244671d10ef15ea3ea94594df2e813682dbdc1b959fa6c",
+    "src/presentation/crisisProjection.ts": "0b221c5ff24b5f8b2cabd3fd45dc212194fe74c0932925f6c59f3ffc9f076c3b",
+    "src/presentation/icons.ts": "765708954fb2796d5a31715a4f66e9036672417b61aad5e80ccdddaf2231a135",
+    "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+    "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+    "src/presentation/rewardProjection.test.ts": "6139dfdad6d5361cb46d4c9cafadd106728dd89a37a962be75046ed5b822bc17",
+    "src/presentation/rewardProjection.ts": "1f50997f2ead918e5e113a8f2035988e2db7b94cfac517f9980ff31ecf75adec",
+    "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+    "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+    "src/presentation/worldUI.test.ts": "90a7d64071c7d4b9c800976a6ade3acdd630b66d8f7421158eae1f81842259ad",
+    "src/presentation/worldUI.ts": "af10ea89cc878a28bd90cdbb739b178069fc62de27dc16a668498ec00162d004",
+    "src/services/playJournal.test.ts": "a974a3238d87282afb2e2321705c406f5264184468bddc801646469eade33f47",
+    "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+    "src/services/rewardSave.test.ts": "9d2841e99d9d9f147aa23d35669b52d831d103915f98fe494df2ddb484f9ec52",
+    "src/services/rewardValidation.ts": "236af259c210d02bc843aa7e29fba06b5bcb5c220793d7668b224e5860337d30",
+    "src/services/saveService.test.ts": "386b2c6a37291f91f05e66320c75f9ffcc270ac4c55fe6c263c6fb713f8b76f6",
+    "src/services/saveService.ts": "8778befac0ea57c90d2e5b0ac6a05f18cd95bcb40fbc4a4ccaaa3049935348cb",
+    "src/services/saveWriter.ts": "0703016eb96d12bb843f0b04b6e21b6568bf7f9b44defc59e340896c675ff43b",
+    "src/stores/gameStore.test.ts": "6c069d44d18f625109885948e546ccdd20a9421ce5d449d6e33910253db7300f",
+    "src/stores/gameStore.ts": "b5d18a378cf4b05d05a37a2825e7eff045fd1ef68ac0714076b8f7c049bf5ac2",
+    "src/style.scss": "446edfecb5c48af2bfc21fb3d8da0ec6b9eb8e54b883532e06a498defef02dbe"
+  },
+  "counts": {
+    "families": 6,
+    "monsters": 66,
+    "monsterRanks": {
+      "boss": 6,
+      "elite": 12,
+      "miniBoss": 12,
+      "normal": 36
+    },
+    "equipmentBases": 54,
+    "materials": 62,
+    "recipes": 28,
+    "contentRecipes": 24,
+    "crops": 11,
+    "cropGoods": 11,
+    "affixes": 7
+  },
+  "families": {
+    "slime": {
+      "id": "slime",
+      "name": {
+        "zh-TW": "濕地黏怪"
+      },
+      "description": {
+        "zh-TW": "沿著農田邊緣與北林水窪聚集，黏液會改變素材鍛造的方向。"
+      },
+      "regions": [
+        "farmland",
+        "forest"
+      ],
+      "spawnProfiles": [
+        {
+          "region": "farmland",
+          "minPlayerLevel": 1,
+          "maxPlayerLevel": 6,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 3
+        },
+        {
+          "region": "forest",
+          "minPlayerLevel": 2,
+          "maxPlayerLevel": 10,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 3
+        }
+      ],
+      "monsterIds": [
+        "slime_slick",
+        "slime_amber",
+        "slime_bog",
+        "slime_moss",
+        "slime_glass",
+        "slime_spring"
+      ],
+      "eliteIds": [
+        "slime_bulwark",
+        "slime_cinder"
+      ],
+      "miniBossIds": [
+        "slime_matriarch",
+        "slime_tidecaller"
+      ],
+      "bossIds": [
+        "slime_heart"
+      ],
+      "lootTableId": "slime_loot",
+      "threatChannel": "regional_ecology"
+    },
+    "cave_insects": {
+      "id": "cave_insects",
+      "name": {
+        "zh-TW": "洞穴蛛蟲"
+      },
+      "description": {
+        "zh-TW": "在礦脈與側道活動的蛛蟲，外殼、肢節與腺體各有鍛造用途。"
+      },
+      "regions": [
+        "mine"
+      ],
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 3,
+          "settlementStages": [
+            "village"
+          ]
+        },
+        {
+          "region": "mine",
+          "minPlayerLevel": 3,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        }
+      ],
+      "monsterIds": [
+        "cave_insect_digger",
+        "cave_insect_skitter",
+        "cave_insect_spitter",
+        "cave_insect_carrier",
+        "cave_insect_shellback",
+        "cave_insect_lurker"
+      ],
+      "eliteIds": [
+        "cave_insect_razor",
+        "cave_insect_warden"
+      ],
+      "miniBossIds": [
+        "cave_insect_broodguard",
+        "cave_insect_tunnelstalker"
+      ],
+      "bossIds": [
+        "cave_insect_queen"
+      ],
+      "lootTableId": "cave_insect_loot",
+      "threatChannel": "regional_ecology"
+    },
+    "wild_beasts": {
+      "id": "wild_beasts",
+      "name": {
+        "zh-TW": "林地野獸"
+      },
+      "description": {
+        "zh-TW": "野獸沿田埂與林地邊緣活動；皮革、角質與筋腱能投入不同鍛造方向。"
+      },
+      "regions": [
+        "farmland",
+        "forest"
+      ],
+      "spawnProfiles": [
+        {
+          "region": "farmland",
+          "minPlayerLevel": 1,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2
+        },
+        {
+          "region": "forest",
+          "minPlayerLevel": 2,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 3
+        },
+        {
+          "region": "forest",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 16,
+            "end": 23
+          }
+        },
+        {
+          "region": "forest",
+          "minPlayerLevel": 10,
+          "maxPlayerLevel": 18,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 16,
+            "end": 23
+          }
+        }
+      ],
+      "monsterIds": [
+        "wild_beast_brush_hare",
+        "wild_beast_stonehorn",
+        "wild_beast_redtail",
+        "wild_beast_fernback",
+        "wild_beast_marshstag",
+        "wild_beast_amberfox"
+      ],
+      "eliteIds": [
+        "wild_beast_bristleback",
+        "wild_beast_galehorn"
+      ],
+      "miniBossIds": [
+        "wild_beast_old_matriarch",
+        "wild_beast_ironhide"
+      ],
+      "bossIds": [
+        "wild_beast_apex"
+      ],
+      "lootTableId": "wild_beasts_loot",
+      "threatChannel": "regional_ecology"
+    },
+    "frontier_goblins": {
+      "id": "frontier_goblins",
+      "name": {
+        "zh-TW": "邊境哥布林"
+      },
+      "description": {
+        "zh-TW": "地方團夥沿林地邊緣與礦道入口活動，與既有哥布林及首領資料分開。"
+      },
+      "regions": [
+        "forest",
+        "mine"
+      ],
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 3,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        },
+        {
+          "region": "mine",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        },
+        {
+          "region": "forest",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3
+        },
+        {
+          "region": "forest",
+          "minPlayerLevel": 10,
+          "maxPlayerLevel": 18,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 17,
+            "end": 23
+          }
+        },
+        {
+          "region": "mine",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3
+        },
+        {
+          "region": "mine",
+          "minPlayerLevel": 10,
+          "maxPlayerLevel": 18,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 17,
+            "end": 23
+          }
+        }
+      ],
+      "monsterIds": [
+        "frontier_goblin_scout",
+        "frontier_goblin_slinger",
+        "frontier_goblin_tinker",
+        "frontier_goblin_lookout",
+        "frontier_goblin_hauler",
+        "frontier_goblin_trapper"
+      ],
+      "eliteIds": [
+        "frontier_goblin_breaker",
+        "frontier_goblin_duelist"
+      ],
+      "miniBossIds": [
+        "frontier_goblin_standardbearer",
+        "frontier_goblin_saboteur"
+      ],
+      "bossIds": [
+        "frontier_goblin_warlord"
+      ],
+      "lootTableId": "frontier_goblins_loot",
+      "threatChannel": "regional_ecology"
+    },
+    "fog_undead": {
+      "id": "fog_undead",
+      "name": {
+        "zh-TW": "霧谷亡骨"
+      },
+      "description": {
+        "zh-TW": "夜間出沒於林地與已探索霧谷的亡骨，骨料與墓石可用於鍛造。"
+      },
+      "regions": [
+        "forest",
+        "unknown"
+      ],
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 18,
+            "end": 23
+          }
+        },
+        {
+          "region": "unknown",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 18,
+            "end": 23
+          }
+        }
+      ],
+      "monsterIds": [
+        "fog_undead_bonewalker",
+        "fog_undead_lantern_wisp",
+        "fog_undead_gravehound",
+        "fog_undead_crypt_guard",
+        "fog_undead_mourner",
+        "fog_undead_bellkeeper"
+      ],
+      "eliteIds": [
+        "fog_undead_wight",
+        "fog_undead_blackguard"
+      ],
+      "miniBossIds": [
+        "fog_undead_crypt_knight",
+        "fog_undead_hollow_bell"
+      ],
+      "bossIds": [
+        "fog_undead_cryptlord"
+      ],
+      "lootTableId": "fog_undead_loot",
+      "threatChannel": "regional_ecology"
+    },
+    "mine_constructs": {
+      "id": "mine_constructs",
+      "name": {
+        "zh-TW": "礦道岩構"
+      },
+      "description": {
+        "zh-TW": "只在礦道與已探索的未知區域活動的岩石守衛，碎石與接合材料可用於鍛造。"
+      },
+      "regions": [
+        "mine",
+        "unknown"
+      ],
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 6,
+            "end": 22
+          }
+        },
+        {
+          "region": "unknown",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 6,
+            "end": 22
+          }
+        }
+      ],
+      "monsterIds": [
+        "mine_construct_shardling",
+        "mine_construct_sentinel",
+        "mine_construct_pylon",
+        "mine_construct_crawler",
+        "mine_construct_mason",
+        "mine_construct_veinwatcher"
+      ],
+      "eliteIds": [
+        "mine_construct_ram",
+        "mine_construct_warder"
+      ],
+      "miniBossIds": [
+        "mine_construct_architect",
+        "mine_construct_bastion"
+      ],
+      "bossIds": [
+        "mine_construct_heart"
+      ],
+      "lootTableId": "mine_construct_loot",
+      "threatChannel": "regional_ecology"
+    }
+  },
+  "monsters": {
+    "slime_slick": {
+      "id": "slime_slick",
+      "name": {
+        "zh-TW": "滑液黏怪"
+      },
+      "description": {
+        "zh-TW": "在農田邊吸收雨水，牠會先壓低身體再彈向目標。"
+      },
+      "familyId": "slime",
+      "rank": "normal",
+      "level": 1,
+      "stats": {
+        "hp": 20,
+        "attack": 5,
+        "defense": 0,
+        "exp": 14,
+        "gold": 4
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 3,
+          "bonusFraction": 0.2,
+          "telegraph": {
+            "zh-TW": "牠的身體向後收縮，準備彈射。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_slick",
+      "lootProfile": {
+        "dropLevel": 1,
+        "equipmentChance": 0.5,
+        "rarityWeights": {
+          "common": 75,
+          "uncommon": 22,
+          "rare": 3,
+          "epic": 0,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "farmland",
+          "minPlayerLevel": 1,
+          "maxPlayerLevel": 3,
+          "maxThreatLevel": 1,
+          "settlementStages": [
+            "hamlet",
+            "village"
+          ],
+          "hours": {
+            "start": 6,
+            "end": 19
+          }
+        }
+      ]
+    },
+    "slime_amber": {
+      "id": "slime_amber",
+      "name": {
+        "zh-TW": "琥珀黏怪"
+      },
+      "description": {
+        "zh-TW": "把硬化的琥珀膠裹在表面，常停在農田石堆旁。"
+      },
+      "familyId": "slime",
+      "rank": "normal",
+      "level": 2,
+      "stats": {
+        "hp": 29,
+        "attack": 6,
+        "defense": 2,
+        "exp": 19,
+        "gold": 5
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 4,
+          "defenseBonus": 3,
+          "telegraph": {
+            "zh-TW": "琥珀外殼亮起，牠正要硬化防禦。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_amber",
+      "lootProfile": {
+        "dropLevel": 2,
+        "equipmentChance": 0.52,
+        "rarityWeights": {
+          "common": 70,
+          "uncommon": 25,
+          "rare": 4.5,
+          "epic": 0.5,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "farmland",
+          "minPlayerLevel": 2,
+          "maxPlayerLevel": 4,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "seasons": [
+            "夏",
+            "秋"
+          ],
+          "hours": {
+            "start": 8,
+            "end": 18
+          }
+        }
+      ]
+    },
+    "slime_bog": {
+      "id": "slime_bog",
+      "name": {
+        "zh-TW": "沼泥黏怪"
+      },
+      "description": {
+        "zh-TW": "沉在林間水窪的泥層裡，攻擊前會攪起一圈深色泥水。"
+      },
+      "familyId": "slime",
+      "rank": "normal",
+      "level": 3,
+      "stats": {
+        "hp": 36,
+        "attack": 7,
+        "defense": 1,
+        "exp": 23,
+        "gold": 6
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 4,
+          "bonusFraction": 0.28,
+          "telegraph": {
+            "zh-TW": "泥水翻湧，牠正在蓄力重擊。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_bog",
+      "lootProfile": {
+        "dropLevel": 3,
+        "equipmentChance": 0.55,
+        "rarityWeights": {
+          "common": 65,
+          "uncommon": 28,
+          "rare": 6,
+          "epic": 1,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 2,
+          "maxPlayerLevel": 5,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "seasons": [
+            "春",
+            "夏"
+          ],
+          "maxSafety": 90,
+          "hours": {
+            "start": 7,
+            "end": 20
+          }
+        }
+      ]
+    },
+    "slime_moss": {
+      "id": "slime_moss",
+      "name": {
+        "zh-TW": "苔衣黏怪"
+      },
+      "description": {
+        "zh-TW": "苔蘚覆蓋牠的背部；牠蓄勢時會聚集自身力量。"
+      },
+      "familyId": "slime",
+      "rank": "normal",
+      "level": 3,
+      "stats": {
+        "hp": 34,
+        "attack": 7,
+        "defense": 2,
+        "exp": 24,
+        "gold": 6
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 4,
+          "bonusFraction": 0.2,
+          "telegraph": {
+            "zh-TW": "苔衣向外舒展，牠正在蓄勢反擊。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_moss",
+      "lootProfile": {
+        "dropLevel": 3,
+        "equipmentChance": 0.56,
+        "rarityWeights": {
+          "common": 64,
+          "uncommon": 29,
+          "rare": 6,
+          "epic": 1,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 3,
+          "maxPlayerLevel": 6,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "settlementStages": [
+            "village",
+            "town"
+          ],
+          "hours": {
+            "start": 17,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "slime_glass": {
+      "id": "slime_glass",
+      "name": {
+        "zh-TW": "晶殼黏怪"
+      },
+      "description": {
+        "zh-TW": "透明晶片沿著身體排列，蓄力時會折射出尖銳的亮光。"
+      },
+      "familyId": "slime",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 31,
+        "attack": 9,
+        "defense": 1,
+        "exp": 29,
+        "gold": 8
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.3,
+          "telegraph": {
+            "zh-TW": "晶片聚光，牠正在準備碎晶衝擊。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_glass",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.58,
+        "rarityWeights": {
+          "common": 60,
+          "uncommon": 31,
+          "rare": 7.5,
+          "epic": 1.4,
+          "legendary": 0.1
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "farmland",
+          "minPlayerLevel": 4,
+          "maxPlayerLevel": 7,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 10,
+            "end": 16
+          }
+        }
+      ]
+    },
+    "slime_spring": {
+      "id": "slime_spring",
+      "name": {
+        "zh-TW": "泉躍黏怪"
+      },
+      "description": {
+        "zh-TW": "春季泉水回暖時最活躍，會以短促跳躍逼近獵物。"
+      },
+      "familyId": "slime",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 27,
+        "attack": 10,
+        "defense": 0,
+        "exp": 30,
+        "gold": 8
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 5,
+          "bonusFraction": 0.35,
+          "telegraph": {
+            "zh-TW": "牠連跳兩次，第三次將猛然撲近。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_spring",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.6,
+        "rarityWeights": {
+          "common": 59,
+          "uncommon": 31,
+          "rare": 8,
+          "epic": 1.8,
+          "legendary": 0.2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 3,
+          "maxPlayerLevel": 6,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "seasons": [
+            "春"
+          ],
+          "hours": {
+            "start": 5,
+            "end": 12
+          }
+        }
+      ]
+    },
+    "slime_bulwark": {
+      "id": "slime_bulwark",
+      "name": {
+        "zh-TW": "壁壘黏怪"
+      },
+      "description": {
+        "zh-TW": "厚實外殼隔開牠和水源；牠會定時蜷縮抵擋攻擊。"
+      },
+      "familyId": "slime",
+      "rank": "elite",
+      "level": 5,
+      "stats": {
+        "hp": 66,
+        "attack": 11,
+        "defense": 5,
+        "exp": 48,
+        "gold": 16
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 3,
+          "defenseBonus": 5,
+          "telegraph": {
+            "zh-TW": "牠蜷起身體，厚殼即將鎖緊。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_bulwark",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.72,
+        "rarityWeights": {
+          "common": 24,
+          "uncommon": 45,
+          "rare": 25,
+          "epic": 5.5,
+          "legendary": 0.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "farmland",
+          "minPlayerLevel": 4,
+          "maxPlayerLevel": 9,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "settlementStages": [
+            "village",
+            "town"
+          ],
+          "hours": {
+            "start": 7,
+            "end": 18
+          }
+        }
+      ]
+    },
+    "slime_cinder": {
+      "id": "slime_cinder",
+      "name": {
+        "zh-TW": "燼晶黏怪"
+      },
+      "description": {
+        "zh-TW": "吸收日照後，牠會把熱量聚在晶殼中心再釋放。"
+      },
+      "familyId": "slime",
+      "rank": "elite",
+      "level": 6,
+      "stats": {
+        "hp": 59,
+        "attack": 13,
+        "defense": 3,
+        "exp": 53,
+        "gold": 18
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 3,
+          "bonusFraction": 0.38,
+          "telegraph": {
+            "zh-TW": "晶殼中央轉為赤亮，熱脈衝即將爆發。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_cinder",
+      "lootProfile": {
+        "dropLevel": 6,
+        "equipmentChance": 0.75,
+        "rarityWeights": {
+          "common": 20,
+          "uncommon": 45,
+          "rare": 28,
+          "epic": 6.5,
+          "legendary": 0.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 5,
+          "maxPlayerLevel": 10,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "夏",
+            "秋"
+          ],
+          "hours": {
+            "start": 11,
+            "end": 18
+          }
+        }
+      ]
+    },
+    "slime_matriarch": {
+      "id": "slime_matriarch",
+      "name": {
+        "zh-TW": "苔池母黏怪"
+      },
+      "description": {
+        "zh-TW": "守著林間苔池，牠蓄勢時會引動周圍黏液一同震動。"
+      },
+      "familyId": "slime",
+      "rank": "miniBoss",
+      "level": 6,
+      "stats": {
+        "hp": 92,
+        "attack": 14,
+        "defense": 4,
+        "exp": 78,
+        "gold": 28
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 3,
+          "bonusFraction": 0.35,
+          "telegraph": {
+            "zh-TW": "池面連續震動，牠正集結力量反擊。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_matriarch",
+      "lootProfile": {
+        "dropLevel": 6,
+        "equipmentChance": 0.82,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 34,
+          "rare": 50,
+          "epic": 15,
+          "legendary": 1
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 5,
+          "maxPlayerLevel": 10,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "春",
+            "夏"
+          ],
+          "settlementStages": [
+            "village",
+            "town"
+          ],
+          "hours": {
+            "start": 6,
+            "end": 20
+          }
+        }
+      ]
+    },
+    "slime_tidecaller": {
+      "id": "slime_tidecaller",
+      "name": {
+        "zh-TW": "潮鳴黏怪"
+      },
+      "description": {
+        "zh-TW": "只在林地水位上升時現身，重擊會激起環形水浪。"
+      },
+      "familyId": "slime",
+      "rank": "miniBoss",
+      "level": 7,
+      "stats": {
+        "hp": 104,
+        "attack": 16,
+        "defense": 3,
+        "exp": 88,
+        "gold": 34
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 3,
+          "bonusFraction": 0.42,
+          "telegraph": {
+            "zh-TW": "水位急升，牠正準備掀起重浪。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_tidecaller",
+      "lootProfile": {
+        "dropLevel": 7,
+        "equipmentChance": 0.86,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 30,
+          "rare": 52,
+          "epic": 16,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 6,
+          "maxPlayerLevel": 12,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "春",
+            "冬"
+          ],
+          "maxSafety": 75,
+          "hours": {
+            "start": 17,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "slime_heart": {
+      "id": "slime_heart",
+      "name": {
+        "zh-TW": "濕地黏核"
+      },
+      "description": {
+        "zh-TW": "稀有黏怪核心在林地深處聚合；牠蓄力時會短暫回復。"
+      },
+      "familyId": "slime",
+      "rank": "boss",
+      "level": 8,
+      "stats": {
+        "hp": 172,
+        "attack": 19,
+        "defense": 6,
+        "exp": 160,
+        "gold": 64
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.5,
+          "healAmount": 8,
+          "telegraph": {
+            "zh-TW": "核心脈動加快，牠將發動蓄力衝擊並回復少量生命。"
+          }
+        }
+      ],
+      "lootTableId": "slime_loot_heart",
+      "lootProfile": {
+        "dropLevel": 8,
+        "equipmentChance": 1,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 85,
+          "epic": 14,
+          "legendary": 1
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "夏",
+            "秋"
+          ],
+          "hours": {
+            "start": 18,
+            "end": 23
+          }
+        },
+        {
+          "region": "forest",
+          "minPlayerLevel": 10,
+          "maxPlayerLevel": 10,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "seasons": [
+            "夏",
+            "秋"
+          ],
+          "hours": {
+            "start": 18,
+            "end": 23
+          }
+        }
+      ],
+      "bossRules": {
+        "cooldownDays": 30,
+        "guaranteedMaterialIds": [
+          "slime_heart_gel"
+        ],
+        "exclusiveEquipmentId": "slime_heartstaff",
+        "variants": [
+          {
+            "id": "slime_heart_stillwater",
+            "name": {
+              "zh-TW": "靜水形態"
+            },
+            "description": {
+              "zh-TW": "濕地平靜時形成，蓄力衝擊後會短暫架起硬化外殼。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "guard",
+                "everyTurns": 4,
+                "defenseBonus": 4,
+                "telegraph": {
+                  "zh-TW": "靜水凝成硬殼，牠正在防禦。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "slime_heart_surging",
+            "name": {
+              "zh-TW": "湧泉形態"
+            },
+            "description": {
+              "zh-TW": "泉水湧動時形成，蓄力之間會快速彈近。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "rush",
+                "everyTurns": 3,
+                "bonusFraction": 0.18,
+                "telegraph": {
+                  "zh-TW": "泉流推動核心，牠將迅速彈射。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "slime_heart_starved",
+            "name": {
+              "zh-TW": "枯池形態"
+            },
+            "description": {
+              "zh-TW": "水源枯竭時形成，會以較弱但頻繁的揮擊尋找補給。"
+            },
+            "weight": 2,
+            "mechanics": [
+              {
+                "kind": "heavyStrike",
+                "everyTurns": 6,
+                "bonusFraction": 0.12,
+                "telegraph": {
+                  "zh-TW": "枯裂外殼震動，牠正準備疲弱重擊。"
+                }
+              }
+            ]
+          }
+        ],
+        "worldConsequence": {
+          "trigger": "bossDefeated",
+          "field": "food",
+          "delta": 3
+        }
+      }
+    },
+    "cave_insect_digger": {
+      "id": "cave_insect_digger",
+      "name": {
+        "zh-TW": "掘脈蛛蟲"
+      },
+      "description": {
+        "zh-TW": "牠在礦脈入口刮取石屑，受擊時會縮進硬殼防守。"
+      },
+      "familyId": "cave_insects",
+      "rank": "normal",
+      "level": 3,
+      "stats": {
+        "hp": 36,
+        "attack": 8,
+        "defense": 3,
+        "exp": 26,
+        "gold": 7
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 3,
+          "defenseBonus": 3,
+          "telegraph": {
+            "zh-TW": "掘脈蛛蟲收起肢節，硬殼即將護住身體。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_digger",
+      "lootProfile": {
+        "dropLevel": 3,
+        "equipmentChance": 0.52,
+        "rarityWeights": {
+          "common": 70,
+          "uncommon": 25,
+          "rare": 4.5,
+          "epic": 0.5,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 3,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2
+        }
+      ]
+    },
+    "cave_insect_skitter": {
+      "id": "cave_insect_skitter",
+      "name": {
+        "zh-TW": "巡隧蛛蟲"
+      },
+      "description": {
+        "zh-TW": "牠沿著開闊隧道快速巡行，發現目標便低身衝刺。"
+      },
+      "familyId": "cave_insects",
+      "rank": "normal",
+      "level": 3,
+      "stats": {
+        "hp": 29,
+        "attack": 10,
+        "defense": 1,
+        "exp": 27,
+        "gold": 8
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 2,
+          "bonusFraction": 0.2,
+          "telegraph": {
+            "zh-TW": "巡隧蛛蟲壓低身體，準備沿隧道撲近。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_skitter",
+      "lootProfile": {
+        "dropLevel": 3,
+        "equipmentChance": 0.53,
+        "rarityWeights": {
+          "common": 69,
+          "uncommon": 25,
+          "rare": 5,
+          "epic": 1,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 3,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "hours": {
+            "start": 6,
+            "end": 22
+          }
+        }
+      ]
+    },
+    "cave_insect_spitter": {
+      "id": "cave_insect_spitter",
+      "name": {
+        "zh-TW": "壁棲蛛蟲"
+      },
+      "description": {
+        "zh-TW": "牠伏在礦室高處，蓄力噴出黏稠樹脂；不帶毒性效果。"
+      },
+      "familyId": "cave_insects",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 34,
+        "attack": 11,
+        "defense": 2,
+        "exp": 32,
+        "gold": 9
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.3,
+          "telegraph": {
+            "zh-TW": "壁棲蛛蟲腹部鼓起，樹脂將要噴出。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_spitter",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.56,
+        "rarityWeights": {
+          "common": 63,
+          "uncommon": 29,
+          "rare": 7,
+          "epic": 1,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2
+        }
+      ]
+    },
+    "cave_insect_carrier": {
+      "id": "cave_insect_carrier",
+      "name": {
+        "zh-TW": "載礦蛛蟲"
+      },
+      "description": {
+        "zh-TW": "牠搬運礦屑穿過巢道，遭遇時會鼓動身軀蓄勢。"
+      },
+      "familyId": "cave_insects",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 39,
+        "attack": 10,
+        "defense": 2,
+        "exp": 35,
+        "gold": 10
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 4,
+          "bonusFraction": 0.22,
+          "telegraph": {
+            "zh-TW": "載礦蛛蟲抬起前肢鼓動身軀，正準備蓄勢反擊。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_carrier",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.57,
+        "rarityWeights": {
+          "common": 62,
+          "uncommon": 29,
+          "rare": 7.5,
+          "epic": 1.5,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "hours": {
+            "start": 5,
+            "end": 19
+          }
+        }
+      ]
+    },
+    "cave_insect_shellback": {
+      "id": "cave_insect_shellback",
+      "name": {
+        "zh-TW": "厚甲蛛蟲"
+      },
+      "description": {
+        "zh-TW": "牠在低危險側道緩慢覓食，厚甲能定時抵住攻擊。"
+      },
+      "familyId": "cave_insects",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 48,
+        "attack": 9,
+        "defense": 5,
+        "exp": 36,
+        "gold": 10
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 2,
+          "defenseBonus": 4,
+          "telegraph": {
+            "zh-TW": "厚甲蛛蟲把身體縮入甲殼，準備承受攻擊。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_shellback",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.58,
+        "rarityWeights": {
+          "common": 60,
+          "uncommon": 30,
+          "rare": 8,
+          "epic": 1.8,
+          "legendary": 0.2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2
+        }
+      ]
+    },
+    "cave_insect_lurker": {
+      "id": "cave_insect_lurker",
+      "name": {
+        "zh-TW": "伏擊蛛蟲"
+      },
+      "description": {
+        "zh-TW": "牠潛伏在礦室陰影中，露面後先停頓蓄力再猛然重擊。"
+      },
+      "familyId": "cave_insects",
+      "rank": "normal",
+      "level": 5,
+      "stats": {
+        "hp": 42,
+        "attack": 14,
+        "defense": 2,
+        "exp": 42,
+        "gold": 12
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 4,
+          "bonusFraction": 0.3,
+          "telegraph": {
+            "zh-TW": "伏擊蛛蟲伏低不動，正在蓄力重擊。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_lurker",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.6,
+        "rarityWeights": {
+          "common": 57,
+          "uncommon": 31,
+          "rare": 9,
+          "epic": 2.5,
+          "legendary": 0.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "hours": {
+            "start": 18,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "cave_insect_razor": {
+      "id": "cave_insect_razor",
+      "name": {
+        "zh-TW": "刃肢蛛蟲"
+      },
+      "description": {
+        "zh-TW": "這隻菁英沿鐵脈巡守，會以明顯蓄勢後的衝刺逼近。"
+      },
+      "familyId": "cave_insects",
+      "rank": "elite",
+      "level": 6,
+      "stats": {
+        "hp": 73,
+        "attack": 16,
+        "defense": 4,
+        "exp": 63,
+        "gold": 20
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 2,
+          "bonusFraction": 0.28,
+          "telegraph": {
+            "zh-TW": "刃肢蛛蟲連續踏地後收勢，下一刻將衝刺。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_razor",
+      "lootProfile": {
+        "dropLevel": 6,
+        "equipmentChance": 0.72,
+        "rarityWeights": {
+          "common": 23,
+          "uncommon": 45,
+          "rare": 25,
+          "epic": 6,
+          "legendary": 1
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "cave_insect_warden": {
+      "id": "cave_insect_warden",
+      "name": {
+        "zh-TW": "守脈蛛蟲"
+      },
+      "description": {
+        "zh-TW": "這隻菁英守著支線礦藏，以厚重外殼穩住陣腳。"
+      },
+      "familyId": "cave_insects",
+      "rank": "elite",
+      "level": 7,
+      "stats": {
+        "hp": 91,
+        "attack": 15,
+        "defense": 7,
+        "exp": 75,
+        "gold": 24
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 2,
+          "defenseBonus": 6,
+          "telegraph": {
+            "zh-TW": "守脈蛛蟲架起外殼，準備擋下攻擊。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_warden",
+      "lootProfile": {
+        "dropLevel": 7,
+        "equipmentChance": 0.76,
+        "rarityWeights": {
+          "common": 18,
+          "uncommon": 43,
+          "rare": 29,
+          "epic": 8,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "hours": {
+            "start": 7,
+            "end": 21
+          }
+        }
+      ]
+    },
+    "cave_insect_broodguard": {
+      "id": "cave_insect_broodguard",
+      "name": {
+        "zh-TW": "護巢蛛蟲"
+      },
+      "description": {
+        "zh-TW": "牠守在育巢側道，以硬殼防守並鼓動自身蓄勢。"
+      },
+      "familyId": "cave_insects",
+      "rank": "miniBoss",
+      "level": 7,
+      "stats": {
+        "hp": 126,
+        "attack": 19,
+        "defense": 8,
+        "exp": 104,
+        "gold": 34
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 3,
+          "defenseBonus": 7,
+          "telegraph": {
+            "zh-TW": "護巢蛛蟲收攏肢節，硬殼即將護住身體。"
+          }
+        },
+        {
+          "kind": "rally",
+          "everyTurns": 4,
+          "bonusFraction": 0.25,
+          "telegraph": {
+            "zh-TW": "護巢蛛蟲抬起前肢，正為下一擊蓄勢。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_broodguard",
+      "lootProfile": {
+        "dropLevel": 7,
+        "equipmentChance": 0.82,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 30,
+          "rare": 50,
+          "epic": 17,
+          "legendary": 3
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "cave_insect_tunnelstalker": {
+      "id": "cave_insect_tunnelstalker",
+      "name": {
+        "zh-TW": "隧道獵蛛"
+      },
+      "description": {
+        "zh-TW": "牠在晚間隧道伏行，先猛衝逼近，再蓄力發動重擊。"
+      },
+      "familyId": "cave_insects",
+      "rank": "miniBoss",
+      "level": 7,
+      "stats": {
+        "hp": 112,
+        "attack": 23,
+        "defense": 5,
+        "exp": 108,
+        "gold": 36
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 2,
+          "bonusFraction": 0.28,
+          "telegraph": {
+            "zh-TW": "隧道獵蛛壓低身體，正準備沿隧道衝刺。"
+          }
+        },
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.34,
+          "telegraph": {
+            "zh-TW": "隧道獵蛛腹部鼓起，下一擊將蓄力撞來。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_tunnelstalker",
+      "lootProfile": {
+        "dropLevel": 7,
+        "equipmentChance": 0.84,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 28,
+          "rare": 50,
+          "epic": 19,
+          "legendary": 3
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "hours": {
+            "start": 18,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "cave_insect_queen": {
+      "id": "cave_insect_queen",
+      "name": {
+        "zh-TW": "洞穴蛛蟲后"
+      },
+      "description": {
+        "zh-TW": "牠盤踞礦脈深處，以厚甲護身並蓄力重擊入侵者。"
+      },
+      "familyId": "cave_insects",
+      "rank": "boss",
+      "level": 9,
+      "stats": {
+        "hp": 216,
+        "attack": 27,
+        "defense": 10,
+        "exp": 205,
+        "gold": 82
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 3,
+          "defenseBonus": 8,
+          "telegraph": {
+            "zh-TW": "蛛蟲后收起肢節，厚甲即將護住身體。"
+          }
+        },
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 4,
+          "bonusFraction": 0.42,
+          "telegraph": {
+            "zh-TW": "蛛蟲后揚起前肢，正蓄力準備重擊。"
+          }
+        }
+      ],
+      "lootTableId": "cave_insect_loot_queen",
+      "lootProfile": {
+        "dropLevel": 9,
+        "equipmentChance": 1,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 75,
+          "epic": 22,
+          "legendary": 3
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3
+        },
+        {
+          "region": "mine",
+          "minPlayerLevel": 10,
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 18,
+            "end": 23
+          }
+        }
+      ],
+      "bossRules": {
+        "cooldownDays": 42,
+        "guaranteedMaterialIds": [
+          "cave_insect_queen_core"
+        ],
+        "exclusiveEquipmentId": "cave_insect_queen_carapace",
+        "variants": [
+          {
+            "id": "cave_insect_queen_plateback",
+            "name": {
+              "zh-TW": "厚背形態"
+            },
+            "description": {
+              "zh-TW": "厚重背甲支撐牠蓄勢反擊。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "rally",
+                "everyTurns": 4,
+                "bonusFraction": 0.24,
+                "telegraph": {
+                  "zh-TW": "蛛蟲后背甲鼓起，正為下一擊蓄勢。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "cave_insect_queen_razor",
+            "name": {
+              "zh-TW": "刃足形態"
+            },
+            "description": {
+              "zh-TW": "銳利足節使牠能猛然衝向目標。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "rush",
+                "everyTurns": 3,
+                "bonusFraction": 0.22,
+                "telegraph": {
+                  "zh-TW": "蛛蟲后刃足刮地，接著將向前衝刺。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "cave_insect_queen_resin",
+            "name": {
+              "zh-TW": "樹脂形態"
+            },
+            "description": {
+              "zh-TW": "樹脂在腹部聚集，牠正準備蓄力撞擊。"
+            },
+            "weight": 2,
+            "mechanics": [
+              {
+                "kind": "chargedAttack",
+                "everyTurns": 4,
+                "bonusFraction": 0.3,
+                "telegraph": {
+                  "zh-TW": "蛛蟲后腹部鼓起，樹脂將隨蓄力攻擊噴出。"
+                }
+              }
+            ]
+          }
+        ],
+        "worldConsequence": {
+          "trigger": "bossDefeated",
+          "field": "safety",
+          "delta": 2
+        }
+      }
+    },
+    "wild_beast_brush_hare": {
+      "id": "wild_beast_brush_hare",
+      "name": {
+        "zh-TW": "灌叢野兔"
+      },
+      "description": {
+        "zh-TW": "棲在田埂草叢的野兔會先縮身再短促躍撲。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "normal",
+      "level": 1,
+      "stats": {
+        "hp": 20,
+        "attack": 6,
+        "defense": 0,
+        "exp": 15,
+        "gold": 4
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 3,
+          "bonusFraction": 0.16,
+          "telegraph": {
+            "zh-TW": "野兔壓低身體，準備短促躍撲。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_brush_hare",
+      "lootProfile": {
+        "dropLevel": 1,
+        "equipmentChance": 0.5,
+        "rarityWeights": {
+          "common": 75,
+          "uncommon": 22,
+          "rare": 3,
+          "epic": 0,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "farmland",
+          "minPlayerLevel": 1,
+          "maxPlayerLevel": 3,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 1,
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 5,
+            "end": 9
+          }
+        }
+      ]
+    },
+    "wild_beast_stonehorn": {
+      "id": "wild_beast_stonehorn",
+      "name": {
+        "zh-TW": "石角獸"
+      },
+      "description": {
+        "zh-TW": "石角獸沿林緣覓食，受威脅時會以角抵住來襲攻勢。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "normal",
+      "level": 2,
+      "stats": {
+        "hp": 32,
+        "attack": 8,
+        "defense": 3,
+        "exp": 22,
+        "gold": 6
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 4,
+          "defenseBonus": 3,
+          "telegraph": {
+            "zh-TW": "石角獸低下角尖，正架起防禦。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_stonehorn",
+      "lootProfile": {
+        "dropLevel": 2,
+        "equipmentChance": 0.52,
+        "rarityWeights": {
+          "common": 70,
+          "uncommon": 25,
+          "rare": 4.5,
+          "epic": 0.5,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 2,
+          "maxPlayerLevel": 4,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2
+        }
+      ]
+    },
+    "wild_beast_redtail": {
+      "id": "wild_beast_redtail",
+      "name": {
+        "zh-TW": "赤尾獸"
+      },
+      "description": {
+        "zh-TW": "赤尾獸低身蓄勢後，以明顯躍擊撲向獵物。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "normal",
+      "level": 3,
+      "stats": {
+        "hp": 38,
+        "attack": 10,
+        "defense": 2,
+        "exp": 28,
+        "gold": 8
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 4,
+          "bonusFraction": 0.3,
+          "telegraph": {
+            "zh-TW": "赤尾獸收緊後腿，準備重重躍擊。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_redtail",
+      "lootProfile": {
+        "dropLevel": 3,
+        "equipmentChance": 0.55,
+        "rarityWeights": {
+          "common": 65,
+          "uncommon": 28,
+          "rare": 6,
+          "epic": 1,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 3,
+          "maxPlayerLevel": 5,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "seasons": [
+            "春",
+            "夏"
+          ]
+        }
+      ]
+    },
+    "wild_beast_fernback": {
+      "id": "wild_beast_fernback",
+      "name": {
+        "zh-TW": "蕨背獸"
+      },
+      "description": {
+        "zh-TW": "蕨葉覆在牠的背上；攻擊前會先鼓起身軀蓄勢。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "normal",
+      "level": 3,
+      "stats": {
+        "hp": 42,
+        "attack": 9,
+        "defense": 4,
+        "exp": 29,
+        "gold": 8
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 4,
+          "bonusFraction": 0.2,
+          "telegraph": {
+            "zh-TW": "蕨背獸拱起身軀，正在蓄勢反擊。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_fernback",
+      "lootProfile": {
+        "dropLevel": 3,
+        "equipmentChance": 0.56,
+        "rarityWeights": {
+          "common": 64,
+          "uncommon": 29,
+          "rare": 6,
+          "epic": 1,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 3,
+          "maxPlayerLevel": 5,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "hours": {
+            "start": 15,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "wild_beast_marshstag": {
+      "id": "wild_beast_marshstag",
+      "name": {
+        "zh-TW": "澤角鹿"
+      },
+      "description": {
+        "zh-TW": "常在林間濕地啃食嫩枝，牠會放低鹿角守住身前。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 46,
+        "attack": 10,
+        "defense": 5,
+        "exp": 33,
+        "gold": 9
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 3,
+          "defenseBonus": 4,
+          "telegraph": {
+            "zh-TW": "澤角鹿放低鹿角，準備擋住正面攻勢。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_marshstag",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.58,
+        "rarityWeights": {
+          "common": 60,
+          "uncommon": 30,
+          "rare": 8,
+          "epic": 1.8,
+          "legendary": 0.2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 3,
+          "maxPlayerLevel": 5,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "seasons": [
+            "春",
+            "秋"
+          ]
+        }
+      ]
+    },
+    "wild_beast_amberfox": {
+      "id": "wild_beast_amberfox",
+      "name": {
+        "zh-TW": "琥珀狐"
+      },
+      "description": {
+        "zh-TW": "琥珀色毛尖在日光下閃爍，牠趁對手停頓時蓄力突擊。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 36,
+        "attack": 12,
+        "defense": 2,
+        "exp": 35,
+        "gold": 10
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.32,
+          "telegraph": {
+            "zh-TW": "琥珀狐背毛亮起，正在準備蓄力突擊。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_amberfox",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.6,
+        "rarityWeights": {
+          "common": 59,
+          "uncommon": 31,
+          "rare": 8,
+          "epic": 1.8,
+          "legendary": 0.2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "farmland",
+          "minPlayerLevel": 4,
+          "maxPlayerLevel": 6,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "hours": {
+            "start": 12,
+            "end": 18
+          }
+        },
+        {
+          "region": "forest",
+          "minPlayerLevel": 4,
+          "maxPlayerLevel": 6,
+          "minThreatLevel": 1,
+          "maxThreatLevel": 2,
+          "hours": {
+            "start": 12,
+            "end": 18
+          }
+        }
+      ]
+    },
+    "wild_beast_bristleback": {
+      "id": "wild_beast_bristleback",
+      "name": {
+        "zh-TW": "刺鬃野豬"
+      },
+      "description": {
+        "zh-TW": "刺鬃豎起的野豬以肩膀猛撞，會先踏地並鎖定方向。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "elite",
+      "level": 5,
+      "stats": {
+        "hp": 78,
+        "attack": 16,
+        "defense": 6,
+        "exp": 62,
+        "gold": 20
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 3,
+          "bonusFraction": 0.4,
+          "telegraph": {
+            "zh-TW": "刺鬃野豬踏地蓄勢，肩撞即將到來。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_bristleback",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.72,
+        "rarityWeights": {
+          "common": 22,
+          "uncommon": 44,
+          "rare": 28,
+          "epic": 5,
+          "legendary": 1
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "wild_beast_galehorn": {
+      "id": "wild_beast_galehorn",
+      "name": {
+        "zh-TW": "疾風角獸"
+      },
+      "description": {
+        "zh-TW": "長角角獸會沿林脊加速直衝，衝鋒前有清楚的低頭動作。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "elite",
+      "level": 6,
+      "stats": {
+        "hp": 84,
+        "attack": 18,
+        "defense": 5,
+        "exp": 72,
+        "gold": 24
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 2,
+          "bonusFraction": 0.38,
+          "telegraph": {
+            "zh-TW": "疾風角獸低頭蓄勢，正要沿直線衝鋒。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_galehorn",
+      "lootProfile": {
+        "dropLevel": 6,
+        "equipmentChance": 0.75,
+        "rarityWeights": {
+          "common": 20,
+          "uncommon": 45,
+          "rare": 28,
+          "epic": 6.5,
+          "legendary": 0.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "wild_beast_old_matriarch": {
+      "id": "wild_beast_old_matriarch",
+      "name": {
+        "zh-TW": "林地母獸"
+      },
+      "description": {
+        "zh-TW": "年長的母獸昂首聚起力量，準備揮出沉重的橫掃。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "miniBoss",
+      "level": 6,
+      "stats": {
+        "hp": 112,
+        "attack": 20,
+        "defense": 8,
+        "exp": 92,
+        "gold": 34
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 3,
+          "bonusFraction": 0.32,
+          "telegraph": {
+            "zh-TW": "母獸昂首聚力，沉重的橫掃即將落下。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_matriarch",
+      "lootProfile": {
+        "dropLevel": 6,
+        "equipmentChance": 0.82,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 32,
+          "rare": 50,
+          "epic": 16,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "wild_beast_ironhide": {
+      "id": "wild_beast_ironhide",
+      "name": {
+        "zh-TW": "鐵甲野獸"
+      },
+      "description": {
+        "zh-TW": "厚實的硬皮反覆繃緊，牠穩住身形抵擋迎面攻勢。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "miniBoss",
+      "level": 7,
+      "stats": {
+        "hp": 124,
+        "attack": 18,
+        "defense": 10,
+        "exp": 94,
+        "gold": 36
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 3,
+          "defenseBonus": 7,
+          "telegraph": {
+            "zh-TW": "野獸厚皮繃緊，正架起堅實防禦。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_ironhide",
+      "lootProfile": {
+        "dropLevel": 7,
+        "equipmentChance": 0.84,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 30,
+          "rare": 52,
+          "epic": 16,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "farmland",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "wild_beast_apex": {
+      "id": "wild_beast_apex",
+      "name": {
+        "zh-TW": "林地王獸"
+      },
+      "description": {
+        "zh-TW": "林地王獸先壓低身體蓄勢，再以重擊衝鋒；明顯的蓄勢留下應對時機。"
+      },
+      "familyId": "wild_beasts",
+      "rank": "boss",
+      "level": 9,
+      "stats": {
+        "hp": 210,
+        "attack": 27,
+        "defense": 9,
+        "exp": 190,
+        "gold": 72
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 4,
+          "bonusFraction": 0.34,
+          "telegraph": {
+            "zh-TW": "王獸壓低身軀，準備直線衝鋒。"
+          }
+        },
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 5,
+          "bonusFraction": 0.48,
+          "telegraph": {
+            "zh-TW": "王獸蓄勢後抬起前肢，準備沉重重擊。"
+          }
+        }
+      ],
+      "lootTableId": "wild_beasts_loot_apex",
+      "lootProfile": {
+        "dropLevel": 9,
+        "equipmentChance": 1,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 82,
+          "epic": 16,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 16,
+            "end": 23
+          }
+        },
+        {
+          "region": "forest",
+          "minPlayerLevel": 10,
+          "maxPlayerLevel": 18,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 16,
+            "end": 23
+          }
+        }
+      ],
+      "bossRules": {
+        "cooldownDays": 35,
+        "guaranteedMaterialIds": [
+          "wild_beast_apex_core"
+        ],
+        "exclusiveEquipmentId": "wild_beast_apex_maul",
+        "variants": [
+          {
+            "id": "wild_beast_apex_amberhide",
+            "name": {
+              "zh-TW": "琥珀硬甲形態"
+            },
+            "description": {
+              "zh-TW": "琥珀色硬毛使王獸在衝鋒與重擊間架起防禦。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "guard",
+                "everyTurns": 4,
+                "defenseBonus": 5,
+                "telegraph": {
+                  "zh-TW": "王獸硬毛豎起，正架起防禦。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "wild_beast_apex_galecharge",
+            "name": {
+              "zh-TW": "疾風蓄勢形態"
+            },
+            "description": {
+              "zh-TW": "王獸在原有衝鋒與重擊間加入明顯的蓄力突擊。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "chargedAttack",
+                "everyTurns": 5,
+                "bonusFraction": 0.36,
+                "telegraph": {
+                  "zh-TW": "王獸鬃毛震動，正在蓄力突擊。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "wild_beast_apex_brutal",
+            "name": {
+              "zh-TW": "猛勢形態"
+            },
+            "description": {
+              "zh-TW": "王獸在原有攻勢間鼓起自身氣勢，再度尋找衝鋒時機。"
+            },
+            "weight": 2,
+            "mechanics": [
+              {
+                "kind": "rally",
+                "everyTurns": 5,
+                "bonusFraction": 0.24,
+                "telegraph": {
+                  "zh-TW": "王獸挺起前身，正在鼓起自身氣勢。"
+                }
+              }
+            ]
+          }
+        ],
+        "worldConsequence": {
+          "trigger": "bossDefeated",
+          "field": "safety",
+          "delta": 2
+        }
+      }
+    },
+    "frontier_goblin_scout": {
+      "id": "frontier_goblin_scout",
+      "name": {
+        "zh-TW": "邊境哥布林斥候"
+      },
+      "description": {
+        "zh-TW": "斥候在林緣探路，交戰時會先壓低肩膀發起短促突擊。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "normal",
+      "level": 3,
+      "stats": {
+        "hp": 40,
+        "attack": 10,
+        "defense": 2,
+        "exp": 32,
+        "gold": 9
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 3,
+          "bonusFraction": 0.22,
+          "telegraph": {
+            "zh-TW": "斥候壓低肩膀，準備迅速突擊。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_scout",
+      "lootProfile": {
+        "dropLevel": 3,
+        "equipmentChance": 0.55,
+        "rarityWeights": {
+          "common": 65,
+          "uncommon": 28,
+          "rare": 6,
+          "epic": 1,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 3,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "frontier_goblin_slinger": {
+      "id": "frontier_goblin_slinger",
+      "name": {
+        "zh-TW": "邊境哥布林投石手"
+      },
+      "description": {
+        "zh-TW": "投石手把石彈握在手中蓄勢砸擊；這是近身重擊，並非遠程攻擊。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 43,
+        "attack": 12,
+        "defense": 2,
+        "exp": 38,
+        "gold": 11
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.32,
+          "telegraph": {
+            "zh-TW": "投石手握緊石彈蓄力，準備一次重擊。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_slinger",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.56,
+        "rarityWeights": {
+          "common": 63,
+          "uncommon": 29,
+          "rare": 7,
+          "epic": 1,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "hours": {
+            "start": 6,
+            "end": 18
+          }
+        }
+      ]
+    },
+    "frontier_goblin_tinker": {
+      "id": "frontier_goblin_tinker",
+      "name": {
+        "zh-TW": "邊境哥布林工匠"
+      },
+      "description": {
+        "zh-TW": "工匠用拼裝盾牌護住身前，抓準時機才反擊。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 52,
+        "attack": 10,
+        "defense": 5,
+        "exp": 39,
+        "gold": 12
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 3,
+          "defenseBonus": 4,
+          "telegraph": {
+            "zh-TW": "工匠把拼裝盾架在身前，準備格擋。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_tinker",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.57,
+        "rarityWeights": {
+          "common": 62,
+          "uncommon": 29,
+          "rare": 7.5,
+          "epic": 1.5,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "frontier_goblin_lookout": {
+      "id": "frontier_goblin_lookout",
+      "name": {
+        "zh-TW": "邊境哥布林瞭望手"
+      },
+      "description": {
+        "zh-TW": "瞭望手觀察戰局後鼓起自身氣勢，不會呼喚同伴。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 42,
+        "attack": 12,
+        "defense": 3,
+        "exp": 40,
+        "gold": 12
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 4,
+          "bonusFraction": 0.22,
+          "telegraph": {
+            "zh-TW": "瞭望手高舉旗布，正在鼓舞自身氣勢。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_lookout",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.57,
+        "rarityWeights": {
+          "common": 62,
+          "uncommon": 29,
+          "rare": 7.5,
+          "epic": 1.5,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "hours": {
+            "start": 15,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "frontier_goblin_hauler": {
+      "id": "frontier_goblin_hauler",
+      "name": {
+        "zh-TW": "邊境哥布林搬運工"
+      },
+      "description": {
+        "zh-TW": "背負沉重礦料的搬運工以慢而有力的揮擊逼退對手。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "normal",
+      "level": 5,
+      "stats": {
+        "hp": 61,
+        "attack": 14,
+        "defense": 4,
+        "exp": 47,
+        "gold": 14
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 4,
+          "bonusFraction": 0.32,
+          "telegraph": {
+            "zh-TW": "搬運工穩住背架，準備沉重揮擊。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_hauler",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.58,
+        "rarityWeights": {
+          "common": 60,
+          "uncommon": 30,
+          "rare": 8,
+          "epic": 1.8,
+          "legendary": 0.2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "frontier_goblin_trapper": {
+      "id": "frontier_goblin_trapper",
+      "name": {
+        "zh-TW": "邊境哥布林捕網手"
+      },
+      "description": {
+        "zh-TW": "捕網手帶著線圈作戰，但只以盾臂架勢防守，不會設置陷阱。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "normal",
+      "level": 5,
+      "stats": {
+        "hp": 48,
+        "attack": 13,
+        "defense": 4,
+        "exp": 48,
+        "gold": 14
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 4,
+          "defenseBonus": 4,
+          "telegraph": {
+            "zh-TW": "捕網手收緊盾臂，準備架勢防守。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_trapper",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.6,
+        "rarityWeights": {
+          "common": 57,
+          "uncommon": 31,
+          "rare": 9,
+          "epic": 2.5,
+          "legendary": 0.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "hours": {
+            "start": 17,
+            "end": 23
+          }
+        },
+        {
+          "region": "mine",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "maxThreatLevel": 3,
+          "hours": {
+            "start": 17,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "frontier_goblin_breaker": {
+      "id": "frontier_goblin_breaker",
+      "name": {
+        "zh-TW": "邊境哥布林破甲手"
+      },
+      "description": {
+        "zh-TW": "破甲手把重鎚舉過肩頭，瞄準後才猛然砸下。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "elite",
+      "level": 6,
+      "stats": {
+        "hp": 88,
+        "attack": 18,
+        "defense": 6,
+        "exp": 72,
+        "gold": 24
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 3,
+          "bonusFraction": 0.42,
+          "telegraph": {
+            "zh-TW": "破甲手高舉重鎚，蓄力準備猛擊。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_breaker",
+      "lootProfile": {
+        "dropLevel": 6,
+        "equipmentChance": 0.72,
+        "rarityWeights": {
+          "common": 22,
+          "uncommon": 44,
+          "rare": 28,
+          "epic": 5,
+          "legendary": 1
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "frontier_goblin_duelist": {
+      "id": "frontier_goblin_duelist",
+      "name": {
+        "zh-TW": "邊境哥布林決鬥者"
+      },
+      "description": {
+        "zh-TW": "決鬥者以精準步伐連續逼近，突刺前會短暫收勢。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "elite",
+      "level": 6,
+      "stats": {
+        "hp": 76,
+        "attack": 20,
+        "defense": 4,
+        "exp": 76,
+        "gold": 26
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 2,
+          "bonusFraction": 0.34,
+          "telegraph": {
+            "zh-TW": "決鬥者收回武器並踏定步伐，準備突刺。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_duelist",
+      "lootProfile": {
+        "dropLevel": 6,
+        "equipmentChance": 0.76,
+        "rarityWeights": {
+          "common": 18,
+          "uncommon": 43,
+          "rare": 29,
+          "epic": 8,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "frontier_goblin_standardbearer": {
+      "id": "frontier_goblin_standardbearer",
+      "name": {
+        "zh-TW": "邊境哥布林旗手"
+      },
+      "description": {
+        "zh-TW": "旗手高舉旗布鼓舞自身，接著以更強氣勢迎戰。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "miniBoss",
+      "level": 8,
+      "stats": {
+        "hp": 116,
+        "attack": 20,
+        "defense": 7,
+        "exp": 96,
+        "gold": 36
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 3,
+          "bonusFraction": 0.34,
+          "telegraph": {
+            "zh-TW": "旗手舉起旗布，正鼓起自身氣勢。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_standardbearer",
+      "lootProfile": {
+        "dropLevel": 8,
+        "equipmentChance": 0.85,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 28,
+          "rare": 54,
+          "epic": 16,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "frontier_goblin_saboteur": {
+      "id": "frontier_goblin_saboteur",
+      "name": {
+        "zh-TW": "邊境哥布林破壞手"
+      },
+      "description": {
+        "zh-TW": "破壞手握緊沉重鐵錘蓄力，不會破壞地形或建築。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "miniBoss",
+      "level": 8,
+      "stats": {
+        "hp": 108,
+        "attack": 23,
+        "defense": 5,
+        "exp": 98,
+        "gold": 38
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.48,
+          "telegraph": {
+            "zh-TW": "破壞手高舉鐵錘蓄力，準備沉重一擊。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_saboteur",
+      "lootProfile": {
+        "dropLevel": 8,
+        "equipmentChance": 0.86,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 26,
+          "rare": 56,
+          "epic": 16,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3
+        }
+      ]
+    },
+    "frontier_goblin_warlord": {
+      "id": "frontier_goblin_warlord",
+      "name": {
+        "zh-TW": "邊境哥布林戰帥"
+      },
+      "description": {
+        "zh-TW": "地方團夥戰帥會鼓舞自身並架起盾牌；此地盤首領並非既有哥布林首領。"
+      },
+      "familyId": "frontier_goblins",
+      "rank": "boss",
+      "level": 9,
+      "stats": {
+        "hp": 224,
+        "attack": 26,
+        "defense": 10,
+        "exp": 196,
+        "gold": 76
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 4,
+          "bonusFraction": 0.26,
+          "telegraph": {
+            "zh-TW": "戰帥挺起身軀，正在鼓起自身氣勢。"
+          }
+        },
+        {
+          "kind": "guard",
+          "everyTurns": 4,
+          "defenseBonus": 5,
+          "telegraph": {
+            "zh-TW": "戰帥舉盾架勢，準備格擋攻勢。"
+          }
+        }
+      ],
+      "lootTableId": "frontier_goblins_loot_warlord",
+      "lootProfile": {
+        "dropLevel": 9,
+        "equipmentChance": 1,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 80,
+          "epic": 18,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3
+        },
+        {
+          "region": "forest",
+          "minPlayerLevel": 10,
+          "maxPlayerLevel": 18,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 17,
+            "end": 23
+          }
+        },
+        {
+          "region": "mine",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "maxThreatLevel": 3
+        },
+        {
+          "region": "mine",
+          "minPlayerLevel": 10,
+          "maxPlayerLevel": 18,
+          "maxThreatLevel": 3,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 17,
+            "end": 23
+          }
+        }
+      ],
+      "bossRules": {
+        "cooldownDays": 45,
+        "guaranteedMaterialIds": [
+          "frontier_goblin_warlord_seal"
+        ],
+        "exclusiveEquipmentId": "frontier_goblin_warlord_cleaver",
+        "variants": [
+          {
+            "id": "frontier_goblin_warlord_ironhide",
+            "name": {
+              "zh-TW": "鐵甲形態"
+            },
+            "description": {
+              "zh-TW": "戰帥保留原有鼓舞與格擋，並加入沉重揮擊。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "heavyStrike",
+                "everyTurns": 5,
+                "bonusFraction": 0.4,
+                "telegraph": {
+                  "zh-TW": "戰帥舉起重刃，準備沉重揮擊。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "frontier_goblin_warlord_breaker",
+            "name": {
+              "zh-TW": "破陣形態"
+            },
+            "description": {
+              "zh-TW": "戰帥保留原有鼓舞與格擋，並加入明顯蓄力的一擊。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "chargedAttack",
+                "everyTurns": 5,
+                "bonusFraction": 0.38,
+                "telegraph": {
+                  "zh-TW": "戰帥蓄起力量，準備發動強力一擊。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "frontier_goblin_warlord_skirmish",
+            "name": {
+              "zh-TW": "疾襲形態"
+            },
+            "description": {
+              "zh-TW": "戰帥保留原有鼓舞與格擋，並加入短促突擊。"
+            },
+            "weight": 2,
+            "mechanics": [
+              {
+                "kind": "rush",
+                "everyTurns": 4,
+                "bonusFraction": 0.22,
+                "telegraph": {
+                  "zh-TW": "戰帥壓低肩膀，準備短促突擊。"
+                }
+              }
+            ]
+          }
+        ],
+        "worldConsequence": {
+          "trigger": "bossDefeated",
+          "field": "safety",
+          "delta": 2
+        }
+      }
+    },
+    "fog_undead_bonewalker": {
+      "id": "fog_undead_bonewalker",
+      "name": {
+        "zh-TW": "骨架行者"
+      },
+      "description": {
+        "zh-TW": "骨架行者在林地夜路緩步逼近，交手時會架起骨架防守。"
+      },
+      "familyId": "fog_undead",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 43,
+        "attack": 11,
+        "defense": 4,
+        "exp": 38,
+        "gold": 10
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 3,
+          "defenseBonus": 4,
+          "telegraph": {
+            "zh-TW": "骨架行者雙臂交疊，準備架住攻勢。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_bonewalker",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.55,
+        "rarityWeights": {
+          "common": 63,
+          "uncommon": 29,
+          "rare": 7,
+          "epic": 1,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "fog_undead_lantern_wisp": {
+      "id": "fog_undead_lantern_wisp",
+      "name": {
+        "zh-TW": "提燈幽影"
+      },
+      "description": {
+        "zh-TW": "提燈幽影只在已探索的霧谷夜間現身，會先聚起光點再發出蓄力衝擊。"
+      },
+      "familyId": "fog_undead",
+      "rank": "normal",
+      "level": 5,
+      "stats": {
+        "hp": 39,
+        "attack": 14,
+        "defense": 2,
+        "exp": 45,
+        "gold": 12
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.28,
+          "telegraph": {
+            "zh-TW": "提燈幽影的燈芯逐漸明亮，正蓄力準備衝擊。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_lantern",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.58,
+        "rarityWeights": {
+          "common": 59,
+          "uncommon": 31,
+          "rare": 8,
+          "epic": 2,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "unknown",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "fog_undead_gravehound": {
+      "id": "fog_undead_gravehound",
+      "name": {
+        "zh-TW": "墓徑獵犬"
+      },
+      "description": {
+        "zh-TW": "墓徑獵犬在秋冬夜間沿林路追逐，低身蓄勢後直線撲近。"
+      },
+      "familyId": "fog_undead",
+      "rank": "normal",
+      "level": 5,
+      "stats": {
+        "hp": 41,
+        "attack": 15,
+        "defense": 2,
+        "exp": 47,
+        "gold": 13
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 3,
+          "bonusFraction": 0.24,
+          "telegraph": {
+            "zh-TW": "墓徑獵犬壓低身體，沿著林路準備撲近。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_gravehound",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.6,
+        "rarityWeights": {
+          "common": 56,
+          "uncommon": 32,
+          "rare": 9,
+          "epic": 2.5,
+          "legendary": 0.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "fog_undead_crypt_guard": {
+      "id": "fog_undead_crypt_guard",
+      "name": {
+        "zh-TW": "墓室石衛"
+      },
+      "description": {
+        "zh-TW": "墓室石衛拖著沉重石甲揮擊，每次重擊前都會停步蓄勢。"
+      },
+      "familyId": "fog_undead",
+      "rank": "normal",
+      "level": 6,
+      "stats": {
+        "hp": 56,
+        "attack": 16,
+        "defense": 6,
+        "exp": 55,
+        "gold": 15
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 4,
+          "bonusFraction": 0.3,
+          "telegraph": {
+            "zh-TW": "墓室石衛抬起沉重手臂，正準備向下重擊。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_guard",
+      "lootProfile": {
+        "dropLevel": 6,
+        "equipmentChance": 0.62,
+        "rarityWeights": {
+          "common": 53,
+          "uncommon": 33,
+          "rare": 10,
+          "epic": 3,
+          "legendary": 1
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "unknown",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "fog_undead_mourner": {
+      "id": "fog_undead_mourner",
+      "name": {
+        "zh-TW": "守墓哀者"
+      },
+      "description": {
+        "zh-TW": "守墓哀者在冬夜停下腳步，凝神蓄力後再揮出一擊。"
+      },
+      "familyId": "fog_undead",
+      "rank": "normal",
+      "level": 5,
+      "stats": {
+        "hp": 46,
+        "attack": 13,
+        "defense": 3,
+        "exp": 49,
+        "gold": 14
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 4,
+          "bonusFraction": 0.22,
+          "telegraph": {
+            "zh-TW": "守墓哀者挺直身軀凝聚力量，準備反擊。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_mourner",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.59,
+        "rarityWeights": {
+          "common": 57,
+          "uncommon": 32,
+          "rare": 8.5,
+          "epic": 2,
+          "legendary": 0.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "seasons": [
+            "冬"
+          ],
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "fog_undead_bellkeeper": {
+      "id": "fog_undead_bellkeeper",
+      "name": {
+        "zh-TW": "暮鐘守者"
+      },
+      "description": {
+        "zh-TW": "暮鐘守者在霧谷夜色中巡守，聽見鐘身震動便架起防勢。"
+      },
+      "familyId": "fog_undead",
+      "rank": "normal",
+      "level": 6,
+      "stats": {
+        "hp": 58,
+        "attack": 14,
+        "defense": 7,
+        "exp": 57,
+        "gold": 16
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 2,
+          "defenseBonus": 5,
+          "telegraph": {
+            "zh-TW": "暮鐘守者舉起鐘身護住胸前，準備擋下攻擊。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_bellkeeper",
+      "lootProfile": {
+        "dropLevel": 6,
+        "equipmentChance": 0.63,
+        "rarityWeights": {
+          "common": 52,
+          "uncommon": 33,
+          "rare": 11,
+          "epic": 3,
+          "legendary": 1
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "unknown",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 2,
+          "settlementStages": [
+            "town"
+          ],
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        },
+        {
+          "region": "unknown",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "fog_undead_wight": {
+      "id": "fog_undead_wight",
+      "name": {
+        "zh-TW": "灰燼怨靈"
+      },
+      "description": {
+        "zh-TW": "灰燼怨靈是霧谷夜間的菁英，燈焰聚起時會蓄力向前衝擊。"
+      },
+      "familyId": "fog_undead",
+      "rank": "elite",
+      "level": 7,
+      "stats": {
+        "hp": 91,
+        "attack": 20,
+        "defense": 5,
+        "exp": 82,
+        "gold": 25
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 3,
+          "bonusFraction": 0.36,
+          "telegraph": {
+            "zh-TW": "灰燼怨靈周身火光收束，蓄力衝擊即將發出。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_wight",
+      "lootProfile": {
+        "dropLevel": 7,
+        "equipmentChance": 0.74,
+        "rarityWeights": {
+          "common": 20,
+          "uncommon": 44,
+          "rare": 28,
+          "epic": 6.5,
+          "legendary": 1.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        },
+        {
+          "region": "unknown",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "fog_undead_blackguard": {
+      "id": "fog_undead_blackguard",
+      "name": {
+        "zh-TW": "黑甲墓衛"
+      },
+      "description": {
+        "zh-TW": "黑甲墓衛以厚重甲片守住霧谷夜路，定時架起更強的防勢。"
+      },
+      "familyId": "fog_undead",
+      "rank": "elite",
+      "level": 7,
+      "stats": {
+        "hp": 106,
+        "attack": 18,
+        "defense": 9,
+        "exp": 86,
+        "gold": 27
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 2,
+          "defenseBonus": 7,
+          "telegraph": {
+            "zh-TW": "黑甲墓衛將甲片合攏，準備穩住防線。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_blackguard",
+      "lootProfile": {
+        "dropLevel": 7,
+        "equipmentChance": 0.77,
+        "rarityWeights": {
+          "common": 17,
+          "uncommon": 43,
+          "rare": 30,
+          "epic": 8,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "unknown",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "fog_undead_crypt_knight": {
+      "id": "fog_undead_crypt_knight",
+      "name": {
+        "zh-TW": "墓紋騎士"
+      },
+      "description": {
+        "zh-TW": "墓紋騎士在已探索霧谷深處守望，抬起沉重長刃後向下重擊。"
+      },
+      "familyId": "fog_undead",
+      "rank": "miniBoss",
+      "level": 8,
+      "stats": {
+        "hp": 142,
+        "attack": 23,
+        "defense": 9,
+        "exp": 126,
+        "gold": 42
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 3,
+          "bonusFraction": 0.4,
+          "telegraph": {
+            "zh-TW": "墓紋騎士舉起長刃，正蓄勢向下重擊。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_crypt_knight",
+      "lootProfile": {
+        "dropLevel": 8,
+        "equipmentChance": 0.88,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 24,
+          "rare": 54,
+          "epic": 19,
+          "legendary": 3
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "unknown",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 21,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "fog_undead_hollow_bell": {
+      "id": "fog_undead_hollow_bell",
+      "name": {
+        "zh-TW": "空鐘守望者"
+      },
+      "description": {
+        "zh-TW": "空鐘守望者在林間空地或已探索霧谷夜巡，鐘姿震顫時便集結自身力量。"
+      },
+      "familyId": "fog_undead",
+      "rank": "miniBoss",
+      "level": 8,
+      "stats": {
+        "hp": 136,
+        "attack": 22,
+        "defense": 8,
+        "exp": 122,
+        "gold": 40
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 3,
+          "bonusFraction": 0.34,
+          "telegraph": {
+            "zh-TW": "空鐘守望者將鐘身高舉，正凝聚力量反擊。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_hollow_bell",
+      "lootProfile": {
+        "dropLevel": 8,
+        "equipmentChance": 0.87,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 25,
+          "rare": 53,
+          "epic": 19,
+          "legendary": 3
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "forest",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        },
+        {
+          "region": "unknown",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        }
+      ]
+    },
+    "fog_undead_cryptlord": {
+      "id": "fog_undead_cryptlord",
+      "name": {
+        "zh-TW": "霧谷墓主"
+      },
+      "description": {
+        "zh-TW": "霧谷墓主在已探索霧谷深處現身，蓄力衝擊與自我振作之間會短暫回復少量生命。"
+      },
+      "familyId": "fog_undead",
+      "rank": "boss",
+      "level": 9,
+      "stats": {
+        "hp": 205,
+        "attack": 27,
+        "defense": 11,
+        "exp": 210,
+        "gold": 86
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.46,
+          "healAmount": 7,
+          "telegraph": {
+            "zh-TW": "墓主周身氣息收束，蓄力衝擊即將發出，並會稍作恢復。"
+          }
+        },
+        {
+          "kind": "rally",
+          "everyTurns": 5,
+          "bonusFraction": 0.24,
+          "telegraph": {
+            "zh-TW": "墓主挺直身軀集結力量，準備再度出手。"
+          }
+        }
+      ],
+      "lootTableId": "fog_undead_loot_cryptlord",
+      "lootProfile": {
+        "dropLevel": 9,
+        "equipmentChance": 1,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 76,
+          "epic": 21,
+          "legendary": 3
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "unknown",
+          "minPlayerLevel": 9,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        },
+        {
+          "region": "unknown",
+          "minPlayerLevel": 11,
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "hours": {
+            "start": 20,
+            "end": 23
+          }
+        }
+      ],
+      "bossRules": {
+        "cooldownDays": 60,
+        "guaranteedMaterialIds": [
+          "fog_undead_crypt_heart"
+        ],
+        "exclusiveEquipmentId": "fog_undead_cryptlord_blade",
+        "variants": [
+          {
+            "id": "fog_undead_cryptlord_coldguard",
+            "name": {
+              "zh-TW": "寒霧守勢"
+            },
+            "description": {
+              "zh-TW": "寒霧聚攏時形成，蓄力衝擊與振作核心不變，另會架起防勢。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "guard",
+                "everyTurns": 4,
+                "defenseBonus": 6,
+                "telegraph": {
+                  "zh-TW": "寒霧凝成護層，墓主正架起防勢。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "fog_undead_cryptlord_bellrush",
+            "name": {
+              "zh-TW": "空鐘疾行"
+            },
+            "description": {
+              "zh-TW": "空鐘迴響時形成，保留墓主的蓄力與振作，並會短促撲近。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "rush",
+                "everyTurns": 4,
+                "bonusFraction": 0.18,
+                "telegraph": {
+                  "zh-TW": "墓主壓低身形，準備迅速撲近。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "fog_undead_cryptlord_lastblow",
+            "name": {
+              "zh-TW": "終響重擊"
+            },
+            "description": {
+              "zh-TW": "低沉鐘響時形成，蓄力與振作核心仍在，並追加沉重一擊。"
+            },
+            "weight": 2,
+            "mechanics": [
+              {
+                "kind": "heavyStrike",
+                "everyTurns": 5,
+                "bonusFraction": 0.2,
+                "telegraph": {
+                  "zh-TW": "墓主抬起雙臂，沉重一擊即將落下。"
+                }
+              }
+            ]
+          }
+        ],
+        "worldConsequence": {
+          "trigger": "bossDefeated",
+          "field": "safety",
+          "delta": 2
+        }
+      }
+    },
+    "mine_construct_shardling": {
+      "id": "mine_construct_shardling",
+      "name": {
+        "zh-TW": "碎晶岩靈"
+      },
+      "description": {
+        "zh-TW": "碎晶岩靈沿礦道短距離移動，接近時會突然向前撞擊。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 42,
+        "attack": 12,
+        "defense": 4,
+        "exp": 39,
+        "gold": 11
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 3,
+          "bonusFraction": 0.22,
+          "telegraph": {
+            "zh-TW": "碎晶岩靈低伏蓄勢，準備短距離撞來。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_shardling",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.55,
+        "rarityWeights": {
+          "common": 63,
+          "uncommon": 29,
+          "rare": 7,
+          "epic": 1,
+          "legendary": 0
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 6,
+            "end": 18
+          }
+        }
+      ]
+    },
+    "mine_construct_sentinel": {
+      "id": "mine_construct_sentinel",
+      "name": {
+        "zh-TW": "礦道石衛"
+      },
+      "description": {
+        "zh-TW": "礦道石衛以層疊石板護住正面，定時停下架起防勢。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "normal",
+      "level": 4,
+      "stats": {
+        "hp": 54,
+        "attack": 11,
+        "defense": 7,
+        "exp": 42,
+        "gold": 12
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 3,
+          "defenseBonus": 5,
+          "telegraph": {
+            "zh-TW": "礦道石衛將石板併攏，準備擋住攻擊。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_sentinel",
+      "lootProfile": {
+        "dropLevel": 4,
+        "equipmentChance": 0.57,
+        "rarityWeights": {
+          "common": 61,
+          "uncommon": 30,
+          "rare": 7.5,
+          "epic": 1.3,
+          "legendary": 0.2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 4,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 6,
+            "end": 22
+          }
+        }
+      ]
+    },
+    "mine_construct_pylon": {
+      "id": "mine_construct_pylon",
+      "name": {
+        "zh-TW": "脈石柱構"
+      },
+      "description": {
+        "zh-TW": "脈石柱構在礦室中段蓄力後發出沉重震擊，沒有額外狀態效果。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "normal",
+      "level": 5,
+      "stats": {
+        "hp": 50,
+        "attack": 15,
+        "defense": 5,
+        "exp": 48,
+        "gold": 13
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.3,
+          "telegraph": {
+            "zh-TW": "脈石柱構的石節逐段繃緊，蓄力震擊即將發出。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_pylon",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.59,
+        "rarityWeights": {
+          "common": 58,
+          "uncommon": 31,
+          "rare": 8,
+          "epic": 2.5,
+          "legendary": 0.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 10,
+            "end": 14
+          }
+        }
+      ]
+    },
+    "mine_construct_crawler": {
+      "id": "mine_construct_crawler",
+      "name": {
+        "zh-TW": "礦巷爬岩"
+      },
+      "description": {
+        "zh-TW": "礦巷爬岩拖著沉重關節前進，抬起前臂後便向下砸落。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "normal",
+      "level": 5,
+      "stats": {
+        "hp": 58,
+        "attack": 16,
+        "defense": 5,
+        "exp": 51,
+        "gold": 14
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "heavyStrike",
+          "everyTurns": 4,
+          "bonusFraction": 0.3,
+          "telegraph": {
+            "zh-TW": "礦巷爬岩抬起前臂，正在蓄力向下重砸。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_crawler",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.6,
+        "rarityWeights": {
+          "common": 56,
+          "uncommon": 32,
+          "rare": 9,
+          "epic": 2.5,
+          "legendary": 0.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 6,
+            "end": 22
+          }
+        }
+      ]
+    },
+    "mine_construct_mason": {
+      "id": "mine_construct_mason",
+      "name": {
+        "zh-TW": "礦脈砌石者"
+      },
+      "description": {
+        "zh-TW": "礦脈砌石者在午後調整身上的石塊，穩住重心後再揮擊。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "normal",
+      "level": 5,
+      "stats": {
+        "hp": 56,
+        "attack": 14,
+        "defense": 6,
+        "exp": 52,
+        "gold": 15
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 4,
+          "bonusFraction": 0.22,
+          "telegraph": {
+            "zh-TW": "礦脈砌石者重新排好石塊，正要蓄勢反擊。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_mason",
+      "lootProfile": {
+        "dropLevel": 5,
+        "equipmentChance": 0.61,
+        "rarityWeights": {
+          "common": 55,
+          "uncommon": 32,
+          "rare": 9,
+          "epic": 3,
+          "legendary": 1
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 5,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 13,
+            "end": 18
+          }
+        }
+      ]
+    },
+    "mine_construct_veinwatcher": {
+      "id": "mine_construct_veinwatcher",
+      "name": {
+        "zh-TW": "鐵脈守望構"
+      },
+      "description": {
+        "zh-TW": "鐵脈守望構守在礦道轉角，窄身側轉後會以石板擋住正面。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "normal",
+      "level": 6,
+      "stats": {
+        "hp": 64,
+        "attack": 15,
+        "defense": 7,
+        "exp": 59,
+        "gold": 17
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 2,
+          "defenseBonus": 5,
+          "telegraph": {
+            "zh-TW": "鐵脈守望構側身架起石板，準備守住正面。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_veinwatcher",
+      "lootProfile": {
+        "dropLevel": 6,
+        "equipmentChance": 0.64,
+        "rarityWeights": {
+          "common": 51,
+          "uncommon": 34,
+          "rare": 11,
+          "epic": 3,
+          "legendary": 1
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 6,
+            "end": 22
+          }
+        },
+        {
+          "region": "unknown",
+          "minPlayerLevel": 6,
+          "minThreatLevel": 2,
+          "hours": {
+            "start": 6,
+            "end": 22
+          }
+        }
+      ]
+    },
+    "mine_construct_ram": {
+      "id": "mine_construct_ram",
+      "name": {
+        "zh-TW": "碎礦衝槌構"
+      },
+      "description": {
+        "zh-TW": "碎礦衝槌構是礦道菁英，踏地蓄勢後會沿直線高速衝撞。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "elite",
+      "level": 7,
+      "stats": {
+        "hp": 103,
+        "attack": 21,
+        "defense": 7,
+        "exp": 86,
+        "gold": 27
+      },
+      "role": "fast",
+      "mechanics": [
+        {
+          "kind": "rush",
+          "everyTurns": 2,
+          "bonusFraction": 0.3,
+          "telegraph": {
+            "zh-TW": "碎礦衝槌構連踏地面後收勢，下一刻將直線衝撞。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_ram",
+      "lootProfile": {
+        "dropLevel": 7,
+        "equipmentChance": 0.75,
+        "rarityWeights": {
+          "common": 20,
+          "uncommon": 44,
+          "rare": 28,
+          "epic": 6.5,
+          "legendary": 1.5
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 6,
+            "end": 22
+          }
+        }
+      ]
+    },
+    "mine_construct_warder": {
+      "id": "mine_construct_warder",
+      "name": {
+        "zh-TW": "礦脈壁壘構"
+      },
+      "description": {
+        "zh-TW": "礦脈壁壘構是厚重菁英守衛，會以層層石殼穩住防線。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "elite",
+      "level": 7,
+      "stats": {
+        "hp": 119,
+        "attack": 19,
+        "defense": 10,
+        "exp": 90,
+        "gold": 29
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 2,
+          "defenseBonus": 8,
+          "telegraph": {
+            "zh-TW": "礦脈壁壘構將石殼緊密扣合，準備承受攻擊。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_warder",
+      "lootProfile": {
+        "dropLevel": 7,
+        "equipmentChance": 0.78,
+        "rarityWeights": {
+          "common": 17,
+          "uncommon": 43,
+          "rare": 30,
+          "epic": 8,
+          "legendary": 2
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 7,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 6,
+            "end": 22
+          }
+        }
+      ]
+    },
+    "mine_construct_architect": {
+      "id": "mine_construct_architect",
+      "name": {
+        "zh-TW": "礦道建造構"
+      },
+      "description": {
+        "zh-TW": "建造構在已探索的未知礦道調整自身石節，集結力量後揮出重擊。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "miniBoss",
+      "level": 8,
+      "stats": {
+        "hp": 151,
+        "attack": 23,
+        "defense": 10,
+        "exp": 132,
+        "gold": 45
+      },
+      "role": "controller",
+      "mechanics": [
+        {
+          "kind": "rally",
+          "everyTurns": 3,
+          "bonusFraction": 0.34,
+          "telegraph": {
+            "zh-TW": "建造構重新扣合石節，正蓄勢準備重擊。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_architect",
+      "lootProfile": {
+        "dropLevel": 8,
+        "equipmentChance": 0.88,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 24,
+          "rare": 54,
+          "epic": 19,
+          "legendary": 3
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "unknown",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 8,
+            "end": 18
+          }
+        }
+      ]
+    },
+    "mine_construct_bastion": {
+      "id": "mine_construct_bastion",
+      "name": {
+        "zh-TW": "礦道壁壘構"
+      },
+      "description": {
+        "zh-TW": "壁壘構在高階礦道架起厚重石板，維持穩定的防禦節奏。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "miniBoss",
+      "level": 8,
+      "stats": {
+        "hp": 164,
+        "attack": 21,
+        "defense": 13,
+        "exp": 130,
+        "gold": 44
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 2,
+          "defenseBonus": 9,
+          "telegraph": {
+            "zh-TW": "壁壘構將石板層層扣緊，準備擋下攻勢。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_bastion",
+      "lootProfile": {
+        "dropLevel": 8,
+        "equipmentChance": 0.9,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 22,
+          "rare": 55,
+          "epic": 20,
+          "legendary": 3
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "mine",
+          "minPlayerLevel": 8,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 6,
+            "end": 22
+          }
+        }
+      ]
+    },
+    "mine_construct_heart": {
+      "id": "mine_construct_heart",
+      "name": {
+        "zh-TW": "遠古岩構核心"
+      },
+      "description": {
+        "zh-TW": "遠古岩構核心在高階礦道現身，先架起防勢，再蓄力發出沉重衝擊。"
+      },
+      "familyId": "mine_constructs",
+      "rank": "boss",
+      "level": 9,
+      "stats": {
+        "hp": 222,
+        "attack": 28,
+        "defense": 14,
+        "exp": 225,
+        "gold": 92
+      },
+      "role": "bruiser",
+      "mechanics": [
+        {
+          "kind": "guard",
+          "everyTurns": 3,
+          "defenseBonus": 8,
+          "telegraph": {
+            "zh-TW": "核心石板逐層合攏，正架起防勢。"
+          }
+        },
+        {
+          "kind": "chargedAttack",
+          "everyTurns": 4,
+          "bonusFraction": 0.48,
+          "telegraph": {
+            "zh-TW": "核心接節逐步繃緊，蓄力衝擊即將發出。"
+          }
+        }
+      ],
+      "lootTableId": "mine_construct_loot_heart",
+      "lootProfile": {
+        "dropLevel": 9,
+        "equipmentChance": 1,
+        "rarityWeights": {
+          "common": 0,
+          "uncommon": 0,
+          "rare": 76,
+          "epic": 21,
+          "legendary": 3
+        }
+      },
+      "spawnProfiles": [
+        {
+          "region": "unknown",
+          "minPlayerLevel": 9,
+          "minThreatLevel": 3,
+          "hours": {
+            "start": 8,
+            "end": 18
+          }
+        },
+        {
+          "region": "unknown",
+          "minPlayerLevel": 11,
+          "seasons": [
+            "春",
+            "秋"
+          ],
+          "hours": {
+            "start": 8,
+            "end": 18
+          }
+        }
+      ],
+      "bossRules": {
+        "cooldownDays": 60,
+        "guaranteedMaterialIds": [
+          "mine_construct_ancient_core"
+        ],
+        "exclusiveEquipmentId": "mine_construct_heartbreaker",
+        "variants": [
+          {
+            "id": "mine_construct_heart_ironwall",
+            "name": {
+              "zh-TW": "鐵壁構形"
+            },
+            "description": {
+              "zh-TW": "堅硬接節形成的構形，固定防守與蓄力衝擊不變，並會自我振作。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "rally",
+                "everyTurns": 5,
+                "bonusFraction": 0.2,
+                "telegraph": {
+                  "zh-TW": "核心重新排列石節，正集結力量。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "mine_construct_heart_shardrush",
+            "name": {
+              "zh-TW": "碎晶疾行"
+            },
+            "description": {
+              "zh-TW": "碎晶外殼形成的構形，保留防守和蓄力衝擊，另會短距離撞來。"
+            },
+            "weight": 3,
+            "mechanics": [
+              {
+                "kind": "rush",
+                "everyTurns": 4,
+                "bonusFraction": 0.18,
+                "telegraph": {
+                  "zh-TW": "核心低伏蓄勢，準備短距離撞擊。"
+                }
+              }
+            ]
+          },
+          {
+            "id": "mine_construct_heart_breaker",
+            "name": {
+              "zh-TW": "斷脈重擊"
+            },
+            "description": {
+              "zh-TW": "厚重石節形成的構形，固定防守和蓄力衝擊仍在，另追加重擊。"
+            },
+            "weight": 2,
+            "mechanics": [
+              {
+                "kind": "heavyStrike",
+                "everyTurns": 5,
+                "bonusFraction": 0.2,
+                "telegraph": {
+                  "zh-TW": "核心舉起沉重前臂，重擊即將落下。"
+                }
+              }
+            ]
+          }
+        ],
+        "worldConsequence": {
+          "trigger": "bossDefeated",
+          "field": "prosperity",
+          "delta": 2
+        }
+      }
+    }
+  },
+  "equipment": {
+    "shortSword": {
+      "id": "shortSword",
+      "name": "短劍",
+      "slot": "weapon",
+      "attack": 4,
+      "defense": 0,
+      "sell": 12,
+      "affixes": [
+        "striking",
+        "keen",
+        "piercing",
+        "bleeding"
+      ]
+    },
+    "axe": {
+      "id": "axe",
+      "name": "獵斧",
+      "slot": "weapon",
+      "attack": 6,
+      "defense": 0,
+      "sell": 16,
+      "affixes": [
+        "striking",
+        "keen",
+        "piercing",
+        "bleeding"
+      ]
+    },
+    "spear": {
+      "id": "spear",
+      "name": "獵矛",
+      "slot": "weapon",
+      "attack": 5,
+      "defense": 0,
+      "sell": 14,
+      "affixes": [
+        "striking",
+        "keen",
+        "piercing",
+        "bleeding"
+      ]
+    },
+    "moonFangSpear": {
+      "id": "moonFangSpear",
+      "name": "月牙獵矛",
+      "slot": "weapon",
+      "attack": 5,
+      "defense": 0,
+      "sell": 20,
+      "affixes": [
+        "keen",
+        "piercing",
+        "bleeding"
+      ],
+      "penetration": 2
+    },
+    "hideArmor": {
+      "id": "hideArmor",
+      "name": "獸皮衣",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 2,
+      "sell": 10,
+      "affixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ]
+    },
+    "chainArmor": {
+      "id": "chainArmor",
+      "name": "鎖甲",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 4,
+      "sell": 18,
+      "affixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ]
+    },
+    "slime_resin_guard": {
+      "id": "slime_resin_guard",
+      "name": "樹脂護衣",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 4,
+      "sell": 18,
+      "affixes": [
+        "sturdy",
+        "blocking"
+      ]
+    },
+    "slime_glass_pike": {
+      "id": "slime_glass_pike",
+      "name": "晶刺長槍",
+      "slot": "weapon",
+      "attack": 6,
+      "defense": 0,
+      "sell": 24,
+      "affixes": [
+        "piercing",
+        "striking"
+      ],
+      "penetration": 2
+    },
+    "slime_moss_coat": {
+      "id": "slime_moss_coat",
+      "name": "苔池外套",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 5,
+      "sell": 27,
+      "affixes": [
+        "blocking",
+        "warding"
+      ]
+    },
+    "slime_spring_blade": {
+      "id": "slime_spring_blade",
+      "name": "泉躍短刃",
+      "slot": "weapon",
+      "attack": 7,
+      "defense": 0,
+      "sell": 28,
+      "affixes": [
+        "keen",
+        "bleeding"
+      ]
+    },
+    "slime_amber_mace": {
+      "id": "slime_amber_mace",
+      "name": "琥珀鎚",
+      "slot": "weapon",
+      "attack": 8,
+      "defense": 0,
+      "sell": 25,
+      "affixes": [
+        "striking",
+        "bleeding"
+      ]
+    },
+    "slime_bog_mail": {
+      "id": "slime_bog_mail",
+      "name": "沼泥鎖衣",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 6,
+      "sell": 30,
+      "affixes": [
+        "sturdy",
+        "warding"
+      ]
+    },
+    "slime_matriarch_cuirass": {
+      "id": "slime_matriarch_cuirass",
+      "name": "母黏怪胸甲",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 7,
+      "sell": 38,
+      "affixes": [
+        "blocking",
+        "sturdy"
+      ]
+    },
+    "slime_heartstaff": {
+      "id": "slime_heartstaff",
+      "name": "濕地核心杖",
+      "slot": "weapon",
+      "attack": 9,
+      "defense": 0,
+      "sell": 45,
+      "affixes": [
+        "keen",
+        "piercing"
+      ],
+      "penetration": 2
+    },
+    "cave_insect_chitin_spear": {
+      "id": "cave_insect_chitin_spear",
+      "name": "甲質穿刺矛",
+      "slot": "weapon",
+      "attack": 7,
+      "defense": 0,
+      "sell": 28,
+      "affixes": [
+        "piercing",
+        "striking"
+      ],
+      "penetration": 2
+    },
+    "cave_insect_queen_carapace": {
+      "id": "cave_insect_queen_carapace",
+      "name": "蛛蟲后甲衣",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 9,
+      "sell": 54,
+      "affixes": [
+        "sturdy",
+        "blocking"
+      ]
+    },
+    "cave_insect_leg_blade": {
+      "id": "cave_insect_leg_blade",
+      "name": "刃節獵刀",
+      "slot": "weapon",
+      "attack": 8,
+      "defense": 0,
+      "sell": 34,
+      "affixes": [
+        "keen",
+        "bleeding"
+      ],
+      "penetration": 0
+    },
+    "cave_insect_gland_pike": {
+      "id": "cave_insect_gland_pike",
+      "name": "腺囊穿刺槍",
+      "slot": "weapon",
+      "attack": 8,
+      "defense": 0,
+      "sell": 40,
+      "affixes": [
+        "piercing",
+        "bleeding"
+      ],
+      "penetration": 3
+    },
+    "cave_insect_core_mace": {
+      "id": "cave_insect_core_mace",
+      "name": "礦核重槌",
+      "slot": "weapon",
+      "attack": 10,
+      "defense": 0,
+      "sell": 46,
+      "affixes": [
+        "striking",
+        "piercing"
+      ],
+      "penetration": 1
+    },
+    "cave_insect_plate_vest": {
+      "id": "cave_insect_plate_vest",
+      "name": "厚甲背心",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 6,
+      "sell": 31,
+      "affixes": [
+        "sturdy",
+        "blocking"
+      ]
+    },
+    "cave_insect_resin_coat": {
+      "id": "cave_insect_resin_coat",
+      "name": "樹脂護衣",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 5,
+      "sell": 29,
+      "affixes": [
+        "sturdy",
+        "blocking"
+      ]
+    },
+    "cave_insect_warden_mail": {
+      "id": "cave_insect_warden_mail",
+      "name": "守脈蛛甲",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 8,
+      "sell": 43,
+      "affixes": [
+        "sturdy",
+        "warding"
+      ]
+    },
+    "wild_beast_tendon_spear": {
+      "id": "wild_beast_tendon_spear",
+      "name": "韌筋長槍",
+      "slot": "weapon",
+      "attack": 7,
+      "defense": 0,
+      "sell": 28,
+      "affixes": [
+        "piercing",
+        "bleeding"
+      ],
+      "penetration": 2
+    },
+    "wild_beast_horn_knife": {
+      "id": "wild_beast_horn_knife",
+      "name": "石角獵刀",
+      "slot": "weapon",
+      "attack": 6,
+      "defense": 0,
+      "sell": 24,
+      "affixes": [
+        "keen",
+        "striking"
+      ]
+    },
+    "wild_beast_hide_coat": {
+      "id": "wild_beast_hide_coat",
+      "name": "野獸皮衣",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 4,
+      "sell": 22,
+      "affixes": [
+        "warding",
+        "blocking"
+      ]
+    },
+    "wild_beast_resin_axe": {
+      "id": "wild_beast_resin_axe",
+      "name": "琥珀樹脂斧",
+      "slot": "weapon",
+      "attack": 9,
+      "defense": 0,
+      "sell": 32,
+      "affixes": [
+        "striking",
+        "keen"
+      ]
+    },
+    "wild_beast_antler_pike": {
+      "id": "wild_beast_antler_pike",
+      "name": "澤角鹿角槍",
+      "slot": "weapon",
+      "attack": 6,
+      "defense": 0,
+      "sell": 30,
+      "affixes": [
+        "piercing",
+        "keen"
+      ],
+      "penetration": 3
+    },
+    "wild_beast_amber_cuirass": {
+      "id": "wild_beast_amber_cuirass",
+      "name": "琥珀筋甲",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 6,
+      "sell": 34,
+      "affixes": [
+        "blocking",
+        "warding"
+      ]
+    },
+    "wild_beast_gale_hide": {
+      "id": "wild_beast_gale_hide",
+      "name": "疾風硬皮衣",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 5,
+      "sell": 31,
+      "affixes": [
+        "blocking"
+      ]
+    },
+    "wild_beast_apex_maul": {
+      "id": "wild_beast_apex_maul",
+      "name": "王獸重槌",
+      "slot": "weapon",
+      "attack": 11,
+      "defense": 0,
+      "sell": 48,
+      "affixes": [
+        "striking",
+        "keen"
+      ]
+    },
+    "frontier_goblin_scrap_spear": {
+      "id": "frontier_goblin_scrap_spear",
+      "name": "廢鐵長槍",
+      "slot": "weapon",
+      "attack": 7,
+      "defense": 0,
+      "sell": 29,
+      "affixes": [
+        "piercing",
+        "keen"
+      ],
+      "penetration": 2
+    },
+    "frontier_goblin_wire_knife": {
+      "id": "frontier_goblin_wire_knife",
+      "name": "鋼線獵刀",
+      "slot": "weapon",
+      "attack": 6,
+      "defense": 0,
+      "sell": 25,
+      "affixes": [
+        "keen",
+        "bleeding"
+      ]
+    },
+    "frontier_goblin_plate_vest": {
+      "id": "frontier_goblin_plate_vest",
+      "name": "拼裝板甲背心",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 6,
+      "sell": 25,
+      "affixes": [
+        "sturdy"
+      ]
+    },
+    "frontier_goblin_signal_coat": {
+      "id": "frontier_goblin_signal_coat",
+      "name": "信號旗布外衣",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 4,
+      "sell": 27,
+      "affixes": [
+        "blocking"
+      ]
+    },
+    "frontier_goblin_ironaxe": {
+      "id": "frontier_goblin_ironaxe",
+      "name": "礦料戰斧",
+      "slot": "weapon",
+      "attack": 8,
+      "defense": 0,
+      "sell": 33,
+      "affixes": [
+        "piercing",
+        "bleeding"
+      ],
+      "penetration": 1
+    },
+    "frontier_goblin_duelist_pike": {
+      "id": "frontier_goblin_duelist_pike",
+      "name": "決鬥長刺",
+      "slot": "weapon",
+      "attack": 8,
+      "defense": 0,
+      "sell": 32,
+      "affixes": [
+        "piercing",
+        "keen"
+      ],
+      "penetration": 2
+    },
+    "frontier_goblin_duelist_vest": {
+      "id": "frontier_goblin_duelist_vest",
+      "name": "決鬥者襯甲",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 4,
+      "sell": 29,
+      "affixes": [
+        "sturdy",
+        "warding"
+      ]
+    },
+    "frontier_goblin_warlord_cleaver": {
+      "id": "frontier_goblin_warlord_cleaver",
+      "name": "戰帥斬刃",
+      "slot": "weapon",
+      "attack": 11,
+      "defense": 0,
+      "sell": 49,
+      "affixes": [
+        "striking",
+        "piercing"
+      ],
+      "penetration": 2
+    },
+    "fog_undead_cryptblade": {
+      "id": "fog_undead_cryptblade",
+      "name": "墓紋短刃",
+      "slot": "weapon",
+      "attack": 8,
+      "defense": 0,
+      "sell": 34,
+      "affixes": [
+        "keen",
+        "piercing"
+      ]
+    },
+    "fog_undead_boneknife": {
+      "id": "fog_undead_boneknife",
+      "name": "骨燈匕首",
+      "slot": "weapon",
+      "attack": 6,
+      "defense": 0,
+      "sell": 29,
+      "affixes": [
+        "keen",
+        "bleeding"
+      ],
+      "penetration": 1
+    },
+    "fog_undead_bellstaff": {
+      "id": "fog_undead_bellstaff",
+      "name": "暮鐘長杖",
+      "slot": "weapon",
+      "attack": 7,
+      "defense": 0,
+      "sell": 32,
+      "affixes": [
+        "piercing",
+        "keen"
+      ],
+      "penetration": 1
+    },
+    "fog_undead_cinderpike": {
+      "id": "fog_undead_cinderpike",
+      "name": "灰燼骨槍",
+      "slot": "weapon",
+      "attack": 6,
+      "defense": 0,
+      "sell": 35,
+      "affixes": [
+        "piercing",
+        "striking"
+      ],
+      "penetration": 3
+    },
+    "fog_undead_wightcleaver": {
+      "id": "fog_undead_wightcleaver",
+      "name": "怨靈斬骨刀",
+      "slot": "weapon",
+      "attack": 10,
+      "defense": 0,
+      "sell": 42,
+      "affixes": [
+        "striking",
+        "keen"
+      ]
+    },
+    "fog_undead_guardmail": {
+      "id": "fog_undead_guardmail",
+      "name": "墓衛鎖甲",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 7,
+      "sell": 36,
+      "affixes": [
+        "blocking",
+        "warding"
+      ]
+    },
+    "fog_undead_shroudcoat": {
+      "id": "fog_undead_shroudcoat",
+      "name": "守墓裹衣",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 5,
+      "sell": 31,
+      "affixes": [
+        "warding"
+      ]
+    },
+    "fog_undead_cryptlord_blade": {
+      "id": "fog_undead_cryptlord_blade",
+      "name": "墓主專屬刃",
+      "slot": "weapon",
+      "attack": 10,
+      "defense": 0,
+      "sell": 48,
+      "affixes": [
+        "keen",
+        "piercing"
+      ],
+      "penetration": 2
+    },
+    "mine_construct_shardpike": {
+      "id": "mine_construct_shardpike",
+      "name": "碎晶穿脈槍",
+      "slot": "weapon",
+      "attack": 8,
+      "defense": 0,
+      "sell": 35,
+      "affixes": [
+        "piercing",
+        "striking"
+      ],
+      "penetration": 2
+    },
+    "mine_construct_jointblade": {
+      "id": "mine_construct_jointblade",
+      "name": "接節刃",
+      "slot": "weapon",
+      "attack": 7,
+      "defense": 0,
+      "sell": 33,
+      "affixes": [
+        "keen",
+        "bleeding"
+      ],
+      "penetration": 1
+    },
+    "mine_construct_ramhammer": {
+      "id": "mine_construct_ramhammer",
+      "name": "碎礦衝槌",
+      "slot": "weapon",
+      "attack": 10,
+      "defense": 0,
+      "sell": 43,
+      "affixes": [
+        "striking",
+        "bleeding"
+      ]
+    },
+    "mine_construct_veinaxe": {
+      "id": "mine_construct_veinaxe",
+      "name": "鐵脈戰斧",
+      "slot": "weapon",
+      "attack": 8,
+      "defense": 0,
+      "sell": 38,
+      "affixes": [
+        "keen",
+        "piercing"
+      ],
+      "penetration": 1
+    },
+    "mine_construct_architect_glaive": {
+      "id": "mine_construct_architect_glaive",
+      "name": "建造構長戟",
+      "slot": "weapon",
+      "attack": 9,
+      "defense": 0,
+      "sell": 44,
+      "affixes": [
+        "piercing",
+        "keen"
+      ],
+      "penetration": 3
+    },
+    "mine_construct_plateguard": {
+      "id": "mine_construct_plateguard",
+      "name": "石板護甲",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 7,
+      "sell": 37,
+      "affixes": [
+        "sturdy",
+        "warding"
+      ]
+    },
+    "mine_construct_bindingmail": {
+      "id": "mine_construct_bindingmail",
+      "name": "岩構束甲",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 5,
+      "sell": 32,
+      "affixes": [
+        "sturdy"
+      ]
+    },
+    "mine_construct_heartbreaker": {
+      "id": "mine_construct_heartbreaker",
+      "name": "遠古破脈槌",
+      "slot": "weapon",
+      "attack": 10,
+      "defense": 0,
+      "sell": 49,
+      "affixes": [
+        "striking",
+        "piercing"
+      ],
+      "penetration": 2
+    }
+  },
+  "materials": {
+    "wolfFang": {
+      "id": "wolfFang",
+      "name": "狼牙",
+      "sell": 5,
+      "bias": {
+        "bleeding": 4,
+        "piercing": 2
+      },
+      "specialBonus": 0,
+      "description": "可出售；作為獵矛或鐵短劍影響素材時偏向裂傷與穿透詞綴。"
+    },
+    "wolfHide": {
+      "id": "wolfHide",
+      "name": "狼皮",
+      "sell": 5,
+      "bias": {
+        "sturdy": 3,
+        "blocking": 2
+      },
+      "specialBonus": 0,
+      "description": "可出售；鍛造鎖甲時作為影響素材，偏向堅固與格擋詞綴。"
+    },
+    "moonStone": {
+      "id": "moonStone",
+      "name": "月石",
+      "sell": 25,
+      "bias": {
+        "keen": 4
+      },
+      "specialBonus": 0.15,
+      "description": "狼族首領的特殊素材；可出售；作為獵矛或鐵短劍影響素材時偏向銳利，並提高傳說武器的月狩特性機率。"
+    },
+    "slime_resin": {
+      "id": "slime_resin",
+      "name": "黏怪樹脂",
+      "sell": 3,
+      "bias": {
+        "sturdy": 2
+      },
+      "specialBonus": 0,
+      "description": "滑液黏怪常見素材；用於護衣並偏向堅固詞綴。"
+    },
+    "slime_amber_gel": {
+      "id": "slime_amber_gel",
+      "name": "琥珀凝膠",
+      "sell": 7,
+      "bias": {
+        "blocking": 2
+      },
+      "specialBonus": 0,
+      "description": "琥珀黏怪凝成的硬膠，可支援格擋護具。"
+    },
+    "slime_bog_mucus": {
+      "id": "slime_bog_mucus",
+      "name": "沼泥黏液",
+      "sell": 4,
+      "bias": {
+        "warding": 1
+      },
+      "specialBonus": 0,
+      "description": "沼泥黏怪的黏液可作鍛造耗材。"
+    },
+    "slime_moss_core": {
+      "id": "slime_moss_core",
+      "name": "苔衣核心",
+      "sell": 8,
+      "bias": {
+        "blocking": 3
+      },
+      "specialBonus": 0,
+      "description": "苔衣黏怪的核心讓護具偏向格擋。"
+    },
+    "slime_glass_shard": {
+      "id": "slime_glass_shard",
+      "name": "晶殼碎片",
+      "sell": 9,
+      "bias": {
+        "piercing": 3,
+        "keen": 1
+      },
+      "specialBonus": 0,
+      "description": "晶殼碎片能使長槍偏向穿透。"
+    },
+    "slime_spring_ichor": {
+      "id": "slime_spring_ichor",
+      "name": "泉躍精華",
+      "sell": 8,
+      "bias": {
+        "keen": 2,
+        "bleeding": 1
+      },
+      "specialBonus": 0,
+      "description": "泉躍黏怪的精華可影響短刃的銳利度。"
+    },
+    "slime_heart_gel": {
+      "id": "slime_heart_gel",
+      "name": "濕地核心膠",
+      "sell": 25,
+      "bias": {
+        "keen": 4
+      },
+      "specialBonus": 0.08,
+      "description": "濕地黏核保證掉落的稀有素材，可偏向武器銳利詞綴。"
+    },
+    "slime_pool_salt": {
+      "id": "slime_pool_salt",
+      "name": "苔池鹽晶",
+      "sell": 6,
+      "bias": {
+        "warding": 2
+      },
+      "specialBonus": 0,
+      "description": "水窪邊緣結成的鹽晶可偏向防護詞綴。"
+    },
+    "cave_insect_chitin": {
+      "id": "cave_insect_chitin",
+      "name": "洞蟲甲質",
+      "sell": 7,
+      "bias": {
+        "piercing": 3
+      },
+      "specialBonus": 0,
+      "description": "掘脈蛛蟲剝落的堅韌甲片，是製作甲質穿刺矛的主要材料。"
+    },
+    "cave_insect_leg": {
+      "id": "cave_insect_leg",
+      "name": "洞蟲肢節",
+      "sell": 4,
+      "bias": {
+        "striking": 1
+      },
+      "specialBonus": 0,
+      "description": "巡隧蛛蟲的硬化肢節，可用來調整穿刺矛的敲擊手感。"
+    },
+    "cave_insect_resin": {
+      "id": "cave_insect_resin",
+      "name": "洞蟲樹脂",
+      "sell": 5,
+      "bias": {
+        "piercing": 1
+      },
+      "specialBonus": 0,
+      "description": "壁棲蛛蟲吐出的黏稠樹脂，可用來調整穿刺矛的穿甲鍛造方向。"
+    },
+    "cave_insect_sac": {
+      "id": "cave_insect_sac",
+      "name": "洞蟲礦囊",
+      "sell": 6,
+      "bias": {
+        "striking": 2
+      },
+      "specialBonus": 0,
+      "description": "載礦蛛蟲攜帶的纖維礦囊，可作為穿刺矛的強化素材。"
+    },
+    "cave_insect_plate": {
+      "id": "cave_insect_plate",
+      "name": "洞蟲厚甲",
+      "sell": 8,
+      "bias": {
+        "piercing": 2
+      },
+      "specialBonus": 0,
+      "description": "厚甲蛛蟲與刃肢蛛蟲的外殼碎片，可作穿刺矛的穿甲偏材。"
+    },
+    "cave_insect_venom_gland": {
+      "id": "cave_insect_venom_gland",
+      "name": "洞蟲腺囊",
+      "sell": 9,
+      "bias": {
+        "striking": 2
+      },
+      "specialBonus": 0,
+      "description": "伏擊蛛蟲的腺囊僅作素材名稱與鍛造偏材，不代表中毒效果。"
+    },
+    "cave_insect_core": {
+      "id": "cave_insect_core",
+      "name": "洞蟲核心",
+      "sell": 10,
+      "bias": {
+        "piercing": 2
+      },
+      "specialBonus": 0,
+      "description": "守脈蛛蟲體內凝結的礦質核心，可穩定穿刺矛的鍛造方向。"
+    },
+    "cave_insect_queen_core": {
+      "id": "cave_insect_queen_core",
+      "name": "蛛蟲后核心",
+      "sell": 32,
+      "bias": {
+        "piercing": 3,
+        "blocking": 2
+      },
+      "specialBonus": 0.1,
+      "description": "蛛蟲后保證掉落的稀有核心，可偏向穿刺或格擋鍛造。"
+    },
+    "wild_beast_hide": {
+      "id": "wild_beast_hide",
+      "name": "野獸皮",
+      "sell": 5,
+      "bias": {
+        "warding": 1
+      },
+      "specialBonus": 0,
+      "description": "灌叢野兔留下的柔韌皮革，是縫製皮衣的主料並可增強抗護。"
+    },
+    "wild_beast_horn": {
+      "id": "wild_beast_horn",
+      "name": "石角",
+      "sell": 6,
+      "bias": {
+        "blocking": 2
+      },
+      "specialBonus": 0,
+      "description": "石角獸脫落的堅硬角質，可讓護具鍛造偏向格擋。"
+    },
+    "wild_beast_tendon": {
+      "id": "wild_beast_tendon",
+      "name": "赤尾筋",
+      "sell": 6,
+      "bias": {
+        "piercing": 2,
+        "bleeding": 1
+      },
+      "specialBonus": 0,
+      "description": "赤尾獸強韌的腿筋，適合編入穿刺長槍。"
+    },
+    "wild_beast_fur": {
+      "id": "wild_beast_fur",
+      "name": "蕨背毛",
+      "sell": 4,
+      "bias": {
+        "warding": 1,
+        "blocking": 1
+      },
+      "specialBonus": 0,
+      "description": "蕨背獸厚實的毛皮能增加護衣的格擋與抗護。"
+    },
+    "wild_beast_antler": {
+      "id": "wild_beast_antler",
+      "name": "澤角鹿角",
+      "sell": 7,
+      "bias": {
+        "striking": 1,
+        "blocking": 1
+      },
+      "specialBonus": 0,
+      "description": "澤角鹿角質適合塑成槍尖，也可調整護具方向。"
+    },
+    "wild_beast_resin": {
+      "id": "wild_beast_resin",
+      "name": "琥珀樹脂",
+      "sell": 9,
+      "bias": {
+        "keen": 2,
+        "bleeding": 1
+      },
+      "specialBonus": 0,
+      "description": "琥珀狐毛間沾附的樹脂可調整武器的銳利鍛造方向。"
+    },
+    "wild_beast_amber_sinew": {
+      "id": "wild_beast_amber_sinew",
+      "name": "琥珀韌筋",
+      "sell": 12,
+      "bias": {
+        "keen": 2,
+        "piercing": 1
+      },
+      "specialBonus": 0,
+      "description": "刺鬃與疾風角獸的稀有韌筋，能支援精準武器鍛造。"
+    },
+    "wild_beast_apex_core": {
+      "id": "wild_beast_apex_core",
+      "name": "王獸核心骨",
+      "sell": 25,
+      "bias": {
+        "striking": 2,
+        "keen": 2
+      },
+      "specialBonus": 0,
+      "description": "林地王獸留下的稀有核心骨，可作為兼容武器的可選鍛造偏材。"
+    },
+    "frontier_goblin_scrap": {
+      "id": "frontier_goblin_scrap",
+      "name": "哥布林廢鐵",
+      "sell": 4,
+      "bias": {
+        "piercing": 1
+      },
+      "specialBonus": 0,
+      "description": "斥候攜帶的零散廢鐵，可作為長槍骨架並偏向穿刺鍛造。"
+    },
+    "frontier_goblin_slingcord": {
+      "id": "frontier_goblin_slingcord",
+      "name": "投石繩索",
+      "sell": 5,
+      "bias": {
+        "keen": 1,
+        "bleeding": 1
+      },
+      "specialBonus": 0,
+      "description": "投石手使用的韌繩能支援輕型武器的銳利與流血方向。"
+    },
+    "frontier_goblin_plate": {
+      "id": "frontier_goblin_plate",
+      "name": "拼裝盾片",
+      "sell": 6,
+      "bias": {
+        "sturdy": 1,
+        "blocking": 2
+      },
+      "specialBonus": 0,
+      "description": "工匠盾牌上的金屬片，可重熔為護衣防護層。"
+    },
+    "frontier_goblin_signalcloth": {
+      "id": "frontier_goblin_signalcloth",
+      "name": "信號旗布",
+      "sell": 8,
+      "bias": {
+        "sturdy": 1,
+        "warding": 2,
+        "blocking": 1
+      },
+      "specialBonus": 0,
+      "description": "瞭望手的耐磨旗布可作護具襯層，兼顧堅固與格擋防護。"
+    },
+    "frontier_goblin_ironbits": {
+      "id": "frontier_goblin_ironbits",
+      "name": "礦料鐵屑",
+      "sell": 5,
+      "bias": {
+        "piercing": 1,
+        "sturdy": 1
+      },
+      "specialBonus": 0,
+      "description": "搬運工背架散落的鐵料，可補強長槍穿刺與護衣堅固。"
+    },
+    "frontier_goblin_wire": {
+      "id": "frontier_goblin_wire",
+      "name": "捕網鋼線",
+      "sell": 6,
+      "bias": {
+        "piercing": 1,
+        "keen": 1
+      },
+      "specialBonus": 0,
+      "description": "捕網手攜帶的鋼線可用於武器纏柄與精準鍛造。"
+    },
+    "frontier_goblin_forgecore": {
+      "id": "frontier_goblin_forgecore",
+      "name": "鍛爐芯片",
+      "sell": 13,
+      "bias": {
+        "keen": 2,
+        "piercing": 2
+      },
+      "specialBonus": 0,
+      "description": "破甲手與決鬥者珍藏的稀有鍛爐芯片，可穩定武器鍛造。"
+    },
+    "frontier_goblin_warlord_seal": {
+      "id": "frontier_goblin_warlord_seal",
+      "name": "戰帥印記",
+      "sell": 25,
+      "bias": {
+        "striking": 2,
+        "piercing": 2
+      },
+      "specialBonus": 0,
+      "description": "地方戰帥留下的稀有印記，可作為兼容武器配方的可選鍛造偏材。"
+    },
+    "fog_undead_bone": {
+      "id": "fog_undead_bone",
+      "name": "霧谷骨片",
+      "sell": 6,
+      "bias": {
+        "piercing": 2
+      },
+      "specialBonus": 0,
+      "description": "骨架行者身上剝落的堅硬骨片，可作墓紋短刃主材並偏向穿透。"
+    },
+    "fog_undead_wax": {
+      "id": "fog_undead_wax",
+      "name": "燈盞蠟",
+      "sell": 5,
+      "bias": {
+        "keen": 2
+      },
+      "specialBonus": 0,
+      "description": "提燈幽影的凝結蠟質，可作墓紋短刃偏材，調整刃口銳利度。"
+    },
+    "fog_undead_tendon": {
+      "id": "fog_undead_tendon",
+      "name": "墓徑筋腱",
+      "sell": 7,
+      "bias": {
+        "piercing": 1
+      },
+      "specialBonus": 0,
+      "description": "墓徑獵犬的堅韌筋腱，是墓紋短刃的鍛造耗材。"
+    },
+    "fog_undead_cryptstone": {
+      "id": "fog_undead_cryptstone",
+      "name": "墓室石片",
+      "sell": 8,
+      "bias": {
+        "blocking": 2
+      },
+      "specialBonus": 0,
+      "description": "墓室石衛掉落的平整石片，可用於墓衛鎖甲並加強格擋鍛造。"
+    },
+    "fog_undead_shroud": {
+      "id": "fog_undead_shroud",
+      "name": "守墓裹布",
+      "sell": 7,
+      "bias": {
+        "warding": 2
+      },
+      "specialBonus": 0,
+      "description": "守墓哀者與黑甲墓衛留下的厚布，可作墓衛護具耗材並偏向抗護。"
+    },
+    "fog_undead_bellmetal": {
+      "id": "fog_undead_bellmetal",
+      "name": "暮鐘合金",
+      "sell": 10,
+      "bias": {
+        "warding": 2
+      },
+      "specialBonus": 0,
+      "description": "暮鐘守者的鐘身碎片，可作墓衛鎖甲偏材，提升抗護鍛造方向。"
+    },
+    "fog_undead_cinderbone": {
+      "id": "fog_undead_cinderbone",
+      "name": "灰燼骨核",
+      "sell": 14,
+      "bias": {
+        "keen": 3
+      },
+      "specialBonus": 0,
+      "description": "菁英怨靈與黑甲墓衛偶爾留下的稀有骨核，可偏向短刃銳利鍛造。"
+    },
+    "fog_undead_crypt_heart": {
+      "id": "fog_undead_crypt_heart",
+      "name": "墓主心核",
+      "sell": 20,
+      "bias": {
+        "keen": 4
+      },
+      "specialBonus": 0,
+      "description": "霧谷墓主必定留下的稀有心核，可作墓紋短刃的可選偏材。"
+    },
+    "mine_construct_shard": {
+      "id": "mine_construct_shard",
+      "name": "岩構碎晶",
+      "sell": 7,
+      "bias": {
+        "piercing": 2
+      },
+      "specialBonus": 0,
+      "description": "碎晶岩靈掉落的尖銳碎片，是碎晶穿脈槍的主要材料。"
+    },
+    "mine_construct_plate": {
+      "id": "mine_construct_plate",
+      "name": "岩構石板",
+      "sell": 8,
+      "bias": {
+        "sturdy": 2
+      },
+      "specialBonus": 0,
+      "description": "礦道石衛與礦脈壁壘構留下的平整石板，可鍛成石板護甲。"
+    },
+    "mine_construct_resonant_stone": {
+      "id": "mine_construct_resonant_stone",
+      "name": "脈石節晶",
+      "sell": 6,
+      "bias": {
+        "striking": 2
+      },
+      "specialBonus": 0,
+      "description": "脈石柱構的節晶可作碎晶穿脈槍偏材，調整打擊手感。"
+    },
+    "mine_construct_joint": {
+      "id": "mine_construct_joint",
+      "name": "岩構接節",
+      "sell": 7,
+      "bias": {
+        "piercing": 1
+      },
+      "specialBonus": 0,
+      "description": "礦巷爬岩掉落的耐磨接節，是碎晶穿脈槍的鍛造耗材。"
+    },
+    "mine_construct_binding": {
+      "id": "mine_construct_binding",
+      "name": "岩構束材",
+      "sell": 7,
+      "bias": {
+        "sturdy": 2
+      },
+      "specialBonus": 0,
+      "description": "礦脈砌石者身上的纖維束材，可作石板護甲主材並偏向穩固。"
+    },
+    "mine_construct_ironvein": {
+      "id": "mine_construct_ironvein",
+      "name": "鐵脈礦節",
+      "sell": 10,
+      "bias": {
+        "sturdy": 2
+      },
+      "specialBonus": 0,
+      "description": "鐵脈守望構留下的礦節可作護甲偏材，提升穩固鍛造方向。"
+    },
+    "mine_construct_corechip": {
+      "id": "mine_construct_corechip",
+      "name": "岩構核片",
+      "sell": 15,
+      "bias": {
+        "striking": 3
+      },
+      "specialBonus": 0,
+      "description": "菁英岩構偶爾掉落的稀有核片，可偏向穿脈槍的打擊鍛造。"
+    },
+    "mine_construct_ancient_core": {
+      "id": "mine_construct_ancient_core",
+      "name": "遠古岩構核心",
+      "sell": 22,
+      "bias": {
+        "striking": 4
+      },
+      "specialBonus": 0,
+      "description": "遠古岩構核心必定留下的稀有材料，可作穿脈槍的可選偏材。"
+    },
+    "spring_pea_good": {
+      "id": "spring_pea_good",
+      "name": "豌豆莢",
+      "sell": 2,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "豌豆成熟後採下的新鮮豆莢。"
+    },
+    "field_turnip_good": {
+      "id": "field_turnip_good",
+      "name": "蕪菁",
+      "sell": 3,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "田蕪菁成熟後收成的根菜。"
+    },
+    "summer_barley_good": {
+      "id": "summer_barley_good",
+      "name": "大麥束",
+      "sell": 4,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "夏大麥收成後整理成束的穀物。"
+    },
+    "sun_pepper_good": {
+      "id": "sun_pepper_good",
+      "name": "紅椒",
+      "sell": 5,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "日照椒成熟後採下的紅色椒果。"
+    },
+    "forest_bean_good": {
+      "id": "forest_bean_good",
+      "name": "林豆莢",
+      "sell": 6,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "林豆成熟後採收的飽滿豆莢。"
+    },
+    "autumn_pumpkin_good": {
+      "id": "autumn_pumpkin_good",
+      "name": "南瓜",
+      "sell": 7,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "秋南瓜完全成熟後收成的果實。"
+    },
+    "orchard_apple_good": {
+      "id": "orchard_apple_good",
+      "name": "蘋果",
+      "sell": 8,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "果園蘋果成熟後採下的秋季果實。"
+    },
+    "winter_cabbage_good": {
+      "id": "winter_cabbage_good",
+      "name": "甘藍",
+      "sell": 9,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "冬甘藍收成的緊實菜葉，可補充糧食。"
+    },
+    "frost_root_good": {
+      "id": "frost_root_good",
+      "name": "霜根塊",
+      "sell": 10,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "霜根成熟後收成的根塊，單份營養豐富。"
+    },
+    "marsh_rice_good": {
+      "id": "marsh_rice_good",
+      "name": "稻穗",
+      "sell": 11,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "濕地稻成熟後收成的穀穗。"
+    },
+    "cave_mushroom_good": {
+      "id": "cave_mushroom_good",
+      "name": "洞菇",
+      "sell": 12,
+      "bias": {},
+      "specialBonus": 0,
+      "description": "洞菇成熟後採下的菌菇，單份營養充足。"
+    }
+  },
+  "recipes": {
+    "starterSpear": {
+      "id": "starterSpear",
+      "name": "木石長矛",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 3
+        },
+        {
+          "source": "inventory",
+          "itemId": "stone",
+          "amount": 2
+        }
+      ],
+      "goldCost": 4,
+      "staminaCost": 10,
+      "durationMinutes": 45,
+      "outputBase": "spear",
+      "outputLevel": 2,
+      "requiredSmithing": 1,
+      "practiceCap": 3,
+      "station": "store",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "wolfFang",
+        "moonStone"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 3,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "fieldSpear": {
+      "id": "fieldSpear",
+      "name": "進階長矛",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 4
+        },
+        {
+          "source": "inventory",
+          "itemId": "stone",
+          "amount": 3
+        }
+      ],
+      "goldCost": 6,
+      "staminaCost": 12,
+      "durationMinutes": 60,
+      "outputBase": "spear",
+      "outputLevel": 3,
+      "requiredSmithing": 2,
+      "practiceCap": 5,
+      "station": "store",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "wolfFang",
+        "moonStone"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 3,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "fieldArmor": {
+      "id": "fieldArmor",
+      "name": "鎖甲",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 1
+        }
+      ],
+      "goldCost": 8,
+      "staminaCost": 12,
+      "durationMinutes": 60,
+      "outputBase": "chainArmor",
+      "outputLevel": 3,
+      "requiredSmithing": 2,
+      "practiceCap": 5,
+      "station": "store",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "wolfHide"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 3,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "ironShortSword": {
+      "id": "ironShortSword",
+      "name": "鐵短劍",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 3
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 1
+        }
+      ],
+      "goldCost": 18,
+      "staminaCost": 16,
+      "durationMinutes": 90,
+      "outputBase": "shortSword",
+      "outputLevel": 6,
+      "requiredSmithing": 5,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "wolfFang",
+        "moonStone"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 5,
+        "minimumRarity": "rare"
+      },
+      "masterpieceRules": {
+        "requiredSmithing": 6,
+        "chance": 0.25
+      },
+      "affixRules": "default"
+    },
+    "slime_resin_guard_recipe": {
+      "id": "slime_resin_guard_recipe",
+      "name": "製作樹脂護衣",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "slime_resin",
+          "amount": 3
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 2
+        }
+      ],
+      "goldCost": 11,
+      "staminaCost": 12,
+      "durationMinutes": 60,
+      "outputBase": "slime_resin_guard",
+      "outputLevel": 3,
+      "requiredSmithing": 2,
+      "practiceCap": 4,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "slime_resin",
+        "slime_amber_gel",
+        "slime_pool_salt"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 2,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "slime_glass_pike_recipe": {
+      "id": "slime_glass_pike_recipe",
+      "name": "鍛造晶刺長槍",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "slime_glass_shard",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 3
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 16,
+      "staminaCost": 16,
+      "durationMinutes": 90,
+      "outputBase": "slime_glass_pike",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "slime_glass_shard",
+        "slime_spring_ichor",
+        "slime_heart_gel"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "rare"
+      },
+      "affixRules": "default"
+    },
+    "slime_moss_coat_recipe": {
+      "id": "slime_moss_coat_recipe",
+      "name": "縫製苔池外套",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "slime_moss_core",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "slime_bog_mucus",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 20,
+      "staminaCost": 18,
+      "durationMinutes": 120,
+      "outputBase": "slime_moss_coat",
+      "outputLevel": 6,
+      "requiredSmithing": 5,
+      "practiceCap": 7,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "slime_moss_core",
+        "slime_bog_mucus",
+        "slime_pool_salt"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 5,
+        "minimumRarity": "rare"
+      },
+      "affixRules": "default"
+    },
+    "slime_spring_blade_recipe": {
+      "id": "slime_spring_blade_recipe",
+      "name": "鍛造泉躍短刃",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "slime_spring_ichor",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "stone",
+          "amount": 1
+        }
+      ],
+      "goldCost": 26,
+      "staminaCost": 22,
+      "durationMinutes": 150,
+      "outputBase": "slime_spring_blade",
+      "outputLevel": 7,
+      "requiredSmithing": 6,
+      "practiceCap": 8,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "slime_spring_ichor",
+        "slime_glass_shard",
+        "slime_heart_gel"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 6,
+        "minimumRarity": "rare"
+      },
+      "masterpieceRules": {
+        "requiredSmithing": 8,
+        "chance": 0.12
+      },
+      "affixRules": "default"
+    },
+    "cave_insect_chitin_spear_recipe": {
+      "id": "cave_insect_chitin_spear_recipe",
+      "name": "鍛造甲質穿刺矛",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "cave_insect_chitin",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 3
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 14,
+      "staminaCost": 15,
+      "durationMinutes": 90,
+      "outputBase": "cave_insect_chitin_spear",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "cave_insect_chitin",
+        "cave_insect_leg",
+        "cave_insect_resin",
+        "cave_insect_sac",
+        "cave_insect_plate",
+        "cave_insect_venom_gland",
+        "cave_insect_core",
+        "cave_insect_queen_core"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "cave_insect_leg_blade_recipe": {
+      "id": "cave_insect_leg_blade_recipe",
+      "name": "鍛造刃節獵刀",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "cave_insect_leg",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "cave_insect_venom_gland",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 17,
+      "staminaCost": 16,
+      "durationMinutes": 85,
+      "outputBase": "cave_insect_leg_blade",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "cave_insect_leg",
+        "cave_insect_venom_gland",
+        "cave_insect_resin",
+        "cave_insect_core",
+        "cave_insect_queen_core"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "cave_insect_plate_vest_recipe": {
+      "id": "cave_insect_plate_vest_recipe",
+      "name": "鍛造厚甲背心",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "cave_insect_plate",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "cave_insect_sac",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 19,
+      "staminaCost": 17,
+      "durationMinutes": 95,
+      "outputBase": "cave_insect_plate_vest",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "cave_insect_plate",
+        "cave_insect_sac",
+        "cave_insect_core",
+        "cave_insect_queen_core"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "cave_insect_resin_coat_recipe": {
+      "id": "cave_insect_resin_coat_recipe",
+      "name": "縫製樹脂護衣",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "cave_insect_resin",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "cave_insect_chitin",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 2
+        }
+      ],
+      "goldCost": 18,
+      "staminaCost": 16,
+      "durationMinutes": 90,
+      "outputBase": "cave_insect_resin_coat",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "cave_insect_resin",
+        "cave_insect_chitin",
+        "cave_insect_core",
+        "cave_insect_queen_core"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "wild_beast_tendon_spear_recipe": {
+      "id": "wild_beast_tendon_spear_recipe",
+      "name": "鍛造韌筋長槍",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "wild_beast_tendon",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "wild_beast_antler",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 3
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 18,
+      "staminaCost": 17,
+      "durationMinutes": 90,
+      "outputBase": "wild_beast_tendon_spear",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "wild_beast_tendon",
+        "wild_beast_resin",
+        "wild_beast_amber_sinew"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "wild_beast_horn_knife_recipe": {
+      "id": "wild_beast_horn_knife_recipe",
+      "name": "鍛造石角獵刀",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "wild_beast_horn",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 15,
+      "staminaCost": 14,
+      "durationMinutes": 75,
+      "outputBase": "wild_beast_horn_knife",
+      "outputLevel": 4,
+      "requiredSmithing": 3,
+      "practiceCap": 5,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "wild_beast_antler",
+        "wild_beast_resin",
+        "wild_beast_amber_sinew",
+        "wild_beast_apex_core"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 3,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "wild_beast_hide_coat_recipe": {
+      "id": "wild_beast_hide_coat_recipe",
+      "name": "縫製野獸皮衣",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "wild_beast_hide",
+          "amount": 3
+        },
+        {
+          "source": "material",
+          "materialId": "wild_beast_fur",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 16,
+      "staminaCost": 15,
+      "durationMinutes": 75,
+      "outputBase": "wild_beast_hide_coat",
+      "outputLevel": 4,
+      "requiredSmithing": 3,
+      "practiceCap": 5,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "wild_beast_hide",
+        "wild_beast_horn",
+        "wild_beast_fur",
+        "wild_beast_antler"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 3,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "wild_beast_amber_cuirass_recipe": {
+      "id": "wild_beast_amber_cuirass_recipe",
+      "name": "鍛造琥珀筋甲",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "wild_beast_hide",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "wild_beast_antler",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 2
+        }
+      ],
+      "goldCost": 22,
+      "staminaCost": 20,
+      "durationMinutes": 110,
+      "outputBase": "wild_beast_amber_cuirass",
+      "outputLevel": 6,
+      "requiredSmithing": 5,
+      "practiceCap": 7,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "wild_beast_hide",
+        "wild_beast_horn",
+        "wild_beast_fur",
+        "wild_beast_antler"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 5,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "frontier_goblin_scrap_spear_recipe": {
+      "id": "frontier_goblin_scrap_spear_recipe",
+      "name": "鍛造廢鐵長槍",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "frontier_goblin_scrap",
+          "amount": 3
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 3
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 18,
+      "staminaCost": 17,
+      "durationMinutes": 90,
+      "outputBase": "frontier_goblin_scrap_spear",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "frontier_goblin_scrap",
+        "frontier_goblin_ironbits",
+        "frontier_goblin_wire",
+        "frontier_goblin_forgecore",
+        "frontier_goblin_warlord_seal"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "frontier_goblin_plate_vest_recipe": {
+      "id": "frontier_goblin_plate_vest_recipe",
+      "name": "製作拼裝板甲背心",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "frontier_goblin_plate",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "frontier_goblin_ironbits",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 18,
+      "staminaCost": 17,
+      "durationMinutes": 90,
+      "outputBase": "frontier_goblin_plate_vest",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "frontier_goblin_plate",
+        "frontier_goblin_signalcloth",
+        "frontier_goblin_ironbits"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "frontier_goblin_wire_knife_recipe": {
+      "id": "frontier_goblin_wire_knife_recipe",
+      "name": "鍛造鋼線獵刀",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "frontier_goblin_wire",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "frontier_goblin_slingcord",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 18,
+      "staminaCost": 17,
+      "durationMinutes": 90,
+      "outputBase": "frontier_goblin_wire_knife",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "frontier_goblin_slingcord",
+        "frontier_goblin_wire",
+        "frontier_goblin_forgecore"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "frontier_goblin_signal_coat_recipe": {
+      "id": "frontier_goblin_signal_coat_recipe",
+      "name": "縫製信號旗布外衣",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "frontier_goblin_signalcloth",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 20,
+      "staminaCost": 18,
+      "durationMinutes": 100,
+      "outputBase": "frontier_goblin_signal_coat",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "frontier_goblin_plate",
+        "frontier_goblin_signalcloth"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "fog_undead_cryptblade_recipe": {
+      "id": "fog_undead_cryptblade_recipe",
+      "name": "鍛造墓紋短刃",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "fog_undead_bone",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "fog_undead_tendon",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 22,
+      "staminaCost": 18,
+      "durationMinutes": 100,
+      "outputBase": "fog_undead_cryptblade",
+      "outputLevel": 6,
+      "requiredSmithing": 5,
+      "practiceCap": 7,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "fog_undead_bone",
+        "fog_undead_wax",
+        "fog_undead_tendon",
+        "fog_undead_cinderbone",
+        "fog_undead_crypt_heart"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 5,
+        "minimumRarity": "rare"
+      },
+      "affixRules": "default"
+    },
+    "fog_undead_guardmail_recipe": {
+      "id": "fog_undead_guardmail_recipe",
+      "name": "鍛造墓衛鎖甲",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "fog_undead_cryptstone",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "fog_undead_shroud",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 24,
+      "staminaCost": 20,
+      "durationMinutes": 120,
+      "outputBase": "fog_undead_guardmail",
+      "outputLevel": 6,
+      "requiredSmithing": 5,
+      "practiceCap": 7,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "fog_undead_cryptstone",
+        "fog_undead_shroud",
+        "fog_undead_bellmetal"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 5,
+        "minimumRarity": "rare"
+      },
+      "affixRules": "default"
+    },
+    "fog_undead_boneknife_recipe": {
+      "id": "fog_undead_boneknife_recipe",
+      "name": "鍛造骨燈匕首",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "fog_undead_wax",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "fog_undead_bone",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 20,
+      "staminaCost": 16,
+      "durationMinutes": 90,
+      "outputBase": "fog_undead_boneknife",
+      "outputLevel": 5,
+      "requiredSmithing": 4,
+      "practiceCap": 6,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "fog_undead_bone",
+        "fog_undead_wax",
+        "fog_undead_tendon",
+        "fog_undead_cinderbone",
+        "fog_undead_crypt_heart"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 4,
+        "minimumRarity": "uncommon"
+      },
+      "affixRules": "default"
+    },
+    "fog_undead_shroudcoat_recipe": {
+      "id": "fog_undead_shroudcoat_recipe",
+      "name": "縫製守墓裹衣",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "fog_undead_shroud",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "fog_undead_bellmetal",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 21,
+      "staminaCost": 18,
+      "durationMinutes": 105,
+      "outputBase": "fog_undead_shroudcoat",
+      "outputLevel": 6,
+      "requiredSmithing": 5,
+      "practiceCap": 7,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "fog_undead_shroud"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 5,
+        "minimumRarity": "rare"
+      },
+      "affixRules": "default"
+    },
+    "mine_construct_shardpike_recipe": {
+      "id": "mine_construct_shardpike_recipe",
+      "name": "鍛造碎晶穿脈槍",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "mine_construct_shard",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "mine_construct_joint",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 22,
+      "staminaCost": 18,
+      "durationMinutes": 100,
+      "outputBase": "mine_construct_shardpike",
+      "outputLevel": 6,
+      "requiredSmithing": 5,
+      "practiceCap": 7,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "mine_construct_shard",
+        "mine_construct_resonant_stone",
+        "mine_construct_joint",
+        "mine_construct_corechip",
+        "mine_construct_ancient_core"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 5,
+        "minimumRarity": "rare"
+      },
+      "affixRules": "default"
+    },
+    "mine_construct_plateguard_recipe": {
+      "id": "mine_construct_plateguard_recipe",
+      "name": "鍛造石板護甲",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "mine_construct_plate",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "mine_construct_binding",
+          "amount": 2
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 24,
+      "staminaCost": 20,
+      "durationMinutes": 120,
+      "outputBase": "mine_construct_plateguard",
+      "outputLevel": 6,
+      "requiredSmithing": 5,
+      "practiceCap": 7,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "mine_construct_plate",
+        "mine_construct_binding",
+        "mine_construct_ironvein"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 5,
+        "minimumRarity": "rare"
+      },
+      "affixRules": "default"
+    },
+    "mine_construct_jointblade_recipe": {
+      "id": "mine_construct_jointblade_recipe",
+      "name": "鍛造接節刃",
+      "category": "weapon",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "mine_construct_resonant_stone",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "mine_construct_ironvein",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "wood",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 21,
+      "staminaCost": 17,
+      "durationMinutes": 95,
+      "outputBase": "mine_construct_jointblade",
+      "outputLevel": 6,
+      "requiredSmithing": 5,
+      "practiceCap": 7,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [],
+      "qualityRules": {
+        "floorAtSmithing": 5,
+        "minimumRarity": "rare"
+      },
+      "affixRules": "default"
+    },
+    "mine_construct_bindingmail_recipe": {
+      "id": "mine_construct_bindingmail_recipe",
+      "name": "鍛造岩構束甲",
+      "category": "armor",
+      "inputs": [
+        {
+          "source": "material",
+          "materialId": "mine_construct_ironvein",
+          "amount": 2
+        },
+        {
+          "source": "material",
+          "materialId": "mine_construct_binding",
+          "amount": 1
+        },
+        {
+          "source": "inventory",
+          "itemId": "iron",
+          "amount": 1
+        }
+      ],
+      "goldCost": 22,
+      "staminaCost": 18,
+      "durationMinutes": 110,
+      "outputBase": "mine_construct_bindingmail",
+      "outputLevel": 6,
+      "requiredSmithing": 5,
+      "practiceCap": 7,
+      "station": "blacksmith",
+      "opensAtHour": 8,
+      "closesAtHour": 18,
+      "allowedBiasMaterials": [
+        "mine_construct_binding"
+      ],
+      "qualityRules": {
+        "floorAtSmithing": 5,
+        "minimumRarity": "rare"
+      },
+      "affixRules": "default"
+    }
+  },
+  "crops": {
+    "spring_pea": {
+      "id": "spring_pea",
+      "name": {
+        "zh-TW": "豌豆"
+      },
+      "description": {
+        "zh-TW": "春季短週期作物，收成少而成熟迅速。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "春"
+      ],
+      "growthMinutes": 720,
+      "harvestAmount": 4,
+      "harvestGoodId": "spring_pea_good"
+    },
+    "field_turnip": {
+      "id": "field_turnip",
+      "name": {
+        "zh-TW": "田蕪菁"
+      },
+      "description": {
+        "zh-TW": "春秋皆可栽種，一日成熟且收量穩定。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "春",
+        "秋"
+      ],
+      "growthMinutes": 1440,
+      "harvestAmount": 6,
+      "harvestGoodId": "field_turnip_good"
+    },
+    "summer_barley": {
+      "id": "summer_barley",
+      "name": {
+        "zh-TW": "夏大麥"
+      },
+      "description": {
+        "zh-TW": "夏季大宗作物，以較長生長時間換取更多收成。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "夏"
+      ],
+      "growthMinutes": 2880,
+      "harvestAmount": 8,
+      "harvestGoodId": "summer_barley_good"
+    },
+    "sun_pepper": {
+      "id": "sun_pepper",
+      "name": {
+        "zh-TW": "日照椒"
+      },
+      "description": {
+        "zh-TW": "夏日成熟的椒果，收量不多但滋味濃厚。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "夏"
+      ],
+      "growthMinutes": 2160,
+      "harvestAmount": 4,
+      "harvestGoodId": "sun_pepper_good"
+    },
+    "forest_bean": {
+      "id": "forest_bean",
+      "name": {
+        "zh-TW": "林豆"
+      },
+      "description": {
+        "zh-TW": "夏秋皆能生長，適合穩定供應中期糧食。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "夏",
+        "秋"
+      ],
+      "growthMinutes": 2880,
+      "harvestAmount": 6,
+      "harvestGoodId": "forest_bean_good"
+    },
+    "autumn_pumpkin": {
+      "id": "autumn_pumpkin",
+      "name": {
+        "zh-TW": "秋南瓜"
+      },
+      "description": {
+        "zh-TW": "需要耐心照料的秋季作物，成熟後收量豐厚。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "秋"
+      ],
+      "growthMinutes": 5760,
+      "harvestAmount": 10,
+      "harvestGoodId": "autumn_pumpkin_good"
+    },
+    "orchard_apple": {
+      "id": "orchard_apple",
+      "name": {
+        "zh-TW": "果園蘋果"
+      },
+      "description": {
+        "zh-TW": "秋季收成的果實，兼顧食用與交易價值。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "秋"
+      ],
+      "growthMinutes": 2880,
+      "harvestAmount": 5,
+      "harvestGoodId": "orchard_apple_good"
+    },
+    "winter_cabbage": {
+      "id": "winter_cabbage",
+      "name": {
+        "zh-TW": "冬甘藍"
+      },
+      "description": {
+        "zh-TW": "冬季三日成熟的耐寒蔬菜，能提供充足糧食。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "冬"
+      ],
+      "growthMinutes": 4320,
+      "harvestAmount": 6,
+      "harvestGoodId": "winter_cabbage_good"
+    },
+    "frost_root": {
+      "id": "frost_root",
+      "name": {
+        "zh-TW": "霜根"
+      },
+      "description": {
+        "zh-TW": "冬季緩慢生長的根菜，收量較少但飽足感高。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "冬"
+      ],
+      "growthMinutes": 5760,
+      "harvestAmount": 5,
+      "harvestGoodId": "frost_root_good"
+    },
+    "marsh_rice": {
+      "id": "marsh_rice",
+      "name": {
+        "zh-TW": "濕地稻"
+      },
+      "description": {
+        "zh-TW": "夏秋生長的長週期作物，成熟時可收穫一批稻穗。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "夏",
+        "秋"
+      ],
+      "growthMinutes": 5760,
+      "harvestAmount": 8,
+      "harvestGoodId": "marsh_rice_good"
+    },
+    "cave_mushroom": {
+      "id": "cave_mushroom",
+      "name": {
+        "zh-TW": "洞菇"
+      },
+      "description": {
+        "zh-TW": "春秋冬皆可栽種，成熟較慢而單份營養豐足。"
+      },
+      "regions": [
+        "farmland"
+      ],
+      "seasons": [
+        "春",
+        "秋",
+        "冬"
+      ],
+      "growthMinutes": 4320,
+      "harvestAmount": 4,
+      "harvestGoodId": "cave_mushroom_good"
+    }
+  },
+  "cropGoods": {
+    "spring_pea_good": {
+      "id": "spring_pea_good",
+      "name": {
+        "zh-TW": "豌豆莢"
+      },
+      "description": {
+        "zh-TW": "豌豆成熟後採下的新鮮豆莢。"
+      },
+      "sourceCropId": "spring_pea",
+      "foodValue": 1,
+      "sell": 2
+    },
+    "field_turnip_good": {
+      "id": "field_turnip_good",
+      "name": {
+        "zh-TW": "蕪菁"
+      },
+      "description": {
+        "zh-TW": "田蕪菁成熟後收成的根菜。"
+      },
+      "sourceCropId": "field_turnip",
+      "foodValue": 1,
+      "sell": 3
+    },
+    "summer_barley_good": {
+      "id": "summer_barley_good",
+      "name": {
+        "zh-TW": "大麥束"
+      },
+      "description": {
+        "zh-TW": "夏大麥收成後整理成束的穀物。"
+      },
+      "sourceCropId": "summer_barley",
+      "foodValue": 1,
+      "sell": 4
+    },
+    "sun_pepper_good": {
+      "id": "sun_pepper_good",
+      "name": {
+        "zh-TW": "紅椒"
+      },
+      "description": {
+        "zh-TW": "日照椒成熟後採下的紅色椒果。"
+      },
+      "sourceCropId": "sun_pepper",
+      "foodValue": 2,
+      "sell": 5
+    },
+    "forest_bean_good": {
+      "id": "forest_bean_good",
+      "name": {
+        "zh-TW": "林豆莢"
+      },
+      "description": {
+        "zh-TW": "林豆成熟後採收的飽滿豆莢。"
+      },
+      "sourceCropId": "forest_bean",
+      "foodValue": 2,
+      "sell": 6
+    },
+    "autumn_pumpkin_good": {
+      "id": "autumn_pumpkin_good",
+      "name": {
+        "zh-TW": "南瓜"
+      },
+      "description": {
+        "zh-TW": "秋南瓜完全成熟後收成的果實。"
+      },
+      "sourceCropId": "autumn_pumpkin",
+      "foodValue": 2,
+      "sell": 7
+    },
+    "orchard_apple_good": {
+      "id": "orchard_apple_good",
+      "name": {
+        "zh-TW": "蘋果"
+      },
+      "description": {
+        "zh-TW": "果園蘋果成熟後採下的秋季果實。"
+      },
+      "sourceCropId": "orchard_apple",
+      "foodValue": 2,
+      "sell": 8
+    },
+    "winter_cabbage_good": {
+      "id": "winter_cabbage_good",
+      "name": {
+        "zh-TW": "甘藍"
+      },
+      "description": {
+        "zh-TW": "冬甘藍收成的緊實菜葉，可補充糧食。"
+      },
+      "sourceCropId": "winter_cabbage",
+      "foodValue": 3,
+      "sell": 9
+    },
+    "frost_root_good": {
+      "id": "frost_root_good",
+      "name": {
+        "zh-TW": "霜根塊"
+      },
+      "description": {
+        "zh-TW": "霜根成熟後收成的根塊，單份營養豐富。"
+      },
+      "sourceCropId": "frost_root",
+      "foodValue": 3,
+      "sell": 10
+    },
+    "marsh_rice_good": {
+      "id": "marsh_rice_good",
+      "name": {
+        "zh-TW": "稻穗"
+      },
+      "description": {
+        "zh-TW": "濕地稻成熟後收成的穀穗。"
+      },
+      "sourceCropId": "marsh_rice",
+      "foodValue": 3,
+      "sell": 11
+    },
+    "cave_mushroom_good": {
+      "id": "cave_mushroom_good",
+      "name": {
+        "zh-TW": "洞菇"
+      },
+      "description": {
+        "zh-TW": "洞菇成熟後採下的菌菇，單份營養充足。"
+      },
+      "sourceCropId": "cave_mushroom",
+      "foodValue": 3,
+      "sell": 12
+    }
+  }
+}

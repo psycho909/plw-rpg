@@ -1,0 +1,575 @@
+{
+  "runId": "2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70",
+  "headBeforeAfterSame": true,
+  "branchBeforeAfterSame": true,
+  "sourceAndConfigMapUnchanged": true,
+  "sourceMapFilesBefore": 117,
+  "sourceMapFilesAfter": 117,
+  "targetNewPackCounts": {
+    "monsters": 11,
+    "materials": 8,
+    "equipment": 8,
+    "recipes": 4
+  },
+  "targetSixFamilyCounts": {
+    "monsters": 66,
+    "materials": 48,
+    "equipment": 48,
+    "recipes": 24,
+    "crops": 0,
+    "cropGoods": 0
+  },
+  "actualNewFamilyCounts": {
+    "slime": {
+      "families": 1,
+      "monsters": 11,
+      "lootTables": 12,
+      "equipment": 8,
+      "materials": 8,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 4,
+      "affixes": 0
+    },
+    "cave-insects": {
+      "families": 1,
+      "monsters": 11,
+      "lootTables": 12,
+      "equipment": 8,
+      "materials": 8,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 4,
+      "affixes": 0
+    },
+    "wild-beasts": {
+      "families": 1,
+      "monsters": 11,
+      "lootTables": 12,
+      "equipment": 8,
+      "materials": 8,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 4,
+      "affixes": 0
+    },
+    "frontier-goblins": {
+      "families": 1,
+      "monsters": 11,
+      "lootTables": 12,
+      "equipment": 8,
+      "materials": 8,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 4,
+      "affixes": 0
+    },
+    "fog-undead": {
+      "families": 1,
+      "monsters": 11,
+      "lootTables": 12,
+      "equipment": 8,
+      "materials": 8,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 4,
+      "affixes": 0
+    },
+    "mine-constructs": {
+      "families": 1,
+      "monsters": 11,
+      "lootTables": 12,
+      "equipment": 8,
+      "materials": 8,
+      "crops": 0,
+      "cropGoods": 0,
+      "recipes": 4,
+      "affixes": 0
+    }
+  },
+  "generatedPackArtifacts": {
+    "slime": {
+      "file": "slime.json",
+      "bytes": 18895,
+      "sha256": "007be15bf032cc266c36d4ee628b94a87a28840e3cb34a41c9c3e16f4bbc7f38"
+    },
+    "cave-insects": {
+      "file": "cave-insects.json",
+      "bytes": 19887,
+      "sha256": "ecd764dccaf811e8d6ba357942706edae915f9f43d0084ae23e86099099a81ef"
+    },
+    "wild-beasts": {
+      "file": "wild-beasts.json",
+      "bytes": 19684,
+      "sha256": "22121079cf75fcfbde2568ef5d85a9ced04b87f0b30203e453b71dec10c4a04b"
+    },
+    "frontier-goblins": {
+      "file": "frontier-goblins.json",
+      "bytes": 20742,
+      "sha256": "00146899333a90f459b7000601ea3764866d82acc16b04536806b0fe6b5a96ea"
+    },
+    "fog-undead": {
+      "file": "fog-undead.json",
+      "bytes": 19825,
+      "sha256": "3b0b3f90247ae3c1433c77630ffe716e91d3bf52f074d4e9784ffbe72fb59f96"
+    },
+    "mine-constructs": {
+      "file": "mine-constructs.json",
+      "bytes": 19842,
+      "sha256": "992bd86d7b181141ad189327873c5c4bff3fb640adf284bc2572e81982d8afad"
+    },
+    "six-family-combined": {
+      "file": "six-family-combined.json",
+      "bytes": 118270,
+      "sha256": "3a0752be73790818b8e3db23b64c12e8af3a99ee5be6bfc1fdaa9ef60cd22b7c"
+    }
+  },
+  "semanticGearAudit": {
+    "method": "Exact canonical gear profile by slot/attack/defense/penetration and effective affix eligibility; excludes sale value, names, descriptions, and equipment IDs from the grouping key. Authored affixes resolve to stat/slots/tiers; absent authored affixes retain the stable baseline affix ID, matching contentValidation affix semantics.",
+    "equipmentCount": 48,
+    "authoredAffixCount": 0,
+    "baselineAffixFallbackIds": [
+      "bleeding",
+      "blocking",
+      "keen",
+      "piercing",
+      "striking",
+      "sturdy",
+      "warding"
+    ],
+    "functionalCloneGroups": [
+      {
+        "semantic": {
+          "slot": "armor",
+          "attack": 0,
+          "defense": 4,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "blocking"
+            },
+            {
+              "id": "sturdy"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "slime_resin_guard",
+            "sell": 18
+          },
+          {
+            "id": "wild_beast_hide_coat",
+            "sell": 22
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "armor",
+          "attack": 0,
+          "defense": 5,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "blocking"
+            },
+            {
+              "id": "warding"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "slime_moss_coat",
+            "sell": 27
+          },
+          {
+            "id": "cave_insect_resin_coat",
+            "sell": 29
+          },
+          {
+            "id": "fog_undead_shroudcoat",
+            "sell": 31
+          },
+          {
+            "id": "mine_construct_bindingmail",
+            "sell": 32
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 7,
+          "defense": 0,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "bleeding"
+            },
+            {
+              "id": "keen"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "slime_spring_blade",
+            "sell": 28
+          },
+          {
+            "id": "cave_insect_leg_blade",
+            "sell": 34
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "armor",
+          "attack": 0,
+          "defense": 7,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "blocking"
+            },
+            {
+              "id": "sturdy"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "slime_matriarch_cuirass",
+            "sell": 38
+          },
+          {
+            "id": "fog_undead_guardmail",
+            "sell": 36
+          },
+          {
+            "id": "mine_construct_plateguard",
+            "sell": 37
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 7,
+          "defense": 0,
+          "penetration": 2,
+          "affixes": [
+            {
+              "id": "piercing"
+            },
+            {
+              "id": "striking"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "cave_insect_chitin_spear",
+            "sell": 28
+          },
+          {
+            "id": "frontier_goblin_scrap_spear",
+            "sell": 29
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 8,
+          "defense": 0,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "keen"
+            },
+            {
+              "id": "striking"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "wild_beast_resin_axe",
+            "sell": 32
+          },
+          {
+            "id": "frontier_goblin_ironaxe",
+            "sell": 33
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 6,
+          "defense": 0,
+          "penetration": 3,
+          "affixes": [
+            {
+              "id": "piercing"
+            },
+            {
+              "id": "striking"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "wild_beast_antler_pike",
+            "sell": 30
+          },
+          {
+            "id": "fog_undead_cinderpike",
+            "sell": 35
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 10,
+          "defense": 0,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "bleeding"
+            },
+            {
+              "id": "striking"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "fog_undead_wightcleaver",
+            "sell": 42
+          },
+          {
+            "id": "mine_construct_ramhammer",
+            "sell": 43
+          }
+        ]
+      }
+    ],
+    "functionalCloneGroupCount": 8,
+    "allMembersOfCloneGroupsExcludedCount": 19,
+    "equipmentCountAfterExcludingAllCloneGroupMembers": 29
+  },
+  "actualSixFamilyCounts": {
+    "families": 6,
+    "monsters": 66,
+    "lootTables": 72,
+    "equipment": 48,
+    "materials": 48,
+    "crops": 0,
+    "cropGoods": 0,
+    "recipes": 24,
+    "affixes": 0
+  },
+  "allSixCountTargetsMatched": true,
+  "cliRuns": [
+    {
+      "name": "slime",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "cave-insects",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "wild-beasts",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "frontier-goblins",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "fog-undead",
+      "exitCode": 1,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "mine-constructs",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "six-family-combined",
+      "exitCode": 1,
+      "signal": null,
+      "error": null
+    }
+  ],
+  "rawRunEvidence": [
+    {
+      "name": "cave-insects",
+      "directory": "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70/cases/cave-insects/.qa-runs/2026-10-13T06-57-16.046Z-db6ed69d-925e-448e-97ab-7578d49b5865",
+      "manifestSha256": "f6b45b5675ec028568e38cf0edccadb9c920865b05fe4ae898f7157d8e223f0b",
+      "inputSha256": "ecd764dccaf811e8d6ba357942706edae915f9f43d0084ae23e86099099a81ef",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "sourceMismatches": [],
+      "contentValidationStatus": "PASS",
+      "overallStatus": "PASS"
+    },
+    {
+      "name": "fog-undead",
+      "directory": "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70/cases/fog-undead/.qa-runs/2026-10-13T06-57-35.166Z-d58e259e-8a5c-40eb-ac15-f500fc085c8b",
+      "manifestSha256": "53be8006f1002f8567dbb660ac045d3b3bebe30f43fa7fadaf528759756434a2",
+      "inputSha256": "3b0b3f90247ae3c1433c77630ffe716e91d3bf52f074d4e9784ffbe72fb59f96",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "sourceMismatches": [],
+      "contentValidationStatus": "FAIL",
+      "overallStatus": "FAIL"
+    },
+    {
+      "name": "frontier-goblins",
+      "directory": "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70/cases/frontier-goblins/.qa-runs/2026-10-13T06-57-28.887Z-8c0323b6-83c7-49c3-b791-14c8ac3778bd",
+      "manifestSha256": "2d0ce2d273978cfe276aee494182da8f7cf9cec4f24b499dfab482f6d317f485",
+      "inputSha256": "00146899333a90f459b7000601ea3764866d82acc16b04536806b0fe6b5a96ea",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "sourceMismatches": [],
+      "contentValidationStatus": "PASS",
+      "overallStatus": "PASS"
+    },
+    {
+      "name": "mine-constructs",
+      "directory": "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70/cases/mine-constructs/.qa-runs/2026-10-13T06-57-41.457Z-690c96b5-8e4f-461e-b1c2-5cd02326b792",
+      "manifestSha256": "e028eaaeda725ddb99f7071932dcbd16a62506998c7cd7b2d65a94311f8c5c9d",
+      "inputSha256": "992bd86d7b181141ad189327873c5c4bff3fb640adf284bc2572e81982d8afad",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "sourceMismatches": [],
+      "contentValidationStatus": "PASS",
+      "overallStatus": "PASS"
+    },
+    {
+      "name": "six-family-combined",
+      "directory": "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70/cases/six-family-combined/.qa-runs/2026-10-13T06-57-47.635Z-1bc9fc5f-8cc9-4ac7-89e8-c766eaa9a054",
+      "manifestSha256": "9bfd213bf0d17b59e744f25409b80733c001e9a5acdc5a3a3d8e96f6e4ebb37d",
+      "inputSha256": "3a0752be73790818b8e3db23b64c12e8af3a99ee5be6bfc1fdaa9ef60cd22b7c",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "sourceMismatches": [],
+      "contentValidationStatus": "FAIL",
+      "overallStatus": "FAIL"
+    },
+    {
+      "name": "slime",
+      "directory": "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70/cases/slime/.qa-runs/2026-10-13T06-57-09.630Z-4ab58fe3-fbd0-48fd-afce-f40c9cd5049b",
+      "manifestSha256": "588a7d7ae5f9b60bea357b4fad0e72290524eb5fd6f5c14a20b2c5b2db05c230",
+      "inputSha256": "007be15bf032cc266c36d4ee628b94a87a28840e3cb34a41c9c3e16f4bbc7f38",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "sourceMismatches": [],
+      "contentValidationStatus": "PASS",
+      "overallStatus": "PASS"
+    },
+    {
+      "name": "wild-beasts",
+      "directory": "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70/cases/wild-beasts/.qa-runs/2026-10-13T06-57-22.344Z-e71ce42a-9807-4f75-869f-4e27a86c0976",
+      "manifestSha256": "ee2b94bd3c0964f55f695c370a004961aca3357eb0748f05301fcabc2a5b5513",
+      "inputSha256": "22121079cf75fcfbde2568ef5d85a9ced04b87f0b30203e453b71dec10c4a04b",
+      "inputMatchesManifest": true,
+      "sourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "sourceMismatches": [],
+      "contentValidationStatus": "PASS",
+      "overallStatus": "PASS"
+    }
+  ],
+  "allSevenCliInvocationsPresent": true,
+  "allSevenContentAndChildChecksPass": false,
+  "allRetainedInputsAndSourcesVerify": true,
+  "qualityCounts": {
+    "slime": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "cave-insects": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "wild-beasts": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "frontier-goblins": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "fog-undead": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 15,
+      "usableNewMaterials": 8
+    },
+    "mine-constructs": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "six-family-combined": {
+      "qualifyingNewMonsters": 66,
+      "candidateNewItemIds": 91,
+      "usableNewMaterials": 44
+    }
+  },
+  "warningCounts": {
+    "slime": 0,
+    "cave-insects": 0,
+    "wild-beasts": 1,
+    "frontier-goblins": 0,
+    "fog-undead": 0,
+    "mine-constructs": 0,
+    "six-family-combined": 3
+  },
+  "warningsByCase": {
+    "slime": [],
+    "cave-insects": [],
+    "wild-beasts": [
+      "- WARNING duplicate-like-loot-table [wild_beasts_loot_ironhide, wild_beasts_loot_matriarch]: Loot tables have identical effective item and material distribution."
+    ],
+    "frontier-goblins": [],
+    "fog-undead": [],
+    "mine-constructs": [],
+    "six-family-combined": [
+      "- WARNING duplicate-like-material [fog_undead_cryptstone, mine_construct_plate]: Material definitions have the same effective economy, generation influence, and recipe consumer functions.",
+      "- WARNING duplicate-like-material [fog_undead_shroud, mine_construct_binding]: Material definitions have the same effective economy, generation influence, and recipe consumer functions.",
+      "- WARNING duplicate-like-loot-table [wild_beasts_loot_ironhide, wild_beasts_loot_matriarch]: Loot tables have identical effective item and material distribution."
+    ]
+  },
+  "errorCounts": {
+    "slime": 0,
+    "cave-insects": 0,
+    "wild-beasts": 0,
+    "frontier-goblins": 0,
+    "fog-undead": 1,
+    "mine-constructs": 0,
+    "six-family-combined": 1
+  },
+  "allSevenQualityAndWarningReportsPresent": true
+}

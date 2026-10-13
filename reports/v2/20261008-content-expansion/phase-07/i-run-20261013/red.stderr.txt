@@ -1,0 +1,53 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentFamilies.test.ts > authored family runtime > attributes the wolf-exclusive equipment source only to the wolf boss
+AssertionError: expected [ { label: '擊敗灰狼', …(3) }, …(4) ] to deeply equal [ ObjectContaining{…} ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "label": "擊敗狼王",
++     "label": "擊敗灰狼",
++     "reason": null,
++     "region": "forest",
++     "state": "available",
++   },
++   {
++     "label": "擊敗傷痕灰狼",
++     "reason": "先擊退灰狼，才能追蹤更深處的狼群。",
++     "region": "forest",
++     "state": "ineligible",
++   },
++   {
++     "label": "擊敗精英頭狼",
++     "reason": "先擊退傷痕灰狼，才能追蹤更深處的狼群。",
+      "region": "forest",
++     "state": "ineligible",
++   },
++   {
++     "label": "擊敗狼群領袖",
++     "reason": "先擊退精英頭狼，才能追蹤更深處的狼群。",
++     "region": "forest",
++     "state": "ineligible",
++   },
++   {
++     "label": "擊敗北林狼王",
++     "reason": "先擊退狼群領袖，才能追蹤更深處的狼群。",
++     "region": "forest",
++     "state": "ineligible",
+    },
+  ]
+
+ ❯ src/engine/contentFamilies.test.ts:69:68
+     67|     state.reward.collection.seen.push('grayWolf', 'scarredWolf', 'alph…
+     68|
+     69|     expect(contentKnowledgeHints(state, 'moonFangSpear')?.sources).toE…
+       |                                                                    ^
+     70|       expect.objectContaining({ label: '擊敗狼王', region: 'forest' }),
+     71|     ])
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

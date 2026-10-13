@@ -66,6 +66,7 @@ export function projectCrafting(
     return {
       id,
       name: definition.name,
+      category: definition.category,
       outputName: recipePlan.output?.name ?? ITEM_BASES[definition.outputBase].name,
       outputSlotName: (recipePlan.output?.slot ?? ITEM_BASES[definition.outputBase].slot) === 'weapon' ? '武器' : '防具',
       requiredSmithing: recipePlan.skill.required,
@@ -94,6 +95,7 @@ export function projectCrafting(
     selectedInfluence: influenceMaterials.find(material => material.id === influenceMaterial) ?? null,
     inputs: plan.inputs.map(input => ({
       key: inputKey(input), name: inputName(input), required: input.required, current: input.current,
+      ...(input.source === 'material' ? { materialId: input.materialId } : {}),
     })),
     quality: {
       floorName: plan.quality.floor ? RARITIES[plan.quality.floor].name : null,

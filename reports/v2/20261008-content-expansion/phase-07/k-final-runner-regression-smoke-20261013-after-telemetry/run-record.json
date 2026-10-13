@@ -1,0 +1,62 @@
+{
+  "runId": "20261013T152544Z-pid404896",
+  "launcherStatus": "COMPLETE",
+  "launcherExitCode": 0,
+  "runnerExitCode": 0,
+  "status": "PASS_BROWSER_REGRESSION",
+  "durationSecondsRequested": 60,
+  "durationSecondsActual": 70.16,
+  "actionCount": 14,
+  "actionCategoryCounts": {
+    "start_from_opening": 1,
+    "advance": 1,
+    "explore": 3,
+    "navigate": 7,
+    "observe": 1,
+    "close_dialog": 1
+  },
+  "checkpointCount": 2,
+  "normalReloadCount": 1,
+  "normalReloadVerified": true,
+  "lastNormalReload": {
+    "atUTC": "2026-10-13T15:25:47.979735+00:00",
+    "reason": "regression-visible-one-day-wait-save-reload",
+    "worldSpeedBeforeReload": 0,
+    "worldSpeedAfterReload": 1,
+    "storageRetainedAtLoad": true,
+    "runtimeSavedMatchesBaseline": true,
+    "storageRetentionDifferences": {},
+    "runtimeReloadDifferences": {},
+    "worldTimeBefore": 1920,
+    "worldTimeAfterLoad": 1920,
+    "worldSpeedRestored": 0
+  },
+  "normalLegalWaitVerified": {
+    "button": "等待 1 日",
+    "worldTimeBefore": 480,
+    "worldTimeAfter": 1920
+  },
+  "errorCounts": {},
+  "browserEventCounts": {
+    "saveWrites": 16
+  },
+  "sourceFingerprint": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+  "buildStatusSha256": "b9d5b047229baf9c8a1bb5f516d18ebc48be4ffb96d6a7dab159e81bdb4f09fc",
+  "distFingerprint": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+  "releaseSha256": "cd1c144e44f8e63a888ddfeeff115e6472cf1a2668419b2df710d0e526f841b9",
+  "runnerSha256": "f65641514aee39d06bc33043965c3c6bc5576165c103e1b1b819290ba037680f",
+  "contractTests": 41,
+  "integrityChecks": {
+    "sourceStable": true,
+    "headStable": true,
+    "buildInputsStable": true,
+    "distStable": true,
+    "runnerStable": true,
+    "launcherComplete": true,
+    "regressionPass": true,
+    "zeroErrors": true,
+    "normalReload": true,
+    "legalWait": true
+  },
+  "sourceStableDuringRun": true
+}

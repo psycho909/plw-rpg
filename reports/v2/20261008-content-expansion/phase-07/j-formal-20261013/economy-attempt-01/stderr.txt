@@ -1,0 +1,16 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > Phase 7 simulation lane: economy
+TypeError: Cannot read properties of undefined (reading 'slime_resin')
+ ❯ runEconomy reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:534:85
+    532|     c.skills.smithing.level = Math.max(c.skills.smithing.level, recipe…
+    533|     for (const input of recipe.inputs) if (input.source === 'material'…
+    534|       state.reward.materials[c.id]![input.materialId] = (state.reward.…
+       |                                                                                     ^
+    535|     }
+    536|     // Inventory inputs are intentionally seeded only within a control…
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:143:34
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

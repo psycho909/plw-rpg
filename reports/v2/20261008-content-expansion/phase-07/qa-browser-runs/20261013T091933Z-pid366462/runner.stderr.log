@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa_browser_runner.py", line 721, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa_browser_runner.py", line 596, in main
+    raise RuntimeError(f"Run directory is not empty; preserving all existing evidence: {run_dir}")
+RuntimeError: Run directory is not empty; preserving all existing evidence: /workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-runs/20261013T091933Z-pid366462

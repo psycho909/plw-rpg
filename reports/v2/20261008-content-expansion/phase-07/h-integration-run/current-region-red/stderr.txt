@@ -1,0 +1,17 @@
+npm warn "projects only family targets for the current discovered region" is being parsed as a normal command line argument.
+npm warn Unknown cli config "--t". This will stop working in the next major version of npm.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentFamilies.test.ts > authored family runtime > projects only family targets for the current discovered region
+AssertionError: expected [ 'slime_slick', 'slime_amber', …(64) ] to not include 'cave_insect_digger'
+ ❯ src/engine/contentFamilies.test.ts:59:66
+     57|     const forestOptions = contentEncounterOptions(state)
+     58|     expect(forestOptions.map(option => option.definitionId)).toContain…
+     59|     expect(forestOptions.map(option => option.definitionId)).not.toCon…
+       |                                                                  ^
+     60|     expect(forestOptions.every(option => option.region === 'forest')).…
+     61|     expect(state).toEqual(before)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

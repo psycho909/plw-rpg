@@ -1,0 +1,106 @@
+{
+  "schema": "phase7-content-coverage-v1",
+  "sourceCommit": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "6a320cfcefc529bb06ad7dd815396fdde21097b1f8aab842ac6ec2fe63345ba3",
+  "evidence": {
+    "combinedPack": "f-content-validation-run/runs/2026-10-13T07-15-20.286Z-80576314-da0a-4343-813c-f457571004ec/packs/six-family-combined.json",
+    "packSha256": "7237f2117c7ccd4e9bcde075559166c2f457b588fcf7313c31ce989ad1980337",
+    "finalValidator": "k-final-regression-valid-pack-20261013/content-validation.md",
+    "targetedIntegration": "src/engine/contentItems.integration.test.ts and src/engine/crops.integration.test.ts"
+  },
+  "monsters": {
+    "newUniqueDefinitions": 66,
+    "byRank": {
+      "normal": 36,
+      "elite": 12,
+      "miniBoss": 12,
+      "boss": 6
+    },
+    "families": [
+      {
+        "id": "slime",
+        "name": "濕地黏怪",
+        "normal": 6,
+        "elite": 2,
+        "miniBoss": 2,
+        "boss": 1,
+        "controlledReachabilityWitnesses": 11
+      },
+      {
+        "id": "cave_insects",
+        "name": "洞穴蛛蟲",
+        "normal": 6,
+        "elite": 2,
+        "miniBoss": 2,
+        "boss": 1,
+        "controlledReachabilityWitnesses": 11
+      },
+      {
+        "id": "wild_beasts",
+        "name": "林地野獸",
+        "normal": 6,
+        "elite": 2,
+        "miniBoss": 2,
+        "boss": 1,
+        "controlledReachabilityWitnesses": 11
+      },
+      {
+        "id": "frontier_goblins",
+        "name": "邊境哥布林",
+        "normal": 6,
+        "elite": 2,
+        "miniBoss": 2,
+        "boss": 1,
+        "controlledReachabilityWitnesses": 11
+      },
+      {
+        "id": "fog_undead",
+        "name": "霧谷亡骨",
+        "normal": 6,
+        "elite": 2,
+        "miniBoss": 2,
+        "boss": 1,
+        "controlledReachabilityWitnesses": 11
+      },
+      {
+        "id": "mine_constructs",
+        "name": "礦道岩構",
+        "normal": 6,
+        "elite": 2,
+        "miniBoss": 2,
+        "boss": 1,
+        "controlledReachabilityWitnesses": 11
+      }
+    ],
+    "controlledReachabilityWitnesses": 66,
+    "naturalEncounterExposure": "not measured"
+  },
+  "items": {
+    "uniqueNewUsefulIds": 107,
+    "equipmentBases": 48,
+    "ecologyMaterials": 48,
+    "cropHarvestGoods": 11,
+    "cropGoodsRuntimeQualified": true,
+    "uniqueIdRule": "equipment + ecology materials + crop goods; crop definitions and material registry mirrors are not separately counted",
+    "equipmentSlots": {
+      "weapon": 30,
+      "armor": 18
+    }
+  },
+  "crafting": {
+    "newRecipes": 24,
+    "runtimeRecipes": 28,
+    "cropDefinitions": 11,
+    "legacyCropDefinitions": [
+      "wheat"
+    ],
+    "totalCropChoices": 12,
+    "newAffixes": 0,
+    "runtimeAffixRegistry": 7
+  },
+  "qualificationLimitations": [
+    "Authoring validator pack reports 96 unique equipment/material IDs and does not include the crop module in the extracted six-family JSON pack. The additional 11 goods qualify separately through crop runtime integration checks.",
+    "Controlled spawn witnesses establish legality of a context, not ordinary encounter probability or natural long-run coverage.",
+    "Combat and economy matrices are controlled fixture signals; they are not human fun or natural drop-rate data."
+  ]
+}

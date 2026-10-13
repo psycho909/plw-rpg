@@ -1,0 +1,35 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > runner configuration guards reject empty combat samples and invalid seed cycles
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > Phase 7 simulation lane: economy
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early crafted combat fixture uses a legal public recipe without changing the combat band level
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > mid combat fixture clamps slime_slick to a shared legal spawn profile and encounters through public APIs
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > preserves the default spring 08:00 when slime_slick time predicates already allow it
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > records non-level context adjustments required by seasonal and hourly spawn predicates
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early masterpiece combat fixture uses a smithing-eligible public recipe without changing the combat band level
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > masterpiece roll is per-seed data while combat setup remains invariant
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > combat raw remaining enemy HP distinguishes victory, death, and active combat
+ × reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > economy fixture initializes an owner material stack before seeding recipe materials 10ms
+   → ensureEconomyOwnerMaterialStack is not defined
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > economy fixture initializes an owner material stack before seeding recipe materials
+ReferenceError: ensureEconomyOwnerMaterialStack is not defined
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:550:21
+    548|     .find(candidate => candidate.source === 'material')
+    549|   expect(input?.source).toBe('material')
+    550|   const materials = ensureEconomyOwnerMaterialStack(state, ownerId)
+       |                     ^
+    551|   if (input?.source === 'material') materials[input.materialId] = inpu…
+    552|   expect(state.reward.materials[ownerId]).toEqual({ [input!.source ===…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 skipped (10)
+   Start at  10:20:40
+   Duration  675ms (transform 445ms, setup 0ms, import 545ms, tests 12ms, environment 0ms)
+

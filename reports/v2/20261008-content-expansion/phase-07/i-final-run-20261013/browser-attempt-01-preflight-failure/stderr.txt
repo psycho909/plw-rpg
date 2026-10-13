@@ -1,0 +1,1 @@
+Build manifest creation helper initially failed to import qa_browser_support because the Phase7 report directory was not added to sys.path. The unchanged launcher then correctly rejected the stale malformed dist manifest before starting a browser: RuntimeError: Build dist manifest differs from current dist/ hashes. No browser or app server started.

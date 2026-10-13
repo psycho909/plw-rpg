@@ -1,0 +1,53 @@
+{
+  "schema": "phase7-region-filter-browser-smoke-v1",
+  "status": "PASS",
+  "startedAtUTC": "2026-10-13T12:53:29.967749+00:00",
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+  "distFingerprint": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+  "browserErrors": [],
+  "httpErrors": [],
+  "checks": [
+    {
+      "name": "production-build-loaded",
+      "status": "PASS",
+      "evidence": {
+        "status": 200
+      }
+    },
+    {
+      "name": "normal-opening-and-menu-navigation",
+      "status": "PASS"
+    },
+    {
+      "name": "actual-region-filter-visible-enabled-selected",
+      "status": "PASS",
+      "evidence": {
+        "label": "區域",
+        "visible": true,
+        "enabled": true,
+        "ariaPressed": "true"
+      }
+    },
+    {
+      "name": "actual-region-filter-not-exploration-action",
+      "status": "PASS",
+      "evidence": {
+        "classification": null,
+        "nextPolicyCategory": "close_dialog",
+        "nextSelectedLabel": null,
+        "policyReason": "依可見控制關閉視窗：關閉視窗。"
+      }
+    },
+    {
+      "name": "browser-and-http-errors-empty",
+      "status": "PASS",
+      "evidence": {
+        "browserErrors": [],
+        "httpErrors": []
+      }
+    }
+  ],
+  "endedAtUTC": "2026-10-13T12:53:32.268551+00:00",
+  "durationSeconds": 2.300823
+}

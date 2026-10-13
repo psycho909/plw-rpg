@@ -1,0 +1,19 @@
+{
+  "name": "validate-fog-undead",
+  "command": "node",
+  "args": [
+    "scripts/validate_content_batch.mjs",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70/packs/fog-undead.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70/cases/fog-undead/readable-report.md"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedUtc": "2026-10-13T06:57:35.033Z",
+  "endedUtc": "2026-10-13T06:57:41.331Z",
+  "startedTaipei": "2026-10-13 14:57:35",
+  "endedTaipei": "2026-10-13 14:57:41",
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

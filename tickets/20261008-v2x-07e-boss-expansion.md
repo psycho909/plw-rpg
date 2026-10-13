@@ -25,7 +25,7 @@ Parent [20261008-v2x-07-content-expansion](20261008-v2x-07-content-expansion.md)
 
 ## Dependencies
 
-Blocked by: [Phase7-D](20261008-v2x-07d-monster-expansion.md)；尚未release。
+Dependency cleared: [Phase7-D](20261008-v2x-07d-monster-expansion.md) was accepted PASS WITH FINDINGS on 2026-10-13; Root released E under the Owner's Phase7 completion instruction.
 
 Currentoverride: entireD acceptedPASSWITHFINDINGS afterfresh585tests/typecheck/build andindependentreview. E **RELEASED** underOwner's instructionfinishPhase7.
 

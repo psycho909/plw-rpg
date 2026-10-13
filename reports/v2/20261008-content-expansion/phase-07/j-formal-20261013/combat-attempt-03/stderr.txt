@@ -1,0 +1,17 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > Phase 7 simulation lane: combat
+Error: no finite legal controlled spawn witness for slime_slick, requestedBand=mid, requestedLevel=5
+ ❯ controlledCombatState reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:275:24
+    273|     selected = contentEncounterOptions(state).some(option => option.de…
+    274|   }
+    275|   if (!selected) throw new Error(`no finite legal controlled spawn wit…
+       |                        ^
+    276|   if (encounterContentMonster(state, definitionId) !== '') throw new E…
+    277|   return {
+ ❯ runCombat reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:354:23
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:139:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

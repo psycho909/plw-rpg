@@ -1,0 +1,1 @@
+The launcher was called without the PHASE7_BROWSER_RELEASE override, so it looked for the final Phase7-K release filename. It exited 2 at preflight, before starting Chromium or a server. The correct I-only manifest is preserved separately and will be passed explicitly on retry.

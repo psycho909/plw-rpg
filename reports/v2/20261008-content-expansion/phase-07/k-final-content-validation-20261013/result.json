@@ -1,0 +1,26 @@
+{
+  "schema": "phase7-content-validation-run-v1",
+  "status": "PASS",
+  "command": [
+    "npm",
+    "run",
+    "validate:content",
+    "--",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/g-integration-run/merged-validator-run/packs/seven-pack-combined.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/content-validation.md"
+  ],
+  "startedAtUTC": "2026-10-13T12:57:13.990925+00:00",
+  "endedAtUTC": "2026-10-13T12:57:20.686434+00:00",
+  "durationSeconds": 6.707,
+  "exitCode": 0,
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprintBefore": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+  "sourceFingerprintAfter": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+  "sourceStable": true,
+  "packPath": "reports/v2/20261008-content-expansion/phase-07/g-integration-run/merged-validator-run/packs/seven-pack-combined.json",
+  "reportPath": "reports/v2/20261008-content-expansion/phase-07/content-validation.md",
+  "stdoutPath": "stdout.txt",
+  "stderrPath": "stderr.txt"
+}

@@ -1,0 +1,14 @@
+test_unrecognized_blocked_modal_stops_after_three_persisted_identical_turns (test_qa_browser_contract.BrowserContracts.test_unrecognized_blocked_modal_stops_after_three_persisted_identical_turns) ... FAIL
+
+======================================================================
+FAIL: test_unrecognized_blocked_modal_stops_after_three_persisted_identical_turns (test_qa_browser_contract.BrowserContracts.test_unrecognized_blocked_modal_stops_after_three_persisted_identical_turns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 35, in test_unrecognized_blocked_modal_stops_after_three_persisted_identical_turns
+    self.assertTrue(callable(record), "identical blocked-modal fail-fast contract is not implemented")
+AssertionError: False is not true : identical blocked-modal fail-fast contract is not implemented
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

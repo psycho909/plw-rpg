@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "saveVersion": 8,
+  "fixtures": {
+    "inventory-gear": {
+      "bytes": 87765,
+      "seed": 781301,
+      "notes": "Controlled inventory fixture: 21 current-source generateItem instances (20 short swords, one hide armor), public save serializer round-trip, player moved to the public blacksmith location by walkTo. Isolated browser context only; not natural acquisition evidence."
+    },
+    "inventory-material-sources": {
+      "bytes": 82982,
+      "seed": 781302,
+      "notes": "Controlled state-aware material knowledge fixture: canonical public monster IDs are marked seen, inventory knowledge contains wolfFang and fog_undead_bone, and stamina is exhausted to expose canonical ineligible reasons. Unknown-region identities remain undiscovered and are represented by the generic projection. Isolated browser context only."
+    },
+    "recipe-missing-expectation": {
+      "bytes": 106
+    },
+    "recipe-missing": {
+      "bytes": 80028,
+      "seed": 781303,
+      "notes": "Controlled public planCraft fixture for starterSpear; expected plan rejected (materials_required). Inputs omitted. Isolated browser context only."
+    },
+    "recipe-satisfied-expectation": {
+      "bytes": 70
+    },
+    "recipe-satisfied": {
+      "bytes": 80058,
+      "seed": 781304,
+      "notes": "Controlled public planCraft fixture for starterSpear; expected plan accepted (none). Exact required wood/stone supplied. Isolated browser context only."
+    },
+    "farm-spring-ready": {
+      "bytes": 80149,
+      "seed": 781305,
+      "notes": "Canonical public walkTo + farm(prepare) fixture at the real farmland tile. Spring valid crops and season-ineligible reasons are projected by the running game; browser performs plant action and x20 maturation through visible controls."
+    },
+    "farm-capacity": {
+      "bytes": 81456,
+      "seed": 781306,
+      "notes": "Canonical public farm prepare/plant transactions fill all four plots; used only to verify the capacity guidance copy in an isolated browser context."
+    },
+    "farm-region-guidance": {
+      "bytes": 80004,
+      "seed": 781307,
+      "notes": "Controlled projection-edge fixture: the canonical farm building is selected at its valid map tile while currentRegion is set to village so the canonical farmCropChoices API can expose region-unavailable reasons. Save schema round trip passes; excluded from natural-play claims."
+    },
+    "forest-content-list": {
+      "bytes": 81482,
+      "seed": 781308,
+      "notes": "Controlled current-region discovery fixture; current-source contentEncounterOptions returned 28 forest rows including normal and boss ranks. UI is restricted to this canonical forest projection. Isolated browser context only."
+    },
+    "boss-cue-expectation": {
+      "bytes": 524
+    },
+    "boss-cue": {
+      "bytes": 82258,
+      "seed": 781309,
+      "notes": "Controlled battle reached through encounterContentMonster(frontier_goblin_warlord) then 3 canonical combatTurn(defend) actions; contentCombatPresentation emitted the visible Boss rank/cue. Isolated browser context only."
+    }
+  }
+}

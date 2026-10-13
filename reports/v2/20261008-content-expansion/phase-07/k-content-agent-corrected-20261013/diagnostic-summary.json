@@ -1,0 +1,219 @@
+{
+  "classification": "diagnostic-only; terminated by Root SIGTERM after action/checkpoint heartbeat stopped",
+  "runId": "20261013T125734Z-pid392604",
+  "mode": "content-agent",
+  "launcherStatus": "FAILED_RUN",
+  "launcherRecordedExitCode": -15,
+  "runnerExitCode": -15,
+  "outerCommandExitCode": 241,
+  "outerElapsedSeconds": 1812.454354,
+  "startUTC": "2026-10-13T12:57:34.367238+00:00",
+  "terminationUTC": "2026-10-13T13:27:46.706755+00:00",
+  "requestedSeconds": 1800,
+  "resultArtifactPresent": false,
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+  "sourceStableDuringRun": true,
+  "runnerSha256Before": "3f6d8cf8d7fa01236a9e2f6d39ee2fd10ff78895367ccef45ed6bd427fdd7c22",
+  "contractTestSha256": "9d56b7034d0e4583e5354294f14c853775412e403c1b9b4d95644caa20506cf1",
+  "releaseSha256": "6fb1b481faf264aa22866114d348827eef9b70b736aaef4fa48a31f0eab94cbf",
+  "buildStatusSha256": "b9d5b047229baf9c8a1bb5f516d18ebc48be4ffb96d6a7dab159e81bdb4f09fc",
+  "distFingerprint": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+  "actionCount": 104,
+  "actionChoices": {
+    "start_from_opening": 1,
+    "explore": 1,
+    "navigate": 35,
+    "observe": 34,
+    "close_dialog": 33
+  },
+  "actionStartUTC": "2026-10-13T12:57:36.034998+00:00",
+  "lastActionUTC": "2026-10-13T13:05:42.903995+00:00",
+  "checkpointCount": 8,
+  "lastCheckpointUTC": "2026-10-13T13:05:00.209602+00:00",
+  "lastCheckpointElapsedSeconds": 443.97,
+  "worldTimeFirstCheckpoint": 591,
+  "worldTimeLastCheckpoint": 1467,
+  "actionWorldTimeFirst": 480,
+  "actionWorldTimeLast": 1553,
+  "reloads": [
+    {
+      "atUTC": "2026-10-13T13:02:39.234341+00:00",
+      "stage": "reload-started",
+      "lane": "NORMAL_FRESH",
+      "reason": "scheduled-stress-save-reload",
+      "baselineFile": "reload-baseline-normal-001.json",
+      "baselineSha256": "a45ed7bc6c38d61c8fb89b320e0decc8578efaa727a8b0c3cb5969038ec1284e",
+      "baselineCoreStateKeys": [
+        "activeCharacterId",
+        "characters",
+        "combat",
+        "crops",
+        "dungeon",
+        "eventSequence",
+        "events",
+        "history",
+        "life",
+        "nextNpcId",
+        "npcs",
+        "party",
+        "preparedPlots",
+        "regionalCrisis",
+        "regions",
+        "reward",
+        "rngState",
+        "saveVersion",
+        "settlement",
+        "threat",
+        "tiles",
+        "worldSeed",
+        "worldTime"
+      ],
+      "stateInjected": false
+    },
+    {
+      "atUTC": "2026-10-13T13:02:39.692419+00:00",
+      "reason": "scheduled-stress-save-reload",
+      "lane": "NORMAL_FRESH",
+      "stateInjected": false,
+      "worldSpeedBeforeReload": 1,
+      "worldSpeedAfterReload": 1,
+      "storageRetainedAtLoad": true,
+      "storageRetentionDifferences": {},
+      "runtimeSavedMatchesBaseline": true,
+      "runtimeReloadDifferences": {},
+      "runtimeSaveComparedAfterLegalPauseAndVisibleSave": true,
+      "excludedMetadataKeys": [
+        "lastSavedAt",
+        "playJournal"
+      ],
+      "comparedCoreGameStateFields": [
+        "activeCharacterId",
+        "characters",
+        "combat",
+        "crops",
+        "dungeon",
+        "eventSequence",
+        "events",
+        "history",
+        "life",
+        "nextNpcId",
+        "npcs",
+        "party",
+        "preparedPlots",
+        "regionalCrisis",
+        "regions",
+        "reward",
+        "rngState",
+        "saveVersion",
+        "settlement",
+        "threat",
+        "tiles",
+        "worldSeed",
+        "worldTime"
+      ],
+      "coreGameStateKeyCount": 23,
+      "saveBytesBefore": 83674,
+      "saveBytesAfter": 83674,
+      "saveSha256Before": "a45ed7bc6c38d61c8fb89b320e0decc8578efaa727a8b0c3cb5969038ec1284e",
+      "saveSha256After": "ba5127c7e7960d8df46f048c8b676f50e55b6ef831261d19349bbc5230b0b816",
+      "loadedSaveBytes": 83674,
+      "loadedSaveSha256": "ea8eab94ec72d5b5a7a7d26983a5a2f0787b84f21b8b59a35933891df765ca27",
+      "worldTimeBefore": 1186,
+      "worldTimeAfterLoad": 1186,
+      "reloadVisibleLabels": [
+        "\u6a61\u8c37",
+        "\u9078\u55ae",
+        "\u5b58\u6a94",
+        "\u66ab\u505c"
+      ]
+    },
+    {
+      "atUTC": "2026-10-13T13:02:39.767554+00:00",
+      "stage": "speed-restored",
+      "lane": "NORMAL_FRESH",
+      "reason": "scheduled-stress-save-reload",
+      "worldSpeed": 1,
+      "stateInjected": false
+    }
+  ],
+  "reloadCount": 1,
+  "allLoggedActionsStateInjectedFalse": true,
+  "allLoggedActionsControlledFixtureFalse": true,
+  "candidateSnapshotCountPerCheckpoint": [
+    70,
+    70,
+    70,
+    70,
+    70,
+    70,
+    70,
+    70
+  ],
+  "candidateSnapshotsAllIdentical": false,
+  "candidateSnapshotSha256": "1a12dcbb112e24841be9f9286a017f8f4c919ac5aabaef2146e3b09a6d1ceaed",
+  "contentAcquisitionEvidence": "No. Logs show 1 explore action, then repeated navigate/observe/close_dialog cycles; no combat/loot/use/craft/farm action. Candidate snapshot remained identical across all 8 checkpoints; no candidate add/remove/acquisition evidence.",
+  "noProgressSummaryAvailable": false,
+  "excludedControlSummaryAvailable": false,
+  "errorCountsAcrossCheckpoints": {},
+  "browserEventCountsLastCheckpoint": {
+    "saveWrites": 1632,
+    "longTasks": 1
+  },
+  "browserEventsTotalByKind": {
+    "saveWrites": 1632,
+    "longTasks": 1
+  },
+  "metrics": {
+    "localStorageBytes": {
+      "first": 83543,
+      "last": 86423,
+      "min": 83543,
+      "max": 86423,
+      "mean": 83940.125
+    },
+    "DOMNodes": {
+      "first": 2736,
+      "last": 2810,
+      "min": 2729,
+      "max": 2832,
+      "mean": 2794.875
+    },
+    "JSListeners": {
+      "first": 431,
+      "last": 459,
+      "min": 431,
+      "max": 460,
+      "mean": 452.5
+    },
+    "runtimeHeapUsedBytes": {
+      "first": 11414484,
+      "last": 24828044,
+      "min": 11414484,
+      "max": 32174168,
+      "mean": 19541957
+    },
+    "runtimeHeapTotalBytes": {
+      "first": 22601728,
+      "last": 67764224,
+      "min": 22601728,
+      "max": 67764224,
+      "mean": 60084224
+    },
+    "indexedDBRecords": {
+      "first": 13,
+      "last": 889,
+      "min": 13,
+      "max": 889,
+      "mean": 451.5
+    }
+  },
+  "profilingLimitationCount": 8,
+  "serverExitCode": -15,
+  "notes": [
+    "Runner stdout/stderr files are empty because the process was terminated before final report emission.",
+    "No qa-browser-result.json exists; no final no-progress/excluded-control counts were emitted.",
+    "Last checkpoint/action/event was at approximately 444\u2013488 elapsed seconds, then no further heartbeat until Root SIGTERM around 1812 seconds.",
+    "Reported browser errors remained empty at all 8 complete checkpoints."
+  ]
+}

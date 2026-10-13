@@ -1,0 +1,31 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentItems.integration.test.ts > Phase 7 content item integration > closes every registered content recipe through planning, generation, provenance, equip, save/reload, and sale
+AssertionError: expected [ { source: 'material', …(4) }, …(2) ] to deeply equal [ { source: 'material', …(4) }, …(2) ]
+
+- Expected
++ Received
+
+@@ -1,9 +1,9 @@
+  [
+    {
+      "amount": 3,
+-     "current": 3,
++     "current": 4,
+      "materialId": "slime_resin",
+      "required": 3,
+      "source": "material",
+    },
+    {
+
+ ❯ src/engine/contentItems.integration.test.ts:63:27
+     61|       expect(plan.ok, `${recipe.id} should be available in its control…
+     62|       expect(state).toEqual(beforePlan)
+     63|       expect(plan.inputs).toEqual([
+       |                           ^
+     64|         ...recipe.inputs.map(input => input.source === 'inventory'
+     65|           ? { ...input, required: input.amount, current: input.amount }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

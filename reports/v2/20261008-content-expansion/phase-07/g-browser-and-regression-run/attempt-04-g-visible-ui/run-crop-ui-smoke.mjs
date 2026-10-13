@@ -1,0 +1,93 @@
+import { createRequire } from 'node:module'
+import { writeFile } from 'node:fs/promises'
+import { performance } from 'node:perf_hooks'
+const require = createRequire(import.meta.url)
+const { chromium } = require('/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright')
+const out = new URL('./', import.meta.url)
+const events = { startedAt: new Date().toISOString(), consoleErrors: [], pageErrors: [], requestFailures: [], steps: [] }
+const mark = (name, extra = {}) => events.steps.push({ name, at: new Date().toISOString(), ...extra })
+const browser = await chromium.launch({ headless: false, executablePath: '/usr/bin/chromium', args: ['--no-sandbox', '--disable-dev-shm-usage'] })
+const context = await browser.newContext({ viewport: { width: 1280, height: 900 } })
+const page = await context.newPage()
+page.on('console', message => { if (message.type() === 'error') events.consoleErrors.push({ text: message.text(), location: message.location() }) })
+page.on('pageerror', error => events.pageErrors.push(String(error.stack || error)))
+page.on('requestfailed', request => events.requestFailures.push({ url: request.url(), failure: request.failure()?.errorText }))
+const started = performance.now()
+try {
+  await page.goto('http://127.0.0.1:4178/', { waitUntil: 'networkidle', timeout: 30000 })
+  await page.screenshot({ path: new URL('initial.png', out).pathname, fullPage: true })
+  mark('loaded', { title: await page.title(), openingVisible: await page.getByText('你醒了過來。').isVisible().catch(() => false) })
+  await page.getByRole('button', { name: '起身' }).click()
+  await page.getByRole('button', { name: '暫停' }).click()
+  await page.waitForTimeout(250)
+  const initialHud = await page.locator('.world-clock').innerText()
+  mark('started-life', { hud: initialHud })
+  await page.locator('.tile[data-position="16,10"]').click()
+  await page.waitForTimeout(500)
+  mark('traveled-to-farm-tile', { region: await page.locator('.world-caption').innerText() })
+  await page.locator('.context-action').click()
+  await page.locator('[aria-label="選擇播種作物"]').waitFor({ timeout: 5000 })
+  const seasonLine = await page.locator('.scene-description').innerText()
+  const cropButtons = await page.locator('[aria-label="選擇播種作物"] button').allTextContents()
+  const cropButton = page.locator('[aria-label="選擇播種作物"] button').nth(1)
+  const selectedCrop = await cropButton.innerText()
+  mark('farm-open-and-season-selected', { seasonLine, cropButtons, selectedCrop })
+  await page.screenshot({ path: new URL('farm-current-season.png', out).pathname, fullPage: true })
+  await page.getByRole('button', { name: '整地 · 體力 6／20 分' }).click()
+  await page.getByRole('button', { name: /播種/ }).click()
+  await page.waitForTimeout(300)
+  const cropBeforeWait = await page.locator('.plot-row').innerText()
+  mark('prepared-and-planted', { cropBeforeWait })
+  await page.locator('button[aria-label="關閉視窗"]').first().click().catch(async () => { await page.keyboard.press('Escape') })
+  await page.getByRole('button', { name: '×20' }).click()
+  const growthStarted = performance.now()
+  let mature = false
+  for (let i = 0; i < 75; i++) {
+    await page.waitForTimeout(1000)
+    await page.getByRole('button', { name: /互動/ }).click().catch(() => {})
+    const plotText = await page.locator('.plot-row').innerText().catch(() => '')
+    if (plotText.includes('可收割')) { mature = true; break }
+    if (i < 74) {
+      await page.keyboard.press('Escape').catch(() => {})
+      await page.waitForTimeout(80)
+      await page.locator('.context-action').click().catch(() => {})
+      await page.getByRole('button', { name: /農田/ }).click().catch(() => {})
+    }
+  }
+  mark('growth-wait', { mature, elapsedMs: Math.round(performance.now() - growthStarted), plot: await page.locator('.plot-row').innerText().catch(() => '') })
+  if (!mature) throw new Error('Crop did not mature within 75 seconds at UI speed ×20')
+  await page.getByRole('button', { name: /收割/ }).click()
+  const harvestVisible = await page.getByText(/收穫 .* 份/).first().isVisible().catch(() => false)
+  mark('harvested', { harvestVisible, plot: await page.locator('.plot-row').innerText() })
+  await page.keyboard.press('Escape').catch(() => {})
+  await page.getByRole('button', { name: '物品' }).first().click()
+  await page.getByRole('group', { name: '物品分類' }).getByRole('button', { name: '狼族素材' }).click()
+  const cropGoodHeading = page.locator('.reward-material').filter({ has: page.getByText(/豌豆莢|小麥|收成/) }).first()
+  const cropMaterial = page.locator('.reward-material').filter({ has: page.getByRole('button', { name: /轉換 1 份/ }) }).first()
+  const materialBefore = await cropMaterial.innerText()
+  const convertButton = cropMaterial.getByRole('button', { name: /轉換 1 份/ })
+  await convertButton.click()
+  const materialAfter = await cropMaterial.innerText()
+  mark('converted-crop-good-to-food', { materialBefore, materialAfter, candidateHeading: await cropGoodHeading.innerText().catch(() => null) })
+  await page.screenshot({ path: new URL('inventory-after-conversion.png', out).pathname, fullPage: true })
+  await page.reload({ waitUntil: 'networkidle', timeout: 30000 })
+  await page.getByRole('button', { name: '物品' }).first().click()
+  await page.getByRole('group', { name: '物品分類' }).getByRole('button', { name: '日常物品' }).click()
+  const foodAfterReload = await page.locator('.inventory-layout').innerText()
+  await page.getByRole('group', { name: '物品分類' }).getByRole('button', { name: '狼族素材' }).click()
+  const materialAfterReload = await page.locator('.reward-material').allInnerTexts()
+  mark('reload-persistence-check', { foodAfterReload, materialAfterReload })
+  await page.screenshot({ path: new URL('inventory-after-reload.png', out).pathname, fullPage: true })
+  events.status = 'PASS'
+} catch (error) {
+  events.status = 'FAIL'
+  events.failure = String(error.stack || error)
+  await page.screenshot({ path: new URL('failure-state.png', out).pathname, fullPage: true }).catch(() => {})
+} finally {
+  events.elapsedMs = Math.round(performance.now() - started)
+  events.finishedAt = new Date().toISOString()
+  events.finalUrl = page.url()
+  await writeFile(new URL('browser-events.json', out), JSON.stringify(events, null, 2) + '\n')
+  await browser.close()
+}
+if (events.status !== 'PASS') process.exitCode = 1

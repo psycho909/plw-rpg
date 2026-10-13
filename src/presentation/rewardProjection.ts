@@ -1,6 +1,6 @@
 import { EQUIPMENT, ITEMS } from '../data/config'
 import { CRAFTING_RECIPES } from '../data/crafting'
-import { ITEM_BASES, RARITIES } from '../data/rewards'
+import { ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
 import type { EquipmentSlot, GearStats, ItemInstance, RarityId } from '../domain/reward'
 import type { GameState } from '../domain/types'
 import { clockLabel } from '../engine/calendar'
@@ -15,9 +15,14 @@ export function statText(key: keyof GearStats, value: number) {
 }
 
 /** Detached bounded projection; paging never deletes owned equipment. */
-export function projectGearPage(state: GameState, requestedPage: number, slot: EquipmentSlot | 'all' = 'all', rarity: RarityId | 'all' = 'all') {
+export function projectGearPage(state: GameState, requestedPage: number, slot: EquipmentSlot | 'all' = 'all', rarity: RarityId | 'all' = 'all', query = '') {
+  const normalizedQuery = query.trim().toLocaleLowerCase('zh-TW')
   const owned = state.reward.instances.filter(item => item.ownerId === state.activeCharacterId
-    && (slot === 'all' || ITEM_BASES[item.baseId].slot === slot) && (rarity === 'all' || item.rarity === rarity))
+    && (slot === 'all' || ITEM_BASES[item.baseId].slot === slot) && (rarity === 'all' || item.rarity === rarity)
+    && (!normalizedQuery || [
+      ITEM_BASES[item.baseId].name, item.baseId, RARITIES[item.rarity].name, item.rarity,
+      `Lv.${item.level}`, item.material ? MATERIALS[item.material]?.name ?? item.material : '',
+    ].join(' ').toLocaleLowerCase('zh-TW').includes(normalizedQuery)))
   const pages = Math.max(1, Math.ceil(owned.length / GEAR_PAGE_SIZE))
   const page = Math.max(0, Math.min(pages - 1, Number.isFinite(requestedPage) ? Math.floor(requestedPage) : 0))
   return { items: structuredClone(owned.slice(page * GEAR_PAGE_SIZE, (page + 1) * GEAR_PAGE_SIZE)), total: owned.length, page, pages }

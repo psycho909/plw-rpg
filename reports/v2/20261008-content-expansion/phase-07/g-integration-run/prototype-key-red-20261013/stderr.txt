@@ -1,0 +1,22 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crops.integration.test.ts > rejects crop IDs inherited from the catalog prototype without throwing or mutating state
+AssertionError: expected [Function] to not throw an error but 'TypeError: Cannot read properties of …' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"TypeError: Cannot read properties of undefined (reading 'includes')"
+
+ ❯ src/engine/crops.integration.test.ts:59:65
+     57|     const before = structuredClone(state)
+     58|     let result = ''
+     59|     expect(() => { result = farm(state, 'plant', cropId) }).not.toThro…
+       |                                                                 ^
+     60|     expect(result).toBe('這種作物不存在。')
+     61|     expect(state).toEqual(before)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

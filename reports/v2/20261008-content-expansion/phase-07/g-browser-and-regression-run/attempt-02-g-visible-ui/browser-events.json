@@ -1,0 +1,40 @@
+{
+  "startedAt": "2026-10-13T07:56:25.966Z",
+  "consoleErrors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://127.0.0.1:4178/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "pageErrors": [],
+  "requestFailures": [],
+  "steps": [
+    {
+      "name": "loaded",
+      "at": "2026-10-13T07:56:27.324Z",
+      "title": "在陌生的天空下 — 橡谷",
+      "openingVisible": true
+    },
+    {
+      "name": "started-life",
+      "at": "2026-10-13T07:56:27.700Z",
+      "hud": "第 1 年 春 1 日\n08:00"
+    },
+    {
+      "name": "traveled-to-farm-tile",
+      "at": "2026-10-13T07:56:28.248Z",
+      "region": "🌾 東方農田 16, 10\n時間已暫停"
+    }
+  ],
+  "status": "FAIL",
+  "failure": "locator.click: Error: strict mode violation: getByRole('button', { name: /農田/ }) resolved to 79 elements:\n    1) <button tabindex=\"-1\" class=\"tile road\" title=\"14, 7：東方農田\" data-position=\"14,7\" aria-label=\"14, 7：東方農田\">…</button> aka getByRole('button', { name: '14, 7：東方農田' })\n    2) <button tabindex=\"-1\" class=\"tile road\" title=\"15, 7：東方農田\" data-position=\"15,7\" aria-label=\"15, 7：東方農田\">…</button> aka getByRole('button', { name: '15, 7：東方農田' })\n    3) <button tabindex=\"-1\" class=\"tile road\" title=\"16, 7：東方農田\" data-position=\"16,7\" aria-label=\"16, 7：東方農田\">…</button> aka getByRole('button', { name: '16, 7：東方農田' })\n    4) <button tabindex=\"-1\" class=\"tile road\" title=\"17, 7：東方農田\" data-position=\"17,7\" aria-label=\"17, 7：東方農田\">…</button> aka getByRole('button', { name: '17, 7：東方農田' })\n    5) <button tabindex=\"-1\" class=\"tile field\" title=\"14, 8：東方農田\" data-position=\"14,8\" aria-label=\"14, 8：東方農田\">…</button> aka getByRole('button', { name: '14, 8：東方農田' })\n    6) <button tabindex=\"-1\" class=\"tile field\" title=\"15, 8：東方農田\" data-position=\"15,8\" aria-label=\"15, 8：東方農田\">…</button> aka getByRole('button', { name: '15, 8：東方農田' })\n    7) <button tabindex=\"-1\" class=\"tile field\" title=\"16, 8：東方農田\" data-position=\"16,8\" aria-label=\"16, 8：東方農田\">…</button> aka getByRole('button', { name: '16, 8：東方農田' })\n    8) <button tabindex=\"-1\" class=\"tile field\" title=\"17, 8：東方農田\" data-position=\"17,8\" aria-label=\"17, 8：東方農田\">…</button> aka getByRole('button', { name: '17, 8：東方農田' })\n    9) <button tabindex=\"-1\" class=\"tile field\" title=\"14, 9：東方農田\" data-position=\"14,9\" aria-label=\"14, 9：東方農田\">…</button> aka getByRole('button', { name: '14, 9：東方農田' })\n    10) <button tabindex=\"-1\" class=\"tile field\" title=\"15, 9：東方農田\" data-position=\"15,9\" aria-label=\"15, 9：東方農田\">…</button> aka getByRole('button', { name: '15, 9：東方農田' })\n    ...\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /農田/ })\u001b[22m\n\n    at /workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/g-browser-and-regression-run/attempt-02-g-visible-ui/run-crop-ui-smoke.mjs:30:52\n    at async file:///workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/g-browser-and-regression-run/attempt-02-g-visible-ui/run-crop-ui-smoke.mjs:29:3",
+  "elapsedMs": 6968,
+  "finishedAt": "2026-10-13T07:56:33.433Z",
+  "finalUrl": "http://127.0.0.1:4178/"
+}

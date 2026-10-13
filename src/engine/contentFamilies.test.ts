@@ -6,11 +6,12 @@ import { combatTurn } from './actions'
 import { awardContentLoot } from './itemGeneration'
 import {
   contentAttackForTurn, contentChargeHealing, contentCombatPhase, contentCombatPresentation,
-  contentDefenseForTurn, contentEncounterOptions, contentSourceHints, encounterContentMonster,
+  contentDefenseForTurn, contentEncounterOptions, contentKnowledgeHints, contentSourceHints, encounterContentMonster,
 } from './contentFamilies'
 import { craft } from './crafting'
 import { equipInstance } from './rewardActions'
 import { createGame, player, simulate, walkTo } from './simulation'
+import { wolfEncounterOptions } from './wolfFamily'
 import { deserialize, serialize } from '../services/saveService'
 
 describe('authored family runtime', () => {
@@ -30,6 +31,46 @@ describe('authored family runtime', () => {
     })
   })
 
+  it('shows only discovered sources, keeps hidden regions generic, and uses canonical source eligibility reasons', () => {
+    const state = createGame(62739)
+    const hidden = contentKnowledgeHints(state, 'fog_undead_bone')!
+    expect(hidden.sources).toContainEqual(expect.objectContaining({
+      label: '尚未探索的區域', state: 'undiscovered', region: null,
+    }))
+    expect(JSON.stringify(hidden)).not.toContain('迷霧山谷')
+    expect(JSON.stringify(hidden)).not.toContain('腐骨行屍')
+
+    player(state).currentRegion = 'forest'
+    state.reward.collection.seen.push('grayWolf', 'scarredWolf')
+    const wolfOptions = wolfEncounterOptions(state)
+    const wolfHints = contentKnowledgeHints(state, 'wolfFang')!
+    expect(wolfHints.sources).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '擊敗灰狼', state: 'available', region: 'forest' }),
+      expect.objectContaining({ label: '擊敗傷痕灰狼', state: 'ineligible', reason: wolfOptions.find(option => option.definitionId === 'scarredWolf')?.reason }),
+    ]))
+
+    player(state).currentRegion = 'farmland'
+    player(state).level = 1
+    player(state).stamina = 7
+    state.reward.collection.seen.push('slime_slick')
+    const slimeOption = contentEncounterOptions(state).find(option => option.definitionId === 'slime_slick')!
+    const resinHint = contentKnowledgeHints(state, 'slime_resin')!
+    expect(resinHint.sources).toContainEqual(expect.objectContaining({
+      label: '擊敗滑液黏怪', state: 'ineligible', reason: slimeOption.reason,
+    }))
+  })
+
+  it('attributes the wolf-exclusive equipment source only to the wolf boss', () => {
+    const state = createGame(62740)
+    player(state).currentRegion = 'forest'
+    state.regions.forest!.discovered = true
+    state.reward.collection.seen.push('grayWolf', 'scarredWolf', 'alphaWolf', 'packLeader', 'wolfKing')
+
+    expect(contentKnowledgeHints(state, 'moonFangSpear')?.sources).toEqual([
+      expect.objectContaining({ label: '擊敗北林狼王', region: 'forest' }),
+    ])
+  })
+
   it('keeps availability a pure projection and rejects before stamina, time, or RNG change', () => {
     const state = createGame(62731)
     const beforeUnavailable = structuredClone(state)
@@ -46,6 +87,28 @@ describe('authored family runtime', () => {
     const beforeBlocked = structuredClone(state)
     expect(encounterContentMonster(state, 'slime_slick')).toBeTruthy()
     expect(state).toEqual(beforeBlocked)
+  })
+
+  it('projects only family targets for the current discovered region', () => {
+    const state = createGame(62742)
+    expect(walkTo(state, { x: 5, y: 4 })).toBe(true)
+    expect(player(state).currentRegion).toBe('forest')
+
+    const before = structuredClone(state)
+    const forestOptions = contentEncounterOptions(state)
+    expect(forestOptions.map(option => option.definitionId)).toContain('wild_beast_stonehorn')
+    expect(forestOptions.map(option => option.definitionId)).not.toContain('cave_insect_digger')
+    expect(forestOptions.every(option => option.region === 'forest')).toBe(true)
+    expect(state).toEqual(before)
+
+    player(state).currentRegion = 'unknown'
+    state.regions.unknown!.discovered = false
+    expect(contentEncounterOptions(state)).toEqual([])
+
+    state.regions.unknown!.discovered = true
+    const unknownOptions = contentEncounterOptions(state)
+    expect(unknownOptions.map(option => option.definitionId)).toContain('fog_undead_lantern_wisp')
+    expect(unknownOptions.map(option => option.definitionId)).not.toContain('wild_beast_stonehorn')
   })
 
   it('uses the selected monster loot table and closes a real loot-to-craft-to-equip-save loop', () => {

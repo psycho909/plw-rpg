@@ -1,0 +1,30 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > runner configuration guards reject empty combat samples and invalid seed cycles
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > Phase 7 simulation lane: combat
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early crafted combat fixture uses a legal public recipe without changing the combat band level
+ × reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early masterpiece combat fixture uses a smithing-eligible public recipe without changing the combat band level 12ms
+   → no masterpiece-enabled recipe is legal at this fixture level
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early masterpiece combat fixture uses a smithing-eligible public recipe without changing the combat band level
+Error: no masterpiece-enabled recipe is legal at this fixture level
+ ❯ controlledCombatState reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:247:51
+    245|     const recipe = Object.values(CRAFTING_RECIPES).find(candidate => c…
+    246|       && (build !== 'masterpiece' || !!candidate.masterpieceRules))
+    247|     if (build === 'masterpiece' && !recipe) throw new Error('no master…
+       |                                                   ^
+    248|     if (recipe && build === 'masterpiece') c.skills.smithing.level = M…
+    249|     const item = generateItem(state, { baseId: recipe?.outputBase ?? '…
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:286:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 skipped (4)
+   Start at  09:46:15
+   Duration  670ms (transform 450ms, setup 0ms, import 540ms, tests 13ms, environment 0ms)
+

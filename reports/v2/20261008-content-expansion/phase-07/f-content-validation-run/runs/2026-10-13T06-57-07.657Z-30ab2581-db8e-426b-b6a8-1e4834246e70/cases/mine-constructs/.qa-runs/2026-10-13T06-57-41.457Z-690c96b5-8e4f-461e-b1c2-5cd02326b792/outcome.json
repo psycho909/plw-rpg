@@ -1,0 +1,41 @@
+{
+  "completedAt": "2026-10-13T06:57:47.454Z",
+  "contentValidationStatus": "PASS",
+  "overallStatus": "PASS",
+  "diagnostics": {
+    "validation": []
+  },
+  "checks": {
+    "targetedTests": {
+      "command": "npm",
+      "args": [
+        "exec",
+        "--",
+        "vitest",
+        "run",
+        "src/engine/contentValidation.test.ts"
+      ],
+      "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:42\n   Duration  243ms (transform 91ms, setup 0ms, import 107ms, tests 29ms, environment 0ms)\n\n",
+      "stderr": "",
+      "exitCode": 0,
+      "signal": null,
+      "error": "",
+      "status": "PASS"
+    },
+    "typecheck": {
+      "command": "npm",
+      "args": [
+        "exec",
+        "--",
+        "vue-tsc",
+        "--noEmit"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "exitCode": 0,
+      "signal": null,
+      "error": "",
+      "status": "PASS"
+    }
+  }
+}

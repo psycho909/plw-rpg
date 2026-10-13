@@ -1,0 +1,33 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > runner configuration guards reject empty combat samples and invalid seed cycles
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > Phase 7 simulation lane: inventory
+ × reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early crafted combat fixture uses a legal public recipe 13ms
+   → expected [Function] to not throw an error but 'Error: no legal recipe found for cont…' was thrown
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early crafted combat fixture uses a legal public recipe
+AssertionError: expected [Function] to not throw an error but 'Error: no legal recipe found for cont…' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: no legal recipe found for controlled crafted build"
+
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:246:88
+    244|
+    245| it('early crafted combat fixture uses a legal public recipe', () => {
+    246|   expect(() => controlledCombatState(0x720000, 'slime_slick', 'early',…
+       |                                                                                        ^
+    247| })
+    248|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 skipped (3)
+   Start at  09:41:46
+   Duration  621ms (transform 401ms, setup 0ms, import 488ms, tests 14ms, environment 0ms)

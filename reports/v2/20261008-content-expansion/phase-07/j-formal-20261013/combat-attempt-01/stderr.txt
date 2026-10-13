@@ -1,0 +1,17 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > Phase 7 simulation lane: combat
+Error: no legal recipe found for controlled crafted build
+ ❯ controlledCombatState reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:222:18
+    220|       item.ownerId = c.id
+    221|       if (equipInstance(state, item.instanceId) !== '') throw new Erro…
+    222|     } else throw new Error('no legal recipe found for controlled craft…
+       |                  ^
+    223|   } else if (build === 'generated' || build === 'masterpiece') {
+    224|     const recipe = Object.values(CRAFTING_RECIPES).find(candidate => c…
+ ❯ runCombat reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:252:21
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:139:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

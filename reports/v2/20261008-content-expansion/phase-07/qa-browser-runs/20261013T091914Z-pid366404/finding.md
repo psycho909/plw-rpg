@@ -1,0 +1,1 @@
+The launcher started its loopback static server successfully, then the runner resolved the relative PLW_BUILD_STATUS from its phase-directory cwd and could not find the build manifest. It exited before launching Chromium. The absolute source/build/release manifest remains valid; retry with absolute environment paths.

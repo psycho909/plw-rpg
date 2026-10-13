@@ -1,0 +1,650 @@
+{
+  "runId": "2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70",
+  "headBefore": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "headAfter": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "branchBefore": "v2x/reward-core",
+  "branchAfter": "v2x/reward-core",
+  "sourceConfigPackageMapFilesBefore": 117,
+  "sourceConfigPackageMapFilesAfter": 117,
+  "sourceConfigPackageMapUnchanged": true,
+  "aggregateRawCounts": {
+    "families": 6,
+    "monsters": 66,
+    "materials": 48,
+    "equipment": 48,
+    "recipes": 24,
+    "crops": 0,
+    "cropGoods": 0
+  },
+  "actualQualityCounts": {
+    "slime": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "cave-insects": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "wild-beasts": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "frontier-goblins": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "fog-undead": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 15,
+      "usableNewMaterials": 8
+    },
+    "mine-constructs": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "six-family-combined": {
+      "qualifyingNewMonsters": 66,
+      "candidateNewItemIds": 91,
+      "usableNewMaterials": 44
+    }
+  },
+  "warningCounts": {
+    "slime": 0,
+    "cave-insects": 0,
+    "wild-beasts": 1,
+    "frontier-goblins": 0,
+    "fog-undead": 0,
+    "mine-constructs": 0,
+    "six-family-combined": 3
+  },
+  "warningsByCase": {
+    "slime": [],
+    "cave-insects": [],
+    "wild-beasts": [
+      "- WARNING duplicate-like-loot-table [wild_beasts_loot_ironhide, wild_beasts_loot_matriarch]: Loot tables have identical effective item and material distribution."
+    ],
+    "frontier-goblins": [],
+    "fog-undead": [],
+    "mine-constructs": [],
+    "six-family-combined": [
+      "- WARNING duplicate-like-material [fog_undead_cryptstone, mine_construct_plate]: Material definitions have the same effective economy, generation influence, and recipe consumer functions.",
+      "- WARNING duplicate-like-material [fog_undead_shroud, mine_construct_binding]: Material definitions have the same effective economy, generation influence, and recipe consumer functions.",
+      "- WARNING duplicate-like-loot-table [wild_beasts_loot_ironhide, wild_beasts_loot_matriarch]: Loot tables have identical effective item and material distribution."
+    ]
+  },
+  "errorCounts": {
+    "slime": 0,
+    "cave-insects": 0,
+    "wild-beasts": 0,
+    "frontier-goblins": 0,
+    "fog-undead": 1,
+    "mine-constructs": 0,
+    "six-family-combined": 1
+  },
+  "errorsByCase": {
+    "slime": [],
+    "cave-insects": [],
+    "wild-beasts": [],
+    "frontier-goblins": [],
+    "fog-undead": [
+      "- ERROR affix-ineligible [fog_undead_bellstaff]: Affix is not eligible for this equipment slot."
+    ],
+    "mine-constructs": [],
+    "six-family-combined": [
+      "- ERROR affix-ineligible [fog_undead_bellstaff]: Affix is not eligible for this equipment slot."
+    ]
+  },
+  "childChecks": {
+    "slime": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:10\n   Duration  288ms (transform 103ms, setup 0ms, import 122ms, tests 40ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "cave-insects": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:16\n   Duration  274ms (transform 102ms, setup 0ms, import 120ms, tests 29ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "wild-beasts": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:23\n   Duration  260ms (transform 91ms, setup 0ms, import 109ms, tests 28ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "frontier-goblins": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:29\n   Duration  242ms (transform 93ms, setup 0ms, import 109ms, tests 27ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "fog-undead": {
+      "cliExit": 1,
+      "contentStatus": "FAIL",
+      "overallStatus": "FAIL",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:35\n   Duration  267ms (transform 109ms, setup 0ms, import 129ms, tests 29ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "mine-constructs": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:42\n   Duration  243ms (transform 91ms, setup 0ms, import 107ms, tests 29ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "six-family-combined": {
+      "cliExit": 1,
+      "contentStatus": "FAIL",
+      "overallStatus": "FAIL",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:48\n   Duration  271ms (transform 100ms, setup 0ms, import 118ms, tests 30ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    }
+  },
+  "functionalGearAudit": {
+    "method": "Exact canonical gear profile by slot/attack/defense/penetration and effective affix eligibility; excludes sale value, names, descriptions, and equipment IDs from the grouping key. Authored affixes resolve to stat/slots/tiers; absent authored affixes retain the stable baseline affix ID, matching contentValidation affix semantics.",
+    "equipmentCount": 48,
+    "authoredAffixCount": 0,
+    "baselineAffixFallbackIds": [
+      "bleeding",
+      "blocking",
+      "keen",
+      "piercing",
+      "striking",
+      "sturdy",
+      "warding"
+    ],
+    "functionalCloneGroups": [
+      {
+        "semantic": {
+          "slot": "armor",
+          "attack": 0,
+          "defense": 4,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "blocking"
+            },
+            {
+              "id": "sturdy"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "slime_resin_guard",
+            "sell": 18
+          },
+          {
+            "id": "wild_beast_hide_coat",
+            "sell": 22
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "armor",
+          "attack": 0,
+          "defense": 5,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "blocking"
+            },
+            {
+              "id": "warding"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "slime_moss_coat",
+            "sell": 27
+          },
+          {
+            "id": "cave_insect_resin_coat",
+            "sell": 29
+          },
+          {
+            "id": "fog_undead_shroudcoat",
+            "sell": 31
+          },
+          {
+            "id": "mine_construct_bindingmail",
+            "sell": 32
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 7,
+          "defense": 0,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "bleeding"
+            },
+            {
+              "id": "keen"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "slime_spring_blade",
+            "sell": 28
+          },
+          {
+            "id": "cave_insect_leg_blade",
+            "sell": 34
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "armor",
+          "attack": 0,
+          "defense": 7,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "blocking"
+            },
+            {
+              "id": "sturdy"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "slime_matriarch_cuirass",
+            "sell": 38
+          },
+          {
+            "id": "fog_undead_guardmail",
+            "sell": 36
+          },
+          {
+            "id": "mine_construct_plateguard",
+            "sell": 37
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 7,
+          "defense": 0,
+          "penetration": 2,
+          "affixes": [
+            {
+              "id": "piercing"
+            },
+            {
+              "id": "striking"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "cave_insect_chitin_spear",
+            "sell": 28
+          },
+          {
+            "id": "frontier_goblin_scrap_spear",
+            "sell": 29
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 8,
+          "defense": 0,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "keen"
+            },
+            {
+              "id": "striking"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "wild_beast_resin_axe",
+            "sell": 32
+          },
+          {
+            "id": "frontier_goblin_ironaxe",
+            "sell": 33
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 6,
+          "defense": 0,
+          "penetration": 3,
+          "affixes": [
+            {
+              "id": "piercing"
+            },
+            {
+              "id": "striking"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "wild_beast_antler_pike",
+            "sell": 30
+          },
+          {
+            "id": "fog_undead_cinderpike",
+            "sell": 35
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 10,
+          "defense": 0,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "bleeding"
+            },
+            {
+              "id": "striking"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "fog_undead_wightcleaver",
+            "sell": 42
+          },
+          {
+            "id": "mine_construct_ramhammer",
+            "sell": 43
+          }
+        ]
+      }
+    ],
+    "functionalCloneGroupCount": 8,
+    "allMembersOfCloneGroupsExcludedCount": 19,
+    "equipmentCountAfterExcludingAllCloneGroupMembers": 29,
+    "validatorQualifiedGearCandidates": 47,
+    "functionalCloneMembersAmongQualifiedGear": 19,
+    "qualifiedGearAfterExcludingAllFunctionalCloneMembers": 28,
+    "qualifyingCloneMemberIds": [
+      "slime_resin_guard",
+      "wild_beast_hide_coat",
+      "slime_moss_coat",
+      "cave_insect_resin_coat",
+      "fog_undead_shroudcoat",
+      "mine_construct_bindingmail",
+      "slime_spring_blade",
+      "cave_insect_leg_blade",
+      "slime_matriarch_cuirass",
+      "fog_undead_guardmail",
+      "mine_construct_plateguard",
+      "cave_insect_chitin_spear",
+      "frontier_goblin_scrap_spear",
+      "wild_beast_resin_axe",
+      "frontier_goblin_ironaxe",
+      "wild_beast_antler_pike",
+      "fog_undead_cinderpike",
+      "fog_undead_wightcleaver",
+      "mine_construct_ramhammer"
+    ],
+    "combinedValidatorErrorIds": [
+      "fog_undead_bellstaff"
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentValidation.test.ts > validateContentPack > uses distinct validated mandatory recipe output functions when comparing materials
+AssertionError: expected [ { …(3) }, { …(3) } ] to not deep equally contain ObjectContaining{…}
+
+- Expected:
+ObjectContaining {
+  "code": "duplicate-like-material",
+  "ids": [
+    "marsh-scale",
+    "mire-claw",
+  ],
+}
+
++ Received:
+[
+  {
+    "code": "duplicate-like-monster",
+    "ids": [
+      "marsh-stalker",
+      "mire-hunter",
+    ],
+    "message": "Monster definitions have the same effective combat, spawn, and loot profile after ignoring IDs and localized prose.",
+  },
+  {
+    "code": "duplicate-like-material",
+    "ids": [
+      "marsh-scale",
+      "mire-claw",
+    ],
+    "message": "Material definitions have the same effective economy and generation influence.",
+  },
+]
+
+ ❯ src/engine/contentValidation.test.ts:347:33
+    345|
+    346|     const report = validateContentPack(recipeConsumers, baseline)
+    347|     expect(report.warnings).not.toContainEqual(expect.objectContaining…
+       |                                 ^
+    348|   })
+    349|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/engine/contentValidation.test.ts > validateContentPack > deduplicates semantically equal recipe consumers and ignores invalid consumers
+AssertionError: expected [ { …(3) }, { …(3) }, { …(3) }, …(1) ] to deep equally contain ObjectContaining{…}
+
+- Expected:
+ObjectContaining {
+  "code": "duplicate-like-material",
+  "ids": [
+    "marsh-scale",
+    "mire-claw",
+  ],
+}
+
++ Received:
+[
+  {
+    "code": "duplicate-like-monster",
+    "ids": [
+      "marsh-stalker",
+      "mire-hunter",
+    ],
+    "message": "Monster definitions have the same effective combat, spawn, and loot profile after ignoring IDs and localized prose.",
+  },
+  {
+    "code": "duplicate-like-equipment",
+    "ids": [
+      "reed-spear",
+      "reed-spear-copy",
+    ],
+    "message": "Equipment definitions have the same effective slot, stats, and affix eligibility.",
+  },
+  {
+    "code": "duplicate-like-material",
+    "ids": [
+      "marsh-scale",
+      "mire-claw",
+      "reed-root",
+    ],
+    "message": "Material definitions have the same effective economy and generation influence.",
+  },
+  {
+    "code": "duplicate-like-recipe",
+    "ids": [
+      "marsh-recipe",
+      "reed-recipe-a",
+    ],
+    "message": "Recipes have the same effective inputs, output, and crafting conditions.",
+  },
+]
+
+ ❯ src/engine/contentValidation.test.ts:373:29
+    371|
+    372|     const report = validateContentPack(recipeConsumers, baseline)
+    373|     expect(report.warnings).toContainEqual(expect.objectContaining({ c…
+       |                             ^
+    374|     expect(report.warnings).not.toContainEqual(expect.objectContaining…
+    375|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

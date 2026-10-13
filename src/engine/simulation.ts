@@ -8,6 +8,7 @@ import { refreshIdentity } from './identity'
 import { dailyNpcLife, npcCanWork, rememberNpc } from './npcLife'
 import { dailyLivingEvents } from './livingEvents'
 import { emptyReward } from './rewardState'
+import { CONTENT_CROPS } from '../data/contentRegistry'
 import {
   REGIONAL_CRISIS_OUTCOME_COOLDOWN_DAYS, dormantRegionalCrisis,
   type RegionalCrisisOutcome, type RegionalCrisisResolutionSummary,
@@ -349,7 +350,7 @@ function dailyTick(state: GameState) {
 function advanceCanonicalBoundary(state: GameState, at: number) {
   state.worldTime = at
   for (const crop of state.crops) if (crop.status === 'growing' && crop.matureAt <= at) {
-    crop.status = 'mature'; emit(state, 'crop.matured', 'player', '小麥已成熟，可以前往農田收割。')
+    crop.status = 'mature'; emit(state, 'crop.matured', 'player', `${crop.cropId === 'wheat' ? '小麥' : CONTENT_CROPS[crop.cropId]?.name['zh-TW'] ?? '作物'}已成熟，可以前往農田收割。`)
   }
   if (at % CONFIG.minutesPerDay === 0) { syncNpcs(state); dailyTick(state) }
 }

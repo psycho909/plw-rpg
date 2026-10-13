@@ -1,0 +1,19 @@
+{
+  "name": "validate-cave_insects",
+  "command": "node",
+  "args": [
+    "scripts/validate_content_batch.mjs",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/g-browser-and-regression-run/attempt-01-g-independent-qa/content-packs/cave_insects.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/g-browser-and-regression-run/attempt-01-g-independent-qa/content-validator-cases/cave_insects/report.md"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedUtc": "2026-10-13T07:52:24.385Z",
+  "endedUtc": "2026-10-13T07:52:31.058Z",
+  "startedTaipei": "2026-10-13 15:52:24",
+  "endedTaipei": "2026-10-13 15:52:31",
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}

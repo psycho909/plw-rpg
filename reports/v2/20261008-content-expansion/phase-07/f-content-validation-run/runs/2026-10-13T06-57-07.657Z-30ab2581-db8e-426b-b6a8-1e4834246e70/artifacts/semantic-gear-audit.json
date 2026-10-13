@@ -1,0 +1,239 @@
+{
+  "method": "Exact canonical gear profile by slot/attack/defense/penetration and effective affix eligibility; excludes sale value, names, descriptions, and equipment IDs from the grouping key. Authored affixes resolve to stat/slots/tiers; absent authored affixes retain the stable baseline affix ID, matching contentValidation affix semantics.",
+  "equipmentCount": 48,
+  "authoredAffixCount": 0,
+  "baselineAffixFallbackIds": [
+    "bleeding",
+    "blocking",
+    "keen",
+    "piercing",
+    "striking",
+    "sturdy",
+    "warding"
+  ],
+  "functionalCloneGroups": [
+    {
+      "semantic": {
+        "slot": "armor",
+        "attack": 0,
+        "defense": 4,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "blocking"
+          },
+          {
+            "id": "sturdy"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "slime_resin_guard",
+          "sell": 18
+        },
+        {
+          "id": "wild_beast_hide_coat",
+          "sell": 22
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "armor",
+        "attack": 0,
+        "defense": 5,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "blocking"
+          },
+          {
+            "id": "warding"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "slime_moss_coat",
+          "sell": 27
+        },
+        {
+          "id": "cave_insect_resin_coat",
+          "sell": 29
+        },
+        {
+          "id": "fog_undead_shroudcoat",
+          "sell": 31
+        },
+        {
+          "id": "mine_construct_bindingmail",
+          "sell": 32
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "weapon",
+        "attack": 7,
+        "defense": 0,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "bleeding"
+          },
+          {
+            "id": "keen"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "slime_spring_blade",
+          "sell": 28
+        },
+        {
+          "id": "cave_insect_leg_blade",
+          "sell": 34
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "armor",
+        "attack": 0,
+        "defense": 7,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "blocking"
+          },
+          {
+            "id": "sturdy"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "slime_matriarch_cuirass",
+          "sell": 38
+        },
+        {
+          "id": "fog_undead_guardmail",
+          "sell": 36
+        },
+        {
+          "id": "mine_construct_plateguard",
+          "sell": 37
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "weapon",
+        "attack": 7,
+        "defense": 0,
+        "penetration": 2,
+        "affixes": [
+          {
+            "id": "piercing"
+          },
+          {
+            "id": "striking"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "cave_insect_chitin_spear",
+          "sell": 28
+        },
+        {
+          "id": "frontier_goblin_scrap_spear",
+          "sell": 29
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "weapon",
+        "attack": 8,
+        "defense": 0,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "keen"
+          },
+          {
+            "id": "striking"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "wild_beast_resin_axe",
+          "sell": 32
+        },
+        {
+          "id": "frontier_goblin_ironaxe",
+          "sell": 33
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "weapon",
+        "attack": 6,
+        "defense": 0,
+        "penetration": 3,
+        "affixes": [
+          {
+            "id": "piercing"
+          },
+          {
+            "id": "striking"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "wild_beast_antler_pike",
+          "sell": 30
+        },
+        {
+          "id": "fog_undead_cinderpike",
+          "sell": 35
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "weapon",
+        "attack": 10,
+        "defense": 0,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "bleeding"
+          },
+          {
+            "id": "striking"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "fog_undead_wightcleaver",
+          "sell": 42
+        },
+        {
+          "id": "mine_construct_ramhammer",
+          "sell": 43
+        }
+      ]
+    }
+  ],
+  "functionalCloneGroupCount": 8,
+  "allMembersOfCloneGroupsExcludedCount": 19,
+  "equipmentCountAfterExcludingAllCloneGroupMembers": 29
+}

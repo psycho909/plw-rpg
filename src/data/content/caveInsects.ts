@@ -138,9 +138,9 @@ export const CAVE_INSECT_CONTENT = {
     { id: 'cave_insect_loot_spitter', guaranteedMaterialIds: ['cave_insect_resin'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 2 }], rareMaterials: [{ materialId: 'cave_insect_leg', chance: 0.05 }] },
     { id: 'cave_insect_loot_carrier', guaranteedMaterialIds: ['cave_insect_sac'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 2 }], rareMaterials: [{ materialId: 'cave_insect_core', chance: 0.03 }] },
     { id: 'cave_insect_loot_shellback', guaranteedMaterialIds: ['cave_insect_plate'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 2 }], rareMaterials: [{ materialId: 'cave_insect_sac', chance: 0.04 }] },
-    { id: 'cave_insect_loot_lurker', guaranteedMaterialIds: ['cave_insect_venom_gland'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 2 }], rareMaterials: [{ materialId: 'cave_insect_core', chance: 0.05 }] },
-    { id: 'cave_insect_loot_razor', guaranteedMaterialIds: ['cave_insect_plate'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 3 }], rareMaterials: [{ materialId: 'cave_insect_leg', chance: 0.1 }, { materialId: 'cave_insect_core', chance: 0.04 }] },
-    { id: 'cave_insect_loot_warden', guaranteedMaterialIds: ['cave_insect_core'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 3 }], rareMaterials: [{ materialId: 'cave_insect_sac', chance: 0.1 }] },
+    { id: 'cave_insect_loot_lurker', guaranteedMaterialIds: ['cave_insect_venom_gland'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 2 }, { equipmentId: 'cave_insect_gland_pike', weight: 1 }], rareMaterials: [{ materialId: 'cave_insect_core', chance: 0.05 }] },
+    { id: 'cave_insect_loot_razor', guaranteedMaterialIds: ['cave_insect_plate'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 3 }, { equipmentId: 'cave_insect_leg_blade', weight: 1 }], rareMaterials: [{ materialId: 'cave_insect_leg', chance: 0.1 }, { materialId: 'cave_insect_core', chance: 0.04 }] },
+    { id: 'cave_insect_loot_warden', guaranteedMaterialIds: ['cave_insect_core'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 3 }, { equipmentId: 'cave_insect_core_mace', weight: 1 }, { equipmentId: 'cave_insect_warden_mail', weight: 1 }], rareMaterials: [{ materialId: 'cave_insect_sac', chance: 0.1 }] },
     { id: 'cave_insect_loot_broodguard', guaranteedMaterialIds: ['cave_insect_plate'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 3 }], rareMaterials: [{ materialId: 'cave_insect_core', chance: 0.12 }] },
     { id: 'cave_insect_loot_tunnelstalker', guaranteedMaterialIds: ['cave_insect_leg'], weightedEquipment: [{ equipmentId: 'cave_insect_chitin_spear', weight: 3 }], rareMaterials: [{ materialId: 'cave_insect_venom_gland', chance: 0.12 }] },
     { id: 'cave_insect_loot_queen', guaranteedMaterialIds: ['cave_insect_queen_core'], weightedEquipment: [{ equipmentId: 'cave_insect_queen_carapace', weight: 1 }], rareMaterials: [] },
@@ -151,6 +151,24 @@ export const CAVE_INSECT_CONTENT = {
   }, {
     id: 'cave_insect_queen_carapace', name: { 'zh-TW': '蛛蟲后甲衣' }, description: { 'zh-TW': '以蛛蟲后的厚背甲製成，兼具堅固與格擋。' },
     slot: 'armor', attack: 0, defense: 9, sell: 54, affixIds: ['sturdy', 'blocking'],
+  }, {
+    id: 'cave_insect_leg_blade', name: { 'zh-TW': '刃節獵刀' }, description: { 'zh-TW': '以硬化足節鍛成的獵刀，刀身較長，兼具銳利與裂傷。' },
+    slot: 'weapon', attack: 8, defense: 0, penetration: 0, sell: 34, affixIds: ['keen', 'bleeding'],
+  }, {
+    id: 'cave_insect_gland_pike', name: { 'zh-TW': '腺囊穿刺槍' }, description: { 'zh-TW': '以堅韌腺囊作為槍身護層，尖端適合穿透並造成裂傷。' },
+    slot: 'weapon', attack: 8, defense: 0, penetration: 3, sell: 40, affixIds: ['piercing', 'bleeding'],
+  }, {
+    id: 'cave_insect_core_mace', name: { 'zh-TW': '礦核重槌' }, description: { 'zh-TW': '以凝結礦核配重的重槌，打擊沉重且保有穿刺力。' },
+    slot: 'weapon', attack: 10, defense: 0, penetration: 1, sell: 46, affixIds: ['striking', 'piercing'],
+  }, {
+    id: 'cave_insect_plate_vest', name: { 'zh-TW': '厚甲背心' }, description: { 'zh-TW': '厚甲片與礦囊纖維扣合成背心，著重穩固與格擋。' },
+    slot: 'armor', attack: 0, defense: 6, sell: 31, affixIds: ['sturdy', 'blocking'],
+  }, {
+    id: 'cave_insect_resin_coat', name: { 'zh-TW': '樹脂護衣' }, description: { 'zh-TW': '樹脂浸過甲質纖層形成護衣，偏向守護與格擋。' },
+    slot: 'armor', attack: 0, defense: 5, sell: 29, affixIds: ['sturdy', 'blocking'],
+  }, {
+    id: 'cave_insect_warden_mail', name: { 'zh-TW': '守脈蛛甲' }, description: { 'zh-TW': '以守脈蛛蟲核心與厚甲鍛成鎖甲，兼顧穩固與守護。' },
+    slot: 'armor', attack: 0, defense: 8, sell: 43, affixIds: ['sturdy', 'warding'],
   }],
   materials: [
     { id: 'cave_insect_chitin', name: { 'zh-TW': '洞蟲甲質' }, description: { 'zh-TW': '掘脈蛛蟲剝落的堅韌甲片，是製作甲質穿刺矛的主要材料。' }, sell: 7, bias: { piercing: 3 } },
@@ -170,6 +188,27 @@ export const CAVE_INSECT_CONTENT = {
     goldCost: 14, staminaCost: 15, durationMinutes: 90, outputBase: 'cave_insect_chitin_spear', outputLevel: 5,
     requiredSmithing: 4, practiceCap: 6, station: 'blacksmith', opensAtHour: 8, closesAtHour: 18,
     allowedBiasMaterials: ['cave_insect_chitin', 'cave_insect_leg', 'cave_insect_resin', 'cave_insect_sac', 'cave_insect_plate', 'cave_insect_venom_gland', 'cave_insect_core', 'cave_insect_queen_core'],
+    qualityRules: { floorAtSmithing: 4, minimumRarity: 'uncommon' }, affixRules: 'default',
+  }, {
+    id: 'cave_insect_leg_blade_recipe', name: { 'zh-TW': '鍛造刃節獵刀' }, description: { 'zh-TW': '以洞蟲肢節和腺囊鍛成獵刀，洞蟲素材可作兼容鍛造偏材。' }, category: 'weapon',
+    inputs: [{ source: 'material', materialId: 'cave_insect_leg', amount: 2 }, { source: 'material', materialId: 'cave_insect_venom_gland', amount: 1 }, { source: 'inventory', itemId: 'iron', amount: 1 }],
+    goldCost: 17, staminaCost: 16, durationMinutes: 85, outputBase: 'cave_insect_leg_blade', outputLevel: 5,
+    requiredSmithing: 4, practiceCap: 6, station: 'blacksmith', opensAtHour: 8, closesAtHour: 18,
+    allowedBiasMaterials: ['cave_insect_leg', 'cave_insect_venom_gland', 'cave_insect_resin', 'cave_insect_core', 'cave_insect_queen_core'],
+    qualityRules: { floorAtSmithing: 4, minimumRarity: 'uncommon' }, affixRules: 'default',
+  }, {
+    id: 'cave_insect_plate_vest_recipe', name: { 'zh-TW': '鍛造厚甲背心' }, description: { 'zh-TW': '以洞蟲厚甲與礦囊纖維製作護身背心，核心可作穩固偏材。' }, category: 'armor',
+    inputs: [{ source: 'material', materialId: 'cave_insect_plate', amount: 2 }, { source: 'material', materialId: 'cave_insect_sac', amount: 2 }, { source: 'inventory', itemId: 'iron', amount: 1 }],
+    goldCost: 19, staminaCost: 17, durationMinutes: 95, outputBase: 'cave_insect_plate_vest', outputLevel: 5,
+    requiredSmithing: 4, practiceCap: 6, station: 'blacksmith', opensAtHour: 8, closesAtHour: 18,
+    allowedBiasMaterials: ['cave_insect_plate', 'cave_insect_sac', 'cave_insect_core', 'cave_insect_queen_core'],
+    qualityRules: { floorAtSmithing: 4, minimumRarity: 'uncommon' }, affixRules: 'default',
+  }, {
+    id: 'cave_insect_resin_coat_recipe', name: { 'zh-TW': '縫製樹脂護衣' }, description: { 'zh-TW': '以洞蟲樹脂浸潤甲質纖層製成護衣，稀有核心僅作兼容偏材。' }, category: 'armor',
+    inputs: [{ source: 'material', materialId: 'cave_insect_resin', amount: 2 }, { source: 'material', materialId: 'cave_insect_chitin', amount: 2 }, { source: 'inventory', itemId: 'wood', amount: 2 }],
+    goldCost: 18, staminaCost: 16, durationMinutes: 90, outputBase: 'cave_insect_resin_coat', outputLevel: 5,
+    requiredSmithing: 4, practiceCap: 6, station: 'blacksmith', opensAtHour: 8, closesAtHour: 18,
+    allowedBiasMaterials: ['cave_insect_resin', 'cave_insect_chitin', 'cave_insect_core', 'cave_insect_queen_core'],
     qualityRules: { floorAtSmithing: 4, minimumRarity: 'uncommon' }, affixRules: 'default',
   }],
   affixes: [],

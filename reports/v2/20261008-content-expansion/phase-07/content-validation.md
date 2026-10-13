@@ -1,66 +1,151 @@
-# Phase 7-B Content Batch Validation
+# Phase 7 Content Batch Validation
 
-- Pack: reports/v2/20261008-content-expansion/phase-07/b-run/minimal-valid-pack.json
-- Pack SHA-256: 2f67710c47cbd5a7a548ffc16d852b95005c5a1e4d5e7f6fa4c7adb9bac48161
-- B source revision anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1
-- B source fingerprint (domain + validator + tests + runner): 59d1d8b358e2d25e15bb0fec52cb82f1775fa8ffeeff24fc416f20610e6b32de
-- SHA-256 src/domain/content.ts: dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba
-- SHA-256 src/engine/contentValidation.ts: 1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e
-- SHA-256 src/engine/contentValidation.test.ts: 484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226
-- SHA-256 scripts/validate_content_batch.mjs: c40e157d2c3395cf2b7179c99aa26aa4fb5364a026e4575358626ef23cf06164
-- Baseline source fingerprint: c9fd3e455af08f18c50bc7eaa3677ecdd950b2e0c177bc779fe39b1fb3ca2cbb
-- Validation: PASS
-- Targeted tests: PASS
-- Typecheck: PASS
+- Supplied pack: reports/v2/20261008-content-expansion/phase-07/g-integration-run/merged-validator-run/packs/seven-pack-combined.json
+- Captured pack SHA-256: 67940cf6d922530da76c02fe7490ba73512f08ab02ffc234bbdd4b68d4a21f52
+- Run evidence: reports/v2/20261008-content-expansion/phase-07/.qa-runs/2026-10-13T12-57-14.215Z-9c3f2a8e-fbd6-4453-907c-2671cb68de5d
+- Current run HEAD: e05cc78f1ef452e2672df223f2febf48444dcbd3
+- Current run branch: v2x/reward-core
+- Current captured-source fingerprint: c538f291e6ed5440d9093bd145ff1c4723c145871cbbbc03d10477fbdca945a8
+- Historical Phase 7-B contract anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1
+- Content validation status: PASS
+- Overall validator + child-check outcome: PASS
+- targetedTests: PASS (exit 0)
+- typecheck: PASS (exit 0)
 - Natural spawn exposure: not-measured
 - Crop goods evidence: declared-food-binding-only-runtime-integration-unverified
 - Save compatibility evidence: stable-id-addition-only-runtime-migration-unverified
+- Counts cover unique qualifying IDs in this supplied authoring batch only.
 
 ## Counts
 
-- Qualifying new monsters: 1
-- Authoring-qualified candidate new item IDs: 2 (equipment + usable materials + crop goods; unique IDs)
-- Authoring-qualified usable new materials subset: 1
-- Existing exact monster IDs: 5; excluded legacy monster IDs: 4
-- Existing exact boss variant IDs: 3
-- Existing exact item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0
-- This is a tiny validation fixture. Its IDs never count toward the approved 50-monster / 100-item targets.
+- Qualifying new monsters: 66
+- Authoring-qualified candidate new item IDs: 107
+- Authoring-qualified usable new materials: 48
+- Exact baseline monster IDs: 5; excluded legacy monster IDs: 4
+- Exact baseline boss variant IDs: 3
+- Exact baseline item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0
 
 ## Reachability
 
-- bog-beasts: controlled-witness (forest, level 2, threat 1, 夏, hour 0, safety 0; already-accessible)
-- mire-hunter: controlled-witness (forest, level 2, threat 1, 夏, hour 0, safety 0; already-accessible)
+- slime: controlled-witness (farmland, level 1, threat 1, hamlet, 春, hour 0, safety 0; already-accessible)
+- cave_insects: controlled-witness (mine, level 3, threat 1, village, 春, hour 0, safety 0; already-accessible)
+- wild_beasts: controlled-witness (farmland, level 1, threat 1, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblins: controlled-witness (forest, level 3, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- fog_undead: controlled-witness (forest, level 4, threat 2, hamlet, 春, hour 18, safety 0; already-accessible)
+- mine_constructs: controlled-witness (mine, level 4, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- slime_slick: controlled-witness (farmland, level 1, threat 1, hamlet, 春, hour 6, safety 0; already-accessible)
+- slime_amber: controlled-witness (farmland, level 2, threat 1, hamlet, 夏, hour 8, safety 0; already-accessible)
+- slime_bog: controlled-witness (forest, level 2, threat 1, hamlet, 春, hour 7, safety 0; already-accessible)
+- slime_moss: controlled-witness (forest, level 3, threat 1, village, 春, hour 17, safety 0; already-accessible)
+- slime_glass: controlled-witness (farmland, level 4, threat 2, hamlet, 秋, hour 10, safety 0; already-accessible)
+- slime_spring: controlled-witness (forest, level 3, threat 1, hamlet, 春, hour 5, safety 0; already-accessible)
+- slime_bulwark: controlled-witness (farmland, level 4, threat 2, village, 春, hour 7, safety 0; already-accessible)
+- slime_cinder: controlled-witness (forest, level 5, threat 2, hamlet, 夏, hour 11, safety 0; already-accessible)
+- slime_matriarch: controlled-witness (forest, level 5, threat 2, village, 春, hour 6, safety 0; already-accessible)
+- slime_tidecaller: controlled-witness (forest, level 6, threat 2, hamlet, 春, hour 17, safety 0; already-accessible)
+- slime_heart: controlled-witness (forest, level 7, threat 3, hamlet, 夏, hour 18, safety 0; already-accessible)
+- cave_insect_digger: controlled-witness (mine, level 3, threat 1, village, 春, hour 0, safety 0; already-accessible)
+- cave_insect_skitter: controlled-witness (mine, level 3, threat 1, village, 春, hour 6, safety 0; already-accessible)
+- cave_insect_spitter: controlled-witness (mine, level 4, threat 1, village, 春, hour 0, safety 0; already-accessible)
+- cave_insect_carrier: controlled-witness (mine, level 4, threat 1, village, 春, hour 5, safety 0; already-accessible)
+- cave_insect_shellback: controlled-witness (mine, level 4, threat 1, village, 春, hour 0, safety 0; already-accessible)
+- cave_insect_lurker: controlled-witness (mine, level 5, threat 2, village, 春, hour 18, safety 0; already-accessible)
+- cave_insect_razor: controlled-witness (mine, level 5, threat 2, village, 春, hour 0, safety 0; already-accessible)
+- cave_insect_warden: controlled-witness (mine, level 6, threat 2, village, 春, hour 7, safety 0; already-accessible)
+- cave_insect_broodguard: controlled-witness (mine, level 7, threat 2, village, 春, hour 0, safety 0; already-accessible)
+- cave_insect_tunnelstalker: controlled-witness (mine, level 7, threat 2, village, 春, hour 18, safety 0; already-accessible)
+- cave_insect_queen: controlled-witness (mine, level 8, threat 3, village, 春, hour 0, safety 0; already-accessible)
+- wild_beast_brush_hare: controlled-witness (farmland, level 1, threat 1, hamlet, 春, hour 5, safety 0; already-accessible)
+- wild_beast_stonehorn: controlled-witness (forest, level 2, threat 1, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_redtail: controlled-witness (forest, level 3, threat 1, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_fernback: controlled-witness (forest, level 3, threat 1, hamlet, 春, hour 15, safety 0; already-accessible)
+- wild_beast_marshstag: controlled-witness (forest, level 3, threat 1, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_amberfox: controlled-witness (farmland, level 4, threat 1, hamlet, 春, hour 12, safety 0; already-accessible)
+- wild_beast_bristleback: controlled-witness (forest, level 5, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_galehorn: controlled-witness (forest, level 6, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_old_matriarch: controlled-witness (forest, level 6, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_ironhide: controlled-witness (farmland, level 7, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- wild_beast_apex: controlled-witness (forest, level 8, threat 3, hamlet, 秋, hour 16, safety 0; already-accessible)
+- frontier_goblin_scout: controlled-witness (forest, level 3, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_slinger: controlled-witness (forest, level 4, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- frontier_goblin_tinker: controlled-witness (mine, level 4, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_lookout: controlled-witness (forest, level 4, threat 2, hamlet, 春, hour 15, safety 0; already-accessible)
+- frontier_goblin_hauler: controlled-witness (mine, level 5, threat 2, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_trapper: controlled-witness (forest, level 5, threat 2, hamlet, 春, hour 17, safety 0; already-accessible)
+- frontier_goblin_breaker: controlled-witness (mine, level 6, threat 3, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_duelist: controlled-witness (forest, level 6, threat 3, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_standardbearer: controlled-witness (forest, level 7, threat 3, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_saboteur: controlled-witness (mine, level 7, threat 3, hamlet, 春, hour 0, safety 0; already-accessible)
+- frontier_goblin_warlord: controlled-witness (forest, level 8, threat 3, hamlet, 春, hour 0, safety 0; already-accessible)
+- fog_undead_bonewalker: controlled-witness (forest, level 4, threat 2, hamlet, 春, hour 20, safety 0; already-accessible)
+- fog_undead_lantern_wisp: controlled-witness (unknown, level 5, threat 2, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+- fog_undead_gravehound: controlled-witness (forest, level 5, threat 2, hamlet, 秋, hour 20, safety 0; already-accessible)
+- fog_undead_crypt_guard: controlled-witness (unknown, level 6, threat 2, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+- fog_undead_mourner: controlled-witness (forest, level 5, threat 2, hamlet, 冬, hour 20, safety 0; already-accessible)
+- fog_undead_bellkeeper: controlled-witness (unknown, level 6, threat 2, town, 春, hour 20, safety 0; explore-to-unlock)
+- fog_undead_wight: controlled-witness (forest, level 7, threat 3, hamlet, 春, hour 20, safety 0; already-accessible)
+- fog_undead_blackguard: controlled-witness (unknown, level 7, threat 3, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+- fog_undead_crypt_knight: controlled-witness (unknown, level 8, threat 3, hamlet, 春, hour 21, safety 0; explore-to-unlock)
+- fog_undead_hollow_bell: controlled-witness (forest, level 8, threat 3, hamlet, 春, hour 20, safety 0; already-accessible)
+- fog_undead_cryptlord: controlled-witness (unknown, level 9, threat 3, hamlet, 春, hour 20, safety 0; explore-to-unlock)
+- mine_construct_shardling: controlled-witness (mine, level 4, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_sentinel: controlled-witness (mine, level 4, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_pylon: controlled-witness (mine, level 5, threat 2, hamlet, 春, hour 10, safety 0; already-accessible)
+- mine_construct_crawler: controlled-witness (mine, level 5, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_mason: controlled-witness (mine, level 5, threat 2, hamlet, 春, hour 13, safety 0; already-accessible)
+- mine_construct_veinwatcher: controlled-witness (mine, level 6, threat 2, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_ram: controlled-witness (mine, level 7, threat 3, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_warder: controlled-witness (mine, level 7, threat 3, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_architect: controlled-witness (unknown, level 8, threat 3, hamlet, 春, hour 8, safety 0; explore-to-unlock)
+- mine_construct_bastion: controlled-witness (mine, level 8, threat 3, hamlet, 春, hour 6, safety 0; already-accessible)
+- mine_construct_heart: controlled-witness (unknown, level 9, threat 3, hamlet, 春, hour 8, safety 0; explore-to-unlock)
 
 ## Diagnostics
 
 - No validation errors.
-- No warnings.
 
-## Authoring bounds and qualification
+## Child checks
 
-- Phase 7 validator guardrails: ecosystem material and crop-good sell are integers 1..50; each material bias is 0..4; crop-good foodValue is an integer 1..4; recipe input amounts are positive safe integers up to 1000; crop growth is 1..43200 whole minutes and yield is 1..100; recipe gold is 0..1000, stamina 0..100, duration 1..43200 minutes, and output/skill levels 0..100.
-- These are conservative Phase 7 authoring and balance bounds informed by current Reward values; they are not runtime formula limits. Raising them requires an explicit balance review.
-- Required contract fields and finite enums are checked before reference graphs grant consumer evidence, including recipe station/category/affix rules and inputs, monster loot profiles/mechanics, and boss variant structure.
-- Family lootTableId supplies the family default; the monster’s selected lootTableId supplies actual reachable drop/source evidence. A table shared across families does not establish family-specific loot identity.
-- Crop-good qualification records an authored food binding only. Final item qualification still requires C/G verification of runtime food/supply/source consumers.
+### targetedTests
 
-## Targeted test output
+Exit: 0
 
+stdout:
 ```text
 
  RUN  v4.1.11 /workspace/plw-rpg
 
 
  Test Files  1 passed (1)
-      Tests  16 passed (16)
-   Start at  05:14:44
-   Duration  259ms (transform 96ms, setup 0ms, import 116ms, tests 29ms, environment 0ms)
+      Tests  23 passed (23)
+   Start at  12:57:14
+   Duration  262ms (transform 99ms, setup 0ms, import 117ms, tests 30ms, environment 0ms)
 ```
 
-## Typecheck output
-
+stderr:
 ```text
-vue-tsc --noEmit completed with no diagnostics.
+
 ```
 
-Controlled witnesses prove bounded predicate satisfiability only (player level 1..100, threat 1..3, supported stages/seasons, hours 0..23, safety 0..100). This report does not estimate natural encounter rates or assert that all content appears in a long simulation.
+### typecheck
+
+Exit: 0
+
+stdout:
+```text
+
+```
+
+stderr:
+```text
+
+```
+
+Controlled witnesses prove bounded predicate satisfiability only. This report does not estimate natural encounter rates.
+
+
+## K source identity clarification — 2026-10-13
+
+The validator's `Current captured-source fingerprint` (`c538f291…`) is the validator's scoped source-capture fingerprint for its own input set; it is not the recursive fingerprint of every file under `src/`. The enclosing K runner independently measured the complete recursive `src/` fingerprint as `585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58` both before and after this command (`k-final-content-validation-20261013/result.json`, `sourceStable: true`). The exact test-time HEAD was `e05cc78f1ef452e2672df223f2febf48444dcbd3` on `v2x/reward-core`.
+
+The `declared-food-binding-only-runtime-integration-unverified` and `stable-id-addition-only-runtime-migration-unverified` fields describe the validator's own direct evidence scope. Separately, the repository-wide suite passed its crop, save/reload and migration-related coverage on the same recursive source fingerprint; see `regression.md`. Controlled witnesses establish that predicates can be satisfied, not natural encounter frequency.

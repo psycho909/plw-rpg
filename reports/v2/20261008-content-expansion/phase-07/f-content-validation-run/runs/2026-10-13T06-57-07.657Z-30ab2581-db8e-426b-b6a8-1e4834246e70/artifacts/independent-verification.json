@@ -1,0 +1,335 @@
+{
+  "actualHead": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "afterHead": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "baselineInput": {
+    "path": "reports/v2/20261008-content-expansion/phase-07/content-baseline.json",
+    "currentSha256": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+    "capturedSha256s": [
+      "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63"
+    ]
+  },
+  "headUnchanged": true,
+  "branchUnchanged": true,
+  "sourceConfigPackageMapsEqual": true,
+  "mapFileCount": 117,
+  "cases": [
+    {
+      "name": "slime",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3483,
+      "commandStderrBytes": 0,
+      "generatedBytes": 18895,
+      "generatedSha256": "007be15bf032cc266c36d4ee628b94a87a28840e3cb34a41c9c3e16f4bbc7f38",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "expectedCliExit": 0,
+      "cliExitMatchesOutcome": true,
+      "errors": [],
+      "warnings": [],
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "expectedTests": 21,
+        "expectedCountPassed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "cave-insects",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3558,
+      "commandStderrBytes": 0,
+      "generatedBytes": 19887,
+      "generatedSha256": "ecd764dccaf811e8d6ba357942706edae915f9f43d0084ae23e86099099a81ef",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "expectedCliExit": 0,
+      "cliExitMatchesOutcome": true,
+      "errors": [],
+      "warnings": [],
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "expectedTests": 21,
+        "expectedCountPassed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "wild-beasts",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3740,
+      "commandStderrBytes": 0,
+      "generatedBytes": 19684,
+      "generatedSha256": "22121079cf75fcfbde2568ef5d85a9ced04b87f0b30203e453b71dec10c4a04b",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "expectedCliExit": 0,
+      "cliExitMatchesOutcome": true,
+      "errors": [],
+      "warnings": [
+        "- WARNING duplicate-like-loot-table [wild_beasts_loot_ironhide, wild_beasts_loot_matriarch]: Loot tables have identical effective item and material distribution."
+      ],
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "expectedTests": 21,
+        "expectedCountPassed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "frontier-goblins",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3617,
+      "commandStderrBytes": 0,
+      "generatedBytes": 20742,
+      "generatedSha256": "00146899333a90f459b7000601ea3764866d82acc16b04536806b0fe6b5a96ea",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "expectedCliExit": 0,
+      "cliExitMatchesOutcome": true,
+      "errors": [],
+      "warnings": [],
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "expectedTests": 21,
+        "expectedCountPassed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "fog-undead",
+      "cliExit": 1,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3659,
+      "commandStderrBytes": 0,
+      "generatedBytes": 19825,
+      "generatedSha256": "3b0b3f90247ae3c1433c77630ffe716e91d3bf52f074d4e9784ffbe72fb59f96",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "FAIL",
+      "overallStatus": "FAIL",
+      "expectedCliExit": 1,
+      "cliExitMatchesOutcome": true,
+      "errors": [
+        "- ERROR affix-ineligible [fog_undead_bellstaff]: Affix is not eligible for this equipment slot."
+      ],
+      "warnings": [],
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "expectedTests": 21,
+        "expectedCountPassed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "mine-constructs",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3585,
+      "commandStderrBytes": 0,
+      "generatedBytes": 19842,
+      "generatedSha256": "992bd86d7b181141ad189327873c5c4bff3fb640adf284bc2572e81982d8afad",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "expectedCliExit": 0,
+      "cliExitMatchesOutcome": true,
+      "errors": [],
+      "warnings": [],
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "expectedTests": 21,
+        "expectedCountPassed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "six-family-combined",
+      "cliExit": 1,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 11445,
+      "commandStderrBytes": 0,
+      "generatedBytes": 118270,
+      "generatedSha256": "3a0752be73790818b8e3db23b64c12e8af3a99ee5be6bfc1fdaa9ef60cd22b7c",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "150396e746c4824c9ebf7119eb490dc0e637db321867e43af5028b93848ed328",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "FAIL",
+      "overallStatus": "FAIL",
+      "expectedCliExit": 1,
+      "cliExitMatchesOutcome": true,
+      "errors": [
+        "- ERROR affix-ineligible [fog_undead_bellstaff]: Affix is not eligible for this equipment slot."
+      ],
+      "warnings": [
+        "- WARNING duplicate-like-material [fog_undead_cryptstone, mine_construct_plate]: Material definitions have the same effective economy, generation influence, and recipe consumer functions.",
+        "- WARNING duplicate-like-material [fog_undead_shroud, mine_construct_binding]: Material definitions have the same effective economy, generation influence, and recipe consumer functions.",
+        "- WARNING duplicate-like-loot-table [wild_beasts_loot_ironhide, wild_beasts_loot_matriarch]: Loot tables have identical effective item and material distribution."
+      ],
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "expectedTests": 21,
+        "expectedCountPassed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    }
+  ],
+  "summaryArchive": {
+    "recordPresent": true,
+    "integrityAndCurrentBytesMatch": true
+  },
+  "allSevenCaseEvidenceVerified": true,
+  "allSevenContentValidationPass": false,
+  "verificationPass": true
+}

@@ -1,16 +1,21 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import { BUILDINGS, CONFIG, DUNGEON, ITEMS, REGIONS } from '../data/config'
 import { CRAFTING_RECIPES } from '../data/crafting'
 import { ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
+import { CONTENT_CROP_GOODS, CONTENT_CROPS, CONTENT_FAMILIES } from '../data/contentRegistry'
 import type { MaterialId, MonsterDefinitionId, RarityId } from '../domain/reward'
+import type { ContentMonsterRank, ContentSeason } from '../domain/content'
 import type { ItemId } from '../domain/types'
 import { buyPrice, canVisit, encounter, enterDungeon, farm, gather, hire, hireTerms, rest, trade, startRegionalCampRaid } from '../engine/actions'
 import { wolfRewardExpectation } from '../engine/itemGeneration'
 import { npcCanWork } from '../engine/npcLife'
 import { encounterWolf, wolfEncounterOptions } from '../engine/wolfFamily'
+import { contentEncounterOptions, contentKnowledgeCatalog, encounterContentMonster } from '../engine/contentFamilies'
+import { farmCropChoices, farmCropPlantingGuidance } from '../engine/crops'
 import { craft, type CraftResult } from '../engine/crafting'
 import { distance, stageIndex } from '../engine/simulation'
+import { calendar } from '../engine/calendar'
 import { buildingIcons, itemIcons, materialIcons } from '../presentation/icons'
 import { projectCrafting } from '../presentation/craftingProjection'
 import type { PlaceId } from '../presentation/worldUI'
@@ -24,10 +29,30 @@ const c = computed(() => game.character)
 const shop = computed(() => props.place === 'store' || props.place === 'blacksmith' ? props.place : null)
 const workbenchPlace = computed(() => shop.value !== null || props.place === 'house')
 const selectedRecipeId = ref<keyof typeof CRAFTING_RECIPES>('starterSpear')
+const selectedCropId = ref('wheat')
+const currentSeason = computed(() => CONFIG.seasons[calendar(game.state.worldTime).season]! as ContentSeason)
+const allCropChoices = computed(() => farmCropChoices(game.state))
+const cropChoices = computed(() => allCropChoices.value.filter(choice => choice.status === 'available'))
+const unavailableCropChoices = computed(() => allCropChoices.value.filter(choice => choice.status !== 'available'))
+const cropPlantingGuidance = computed(() => farmCropPlantingGuidance(game.state))
+const selectedCrop = computed(() => cropChoices.value.find(choice => choice.id === selectedCropId.value) ?? cropChoices.value[0] ?? null)
+watch(cropChoices, choices => {
+  if (!choices.some(choice => choice.id === selectedCropId.value)) selectedCropId.value = choices.find(choice => choice.id === 'wheat')?.id ?? choices[0]?.id ?? 'wheat'
+})
 const selectedInfluenceMaterial = ref<MaterialId | null>(null)
 const crafting = computed(() => workbenchPlace.value ? projectCrafting(game.state, selectedRecipeId.value, selectedInfluenceMaterial.value) : null)
 const craftingPlan = computed(() => crafting.value?.plan ?? null)
 const lastCraftResult = ref<Extract<CraftResult, { ok: true }> | null>(null)
+const recipeSearch = ref(''), recipeSearchInput = ref<HTMLInputElement | null>(null)
+const recipeGroup = ref<'all' | 'weapon' | 'armor'>('all')
+const recipeGroups = [{ id: 'all', name: '全部配方' }, { id: 'weapon', name: '武器' }, { id: 'armor', name: '防具' }] as const
+const visibleRecipes = computed(() => (crafting.value?.recipes ?? []).filter(recipe => {
+  const query = recipeSearch.value.trim().toLocaleLowerCase('zh-TW')
+  const searchable = `${recipe.name} ${recipe.outputName} ${recipe.outputSlotName} Lv.${recipe.requiredSmithing}`.toLocaleLowerCase('zh-TW')
+  return (recipeGroup.value === 'all' || recipe.category === recipeGroup.value) && (!query || searchable.includes(query))
+}))
+const missingRecipeMaterials = computed(() => (crafting.value?.inputs ?? []).filter(input => input.materialId && (input.current ?? 0) < input.required))
+const recipeMaterialKnowledge = computed(() => contentKnowledgeCatalog(game.state, missingRecipeMaterials.value.map(input => input.materialId!)))
 const products = computed(() => (Object.keys(ITEMS) as ItemId[]).filter(i => props.place === 'blacksmith' ? ['sword', 'armor'].includes(i) : !['sword', 'armor'].includes(i)))
 const mercenaries = computed(() => game.state.npcs.filter(n => n.job === 'mercenary' && npcCanWork(game.state, n.id) && !game.state.party.some(p => p.npcId === n.id))
   .map(npc => ({ id: npc.id, name: npc.name, age: npc.age, level: npc.level, injuredUntil: npc.injuredUntil })))
@@ -47,6 +72,14 @@ function chooseInfluenceMaterial(material: MaterialId | null) {
   selectedInfluenceMaterial.value = material
   lastCraftResult.value = null
 }
+function clearRecipeSearch() {
+  recipeSearch.value = ''
+  void nextTick(() => recipeSearchInput.value?.focus())
+}
+function clearMonsterSearch() {
+  monsterSearch.value = ''
+  void nextTick(() => monsterSearchInput.value?.focus())
+}
 function craftSelectedRecipe() {
   const result = game.act(() => craft(game.state, {
     recipeId: selectedRecipeId.value,
@@ -62,6 +95,41 @@ function craftSelectedRecipe() {
 const canSell = (item: ItemId) => c.value.inventory[item] > (c.value.equipment.weapon === item || c.value.equipment.armor === item ? 1 : 0)
 const rumor = computed(() => game.state.threat.bossAlive ? '北方出現了哥布林酋長，商人都不敢出門了。' : game.state.threat.threatLevel >= 2 ? '森林裡的腳步聲愈來愈多，出門記得找個伴。' : '最近林子還算安靜。聽說山谷裡藏著一座舊礦坑。')
 const wolfOptions = computed(() => props.place === 'forest' ? wolfEncounterOptions(game.state) : [])
+const monsterSearch = ref(''), monsterSearchInput = ref<HTMLInputElement | null>(null)
+const monsterFamilyFilter = ref('all'), monsterRankFilter = ref<'all' | ContentMonsterRank>('all')
+const monsterRankFilters: { id: 'all' | ContentMonsterRank; name: string }[] = [
+  { id: 'all', name: '全部階級' }, { id: 'normal', name: '普通' }, { id: 'elite', name: '精英' },
+  { id: 'miniBoss', name: '小首領' }, { id: 'boss', name: '首領' },
+]
+const monsterRankNames: Record<ContentMonsterRank, string> = { normal: '普通', elite: '精英', miniBoss: '小首領', boss: '首領' }
+const contentOptions = computed(() => contentEncounterOptions(game.state))
+const monsterFamilies = computed(() => [...new Set(contentOptions.value.map(option => option.familyId))]
+  .map(id => ({ id, name: CONTENT_FAMILIES[id]?.name['zh-TW'] ?? id })))
+function contentSeen(definitionId: string) {
+  return game.state.reward.collection.seen.includes(definitionId)
+    || game.state.reward.collection.defeated.includes(definitionId)
+}
+const visibleContentOptions = computed(() => {
+  const query = monsterSearch.value.trim().toLocaleLowerCase('zh-TW')
+  return contentOptions.value.filter(option => {
+    const familyName = CONTENT_FAMILIES[option.familyId]?.name['zh-TW'] ?? ''
+    const known = contentSeen(option.definitionId)
+    const searchable = `${option.label} ${familyName} ${known ? option.description : ''} ${monsterRankNames[option.rank]} ${known ? '已遇見' : '未曾相遇'}`.toLocaleLowerCase('zh-TW')
+    return (monsterFamilyFilter.value === 'all' || option.familyId === monsterFamilyFilter.value)
+      && (monsterRankFilter.value === 'all' || option.rank === monsterRankFilter.value)
+      && (!query || searchable.includes(query))
+  })
+})
+const contentFamilyGroups = computed(() => monsterFamilies.value.map(family => ({
+  ...family,
+  options: visibleContentOptions.value.filter(option => option.familyId === family.id),
+})).filter(family => family.options.length))
+const farmUseText = computed(() => {
+  const good = selectedCrop.value?.harvestGoodId ? CONTENT_CROP_GOODS[selectedCrop.value.harvestGoodId] : null
+  return good
+    ? `收成品每份可轉為 ${good.foodValue} 份食物，或以 ${good.sell} 金幣出售。`
+    : '收成會直接加入食物背包，也會補充聚落糧食。'
+})
 const wolfExpectations = computed(() => Object.fromEntries(wolfOptions.value.map(option => [option.definitionId, wolfRewardExpectation(option.definitionId)])))
 const adventureGoal = computed(() => {
   const defeated = new Set(game.state.reward.collection.defeated)
@@ -92,14 +160,26 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
 
 <template>
   <template v-if="place === 'farm'">
-    <p class="scene-description">🌾 東方農田 · 今天種下的，兩日後收穫。</p>
+    <p class="scene-description">🌾 {{ REGIONS.farmland.name }} · {{ currentSeason }} · 依目前季節與農田區域列出可種作物。</p>
+    <div class="filter-buttons" role="group" aria-label="選擇播種作物">
+      <button v-for="crop in cropChoices" :key="crop.id" :data-crop-choice="crop.id" data-crop-state="available"
+        :aria-pressed="selectedCropId === crop.id" aria-describedby="crop-guidance"
+        :class="{ selected: selectedCropId === crop.id }" @click="selectedCropId = crop.id">{{ crop.name }} · {{ Math.ceil(crop.growthMinutes / 1440) }} 日</button>
+    </div>
+    <p v-for="crop in unavailableCropChoices" :key="crop.id" class="muted help-text" data-crop-guidance :data-crop-state="crop.status">
+      {{ crop.name }}：{{ crop.reason }}
+    </p>
+    <p v-if="selectedCrop" id="crop-guidance" class="muted help-text" data-crop-guidance data-crop-state="available">
+      {{ selectedCrop.name }} · 生長 {{ Math.ceil(selectedCrop.growthMinutes / 1440) }} 日 · 預估收成 {{ selectedCrop.harvestAmount }} 份。{{ farmUseText }}
+    </p>
+    <p v-if="cropPlantingGuidance" id="crop-planting-guidance" class="inline-warning" data-crop-guidance :data-crop-state="cropPlantingGuidance.status">{{ cropPlantingGuidance.reason }}</p>
     <div class="plot-row"><section v-for="i in CONFIG.maxPlots" :key="i" class="plot">
       <span aria-hidden="true">{{ game.state.crops[i - 1] ? game.state.crops[i - 1]!.status === 'mature' ? '🌾' : '🌱' : i <= game.state.crops.length + game.state.preparedPlots ? '▤' : '≋' }}</span>
-      <h3>田 {{ i }}</h3><p>{{ game.state.crops[i - 1] ? game.state.crops[i - 1]!.status === 'mature' ? '可收割' : `剩 ${Math.max(0, Math.ceil((game.state.crops[i - 1]!.matureAt - game.state.worldTime) / 60))} 小時` : i <= game.state.crops.length + game.state.preparedPlots ? '已整地' : '未整地' }}</p>
+      <h3>田 {{ i }}<span v-if="game.state.crops[i - 1]"> · {{ game.state.crops[i - 1]!.cropId === 'wheat' ? '小麥' : CONTENT_CROPS[game.state.crops[i - 1]!.cropId]?.name['zh-TW'] ?? '作物' }}</span></h3><p>{{ game.state.crops[i - 1] ? game.state.crops[i - 1]!.status === 'mature' ? '可收割' : `剩 ${Math.max(0, Math.ceil((game.state.crops[i - 1]!.matureAt - game.state.worldTime) / 60))} 小時` : i <= game.state.crops.length + game.state.preparedPlots ? '已整地' : '未整地' }}</p>
       <PixelMeter v-if="game.state.crops[i - 1]" :label="`田 ${i} 生長`" :value="Math.min(100, (game.state.worldTime - game.state.crops[i - 1]!.plantedAt) / game.state.crops[i - 1]!.growthDuration * 100)" :max="100" compact />
     </section></div>
-    <div class="action-buttons"><button :disabled="blocked || c.stamina < 6 || game.state.crops.length + game.state.preparedPlots >= CONFIG.maxPlots" @click="game.act(() => farm(game.state, 'prepare'))">整地 · 體力 6／20 分</button><button :disabled="blocked || c.stamina < 4 || !game.state.preparedPlots" @click="game.act(() => farm(game.state, 'plant'))">播種 · 體力 4／10 分</button><button class="primary" :disabled="blocked || c.stamina < 4 || !game.state.crops.some(p => p.status === 'mature')" @click="game.act(() => farm(game.state, 'harvest'))">收割 · 體力 4／15 分</button></div>
-    <p class="muted help-text">先整地，再播種。未成熟時可到別處生活；世界時間會讓小麥成長。體力不足時回聚落休息。</p>
+    <div class="action-buttons"><button :disabled="blocked || c.stamina < 6 || game.state.crops.length + game.state.preparedPlots >= CONFIG.maxPlots" @click="game.act(() => farm(game.state, 'prepare'))">整地 · 體力 6／20 分</button><button :aria-describedby="cropPlantingGuidance ? 'crop-planting-guidance' : 'farm-action-help'" :disabled="blocked || c.stamina < 4 || !selectedCrop || !!cropPlantingGuidance" @click="game.act(() => farm(game.state, 'plant', selectedCropId))">播種{{ selectedCrop?.name ?? '作物' }} · 體力 4／10 分</button><button class="primary" :disabled="blocked || c.stamina < 4 || !game.state.crops.some(p => p.status === 'mature')" @click="game.act(() => farm(game.state, 'harvest'))">收割 · 體力 4／15 分</button></div>
+    <p id="farm-action-help" class="muted help-text">先整地，再播種。未成熟時可到別處生活；世界時間會讓作物依品種生長。體力不足時回聚落休息。</p>
   </template>
   <template v-else-if="place === 'forest' || place === 'mine'">
     <div class="scene-illustration" aria-hidden="true">{{ place === 'forest' ? '🌲　🌲　♣　🌲　🌲' : '▲　⛰️　▲　🪨　▲' }}</div>
@@ -153,15 +233,59 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
     <p>{{ place === 'house' ? '回到家了，歇一會兒吧。' : '橡谷有自己的日常。居民工作，聚落也慢慢成長。' }}</p>
     <div class="action-buttons"><button class="primary" :disabled="blocked || c.currentRegion !== 'village'" @click="game.act(() => rest(game.state, 'rest'))">休息 · 1 小時</button></div><p class="muted help-text">恢復 15 生命與 35 體力，不花金幣。時間會繼續前進。</p>
   </template>
+  <section v-if="contentOptions.length" class="content-encounters" aria-labelledby="content-encounters-title">
+    <h3 id="content-encounters-title" class="section-title">{{ REGIONS[c.currentRegion].name }}的已知蹤跡</h3>
+    <p class="muted help-text">只列目前所在已探索區域可追蹤的族群。遇見紀錄會跨角色保留；追蹤資格與拒絕原因由世界狀態判定。</p>
+    <div class="content-search-row">
+      <label for="monster-content-search">搜尋蹤跡</label>
+      <input id="monster-content-search" ref="monsterSearchInput" v-model="monsterSearch" type="search" autocomplete="off" data-content-search="monster" aria-controls="content-monster-results">
+      <button v-if="monsterSearch" type="button" data-content-search-clear aria-label="清除蹤跡搜尋" @click="clearMonsterSearch">清除</button>
+    </div>
+    <div v-if="monsterFamilies.length > 1" class="filter-buttons" role="group" aria-label="怪物族群">
+      <button :aria-pressed="monsterFamilyFilter === 'all'" :class="{ selected: monsterFamilyFilter === 'all' }" @click="monsterFamilyFilter = 'all'">全部族群</button>
+      <button v-for="family in monsterFamilies" :key="family.id" :aria-pressed="monsterFamilyFilter === family.id" :class="{ selected: monsterFamilyFilter === family.id }" @click="monsterFamilyFilter = family.id">{{ family.name }}</button>
+    </div>
+    <div class="filter-buttons" role="group" aria-label="怪物階級">
+      <button v-for="rank in monsterRankFilters" :key="rank.id" :aria-pressed="monsterRankFilter === rank.id" :class="{ selected: monsterRankFilter === rank.id }" @click="monsterRankFilter = rank.id">{{ rank.name }}</button>
+    </div>
+    <p class="muted" data-content-result-count="monster">找到 {{ visibleContentOptions.length }}／{{ contentOptions.length }} 個目標</p>
+    <div id="content-monster-results">
+      <p v-if="!visibleContentOptions.length" class="empty-state" data-content-empty="no-results">沒有符合條件的蹤跡。清除搜尋或改選族群、階級。</p>
+      <div v-else class="content-family-list">
+        <section v-for="family in contentFamilyGroups" :key="family.id" class="content-family" :data-content-family="family.id">
+          <h4>{{ family.name }}</h4>
+          <article v-for="option in family.options" :key="option.definitionId" class="content-monster-row" :data-content-monster="option.definitionId" :data-content-rank="option.rank">
+            <button :aria-describedby="option.reason ? `content-reason-${option.definitionId}` : undefined" :disabled="!option.eligible" @click="game.act(() => encounterContentMonster(game.state, option.definitionId))">追蹤{{ option.label }} · {{ monsterRankNames[option.rank] }}</button>
+            <span class="muted">{{ contentSeen(option.definitionId) ? '已遇見' : '尚未相遇' }}<template v-if="option.eligible"> · 花費 8 體力</template></span>
+            <p v-if="contentSeen(option.definitionId)" class="muted">{{ option.description }}</p>
+            <p v-else class="muted">這片區域尚未留下足夠的相遇紀錄。</p>
+            <p v-if="option.reason" :id="`content-reason-${option.definitionId}`" class="inline-warning">{{ option.reason }}</p>
+          </article>
+        </section>
+      </div>
+    </div>
+  </section>
   <section v-if="crafting && craftingPlan" class="crafting-workbench" aria-labelledby="workbench-title">
     <h3 id="workbench-title" class="section-title">工作台</h3>
     <p class="muted">實際工作台 {{ crafting.stationName }} · 服務時間 {{ hourLabel(crafting.opensAtHour) }}–{{ hourLabel(crafting.closesAtHour) }}。</p>
     <p v-if="place === 'house' && crafting.hasHomeWorkbench" class="muted help-text">在自有住所附近，基礎與進階配方可於家中鍛造並減少服務費；實際站點、時段與費用依下方計畫顯示。高階鐵短劍仍需前往鐵匠鋪。</p>
     <h4 class="crafting-subheading">選擇配方</h4>
-    <div class="filter-buttons crafting-recipe-options" role="group" aria-label="選擇鍛造配方">
-      <button v-for="recipe in crafting.recipes" :key="recipe.id" :data-craft-recipe="recipe.id"
+    <div class="content-search-row">
+      <label for="recipe-content-search">搜尋配方</label>
+      <input id="recipe-content-search" ref="recipeSearchInput" v-model="recipeSearch" type="search" autocomplete="off" data-content-search="recipe" aria-controls="recipe-content-results">
+      <button v-if="recipeSearch" type="button" data-content-search-clear aria-label="清除配方搜尋" @click="clearRecipeSearch">清除</button>
+    </div>
+    <div class="filter-buttons" role="group" aria-label="配方類別">
+      <button v-for="group in recipeGroups" :key="group.id" :aria-pressed="recipeGroup === group.id" :class="{ selected: recipeGroup === group.id }" @click="recipeGroup = group.id">{{ group.name }}</button>
+    </div>
+    <p class="muted" data-content-result-count="recipe">找到 {{ visibleRecipes.length }}／{{ crafting.recipes.length }} 項配方</p>
+    <div id="recipe-content-results">
+    <p v-if="!visibleRecipes.length" class="empty-state" data-content-empty="no-results">找不到符合條件的配方。清除搜尋或改選類別；目前選擇與鍛造計畫仍保留。</p>
+    <div v-else class="filter-buttons crafting-recipe-options" role="group" aria-label="選擇鍛造配方">
+      <button v-for="recipe in visibleRecipes" :key="recipe.id" :data-craft-recipe="recipe.id"
         :aria-pressed="selectedRecipeId === recipe.id" :class="{ selected: selectedRecipeId === recipe.id }"
         @click="chooseRecipe(recipe.id)">{{ recipe.name }}<small>{{ recipe.unlocked ? `Smithing Lv.${recipe.requiredSmithing} 已解鎖` : `Smithing Lv.${recipe.requiredSmithing} 解鎖` }}</small></button>
+    </div>
     </div>
     <p class="crafting-recipe-name">{{ crafting.recipeName }}</p>
     <h4 class="crafting-subheading">影響素材</h4>
@@ -174,7 +298,15 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
     <p v-if="crafting.selectedInfluence" class="crafting-influence-copy" data-crafting-influence-copy>{{ crafting.selectedInfluence.influenceText }}</p>
     <dl class="crafting-preview">
       <dt>成品</dt><dd>{{ crafting.outputName }} · {{ crafting.outputSlotName }} · Lv.{{ crafting.outputLevel }}</dd>
-      <dt>材料</dt><dd><ul><li v-for="input in crafting.inputs" :key="input.key">{{ input.name }} ×{{ input.required }} <span class="muted">／持有 {{ input.current ?? '—' }}</span></li></ul></dd>
+      <dt>材料</dt><dd><ul><li v-for="input in crafting.inputs" :key="input.key">
+        {{ input.name }} ×{{ input.required }} <span class="muted">／持有 {{ input.current ?? '—' }}</span>
+        <small v-if="input.materialId && (input.current ?? 0) < input.required" class="content-hints">
+          <span v-for="source in recipeMaterialKnowledge[input.materialId]?.sources ?? []" :key="`${source.label}-${source.region ?? 'unknown'}`" :data-content-source="input.materialId" :data-content-source-state="source.state">
+            來源：{{ source.label }}<template v-if="source.region"> · {{ REGIONS[source.region].name }}</template><template v-if="source.reason"> · {{ source.reason }}</template>
+          </span>
+          <span v-for="use in recipeMaterialKnowledge[input.materialId]?.uses ?? []" :key="use" :data-content-use="input.materialId">用途：{{ use }}</span>
+        </small>
+      </li></ul></dd>
       <dt>費用</dt><dd>{{ craftingPlan.gold.required }} 金 <span class="muted">／持有 {{ craftingPlan.gold.current ?? '—' }}</span></dd>
       <dt>體力與時間</dt><dd>體力 {{ craftingPlan.stamina.required }} <span class="muted">／目前 {{ craftingPlan.stamina.current ?? '—' }}</span> · {{ craftingPlan.durationMinutes }} 分鐘</dd>
       <dt>鍛造熟練度</dt><dd>需求 Lv.{{ craftingPlan.skill.required }} <span class="muted">／目前 Lv.{{ craftingPlan.skill.current ?? '—' }}</span></dd>

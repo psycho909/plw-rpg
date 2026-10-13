@@ -1,0 +1,1 @@
+Attempt-03 red reproduction retained verbatim. Formal combat lane failed at slime_slick/mid after 600 samples with requestedPlayerLevel=5 and no legal witness; the source fingerprint remained 6a320cfcefc529bb06ad7dd815396fdde21097b1f8aab842ac6ec2fe63345ba3.

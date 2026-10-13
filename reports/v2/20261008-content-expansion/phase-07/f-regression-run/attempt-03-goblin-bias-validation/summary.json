@@ -1,0 +1,63 @@
+{
+  "headBefore": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "headAfter": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "headUnchanged": true,
+  "fileCountBefore": 117,
+  "fileCountAfter": 117,
+  "sourceMapUnchanged": true,
+  "changedPaths": [],
+  "checks": [
+    {
+      "name": "targeted",
+      "command": [
+        "npm",
+        "exec",
+        "--",
+        "vitest",
+        "run",
+        "src/engine/remainingFamilies.integration.test.ts",
+        "-t",
+        "keeps Wild and Frontier bias materials compatible with their recipe outputs and exposes planned gear in selected loot"
+      ],
+      "cwd": "/workspace/plw-rpg",
+      "started": {
+        "utc": "2026-10-13T07:26:38.986+00:00",
+        "taipei": "2026-10-13T15:26:38.986+08:00"
+      },
+      "ended": {
+        "utc": "2026-10-13T07:26:40.145+00:00",
+        "taipei": "2026-10-13T15:26:40.145+08:00"
+      },
+      "durationSeconds": 1.159,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutBytes": 215,
+      "stderrBytes": 0
+    },
+    {
+      "name": "vue-tsc",
+      "command": [
+        "npm",
+        "exec",
+        "--",
+        "vue-tsc",
+        "--noEmit"
+      ],
+      "cwd": "/workspace/plw-rpg",
+      "started": {
+        "utc": "2026-10-13T07:26:40.145+00:00",
+        "taipei": "2026-10-13T15:26:40.145+08:00"
+      },
+      "ended": {
+        "utc": "2026-10-13T07:26:45.252+00:00",
+        "taipei": "2026-10-13T15:26:45.252+08:00"
+      },
+      "durationSeconds": 5.107,
+      "exitCode": 0,
+      "signal": null,
+      "stdoutBytes": 0,
+      "stderrBytes": 0
+    }
+  ],
+  "allPassed": true
+}

@@ -1,0 +1,4 @@
+$ python3 -m unittest test_qa_browser_contract.BrowserContracts.test_normal_reload_restores_the_speed_selected_before_the_reload -v
+Ran 1 test in 0.010s
+OK
+Contract covers initial speeds 0, 1, 5, and 20; each was restored after reload.

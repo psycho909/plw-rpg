@@ -1,0 +1,153 @@
+{
+  "method": "Exact canonical gear profile by slot/attack/defense/penetration and effective affix eligibility; excludes sale value, names, descriptions, and equipment IDs from the grouping key. Authored affixes resolve to stat/slots/tiers; absent authored affixes retain the stable baseline affix ID, matching contentValidation affix semantics.",
+  "equipmentCount": 48,
+  "authoredAffixCount": 0,
+  "baselineAffixFallbackIds": [
+    "bleeding",
+    "blocking",
+    "keen",
+    "piercing",
+    "striking",
+    "sturdy",
+    "warding"
+  ],
+  "functionalCloneGroups": [
+    {
+      "semantic": {
+        "slot": "weapon",
+        "attack": 7,
+        "defense": 0,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "keen"
+          },
+          {
+            "id": "striking"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "slime_spring_blade",
+          "sell": 28
+        },
+        {
+          "id": "fog_undead_bellstaff",
+          "sell": 32
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "weapon",
+        "attack": 8,
+        "defense": 0,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "bleeding"
+          },
+          {
+            "id": "striking"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "slime_amber_mace",
+          "sell": 25
+        },
+        {
+          "id": "wild_beast_resin_axe",
+          "sell": 32
+        },
+        {
+          "id": "frontier_goblin_ironaxe",
+          "sell": 33
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "armor",
+        "attack": 0,
+        "defense": 5,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "blocking"
+          },
+          {
+            "id": "sturdy"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "cave_insect_resin_coat",
+          "sell": 29
+        },
+        {
+          "id": "frontier_goblin_plate_vest",
+          "sell": 25
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "armor",
+        "attack": 0,
+        "defense": 4,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "blocking"
+          },
+          {
+            "id": "warding"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "wild_beast_hide_coat",
+          "sell": 22
+        },
+        {
+          "id": "frontier_goblin_signal_coat",
+          "sell": 27
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "weapon",
+        "attack": 6,
+        "defense": 0,
+        "penetration": 3,
+        "affixes": [
+          {
+            "id": "keen"
+          },
+          {
+            "id": "piercing"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "wild_beast_antler_pike",
+          "sell": 30
+        },
+        {
+          "id": "frontier_goblin_duelist_pike",
+          "sell": 32
+        }
+      ]
+    }
+  ],
+  "functionalCloneGroupCount": 5,
+  "allMembersOfCloneGroupsExcludedCount": 11,
+  "equipmentCountAfterExcludingAllCloneGroupMembers": 37
+}

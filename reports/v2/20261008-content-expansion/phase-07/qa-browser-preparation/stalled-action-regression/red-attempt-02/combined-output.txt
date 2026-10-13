@@ -1,0 +1,27 @@
+F.F
+======================================================================
+FAIL: test_exhausted_modal_controls_try_safe_close_before_reporting_blocked (__main__.BrowserContracts.test_exhausted_modal_controls_try_safe_close_before_reporting_blocked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 64, in test_exhausted_modal_controls_try_safe_close_before_reporting_blocked
+    self.assertEqual(category, "close_dialog")
+AssertionError: 'observe_blocked' != 'close_dialog'
+- observe_blocked
++ close_dialog
+
+
+======================================================================
+FAIL: test_clock_only_background_movement_is_not_control_progress (__main__.BrowserContracts.test_clock_only_background_movement_is_not_control_progress)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 112, in test_clock_only_background_movement_is_not_control_progress
+    self.assertEqual(before, after)
+AssertionError: '76147fba11db787e6d40c9429f42a5c403a340ae5bb847302001e105ef68cf53' != '8830d75859a45e60320f677624f3f6a3742dce1423f173d2619388fa48ecc53e'
+- 76147fba11db787e6d40c9429f42a5c403a340ae5bb847302001e105ef68cf53
++ 8830d75859a45e60320f677624f3f6a3742dce1423f173d2619388fa48ecc53e
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+FAILED (failures=2)

@@ -1,0 +1,59 @@
+"""Disposable-browser onboarding smoke; requires local Vite and does not touch real saves."""
+import json
+import re
+from playwright.sync_api import sync_playwright, expect
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(executable_path='/usr/bin/chromium', headless=True, args=['--no-sandbox'])
+    context = browser.new_context(viewport={'width': 1440, 'height': 1000})
+    page = context.new_page()
+    page.set_default_timeout(10000)
+    errors = []
+    page.on('pageerror', lambda error: errors.append(str(error)))
+    response = page.goto('http://127.0.0.1:5173/', wait_until='networkidle')
+    assert response.status == 200
+    expect(page.get_by_role('main', name='探索世界')).to_be_visible()
+    page.get_by_role('button', name='暫停', exact=True).click()
+    expect(page.get_by_role('button', name='暫停', exact=True)).to_have_attribute('aria-pressed', 'true')
+    before = page.locator('.world-caption').inner_text()
+    page.get_by_role('button', name='往右', exact=True).click()
+    assert page.locator('.world-caption').inner_text() != before
+    page.keyboard.press('m')
+    page.get_by_role('button', name='前往農田', exact=True).click()
+    page.locator('.context-action').click()
+    page.get_by_role('button', name=re.compile('^整地')).click()
+    page.get_by_role('button', name=re.compile('^播種')).click()
+    expect(page.locator('.plot-row')).to_contain_text('剩')
+    page.keyboard.press('Escape')
+    page.keyboard.press('Escape')
+    page.locator('.pixel-menu').get_by_role('button', name='旅人筆記', exact=True).click()
+    page.get_by_role('button', name='等待 1 日', exact=True).click()
+    page.get_by_role('button', name='等待 1 日', exact=True).click()
+    page.keyboard.press('Escape')
+    page.locator('.context-action').click()
+    expect(page.locator('.plot-row')).to_contain_text('可收割')
+    page.get_by_role('button', name=re.compile('^收割')).click()
+    expect(page.get_by_role('status')).to_contain_text('收穫 5 份食物')
+    page.keyboard.press('Escape')
+    for key, title in [('c', '角色'), ('i', '物品'), ('l', '世界日誌'), ('m', '地圖與世界')]:
+        page.keyboard.press(key)
+        expect(page.locator('#window-title')).to_contain_text(title)
+        page.keyboard.press('Escape')
+    page.locator('.save-button').click()
+    expect(page.get_by_role('status')).to_contain_text('世界已儲存')
+    saved = page.evaluate('JSON.parse(localStorage.getItem("oakvale-v1"))')
+    character = next(c for c in saved['characters'] if c['id'] == saved['activeCharacterId'])
+    assert character['inventory']['food'] == 8
+    assert saved['worldTime'] >= 2880
+    page.reload(wait_until='networkidle')
+    expect(page.get_by_role('main', name='探索世界')).to_be_visible()
+    page.get_by_role('button', name='暫停', exact=True).click()
+    page.locator('.save-button').click()
+    loaded = page.evaluate('JSON.parse(localStorage.getItem("oakvale-v1"))')
+    hero = next(c for c in loaded['characters'] if c['id'] == loaded['activeCharacterId'])
+    assert hero['position'] == character['position']
+    assert hero['inventory'] == character['inventory']
+    assert not errors, errors
+    print(json.dumps({'browser_smoke': 'passed', 'checks': ['Vue rendering', 'pause', 'movement', 'farm prepare/plant/mature/harvest', 'C/I/L/M windows', 'localStorage save/reload'], 'stored_food': character['inventory']['food'], 'browser_errors': errors}, ensure_ascii=False))
+    context.close()
+    browser.close()

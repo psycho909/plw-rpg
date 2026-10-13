@@ -1,0 +1,21 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crops.integration.test.ts > supplies a regional crisis with food converted from harvested crop goods
+AssertionError: expected '目前糧食消耗快於補給；需要更多農夫或防衛協助，單靠存糧無法補足需求。' to be '' // Object.is equality
+
+- Expected
++ Received
+
++ 目前糧食消耗快於補給；需要更多農夫或防衛協助，單靠存糧無法補足需求。
+
+ ❯ src/engine/crops.integration.test.ts:153:53
+    151|   state.threat.bossAlive = true
+    152|   const crisis = state.regionalCrisis
+    153|   expect(contributeCrisisFood(state, crisis.id, 1)).toBe('')
+       |                                                     ^
+    154|   expect(owner.inventory.food).toBe(0)
+    155|   expect(state.reward.materials[owner.id]?.spring_pea_good).toBe(3)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

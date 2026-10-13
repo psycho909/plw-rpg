@@ -1,0 +1,80 @@
+{
+  "qualityCounts": {
+    "slime": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "cave-insects": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "wild-beasts": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "frontier-goblins": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 14,
+      "usableNewMaterials": 8
+    },
+    "fog-undead": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "mine-constructs": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "six-family-combined": {
+      "qualifyingNewMonsters": 66,
+      "candidateNewItemIds": 92,
+      "usableNewMaterials": 48
+    }
+  },
+  "warningCounts": {
+    "slime": 0,
+    "cave-insects": 0,
+    "wild-beasts": 0,
+    "frontier-goblins": 1,
+    "fog-undead": 0,
+    "mine-constructs": 0,
+    "six-family-combined": 2
+  },
+  "warningsByCase": {
+    "slime": [],
+    "cave-insects": [],
+    "wild-beasts": [],
+    "frontier-goblins": [
+      "- WARNING duplicate-like-equipment [frontier_goblin_duelist_pike, frontier_goblin_scrap_spear]: Equipment definitions have the same effective slot, stats, and affix eligibility."
+    ],
+    "fog-undead": [],
+    "mine-constructs": [],
+    "six-family-combined": [
+      "- WARNING duplicate-like-equipment [cave_insect_plate_vest, frontier_goblin_plate_vest]: Equipment definitions have the same effective slot, stats, and affix eligibility.",
+      "- WARNING duplicate-like-equipment [frontier_goblin_duelist_pike, frontier_goblin_scrap_spear]: Equipment definitions have the same effective slot, stats, and affix eligibility."
+    ]
+  },
+  "errorCounts": {
+    "slime": 0,
+    "cave-insects": 0,
+    "wild-beasts": 0,
+    "frontier-goblins": 0,
+    "fog-undead": 0,
+    "mine-constructs": 0,
+    "six-family-combined": 0
+  },
+  "errorsByCase": {
+    "slime": [],
+    "cave-insects": [],
+    "wild-beasts": [],
+    "frontier-goblins": [],
+    "fog-undead": [],
+    "mine-constructs": [],
+    "six-family-combined": []
+  }
+}

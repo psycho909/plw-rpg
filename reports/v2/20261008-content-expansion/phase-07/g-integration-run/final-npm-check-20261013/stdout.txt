@@ -1,0 +1,22 @@
+
+> plw-rpg@0.1.0 check
+> npm run test && npm run build
+
+
+> plw-rpg@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  35 passed (35)
+      Tests  614 passed (614)
+   Start at  08:16:07
+   Duration  40.09s (transform 1.12s, setup 0ms, import 2.99s, tests 32.85s, environment 16ms)
+
+
+> plw-rpg@0.1.0 build
+> vue-tsc --noEmit && vite build
+
+src/engine/crops.integration.test.ts(162,10): error TS2367: This comparison appears to be unintentional because the types '"warning"' and '"dormant"' have no overlap.

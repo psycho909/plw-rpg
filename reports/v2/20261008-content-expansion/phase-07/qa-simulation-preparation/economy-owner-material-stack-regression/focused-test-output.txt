@@ -1,0 +1,19 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ✓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > runner configuration guards reject empty combat samples and invalid seed cycles 2ms
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > Phase 7 simulation lane: economy
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early crafted combat fixture uses a legal public recipe without changing the combat band level
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > mid combat fixture clamps slime_slick to a shared legal spawn profile and encounters through public APIs
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > preserves the default spring 08:00 when slime_slick time predicates already allow it
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > records non-level context adjustments required by seasonal and hourly spawn predicates
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early masterpiece combat fixture uses a smithing-eligible public recipe without changing the combat band level
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > masterpiece roll is per-seed data while combat setup remains invariant
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > combat raw remaining enemy HP distinguishes victory, death, and active combat
+ ✓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > economy fixture initializes an owner material stack before seeding recipe materials 3ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed | 8 skipped (10)
+   Start at  10:21:36
+   Duration  605ms (transform 397ms, setup 0ms, import 486ms, tests 7ms, environment 0ms)
+

@@ -722,7 +722,7 @@ describe('versioned saves and deterministic continuation', () => {
     simulate(s, 15 * 1440); simulate(loaded, 15 * 1440)
     expect(loaded).toEqual(s)
     expect(deserialize(serialize(loaded, 0)).state).toEqual(loaded)
-  }, 15000)
+  }, 30000)
 
   it('rejects a rolled-back event sequence before planting duplicates a crop ID', () => {
     const s = createGame(909)

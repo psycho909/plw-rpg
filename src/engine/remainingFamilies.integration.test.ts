@@ -205,8 +205,16 @@ const correctedBridgeRecipes = [
 
 describe('remaining D family runtime integration', () => {
   it.each(familyCases)('$familyId registers six normal and two Elite encounters', ({ familyId, normalIds, eliteIds }) => {
-    expect(CONTENT_FAMILIES[familyId]).toBeDefined()
-    const options = contentEncounterOptions(createGame(72800), familyId)
+    const family = CONTENT_FAMILIES[familyId]
+    expect(family).toBeDefined()
+    const optionsById = new Map()
+    for (const region of family.regions) {
+      const state = createGame(72800)
+      player(state).currentRegion = region
+      state.regions[region]!.discovered = true
+      for (const option of contentEncounterOptions(state, familyId)) optionsById.set(option.definitionId, option)
+    }
+    const options = [...optionsById.values()]
     const originalPackOptions = options.filter(option => option.rank === 'normal' || option.rank === 'elite')
     expect(originalPackOptions).toHaveLength(8)
     expect(originalPackOptions.filter(option => option.rank === 'normal').map(option => option.definitionId).sort())

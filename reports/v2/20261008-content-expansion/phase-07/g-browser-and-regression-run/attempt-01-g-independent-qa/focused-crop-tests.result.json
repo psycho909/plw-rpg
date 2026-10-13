@@ -1,0 +1,27 @@
+{
+  "command": [
+    "npm",
+    "exec",
+    "--",
+    "vitest",
+    "run",
+    "src/engine/crops.integration.test.ts",
+    "src/engine/actions.test.ts",
+    "src/services/saveService.test.ts",
+    "src/presentation/worldUI.test.ts",
+    "src/engine/contentValidation.test.ts"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "started": {
+    "utc": "2026-10-13T07:51:03.950+00:00",
+    "taipei": "2026-10-13T15:51:03.950+08:00"
+  },
+  "ended": {
+    "utc": "2026-10-13T07:51:21.097+00:00",
+    "taipei": "2026-10-13T15:51:21.097+08:00"
+  },
+  "durationSeconds": 17.147,
+  "exitCode": 0,
+  "stdoutBytes": 209,
+  "stderrBytes": 0
+}

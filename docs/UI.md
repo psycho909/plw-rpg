@@ -30,9 +30,11 @@
 | Identity／Reputation | App.vue + IdentityWindow.vue | `state.life.characters[activeCharacterId]` | 身分、聲望稱號、人生記事、名下產業；鍛造身分與傑作匠師稱號由 engine 身分投影形成，UI 只顯示 label | `identity.test.ts`、`lifeIntegration.test.ts` |
 | NPC life | NpcWindow.vue | `state.life.npcs[npcId]` 與目前居民 state | 職涯、熟悉度、掛心事項、旅人狀態、記得與玩家有關的事 | `npcLife.test.ts`、`lifeIntegration.test.ts` |
 | Property | PropertyWindow.vue | `state.life.properties`、`PROPERTY_DEFINITIONS` | 自宅、農地、農場事業及手動供糧 | `ownership.test.ts`、`lifeIntegration.test.ts` |
+| Farming / crop goods | 農田 `PlaceWindow.vue`、素材分類 `InventoryWindow.vue`、`worldUI.ts` | `farmCropChoices`／`farmCropPlantingGuidance`、`CONTENT_CROPS`／`CONTENT_CROP_GOODS`、`farm`、`convertCropGoodToFood`、既有 `GameState.crops` 與 reward material stacks | 依當前季節及區域只列可種作物，以 `aria-pressed` 按鈕選種；不符合季節／區域的作物只顯示引擎原因、不提供播種按鈕；選取暫存在視窗，不寫入存檔；田地與地圖標記顯示品種及生長進度。收成品沿用素材交易，背包逐份顯示並兌換其註冊食物值；轉換扣除素材，產生的食物可用既有供糧流程 | `crops.test.ts`、`crops.integration.test.ts`、`worldProjection.test.ts`、Phase 7-G Chromium farm/save/reload 流程 |
 | Living news／requests | LifeNewsWindow.vue | `projectLivingNews`、`state.life.requests` | 地方／區域／傳聞／重大消息、近期委託 | `livingEvents.test.ts`、`lifeIntegration.test.ts` |
 | World First map | WorldMap.vue + `projectWorld` | `GameState` 經 `worldProjection.ts`／`worldUI.ts` 投影 | 已探索圖格、居民、產業、作物和威脅標記 | `worldProjection.test.ts`、瀏覽器遊玩流程 |
-| Procedural gear / discovery | InventoryWindow.vue、CharacterSheet.vue + `rewardProjection` | `state.reward`、rewards catalog、rewardActions / combatStats | 原生分類／部位／品質按鈕、20 件分頁、同部位比較、穿戴、出售確認、素材交易、有限見聞收藏 | `rewardProjection.test.ts`、Phase2 engine tests、reward-core production Browser 流程 |
+| Procedural gear / discovery | InventoryWindow.vue、CharacterSheet.vue + `rewardProjection` | `state.reward`、rewards catalog、rewardActions / combatStats | 原生分類／部位／品質按鈕、裝備搜尋、20 件分頁、同部位比較、穿戴、出售確認、素材交易、有限見聞收藏；搜尋／分類狀態只在視窗期間保留 | `rewardProjection.test.ts`、Phase2 engine tests、Phase 7-I Chromium search/filter/page flow |
+| Content discovery / encounter | `PlaceWindow.vue`、`AdventureWindow.vue`、`InventoryWindow.vue` | `contentEncounterOptions`／`contentCombatPresentation`、`contentKnowledgeCatalog`、`state.reward.collection` | 工作台配方依類別／搜尋即時篩選；森林、礦場、農田等地區視窗只顯示目前已探索區域的族群，階級與資格／拒絕原因讀取 engine projection；素材來源依已發現 ID 和區域知識投影，未探索地區只顯示一般提示；Boss 形態和下一回合 cue 由戰鬥投影提供 | `contentFamilies.test.ts`、`contentBosses.integration.test.ts`、Phase 7-I Chromium search/encounter flow |
 | Adventure reward / comparison | PlaceWindow.vue + AdventureWindow.vue + `wolfRewardExpectation` / `rewardProjection` | `state.reward`、wolf loot configuration、current slot equipment | 追蹤目標逐列呈現真實 gear/rank/rarity/material/exclusive expectation；單一下一目標提示；戰鬥顯示 reward forecast；同窗比較 rarity、逐項能力差與 affix/special 差異 | `rewardProjection.test.ts`、Phase4 targeted browser、Adventure stress/playtest |
 | Crafting / craftsmanship | Home／雜貨店／鐵匠鋪 `PlaceWindow.vue` 共用工作台 + `InventoryWindow.vue` gear detail + `CharacterSheet.vue` Smithing | `CRAFTING_RECIPES`、`planCraft` / `craft`、`state.reward.instances`、角色技能與持有素材、既有 life identity projection | 配方選取、合法性／成本／拒絕原因／實際站點與時段均由 engine plan 提供；可在既有 Home 檢視基礎／中階 recipe，所有服務費、站點與營業時間只讀 plan；仍由同一工作台互動。解鎖、熟練 XP 上限、畢業狀態、品質下限／機率與下一目標讀取 plan；鍛造能力不增加裝備原始數值。預設不加影響素材，只有 registry allowlist 會顯示為選項。F masterpiece 是既有裝備身分標記，不是新稀有度或通用戰力保證；現有 gear row/detail 與成功回饋呈現傑作、原製作者、時間及配方。G 鍛造師／傑作匠師標籤由 engine lifetime identity 投影形成，UI 不重算門檻；不新增 inspector 或 ownership panel | `craftingProjection.test.ts`、`rewardProjection.test.ts`、`gameStore.test.ts`、engine crafting tests、C fresh-save browser pilot；E/F/G UI browser flow；save/reload |
 
@@ -44,7 +46,7 @@
 
 - WASD／方向鍵移動；Enter 開啟附近互動；Esc 開選單或關閉視窗；C 角色、I 物品、L 日誌、M 地圖。滑鼠與手機有對應按鈕。
 - 快捷鍵忽略 IME、修飾鍵、文字輸入；modal 開啟時不移動玩家，不覆寫原生按鈕 Enter 行為。地圖一個 Tab 入口，方向鍵直接控制角色。
-- 原生 dialog.showModal 負責背景 inert，PixelWindow 統一循環 Tab／Shift+Tab，避免焦點跑到瀏覽器介面。開啟聚焦內容／安全取消；Esc 只取消，關閉還原觸發者，觸發者已不存在則回地圖。繼任視窗不可關閉。
+- 原生 dialog.showModal 負責背景 inert，PixelWindow 統一循環 Tab／Shift+Tab，包含可見且啟用的按鈕、連結、表單控制項與有效 tabindex 元素，避免焦點跑到瀏覽器介面。開啟聚焦內容／安全取消；Esc 只取消，關閉還原觸發者，觸發者已不存在則回地圖。繼任視窗不可關閉。
 - 只允許一個 modal，內部導覽換內容，不疊加 dialog。訊息於 modal 內呈現，避免被 top layer 遮蔽。
 - 選單提供「這一生」、「住所與產業」和「地方消息與委託」視窗；詳細資料以目前角色與世界 state 呈現，關閉視窗不改變模擬狀態。
 - 世界時間照所選倍率流動，開視窗不自動暫停。背景分頁在同一 Session 透過單一 monotonic loop 補進延遲時間；頁面關閉後世界凍結，重新載入不做 offline advancement。持續顯示精簡時鐘；等待一季／一年明示會改變所有人的生命與契約，不能於戰鬥／地下城使用。
@@ -53,6 +55,10 @@
 ## 情境操作與復原
 
 附近建築／NPC 的定義使用引擎 Manhattan distance ≤ 1；農作／採集仍依引擎區域條件。服務營業、價格、資源、體力、裝備與傭兵上限取自 config／actions。打烊時視窗保留營業時間與離開按鈕，操作停用；時間流動後條件即時重算。失敗顯示引擎中文原因，不跳離原操作視窗。
+
+農田選種只列目前季節且位於農田區可種的內容，小麥保留為所有季節的相容選項；季節跨界時，暫存選擇會回到小麥。選擇、播種、成熟、收成名稱與時間來自註冊作物資料及既有世界時鐘。新作物的收成先進入既有素材堆疊，素材視窗標示每份食物值並提供逐份兌換；兌換扣除收成品、增加角色食物，可接續既有供糧，沒有自動轉換或重複發放小麥式食物。視窗的選種不增加存檔欄位；持久作物只使用既有 `cropId`。
+
+Phase 7-I 的裝備、素材、配方與當前區域蹤跡搜尋只在目前 `PixelWindow` 期間暫存；清除搜尋會把焦點還給輸入欄。裝備查詢先套用部位／品質，再分頁並夾限頁碼。素材來源使用持久 `collection` 中已遇見／擊退的 ID 和已探索區域；未探索來源不列出區域名稱或怪物名稱，當前已知但不可追蹤的怪物沿用 `contentEncounterOptions` 的精確原因。工作台仍由 `planCraft` 決定可否製作；材料不足時在同一計畫列出已知來源／用途。地區視窗只取當前已探索區域的 canonical encounter projection，Boss 變種與回合提示取自 `contentCombatPresentation`。作物可選清單與 action 共用 `farmCropChoices`，滿田／缺整地說明來自 `farmCropPlantingGuidance`；所有視窗搜尋均為本機即時篩選，不呼叫網路、不暫停世界時間，也不新增存檔欄位。
 
 居民視窗顯示年齡、職涯、大家認得的角色、目前活動、位置、熟悉度、掛心事項與已知回憶。個人回憶只顯示與目前角色相關的部分；交談依職業、職涯、特質、已知記憶、玩家身分和聲望選擇對話，居民不會知道未親歷或未聽聞的事。NPC 保存有界結構化記憶，每種重要記憶會受距離、職業、特質或親身關係限制，避免形成全知或逐人好感度系統。
 

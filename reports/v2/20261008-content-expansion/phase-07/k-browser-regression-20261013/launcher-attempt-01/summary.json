@@ -1,0 +1,66 @@
+{
+  "runId": "20261013T103953Z-pid378555",
+  "runDirectory": "reports/v2/20261008-content-expansion/phase-07/qa-browser-runs/20261013T103953Z-pid378555",
+  "launcherCommand": "python3 reports/v2/20261008-content-expansion/phase-07/qa_browser_launcher.py --go --mode regression --seconds 60",
+  "launcherExitCode": 0,
+  "runnerExitCode": 0,
+  "status": "PASS_BROWSER_REGRESSION",
+  "mode": "regression",
+  "requestedSeconds": 60,
+  "actualSeconds": 63.8,
+  "startUTC": "2026-10-13T10:39:53.517789+00:00",
+  "endUTC": "2026-10-13T10:40:59.111621+00:00",
+  "sourceStable": true,
+  "actionCount": 17,
+  "actionCategoryCounts": {
+    "start_from_opening": 1,
+    "advance": 1,
+    "explore": 4,
+    "navigate": 4,
+    "observe": 4,
+    "close_dialog": 3
+  },
+  "openingVerified": true,
+  "legalOneDayWait": {
+    "button": "等待 1 日",
+    "worldTimeBefore": 480,
+    "worldTimeAfter": 1920
+  },
+  "saveReloadVerified": true,
+  "normalReloadCount": 1,
+  "finalSaveSummary": {
+    "worldTime": 2020,
+    "coreGameStateKeyCount": 23
+  },
+  "errorCounts": {},
+  "browserErrors": false,
+  "browserEventCounts": {
+    "saveWrites": 11,
+    "longTasks": 1
+  },
+  "checkpointCount": 1,
+  "chromiumVersion": "151.0.7922.173",
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "6a320cfcefc529bb06ad7dd815396fdde21097b1f8aab842ac6ec2fe63345ba3",
+  "sourceMapStable": true,
+  "releaseSha256": "4fc71d98a6b408ba17fa8639ecc979f6ac6271c811971e13537de20dd8871296",
+  "buildStatusSha256": "3fb03bbaff6985b66c690ecd11738cb9464db56b5bbb31ca76ed636101105f05",
+  "screenshots": [
+    {
+      "path": "normal-fresh-opening-001.png",
+      "sha256": "04c0e7234e2df37db51e230f55eb6ffb1f88bacb4095c53006363e384d2168bf"
+    },
+    {
+      "path": "normal-fresh-world-after-opening-002.png",
+      "sha256": "fd79f53b2bebc7485e7ef38f632e2e769bf4d77ea7044fb3beb80509f639afda"
+    },
+    {
+      "path": "normal-fresh-1280x800-003.png",
+      "sha256": "d292a9c031fa42f7b2f5c0ac4cec3c925f27687705273490c4d5fef9b61cd481"
+    },
+    {
+      "path": "normal-fresh-390x844-004.png",
+      "sha256": "ea39a100295238f00e2b95c5914fa47beab388e76b06ce77e815881d2b6631dc"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "npm",
+    "run",
+    "validate:content",
+    "--",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/g-integration-run/merged-validator-run/packs/seven-pack-combined.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/h-content-reachability-validation-20261013.md"
+  ],
+  "startedAt": "2026-10-13T08:33:49.460815+00:00",
+  "finishedAt": "2026-10-13T08:33:56.733177+00:00",
+  "exitCode": 0,
+  "stdoutSha256": "4c36297ecfc1dcb5c3545ea7333d51babbdcf84b7ae561e29c46bacaec51df96",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -7,11 +7,12 @@ import { WILD_BEAST_CONTENT } from './content/wildBeasts'
 import { FRONTIER_GOBLIN_CONTENT } from './content/frontierGoblins'
 import { FOG_UNDEAD_CONTENT } from './content/fogUndead'
 import { MINE_CONSTRUCT_CONTENT } from './content/mineConstructs'
+import { FARM_CROP_CONTENT } from './content/farmCrops'
 import { SLIME_CONTENT } from './content/slime'
 
 /** Runtime registry entry point. Family modules remain isolated, authored-only packs. */
 export const CONTENT_PACKS: readonly ContentPack[] = [
-  SLIME_CONTENT, CAVE_INSECT_CONTENT,
+  SLIME_CONTENT, CAVE_INSECT_CONTENT, FARM_CROP_CONTENT,
   WILD_BEAST_CONTENT, FRONTIER_GOBLIN_CONTENT, FOG_UNDEAD_CONTENT, MINE_CONSTRUCT_CONTENT,
 ]
 

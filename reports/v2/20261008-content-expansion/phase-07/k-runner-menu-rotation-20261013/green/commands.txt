@@ -1,0 +1,8 @@
+cd reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation && python3 -m unittest -v test_qa_browser_contract
+cd reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation && PYTHONPYCACHEPREFIX=/tmp/plw-rpg-menu-rotation-pyc python3 -m py_compile ../qa_browser_runner.py ../qa_browser_launcher.py test_qa_browser_contract.py
+cd reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation && PYTHONPATH=.. python3 <FakePage script extraction calling indexeddb_summary>
+node --check reports/v2/20261008-content-expansion/phase-07/k-runner-menu-rotation-20261013/green/indexeddb-cursor-script.js
+cd reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation && python3 ../qa_browser_launcher.py
+cd reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation && python3 ../qa_browser_runner.py --help
+git diff --check -- <7 scoped QA harness/docs/ticket files>
+python3 -m json.tool reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/phase7-browser-release.json

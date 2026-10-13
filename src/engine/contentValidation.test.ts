@@ -324,4 +324,109 @@ describe('validateContentPack', () => {
     }))
     expect(report.qualityCounts.usableNewItems).toBe(0)
   })
+
+  it('uses distinct validated mandatory recipe output functions when comparing materials', () => {
+    const recipeConsumers: ContentPack = {
+      ...pack,
+      lootTables: [{ ...pack.lootTables[0]!, guaranteedMaterialIds: ['mire-claw', 'marsh-scale'] }],
+      materials: [
+        { ...pack.materials[0]!, id: 'mire-claw' },
+        { ...pack.materials[0]!, id: 'marsh-scale' },
+      ],
+      equipment: [
+        { ...pack.equipment[0]!, id: 'reed-spear', name: { 'zh-TW': '蘆槍' } },
+        { ...pack.equipment[0]!, id: 'marsh-spear', attack: 4, name: { 'zh-TW': '濕地槍' } },
+      ],
+      recipes: [
+        { ...pack.recipes[0]!, id: 'reed-spear-recipe', inputs: [{ source: 'material', materialId: 'mire-claw', amount: 1 }], outputBase: 'reed-spear' },
+        { ...pack.recipes[0]!, id: 'marsh-spear-recipe', inputs: [{ source: 'material', materialId: 'marsh-scale', amount: 1 }], outputBase: 'marsh-spear' },
+      ],
+    }
+
+    const report = validateContentPack(recipeConsumers, baseline)
+    expect(report.warnings).not.toContainEqual(expect.objectContaining({ code: 'duplicate-like-material', ids: ['marsh-scale', 'mire-claw'] }))
+  })
+
+  it('does not distinguish material consumers by output equipment sale price', () => {
+    const recipeConsumers: ContentPack = {
+      ...pack,
+      lootTables: [{ ...pack.lootTables[0]!, guaranteedMaterialIds: ['mire-claw', 'marsh-scale'] }],
+      materials: [
+        { ...pack.materials[0]!, id: 'mire-claw' },
+        { ...pack.materials[0]!, id: 'marsh-scale' },
+      ],
+      equipment: [
+        { ...pack.equipment[0]!, id: 'reed-spear-a', sell: 4 },
+        { ...pack.equipment[0]!, id: 'reed-spear-b', sell: 20 },
+      ],
+      recipes: [
+        { ...pack.recipes[0]!, id: 'reed-recipe-a', inputs: [{ source: 'material', materialId: 'mire-claw', amount: 1 }], outputBase: 'reed-spear-a' },
+        { ...pack.recipes[0]!, id: 'reed-recipe-b', inputs: [{ source: 'material', materialId: 'marsh-scale', amount: 1 }], outputBase: 'reed-spear-b' },
+      ],
+    }
+
+    const report = validateContentPack(recipeConsumers, baseline)
+    expect(report.warnings).toContainEqual(expect.objectContaining({ code: 'duplicate-like-material', ids: ['marsh-scale', 'mire-claw'] }))
+  })
+
+  it('deduplicates semantically equal recipe consumers and ignores invalid consumers', () => {
+    const recipeConsumers: ContentPack = {
+      ...pack,
+      lootTables: [{ ...pack.lootTables[0]!, guaranteedMaterialIds: ['mire-claw', 'marsh-scale', 'reed-root'] }],
+      materials: [
+        { ...pack.materials[0]!, id: 'mire-claw' },
+        { ...pack.materials[0]!, id: 'marsh-scale' },
+        { ...pack.materials[0]!, id: 'reed-root' },
+      ],
+      equipment: [
+        { ...pack.equipment[0]!, id: 'reed-spear' },
+        { ...pack.equipment[0]!, id: 'reed-spear-copy', name: { 'zh-TW': '蘆槍副本' } },
+        { ...pack.equipment[0]!, id: 'invalid-output', attack: 9 },
+      ],
+      recipes: [
+        { ...pack.recipes[0]!, id: 'reed-recipe-a', inputs: [{ source: 'material', materialId: 'mire-claw', amount: 1 }], outputBase: 'reed-spear' },
+        { ...pack.recipes[0]!, id: 'reed-recipe-b', inputs: [{ source: 'material', materialId: 'mire-claw', amount: 2 }], outputBase: 'reed-spear-copy' },
+        { ...pack.recipes[0]!, id: 'marsh-recipe', inputs: [{ source: 'material', materialId: 'marsh-scale', amount: 1 }], outputBase: 'reed-spear' },
+        { ...pack.recipes[0]!, id: 'invalid-recipe', inputs: [{ source: 'material', materialId: 'reed-root', amount: 1 }], outputBase: 'invalid-output', station: 'invalid' as never },
+      ],
+    }
+
+    const report = validateContentPack(recipeConsumers, baseline)
+    expect(report.warnings).toContainEqual(expect.objectContaining({ code: 'duplicate-like-material', ids: ['marsh-scale', 'mire-claw'] }))
+    expect(report.warnings).not.toContainEqual(expect.objectContaining({ code: 'duplicate-like-material', ids: expect.arrayContaining(['reed-root']) }))
+  })
+
+  it('excludes both sale-price-only equipment clones from the usable item count', () => {
+    const clones: ContentPack = {
+      ...pack,
+      lootTables: [{ ...pack.lootTables[0]!, weightedEquipment: [
+        { equipmentId: 'reed-spear', weight: 1 }, { equipmentId: 'reed-spear-copy', weight: 1 },
+      ] }],
+      equipment: [
+        { ...pack.equipment[0]!, id: 'reed-spear', sell: 4, name: { 'zh-TW': '蘆槍' } },
+        { ...pack.equipment[0]!, id: 'reed-spear-copy', sell: 20, name: { 'zh-TW': '新蘆槍' }, description: { 'zh-TW': '外觀不同' } },
+      ],
+    }
+
+    const report = validateContentPack(clones, baseline)
+    expect(report.warnings).toContainEqual(expect.objectContaining({ code: 'duplicate-like-equipment', ids: ['reed-spear', 'reed-spear-copy'] }))
+    expect(report.qualityCounts.usableNewItems).toBe(1)
+  })
+
+  it('qualifies equipment with a different combat stat despite equal sale price', () => {
+    const sidegrades: ContentPack = {
+      ...pack,
+      lootTables: [{ ...pack.lootTables[0]!, weightedEquipment: [
+        { equipmentId: 'reed-spear', weight: 1 }, { equipmentId: 'marsh-spear', weight: 1 },
+      ] }],
+      equipment: [
+        { ...pack.equipment[0]!, id: 'reed-spear', sell: 4 },
+        { ...pack.equipment[0]!, id: 'marsh-spear', attack: 4, sell: 4 },
+      ],
+    }
+
+    const report = validateContentPack(sidegrades, baseline)
+    expect(report.warnings).not.toContainEqual(expect.objectContaining({ code: 'duplicate-like-equipment' }))
+    expect(report.qualityCounts.usableNewItems).toBe(3)
+  })
 })

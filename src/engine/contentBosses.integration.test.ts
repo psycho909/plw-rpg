@@ -89,6 +89,19 @@ function lcm(values: readonly number[]) {
 }
 
 describe('content boss public integration', () => {
+  it.each(bossIds)('%s forms the same weighted variant from identical seed and eligible world state', id => {
+    const first = setWitness(createGame(84000), id)
+    const second = setWitness(createGame(84000), id)
+
+    expect(encounterContentMonster(first, id)).toBe('')
+    expect(encounterContentMonster(second, id)).toBe('')
+
+    expect(first.combat?.contentEncounter).toEqual(second.combat?.contentEncounter)
+    expect(first.rngState).toBe(second.rngState)
+    expect(CONTENT_MONSTERS[id]!.bossRules!.variants.map(variant => variant.id))
+      .toContain(first.combat?.contentEncounter?.variantId)
+  })
+
   it.each(bossIds)('%s supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown', id => {
     const definition = CONTENT_MONSTERS[id]!
     const family = CONTENT_FAMILIES[definition.familyId]!

@@ -1,6 +1,6 @@
 # Phase7 — Living World Content Expansion
 
-- Status: in_progress
+- Status: blocked — Development Engineering is complete; Owner final L3 review/approval is pending
 - Risk: L3
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
@@ -19,8 +19,8 @@
 
 ## Acceptance
 
-- [ ] 全規格20項DoD及11項Final Gate如實判定。
-- [ ] 17必需reports、source fingerprint/build/delivery correlation、original failure、獨立Review、外部Review handoff完整。
+- [x] 全規格20項DoD及11項Final Gate均已如實評估並分別記錄，不以未量測結果冒充 PASS。
+- [x] 17項必需交付物、source fingerprint/build correlation、原始失敗、QA dossier 獨立審閱與外部 Review handoff 完整。
 - [ ] 所有accepted更新commit/push verified；不自動下階段或外部部署。
 
 ## Child Tickets
@@ -41,9 +41,41 @@
 
 Initial HEAD 2d6af37cb36c9616cb832fc4d839bfd6ea7ef7c9，initial working tree clean；reports/v2/20261008-content-expansion/phase-07/；A基線與計畫待完成。
 
+## Latest progression — 2026-10-13
+
+Phase7-H accepted **PASS WITH FINDINGS** after current-region projection, runtime reachability for every registered monster, deterministic same-seed Boss formation, crop-good-to-crisis contribution and Phase6 regression were verified. Independent Standards review passed; follow-up Spec review cleared its initial evidence blockers. Natural encounter frequency remains explicitly `not-measured`; I must consume the H engine projection in UI, and J/K retain distribution and long-world gates. Phase7-I has been released and is now in progress. Human testing remains `DEFERRED / NOT APPLICABLE AT THIS STAGE`. Closeout: `reports/v2/20261008-content-expansion/phase-07/h-review-closeout-20261013.md`.
+
 ## Current delivery state
 
+### Authoritative Phase7-K closeout — 2026-10-13
+
+Phase7-A through Phase7-K engineering work is complete on `v2x/reward-core`. Phase7-K is accepted **PASS WITH FINDINGS**; the detailed gate disposition is in [`final-review.md`](../reports/v2/20261008-content-expansion/phase-07/final-review.md). This supersedes older in-progress/release notes below where they describe D/E/F/G/H/I/J or K as pending. Historical failures and superseded decisions remain preserved as audit history.
+
+The 20 Definition-of-Done items were assessed against current code and evidence; findings and measurement limits remain open, so they are not all unqualified PASS. The 11 final gates are:
+
+| Gate | Final status | Limitation carried forward |
+| --- | --- | --- |
+| Engineering | PASS WITH FINDINGS | Full current-source suite/build passed; the historical D auditability limitation remains disclosed. |
+| Content Quantity | PASS | Content audits report 66 qualifying monster definitions and 107 unique qualified item IDs. |
+| Content Quality | PASS WITH FINDINGS | Controlled differentiation is covered; natural exposure and player-side value remain unmeasured. |
+| Ecology | PASS WITH FINDINGS | Legal current-region reachability is validated; natural encounter frequency was not measured. |
+| Combat Diversity | PASS WITH FINDINGS | Controlled fixtures passed; early/mid Boss results need ordinary progression evidence. |
+| Reward / Loot | PASS WITH FINDINGS | Controlled loot distributions passed; natural acquisition and player value were not measured. |
+| Crafting / Life | PASS WITH FINDINGS | Recipe/use paths passed; a complete merchant purchase/stock/restock cycle was not modeled. |
+| World Integration | PASS WITH FINDINGS | Crisis, crop supply and long-world regression passed; some natural world exposure remains unmeasured. |
+| Economy | PASS WITH FINDINGS | No exploit was confirmed in tested scope; full-cycle economy and multi-season crop strategy remain evidence questions. |
+| Long-world Stability | PASS WITH FINDINGS | Three seeds passed 10/50/100-year save/reload continuation checks; physical IndexedDB bytes/quota remain unmeasured. |
+| Human Product | DEFERRED / NOT APPLICABLE AT THIS STAGE | This was Development QA; human feedback is not required for its Engineering gates. |
+
+The two-hour Chromium soak and one-hour runner-driven content lane each completed with zero recorded Browser errors; both runner statuses remain `COMPLETE_STRESS_REVIEW_REQUIRED` because the visible-action no-progress classifier found repeated actions. Life, Adventure and Hybrid mastery are **NOT ESTABLISHED**. Native Safari and physical iOS/Android tests are excluded; Firefox was unavailable. V2 Product Gate is **NOT APPROVED**. The external code-review packet is prepared but external review has not been performed.
+
+The parent is L3 and remains blocked only on the Owner's final review/approval of this completed engineering evidence package. Human Fun Gate is separately `DEFERRED / NOT APPLICABLE AT THIS STAGE` and does not block Engineering QA. No Phase8/V3 work is authorized by this closeout.
+
+2026-10-13 latest: Phase7-G accepted by Root **PASS WITH FINDINGS**. Final source check passed 614 tests, typecheck/build; seven packs and merged pack validated; 108 crop-economy public API scenarios and production Chromium crop conversion/save-reload smoke passed. Findings: seasonal crops outperform wheat under some measured single-cycle throughput metrics (no numeric balance cutoff in G); a low-severity duplicated wheat presentation rule. Original failures and retries are retained in `g-review-closeout-20261013.md`. Root released H; Human validation remains DEFERRED / NOT APPLICABLE AT THIS STAGE.
+
 Latest2026-10-13: entireD acceptedPASSWITHFINDINGS (fresh32files585tests/type/build,independentreview); E releasedusinge-content-plan.md. All36normal/12Elitepresent; current51qualifyingmonsters/50usableitems. Sixduplicate-material groups excluded; final100itemgate dueF/G. Earlierblockedstatebelow ishistory.
+
+2026-10-13 latest: Phase7-I accepted **PASS WITH FINDINGS** after the 37-file / 627-test full check, typecheck/build, strict UI audit and 61.75-second Chromium regression. Its exact source is frozen at `e05cc78f1ef452e2672df223f2febf48444dcbd3` / fingerprint `6a320cfcefc529bb06ad7dd815396fdde21097b1f8aab842ac6ec2fe63345ba3`. The broad regression did not individually exercise each I selector contract; focused search/filter/source/privacy/crop/keyboard/mobile assertions remain Phase7-K items. Root released J's approved data-only balance/coverage runs against this frozen source. Human validation remains `DEFERRED / NOT APPLICABLE AT THIS STAGE`. Closeout: `reports/v2/20261008-content-expansion/phase-07/i-review-closeout-20261013.md`.
 
 2026-10-13 latest Owner instruction 「繼續把Phase7完成」 follows the concrete D compensating-evidence proposal. Root adopts that limited exception, permanently retaining the historical P2; Cave Insects slice is accepted with findings. Entire D resumes for the four still-missing normal/Elite families, then E→K proceed through local verification and Root release. Earlier blocked delivery descriptions below are retained history. Final 50/100 hard gates and Human DEFERRED remain unchanged.
 

@@ -1,0 +1,81 @@
+{
+  "method": "Exact canonical gear profile by slot/attack/defense/penetration and effective affix eligibility; excludes sale value, names, descriptions, and equipment IDs from the grouping key. Authored affixes resolve to stat/slots/tiers; absent authored affixes retain the stable baseline affix ID, matching contentValidation affix semantics.",
+  "equipmentCount": 48,
+  "authoredAffixCount": 0,
+  "baselineAffixFallbackIds": [
+    "bleeding",
+    "blocking",
+    "keen",
+    "piercing",
+    "striking",
+    "sturdy",
+    "warding"
+  ],
+  "functionalCloneGroups": [
+    {
+      "semantic": {
+        "slot": "armor",
+        "attack": 0,
+        "defense": 6,
+        "penetration": 0,
+        "affixes": [
+          {
+            "id": "blocking"
+          },
+          {
+            "id": "sturdy"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "cave_insect_plate_vest",
+          "sell": 31
+        },
+        {
+          "id": "frontier_goblin_plate_vest",
+          "sell": 25
+        }
+      ]
+    },
+    {
+      "semantic": {
+        "slot": "weapon",
+        "attack": 7,
+        "defense": 0,
+        "penetration": 2,
+        "affixes": [
+          {
+            "id": "keen"
+          },
+          {
+            "id": "piercing"
+          }
+        ]
+      },
+      "members": [
+        {
+          "id": "frontier_goblin_scrap_spear",
+          "sell": 29
+        },
+        {
+          "id": "frontier_goblin_duelist_pike",
+          "sell": 32
+        }
+      ]
+    }
+  ],
+  "functionalCloneGroupCount": 2,
+  "allMembersOfCloneGroupsExcludedCount": 4,
+  "equipmentCountAfterExcludingAllCloneGroupMembers": 44,
+  "validatorQualifiedGearCandidates": 44,
+  "functionalCloneMembersAmongQualifiedGear": 4,
+  "qualifiedGearAfterExcludingAllFunctionalCloneMembers": 40,
+  "qualifyingCloneMemberIds": [
+    "cave_insect_plate_vest",
+    "frontier_goblin_plate_vest",
+    "frontier_goblin_scrap_spear",
+    "frontier_goblin_duelist_pike"
+  ],
+  "combinedValidatorErrorIds": []
+}

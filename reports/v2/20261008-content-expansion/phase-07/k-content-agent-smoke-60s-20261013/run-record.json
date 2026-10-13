@@ -1,0 +1,151 @@
+{
+  "runId": "20261013T141005Z-pid398613",
+  "rawRunPath": "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-runs/20261013T141005Z-pid398613",
+  "command": "python3 reports/v2/20261008-content-expansion/phase-07/qa_browser_launcher.py --go --mode content-agent --seconds 60 --execution-model GPT-6 Luna --execution-effort low",
+  "wrapperStartedUTC": "2026-10-13T14:10:04.967464+00:00",
+  "wrapperEndedUTC": "2026-10-13T14:11:14.397527+00:00",
+  "wrapperElapsedSeconds": 69.430063,
+  "wrapperCommandExitCode": 1,
+  "launcherStatus": "FAILED_RUN",
+  "launcherExitCode": 1,
+  "runnerExitCode": 1,
+  "resultStatus": "FAILED",
+  "resultError": "AssertionError: Long browser lane ended without its required normal save/reload checkpoint",
+  "actualRunSeconds": 66.89,
+  "sourceStable": true,
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+  "buildStatusSha256": "b9d5b047229baf9c8a1bb5f516d18ebc48be4ffb96d6a7dab159e81bdb4f09fc",
+  "distFingerprint": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+  "releaseSha256": "966f971f5920c49a6d5510df7dc5ee990070c4cf01c71301ffa10922a4e9e97d",
+  "launcherSha256": "63459ea295f203aada7a75144eda33c94f07e86446ad5cafc89fa5c7e081a75b",
+  "runnerSha256": "d3c5edc7cd483d09a987aecae424dedbfbba6b749e5dda1a70a4091a675360d9",
+  "supportSha256": "2bcc2fb627b8a6f7317671526f5d52e2f194590fa28fe4c1b0ab31fa868367aa",
+  "chromiumVersion": "151.0.7922.173",
+  "checkpointCount": 2,
+  "actionCount": 13,
+  "actionCategoryCounts": {
+    "start_from_opening": 1,
+    "explore": 3,
+    "navigate": 7,
+    "observe": 1,
+    "close_dialog": 1
+  },
+  "dialogLabelVarietyCount": 7,
+  "dialogActionUseCounts": {
+    "01d48466387d607e40d964fc": {
+      "\u532f\u51fa\u904a\u73a9\u7d00\u9304\n\u7d00\u9304\u53ea\u80fd\u8ffd\u52a0": 1,
+      "\u4e16\u754c\u6b77\u53f2": 1,
+      "\u4f4f\u6240\u8207\u7522\u696d": 1,
+      "\u5132\u5b58\u4e16\u754c\n\u5df2\u5b58\u65bc\u6b64\u700f\u89bd\u5668 \u00b7 \u64cd\u4f5c\u5f8c\u7acb\u5373\u4fdd\u5b58": 1,
+      "\u5730\u5716\u8207\u4e16\u754c \u5730\u5716\u8207\u4e16\u754c\nM": 1
+    },
+    "b77ea634ad69d3283839dc3a": {
+      "\u524d\u5f80\u81ea\u5b85": 1
+    },
+    "dd8591ef571ce8ccbca1bfaa": {
+      "\u524d\u5f80\u5bb6": 1
+    }
+  },
+  "noProgressActionCount": 2,
+  "noProgressControls": [],
+  "reloadCount": 0,
+  "errorCounts": {},
+  "browserErrors": false,
+  "browserEventCounts": {
+    "saveWrites": 283,
+    "longTasks": 1
+  },
+  "finalSaveSummary": {
+    "worldTime": 813,
+    "coreGameStateKeyCount": 23
+  },
+  "idbCheckpoints": [
+    {
+      "supported": true,
+      "estimateMethod": "Per-store UTF-8 JSON bounded-projection record estimate, not physical IndexedDB or quota bytes; total omitted when any sampled projection is truncated or serialization fails",
+      "recordProjectionLimits": {
+        "nodes": 256,
+        "depth": 8,
+        "textCharacters": 1024,
+        "totalTextCharactersPerRecord": 4096,
+        "propertiesPerObjectOrArray": 64
+      },
+      "instrumentationCost": "Read-only cursor; at most 8 databases \u00d7 32 stores/database \u00d7 64 records/store (16384 bounded projections and serializations) per minute",
+      "sampleLimitPerStore": 64,
+      "databaseScanLimit": 8,
+      "storeScanLimitPerDatabase": 32,
+      "omittedDatabaseCount": 0,
+      "databases": [
+        {
+          "name": "oakvale-play-journal",
+          "counts": {
+            "records": 14
+          },
+          "stores": {
+            "records": {
+              "count": 14,
+              "sampledRecords": 14,
+              "sampleLimit": 64,
+              "serializedSampleBytes": 3830,
+              "serializedSampleCount": 14,
+              "serializationErrors": 0,
+              "truncatedSampleRecords": 0,
+              "estimatedTotalSerializedRecordBytes": 3830,
+              "estimationMethod": "UTF-8 JSON bounded projection samples by readonly cursor; sample mean multiplied by record count only when untruncated"
+            }
+          },
+          "omittedStoreCount": 0
+        }
+      ]
+    },
+    {
+      "supported": true,
+      "estimateMethod": "Per-store UTF-8 JSON bounded-projection record estimate, not physical IndexedDB or quota bytes; total omitted when any sampled projection is truncated or serialization fails",
+      "recordProjectionLimits": {
+        "nodes": 256,
+        "depth": 8,
+        "textCharacters": 1024,
+        "totalTextCharactersPerRecord": 4096,
+        "propertiesPerObjectOrArray": 64
+      },
+      "instrumentationCost": "Read-only cursor; at most 8 databases \u00d7 32 stores/database \u00d7 64 records/store (16384 bounded projections and serializations) per minute",
+      "sampleLimitPerStore": 64,
+      "databaseScanLimit": 8,
+      "storeScanLimitPerDatabase": 32,
+      "omittedDatabaseCount": 0,
+      "databases": [
+        {
+          "name": "oakvale-play-journal",
+          "counts": {
+            "records": 137
+          },
+          "stores": {
+            "records": {
+              "count": 137,
+              "sampledRecords": 64,
+              "sampleLimit": 64,
+              "serializedSampleBytes": 16480,
+              "serializedSampleCount": 64,
+              "serializationErrors": 0,
+              "truncatedSampleRecords": 0,
+              "estimatedTotalSerializedRecordBytes": 35278,
+              "estimationMethod": "UTF-8 JSON bounded projection samples by readonly cursor; sample mean multiplied by record count only when untruncated"
+            }
+          },
+          "omittedStoreCount": 0
+        }
+      ]
+    }
+  ],
+  "contentAgentExecution": {
+    "modelRequested": "GPT-6 Luna",
+    "effortRequested": "low",
+    "runtimeTelemetry": "unavailable",
+    "policy": "runner_driven_agent_heuristic_semantic_visible_control_v1",
+    "modelInference": false,
+    "humanTester": false,
+    "humanValidation": "DEFERRED"
+  },
+  "captureWrapperPostprocessError": "NameError: preflight_runner was not defined after launcher completed; raw launcher outputs and run result were preserved, and this record was reconstructed from them without rerunning."
+}

@@ -1,0 +1,7 @@
+$ python3 -m unittest test_qa_browser_contract.BrowserContracts.test_normal_reload_restores_the_speed_selected_before_the_reload -v
+FAIL: test_normal_reload_restores_the_speed_selected_before_the_reload
+Traceback:
+  File "test_qa_browser_contract.py", line 82, in test_normal_reload_restores_the_speed_selected_before_the_reload
+    self.assertEqual(page.speed, 5)
+AssertionError: 0 != 5
+Ran 1 test; FAILED (failures=1)

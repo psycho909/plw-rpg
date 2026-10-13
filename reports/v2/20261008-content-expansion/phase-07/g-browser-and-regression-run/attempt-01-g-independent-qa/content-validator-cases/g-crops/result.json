@@ -1,0 +1,19 @@
+{
+  "name": "validate-g-crops",
+  "command": "node",
+  "args": [
+    "scripts/validate_content_batch.mjs",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/g-browser-and-regression-run/attempt-01-g-independent-qa/content-packs/g-crops.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/g-browser-and-regression-run/attempt-01-g-independent-qa/content-validator-cases/g-crops/report.md"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedUtc": "2026-10-13T07:52:31.061Z",
+  "endedUtc": "2026-10-13T07:52:37.889Z",
+  "startedTaipei": "2026-10-13 15:52:31",
+  "endedTaipei": "2026-10-13 15:52:37",
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}

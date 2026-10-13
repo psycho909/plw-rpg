@@ -1,0 +1,12 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/contentValidation.test.ts (20 tests | 2 failed) 35ms
+     × uses distinct validated mandatory recipe output functions when comparing materials 7ms
+     × deduplicates semantically equal recipe consumers and ignores invalid consumers 1ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 18 passed (20)
+   Start at  05:46:29
+   Duration  266ms (transform 98ms, setup 0ms, import 114ms, tests 35ms, environment 0ms)
+

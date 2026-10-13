@@ -155,6 +155,24 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .skill-line .pixel-meter { grid-template-columns: minmax(70px, 1fr) auto; }
 .help-text { margin: 14px 0; line-height: 1.9; }
 .inventory-summary { display: flex; justify-content: space-between; margin-bottom: 16px; }
+.content-search-row { display: grid; grid-template-columns: max-content minmax(0, 1fr) auto; align-items: center; gap: var(--space-2); margin: var(--space-3) 0; }
+.content-search-row label { font-size: 12px; }
+.content-search-row input { width: 100%; min-width: 0; min-height: 40px; padding: 6px 8px; color: var(--text); background: var(--bg); border: 2px solid var(--border-muted); border-radius: 0; font: inherit; }
+.content-search-row input:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; border-color: var(--border); }
+.content-search-row button { min-width: 60px; min-height: 40px; }
+.content-search-row + .filter-buttons { margin-top: var(--space-2); }
+.content-hints { display: block; margin: var(--space-2) 0; font-size: 11px; line-height: 1.8; overflow-wrap: anywhere; }
+.content-hints h4 { margin: var(--space-2) 0; font-size: 11px; }
+.content-hints ul { margin: 0; padding-left: 20px; }
+.content-hints li + li { margin-top: 2px; }
+.content-hints > span { display: block; }
+.content-family-list { display: grid; gap: var(--space-3); }
+.content-family { border-top: 1px solid var(--border-muted); padding-top: var(--space-3); }
+.content-family h4 { margin-bottom: var(--space-2); }
+.content-monster-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px var(--space-2); border-bottom: 1px dotted var(--border-muted); padding: var(--space-2) 0; font-size: 12px; line-height: 1.7; }
+.content-monster-row > button { min-height: 44px; text-align: left; overflow-wrap: anywhere; }
+.content-monster-row > p { grid-column: 1 / -1; }
+.content-monster-row > p.inline-warning { margin: 0; }
 .reward-feedback { border: 1px solid var(--border-muted); border-left: 3px solid var(--border); padding: 10px 12px; margin: 0 0 16px; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
 .inventory-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; }
 .item-list { display: grid; align-content: start; gap: 4px; }
@@ -314,6 +332,10 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
   .window-world-status small { font-size: 9px; }
   .window-world-status { gap: 8px; }
   .inventory-layout { grid-template-columns: 1fr; gap: 14px; }
+  .content-search-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .content-search-row label { grid-column: 1 / -1; }
+  .content-monster-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .content-monster-row > p { grid-column: 1; }
   .gear-affix-compare { grid-template-columns: 1fr; gap: var(--space-2); }
   .item-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .item-list button { flex-wrap: wrap; gap: 4px; font-size: 11px; padding: 8px; }

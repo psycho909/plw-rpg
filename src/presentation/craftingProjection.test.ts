@@ -41,7 +41,7 @@ describe('crafting UI projection', () => {
 
     expect(projection.plan).toMatchObject({ ok: true, influenceMaterial: 'wolfFang' })
     expect(projection.inputs.at(-1)).toEqual({
-      key: 'material:wolfFang', name: '狼牙', required: 1, current: 1,
+      key: 'material:wolfFang', name: '狼牙', required: 1, current: 1, materialId: 'wolfFang',
     })
     expect(projection.selectedInfluence?.influenceText).toContain('裂傷 +4、穿透 +2')
     expect(projection.selectedInfluence?.influenceText).toContain('不改變品質權重或稀有度機率')
@@ -66,7 +66,7 @@ describe('crafting UI projection', () => {
     expect(projection.plan.ok).toBe(false)
     if (!projection.plan.ok) expect(projection.plan.reasonCode).toBe('materials_required')
     expect(projection.inputs.at(-1)).toEqual({
-      key: 'material:wolfFang', name: '狼牙', required: 1, current: 0,
+      key: 'material:wolfFang', name: '狼牙', required: 1, current: 0, materialId: 'wolfFang',
     })
     expect(projection.selectedInfluence?.owned).toBe(0)
   })

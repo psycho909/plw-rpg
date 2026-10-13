@@ -1,0 +1,27 @@
+{
+  "commitStable": true,
+  "srcStable": true,
+  "runnerStable": true,
+  "sourceBefore": "6a320cfcefc529bb06ad7dd815396fdde21097b1f8aab842ac6ec2fe63345ba3",
+  "sourceAfter": "6a320cfcefc529bb06ad7dd815396fdde21097b1f8aab842ac6ec2fe63345ba3",
+  "runnerBefore": {
+    "reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts": "07eab59e031fd2547a6fa9278bf05ed1244c97baa66b2c57e086f2abf016ea7f",
+    "reports/v2/20261008-content-expansion/phase-07/qa_simulation.config.ts": "7c05c9ac7f34544590b98250fb30c470d9f297a0bfec661a9fffcc0888830351",
+    "reports/v2/20261008-content-expansion/phase-07/qa_simulation.json": "640a8e22bf5484e11bfeb438bdd9105b90d57ade722716b0aa463be3934ec53c",
+    "reports/v2/20261008-content-expansion/phase-07/qa_simulation.tsconfig.json": "18dd568065ef02c5f93bd8276bdd03eecd01b799673a5aa897f4eaffd2d02efc",
+    "reports/v2/20261008-content-expansion/phase-07/qa-simulation-preparation/node-shims.d.ts": "6b76fa0a7bef3d9518e143e878bc2212d8a911c241a84aeed212997d5db26e5b"
+  },
+  "runnerAfter": {
+    "reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts": "07eab59e031fd2547a6fa9278bf05ed1244c97baa66b2c57e086f2abf016ea7f",
+    "reports/v2/20261008-content-expansion/phase-07/qa_simulation.config.ts": "7c05c9ac7f34544590b98250fb30c470d9f297a0bfec661a9fffcc0888830351",
+    "reports/v2/20261008-content-expansion/phase-07/qa_simulation.json": "640a8e22bf5484e11bfeb438bdd9105b90d57ade722716b0aa463be3934ec53c",
+    "reports/v2/20261008-content-expansion/phase-07/qa_simulation.tsconfig.json": "18dd568065ef02c5f93bd8276bdd03eecd01b799673a5aa897f4eaffd2d02efc",
+    "reports/v2/20261008-content-expansion/phase-07/qa-simulation-preparation/node-shims.d.ts": "6b76fa0a7bef3d9518e143e878bc2212d8a911c241a84aeed212997d5db26e5b"
+  },
+  "checks": {
+    "npm test": "exit 0; 37 files, 627 tests passed",
+    "npm run validate:content": "exit 1; usage requires --pack <authoring-pack.json>",
+    "python unittest": "not run after first failure",
+    "npm run build": "not run after first failure"
+  }
+}

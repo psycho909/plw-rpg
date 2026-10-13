@@ -1,0 +1,41 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > runner configuration guards reject empty combat samples and invalid seed cycles
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > Phase 7 simulation lane: combat
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early crafted combat fixture uses a legal public recipe without changing the combat band level
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > mid combat fixture clamps slime_slick to a shared legal spawn profile and encounters through public APIs
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > preserves the default spring 08:00 when slime_slick time predicates already allow it
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > records non-level context adjustments required by seasonal and hourly spawn predicates
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early masterpiece combat fixture uses a smithing-eligible public recipe without changing the combat band level
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > masterpiece roll is per-seed data while combat setup remains invariant
+ × reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > combat raw remaining enemy HP distinguishes victory, death, and active combat 17ms
+   → expected +0 to be null
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > combat raw remaining enemy HP distinguishes victory, death, and active combat
+AssertionError: expected +0 to be null
+
+- Expected:
+null
+
++ Received:
+0
+
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:519:36
+    517|   expect(player(death).isAlive).toBe(false)
+    518|   expect(death.combat).toBeNull()
+    519|   expect(currentProjection(death)).toBeNull()
+       |                                    ^
+    520| })
+    521|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 skipped (9)
+   Start at  10:16:25
+   Duration  618ms (transform 396ms, setup 0ms, import 477ms, tests 18ms, environment 0ms)
+

@@ -1,6 +1,6 @@
 # Phase7-D — Monster Expansion
 
-- Status: accepted
+- Status: accepted — PASS WITH FINDINGS
 - Risk: L2
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
@@ -22,17 +22,21 @@ Parent [20261008-v2x-07-content-expansion](20261008-v2x-07-content-expansion.md)
 - [x] 本stage實作與合法來源／用途閉環完成；validator、targeted tests、full regression與build均有證據。2026-10-13測試runner改採單一worker後，正式`npm run check`通過31files/570tests、typecheck/build；先前並行timeout原始紀錄保留，故為PASS WITH FINDINGS。
 - [x] 洞穴昆蟲批次採 Owner 核定補救條件：保留原始 failure report／diagnostics／checksum，永久揭露缺失 input bytes／原始 source fingerprint，以完整 current-source revalidation 與獨立審查作為限定替代依據。新批次仍須完整 input／source／failure 保存及獨立 review。
 - [x] 核定計畫其餘四個 Family 的24normal/8Elite接入與逐批驗證完成；六Family共51合格新定義（含C已交付小頭目/Boss）。
-- [x] 下一階段僅在Root release後施工；E尚未release且未開始施工。
+- [x] 下一階段僅在Root release後施工；E及後續階段均依序 release，沒有預先施工。
 
 ## Dependencies
 
-Dependency released by Root on 2026-10-12 after local Phase7-C acceptance. D implementation/verification is complete with findings, but acceptance is blocked by the missing original failed authored-source SHA/fingerprint. Owner directed on 2026-10-12 to maintain the block without waiver; E remains unreleased.
+Historical dependency status — Phase7-C was accepted before D began. D was initially blocked by the missing original failed authored-source SHA/fingerprint; the Owner later approved a bounded compensating-evidence condition and D received the final acceptance recorded below. Earlier blocked-state text remains historical.
 
-Current override (2026-10-13): after the completed exact exception proposal was presented, Owner instructed 「繼續把Phase7完成」. Root records this as authority to use that limited compensating-evidence condition and resume Phase7. Cave Insects slice is accepted PASS WITH FINDINGS; historical P2 stays permanent. D is now in progress for the remaining four approved families; E is not released until those D batches pass. Earlier blocked-state sections below are historical, not current authority.
+Historical override (2026-10-13): after the completed exact exception proposal was presented, Owner instructed 「繼續把Phase7完成」. Root recorded authority to use that limited compensating-evidence condition and resume Phase7. The later final D acceptance below supersedes this intermediate in-progress state; the P2 auditability limitation remains permanent.
 
 ## Evidence
 
 `reports/v2/20261008-content-expansion/phase-07/d-root-closeout.md`；validator and default-regression RED evidence are archived in the adjacent `playlog.jsonl`.
+
+## Final D acceptance — 2026-10-13
+
+**ACCEPTED / PASS WITH FINDINGS.** The approved remaining four families were completed and verified; six families contain 66 qualifying definitions including the earlier C mini-Boss/Boss slice. Final content validation, current full regression/typecheck/build, and independent D review passed. P7-D-HIST remains an explicit historical P2 evidence limitation: the original Cave Insects input bytes and source fingerprint were not recovered, and the Owner-approved compensating evidence does not recreate them. Phase7-E and all later child tickets subsequently completed; see the parent Phase7-K closeout for the current aggregate gate.
 
 ## Root release — 2026-10-12
 

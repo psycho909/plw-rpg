@@ -1,0 +1,460 @@
+{
+  "runId": "2026-10-13T07-07-59.492Z-92f5bbc9-0234-4c97-be95-68589a87b211",
+  "headBefore": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "headAfter": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "branchBefore": "v2x/reward-core",
+  "branchAfter": "v2x/reward-core",
+  "sourceConfigPackageMapFilesBefore": 117,
+  "sourceConfigPackageMapFilesAfter": 117,
+  "sourceConfigPackageMapUnchanged": true,
+  "aggregateRawCounts": {
+    "families": 6,
+    "monsters": 66,
+    "materials": 48,
+    "equipment": 48,
+    "recipes": 24,
+    "crops": 0,
+    "cropGoods": 0
+  },
+  "actualQualityCounts": {
+    "slime": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "cave-insects": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "wild-beasts": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "frontier-goblins": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 14,
+      "usableNewMaterials": 8
+    },
+    "fog-undead": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "mine-constructs": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "six-family-combined": {
+      "qualifyingNewMonsters": 66,
+      "candidateNewItemIds": 92,
+      "usableNewMaterials": 48
+    }
+  },
+  "warningCounts": {
+    "slime": 0,
+    "cave-insects": 0,
+    "wild-beasts": 0,
+    "frontier-goblins": 1,
+    "fog-undead": 0,
+    "mine-constructs": 0,
+    "six-family-combined": 2
+  },
+  "warningsByCase": {
+    "slime": [],
+    "cave-insects": [],
+    "wild-beasts": [],
+    "frontier-goblins": [
+      "- WARNING duplicate-like-equipment [frontier_goblin_duelist_pike, frontier_goblin_scrap_spear]: Equipment definitions have the same effective slot, stats, and affix eligibility."
+    ],
+    "fog-undead": [],
+    "mine-constructs": [],
+    "six-family-combined": [
+      "- WARNING duplicate-like-equipment [cave_insect_plate_vest, frontier_goblin_plate_vest]: Equipment definitions have the same effective slot, stats, and affix eligibility.",
+      "- WARNING duplicate-like-equipment [frontier_goblin_duelist_pike, frontier_goblin_scrap_spear]: Equipment definitions have the same effective slot, stats, and affix eligibility."
+    ]
+  },
+  "errorCounts": {
+    "slime": 0,
+    "cave-insects": 0,
+    "wild-beasts": 0,
+    "frontier-goblins": 0,
+    "fog-undead": 0,
+    "mine-constructs": 0,
+    "six-family-combined": 0
+  },
+  "errorsByCase": {
+    "slime": [],
+    "cave-insects": [],
+    "wild-beasts": [],
+    "frontier-goblins": [],
+    "fog-undead": [],
+    "mine-constructs": [],
+    "six-family-combined": []
+  },
+  "childChecks": {
+    "slime": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  23 passed (23)\n   Start at  07:08:02\n   Duration  267ms (transform 100ms, setup 0ms, import 117ms, tests 32ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "cave-insects": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  23 passed (23)\n   Start at  07:08:08\n   Duration  259ms (transform 99ms, setup 0ms, import 118ms, tests 29ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "wild-beasts": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  23 passed (23)\n   Start at  07:08:15\n   Duration  292ms (transform 105ms, setup 0ms, import 122ms, tests 31ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "frontier-goblins": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  23 passed (23)\n   Start at  07:08:21\n   Duration  271ms (transform 112ms, setup 0ms, import 131ms, tests 30ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "fog-undead": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  23 passed (23)\n   Start at  07:08:28\n   Duration  295ms (transform 115ms, setup 0ms, import 133ms, tests 42ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "mine-constructs": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  23 passed (23)\n   Start at  07:08:34\n   Duration  268ms (transform 105ms, setup 0ms, import 122ms, tests 29ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "six-family-combined": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  23 passed (23)\n   Start at  07:08:40\n   Duration  284ms (transform 103ms, setup 0ms, import 121ms, tests 35ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    }
+  },
+  "functionalGearAudit": {
+    "method": "Exact canonical gear profile by slot/attack/defense/penetration and effective affix eligibility; excludes sale value, names, descriptions, and equipment IDs from the grouping key. Authored affixes resolve to stat/slots/tiers; absent authored affixes retain the stable baseline affix ID, matching contentValidation affix semantics.",
+    "equipmentCount": 48,
+    "authoredAffixCount": 0,
+    "baselineAffixFallbackIds": [
+      "bleeding",
+      "blocking",
+      "keen",
+      "piercing",
+      "striking",
+      "sturdy",
+      "warding"
+    ],
+    "functionalCloneGroups": [
+      {
+        "semantic": {
+          "slot": "armor",
+          "attack": 0,
+          "defense": 6,
+          "penetration": 0,
+          "affixes": [
+            {
+              "id": "blocking"
+            },
+            {
+              "id": "sturdy"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "cave_insect_plate_vest",
+            "sell": 31
+          },
+          {
+            "id": "frontier_goblin_plate_vest",
+            "sell": 25
+          }
+        ]
+      },
+      {
+        "semantic": {
+          "slot": "weapon",
+          "attack": 7,
+          "defense": 0,
+          "penetration": 2,
+          "affixes": [
+            {
+              "id": "keen"
+            },
+            {
+              "id": "piercing"
+            }
+          ]
+        },
+        "members": [
+          {
+            "id": "frontier_goblin_scrap_spear",
+            "sell": 29
+          },
+          {
+            "id": "frontier_goblin_duelist_pike",
+            "sell": 32
+          }
+        ]
+      }
+    ],
+    "functionalCloneGroupCount": 2,
+    "allMembersOfCloneGroupsExcludedCount": 4,
+    "equipmentCountAfterExcludingAllCloneGroupMembers": 44,
+    "validatorQualifiedGearCandidates": 44,
+    "functionalCloneMembersAmongQualifiedGear": 4,
+    "qualifiedGearAfterExcludingAllFunctionalCloneMembers": 40,
+    "qualifyingCloneMemberIds": [
+      "cave_insect_plate_vest",
+      "frontier_goblin_plate_vest",
+      "frontier_goblin_scrap_spear",
+      "frontier_goblin_duelist_pike"
+    ],
+    "combinedValidatorErrorIds": []
+  }
+}

@@ -1,0 +1,25 @@
+test_browser_state_summary_projects_v2_population_economy_threat_and_history (test_qa_browser_contract.BrowserContracts.test_browser_state_summary_projects_v2_population_economy_threat_and_history) ... ERROR
+test_npc_death_history_excludes_player_events_and_marks_history_cap (test_qa_browser_contract.BrowserContracts.test_npc_death_history_excludes_player_events_and_marks_history_cap) ... ERROR
+
+======================================================================
+ERROR: test_browser_state_summary_projects_v2_population_economy_threat_and_history (test_qa_browser_contract.BrowserContracts.test_browser_state_summary_projects_v2_population_economy_threat_and_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 84, in test_browser_state_summary_projects_v2_population_economy_threat_and_history
+    self.assertEqual(summary["npcPopulation"]["liveRegistryTotal"], 3)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'liveRegistryTotal'
+
+======================================================================
+ERROR: test_npc_death_history_excludes_player_events_and_marks_history_cap (test_qa_browser_contract.BrowserContracts.test_npc_death_history_excludes_player_events_and_marks_history_cap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 130, in test_npc_death_history_excludes_player_events_and_marks_history_cap
+    self.assertEqual(population["registryAlive"], 1)
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'registryAlive'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (errors=2)

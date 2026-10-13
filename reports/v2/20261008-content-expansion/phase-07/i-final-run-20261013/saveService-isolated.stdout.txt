@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run --run src/services/saveService.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/services/saveService.test.ts (107 tests | 1 failed) 16174ms
+     × round trips 500 years of history, natural deaths and successors and continues deterministically 15300ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 106 passed (107)
+   Start at  09:12:48
+   Duration  16.90s (transform 477ms, setup 0ms, import 592ms, tests 16.17s, environment 0ms)
+

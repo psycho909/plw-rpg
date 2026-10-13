@@ -1,0 +1,19 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/crops.integration.test.ts > plants a registered crop through the public farm action using its registered growth time
+AssertionError: expected 'wheat' to be 'spring_pea' // Object.is equality
+
+Expected: "spring_pea"
+Received: "wheat"
+
+ ❯ src/engine/crops.integration.test.ts:13:34
+     11|
+     12|   expect(state.crops).toHaveLength(1)
+     13|   expect(state.crops[0]?.cropId).toBe('spring_pea')
+       |                                  ^
+     14|   expect(state.crops[0]?.growthDuration).toBe(720)
+     15|   expect(player(state).inventory.food).toBeGreaterThanOrEqual(0)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

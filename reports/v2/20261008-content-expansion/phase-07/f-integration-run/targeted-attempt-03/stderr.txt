@@ -1,0 +1,16 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentItems.integration.test.ts > Phase 7 content item integration > closes every registered content recipe through planning, generation, provenance, equip, save/reload, and sale
+Error: 存檔資料不完整。原始存檔已保留。
+ ❯ deserialize src/services/saveService.ts:516:36
+    514|   const normalizedRewardV3 = sourceVersion === 8 ? normalizeRewardV3Ma…
+    515|   if (sourceVersion === 8) {
+    516|     if (!normalizedRewardV3) throw new Error('存檔資料不完整。原始存檔已保留。')
+       |                                    ^
+    517|     stateData.reward = normalizedRewardV3
+    518|   }
+ ❯ src/engine/contentItems.integration.test.ts:99:24
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

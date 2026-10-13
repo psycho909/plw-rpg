@@ -1,0 +1,17 @@
+{
+  "status": "EXPECTED_RED",
+  "sourceHead": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "test_qa_browser_contract.BrowserContracts.test_region_filter_tab_is_not_treated_as_an_exploration_action"
+  ],
+  "startedUTC": "2026-10-13T12:47:39.935574+00:00",
+  "endedUTC": "2026-10-13T12:47:40.111721+00:00",
+  "exitCode": 1,
+  "files": {
+    "reports/v2/20261008-content-expansion/phase-07/qa_browser_runner.py": "9cf301463c2d67fe8ae735f9806f90b27287f76daf85b6edc3a646f5a0f68178",
+    "reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py": "5845fe363850e5b19a0cda07e42bddf5855dc69901bd08162f85409915dd8bcb"
+  }
+}

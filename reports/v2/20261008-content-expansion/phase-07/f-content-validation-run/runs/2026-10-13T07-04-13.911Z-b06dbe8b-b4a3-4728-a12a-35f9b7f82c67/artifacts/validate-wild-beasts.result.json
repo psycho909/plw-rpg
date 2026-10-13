@@ -1,0 +1,19 @@
+{
+  "name": "validate-wild-beasts",
+  "command": "node",
+  "args": [
+    "scripts/validate_content_batch.mjs",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T07-04-13.911Z-b06dbe8b-b4a3-4728-a12a-35f9b7f82c67/packs/wild-beasts.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T07-04-13.911Z-b06dbe8b-b4a3-4728-a12a-35f9b7f82c67/cases/wild-beasts/readable-report.md"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedUtc": "2026-10-13T07:04:28.555Z",
+  "endedUtc": "2026-10-13T07:04:34.891Z",
+  "startedTaipei": "2026-10-13 15:04:28",
+  "endedTaipei": "2026-10-13 15:04:34",
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

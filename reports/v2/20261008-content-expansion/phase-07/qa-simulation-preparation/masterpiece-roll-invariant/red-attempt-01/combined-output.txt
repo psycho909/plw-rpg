@@ -1,0 +1,48 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > runner configuration guards reject empty combat samples and invalid seed cycles
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > Phase 7 simulation lane: combat
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early crafted combat fixture uses a legal public recipe without changing the combat band level
+ ↓ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > early masterpiece combat fixture uses a smithing-eligible public recipe without changing the combat band level
+ × reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > masterpiece roll is per-seed data while combat setup remains invariant 86ms
+   → expected { id: 'ironShortSword', …(9) } to deeply equal { id: 'ironShortSword', …(9) }
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > masterpiece roll is per-seed data while combat setup remains invariant
+AssertionError: expected { id: 'ironShortSword', …(9) } to deeply equal { id: 'ironShortSword', …(9) }
+
+- Expected
++ Received
+
+@@ -1,11 +1,11 @@
+  {
+    "characterLevel": 1,
+    "comparisonLimitation": "generated item level 6 differs from early-band character level 1; combat comparison includes item-level difference",
+    "generatedItemLevel": 6,
+    "id": "ironShortSword",
+-   "masterpiece": false,
++   "masterpiece": true,
+    "masterpieceChance": 0.25,
+    "outputLevel": 6,
+    "playerLevelDelta": 5,
+    "selectionReason": "minimum_masterpiece_smithing_gate",
+    "smithingGate": 6,
+
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:323:43
+    321|     'slime_slick', 'early', 'masterpiece')).find(fixture => fixture.co…
+    322|   expect(differentRoll).toBeDefined()
+    323|   expect(differentRoll!.controlledRecipe).toEqual(first.controlledReci…
+       |                                           ^
+    324| })
+    325|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 skipped (5)
+   Start at  09:51:06
+   Duration  754ms (transform 429ms, setup 0ms, import 518ms, tests 87ms, environment 0ms)
+

@@ -1,4 +1,5 @@
 import { ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
+import { CONTENT_CROP_GOODS } from '../data/contentRegistry'
 import { BUILDINGS } from '../data/config'
 import type { BuildingId } from '../domain/types'
 import type { EquipmentSlot, ItemInstance, MaterialId } from '../domain/reward'
@@ -88,6 +89,23 @@ function sellInstanceInternal(state: GameState, instanceId: string): string {
 export function tradeMaterial(state: GameState, materialId: MaterialId): string {
   preflightRegionalCrisisAction(state, 5, preview => tradeMaterialInternal(preview, materialId))
   return tradeMaterialInternal(state, materialId)
+}
+
+/** Converts a bounded stack of owned crop goods into their declared food value. */
+export function convertCropGoodToFood(state: GameState, goodId: MaterialId, amount: number): string {
+  if (!Object.hasOwn(CONTENT_CROP_GOODS, goodId)) return '這項素材不能轉換成食物。'
+  if (!Number.isSafeInteger(amount) || amount <= 0) return '轉換數量必須是正整數。'
+  const character = player(state)
+  const counts = state.reward.materials[character.id]
+  if (!counts || !Number.isSafeInteger(counts[goodId]) || counts[goodId]! < amount) return '沒有足夠的收成品可轉換。'
+  const foodValue = CONTENT_CROP_GOODS[goodId]!.foodValue
+  const food = character.inventory.food
+  if (!Number.isSafeInteger(food) || food < 0 || amount > Math.floor((Number.MAX_SAFE_INTEGER - food) / foodValue)) return '轉換後食物數量超出安全上限。'
+  counts[goodId]! -= amount
+  character.inventory.food += amount * foodValue
+  state.life.director.lastPlayerActivity = state.worldTime
+  emit(state, 'crop.foodConverted', 'player', `將 ${amount} 份${MATERIALS[goodId].name}轉為 ${amount * foodValue} 份食物。`)
+  return ''
 }
 function tradeMaterialInternal(state: GameState, materialId: MaterialId): string {
   if (!Object.hasOwn(MATERIALS, materialId)) return '沒有這項可出售的素材。'

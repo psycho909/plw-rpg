@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crops.integration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crops.integration.test.ts (8 tests | 1 failed) 75ms
+   × rejects crop IDs inherited from the catalog prototype without throwing or mutating state 9ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  08:10:22
+   Duration  657ms (transform 379ms, setup 0ms, import 457ms, tests 75ms, environment 0ms)
+

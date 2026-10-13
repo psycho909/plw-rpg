@@ -1,0 +1,16 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/contentFamilies.test.ts (12 tests | 1 failed) 149ms
+     × projects only family targets for the current discovered region 8ms
+ ❯ src/engine/remainingFamilies.integration.test.ts (13 tests | 4 failed) 82ms
+     × 'wild_beasts' registers six normal and two Elite encounters 11ms
+     × 'frontier_goblins' registers six normal and two Elite encounters 3ms
+     × 'fog_undead' registers six normal and two Elite encounters 2ms
+     × 'mine_constructs' registers six normal and two Elite encounters 2ms
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  5 failed | 23 passed (28)
+   Start at  08:25:49
+   Duration  1.43s (transform 548ms, setup 0ms, import 771ms, tests 267ms, environment 1ms)
+

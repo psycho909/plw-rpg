@@ -1,0 +1,18 @@
+{
+  "method": "Exact canonical gear profile by slot/attack/defense/penetration and effective affix eligibility; excludes sale value, names, descriptions, and equipment IDs from the grouping key. Authored affixes resolve to stat/slots/tiers; absent authored affixes retain the stable baseline affix ID, matching contentValidation affix semantics.",
+  "equipmentCount": 48,
+  "authoredAffixCount": 0,
+  "baselineAffixFallbackIds": [
+    "bleeding",
+    "blocking",
+    "keen",
+    "piercing",
+    "striking",
+    "sturdy",
+    "warding"
+  ],
+  "functionalCloneGroups": [],
+  "functionalCloneGroupCount": 0,
+  "allMembersOfCloneGroupsExcludedCount": 0,
+  "equipmentCountAfterExcludingAllCloneGroupMembers": 48
+}

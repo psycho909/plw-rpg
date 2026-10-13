@@ -1,0 +1,14 @@
+test_action_chooser_excludes_destructive_world_reset_and_confirmation (test_qa_browser_contract.BrowserContracts.test_action_chooser_excludes_destructive_world_reset_and_confirmation) ... FAIL
+
+======================================================================
+FAIL: test_action_chooser_excludes_destructive_world_reset_and_confirmation (test_qa_browser_contract.BrowserContracts.test_action_chooser_excludes_destructive_world_reset_and_confirmation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 80, in test_action_chooser_excludes_destructive_world_reset_and_confirmation
+    self.assertIsNone(classify_button(Button(label)), label)
+AssertionError: 'navigate' is not None : 重建世界
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

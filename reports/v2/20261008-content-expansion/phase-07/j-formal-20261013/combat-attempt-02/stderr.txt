@@ -1,0 +1,34 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > Phase 7 simulation lane: combat
+AssertionError: expected { band: 'early', …(4) } to deeply equal { band: 'early', …(4) }
+
+- Expected
++ Received
+
+@@ -3,11 +3,11 @@
+    "controlledRecipe": {
+      "characterLevel": 1,
+      "comparisonLimitation": "generated item level 6 differs from early-band character level 1; combat comparison includes item-level difference",
+      "generatedItemLevel": 6,
+      "id": "ironShortSword",
+-     "masterpiece": false,
++     "masterpiece": true,
+      "masterpieceChance": 0.25,
+      "outputLevel": 6,
+      "playerLevelDelta": 5,
+      "selectionReason": "minimum_masterpiece_smithing_gate",
+      "smithingGate": 6,
+
+ ❯ runCombat reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:331:39
+    329|         effectivePlayerLevel: fixture.effectivePlayerLevel, playerLeve…
+    330|         controlledRecipe: fixture.controlledRecipe }
+    331|       if (fixtureSetup) expect(setup).toEqual(fixtureSetup)
+       |                                       ^
+    332|       else fixtureSetup = setup
+    333|       let count = 0
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:139:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

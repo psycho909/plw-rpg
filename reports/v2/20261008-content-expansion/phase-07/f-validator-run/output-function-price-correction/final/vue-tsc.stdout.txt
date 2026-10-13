@@ -1,0 +1,14 @@
+src/engine/contentItems.integration.test.ts(29,3): error TS2322: Type 'string[]' is not assignable to type 'BuildingId[]'.
+  Type 'string' is not assignable to type 'BuildingId'.
+src/engine/contentItems.integration.test.ts(47,45): error TS2322: Type '{ recipe: ContentRecipe; influenceMaterial: string; }[] | { recipe: ContentRecipe; influenceMaterial: undefined; }[]' is not assignable to type '{ recipe: ContentRecipe; influenceMaterial: string; } | readonly { recipe: ContentRecipe; influenceMaterial: string; }[]'.
+  Type '{ recipe: ContentRecipe; influenceMaterial: undefined; }[]' is not assignable to type '{ recipe: ContentRecipe; influenceMaterial: string; } | readonly { recipe: ContentRecipe; influenceMaterial: string; }[]'.
+    Type '{ recipe: ContentRecipe; influenceMaterial: undefined; }[]' is not assignable to type 'readonly { recipe: ContentRecipe; influenceMaterial: string; }[]'.
+      Type '{ recipe: ContentRecipe; influenceMaterial: undefined; }' is not assignable to type '{ recipe: ContentRecipe; influenceMaterial: string; }'.
+        Types of property 'influenceMaterial' are incompatible.
+          Type 'undefined' is not assignable to type 'string'.
+src/engine/contentItems.integration.test.ts(51,26): error TS2339: Property 'recipe' does not exist on type 'unknown'.
+src/engine/contentItems.integration.test.ts(51,49): error TS2339: Property 'influenceMaterial' does not exist on type 'unknown'.
+src/engine/contentItems.integration.test.ts(100,14): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ weapon: string | null; armor: string | null; }'.
+src/engine/contentItems.integration.test.ts(109,7): error TS2322: Type 'string[]' is not assignable to type 'BuildingId[]'.
+  Type 'string' is not assignable to type 'BuildingId'.
+src/engine/contentItems.integration.test.ts(155,11): error TS18048: 'weight' is possibly 'undefined'.

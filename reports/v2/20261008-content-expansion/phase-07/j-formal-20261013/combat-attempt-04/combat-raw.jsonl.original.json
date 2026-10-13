@@ -1,0 +1,10 @@
+{
+  "originalFile": "combat-raw.jsonl",
+  "originalBytes": 142980038,
+  "originalSha256": "a5ce56eff6395d8efd94d772fa0d684dbb5d057c7a97f2129e727b3288700616",
+  "storedFile": "combat-raw.jsonl.gz",
+  "storedBytes": 1584835,
+  "storedSha256": "8311f74017b6432b65fbb0c790377cf80d2bbd8477db34584324d58388a33627",
+  "compression": "gzip -n, lossless",
+  "restoreCommand": "gzip -dc combat-raw.jsonl.gz > combat-raw.jsonl"
+}

@@ -24,7 +24,12 @@ describe('世界情境互動', () => {
     state.threat.bossAlive = true
     state.crops.push({ id: 1, cropId: 'wheat', plantedAt: 0, growthDuration: 2880, matureAt: 2880, status: 'mature' })
     const grown = worldMarks(state)
-    expect(grown.get('16,10')?.label).toBe('成熟小麥，可收割')
+    expect(grown.get('16,10')?.label).toBe('小麥已成熟，可收割')
+    state.crops[0]!.cropId = 'spring_pea'
+    expect(worldMarks(state).get('16,10')?.label).toBe('豌豆已成熟，可收割')
+    state.crops[0]!.status = 'growing'
+    state.crops[0]!.matureAt = state.worldTime + 120
+    expect(worldMarks(state).get('16,10')?.label).toBe('豌豆生長中，剩 2 小時')
     expect(grown.get('8,3')?.label).toBe('哥布林蹤跡')
     expect([...grown.values()].some(m => m.label.includes('酋長'))).toBe(true)
     expect([...grown.values()].filter(m => m.kind === 'home').length).toBeGreaterThan([...early.values()].filter(m => m.kind === 'home').length)

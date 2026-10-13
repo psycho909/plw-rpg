@@ -1,0 +1,1271 @@
+{
+  "schema": "phase7-browser-result-v1",
+  "status": "COMPLETE_STRESS_REVIEW_REQUIRED",
+  "mode": "content-agent",
+  "runId": "20261013T173052Z-pid410744",
+  "startUTC": "2026-10-13T17:30:53.241127+00:00",
+  "startLocalTaipei": "2026-10-13T17:30:53.241140+00:00",
+  "execution": {
+    "modelRequested": "GPT-6 Luna",
+    "effortRequested": "low",
+    "runtimeTelemetry": "unavailable",
+    "policy": "runner_driven_agent_heuristic_semantic_visible_control_v1",
+    "modelInference": false,
+    "humanTester": false,
+    "humanValidation": "DEFERRED"
+  },
+  "durationSecondsRequested": 3600,
+  "normalLane": "NORMAL_FRESH",
+  "controlledFixturesExcludedFromNaturalCoverage": true,
+  "sourceBefore": {
+    "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+    "sourceSha256": {
+      "src/App.vue": "f3ed979e98946fd747bf7f0508a03a31b50165ff09b4202e5b48753a977fdde8",
+      "src/components/AdventureWindow.vue": "f76abfa1f809d3fd9b341d842c192e3ab02a50d4d7fdf67ad8dd1b4dae2e32e3",
+      "src/components/CharacterSheet.vue": "0905f39da0b3ba52ed2c8c4c852ce08bc96a5e80d925cb64bb1f3dcb5b0d0dbd",
+      "src/components/IdentityWindow.vue": "982afc32143581311c9a014236e3e2a75e1a40b8f04f8fe97796c542966f7f06",
+      "src/components/InventoryWindow.vue": "f6d9f91cbbe2b3617406be32e7d1ebf210956d6cf54c4f8796ed413d22012f5f",
+      "src/components/LifeNewsWindow.vue": "f59e6aef06e4f610b702f09ac45ed64295a4fbeece8bfe9a424e0b2d7975438b",
+      "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+      "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+      "src/components/PixelWindow.vue": "7534d4dd48d93742fb74ced23c7a77999282ac51a08eb1842be54745cb026b4d",
+      "src/components/PlaceWindow.vue": "f7894a87ace8c4a7f3022a6c2a7febb19d43c309500a30301abec95538c6553d",
+      "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+      "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+      "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+      "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+      "src/data/config.ts": "ea56d790207bf13575ee19cbbdf46fa29ad8a03dd374a4613863af33c44e707a",
+      "src/data/content/caveInsects.ts": "dcc14c74cfd9ce50803af7645fa0c52beb22288b15d29925cbf801ba1bde3bf3",
+      "src/data/content/farmCrops.ts": "d49418c074d0bb5757db26b40c1342e169e29975caf717095fec668246af30a8",
+      "src/data/content/fogUndead.ts": "ef0d2c7b071193acb26803128c9041874d9f763a4e929a7030c1cd0b68653e5e",
+      "src/data/content/frontierGoblins.ts": "61b109a69611743f6b4d3983fb252a40dc8a8d1758a4154af034fa2d91c9bb13",
+      "src/data/content/mineConstructs.ts": "ac24251494d94acc8a6acdb4d7349372ba9c212c17424d8a58864bb63ee32c00",
+      "src/data/content/slime.ts": "334c031aa75c09e7612dd426d9d58284a1093efb5b773fcf5c8011640739edd2",
+      "src/data/content/wildBeasts.ts": "bbae4d9882708fa77c200f6810db0c02b943d027f186ff5d89af7f62e5de785b",
+      "src/data/contentRegistry.ts": "65593e63bffdfd3c0c20cb3ca780af921ee01e61b550aa4542c69c6e433f9585",
+      "src/data/crafting.ts": "e882f58803229c01b4853e44710f5cd1f7b2a56a2c4b058bbebe2fe2141aaa73",
+      "src/data/identity.ts": "0acc09bbd1f9d9c4e057b2bdca01fa202730e868325cb873286c5c31a809dae0",
+      "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+      "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+      "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+      "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+      "src/data/rewards.ts": "7169a34cfd420ec4a181fa54c03560c5301f7fac666a049e5773d0439d897806",
+      "src/domain/content.ts": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+      "src/domain/crisis.ts": "03ef61f00c08ea84cdd6126d64009e3032fb38a5662db8a736519045f00ad14c",
+      "src/domain/life.ts": "db2eff0c1eb6d3ae310f39d8df5a6bf40b125193741a25b9bbe652c4640de72a",
+      "src/domain/reward.ts": "237c1e6eeb42d4af77d78c24ef7c3b699816459a9b71357acfd57c31810a9aac",
+      "src/domain/types.ts": "7924e0383ca4f1e5623e95aca5ceb28b5022c03af007dca0d2cb2c1ec0050450",
+      "src/engine/actions.test.ts": "813166423bd0b55fd0172eedb1bcf766028a1045588807473c2205f6cec47fa5",
+      "src/engine/actions.ts": "0e998159696dfd89f450b2041cea61792bd10246a05354b6844a4a2d0a4505ff",
+      "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+      "src/engine/caveInsects.integration.test.ts": "db9ba41d196b98f66dab47cd0398122e9e139e02d586a15cd6af8dcb088205fe",
+      "src/engine/civilDefense.test.ts": "c05afe2ab42f334f3284f3b7830ea073db96707995b2336e2b30855d0c84e125",
+      "src/engine/civilDefense.ts": "9a6988658e62df485f85f69d0c1f0a0626078eeec43f0934ad2298e6cdcfe77d",
+      "src/engine/combatStats.test.ts": "896b7517b4a2bcb4671b4d17188f0823edfe290e3826fc21f3bc94fe0f062bea",
+      "src/engine/combatStats.ts": "d7235e4c59edc77aec368f940e8825712672cc3fcd49e83c7c901c5f049db34f",
+      "src/engine/contentBosses.integration.test.ts": "af93da05f87f1684a049c00850e819d7e1e09a93895f994c58f135953aa614c9",
+      "src/engine/contentFamilies.test.ts": "cb019c6119e9776f9955b5fafd276effd931075085285334285417b8bc8fff4c",
+      "src/engine/contentFamilies.ts": "9cc6c32ef154c6562a09a8f328fe3003465ab8265672538445b1d2bf2484716c",
+      "src/engine/contentItems.integration.test.ts": "0be844b6bb8f7dd6c1d762463d48982b0d4402d396dcf10b56ba5cc165f77f64",
+      "src/engine/contentReachability.integration.test.ts": "87ea32c0ab13cd7a5bf5a313ccb6662c5e707764ad05241c52e28949bd07fe54",
+      "src/engine/contentValidation.test.ts": "cf14cadc9459f0e35d0469663160981432986ebeb0c55c5a8e80bbbfa96ea06a",
+      "src/engine/contentValidation.ts": "0b716843cf23664c6bfc057043655b660979ab38ba8be3b3f3fdf7c433ed956f",
+      "src/engine/crafting.test.ts": "b83e272a0a578b192040e26876057cd01bf8901fd687adea9e167a2471d60467",
+      "src/engine/crafting.ts": "04ed1724b723b78221ee31811b46171bb9e8d2fbb029a777dda5a12449378a88",
+      "src/engine/crisisAdventure.test.ts": "729e442247d398292bb9bd0a2a6c4f3a2fb3488248859f362a3b700383454624",
+      "src/engine/crisisContributions.test.ts": "2f88fab54f5ceca44570195901077f3f41a421b4c9ff3657b90ddcfe31ca02ce",
+      "src/engine/crisisContributions.ts": "9354b3ddb288d2cfc5cad639b16bdb1b68c5eaca782101040ee3c9bbe49e1cd6",
+      "src/engine/crisisResolution.test.ts": "8d289cce7b38e55494b3198c3da986a36d14d7c776f32aac776179c5a8685bb8",
+      "src/engine/crops.integration.test.ts": "36e6e8b912b9d3a9d45bc7d6c8668008d842cd4e8de948d1f34ccadc11815674",
+      "src/engine/crops.test.ts": "f2d6b2a939803a4e20ad49a30d5df41b1e6eb8cee803dba971bc11dc50f69690",
+      "src/engine/crops.ts": "308a0488ab376e5b3e6b37cb7ae9a25a6d1a79677d8e01cec547692c57a84e8e",
+      "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+      "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+      "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+      "src/engine/gearStats.ts": "66fa786c0c3e81cc317033181a0f11d9ef987c15f943e0960ec20a668eff0702",
+      "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+      "src/engine/identity.ts": "2d7596a712c16940a590bdf47edd288fc965f429304889e0be3b09969d61119e",
+      "src/engine/itemGeneration.test.ts": "377f8471b4bc69169d01d969a3c0d443b5ddbe1624f7436851320c0a9b45287f",
+      "src/engine/itemGeneration.ts": "d8aa3c510920f44edaa2a6e6b45ab2b013daa56a9e6bfc0cb16c72d23e4bc35b",
+      "src/engine/lifeIntegration.test.ts": "29a8cfbe6e4bc7ee1ffd2ba4dc0404e4ce9698495218c7850ed4fec3a9399b16",
+      "src/engine/lifeState.ts": "bd7697bcb564061cd00ff7fc14373625c30d2a7de06473b8f97bffb4c61b3c58",
+      "src/engine/livingEvents.test.ts": "8570cc1d1a00bd8970237cb469b71ce1b7b21146dd14eb28e2fe0d921677a217",
+      "src/engine/livingEvents.ts": "aba3813377c4940ca192a6275452288c1d10b501c6aad0b693a4205c22900bec",
+      "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+      "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+      "src/engine/npcLife.ts": "7f2fe08b29c5ee145a06c3623b19b663fcd7251bdfa5c3a7bfe19bc393bf5c28",
+      "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+      "src/engine/ownership.ts": "50b5bef7df35778c95ddbf0dd0951a22f46517842a224bee1552cd2dd18ff6db",
+      "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+      "src/engine/regionalCrisis.test.ts": "2eef285818c781d60dda7120bf6f3cd89c65084c1ac4345674010976830912f4",
+      "src/engine/regionalCrisis.ts": "3fe8139a9677ae925c1f8ee63c5763b12fd03036d2cf651893a09874e3783bf3",
+      "src/engine/regionalCrisisRecognition.ts": "b6c33d892cbb421b89d84620219bad60c7fe15fa883852bf6dbd0a44658004c0",
+      "src/engine/remainingFamilies.integration.test.ts": "b65c8f68aad55dff49a75010db3eaea3cdd6760fd49b394a7b32da13068b19d1",
+      "src/engine/rewardActions.test.ts": "133b21d4f52de1c4a46e2c4600b214fc56d14f80de45ade78e81b1eebad667f1",
+      "src/engine/rewardActions.ts": "b1cee65e318adfd0c2632b48a973fbeec9682cb982ace71b9518fe64a498cd5c",
+      "src/engine/rewardState.ts": "58c420a3372a3e8292c07b99f8551d8672df8d024f36a752001d74a26e27e59d",
+      "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+      "src/engine/simulation.ts": "149c2bc120fef9984be6afa6f72db293f16877085211f630d004e49f8db0f3db",
+      "src/engine/wolfFamily.test.ts": "9d1aa4f13c4582c317dd4e91b6a3cf32db1ea33e8adeef4a54097ecf4355716f",
+      "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+      "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+      "src/presentation/craftingProjection.test.ts": "9cc38a0d0b078963be417b6e3c431d0ab063f86afad1fa2e178d956d3e09895a",
+      "src/presentation/craftingProjection.ts": "3fb3afc5704b3e7fc87c365a567729d0655056d0f2594586044bf3e4942cdef8",
+      "src/presentation/crisisProjection.test.ts": "5e0988814fda47f84e244671d10ef15ea3ea94594df2e813682dbdc1b959fa6c",
+      "src/presentation/crisisProjection.ts": "0b221c5ff24b5f8b2cabd3fd45dc212194fe74c0932925f6c59f3ffc9f076c3b",
+      "src/presentation/icons.ts": "765708954fb2796d5a31715a4f66e9036672417b61aad5e80ccdddaf2231a135",
+      "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+      "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+      "src/presentation/rewardProjection.test.ts": "6139dfdad6d5361cb46d4c9cafadd106728dd89a37a962be75046ed5b822bc17",
+      "src/presentation/rewardProjection.ts": "1f50997f2ead918e5e113a8f2035988e2db7b94cfac517f9980ff31ecf75adec",
+      "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+      "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+      "src/presentation/worldUI.test.ts": "90a7d64071c7d4b9c800976a6ade3acdd630b66d8f7421158eae1f81842259ad",
+      "src/presentation/worldUI.ts": "af10ea89cc878a28bd90cdbb739b178069fc62de27dc16a668498ec00162d004",
+      "src/services/playJournal.test.ts": "a974a3238d87282afb2e2321705c406f5264184468bddc801646469eade33f47",
+      "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+      "src/services/rewardSave.test.ts": "9d2841e99d9d9f147aa23d35669b52d831d103915f98fe494df2ddb484f9ec52",
+      "src/services/rewardValidation.ts": "236af259c210d02bc843aa7e29fba06b5bcb5c220793d7668b224e5860337d30",
+      "src/services/saveService.test.ts": "386b2c6a37291f91f05e66320c75f9ffcc270ac4c55fe6c263c6fb713f8b76f6",
+      "src/services/saveService.ts": "8778befac0ea57c90d2e5b0ac6a05f18cd95bcb40fbc4a4ccaaa3049935348cb",
+      "src/services/saveWriter.ts": "0703016eb96d12bb843f0b04b6e21b6568bf7f9b44defc59e340896c675ff43b",
+      "src/stores/gameStore.test.ts": "6c069d44d18f625109885948e546ccdd20a9421ce5d449d6e33910253db7300f",
+      "src/stores/gameStore.ts": "b5d18a378cf4b05d05a37a2825e7eff045fd1ef68ac0714076b8f7c049bf5ac2",
+      "src/style.scss": "446edfecb5c48af2bfc21fb3d8da0ec6b9eb8e54b883532e06a498defef02dbe"
+    },
+    "sourceFingerprint": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+    "buildInputsSha256": {
+      "package.json": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6",
+      "package-lock.json": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d",
+      "tsconfig.json": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0",
+      "vite.config.ts": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771",
+      "index.html": "bfa28297eece5f57e38878097b4db8b481d5fcee44442da76244e0bb3dffb794"
+    },
+    "buildInputsFingerprint": "202bdd74f7b6e8c048e303850b9ff2262f170965b1395888b61eb7d70f2a74a0",
+    "distSha256": {
+      "dist/assets/index-DMt1I0Yu.js": "9ee33ffaeb49cfd86712f8a063a01f4b37b962adea4bb4751c5adb713886ff97",
+      "dist/assets/index-lzgghHZZ.css": "44eab35769f3eeb91e24eacfb3372d8b09a3a3a4a52d018c1adc4bf064ab1917",
+      "dist/index.html": "af15a91967b5f983573f078a6e92773798de6a08ac5a24d3d7fe4ac4e70c4634"
+    },
+    "distFingerprint": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+    "buildStatusPath": "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/phase7-build-status.json",
+    "buildStatusSha256": "b9d5b047229baf9c8a1bb5f516d18ebc48be4ffb96d6a7dab159e81bdb4f09fc",
+    "buildStatusSourceSha256": {
+      "src/App.vue": "f3ed979e98946fd747bf7f0508a03a31b50165ff09b4202e5b48753a977fdde8",
+      "src/components/AdventureWindow.vue": "f76abfa1f809d3fd9b341d842c192e3ab02a50d4d7fdf67ad8dd1b4dae2e32e3",
+      "src/components/CharacterSheet.vue": "0905f39da0b3ba52ed2c8c4c852ce08bc96a5e80d925cb64bb1f3dcb5b0d0dbd",
+      "src/components/IdentityWindow.vue": "982afc32143581311c9a014236e3e2a75e1a40b8f04f8fe97796c542966f7f06",
+      "src/components/InventoryWindow.vue": "f6d9f91cbbe2b3617406be32e7d1ebf210956d6cf54c4f8796ed413d22012f5f",
+      "src/components/LifeNewsWindow.vue": "f59e6aef06e4f610b702f09ac45ed64295a4fbeece8bfe9a424e0b2d7975438b",
+      "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+      "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+      "src/components/PixelWindow.vue": "7534d4dd48d93742fb74ced23c7a77999282ac51a08eb1842be54745cb026b4d",
+      "src/components/PlaceWindow.vue": "f7894a87ace8c4a7f3022a6c2a7febb19d43c309500a30301abec95538c6553d",
+      "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+      "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+      "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+      "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+      "src/data/config.ts": "ea56d790207bf13575ee19cbbdf46fa29ad8a03dd374a4613863af33c44e707a",
+      "src/data/content/caveInsects.ts": "dcc14c74cfd9ce50803af7645fa0c52beb22288b15d29925cbf801ba1bde3bf3",
+      "src/data/content/farmCrops.ts": "d49418c074d0bb5757db26b40c1342e169e29975caf717095fec668246af30a8",
+      "src/data/content/fogUndead.ts": "ef0d2c7b071193acb26803128c9041874d9f763a4e929a7030c1cd0b68653e5e",
+      "src/data/content/frontierGoblins.ts": "61b109a69611743f6b4d3983fb252a40dc8a8d1758a4154af034fa2d91c9bb13",
+      "src/data/content/mineConstructs.ts": "ac24251494d94acc8a6acdb4d7349372ba9c212c17424d8a58864bb63ee32c00",
+      "src/data/content/slime.ts": "334c031aa75c09e7612dd426d9d58284a1093efb5b773fcf5c8011640739edd2",
+      "src/data/content/wildBeasts.ts": "bbae4d9882708fa77c200f6810db0c02b943d027f186ff5d89af7f62e5de785b",
+      "src/data/contentRegistry.ts": "65593e63bffdfd3c0c20cb3ca780af921ee01e61b550aa4542c69c6e433f9585",
+      "src/data/crafting.ts": "e882f58803229c01b4853e44710f5cd1f7b2a56a2c4b058bbebe2fe2141aaa73",
+      "src/data/identity.ts": "0acc09bbd1f9d9c4e057b2bdca01fa202730e868325cb873286c5c31a809dae0",
+      "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+      "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+      "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+      "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+      "src/data/rewards.ts": "7169a34cfd420ec4a181fa54c03560c5301f7fac666a049e5773d0439d897806",
+      "src/domain/content.ts": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+      "src/domain/crisis.ts": "03ef61f00c08ea84cdd6126d64009e3032fb38a5662db8a736519045f00ad14c",
+      "src/domain/life.ts": "db2eff0c1eb6d3ae310f39d8df5a6bf40b125193741a25b9bbe652c4640de72a",
+      "src/domain/reward.ts": "237c1e6eeb42d4af77d78c24ef7c3b699816459a9b71357acfd57c31810a9aac",
+      "src/domain/types.ts": "7924e0383ca4f1e5623e95aca5ceb28b5022c03af007dca0d2cb2c1ec0050450",
+      "src/engine/actions.test.ts": "813166423bd0b55fd0172eedb1bcf766028a1045588807473c2205f6cec47fa5",
+      "src/engine/actions.ts": "0e998159696dfd89f450b2041cea61792bd10246a05354b6844a4a2d0a4505ff",
+      "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+      "src/engine/caveInsects.integration.test.ts": "db9ba41d196b98f66dab47cd0398122e9e139e02d586a15cd6af8dcb088205fe",
+      "src/engine/civilDefense.test.ts": "c05afe2ab42f334f3284f3b7830ea073db96707995b2336e2b30855d0c84e125",
+      "src/engine/civilDefense.ts": "9a6988658e62df485f85f69d0c1f0a0626078eeec43f0934ad2298e6cdcfe77d",
+      "src/engine/combatStats.test.ts": "896b7517b4a2bcb4671b4d17188f0823edfe290e3826fc21f3bc94fe0f062bea",
+      "src/engine/combatStats.ts": "d7235e4c59edc77aec368f940e8825712672cc3fcd49e83c7c901c5f049db34f",
+      "src/engine/contentBosses.integration.test.ts": "af93da05f87f1684a049c00850e819d7e1e09a93895f994c58f135953aa614c9",
+      "src/engine/contentFamilies.test.ts": "cb019c6119e9776f9955b5fafd276effd931075085285334285417b8bc8fff4c",
+      "src/engine/contentFamilies.ts": "9cc6c32ef154c6562a09a8f328fe3003465ab8265672538445b1d2bf2484716c",
+      "src/engine/contentItems.integration.test.ts": "0be844b6bb8f7dd6c1d762463d48982b0d4402d396dcf10b56ba5cc165f77f64",
+      "src/engine/contentReachability.integration.test.ts": "87ea32c0ab13cd7a5bf5a313ccb6662c5e707764ad05241c52e28949bd07fe54",
+      "src/engine/contentValidation.test.ts": "cf14cadc9459f0e35d0469663160981432986ebeb0c55c5a8e80bbbfa96ea06a",
+      "src/engine/contentValidation.ts": "0b716843cf23664c6bfc057043655b660979ab38ba8be3b3f3fdf7c433ed956f",
+      "src/engine/crafting.test.ts": "b83e272a0a578b192040e26876057cd01bf8901fd687adea9e167a2471d60467",
+      "src/engine/crafting.ts": "04ed1724b723b78221ee31811b46171bb9e8d2fbb029a777dda5a12449378a88",
+      "src/engine/crisisAdventure.test.ts": "729e442247d398292bb9bd0a2a6c4f3a2fb3488248859f362a3b700383454624",
+      "src/engine/crisisContributions.test.ts": "2f88fab54f5ceca44570195901077f3f41a421b4c9ff3657b90ddcfe31ca02ce",
+      "src/engine/crisisContributions.ts": "9354b3ddb288d2cfc5cad639b16bdb1b68c5eaca782101040ee3c9bbe49e1cd6",
+      "src/engine/crisisResolution.test.ts": "8d289cce7b38e55494b3198c3da986a36d14d7c776f32aac776179c5a8685bb8",
+      "src/engine/crops.integration.test.ts": "36e6e8b912b9d3a9d45bc7d6c8668008d842cd4e8de948d1f34ccadc11815674",
+      "src/engine/crops.test.ts": "f2d6b2a939803a4e20ad49a30d5df41b1e6eb8cee803dba971bc11dc50f69690",
+      "src/engine/crops.ts": "308a0488ab376e5b3e6b37cb7ae9a25a6d1a79677d8e01cec547692c57a84e8e",
+      "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+      "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+      "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+      "src/engine/gearStats.ts": "66fa786c0c3e81cc317033181a0f11d9ef987c15f943e0960ec20a668eff0702",
+      "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+      "src/engine/identity.ts": "2d7596a712c16940a590bdf47edd288fc965f429304889e0be3b09969d61119e",
+      "src/engine/itemGeneration.test.ts": "377f8471b4bc69169d01d969a3c0d443b5ddbe1624f7436851320c0a9b45287f",
+      "src/engine/itemGeneration.ts": "d8aa3c510920f44edaa2a6e6b45ab2b013daa56a9e6bfc0cb16c72d23e4bc35b",
+      "src/engine/lifeIntegration.test.ts": "29a8cfbe6e4bc7ee1ffd2ba4dc0404e4ce9698495218c7850ed4fec3a9399b16",
+      "src/engine/lifeState.ts": "bd7697bcb564061cd00ff7fc14373625c30d2a7de06473b8f97bffb4c61b3c58",
+      "src/engine/livingEvents.test.ts": "8570cc1d1a00bd8970237cb469b71ce1b7b21146dd14eb28e2fe0d921677a217",
+      "src/engine/livingEvents.ts": "aba3813377c4940ca192a6275452288c1d10b501c6aad0b693a4205c22900bec",
+      "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+      "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+      "src/engine/npcLife.ts": "7f2fe08b29c5ee145a06c3623b19b663fcd7251bdfa5c3a7bfe19bc393bf5c28",
+      "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+      "src/engine/ownership.ts": "50b5bef7df35778c95ddbf0dd0951a22f46517842a224bee1552cd2dd18ff6db",
+      "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+      "src/engine/regionalCrisis.test.ts": "2eef285818c781d60dda7120bf6f3cd89c65084c1ac4345674010976830912f4",
+      "src/engine/regionalCrisis.ts": "3fe8139a9677ae925c1f8ee63c5763b12fd03036d2cf651893a09874e3783bf3",
+      "src/engine/regionalCrisisRecognition.ts": "b6c33d892cbb421b89d84620219bad60c7fe15fa883852bf6dbd0a44658004c0",
+      "src/engine/remainingFamilies.integration.test.ts": "b65c8f68aad55dff49a75010db3eaea3cdd6760fd49b394a7b32da13068b19d1",
+      "src/engine/rewardActions.test.ts": "133b21d4f52de1c4a46e2c4600b214fc56d14f80de45ade78e81b1eebad667f1",
+      "src/engine/rewardActions.ts": "b1cee65e318adfd0c2632b48a973fbeec9682cb982ace71b9518fe64a498cd5c",
+      "src/engine/rewardState.ts": "58c420a3372a3e8292c07b99f8551d8672df8d024f36a752001d74a26e27e59d",
+      "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+      "src/engine/simulation.ts": "149c2bc120fef9984be6afa6f72db293f16877085211f630d004e49f8db0f3db",
+      "src/engine/wolfFamily.test.ts": "9d1aa4f13c4582c317dd4e91b6a3cf32db1ea33e8adeef4a54097ecf4355716f",
+      "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+      "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+      "src/presentation/craftingProjection.test.ts": "9cc38a0d0b078963be417b6e3c431d0ab063f86afad1fa2e178d956d3e09895a",
+      "src/presentation/craftingProjection.ts": "3fb3afc5704b3e7fc87c365a567729d0655056d0f2594586044bf3e4942cdef8",
+      "src/presentation/crisisProjection.test.ts": "5e0988814fda47f84e244671d10ef15ea3ea94594df2e813682dbdc1b959fa6c",
+      "src/presentation/crisisProjection.ts": "0b221c5ff24b5f8b2cabd3fd45dc212194fe74c0932925f6c59f3ffc9f076c3b",
+      "src/presentation/icons.ts": "765708954fb2796d5a31715a4f66e9036672417b61aad5e80ccdddaf2231a135",
+      "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+      "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+      "src/presentation/rewardProjection.test.ts": "6139dfdad6d5361cb46d4c9cafadd106728dd89a37a962be75046ed5b822bc17",
+      "src/presentation/rewardProjection.ts": "1f50997f2ead918e5e113a8f2035988e2db7b94cfac517f9980ff31ecf75adec",
+      "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+      "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+      "src/presentation/worldUI.test.ts": "90a7d64071c7d4b9c800976a6ade3acdd630b66d8f7421158eae1f81842259ad",
+      "src/presentation/worldUI.ts": "af10ea89cc878a28bd90cdbb739b178069fc62de27dc16a668498ec00162d004",
+      "src/services/playJournal.test.ts": "a974a3238d87282afb2e2321705c406f5264184468bddc801646469eade33f47",
+      "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+      "src/services/rewardSave.test.ts": "9d2841e99d9d9f147aa23d35669b52d831d103915f98fe494df2ddb484f9ec52",
+      "src/services/rewardValidation.ts": "236af259c210d02bc843aa7e29fba06b5bcb5c220793d7668b224e5860337d30",
+      "src/services/saveService.test.ts": "386b2c6a37291f91f05e66320c75f9ffcc270ac4c55fe6c263c6fb713f8b76f6",
+      "src/services/saveService.ts": "8778befac0ea57c90d2e5b0ac6a05f18cd95bcb40fbc4a4ccaaa3049935348cb",
+      "src/services/saveWriter.ts": "0703016eb96d12bb843f0b04b6e21b6568bf7f9b44defc59e340896c675ff43b",
+      "src/stores/gameStore.test.ts": "6c069d44d18f625109885948e546ccdd20a9421ce5d449d6e33910253db7300f",
+      "src/stores/gameStore.ts": "b5d18a378cf4b05d05a37a2825e7eff045fd1ef68ac0714076b8f7c049bf5ac2",
+      "src/style.scss": "446edfecb5c48af2bfc21fb3d8da0ec6b9eb8e54b883532e06a498defef02dbe"
+    },
+    "qaFilesSha256": {
+      "reports/v2/20261008-content-expansion/phase-07/qa_browser_launcher.py": "63459ea295f203aada7a75144eda33c94f07e86446ad5cafc89fa5c7e081a75b",
+      "reports/v2/20261008-content-expansion/phase-07/qa_browser_runner.py": "f65641514aee39d06bc33043965c3c6bc5576165c103e1b1b819290ba037680f",
+      "reports/v2/20261008-content-expansion/phase-07/qa_browser_support.py": "2bcc2fb627b8a6f7317671526f5d52e2f194590fa28fe4c1b0ab31fa868367aa"
+    },
+    "recordedReportsSha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b"
+  },
+  "buildStatusPath": "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/phase7-build-status.json",
+  "buildStatusSha256": "b9d5b047229baf9c8a1bb5f516d18ebc48be4ffb96d6a7dab159e81bdb4f09fc",
+  "buildStatus": {
+    "schema": "phase7-build-status-v1",
+    "generatedAt": "2026-10-13T11:52:49.907085+00:00",
+    "startedAt": "2026-10-13T11:52:42.655150+00:00",
+    "endedAt": "2026-10-13T11:52:49.907085+00:00",
+    "command": "npm run build",
+    "exitCode": 0,
+    "headBefore": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+    "headAfter": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+    "sourceStableDuringRun": true,
+    "sourceSha256": {
+      "src/App.vue": "f3ed979e98946fd747bf7f0508a03a31b50165ff09b4202e5b48753a977fdde8",
+      "src/components/AdventureWindow.vue": "f76abfa1f809d3fd9b341d842c192e3ab02a50d4d7fdf67ad8dd1b4dae2e32e3",
+      "src/components/CharacterSheet.vue": "0905f39da0b3ba52ed2c8c4c852ce08bc96a5e80d925cb64bb1f3dcb5b0d0dbd",
+      "src/components/IdentityWindow.vue": "982afc32143581311c9a014236e3e2a75e1a40b8f04f8fe97796c542966f7f06",
+      "src/components/InventoryWindow.vue": "f6d9f91cbbe2b3617406be32e7d1ebf210956d6cf54c4f8796ed413d22012f5f",
+      "src/components/LifeNewsWindow.vue": "f59e6aef06e4f610b702f09ac45ed64295a4fbeece8bfe9a424e0b2d7975438b",
+      "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+      "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+      "src/components/PixelWindow.vue": "7534d4dd48d93742fb74ced23c7a77999282ac51a08eb1842be54745cb026b4d",
+      "src/components/PlaceWindow.vue": "f7894a87ace8c4a7f3022a6c2a7febb19d43c309500a30301abec95538c6553d",
+      "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+      "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+      "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+      "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+      "src/data/config.ts": "ea56d790207bf13575ee19cbbdf46fa29ad8a03dd374a4613863af33c44e707a",
+      "src/data/content/caveInsects.ts": "dcc14c74cfd9ce50803af7645fa0c52beb22288b15d29925cbf801ba1bde3bf3",
+      "src/data/content/farmCrops.ts": "d49418c074d0bb5757db26b40c1342e169e29975caf717095fec668246af30a8",
+      "src/data/content/fogUndead.ts": "ef0d2c7b071193acb26803128c9041874d9f763a4e929a7030c1cd0b68653e5e",
+      "src/data/content/frontierGoblins.ts": "61b109a69611743f6b4d3983fb252a40dc8a8d1758a4154af034fa2d91c9bb13",
+      "src/data/content/mineConstructs.ts": "ac24251494d94acc8a6acdb4d7349372ba9c212c17424d8a58864bb63ee32c00",
+      "src/data/content/slime.ts": "334c031aa75c09e7612dd426d9d58284a1093efb5b773fcf5c8011640739edd2",
+      "src/data/content/wildBeasts.ts": "bbae4d9882708fa77c200f6810db0c02b943d027f186ff5d89af7f62e5de785b",
+      "src/data/contentRegistry.ts": "65593e63bffdfd3c0c20cb3ca780af921ee01e61b550aa4542c69c6e433f9585",
+      "src/data/crafting.ts": "e882f58803229c01b4853e44710f5cd1f7b2a56a2c4b058bbebe2fe2141aaa73",
+      "src/data/identity.ts": "0acc09bbd1f9d9c4e057b2bdca01fa202730e868325cb873286c5c31a809dae0",
+      "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+      "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+      "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+      "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+      "src/data/rewards.ts": "7169a34cfd420ec4a181fa54c03560c5301f7fac666a049e5773d0439d897806",
+      "src/domain/content.ts": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+      "src/domain/crisis.ts": "03ef61f00c08ea84cdd6126d64009e3032fb38a5662db8a736519045f00ad14c",
+      "src/domain/life.ts": "db2eff0c1eb6d3ae310f39d8df5a6bf40b125193741a25b9bbe652c4640de72a",
+      "src/domain/reward.ts": "237c1e6eeb42d4af77d78c24ef7c3b699816459a9b71357acfd57c31810a9aac",
+      "src/domain/types.ts": "7924e0383ca4f1e5623e95aca5ceb28b5022c03af007dca0d2cb2c1ec0050450",
+      "src/engine/actions.test.ts": "813166423bd0b55fd0172eedb1bcf766028a1045588807473c2205f6cec47fa5",
+      "src/engine/actions.ts": "0e998159696dfd89f450b2041cea61792bd10246a05354b6844a4a2d0a4505ff",
+      "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+      "src/engine/caveInsects.integration.test.ts": "db9ba41d196b98f66dab47cd0398122e9e139e02d586a15cd6af8dcb088205fe",
+      "src/engine/civilDefense.test.ts": "c05afe2ab42f334f3284f3b7830ea073db96707995b2336e2b30855d0c84e125",
+      "src/engine/civilDefense.ts": "9a6988658e62df485f85f69d0c1f0a0626078eeec43f0934ad2298e6cdcfe77d",
+      "src/engine/combatStats.test.ts": "896b7517b4a2bcb4671b4d17188f0823edfe290e3826fc21f3bc94fe0f062bea",
+      "src/engine/combatStats.ts": "d7235e4c59edc77aec368f940e8825712672cc3fcd49e83c7c901c5f049db34f",
+      "src/engine/contentBosses.integration.test.ts": "af93da05f87f1684a049c00850e819d7e1e09a93895f994c58f135953aa614c9",
+      "src/engine/contentFamilies.test.ts": "cb019c6119e9776f9955b5fafd276effd931075085285334285417b8bc8fff4c",
+      "src/engine/contentFamilies.ts": "9cc6c32ef154c6562a09a8f328fe3003465ab8265672538445b1d2bf2484716c",
+      "src/engine/contentItems.integration.test.ts": "0be844b6bb8f7dd6c1d762463d48982b0d4402d396dcf10b56ba5cc165f77f64",
+      "src/engine/contentReachability.integration.test.ts": "87ea32c0ab13cd7a5bf5a313ccb6662c5e707764ad05241c52e28949bd07fe54",
+      "src/engine/contentValidation.test.ts": "cf14cadc9459f0e35d0469663160981432986ebeb0c55c5a8e80bbbfa96ea06a",
+      "src/engine/contentValidation.ts": "0b716843cf23664c6bfc057043655b660979ab38ba8be3b3f3fdf7c433ed956f",
+      "src/engine/crafting.test.ts": "b83e272a0a578b192040e26876057cd01bf8901fd687adea9e167a2471d60467",
+      "src/engine/crafting.ts": "04ed1724b723b78221ee31811b46171bb9e8d2fbb029a777dda5a12449378a88",
+      "src/engine/crisisAdventure.test.ts": "729e442247d398292bb9bd0a2a6c4f3a2fb3488248859f362a3b700383454624",
+      "src/engine/crisisContributions.test.ts": "2f88fab54f5ceca44570195901077f3f41a421b4c9ff3657b90ddcfe31ca02ce",
+      "src/engine/crisisContributions.ts": "9354b3ddb288d2cfc5cad639b16bdb1b68c5eaca782101040ee3c9bbe49e1cd6",
+      "src/engine/crisisResolution.test.ts": "8d289cce7b38e55494b3198c3da986a36d14d7c776f32aac776179c5a8685bb8",
+      "src/engine/crops.integration.test.ts": "36e6e8b912b9d3a9d45bc7d6c8668008d842cd4e8de948d1f34ccadc11815674",
+      "src/engine/crops.test.ts": "f2d6b2a939803a4e20ad49a30d5df41b1e6eb8cee803dba971bc11dc50f69690",
+      "src/engine/crops.ts": "308a0488ab376e5b3e6b37cb7ae9a25a6d1a79677d8e01cec547692c57a84e8e",
+      "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+      "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+      "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+      "src/engine/gearStats.ts": "66fa786c0c3e81cc317033181a0f11d9ef987c15f943e0960ec20a668eff0702",
+      "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+      "src/engine/identity.ts": "2d7596a712c16940a590bdf47edd288fc965f429304889e0be3b09969d61119e",
+      "src/engine/itemGeneration.test.ts": "377f8471b4bc69169d01d969a3c0d443b5ddbe1624f7436851320c0a9b45287f",
+      "src/engine/itemGeneration.ts": "d8aa3c510920f44edaa2a6e6b45ab2b013daa56a9e6bfc0cb16c72d23e4bc35b",
+      "src/engine/lifeIntegration.test.ts": "29a8cfbe6e4bc7ee1ffd2ba4dc0404e4ce9698495218c7850ed4fec3a9399b16",
+      "src/engine/lifeState.ts": "bd7697bcb564061cd00ff7fc14373625c30d2a7de06473b8f97bffb4c61b3c58",
+      "src/engine/livingEvents.test.ts": "8570cc1d1a00bd8970237cb469b71ce1b7b21146dd14eb28e2fe0d921677a217",
+      "src/engine/livingEvents.ts": "aba3813377c4940ca192a6275452288c1d10b501c6aad0b693a4205c22900bec",
+      "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+      "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+      "src/engine/npcLife.ts": "7f2fe08b29c5ee145a06c3623b19b663fcd7251bdfa5c3a7bfe19bc393bf5c28",
+      "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+      "src/engine/ownership.ts": "50b5bef7df35778c95ddbf0dd0951a22f46517842a224bee1552cd2dd18ff6db",
+      "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+      "src/engine/regionalCrisis.test.ts": "2eef285818c781d60dda7120bf6f3cd89c65084c1ac4345674010976830912f4",
+      "src/engine/regionalCrisis.ts": "3fe8139a9677ae925c1f8ee63c5763b12fd03036d2cf651893a09874e3783bf3",
+      "src/engine/regionalCrisisRecognition.ts": "b6c33d892cbb421b89d84620219bad60c7fe15fa883852bf6dbd0a44658004c0",
+      "src/engine/remainingFamilies.integration.test.ts": "b65c8f68aad55dff49a75010db3eaea3cdd6760fd49b394a7b32da13068b19d1",
+      "src/engine/rewardActions.test.ts": "133b21d4f52de1c4a46e2c4600b214fc56d14f80de45ade78e81b1eebad667f1",
+      "src/engine/rewardActions.ts": "b1cee65e318adfd0c2632b48a973fbeec9682cb982ace71b9518fe64a498cd5c",
+      "src/engine/rewardState.ts": "58c420a3372a3e8292c07b99f8551d8672df8d024f36a752001d74a26e27e59d",
+      "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+      "src/engine/simulation.ts": "149c2bc120fef9984be6afa6f72db293f16877085211f630d004e49f8db0f3db",
+      "src/engine/wolfFamily.test.ts": "9d1aa4f13c4582c317dd4e91b6a3cf32db1ea33e8adeef4a54097ecf4355716f",
+      "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+      "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+      "src/presentation/craftingProjection.test.ts": "9cc38a0d0b078963be417b6e3c431d0ab063f86afad1fa2e178d956d3e09895a",
+      "src/presentation/craftingProjection.ts": "3fb3afc5704b3e7fc87c365a567729d0655056d0f2594586044bf3e4942cdef8",
+      "src/presentation/crisisProjection.test.ts": "5e0988814fda47f84e244671d10ef15ea3ea94594df2e813682dbdc1b959fa6c",
+      "src/presentation/crisisProjection.ts": "0b221c5ff24b5f8b2cabd3fd45dc212194fe74c0932925f6c59f3ffc9f076c3b",
+      "src/presentation/icons.ts": "765708954fb2796d5a31715a4f66e9036672417b61aad5e80ccdddaf2231a135",
+      "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+      "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+      "src/presentation/rewardProjection.test.ts": "6139dfdad6d5361cb46d4c9cafadd106728dd89a37a962be75046ed5b822bc17",
+      "src/presentation/rewardProjection.ts": "1f50997f2ead918e5e113a8f2035988e2db7b94cfac517f9980ff31ecf75adec",
+      "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+      "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+      "src/presentation/worldUI.test.ts": "90a7d64071c7d4b9c800976a6ade3acdd630b66d8f7421158eae1f81842259ad",
+      "src/presentation/worldUI.ts": "af10ea89cc878a28bd90cdbb739b178069fc62de27dc16a668498ec00162d004",
+      "src/services/playJournal.test.ts": "a974a3238d87282afb2e2321705c406f5264184468bddc801646469eade33f47",
+      "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+      "src/services/rewardSave.test.ts": "9d2841e99d9d9f147aa23d35669b52d831d103915f98fe494df2ddb484f9ec52",
+      "src/services/rewardValidation.ts": "236af259c210d02bc843aa7e29fba06b5bcb5c220793d7668b224e5860337d30",
+      "src/services/saveService.test.ts": "386b2c6a37291f91f05e66320c75f9ffcc270ac4c55fe6c263c6fb713f8b76f6",
+      "src/services/saveService.ts": "8778befac0ea57c90d2e5b0ac6a05f18cd95bcb40fbc4a4ccaaa3049935348cb",
+      "src/services/saveWriter.ts": "0703016eb96d12bb843f0b04b6e21b6568bf7f9b44defc59e340896c675ff43b",
+      "src/stores/gameStore.test.ts": "6c069d44d18f625109885948e546ccdd20a9421ce5d449d6e33910253db7300f",
+      "src/stores/gameStore.ts": "b5d18a378cf4b05d05a37a2825e7eff045fd1ef68ac0714076b8f7c049bf5ac2",
+      "src/style.scss": "446edfecb5c48af2bfc21fb3d8da0ec6b9eb8e54b883532e06a498defef02dbe"
+    },
+    "sourceFingerprint": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+    "buildInputs": {
+      "package.json": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6",
+      "package-lock.json": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d",
+      "tsconfig.json": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0",
+      "vite.config.ts": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771",
+      "index.html": "bfa28297eece5f57e38878097b4db8b481d5fcee44442da76244e0bb3dffb794"
+    },
+    "buildInputsFingerprint": "202bdd74f7b6e8c048e303850b9ff2262f170965b1395888b61eb7d70f2a74a0",
+    "distSha256": {
+      "dist/assets/index-DMt1I0Yu.js": "9ee33ffaeb49cfd86712f8a063a01f4b37b962adea4bb4751c5adb713886ff97",
+      "dist/assets/index-lzgghHZZ.css": "44eab35769f3eeb91e24eacfb3372d8b09a3a3a4a52d018c1adc4bf064ab1917",
+      "dist/index.html": "af15a91967b5f983573f078a6e92773798de6a08ac5a24d3d7fe4ac4e70c4634"
+    },
+    "distFingerprint": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+    "buildRunDirectory": "reports/v2/20261008-content-expansion/phase-07/k-final-build-20261013",
+    "buildStdoutSha256": "f30eae781cca5ba024169bde25444a78f4feadb3dd3490118a8bacac5b38478a",
+    "buildStderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification": {
+      "npmRunCheck": "PASS",
+      "tests": "37 files / 627 passed",
+      "typecheck": "PASS",
+      "productionBuild": "PASS"
+    },
+    "environment": {
+      "node": "v24.19.0",
+      "npm": "11.9.0",
+      "vite": "7.3.6",
+      "vitest": "4.1.11"
+    }
+  },
+  "releasePath": "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/phase7-browser-release.json",
+  "releaseSha256": "cd1c144e44f8e63a888ddfeeff115e6472cf1a2668419b2df710d0e526f841b9",
+  "release": {
+    "schema": "phase7-browser-release-v1",
+    "status": "RELEASED",
+    "scope": "Phase7-K final frozen production Chromium QA: final 60s regression, 7200s integrated stress, and 3600s content-focused runner-driven Agent Exploratory; no public release or human product approval.",
+    "requiredStressSeconds": 7200,
+    "requiredContentAgentSeconds": 3600,
+    "contentAgentSmokeSeconds": 60,
+    "runnerHeartbeatTimeoutSeconds": 120,
+    "releasedAt": "2026-10-13T15:24:13+00:00",
+    "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+    "sourceFingerprint": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+    "buildStatusPath": "reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/phase7-build-status.json",
+    "buildStatusSha256": "b9d5b047229baf9c8a1bb5f516d18ebc48be4ffb96d6a7dab159e81bdb4f09fc",
+    "distFingerprint": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+    "conditions": [
+      "Full `npm run check` passed after PixelWindow fix: 37 files / 627 tests, typecheck and build passed.",
+      "41 Phase7 browser runner contract tests pass against the frozen QA harness; runner and test SHA-256 values are recorded in this manifest.",
+      "Checkpoint browserState records NPC registry totals/alive/dead separately from retained-history NPC death events; history scope, 20,000-row cap and possible incompleteness are explicit. It also records settlement, active-character/economy, threat/Boss/crisis, events/history/journal and save bytes; unavailable fields are null and marked unsupported.",
+      "IndexedDB record sampling uses a bounded projection before JSON serialization; truncated samples or serialization errors suppress store-total estimates. The Node projection contract passes.",
+      "Final acceptance remains a 7,200-second stress lane and 3,600-second content-agent lane; a 60-second regression is smoke-only. Runner heartbeat watchdog is 120s and terminates/reaps the runner process group on stale heartbeat.",
+      "Root verifies final build, dist, source, and current QA runner provenance before every Browser run.",
+      "Human product validation remains DEFERRED / NOT APPLICABLE AT THIS STAGE."
+    ],
+    "contractTests": 41,
+    "runnerSha256": "f65641514aee39d06bc33043965c3c6bc5576165c103e1b1b819290ba037680f",
+    "contractTestSha256": "9f85802b4ea9adc76ed00606afe16200a35a661dbbafa1bd328fff6645e9418d"
+  },
+  "actionCount": 840,
+  "actionTail": [
+    {
+      "turn": 828,
+      "choice": "farm",
+      "motivation": "在可見視窗「素材與收成」輪替可用目的地；此目的地在同一視窗已選 38 次。",
+      "buttonText": "素材與收成",
+      "atUTC": "2026-10-13T18:30:04.289565+00:00"
+    },
+    {
+      "turn": 829,
+      "choice": "use_equip",
+      "motivation": "在可見視窗「獵獲裝備」輪替可用目的地；此目的地在同一視窗已選 72 次。",
+      "buttonText": "獵獲裝備",
+      "atUTC": "2026-10-13T18:30:08.739163+00:00"
+    },
+    {
+      "turn": 830,
+      "choice": "farm",
+      "motivation": "在可見視窗「素材與收成」輪替可用目的地；此目的地在同一視窗已選 72 次。",
+      "buttonText": "素材與收成",
+      "atUTC": "2026-10-13T18:30:13.925242+00:00"
+    },
+    {
+      "turn": 831,
+      "choice": "navigate",
+      "motivation": "在可見視窗「日常物品」輪替可用目的地；此目的地在同一視窗已選 72 次。",
+      "buttonText": "日常物品",
+      "atUTC": "2026-10-13T18:30:18.893460+00:00"
+    },
+    {
+      "turn": 832,
+      "choice": "navigate",
+      "motivation": "在可見視窗「日常物品」輪替可用目的地；此目的地在同一視窗已選 38 次。",
+      "buttonText": "日常物品",
+      "atUTC": "2026-10-13T18:30:23.546961+00:00"
+    },
+    {
+      "turn": 833,
+      "choice": "combat",
+      "motivation": "在可見視窗「🧪 治療藥水\n×0」輪替可用目的地；此目的地在同一視窗已選 39 次。",
+      "buttonText": "🧪 治療藥水\n×0",
+      "atUTC": "2026-10-13T18:30:28.832332+00:00"
+    },
+    {
+      "turn": 834,
+      "choice": "use_equip",
+      "motivation": "在可見視窗「獵獲裝備」輪替可用目的地；此目的地在同一視窗已選 39 次。",
+      "buttonText": "獵獲裝備",
+      "atUTC": "2026-10-13T18:30:33.757300+00:00"
+    },
+    {
+      "turn": 835,
+      "choice": "use_equip",
+      "motivation": "在可見視窗「獵獲裝備」輪替可用目的地；此目的地在同一視窗已選 73 次。",
+      "buttonText": "獵獲裝備",
+      "atUTC": "2026-10-13T18:30:38.876491+00:00"
+    },
+    {
+      "turn": 836,
+      "choice": "farm",
+      "motivation": "在可見視窗「素材與收成」輪替可用目的地；此目的地在同一視窗已選 73 次。",
+      "buttonText": "素材與收成",
+      "atUTC": "2026-10-13T18:30:43.396762+00:00"
+    },
+    {
+      "turn": 837,
+      "choice": "navigate",
+      "motivation": "在可見視窗「日常物品」輪替可用目的地；此目的地在同一視窗已選 73 次。",
+      "buttonText": "日常物品",
+      "atUTC": "2026-10-13T18:30:47.560973+00:00"
+    },
+    {
+      "turn": 838,
+      "choice": "farm",
+      "motivation": "在可見視窗「素材與收成」輪替可用目的地；此目的地在同一視窗已選 39 次。",
+      "buttonText": "素材與收成",
+      "atUTC": "2026-10-13T18:30:51.849993+00:00"
+    },
+    {
+      "turn": 839,
+      "choice": "use_equip",
+      "motivation": "在可見視窗「獵獲裝備」輪替可用目的地；此目的地在同一視窗已選 74 次。",
+      "buttonText": "獵獲裝備",
+      "atUTC": "2026-10-13T18:30:55.871852+00:00"
+    }
+  ],
+  "actionCategoryCounts": {
+    "start_from_opening": 1,
+    "explore": 14,
+    "navigate": 230,
+    "observe": 6,
+    "close_dialog": 27,
+    "advance": 289,
+    "combat": 42,
+    "use_equip": 117,
+    "farm": 114
+  },
+  "noProgressActionCount": 247,
+  "noProgressActionTail": [
+    {
+      "stateKey": "1409e3f1675f577ab1ae6fd9d1b12d2c17b40cd5e801439f3172c6c36ab87c01",
+      "buttonText": "素材與收成",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:29:31.361175+00:00"
+    },
+    {
+      "stateKey": "6fd219b7e9446824209375f5183384537670cc73f58d3b1bc9d9ea095e8ef8ad",
+      "buttonText": "日常物品",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:29:40.575729+00:00"
+    },
+    {
+      "stateKey": "6fd219b7e9446824209375f5183384537670cc73f58d3b1bc9d9ea095e8ef8ad",
+      "buttonText": "🧪 治療藥水\n×0",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:29:45.407652+00:00"
+    },
+    {
+      "stateKey": "1409e3f1675f577ab1ae6fd9d1b12d2c17b40cd5e801439f3172c6c36ab87c01",
+      "buttonText": "獵獲裝備",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:29:53.519320+00:00"
+    },
+    {
+      "stateKey": "1409e3f1675f577ab1ae6fd9d1b12d2c17b40cd5e801439f3172c6c36ab87c01",
+      "buttonText": "素材與收成",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:29:57.793452+00:00"
+    },
+    {
+      "stateKey": "1409e3f1675f577ab1ae6fd9d1b12d2c17b40cd5e801439f3172c6c36ab87c01",
+      "buttonText": "獵獲裝備",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:30:11.062133+00:00"
+    },
+    {
+      "stateKey": "1409e3f1675f577ab1ae6fd9d1b12d2c17b40cd5e801439f3172c6c36ab87c01",
+      "buttonText": "素材與收成",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:30:16.517500+00:00"
+    },
+    {
+      "stateKey": "6fd219b7e9446824209375f5183384537670cc73f58d3b1bc9d9ea095e8ef8ad",
+      "buttonText": "日常物品",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:30:25.862068+00:00"
+    },
+    {
+      "stateKey": "6fd219b7e9446824209375f5183384537670cc73f58d3b1bc9d9ea095e8ef8ad",
+      "buttonText": "🧪 治療藥水\n×0",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:30:31.185705+00:00"
+    },
+    {
+      "stateKey": "1409e3f1675f577ab1ae6fd9d1b12d2c17b40cd5e801439f3172c6c36ab87c01",
+      "buttonText": "獵獲裝備",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:30:41.060917+00:00"
+    },
+    {
+      "stateKey": "1409e3f1675f577ab1ae6fd9d1b12d2c17b40cd5e801439f3172c6c36ab87c01",
+      "buttonText": "素材與收成",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:30:45.468698+00:00"
+    },
+    {
+      "stateKey": "1409e3f1675f577ab1ae6fd9d1b12d2c17b40cd5e801439f3172c6c36ab87c01",
+      "buttonText": "獵獲裝備",
+      "noProgress": true,
+      "excludedForCurrentState": true,
+      "atUTC": "2026-10-13T18:30:58.195525+00:00"
+    }
+  ],
+  "noProgressStateKey": "1409e3f1675f577ab1ae6fd9d1b12d2c17b40cd5e801439f3172c6c36ab87c01",
+  "noProgressControls": [
+    "獵獲裝備"
+  ],
+  "checkpointCount": 58,
+  "checkpointTail": [
+    {
+      "atUTC": "2026-10-13T18:28:09.378751+00:00",
+      "elapsedRealSeconds": 3434.71,
+      "localStorageBytes": 164218,
+      "worldTime": 424143,
+      "errorCounts": {},
+      "browserEventCounts": {
+        "saveWrites": 13253,
+        "longTasks": 1
+      }
+    },
+    {
+      "atUTC": "2026-10-13T18:29:09.475536+00:00",
+      "elapsedRealSeconds": 3494.8,
+      "localStorageBytes": 164218,
+      "worldTime": 424263,
+      "errorCounts": {},
+      "browserEventCounts": {
+        "saveWrites": 13499,
+        "longTasks": 1
+      }
+    },
+    {
+      "atUTC": "2026-10-13T18:30:11.209442+00:00",
+      "elapsedRealSeconds": 3556.54,
+      "localStorageBytes": 164308,
+      "worldTime": 424386,
+      "errorCounts": {},
+      "browserEventCounts": {
+        "saveWrites": 13753,
+        "longTasks": 1
+      }
+    }
+  ],
+  "normalReloadCount": 11,
+  "screenshots": [
+    {
+      "path": "normal-fresh-opening-001.png",
+      "sha256": "04c0e7234e2df37db51e230f55eb6ffb1f88bacb4095c53006363e384d2168bf"
+    },
+    {
+      "path": "normal-fresh-world-after-opening-002.png",
+      "sha256": "fd79f53b2bebc7485e7ef38f632e2e769bf4d77ea7044fb3beb80509f639afda"
+    },
+    {
+      "path": "normal-reload-turn-72-003.png",
+      "sha256": "91494b58021f93f1282353228dc1a56fc84b00ab859ec61c4dce21062a40f384"
+    },
+    {
+      "path": "normal-reload-turn-148-004.png",
+      "sha256": "7c940e20d454aa033c0d3fa9a106287fb617d75162c61a8288f98c9dea488690"
+    },
+    {
+      "path": "normal-reload-turn-219-005.png",
+      "sha256": "300744fecf596e5658b582d72e85243e6cb53ce6aa7ae4b3cbf5a6db467492dc"
+    },
+    {
+      "path": "normal-reload-turn-290-006.png",
+      "sha256": "fcbdab60cebf84d2c7d194891ffd035c89688cd3f0323f33929d259c592ddd38"
+    },
+    {
+      "path": "normal-reload-turn-356-007.png",
+      "sha256": "08393723ee8a98d0036a0c841eaa0b03abe0dc24f8644ac923ca66352eefa62f"
+    },
+    {
+      "path": "normal-reload-turn-427-008.png",
+      "sha256": "2105db410ce57a31454f7c93f9a0b43cf82a529d6bfc389a38c3184bde852d38"
+    },
+    {
+      "path": "normal-reload-turn-498-009.png",
+      "sha256": "40b21f3e2efc2f2a8e13304291f6cbfc4d542d7323600703a37161901b889ab3"
+    },
+    {
+      "path": "normal-reload-turn-565-010.png",
+      "sha256": "3c984e45a5b1e3806502807115d9f5631fea52721e1f17d927168ffccec117e0"
+    },
+    {
+      "path": "normal-reload-turn-634-011.png",
+      "sha256": "d25e85924e8a50cd44207906b70d72d3b94035651631169818202a835fa3dffe"
+    },
+    {
+      "path": "normal-reload-turn-707-012.png",
+      "sha256": "7192ccd4352958b54ada4d587e4ded1341bca54f8112cc45f96ecd1eb3193616"
+    },
+    {
+      "path": "normal-reload-turn-775-013.png",
+      "sha256": "6ad2e6eca62c2d3333f88d34544d8e8e94edbb5a2e1e6865f3df2fff707b3b83"
+    }
+  ],
+  "errorCounts": {},
+  "errorTails": {},
+  "browserEventCounts": {
+    "saveWrites": 13945,
+    "longTasks": 1
+  },
+  "browserEventTails": {
+    "saveWrites": [
+      {
+        "atUTC": "2026-10-13T18:30:58.376363+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.2999999523162842,
+          "bytes": 164640,
+          "at": 1791916255617
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.376623+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.20000004768371582,
+          "bytes": 164413,
+          "at": 1791916255629
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.376880+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.8999999761581421,
+          "bytes": 164640,
+          "at": 1791916256144
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.377219+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.40000009536743164,
+          "bytes": 164413,
+          "at": 1791916256156
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.377681+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.7000000476837158,
+          "bytes": 164640,
+          "at": 1791916256618
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.377927+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.5999999046325684,
+          "bytes": 164413,
+          "at": 1791916256629
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.378284+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.3999999761581421,
+          "bytes": 164640,
+          "at": 1791916257117
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.378795+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.6000000238418579,
+          "bytes": 164413,
+          "at": 1791916257127
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.379241+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.40000009536743164,
+          "bytes": 164640,
+          "at": 1791916257618
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.379575+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.19999992847442627,
+          "bytes": 164413,
+          "at": 1791916257630
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.379919+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.7000000476837158,
+          "bytes": 164640,
+          "at": 1791916258116
+        }
+      },
+      {
+        "atUTC": "2026-10-13T18:30:58.381193+00:00",
+        "kind": "saveWrites",
+        "detail": {
+          "elapsedMs": 0.5,
+          "bytes": 164413,
+          "at": 1791916258127
+        }
+      }
+    ],
+    "longTasks": [
+      {
+        "atUTC": "2026-10-13T17:31:00.084296+00:00",
+        "kind": "longTasks",
+        "detail": {
+          "startTime": 44,
+          "duration": 183
+        }
+      }
+    ]
+  },
+  "profilingLimitationsTail": [
+    {
+      "atUTC": "2026-10-13T18:18:51.619944+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:19:51.753208+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:20:53.043084+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:21:55.902739+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:22:56.544599+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:23:59.209891+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:25:01.314592+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:26:03.131519+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:27:06.180014+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:28:09.259140+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:29:09.349755+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    },
+    {
+      "atUTC": "2026-10-13T18:30:11.067720+00:00",
+      "setup": "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found"
+    }
+  ],
+  "chromiumVersion": "151.0.7922.173",
+  "normalOpeningVerified": true,
+  "normalWorldVisibleAfterOpening": "橡谷\n持續演化的世界\n第 1 年 春 1 日\n08:00\n暫停\n×1\n×5\n×20\n存檔\n選單 Esc\n🏘️ 橡谷聚落 7, 9\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n🪓\n4\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n⛏️\n4\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n🛡️\n4\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n4\n·\n⚒️\n4\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🙂\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n5\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n·\n·\n·\n⚔️\n4\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田\n未知之地\n🏠 家\nEnter 互動\n附近還有 1 個互動 ›\n↑\n←\n↓\n→\nWASD／方向鍵移動　Enter 互動　點地圖步行\n查看地圖 M\n🙂\n奧登 Lv.1\n生命\n100/100\n體力\n84/84\n🪙 45\n› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L\n物品 I\n旅人筆記",
+  "lastCheckpoint": {
+    "atUTC": "2026-10-13T18:30:11.209442+00:00",
+    "elapsedRealSeconds": 3556.54,
+    "localStorageBytes": 164308,
+    "worldTime": 424386,
+    "errorCounts": {},
+    "browserEventCounts": {
+      "saveWrites": 13753,
+      "longTasks": 1
+    }
+  },
+  "nextCheckpointMonotonic": 552283.166649312,
+  "dialogActionUseCounts": {
+    "4a7c7bc62f7a274fb7f8ab23": {
+      "匯出遊玩紀錄\n紀錄只能追加": 6,
+      "世界歷史": 6,
+      "住所與產業": 6,
+      "儲存世界\n已存於此瀏覽器 · 操作後立即保存": 6,
+      "地圖與世界 地圖與世界\nM": 6,
+      "地方消息與委託": 6,
+      "旅人筆記": 6,
+      "日誌 日誌\nL": 6,
+      "物品 物品\nI": 6,
+      "角色 角色\nC": 5,
+      "這一生": 5
+    },
+    "b77ea634ad69d3283839dc3a": {
+      "前往自宅": 2,
+      "前往農田": 2
+    },
+    "dd8591ef571ce8ccbca1bfaa": {
+      "前往家": 2,
+      "前往探索迷霧": 1,
+      "前往森林": 1,
+      "前往礦場": 1,
+      "前往農田": 1,
+      "地圖": 1
+    },
+    "929a6f44def400eb81fa12d9": {
+      "等待 1 日": 289
+    },
+    "461941081676e5455aafc4d1": {
+      "世界": 6
+    },
+    "315a4ec43ea70702b6cb3ec5": {
+      "🧪 治療藥水\n×2": 1,
+      "使用藥水": 1
+    },
+    "16edcfba583fe69f4b02edff": {
+      "🧪 治療藥水\n×1": 1,
+      "使用藥水": 1
+    },
+    "b1ac6f8b7667d828456f814e": {
+      "🧪 治療藥水\n×0": 40,
+      "獵獲裝備": 40,
+      "素材與收成": 40,
+      "日常物品": 39
+    },
+    "59a502a5d19ce38b1bb56b49": {
+      "獵獲裝備": 75,
+      "素材與收成": 74,
+      "日常物品": 74
+    },
+    "29aed829d25cff76565ec607": {
+      "前往農田": 1
+    },
+    "5a7d36b2693464215089a760": {
+      "前往北方森林": 1
+    },
+    "80588ea5f2273e2e7afb82c3": {
+      "前往自宅": 1
+    }
+  },
+  "normalReloadVerified": true,
+  "lastNormalReload": {
+    "atUTC": "2026-10-13T18:26:16.792510+00:00",
+    "reason": "scheduled-stress-save-reload",
+    "worldSpeedBeforeReload": 1,
+    "worldSpeedAfterReload": 1,
+    "storageRetainedAtLoad": true,
+    "runtimeSavedMatchesBaseline": true,
+    "storageRetentionDifferences": {},
+    "runtimeReloadDifferences": {},
+    "worldTimeBefore": 423918,
+    "worldTimeAfterLoad": 423918,
+    "worldSpeedRestored": 1
+  },
+  "finalSaveSummary": {
+    "worldTime": 424481,
+    "coreGameStateKeyCount": 23
+  },
+  "endUTC": "2026-10-13T18:30:58.518146+00:00",
+  "durationSecondsActual": 3603.84,
+  "browserErrors": false,
+  "sourceAfter": {
+    "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+    "sourceSha256": {
+      "src/App.vue": "f3ed979e98946fd747bf7f0508a03a31b50165ff09b4202e5b48753a977fdde8",
+      "src/components/AdventureWindow.vue": "f76abfa1f809d3fd9b341d842c192e3ab02a50d4d7fdf67ad8dd1b4dae2e32e3",
+      "src/components/CharacterSheet.vue": "0905f39da0b3ba52ed2c8c4c852ce08bc96a5e80d925cb64bb1f3dcb5b0d0dbd",
+      "src/components/IdentityWindow.vue": "982afc32143581311c9a014236e3e2a75e1a40b8f04f8fe97796c542966f7f06",
+      "src/components/InventoryWindow.vue": "f6d9f91cbbe2b3617406be32e7d1ebf210956d6cf54c4f8796ed413d22012f5f",
+      "src/components/LifeNewsWindow.vue": "f59e6aef06e4f610b702f09ac45ed64295a4fbeece8bfe9a424e0b2d7975438b",
+      "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+      "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+      "src/components/PixelWindow.vue": "7534d4dd48d93742fb74ced23c7a77999282ac51a08eb1842be54745cb026b4d",
+      "src/components/PlaceWindow.vue": "f7894a87ace8c4a7f3022a6c2a7febb19d43c309500a30301abec95538c6553d",
+      "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+      "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+      "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+      "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+      "src/data/config.ts": "ea56d790207bf13575ee19cbbdf46fa29ad8a03dd374a4613863af33c44e707a",
+      "src/data/content/caveInsects.ts": "dcc14c74cfd9ce50803af7645fa0c52beb22288b15d29925cbf801ba1bde3bf3",
+      "src/data/content/farmCrops.ts": "d49418c074d0bb5757db26b40c1342e169e29975caf717095fec668246af30a8",
+      "src/data/content/fogUndead.ts": "ef0d2c7b071193acb26803128c9041874d9f763a4e929a7030c1cd0b68653e5e",
+      "src/data/content/frontierGoblins.ts": "61b109a69611743f6b4d3983fb252a40dc8a8d1758a4154af034fa2d91c9bb13",
+      "src/data/content/mineConstructs.ts": "ac24251494d94acc8a6acdb4d7349372ba9c212c17424d8a58864bb63ee32c00",
+      "src/data/content/slime.ts": "334c031aa75c09e7612dd426d9d58284a1093efb5b773fcf5c8011640739edd2",
+      "src/data/content/wildBeasts.ts": "bbae4d9882708fa77c200f6810db0c02b943d027f186ff5d89af7f62e5de785b",
+      "src/data/contentRegistry.ts": "65593e63bffdfd3c0c20cb3ca780af921ee01e61b550aa4542c69c6e433f9585",
+      "src/data/crafting.ts": "e882f58803229c01b4853e44710f5cd1f7b2a56a2c4b058bbebe2fe2141aaa73",
+      "src/data/identity.ts": "0acc09bbd1f9d9c4e057b2bdca01fa202730e868325cb873286c5c31a809dae0",
+      "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+      "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+      "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+      "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+      "src/data/rewards.ts": "7169a34cfd420ec4a181fa54c03560c5301f7fac666a049e5773d0439d897806",
+      "src/domain/content.ts": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+      "src/domain/crisis.ts": "03ef61f00c08ea84cdd6126d64009e3032fb38a5662db8a736519045f00ad14c",
+      "src/domain/life.ts": "db2eff0c1eb6d3ae310f39d8df5a6bf40b125193741a25b9bbe652c4640de72a",
+      "src/domain/reward.ts": "237c1e6eeb42d4af77d78c24ef7c3b699816459a9b71357acfd57c31810a9aac",
+      "src/domain/types.ts": "7924e0383ca4f1e5623e95aca5ceb28b5022c03af007dca0d2cb2c1ec0050450",
+      "src/engine/actions.test.ts": "813166423bd0b55fd0172eedb1bcf766028a1045588807473c2205f6cec47fa5",
+      "src/engine/actions.ts": "0e998159696dfd89f450b2041cea61792bd10246a05354b6844a4a2d0a4505ff",
+      "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+      "src/engine/caveInsects.integration.test.ts": "db9ba41d196b98f66dab47cd0398122e9e139e02d586a15cd6af8dcb088205fe",
+      "src/engine/civilDefense.test.ts": "c05afe2ab42f334f3284f3b7830ea073db96707995b2336e2b30855d0c84e125",
+      "src/engine/civilDefense.ts": "9a6988658e62df485f85f69d0c1f0a0626078eeec43f0934ad2298e6cdcfe77d",
+      "src/engine/combatStats.test.ts": "896b7517b4a2bcb4671b4d17188f0823edfe290e3826fc21f3bc94fe0f062bea",
+      "src/engine/combatStats.ts": "d7235e4c59edc77aec368f940e8825712672cc3fcd49e83c7c901c5f049db34f",
+      "src/engine/contentBosses.integration.test.ts": "af93da05f87f1684a049c00850e819d7e1e09a93895f994c58f135953aa614c9",
+      "src/engine/contentFamilies.test.ts": "cb019c6119e9776f9955b5fafd276effd931075085285334285417b8bc8fff4c",
+      "src/engine/contentFamilies.ts": "9cc6c32ef154c6562a09a8f328fe3003465ab8265672538445b1d2bf2484716c",
+      "src/engine/contentItems.integration.test.ts": "0be844b6bb8f7dd6c1d762463d48982b0d4402d396dcf10b56ba5cc165f77f64",
+      "src/engine/contentReachability.integration.test.ts": "87ea32c0ab13cd7a5bf5a313ccb6662c5e707764ad05241c52e28949bd07fe54",
+      "src/engine/contentValidation.test.ts": "cf14cadc9459f0e35d0469663160981432986ebeb0c55c5a8e80bbbfa96ea06a",
+      "src/engine/contentValidation.ts": "0b716843cf23664c6bfc057043655b660979ab38ba8be3b3f3fdf7c433ed956f",
+      "src/engine/crafting.test.ts": "b83e272a0a578b192040e26876057cd01bf8901fd687adea9e167a2471d60467",
+      "src/engine/crafting.ts": "04ed1724b723b78221ee31811b46171bb9e8d2fbb029a777dda5a12449378a88",
+      "src/engine/crisisAdventure.test.ts": "729e442247d398292bb9bd0a2a6c4f3a2fb3488248859f362a3b700383454624",
+      "src/engine/crisisContributions.test.ts": "2f88fab54f5ceca44570195901077f3f41a421b4c9ff3657b90ddcfe31ca02ce",
+      "src/engine/crisisContributions.ts": "9354b3ddb288d2cfc5cad639b16bdb1b68c5eaca782101040ee3c9bbe49e1cd6",
+      "src/engine/crisisResolution.test.ts": "8d289cce7b38e55494b3198c3da986a36d14d7c776f32aac776179c5a8685bb8",
+      "src/engine/crops.integration.test.ts": "36e6e8b912b9d3a9d45bc7d6c8668008d842cd4e8de948d1f34ccadc11815674",
+      "src/engine/crops.test.ts": "f2d6b2a939803a4e20ad49a30d5df41b1e6eb8cee803dba971bc11dc50f69690",
+      "src/engine/crops.ts": "308a0488ab376e5b3e6b37cb7ae9a25a6d1a79677d8e01cec547692c57a84e8e",
+      "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+      "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+      "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+      "src/engine/gearStats.ts": "66fa786c0c3e81cc317033181a0f11d9ef987c15f943e0960ec20a668eff0702",
+      "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+      "src/engine/identity.ts": "2d7596a712c16940a590bdf47edd288fc965f429304889e0be3b09969d61119e",
+      "src/engine/itemGeneration.test.ts": "377f8471b4bc69169d01d969a3c0d443b5ddbe1624f7436851320c0a9b45287f",
+      "src/engine/itemGeneration.ts": "d8aa3c510920f44edaa2a6e6b45ab2b013daa56a9e6bfc0cb16c72d23e4bc35b",
+      "src/engine/lifeIntegration.test.ts": "29a8cfbe6e4bc7ee1ffd2ba4dc0404e4ce9698495218c7850ed4fec3a9399b16",
+      "src/engine/lifeState.ts": "bd7697bcb564061cd00ff7fc14373625c30d2a7de06473b8f97bffb4c61b3c58",
+      "src/engine/livingEvents.test.ts": "8570cc1d1a00bd8970237cb469b71ce1b7b21146dd14eb28e2fe0d921677a217",
+      "src/engine/livingEvents.ts": "aba3813377c4940ca192a6275452288c1d10b501c6aad0b693a4205c22900bec",
+      "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+      "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+      "src/engine/npcLife.ts": "7f2fe08b29c5ee145a06c3623b19b663fcd7251bdfa5c3a7bfe19bc393bf5c28",
+      "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+      "src/engine/ownership.ts": "50b5bef7df35778c95ddbf0dd0951a22f46517842a224bee1552cd2dd18ff6db",
+      "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+      "src/engine/regionalCrisis.test.ts": "2eef285818c781d60dda7120bf6f3cd89c65084c1ac4345674010976830912f4",
+      "src/engine/regionalCrisis.ts": "3fe8139a9677ae925c1f8ee63c5763b12fd03036d2cf651893a09874e3783bf3",
+      "src/engine/regionalCrisisRecognition.ts": "b6c33d892cbb421b89d84620219bad60c7fe15fa883852bf6dbd0a44658004c0",
+      "src/engine/remainingFamilies.integration.test.ts": "b65c8f68aad55dff49a75010db3eaea3cdd6760fd49b394a7b32da13068b19d1",
+      "src/engine/rewardActions.test.ts": "133b21d4f52de1c4a46e2c4600b214fc56d14f80de45ade78e81b1eebad667f1",
+      "src/engine/rewardActions.ts": "b1cee65e318adfd0c2632b48a973fbeec9682cb982ace71b9518fe64a498cd5c",
+      "src/engine/rewardState.ts": "58c420a3372a3e8292c07b99f8551d8672df8d024f36a752001d74a26e27e59d",
+      "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+      "src/engine/simulation.ts": "149c2bc120fef9984be6afa6f72db293f16877085211f630d004e49f8db0f3db",
+      "src/engine/wolfFamily.test.ts": "9d1aa4f13c4582c317dd4e91b6a3cf32db1ea33e8adeef4a54097ecf4355716f",
+      "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+      "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+      "src/presentation/craftingProjection.test.ts": "9cc38a0d0b078963be417b6e3c431d0ab063f86afad1fa2e178d956d3e09895a",
+      "src/presentation/craftingProjection.ts": "3fb3afc5704b3e7fc87c365a567729d0655056d0f2594586044bf3e4942cdef8",
+      "src/presentation/crisisProjection.test.ts": "5e0988814fda47f84e244671d10ef15ea3ea94594df2e813682dbdc1b959fa6c",
+      "src/presentation/crisisProjection.ts": "0b221c5ff24b5f8b2cabd3fd45dc212194fe74c0932925f6c59f3ffc9f076c3b",
+      "src/presentation/icons.ts": "765708954fb2796d5a31715a4f66e9036672417b61aad5e80ccdddaf2231a135",
+      "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+      "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+      "src/presentation/rewardProjection.test.ts": "6139dfdad6d5361cb46d4c9cafadd106728dd89a37a962be75046ed5b822bc17",
+      "src/presentation/rewardProjection.ts": "1f50997f2ead918e5e113a8f2035988e2db7b94cfac517f9980ff31ecf75adec",
+      "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+      "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+      "src/presentation/worldUI.test.ts": "90a7d64071c7d4b9c800976a6ade3acdd630b66d8f7421158eae1f81842259ad",
+      "src/presentation/worldUI.ts": "af10ea89cc878a28bd90cdbb739b178069fc62de27dc16a668498ec00162d004",
+      "src/services/playJournal.test.ts": "a974a3238d87282afb2e2321705c406f5264184468bddc801646469eade33f47",
+      "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+      "src/services/rewardSave.test.ts": "9d2841e99d9d9f147aa23d35669b52d831d103915f98fe494df2ddb484f9ec52",
+      "src/services/rewardValidation.ts": "236af259c210d02bc843aa7e29fba06b5bcb5c220793d7668b224e5860337d30",
+      "src/services/saveService.test.ts": "386b2c6a37291f91f05e66320c75f9ffcc270ac4c55fe6c263c6fb713f8b76f6",
+      "src/services/saveService.ts": "8778befac0ea57c90d2e5b0ac6a05f18cd95bcb40fbc4a4ccaaa3049935348cb",
+      "src/services/saveWriter.ts": "0703016eb96d12bb843f0b04b6e21b6568bf7f9b44defc59e340896c675ff43b",
+      "src/stores/gameStore.test.ts": "6c069d44d18f625109885948e546ccdd20a9421ce5d449d6e33910253db7300f",
+      "src/stores/gameStore.ts": "b5d18a378cf4b05d05a37a2825e7eff045fd1ef68ac0714076b8f7c049bf5ac2",
+      "src/style.scss": "446edfecb5c48af2bfc21fb3d8da0ec6b9eb8e54b883532e06a498defef02dbe"
+    },
+    "sourceFingerprint": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+    "buildInputsSha256": {
+      "package.json": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6",
+      "package-lock.json": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d",
+      "tsconfig.json": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0",
+      "vite.config.ts": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771",
+      "index.html": "bfa28297eece5f57e38878097b4db8b481d5fcee44442da76244e0bb3dffb794"
+    },
+    "buildInputsFingerprint": "202bdd74f7b6e8c048e303850b9ff2262f170965b1395888b61eb7d70f2a74a0",
+    "distSha256": {
+      "dist/assets/index-DMt1I0Yu.js": "9ee33ffaeb49cfd86712f8a063a01f4b37b962adea4bb4751c5adb713886ff97",
+      "dist/assets/index-lzgghHZZ.css": "44eab35769f3eeb91e24eacfb3372d8b09a3a3a4a52d018c1adc4bf064ab1917",
+      "dist/index.html": "af15a91967b5f983573f078a6e92773798de6a08ac5a24d3d7fe4ac4e70c4634"
+    },
+    "distFingerprint": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+    "buildStatusPath": "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/phase7-build-status.json",
+    "buildStatusSha256": "b9d5b047229baf9c8a1bb5f516d18ebc48be4ffb96d6a7dab159e81bdb4f09fc",
+    "buildStatusSourceSha256": {
+      "src/App.vue": "f3ed979e98946fd747bf7f0508a03a31b50165ff09b4202e5b48753a977fdde8",
+      "src/components/AdventureWindow.vue": "f76abfa1f809d3fd9b341d842c192e3ab02a50d4d7fdf67ad8dd1b4dae2e32e3",
+      "src/components/CharacterSheet.vue": "0905f39da0b3ba52ed2c8c4c852ce08bc96a5e80d925cb64bb1f3dcb5b0d0dbd",
+      "src/components/IdentityWindow.vue": "982afc32143581311c9a014236e3e2a75e1a40b8f04f8fe97796c542966f7f06",
+      "src/components/InventoryWindow.vue": "f6d9f91cbbe2b3617406be32e7d1ebf210956d6cf54c4f8796ed413d22012f5f",
+      "src/components/LifeNewsWindow.vue": "f59e6aef06e4f610b702f09ac45ed64295a4fbeece8bfe9a424e0b2d7975438b",
+      "src/components/NpcWindow.vue": "0e930a8dfeec0f4db6cdad0adace75825baa8cc40e09307e1e55c7085cde4cd7",
+      "src/components/PixelMeter.vue": "77b69a1b161f6ad7e29a346665a69645a3d8589281e8bc32832f149e41d81ca9",
+      "src/components/PixelWindow.vue": "7534d4dd48d93742fb74ced23c7a77999282ac51a08eb1842be54745cb026b4d",
+      "src/components/PlaceWindow.vue": "f7894a87ace8c4a7f3022a6c2a7febb19d43c309500a30301abec95538c6553d",
+      "src/components/PropertyWindow.vue": "9bd6f8d2a5b00435b6e86c149bf6a7d4bf5343ed2be26e2416772a3aaf0c27d1",
+      "src/components/StatusNotice.vue": "6c722ade5aa61f45e5fb2c77c8a8dc15e701173484f3871f7365d7cf9500f6a9",
+      "src/components/WorldMap.vue": "37de32ea49da36d4e74c9ced377adbe280fa45cb60fdf69d8a5c39a260719a5f",
+      "src/components/WorldRecords.vue": "424365a02880ce6767ffc9e9769e5a0f61905c0fc046753d8fc80f5bfadaaed8",
+      "src/data/config.ts": "ea56d790207bf13575ee19cbbdf46fa29ad8a03dd374a4613863af33c44e707a",
+      "src/data/content/caveInsects.ts": "dcc14c74cfd9ce50803af7645fa0c52beb22288b15d29925cbf801ba1bde3bf3",
+      "src/data/content/farmCrops.ts": "d49418c074d0bb5757db26b40c1342e169e29975caf717095fec668246af30a8",
+      "src/data/content/fogUndead.ts": "ef0d2c7b071193acb26803128c9041874d9f763a4e929a7030c1cd0b68653e5e",
+      "src/data/content/frontierGoblins.ts": "61b109a69611743f6b4d3983fb252a40dc8a8d1758a4154af034fa2d91c9bb13",
+      "src/data/content/mineConstructs.ts": "ac24251494d94acc8a6acdb4d7349372ba9c212c17424d8a58864bb63ee32c00",
+      "src/data/content/slime.ts": "334c031aa75c09e7612dd426d9d58284a1093efb5b773fcf5c8011640739edd2",
+      "src/data/content/wildBeasts.ts": "bbae4d9882708fa77c200f6810db0c02b943d027f186ff5d89af7f62e5de785b",
+      "src/data/contentRegistry.ts": "65593e63bffdfd3c0c20cb3ca780af921ee01e61b550aa4542c69c6e433f9585",
+      "src/data/crafting.ts": "e882f58803229c01b4853e44710f5cd1f7b2a56a2c4b058bbebe2fe2141aaa73",
+      "src/data/identity.ts": "0acc09bbd1f9d9c4e057b2bdca01fa202730e868325cb873286c5c31a809dae0",
+      "src/data/lifeRules.ts": "07b9ab1836c6d96077a4a6aaedd7f5d7abec6f1b5132bc5203da1d1e9291e1b3",
+      "src/data/livingEvents.ts": "768aaee2a9d1e8b9919163059d36a494f5071bf7a0568bfe7b0c80f735d03bc1",
+      "src/data/npcLife.ts": "5089f01033570e33528b63538a06a3f0645735b8c8c884d8f2c54a900a937b4f",
+      "src/data/ownership.ts": "32b4133d753764952905da43276cd1cd56ea26f32e44b4b540225dc8f59140f2",
+      "src/data/rewards.ts": "7169a34cfd420ec4a181fa54c03560c5301f7fac666a049e5773d0439d897806",
+      "src/domain/content.ts": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+      "src/domain/crisis.ts": "03ef61f00c08ea84cdd6126d64009e3032fb38a5662db8a736519045f00ad14c",
+      "src/domain/life.ts": "db2eff0c1eb6d3ae310f39d8df5a6bf40b125193741a25b9bbe652c4640de72a",
+      "src/domain/reward.ts": "237c1e6eeb42d4af77d78c24ef7c3b699816459a9b71357acfd57c31810a9aac",
+      "src/domain/types.ts": "7924e0383ca4f1e5623e95aca5ceb28b5022c03af007dca0d2cb2c1ec0050450",
+      "src/engine/actions.test.ts": "813166423bd0b55fd0172eedb1bcf766028a1045588807473c2205f6cec47fa5",
+      "src/engine/actions.ts": "0e998159696dfd89f450b2041cea61792bd10246a05354b6844a4a2d0a4505ff",
+      "src/engine/calendar.ts": "e587ce1d1e149fea987f5a3ab6013872528d5d74beafcb0f40d2fe476abf5524",
+      "src/engine/caveInsects.integration.test.ts": "db9ba41d196b98f66dab47cd0398122e9e139e02d586a15cd6af8dcb088205fe",
+      "src/engine/civilDefense.test.ts": "c05afe2ab42f334f3284f3b7830ea073db96707995b2336e2b30855d0c84e125",
+      "src/engine/civilDefense.ts": "9a6988658e62df485f85f69d0c1f0a0626078eeec43f0934ad2298e6cdcfe77d",
+      "src/engine/combatStats.test.ts": "896b7517b4a2bcb4671b4d17188f0823edfe290e3826fc21f3bc94fe0f062bea",
+      "src/engine/combatStats.ts": "d7235e4c59edc77aec368f940e8825712672cc3fcd49e83c7c901c5f049db34f",
+      "src/engine/contentBosses.integration.test.ts": "af93da05f87f1684a049c00850e819d7e1e09a93895f994c58f135953aa614c9",
+      "src/engine/contentFamilies.test.ts": "cb019c6119e9776f9955b5fafd276effd931075085285334285417b8bc8fff4c",
+      "src/engine/contentFamilies.ts": "9cc6c32ef154c6562a09a8f328fe3003465ab8265672538445b1d2bf2484716c",
+      "src/engine/contentItems.integration.test.ts": "0be844b6bb8f7dd6c1d762463d48982b0d4402d396dcf10b56ba5cc165f77f64",
+      "src/engine/contentReachability.integration.test.ts": "87ea32c0ab13cd7a5bf5a313ccb6662c5e707764ad05241c52e28949bd07fe54",
+      "src/engine/contentValidation.test.ts": "cf14cadc9459f0e35d0469663160981432986ebeb0c55c5a8e80bbbfa96ea06a",
+      "src/engine/contentValidation.ts": "0b716843cf23664c6bfc057043655b660979ab38ba8be3b3f3fdf7c433ed956f",
+      "src/engine/crafting.test.ts": "b83e272a0a578b192040e26876057cd01bf8901fd687adea9e167a2471d60467",
+      "src/engine/crafting.ts": "04ed1724b723b78221ee31811b46171bb9e8d2fbb029a777dda5a12449378a88",
+      "src/engine/crisisAdventure.test.ts": "729e442247d398292bb9bd0a2a6c4f3a2fb3488248859f362a3b700383454624",
+      "src/engine/crisisContributions.test.ts": "2f88fab54f5ceca44570195901077f3f41a421b4c9ff3657b90ddcfe31ca02ce",
+      "src/engine/crisisContributions.ts": "9354b3ddb288d2cfc5cad639b16bdb1b68c5eaca782101040ee3c9bbe49e1cd6",
+      "src/engine/crisisResolution.test.ts": "8d289cce7b38e55494b3198c3da986a36d14d7c776f32aac776179c5a8685bb8",
+      "src/engine/crops.integration.test.ts": "36e6e8b912b9d3a9d45bc7d6c8668008d842cd4e8de948d1f34ccadc11815674",
+      "src/engine/crops.test.ts": "f2d6b2a939803a4e20ad49a30d5df41b1e6eb8cee803dba971bc11dc50f69690",
+      "src/engine/crops.ts": "308a0488ab376e5b3e6b37cb7ae9a25a6d1a79677d8e01cec547692c57a84e8e",
+      "src/engine/events.ts": "e2b781ad3f99cfc2b20f58ce561b2bf9c489c417512f4c7b209e02e3d5d2a1b1",
+      "src/engine/gameLoop.test.ts": "96c76b875cedace6ab191a95e0b01285a024723691c1ebaca3ae76407492258d",
+      "src/engine/gameLoop.ts": "016305d39fe6746347f783723e0f6e6d53f387766d3ca899816d618e9ab2d941",
+      "src/engine/gearStats.ts": "66fa786c0c3e81cc317033181a0f11d9ef987c15f943e0960ec20a668eff0702",
+      "src/engine/identity.test.ts": "5dc96ec9abf767c0e9202429cabebedefeb3bc0237ebe519c4d9feeccda2a07f",
+      "src/engine/identity.ts": "2d7596a712c16940a590bdf47edd288fc965f429304889e0be3b09969d61119e",
+      "src/engine/itemGeneration.test.ts": "377f8471b4bc69169d01d969a3c0d443b5ddbe1624f7436851320c0a9b45287f",
+      "src/engine/itemGeneration.ts": "d8aa3c510920f44edaa2a6e6b45ab2b013daa56a9e6bfc0cb16c72d23e4bc35b",
+      "src/engine/lifeIntegration.test.ts": "29a8cfbe6e4bc7ee1ffd2ba4dc0404e4ce9698495218c7850ed4fec3a9399b16",
+      "src/engine/lifeState.ts": "bd7697bcb564061cd00ff7fc14373625c30d2a7de06473b8f97bffb4c61b3c58",
+      "src/engine/livingEvents.test.ts": "8570cc1d1a00bd8970237cb469b71ce1b7b21146dd14eb28e2fe0d921677a217",
+      "src/engine/livingEvents.ts": "aba3813377c4940ca192a6275452288c1d10b501c6aad0b693a4205c22900bec",
+      "src/engine/lod.ts": "325c339270bc38b55bf9e5185f9f502e3934a1055ece7f1b67fb448743fe5df4",
+      "src/engine/npcLife.test.ts": "8bbe40ae3b0a87926c7d65a53d079931b59bdd26ac8489148518c188a466a9dc",
+      "src/engine/npcLife.ts": "7f2fe08b29c5ee145a06c3623b19b663fcd7251bdfa5c3a7bfe19bc393bf5c28",
+      "src/engine/ownership.test.ts": "b339812b317032d3cf497e53c139c6397cc829ad5f5d50859897306acb2de725",
+      "src/engine/ownership.ts": "50b5bef7df35778c95ddbf0dd0951a22f46517842a224bee1552cd2dd18ff6db",
+      "src/engine/random.ts": "b0844202733996c5dd2f123a32ad800c433b22c02ddf0e744c163e880b612734",
+      "src/engine/regionalCrisis.test.ts": "2eef285818c781d60dda7120bf6f3cd89c65084c1ac4345674010976830912f4",
+      "src/engine/regionalCrisis.ts": "3fe8139a9677ae925c1f8ee63c5763b12fd03036d2cf651893a09874e3783bf3",
+      "src/engine/regionalCrisisRecognition.ts": "b6c33d892cbb421b89d84620219bad60c7fe15fa883852bf6dbd0a44658004c0",
+      "src/engine/remainingFamilies.integration.test.ts": "b65c8f68aad55dff49a75010db3eaea3cdd6760fd49b394a7b32da13068b19d1",
+      "src/engine/rewardActions.test.ts": "133b21d4f52de1c4a46e2c4600b214fc56d14f80de45ade78e81b1eebad667f1",
+      "src/engine/rewardActions.ts": "b1cee65e318adfd0c2632b48a973fbeec9682cb982ace71b9518fe64a498cd5c",
+      "src/engine/rewardState.ts": "58c420a3372a3e8292c07b99f8551d8672df8d024f36a752001d74a26e27e59d",
+      "src/engine/simulation.test.ts": "a0808a2c3a02ea77382e0c29cd931e175f71e3201fc0827ae177c2af320d3b4e",
+      "src/engine/simulation.ts": "149c2bc120fef9984be6afa6f72db293f16877085211f630d004e49f8db0f3db",
+      "src/engine/wolfFamily.test.ts": "9d1aa4f13c4582c317dd4e91b6a3cf32db1ea33e8adeef4a54097ecf4355716f",
+      "src/engine/wolfFamily.ts": "1c1c18f12926a13f804ae215e60349e0c69e2dcb0e5c8d26518b11eeb7197ed7",
+      "src/main.ts": "d40986b5fc51412d180baf7fd19e010611819486787be3a901e22315f3ae34a4",
+      "src/presentation/craftingProjection.test.ts": "9cc38a0d0b078963be417b6e3c431d0ab063f86afad1fa2e178d956d3e09895a",
+      "src/presentation/craftingProjection.ts": "3fb3afc5704b3e7fc87c365a567729d0655056d0f2594586044bf3e4942cdef8",
+      "src/presentation/crisisProjection.test.ts": "5e0988814fda47f84e244671d10ef15ea3ea94594df2e813682dbdc1b959fa6c",
+      "src/presentation/crisisProjection.ts": "0b221c5ff24b5f8b2cabd3fd45dc212194fe74c0932925f6c59f3ffc9f076c3b",
+      "src/presentation/icons.ts": "765708954fb2796d5a31715a4f66e9036672417b61aad5e80ccdddaf2231a135",
+      "src/presentation/lifeProjection.test.ts": "fa6c4282aedc420b300baf2d283bf11222b3cd806a4e4b7dbf8c77269a95292a",
+      "src/presentation/lifeProjection.ts": "07c2f4a68e2ce095c8eb352db85a22d0481e9cf6131c1440da950f765b0e24f4",
+      "src/presentation/rewardProjection.test.ts": "6139dfdad6d5361cb46d4c9cafadd106728dd89a37a962be75046ed5b822bc17",
+      "src/presentation/rewardProjection.ts": "1f50997f2ead918e5e113a8f2035988e2db7b94cfac517f9980ff31ecf75adec",
+      "src/presentation/worldProjection.test.ts": "ac09f1dd5fd910f21f54f2475de22aaab72c8ba5be3b974d90913cde7910bad4",
+      "src/presentation/worldProjection.ts": "06d76b4946a11de5ef28d3fa4a6966a0a2a0e0859c43370009b4ad30d2dcc73b",
+      "src/presentation/worldUI.test.ts": "90a7d64071c7d4b9c800976a6ade3acdd630b66d8f7421158eae1f81842259ad",
+      "src/presentation/worldUI.ts": "af10ea89cc878a28bd90cdbb739b178069fc62de27dc16a668498ec00162d004",
+      "src/services/playJournal.test.ts": "a974a3238d87282afb2e2321705c406f5264184468bddc801646469eade33f47",
+      "src/services/playJournal.ts": "92d55ee79abe39e0e0c83fd2cc54243559517f787cfe23262486810f45163940",
+      "src/services/rewardSave.test.ts": "9d2841e99d9d9f147aa23d35669b52d831d103915f98fe494df2ddb484f9ec52",
+      "src/services/rewardValidation.ts": "236af259c210d02bc843aa7e29fba06b5bcb5c220793d7668b224e5860337d30",
+      "src/services/saveService.test.ts": "386b2c6a37291f91f05e66320c75f9ffcc270ac4c55fe6c263c6fb713f8b76f6",
+      "src/services/saveService.ts": "8778befac0ea57c90d2e5b0ac6a05f18cd95bcb40fbc4a4ccaaa3049935348cb",
+      "src/services/saveWriter.ts": "0703016eb96d12bb843f0b04b6e21b6568bf7f9b44defc59e340896c675ff43b",
+      "src/stores/gameStore.test.ts": "6c069d44d18f625109885948e546ccdd20a9421ce5d449d6e33910253db7300f",
+      "src/stores/gameStore.ts": "b5d18a378cf4b05d05a37a2825e7eff045fd1ef68ac0714076b8f7c049bf5ac2",
+      "src/style.scss": "446edfecb5c48af2bfc21fb3d8da0ec6b9eb8e54b883532e06a498defef02dbe"
+    },
+    "qaFilesSha256": {
+      "reports/v2/20261008-content-expansion/phase-07/qa_browser_launcher.py": "63459ea295f203aada7a75144eda33c94f07e86446ad5cafc89fa5c7e081a75b",
+      "reports/v2/20261008-content-expansion/phase-07/qa_browser_runner.py": "f65641514aee39d06bc33043965c3c6bc5576165c103e1b1b819290ba037680f",
+      "reports/v2/20261008-content-expansion/phase-07/qa_browser_support.py": "2bcc2fb627b8a6f7317671526f5d52e2f194590fa28fe4c1b0ab31fa868367aa"
+    },
+    "recordedReportsSha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b"
+  },
+  "sourceStableDuringRun": true,
+  "resultPath": "qa-browser-result.json"
+}

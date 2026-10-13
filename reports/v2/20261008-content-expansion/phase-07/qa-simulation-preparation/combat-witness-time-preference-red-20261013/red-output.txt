@@ -1,0 +1,33 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts (8 tests | 1 failed | 7 skipped) 16ms
+   × preserves the default spring 08:00 when slime_slick time predicates already allow it 14ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > preserves the default spring 08:00 when slime_slick time predicates already allow it
+AssertionError: expected 360 to be 480 // Object.is equality
+
+- Expected
++ Received
+
+- 480
++ 360
+
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:420:55
+    418| it('preserves the default spring 08:00 when slime_slick time predicate…
+    419|   const fixture = controlledCombatState(0x720000, 'slime_slick', 'mid'…
+    420|   expect(fixture.spawnAdjustment.effective.worldTime).toBe(480)
+       |                                                       ^
+    421|   expect(fixture.spawnAdjustment.adjustments.some(adjustment => adjust…
+    422| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  10:07:23
+   Duration  593ms (transform 383ms, setup 0ms, import 467ms, tests 16ms, environment 0ms)
+

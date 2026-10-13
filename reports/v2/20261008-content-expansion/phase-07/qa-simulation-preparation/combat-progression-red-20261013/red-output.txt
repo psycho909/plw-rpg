@@ -1,0 +1,38 @@
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts (11 tests | 1 failed | 10 skipped) 16ms
+   × mid combat fixture applies normal Lv1 progression through gainExp 14ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts > mid combat fixture applies normal Lv1 progression through gainExp
+AssertionError: expected { strength: 8, vitality: 8, …(2) } to match object { strength: 12, vitality: 10 }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "strength": 12,
+-   "vitality": 10,
++   "strength": 8,
++   "vitality": 8,
+  }
+
+ ❯ reports/v2/20261008-content-expansion/phase-07/qa_simulation.test.ts:423:19
+    421|   expect(c.level).toBe(3)
+    422|   expect(c.exp).toBe(0)
+    423|   expect(c.stats).toMatchObject({ strength: 12, vitality: 10 })
+       |                   ^
+    424|   expect(c.maxHp).toBe(112)
+    425|   expect(c.hp).toBe(112)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 skipped (11)
+   Start at  10:22:25
+   Duration  618ms (transform 379ms, setup 0ms, import 463ms, tests 16ms, environment 0ms)
+

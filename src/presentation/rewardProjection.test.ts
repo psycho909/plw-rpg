@@ -25,6 +25,22 @@ it('bounds owned gear pages, clamps stale pages and filters without discarding i
   expect(state.reward.instances[40]!.rolledStats.attack).toBe(4)
 })
 
+it('searches owned gear before paging and includes its displayed name and rarity', () => {
+  const state = createGame()
+  state.reward.instances = Array.from({ length: 25 }, (_, i) => gear(i + 1))
+  state.reward.instances[21]!.baseId = 'shortSword'
+  state.reward.instances[21]!.rarity = 'epic'
+
+  expect(projectGearPage(state, 1, 'all', 'all', '史詩')).toMatchObject({
+    total: 1, page: 0, pages: 1,
+    items: [{ instanceId: 'item-22', baseId: 'shortSword', rarity: 'epic' }],
+  })
+  expect(projectGearPage(state, 1, 'weapon', 'epic', '短劍').total).toBe(1)
+  expect(projectGearPage(state, 0, 'all', 'all', '  沒有這件  ')).toMatchObject({
+    total: 0, page: 0, pages: 1, items: [],
+  })
+})
+
 it('projects a masterpiece as an identity label with its original maker, creation time, and recipe', () => {
   const state = createGame()
   const creator = state.characters[0]!

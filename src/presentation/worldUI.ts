@@ -2,6 +2,7 @@ import type { BuildingId, GameState, Position } from '../domain/types'
 import { BUILDINGS, DUNGEON, REGIONS } from '../data/config'
 import { distance, player, stageIndex } from '../engine/simulation'
 import { buildingIcons, jobIcons, regionIcons } from './icons'
+import { CONTENT_CROPS } from '../data/contentRegistry'
 
 export type PlaceId = BuildingId | 'forest' | 'mine' | 'unknown' | 'village'
 export type Interaction = { id: string; label: string; icon: string; place?: PlaceId; npcId?: string }
@@ -36,7 +37,7 @@ export function worldMarks(state: GameState): Map<string, MapMark> {
     const prepared = i < state.crops.length + state.preparedPlots
     put(16 + i % 2, 10 + Math.floor(i / 2), {
       icon: crop ? crop.status === 'mature' ? '🌾' : '🌱' : prepared ? '▤' : '≋',
-      label: crop ? crop.status === 'mature' ? '成熟小麥，可收割' : '生長中的小麥' : prepared ? '已整地的田' : '未整地的田', kind: 'crop',
+      label: crop ? `${crop.cropId === 'wheat' ? '小麥' : CONTENT_CROPS[crop.cropId]?.name['zh-TW'] ?? '作物'}${crop.status === 'mature' ? '已成熟，可收割' : `生長中，剩 ${Math.max(0, Math.ceil((crop.matureAt - state.worldTime) / 60))} 小時`}` : prepared ? '已整地的田' : '未整地的田', kind: 'crop',
     })
   }
   if (state.threat.monsterPopulation >= 1) {

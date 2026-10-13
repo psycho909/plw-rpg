@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run --run src/engine/contentFamilies.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/contentFamilies.test.ts (14 tests | 1 failed) 145ms
+     × attributes the wolf-exclusive equipment source only to the wolf boss 10ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 13 passed (14)
+   Start at  09:09:28
+   Duration  790ms (transform 435ms, setup 0ms, import 515ms, tests 145ms, environment 0ms)
+

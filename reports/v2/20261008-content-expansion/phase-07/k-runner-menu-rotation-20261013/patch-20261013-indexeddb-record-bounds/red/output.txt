@@ -1,0 +1,23 @@
+test_indexeddb_truncated_sample_suppresses_store_total_estimate (test_qa_browser_contract.BrowserContracts.test_indexeddb_truncated_sample_suppresses_store_total_estimate) ... FAIL
+test_indexeddb_record_projection_bounds_value_before_stringify (test_qa_browser_contract.BrowserContracts.test_indexeddb_record_projection_bounds_value_before_stringify) ... FAIL
+
+======================================================================
+FAIL: test_indexeddb_truncated_sample_suppresses_store_total_estimate (test_qa_browser_contract.BrowserContracts.test_indexeddb_truncated_sample_suppresses_store_total_estimate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 136, in test_indexeddb_truncated_sample_suppresses_store_total_estimate
+    self.assertIsNone(row["estimatedTotalSerializedRecordBytes"])
+AssertionError: 4000 is not None
+
+======================================================================
+FAIL: test_indexeddb_record_projection_bounds_value_before_stringify (test_qa_browser_contract.BrowserContracts.test_indexeddb_record_projection_bounds_value_before_stringify)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 147, in test_indexeddb_record_projection_bounds_value_before_stringify
+    self.assertIn("projectIndexedDBRecord", page.script)
+AssertionError: 'projectIndexedDBRecord' not found in "async()=>{\n      if(!indexedDB.databases)return {supported:false};\n      const allInfos=await indexedDB.databases(); const infos=allInfos.slice(0,8); const out=[];\n      for(const info of infos){if(!info.name)continue;out.push(await new Promise(resolve=>{\n        const req=indexedDB.open(info.name);req.onupgradeneeded=()=>req.transaction.abort();req.onerror=()=>resolve({name:info.name,error:String(req.error),stores:{}});\n        req.onsuccess=()=>{const db=req.result;const allStoreNames=[...db.objectStoreNames];const storeNames=allStoreNames.slice(0,32);\n          Promise.all(storeNames.map(storeName=>new Promise(done=>{\n            const tx=db.transaction(storeName,'readonly');const store=tx.objectStore(storeName);\n            const row={count:null,sampledRecords:0,sampleLimit:64,serializedSampleBytes:0,serializedSampleCount:0,serializationErrors:0};\n            let countDone=false,cursorDone=false;\n            const finish=()=>{if(countDone&&cursorDone)done([storeName,row]);};\n            const countRequest=store.count();countRequest.onsuccess=()=>{row.count=countRequest.result;countDone=true;finish();};\n            countRequest.onerror=()=>{row.count=null;countDone=true;finish();};\n            const cursorRequest=store.openCursor();cursorRequest.onsuccess=()=>{\n              const cursor=cursorRequest.result;\n              if(!cursor||row.sampledRecords>=row.sampleLimit){cursorDone=true;finish();return;}\n              row.sampledRecords++;\n              try{const serialized=JSON.stringify({key:cursor.key,value:cursor.value});if(typeof serialized==='string'){row.serializedSampleBytes+=new TextEncoder().encode(serialized).length;row.serializedSampleCount++;}else row.serializationErrors++;}\n              catch{row.serializationErrors++;}\n              if(row.sampledRecords<row.sampleLimit)cursor.continue();else{cursorDone=true;finish();}\n            };\n            cursorRequest.onerror=()=>{cursorDone=true;row.serializationErrors++;finish();};\n          }))).then(rows=>{const stores=Object.fromEntries(rows);const counts=Object.fromEntries(rows.map(([name,row])=>[name,row.count]));db.close();resolve({name:info.name,counts,stores,omittedStoreCount:allStoreNames.length-storeNames.length});})\n            .catch(error=>{db.close();resolve({name:info.name,error:String(error),stores:{}});});\n        };\n      }));}return {supported:true,databases:out,omittedDatabaseCount:Math.max(0,allInfos.length-infos.length)};\n    }"
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+FAILED (failures=2)

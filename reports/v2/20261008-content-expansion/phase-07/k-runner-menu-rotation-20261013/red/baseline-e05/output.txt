@@ -1,0 +1,15 @@
+test_visible_menu_destination_does_not_repeat_three_times (__main__.BaselineChooserRegression.test_visible_menu_destination_does_not_repeat_three_times) ... FAIL
+
+======================================================================
+FAIL: test_visible_menu_destination_does_not_repeat_three_times (__main__.BaselineChooserRegression.test_visible_menu_destination_does_not_repeat_three_times)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/k-runner-menu-rotation-20261013/red/baseline-e05/reproduce.py", line 76, in test_visible_menu_destination_does_not_repeat_three_times
+    self.assertEqual(len(set(selected)), 3, "menu chooser repeats its first visible action instead of rotating")
+AssertionError: 1 != 3 : menu chooser repeats its first visible action instead of rotating
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+baseline=e05cc78f1ef452e2672df223f2febf48444dcbd3; selected=['地方消息與委託', '地方消息與委託', '地方消息與委託']

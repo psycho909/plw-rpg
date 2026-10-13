@@ -1,0 +1,6 @@
+{
+  "issue": "Initial wrapper checksum manifest included checksum-verify.stdout.txt, whose contents are the output of verification, creating a self-reference.",
+  "impact": "Browser regression evidence and its raw run are unchanged; only the wrapper integrity check had one packaging mismatch.",
+  "preservation": "Initial SHA256SUMS and checksum-verify.stdout.txt were copied to *.initial.txt and remain preserved.",
+  "correctedProcedure": "A new SHA256SUMS.final covers all wrapper artifacts and its verification output is captured outside this directory so checked files remain immutable."
+}

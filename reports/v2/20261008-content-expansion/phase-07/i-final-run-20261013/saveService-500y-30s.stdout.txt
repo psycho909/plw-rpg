@@ -1,0 +1,13 @@
+
+> plw-rpg@0.1.0 test
+> vitest run --run src/services/saveService.test.ts -t round trips 500 years --testTimeout=30000
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 106 skipped (107)
+   Start at  09:13:35
+   Duration  10.14s (transform 544ms, setup 0ms, import 666ms, tests 9.33s, environment 1ms)
+

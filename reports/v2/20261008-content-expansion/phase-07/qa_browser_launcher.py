@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+import signal
 import socket
 import subprocess
 import sys
@@ -22,6 +23,10 @@ LAUNCHER = Path(__file__).resolve()
 BUILD_PATH = Path(os.environ.get("PLW_BUILD_STATUS", PREP / "phase7-build-status.json"))
 RELEASE_PATH = Path(os.environ.get("PHASE7_BROWSER_RELEASE", PREP / "phase7-browser-release.json"))
 RUNS = PHASE / "qa-browser-runs"
+MODE_DURATION_BOUNDS = {"regression": (60, 300), "stress": (1200, 7200), "content-agent": (60, 3600)}
+MODE_DEFAULT_DURATION_SECONDS = {"regression": 60, "stress": 1200, "content-agent": 3600}
+RUNNER_HEARTBEAT_TIMEOUT_SECONDS = 120
+RUNNER_HEARTBEAT_POLL_SECONDS = 1
 
 
 def server_code() -> str:
@@ -37,6 +42,73 @@ class Handler(SimpleHTTPRequestHandler):
   else: super().do_HEAD()
 ThreadingHTTPServer(('127.0.0.1',int(sys.argv[1])),partial(Handler,directory=sys.argv[2])).serve_forever()
 '''
+
+
+def terminate_runner_process_tree(runner, grace_seconds: int = 10) -> dict:
+    """Terminate the runner process group so its Chromium descendants are stopped too."""
+    if runner.poll() is not None:
+        return {"runnerExitCode": runner.returncode, "terminationSignal": "already_exited", "reapTimedOut": False}
+    sent = "SIGTERM"
+    try:
+        if os.name == "posix":
+            os.killpg(runner.pid, signal.SIGTERM)
+        else:
+            runner.terminate()
+    except ProcessLookupError:
+        pass
+    except OSError:
+        runner.terminate()
+    try:
+        return {"runnerExitCode": runner.wait(timeout=grace_seconds),
+                "terminationSignal": sent, "reapTimedOut": False}
+    except subprocess.TimeoutExpired:
+        sent = "SIGKILL"
+        try:
+            if os.name == "posix":
+                os.killpg(runner.pid, signal.SIGKILL)
+            else:
+                runner.kill()
+        except ProcessLookupError:
+            pass
+        except OSError:
+            runner.kill()
+        try:
+            exit_code = runner.wait(timeout=grace_seconds)
+            return {"runnerExitCode": exit_code, "terminationSignal": sent, "reapTimedOut": False}
+        except subprocess.TimeoutExpired:
+            return {"runnerExitCode": runner.poll(), "terminationSignal": sent, "reapTimedOut": True}
+
+
+def monitor_runner_process(runner, heartbeat_path: Path, timeout_seconds: int = RUNNER_HEARTBEAT_TIMEOUT_SECONDS,
+                           poll_interval: int = RUNNER_HEARTBEAT_POLL_SECONDS, clock=time.monotonic,
+                           sleeper=time.sleep) -> dict:
+    """Wait for child exit or stop it after a stale atomic runner heartbeat."""
+    started = clock()
+    last_heartbeat = None
+    while True:
+        exit_code = runner.poll()
+        if exit_code is not None:
+            return {"timedOut": False, "status": "RUNNER_EXITED", "runnerExitCode": exit_code,
+                    "lastHeartbeat": last_heartbeat}
+        try:
+            payload = json.loads(heartbeat_path.read_text(encoding="utf-8"))
+            heartbeat_time = payload.get("heartbeatMonotonic")
+            if payload.get("schema") == "phase7-runner-heartbeat-v1" and isinstance(heartbeat_time, (int, float)):
+                last_heartbeat = payload
+        except (OSError, ValueError, TypeError):
+            pass
+        now = clock()
+        last_time = last_heartbeat.get("heartbeatMonotonic", started) if last_heartbeat else started
+        age = max(0.0, now - last_time)
+        if age >= timeout_seconds:
+            termination = terminate_runner_process_tree(runner)
+            return {"timedOut": True, "status": "STALE_HEARTBEAT_TIMEOUT",
+                    "timeoutSeconds": timeout_seconds, "heartbeatAgeSeconds": round(age, 2),
+                    "lastHeartbeat": last_heartbeat, "lastHeartbeatStage":
+                        last_heartbeat.get("stage") if last_heartbeat else "no_heartbeat_received",
+                    "lastHeartbeatTurn": last_heartbeat.get("turn") if last_heartbeat else None,
+                    "detectedUTC": datetime.now(timezone.utc).isoformat(), **termination}
+        sleeper(min(poll_interval, max(0.01, timeout_seconds - age)))
 
 
 def main() -> int:
@@ -67,8 +139,8 @@ def main() -> int:
     mismatches = {key: {"release": release.get(key), "current": value} for key, value in expected.items() if release.get(key) != value}
     if mismatches:
         parser.error(f"Frozen release/build correlation mismatch: {json.dumps(mismatches, ensure_ascii=False)}")
-    minimum, maximum = {"regression": (60, 300), "stress": (1200, 1800), "content-agent": (1800, 3600)}[args.mode]
-    seconds = args.seconds if args.seconds is not None else minimum
+    minimum, maximum = MODE_DURATION_BOUNDS[args.mode]
+    seconds = args.seconds if args.seconds is not None else MODE_DEFAULT_DURATION_SECONDS[args.mode]
     if seconds < minimum or seconds > maximum:
         parser.error(f"{args.mode} duration must be {minimum}..{maximum} seconds")
     RUNS.mkdir(parents=True, exist_ok=True)
@@ -113,23 +185,28 @@ def main() -> int:
         status["runnerCommand"] = command
         status["status"] = "RUNNING"
         with (run_dir / "runner.stdout.log").open("xb") as stdout, (run_dir / "runner.stderr.log").open("xb") as stderr:
-            runner = subprocess.Popen(command, cwd=PHASE, env=env, stdout=stdout, stderr=stderr)
+            runner = subprocess.Popen(command, cwd=PHASE, env=env, stdout=stdout, stderr=stderr,
+                                      start_new_session=(os.name == "posix"))
             status["runnerPID"] = runner.pid
-            code = runner.wait()
-        status["runnerExitCode"] = code
-        status["status"] = "COMPLETE" if code == 0 else "FAILED_RUN"
+            supervision = monitor_runner_process(runner, run_dir / "runner-heartbeat.json")
+        status["runnerSupervisor"] = supervision
+        status["runnerExitCode"] = supervision["runnerExitCode"]
+        if supervision["timedOut"]:
+            status["status"] = "FAILED_RUNNER_HEARTBEAT_TIMEOUT"
+            status["error"] = (f"Runner heartbeat stale for {supervision['heartbeatAgeSeconds']}s; "
+                f"last stage={supervision['lastHeartbeatStage']} turn={supervision['lastHeartbeatTurn']}")
+            status["watchdog"] = supervision
+            code = 1
+        else:
+            code = supervision["runnerExitCode"]
+            status["status"] = "COMPLETE" if code == 0 else "FAILED_RUN"
     except BaseException as exc:
         status["status"] = "FAILED_LAUNCH"
         status["error"] = f"{type(exc).__name__}: {exc}"
         code = 1
     finally:
         if runner is not None and runner.poll() is None:
-            runner.terminate()
-            try:
-                runner.wait(timeout=10)
-            except subprocess.TimeoutExpired:
-                runner.kill()
-                runner.wait(timeout=10)
+            status["runnerCleanup"] = terminate_runner_process_tree(runner)
         if server.poll() is None:
             server.terminate()
         try:

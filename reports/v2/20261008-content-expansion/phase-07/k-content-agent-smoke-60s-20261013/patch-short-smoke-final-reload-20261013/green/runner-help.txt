@@ -1,0 +1,21 @@
+usage: qa_browser_runner.py [-h] [--go]
+                            [--mode {regression,stress,content-agent}]
+                            [--seconds SECONDS] --run-id RUN_ID --url URL
+                            --run-dir RUN_DIR
+                            [--execution-model EXECUTION_MODEL]
+                            [--execution-effort EXECUTION_EFFORT]
+
+Released Phase 7 Chromium UI regression and long-play harness. Normal lanes
+use fresh contexts and visible application controls only. Controlled fixture
+cases are executed in separate contexts and never count as natural access.
+
+options:
+  -h, --help            show this help message and exit
+  --go                  Required execution latch; use only after Root release
+  --mode {regression,stress,content-agent}
+  --seconds SECONDS
+  --run-id RUN_ID
+  --url URL
+  --run-dir RUN_DIR
+  --execution-model EXECUTION_MODEL
+  --execution-effort EXECUTION_EFFORT

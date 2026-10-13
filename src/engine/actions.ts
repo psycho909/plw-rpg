@@ -1,9 +1,10 @@
-import { ARCHETYPES, BOSS, BUILDINGS, CONFIG, CROP, DUNGEON, ITEMS, MONSTERS } from '../data/config'
-import { ITEM_BASES, RARITIES, WOLF_MONSTERS } from '../data/rewards'
-import { CONTENT_MONSTERS } from '../data/contentRegistry'
+import { ARCHETYPES, BOSS, BUILDINGS, CONFIG, DUNGEON, ITEMS, MONSTERS } from '../data/config'
+import { ITEM_BASES, MATERIALS, RARITIES, WOLF_MONSTERS } from '../data/rewards'
+import { CONTENT_CROP_GOODS, CONTENT_MONSTERS } from '../data/contentRegistry'
 import type { GameState, ItemId, RegionalCrisisCombatObjective, SkillId } from '../domain/types'
 import { emit } from './events'
 import { random } from './random'
+import { farmCropChoices } from './crops'
 import { changeReputation, recordLifeAction } from './identity'
 import { MERCENARY_REPUTATION } from '../data/lifeRules'
 import { npcCanWork, rememberNpc } from './npcLife'
@@ -31,12 +32,18 @@ function cost(state: GameState, stamina: number, minutes: number, gold = 0) {
   state.life.director.lastPlayerActivity = state.worldTime
   return c.isAlive ? '' : '角色已離世，請選擇繼任者。'
 }
-export function farm(state: GameState, action: 'prepare' | 'plant' | 'harvest') {
+export function farm(state: GameState, action: 'prepare' | 'plant' | 'harvest', cropId = 'wheat') {
+  if (action === 'plant') {
+    if (player(state).currentRegion !== 'farmland') return '請先前往東方農田。'
+    const choice = farmCropChoices(state).find(candidate => candidate.id === cropId)
+    if (!choice) return '這種作物不存在。'
+    if (choice.status !== 'available') return choice.reason ?? '目前無法種植這種作物。'
+  }
   const minutes = action === 'prepare' ? 20 : action === 'plant' ? 10 : 15
-  preflightRegionalCrisisAction(state, minutes, preview => farmInternal(preview, action))
-  return farmInternal(state, action)
+  preflightRegionalCrisisAction(state, minutes, preview => farmInternal(preview, action, cropId))
+  return farmInternal(state, action, cropId)
 }
-function farmInternal(state: GameState, action: 'prepare' | 'plant' | 'harvest') {
+function farmInternal(state: GameState, action: 'prepare' | 'plant' | 'harvest', cropId: string) {
   if (player(state).currentRegion !== 'farmland') return '請先前往東方農田。'
   if (action === 'prepare') {
     if (state.preparedPlots + state.crops.length >= CONFIG.maxPlots) return '四塊田都已使用，請先收割。'
@@ -44,17 +51,30 @@ function farmInternal(state: GameState, action: 'prepare' | 'plant' | 'harvest')
     state.preparedPlots++; emit(state, 'crop.prepared', 'player', '翻整了一塊田，可以播種了。')
   } else if (action === 'plant') {
     if (!state.preparedPlots) return '請先整地，再播種。'
+    const cropChoice = farmCropChoices(state).find(candidate => candidate.id === cropId)
+    const growthDuration = cropChoice?.growthMinutes ?? 2880
     const error = cost(state, 4, 10); if (error) return error
     state.preparedPlots--
-    state.crops.push({ id: ++state.eventSequence, cropId: 'wheat', plantedAt: state.worldTime, growthDuration: CROP.duration, matureAt: state.worldTime + CROP.duration, status: 'growing' })
-    gainExp(state, player(state), 5, 'farming'); emit(state, 'crop.planted', 'player', '播下小麥。兩日後即可收割。')
+    state.crops.push({ id: ++state.eventSequence, cropId, plantedAt: state.worldTime, growthDuration, matureAt: state.worldTime + growthDuration, status: 'growing' })
+    gainExp(state, player(state), 5, 'farming'); emit(state, 'crop.planted', 'player', `播下${cropChoice?.name ?? '小麥'}。`)
   } else {
-    const crop = state.crops.find(c => c.status === 'mature'); if (!crop) return '小麥還沒成熟，讓世界時間繼續前進。'
+    const planted = state.crops.find(c => c.status === 'mature'); if (!planted) return '作物還沒成熟，讓世界時間繼續前進。'
+    const cropChoice = farmCropChoices(state).find(candidate => candidate.id === planted.cropId)
+    const definition = planted.cropId === 'wheat' ? null : cropChoice
+    const yieldAmount = cropChoice?.harvestAmount ?? 8 + player(state).skills.farming.level - 1
+    const goodId = cropChoice?.harvestGoodId ?? null
+    const currentStack = goodId ? state.reward.materials[player(state).id]?.[goodId] ?? 0 : 0
+    if (goodId && (!Number.isSafeInteger(currentStack) || currentStack < 0 || yieldAmount > Number.MAX_SAFE_INTEGER - currentStack)) return '收成品堆疊超出安全上限。'
     const error = cost(state, 4, 15); if (error) return error
-    const yieldAmount = CROP.yield + player(state).skills.farming.level - 1
-    player(state).inventory.food += yieldAmount; state.settlement.food = Math.min(100, state.settlement.food + 2)
-    state.crops = state.crops.filter(c => c.id !== crop.id); gainExp(state, player(state), 15, 'farming')
-    emit(state, 'crop.harvested', 'player', `收穫 ${yieldAmount} 份食物，耕作經驗增加。`)
+    if (definition) {
+      const good = CONTENT_CROP_GOODS[definition!.harvestGoodId!]!
+      const ownerMaterials = state.reward.materials[player(state).id] ??= Object.fromEntries(Object.keys(MATERIALS).map(id => [id, 0]))
+      ownerMaterials[good.id] = (ownerMaterials[good.id] ?? 0) + yieldAmount
+      if (!state.reward.collection.materials.includes(good.id)) state.reward.collection.materials.push(good.id)
+    } else player(state).inventory.food += yieldAmount
+    state.settlement.food = Math.min(100, state.settlement.food + 2)
+    state.crops = state.crops.filter(c => c.id !== planted.id); gainExp(state, player(state), 15, 'farming')
+    emit(state, 'crop.harvested', 'player', definition ? `收穫 ${yieldAmount} 份${CONTENT_CROP_GOODS[definition.harvestGoodId!]!.name['zh-TW']}，耕作經驗增加。` : `收穫 ${yieldAmount} 份食物，耕作經驗增加。`)
   }
   recordLifeAction(state, 'farming')
   if (action === 'harvest') changeReputation(state, 1, '收成補充橡谷糧食')

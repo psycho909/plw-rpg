@@ -1,0 +1,18 @@
+{
+  "schema": "phase7-region-filter-browser-smoke-v1",
+  "status": "FAIL",
+  "startedAtUTC": "2026-10-13T12:53:03.060341+00:00",
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+  "distFingerprint": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+  "browserErrors": [
+    {
+      "type": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)"
+    }
+  ],
+  "checks": [],
+  "error": "AssertionError: [{'type': 'console', 'text': 'Failed to load resource: the server responded with a status of 404 (File not found)'}]",
+  "endedAtUTC": "2026-10-13T12:53:05.018139+00:00",
+  "durationSeconds": 1.957819
+}

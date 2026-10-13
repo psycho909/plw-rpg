@@ -1,0 +1,14 @@
+E
+======================================================================
+ERROR: test_action_state_ignores_ambient_ticks_but_tracks_controls_and_player_state (__main__.BrowserContracts.test_action_state_ignores_ambient_ticks_but_tracks_controls_and_player_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 126, in test_action_state_ignores_ambient_ticks_but_tracks_controls_and_player_state
+    first = observable_action_state_key("/world", surface, [], base, controls)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: observable_action_state_key() takes 4 positional arguments but 5 were given
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

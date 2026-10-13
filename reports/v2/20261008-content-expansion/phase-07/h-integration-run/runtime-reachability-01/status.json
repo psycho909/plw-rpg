@@ -1,0 +1,23 @@
+{
+  "command": [
+    "npm",
+    "exec",
+    "--",
+    "vitest",
+    "run",
+    "src/engine/contentReachability.integration.test.ts",
+    "src/engine/contentBosses.integration.test.ts",
+    "src/engine/remainingFamilies.integration.test.ts",
+    "src/engine/crops.integration.test.ts",
+    "src/engine/crisisAdventure.test.ts",
+    "src/engine/crisisResolution.test.ts",
+    "src/engine/civilDefense.test.ts",
+    "src/engine/crisisContributions.test.ts",
+    "src/engine/regionalCrisis.test.ts"
+  ],
+  "startedAt": "2026-10-13T08:33:28.376209+00:00",
+  "finishedAt": "2026-10-13T08:33:33.444200+00:00",
+  "exitCode": 0,
+  "stdoutSha256": "6703bc48faa8dc403205304500a9a2808f5a9191e16bdbadd04368b152923a1f",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

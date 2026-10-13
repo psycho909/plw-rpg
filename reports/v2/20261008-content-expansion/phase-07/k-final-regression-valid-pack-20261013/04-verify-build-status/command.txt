@@ -1,0 +1,1 @@
+python3 -B -c "from pathlib import Path; import sys; sys.path.insert(0, \"reports/v2/20261008-content-expansion/phase-07\"); from qa_browser_support import validate_build; validate_build(Path.cwd(), Path(\"reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/phase7-build-status.json\"))"

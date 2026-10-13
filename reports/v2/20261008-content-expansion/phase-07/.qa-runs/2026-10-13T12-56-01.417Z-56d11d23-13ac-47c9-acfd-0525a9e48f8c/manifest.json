@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "capturedAt": "2026-10-13T12:56:01.471Z",
+  "git": {
+    "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+    "branch": "v2x/reward-core"
+  },
+  "input": {
+    "originalPath": "reports/v2/20261008-content-expansion/phase-07/g-integration-run/merged-validator-run/packs/seven-pack-combined.json",
+    "snapshot": "input/seven-pack-combined.json",
+    "bytes": 123045,
+    "sha256": "67940cf6d922530da76c02fe7490ba73512f08ab02ffc234bbdd4b68d4a21f52"
+  },
+  "pack": {
+    "bytes": 123045,
+    "sha256": "67940cf6d922530da76c02fe7490ba73512f08ab02ffc234bbdd4b68d4a21f52"
+  },
+  "sourceFingerprintAlgorithm": "SHA-256 over compact JSON mapping sorted source paths to their SHA-256 values",
+  "sourceFingerprint": "c538f291e6ed5440d9093bd145ff1c4723c145871cbbbc03d10477fbdca945a8",
+  "runtime": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "architecture": "x64"
+  },
+  "sourceFiles": {
+    "package-lock.json": {
+      "sha256": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d",
+      "snapshot": "source/package-lock.json"
+    },
+    "package.json": {
+      "sha256": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6",
+      "snapshot": "source/package.json"
+    },
+    "reports/v2/20261008-content-expansion/phase-07/content-baseline.json": {
+      "sha256": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "snapshot": "source/reports/v2/20261008-content-expansion/phase-07/content-baseline.json"
+    },
+    "scripts/recorded_reports.py": {
+      "sha256": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+      "snapshot": "source/scripts/recorded_reports.py"
+    },
+    "scripts/validate_content_batch.mjs": {
+      "sha256": "79f390fad5a706955b1f2546c6065191e52e556d4c6297587d2a11cc8859c989",
+      "snapshot": "source/scripts/validate_content_batch.mjs"
+    },
+    "scripts/validate_content_evidence.mjs": {
+      "sha256": "574343415da3524deb7092cc1288ce8e602eae8aa9eb41be9b998c62d8dd6bc4",
+      "snapshot": "source/scripts/validate_content_evidence.mjs"
+    },
+    "src/data/content/caveInsects.ts": {
+      "sha256": "dcc14c74cfd9ce50803af7645fa0c52beb22288b15d29925cbf801ba1bde3bf3",
+      "snapshot": "source/src/data/content/caveInsects.ts"
+    },
+    "src/data/content/farmCrops.ts": {
+      "sha256": "d49418c074d0bb5757db26b40c1342e169e29975caf717095fec668246af30a8",
+      "snapshot": "source/src/data/content/farmCrops.ts"
+    },
+    "src/data/content/fogUndead.ts": {
+      "sha256": "ef0d2c7b071193acb26803128c9041874d9f763a4e929a7030c1cd0b68653e5e",
+      "snapshot": "source/src/data/content/fogUndead.ts"
+    },
+    "src/data/content/frontierGoblins.ts": {
+      "sha256": "61b109a69611743f6b4d3983fb252a40dc8a8d1758a4154af034fa2d91c9bb13",
+      "snapshot": "source/src/data/content/frontierGoblins.ts"
+    },
+    "src/data/content/mineConstructs.ts": {
+      "sha256": "ac24251494d94acc8a6acdb4d7349372ba9c212c17424d8a58864bb63ee32c00",
+      "snapshot": "source/src/data/content/mineConstructs.ts"
+    },
+    "src/data/content/slime.ts": {
+      "sha256": "334c031aa75c09e7612dd426d9d58284a1093efb5b773fcf5c8011640739edd2",
+      "snapshot": "source/src/data/content/slime.ts"
+    },
+    "src/data/content/wildBeasts.ts": {
+      "sha256": "bbae4d9882708fa77c200f6810db0c02b943d027f186ff5d89af7f62e5de785b",
+      "snapshot": "source/src/data/content/wildBeasts.ts"
+    },
+    "src/domain/content.ts": {
+      "sha256": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+      "snapshot": "source/src/domain/content.ts"
+    },
+    "src/engine/contentValidation.test.ts": {
+      "sha256": "cf14cadc9459f0e35d0469663160981432986ebeb0c55c5a8e80bbbfa96ea06a",
+      "snapshot": "source/src/engine/contentValidation.test.ts"
+    },
+    "src/engine/contentValidation.ts": {
+      "sha256": "0b716843cf23664c6bfc057043655b660979ab38ba8be3b3f3fdf7c433ed956f",
+      "snapshot": "source/src/engine/contentValidation.ts"
+    },
+    "tsconfig.json": {
+      "sha256": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0",
+      "snapshot": "source/tsconfig.json"
+    },
+    "vite.config.ts": {
+      "sha256": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771",
+      "snapshot": "source/vite.config.ts"
+    }
+  },
+  "provenance": "Input and source files are independent run-time captures; this manifest does not claim that the captured source generated the supplied pack."
+}

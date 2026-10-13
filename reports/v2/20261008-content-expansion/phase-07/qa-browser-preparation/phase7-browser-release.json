@@ -1,0 +1,27 @@
+{
+  "schema": "phase7-browser-release-v1",
+  "status": "RELEASED",
+  "scope": "Phase7-K final frozen production Chromium QA: final 60s regression, 7200s integrated stress, and 3600s content-focused runner-driven Agent Exploratory; no public release or human product approval.",
+  "requiredStressSeconds": 7200,
+  "requiredContentAgentSeconds": 3600,
+  "contentAgentSmokeSeconds": 60,
+  "runnerHeartbeatTimeoutSeconds": 120,
+  "releasedAt": "2026-10-13T15:24:13+00:00",
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+  "buildStatusPath": "reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/phase7-build-status.json",
+  "buildStatusSha256": "b9d5b047229baf9c8a1bb5f516d18ebc48be4ffb96d6a7dab159e81bdb4f09fc",
+  "distFingerprint": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+  "conditions": [
+    "Full `npm run check` passed after PixelWindow fix: 37 files / 627 tests, typecheck and build passed.",
+    "41 Phase7 browser runner contract tests pass against the frozen QA harness; runner and test SHA-256 values are recorded in this manifest.",
+    "Checkpoint browserState records NPC registry totals/alive/dead separately from retained-history NPC death events; history scope, 20,000-row cap and possible incompleteness are explicit. It also records settlement, active-character/economy, threat/Boss/crisis, events/history/journal and save bytes; unavailable fields are null and marked unsupported.",
+    "IndexedDB record sampling uses a bounded projection before JSON serialization; truncated samples or serialization errors suppress store-total estimates. The Node projection contract passes.",
+    "Final acceptance remains a 7,200-second stress lane and 3,600-second content-agent lane; a 60-second regression is smoke-only. Runner heartbeat watchdog is 120s and terminates/reaps the runner process group on stale heartbeat.",
+    "Root verifies final build, dist, source, and current QA runner provenance before every Browser run.",
+    "Human product validation remains DEFERRED / NOT APPLICABLE AT THIS STAGE."
+  ],
+  "contractTests": 41,
+  "runnerSha256": "f65641514aee39d06bc33043965c3c6bc5576165c103e1b1b819290ba037680f",
+  "contractTestSha256": "9f85802b4ea9adc76ed00606afe16200a35a661dbbafa1bd328fff6645e9418d"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "validate-frontier-goblins",
+  "command": "node",
+  "args": [
+    "scripts/validate_content_batch.mjs",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T07-04-13.911Z-b06dbe8b-b4a3-4728-a12a-35f9b7f82c67/packs/frontier-goblins.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T07-04-13.911Z-b06dbe8b-b4a3-4728-a12a-35f9b7f82c67/cases/frontier-goblins/readable-report.md"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedUtc": "2026-10-13T07:04:34.893Z",
+  "endedUtc": "2026-10-13T07:04:41.244Z",
+  "startedTaipei": "2026-10-13 15:04:34",
+  "endedTaipei": "2026-10-13 15:04:41",
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}

@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/crops.integration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/crops.integration.test.ts (9 tests | 1 failed) 95ms
+   × supplies a regional crisis with food converted from harvested crop goods 11ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  08:14:28
+   Duration  719ms (transform 426ms, setup 0ms, import 505ms, tests 95ms, environment 0ms)
+

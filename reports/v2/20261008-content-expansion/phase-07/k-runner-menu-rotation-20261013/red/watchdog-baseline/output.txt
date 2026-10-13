@@ -1,0 +1,22 @@
+test_launcher_wait_is_bounded_by_runner_heartbeat (__main__.BaselineWatchdogRegression.test_launcher_wait_is_bounded_by_runner_heartbeat) ... FAIL
+
+======================================================================
+FAIL: test_launcher_wait_is_bounded_by_runner_heartbeat (__main__.BaselineWatchdogRegression.test_launcher_wait_is_bounded_by_runner_heartbeat)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/k-runner-menu-rotation-20261013/red/watchdog-baseline/reproduce.py", line 21, in test_launcher_wait_is_bounded_by_runner_heartbeat
+    self.assertEqual(unbounded_wait_lines, [], "launcher blocks forever without runner heartbeat supervision")
+AssertionError: Lists differ: [118] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+118
+
+- [118]
++ [] : launcher blocks forever without runner heartbeat supervision
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (failures=1)
+baseline=e05cc78f1ef452e2672df223f2febf48444dcbd3; unbounded runner.wait() lines=[118]

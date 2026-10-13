@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_indexeddb_projection_does_not_expand_bigint_before_truncation (reports.v2.20261008-content-expansion.phase-07.qa-browser-preparation.test_qa_browser_contract.BrowserContracts.test_indexeddb_projection_does_not_expand_bigint_before_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 178, in test_indexeddb_projection_does_not_expand_bigint_before_truncation
+    self.assertEqual(projection["bigintToStringCalls"], 0)
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.117s
+
+FAILED (failures=1)

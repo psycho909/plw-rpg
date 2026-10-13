@@ -1,0 +1,37 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentFamilies.test.ts > authored family runtime > projects only family targets for the current discovered region
+AssertionError: expected [ 'slime_bog', 'slime_moss', …(26) ] to include 'slime_slick'
+ ❯ src/engine/contentFamilies.test.ts:58:62
+     56|     const before = structuredClone(state)
+     57|     const forestOptions = contentEncounterOptions(state)
+     58|     expect(forestOptions.map(option => option.definitionId)).toContain…
+       |                                                              ^
+     59|     expect(forestOptions.map(option => option.definitionId)).not.toCon…
+     60|     expect(forestOptions.every(option => option.region === 'forest')).…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > 'wild_beasts' registers six normal and two Elite encounters
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > 'frontier_goblins' registers six normal and two Elite encounters
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > 'fog_undead' registers six normal and two Elite encounters
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > 'mine_constructs' registers six normal and two Elite encounters
+AssertionError: expected [] to have a length of 8 but got +0
+
+- Expected
++ Received
+
+- 8
++ 0
+
+ ❯ src/engine/remainingFamilies.integration.test.ts:211:33
+    209|     const options = contentEncounterOptions(createGame(72800), familyI…
+    210|     const originalPackOptions = options.filter(option => option.rank =…
+    211|     expect(originalPackOptions).toHaveLength(8)
+       |                                 ^
+    212|     expect(originalPackOptions.filter(option => option.rank === 'norma…
+    213|       .toEqual([...normalIds].sort())
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+

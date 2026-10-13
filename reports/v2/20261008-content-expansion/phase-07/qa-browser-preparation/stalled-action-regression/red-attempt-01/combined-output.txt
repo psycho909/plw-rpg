@@ -1,0 +1,14 @@
+E
+======================================================================
+ERROR: test_action_chooser_skips_a_control_stalled_in_the_current_ui_state (__main__.BrowserContracts.test_action_chooser_skips_a_control_stalled_in_the_current_ui_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 60, in test_action_chooser_skips_a_control_stalled_in_the_current_ui_state
+    selected, category, _ = choose_visible_action(page, 1, {}, excluded_labels=set())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: choose_visible_action() got an unexpected keyword argument 'excluded_labels'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

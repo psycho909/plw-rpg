@@ -1,0 +1,13 @@
+...............F.
+======================================================================
+FAIL: test_selector_smoke_browser_cleanup_cannot_mask_result (reports.v2.20261008-content-expansion.phase-07.qa-browser-preparation.test_qa_browser_contract.BrowserContracts.test_selector_smoke_browser_cleanup_cannot_mask_result)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 30, in test_selector_smoke_browser_cleanup_cannot_mask_result
+    self.assertTrue(hasattr(selector, "close_browser_safely"),
+AssertionError: False is not true : selector smoke must expose cleanup that cannot escape before status publication
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.036s
+
+FAILED (failures=1)

@@ -1,0 +1,37 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentValidation.test.ts > validateContentPack > excludes both sale-price-only equipment clones from the usable item count
+AssertionError: expected [ { …(3) } ] to deep equally contain ObjectContaining{…}
+
+- Expected:
+ObjectContaining {
+  "code": "duplicate-like-equipment",
+  "ids": [
+    "reed-spear",
+    "reed-spear-copy",
+  ],
+}
+
++ Received:
+[
+  {
+    "code": "duplicate-like-monster",
+    "ids": [
+      "marsh-stalker",
+      "mire-hunter",
+    ],
+    "message": "Monster definitions have the same effective combat, spawn, and loot profile after ignoring IDs and localized prose.",
+  },
+]
+
+ ❯ src/engine/contentValidation.test.ts:412:29
+    410|
+    411|     const report = validateContentPack(clones, baseline)
+    412|     expect(report.warnings).toContainEqual(expect.objectContaining({ c…
+       |                             ^
+    413|     expect(report.qualityCounts.usableNewItems).toBe(1)
+    414|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

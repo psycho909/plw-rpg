@@ -1,0 +1,18 @@
+E
+======================================================================
+ERROR: test_qa_browser_contract (unittest.loader._FailedTest.test_qa_browser_contract)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_qa_browser_contract
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 16, in <module>
+    from qa_browser_runner import (MODE_DURATION_BOUNDS, action_made_progress, choose_visible_action, classify_button, drain_browser_events,
+ImportError: cannot import name 'project_indexeddb_summary' from 'qa_browser_runner' (/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa_browser_runner.py)
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

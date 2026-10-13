@@ -1,0 +1,178 @@
+{
+  "runId": "20261013T104317Z-pid379026",
+  "runDir": "qa-browser-runs/20261013T104317Z-pid379026",
+  "launcherCapture": "k-browser-stress-20261013/launcher-attempt-01",
+  "requestedSeconds": 1200,
+  "actualSeconds": 1201.34,
+  "startUTC": "2026-10-13T10:43:17.545853+00:00",
+  "endUTC": "2026-10-13T11:03:20.317527+00:00",
+  "launcherStatus": "COMPLETE",
+  "launcherExitCode": 0,
+  "runnerExitCode": 0,
+  "serverExitCode": -15,
+  "runnerResultStatus": "COMPLETE_STRESS_REVIEW_REQUIRED",
+  "sourceStable": true,
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "6a320cfcefc529bb06ad7dd815396fdde21097b1f8aab842ac6ec2fe63345ba3",
+  "releaseSha256": "4fc71d98a6b408ba17fa8639ecc979f6ac6271c811971e13537de20dd8871296",
+  "buildStatusSha256": "3fb03bbaff6985b66c690ecd11738cb9464db56b5bbb31ca76ed636101105f05",
+  "chromiumVersion": "151.0.7922.173",
+  "checkpoints": 20,
+  "checkpointElapsedSeconds": [
+    5.52,
+    66.57,
+    128.39,
+    189.08,
+    250.9,
+    314.83,
+    376.45,
+    438.28,
+    501.37,
+    561.62,
+    627.13,
+    687.84,
+    749.77,
+    810.86,
+    872.34,
+    932.83,
+    994.98,
+    1056.67,
+    1119.54,
+    1183.06
+  ],
+  "finalSaveSummary": {
+    "worldTime": 1190,
+    "coreGameStateKeyCount": 23
+  },
+  "actionCount": 302,
+  "actionCategoryCounts": {
+    "start_from_opening": 1,
+    "explore": 75,
+    "navigate": 77,
+    "observe": 76,
+    "close_dialog": 73
+  },
+  "noProgressActionCount": 74,
+  "normalReloadCount": 3,
+  "reloadChecks": [
+    {
+      "stage": "reload-started",
+      "runtimeSavedMatchesBaseline": null,
+      "runtimeReloadDifferences": null,
+      "storageRetainedAtLoad": null,
+      "worldTimeBefore": null,
+      "worldTimeAfterLoad": null,
+      "coreGameStateKeyCount": null
+    },
+    {
+      "stage": "completed",
+      "runtimeSavedMatchesBaseline": true,
+      "runtimeReloadDifferences": {},
+      "storageRetainedAtLoad": true,
+      "worldTimeBefore": 1190,
+      "worldTimeAfterLoad": 1190,
+      "coreGameStateKeyCount": 23
+    },
+    {
+      "stage": "reload-started",
+      "runtimeSavedMatchesBaseline": null,
+      "runtimeReloadDifferences": null,
+      "storageRetainedAtLoad": null,
+      "worldTimeBefore": null,
+      "worldTimeAfterLoad": null,
+      "coreGameStateKeyCount": null
+    },
+    {
+      "stage": "completed",
+      "runtimeSavedMatchesBaseline": true,
+      "runtimeReloadDifferences": {},
+      "storageRetainedAtLoad": true,
+      "worldTimeBefore": 1190,
+      "worldTimeAfterLoad": 1190,
+      "coreGameStateKeyCount": 23
+    },
+    {
+      "stage": "reload-started",
+      "runtimeSavedMatchesBaseline": null,
+      "runtimeReloadDifferences": null,
+      "storageRetainedAtLoad": null,
+      "worldTimeBefore": null,
+      "worldTimeAfterLoad": null,
+      "coreGameStateKeyCount": null
+    },
+    {
+      "stage": "completed",
+      "runtimeSavedMatchesBaseline": true,
+      "runtimeReloadDifferences": {},
+      "storageRetainedAtLoad": true,
+      "worldTimeBefore": 1190,
+      "worldTimeAfterLoad": 1190,
+      "coreGameStateKeyCount": 23
+    }
+  ],
+  "pageConsoleRequestHttpErrors": {},
+  "browserErrors": false,
+  "storageErrors": 0,
+  "unhandledRejections": 0,
+  "browserEventCounts": {
+    "saveWrites": 1123,
+    "longTasks": 2
+  },
+  "intervalEventTotals": {
+    "saveWrites": 1121,
+    "longTasks": 2,
+    "storageErrors": 0,
+    "unhandledRejections": 0
+  },
+  "metricsTrend": {
+    "localStorageBytes": {
+      "first": 83543,
+      "last": 83674,
+      "min": 83543,
+      "max": 83674,
+      "samples": 20
+    },
+    "domNodes": {
+      "first": 2736,
+      "last": 2793,
+      "min": 2727,
+      "max": 2833,
+      "samples": 20
+    },
+    "jsEventListeners": {
+      "first": 431,
+      "last": 445,
+      "min": 431,
+      "max": 463,
+      "samples": 20
+    },
+    "heapUsedBytes": {
+      "first": 7171400,
+      "last": 29080204,
+      "min": 7171400,
+      "max": 31590244,
+      "samples": 20,
+      "mean": 18344715
+    },
+    "heapTotalBytes": {
+      "first": 22863872,
+      "last": 71794688,
+      "min": 22863872,
+      "max": 72056832,
+      "samples": 20
+    },
+    "indexedDbRecords": {
+      "first": 13,
+      "last": 612,
+      "min": 13,
+      "max": 612,
+      "samples": 20
+    }
+  },
+  "profilingLimitations": {
+    "CDPSession.send: Protocol error (Memory.enable): 'Memory.enable' wasn't found": 20
+  },
+  "memoryEnableUnsupported": true,
+  "runtimeHeapAndDomCountersAvailable": true,
+  "interpretation": "COMPLETE_STRESS_REVIEW_REQUIRED is the runner stress-lane completion state; no product/browser errors were reported. Runner-driven heuristic; no model inference or human tester."
+}

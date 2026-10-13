@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_region_filter_tab_is_not_treated_as_an_exploration_action (test_qa_browser_contract.BrowserContracts.test_region_filter_tab_is_not_treated_as_an_exploration_action)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 59, in test_region_filter_tab_is_not_treated_as_an_exploration_action
+    self.assertIsNone(selected)
+AssertionError: <test_qa_browser_contract.BrowserContracts.test_region_filter_tab_is_not_treated_as_an_exploration_action.<locals>.Button object at 0x7f729dcd9760> is not None
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

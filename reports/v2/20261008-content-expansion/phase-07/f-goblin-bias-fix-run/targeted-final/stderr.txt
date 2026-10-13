@@ -1,0 +1,22 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > keeps Wild and Frontier bias materials compatible with their recipe outputs and exposes planned gear in selected loot
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/engine/remainingFamilies.integration.test.ts:274:83
+    272|       for (const materialId of recipe.allowedBiasMaterials.filter(id =…
+    273|         const biasAffixes = Object.keys(CONTENT_MATERIALS[materialId]!…
+    274|         expect(biasAffixes.some(affixId => equipment.affixIds.includes…
+       |                                                                                   ^
+    275|       }
+    276|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

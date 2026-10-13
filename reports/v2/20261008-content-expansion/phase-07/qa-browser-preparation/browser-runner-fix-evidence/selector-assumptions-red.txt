@@ -1,0 +1,14 @@
+...............E..
+======================================================================
+ERROR: test_selector_inventory_trigger_accepts_shortcut_in_accessible_name (reports.v2.20261008-content-expansion.phase-07.qa-browser-preparation.test_qa_browser_contract.BrowserContracts.test_selector_inventory_trigger_accepts_shortcut_in_accessible_name)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/qa-browser-preparation/test_qa_browser_contract.py", line 56, in test_selector_inventory_trigger_accepts_shortcut_in_accessible_name
+    self.assertRegex("物品 I", selector.INVENTORY_TRIGGER_NAME)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'phase7_selector_smoke_name' has no attribute 'INVENTORY_TRIGGER_NAME'
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.028s
+
+FAILED (errors=1)

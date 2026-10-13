@@ -1,0 +1,86 @@
+{
+  "source": "Measured from each standard validator CLI readable report produced in this run.",
+  "qualityCounts": {
+    "slime": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "cave-insects": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "wild-beasts": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "frontier-goblins": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "fog-undead": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 15,
+      "usableNewMaterials": 8
+    },
+    "mine-constructs": {
+      "qualifyingNewMonsters": 11,
+      "candidateNewItemIds": 16,
+      "usableNewMaterials": 8
+    },
+    "six-family-combined": {
+      "qualifyingNewMonsters": 66,
+      "candidateNewItemIds": 91,
+      "usableNewMaterials": 44
+    }
+  },
+  "warningCounts": {
+    "slime": 0,
+    "cave-insects": 0,
+    "wild-beasts": 1,
+    "frontier-goblins": 0,
+    "fog-undead": 0,
+    "mine-constructs": 0,
+    "six-family-combined": 3
+  },
+  "warningsByCase": {
+    "slime": [],
+    "cave-insects": [],
+    "wild-beasts": [
+      "- WARNING duplicate-like-loot-table [wild_beasts_loot_ironhide, wild_beasts_loot_matriarch]: Loot tables have identical effective item and material distribution."
+    ],
+    "frontier-goblins": [],
+    "fog-undead": [],
+    "mine-constructs": [],
+    "six-family-combined": [
+      "- WARNING duplicate-like-material [fog_undead_cryptstone, mine_construct_plate]: Material definitions have the same effective economy, generation influence, and recipe consumer functions.",
+      "- WARNING duplicate-like-material [fog_undead_shroud, mine_construct_binding]: Material definitions have the same effective economy, generation influence, and recipe consumer functions.",
+      "- WARNING duplicate-like-loot-table [wild_beasts_loot_ironhide, wild_beasts_loot_matriarch]: Loot tables have identical effective item and material distribution."
+    ]
+  },
+  "errorCounts": {
+    "slime": 0,
+    "cave-insects": 0,
+    "wild-beasts": 0,
+    "frontier-goblins": 0,
+    "fog-undead": 1,
+    "mine-constructs": 0,
+    "six-family-combined": 1
+  },
+  "errorsByCase": {
+    "slime": [],
+    "cave-insects": [],
+    "wild-beasts": [],
+    "frontier-goblins": [],
+    "fog-undead": [
+      "- ERROR affix-ineligible [fog_undead_bellstaff]: Affix is not eligible for this equipment slot."
+    ],
+    "mine-constructs": [],
+    "six-family-combined": [
+      "- ERROR affix-ineligible [fog_undead_bellstaff]: Affix is not eligible for this equipment slot."
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+PHASE7_QA_LANE=economy ./node_modules/.bin/vitest run --config reports/v2/20261008-content-expansion/phase-07/qa_simulation.config.ts --reporter=verbose -t 'economy fixture initializes an owner material stack before seeding recipe materials|runner configuration guards'

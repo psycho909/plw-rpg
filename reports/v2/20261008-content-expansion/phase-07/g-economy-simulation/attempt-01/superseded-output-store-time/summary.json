@@ -1,0 +1,214 @@
+{
+  "title": "Phase 7-G crop economy runner simulation",
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "started_at": "2026-10-13T07:58:32.729Z",
+  "finished_at": "2026-10-13T07:58:35.028Z",
+  "source_sha256_before": {
+    "src/engine/actions.ts": "38bf369b2fc8ce13f73a20cdfc50f756f5437d14cc1b67530600e0f61abd0344",
+    "src/engine/simulation.ts": "149c2bc120fef9984be6afa6f72db293f16877085211f630d004e49f8db0f3db",
+    "src/engine/rewardActions.ts": "b1cee65e318adfd0c2632b48a973fbeec9682cb982ace71b9518fe64a498cd5c",
+    "src/engine/ownership.ts": "50b5bef7df35778c95ddbf0dd0951a22f46517842a224bee1552cd2dd18ff6db",
+    "src/data/contentRegistry.ts": "65593e63bffdfd3c0c20cb3ca780af921ee01e61b550aa4542c69c6e433f9585",
+    "src/data/content/farmCrops.ts": "d49418c074d0bb5757db26b40c1342e169e29975caf717095fec668246af30a8",
+    "src/data/config.ts": "ea56d790207bf13575ee19cbbdf46fa29ad8a03dd374a4613863af33c44e707a"
+  },
+  "source_sha256_after": {
+    "src/engine/actions.ts": "38bf369b2fc8ce13f73a20cdfc50f756f5437d14cc1b67530600e0f61abd0344",
+    "src/engine/simulation.ts": "149c2bc120fef9984be6afa6f72db293f16877085211f630d004e49f8db0f3db",
+    "src/engine/rewardActions.ts": "b1cee65e318adfd0c2632b48a973fbeec9682cb982ace71b9518fe64a498cd5c",
+    "src/engine/ownership.ts": "50b5bef7df35778c95ddbf0dd0951a22f46517842a224bee1552cd2dd18ff6db",
+    "src/data/contentRegistry.ts": "65593e63bffdfd3c0c20cb3ca780af921ee01e61b550aa4542c69c6e433f9585",
+    "src/data/content/farmCrops.ts": "d49418c074d0bb5757db26b40c1342e169e29975caf717095fec668246af30a8",
+    "src/data/config.ts": "ea56d790207bf13575ee19cbbdf46fa29ad8a03dd374a4613863af33c44e707a"
+  },
+  "source_unchanged_during_runner": true,
+  "seeds": [
+    271828,
+    314159,
+    161803
+  ],
+  "requested_farming_skill_levels": [
+    1,
+    3,
+    6
+  ],
+  "crops": [
+    {
+      "id": "wheat",
+      "name": "小麥",
+      "seasons": [
+        "春",
+        "夏",
+        "秋",
+        "冬"
+      ],
+      "growthMinutes": 2880,
+      "harvestAmount": 5,
+      "goodId": null,
+      "foodValue": 1,
+      "sell": 0
+    },
+    {
+      "id": "spring_pea",
+      "name": "豌豆",
+      "seasons": [
+        "春"
+      ],
+      "growthMinutes": 720,
+      "harvestAmount": 4,
+      "goodId": "spring_pea_good",
+      "foodValue": 1,
+      "sell": 2
+    },
+    {
+      "id": "field_turnip",
+      "name": "田蕪菁",
+      "seasons": [
+        "春",
+        "秋"
+      ],
+      "growthMinutes": 1440,
+      "harvestAmount": 6,
+      "goodId": "field_turnip_good",
+      "foodValue": 1,
+      "sell": 3
+    },
+    {
+      "id": "summer_barley",
+      "name": "夏大麥",
+      "seasons": [
+        "夏"
+      ],
+      "growthMinutes": 2880,
+      "harvestAmount": 8,
+      "goodId": "summer_barley_good",
+      "foodValue": 1,
+      "sell": 4
+    },
+    {
+      "id": "sun_pepper",
+      "name": "日照椒",
+      "seasons": [
+        "夏"
+      ],
+      "growthMinutes": 2160,
+      "harvestAmount": 4,
+      "goodId": "sun_pepper_good",
+      "foodValue": 2,
+      "sell": 5
+    },
+    {
+      "id": "forest_bean",
+      "name": "林豆",
+      "seasons": [
+        "夏",
+        "秋"
+      ],
+      "growthMinutes": 2880,
+      "harvestAmount": 6,
+      "goodId": "forest_bean_good",
+      "foodValue": 2,
+      "sell": 6
+    },
+    {
+      "id": "autumn_pumpkin",
+      "name": "秋南瓜",
+      "seasons": [
+        "秋"
+      ],
+      "growthMinutes": 5760,
+      "harvestAmount": 10,
+      "goodId": "autumn_pumpkin_good",
+      "foodValue": 2,
+      "sell": 7
+    },
+    {
+      "id": "orchard_apple",
+      "name": "果園蘋果",
+      "seasons": [
+        "秋"
+      ],
+      "growthMinutes": 2880,
+      "harvestAmount": 5,
+      "goodId": "orchard_apple_good",
+      "foodValue": 2,
+      "sell": 8
+    },
+    {
+      "id": "winter_cabbage",
+      "name": "冬甘藍",
+      "seasons": [
+        "冬"
+      ],
+      "growthMinutes": 4320,
+      "harvestAmount": 6,
+      "goodId": "winter_cabbage_good",
+      "foodValue": 3,
+      "sell": 9
+    },
+    {
+      "id": "frost_root",
+      "name": "霜根",
+      "seasons": [
+        "冬"
+      ],
+      "growthMinutes": 5760,
+      "harvestAmount": 5,
+      "goodId": "frost_root_good",
+      "foodValue": 3,
+      "sell": 10
+    },
+    {
+      "id": "marsh_rice",
+      "name": "濕地稻",
+      "seasons": [
+        "夏",
+        "秋"
+      ],
+      "growthMinutes": 5760,
+      "harvestAmount": 8,
+      "goodId": "marsh_rice_good",
+      "foodValue": 3,
+      "sell": 11
+    },
+    {
+      "id": "cave_mushroom",
+      "name": "洞菇",
+      "seasons": [
+        "春",
+        "秋",
+        "冬"
+      ],
+      "growthMinutes": 4320,
+      "harvestAmount": 4,
+      "goodId": "cave_mushroom_good",
+      "foodValue": 3,
+      "sell": 12
+    }
+  ],
+  "sample_count": 108,
+  "runner_method": "Vite SSR loads actual exported engine APIs; each scenario creates a fresh seeded game, moves via walkTo, sets exact starting season, sets representative farming skill, invokes four prepare/farm plant/farm harvest actions, then branches a cloned post-harvest state through actual conversion or material-sale API. No direct edits to output observations.",
+  "interpretation_limits": [
+    "Observed four-plot yield includes farming skill gains during the 12 public farm actions; observed harvest skill levels are retained per scenario.",
+    "Per-plot projected food rates use the four-plot observed yield normalized by plot count and a plot cycle of growth plus its 20-minute prepare, 10-minute plant, and 15-minute harvest actions. Sale gold rates include the actual five-minute material sale action per good. Batch-per-day rates divide the four-plot yield by the observed batch elapsed time, plus sale actions for gold. These are calculated rates, not a long-run seasonal simulation.",
+    "Crop-good sale option measures the actual tradeMaterial path per unit (five world minutes each), while crop-good conversion has no time/stamina cost in its public API. Walking to the store and waiting for opening are excluded from sale_action_minutes and captured separately as sale_elapsed_minutes_after_travel.",
+    "Planting accepts only the listed seasons. Each scenario starts in the first declared season; season transitions and crop reseeding over a whole year are not simulated.",
+    "No seeds, fertilizers, water, or other recurring input costs are charged by the public farm API. No explicit numeric balance threshold exists in the G ticket/spec."
+  ],
+  "farm_business_supply_path": {
+    "seed": 424242,
+    "crop_id": "spring_pea",
+    "plots": 4,
+    "harvested_good_units": 21,
+    "food_value_per_good": 1,
+    "conversion_result": "",
+    "food_before_supply": 24,
+    "food_after_supply": 22,
+    "supply_amount": 2,
+    "supply_result": "",
+    "settlement_food_after_supply": 88,
+    "farm_business_food_supplied_total": 2,
+    "purchase_gold_cost": 360,
+    "actual_purchase_gold_delta": 360
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "phase7-final-checks-v1",
+  "status": "FAIL",
+  "startedAtUTC": "2026-10-13T12:53:54.574232+00:00",
+  "head": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprintBefore": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+  "distFingerprintBefore": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+  "commands": {
+    "npm-run-check": {
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "startedAtUTC": "2026-10-13T12:53:54.574247+00:00",
+      "endedAtUTC": "2026-10-13T12:54:41.471468+00:00",
+      "durationSeconds": 46.898,
+      "exitCode": 0,
+      "stdoutPath": "npm-run-check.stdout.txt",
+      "stderrPath": "npm-run-check.stderr.txt"
+    },
+    "npm-run-validate-content": {
+      "command": [
+        "npm",
+        "run",
+        "validate:content"
+      ],
+      "startedAtUTC": "2026-10-13T12:54:41.471800+00:00",
+      "endedAtUTC": "2026-10-13T12:54:41.722521+00:00",
+      "durationSeconds": 0.251,
+      "exitCode": 1,
+      "stdoutPath": "npm-run-validate-content.stdout.txt",
+      "stderrPath": "npm-run-validate-content.stderr.txt"
+    }
+  },
+  "endedAtUTC": "2026-10-13T12:54:41.733615+00:00",
+  "sourceFingerprintAfter": "585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58",
+  "distFingerprintAfter": "0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1",
+  "sourceStable": true,
+  "distStable": true
+}

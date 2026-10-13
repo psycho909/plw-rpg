@@ -1,7 +1,8 @@
-import { CONFIG } from '../data/config'
+import { CONFIG, REGIONS } from '../data/config'
+import { CRAFTING_RECIPES } from '../data/crafting'
+import { ITEM_BASES, LOOT_TABLES, MATERIALS, WOLF_LOOT_RULES, WOLF_MONSTERS } from '../data/rewards'
 import {
   CONTENT_CROPS, CONTENT_CROP_GOODS, CONTENT_FAMILIES, CONTENT_LOOT_TABLES, CONTENT_MONSTERS,
-  CONTENT_RECIPES, CONTENT_EQUIPMENT, CONTENT_MATERIALS,
 } from '../data/contentRegistry'
 import type {
   ContentBossVariant, ContentCombatMechanic, ContentId, ContentMonster, ContentMonsterRank,
@@ -11,6 +12,8 @@ import type { GameState, RegionId } from '../domain/types'
 import { calendar } from './calendar'
 import { emit } from './events'
 import { random } from './random'
+import { farmCropChoices, farmCropPlantingGuidance } from './crops'
+import { wolfEncounterOptions } from './wolfFamily'
 
 const ENCOUNTER_STAMINA_COST = 8
 const RANK_LABELS: Record<ContentMonsterRank, string> = {
@@ -122,9 +125,19 @@ function monsterReason(state: GameState, definition: ContentMonster): string | n
 
 /** Pure canonical eligibility projection for authored family encounters. */
 export function contentEncounterOptions(state: GameState, familyId?: string): ContentEncounterOption[] {
+  const character = activeCharacter(state)
+  const region = character?.currentRegion
+  if (!region || !Object.hasOwn(state.regions, region) || !state.regions[region].discovered) return []
   const globalReason = worldBlockReason(state)
   return Object.values(CONTENT_MONSTERS)
     .filter(definition => familyId === undefined || definition.familyId === familyId)
+    .filter(definition => {
+      const family = CONTENT_FAMILIES[definition.familyId]
+      const profiles = definition.spawnProfiles ?? family?.spawnProfiles ?? []
+      return family?.regions.includes(region) === true
+        && family.spawnProfiles.some(profile => profile.region === region)
+        && profiles.some(profile => profile.region === region)
+    })
     .map(definition => {
       const family = CONTENT_FAMILIES[definition.familyId]
       const reason = globalReason ?? monsterReason(state, definition)
@@ -134,7 +147,7 @@ export function contentEncounterOptions(state: GameState, familyId?: string): Co
         label: definition.name['zh-TW'],
         description: definition.description['zh-TW'],
         rank: definition.rank,
-        region: activeCharacter(state)?.currentRegion ?? family.regions[0]!,
+        region,
         eligible: reason === null,
         reason,
       }
@@ -295,35 +308,171 @@ export interface ContentSourceHints {
   uses: string[]
 }
 
-/** Pure source/use projection shared by future codex and inventory surfaces. */
-export function contentSourceHints(contentId: string): ContentSourceHints | null {
-  const sources = new Set<string>()
-  const uses = new Set<string>()
+export interface ContentKnowledgeSource {
+  label: string
+  region: RegionId | null
+  state: 'available' | 'ineligible' | 'undiscovered'
+  reason: string | null
+}
+
+export interface ContentKnowledgeHints {
+  id: ContentId
+  sources: ContentKnowledgeSource[]
+  uses: string[]
+}
+
+interface CatalogSource {
+  id: string
+  label: string
+  kind: 'monster' | 'crop'
+  region: RegionId
+}
+
+function catalogSources(contentId: string): CatalogSource[] {
+  const sources: CatalogSource[] = []
+  const add = (source: CatalogSource) => {
+    if (!sources.some(candidate => candidate.id === source.id && candidate.region === source.region && candidate.kind === source.kind)) {
+      sources.push(source)
+    }
+  }
   for (const monster of Object.values(CONTENT_MONSTERS)) {
     const table = CONTENT_LOOT_TABLES[monster.lootTableId]
     if (!table) continue
-    if (table.guaranteedMaterialIds.includes(contentId) || table.rareMaterials.some(entry => entry.materialId === contentId)) {
-      sources.add(`擊敗${monster.name['zh-TW']}`)
+    const yieldsContent = table.guaranteedMaterialIds.includes(contentId)
+      || table.rareMaterials.some(entry => entry.materialId === contentId)
+      || table.weightedEquipment.some(entry => entry.equipmentId === contentId)
+      || monster.bossRules?.guaranteedMaterialIds.includes(contentId) === true
+      || monster.bossRules?.exclusiveEquipmentId === contentId
+    if (!yieldsContent) continue
+    const family = CONTENT_FAMILIES[monster.familyId]
+    if (!family) continue
+    const monsterProfiles = monster.spawnProfiles ?? family.spawnProfiles
+    for (const region of family.regions) {
+      if (family.spawnProfiles.some(profile => profile.region === region)
+        && monsterProfiles.some(profile => profile.region === region)) {
+        add({ id: monster.id, label: `擊敗${monster.name['zh-TW']}`, kind: 'monster', region })
+      }
     }
-    if (table.weightedEquipment.some(entry => entry.equipmentId === contentId)
-      || monster.bossRules?.exclusiveEquipmentId === contentId) sources.add(`擊敗${monster.name['zh-TW']}`)
-    if (monster.bossRules?.guaranteedMaterialIds.includes(contentId)) sources.add(`擊敗${monster.name['zh-TW']}`)
   }
+
+  const wolfLoot = LOOT_TABLES.wolf
+  const wolfMaterials = new Set([
+    ...wolfLoot.guaranteed,
+    wolfLoot.rare.materialId,
+    wolfLoot.bossGuaranteed,
+    ...(WOLF_LOOT_RULES.hideChance > 0 ? ['wolfHide'] : []),
+  ])
+  const wolfEquipment = new Set([
+    ...wolfLoot.weighted.map(entry => entry.baseId),
+    WOLF_LOOT_RULES.bossExclusiveBase,
+  ])
+  if (wolfMaterials.has(contentId) || wolfEquipment.has(contentId)) {
+    for (const monster of Object.values(WOLF_MONSTERS)) {
+      const profile = WOLF_LOOT_RULES.profiles[monster.id]
+      const canDropMaterial = wolfLoot.guaranteed.includes(contentId)
+        || monster.rank === 'boss' && wolfLoot.bossGuaranteed === contentId
+        || WOLF_LOOT_RULES.hideChance > 0 && contentId === 'wolfHide'
+        || monster.rank !== 'boss' && profile.rareMaterialChance > 0 && wolfLoot.rare.materialId === contentId
+      const canDropEquipment = monster.rank === 'boss'
+        ? WOLF_LOOT_RULES.bossExclusiveBase === contentId
+        : wolfLoot.weighted.some(entry => entry.baseId === contentId)
+      if (canDropMaterial || canDropEquipment) {
+        add({ id: monster.id, label: `擊敗${monster.name}`, kind: 'monster', region: 'forest' })
+      }
+    }
+  }
+
   for (const crop of Object.values(CONTENT_CROPS)) {
-    if (crop.harvestGoodId === contentId) sources.add(`收穫${crop.name['zh-TW']}`)
+    if (crop.harvestGoodId !== contentId) continue
+    for (const region of crop.regions) add({ id: crop.id, label: `收穫${crop.name['zh-TW']}`, kind: 'crop', region })
+  }
+  return sources
+}
+
+/** Pure source/use projection from the registered loot, crop, recipe, and equipment graph. */
+export function contentSourceHints(contentId: string): ContentSourceHints | null {
+  const sources = new Set<string>()
+  const uses = new Set<string>()
+  for (const source of catalogSources(contentId)) sources.add(source.label)
+  for (const crop of Object.values(CONTENT_CROPS)) {
     if (crop.id === contentId) uses.add(`種植於${crop.regions.join('、')}`)
   }
-  for (const recipe of Object.values(CONTENT_RECIPES)) {
-    if (recipe.outputBase === contentId) uses.add(`製作${recipe.name['zh-TW']}`)
-    if (recipe.inputs.some(input => input.source === 'material' && input.materialId === contentId)) uses.add(`配方：${recipe.name['zh-TW']}`)
-    if (recipe.allowedBiasMaterials.includes(contentId)) uses.add(`影響配方：${recipe.name['zh-TW']}`)
+  for (const recipe of Object.values(CRAFTING_RECIPES)) {
+    if (recipe.outputBase === contentId) uses.add(`製作${recipe.name}`)
+    if (recipe.inputs.some(input => input.source === 'material' && input.materialId === contentId)) uses.add(`配方：${recipe.name}`)
+    if (recipe.allowedBiasMaterials.includes(contentId)) uses.add(`影響配方：${recipe.name}`)
   }
-  const material = CONTENT_MATERIALS[contentId]
+  const material = MATERIALS[contentId]
   if (material) uses.add(`出售（${material.sell} 金幣）`)
   const good = CONTENT_CROP_GOODS[contentId]
   if (good) uses.add(`食用（補充 ${good.foodValue} 糧食）`)
-  const equipment = CONTENT_EQUIPMENT[contentId]
+  const equipment = ITEM_BASES[contentId]
   if (equipment) uses.add(`穿戴（${equipment.slot === 'weapon' ? '武器' : '護甲'}）`)
   if (!sources.size && !uses.size) return null
   return { id: contentId, sources: [...sources], uses: [...uses] }
+}
+
+function projectContentKnowledge(state: GameState, contentId: string, context: {
+  currentRegion: RegionId | undefined
+  seen: Set<string>
+  contentOptions: Map<string, ContentEncounterOption>
+  wolfOptions: ReturnType<typeof wolfEncounterOptions>
+  crops: ReturnType<typeof farmCropChoices>
+}): ContentKnowledgeHints | null {
+  const staticHints = contentSourceHints(contentId)
+  if (!staticHints) return null
+  let hasUndiscoveredSource = false
+  const sources: ContentKnowledgeSource[] = []
+
+  for (const source of catalogSources(contentId)) {
+    if (!state.regions[source.region]?.discovered) {
+      hasUndiscoveredSource = true
+      continue
+    }
+    if (source.kind === 'monster' && !context.seen.has(source.id)) continue
+
+    let reason: string | null = null
+    if (source.region === context.currentRegion) {
+      if (source.kind === 'monster') {
+        reason = context.contentOptions.get(source.id)?.reason
+          ?? context.wolfOptions.find(option => option.definitionId === source.id)?.reason ?? null
+      } else {
+        const crop = context.crops.find(candidate => candidate.id === source.id)
+        reason = crop?.reason ?? farmCropPlantingGuidance(state)?.reason ?? null
+      }
+    }
+    sources.push({
+      label: source.label,
+      region: source.region,
+      state: reason ? 'ineligible' : 'available',
+      reason,
+    })
+  }
+  if (hasUndiscoveredSource) sources.push({
+    label: '尚未探索的區域', region: null, state: 'undiscovered', reason: null,
+  })
+  if (!sources.length && !staticHints.uses.length) return null
+  return { id: contentId, sources, uses: staticHints.uses }
+}
+
+/** Batched state-aware hints avoid reevaluating encounter eligibility once per inventory row. */
+export function contentKnowledgeCatalog(state: GameState, contentIds: readonly string[]): Record<string, ContentKnowledgeHints | null> {
+  const seen = new Set([
+    ...state.reward.collection.seen,
+    ...state.reward.collection.defeated,
+    ...state.reward.collection.bosses,
+  ])
+  const context = {
+    currentRegion: activeCharacter(state)?.currentRegion,
+    seen,
+    contentOptions: new Map(contentEncounterOptions(state).map(option => [option.definitionId, option])),
+    wolfOptions: wolfEncounterOptions(state),
+    crops: farmCropChoices(state),
+  }
+  return Object.fromEntries([...new Set(contentIds)].map(id => [id, projectContentKnowledge(state, id, context)]))
+}
+
+/** State-aware view hides undiscovered regions and names only persisted, already-seen monsters. */
+export function contentKnowledgeHints(state: GameState, contentId: string): ContentKnowledgeHints | null {
+  return contentKnowledgeCatalog(state, [contentId])[contentId] ?? null
 }

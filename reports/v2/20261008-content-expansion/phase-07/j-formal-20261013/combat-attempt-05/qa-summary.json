@@ -1,0 +1,285 @@
+{
+  "lane": "combat",
+  "exitCode": 0,
+  "laneSucceeded": true,
+  "sourceStable": true,
+  "runnerStable": true,
+  "commit": "e05cc78f1ef452e2672df223f2febf48444dcbd3",
+  "sourceFingerprint": "6a320cfcefc529bb06ad7dd815396fdde21097b1f8aab842ac6ec2fe63345ba3",
+  "seeds": [
+    40131,
+    40132,
+    40133
+  ],
+  "combatPerCell": 100,
+  "combatRawRows": 118800,
+  "summaryCells": 1188,
+  "samplesPerCell": [
+    100
+  ],
+  "wins": 109887,
+  "deaths": 8913,
+  "deathRowsRemainingEnemyHpNull": 8913,
+  "deathRowsRemainingEnemyHpNonNull": 0,
+  "winRowsRemainingEnemyHpZero": 109887,
+  "integratedWitnesses": 198,
+  "integratedWitnessesPerBand": {
+    "early": 66,
+    "mid": 66,
+    "late": 66
+  },
+  "progressionRows": 118800,
+  "progressionDistinctTuples": [
+    {
+      "fromLevel": 1,
+      "toLevel": 1,
+      "appliedExperience": 0,
+      "rows": 1200
+    },
+    {
+      "fromLevel": 1,
+      "toLevel": 2,
+      "appliedExperience": 30,
+      "rows": 1800
+    },
+    {
+      "fromLevel": 1,
+      "toLevel": 3,
+      "appliedExperience": 90,
+      "rows": 7200
+    },
+    {
+      "fromLevel": 1,
+      "toLevel": 4,
+      "appliedExperience": 180,
+      "rows": 9600
+    },
+    {
+      "fromLevel": 1,
+      "toLevel": 5,
+      "appliedExperience": 300,
+      "rows": 28800
+    },
+    {
+      "fromLevel": 1,
+      "toLevel": 6,
+      "appliedExperience": 450,
+      "rows": 14400
+    },
+    {
+      "fromLevel": 1,
+      "toLevel": 7,
+      "appliedExperience": 630,
+      "rows": 11400
+    },
+    {
+      "fromLevel": 1,
+      "toLevel": 8,
+      "appliedExperience": 840,
+      "rows": 8400
+    },
+    {
+      "fromLevel": 1,
+      "toLevel": 9,
+      "appliedExperience": 1080,
+      "rows": 4200
+    },
+    {
+      "fromLevel": 1,
+      "toLevel": 10,
+      "appliedExperience": 1350,
+      "rows": 2400
+    },
+    {
+      "fromLevel": 1,
+      "toLevel": 12,
+      "appliedExperience": 1980,
+      "rows": 29400
+    }
+  ],
+  "requestedEffectiveLevels": [
+    {
+      "band": "early",
+      "requested": 1,
+      "effective": 1,
+      "rows": 1200
+    },
+    {
+      "band": "early",
+      "requested": 1,
+      "effective": 2,
+      "rows": 1800
+    },
+    {
+      "band": "early",
+      "requested": 1,
+      "effective": 3,
+      "rows": 3600
+    },
+    {
+      "band": "early",
+      "requested": 2,
+      "effective": 3,
+      "rows": 1200
+    },
+    {
+      "band": "early",
+      "requested": 2,
+      "effective": 4,
+      "rows": 6600
+    },
+    {
+      "band": "early",
+      "requested": 3,
+      "effective": 4,
+      "rows": 600
+    },
+    {
+      "band": "early",
+      "requested": 3,
+      "effective": 5,
+      "rows": 6000
+    },
+    {
+      "band": "early",
+      "requested": 4,
+      "effective": 5,
+      "rows": 1800
+    },
+    {
+      "band": "early",
+      "requested": 4,
+      "effective": 6,
+      "rows": 4200
+    },
+    {
+      "band": "early",
+      "requested": 5,
+      "effective": 6,
+      "rows": 1200
+    },
+    {
+      "band": "early",
+      "requested": 5,
+      "effective": 7,
+      "rows": 4200
+    },
+    {
+      "band": "early",
+      "requested": 6,
+      "effective": 7,
+      "rows": 1800
+    },
+    {
+      "band": "early",
+      "requested": 6,
+      "effective": 8,
+      "rows": 2400
+    },
+    {
+      "band": "early",
+      "requested": 7,
+      "effective": 8,
+      "rows": 1800
+    },
+    {
+      "band": "early",
+      "requested": 7,
+      "effective": 9,
+      "rows": 1200
+    },
+    {
+      "band": "late",
+      "requested": 12,
+      "effective": 3,
+      "rows": 1200
+    },
+    {
+      "band": "late",
+      "requested": 12,
+      "effective": 4,
+      "rows": 1200
+    },
+    {
+      "band": "late",
+      "requested": 12,
+      "effective": 5,
+      "rows": 2400
+    },
+    {
+      "band": "late",
+      "requested": 12,
+      "effective": 6,
+      "rows": 3000
+    },
+    {
+      "band": "late",
+      "requested": 12,
+      "effective": 10,
+      "rows": 2400
+    },
+    {
+      "band": "late",
+      "requested": 12,
+      "effective": 12,
+      "rows": 29400
+    },
+    {
+      "band": "mid",
+      "requested": 5,
+      "effective": 3,
+      "rows": 1200
+    },
+    {
+      "band": "mid",
+      "requested": 5,
+      "effective": 4,
+      "rows": 1200
+    },
+    {
+      "band": "mid",
+      "requested": 5,
+      "effective": 5,
+      "rows": 18600
+    },
+    {
+      "band": "mid",
+      "requested": 6,
+      "effective": 6,
+      "rows": 6000
+    },
+    {
+      "band": "mid",
+      "requested": 7,
+      "effective": 7,
+      "rows": 5400
+    },
+    {
+      "band": "mid",
+      "requested": 8,
+      "effective": 8,
+      "rows": 4200
+    },
+    {
+      "band": "mid",
+      "requested": 9,
+      "effective": 9,
+      "rows": 3000
+    }
+  ],
+  "spawnAdjustmentRowsByField": {
+    "player-level:-2": 3600,
+    "playerLevel": 51000,
+    "player-level:-9": 1200,
+    "player-level:1": 10200,
+    "worldTime": 46800,
+    "player-level:-1": 1200,
+    "player-level:-8": 1200,
+    "region": 48600,
+    "player-level:-7": 2400,
+    "player-level:2": 28200,
+    "player-level:-6": 3000,
+    "threatLevel": 49200,
+    "settlementStage": 1800
+  }
+}

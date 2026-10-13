@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-13T07:55:36.627Z",
+  "consoleErrors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://127.0.0.1:4178/favicon.ico",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "pageErrors": [],
+  "requestFailures": [],
+  "steps": [
+    {
+      "name": "loaded",
+      "at": "2026-10-13T07:55:38.705Z",
+      "title": "在陌生的天空下 — 橡谷",
+      "openingVisible": true
+    }
+  ],
+  "status": "FAIL",
+  "failure": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '×0' })\u001b[22m\n\n    at /workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/g-browser-and-regression-run/attempt-01-g-independent-qa/browser/run-crop-ui-smoke.mjs:21:50",
+  "elapsedMs": 31728,
+  "finishedAt": "2026-10-13T07:56:08.863Z",
+  "finalUrl": "http://127.0.0.1:4178/"
+}

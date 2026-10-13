@@ -1,0 +1,295 @@
+{
+  "summaryPath": "/workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/f-content-validation-run/runs/2026-10-13T06-57-07.657Z-30ab2581-db8e-426b-b6a8-1e4834246e70/f-content-validation-final-summary.md",
+  "summarySha256": "15593325e3da3ae037930ffd8410f410958579164bd71dd294b4f82df539b090",
+  "sourceMapUnchanged": true,
+  "outcomes": {
+    "slime": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:10\n   Duration  288ms (transform 103ms, setup 0ms, import 122ms, tests 40ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "cave-insects": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:16\n   Duration  274ms (transform 102ms, setup 0ms, import 120ms, tests 29ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "wild-beasts": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:23\n   Duration  260ms (transform 91ms, setup 0ms, import 109ms, tests 28ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "frontier-goblins": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:29\n   Duration  242ms (transform 93ms, setup 0ms, import 109ms, tests 27ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "fog-undead": {
+      "cliExit": 1,
+      "contentStatus": "FAIL",
+      "overallStatus": "FAIL",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:35\n   Duration  267ms (transform 109ms, setup 0ms, import 129ms, tests 29ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "mine-constructs": {
+      "cliExit": 0,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:42\n   Duration  243ms (transform 91ms, setup 0ms, import 107ms, tests 29ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    },
+    "six-family-combined": {
+      "cliExit": 1,
+      "contentStatus": "FAIL",
+      "overallStatus": "FAIL",
+      "targetedTests": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vitest",
+          "run",
+          "src/engine/contentValidation.test.ts"
+        ],
+        "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  06:57:48\n   Duration  271ms (transform 100ms, setup 0ms, import 118ms, tests 30ms, environment 0ms)\n\n",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "typecheck": {
+        "command": "npm",
+        "args": [
+          "exec",
+          "--",
+          "vue-tsc",
+          "--noEmit"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exitCode": 0,
+        "signal": null,
+        "error": "",
+        "status": "PASS"
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      }
+    }
+  },
+  "gearAudit": {
+    "raw": 48,
+    "cloneGroups": 8,
+    "cloneMembersExcluded": 19,
+    "rawAfterExclusion": 29,
+    "validatorQualifiedGear": 47,
+    "qualifiedAfterExclusion": 28
+  }
+}
