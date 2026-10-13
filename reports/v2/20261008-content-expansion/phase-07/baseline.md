@@ -16,4 +16,4 @@
 - The Browser runs used a frozen production dist and verified source/build/dist maps before and after. Their exact manifests, commands, and raw outputs remain in the linked run folders.
 - Human validation remains DEFERRED / NOT APPLICABLE AT THIS STAGE. The Browser heuristic is not a human tester and has no model inference.
 
-The test snapshot remains identified by the HEAD and recursive source fingerprint above. A later repository delivery commit, if created, does not retroactively change these test-time identities.
+Delivery source commit: `b71201e84ff6b78035f8b6ef9b845dbb831451c5`. Its recursive `src/` fingerprint matches the tested fingerprint above. The test HEAD remains `e05cc78f1ef452e2672df223f2febf48444dcbd3`; test results are attributed to the fingerprinted source tree, not to that HEAD alone.

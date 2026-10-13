@@ -2,7 +2,8 @@
 
 ## Tested source and environment
 
-- Branch v2x/reward-core; test-time HEAD e05cc78f1ef452e2672df223f2febf48444dcbd3.
+- Branch `v2x/reward-core`; test-time HEAD `e05cc78f1ef452e2672df223f2febf48444dcbd3`.
+- Delivery source commit `b71201e84ff6b78035f8b6ef9b845dbb831451c5` contains the tested recursive `src/` fingerprint below; no source files changed during final packaging.
 - Recursive src fingerprint 585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58.
 - Frozen production build status SHA-256 b9d5b047229baf9c8a1bb5f516d18ebc48be4ffb96d6a7dab159e81bdb4f09fc; dist fingerprint 0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1.
 - Chromium 151.0.7922.173, Playwright 1.62.0, Debian 13 x86_64. Native Safari and physical mobile are excluded; Firefox is unavailable.

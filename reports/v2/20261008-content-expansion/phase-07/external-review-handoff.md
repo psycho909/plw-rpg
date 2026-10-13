@@ -8,7 +8,7 @@
 - Branch: `v2x/reward-core`
 - QA source commit: `e05cc78f1ef452e2672df223f2febf48444dcbd3`
 - Recursive `src/` fingerprint: `585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58` (112 source files)
-- Delivery commit: to be filled after the authorized current-branch commit; use that exact commit and its diff for review.
+- Delivery source commit: `b71201e84ff6b78035f8b6ef9b845dbb831451c5`. Review the source diff `e05cc78f1ef452e2672df223f2febf48444dcbd3..b71201e84ff6b78035f8b6ef9b845dbb831451c5`; QA reports and delivery metadata are committed alongside it.
 - Build status SHA-256: `b9d5b047229baf9c8a1bb5f516d18ebc48be4ffb96d6a7dab159e81bdb4f09fc`; `dist/` fingerprint: `0fc9f8bba0f703f18da79e16184ad07e431dd1817892cc70f5be1377979165d1`.
 - Do not infer source identity from a test base SHA alone; the K QA exercised uncommitted source captured by the recursive fingerprint above before delivery.
 

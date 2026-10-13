@@ -51,6 +51,8 @@ Phase7-H accepted **PASS WITH FINDINGS** after current-region projection, runtim
 
 Phase7-A through Phase7-K engineering work is complete on `v2x/reward-core`. Phase7-K is accepted **PASS WITH FINDINGS**; the detailed gate disposition is in [`final-review.md`](../reports/v2/20261008-content-expansion/phase-07/final-review.md). This supersedes older in-progress/release notes below where they describe D/E/F/G/H/I/J or K as pending. Historical failures and superseded decisions remain preserved as audit history.
 
+Delivery source commit: `b71201e84ff6b78035f8b6ef9b845dbb831451c5`, containing the tested `src/` fingerprint `585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58`. The test-time HEAD remains `e05cc78f1ef452e2672df223f2febf48444dcbd3`; this distinction is preserved in the baseline and external-review handoff.
+
 The 20 Definition-of-Done items were assessed against current code and evidence; findings and measurement limits remain open, so they are not all unqualified PASS. The 11 final gates are:
 
 | Gate | Final status | Limitation carried forward |
