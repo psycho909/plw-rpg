@@ -1,0 +1,16 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 500 years of history, natural deaths and successors and continues deterministically
+Error: Test timed out in 15000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/services/saveService.test.ts:708:3
+    706|     }
+    707|   })
+    708|   it('round trips 500 years of history, natural deaths and successors …
+       |   ^
+    709|     const s = createGame(909)
+    710|     for (let year = 0; year < 500; year++) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

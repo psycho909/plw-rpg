@@ -75,7 +75,7 @@ describe('crafting UI projection', () => {
     const projection = projectCrafting(readyAtStore())
 
     const rows = projection.recipes.map(({ id, name, unlocked }) => ({ id, name, unlocked }))
-    expect(rows.filter(recipe => !recipe.id.startsWith('slime_'))).toEqual([
+    expect(rows.filter(recipe => !recipe.id.startsWith('slime_') && !recipe.id.startsWith('cave_insect_'))).toEqual([
       { id: 'starterSpear', name: '木石長矛', unlocked: true },
       { id: 'fieldSpear', name: '進階長矛', unlocked: false },
       { id: 'fieldArmor', name: '鎖甲', unlocked: false },
@@ -87,6 +87,9 @@ describe('crafting UI projection', () => {
       { id: 'slime_moss_coat_recipe', name: '縫製苔池外套', unlocked: false },
       { id: 'slime_spring_blade_recipe', name: '鍛造泉躍短刃', unlocked: false },
     ])
+    expect(rows.find(recipe => recipe.id === 'cave_insect_chitin_spear_recipe')).toEqual({
+      id: 'cave_insect_chitin_spear_recipe', name: '鍛造甲質穿刺矛', unlocked: false,
+    })
     expect(projection.recipes.find(recipe => recipe.id === 'ironShortSword')?.plan.ok).toBe(false)
     expect(projection.recipes.find(recipe => recipe.id === 'ironShortSword')?.plan.message).toBeTruthy()
     for (const recipe of projection.recipes.filter(recipe => recipe.id.startsWith('slime_'))) {

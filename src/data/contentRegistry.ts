@@ -2,10 +2,11 @@ import type {
   ContentAffix, ContentCrop, ContentCropGood, ContentEquipment, ContentLootTable, ContentMaterial,
   ContentMonster, ContentMonsterFamily, ContentPack, ContentRecipe,
 } from '../domain/content'
+import { CAVE_INSECT_CONTENT } from './content/caveInsects'
 import { SLIME_CONTENT } from './content/slime'
 
 /** Runtime registry entry point. Family modules remain isolated, authored-only packs. */
-export const CONTENT_PACKS: readonly ContentPack[] = [SLIME_CONTENT]
+export const CONTENT_PACKS: readonly ContentPack[] = [SLIME_CONTENT, CAVE_INSECT_CONTENT]
 
 function catalog<T extends { id: string }>(select: (pack: ContentPack) => readonly T[]): Record<string, T> {
   return Object.fromEntries(CONTENT_PACKS.flatMap(pack => select(pack).map(value => [value.id, value])))

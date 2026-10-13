@@ -7,7 +7,7 @@
 - Approval evidence: 2026-10-08 使用者上傳 Phase7 規格並明確要求「開始進行Phase7的開發」。
 - Branch: v2x/reward-core
 - Git / Remote authority: 沿用 README 現工作分支 commit/push 授權；Root-only Git。不PR/merge/main/force/deploy。
-- Updated: 2026-10-08（Asia/Taipei）
+- Updated: 2026-10-13（Asia/Taipei）
 
 ## Scope
 
@@ -43,4 +43,4 @@ Initial HEAD 2d6af37cb36c9616cb832fc4d839bfd6ea7ef7c9，initial working tree cle
 
 ## Current delivery state
 
-Phase7-C was locally accepted by Root on 2026-10-12 after the independent corrective-diff review passed Standards and Spec, and the post-C4 full check passed 30 files / 567 tests, typecheck, production build, plus source diff check. The `__proto__` material-owner defect was captured RED before its test-first fix; original failures and source fingerprints remain archived. A disposable Chromium functional smoke passed after dismissing the expected startup introduction; the unchanged environment helper is stale and its failure is documented. Phase7-D is now released and in progress under isolated Cave Insects content ownership. E and later stages remain gated by their own dependencies/Root releases; the Phase7 final gate, natural exposure/balance, long browser soak, and human product validation remain outstanding.
+Phase7-C was locally accepted by Root on 2026-10-12 after independent review and its full check passed. Its original failures remain archived. Phase7-D implementation/verification is complete with findings, but acceptance stays blocked on the first authoring failure's missing original source-module SHA/fingerprint and pack bytes; the original diagnostics/report and failed pack SHA remain archived. The Owner directed Root to maintain this block without waiver. On 2026-10-13, bounded evidence recovery did not find those bytes; a test-only one-worker scheduling correction then passed the canonical `npm run check` (31 files / 570 tests, typecheck and build) while preserving earlier default-worker timeout failures and all long-world assertions. Independent Medium continuation review passed Standards and Spec; it accepts the QA continuation and blocked WIP handoff, not D acceptance. Root will preserve the unfinished D/QA state under existing branch authority. Phase7-E remains unreleased. Evidence: `reports/v2/20261008-content-expansion/phase-07/d-root-closeout.md`. The Phase7 final gate, natural exposure/balance, long browser soak, and human product validation remain outstanding.

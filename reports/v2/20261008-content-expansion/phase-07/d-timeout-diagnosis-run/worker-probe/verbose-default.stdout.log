@@ -1,0 +1,583 @@
+
+> plw-rpg@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates V8 crops and reward materials to V8/Reward3 without rebuilding the world or drawing RNG 25ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > normalizes only newly registered Phase7 material keys on an older Reward3 save 7ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > preserves special known material owners during Reward3 normalization and reload 9ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects special unknown material owners during Reward3 normalization 7ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unknown or invalid Reward3 material values instead of repairing them 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed measured summaries in new V8 outcome saves 38ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates the authentic archived V6 D and camp-raid save to V8 without changing world, RNG, or crisis facts 22ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > connects living trade penalties and supplies to actual transactions 5ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > records actual battle wins as life experience and keeps the boss story through reload 23ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > preserves real property, supplies and its deceased owner when another life begins 6ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > lets settlement reputation affect actual mercenary terms 1ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > lets life actions form an identity without selecting a class 4ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > retires elderly NPCs through daily evolution and stops their paid work schedule 3ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > successors are local residents and preserve the deceased generation and ownership 1ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > produces equal state for minute, hour, day and one-batch stepping 152ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates legacy V6 aftermath outcomes without inventing a summary or replaying consequences 13ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates legacy V6 cooldown outcomes without inventing a summary or replaying consequences 15ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates a V4 active crisis through V5 and V6 to V8 with an empty ledger and adventure default 9ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates authentic archived V4 warning crisis saves without recreating the crisis 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates authentic archived V4 preparation crisis saves without recreating the crisis 7ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates authentic archived V4 active crisis saves without recreating the crisis 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > validates crisis shapes separately for V4, V5, V6 and V8 22ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates the authentic archived V5 D ledger through V6 to V8 without changing world, time or RNG 17ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates a native V3 save to V8 with a dormant crisis and no world or RNG changes 11ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a crisis field in V3 and malformed or missing V4 crisis unions 11ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > validates crisis severity as a number: numeric severity 1 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > validates crisis severity as a number: numeric severity 2 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > validates crisis severity as a number: numeric severity 3 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > validates crisis severity as a number: string severity 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > validates crisis severity as a number: boolean severity 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > validates crisis severity as a number: array severity 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates a complete V2 world and its rolled items once without consuming RNG or changing world state 12ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates the archived historical V1 save without changing its old world fields or RNG 17ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > migrates the archived Phase4 V2 stress save while preserving every old item roll 14ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects fields from the newer schema in a V2 save before adding defaults: smithing-skill-in-v2 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects fields from the newer schema in a V2 save before adding defaults: craft-provenance-in-v1 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects G-only identities in a V2 save before migrating it to V8 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects coercible arrays where a V2 origin enum string is required 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects coercible arrays where a V2 identity enum string is required 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects coercible arrays where a V2 trait enum string is required 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects coercible arrays where a V2 career enum string is required 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > validates a complete V1 world before migration and preserves every legacy world field and RNG 8ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt V1 world before migration: world-time 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt V1 world before migration: missing-world-field 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt V1 world before migration: bad-reference 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a V1 payload that already contains life metadata instead of overwriting it 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: canon 8ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: extra-life-field 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: origin 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: reputation 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: character-reference 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: npc-reference 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: property-owner 12ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: property-bounds 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: property-day 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: property-daily-total 7ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects malformed V2 life data: milestone-bound 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a null crop with the standard preserved-save error 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects forged crafted-item provenance: creator 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects forged crafted-item provenance: recipe-output 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a crafted legendary with a legacy boss source while keeping both generated paths valid 16ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > preserves the original crafter separately from the current item owner 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe nextNpcId -1 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe nextNpcId 0 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe nextNpcId 1.5 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe nextNpcId 9007199254740991 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe nextNpcId 9007199254740992 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe eventSequence -1 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe eventSequence 0.5 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe eventSequence 9007199254740991 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe eventSequence 9007199254740992 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a sequence behind an ID in events 12ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a sequence behind an ID in history 7ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a sequence behind an ID in crops 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe crop ID 0 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe crop ID -1 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe crop ID 0.5 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe crop ID 9007199254740992 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > checks the NPC counter against inherited characters as well as remaining NPCs 9ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips four normally planted crops and harvests exactly one at a time 23ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > keeps a 10-year world bounded, serializable and deterministic after save 759ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > settles all four outcomes during canonical simulation with only the world RNG 1953ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > provides one persisted adult relief immigrant after 30 days at zero population with a live Chief 18ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > keeps relief pending until its due date, then cancels if population has recovered 3ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > rejects an event-capacity-exhausted resolution boundary before changing time or state 8ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > keeps paid rest atomic when resolution capacity rejects its daily boundary 8ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > keeps a lethal combat turn and its rewards atomic when resolution capacity rejects 9ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > keeps a composite walk atomic when a later step reaches a rejected resolution boundary 7ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > keeps home rest atomic when its trailing event would exhaust resolution capacity 4ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > rejects a resolution whose future cooldown would exceed the safe world-time range atomically 5ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > preflights a legacy resolution-phase save before paid action costs 6ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > keeps paid rest atomic when its resulting world time is outside the safe integer range 3ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > rejects a due relief immigrant when eventSequence has no safe capacity 3ms
+ ✓ src/engine/crisisResolution.test.ts > regional crisis resolution and recovery > rejects a due relief immigrant when nextNpcId has no safe capacity 2ms
+ ✓ src/engine/simulation.test.ts > uses additional configured threat levels for population and camp growth 8ms
+ ✓ src/engine/simulation.test.ts > calendar and seeded world > rolls days, seasons and years at their exact boundaries 1ms
+ ✓ src/engine/simulation.test.ts > calendar and seeded world > reproduces the same seed and serializable RNG continuation 7ms
+ ✓ src/engine/simulation.test.ts > calendar and seeded world > is independent of simulation call size 47ms
+ ✓ src/engine/simulation.test.ts > calendar and seeded world > rejects invalid elapsed minutes NaN 1ms
+ ✓ src/engine/simulation.test.ts > calendar and seeded world > rejects invalid elapsed minutes Infinity 1ms
+ ✓ src/engine/simulation.test.ts > calendar and seeded world > rejects invalid elapsed minutes -1 0ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > moves only the active character and respects water / cardinal steps 5ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > accumulates character and skill EXP with level ups 1ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > maps age 14 to child 0ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > maps age 15 to young 0ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > maps age 24 to young 0ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > maps age 25 to adult 0ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > maps age 49 to adult 0ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > maps age 50 to middleAge 0ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > maps age 64 to middleAge 0ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > maps age 65 to elder 0ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > runs sleep, travel, work and leisure without a player action 1ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > ages characters annually and applies stamina modifiers 283ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > records births, immigration and natural deaths while preserving the world 12ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > allows a successor only after death without resetting time or history 2ms
+ ✓ src/engine/simulation.test.ts > characters, movement and autonomous residents > starts a successor in the region where the resident actually lives 1ms
+ ✓ src/engine/simulation.test.ts > settlements and threats > grows through both settlement stages without an upgrade button 73ms
+ ✓ src/engine/simulation.test.ts > settlements and threats > grows the camp, warns before a threat-driven boss, and harms settlement safety 41ms
+ ✓ src/engine/simulation.test.ts > settlements and threats > spawns based on accumulated threat instead of elapsed date 15ms
+ ✓ src/engine/simulation.test.ts > settlements and threats > survives a 1-year headless simulation 37ms
+ ✓ src/engine/simulation.test.ts > settlements and threats > survives a 10-year headless simulation 204ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > keeps a 50-year world bounded, serializable and deterministic after save 2745ms
+ ✓ src/engine/simulation.test.ts > settlements and threats > survives a 50-year headless simulation 995ms
+ ✓ src/engine/livingEvents.test.ts > living event arcs > prunes request references together with old arcs and stays reloadable at every intermediate phase 680ms
+ ✓ src/engine/livingEvents.test.ts > living event arcs > completes the road arc with lasting helped and ignored consequences 3ms
+ ✓ src/engine/livingEvents.test.ts > living event arcs > completes the food arc with lasting helped and ignored consequences 4ms
+ ✓ src/engine/livingEvents.test.ts > living event arcs > completes the iron arc with lasting helped and ignored consequences 3ms
+ ✓ src/engine/livingEvents.test.ts > living event arcs > gates candidates by world conditions, threat weight, player activity, cooldown and recovery 1ms
+ ✓ src/engine/livingEvents.test.ts > living event arcs > uses seeded randomness and bounds retained event data over 100 simulated years 116ms
+ ✓ src/engine/livingEvents.test.ts > world-driven requests > rejects missing items, remote delivery, uninjured targets and unearned hunting progress without mutation 8ms
+ ✓ src/engine/livingEvents.test.ts > world-driven requests > requires a real active defeated outdoor combat and records each kill once 1ms
+ ✓ src/engine/livingEvents.test.ts > world-driven requests > skips a daily event pass when the cooldown map is full and has no daily marker slot 7ms
+ ✓ src/engine/livingEvents.test.ts > world-driven requests > filters new daily event candidates when the marker consumes the final cooldown slot 6ms
+ ✓ src/engine/livingEvents.test.ts > world-driven requests > does not add hunt progress when the daily marker used the last cooldown slot 6ms
+ ✓ src/engine/livingEvents.test.ts > world-driven requests > consumes medicine only beside a currently injured NPC and removes the injury 1ms
+ ✓ src/engine/livingEvents.test.ts > living news and trade projection > lets working brave NPCs attempt the boss without claiming player credit or involving retirees 3ms
+ ✓ src/engine/livingEvents.test.ts > living news and trade projection > projects only bounded newest news and exposes the current buy-price penalty 1ms
+ ✓ src/engine/livingEvents.test.ts > living news and trade projection > creates a traveler only through the bounded spawn hook and sends the spawn definition 6ms
+ ✓ src/engine/actions.test.ts > selects wild encounters from configured spawn levels 8ms
+ ✓ src/engine/actions.test.ts > personal life activities > keeps an overnight stay reloadable when its fee leaves no money for wages 43ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles inn before midnight wages with 8 gold 34ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles inn before midnight wages with 12 gold 32ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles tavern before midnight wages with 6 gold 26ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles tavern before midnight wages with 7 gold 28ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles rest before midnight wages with 0 gold 31ms
+ ✓ src/engine/actions.test.ts > personal life activities > settles rest before midnight wages with 4 gold 19ms
+ ✓ src/engine/actions.test.ts > personal life activities > rejects unaffordable inn without advancing time or changing state 11ms
+ ✓ src/engine/actions.test.ts > personal life activities > rejects unaffordable tavern without advancing time or changing state 10ms
+ ✓ src/engine/actions.test.ts > personal life activities > charges lodging once when natural death interrupts recovery at the new year 25ms
+ ✓ src/engine/actions.test.ts > personal life activities > does not charge or advance a blocked free rest 5ms
+ ✓ src/engine/actions.test.ts > personal life activities > requires farmland, preparation and exact world-time growth before harvest 6ms
+ ✓ src/engine/actions.test.ts > personal life activities > limits farm plots and blocks work with insufficient stamina 4ms
+ ✓ src/engine/actions.test.ts > personal life activities > gathers wood, stone and iron through regional work and pays gold 6ms
+ ✓ src/engine/actions.test.ts > personal life activities > improves yield and time as skills increase and regenerates depleted nodes 3ms
+ ✓ src/engine/actions.test.ts > personal life activities > restores health and stamina through village rest or paid lodging 3ms
+ ✓ src/engine/actions.test.ts > shop and equipment > respects shop location, opening hours and money 1ms
+ ✓ src/engine/actions.test.ts > shop and equipment > unlocks smith goods, equips items and prevents selling the equipped last copy 18ms
+ ✓ src/engine/actions.test.ts > combat and exploration > does not advance the world or RNG for an attack without an active encounter 4ms
+ ✓ src/engine/actions.test.ts > combat and exploration > uses the wolf family material payout without adding the legacy generic stack 5ms
+ ✓ src/engine/actions.test.ts > combat and exploration > earns combat EXP, loot and gold while reducing threat 3ms
+ ✓ src/engine/actions.test.ts > combat and exploration > reduces incoming damage when defending and uses a potion as a combat turn 3ms
+ ✓ src/engine/actions.test.ts > combat and exploration > clears combat on death while leaving time and history intact 2ms
+ ✓ src/engine/actions.test.ts > combat and exploration > allows retreat without XP or loot and rejects empty potion use 1ms
+ ✓ src/engine/actions.test.ts > combat and exploration > completes normal, elite and boss dungeon encounters with scaled loot 4ms
+ ✓ src/engine/actions.test.ts > combat and exploration > defeats the world boss and resets its threat buildup 83ms
+ ✓ src/engine/actions.test.ts > combat and exploration > records player Chief success as a bounded crisis fact without resolving the region 2ms
+ ✓ src/engine/actions.test.ts > combat and exploration > keeps ordinary nonboss hunts outside regional Chief outcome facts 1ms
+ ✓ src/engine/actions.test.ts > mercenary contracts and autonomous party > hires at the tavern only, caps party size at two, and expires contracts 21ms
+ ✓ src/engine/actions.test.ts > mercenary contracts and autonomous party > charges wages and ends a contract when the player cannot pay 18ms
+ ✓ src/engine/actions.test.ts > mercenary contracts and autonomous party > lets fighter and healer act autonomously in combat 28ms
+ ✓ src/engine/crafting.test.ts > starter crafting preview > resolves an owned nearby home as the all-day store site and charges the planned reduced fee 9ms
+ ✓ src/engine/crafting.test.ts > starter crafting preview > keeps advanced recipes at the blacksmith when the crafter owns a nearby home 2ms
+ ✓ src/engine/crafting.test.ts > starter crafting preview > uses the exact home fee for fieldSpear 4ms
+ ✓ src/engine/crafting.test.ts > starter crafting preview > uses the exact home fee for fieldArmor 2ms
+ ✓ src/engine/crafting.test.ts > starter crafting preview > returns the exact affordable starter spear plan without mutating the world 11ms
+ ✓ src/engine/crafting.test.ts > starter crafting preview > previews a selected influence material as one owned-material input without mutation 5ms
+ ✓ src/engine/crafting.test.ts > starter crafting preview > creates one shared-pipeline instance, consumes the recipe, advances time, and survives reload/equip 11ms
+ ✓ src/engine/crafting.test.ts > starter crafting preview > consumes and records wolfFang through save and reload 5ms
+ ✓ src/engine/crafting.test.ts > starter crafting preview > consumes and records moonStone through save and reload 5ms
+ ✓ src/engine/crafting.test.ts > starter crafting preview > repeats an influence craft deterministically from the same seed and inputs 2ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > defines the four approved recipes with their exact costs, outputs, unlocks, stations and practice caps 0ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > denies a locked recipe before changing any state and reports the unlock in the preview 5ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > previews the next quality floor and exact rarity weights from the current Smithing level 1ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > enforces craft rarity floors in the shared generator while leaving below-threshold and context-free rolls alone 3ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > consumes one wolfFang for the advanced sword without changing its seeded masterpiece or rarity odds 3ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > consumes one moonStone for the advanced sword without changing its seeded masterpiece or rarity odds 2ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > awards practice through the level-3 graduation craft and keeps recording later starter crafts without XP 2ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > forms the Smith identity on the tenth successful action at Smithing 3 and preserves it on reload 4ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > stops awarding practice at the starterSpear Smithing cap 3 while recording the action 3ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > stops awarding practice at the fieldSpear Smithing cap 5 while recording the action 3ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > stops awarding practice at the fieldArmor Smithing cap 5 while recording the action 3ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > stops awarding practice at the ironShortSword Smithing cap 6 while recording the action 3ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > preserves a legitimate common starter craft after the creator advances to a higher Smithing floor 4ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > records a seeded Smithing 6 masterpiece as a saved, important crafter milestone 5ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > awards first-masterpiece reputation once and keeps its identity after sale and milestone eviction 5ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > allows a first masterpiece when the conservative same-day event budget fits 1ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > rejects a first masterpiece before RNG when the event budget does not fit 6ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > rejects before mutation when crop and XP events exceed the remaining event ids 16ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > reserves one daily event for a crisis phase and rejects atomically near the event id limit 3ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > reserves the year-boundary event budget for the full NPC and party population 203ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > rejects before mutation when a crossed day could exhaust the NPC id allocator 20ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > rejects before mutation when a crossed day could exhaust the living-event id allocator 10ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > keeps ordinary crafts out of important history and records Legendary non-masterpieces 4ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > retains the newest important craft when personal milestones and world history are full 76ms
+ ✓ src/engine/crafting.test.ts > crafting skill capabilities > preserves the crafter and craft-start milestone when a masterpiece outlasts its maker 7ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'a material unsupported by the recipe' before RNG or mutation 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'a selected material absent from the a…' before RNG or mutation 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'outside the station range' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'while the workbench is closed' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'before the workbench exists' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'after the character dies' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'during combat' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'inside the dungeon' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'below the recipe skill requirement' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'without enough ingredients' without changing state, RNG, ids, resources, time, or events 4ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'without enough gold' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'without enough stamina' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'without a workbench outside store hou…' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'with a malformed owned home site' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'with malformed identity state' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'with malformed reputation' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'with malformed reputation history' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'with an unsafe ingredient stack' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'with invalid existing milestone metad…' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'with unsafe practice experience' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'with an unsafe life action counter' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'with invalid world time' without changing state, RNG, ids, resources, time, or events 2ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'after exhausting item ids' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects 'after exhausting event ids' without changing state, RNG, ids, resources, time, or events 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects invalid recipe requests without changing state 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects invalid recipe requests without changing state 3ms
+ ✓ src/engine/crafting.test.ts > starter crafting transaction > rejects invalid recipe requests without changing state 3ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > returns a typed action result once and does not persist a denied no-op 18ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > persists a typed successful action and journals its mapped message 24ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > records factual equip and unequip messages in the stored action journal 27ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > preserves corrupt saves and blocks automatic and manual overwrite 2ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > preserves malformed reward extensions and blocks all progress instead of discarding owned gear 6ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > migrates V1 without offline advancement and retains the historical world checkpoint 13ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > keeps historical offline journal records but adds no offline load record 17ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > reports storage failure without silently clearing state 4ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > replaces the stale failure message when automatic saving recovers 6ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > allows explicit reset to replace corrupt data after the UI confirmation 5ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > keeps a new world paused until startLife and triggers shallow world updates 8ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > blocks the next action until the failed checkpoint can be saved 21ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > updates character display dependencies after health, equipment and life changes 11ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > blocks further time advancement while the failed checkpoint still cannot be saved 8ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > retries the checkpoint before resuming at speed 1 18ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > retries the checkpoint before resuming at speed 5 12ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > retries the checkpoint before resuming at speed 20 14ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > saves the retained operation before the next action and commits each record once after recovery 26ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > continues actions, time, and resume when only the journal archive is unavailable 20ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > allows confirmed reset during both storage failures and retains the old pending records 25ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > saves movement and time immediately without manual saving 14ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > immediately saves death-interrupted lodging and its failure events 37ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > retains persisted pending records on reload without leaking metadata into the engine 19ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > records all events even when a single operation exceeds the visible log limit 7ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > retains the old world journal when explicitly rebuilding 7ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > reports a rejected journal batch and preserves newer progress (save failure: false) 27ms
+ ✓ src/stores/gameStore.test.ts > safe browser persistence > reports a rejected journal batch and preserves newer progress (save failure: true) 19ms
+ ✓ src/stores/gameStore.test.ts > exclusive checkpoint writer > prevents a second tab from overwriting newer progress or appending its own journal 14ms
+ ✓ src/stores/gameStore.test.ts > exports the latest persisted checkpoint from a blocked tab, not its stale preview 14ms
+ ✓ src/stores/gameStore.test.ts > does not write before asynchronous lock acquisition and re-reads the winning checkpoint 13ms
+ ✓ src/stores/gameStore.test.ts > fails closed with unsupported browser lock support 1ms
+ ✓ src/stores/gameStore.test.ts > fails closed with rejected browser lock support 1ms
+ ✓ src/stores/gameStore.test.ts > releases ownership on store disposal and a new session reads the latest save 13ms
+ ✓ src/stores/gameStore.test.ts > does not activate an asynchronously granted lease after store disposal 1ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > defines the boss-exclusive moon fang spear without changing the shared base pool or old weapon rolls 3ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > projects source-specific reward expectations as detached pure data 1ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > returns a deterministic unique instance without awarding it to the reward state 6ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > keeps the legacy generation stream and rolled stats fixed 1ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > adds recipe provenance through the shared generator without changing its legacy rolls 2ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid craft context before changing RNG or item identity sequence 21ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects a locked or output-mismatched recipe context before changing RNG or item identity sequence 7ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'missing', level: 1 } 4ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: +0 } 4ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 101 } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, material: 'iron' } 6ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 1, bossSource: 'grayWolf' } 5ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 7, dropSource: 'missing' } 3ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > rejects invalid input before consuming state: { baseId: 'shortSword', level: 7, dropSource: 'alphaWolf', bossSource: 'wolfKing' } 3ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > keeps affixes eligible, unique, rarity-sized, level-bounded and stat-exact 126ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > biases wolf fang rolls toward bleed or penetration affixes 11ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > biases the starter spear affixes without changing its rarity pool 22ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > uses the rare-plus boss rarity pool and preserves generated rolls across save and reload 14ms
+ ✓ src/engine/itemGeneration.test.ts > procedural item generation > uses source-qualified rarity pools while keeping every roll valid for its level and rarity 3ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > marks only the first award of an equipment base as a new discovery without changing loot state or RNG 4ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > awards the moon fang spear only for the boss and round-trips its intrinsic penetration through strict save validation 6ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects the boss-exclusive base for a non-boss source before consuming RNG 4ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > uses approved new drop levels and keeps their generated stats reloadable 6ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > awards guaranteed family materials and an instance for elite and boss kills 1ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > uses a deterministic seeded normal gear chance and weighted base table 52ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > biases armor drops with wolf hide and weapon drops with wolf fang 2ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unsafe material capacity and item sequence before any reward mutation or RNG draw 10ms
+ ✓ src/engine/itemGeneration.test.ts > wolf loot awards > rejects unknown definitions without changing state 5ms
+ ✓ src/services/rewardSave.test.ts > migrates a native V2 save without reward to V8/Reward3 without consuming world RNG or replacing its world 19ms
+ ✓ src/services/rewardSave.test.ts > migrates the committed native V1 fixture through the current V8 save format 21ms
+ ✓ src/services/rewardSave.test.ts > persists separate equipment instances and stackable materials without replacing fixed legacy gear 18ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward schema without recreating a world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward duplicate without recreating a world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward owner without recreating a world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward reference without recreating a world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward dual-gear without recreating a world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward stats without recreating a world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward affix-slot without recreating a world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward affix-value without recreating a world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward materials without recreating a world 2ms
+ ✓ src/services/rewardSave.test.ts > rejects malformed reward collection without recreating a world 4ms
+ ✓ src/services/rewardSave.test.ts > round-trips canonical family stats and preserves a boss formation across live turns 13ms
+ ✓ src/services/rewardSave.test.ts > applies active armor-phase penetration identically after exact save and reload 25ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged hp before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged maxHp before loading the world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged attack before loading the world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged defense before loading the world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged exp before loading the world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged gold before loading the world 6ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged elite before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-traits before loading the world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-variant before loading the world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-formedAt before loading the world 5ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-context before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged root-missing before loading the world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged turn before loading the world 3ms
+ ✓ src/services/rewardSave.test.ts > rejects a wolf boss save with a forged howl before loading the world 4ms
+ ✓ src/services/rewardSave.test.ts > accepts the fixed howl phase and rejects impossible turn/howl combinations 12ms
+ ✓ src/services/rewardSave.test.ts > round-trips a fractional wolf HP caused by companion damage 6ms
+ ✓ src/services/rewardSave.test.ts > keeps a boss form after death and lets a successor reuse it without another formation draw 7ms
+ ✓ src/services/rewardSave.test.ts > keeps legacy untagged wolf and dungeon fights loadable 9ms
+ ✓ src/engine/crisisAdventure.test.ts > records a real Goblin camp victory once and improves odds when current pressure dominates 55ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects a camp raid before start when the event sequence cannot support one victory 14ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects a camp victory turn atomically when its exact outcome would exhaust the event sequence 14ms
+ ✓ src/engine/crisisAdventure.test.ts > preflights the camp victory and H recognition at the final saveable event sequence 15ms
+ ✓ src/engine/crisisAdventure.test.ts > preflights daily-boundary combat events before applying damage or advancing time 16ms
+ ✓ src/engine/crisisAdventure.test.ts > allows a raid during warning before its deadline 2ms
+ ✓ src/engine/crisisAdventure.test.ts > allows a raid during preparation before its deadline 1ms
+ ✓ src/engine/crisisAdventure.test.ts > allows a raid during active before its deadline 1ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects an unavailable camp raid atomically: stale-id 5ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects an unavailable camp raid atomically: outside-forest 3ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects an unavailable camp raid atomically: mismatched-tile 3ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects an unavailable camp raid atomically: combat 4ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects an unavailable camp raid atomically: dead-player 4ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects an unavailable camp raid atomically: dungeon 5ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects an unavailable camp raid atomically: no-stamina 4ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects an unavailable camp raid atomically: expired 4ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects an unavailable camp raid atomically: event-capacity 3ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects an unavailable camp raid atomically: already-credited 4ms
+ ✓ src/engine/crisisAdventure.test.ts > allows a genuine retry after fleeing without granting the camp benefit 5ms
+ ✓ src/engine/crisisAdventure.test.ts > keeps a departed raid loadable through a new crisis but credits only its own current crisis 6ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects malformed in-flight camp objective on save load: other-world 6ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects malformed in-flight camp objective on save load: future-sequence 4ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects malformed in-flight camp objective on save load: future-start-time 4ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects malformed in-flight camp objective on save load: other-monster 4ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects malformed in-flight camp objective on save load: dungeon 4ms
+ ✓ src/engine/crisisAdventure.test.ts > rejects malformed in-flight camp objective on save load: wrong-kind 4ms
+ ✓ src/engine/crisisAdventure.test.ts > keeps late victory rewards ordinary and does not credit an expired crisis 3ms
+ ✓ src/engine/crisisAdventure.test.ts > does not credit an ordinary Goblin hunt as a camp raid 1ms
+ ✓ src/engine/crisisAdventure.test.ts > combines actual Chief and camp outcomes with bounded relief instead of guaranteeing victory 3ms
+ ✓ src/engine/crisisAdventure.test.ts > does not grant an in-flight raid credit when its player dies and the world continues after succession 9ms
+ ✓ src/engine/crisisContributions.test.ts > accepts an owned unequipped item for a current crisis defender without time or RNG advancement 21ms
+ ✓ src/engine/crisisContributions.test.ts > turns actual weapon stats and defender suitability into capped equipment readiness 2ms
+ ✓ src/engine/crisisContributions.test.ts > rejects an invalid equipment contribution atomically: stale-crisis 6ms
+ ✓ src/engine/crisisContributions.test.ts > rejects an invalid equipment contribution atomically: outside-village 5ms
+ ✓ src/engine/crisisContributions.test.ts > rejects an invalid equipment contribution atomically: combat 4ms
+ ✓ src/engine/crisisContributions.test.ts > rejects an invalid equipment contribution atomically: dead-player 3ms
+ ✓ src/engine/crisisContributions.test.ts > rejects an invalid equipment contribution atomically: dungeon 3ms
+ ✓ src/engine/crisisContributions.test.ts > rejects an invalid equipment contribution atomically: active-phase 9ms
+ ✓ src/engine/crisisContributions.test.ts > rejects an invalid equipment contribution atomically: event-capacity 4ms
+ ✓ src/engine/crisisContributions.test.ts > rejects an invalid equipment contribution atomically: unowned-item 4ms
+ ✓ src/engine/crisisContributions.test.ts > rejects an invalid equipment contribution atomically: equipped-item 3ms
+ ✓ src/engine/crisisContributions.test.ts > rejects an invalid equipment contribution atomically: no-free-slot 4ms
+ ✓ src/engine/crisisContributions.test.ts > accepts food only when it improves the raw forecast and bounded supply need 14ms
+ ✓ src/engine/crisisContributions.test.ts > does not tell the player to add farmers when a negative forecast can reach need but the request is oversized 5ms
+ ✓ src/engine/crisisContributions.test.ts > retains equipment provenance and historical NPC/donor references through death and succession 6ms
+ ✓ src/engine/crisisContributions.test.ts > rejects forged consumed-item provenance in a V5 contribution ledger 4ms
+ ✓ src/engine/crisisContributions.test.ts > retains an allocated defender reference after daily simulation prunes its dead nonfeatured NPC record 5ms
+ ✓ src/engine/crisisContributions.test.ts > adds capped gold to the workforce-derived emergency logistics need 11ms
+ ✓ src/engine/crisisContributions.test.ts > recognizes a donor once when combined food and gold supply crosses five normalized credits 9ms
+ ✓ src/engine/crisisContributions.test.ts > credits summed defense craft by original crafter across creators, never the successor item owner 6ms
+ ✓ src/engine/crisisContributions.test.ts > rejects a major supply threshold crossing atomically without room for its complete event path 4ms
+ ✓ src/engine/crisisContributions.test.ts > keeps a threshold-crossing crafted asset and ledger intact when event capacity is short 4ms
+ ✓ src/engine/crisisContributions.test.ts > admits the full three-event supply path at the last saveable event sequence 5ms
+ ✓ src/engine/crisisContributions.test.ts > does not replay recognition for a loaded ledger already above the supply threshold 2ms
+ ✓ src/engine/regionalCrisis.test.ts > regional crisis state > starts each new world dormant with a zeroed deterministic sequence 4ms
+ ✓ src/engine/regionalCrisis.test.ts > regional crisis state > starts one warning after an eligible daily threat roll succeeds 4ms
+ ✓ src/engine/regionalCrisis.test.ts > regional crisis state > does not consume shared RNG when a daily crisis trigger is ineligible 1ms
+ ✓ src/engine/regionalCrisis.test.ts > regional crisis state > does not draw or start a crisis when its warning event cannot receive a safe id 1ms
+ ✓ src/engine/regionalCrisis.test.ts > regional crisis state > uses exactly one shared RNG draw for an eligible trigger 2ms
+ ✓ src/engine/regionalCrisis.test.ts > regional crisis state > advances through fixed phases once and waits at resolution for a real outcome 1ms
+ ✓ src/engine/regionalCrisis.test.ts > regional crisis state > round trips every crisis phase and keeps chunked and reloaded simulation deterministic 102ms
+ ✓ src/engine/regionalCrisis.test.ts > regional crisis state > keeps crisis state across player death and succession 2ms
+ ✓ src/engine/regionalCrisis.test.ts > regional crisis state > accepts a Chief record for a valid historical NPC id after the NPC leaves the world 5ms
+ ✓ src/engine/lifeIntegration.test.ts > V2 integrated life rules > keeps a 100-year world bounded, serializable and deterministic after save 5780ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > applies finite mechanics and exposes the same authored cue plus real source/use hints 4ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > keeps availability a pure projection and rejects before stamina, time, or RNG change 23ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > uses the selected monster loot table and closes a real loot-to-craft-to-equip-save loop 20ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > does not advance dungeon state or award dungeon-clear iron for an outdoor content win 4ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > freezes boss form over escape and reload, then applies bounded reward/cooldown without Goblin crisis changes 12ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > allows a saved boss cooldown to reform at expiry with one new formation draw 5ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > normalizes a legacy raw Reward3 frozen boss form deterministically and idempotently 14ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > rejects unknown boss IDs and malformed defeated cooldown entries 9ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > keeps a boss defeat cooldown in bounded boss state when combat crosses a full director-key boundary 11ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > rejects unknown or unresolved loot sources before touching RNG or reward state 11ms
+ ✓ src/engine/contentFamilies.test.ts > authored family runtime > uses the selected monster loot table and deduplicates overlapping boss guarantees 1ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > explains the active hard-skin penetration effect in the armor trait cue 2ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > projects all five definitions and progression reasons without changing the world 13ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > blocks invalid starts before spending stamina, advancing time, or drawing RNG 20ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > forms deterministic tagged combat snapshots and records discovery only on a legal start 6ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > keeps trait counts inside each rank contract 11ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > gates wolf king behind the full collection path and a seven game-day defeat cooldown 2ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > uses the actual encounter definition and shared regional-defense effects without goblin-chief side effects 4ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > keeps a formed boss variant across flee, save, reload, and re-challenge 22ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > makes fast rushes and armored turns change combat damage, with cues from those same phases 6ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > uses the boss variant in the next-turn cue and applies moonlit healing before a charge 1ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > makes a starved boss charge at half health a turn early and well-fed charge hit harder 2ms
+ ✓ src/engine/wolfFamily.test.ts > wolf family encounters > persists the howl phase only on its legal third-round window 0ms
+ ✓ src/engine/ownership.test.ts > ownership > projects the home price and money blocker without mutating the world 10ms
+ ✓ src/engine/ownership.test.ts > ownership > buys a home once for the active character and keeps it in the world after death 3ms
+ ✓ src/engine/ownership.test.ts > ownership > keeps character milestone history within the identity limit when adding ownership 2ms
+ ✓ src/engine/ownership.test.ts > ownership > requires the settlement stage and reputation for land, then land for the farm business 5ms
+ ✓ src/engine/ownership.test.ts > ownership > keeps farm business income manual rather than generating food or money over time 6ms
+ ✓ src/engine/ownership.test.ts > ownership > blocks ownership purchases away from the site, while dead, in combat, or in a dungeon 13ms
+ ✓ src/engine/ownership.test.ts > ownership > does not grant a purchase when the actor dies during the paid transaction 4ms
+ ✓ src/engine/ownership.test.ts > ownership > rests at an owned home, restores the living owner, and blocks a distant owner 10ms
+ ✓ src/engine/ownership.test.ts > ownership > does not restore the owner if a home rest crosses their death 2ms
+ ✓ src/engine/ownership.test.ts > ownership > moves exact item quantities through home storage without creating or losing items 1ms
+ ✓ src/engine/ownership.test.ts > ownership > rejects invalid, unavailable, or over-capacity storage transfers without mutation 2ms
+ ✓ src/engine/ownership.test.ts > ownership > consumes supplied food and records bounded settlement impact, reputation, and memory 4ms
+ ✓ src/engine/ownership.test.ts > ownership > rejects invalid food supplies and resets the daily cap on the next world day 8ms
+ ✓ src/engine/ownership.test.ts > ownership > does not accept a food gift from a dead or blocked actor 19ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment actions > equips by active owner, clears legacy gear in that slot and supports unequipping 5ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment actions > clears a procedural reference when legacy equipment is equipped 1ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment actions > rejects missing equipment changes without mutation 8ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment actions > rejects foreign equipment changes without mutation 6ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment actions > rejects combat equipment changes without mutation 7ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment actions > rejects dead equipment changes without mutation 4ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment actions > never sums legacy and procedural gear and resolves an owner-specific equipped instance 1ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > preserves the legacy common sale price exactly 0ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > preserves the legacy uncommon sale price exactly 0ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > preserves the legacy rare sale price exactly 0ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > preserves the legacy epic sale price exactly 0ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > preserves the legacy legendary sale price exactly 0ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > adds exactly two gold when the same eligible Rare short sword is a Masterpiece 0ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > bounds affix and Masterpiece premium independently and caps their combined value 0ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > keeps the approved legacy recipe sale bounds unchanged 1ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > rejects profitable repeatable purchase-to-craft-to-sale cycles 1ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > sells owned un-equipped gear at the smith for its rarity-adjusted price and records the trade 1ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > blocks equipped sales without consuming an instance 6ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > blocks foreign sales without consuming an instance 5ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > blocks missing sales without consuming an instance 3ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > blocks closed-shop sales without consuming an instance 3ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > blocks unsafe-gold sales without consuming an instance 6ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > sells one owned material through the store with a safe payout and five-minute activity event 1ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > rejects absent materials and payouts that would exceed safe gold 10ms
+ ✓ src/engine/rewardActions.test.ts > procedural equipment sales > does not sell materials at the blacksmith when the store is unavailable 3ms
+ ✓ src/services/playJournal.test.ts > atomic local checkpoint envelope > migrates a valid V1 world and starts a separate journal 14ms
+ ✓ src/services/playJournal.test.ts > atomic local checkpoint envelope > preserves historical offline journal entries unchanged during V1 migration 9ms
+ ✓ src/services/playJournal.test.ts > atomic local checkpoint envelope > round trips both the checkpoint and pending records without engine metadata 11ms
+ ✓ src/services/playJournal.test.ts > atomic local checkpoint envelope > protects a checkpoint with damaged pending-record metadata 7ms
+ ✓ src/services/playJournal.test.ts > journal transaction failure lifecycle > rejects with the final conflict reason after a request error precedes abort 2ms
+ ✓ src/services/playJournal.test.ts > journal transaction failure lifecycle > rejects with the final quota reason after a request error precedes abort 0ms
+ ✓ src/presentation/craftingProjection.test.ts > crafting UI projection > projects neutral crafting and only the influence materials allowed by the recipe 27ms
+ ✓ src/presentation/craftingProjection.test.ts > crafting UI projection > projects the selected fang as one owned-material input and describes its exact affix weight changes 6ms
+ ✓ src/presentation/craftingProjection.test.ts > crafting UI projection > explains that moonstone special chance applies only to legendary weapons and leaves rarity unchanged 1ms
+ ✓ src/presentation/craftingProjection.test.ts > crafting UI projection > preserves the engine denial and owned count when the selected influence material is missing 1ms
+ ✓ src/presentation/craftingProjection.test.ts > crafting UI projection > lists legacy recipes unchanged and projects the exact Slime recipes with their denials 2ms
+ ✓ src/presentation/craftingProjection.test.ts > crafting UI projection > uses the selected recipe plan for exact costs, station, quality floor, and capped practice 2ms
+ ✓ src/presentation/craftingProjection.test.ts > crafting UI projection > projects the current recipe material allowlist and preserves the engine denial 2ms
+ ✓ src/presentation/craftingProjection.test.ts > crafting UI projection > projects an owned nearby home as the actual basic-recipe site with its planned hours and fee 1ms
+ ✓ src/engine/caveInsects.integration.test.ts > Cave Insects runtime integration > registers six normal and two Elite canonical mine encounters with their progression predicates 11ms
+ ✓ src/engine/caveInsects.integration.test.ts > Cave Insects runtime integration > runs authored mechanics in combat and awards the selected monster loot source 5ms
+ ✓ src/engine/caveInsects.integration.test.ts > Cave Insects runtime integration > crafts the chitin spear from the real recipe, equips it, and preserves it across save reload 23ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > reports an ID-independent effective monster duplicate and a controlled spawn witness 7ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > uses reachable monster-selected loot tables for distinct sourced and useful family loot 9ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > rejects an unresolved monster-selected loot table 1ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > rejects unsatisfiable predicates, unknown references, and materials without a real consumer 1ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > checks satisfiability of the family AND monster profile combination 4ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > rejects out-of-range stats and missing required localized text 1ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > validates unknown JSON instead of trusting a TypeScript cast 1ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > excludes an exact baseline ID collision from every new-content count 1ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > rejects baseline boss variant collisions in their own namespace 1ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > excludes exact legacy and procedural item IDs from item collisions and quality counts 0ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > does not treat an invalid recipe as an item or material consumer 0ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > rejects malformed and fractional recipe inputs and every invalid family region token 0ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > rejects malformed loot entries instead of dropping them from consumer evidence 0ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > rejects crop and recipe economy values outside finite authoring bounds 1ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > rejects missing or unsupported required recipe enums before granting consumer credit 1ms
+ ✓ src/engine/contentValidation.test.ts > validateContentPack > applies bounded authoring economy guards and uses legacy affix slot metadata 1ms
+ ✓ src/engine/npcLife.test.ts > NPC life > keeps old-life memories without attributing the previous owner achievements to a successor 12ms
+ ✓ src/engine/npcLife.test.ts > NPC life > retires older residents and makes retirement visible to work eligibility 1ms
+ ✓ src/engine/npcLife.test.ts > NPC life > advances skilled adults at the annual review without consuming world RNG 2ms
+ ✓ src/engine/npcLife.test.ts > NPC life > preserves starting occupations until residents have learned their work 1ms
+ ✓ src/engine/npcLife.test.ts > NPC life > keeps personal memories with their named resident and shares local news only with witnesses 2ms
+ ✓ src/engine/npcLife.test.ts > NPC life > bounds each resident memory list while preserving the most recent distinct entries 3ms
+ ✓ src/engine/npcLife.test.ts > NPC life > projects dialogue without mutation and spends one world RNG draw only when spoken 6ms
+ ✓ src/engine/npcLife.test.ts > NPC life > rejects distant conversations without consuming world RNG 5ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > preserves legacy damage results and consumes no RNG with zero proc chances 4ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > uses one source per physical slot while combining different legacy and instance slots 1ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > applies penetration, per-hit bleed, critical chance and wolf-only Moon Hunter damage 1ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > doubles penetration only during an active wolf hard-skin phase and preserves other damage formulas 4ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > keeps bleed and Moon Hunter as extra per-hit damage through very high defense 1ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > routes player and incoming combat damage through the gear-aware helpers 1ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > keeps wolf family drops separate from legacy payouts and shows gear in victory messages 10ms
+ ✓ src/engine/combatStats.test.ts > equipment stats and damage > halves blocked hits and applies percentage reduction without drawing when chances are zero 1ms
+ ✓ src/engine/civilDefense.test.ts > civil defense derivation > returns bounded deterministic readiness without mutating world state or RNG 18ms
+ ✓ src/engine/civilDefense.test.ts > civil defense derivation > counts only available local guards and mercenaries, and caps gear to their slots 2ms
+ ✓ src/engine/civilDefense.test.ts > civil defense derivation > projects food from the simulation daily net across each remaining crisis phase 2ms
+ ✓ src/engine/civilDefense.test.ts > civil defense derivation > retains the trigger-time threat floor after ordinary threat reduction 1ms
+ ✓ src/engine/civilDefense.test.ts > civil defense derivation > allows a naturally prepared town to outperform an underprepared hamlet without player aid 2ms
+ ✓ src/engine/civilDefense.test.ts > civil defense derivation > does not make player equipment or combat stats a readiness source 1ms
+ ✓ src/engine/civilDefense.test.ts > civil defense derivation > returns no model for dormant or completed aftermath crises 2ms
+ ✓ src/presentation/rewardProjection.test.ts > bounds owned gear pages, clamps stale pages and filters without discarding inventory 6ms
+ ✓ src/presentation/rewardProjection.test.ts > projects a masterpiece as an identity label with its original maker, creation time, and recipe 1ms
+ ✓ src/presentation/rewardProjection.test.ts > projects the actual physical slot and preserves the other slot comparison 1ms
+ ✓ src/presentation/rewardProjection.test.ts > compares an owned candidate with the current same-slot item, including affixes and signed deltas 1ms
+ ✓ src/presentation/rewardProjection.test.ts > includes intrinsic base stats and current generated affix/special identity 1ms
+ ✓ src/presentation/rewardProjection.test.ts > presents a real boss first-discovery event and never reconstructs it after the bounded event leaves 4ms
+ ✓ src/presentation/worldProjection.test.ts > world projection boundary > exposes display fields without character inventories or simulation counters 8ms
+ ✓ src/presentation/worldProjection.test.ts > world projection boundary > never projects NPC names or markers through undiscovered tiles 2ms
+ ✓ src/presentation/worldProjection.test.ts > world projection boundary > classifies nearby, featured and distant NPCs without materializing monsters 1ms
+ ✓ src/engine/identity.test.ts > life identity > forms each identity once from sustained work and skill, then supports multiple identities 7ms
+ ✓ src/engine/identity.test.ts > life identity > forms farm owner identity from an owned farm business 1ms
+ ✓ src/engine/identity.test.ts > life identity > recognizes a successor’s retained career even before new actions accrue 1ms
+ ✓ src/engine/identity.test.ts > life identity > requires both sustained actions and skill for an experience-based identity 1ms
+ ✓ src/engine/identity.test.ts > life identity > clamps negative reputation, changes the displayed label, and gates eligibility 1ms
+ ✓ src/engine/identity.test.ts > life identity > does not record a reputation change when clamping leaves the value unchanged 1ms
+ ✓ src/engine/identity.test.ts > life identity > bounds reputation history and milestones while keeping a deceased life intact 2ms
+ ✓ src/presentation/crisisProjection.test.ts > projectCrisis > projects an active warning without changing world state or RNG 17ms
+ ✓ src/presentation/crisisProjection.test.ts > projectCrisis > keeps missing legacy summaries unknown 2ms
+ ✓ src/presentation/lifeProjection.test.ts > detached life display snapshots > keeps character and NPC display edits outside the simulation 5ms
+ ✓ src/presentation/lifeProjection.test.ts > detached life display snapshots > refreshes career, memory, identity and storage snapshots without retaining raw aliases 3ms
+ ✓ src/presentation/worldUI.test.ts > 世界情境互動 > 商店僅靠近時可開啟，打烊後仍能查看營業時間 4ms
+ ✓ src/presentation/worldUI.test.ts > 世界情境互動 > 地圖呈現農作、聚落與怪物變化，且不洩露迷霧或改動世界 3ms
+ ✓ src/presentation/worldUI.test.ts > 世界情境互動 > 方向鍵與 WASD 支援大小寫且其他按鍵不移動 1ms
+ ✓ src/presentation/worldUI.test.ts > 世界情境互動 > 採集區優先提示區域工作，附近居民仍可以另外互動 1ms
+ ✓ src/engine/gameLoop.test.ts > single real-time loop > flushes elapsed time at the speed in effect before pause and resume changes 4ms
+ ✓ src/engine/gameLoop.test.ts > single real-time loop > catches up a delayed background callback from monotonic elapsed time 1ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 500 years of history, natural deaths and successors and continues deterministically 14938ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a rolled-back event sequence before planting duplicates a crop ID 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects duplicate crop IDs before harvesting can remove an extra plot 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects an NPC counter that would collide with an existing resident 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips a living world and preserves future simulation 25ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips a deceased character instead of discarding the world 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips an equipped character in active combat and continues the encounter 9ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsupported versions, missing fields and invalid JSON 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects fractional prepared plots on the first load (PT-001) 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 0 whole prepared plots 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 1 whole prepared plots 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 2 whole prepared plots 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 3 whole prepared plots 5ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 4 whole prepared plots 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips normal farming at capacity and continues planting 11ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt invalid-calendar save 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt invalid-character-stage save 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt invalid-event save 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects a corrupt invalid-combat save 6ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > matures crops at the same instant in batch and minute-by-minute simulation 223ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: character-exp 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: npc-skill-exp 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: skill-level 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: schedule-midnight 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: schedule-order 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: schedule-start 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: dungeon-stage 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects unsafe continuation: dungeon-combat 2ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects an incomplete grid caused by tile x=24 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects an incomplete grid caused by tile x=0.5 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects invalid world locations or encounter levels: player 4ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects invalid world locations or encounter levels: npc 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects invalid world locations or encounter levels: home 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects invalid world locations or encounter levels: workplace 3ms
+ ✓ src/services/saveService.test.ts > versioned saves and deterministic continuation > rejects invalid world locations or encounter levels: threat 3ms
+
+ Test Files  31 passed (31)
+      Tests  570 passed (570)
+   Start at  01:07:55
+   Duration  16.60s (transform 1.88s, setup 0ms, import 3.48s, tests 33.22s, environment 13ms)
+
