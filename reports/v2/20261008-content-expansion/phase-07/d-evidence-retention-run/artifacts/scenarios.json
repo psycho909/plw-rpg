@@ -1,0 +1,270 @@
+{
+  "A": {
+    "exit": 1,
+    "noReadableReport": true,
+    "noQARuns": true
+  },
+  "B": {
+    "exit": 0,
+    "report": "# Phase 7 Content Batch Validation\n\n- Supplied pack: reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/minimal-valid-pack.json\n- Captured pack SHA-256: 2f67710c47cbd5a7a548ffc16d852b95005c5a1e4d5e7f6fa4c7adb9bac48161\n- Run evidence: reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/.qa-runs/2026-10-13T01-42-14.683Z-707c3335-93f1-40ed-8fe7-2ad8f6c508b0\n- Current run HEAD: f026b6b4947d18aadc0f551c642c31750db5768c\n- Current run branch: v2x/reward-core\n- Current captured-source fingerprint: 6591df2cb3488e3423e692c2eb5c2adccf16950e1b747e20e81553fa1b0911eb\n- Historical Phase 7-B contract anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1\n- Content validation status: PASS\n- Overall validator + child-check outcome: PASS\n- targetedTests: PASS (exit 0)\n- typecheck: PASS (exit 0)\n- Natural spawn exposure: not-measured\n- Crop goods evidence: declared-food-binding-only-runtime-integration-unverified\n- Save compatibility evidence: stable-id-addition-only-runtime-migration-unverified\n- Tiny validation fixture: fixture IDs do not count toward approved targets.\n\n## Counts\n\n- Qualifying new monsters: 1\n- Authoring-qualified candidate new item IDs: 2\n- Authoring-qualified usable new materials: 1\n- Exact baseline monster IDs: 5; excluded legacy monster IDs: 4\n- Exact baseline boss variant IDs: 3\n- Exact baseline item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0\n\n## Reachability\n\n- bog-beasts: controlled-witness (forest, level 2, threat 1, hamlet, 夏, hour 0, safety 0; already-accessible)\n- mire-hunter: controlled-witness (forest, level 2, threat 1, hamlet, 夏, hour 0, safety 0; already-accessible)\n\n## Diagnostics\n\n- No validation errors.\n\n## Child checks\n\n### targetedTests\n\nExit: 0\n\nstdout:\n```text\n\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  16 passed (16)\n   Start at  01:42:15\n   Duration  244ms (transform 92ms, setup 0ms, import 107ms, tests 26ms, environment 0ms)\n```\n\nstderr:\n```text\n\n```\n\n### typecheck\n\nExit: 0\n\nstdout:\n```text\n\n```\n\nstderr:\n```text\n\n```\n\nControlled witnesses prove bounded predicate satisfiability only. This report does not estimate natural encounter rates.\n",
+    "runDirs": [
+      "2026-10-13T01-42-14.683Z-707c3335-93f1-40ed-8fe7-2ad8f6c508b0"
+    ]
+  },
+  "C": {
+    "exit": 1,
+    "report": "# Phase 7 Content Batch Validation\n\n- Supplied pack: reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/minimal-valid-pack.json\n- Captured pack SHA-256: 4e4f8984f46b93137c66d820a01f238363e8ee645368211e48df0f0d2ae0b5e3\n- Run evidence: reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/.qa-runs/2026-10-13T01-42-20.397Z-dbcd0565-95b8-43cd-b78a-dc7e69dfbd01\n- Current run HEAD: f026b6b4947d18aadc0f551c642c31750db5768c\n- Current run branch: v2x/reward-core\n- Current captured-source fingerprint: 6591df2cb3488e3423e692c2eb5c2adccf16950e1b747e20e81553fa1b0911eb\n- Historical Phase 7-B contract anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1\n- Content validation status: FAIL\n- Overall validator + child-check outcome: FAIL\n- targetedTests: PASS (exit 0)\n- typecheck: PASS (exit 0)\n- Natural spawn exposure: not-measured\n- Crop goods evidence: declared-food-binding-only-runtime-integration-unverified\n- Save compatibility evidence: stable-id-addition-only-runtime-migration-unverified\n- Tiny validation fixture: fixture IDs do not count toward approved targets.\n\n## Counts\n\n- Qualifying new monsters: 0\n- Authoring-qualified candidate new item IDs: 1\n- Authoring-qualified usable new materials: 0\n- Exact baseline monster IDs: 5; excluded legacy monster IDs: 4\n- Exact baseline boss variant IDs: 3\n- Exact baseline item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0\n\n## Reachability\n\n- bog-beasts: controlled-witness (forest, level 2, threat 1, hamlet, 夏, hour 0, safety 0; already-accessible)\n- mire-hunter: controlled-witness (forest, level 2, threat 1, hamlet, 夏, hour 0, safety 0; already-accessible)\n\n## Diagnostics\n\n- ERROR invalid-range [mire-hunter]: hp is outside its legal range.\n- ERROR unreachable-material [mire-claw]: Material has no reachable loot or crop source.\n- ERROR insufficient-identity-axes [mire-hunter]: Monster has 2 effective identity axes (combat, world) or an invalid source graph; at least two effective axes are required.\n\n## Child checks\n\n### targetedTests\n\nExit: 0\n\nstdout:\n```text\n\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  16 passed (16)\n   Start at  01:42:21\n   Duration  244ms (transform 94ms, setup 0ms, import 110ms, tests 25ms, environment 0ms)\n```\n\nstderr:\n```text\n\n```\n\n### typecheck\n\nExit: 0\n\nstdout:\n```text\n\n```\n\nstderr:\n```text\n\n```\n\nControlled witnesses prove bounded predicate satisfiability only. This report does not estimate natural encounter rates.\n",
+    "priorReportStillInArchive": true
+  },
+  "D": {
+    "exit": 1,
+    "inputSha": "76ee177440cdc3575811aa3e0eebeb2afdd283ec7cc596ce8bf8e13b687c8da9"
+  },
+  "E": {
+    "exit": 1,
+    "stderr": "Could not archive validation report (exit 23).\nCONTROLLED-PUBLISHER-SENTINEL\n",
+    "reportPreserved": true
+  },
+  "manifests": [
+    {
+      "dir": "reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/.qa-runs/2026-10-13T01-42-14.683Z-707c3335-93f1-40ed-8fe7-2ad8f6c508b0",
+      "manifestSha256": "af44adc056e2c1fcb11548de08952d3eed5c00c0b3da318d3863f6c1a44bc175",
+      "packSnapshotSha256": "2f67710c47cbd5a7a548ffc16d852b95005c5a1e4d5e7f6fa4c7adb9bac48161",
+      "expectedInputSha256": "2f67710c47cbd5a7a548ffc16d852b95005c5a1e4d5e7f6fa4c7adb9bac48161",
+      "sourceSnapshotHashes": {
+        "package-lock.json": {
+          "declared": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d",
+          "actual": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d"
+        },
+        "package.json": {
+          "declared": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6",
+          "actual": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6"
+        },
+        "reports/v2/20261008-content-expansion/phase-07/content-baseline.json": {
+          "declared": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+          "actual": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63"
+        },
+        "scripts/recorded_reports.py": {
+          "declared": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+          "actual": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b"
+        },
+        "scripts/validate_content_batch.mjs": {
+          "declared": "79f390fad5a706955b1f2546c6065191e52e556d4c6297587d2a11cc8859c989",
+          "actual": "79f390fad5a706955b1f2546c6065191e52e556d4c6297587d2a11cc8859c989"
+        },
+        "scripts/validate_content_evidence.mjs": {
+          "declared": "574343415da3524deb7092cc1288ce8e602eae8aa9eb41be9b998c62d8dd6bc4",
+          "actual": "574343415da3524deb7092cc1288ce8e602eae8aa9eb41be9b998c62d8dd6bc4"
+        },
+        "src/data/content/caveInsects.ts": {
+          "declared": "20d7d07e7780caf8c199a9c041eeae96a67e30da5bc1c0b34763d1ef9ce39468",
+          "actual": "20d7d07e7780caf8c199a9c041eeae96a67e30da5bc1c0b34763d1ef9ce39468"
+        },
+        "src/data/content/slime.ts": {
+          "declared": "0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead",
+          "actual": "0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead"
+        },
+        "src/domain/content.ts": {
+          "declared": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+          "actual": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba"
+        },
+        "src/engine/contentValidation.test.ts": {
+          "declared": "484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226",
+          "actual": "484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226"
+        },
+        "src/engine/contentValidation.ts": {
+          "declared": "1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e",
+          "actual": "1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e"
+        },
+        "tsconfig.json": {
+          "declared": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0",
+          "actual": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0"
+        },
+        "vite.config.ts": {
+          "declared": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771",
+          "actual": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771"
+        }
+      }
+    },
+    {
+      "dir": "reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/.qa-runs/2026-10-13T01-42-20.397Z-dbcd0565-95b8-43cd-b78a-dc7e69dfbd01",
+      "manifestSha256": "671570e884ab536edab338938b7dd1916c6286a293b65d235a5a67febe969579",
+      "packSnapshotSha256": "4e4f8984f46b93137c66d820a01f238363e8ee645368211e48df0f0d2ae0b5e3",
+      "expectedInputSha256": "4e4f8984f46b93137c66d820a01f238363e8ee645368211e48df0f0d2ae0b5e3",
+      "sourceSnapshotHashes": {
+        "package-lock.json": {
+          "declared": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d",
+          "actual": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d"
+        },
+        "package.json": {
+          "declared": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6",
+          "actual": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6"
+        },
+        "reports/v2/20261008-content-expansion/phase-07/content-baseline.json": {
+          "declared": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+          "actual": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63"
+        },
+        "scripts/recorded_reports.py": {
+          "declared": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+          "actual": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b"
+        },
+        "scripts/validate_content_batch.mjs": {
+          "declared": "79f390fad5a706955b1f2546c6065191e52e556d4c6297587d2a11cc8859c989",
+          "actual": "79f390fad5a706955b1f2546c6065191e52e556d4c6297587d2a11cc8859c989"
+        },
+        "scripts/validate_content_evidence.mjs": {
+          "declared": "574343415da3524deb7092cc1288ce8e602eae8aa9eb41be9b998c62d8dd6bc4",
+          "actual": "574343415da3524deb7092cc1288ce8e602eae8aa9eb41be9b998c62d8dd6bc4"
+        },
+        "src/data/content/caveInsects.ts": {
+          "declared": "20d7d07e7780caf8c199a9c041eeae96a67e30da5bc1c0b34763d1ef9ce39468",
+          "actual": "20d7d07e7780caf8c199a9c041eeae96a67e30da5bc1c0b34763d1ef9ce39468"
+        },
+        "src/data/content/slime.ts": {
+          "declared": "0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead",
+          "actual": "0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead"
+        },
+        "src/domain/content.ts": {
+          "declared": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+          "actual": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba"
+        },
+        "src/engine/contentValidation.test.ts": {
+          "declared": "484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226",
+          "actual": "484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226"
+        },
+        "src/engine/contentValidation.ts": {
+          "declared": "1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e",
+          "actual": "1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e"
+        },
+        "tsconfig.json": {
+          "declared": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0",
+          "actual": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0"
+        },
+        "vite.config.ts": {
+          "declared": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771",
+          "actual": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771"
+        }
+      }
+    },
+    {
+      "dir": "reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/.qa-runs/2026-10-13T01-42-26.274Z-59dba7ad-8d27-443a-9e84-4e143ea4a027",
+      "manifestSha256": "9f042911266e5d35769ba34d48df00cf0563a874371bfef36fae70d0b9202cc5",
+      "packSnapshotSha256": "76ee177440cdc3575811aa3e0eebeb2afdd283ec7cc596ce8bf8e13b687c8da9",
+      "expectedInputSha256": "76ee177440cdc3575811aa3e0eebeb2afdd283ec7cc596ce8bf8e13b687c8da9",
+      "sourceSnapshotHashes": {
+        "package-lock.json": {
+          "declared": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d",
+          "actual": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d"
+        },
+        "package.json": {
+          "declared": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6",
+          "actual": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6"
+        },
+        "reports/v2/20261008-content-expansion/phase-07/content-baseline.json": {
+          "declared": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+          "actual": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63"
+        },
+        "scripts/recorded_reports.py": {
+          "declared": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+          "actual": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b"
+        },
+        "scripts/validate_content_batch.mjs": {
+          "declared": "79f390fad5a706955b1f2546c6065191e52e556d4c6297587d2a11cc8859c989",
+          "actual": "79f390fad5a706955b1f2546c6065191e52e556d4c6297587d2a11cc8859c989"
+        },
+        "scripts/validate_content_evidence.mjs": {
+          "declared": "574343415da3524deb7092cc1288ce8e602eae8aa9eb41be9b998c62d8dd6bc4",
+          "actual": "574343415da3524deb7092cc1288ce8e602eae8aa9eb41be9b998c62d8dd6bc4"
+        },
+        "src/data/content/caveInsects.ts": {
+          "declared": "20d7d07e7780caf8c199a9c041eeae96a67e30da5bc1c0b34763d1ef9ce39468",
+          "actual": "20d7d07e7780caf8c199a9c041eeae96a67e30da5bc1c0b34763d1ef9ce39468"
+        },
+        "src/data/content/slime.ts": {
+          "declared": "0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead",
+          "actual": "0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead"
+        },
+        "src/domain/content.ts": {
+          "declared": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+          "actual": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba"
+        },
+        "src/engine/contentValidation.test.ts": {
+          "declared": "484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226",
+          "actual": "484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226"
+        },
+        "src/engine/contentValidation.ts": {
+          "declared": "1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e",
+          "actual": "1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e"
+        },
+        "tsconfig.json": {
+          "declared": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0",
+          "actual": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0"
+        },
+        "vite.config.ts": {
+          "declared": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771",
+          "actual": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771"
+        }
+      }
+    },
+    {
+      "dir": "reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/.qa-runs/2026-10-13T01-42-31.626Z-c90898be-79ca-4b95-b2e0-5517cdca25b0",
+      "manifestSha256": "977965efd8785ece7bc1b9a0b653b19a7a4de13d8a6cbeb0b7c1e760e826c5f2",
+      "packSnapshotSha256": "4e4f8984f46b93137c66d820a01f238363e8ee645368211e48df0f0d2ae0b5e3",
+      "expectedInputSha256": "4e4f8984f46b93137c66d820a01f238363e8ee645368211e48df0f0d2ae0b5e3",
+      "sourceSnapshotHashes": {
+        "package-lock.json": {
+          "declared": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d",
+          "actual": "cd8379969a4ee99f80434dce4c7afff4fcf52290aa9d40ba4668c5165dbdc53d"
+        },
+        "package.json": {
+          "declared": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6",
+          "actual": "078ebab024c9d3f048163fbe3bee50cc0fe282492bff5bfd8a2d390193952bd6"
+        },
+        "reports/v2/20261008-content-expansion/phase-07/content-baseline.json": {
+          "declared": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+          "actual": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63"
+        },
+        "scripts/recorded_reports.py": {
+          "declared": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b",
+          "actual": "bc09dc981267e9cdfaf63103b260c052417b2ff675e551cd2677986f9231962b"
+        },
+        "scripts/validate_content_batch.mjs": {
+          "declared": "79f390fad5a706955b1f2546c6065191e52e556d4c6297587d2a11cc8859c989",
+          "actual": "79f390fad5a706955b1f2546c6065191e52e556d4c6297587d2a11cc8859c989"
+        },
+        "scripts/validate_content_evidence.mjs": {
+          "declared": "574343415da3524deb7092cc1288ce8e602eae8aa9eb41be9b998c62d8dd6bc4",
+          "actual": "574343415da3524deb7092cc1288ce8e602eae8aa9eb41be9b998c62d8dd6bc4"
+        },
+        "src/data/content/caveInsects.ts": {
+          "declared": "20d7d07e7780caf8c199a9c041eeae96a67e30da5bc1c0b34763d1ef9ce39468",
+          "actual": "20d7d07e7780caf8c199a9c041eeae96a67e30da5bc1c0b34763d1ef9ce39468"
+        },
+        "src/data/content/slime.ts": {
+          "declared": "0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead",
+          "actual": "0f91295536535f55679a770d3d09b368ec188c7ff322104f059e048589e55ead"
+        },
+        "src/domain/content.ts": {
+          "declared": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba",
+          "actual": "dd9d3eedac08df9b47af1e16d6f0610190378450e90a768079b574e0aa2408ba"
+        },
+        "src/engine/contentValidation.test.ts": {
+          "declared": "484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226",
+          "actual": "484c9e8e528311574ba21139bc9c68b7ab74377da3cbc1893ecac71c65a08226"
+        },
+        "src/engine/contentValidation.ts": {
+          "declared": "1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e",
+          "actual": "1c44bfa79e0e37f3fa601a5e3832925a8c0b63e2cd2c6dec30176586aab7565e"
+        },
+        "tsconfig.json": {
+          "declared": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0",
+          "actual": "2f45629d03f844524c3b19b580db910c7c120e4e0d06b00eae6f73e829d968b0"
+        },
+        "vite.config.ts": {
+          "declared": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771",
+          "actual": "becf40818c32c8a55aea3c51276d1a6be6e4c7243b06fad512ece24b7a10a771"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+Provenance: reconstructed now from the initial apply_patch tool-history record. This source was not separately saved to disk at the time. It is shown as text and is not a runnable test entry at this report path.
+
+import assert from 'node:assert/strict'
+import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
+import test from 'node:test'
+import { captureRunEvidence, runCheck } from './validate_content_evidence.mjs'
+
+async function fixture(t) {
+  const root = await mkdtemp(join(tmpdir(), 'content-evidence-'))
+  t.after(() => rm(root, { recursive: true, force: true }))
+  const pack = join(root, 'pack.json')
+  await writeFile(pack, '{"first":true}\n')
+  return { root, pack }
+}
+
+test('captures the supplied bytes before later input changes', async t => {
+  const { root, pack } = await fixture(t)
+  const run = await captureRunEvidence({ root, packPath: pack, reportDirectory: join(root, 'reports'), sourcePaths: ['pack.json'] })
+  await writeFile(pack, '{"replacement":true}\n')
+  assert.equal(await readFile(join(run.directory, 'input', 'pack.json'), 'utf8'), '{"first":true}\n')
+  assert.equal(run.manifest.pack.sha256, 'c1d6a2ce65f04575a07a1725bf3966dff6ff582af210939f03e3c7781e4a6bb7')
+})
+
+test('allocates distinct run directories and keeps each captured input', async t => {
+  const { root, pack } = await fixture(t)
+  const options = { root, packPath: pack, reportDirectory: join(root, 'reports'), sourcePaths: ['pack.json'] }
+  const first = await captureRunEvidence(options)
+  await writeFile(pack, '{"second":true}\n')
+  const second = await captureRunEvidence(options)
+  assert.notEqual(first.directory, second.directory)
+  assert.equal(await readFile(join(first.directory, 'input', 'pack.json'), 'utf8'), '{"first":true}\n')
+  assert.equal(await readFile(join(second.directory, 'input', 'pack.json'), 'utf8'), '{"second":true}\n')
+})
+
+test('retains malformed input bytes before JSON parsing fails', async t => {
+  const { root, pack } = await fixture(t)
+  await writeFile(pack, '{ malformed\n')
+  const run = await captureRunEvidence({ root, packPath: pack, reportDirectory: join(root, 'reports'), sourcePaths: ['pack.json'] })
+  assert.throws(() => JSON.parse(run.packBytes.toString('utf8')))
+  assert.equal(await readFile(join(run.directory, 'input', 'pack.json'), 'utf8'), '{ malformed\n')
+})
+
+test('uses process exit status even when a child prints success text', () => {
+  const result = runCheck(process.execPath, ['-e', "console.log('PASS'); process.exit(7)"])
+  assert.equal(result.stdout.trim(), 'PASS')
+  assert.equal(result.exitCode, 7)
+  assert.equal(result.status, 'FAIL')
+})
+
+test('retains a no-output child failure as a failure', () => {
+  const result = runCheck(process.execPath, ['-e', 'process.exit(4)'])
+  assert.equal(result.stdout, '')
+  assert.equal(result.stderr, '')
+  assert.equal(result.exitCode, 4)
+  assert.equal(result.status, 'FAIL')
+})

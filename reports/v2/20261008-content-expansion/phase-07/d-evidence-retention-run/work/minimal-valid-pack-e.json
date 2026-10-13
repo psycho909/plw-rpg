@@ -1,0 +1,85 @@
+{
+  "families": [{
+    "id": "bog-beasts",
+    "name": { "zh-TW": "沼澤獸" },
+    "description": { "zh-TW": "居於沼澤" },
+    "regions": ["forest"],
+    "spawnProfiles": [{ "region": "forest", "minPlayerLevel": 2, "seasons": ["夏"] }],
+    "monsterIds": ["mire-hunter"],
+    "eliteIds": [],
+    "miniBossIds": [],
+    "bossIds": [],
+    "lootTableId": "bog-loot",
+    "threatChannel": "regional_ecology"
+  }],
+  "monsters": [{
+    "id": "mire-hunter",
+    "name": { "zh-TW": "泥沼獵手" },
+    "description": { "zh-TW": "伏擊旅人" },
+    "familyId": "bog-beasts",
+    "rank": "normal",
+    "level": 3,
+    "stats": { "hp": 30, "attack": 8, "defense": 2, "exp": 20, "gold": 5 },
+    "role": "fast",
+    "mechanics": [{ "kind": "rush", "everyTurns": 3, "bonusFraction": 0.2, "telegraph": { "zh-TW": "牠蓄力準備突襲。" } }],
+    "lootTableId": "bog-loot",
+    "lootProfile": {
+      "dropLevel": 3,
+      "equipmentChance": 0.5,
+      "rarityWeights": { "common": 1, "uncommon": 0, "rare": 0, "epic": 0, "legendary": 0 }
+    }
+  }],
+  "lootTables": [{
+    "id": "bog-loot",
+    "guaranteedMaterialIds": ["mire-claw"],
+    "weightedEquipment": [{ "equipmentId": "reed-spear", "weight": 1 }],
+    "rareMaterials": []
+  }],
+  "equipment": [{
+    "id": "reed-spear",
+    "name": { "zh-TW": "蘆槍" },
+    "description": { "zh-TW": "沼澤製作" },
+    "slot": "weapon",
+    "attack": 3,
+    "defense": 0,
+    "sell": 4,
+    "affixIds": ["mireKeen"]
+  }],
+  "materials": [{
+    "id": "mire-claw",
+    "name": { "zh-TW": "泥沼爪" },
+    "description": { "zh-TW": "可用於製作" },
+    "sell": 2,
+    "bias": {}
+  }],
+  "crops": [],
+  "cropGoods": [],
+  "recipes": [{
+    "id": "reed-spear-recipe",
+    "name": { "zh-TW": "製作蘆槍" },
+    "description": { "zh-TW": "鍛造用" },
+    "category": "weapon",
+    "inputs": [{ "source": "material", "materialId": "mire-claw", "amount": 1 }],
+    "goldCost": 1,
+    "staminaCost": 1,
+    "durationMinutes": 60,
+    "outputBase": "reed-spear",
+    "outputLevel": 1,
+    "requiredSmithing": 0,
+    "practiceCap": 1,
+    "station": "blacksmith",
+    "opensAtHour": 0,
+    "closesAtHour": 23,
+    "allowedBiasMaterials": ["mire-claw"],
+    "qualityRules": { "floorAtSmithing": 0, "minimumRarity": "common" },
+    "affixRules": "default"
+  }],
+  "affixes": [{
+    "id": "mireKeen",
+    "name": { "zh-TW": "銳利" },
+    "description": { "zh-TW": "提升穿刺" },
+    "stat": "critical",
+    "slots": ["weapon"],
+    "tiers": [1, 2]
+  }]
+}

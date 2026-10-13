@@ -1,0 +1,19 @@
+{
+  "name": "negative-derived-resin-keen-validation",
+  "command": "node",
+  "args": [
+    "scripts/validate_content_batch.mjs",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/d-remediation-run/work/derived-negative-resin-keen.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/d-remediation-run/work/current-source-validation.md"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedUtc": "2026-10-13T01:49:32.450Z",
+  "endedUtc": "2026-10-13T01:49:38.413Z",
+  "startedTaipei": "2026-10-13 09:49:32",
+  "endedTaipei": "2026-10-13 09:49:38",
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

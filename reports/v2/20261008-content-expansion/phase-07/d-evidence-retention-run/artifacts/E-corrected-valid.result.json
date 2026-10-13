@@ -1,0 +1,22 @@
+{
+  "command": "node",
+  "args": [
+    "scripts/validate_content_batch.mjs",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/minimal-valid-pack-e.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/publisher-protected-report.md"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedUtc": "2026-10-13T01:43:05.771Z",
+  "endedUtc": "2026-10-13T01:43:12.142Z",
+  "startedTaipei": "2026-10-13 09:43:05",
+  "endedTaipei": "2026-10-13 09:43:12",
+  "exitCode": 1,
+  "signal": null,
+  "error": null,
+  "stdout": "",
+  "stderr": "Could not archive validation report (exit 23).\nCONTROLLED-PUBLISHER-SENTINEL\n",
+  "validInputSha256": "2f67710c47cbd5a7a548ffc16d852b95005c5a1e4d5e7f6fa4c7adb9bac48161",
+  "protectedReportPreserved": true
+}

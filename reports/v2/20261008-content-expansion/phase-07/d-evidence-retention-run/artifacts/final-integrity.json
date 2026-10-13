@@ -1,0 +1,82 @@
+{
+  "headUnchanged": true,
+  "sourceConfigChanges": [],
+  "qaRunCount": 5,
+  "runs": [
+    {
+      "run": "2026-10-13T01-42-14.683Z-707c3335-93f1-40ed-8fe7-2ad8f6c508b0",
+      "inputMatch": true,
+      "sourceMismatches": [],
+      "content": "PASS",
+      "overall": "PASS",
+      "publisher": "PASS",
+      "publisherExit": 0,
+      "manifestSha": "af44adc056e2c1fcb11548de08952d3eed5c00c0b3da318d3863f6c1a44bc175"
+    },
+    {
+      "run": "2026-10-13T01-42-20.397Z-dbcd0565-95b8-43cd-b78a-dc7e69dfbd01",
+      "inputMatch": true,
+      "sourceMismatches": [],
+      "content": "FAIL",
+      "overall": "FAIL",
+      "publisher": "PASS",
+      "publisherExit": 0,
+      "manifestSha": "671570e884ab536edab338938b7dd1916c6286a293b65d235a5a67febe969579"
+    },
+    {
+      "run": "2026-10-13T01-42-26.274Z-59dba7ad-8d27-443a-9e84-4e143ea4a027",
+      "inputMatch": true,
+      "sourceMismatches": [],
+      "content": "ERROR",
+      "overall": "FAIL",
+      "publisher": "PASS",
+      "publisherExit": 0,
+      "manifestSha": "9f042911266e5d35769ba34d48df00cf0563a874371bfef36fae70d0b9202cc5"
+    },
+    {
+      "run": "2026-10-13T01-42-31.626Z-c90898be-79ca-4b95-b2e0-5517cdca25b0",
+      "inputMatch": true,
+      "sourceMismatches": [],
+      "content": "FAIL",
+      "overall": "FAIL",
+      "publisher": "FAIL",
+      "publisherExit": 23,
+      "manifestSha": "977965efd8785ece7bc1b9a0b653b19a7a4de13d8a6cbeb0b7c1e760e826c5f2"
+    },
+    {
+      "run": "2026-10-13T01-43-05.892Z-cfed9cce-37c9-4d0a-a278-808c0f9c1591",
+      "inputMatch": true,
+      "sourceMismatches": [],
+      "content": "PASS",
+      "overall": "PASS",
+      "publisher": "FAIL",
+      "publisherExit": 23,
+      "manifestSha": "91bac4245b6e70a0d2b2197afc260a263fdcd0faee8dfefa045bd8777c9a25d4"
+    }
+  ],
+  "correctedE": {
+    "exit": 1,
+    "validPackSha": "2f67710c47cbd5a7a548ffc16d852b95005c5a1e4d5e7f6fa4c7adb9bac48161",
+    "publisherSentinel": true,
+    "reportPreserved": true
+  },
+  "oldBlobExact": true,
+  "workArchive": [
+    {
+      "file": "report.md",
+      "sha": "52d11a35114f9d3b66ed4b69baf8204a7f3bff8b57dc1140970e3d9fe27b7168",
+      "actual": "52d11a35114f9d3b66ed4b69baf8204a7f3bff8b57dc1140970e3d9fe27b7168"
+    },
+    {
+      "file": "report.md",
+      "sha": "ccdd68f6964962139cd98fbdd2692e9a3a9245f233e0bb35b7b8093c9ae573e1",
+      "actual": "ccdd68f6964962139cd98fbdd2692e9a3a9245f233e0bb35b7b8093c9ae573e1"
+    },
+    {
+      "file": "report.md",
+      "sha": "e915bdf18c18cfc4c7d8c8d52db490ef0b98409eef92aa26cf8986c1127a84f4",
+      "actual": "e915bdf18c18cfc4c7d8c8d52db490ef0b98409eef92aa26cf8986c1127a84f4"
+    }
+  ],
+  "workReportPrefixIntegrity": true
+}

@@ -1,0 +1,19 @@
+{
+  "name": "D-malformed-new-cli",
+  "command": "node",
+  "args": [
+    "scripts/validate_content_batch.mjs",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/malformed.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/report.md"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedUtc": "2026-10-13T01:42:26.131Z",
+  "endedUtc": "2026-10-13T01:42:31.509Z",
+  "startedTaipei": "2026-10-13 09:42:26",
+  "endedTaipei": "2026-10-13 09:42:31",
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

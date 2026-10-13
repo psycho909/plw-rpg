@@ -10,12 +10,13 @@
 - Branch: `v2x/reward-core`.
 - Remote: `origin` (psycho909/plw-rpg).
 - Base commit: `fd6b5e84bef73d5dc429201c903d4a867976cd0a`.
-- Working tree at preparation: unfinished D source, isolated runtime tests, source-linked QA reports/raw logs, and the one-worker test configuration. The intended checkpoint preserves this blocked state; it is not D acceptance.
+- Latest verified remote checkpoint before the current QA repair: `f026b6b4947d18aadc0f551c642c31750db5768c` (HEAD and explicit work-branch remote matched).
+- Current delivery: completed preventive validator evidence-retention repair and its QA artifacts; D source/tests/config are preserved in the prior checkpoint and unchanged. The next commit preserves this blocked state; it is not D acceptance.
 - Sync target: `origin/v2x/reward-core`.
 
 ## Goal and Acceptance
 
-Complete only the approved Cave Insects D slice. D requires original failure/source/fingerprint evidence and independent review. E requires a later Root release. The Owner explicitly chose to maintain D blocked rather than waive the historical evidence gap; later requests to continue did not reverse that decision.
+Complete only the approved Cave Insects D slice. D requires original failure/source/fingerprint evidence and independent review. E requires a later Root release. Owner earlier chose to maintain D blocked; latest 「把D的問題解決」 authorized a completed compensating-evidence dossier. The exact proposed exception still requires confirmation before replacing that earlier explicit decision.
 
 ## Completed
 
@@ -28,6 +29,11 @@ Complete only the approved Cave Insects D slice. D requires original failure/sou
 - Independent Medium continuation review: Standards PASS, Spec PASS for the QA continuation and blocked handoff; `reports/v2/20261008-content-expansion/phase-07/d-qa-resume-review.md`. D semantic hashes match the previous reviewed snapshot.
 
 ## Remaining
+
+- Current D pack was freshly generated from the frozen source and exactly matches the retained passing pack. Real positive CLI passed; a new resin/keen negative fixture produces both historical diagnostics with input/source retained. Technical remediation is complete. The specific proposed revised acceptance and remaining historical finding are in `d-remediation-disposition.md`; independent evidence review is `d-remediation-review.md`.
+
+- Preventive QA repair is done: 8 native tests, exact old CLI malformed baseline and four current CLI scenario types verified; five current invocations include the retained E harness error and corrected valid-input attempt. Independent Medium review has no open source findings. See `d-evidence-retention-engineering.md`, `d-evidence-retention-review.md` and `d-evidence-retention-run/d-evidence-retention-regression.md` beside the closeout. Initial RED/behavioral reproduction chronology is documented, not invented.
+- One explicitly derived candidate failed to match the expected historical checksum; `d-evidence-reconstruction-check.md` is not original evidence recovery.
 
 - D acceptance requires the authentic missing original artifact/provenance; E remains unreleased.
 - Phase7 later stages, natural exposure/balance, browser soak and the final Phase7 gate are not completed by this QA continuation.
@@ -45,8 +51,11 @@ Complete only the approved Cave Insects D slice. D requires original failure/sou
 - `vite.config.ts` (test workers only).
 - D recovery/diagnosis/closeout reports, raw run directories, `playlog.jsonl`, D and parent tickets, this handoff.
 - No production changes were added during the 2026-10-13 QA continuation.
+- Current QA-only repair: `scripts/validate_content_batch.mjs`, new evidence helper and native tests, scripts README, source-linked repair/review/regression artifacts, D/parent tickets and this handoff. Product/test/config/package map remains unchanged; no full suite rerun claimed for the scripts-only repair.
 
 ## Verification
+
+- Current repair delivery: both runner artifact checksum files pass; seven run input/source manifests and their fingerprints verify; original failure report and HEAD archive prefix remain intact. Frozen scripts match the reviewed hashes. The new unqualified staged whitespace check failed only on seven captured `targetedTests.stdout.txt` ending blank lines; strict non-exception paths and raw-only invocation-specific EOF exception both pass, with exact staged/raw bytes preserved. No raw evidence normalization or global Git setting changed.
 
 - Latest canonical full check: PASS once, with raw evidence and matching 103-entry before/after source map.
 - Prior failures remain retained. No claim of a product-performance root cause or full Phase7 acceptance.
@@ -56,7 +65,7 @@ Complete only the approved Cave Insects D slice. D requires original failure/sou
 
 ## Blockers
 
-Original failed authored-source SHA/fingerprint and failed pack bytes are unavailable. The Owner chose no waiver. Do not reinterpret D as accepted or release E.
+Original failed authored-source SHA/fingerprint and failed pack bytes are unavailable. A concrete alternative has now been prepared after Owner's resolve-D request; the exact replacement clause is awaiting Owner confirmation. Do not reinterpret D as accepted or release E before that decision.
 
 ## Suggested Skills
 
@@ -66,6 +75,6 @@ Original failed authored-source SHA/fingerprint and failed pack bytes are unavai
 
 ## Next Action
 
-Read `tickets/20261008-v2x-07d-monster-expansion.md` and maintain its blocked state. Resume acceptance only when authentic original artifacts/provenance become available, then verify the supplied pack's SHA against the expected value above and review the source linkage. Do not repeat the bounded negative search or advance E without new evidence/direction.
+Obtain Owner's decision on the exact replacement clause in `d-remediation-disposition.md`. If explicitly approved, record that authority in the D ticket, retain the historical P2 finding and mark D accepted with findings, then separately decide E release under the existing plan. If declined, keep D blocked; authentic newly supplied original artifacts remain another route. Do not repeat the already-negative search or completed tests without new evidence/change.
 
-Exact resume prompt: `Read .scratch/20261013-phase7-d-qa/handoff.md and the D ticket. Preserve the Owner's no-waiver decision; inspect only newly available authentic original evidence before changing the D/E gates.`
+Exact resume prompt: `Read .scratch/20261013-phase7-d-qa/handoff.md, the D ticket and d-remediation-disposition.md. Technical remediation and current-source validation are complete; verify whether Owner explicitly approved the proposed replacement clause before changing D/E gates.`

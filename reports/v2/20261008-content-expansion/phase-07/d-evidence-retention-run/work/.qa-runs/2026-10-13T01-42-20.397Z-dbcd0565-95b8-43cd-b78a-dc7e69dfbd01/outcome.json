@@ -1,0 +1,58 @@
+{
+  "completedAt": "2026-10-13T01:42:26.047Z",
+  "contentValidationStatus": "FAIL",
+  "overallStatus": "FAIL",
+  "diagnostics": {
+    "validation": [
+      {
+        "code": "invalid-range",
+        "id": "mire-hunter",
+        "path": "stats.hp",
+        "message": "hp is outside its legal range."
+      },
+      {
+        "code": "unreachable-material",
+        "id": "mire-claw",
+        "message": "Material has no reachable loot or crop source."
+      },
+      {
+        "code": "insufficient-identity-axes",
+        "id": "mire-hunter",
+        "message": "Monster has 2 effective identity axes (combat, world) or an invalid source graph; at least two effective axes are required."
+      }
+    ]
+  },
+  "checks": {
+    "targetedTests": {
+      "command": "npm",
+      "args": [
+        "exec",
+        "--",
+        "vitest",
+        "run",
+        "src/engine/contentValidation.test.ts"
+      ],
+      "stdout": "\n RUN  v4.1.11 /workspace/plw-rpg\n\n\n Test Files  1 passed (1)\n      Tests  16 passed (16)\n   Start at  01:42:21\n   Duration  244ms (transform 94ms, setup 0ms, import 110ms, tests 25ms, environment 0ms)\n\n",
+      "stderr": "",
+      "exitCode": 0,
+      "signal": null,
+      "error": "",
+      "status": "PASS"
+    },
+    "typecheck": {
+      "command": "npm",
+      "args": [
+        "exec",
+        "--",
+        "vue-tsc",
+        "--noEmit"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "exitCode": 0,
+      "signal": null,
+      "error": "",
+      "status": "PASS"
+    }
+  }
+}

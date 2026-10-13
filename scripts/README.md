@@ -19,6 +19,16 @@ python3 -B scripts/recorded_reports.py publish reports/playtests/example/results
 python3 -B scripts/recorded_reports.py capture reports/playtests/example/results.json
 ```
 
+`validate_content_batch.mjs` 在解析 pack 前，先於報告目錄的 `.qa-runs/<timestamp-uuid>/` 寫入原始 pack bytes、`src/data/content` 下的 TypeScript authoring modules，以及 validator、runner、baseline、publisher、lockfile、TypeScript 設定和 runner 設定輸入。每次執行使用新的目錄並以 exclusive-create 寫檔；`manifest.json` 記錄輸入與來源雜湊、source fingerprint、實際 Git HEAD／branch，以及 Node 版本／平台／架構，並清楚說明來源快照不證明它產生了已提供的 pack。`outcome.json`、每個 child check 的 stdout／stderr／exit status 在 malformed JSON、validation errors 或 child failure 時仍會寫入；不能建立證據檔案時命令失敗。可讀報告仍透過 `recorded_reports.py publish` 追加版本後更新。
+
+Child check 的 PASS 取決於實際 process exit/error/signal，不依賴輸出文字。Run report 分列 content validation 狀態與整體 validator／child-check 結果；publisher 失敗另存狀態、stdout 和 stderr。Run report 將目前 HEAD 與 source fingerprint 和歷史 Phase 7-B contract anchor 分開呈現；controlled witness 會包含實際 settlement stage。Node file writes 使用 `flush: true`；這不證明目錄項目已同步，也不構成完整的斷電耐久保證。本機快照不是防篡改儲存，也不宣稱來源與輸入間未驗證的生成關係。
+
+原生 Node 腳本測試獨立執行：
+
+```bash
+node --test scripts/test_validate_content_batch.mjs
+```
+
 `published` 是這次發布自動追加的版本；`initial-capture` 只表示封存時的既有檔案，不能證明更早的版本曾自動記錄。2026-10-03 完整測試的五條主要 harness 已接上 writer；原本完成的結果以初始封存保留，本次單機瀏覽器驗證從執行開始逐 checkpoint 追加。
 
 讀取完整版本：

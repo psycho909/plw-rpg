@@ -1,0 +1,19 @@
+{
+  "name": "E-controlled-publisher-failure",
+  "command": "node",
+  "args": [
+    "scripts/validate_content_batch.mjs",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/minimal-valid-pack.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/publisher-protected-report.md"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedUtc": "2026-10-13T01:42:31.514Z",
+  "endedUtc": "2026-10-13T01:42:37.271Z",
+  "startedTaipei": "2026-10-13 09:42:31",
+  "endedTaipei": "2026-10-13 09:42:37",
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

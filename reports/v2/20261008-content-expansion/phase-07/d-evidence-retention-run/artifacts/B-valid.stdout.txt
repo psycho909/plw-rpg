@@ -1,0 +1,74 @@
+# Phase 7 Content Batch Validation
+
+- Supplied pack: reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/minimal-valid-pack.json
+- Captured pack SHA-256: 2f67710c47cbd5a7a548ffc16d852b95005c5a1e4d5e7f6fa4c7adb9bac48161
+- Run evidence: reports/v2/20261008-content-expansion/phase-07/d-evidence-retention-run/work/.qa-runs/2026-10-13T01-42-14.683Z-707c3335-93f1-40ed-8fe7-2ad8f6c508b0
+- Current run HEAD: f026b6b4947d18aadc0f551c642c31750db5768c
+- Current run branch: v2x/reward-core
+- Current captured-source fingerprint: 6591df2cb3488e3423e692c2eb5c2adccf16950e1b747e20e81553fa1b0911eb
+- Historical Phase 7-B contract anchor: 11980b796f88173cf05ef83ac41510a0d44a53b1
+- Content validation status: PASS
+- Overall validator + child-check outcome: PASS
+- targetedTests: PASS (exit 0)
+- typecheck: PASS (exit 0)
+- Natural spawn exposure: not-measured
+- Crop goods evidence: declared-food-binding-only-runtime-integration-unverified
+- Save compatibility evidence: stable-id-addition-only-runtime-migration-unverified
+- Tiny validation fixture: fixture IDs do not count toward approved targets.
+
+## Counts
+
+- Qualifying new monsters: 1
+- Authoring-qualified candidate new item IDs: 2
+- Authoring-qualified usable new materials: 1
+- Exact baseline monster IDs: 5; excluded legacy monster IDs: 4
+- Exact baseline boss variant IDs: 3
+- Exact baseline item IDs: 9; excluded legacy item IDs: 8; excluded procedural IDs: 0
+
+## Reachability
+
+- bog-beasts: controlled-witness (forest, level 2, threat 1, hamlet, 夏, hour 0, safety 0; already-accessible)
+- mire-hunter: controlled-witness (forest, level 2, threat 1, hamlet, 夏, hour 0, safety 0; already-accessible)
+
+## Diagnostics
+
+- No validation errors.
+
+## Child checks
+
+### targetedTests
+
+Exit: 0
+
+stdout:
+```text
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  01:42:15
+   Duration  244ms (transform 92ms, setup 0ms, import 107ms, tests 26ms, environment 0ms)
+```
+
+stderr:
+```text
+
+```
+
+### typecheck
+
+Exit: 0
+
+stdout:
+```text
+
+```
+
+stderr:
+```text
+
+```
+
+Controlled witnesses prove bounded predicate satisfiability only. This report does not estimate natural encounter rates.
