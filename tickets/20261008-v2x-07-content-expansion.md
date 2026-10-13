@@ -21,7 +21,7 @@
 
 - [x] 全規格20項DoD及11項Final Gate均已如實評估並分別記錄，不以未量測結果冒充 PASS。
 - [x] 17項必需交付物、source fingerprint/build correlation、原始失敗、QA dossier 獨立審閱與外部 Review handoff 完整。
-- [ ] 所有accepted更新commit/push verified；不自動下階段或外部部署。
+- [x] 所有 accepted engineering 更新均納入目前功能分支交付並完成遠端核對；不自動下階段或外部部署。
 
 ## Child Tickets
 
