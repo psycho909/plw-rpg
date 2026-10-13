@@ -1,0 +1,25 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentBosses.integration.test.ts > content boss public integration > cave_insect_queen supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown
+ FAIL  src/engine/contentBosses.integration.test.ts > content boss public integration > wild_beast_apex supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown
+ FAIL  src/engine/contentBosses.integration.test.ts > content boss public integration > frontier_goblin_warlord supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown
+ FAIL  src/engine/contentBosses.integration.test.ts > content boss public integration > fog_undead_cryptlord supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown
+AssertionError: expected 25 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 25
+
+ ❯ src/engine/contentBosses.integration.test.ts:146:52
+    144|     const actualDrop = defeated.reward.instances.find(instance => !ins…
+    145|     expect(actualDrop?.baseId).toBe(rules.exclusiveEquipmentId)
+    146|     expect(defeated.settlement[consequence.field]).toBe(settlementBefo…
+       |                                                    ^
+    147|     for (const field of ['food', 'safety', 'prosperity'] as const) {
+    148|       if (field !== consequence.field) expect(defeated.settlement[fiel…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+

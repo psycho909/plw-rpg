@@ -1,0 +1,10 @@
+--- /workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/e-integration-run/root-fallback-20261013T051844Z/source/src/engine/contentBosses.integration.test.ts	2026-10-13 05:18:44.230859575 +0000
++++ /workspace/plw-rpg/reports/v2/20261008-content-expansion/phase-07/e-integration-run/audit-correction-20261013T053847Z/snapshots/contentBosses.integration.test.ts	2026-10-13 05:39:49.800461203 +0000
+@@ -145,7 +145,6 @@
+     const instancesBefore = defeated.reward.instances.map(instance => instance.instanceId)
+     const lootTable = CONTENT_LOOT_TABLES[definition.lootTableId]!
+     expect(encounterContentMonster(defeated, id)).toBe('')
+-    defeated.combat!.hp = 1
+     expect(combatTurn(defeated, 'attack')).toBe('')
+     expect(defeated.combat).toBeNull()
+     const characterId = defeated.activeCharacterId

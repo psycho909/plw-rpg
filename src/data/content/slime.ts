@@ -105,7 +105,10 @@ export const SLIME_CONTENT = {
       stats: { hp: 172, attack: 19, defense: 6, exp: 160, gold: 64 }, role: 'controller',
       mechanics: [{ kind: 'chargedAttack', everyTurns: 4, bonusFraction: 0.5, healAmount: 8, telegraph: { 'zh-TW': '核心脈動加快，牠將發動蓄力衝擊並回復少量生命。' } }],
       lootTableId: 'slime_loot_heart', lootProfile: { dropLevel: 8, equipmentChance: 1, rarityWeights: { common: 0, uncommon: 0, rare: 85, epic: 14, legendary: 1 } },
-      spawnProfiles: [{ region: 'forest', minPlayerLevel: 7, minThreatLevel: 3, seasons: ['夏', '秋'], hours: { start: 18, end: 23 } }],
+      spawnProfiles: [
+        { region: 'forest', minPlayerLevel: 7, minThreatLevel: 3, maxThreatLevel: 3, seasons: ['夏', '秋'], hours: { start: 18, end: 23 } },
+        { region: 'forest', minPlayerLevel: 10, maxPlayerLevel: 10, minThreatLevel: 1, maxThreatLevel: 2, seasons: ['夏', '秋'], hours: { start: 18, end: 23 } },
+      ],
       bossRules: {
         cooldownDays: 30,
         guaranteedMaterialIds: ['slime_heart_gel'],

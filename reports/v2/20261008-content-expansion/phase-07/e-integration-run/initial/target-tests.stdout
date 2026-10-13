@@ -1,0 +1,21 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/contentFamilies.test.ts src/engine/caveInsects.integration.test.ts src/engine/remainingFamilies.integration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/remainingFamilies.integration.test.ts (13 tests | 5 failed) 97ms
+     × 'wild_beasts' registers six normal and two Elite encounters 15ms
+     × 'frontier_goblins' registers six normal and two Elite encounters 4ms
+     × 'fog_undead' registers six normal and two Elite encounters 3ms
+     × 'mine_constructs' registers six normal and two Elite encounters 1ms
+     × keeps Wild and Frontier bias materials compatible with their recipe outputs and exposes planned gear in selected loot 1ms
+ ❯ src/engine/caveInsects.integration.test.ts (3 tests | 1 failed) 57ms
+     × registers six normal and two Elite canonical mine encounters with their progression predicates 31ms
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  6 failed | 21 passed (27)
+   Start at  02:50:53
+   Duration  1.35s (transform 428ms, setup 0ms, import 637ms, tests 266ms, environment 1ms)
+

@@ -1,0 +1,18 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/contentBosses.integration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/contentBosses.integration.test.ts (11 tests | 4 failed) 142ms
+     × cave_insect_queen supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown 20ms
+     × wild_beast_apex supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown 13ms
+     × frontier_goblin_warlord supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown 9ms
+     × fog_undead_cryptlord supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown 10ms
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 7 passed (11)
+   Start at  02:53:00
+   Duration  670ms (transform 345ms, setup 0ms, import 414ms, tests 142ms, environment 0ms)
+

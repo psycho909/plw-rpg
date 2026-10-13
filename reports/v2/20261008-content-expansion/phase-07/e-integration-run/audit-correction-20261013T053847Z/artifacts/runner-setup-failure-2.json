@@ -1,0 +1,6 @@
+{
+  "command": "node reports/v2/20261008-content-expansion/phase-07/e-integration-run/audit-correction-20261013T053847Z/run-audit-correction.mjs",
+  "exitCode": 1,
+  "error": "SyntaxError: Unexpected identifier npx at line 130; nested backticks remained in the typecheck summary template",
+  "impact": "The runner again failed to parse before executing any command or creating test snapshots. Neither Vitest nor vue-tsc started in this attempt."
+}

@@ -1,0 +1,27 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentBosses.integration.test.ts > content boss public integration > keeps each boss-only material optional for a positive slot-compatible recipe bias and consumes Apex core from actual loot
+AssertionError: expected { familyId: 'wild_beasts', …(7) } to match object { eligible: true, reason: null }
+(6 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "eligible": true,
+-   "reason": null,
++   "eligible": false,
++   "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。",
+  }
+
+ ❯ src/engine/contentBosses.integration.test.ts:228:10
+    226|     for (let hunt = 0; hunt < 2; hunt++) {
+    227|       expect(contentEncounterOptions(state, 'wild_beasts').find(option…
+    228|         .toMatchObject({ eligible: true, reason: null })
+       |          ^
+    229|       expect(encounterContentMonster(state, 'wild_beast_stonehorn')).t…
+    230|       expect(combatTurn(state, 'attack')).toBe('')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

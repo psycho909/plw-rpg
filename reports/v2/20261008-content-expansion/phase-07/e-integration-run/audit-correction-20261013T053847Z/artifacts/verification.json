@@ -1,0 +1,28 @@
+{
+  "runDirectory": "reports/v2/20261008-content-expansion/phase-07/e-integration-run/audit-correction-20261013T053847Z",
+  "headBefore": "3d15d2e479662cb74135bba8894290e054adaa6f",
+  "headAfter": "3d15d2e479662cb74135bba8894290e054adaa6f",
+  "sourceMapFilesBefore": 116,
+  "sourceMapFilesAfter": 116,
+  "sourceMapUnchanged": true,
+  "changedSnapshot": {
+    "file": "src/engine/contentBosses.integration.test.ts",
+    "sha256": "deaf227c4379c4700314dc52b6ae1273655dd7071caca998a742a71f4503e564",
+    "matchesCurrentAfterMap": true,
+    "priorRootFallbackSha256": "4055588f2c291391a93f99ff4bbfef944894e7ae50e0530f9526f63c0ccc92a8",
+    "diffExitCode": 1
+  },
+  "targeted": {
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "testFilesPassed": 4,
+    "testsPassed": 39
+  },
+  "typecheck": {
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  "allRequestedChecksPassed": true
+}

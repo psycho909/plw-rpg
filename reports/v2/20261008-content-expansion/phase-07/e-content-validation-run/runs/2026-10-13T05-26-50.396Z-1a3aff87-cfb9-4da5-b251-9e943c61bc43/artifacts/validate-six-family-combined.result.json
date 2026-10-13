@@ -1,0 +1,19 @@
+{
+  "name": "validate-six-family-combined",
+  "command": "node",
+  "args": [
+    "scripts/validate_content_batch.mjs",
+    "--pack",
+    "reports/v2/20261008-content-expansion/phase-07/e-content-validation-run/runs/2026-10-13T05-26-50.396Z-1a3aff87-cfb9-4da5-b251-9e943c61bc43/packs/six-family-combined.json",
+    "--report",
+    "reports/v2/20261008-content-expansion/phase-07/e-content-validation-run/runs/2026-10-13T05-26-50.396Z-1a3aff87-cfb9-4da5-b251-9e943c61bc43/cases/six-family-combined/readable-report.md"
+  ],
+  "cwd": "/workspace/plw-rpg",
+  "startedUtc": "2026-10-13T05:27:28.782Z",
+  "endedUtc": "2026-10-13T05:27:34.855Z",
+  "startedTaipei": "2026-10-13 13:27:28",
+  "endedTaipei": "2026-10-13 13:27:34",
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}

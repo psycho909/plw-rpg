@@ -1,0 +1,289 @@
+{
+  "actualHead": "3d15d2e479662cb74135bba8894290e054adaa6f",
+  "afterHead": "3d15d2e479662cb74135bba8894290e054adaa6f",
+  "baselineInput": {
+    "path": "reports/v2/20261008-content-expansion/phase-07/content-baseline.json",
+    "currentSha256": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+    "capturedSha256s": [
+      "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63"
+    ]
+  },
+  "headUnchanged": true,
+  "branchUnchanged": true,
+  "sourceConfigPackageMapsEqual": true,
+  "mapFileCount": 116,
+  "cases": [
+    {
+      "name": "slime",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3483,
+      "commandStderrBytes": 0,
+      "generatedBytes": 18895,
+      "generatedSha256": "007be15bf032cc266c36d4ee628b94a87a28840e3cb34a41c9c3e16f4bbc7f38",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "507afe24b6e6b492b127f0e1179d92bf9ebe1f43fa9c7b9c5ca5d14ed247f9d9",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "tests18Passed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "cave-insects",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3556,
+      "commandStderrBytes": 0,
+      "generatedBytes": 15801,
+      "generatedSha256": "5512694273d4d66e2b3934ce106901e0eb85d340832b25bd6ab8470efa712192",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "507afe24b6e6b492b127f0e1179d92bf9ebe1f43fa9c7b9c5ca5d14ed247f9d9",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "tests18Passed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "wild-beasts",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3739,
+      "commandStderrBytes": 0,
+      "generatedBytes": 17749,
+      "generatedSha256": "48ae5fd7cedbc534bba6b55227aa5336f1dd645c7fcafd4e7602a5ccdc82d2f4",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "507afe24b6e6b492b127f0e1179d92bf9ebe1f43fa9c7b9c5ca5d14ed247f9d9",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "tests18Passed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "frontier-goblins",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3618,
+      "commandStderrBytes": 0,
+      "generatedBytes": 19803,
+      "generatedSha256": "39da5659c0aa52500ef68153f1af4ef3fc556d9937da728980150d24e9aab7bd",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "507afe24b6e6b492b127f0e1179d92bf9ebe1f43fa9c7b9c5ca5d14ed247f9d9",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "tests18Passed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "fog-undead",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3586,
+      "commandStderrBytes": 0,
+      "generatedBytes": 16818,
+      "generatedSha256": "8af5a81dbd588615611c7312aa627121f179326564a7dc6a4d7ad7d509b60dd5",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "507afe24b6e6b492b127f0e1179d92bf9ebe1f43fa9c7b9c5ca5d14ed247f9d9",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "tests18Passed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "mine-constructs",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 3584,
+      "commandStderrBytes": 0,
+      "generatedBytes": 16871,
+      "generatedSha256": "83ceae3d698c3b59c0f15d3317af705f394c6553f48b1bafa48ff0cf967530c7",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "507afe24b6e6b492b127f0e1179d92bf9ebe1f43fa9c7b9c5ca5d14ed247f9d9",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "tests18Passed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    },
+    {
+      "name": "six-family-combined",
+      "cliExit": 0,
+      "cliSignal": null,
+      "cliSpawnError": null,
+      "commandStdoutBytes": 11968,
+      "commandStderrBytes": 0,
+      "generatedBytes": 105332,
+      "generatedSha256": "bd472a5b7d0fae13e87b35b5d82abf520fcccab432066c9a7a2eaf722db1885e",
+      "generatedMatchesExtractionManifest": true,
+      "qaRunCount": 1,
+      "capturedInputMatchesGenerated": true,
+      "capturedSourceFingerprint": "507afe24b6e6b492b127f0e1179d92bf9ebe1f43fa9c7b9c5ca5d14ed247f9d9",
+      "recomputedSourceFingerprintMatches": true,
+      "capturedSourceMismatches": [],
+      "baselineInputShaAtRun": "42eee3547eb8f9eac7d2bfae0def13e7d6cc1dc19ccad0210e854a918ee3be63",
+      "baselineInputSnapshotMatches": true,
+      "baselineInputStillSame": true,
+      "contentStatus": "PASS",
+      "overallStatus": "PASS",
+      "targetedTests": {
+        "status": "PASS",
+        "exitCode": 0,
+        "tests18Passed": true
+      },
+      "typecheck": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportPublisher": {
+        "status": "PASS",
+        "exitCode": 0
+      },
+      "reportContentStatusMatchesOutcome": true,
+      "reportOverallStatusMatchesOutcome": true,
+      "rawCommandStreamsPresent": true,
+      "archivedSummary": null
+    }
+  ],
+  "summaryArchive": {
+    "recordPresent": true,
+    "integrityAndCurrentBytesMatch": true
+  },
+  "allSevenCasesComplete": true,
+  "verificationPass": true
+}

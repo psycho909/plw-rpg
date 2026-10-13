@@ -1,0 +1,6 @@
+{
+  "command": "node reports/v2/20261008-content-expansion/phase-07/e-content-validation-run/harness/verify-e-content-run.mjs reports/v2/20261008-content-expansion/phase-07/e-content-validation-run/runs/2026-10-13T05-26-50.396Z-1a3aff87-cfb9-4da5-b251-9e943c61bc43",
+  "exitCode": 1,
+  "error": "SyntaxError: Invalid or unexpected token at unquoted property key 18Passed in post-run verification script",
+  "impact": "The validator invocation results and retained QA evidence were already complete; this verification script stopped before producing any verification output."
+}

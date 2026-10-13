@@ -1,13 +1,13 @@
 # Phase7-F — Item / Recipe Expansion
 
-- Status: approved
+- Status: in_progress
 - Risk: L2
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-08 使用者上傳 Phase7 規格並明確要求「開始進行Phase7的開發」。
 - Branch: v2x/reward-core
 - Git / Remote authority: 沿用 README 現工作分支 commit/push 授權；Root-only Git。不PR/merge/main/force/deploy。
-- Updated: 2026-10-08（Asia/Taipei）
+- Updated: 2026-10-13（Asia/Taipei）
 
 ## Goal / Scope
 
@@ -25,7 +25,11 @@ Parent [20261008-v2x-07-content-expansion](20261008-v2x-07-content-expansion.md)
 
 ## Dependencies
 
-Blocked by: [Phase7-E](20261008-v2x-07e-boss-expansion.md)；尚未release。
+Dependency satisfied: [Phase7-E](20261008-v2x-07e-boss-expansion.md) ACCEPTED / PASS WITH FINDINGS. Root F RELEASED on 2026-10-13 under Owner's instruction to finish Phase7.
+
+## Root F release
+
+Execute `reports/v2/20261008-content-expansion/phase-07/f-content-plan.md`: complete five remaining family equipment/recipes to 48/24 total, preserve 48 real materials and 66 monster IDs. Low owns isolated modules, Medium owns targeted integration and narrow authoring-validator correction. Validated mandatory recipe output functions may distinguish material uses; names/IDs/prose/duplicate recipes never qualify them. Keep real effect/use duplicates excluded, preserve previous warnings and add counterexample RED/GREEN tests plus independent review. No Save/RNG/generation changes. G remains unreleased until F acceptance.
 
 ## Evidence
 

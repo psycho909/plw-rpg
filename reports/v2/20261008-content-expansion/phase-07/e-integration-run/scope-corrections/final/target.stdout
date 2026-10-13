@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/contentBosses.integration.test.ts src/engine/contentFamilies.test.ts src/engine/caveInsects.integration.test.ts src/engine/remainingFamilies.integration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/contentBosses.integration.test.ts (12 tests | 1 failed) 169ms
+     × keeps each boss-only material optional for a positive slot-compatible recipe bias and consumes Apex core from actual loot 9ms
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 38 passed (39)
+   Start at  03:03:59
+   Duration  1.51s (transform 405ms, setup 0ms, import 652ms, tests 385ms, environment 2ms)
+

@@ -207,10 +207,11 @@ describe('remaining D family runtime integration', () => {
   it.each(familyCases)('$familyId registers six normal and two Elite encounters', ({ familyId, normalIds, eliteIds }) => {
     expect(CONTENT_FAMILIES[familyId]).toBeDefined()
     const options = contentEncounterOptions(createGame(72800), familyId)
-    expect(options).toHaveLength(8)
-    expect(options.filter(option => option.rank === 'normal').map(option => option.definitionId).sort())
+    const originalPackOptions = options.filter(option => option.rank === 'normal' || option.rank === 'elite')
+    expect(originalPackOptions).toHaveLength(8)
+    expect(originalPackOptions.filter(option => option.rank === 'normal').map(option => option.definitionId).sort())
       .toEqual([...normalIds].sort())
-    expect(options.filter(option => option.rank === 'elite').map(option => option.definitionId).sort())
+    expect(originalPackOptions.filter(option => option.rank === 'elite').map(option => option.definitionId).sort())
       .toEqual([...eliteIds].sort())
     for (const id of [...normalIds, ...eliteIds]) {
       expect(CONTENT_MONSTERS[id]).toMatchObject({ familyId, lootTableId: expect.stringContaining(familyId.split('_')[0]!) })
@@ -257,11 +258,18 @@ describe('remaining D family runtime integration', () => {
     const wildRecipeIds = ['wild_beast_tendon_spear_recipe', 'wild_beast_horn_knife_recipe', 'wild_beast_hide_coat_recipe']
     const goblinRecipeIds = ['frontier_goblin_scrap_spear_recipe', 'frontier_goblin_plate_vest_recipe',
       'frontier_goblin_wire_knife_recipe', 'frontier_goblin_signal_coat_recipe']
+    const originalMaterials = new Set([
+      'wild_beast_hide', 'wild_beast_horn', 'wild_beast_tendon', 'wild_beast_fur',
+      'wild_beast_antler', 'wild_beast_resin', 'wild_beast_amber_sinew',
+      'frontier_goblin_scrap', 'frontier_goblin_slingcord', 'frontier_goblin_plate',
+      'frontier_goblin_signalcloth', 'frontier_goblin_ironbits', 'frontier_goblin_wire',
+      'frontier_goblin_forgecore',
+    ])
     for (const recipeId of [...wildRecipeIds, ...goblinRecipeIds]) {
       const recipe = CONTENT_RECIPES[recipeId]!
       const equipment = CONTENT_EQUIPMENT[recipe.outputBase]!
       expect(recipe.allowedBiasMaterials.length).toBeGreaterThan(0)
-      for (const materialId of recipe.allowedBiasMaterials) {
+      for (const materialId of recipe.allowedBiasMaterials.filter(id => originalMaterials.has(id))) {
         const biasAffixes = Object.keys(CONTENT_MATERIALS[materialId]!.bias)
         expect(biasAffixes.some(affixId => equipment.affixIds.includes(affixId))).toBe(true)
       }

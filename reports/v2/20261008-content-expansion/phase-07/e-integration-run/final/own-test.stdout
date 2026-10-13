@@ -1,0 +1,15 @@
+
+> plw-rpg@0.1.0 test
+> vitest run src/engine/contentBosses.integration.test.ts
+
+
+ RUN  v4.1.11 /workspace/plw-rpg
+
+ ❯ src/engine/contentBosses.integration.test.ts (11 tests | 1 failed) 153ms
+     × fog_undead_cryptlord supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown 26ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 passed (11)
+   Start at  02:53:28
+   Duration  657ms (transform 321ms, setup 0ms, import 391ms, tests 153ms, environment 0ms)
+

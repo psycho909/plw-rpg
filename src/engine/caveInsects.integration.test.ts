@@ -74,9 +74,11 @@ describe('Cave Insects runtime integration', () => {
       expect(contentEncounterOptions(state, 'cave_insects').find(option => option.definitionId === id))
         .toMatchObject({ eligible: true, reason: null, region: 'mine' })
     }
-    expect(contentEncounterOptions(state, 'cave_insects')).toHaveLength(8)
-    expect(contentEncounterOptions(state, 'cave_insects').map(option => option.rank).filter(rank => rank === 'normal')).toHaveLength(6)
-    expect(contentEncounterOptions(state, 'cave_insects').map(option => option.rank).filter(rank => rank === 'elite')).toHaveLength(2)
+    const originalPackOptions = contentEncounterOptions(state, 'cave_insects')
+      .filter(option => option.rank === 'normal' || option.rank === 'elite')
+    expect(originalPackOptions).toHaveLength(8)
+    expect(originalPackOptions.filter(option => option.rank === 'normal')).toHaveLength(6)
+    expect(originalPackOptions.filter(option => option.rank === 'elite')).toHaveLength(2)
 
     character.level = 2
     expect(contentEncounterOptions(state, 'cave_insects').every(option => !option.eligible)).toBe(true)

@@ -1,0 +1,27 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/contentBosses.integration.test.ts > content boss public integration > fog_undead_cryptlord supports alternate low threat access, frozen form reload, sourced victory loot, bounded settlement effect and canonical cooldown
+AssertionError: expected { familyId: 'fog_undead', …(7) } to match object { eligible: true, reason: null }
+(6 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "eligible": true,
+-   "reason": null,
++   "eligible": false,
++   "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。",
+  }
+
+ ❯ src/engine/contentBosses.integration.test.ts:168:8
+    166|     advanceTo(savedCooldown, availableAt)
+    167|     expect(contentEncounterOptions(savedCooldown, definition.familyId)…
+    168|       .toMatchObject({ eligible: true, reason: null })
+       |        ^
+    169|   })
+    170|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

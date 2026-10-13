@@ -1,0 +1,81 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/caveInsects.integration.test.ts > Cave Insects runtime integration > registers six normal and two Elite canonical mine encounters with their progression predicates
+AssertionError: expected [ …(11) ] to have a length of 8 but got 11
+
+- Expected
++ Received
+
+- 8
++ 11
+
+ ❯ src/engine/caveInsects.integration.test.ts:77:60
+     75|         .toMatchObject({ eligible: true, reason: null, region: 'mine' …
+     76|     }
+     77|     expect(contentEncounterOptions(state, 'cave_insects')).toHaveLengt…
+       |                                                            ^
+     78|     expect(contentEncounterOptions(state, 'cave_insects').map(option =…
+     79|     expect(contentEncounterOptions(state, 'cave_insects').map(option =…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > 'wild_beasts' registers six normal and two Elite encounters
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > 'fog_undead' registers six normal and two Elite encounters
+AssertionError: expected [ …(11) ] to have a length of 8 but got 11
+
+- Expected
++ Received
+
+- 8
++ 11
+
+ ❯ src/engine/remainingFamilies.integration.test.ts:210:21
+    208|     expect(CONTENT_FAMILIES[familyId]).toBeDefined()
+    209|     const options = contentEncounterOptions(createGame(72800), familyI…
+    210|     expect(options).toHaveLength(8)
+       |                     ^
+    211|     expect(options.filter(option => option.rank === 'normal').map(opti…
+    212|       .toEqual([...normalIds].sort())
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > 'frontier_goblins' registers six normal and two Elite encounters
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > 'mine_constructs' registers six normal and two Elite encounters
+AssertionError: expected [ { …(8) }, { …(8) }, { …(8) }, …(8) ] to have a length of 8 but got 11
+
+- Expected
++ Received
+
+- 8
++ 11
+
+ ❯ src/engine/remainingFamilies.integration.test.ts:210:21
+    208|     expect(CONTENT_FAMILIES[familyId]).toBeDefined()
+    209|     const options = contentEncounterOptions(createGame(72800), familyI…
+    210|     expect(options).toHaveLength(8)
+       |                     ^
+    211|     expect(options.filter(option => option.rank === 'normal').map(opti…
+    212|       .toEqual([...normalIds].sort())
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  src/engine/remainingFamilies.integration.test.ts > remaining D family runtime integration > keeps Wild and Frontier bias materials compatible with their recipe outputs and exposes planned gear in selected loot
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/engine/remainingFamilies.integration.test.ts:266:83
+    264|       for (const materialId of recipe.allowedBiasMaterials) {
+    265|         const biasAffixes = Object.keys(CONTENT_MATERIALS[materialId]!…
+    266|         expect(biasAffixes.some(affixId => equipment.affixIds.includes…
+       |                                                                                   ^
+    267|       }
+    268|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+

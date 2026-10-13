@@ -1,5 +1,13 @@
 # Task Handoff
 
+## Latest authority / next action — E accepted, F released
+
+2026-10-13: Whole D and E ACCEPTED / PASS WITH FINDINGS. Historical D missing-pack P2 remains; Owner instructed completion after limited compensating-evidence disposition, no pending waiver question. E independent Max audit initial P2 HP mutation resolved by one-line deletion; fresh four files / 39 tests and vue-tsc PASS, exact snapshot and independent CLEARED delta in `e-integration-run/audit-correction-20261013T053847Z/` and `reports/audit/phase7-e-boss-review.md`. Seven E standardCLI checks PASS, 66 qualified monsters / 60 interim qualified items. No E/final full-suite claim. Root `e-root-closeout.md` and E/F tickets are current authority; historical conflicting sections below are superseded.
+
+**Next: implement F following `f-content-plan.md`, then G following corrected `g-crop-plan.md` after F acceptance.** Low owns five isolated family modules; Medium owns narrow material-function validator correction and public integration tests. Material comparison must include validated mandatory recipe output functions, excluding IDs/prose/nominal consumers; preserve real clones and add counterexamples. G requires actual crop selection/harvest/reward-material consumption into food; currently legacy farm is wheat-only. Optional cropId argument/defaultwheat and registry/season guards approved narrowly; no save field/generator/second system. All new crops farmland; plan food/sell pairs unique, not unrun balance findings.
+
+QA preparation source-reviewed and corrected: simulation guard/bias costs/resale-metric disclosures; browser postload runtime Save equality, opening/reload assertions, bounded logs. No formal J/K lanes yet; do not launch before I/source/build release. Complete F/G then H world/crisis and I minimal discovery UX, then 100Kloot/combat/economy, continuous3seeds100y with10/50/100 checkpoints, productionChromiumregression+1200s stress+1800s content exploration, independent review,17reports/externalhandoff. StopbeforePhase8/V3. Human DEFERRED. Root-onlybranchcommit/push explicit refspec. Low/Medium quota failure fallback must be recorded, not repeated blindly. Use current tickets/source; do not repeat prior reliable mechanical exploration.
+
 ## Identity
 
 - Task: Phase7 completion, continuing remaining D then E–K.

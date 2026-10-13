@@ -1,0 +1,1545 @@
+{
+  "executionMode": "validation-only public validateContentPack precheck; no validator CLI, child tests, or typecheck invoked",
+  "generatedAtUtc": "2026-10-13T02:51:57.017Z",
+  "generatedFrom": "Vite SSR /src/data/contentRegistry.ts CONTENT_PACKS",
+  "contentPackCount": 6,
+  "catalogs": {
+    "families": 6,
+    "monsters": 66,
+    "lootTables": 72,
+    "equipment": 25,
+    "materials": 48,
+    "crops": 0,
+    "cropGoods": 0,
+    "recipes": 16,
+    "affixes": 0
+  },
+  "pack": {
+    "bytes": 105337,
+    "sha256": "c5c3e574ca915b37dedd45056ee72344cb27f9919982eaaf655ae7bb24e194f4",
+    "relativePath": "reports/v2/20261008-content-expansion/phase-07/e-content-validation-run/runs/2026-10-13T02-51-56.085Z-dbda131c-3bbb-4c7d-a118-d872aadb4196/packs/e-six-family-content-pack.json"
+  },
+  "evidence": {
+    "directory": "reports/v2/20261008-content-expansion/phase-07/e-content-validation-run/runs/2026-10-13T02-51-56.085Z-dbda131c-3bbb-4c7d-a118-d872aadb4196/.qa-runs/2026-10-13T02-51-56.810Z-04d0ccab-402e-43bc-a4f3-9e343649c526",
+    "manifestSha256": "fbc881682bd713a466bb3b612c7a731fe6dd4f9e9403ca1835c1c4779bcdfe7f",
+    "sourceFingerprint": "6974db9613b5a8ba136026c6b9d7e7ef1ff37aae862c36f6136547373c6e97d7",
+    "capturedAtHead": "3d15d2e479662cb74135bba8894290e054adaa6f"
+  },
+  "validation": {
+    "errors": [
+      {
+        "code": "unknown-reference",
+        "id": "wild_beasts_loot_amberback",
+        "reference": "wild_beast_gale_hide",
+        "path": "weightedEquipment.equipmentId",
+        "message": "Reference wild_beast_gale_hide does not resolve."
+      },
+      {
+        "code": "unknown-reference",
+        "id": "wild_beasts_loot_gorehorn",
+        "reference": "wild_beast_antler_pike",
+        "path": "weightedEquipment.equipmentId",
+        "message": "Reference wild_beast_antler_pike does not resolve."
+      },
+      {
+        "code": "unknown-reference",
+        "id": "frontier_goblins_loot_saboteur",
+        "reference": "frontier_goblin_ironaxe",
+        "path": "weightedEquipment.equipmentId",
+        "message": "Reference frontier_goblin_ironaxe does not resolve."
+      },
+      {
+        "code": "orphan-material",
+        "id": "wild_beast_apex_core",
+        "message": "Material has no recipe input or legal generator bias consumer."
+      },
+      {
+        "code": "insufficient-identity-axes",
+        "id": "wild_beast_amberback",
+        "message": "Monster has 2 effective identity axes (combat, world) or an invalid source graph; at least two effective axes are required."
+      },
+      {
+        "code": "insufficient-identity-axes",
+        "id": "wild_beast_gorehorn",
+        "message": "Monster has 2 effective identity axes (combat, world) or an invalid source graph; at least two effective axes are required."
+      },
+      {
+        "code": "insufficient-identity-axes",
+        "id": "frontier_goblin_saboteur",
+        "message": "Monster has 2 effective identity axes (combat, world) or an invalid source graph; at least two effective axes are required."
+      }
+    ],
+    "warnings": [
+      {
+        "code": "duplicate-like-material",
+        "ids": [
+          "fog_undead_shroud",
+          "mine_construct_binding",
+          "slime_amber_gel"
+        ],
+        "message": "Material definitions have the same effective economy and generation influence."
+      },
+      {
+        "code": "duplicate-like-material",
+        "ids": [
+          "cave_insect_leg",
+          "frontier_goblin_scrap"
+        ],
+        "message": "Material definitions have the same effective economy and generation influence."
+      },
+      {
+        "code": "duplicate-like-material",
+        "ids": [
+          "cave_insect_sac",
+          "mine_construct_resonant_stone"
+        ],
+        "message": "Material definitions have the same effective economy and generation influence."
+      },
+      {
+        "code": "duplicate-like-material",
+        "ids": [
+          "fog_undead_tendon",
+          "mine_construct_joint"
+        ],
+        "message": "Material definitions have the same effective economy and generation influence."
+      },
+      {
+        "code": "duplicate-like-material",
+        "ids": [
+          "fog_undead_cryptstone",
+          "mine_construct_plate"
+        ],
+        "message": "Material definitions have the same effective economy and generation influence."
+      },
+      {
+        "code": "duplicate-like-material",
+        "ids": [
+          "fog_undead_bellmetal",
+          "mine_construct_ironvein"
+        ],
+        "message": "Material definitions have the same effective economy and generation influence."
+      }
+    ],
+    "reachability": [
+      {
+        "contentId": "slime",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "farmland",
+          "regionAccess": "already-accessible",
+          "playerLevel": 1,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insects",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 3,
+          "threatLevel": 1,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beasts",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "farmland",
+          "regionAccess": "already-accessible",
+          "playerLevel": 1,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblins",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 3,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 18,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_constructs",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_slick",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "farmland",
+          "regionAccess": "already-accessible",
+          "playerLevel": 1,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_amber",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "farmland",
+          "regionAccess": "already-accessible",
+          "playerLevel": 2,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "夏",
+          "hour": 8,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_bog",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 2,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 7,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_moss",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 3,
+          "threatLevel": 1,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 17,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_glass",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "farmland",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "秋",
+          "hour": 10,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_spring",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 3,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 5,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_bulwark",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "farmland",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 2,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 7,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_cinder",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "夏",
+          "hour": 11,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_matriarch",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_tidecaller",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 6,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 17,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "slime_heart",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 7,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "夏",
+          "hour": 18,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_digger",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 3,
+          "threatLevel": 1,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_skitter",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 3,
+          "threatLevel": 1,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_spitter",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 1,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_carrier",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 1,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 5,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_shellback",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 1,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_lurker",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 18,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_razor",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_warden",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 6,
+          "threatLevel": 2,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 7,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_broodguard",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 7,
+          "threatLevel": 2,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_tunnelstalker",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 7,
+          "threatLevel": 2,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 18,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "cave_insect_queen",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 8,
+          "threatLevel": 3,
+          "settlementStage": "village",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_brush_hare",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "farmland",
+          "regionAccess": "already-accessible",
+          "playerLevel": 1,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 5,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_stonehorn",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 2,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_redtail",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 3,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_fernback",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 3,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 15,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_marshstag",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 3,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_amberfox",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "farmland",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 1,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 12,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_bristleback",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_galehorn",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 6,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_amberback",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 7,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_gorehorn",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 7,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "wild_beast_apex",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 8,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "秋",
+          "hour": 16,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_scout",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 3,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_slinger",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_tinker",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_lookout",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 15,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_hauler",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_trapper",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 17,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_breaker",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 6,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_duelist",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 6,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_standardbearer",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 7,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_saboteur",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 7,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "frontier_goblin_warlord",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 8,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 0,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_bonewalker",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 20,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_lantern_wisp",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "unknown",
+          "regionAccess": "explore-to-unlock",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 20,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_gravehound",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "秋",
+          "hour": 20,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_crypt_guard",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "unknown",
+          "regionAccess": "explore-to-unlock",
+          "playerLevel": 6,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 20,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_mourner",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "冬",
+          "hour": 20,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_bellkeeper",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "unknown",
+          "regionAccess": "explore-to-unlock",
+          "playerLevel": 6,
+          "threatLevel": 2,
+          "settlementStage": "town",
+          "season": "春",
+          "hour": 20,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_wight",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 7,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 20,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_blackguard",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "unknown",
+          "regionAccess": "explore-to-unlock",
+          "playerLevel": 7,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 20,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_crypt_knight",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "unknown",
+          "regionAccess": "explore-to-unlock",
+          "playerLevel": 8,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 21,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_hollow_bell",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "forest",
+          "regionAccess": "already-accessible",
+          "playerLevel": 8,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 20,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "fog_undead_cryptlord",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "unknown",
+          "regionAccess": "explore-to-unlock",
+          "playerLevel": 9,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 20,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_shardling",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_sentinel",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 4,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_pylon",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 10,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_crawler",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_mason",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 5,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 13,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_veinwatcher",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 6,
+          "threatLevel": 2,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_ram",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 7,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_warder",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 7,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_architect",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "unknown",
+          "regionAccess": "explore-to-unlock",
+          "playerLevel": 8,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 8,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_bastion",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "mine",
+          "regionAccess": "already-accessible",
+          "playerLevel": 8,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 6,
+          "safety": 0
+        }
+      },
+      {
+        "contentId": "mine_construct_heart",
+        "status": "controlled-witness",
+        "witness": {
+          "region": "unknown",
+          "regionAccess": "explore-to-unlock",
+          "playerLevel": 9,
+          "threatLevel": 3,
+          "settlementStage": "hamlet",
+          "season": "春",
+          "hour": 8,
+          "safety": 0
+        }
+      }
+    ],
+    "naturalExposure": "not-measured",
+    "cropGoodEvidence": "declared-food-binding-only-runtime-integration-unverified",
+    "saveCompatibility": "stable-id-addition-only-runtime-migration-unverified",
+    "identityAxes": {
+      "slime_slick": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "slime_amber": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "slime_bog": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "slime_moss": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "slime_glass": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "slime_spring": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "slime_bulwark": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "slime_cinder": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "slime_matriarch": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "slime_tidecaller": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "slime_heart": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_digger": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_skitter": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_spitter": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_carrier": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_shellback": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_lurker": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_razor": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_warden": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_broodguard": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_tunnelstalker": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "cave_insect_queen": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "wild_beast_brush_hare": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "wild_beast_stonehorn": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "wild_beast_redtail": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "wild_beast_fernback": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "wild_beast_marshstag": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "wild_beast_amberfox": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "wild_beast_bristleback": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "wild_beast_galehorn": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "wild_beast_amberback": [
+        "combat",
+        "world"
+      ],
+      "wild_beast_gorehorn": [
+        "combat",
+        "world"
+      ],
+      "wild_beast_apex": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "frontier_goblin_scout": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "frontier_goblin_slinger": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "frontier_goblin_tinker": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "frontier_goblin_lookout": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "frontier_goblin_hauler": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "frontier_goblin_trapper": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "frontier_goblin_breaker": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "frontier_goblin_duelist": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "frontier_goblin_standardbearer": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "frontier_goblin_saboteur": [
+        "combat",
+        "world"
+      ],
+      "frontier_goblin_warlord": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_bonewalker": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_lantern_wisp": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_gravehound": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_crypt_guard": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_mourner": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_bellkeeper": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_wight": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_blackguard": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_crypt_knight": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_hollow_bell": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "fog_undead_cryptlord": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_shardling": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_sentinel": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_pylon": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_crawler": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_mason": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_veinwatcher": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_ram": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_warder": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_architect": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_bastion": [
+        "combat",
+        "loot",
+        "world"
+      ],
+      "mine_construct_heart": [
+        "combat",
+        "loot",
+        "world"
+      ]
+    },
+    "qualifyingMonsterIds": [
+      "slime_slick",
+      "slime_amber",
+      "slime_bog",
+      "slime_moss",
+      "slime_glass",
+      "slime_spring",
+      "slime_bulwark",
+      "slime_cinder",
+      "slime_matriarch",
+      "slime_tidecaller",
+      "slime_heart",
+      "cave_insect_digger",
+      "cave_insect_skitter",
+      "cave_insect_spitter",
+      "cave_insect_carrier",
+      "cave_insect_shellback",
+      "cave_insect_lurker",
+      "cave_insect_razor",
+      "cave_insect_warden",
+      "cave_insect_broodguard",
+      "cave_insect_tunnelstalker",
+      "cave_insect_queen",
+      "wild_beast_brush_hare",
+      "wild_beast_stonehorn",
+      "wild_beast_redtail",
+      "wild_beast_fernback",
+      "wild_beast_marshstag",
+      "wild_beast_amberfox",
+      "wild_beast_bristleback",
+      "wild_beast_galehorn",
+      "wild_beast_apex",
+      "frontier_goblin_scout",
+      "frontier_goblin_slinger",
+      "frontier_goblin_tinker",
+      "frontier_goblin_lookout",
+      "frontier_goblin_hauler",
+      "frontier_goblin_trapper",
+      "frontier_goblin_breaker",
+      "frontier_goblin_duelist",
+      "frontier_goblin_standardbearer",
+      "frontier_goblin_warlord",
+      "fog_undead_bonewalker",
+      "fog_undead_lantern_wisp",
+      "fog_undead_gravehound",
+      "fog_undead_crypt_guard",
+      "fog_undead_mourner",
+      "fog_undead_bellkeeper",
+      "fog_undead_wight",
+      "fog_undead_blackguard",
+      "fog_undead_crypt_knight",
+      "fog_undead_hollow_bell",
+      "fog_undead_cryptlord",
+      "mine_construct_shardling",
+      "mine_construct_sentinel",
+      "mine_construct_pylon",
+      "mine_construct_crawler",
+      "mine_construct_mason",
+      "mine_construct_veinwatcher",
+      "mine_construct_ram",
+      "mine_construct_warder",
+      "mine_construct_architect",
+      "mine_construct_bastion",
+      "mine_construct_heart"
+    ],
+    "qualityCounts": {
+      "qualifyingNewMonsters": 63,
+      "usableNewItems": 59,
+      "usableNewMaterials": 34
+    },
+    "baseline": {
+      "exactMonsterIds": 5,
+      "exactBossVariantIds": 3,
+      "exactItemIds": 9,
+      "excludedLegacyMonsterIds": 4,
+      "excludedLegacyItemIds": 8,
+      "excludedProceduralIds": 0
+    }
+  },
+  "validationExitCode": 1
+}

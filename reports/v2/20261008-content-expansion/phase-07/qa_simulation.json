@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Phase 7-J controlled loot, combat, economy, and continuous-world QA runner configuration",
+  "status": "preparation-only",
+  "catalogTarget": {
+    "families": 6,
+    "monsters": 66,
+    "equipment": 48,
+    "materials": 48,
+    "recipes": 24,
+    "crops": 11,
+    "cropGoods": "record independently from the frozen registry"
+  },
+  "lanes": {
+    "inventory": { "sourceGuard": "optional", "cost": "small", "outputs": ["inventory.jsonl", "manifest.json", "completion.json"] },
+    "loot": { "awards": 100000, "strata": "all actual CONTENT_MONSTERS grouped by familyId and rank; balanced within groups then distributed among definitions", "mirrorAwardsPerGroup": 50, "outputs": ["loot-raw.jsonl", "loot-summary.jsonl"] },
+    "combat": { "targets": "all actual content monster definitions", "bands": ["early", "mid", "late"], "builds": ["legacy", "attack", "defense", "generated", "crafted", "masterpiece"], "samplesPerCell": 100, "minimumSamplesPerCell": 1, "outputs": ["combat-raw.jsonl", "combat-summary.jsonl"] },
+    "economy": { "sources": ["actual content equipment and materials", "actual content recipes", "canonical public planCraft/craft actions"], "outputs": ["craft-raw.jsonl", "economy-summary.jsonl"], "fieldVerification": "pending: catalog resale opportunity margin is not actual arbitrage without merchant purchase prices and source availability" },
+    "long": { "seeds": ["40131", "40132", "40133"], "requiredSeedCount": 3, "seedRange": "unsigned 32-bit integer", "seedsMustBeDistinct": true, "continuousYears": 100, "checkpoints": [10, 50, 100], "outputs": ["long-checkpoints.jsonl"] }
+  },
+  "sourceGuard": {
+    "actualHead": "git rev-parse HEAD captured at lane start and end",
+    "sourceFiles": "recursive sorted src file path-to-SHA256 map, including untracked files",
+    "fingerprint": "SHA256(JSON.stringify(sorted path-to-file-SHA256 map))",
+    "formalLaneRequiresEnv": ["PHASE7_QA_EXPECT_COMMIT", "PHASE7_QA_EXPECT_FINGERPRINT"],
+    "refusesSourceDrift": true
+  },
+  "laneInputGuards": { "formalLanesRequireExactlyThreeDistinctSeeds": true, "combatPerCellMustBePositiveSafeInteger": true, "lootAwardsMustBePositiveSafeInteger": true, "failedLaneCompletionIsExplicit": true },
+  "historicalRefs": [
+    "reports/v2/20261006-reward-core/phase-04/loot_monte_carlo.test.ts",
+    "reports/v2/20261006-reward-core/phase-04/combat_simulation.test.ts",
+    "reports/v2/20261006-reward-core/phase-04/simulation.config.ts",
+    "reports/v2/20261008-regional-crisis/phase-06/phase06_i_simulation.test.ts",
+    "reports/v2/20261008-regional-crisis/phase-06/phase06_i_simulation.config.ts"
+  ]
+}

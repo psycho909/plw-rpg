@@ -1,0 +1,11 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "types": ["vite/client"]
+  },
+  "include": [
+    "qa_simulation.test.ts",
+    "qa_simulation.config.ts",
+    "qa-simulation-preparation/node-shims.d.ts"
+  ]
+}
