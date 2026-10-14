@@ -1,0 +1,1081 @@
+{
+  "status": "PASS",
+  "failure": null,
+  "endedAt": "2026-10-14T04:02:57.546Z",
+  "seedVariance": {
+    "status": "VALID_POLICY",
+    "failures": [],
+    "checks": {
+      "sampleCount": 3,
+      "distinctSeeds": 3,
+      "distinctWorldSeeds": 3,
+      "distinctRngStates": 3,
+      "distinctRngProbes": 3
+    }
+  },
+  "seedEvidence": [
+    {
+      "seed": 61101,
+      "worldSeed": 61101,
+      "rngState": 1216225876,
+      "rngProbe": 0.5262475989293307
+    },
+    {
+      "seed": 61102,
+      "worldSeed": 61102,
+      "rngState": 399550865,
+      "rngProbe": 0.14355979766696692
+    },
+    {
+      "seed": 61103,
+      "worldSeed": 61103,
+      "rngState": 3877843150,
+      "rngProbe": 0.7608719964046031
+    }
+  ],
+  "routeValidity": [
+    {
+      "route": "life",
+      "seed": 61101,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 3762,
+        "successfulGatherActions": 743,
+        "successfulFarmActions": 13,
+        "successfulCraftActions": 676,
+        "successfulSellActions": 2330,
+        "skillXpGained": 7570,
+        "smithingXpGained": 60,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 242,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      },
+      "seedRngEvidence": {
+        "seed": 61101,
+        "worldSeed": 61101,
+        "rngState": 1216225876,
+        "rngProbe": 0.5262475989293307
+      },
+      "craftingEvidence": {
+        "checkedPlanCount": 208880,
+        "legalPlanSeen": true,
+        "legalRecipes": [
+          "fieldArmor",
+          "starterSpear"
+        ],
+        "successfulCrafts": 676,
+        "smithingXpGained": 60,
+        "blockedReasonCounts": {
+          "station_unavailable": 34650,
+          "too_far": 159092,
+          "skill_required": 26,
+          "materials_required": 12166,
+          "station_closed": 1344
+        },
+        "freshSaveReachableRecipes": [
+          "starterSpear"
+        ],
+        "impossibilityReason": null,
+        "noSmithingXpReason": null
+      },
+      "rankEvidence": {
+        "sampledDecisions": 0,
+        "higherRankEligibleCount": 0,
+        "regions": {},
+        "eligibleByRank": {
+          "normal": {},
+          "elite": {},
+          "miniBoss": {},
+          "boss": {}
+        },
+        "blockedReasonsByRank": {
+          "normal": {},
+          "elite": {},
+          "miniBoss": {},
+          "boss": {}
+        },
+        "noHigherRankReason": "No Elite, MiniBoss, or Boss target was legal in 0 sampled Adventure decisions across no regions; disabled track reasons observed: higher-rank spawn profiles did not match the sampled region, level, threat, season, hour, settlement, or progression state."
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 3762,
+        "successfulGatherActions": 743,
+        "successfulFarmActions": 13,
+        "successfulCraftActions": 676,
+        "successfulSellActions": 2330,
+        "skillXpGained": 7570,
+        "smithingXpGained": 60,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 242,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      },
+      "seedRngEvidence": {
+        "seed": 61102,
+        "worldSeed": 61102,
+        "rngState": 399550865,
+        "rngProbe": 0.14355979766696692
+      },
+      "craftingEvidence": {
+        "checkedPlanCount": 208880,
+        "legalPlanSeen": true,
+        "legalRecipes": [
+          "fieldArmor",
+          "starterSpear"
+        ],
+        "successfulCrafts": 676,
+        "smithingXpGained": 60,
+        "blockedReasonCounts": {
+          "station_unavailable": 34650,
+          "too_far": 159092,
+          "skill_required": 26,
+          "materials_required": 12166,
+          "station_closed": 1344
+        },
+        "freshSaveReachableRecipes": [
+          "starterSpear"
+        ],
+        "impossibilityReason": null,
+        "noSmithingXpReason": null
+      },
+      "rankEvidence": {
+        "sampledDecisions": 0,
+        "higherRankEligibleCount": 0,
+        "regions": {},
+        "eligibleByRank": {
+          "normal": {},
+          "elite": {},
+          "miniBoss": {},
+          "boss": {}
+        },
+        "blockedReasonsByRank": {
+          "normal": {},
+          "elite": {},
+          "miniBoss": {},
+          "boss": {}
+        },
+        "noHigherRankReason": "No Elite, MiniBoss, or Boss target was legal in 0 sampled Adventure decisions across no regions; disabled track reasons observed: higher-rank spawn profiles did not match the sampled region, level, threat, season, hour, settlement, or progression state."
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 3762,
+        "successfulGatherActions": 743,
+        "successfulFarmActions": 13,
+        "successfulCraftActions": 676,
+        "successfulSellActions": 2330,
+        "skillXpGained": 7570,
+        "smithingXpGained": 60,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 242,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      },
+      "seedRngEvidence": {
+        "seed": 61103,
+        "worldSeed": 61103,
+        "rngState": 3877843150,
+        "rngProbe": 0.7608719964046031
+      },
+      "craftingEvidence": {
+        "checkedPlanCount": 208880,
+        "legalPlanSeen": true,
+        "legalRecipes": [
+          "fieldArmor",
+          "starterSpear"
+        ],
+        "successfulCrafts": 676,
+        "smithingXpGained": 60,
+        "blockedReasonCounts": {
+          "station_unavailable": 34650,
+          "too_far": 159092,
+          "skill_required": 26,
+          "materials_required": 12166,
+          "station_closed": 1344
+        },
+        "freshSaveReachableRecipes": [
+          "starterSpear"
+        ],
+        "impossibilityReason": null,
+        "noSmithingXpReason": null
+      },
+      "rankEvidence": {
+        "sampledDecisions": 0,
+        "higherRankEligibleCount": 0,
+        "regions": {},
+        "eligibleByRank": {
+          "normal": {},
+          "elite": {},
+          "miniBoss": {},
+          "boss": {}
+        },
+        "blockedReasonsByRank": {
+          "normal": {},
+          "elite": {},
+          "miniBoss": {},
+          "boss": {}
+        },
+        "noHigherRankReason": "No Elite, MiniBoss, or Boss target was legal in 0 sampled Adventure decisions across no regions; disabled track reasons observed: higher-rank spawn profiles did not match the sampled region, level, threat, season, hour, settlement, or progression state."
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 0,
+        "successfulGatherActions": 0,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 0,
+        "successfulSellActions": 0,
+        "skillXpGained": 6652,
+        "smithingXpGained": 0,
+        "successfulAdventureActions": 4328,
+        "encounterCount": 254,
+        "higherRankEncounterCount": 17,
+        "higherRankEligibleCount": 37,
+        "noProgressActions": 155,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      },
+      "seedRngEvidence": {
+        "seed": 61101,
+        "worldSeed": 61101,
+        "rngState": 1216225876,
+        "rngProbe": 0.5262475989293307
+      },
+      "craftingEvidence": {
+        "checkedPlanCount": 135352,
+        "legalPlanSeen": false,
+        "legalRecipes": [],
+        "successfulCrafts": 0,
+        "smithingXpGained": 0,
+        "blockedReasonCounts": {
+          "station_unavailable": 23700,
+          "too_far": 103000,
+          "in_combat": 8652
+        },
+        "freshSaveReachableRecipes": [
+          "starterSpear"
+        ],
+        "impossibilityReason": null,
+        "noSmithingXpReason": null
+      },
+      "rankEvidence": {
+        "sampledDecisions": 4165,
+        "higherRankEligibleCount": 37,
+        "regions": {
+          "village": 124,
+          "forest": 2034,
+          "mine": 948,
+          "unknown": 1059
+        },
+        "eligibleByRank": {
+          "normal": {
+            "grayWolf": 282,
+            "scarredWolf": 281,
+            "slime_bog": 32,
+            "wild_beast_stonehorn": 62,
+            "wild_beast_redtail": 74,
+            "wild_beast_marshstag": 74,
+            "slime_spring": 50,
+            "wild_beast_fernback": 21,
+            "wild_beast_amberfox": 32,
+            "cave_insect_digger": 169,
+            "cave_insect_spitter": 169,
+            "cave_insect_shellback": 169,
+            "cave_insect_carrier": 31
+          },
+          "elite": {},
+          "miniBoss": {},
+          "boss": {
+            "wild_beast_apex": 8,
+            "slime_heart": 2,
+            "frontier_goblin_warlord": 27
+          }
+        },
+        "blockedReasonsByRank": {
+          "normal": {
+            "請先前往北方森林。": 4262,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 47498,
+            "先擊退灰狼，才能追蹤更深處的狼群。": 1,
+            "附近暫時沒有怪物。": 3456,
+            "體力不足，請先休息。": 633
+          },
+          "elite": {
+            "請先前往北方森林。": 2131,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 16833,
+            "先擊退傷痕灰狼，才能追蹤更深處的狼群。": 282,
+            "附近暫時沒有怪物。": 1728,
+            "體力不足，請先休息。": 219
+          },
+          "miniBoss": {
+            "請先前往北方森林。": 2131,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 16959,
+            "先擊退精英頭狼，才能追蹤更深處的狼群。": 282,
+            "附近暫時沒有怪物。": 1728,
+            "體力不足，請先休息。": 204
+          },
+          "boss": {
+            "請先前往北方森林。": 2131,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 9941,
+            "先擊退狼群領袖，才能追蹤更深處的狼群。": 282,
+            "附近暫時沒有怪物。": 1728,
+            "體力不足，請先休息。": 126,
+            "首領再次現身前還需等待 35 日。": 3,
+            "首領再次現身前還需等待 33 日。": 1,
+            "首領再次現身前還需等待 32 日。": 2,
+            "首領再次現身前還需等待 30 日。": 1,
+            "首領再次現身前還需等待 29 日。": 2,
+            "首領再次現身前還需等待 27 日。": 1,
+            "首領再次現身前還需等待 26 日。": 2,
+            "首領再次現身前還需等待 24 日。": 1,
+            "首領再次現身前還需等待 23 日。": 2,
+            "首領再次現身前還需等待 21 日。": 1,
+            "首領再次現身前還需等待 20 日。": 2,
+            "首領再次現身前還需等待 18 日。": 1,
+            "首領再次現身前還需等待 17 日。": 2,
+            "首領再次現身前還需等待 15 日。": 1,
+            "首領再次現身前還需等待 14 日。": 2,
+            "首領再次現身前還需等待 12 日。": 1,
+            "首領再次現身前還需等待 11 日。": 2,
+            "首領再次現身前還需等待 9 日。": 1,
+            "首領再次現身前還需等待 8 日。": 2,
+            "首領再次現身前還需等待 6 日。": 1,
+            "首領再次現身前還需等待 5 日。": 2,
+            "首領再次現身前還需等待 3 日。": 1,
+            "首領再次現身前還需等待 2 日。": 2
+          }
+        },
+        "noHigherRankReason": null
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 0,
+        "successfulGatherActions": 0,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 0,
+        "successfulSellActions": 0,
+        "skillXpGained": 6730,
+        "smithingXpGained": 0,
+        "successfulAdventureActions": 4316,
+        "encounterCount": 257,
+        "higherRankEncounterCount": 17,
+        "higherRankEligibleCount": 37,
+        "noProgressActions": 156,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      },
+      "seedRngEvidence": {
+        "seed": 61102,
+        "worldSeed": 61102,
+        "rngState": 399550865,
+        "rngProbe": 0.14355979766696692
+      },
+      "craftingEvidence": {
+        "checkedPlanCount": 135100,
+        "legalPlanSeen": false,
+        "legalRecipes": [],
+        "successfulCrafts": 0,
+        "smithingXpGained": 0,
+        "blockedReasonCounts": {
+          "station_unavailable": 23700,
+          "too_far": 102748,
+          "in_combat": 8652
+        },
+        "freshSaveReachableRecipes": [
+          "starterSpear"
+        ],
+        "impossibilityReason": null,
+        "noSmithingXpReason": null
+      },
+      "rankEvidence": {
+        "sampledDecisions": 4156,
+        "higherRankEligibleCount": 37,
+        "regions": {
+          "village": 126,
+          "forest": 2027,
+          "mine": 944,
+          "unknown": 1059
+        },
+        "eligibleByRank": {
+          "normal": {
+            "grayWolf": 598,
+            "scarredWolf": 597,
+            "slime_bog": 32,
+            "wild_beast_stonehorn": 62,
+            "wild_beast_redtail": 74,
+            "wild_beast_marshstag": 74,
+            "slime_spring": 50,
+            "wild_beast_fernback": 21,
+            "wild_beast_amberfox": 32,
+            "cave_insect_digger": 172,
+            "cave_insect_spitter": 172,
+            "cave_insect_shellback": 172,
+            "cave_insect_carrier": 31
+          },
+          "elite": {},
+          "miniBoss": {},
+          "boss": {
+            "wild_beast_apex": 8,
+            "slime_heart": 2,
+            "frontier_goblin_warlord": 27
+          }
+        },
+        "blockedReasonsByRank": {
+          "normal": {
+            "請先前往北方森林。": 4258,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 47309,
+            "先擊退灰狼，才能追蹤更深處的狼群。": 1,
+            "附近暫時沒有怪物。": 2810,
+            "體力不足，請先休息。": 648
+          },
+          "elite": {
+            "請先前往北方森林。": 2129,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 16773,
+            "先擊退傷痕灰狼，才能追蹤更深處的狼群。": 598,
+            "附近暫時沒有怪物。": 1405,
+            "體力不足，請先休息。": 224
+          },
+          "miniBoss": {
+            "請先前往北方森林。": 2129,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 16904,
+            "先擊退精英頭狼，才能追蹤更深處的狼群。": 598,
+            "附近暫時沒有怪物。": 1405,
+            "體力不足，請先休息。": 208
+          },
+          "boss": {
+            "請先前往北方森林。": 2129,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 9910,
+            "先擊退狼群領袖，才能追蹤更深處的狼群。": 598,
+            "附近暫時沒有怪物。": 1405,
+            "體力不足，請先休息。": 128,
+            "首領再次現身前還需等待 35 日。": 3,
+            "首領再次現身前還需等待 33 日。": 1,
+            "首領再次現身前還需等待 32 日。": 2,
+            "首領再次現身前還需等待 30 日。": 1,
+            "首領再次現身前還需等待 29 日。": 2,
+            "首領再次現身前還需等待 27 日。": 1,
+            "首領再次現身前還需等待 26 日。": 2,
+            "首領再次現身前還需等待 24 日。": 1,
+            "首領再次現身前還需等待 23 日。": 2,
+            "首領再次現身前還需等待 21 日。": 1,
+            "首領再次現身前還需等待 20 日。": 2,
+            "首領再次現身前還需等待 18 日。": 1,
+            "首領再次現身前還需等待 17 日。": 2,
+            "首領再次現身前還需等待 15 日。": 1,
+            "首領再次現身前還需等待 14 日。": 2,
+            "首領再次現身前還需等待 12 日。": 1,
+            "首領再次現身前還需等待 11 日。": 2,
+            "首領再次現身前還需等待 9 日。": 1,
+            "首領再次現身前還需等待 8 日。": 2,
+            "首領再次現身前還需等待 6 日。": 1,
+            "首領再次現身前還需等待 5 日。": 2,
+            "首領再次現身前還需等待 3 日。": 1,
+            "首領再次現身前還需等待 2 日。": 2
+          }
+        },
+        "noHigherRankReason": null
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 0,
+        "successfulGatherActions": 0,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 0,
+        "successfulSellActions": 0,
+        "skillXpGained": 6652,
+        "smithingXpGained": 0,
+        "successfulAdventureActions": 4335,
+        "encounterCount": 257,
+        "higherRankEncounterCount": 20,
+        "higherRankEligibleCount": 49,
+        "noProgressActions": 155,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      },
+      "seedRngEvidence": {
+        "seed": 61103,
+        "worldSeed": 61103,
+        "rngState": 3877843150,
+        "rngProbe": 0.7608719964046031
+      },
+      "craftingEvidence": {
+        "checkedPlanCount": 135688,
+        "legalPlanSeen": false,
+        "legalRecipes": [],
+        "successfulCrafts": 0,
+        "smithingXpGained": 0,
+        "blockedReasonCounts": {
+          "station_unavailable": 23700,
+          "too_far": 103196,
+          "in_combat": 8792
+        },
+        "freshSaveReachableRecipes": [
+          "starterSpear"
+        ],
+        "impossibilityReason": null,
+        "noSmithingXpReason": null
+      },
+      "rankEvidence": {
+        "sampledDecisions": 4172,
+        "higherRankEligibleCount": 49,
+        "regions": {
+          "village": 129,
+          "forest": 2037,
+          "mine": 948,
+          "unknown": 1058
+        },
+        "eligibleByRank": {
+          "normal": {
+            "grayWolf": 282,
+            "scarredWolf": 281,
+            "slime_bog": 32,
+            "wild_beast_stonehorn": 62,
+            "wild_beast_redtail": 74,
+            "wild_beast_marshstag": 74,
+            "slime_spring": 50,
+            "wild_beast_fernback": 21,
+            "wild_beast_amberfox": 32,
+            "cave_insect_digger": 169,
+            "cave_insect_spitter": 169,
+            "cave_insect_shellback": 169,
+            "cave_insect_carrier": 31
+          },
+          "elite": {},
+          "miniBoss": {},
+          "boss": {
+            "wild_beast_apex": 38,
+            "slime_heart": 2,
+            "frontier_goblin_warlord": 9
+          }
+        },
+        "blockedReasonsByRank": {
+          "normal": {
+            "請先前往北方森林。": 4270,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 47539,
+            "先擊退灰狼，才能追蹤更深處的狼群。": 1,
+            "附近暫時沒有怪物。": 3462,
+            "體力不足，請先休息。": 633
+          },
+          "elite": {
+            "請先前往北方森林。": 2135,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 16846,
+            "先擊退傷痕灰狼，才能追蹤更深處的狼群。": 282,
+            "附近暫時沒有怪物。": 1731,
+            "體力不足，請先休息。": 219
+          },
+          "miniBoss": {
+            "請先前往北方森林。": 2135,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 16971,
+            "先擊退精英頭狼，才能追蹤更深處的狼群。": 282,
+            "附近暫時沒有怪物。": 1731,
+            "體力不足，請先休息。": 204
+          },
+          "boss": {
+            "請先前往北方森林。": 2135,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 9970,
+            "先擊退狼群領袖，才能追蹤更深處的狼群。": 282,
+            "附近暫時沒有怪物。": 1731,
+            "體力不足，請先休息。": 126,
+            "首領再次現身前還需等待 45 日。": 2
+          }
+        },
+        "noHigherRankReason": null
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 2355,
+        "successfulGatherActions": 529,
+        "successfulFarmActions": 7,
+        "successfulCraftActions": 458,
+        "successfulSellActions": 1361,
+        "skillXpGained": 9717,
+        "smithingXpGained": 60,
+        "successfulAdventureActions": 1611,
+        "encounterCount": 121,
+        "higherRankEncounterCount": 6,
+        "higherRankEligibleCount": 7,
+        "noProgressActions": 77,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      },
+      "seedRngEvidence": {
+        "seed": 61101,
+        "worldSeed": 61101,
+        "rngState": 1216225876,
+        "rngProbe": 0.5262475989293307
+      },
+      "craftingEvidence": {
+        "checkedPlanCount": 192500,
+        "legalPlanSeen": true,
+        "legalRecipes": [
+          "fieldArmor",
+          "starterSpear"
+        ],
+        "successfulCrafts": 458,
+        "smithingXpGained": 60,
+        "blockedReasonCounts": {
+          "station_unavailable": 27825,
+          "too_far": 149492,
+          "skill_required": 38,
+          "materials_required": 7658,
+          "station_closed": 1887,
+          "in_combat": 4284,
+          "stamina_required": 6
+        },
+        "freshSaveReachableRecipes": [
+          "starterSpear"
+        ],
+        "impossibilityReason": null,
+        "noSmithingXpReason": null
+      },
+      "rankEvidence": {
+        "sampledDecisions": 1528,
+        "higherRankEligibleCount": 7,
+        "regions": {
+          "village": 237,
+          "mine": 335,
+          "forest": 657,
+          "unknown": 299
+        },
+        "eligibleByRank": {
+          "normal": {
+            "slime_bog": 15,
+            "wild_beast_stonehorn": 18,
+            "grayWolf": 330,
+            "slime_spring": 12,
+            "wild_beast_redtail": 16,
+            "wild_beast_marshstag": 16,
+            "scarredWolf": 324,
+            "wild_beast_amberfox": 10,
+            "wild_beast_fernback": 6,
+            "cave_insect_digger": 64,
+            "cave_insect_skitter": 64,
+            "cave_insect_spitter": 64,
+            "cave_insect_carrier": 64,
+            "cave_insect_shellback": 64
+          },
+          "elite": {},
+          "miniBoss": {},
+          "boss": {
+            "slime_heart": 1,
+            "wild_beast_apex": 2,
+            "frontier_goblin_warlord": 4
+          }
+        },
+        "blockedReasonsByRank": {
+          "normal": {
+            "請先前往北方森林。": 1742,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 15258,
+            "先擊退灰狼，才能追蹤更深處的狼群。": 6,
+            "體力不足，請先休息。": 437,
+            "附近暫時沒有怪物。": 622
+          },
+          "elite": {
+            "請先前往北方森林。": 871,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 5423,
+            "先擊退傷痕灰狼，才能追蹤更深處的狼群。": 330,
+            "體力不足，請先休息。": 151,
+            "附近暫時沒有怪物。": 311
+          },
+          "miniBoss": {
+            "請先前往北方森林。": 871,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 5398,
+            "先擊退精英頭狼，才能追蹤更深處的狼群。": 330,
+            "體力不足，請先休息。": 140,
+            "附近暫時沒有怪物。": 311
+          },
+          "boss": {
+            "請先前往北方森林。": 871,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 3104,
+            "先擊退狼群領袖，才能追蹤更深處的狼群。": 330,
+            "體力不足，請先休息。": 86,
+            "附近暫時沒有怪物。": 311,
+            "首領再次現身前還需等待 30 日。": 4,
+            "首領再次現身前還需等待 35 日。": 4,
+            "首領再次現身前還需等待 31 日。": 2,
+            "首領再次現身前還需等待 44 日。": 2,
+            "首領再次現身前還需等待 29 日。": 4,
+            "首領再次現身前還需等待 43 日。": 2,
+            "首領再次現身前還需等待 25 日。": 3,
+            "首領再次現身前還需等待 40 日。": 2,
+            "首領再次現身前還需等待 39 日。": 2,
+            "首領再次現身前還需等待 19 日。": 3,
+            "首領再次現身前還需等待 34 日。": 1,
+            "首領再次現身前還需等待 33 日。": 1,
+            "首領再次現身前還需等待 13 日。": 3,
+            "首領再次現身前還需等待 28 日。": 1,
+            "首領再次現身前還需等待 27 日。": 1,
+            "首領再次現身前還需等待 7 日。": 3,
+            "首領再次現身前還需等待 22 日。": 1,
+            "首領再次現身前還需等待 21 日。": 1,
+            "首領再次現身前還需等待 1 日。": 3,
+            "首領再次現身前還需等待 16 日。": 1,
+            "首領再次現身前還需等待 15 日。": 1,
+            "首領再次現身前還需等待 9 日。": 2,
+            "首領再次現身前還需等待 4 日。": 1,
+            "首領再次現身前還需等待 3 日。": 1,
+            "首領再次現身前還需等待 24 日。": 1,
+            "首領再次現身前還需等待 23 日。": 3,
+            "首領再次現身前還需等待 45 日。": 2,
+            "首領再次現身前還需等待 18 日。": 1,
+            "首領再次現身前還需等待 17 日。": 2
+          }
+        },
+        "noHigherRankReason": null
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 2352,
+        "successfulGatherActions": 528,
+        "successfulFarmActions": 7,
+        "successfulCraftActions": 457,
+        "successfulSellActions": 1360,
+        "skillXpGained": 9511,
+        "smithingXpGained": 60,
+        "successfulAdventureActions": 1625,
+        "encounterCount": 125,
+        "higherRankEncounterCount": 10,
+        "higherRankEligibleCount": 15,
+        "noProgressActions": 77,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      },
+      "seedRngEvidence": {
+        "seed": 61102,
+        "worldSeed": 61102,
+        "rngState": 399550865,
+        "rngProbe": 0.14355979766696692
+      },
+      "craftingEvidence": {
+        "checkedPlanCount": 193032,
+        "legalPlanSeen": true,
+        "legalRecipes": [
+          "fieldArmor",
+          "starterSpear"
+        ],
+        "successfulCrafts": 457,
+        "smithingXpGained": 60,
+        "blockedReasonCounts": {
+          "station_unavailable": 27900,
+          "too_far": 149581,
+          "skill_required": 38,
+          "materials_required": 7603,
+          "station_closed": 1908,
+          "in_combat": 4676,
+          "stamina_required": 5
+        },
+        "freshSaveReachableRecipes": [
+          "starterSpear"
+        ],
+        "impossibilityReason": null,
+        "noSmithingXpReason": null
+      },
+      "rankEvidence": {
+        "sampledDecisions": 1527,
+        "higherRankEligibleCount": 15,
+        "regions": {
+          "village": 242,
+          "mine": 332,
+          "forest": 655,
+          "unknown": 298
+        },
+        "eligibleByRank": {
+          "normal": {
+            "slime_bog": 15,
+            "wild_beast_stonehorn": 18,
+            "grayWolf": 389,
+            "slime_spring": 12,
+            "wild_beast_redtail": 16,
+            "wild_beast_marshstag": 16,
+            "scarredWolf": 383,
+            "wild_beast_amberfox": 10,
+            "wild_beast_fernback": 6,
+            "cave_insect_digger": 61,
+            "cave_insect_skitter": 61,
+            "cave_insect_spitter": 61,
+            "cave_insect_carrier": 61,
+            "cave_insect_shellback": 61
+          },
+          "elite": {},
+          "miniBoss": {},
+          "boss": {
+            "slime_heart": 1,
+            "wild_beast_apex": 7,
+            "frontier_goblin_warlord": 7
+          }
+        },
+        "blockedReasonsByRank": {
+          "normal": {
+            "請先前往北方森林。": 1744,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 15194,
+            "先擊退灰狼，才能追蹤更深處的狼群。": 6,
+            "體力不足，請先休息。": 435,
+            "附近暫時沒有怪物。": 502
+          },
+          "elite": {
+            "請先前往北方森林。": 872,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 5396,
+            "先擊退傷痕灰狼，才能追蹤更深處的狼群。": 389,
+            "體力不足，請先休息。": 150,
+            "附近暫時沒有怪物。": 251
+          },
+          "miniBoss": {
+            "請先前往北方森林。": 872,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 5374,
+            "先擊退精英頭狼，才能追蹤更深處的狼群。": 389,
+            "體力不足，請先休息。": 138,
+            "附近暫時沒有怪物。": 251
+          },
+          "boss": {
+            "請先前往北方森林。": 872,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 3096,
+            "先擊退狼群領袖，才能追蹤更深處的狼群。": 389,
+            "體力不足，請先休息。": 84,
+            "附近暫時沒有怪物。": 251,
+            "首領再次現身前還需等待 30 日。": 4,
+            "首領再次現身前還需等待 35 日。": 5,
+            "首領再次現身前還需等待 29 日。": 5,
+            "首領再次現身前還需等待 45 日。": 2,
+            "首領再次現身前還需等待 24 日。": 2,
+            "首領再次現身前還需等待 23 日。": 4,
+            "首領再次現身前還需等待 40 日。": 1,
+            "首領再次現身前還需等待 39 日。": 1,
+            "首領再次現身前還需等待 18 日。": 1,
+            "首領再次現身前還需等待 17 日。": 2,
+            "首領再次現身前還需等待 34 日。": 1,
+            "首領再次現身前還需等待 33 日。": 1,
+            "首領再次現身前還需等待 12 日。": 1,
+            "首領再次現身前還需等待 11 日。": 2,
+            "首領再次現身前還需等待 28 日。": 1,
+            "首領再次現身前還需等待 27 日。": 1,
+            "首領再次現身前還需等待 6 日。": 1,
+            "首領再次現身前還需等待 5 日。": 2,
+            "首領再次現身前還需等待 22 日。": 1,
+            "首領再次現身前還需等待 21 日。": 1,
+            "首領再次現身前還需等待 16 日。": 1,
+            "首領再次現身前還需等待 15 日。": 1,
+            "首領再次現身前還需等待 10 日。": 1,
+            "首領再次現身前還需等待 9 日。": 1,
+            "首領再次現身前還需等待 4 日。": 1,
+            "首領再次現身前還需等待 3 日。": 1
+          }
+        },
+        "noHigherRankReason": null
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 2340,
+        "successfulGatherActions": 526,
+        "successfulFarmActions": 7,
+        "successfulCraftActions": 455,
+        "successfulSellActions": 1352,
+        "skillXpGained": 9491,
+        "smithingXpGained": 60,
+        "successfulAdventureActions": 1624,
+        "encounterCount": 124,
+        "higherRankEncounterCount": 9,
+        "higherRankEligibleCount": 13,
+        "noProgressActions": 77,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      },
+      "seedRngEvidence": {
+        "seed": 61103,
+        "worldSeed": 61103,
+        "rngState": 3877843150,
+        "rngProbe": 0.7608719964046031
+      },
+      "craftingEvidence": {
+        "checkedPlanCount": 192444,
+        "legalPlanSeen": true,
+        "legalRecipes": [
+          "fieldArmor",
+          "starterSpear"
+        ],
+        "successfulCrafts": 455,
+        "smithingXpGained": 60,
+        "blockedReasonCounts": {
+          "station_unavailable": 27925,
+          "too_far": 149010,
+          "skill_required": 40,
+          "materials_required": 7635,
+          "station_closed": 1836,
+          "in_combat": 4676,
+          "stamina_required": 5
+        },
+        "freshSaveReachableRecipes": [
+          "starterSpear"
+        ],
+        "impossibilityReason": null,
+        "noSmithingXpReason": null
+      },
+      "rankEvidence": {
+        "sampledDecisions": 1527,
+        "higherRankEligibleCount": 13,
+        "regions": {
+          "village": 244,
+          "mine": 331,
+          "forest": 654,
+          "unknown": 298
+        },
+        "eligibleByRank": {
+          "normal": {
+            "slime_bog": 15,
+            "wild_beast_stonehorn": 18,
+            "grayWolf": 329,
+            "slime_spring": 12,
+            "wild_beast_redtail": 16,
+            "wild_beast_marshstag": 16,
+            "scarredWolf": 323,
+            "wild_beast_amberfox": 10,
+            "wild_beast_fernback": 6,
+            "cave_insect_digger": 61,
+            "cave_insect_skitter": 61,
+            "cave_insect_spitter": 61,
+            "cave_insect_carrier": 61,
+            "cave_insect_shellback": 61
+          },
+          "elite": {},
+          "miniBoss": {},
+          "boss": {
+            "slime_heart": 1,
+            "wild_beast_apex": 7,
+            "frontier_goblin_warlord": 5
+          }
+        },
+        "blockedReasonsByRank": {
+          "normal": {
+            "請先前往北方森林。": 1746,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 15164,
+            "先擊退灰狼，才能追蹤更深處的狼群。": 6,
+            "體力不足，請先休息。": 435,
+            "附近暫時沒有怪物。": 620
+          },
+          "elite": {
+            "請先前往北方森林。": 873,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 5386,
+            "先擊退傷痕灰狼，才能追蹤更深處的狼群。": 329,
+            "體力不足，請先休息。": 150,
+            "附近暫時沒有怪物。": 310
+          },
+          "miniBoss": {
+            "請先前往北方森林。": 873,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 5365,
+            "先擊退精英頭狼，才能追蹤更深處的狼群。": 329,
+            "體力不足，請先休息。": 138,
+            "附近暫時沒有怪物。": 310
+          },
+          "boss": {
+            "請先前往北方森林。": 873,
+            "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。": 3093,
+            "先擊退狼群領袖，才能追蹤更深處的狼群。": 329,
+            "體力不足，請先休息。": 84,
+            "附近暫時沒有怪物。": 310,
+            "首領再次現身前還需等待 30 日。": 4,
+            "首領再次現身前還需等待 35 日。": 5,
+            "首領再次現身前還需等待 29 日。": 5,
+            "首領再次現身前還需等待 45 日。": 2,
+            "首領再次現身前還需等待 24 日。": 2,
+            "首領再次現身前還需等待 23 日。": 4,
+            "首領再次現身前還需等待 40 日。": 1,
+            "首領再次現身前還需等待 39 日。": 1,
+            "首領再次現身前還需等待 18 日。": 1,
+            "首領再次現身前還需等待 17 日。": 2,
+            "首領再次現身前還需等待 34 日。": 1,
+            "首領再次現身前還需等待 33 日。": 1,
+            "首領再次現身前還需等待 12 日。": 1,
+            "首領再次現身前還需等待 11 日。": 2,
+            "首領再次現身前還需等待 28 日。": 1,
+            "首領再次現身前還需等待 27 日。": 1,
+            "首領再次現身前還需等待 6 日。": 1,
+            "首領再次現身前還需等待 5 日。": 2,
+            "首領再次現身前還需等待 22 日。": 1,
+            "首領再次現身前還需等待 21 日。": 1,
+            "首領再次現身前還需等待 16 日。": 1,
+            "首領再次現身前還需等待 15 日。": 1,
+            "首領再次現身前還需等待 10 日。": 1,
+            "首領再次現身前還需等待 9 日。": 1,
+            "首領再次現身前還需等待 4 日。": 1,
+            "首領再次現身前還需等待 3 日。": 1
+          }
+        },
+        "noHigherRankReason": null
+      },
+      "allWinsExplanation": null
+    }
+  ],
+  "rows": {
+    "daily": 3240,
+    "encounters": 1138,
+    "actions": 50931,
+    "crafts": 3398,
+    "gearChanges": 42,
+    "unlocks": 12,
+    "cropYields": 18
+  }
+}

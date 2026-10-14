@@ -1,0 +1,32 @@
+{
+  "head": "eb4946ce4f486e9f9ad1707b9ba20bb01cdf4781",
+  "srcFingerprint": {
+    "method": "sha256 over sorted relative path + NUL + file bytes + NUL",
+    "value": "c07dd0a1434fe6b53fe8828f9c351c644876ec6fdbc0ed87bf232fd0458499ce",
+    "files": 112
+  },
+  "seeds": [
+    61101,
+    61102,
+    61103
+  ],
+  "routePolicyVersion": "normal-fresh-save-routes-v3",
+  "command": "node scripts/phase8/run-normal-routes.mjs",
+  "startedAt": "2026-10-14T04:00:39.340Z",
+  "window": {
+    "years": 3,
+    "calendarYears": "game calendar years 1–3; stop at exact year-4 boundary",
+    "bands": {
+      "year1": "early",
+      "year2": "mid",
+      "year3": "late"
+    }
+  },
+  "dailyActionBudget": "The UI has no fixed actions-per-day counter. Engine actions spend their configured stamina and/or game minutes; movement costs 5 minutes per tile, gather spends 10 stamina and 15–43 minutes by skill, farming spends 4–6 stamina and 10–20 minutes, craft spends recipe-defined stamina/time (starterSpear: 10/45 minutes), encounter starts spend 8 stamina, combat turns advance 1 minute and retreat advances 10 minutes, and village rest restores 35 stamina/15 HP in 60 minutes (inn: full recovery, 8 gold, 480 minutes). The runner uses midnight only as a time-series boundary, chooses legal actions repeatedly within the day, and simulates the remainder when the policy has no legal useful action. The 80-decision daily ceiling is a harness safety guard, not a game/UI rule; actions can cross midnight.",
+  "routePolicies": {
+    "life": "Only legal public gather/farm/craft/sell/rest/travel actions; never starts a voluntary encounter. Plants all-season wheat when a plot is free, harvests when mature, reserves 3 wood and 2 stone for starterSpear at the store station, follows planCraft readiness, and sells gathered surplus only after the reserve is protected.",
+    "adventure": "Uses legal public movement, contentEncounterOptions/encounterContentMonster, wolfEncounterOptions/encounterWolf, forest encounter, and the explicit Goblin Chief challenge only while bossAlive. Rotates forest/mine/valley by game day, picks the highest eligible rank, equips legal upgrades, and uses combat/rest thresholds; caps normal-rank starts at three per day but continues for any eligible higher rank as a policy rule.",
+    "hybrid": "Alternates the full Life policy and Adventure policy by in-game day; if combat is active, resolves it before taking an action from either half. Both halves must complete successful actions per seed."
+  },
+  "label": "Normal fresh-save (scripted policy); not a human playtest and not a controlled fixture"
+}

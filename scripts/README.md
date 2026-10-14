@@ -27,6 +27,15 @@ Child check 的 PASS 取決於實際 process exit/error/signal，不依賴輸出
 
 ```bash
 node --test scripts/test_validate_content_batch.mjs
+node --test scripts/phase8/test_classify_playtest.mjs
+node --test scripts/phase8/test_route_validity.mjs
+```
+
+Phase 8-A deterministic runner commands (each writes to a new UTC attempt directory):
+
+```bash
+node scripts/phase8/extract-combat.mjs
+node scripts/phase8/run-normal-routes.mjs
 ```
 
 `published` 是這次發布自動追加的版本；`initial-capture` 只表示封存時的既有檔案，不能證明更早的版本曾自動記錄。2026-10-03 完整測試的五條主要 harness 已接上 writer；原本完成的結果以初始封存保留，本次單機瀏覽器驗證從執行開始逐 checkpoint 追加。

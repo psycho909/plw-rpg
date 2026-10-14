@@ -1,0 +1,18 @@
+{
+  "head": "eb4946ce4f486e9f9ad1707b9ba20bb01cdf4781",
+  "sourceFingerprint": {
+    "algorithm": "sha256(sorted relative path + NUL + file bytes + NUL)",
+    "value": "c07dd0a1434fe6b53fe8828f9c351c644876ec6fdbc0ed87bf232fd0458499ce",
+    "files": 112
+  },
+  "seeds": [
+    40131,
+    40132,
+    40133
+  ],
+  "routePolicyVersion": "phase7-controlled-combat-raw-extraction-v1",
+  "command": "node scripts/phase8/extract-combat.mjs",
+  "input": "reports/v2/20261008-content-expansion/phase-07/j-formal-20261013/combat-attempt-05/combat-raw.jsonl.gz",
+  "inputSha256": "9d64ad92d56e472ed952499c3d01fd54c468a2ff3e564122c519dd0f73d3e294",
+  "generatedAt": "2026-10-14T03:08:49.342Z"
+}

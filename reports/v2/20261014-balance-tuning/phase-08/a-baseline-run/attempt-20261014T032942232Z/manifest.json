@@ -1,0 +1,32 @@
+{
+  "head": "eb4946ce4f486e9f9ad1707b9ba20bb01cdf4781",
+  "srcFingerprint": {
+    "method": "sha256 over sorted relative path + NUL + file bytes + NUL",
+    "value": "c07dd0a1434fe6b53fe8828f9c351c644876ec6fdbc0ed87bf232fd0458499ce",
+    "files": 112
+  },
+  "seeds": [
+    61101,
+    61102,
+    61103
+  ],
+  "routePolicyVersion": "normal-fresh-save-routes-v2",
+  "command": "node scripts/phase8/run-normal-routes.mjs",
+  "startedAt": "2026-10-14T03:29:42.232Z",
+  "window": {
+    "years": 3,
+    "calendarYears": "game calendar years 1–3; stop at exact year-4 boundary",
+    "bands": {
+      "year1": "early",
+      "year2": "mid",
+      "year3": "late"
+    }
+  },
+  "dailyActionBudget": "Within each in-game day, choose legal actions until engine-managed time/stamina costs leave no useful action budget. Stop at the next midnight boundary or the first no-progress decision (hard cap: 80 policy decisions/day), then simulate only the remainder to midnight. An action may advance across midnight.",
+  "routePolicies": {
+    "life": "Only legal public gather/farm/craft/sell/rest/travel actions; never starts a voluntary encounter. Repeats decisions within the day until stamina/time is spent, resting when needed.",
+    "adventure": "Explores reachable regions, chooses only currently eligible encounter targets / legal forest encounters, equips legal upgrades, fights or retreats; no farming/crafting/trading unless needed to recover. Repeats decisions within the day until stamina/time is spent.",
+    "hybrid": "Alternates Life and Adventure by in-game day; repeats decisions during that day until stamina/time budget is spent. An active combat is resolved before the day ends. Both halves must complete successful actions per seed."
+  },
+  "label": "Normal fresh-save (scripted policy); not a human playtest and not a controlled fixture"
+}

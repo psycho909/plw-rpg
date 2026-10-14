@@ -1,0 +1,199 @@
+{
+  "status": "PASS",
+  "failure": null,
+  "endedAt": "2026-10-14T03:31:35.797Z",
+  "routeValidity": [
+    {
+      "route": "life",
+      "seed": 61101,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 2927,
+        "successfulGatherActions": 414,
+        "skillXpGained": 4140,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "noProgressActions": 0,
+        "unclassifiedNoProgressActions": 0,
+        "allWinsExplanationVerified": false
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 2927,
+        "successfulGatherActions": 414,
+        "skillXpGained": 4140,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "noProgressActions": 0,
+        "unclassifiedNoProgressActions": 0,
+        "allWinsExplanationVerified": false
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 2927,
+        "successfulGatherActions": 414,
+        "skillXpGained": 4140,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "noProgressActions": 0,
+        "unclassifiedNoProgressActions": 0,
+        "allWinsExplanationVerified": false
+      },
+      "allWinsExplanation": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 0,
+        "successfulGatherActions": 0,
+        "skillXpGained": 23351,
+        "successfulAdventureActions": 2495,
+        "encounterCount": 795,
+        "noProgressActions": 333,
+        "unclassifiedNoProgressActions": 0,
+        "allWinsExplanationVerified": true
+      },
+      "allWinsExplanation": {
+        "text": "All recorded encounters ended in wins. This scripted policy starts only currently eligible authored targets, uses potions below 55% HP, retreats below 28% HP or after 9 turns, and seeks an inn to recover below 35% HP or below 8 stamina. These policy safeguards and encounter selection explain the observed scripted outcome; they are not evidence of normal-player win rate.",
+        "hpBeforeAfterChecked": true,
+        "bossDefinitionIdsChecked": true,
+        "bossDefinitionIds": []
+      }
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 0,
+        "successfulGatherActions": 0,
+        "skillXpGained": 23357,
+        "successfulAdventureActions": 2500,
+        "encounterCount": 801,
+        "noProgressActions": 333,
+        "unclassifiedNoProgressActions": 0,
+        "allWinsExplanationVerified": true
+      },
+      "allWinsExplanation": {
+        "text": "All recorded encounters ended in wins. This scripted policy starts only currently eligible authored targets, uses potions below 55% HP, retreats below 28% HP or after 9 turns, and seeks an inn to recover below 35% HP or below 8 stamina. These policy safeguards and encounter selection explain the observed scripted outcome; they are not evidence of normal-player win rate.",
+        "hpBeforeAfterChecked": true,
+        "bossDefinitionIdsChecked": true,
+        "bossDefinitionIds": []
+      }
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 0,
+        "successfulGatherActions": 0,
+        "skillXpGained": 22608,
+        "successfulAdventureActions": 2424,
+        "encounterCount": 770,
+        "noProgressActions": 333,
+        "unclassifiedNoProgressActions": 0,
+        "allWinsExplanationVerified": true
+      },
+      "allWinsExplanation": {
+        "text": "All recorded encounters ended in wins. This scripted policy starts only currently eligible authored targets, uses potions below 55% HP, retreats below 28% HP or after 9 turns, and seeks an inn to recover below 35% HP or below 8 stamina. These policy safeguards and encounter selection explain the observed scripted outcome; they are not evidence of normal-player win rate.",
+        "hpBeforeAfterChecked": true,
+        "bossDefinitionIdsChecked": true,
+        "bossDefinitionIds": []
+      }
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 1229,
+        "successfulGatherActions": 7,
+        "skillXpGained": 9318,
+        "successfulAdventureActions": 345,
+        "encounterCount": 73,
+        "noProgressActions": 238,
+        "unclassifiedNoProgressActions": 0,
+        "allWinsExplanationVerified": true
+      },
+      "allWinsExplanation": {
+        "text": "All recorded encounters ended in wins. This scripted policy starts only currently eligible authored targets, uses potions below 55% HP, retreats below 28% HP or after 9 turns, and seeks an inn to recover below 35% HP or below 8 stamina. These policy safeguards and encounter selection explain the observed scripted outcome; they are not evidence of normal-player win rate.",
+        "hpBeforeAfterChecked": true,
+        "bossDefinitionIdsChecked": true,
+        "bossDefinitionIds": []
+      }
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 724,
+        "successfulGatherActions": 4,
+        "skillXpGained": 21375,
+        "successfulAdventureActions": 2092,
+        "encounterCount": 723,
+        "noProgressActions": 211,
+        "unclassifiedNoProgressActions": 0,
+        "allWinsExplanationVerified": true
+      },
+      "allWinsExplanation": {
+        "text": "All recorded encounters ended in wins. This scripted policy starts only currently eligible authored targets, uses potions below 55% HP, retreats below 28% HP or after 9 turns, and seeks an inn to recover below 35% HP or below 8 stamina. These policy safeguards and encounter selection explain the observed scripted outcome; they are not evidence of normal-player win rate.",
+        "hpBeforeAfterChecked": true,
+        "bossDefinitionIdsChecked": true,
+        "bossDefinitionIds": []
+      }
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 1233,
+        "successfulGatherActions": 4,
+        "skillXpGained": 9405,
+        "successfulAdventureActions": 355,
+        "encounterCount": 73,
+        "noProgressActions": 239,
+        "unclassifiedNoProgressActions": 0,
+        "allWinsExplanationVerified": true
+      },
+      "allWinsExplanation": {
+        "text": "All recorded encounters ended in wins. This scripted policy starts only currently eligible authored targets, uses potions below 55% HP, retreats below 28% HP or after 9 turns, and seeks an inn to recover below 35% HP or below 8 stamina. These policy safeguards and encounter selection explain the observed scripted outcome; they are not evidence of normal-player win rate.",
+        "hpBeforeAfterChecked": true,
+        "bossDefinitionIdsChecked": true,
+        "bossDefinitionIds": []
+      }
+    }
+  ],
+  "rows": {
+    "daily": 3240,
+    "encounters": 3235,
+    "actions": 50374,
+    "crafts": 0,
+    "gearChanges": 32,
+    "unlocks": 0,
+    "cropYields": 778
+  }
+}

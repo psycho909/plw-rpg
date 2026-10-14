@@ -1,0 +1,17 @@
+{
+  "status": "FAIL",
+  "failure": {
+    "message": "Error: spawn EPERM",
+    "stack": "Error: spawn EPERM\n    at ChildProcess.spawn (node:internal/child_process:420:11)\n    at Object.spawn (node:child_process:753:9)\n    at ensureServiceIsRunning (D:\\Codex\\plw-rpg\\node_modules\\esbuild\\lib\\main.js:2272:29)\n    at build (D:\\Codex\\plw-rpg\\node_modules\\esbuild\\lib\\main.js:2170:26)\n    at bundleConfigFile (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:35895:23)\n    at bundleAndLoadConfigFile (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:35882:24)\n    at loadConfigFromFile (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:35851:179)\n    at resolveConfig (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:35500:28)\n    at _createServer (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:25441:73)\n    at createServer$2 (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:25438:9)"
+  },
+  "endedAt": "2026-10-14T03:12:35.453Z",
+  "rows": {
+    "daily": 0,
+    "encounters": 0,
+    "actions": 0,
+    "crafts": 0,
+    "gearChanges": 0,
+    "unlocks": 0,
+    "cropYields": 0
+  }
+}

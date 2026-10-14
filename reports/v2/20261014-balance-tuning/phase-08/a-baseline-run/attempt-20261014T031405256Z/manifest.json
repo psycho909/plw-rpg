@@ -1,0 +1,31 @@
+{
+  "head": "eb4946ce4f486e9f9ad1707b9ba20bb01cdf4781",
+  "srcFingerprint": {
+    "method": "sha256 over sorted relative path + NUL + file bytes + NUL",
+    "value": "c07dd0a1434fe6b53fe8828f9c351c644876ec6fdbc0ed87bf232fd0458499ce",
+    "files": 112
+  },
+  "seeds": [
+    61101,
+    61102,
+    61103
+  ],
+  "routePolicyVersion": "normal-fresh-save-routes-v1",
+  "command": "node scripts/phase8/run-normal-routes.mjs",
+  "startedAt": "2026-10-14T03:14:05.256Z",
+  "window": {
+    "years": 3,
+    "calendarYears": "game calendar years 1–3; stop at exact year-4 boundary",
+    "bands": {
+      "year1": "early",
+      "year2": "mid",
+      "year3": "late"
+    }
+  },
+  "routePolicies": {
+    "life": "Only legal public gather/farm/craft/sell/rest/travel actions; never starts a voluntary encounter. One policy decision per in-game day.",
+    "adventure": "Explores reachable regions, chooses only currently eligible encounter targets / legal forest encounters, equips legal upgrades, fights or retreats; no farming/crafting/trading unless needed to recover.",
+    "hybrid": "Alternates Life and Adventure decision days; an active combat is resolved before the next route decision."
+  },
+  "label": "Normal fresh-save (scripted policy); not a human playtest and not a controlled fixture"
+}

@@ -1,0 +1,36 @@
+{
+  "source": "Phase7 one-hour normal fresh-save browser heuristic trace",
+  "path": "reports/v2/20261008-content-expansion/phase-07/qa-browser-runs/20261013T173052Z-pid410744/actions.jsonl",
+  "actionCount": 840,
+  "noProgressCount": 247,
+  "categories": {
+    "runner": {
+      "count": 173,
+      "confidence": {
+        "medium": 173
+      }
+    },
+    "ui": {
+      "count": 0,
+      "confidence": {}
+    },
+    "resource": {
+      "count": 74,
+      "confidence": {
+        "low": 74
+      }
+    },
+    "world-wait": {
+      "count": 0,
+      "confidence": {}
+    },
+    "goal": {
+      "count": 0,
+      "confidence": {}
+    }
+  },
+  "limitations": [
+    "classification is a transparent heuristic over runner action fields and visible text; low-confidence classes are not product findings",
+    "no human goal, emotion, or intent inference"
+  ]
+}
