@@ -1,0 +1,4798 @@
+{
+  "cells": [
+    {
+      "definitionId": "slime_heart",
+      "rank": "boss",
+      "familyId": "slime",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for slime_heart at player level 6 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "slime_heart",
+      "rank": "boss",
+      "familyId": "slime",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "slime_heart",
+      "rank": "boss",
+      "familyId": "slime",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "slime_heart",
+      "rank": "boss",
+      "familyId": "slime",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "slime_heart",
+      "rank": "boss",
+      "familyId": "slime",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for slime_heart at player level 6 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_queen",
+      "rank": "boss",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for cave_insect_queen at player level 7 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_queen",
+      "rank": "boss",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_queen",
+      "rank": "boss",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_queen",
+      "rank": "boss",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_queen",
+      "rank": "boss",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for cave_insect_queen at player level 7 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_apex",
+      "rank": "boss",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for wild_beast_apex at player level 7 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_apex",
+      "rank": "boss",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_apex",
+      "rank": "boss",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_apex",
+      "rank": "boss",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_apex",
+      "rank": "boss",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for wild_beast_apex at player level 7 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "frontier_goblin_warlord",
+      "rank": "boss",
+      "familyId": "frontier_goblins",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for frontier_goblin_warlord at player level 7 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "frontier_goblin_warlord",
+      "rank": "boss",
+      "familyId": "frontier_goblins",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "frontier_goblin_warlord",
+      "rank": "boss",
+      "familyId": "frontier_goblins",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "frontier_goblin_warlord",
+      "rank": "boss",
+      "familyId": "frontier_goblins",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "frontier_goblin_warlord",
+      "rank": "boss",
+      "familyId": "frontier_goblins",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for frontier_goblin_warlord at player level 7 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "fog_undead_cryptlord",
+      "rank": "boss",
+      "familyId": "fog_undead",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for fog_undead_cryptlord at player level 7 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "fog_undead_cryptlord",
+      "rank": "boss",
+      "familyId": "fog_undead",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "fog_undead_cryptlord",
+      "rank": "boss",
+      "familyId": "fog_undead",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "fog_undead_cryptlord",
+      "rank": "boss",
+      "familyId": "fog_undead",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "fog_undead_cryptlord",
+      "rank": "boss",
+      "familyId": "fog_undead",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for fog_undead_cryptlord at player level 7 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "mine_construct_heart",
+      "rank": "boss",
+      "familyId": "mine_constructs",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for mine_construct_heart at player level 7 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "mine_construct_heart",
+      "rank": "boss",
+      "familyId": "mine_constructs",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "mine_construct_heart",
+      "rank": "boss",
+      "familyId": "mine_constructs",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "mine_construct_heart",
+      "rank": "boss",
+      "familyId": "mine_constructs",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "mine_construct_heart",
+      "rank": "boss",
+      "familyId": "mine_constructs",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for mine_construct_heart at player level 7 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "familyId": "legacy",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PASS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 300,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61102,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61103,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": {
+        "definitionId": "chief",
+        "rank": "boss",
+        "band": "early",
+        "source": "legacy",
+        "style": "damage",
+        "samples": 300,
+        "wins": 300,
+        "retreats": 0,
+        "deaths": 0,
+        "winRate": 1,
+        "retreatRate": 0,
+        "deathRate": 0,
+        "turnsP10": 6,
+        "turnsP50": 6,
+        "turnsP90": 6,
+        "hpRemainingPercentP10": 50,
+        "hpRemainingPercentP50": 50,
+        "hpRemainingPercentP90": 50,
+        "potionUseMean": 0,
+        "grossDamageTakenP50": 65,
+        "fightGoldDeltaMean": 100,
+        "fightTimeMinutesP50": 6,
+        "fightStaminaSpentP50": 8,
+        "riskAdjustedGold": 100,
+        "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+      }
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "familyId": "legacy",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "familyId": "legacy",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "familyId": "legacy",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "familyId": "legacy",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PASS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 300,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61102,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61103,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": {
+        "definitionId": "chief",
+        "rank": "boss",
+        "band": "early",
+        "source": "legacy",
+        "style": "defense",
+        "samples": 300,
+        "wins": 300,
+        "retreats": 0,
+        "deaths": 0,
+        "winRate": 1,
+        "retreatRate": 0,
+        "deathRate": 0,
+        "turnsP10": 8,
+        "turnsP50": 8,
+        "turnsP90": 8,
+        "hpRemainingPercentP10": 56.92307692307692,
+        "hpRemainingPercentP50": 56.92307692307692,
+        "hpRemainingPercentP90": 56.92307692307692,
+        "potionUseMean": 0,
+        "grossDamageTakenP50": 56,
+        "fightGoldDeltaMean": 100,
+        "fightTimeMinutesP50": 8,
+        "fightStaminaSpentP50": 8,
+        "riskAdjustedGold": 100,
+        "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+      }
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PASS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 300,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61102,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61103,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": {
+        "definitionId": "wolfKing",
+        "rank": "boss",
+        "band": "early",
+        "source": "legacy",
+        "style": "damage",
+        "samples": 300,
+        "wins": 300,
+        "retreats": 0,
+        "deaths": 0,
+        "winRate": 1,
+        "retreatRate": 0,
+        "deathRate": 0,
+        "turnsP10": 7,
+        "turnsP50": 8,
+        "turnsP90": 10,
+        "hpRemainingPercentP10": 25.806451612903224,
+        "hpRemainingPercentP50": 45.16129032258064,
+        "hpRemainingPercentP90": 62.096774193548384,
+        "potionUseMean": 1.4,
+        "grossDamageTakenP50": 113,
+        "fightGoldDeltaMean": 75,
+        "fightTimeMinutesP50": 8,
+        "fightStaminaSpentP50": 8,
+        "riskAdjustedGold": 75,
+        "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+      }
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PASS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 300,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61102,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61103,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": {
+        "definitionId": "wolfKing",
+        "rank": "boss",
+        "band": "early",
+        "source": "legacy",
+        "style": "defense",
+        "samples": 300,
+        "wins": 300,
+        "retreats": 0,
+        "deaths": 0,
+        "winRate": 1,
+        "retreatRate": 0,
+        "deathRate": 0,
+        "turnsP10": 13,
+        "turnsP50": 13,
+        "turnsP90": 15,
+        "hpRemainingPercentP10": 12.096774193548388,
+        "hpRemainingPercentP50": 26.61290322580645,
+        "hpRemainingPercentP90": 47.58064516129033,
+        "potionUseMean": 1.96,
+        "grossDamageTakenP50": 181,
+        "fightGoldDeltaMean": 75,
+        "fightTimeMinutesP50": 13,
+        "fightStaminaSpentP50": 8,
+        "riskAdjustedGold": 75,
+        "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+      }
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PASS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 300,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61102,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61103,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": {
+        "definitionId": "grayWolf",
+        "rank": "normal",
+        "band": "early",
+        "source": "legacy",
+        "style": "damage",
+        "samples": 300,
+        "wins": 300,
+        "retreats": 0,
+        "deaths": 0,
+        "winRate": 1,
+        "retreatRate": 0,
+        "deathRate": 0,
+        "turnsP10": 2,
+        "turnsP50": 2,
+        "turnsP90": 2,
+        "hpRemainingPercentP10": 94,
+        "hpRemainingPercentP50": 94,
+        "hpRemainingPercentP90": 94,
+        "potionUseMean": 0,
+        "grossDamageTakenP50": 6,
+        "fightGoldDeltaMean": 10,
+        "fightTimeMinutesP50": 2,
+        "fightStaminaSpentP50": 8,
+        "riskAdjustedGold": 10,
+        "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+      }
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PASS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 300,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61102,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61103,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": {
+        "definitionId": "grayWolf",
+        "rank": "normal",
+        "band": "early",
+        "source": "legacy",
+        "style": "defense",
+        "samples": 300,
+        "wins": 300,
+        "retreats": 0,
+        "deaths": 0,
+        "winRate": 1,
+        "retreatRate": 0,
+        "deathRate": 0,
+        "turnsP10": 4,
+        "turnsP50": 4,
+        "turnsP90": 5,
+        "hpRemainingPercentP10": 83,
+        "hpRemainingPercentP50": 94,
+        "hpRemainingPercentP90": 94,
+        "potionUseMean": 0,
+        "grossDamageTakenP50": 6,
+        "fightGoldDeltaMean": 10,
+        "fightTimeMinutesP50": 4,
+        "fightStaminaSpentP50": 8,
+        "riskAdjustedGold": 10,
+        "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+      }
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PASS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 300,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61102,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61103,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": {
+        "definitionId": "alphaWolf",
+        "rank": "elite",
+        "band": "early",
+        "source": "legacy",
+        "style": "damage",
+        "samples": 300,
+        "wins": 300,
+        "retreats": 0,
+        "deaths": 0,
+        "winRate": 1,
+        "retreatRate": 0,
+        "deathRate": 0,
+        "turnsP10": 4,
+        "turnsP50": 4,
+        "turnsP90": 4,
+        "hpRemainingPercentP10": 60.37735849056604,
+        "hpRemainingPercentP50": 60.37735849056604,
+        "hpRemainingPercentP90": 73.58490566037736,
+        "potionUseMean": 0,
+        "grossDamageTakenP50": 42,
+        "fightGoldDeltaMean": 24,
+        "fightTimeMinutesP50": 4,
+        "fightStaminaSpentP50": 8,
+        "riskAdjustedGold": 24,
+        "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+      }
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PASS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 300,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61102,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61103,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": {
+        "definitionId": "alphaWolf",
+        "rank": "elite",
+        "band": "early",
+        "source": "legacy",
+        "style": "defense",
+        "samples": 300,
+        "wins": 300,
+        "retreats": 0,
+        "deaths": 0,
+        "winRate": 1,
+        "retreatRate": 0,
+        "deathRate": 0,
+        "turnsP10": 7,
+        "turnsP50": 8,
+        "turnsP90": 8,
+        "hpRemainingPercentP10": 46.22641509433962,
+        "hpRemainingPercentP50": 46.22641509433962,
+        "hpRemainingPercentP90": 68.86792452830188,
+        "potionUseMean": 0,
+        "grossDamageTakenP50": 57,
+        "fightGoldDeltaMean": 24,
+        "fightTimeMinutesP50": 8,
+        "fightStaminaSpentP50": 8,
+        "riskAdjustedGold": 24,
+        "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+      }
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PASS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 300,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61102,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61103,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": {
+        "definitionId": "packLeader",
+        "rank": "miniBoss",
+        "band": "early",
+        "source": "legacy",
+        "style": "damage",
+        "samples": 300,
+        "wins": 300,
+        "retreats": 0,
+        "deaths": 0,
+        "winRate": 1,
+        "retreatRate": 0,
+        "deathRate": 0,
+        "turnsP10": 5,
+        "turnsP50": 5,
+        "turnsP90": 5,
+        "hpRemainingPercentP10": 57.14285714285714,
+        "hpRemainingPercentP50": 57.14285714285714,
+        "hpRemainingPercentP90": 57.14285714285714,
+        "potionUseMean": 0,
+        "grossDamageTakenP50": 48,
+        "fightGoldDeltaMean": 40,
+        "fightTimeMinutesP50": 5,
+        "fightStaminaSpentP50": 8,
+        "riskAdjustedGold": 40,
+        "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+      }
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "familyId": "wolf",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PASS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 300,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61102,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        },
+        {
+          "seed": 61103,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": {
+        "definitionId": "packLeader",
+        "rank": "miniBoss",
+        "band": "early",
+        "source": "legacy",
+        "style": "defense",
+        "samples": 300,
+        "wins": 300,
+        "retreats": 0,
+        "deaths": 0,
+        "winRate": 1,
+        "retreatRate": 0,
+        "deathRate": 0,
+        "turnsP10": 11,
+        "turnsP50": 11,
+        "turnsP90": 11,
+        "hpRemainingPercentP10": 72.32142857142857,
+        "hpRemainingPercentP50": 72.32142857142857,
+        "hpRemainingPercentP90": 72.32142857142857,
+        "potionUseMean": 1,
+        "grossDamageTakenP50": 76,
+        "fightGoldDeltaMean": 40,
+        "fightTimeMinutesP50": 11,
+        "fightStaminaSpentP50": 8,
+        "riskAdjustedGold": 40,
+        "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+      }
+    },
+    {
+      "definitionId": "cave_insect_digger",
+      "rank": "normal",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for cave_insect_digger at player level 1 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_digger",
+      "rank": "normal",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_digger",
+      "rank": "normal",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_digger",
+      "rank": "normal",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_digger",
+      "rank": "normal",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for cave_insect_digger at player level 1 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_razor",
+      "rank": "elite",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for cave_insect_razor at player level 4 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_razor",
+      "rank": "elite",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_razor",
+      "rank": "elite",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_razor",
+      "rank": "elite",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_razor",
+      "rank": "elite",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for cave_insect_razor at player level 4 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_broodguard",
+      "rank": "miniBoss",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for cave_insect_broodguard at player level 5 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_broodguard",
+      "rank": "miniBoss",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_broodguard",
+      "rank": "miniBoss",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_broodguard",
+      "rank": "miniBoss",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "cave_insect_broodguard",
+      "rank": "miniBoss",
+      "familyId": "cave_insects",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for cave_insect_broodguard at player level 5 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_stonehorn",
+      "rank": "normal",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for wild_beast_stonehorn at player level 1 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_stonehorn",
+      "rank": "normal",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_stonehorn",
+      "rank": "normal",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_stonehorn",
+      "rank": "normal",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_stonehorn",
+      "rank": "normal",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for wild_beast_stonehorn at player level 1 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_bristleback",
+      "rank": "elite",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for wild_beast_bristleback at player level 3 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_bristleback",
+      "rank": "elite",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_bristleback",
+      "rank": "elite",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_bristleback",
+      "rank": "elite",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_bristleback",
+      "rank": "elite",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for wild_beast_bristleback at player level 3 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_old_matriarch",
+      "rank": "miniBoss",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for wild_beast_old_matriarch at player level 4 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "sword",
+            "actions": [
+              {
+                "action": "trade(sword, buy)",
+                "result": "",
+                "goldDelta": -56,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(sword)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 944,
+              "goldDelta": -56,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_old_matriarch",
+      "rank": "miniBoss",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "crit-speed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_old_matriarch",
+      "rank": "miniBoss",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "bleed",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_old_matriarch",
+      "rank": "miniBoss",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "penetration",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "Legacy sword/armor provide the static damage/defense baselines and have no rolled affixes for this style.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "attemptedSamples": 0,
+      "summary": null
+    },
+    {
+      "definitionId": "wild_beast_old_matriarch",
+      "rank": "miniBoss",
+      "familyId": "wild_beasts",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "acquisitionPath": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "NOT_APPLICABLE",
+      "naReason": "No canonical legal spawn witness for wild_beast_old_matriarch at player level 4 in the next four in-game years.",
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ],
+      "errorReason": null,
+      "attemptedSamples": 0,
+      "expectedSamples": 300,
+      "acquisitionWitnesses": [
+        {
+          "seed": 61101,
+          "acquisition": {
+            "item": "armor",
+            "actions": [
+              {
+                "action": "trade(armor, buy)",
+                "result": "",
+                "goldDelta": -44,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 5,
+                "materialDelta": {}
+              },
+              {
+                "action": "equip(armor)",
+                "result": "",
+                "goldDelta": 0,
+                "staminaDelta": 0,
+                "timeDeltaMinutes": 0,
+                "materialDelta": {}
+              }
+            ],
+            "cost": {
+              "startGold": 1000,
+              "endGold": 956,
+              "goldDelta": -44,
+              "startWorldTime": 480,
+              "endWorldTime": 485,
+              "timeMinutes": 5,
+              "startStamina": 84,
+              "endStamina": 84,
+              "staminaSpent": 0,
+              "materialDelta": {}
+            },
+            "endedAt": 485
+          },
+          "itemInstanceId": null
+        }
+      ],
+      "summary": null
+    }
+  ],
+  "summaries": [
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "samples": 300,
+      "wins": 300,
+      "retreats": 0,
+      "deaths": 0,
+      "winRate": 1,
+      "retreatRate": 0,
+      "deathRate": 0,
+      "turnsP10": 6,
+      "turnsP50": 6,
+      "turnsP90": 6,
+      "hpRemainingPercentP10": 50,
+      "hpRemainingPercentP50": 50,
+      "hpRemainingPercentP90": 50,
+      "potionUseMean": 0,
+      "grossDamageTakenP50": 65,
+      "fightGoldDeltaMean": 100,
+      "fightTimeMinutesP50": 6,
+      "fightStaminaSpentP50": 8,
+      "riskAdjustedGold": 100,
+      "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "samples": 300,
+      "wins": 300,
+      "retreats": 0,
+      "deaths": 0,
+      "winRate": 1,
+      "retreatRate": 0,
+      "deathRate": 0,
+      "turnsP10": 8,
+      "turnsP50": 8,
+      "turnsP90": 8,
+      "hpRemainingPercentP10": 56.92307692307692,
+      "hpRemainingPercentP50": 56.92307692307692,
+      "hpRemainingPercentP90": 56.92307692307692,
+      "potionUseMean": 0,
+      "grossDamageTakenP50": 56,
+      "fightGoldDeltaMean": 100,
+      "fightTimeMinutesP50": 8,
+      "fightStaminaSpentP50": 8,
+      "riskAdjustedGold": 100,
+      "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "samples": 300,
+      "wins": 300,
+      "retreats": 0,
+      "deaths": 0,
+      "winRate": 1,
+      "retreatRate": 0,
+      "deathRate": 0,
+      "turnsP10": 7,
+      "turnsP50": 8,
+      "turnsP90": 10,
+      "hpRemainingPercentP10": 25.806451612903224,
+      "hpRemainingPercentP50": 45.16129032258064,
+      "hpRemainingPercentP90": 62.096774193548384,
+      "potionUseMean": 1.4,
+      "grossDamageTakenP50": 113,
+      "fightGoldDeltaMean": 75,
+      "fightTimeMinutesP50": 8,
+      "fightStaminaSpentP50": 8,
+      "riskAdjustedGold": 75,
+      "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "samples": 300,
+      "wins": 300,
+      "retreats": 0,
+      "deaths": 0,
+      "winRate": 1,
+      "retreatRate": 0,
+      "deathRate": 0,
+      "turnsP10": 13,
+      "turnsP50": 13,
+      "turnsP90": 15,
+      "hpRemainingPercentP10": 12.096774193548388,
+      "hpRemainingPercentP50": 26.61290322580645,
+      "hpRemainingPercentP90": 47.58064516129033,
+      "potionUseMean": 1.96,
+      "grossDamageTakenP50": 181,
+      "fightGoldDeltaMean": 75,
+      "fightTimeMinutesP50": 13,
+      "fightStaminaSpentP50": 8,
+      "riskAdjustedGold": 75,
+      "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "samples": 300,
+      "wins": 300,
+      "retreats": 0,
+      "deaths": 0,
+      "winRate": 1,
+      "retreatRate": 0,
+      "deathRate": 0,
+      "turnsP10": 4,
+      "turnsP50": 4,
+      "turnsP90": 4,
+      "hpRemainingPercentP10": 60.37735849056604,
+      "hpRemainingPercentP50": 60.37735849056604,
+      "hpRemainingPercentP90": 73.58490566037736,
+      "potionUseMean": 0,
+      "grossDamageTakenP50": 42,
+      "fightGoldDeltaMean": 24,
+      "fightTimeMinutesP50": 4,
+      "fightStaminaSpentP50": 8,
+      "riskAdjustedGold": 24,
+      "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "samples": 300,
+      "wins": 300,
+      "retreats": 0,
+      "deaths": 0,
+      "winRate": 1,
+      "retreatRate": 0,
+      "deathRate": 0,
+      "turnsP10": 7,
+      "turnsP50": 8,
+      "turnsP90": 8,
+      "hpRemainingPercentP10": 46.22641509433962,
+      "hpRemainingPercentP50": 46.22641509433962,
+      "hpRemainingPercentP90": 68.86792452830188,
+      "potionUseMean": 0,
+      "grossDamageTakenP50": 57,
+      "fightGoldDeltaMean": 24,
+      "fightTimeMinutesP50": 8,
+      "fightStaminaSpentP50": 8,
+      "riskAdjustedGold": 24,
+      "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "samples": 300,
+      "wins": 300,
+      "retreats": 0,
+      "deaths": 0,
+      "winRate": 1,
+      "retreatRate": 0,
+      "deathRate": 0,
+      "turnsP10": 5,
+      "turnsP50": 5,
+      "turnsP90": 5,
+      "hpRemainingPercentP10": 57.14285714285714,
+      "hpRemainingPercentP50": 57.14285714285714,
+      "hpRemainingPercentP90": 57.14285714285714,
+      "potionUseMean": 0,
+      "grossDamageTakenP50": 48,
+      "fightGoldDeltaMean": 40,
+      "fightTimeMinutesP50": 5,
+      "fightStaminaSpentP50": 8,
+      "riskAdjustedGold": 40,
+      "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "samples": 300,
+      "wins": 300,
+      "retreats": 0,
+      "deaths": 0,
+      "winRate": 1,
+      "retreatRate": 0,
+      "deathRate": 0,
+      "turnsP10": 11,
+      "turnsP50": 11,
+      "turnsP90": 11,
+      "hpRemainingPercentP10": 72.32142857142857,
+      "hpRemainingPercentP50": 72.32142857142857,
+      "hpRemainingPercentP90": 72.32142857142857,
+      "potionUseMean": 1,
+      "grossDamageTakenP50": 76,
+      "fightGoldDeltaMean": 40,
+      "fightTimeMinutesP50": 11,
+      "fightStaminaSpentP50": 8,
+      "riskAdjustedGold": 40,
+      "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "band": "early",
+      "source": "legacy",
+      "style": "damage",
+      "samples": 300,
+      "wins": 300,
+      "retreats": 0,
+      "deaths": 0,
+      "winRate": 1,
+      "retreatRate": 0,
+      "deathRate": 0,
+      "turnsP10": 2,
+      "turnsP50": 2,
+      "turnsP90": 2,
+      "hpRemainingPercentP10": 94,
+      "hpRemainingPercentP50": 94,
+      "hpRemainingPercentP90": 94,
+      "potionUseMean": 0,
+      "grossDamageTakenP50": 6,
+      "fightGoldDeltaMean": 10,
+      "fightTimeMinutesP50": 2,
+      "fightStaminaSpentP50": 8,
+      "riskAdjustedGold": 10,
+      "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "band": "early",
+      "source": "legacy",
+      "style": "defense",
+      "samples": 300,
+      "wins": 300,
+      "retreats": 0,
+      "deaths": 0,
+      "winRate": 1,
+      "retreatRate": 0,
+      "deathRate": 0,
+      "turnsP10": 4,
+      "turnsP50": 4,
+      "turnsP90": 5,
+      "hpRemainingPercentP10": 83,
+      "hpRemainingPercentP50": 94,
+      "hpRemainingPercentP90": 94,
+      "potionUseMean": 0,
+      "grossDamageTakenP50": 6,
+      "fightGoldDeltaMean": 10,
+      "fightTimeMinutesP50": 4,
+      "fightStaminaSpentP50": 8,
+      "riskAdjustedGold": 10,
+      "riskAdjustedGoldScope": "Direct fight gold only; preparation, potion, material, game time and stamina remain separate unpriced dimensions."
+    }
+  ]
+}

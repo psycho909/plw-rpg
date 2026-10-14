@@ -53,6 +53,6 @@ Evidence 位置：`reports/v2/20261014-balance-tuning/phase-08/`。
 
 ## Evidence
 
-- Verification: Phase8-A accepted PASS WITH FINDINGS 2026-10-14 (see A ticket); Windows baseline check PASS 37/627; A-F1 long-world test timeout flake carried to F.
+- Verification: Phase8-A accepted PASS WITH FINDINGS 2026-10-14 (see A ticket); Windows baseline check PASS 37/627; A-F1 long-world test timeout flake carried to F. Phase8-B accepted PASS WITH FINDINGS 2026-10-14 (no product value change; B-F1→E, B-F2→F); A-F1 resolved (long-world test timeouts), check PASS 38/629.
 - Review / Audit: 待 F。
 - Commit / PR: 無 PR；branch commits 記錄於各子票。

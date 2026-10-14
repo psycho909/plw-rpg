@@ -1,0 +1,2035 @@
+{
+  "schema": 1,
+  "job": {
+    "band": "late",
+    "source": "masterpiece",
+    "target": null
+  },
+  "command": "node scripts/phase8/run-controlled-combat-matrix.mjs --band late --source masterpiece",
+  "generatedAt": "2026-10-14T05:54:19.177Z",
+  "phase7BandClassifier": "early=max(1, targetLevel-2); mid=max(5,targetLevel); late=max(12,targetLevel).",
+  "scope": {
+    "targetCount": 17,
+    "selectedTargetIds": [
+      "slime_heart",
+      "cave_insect_queen",
+      "wild_beast_apex",
+      "frontier_goblin_warlord",
+      "fog_undead_cryptlord",
+      "mine_construct_heart",
+      "chief",
+      "wolfKing",
+      "grayWolf",
+      "alphaWolf",
+      "packLeader",
+      "cave_insect_digger",
+      "cave_insect_razor",
+      "cave_insect_broodguard",
+      "wild_beast_stonehorn",
+      "wild_beast_bristleback",
+      "wild_beast_old_matriarch"
+    ],
+    "band": "late",
+    "source": "masterpiece",
+    "seedStrata": [
+      61101,
+      61102,
+      61103
+    ],
+    "samplesPerCellPerSeed": 100,
+    "expectedJobCells": 85,
+    "estimatedTotalMinutes": 17,
+    "estimatedMaxJobMinutes": 2,
+    "hardStopMinutes": 14
+  },
+  "targetSelection": {
+    "bossRule": "All eight Boss IDs are included.",
+    "nonBossRule": "One representative Normal, Elite, and MiniBoss from each of three family-region slices; never more than two definitions per rank/family-region.",
+    "representatives": [
+      {
+        "definitionId": "grayWolf",
+        "rank": "normal",
+        "familyId": "wolf",
+        "familyRegion": "forest",
+        "selectionRationale": "Wolf chain baseline: first legal member and repeatable Normal target."
+      },
+      {
+        "definitionId": "alphaWolf",
+        "rank": "elite",
+        "familyId": "wolf",
+        "familyRegion": "forest",
+        "selectionRationale": "Wolf chain Elite step; distinguishes the first higher-rank gate."
+      },
+      {
+        "definitionId": "packLeader",
+        "rank": "miniBoss",
+        "familyId": "wolf",
+        "familyRegion": "forest",
+        "selectionRationale": "Wolf chain MiniBoss step with the authored howl/control mechanic."
+      },
+      {
+        "definitionId": "cave_insect_digger",
+        "rank": "normal",
+        "familyId": "cave_insects",
+        "familyRegion": "mine",
+        "selectionRationale": "Mine Normal baseline with periodic shell guard."
+      },
+      {
+        "definitionId": "cave_insect_razor",
+        "rank": "elite",
+        "familyId": "cave_insects",
+        "familyRegion": "mine",
+        "selectionRationale": "Mine Elite with frequent telegraphed rush."
+      },
+      {
+        "definitionId": "cave_insect_broodguard",
+        "rank": "miniBoss",
+        "familyId": "cave_insects",
+        "familyRegion": "mine",
+        "selectionRationale": "Mine MiniBoss combining guard and rally mechanics."
+      },
+      {
+        "definitionId": "wild_beast_stonehorn",
+        "rank": "normal",
+        "familyId": "wild_beasts",
+        "familyRegion": "forest",
+        "selectionRationale": "Forest Normal baseline with periodic guard."
+      },
+      {
+        "definitionId": "wild_beast_bristleback",
+        "rank": "elite",
+        "familyId": "wild_beasts",
+        "familyRegion": "forest",
+        "selectionRationale": "Forest Elite with a high-impact telegraphed heavy strike."
+      },
+      {
+        "definitionId": "wild_beast_old_matriarch",
+        "rank": "miniBoss",
+        "familyId": "wild_beasts",
+        "familyRegion": "forest",
+        "selectionRationale": "Forest MiniBoss with a recurring rally attack."
+      }
+    ]
+  },
+  "legalAcquisitionPaths": {
+    "legacy": "Buy the legacy sword/armor through the public trade action after blacksmith access; record actual gold paid. Fresh-save equipment is empty.",
+    "adventure-loot": "Win a legal encounter through public encounter/combat actions; use the awarded owned ItemInstance and retain drop provenance.",
+    "crafted": "Use public planCraft, satisfy recipe unlock/station/time/material/gold/stamina gates, then call public craft; retain recipe and input provenance.",
+    "boss-gear": "Win a different Boss before the target first-kill fixture, then use that Boss reward; exclude the target Boss own drops from first-kill loadouts.",
+    "masterpiece": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true."
+  },
+  "fixturePolicy": {
+    "publicAcquisitionOnly": true,
+    "sourceItemReplay": "A source item is generated once by a legal public acquisition checkpoint and copied unchanged into independent combat fixtures; no generator or reward-award helper is called directly.",
+    "level": "Set through simulation.gainExp to the Phase7 relative band level.",
+    "worldGates": "Region, season, hour, threat, safety, settlement stage, Wolf chain predecessors and Chief bossAlive are explicit controlled preconditions, then verified through canonical encounter option projections/public encounter actions.",
+    "startingGold": "Controlled preparation wallet 1000; every gear/material transaction uses public actions and actual deltas are recorded. This endowment is not counted as fight reward.",
+    "companions": "No companions; gross incoming damage is reconstructed from action-boundary HP and measured potion deltas."
+  },
+  "cells": [
+    {
+      "definitionId": "slime_heart",
+      "rank": "boss",
+      "familyId": "slime",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "slime_heart",
+      "rank": "boss",
+      "familyId": "slime",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "slime_heart",
+      "rank": "boss",
+      "familyId": "slime",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "slime_heart",
+      "rank": "boss",
+      "familyId": "slime",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "slime_heart",
+      "rank": "boss",
+      "familyId": "slime",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_queen",
+      "rank": "boss",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_queen",
+      "rank": "boss",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_queen",
+      "rank": "boss",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_queen",
+      "rank": "boss",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_queen",
+      "rank": "boss",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_apex",
+      "rank": "boss",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_apex",
+      "rank": "boss",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_apex",
+      "rank": "boss",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_apex",
+      "rank": "boss",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_apex",
+      "rank": "boss",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "frontier_goblin_warlord",
+      "rank": "boss",
+      "familyId": "frontier_goblins",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "frontier_goblin_warlord",
+      "rank": "boss",
+      "familyId": "frontier_goblins",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "frontier_goblin_warlord",
+      "rank": "boss",
+      "familyId": "frontier_goblins",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "frontier_goblin_warlord",
+      "rank": "boss",
+      "familyId": "frontier_goblins",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "frontier_goblin_warlord",
+      "rank": "boss",
+      "familyId": "frontier_goblins",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "fog_undead_cryptlord",
+      "rank": "boss",
+      "familyId": "fog_undead",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "fog_undead_cryptlord",
+      "rank": "boss",
+      "familyId": "fog_undead",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "fog_undead_cryptlord",
+      "rank": "boss",
+      "familyId": "fog_undead",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "fog_undead_cryptlord",
+      "rank": "boss",
+      "familyId": "fog_undead",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "fog_undead_cryptlord",
+      "rank": "boss",
+      "familyId": "fog_undead",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "mine_construct_heart",
+      "rank": "boss",
+      "familyId": "mine_constructs",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "mine_construct_heart",
+      "rank": "boss",
+      "familyId": "mine_constructs",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "mine_construct_heart",
+      "rank": "boss",
+      "familyId": "mine_constructs",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "mine_construct_heart",
+      "rank": "boss",
+      "familyId": "mine_constructs",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "mine_construct_heart",
+      "rank": "boss",
+      "familyId": "mine_constructs",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "familyId": "legacy",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "familyId": "legacy",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "familyId": "legacy",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "familyId": "legacy",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "chief",
+      "rank": "boss",
+      "familyId": "legacy",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wolfKing",
+      "rank": "boss",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": true,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "grayWolf",
+      "rank": "normal",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "alphaWolf",
+      "rank": "elite",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "packLeader",
+      "rank": "miniBoss",
+      "familyId": "wolf",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_digger",
+      "rank": "normal",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_digger",
+      "rank": "normal",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_digger",
+      "rank": "normal",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_digger",
+      "rank": "normal",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_digger",
+      "rank": "normal",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_razor",
+      "rank": "elite",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_razor",
+      "rank": "elite",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_razor",
+      "rank": "elite",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_razor",
+      "rank": "elite",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_razor",
+      "rank": "elite",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_broodguard",
+      "rank": "miniBoss",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_broodguard",
+      "rank": "miniBoss",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_broodguard",
+      "rank": "miniBoss",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_broodguard",
+      "rank": "miniBoss",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "cave_insect_broodguard",
+      "rank": "miniBoss",
+      "familyId": "cave_insects",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_stonehorn",
+      "rank": "normal",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_stonehorn",
+      "rank": "normal",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_stonehorn",
+      "rank": "normal",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_stonehorn",
+      "rank": "normal",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_stonehorn",
+      "rank": "normal",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_bristleback",
+      "rank": "elite",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_bristleback",
+      "rank": "elite",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_bristleback",
+      "rank": "elite",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_bristleback",
+      "rank": "elite",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_bristleback",
+      "rank": "elite",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_old_matriarch",
+      "rank": "miniBoss",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "damage",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "striking"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_old_matriarch",
+      "rank": "miniBoss",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "crit-speed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "keen"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_old_matriarch",
+      "rank": "miniBoss",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "bleed",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "bleeding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_old_matriarch",
+      "rank": "miniBoss",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "penetration",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "piercing"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    },
+    {
+      "definitionId": "wild_beast_old_matriarch",
+      "rank": "miniBoss",
+      "familyId": "wild_beasts",
+      "band": "late",
+      "source": "masterpiece",
+      "style": "defense",
+      "acquisitionPath": "Complete a public masterpiece-enabled craft after meeting its Smithing, recipe, station and input requirements; require craftProvenance.masterpiece=true.",
+      "requiredAffixes": [
+        "sturdy",
+        "blocking",
+        "warding"
+      ],
+      "bossIdStratified": false,
+      "excludeTargetBossDropOnFirstKill": false,
+      "status": "PENDING_LEGAL_ACQUISITION_WITNESS",
+      "naReason": null,
+      "samplesPerSeed": 100,
+      "seeds": [
+        61101,
+        61102,
+        61103
+      ]
+    }
+  ]
+}

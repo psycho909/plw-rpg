@@ -1,0 +1,51 @@
+
+> plw-rpg@0.1.0 check
+> npm run test && npm run build
+
+
+> plw-rpg@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.11 D:/Codex/plw-rpg
+
+ ❯ src/services/saveService.test.ts (107 tests | 1 failed) 36528ms
+     × round trips 500 years of history, natural deaths and successors and continues deterministically 34816ms
+ ❯ src/engine/lifeIntegration.test.ts (11 tests | 1 failed) 15205ms
+     × keeps a 50-year world bounded, serializable and deterministic after save 5147ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/engine/lifeIntegration.test.ts > V2 integrated life rules > keeps a 50-year world bounded, serializable and deterministic after save
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/engine/lifeIntegration.test.ts:113:19
+    111|     expect(new Set([...state.npcs, ...state.characters].map(c => c.id)…
+    112|   }
+    113|   it.each([10, 50])('keeps a %s-year world bounded, serializable and d…
+       |                   ^
+    114|     assertLongWorldIsBoundedAndDeterministic(years)
+    115|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/services/saveService.test.ts > versioned saves and deterministic continuation > round trips 500 years of history, natural deaths and successors and continues deterministically
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/services/saveService.test.ts:708:3
+    706|     }
+    707|   })
+    708|   it('round trips 500 years of history, natural deaths and successors …
+       |   ^
+    709|     const s = createGame(909)
+    710|     for (let year = 0; year < 500; year++) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 36 passed (38)
+      Tests  2 failed | 627 passed (629)
+   Start at  14:30:58
+   Duration  85.51s (transform 2.79s, setup 0ms, import 7.04s, tests 63.31s, environment 15ms)
+
+exit=1

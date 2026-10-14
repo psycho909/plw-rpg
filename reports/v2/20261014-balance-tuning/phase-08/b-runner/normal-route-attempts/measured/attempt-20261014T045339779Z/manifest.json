@@ -1,0 +1,42 @@
+{
+  "head": "ea75684e1533b9d55a992495c256acfb58c5c4e6",
+  "srcFingerprint": {
+    "method": "sha256 over sorted relative path + NUL + file bytes + NUL",
+    "value": "38bb27070c0e52448d8bdb4a258c517b651cf2b6266d6606d97ea1a57301040d",
+    "files": 113
+  },
+  "seeds": [
+    61101,
+    61102,
+    61103
+  ],
+  "routePolicyVersion": "phase8-measured-routes-v1",
+  "command": "node scripts/phase8/run-normal-routes.mjs --policy measured",
+  "startedAt": "2026-10-14T04:53:39.779Z",
+  "window": {
+    "years": 3,
+    "calendarYears": "game calendar years 1–3; stop at exact year-4 boundary",
+    "bands": {
+      "year1": "early",
+      "year2": "mid",
+      "year3": "late"
+    }
+  },
+  "dailyActionBudget": "The UI has no fixed actions-per-day counter. Engine actions spend their configured stamina and/or game minutes; movement costs 5 minutes per tile, gather spends 10 stamina and 15–43 minutes by skill, farming spends 4–6 stamina and 10–20 minutes, craft spends recipe-defined stamina/time (starterSpear: 10/45 minutes), encounter starts spend 8 stamina, combat turns advance 1 minute and retreat advances 10 minutes, and village rest restores 35 stamina/15 HP in 60 minutes (inn: full recovery, 8 gold, 480 minutes). The runner uses midnight only as a time-series boundary, chooses legal actions repeatedly within the day, and simulates the remainder when the policy has no legal useful action. The 80-decision daily ceiling is a harness safety guard, not a game/UI rule; actions can cross midnight.",
+  "routePolicies": {
+    "life": "Only legal public gather/farm/craft/sell/rest/travel actions; never starts a voluntary encounter. Plants all-season wheat when a plot is free, harvests when mature, reserves 3 wood and 2 stone for starterSpear at the store station, follows planCraft readiness, and sells gathered surplus only after the reserve is protected.",
+    "adventure": "Uses the same legal APIs, itinerary, seed and three-year window as v3. measured permits one Normal start per in-game day, then leaves the area uncleared for another day or recovery; higher-rank opportunities remain selectable. This is a player-plausible daily hunt budget, not a game rule or threat tuning.",
+    "hybrid": "Alternates the same Life and measured Adventure decisions by in-game day; measured permits one Normal start per in-game day, then leaves the area uncleared for another day or recovery; higher-rank opportunities remain selectable. Higher-rank targets remain selectable."
+  },
+  "routeVariants": {
+    "life": "life-measured",
+    "adventure": "adventure-measured",
+    "hybrid": "hybrid-measured"
+  },
+  "combatObservation": {
+    "potionUse": "Exact count from inventory potion delta per combat action.",
+    "grossDamageTaken": "Reconstructed from action-boundary HP delta plus measured potion healing when an enemy attack occurs; healer rows are NOT MEASURED rather than treating net HP loss as gross damage.",
+    "fightCost": "Gold, potion and owner-material deltas are retained per encounter; non-gold values are not converted to gold."
+  },
+  "label": "Normal fresh-save (scripted policy); not a human playtest and not a controlled fixture"
+}

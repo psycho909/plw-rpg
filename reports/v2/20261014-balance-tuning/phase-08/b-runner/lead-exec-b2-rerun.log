@@ -1,0 +1,106 @@
+### node --test scripts/phase8/test-route-policy.mjs
+TAP version 13
+# Subtest: v3 remains the default control and accepts only the two registered policies
+ok 1 - v3 remains the default control and accepts only the two registered policies
+  ---
+  duration_ms: 13.9262
+  ...
+# Subtest: measured tie-break chooses the next undefeated legal wolf member before re-farming
+not ok 2 - measured tie-break chooses the next undefeated legal wolf member before re-farming
+  ---
+  duration_ms: 1.704
+  location: 'D:\\Codex\\plw-rpg\\scripts\\phase8\\test-route-policy.mjs:18:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    +   'packLeader',
+        'wolfKing',
+    -   'packLeader'
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'wolfKing'
+    1: 'packLeader'
+  actual:
+    0: 'packLeader'
+    1: 'wolfKing'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Codex/plw-rpg/scripts/phase8/test-route-policy.mjs:22:10)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:979:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:677:18)
+    Test.postRun (node:internal/test_runner/test:1090:19)
+    Test.run (node:internal/test_runner/test:1018:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: measured policy limits ordinary encounters to one daily start while v3 keeps three
+ok 3 - measured policy limits ordinary encounters to one daily start while v3 keeps three
+  ---
+  duration_ms: 0.219
+  ...
+# Subtest: potion inventory deltas and known healing reconstruct gross incoming damage exactly
+ok 4 - potion inventory deltas and known healing reconstruct gross incoming damage exactly
+  ---
+  duration_ms: 0.3289
+  ...
+# Subtest: risk-adjusted gold preserves the B1 probability-weighted formula and refuses missing costs
+ok 5 - risk-adjusted gold preserves the B1 probability-weighted formula and refuses missing costs
+  ---
+  duration_ms: 0.3566
+  ...
+# Subtest: combat summaries keep Boss IDs separate and expose outcome, cost, and risk-adjusted gold metrics
+ok 6 - combat summaries keep Boss IDs separate and expose outcome, cost, and risk-adjusted gold metrics
+  ---
+  duration_ms: 1.6265
+  ...
+# Subtest: combat matrix manifest counts the full grid, keeps Boss IDs distinct, and bounds source-band jobs
+ok 7 - combat matrix manifest counts the full grid, keeps Boss IDs distinct, and bounds source-band jobs
+  ---
+  duration_ms: 1.1716
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 6
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 234.2959
+exit=1
+### node scripts/phase8/build-combat-matrix-manifest.mjs
+{
+  "manifest": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\matrix-manifest-attempts\\attempt-20261014T050117732Z\\combat-cell-manifest.json",
+  "status": "PLAN_ONLY_LEGAL_WITNESSES_PENDING",
+  "targetCount": 75,
+  "candidateCellCount": 5625,
+  "knownNACells": 675,
+  "bossIds": [
+    "cave_insect_queen",
+    "chief",
+    "fog_undead_cryptlord",
+    "frontier_goblin_warlord",
+    "mine_construct_heart",
+    "slime_heart",
+    "wild_beast_apex",
+    "wolfKing"
+  ],
+  "estimatedMinutesPerJob": 6
+}
+exit=0
+### node scripts/phase8/summarize-route-combat-matrix.mjs
+{
+  "output": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\route-matrix-attempts\\attempt-20261014T050130566Z",
+  "status": "PASS",
+  "v3Attempt": "attempt-20261014T045140077Z",
+  "measuredAttempt": "attempt-20261014T045339779Z",
+  "bossRows": 48,
+  "routeRows": 58
+}
+exit=0

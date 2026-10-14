@@ -1,0 +1,89 @@
+### node --test scripts/phase8/test-route-policy.mjs
+TAP version 13
+# file:///D:/Codex/plw-rpg/scripts/phase8/combat-matrix.mjs:49
+#   }))))
+#       ^
+# SyntaxError: missing ) after argument list
+#     at compileSourceTextModule (node:internal/modules/esm/utils:338:16)
+#     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:102:18)
+#     at \#translate (node:internal/modules/esm/loader:468:12)
+#     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:515:27)
+# Node.js v22.14.0
+# Subtest: scripts\\phase8\\test-route-policy.mjs
+not ok 1 - scripts\\phase8\\test-route-policy.mjs
+  ---
+  duration_ms: 163.3171
+  location: 'D:\\Codex\\plw-rpg\\scripts\\phase8\\test-route-policy.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 174.1561
+exit=1
+### npx.cmd vitest run src/engine/bossSaveReload.test.ts
+
+ RUN  v4.1.11 D:/Codex/plw-rpg
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  12:51:34
+   Duration  1.35s (transform 748ms, setup 0ms, import 890ms, tests 56ms, environment 0ms)
+
+exit=0
+### node scripts/phase8/build-combat-matrix-manifest.mjs
+file:///D:/Codex/plw-rpg/scripts/phase8/combat-matrix.mjs:49
+  }))))
+      ^
+
+SyntaxError: missing ) after argument list
+    at compileSourceTextModule (node:internal/modules/esm/utils:338:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:102:18)
+    at #translate (node:internal/modules/esm/loader:468:12)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:515:27)
+
+Node.js v22.14.0
+exit=1
+### node scripts/phase8/run-normal-routes.mjs --policy v3
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\normal-route-attempts\\v3\\attempt-20261014T045140077Z",
+  "status": "PASS",
+  "failure": null,
+  "dailyRows": 3240,
+  "encounters": 1138,
+  "actions": 50931
+}
+exit=0
+### node scripts/phase8/run-normal-routes.mjs --policy measured
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\normal-route-attempts\\measured\\attempt-20261014T045339779Z",
+  "status": "PASS",
+  "failure": null,
+  "dailyRows": 3240,
+  "encounters": 2076,
+  "actions": 58943
+}
+exit=0
+### node scripts/phase8/summarize-route-combat-matrix.mjs
+file:///D:/Codex/plw-rpg/scripts/phase8/combat-matrix.mjs:49
+  }))))
+      ^
+
+SyntaxError: missing ) after argument list
+    at compileSourceTextModule (node:internal/modules/esm/utils:338:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:102:18)
+    at #translate (node:internal/modules/esm/loader:468:12)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:515:27)
+
+Node.js v22.14.0
+exit=1

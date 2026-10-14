@@ -1,0 +1,335 @@
+### node --check scripts/phase8/build-combat-matrix-manifest.mjs
+exit=0
+### node --check scripts/phase8/classify-playtest.mjs
+exit=0
+### node --check scripts/phase8/combat-matrix.mjs
+exit=0
+### node --check scripts/phase8/controlled-matrix-core.mjs
+exit=0
+### node --check scripts/phase8/extract-combat.mjs
+exit=0
+### node --check scripts/phase8/route-policy.mjs
+exit=0
+### node --check scripts/phase8/route-validity.mjs
+exit=0
+### node --check scripts/phase8/run-baseline.mjs
+exit=0
+### node --check scripts/phase8/run-controlled-combat-matrix.mjs
+exit=0
+### node --check scripts/phase8/run-normal-routes.mjs
+exit=0
+### node --check scripts/phase8/summarize-route-combat-matrix.mjs
+exit=0
+### node --check scripts/phase8/test-controlled-combat-matrix.mjs
+exit=0
+### node --check scripts/phase8/test-route-policy.mjs
+exit=0
+### node --check scripts/phase8/test_classify_playtest.mjs
+exit=0
+### node --check scripts/phase8/test_route_validity.mjs
+exit=0
+### node --test scripts/phase8/test-route-policy.mjs scripts/phase8/test-controlled-combat-matrix.mjs
+TAP version 13
+# Subtest: scope contains all Bosses and one non-Boss per rank in each selected family-region
+ok 1 - scope contains all Bosses and one non-Boss per rank in each selected family-region
+  ---
+  duration_ms: 5.6513
+  ...
+# Subtest: scoped manifest stays under the 20-minute estimate and splits to 15 jobs
+ok 2 - scoped manifest stays under the 20-minute estimate and splits to 15 jobs
+  ---
+  duration_ms: 5.1913
+  ...
+# Subtest: legacy style compatibility is explicit and cell sample seed is stable and stratified
+ok 3 - legacy style compatibility is explicit and cell sample seed is stable and stratified
+  ---
+  duration_ms: 0.3263
+  ...
+# Subtest: job arguments require one legal band and source, with optional target split
+ok 4 - job arguments require one legal band and source, with optional target split
+  ---
+  duration_ms: 1.423
+  ...
+# Subtest: the 14-minute hard stop is strict and summaries retain outcome percentiles and gold risk
+ok 5 - the 14-minute hard stop is strict and summaries retain outcome percentiles and gold risk
+  ---
+  duration_ms: 1.6913
+  ...
+# Subtest: controlled cell results distinguish legal N/A gates, runner errors, timeouts, and partial output
+ok 6 - controlled cell results distinguish legal N/A gates, runner errors, timeouts, and partial output
+  ---
+  duration_ms: 1.2909
+  ...
+# Subtest: v3 remains the default control and accepts only the two registered policies
+ok 7 - v3 remains the default control and accepts only the two registered policies
+  ---
+  duration_ms: 26.76
+  ...
+# Subtest: measured tie-break chooses the next undefeated legal wolf member before re-farming
+ok 8 - measured tie-break chooses the next undefeated legal wolf member before re-farming
+  ---
+  duration_ms: 0.8416
+  ...
+# Subtest: measured policy limits ordinary encounters to one daily start while v3 keeps three
+ok 9 - measured policy limits ordinary encounters to one daily start while v3 keeps three
+  ---
+  duration_ms: 0.4296
+  ...
+# Subtest: potion inventory deltas and known healing reconstruct gross incoming damage exactly
+ok 10 - potion inventory deltas and known healing reconstruct gross incoming damage exactly
+  ---
+  duration_ms: 0.6012
+  ...
+# Subtest: risk-adjusted gold preserves the B1 probability-weighted formula and refuses missing costs
+ok 11 - risk-adjusted gold preserves the B1 probability-weighted formula and refuses missing costs
+  ---
+  duration_ms: 0.8668
+  ...
+# Subtest: combat summaries keep Boss IDs separate and expose outcome, cost, and risk-adjusted gold metrics
+ok 12 - combat summaries keep Boss IDs separate and expose outcome, cost, and risk-adjusted gold metrics
+  ---
+  duration_ms: 2.3263
+  ...
+# Subtest: combat matrix manifest counts the full grid, keeps Boss IDs distinct, and bounds source-band jobs
+ok 13 - combat matrix manifest counts the full grid, keeps Boss IDs distinct, and bounds source-band jobs
+  ---
+  duration_ms: 2.6175
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1233.6429
+exit=0
+### node scripts/phase8/build-combat-matrix-manifest.mjs
+{
+  "manifest": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\matrix-manifest-attempts\\attempt-20261014T053603074Z\\combat-cell-manifest.json",
+  "status": "PLAN_ONLY_LEGAL_WITNESSES_PENDING",
+  "targetCount": 17,
+  "candidateCellCount": 1275,
+  "knownNACells": 153,
+  "bossIds": [
+    "cave_insect_queen",
+    "chief",
+    "fog_undead_cryptlord",
+    "frontier_goblin_warlord",
+    "mine_construct_heart",
+    "slime_heart",
+    "wild_beast_apex",
+    "wolfKing"
+  ],
+  "representativeTargets": [
+    "grayWolf",
+    "alphaWolf",
+    "packLeader",
+    "cave_insect_digger",
+    "cave_insect_razor",
+    "cave_insect_broodguard",
+    "wild_beast_stonehorn",
+    "wild_beast_bristleback",
+    "wild_beast_old_matriarch"
+  ],
+  "estimatedMinutesPerJob": 2,
+  "estimatedMinutesTotal": 17
+}
+exit=0
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band early --source legacy
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\early-legacy\\attempt-20261014T053617345Z",
+  "status": "PASS",
+  "job": {
+    "band": "early",
+    "source": "legacy",
+    "target": null
+  },
+  "sampleRows": 3000,
+  "cellRows": 85
+}
+exit=0
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band early --source adventure-loot
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\early-adventure-loot\\attempt-20261014T053701021Z",
+  "status": "PARTIAL",
+  "job": {
+    "band": "early",
+    "source": "adventure-loot",
+    "target": null
+  },
+  "sampleRows": 3500,
+  "cellRows": 85
+}
+exit=1
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band early --source crafted
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\early-crafted\\attempt-20261014T053856893Z",
+  "status": "PASS",
+  "job": {
+    "band": "early",
+    "source": "crafted",
+    "target": null
+  },
+  "sampleRows": 7500,
+  "cellRows": 85
+}
+exit=0
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band early --source boss-gear
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\early-boss-gear\\attempt-20261014T054002914Z",
+  "status": "FAIL",
+  "job": {
+    "band": "early",
+    "source": "boss-gear",
+    "target": null
+  },
+  "sampleRows": 0,
+  "cellRows": 85
+}
+exit=1
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band early --source masterpiece
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\early-masterpiece\\attempt-20261014T054020019Z",
+  "status": "PARTIAL",
+  "job": {
+    "band": "early",
+    "source": "masterpiece",
+    "target": null
+  },
+  "sampleRows": 5000,
+  "cellRows": 85
+}
+exit=1
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band mid --source legacy
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\mid-legacy\\attempt-20261014T054121807Z",
+  "status": "PASS",
+  "job": {
+    "band": "mid",
+    "source": "legacy",
+    "target": null
+  },
+  "sampleRows": 8400,
+  "cellRows": 85
+}
+exit=0
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band mid --source adventure-loot
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\mid-adventure-loot\\attempt-20261014T054220247Z",
+  "status": "PARTIAL",
+  "job": {
+    "band": "mid",
+    "source": "adventure-loot",
+    "target": null
+  },
+  "sampleRows": 14300,
+  "cellRows": 85
+}
+exit=1
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band mid --source crafted
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\mid-crafted\\attempt-20261014T054441418Z",
+  "status": "PASS",
+  "job": {
+    "band": "mid",
+    "source": "crafted",
+    "target": null
+  },
+  "sampleRows": 21000,
+  "cellRows": 85
+}
+exit=0
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band mid --source boss-gear
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\mid-boss-gear\\attempt-20261014T054652681Z",
+  "status": "FAIL",
+  "job": {
+    "band": "mid",
+    "source": "boss-gear",
+    "target": null
+  },
+  "sampleRows": 0,
+  "cellRows": 85
+}
+exit=1
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band mid --source masterpiece
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\mid-masterpiece\\attempt-20261014T054713277Z",
+  "status": "PARTIAL",
+  "job": {
+    "band": "mid",
+    "source": "masterpiece",
+    "target": null
+  },
+  "sampleRows": 14000,
+  "cellRows": 85
+}
+exit=1
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band late --source legacy
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\late-legacy\\attempt-20261014T054908094Z",
+  "status": "PASS",
+  "job": {
+    "band": "late",
+    "source": "legacy",
+    "target": null
+  },
+  "sampleRows": 7800,
+  "cellRows": 85
+}
+exit=0
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band late --source adventure-loot
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\late-adventure-loot\\attempt-20261014T055016861Z",
+  "status": "PARTIAL",
+  "job": {
+    "band": "late",
+    "source": "adventure-loot",
+    "target": null
+  },
+  "sampleRows": 10400,
+  "cellRows": 85
+}
+exit=1
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band late --source crafted
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\late-crafted\\attempt-20261014T055146192Z",
+  "status": "PASS",
+  "job": {
+    "band": "late",
+    "source": "crafted",
+    "target": null
+  },
+  "sampleRows": 19500,
+  "cellRows": 85
+}
+exit=0
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band late --source boss-gear
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\late-boss-gear\\attempt-20261014T055342804Z",
+  "status": "FAIL",
+  "job": {
+    "band": "late",
+    "source": "boss-gear",
+    "target": null
+  },
+  "sampleRows": 0,
+  "cellRows": 85
+}
+exit=1
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band late --source masterpiece
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\late-masterpiece\\attempt-20261014T055402046Z",
+  "status": "PARTIAL",
+  "job": {
+    "band": "late",
+    "source": "masterpiece",
+    "target": null
+  },
+  "sampleRows": 13000,
+  "cellRows": 85
+}
+exit=1
+DONE

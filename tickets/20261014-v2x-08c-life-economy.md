@@ -1,6 +1,6 @@
 # Phase8-C — Life & Economy Balance
 
-- Status: approved — waiting on dependency
+- Status: in_progress
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-14 Owner 正式規格 [V2X-PHASE8](../docs/specs/V2X-PHASE8-BALANCE-TUNING.md)；Parent [Phase8](20261014-v2x-08-balance-tuning.md)。

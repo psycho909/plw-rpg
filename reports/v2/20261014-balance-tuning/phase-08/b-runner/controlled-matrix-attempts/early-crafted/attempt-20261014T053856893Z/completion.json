@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "failure": null,
+  "startedAt": "2026-10-14T05:38:56.893Z",
+  "endedAt": "2026-10-14T05:40:01.804Z",
+  "elapsedSeconds": 64.9,
+  "jobHardStopMinutes": 14,
+  "sampleRows": 7500,
+  "expectedJobCells": 85,
+  "rows": {
+    "cellResults": 85,
+    "acquisitionWitnesses": 135,
+    "summaries": 25
+  },
+  "outcomeCounts": {
+    "win": 7474,
+    "death": 26
+  },
+  "grossDamage": "MEASURED by runner-side HP/potion reconstruction; no companions present.",
+  "totalLegalTargetCount": 17,
+  "estimate": {
+    "splitAxes": [
+      "band",
+      "source"
+    ],
+    "jobCount": 15,
+    "jobs": [
+      {
+        "band": "early",
+        "source": "legacy",
+        "expectedRows": 10200
+      },
+      {
+        "band": "early",
+        "source": "adventure-loot",
+        "expectedRows": 25500
+      },
+      {
+        "band": "early",
+        "source": "crafted",
+        "expectedRows": 25500
+      },
+      {
+        "band": "early",
+        "source": "boss-gear",
+        "expectedRows": 25500
+      },
+      {
+        "band": "early",
+        "source": "masterpiece",
+        "expectedRows": 25500
+      },
+      {
+        "band": "mid",
+        "source": "legacy",
+        "expectedRows": 10200
+      },
+      {
+        "band": "mid",
+        "source": "adventure-loot",
+        "expectedRows": 25500
+      },
+      {
+        "band": "mid",
+        "source": "crafted",
+        "expectedRows": 25500
+      },
+      {
+        "band": "mid",
+        "source": "boss-gear",
+        "expectedRows": 25500
+      },
+      {
+        "band": "mid",
+        "source": "masterpiece",
+        "expectedRows": 25500
+      },
+      {
+        "band": "late",
+        "source": "legacy",
+        "expectedRows": 10200
+      },
+      {
+        "band": "late",
+        "source": "adventure-loot",
+        "expectedRows": 25500
+      },
+      {
+        "band": "late",
+        "source": "crafted",
+        "expectedRows": 25500
+      },
+      {
+        "band": "late",
+        "source": "boss-gear",
+        "expectedRows": 25500
+      },
+      {
+        "band": "late",
+        "source": "masterpiece",
+        "expectedRows": 25500
+      }
+    ],
+    "upperBoundSamplesPerJob": 25500,
+    "maxRowsPerJobAfterKnownNAs": 25500,
+    "estimatedWallClockMinutesPerJob": 2,
+    "estimatedWallClockMinutesTotal": 17,
+    "reference": "Phase7 combat-attempt-05 completed 118,800 controlled rows in 72 seconds; estimate applies 5x setup/acquisition/ledger allowance.",
+    "maxSingleRunMinutes": 15,
+    "hardStopMinutesPerJob": 14,
+    "splitFurtherIfExceeded": "--band <band> --source <source> --target <definitionId> (one target per command)"
+  }
+}

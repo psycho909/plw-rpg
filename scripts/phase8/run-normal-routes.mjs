@@ -1,5 +1,5 @@
 /**
- * Normal fresh-save route harness (policy v3).
+ * Normal fresh-save route harness with v3 control and Phase8 measured policies.
  *
  * The route decisions call the same public engine actions and eligibility projections exposed by the UI.
  * Game time, stamina, station hours, crop seasons, recipe inputs and encounter ranks remain engine-owned.
@@ -12,7 +12,8 @@
  * station transaction is legal, and sells surplus after reserving the next recipe inputs. It starts no combat.
  * Adventure rotates forest, mine and the revealed valley by day, follows the legal wolf rank track, chooses
  * the highest currently eligible content rank, and challenges the Goblin Chief only after the world spawns it.
- * It caps normal-rank starts at three per in-game day but continues when a higher rank is legally available.
+ * The v3 control caps normal-rank starts at three per in-game day. The measured route caps them at one,
+ * leaving the area uncleared for another day or recovery, while still taking any legal higher-rank target.
  * Hybrid alternates those Life and Adventure decisions by game day. These are repeatable scripted policies,
  * not human play; their itinerary, thresholds and encounter cap can shape measured outcomes.
  */
@@ -23,12 +24,17 @@ import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { classifyNoProgress } from './classify-playtest.mjs'
 import { classifyActionOutcome, evaluateRouteValidity, evaluateSeedVariance } from './route-validity.mjs'
+import {
+  canStartNormalEncounter, countPotionUses, normalEncounterCutoffReason, orderAdventureTargets,
+  parseRoutePolicy, reconstructIncomingDamage, summarizeCombatOutcomes,
+} from './route-policy.mjs'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
-const attemptRoot = join(root, 'reports/v2/20261014-balance-tuning/phase-08/a-baseline-run')
+const policy = parseRoutePolicy(process.argv.slice(2))
+const attemptRoot = join(root, 'reports/v2/20261014-balance-tuning/phase-08/b-runner/normal-route-attempts', policy.id)
 const SEEDS = [61101, 61102, 61103]
 const YEARS = 3
-const POLICY_VERSION = 'normal-fresh-save-routes-v3'
+const POLICY_VERSION = policy.version
 const started = new Date()
 const stamp = started.toISOString().replaceAll(':', '').replaceAll('-', '').replaceAll('.', '')
 const out = join(attemptRoot, `attempt-${stamp}`)
@@ -76,22 +82,33 @@ const csv = rows => {
   return `${columns.join(',')}\n${rows.map(row => columns.map(key => quote(row[key])).join(',')).join('\n')}\n`
 }
 
+await mkdir(attemptRoot, { recursive: true })
 await mkdir(out, { recursive: false })
 const head = await readHead()
 const fingerprint = await srcFingerprint()
 const manifest = {
   head, srcFingerprint: fingerprint, seeds: SEEDS, routePolicyVersion: POLICY_VERSION,
-  command: 'node scripts/phase8/run-normal-routes.mjs', startedAt: started.toISOString(),
+  command: `node scripts/phase8/run-normal-routes.mjs --policy ${policy.id}`, startedAt: started.toISOString(),
   window: { years: YEARS, calendarYears: 'game calendar years 1–3; stop at exact year-4 boundary', bands: { year1: 'early', year2: 'mid', year3: 'late' } },
   dailyActionBudget: 'The UI has no fixed actions-per-day counter. Engine actions spend their configured stamina and/or game minutes; movement costs 5 minutes per tile, gather spends 10 stamina and 15–43 minutes by skill, farming spends 4–6 stamina and 10–20 minutes, craft spends recipe-defined stamina/time (starterSpear: 10/45 minutes), encounter starts spend 8 stamina, combat turns advance 1 minute and retreat advances 10 minutes, and village rest restores 35 stamina/15 HP in 60 minutes (inn: full recovery, 8 gold, 480 minutes). The runner uses midnight only as a time-series boundary, chooses legal actions repeatedly within the day, and simulates the remainder when the policy has no legal useful action. The 80-decision daily ceiling is a harness safety guard, not a game/UI rule; actions can cross midnight.',
   routePolicies: {
     life: 'Only legal public gather/farm/craft/sell/rest/travel actions; never starts a voluntary encounter. Plants all-season wheat when a plot is free, harvests when mature, reserves 3 wood and 2 stone for starterSpear at the store station, follows planCraft readiness, and sells gathered surplus only after the reserve is protected.',
-    adventure: 'Uses legal public movement, contentEncounterOptions/encounterContentMonster, wolfEncounterOptions/encounterWolf, forest encounter, and the explicit Goblin Chief challenge only while bossAlive. Rotates forest/mine/valley by game day, picks the highest eligible rank, equips legal upgrades, and uses combat/rest thresholds; caps normal-rank starts at three per day but continues for any eligible higher rank as a policy rule.',
-    hybrid: 'Alternates the full Life policy and Adventure policy by in-game day; if combat is active, resolves it before taking an action from either half. Both halves must complete successful actions per seed.',
+    adventure: policy.id === 'v3'
+      ? 'Uses legal public movement and encounter APIs; rotates forest/mine/valley by game day and picks the highest eligible rank. Control behavior is unchanged: up to three Normal starts per day, while eligible higher ranks bypass the cap.'
+      : `Uses the same legal APIs, itinerary, seed and three-year window as v3. ${normalEncounterCutoffReason(policy.id)} This is a player-plausible daily hunt budget, not a game rule or threat tuning.`,
+    hybrid: policy.id === 'v3'
+      ? 'Alternates the full Life policy and Adventure policy by in-game day; if combat is active, resolves it before taking an action from either half. Both halves must complete successful actions per seed. Control behavior is unchanged.'
+      : `Alternates the same Life and measured Adventure decisions by in-game day; ${normalEncounterCutoffReason(policy.id)} Higher-rank targets remain selectable.`,
+  },
+  routeVariants: { life: `life-${policy.id}`, adventure: policy.id === 'v3' ? 'adventure-v3' : 'adventure-measured', hybrid: policy.id === 'v3' ? 'hybrid-v3' : 'hybrid-measured' },
+  combatObservation: {
+    potionUse: 'Exact count from inventory potion delta per combat action.',
+    grossDamageTaken: 'Reconstructed from action-boundary HP delta plus measured potion healing when an enemy attack occurs; healer rows are NOT MEASURED rather than treating net HP loss as gross damage.',
+    fightCost: 'Gold, potion and owner-material deltas are retained per encounter; non-gold values are not converted to gold.',
   },
   label: 'Normal fresh-save (scripted policy); not a human playtest and not a controlled fixture',
 }
-await writeFile(join(out, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, { flag: 'wx' })
+  await writeFile(join(out, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, { flag: 'wx' })
 
 let vite
 const daily = [], encounters = [], actions = [], crafts = [], gearChanges = [], unlocks = [], cropYields = [], routeValidity = []
@@ -124,6 +141,7 @@ try {
   const { calendar } = calendarApi
   const { random } = randomApi
   const routes = ['life', 'adventure', 'hybrid']
+  const routeVariant = route => `${route}-${policy.id}`
   const endAt = YEARS * CONFIG.daysPerSeason * CONFIG.seasons.length * CONFIG.minutesPerDay
   const recipeIds = Object.keys(CRAFTING_RECIPES).sort()
   const rarityRank = Object.fromEntries(Object.keys(RARITIES).map((id, index) => [id, index]))
@@ -157,7 +175,7 @@ try {
   let activeDay = 0
   const metric = (route, seed, state, dayIndex) => {
     const c = player(state), materials = materialCounts(state)
-    return { route, seed, day: dayIndex, worldTime: state.worldTime, calendarYear: calendar(state.worldTime).year,
+    return { route, routeVariant: routeVariant(route), policy: policy.id, seed, day: dayIndex, worldTime: state.worldTime, calendarYear: calendar(state.worldTime).year,
       band: calendar(state.worldTime).year <= 1 ? 'early' : calendar(state.worldTime).year === 2 ? 'mid' : 'late',
       playerLevel: c.level, hp: c.hp, stamina: c.stamina, gold: c.gold, wood: c.inventory.wood, stone: c.inventory.stone,
       iron: c.inventory.iron, food: c.inventory.food, playerMaterials: materials, farming: c.skills.farming.level,
@@ -181,7 +199,7 @@ try {
     const afterMaterials = materialCounts(state)
     const materialDelta = Object.fromEntries([...new Set([...Object.keys(beforeMaterials), ...Object.keys(afterMaterials)])]
       .map(id => [id, (afterMaterials[id] ?? 0) - (beforeMaterials[id] ?? 0)]))
-    const observed = { route, seed, day: activeDay, policyHalf: activePolicyHalf, at: beforeTime, choice, goldDelta: player(state).gold - beforeGold, materialDelta }
+    const observed = { route, routeVariant: routeVariant(route), policy: policy.id, seed, day: activeDay, policyHalf: activePolicyHalf, at: beforeTime, choice, goldDelta: player(state).gold - beforeGold, materialDelta }
     if (classification.noProgress) {
       const category = classifyNoProgress({ choice, visibleCue: failureReason })
       actions.push({ ...observed, result: failureReason || JSON.stringify(result), ...classification,
@@ -317,10 +335,7 @@ try {
       if (state.threat.bossAlive) targets.push({ kind: 'chief', definitionId: BOSS.monsterId, rank: 'boss' })
       if (state.threat.monsterPopulation >= 1) targets.push({ kind: 'wild', definitionId: 'wild-encounter', rank: 'normal' })
     }
-    const rankOrder = { normal: 0, elite: 1, miniBoss: 2, boss: 3 }
-    const kindOrder = { chief: 0, wolf: 1, content: 2, wild: 3 }
-    return targets.sort((a, b) => rankOrder[b.rank] - rankOrder[a.rank]
-      || kindOrder[a.kind] - kindOrder[b.kind] || a.definitionId.localeCompare(b.definitionId))
+    return orderAdventureTargets(targets, policy.id, state.reward.collection.defeated)
   }
   const bossDefinitionIsValid = id => CONTENT_MONSTERS[id]?.rank === 'boss'
     || WOLF_MONSTERS[id]?.rank === 'boss' || MONSTERS[id]?.boss === true
@@ -344,10 +359,11 @@ try {
       const familyId = combat.contentEncounter?.familyId ?? (combat.familyEncounter ? 'wolf' : id)
       const band = calendar(state.worldTime).year <= 1 ? 'early' : calendar(state.worldTime).year === 2 ? 'mid' : 'late'
       const firstEncounterForFamily = !encounters.some(row => row.route === route && row.seed === seed && row.familyId === familyId)
-      const row = { key: `${route}/${seed}/${encounters.length + 1}`, route, seed, day: activeDay, at: state.worldTime,
+      const row = { key: `${route}/${seed}/${encounters.length + 1}`, route, routeVariant: routeVariant(route), policy: policy.id, seed, day: activeDay, at: state.worldTime,
         familyId, definitionId: id, rank, band, firstEncounterForFamily, playerLevel: c.level,
         hpBefore: c.hp, hpMaxBefore: c.maxHp, outcome: 'active', turns: 0, hpAfter: null, hpMaxAfter: null,
-        retreat: false, death: false }
+        retreat: false, death: false, potionUse: 0, grossDamageTaken: 0, grossDamageStatus: 'MEASURED',
+        goldBefore: c.gold, potionBefore: c.inventory.potion, materialsBefore: materialCounts(state), staminaBefore: c.stamina }
       encounters.push(row)
       active = { combat, row }
       currentCombat.set(state, active)
@@ -356,11 +372,36 @@ try {
     let command = 'attack'
     if (c.hp < c.maxHp * .28 || row.turns >= 9) command = 'run'
     else if (c.hp < c.maxHp * .55 && c.inventory.potion > 0) command = 'potion'
+    const hpBefore = c.hp, maxHpBefore = c.maxHp, potionBefore = c.inventory.potion
+    const hasHealer = state.party.some(member => member.archetype === 'healer'
+      && state.npcs.some(npc => npc.id === member.npcId && npc.isAlive))
     const did = act(route, seed, state, command === 'run' ? 'retreat' : command === 'potion' ? 'potion' : 'combat',
       () => combatTurn(state, command), result => result === '')
-    if (did) row.turns++
+    if (did) {
+      row.turns++
+      const potionUses = countPotionUses(potionBefore, c.inventory.potion)
+      if (potionUses === null) row.grossDamageStatus = 'NOT MEASURED: invalid potion inventory delta'
+      else row.potionUse += potionUses
+      const receivedAttack = command !== 'run' && (Boolean(state.combat) || !c.isAlive)
+      const damage = reconstructIncomingDamage({ hpBefore, hpAfter: c.hp, maxHp: maxHpBefore,
+        potionUses: potionUses ?? 0, receivedAttack, healingUnknown: hasHealer })
+      if (damage === null) row.grossDamageStatus = hasHealer
+        ? 'NOT MEASURED: healer companion HP contribution is not separated at this runner boundary'
+        : 'NOT MEASURED: combat action boundary did not permit exact reconstruction'
+      else if (row.grossDamageStatus === 'MEASURED') row.grossDamageTaken += damage
+    }
     if (!c.isAlive) { row.outcome = 'death'; row.death = true; row.hpAfter = c.hp; row.hpMaxAfter = c.maxHp; row.playerLevelAfter = c.level }
     else if (!state.combat) { row.outcome = command === 'run' ? 'retreat' : 'win'; row.retreat = command === 'run'; row.hpAfter = c.hp; row.hpMaxAfter = c.maxHp; row.playerLevelAfter = c.level }
+    if (row.outcome !== 'active') {
+      row.goldDelta = c.gold - row.goldBefore
+      row.potionInventoryDelta = c.inventory.potion - row.potionBefore
+      row.timeDeltaMinutes = state.worldTime - row.at
+      row.staminaDelta = c.stamina - row.staminaBefore
+      const materialsAfter = materialCounts(state)
+      row.materialDelta = Object.fromEntries([...new Set([...Object.keys(row.materialsBefore), ...Object.keys(materialsAfter)])]
+        .map(id => [id, (materialsAfter[id] ?? 0) - (row.materialsBefore[id] ?? 0)]))
+      delete row.goldBefore; delete row.potionBefore; delete row.materialsBefore; delete row.staminaBefore
+    }
     return did
   }
   const allWinsExplanation = rows => {
@@ -372,7 +413,7 @@ try {
     const bossDefinitionIdsChecked = bossRows.every(row => bossDefinitionIsValid(row.definitionId))
     const bossIds = [...new Set(bossRows.map(row => row.definitionId))]
     return {
-      text: `All recorded encounters ended in wins. Every row's HP before/after and rank catalog entry was checked; Boss definition IDs checked: ${bossIds.join(', ') || 'none engaged'}. The scripted policy chooses the highest currently eligible public target, caps normal-rank starts at three per game day but continues for an available higher rank, uses potions below 55% HP, retreats below 28% HP or after 9 turns, and rests below 35% HP or 8 stamina. These safeguards explain policy outcomes only; they are not normal-player win-rate evidence.`,
+      text: `All recorded encounters ended in wins. Every row's HP before/after and rank catalog entry was checked; Boss definition IDs checked: ${bossIds.join(', ') || 'none engaged'}. Policy ${policy.id} chooses the highest currently eligible public target; ${normalEncounterCutoffReason(policy.id)} The runner uses potions below 55% HP, retreats below 28% HP or after 9 turns, and rests below 35% HP or 8 stamina. These safeguards explain policy outcomes only; they are not normal-player win-rate evidence.`,
       hpBeforeAfterChecked,
       rankCatalogChecked,
       bossDefinitionIdsChecked,
@@ -387,7 +428,8 @@ try {
       if (c.currentRegion === 'village') return act(route, seed, state, 'rest', () => rest(state, 'rest'), result => result === '')
       return move(route, seed, state, BUILDINGS.inn.position, 'navigation')
     }
-    const encountersToday = encounters.filter(row => row.route === route && row.seed === seed && row.day === day).length
+    const encountersToday = encounters.filter(row => row.route === route && row.seed === seed && row.day === day)
+    const normalStartsToday = encountersToday.filter(row => row.rank === 'normal').length
     const currentTargets = adventureTargets(state)
     const higherRankTarget = currentTargets.find(target => target.rank !== 'normal')
     const startTarget = target => {
@@ -400,7 +442,8 @@ try {
       return act(route, seed, state, 'forest-encounter', () => encounter(state, false), result => result === '')
     }
     if (higherRankTarget) return startTarget(higherRankTarget)
-    if (encountersToday >= 3) return false
+    // The v3 control retains its original total-encounter accounting. Measured applies its one-start cap to Normal only.
+    if (!canStartNormalEncounter(policy.id, policy.id === 'v3' ? encountersToday.length : normalStartsToday)) return false
     const expeditionRegions = ['forest', 'mine', 'unknown']
     const targetRegion = expeditionRegions[day % expeditionRegions.length]
     if (c.currentRegion !== targetRegion) {
@@ -617,14 +660,17 @@ try {
   status = 'FAIL'; failure = { message: String(error), stack: error?.stack ?? null }
 } finally {
   await vite?.close()
+  const encounterSummaries = summarizeCombatOutcomes(encounters)
   await writeFile(join(out, 'time-series.csv'), csv(daily), { flag: 'wx' })
   await writeFile(join(out, 'encounters.csv'), csv(encounters), { flag: 'wx' })
+  await writeFile(join(out, 'encounter-summary.csv'), csv(encounterSummaries), { flag: 'wx' })
   await writeFile(join(out, 'actions.csv'), csv(actions), { flag: 'wx' })
   await writeFile(join(out, 'crafts.csv'), csv(crafts), { flag: 'wx' })
   await writeFile(join(out, 'gear-upgrades.csv'), csv(gearChanges), { flag: 'wx' })
   await writeFile(join(out, 'recipe-unlocks.csv'), csv(unlocks), { flag: 'wx' })
   await writeFile(join(out, 'crop-yields.csv'), csv(cropYields), { flag: 'wx' })
   await writeFile(join(out, 'completion.json'), `${JSON.stringify({ status, failure, endedAt: new Date().toISOString(), seedVariance, seedEvidence, routeValidity,
+    encounterSummaries,
     rows: { daily: daily.length, encounters: encounters.length, actions: actions.length, crafts: crafts.length, gearChanges: gearChanges.length, unlocks: unlocks.length, cropYields: cropYields.length } }, null, 2)}\n`, { flag: 'wx' })
   await writeFile(join(out, 'runner.log'), `${status} daily=${daily.length} encounters=${encounters.length} actions=${actions.length}${failure ? ` error=${failure.message}` : ''}\n`, { flag: 'wx' })
 }

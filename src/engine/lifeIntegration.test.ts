@@ -112,7 +112,7 @@ describe('V2 integrated life rules', () => {
   }
   it.each([10, 50])('keeps a %s-year world bounded, serializable and deterministic after save', years => {
     assertLongWorldIsBoundedAndDeterministic(years)
-  })
+  }, 15_000)
   it('keeps a 100-year world bounded, serializable and deterministic after save', () => {
     assertLongWorldIsBoundedAndDeterministic(100)
   }, 15_000)

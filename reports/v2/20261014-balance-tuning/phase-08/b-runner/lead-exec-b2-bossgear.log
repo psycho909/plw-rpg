@@ -1,0 +1,97 @@
+### node --check scripts/phase8/controlled-matrix-core.mjs
+exit=0
+### node --check scripts/phase8/test-controlled-combat-matrix.mjs
+exit=0
+### node --check scripts/phase8/run-controlled-combat-matrix.mjs
+exit=0
+### node --test scripts/phase8/test-controlled-combat-matrix.mjs
+TAP version 13
+# Subtest: scope contains all Bosses and one non-Boss per rank in each selected family-region
+ok 1 - scope contains all Bosses and one non-Boss per rank in each selected family-region
+  ---
+  duration_ms: 1.9466
+  ...
+# Subtest: scoped manifest stays under the 20-minute estimate and splits to 15 jobs
+ok 2 - scoped manifest stays under the 20-minute estimate and splits to 15 jobs
+  ---
+  duration_ms: 3.6879
+  ...
+# Subtest: legacy style compatibility is explicit and cell sample seed is stable and stratified
+ok 3 - legacy style compatibility is explicit and cell sample seed is stable and stratified
+  ---
+  duration_ms: 0.3024
+  ...
+# Subtest: job arguments require one legal band and source, with optional target split
+ok 4 - job arguments require one legal band and source, with optional target split
+  ---
+  duration_ms: 1.0645
+  ...
+# Subtest: the 14-minute hard stop is strict and summaries retain outcome percentiles and gold risk
+ok 5 - the 14-minute hard stop is strict and summaries retain outcome percentiles and gold risk
+  ---
+  duration_ms: 1.4547
+  ...
+# Subtest: controlled cell results distinguish legal N/A gates, runner errors, timeouts, and partial output
+ok 6 - controlled cell results distinguish legal N/A gates, runner errors, timeouts, and partial output
+  ---
+  duration_ms: 0.4139
+  ...
+# Subtest: Boss exclusive rewards remain detectable when non-legendary provenance is null
+ok 7 - Boss exclusive rewards remain detectable when non-legendary provenance is null
+  ---
+  duration_ms: 0.2479
+  ...
+# Subtest: one runner-error cell leaves the job failed but continuing; only hard time limit stops it
+ok 8 - one runner-error cell leaves the job failed but continuing; only hard time limit stops it
+  ---
+  duration_ms: 0.4557
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 247.0015
+exit=0
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band early --source boss-gear
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\early-boss-gear\\attempt-20261014T060734555Z",
+  "status": "PARTIAL",
+  "job": {
+    "band": "early",
+    "source": "boss-gear",
+    "target": null
+  },
+  "sampleRows": 1500,
+  "cellRows": 85
+}
+exit=1
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band mid --source boss-gear
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\mid-boss-gear\\attempt-20261014T060832702Z",
+  "status": "PARTIAL",
+  "job": {
+    "band": "mid",
+    "source": "boss-gear",
+    "target": null
+  },
+  "sampleRows": 9200,
+  "cellRows": 85
+}
+exit=1
+### node scripts/phase8/run-controlled-combat-matrix.mjs --band late --source boss-gear
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\b-runner\\controlled-matrix-attempts\\late-boss-gear\\attempt-20261014T060950362Z",
+  "status": "PARTIAL",
+  "job": {
+    "band": "late",
+    "source": "boss-gear",
+    "target": null
+  },
+  "sampleRows": 15100,
+  "cellRows": 85
+}
+exit=1

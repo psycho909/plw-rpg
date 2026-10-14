@@ -1,0 +1,5407 @@
+[
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/slime_heart/damage",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "damage",
+    "combatTargetDefinitionId": "slime_heart",
+    "acquisitionTargetDefinitionId": "cave_insect_digger",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "cave_insect_digger",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "cave_insect_digger",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 7,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "cave_insect_chitin_spear",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1007,
+        "goldDelta": 7,
+        "startWorldTime": 480,
+        "endWorldTime": 483,
+        "timeMinutes": 3,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "cave_insect_chitin": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 7,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 483
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/slime_heart/crit-speed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "slime_heart",
+    "acquisitionTargetDefinitionId": "wild_beast_amberfox",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "wild_beast_amberfox",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "farmland",
+        "worldTime": 720,
+        "season": "春",
+        "hour": 12,
+        "settlementStage": "hamlet",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "wild_beast_amberfox",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 6,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "wild_beast_resin_axe",
+        "level": 4,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 723,
+        "timeMinutes": 243,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wild_beast_resin": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 723
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/slime_heart/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "slime_heart",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 13,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "spear",
+        "level": 5,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 2,
+            "value": 2
+          },
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 484,
+        "timeMinutes": 4,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 24,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 484
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/slime_heart/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "slime_heart",
+    "acquisitionTargetDefinitionId": "fog_undead_gravehound",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "fog_undead_gravehound",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 87600,
+        "season": "秋",
+        "hour": 20,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "fog_undead_gravehound",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 18,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "fog_undead_cryptblade",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1013,
+        "goldDelta": 13,
+        "startWorldTime": 480,
+        "endWorldTime": 87603,
+        "timeMinutes": 87123,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "fog_undead_tendon": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 13,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 87603
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/slime_heart/defense",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "slime_heart",
+    "acquisitionTargetDefinitionId": "slime_moss",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_moss",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 1020,
+        "season": "春",
+        "hour": 17,
+        "settlementStage": "village",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "slime_moss",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 7,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_moss_coat",
+        "level": 3,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "blocking",
+            "tier": 1,
+            "value": 4
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1006,
+        "goldDelta": 6,
+        "startWorldTime": 480,
+        "endWorldTime": 1022,
+        "timeMinutes": 542,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_moss_core": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 6,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 1022
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_queen/crit-speed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "cave_insect_queen",
+    "acquisitionTargetDefinitionId": "scarredWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "scarredWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_queen/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "cave_insect_queen",
+    "acquisitionTargetDefinitionId": "grayWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "grayWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 2,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 2,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1,
+          "wolfHide": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_queen/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "cave_insect_queen",
+    "acquisitionTargetDefinitionId": "cave_insect_skitter",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "cave_insect_skitter",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 7,
+        "option": {
+          "definitionId": "cave_insect_skitter",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 5,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "cave_insect_chitin_spear",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "cave_insect_leg": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wild_beast_apex/crit-speed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "wild_beast_apex",
+    "acquisitionTargetDefinitionId": "scarredWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "scarredWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wild_beast_apex/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "wild_beast_apex",
+    "acquisitionTargetDefinitionId": "grayWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "grayWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 2,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 2,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1,
+          "wolfHide": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wild_beast_apex/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "wild_beast_apex",
+    "acquisitionTargetDefinitionId": "cave_insect_skitter",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "cave_insect_skitter",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 7,
+        "option": {
+          "definitionId": "cave_insect_skitter",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 5,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "cave_insect_chitin_spear",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "cave_insect_leg": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/frontier_goblin_warlord/crit-speed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "frontier_goblin_warlord",
+    "acquisitionTargetDefinitionId": "scarredWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "scarredWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/frontier_goblin_warlord/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "frontier_goblin_warlord",
+    "acquisitionTargetDefinitionId": "grayWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "grayWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 2,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 2,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1,
+          "wolfHide": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/frontier_goblin_warlord/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "frontier_goblin_warlord",
+    "acquisitionTargetDefinitionId": "cave_insect_skitter",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "cave_insect_skitter",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 7,
+        "option": {
+          "definitionId": "cave_insect_skitter",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 5,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "cave_insect_chitin_spear",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "cave_insect_leg": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/fog_undead_cryptlord/crit-speed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "fog_undead_cryptlord",
+    "acquisitionTargetDefinitionId": "scarredWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "scarredWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/fog_undead_cryptlord/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "fog_undead_cryptlord",
+    "acquisitionTargetDefinitionId": "grayWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "grayWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 2,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 2,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1,
+          "wolfHide": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/fog_undead_cryptlord/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "fog_undead_cryptlord",
+    "acquisitionTargetDefinitionId": "cave_insect_skitter",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "cave_insect_skitter",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 7,
+        "option": {
+          "definitionId": "cave_insect_skitter",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 5,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "cave_insect_chitin_spear",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "cave_insect_leg": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/mine_construct_heart/crit-speed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "mine_construct_heart",
+    "acquisitionTargetDefinitionId": "scarredWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "scarredWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/mine_construct_heart/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "mine_construct_heart",
+    "acquisitionTargetDefinitionId": "grayWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "grayWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 2,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 2,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1,
+          "wolfHide": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/mine_construct_heart/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "mine_construct_heart",
+    "acquisitionTargetDefinitionId": "cave_insect_skitter",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "cave_insect_skitter",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 7,
+        "option": {
+          "definitionId": "cave_insect_skitter",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 5,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "cave_insect_chitin_spear",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "cave_insect_leg": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/chief/damage",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "damage",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "cave_insect_digger",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "cave_insect_digger",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "cave_insect_digger",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 7,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "cave_insect_chitin_spear",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1007,
+        "goldDelta": 7,
+        "startWorldTime": 480,
+        "endWorldTime": 483,
+        "timeMinutes": 3,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "cave_insect_chitin": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 7,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 483
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61102/chief/damage",
+    "controlSeed": 61102,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "damage",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "mine_construct_pylon",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "mine_construct_pylon",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 600,
+        "season": "春",
+        "hour": 10,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "mine_construct_pylon",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 17,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "mine_construct_shardpike",
+        "level": 5,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1013,
+        "goldDelta": 13,
+        "startWorldTime": 480,
+        "endWorldTime": 604,
+        "timeMinutes": 124,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "mine_construct_resonant_stone": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 13,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 604
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61103/chief/damage",
+    "controlSeed": 61103,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "damage",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "wild_beast_amberfox",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "wild_beast_amberfox",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "farmland",
+        "worldTime": 720,
+        "season": "春",
+        "hour": 12,
+        "settlementStage": "hamlet",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "wild_beast_amberfox",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 9,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "wild_beast_resin_axe",
+        "level": 4,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 723,
+        "timeMinutes": 243,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wild_beast_resin": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 723
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/chief/crit-speed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "wild_beast_amberfox",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "wild_beast_amberfox",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "farmland",
+        "worldTime": 720,
+        "season": "春",
+        "hour": 12,
+        "settlementStage": "hamlet",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "wild_beast_amberfox",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 6,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "wild_beast_resin_axe",
+        "level": 4,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 723,
+        "timeMinutes": 243,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wild_beast_resin": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 723
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61102/chief/crit-speed",
+    "controlSeed": 61102,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "wild_beast_amberfox",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "wild_beast_amberfox",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "farmland",
+        "worldTime": 720,
+        "season": "春",
+        "hour": 12,
+        "settlementStage": "hamlet",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "wild_beast_amberfox",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 6,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "wild_beast_resin_axe",
+        "level": 4,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 723,
+        "timeMinutes": 243,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wild_beast_resin": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 723
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61103/chief/crit-speed",
+    "controlSeed": 61103,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "frontier_goblin_slinger",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "frontier_goblin_slinger",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "frontier_goblin_slinger",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 8,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "frontier_goblin_scrap_spear",
+        "level": 4,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1011,
+        "goldDelta": 11,
+        "startWorldTime": 480,
+        "endWorldTime": 483,
+        "timeMinutes": 3,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "frontier_goblin_slingcord": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 11,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 483
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/chief/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 13,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "spear",
+        "level": 5,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 2,
+            "value": 2
+          },
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 484,
+        "timeMinutes": 4,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 24,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 484
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61102/chief/bleed",
+    "controlSeed": 61102,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 13,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "spear",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 484,
+        "timeMinutes": 4,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1,
+          "wolfHide": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 24,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 484
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61103/chief/bleed",
+    "controlSeed": 61103,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "wild_beast_bristleback",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "wild_beast_bristleback",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "wild_beast_bristleback",
+          "rank": "elite",
+          "eligible": true
+        }
+      },
+      "attempts": 14,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "wild_beast_tendon_spear",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1020,
+        "goldDelta": 20,
+        "startWorldTime": 480,
+        "endWorldTime": 486,
+        "timeMinutes": 6,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wild_beast_fur": 1,
+          "wild_beast_amber_sinew": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 6,
+          "goldDelta": 20,
+          "potionUse": 0,
+          "timeDeltaMinutes": 6,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 486
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/chief/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "fog_undead_gravehound",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "fog_undead_gravehound",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 87600,
+        "season": "秋",
+        "hour": 20,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "fog_undead_gravehound",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 18,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "fog_undead_cryptblade",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1013,
+        "goldDelta": 13,
+        "startWorldTime": 480,
+        "endWorldTime": 87603,
+        "timeMinutes": 87123,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "fog_undead_tendon": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 13,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 87603
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/chief/defense",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "chief",
+    "acquisitionTargetDefinitionId": "slime_moss",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_moss",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 1020,
+        "season": "春",
+        "hour": 17,
+        "settlementStage": "village",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 6,
+        "option": {
+          "definitionId": "slime_moss",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 7,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_moss_coat",
+        "level": 3,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "blocking",
+            "tier": 1,
+            "value": 4
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1006,
+        "goldDelta": 6,
+        "startWorldTime": 480,
+        "endWorldTime": 1022,
+        "timeMinutes": 542,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_moss_core": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 6,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 1022
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wolfKing/damage",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "damage",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 18,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 485,
+        "timeMinutes": 5,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 5,
+          "goldDelta": 24,
+          "potionUse": 0,
+          "timeDeltaMinutes": 5,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 485
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61102/wolfKing/damage",
+    "controlSeed": 61102,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "damage",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 18,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "axe",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 485,
+        "timeMinutes": 5,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 5,
+          "goldDelta": 24,
+          "potionUse": 0,
+          "timeDeltaMinutes": 5,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 485
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61103/wolfKing/damage",
+    "controlSeed": 61103,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "damage",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 18,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "axe",
+        "level": 5,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 2,
+            "value": 2
+          },
+          {
+            "id": "striking",
+            "tier": 2,
+            "value": 2
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 484,
+        "timeMinutes": 4,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 24,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 484
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wolfKing/crit-speed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "fog_undead_gravehound",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "fog_undead_gravehound",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 87600,
+        "season": "秋",
+        "hour": 20,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "fog_undead_gravehound",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 10,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "fog_undead_cryptblade",
+        "level": 5,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1013,
+        "goldDelta": 13,
+        "startWorldTime": 480,
+        "endWorldTime": 87603,
+        "timeMinutes": 87123,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "fog_undead_tendon": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 13,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 87603
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61102/wolfKing/crit-speed",
+    "controlSeed": 61102,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "cave_insect_razor",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "cave_insect_razor",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "cave_insect_razor",
+          "rank": "elite",
+          "eligible": true
+        }
+      },
+      "attempts": 18,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "cave_insect_leg_blade",
+        "level": 6,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1020,
+        "goldDelta": 20,
+        "startWorldTime": 480,
+        "endWorldTime": 487,
+        "timeMinutes": 7,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "potion": -1,
+          "cave_insect_plate": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 7,
+          "goldDelta": 20,
+          "potionUse": 1,
+          "timeDeltaMinutes": 7,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 487
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61103/wolfKing/crit-speed",
+    "controlSeed": 61103,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "frontier_goblin_scout",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "frontier_goblin_scout",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "frontier_goblin_scout",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 4,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "frontier_goblin_scrap_spear",
+        "level": 3,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1009,
+        "goldDelta": 9,
+        "startWorldTime": 480,
+        "endWorldTime": 483,
+        "timeMinutes": 3,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "frontier_goblin_scrap": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 9,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 483
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wolfKing/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "slime_glass",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_glass",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "farmland",
+        "worldTime": 87000,
+        "season": "秋",
+        "hour": 10,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "slime_glass",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 8,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_amber_mace",
+        "level": 4,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 87002,
+        "timeMinutes": 86522,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_glass_shard": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 87002
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wolfKing/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "frontier_goblin_scout",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "frontier_goblin_scout",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "frontier_goblin_scout",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "frontier_goblin_scrap_spear",
+        "level": 3,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1009,
+        "goldDelta": 9,
+        "startWorldTime": 480,
+        "endWorldTime": 483,
+        "timeMinutes": 3,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "frontier_goblin_scrap": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 9,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 483
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61102/wolfKing/penetration",
+    "controlSeed": 61102,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "scarredWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "scarredWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 2,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "spear",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 483,
+        "timeMinutes": 3,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 483
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61103/wolfKing/penetration",
+    "controlSeed": 61103,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "slime_glass",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_glass",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "farmland",
+        "worldTime": 87000,
+        "season": "秋",
+        "hour": 10,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "slime_glass",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 10,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_glass_pike",
+        "level": 4,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 87002,
+        "timeMinutes": 86522,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_glass_shard": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 87002
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wolfKing/defense",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "mine_construct_sentinel",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "mine_construct_sentinel",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "mine_construct_sentinel",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 12,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "mine_construct_plateguard",
+        "level": 4,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "warding",
+            "tier": 1,
+            "value": 3
+          },
+          {
+            "id": "sturdy",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 487,
+        "timeMinutes": 7,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "mine_construct_plate": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 7,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 7,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 487
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61102/wolfKing/defense",
+    "controlSeed": 61102,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "slime_bog",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_bog",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "slime_bog",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 9,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_bog_mail",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "sturdy",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "warding",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1006,
+        "goldDelta": 6,
+        "startWorldTime": 480,
+        "endWorldTime": 483,
+        "timeMinutes": 3,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_bog_mucus": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 6,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 483
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61103/wolfKing/defense",
+    "controlSeed": 61103,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "wolfKing",
+    "acquisitionTargetDefinitionId": "grayWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "grayWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "hideArmor",
+        "level": 2,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "sturdy",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "warding",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1,
+          "wolfHide": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/grayWolf/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "grayWolf",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 13,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 494,
+        "timeMinutes": 14,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "potion": -2,
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 14,
+          "goldDelta": 24,
+          "potionUse": 2,
+          "timeDeltaMinutes": 14,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 494
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61102/grayWolf/bleed",
+    "controlSeed": 61102,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "grayWolf",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 13,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "axe",
+        "level": 5,
+        "rarity": "legendary",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "striking",
+            "tier": 2,
+            "value": 2
+          }
+        ],
+        "provenance": {
+          "createdBy": null,
+          "createdAt": 489,
+          "bossSource": null,
+          "materialSource": "wolfFang"
+        },
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 490,
+        "timeMinutes": 10,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "potion": -2,
+          "wolfFang": 1,
+          "wolfHide": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 10,
+          "goldDelta": 24,
+          "potionUse": 2,
+          "timeDeltaMinutes": 10,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 490
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61103/grayWolf/bleed",
+    "controlSeed": 61103,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "grayWolf",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 13,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 494,
+        "timeMinutes": 14,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "potion": -2,
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 14,
+          "goldDelta": 24,
+          "potionUse": 2,
+          "timeDeltaMinutes": 14,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 494
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/alphaWolf/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "alphaWolf",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 13,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "axe",
+        "level": 5,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 2,
+            "value": 2
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 489,
+        "timeMinutes": 9,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "potion": -1,
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 9,
+          "goldDelta": 24,
+          "potionUse": 1,
+          "timeDeltaMinutes": 9,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 489
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61102/alphaWolf/bleed",
+    "controlSeed": 61102,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "alphaWolf",
+    "acquisitionTargetDefinitionId": "slime_amber",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_amber",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "farmland",
+        "worldTime": 43680,
+        "season": "夏",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 2,
+        "option": {
+          "definitionId": "slime_amber",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_amber_mace",
+        "level": 2,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1005,
+        "goldDelta": 5,
+        "startWorldTime": 480,
+        "endWorldTime": 43684,
+        "timeMinutes": 43204,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_amber_gel": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 5,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 43684
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61103/alphaWolf/bleed",
+    "controlSeed": 61103,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "alphaWolf",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 13,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "spear",
+        "level": 5,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 2,
+            "value": 2
+          },
+          {
+            "id": "keen",
+            "tier": 2,
+            "value": 6
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 490,
+        "timeMinutes": 10,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "potion": -2,
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 10,
+          "goldDelta": 24,
+          "potionUse": 2,
+          "timeDeltaMinutes": 10,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 490
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/alphaWolf/defense",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "alphaWolf",
+    "acquisitionTargetDefinitionId": "wild_beast_stonehorn",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "wild_beast_stonehorn",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 2,
+        "option": {
+          "definitionId": "wild_beast_stonehorn",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 5,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "wild_beast_hide_coat",
+        "level": 2,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "warding",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1006,
+        "goldDelta": 6,
+        "startWorldTime": 480,
+        "endWorldTime": 485,
+        "timeMinutes": 5,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wild_beast_horn": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 5,
+          "goldDelta": 6,
+          "potionUse": 0,
+          "timeDeltaMinutes": 5,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 485
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/packLeader/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "packLeader",
+    "acquisitionTargetDefinitionId": "frontier_goblin_scout",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "frontier_goblin_scout",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 3,
+        "option": {
+          "definitionId": "frontier_goblin_scout",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "frontier_goblin_scrap_spear",
+        "level": 3,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1009,
+        "goldDelta": 9,
+        "startWorldTime": 480,
+        "endWorldTime": 484,
+        "timeMinutes": 4,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "frontier_goblin_scrap": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 9,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 484
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/packLeader/defense",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "packLeader",
+    "acquisitionTargetDefinitionId": "slime_moss",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_moss",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 1020,
+        "season": "春",
+        "hour": 17,
+        "settlementStage": "village",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 3,
+        "option": {
+          "definitionId": "slime_moss",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 7,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_moss_coat",
+        "level": 3,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "blocking",
+            "tier": 1,
+            "value": 4
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1006,
+        "goldDelta": 6,
+        "startWorldTime": 480,
+        "endWorldTime": 1024,
+        "timeMinutes": 544,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_moss_core": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 6,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 1024
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61102/packLeader/defense",
+    "controlSeed": 61102,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "packLeader",
+    "acquisitionTargetDefinitionId": "slime_bog",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_bog",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 3,
+        "option": {
+          "definitionId": "slime_bog",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 9,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_bog_mail",
+        "level": 3,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "warding",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1006,
+        "goldDelta": 6,
+        "startWorldTime": 480,
+        "endWorldTime": 483,
+        "timeMinutes": 3,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_bog_mucus": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 6,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 483
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61103/packLeader/defense",
+    "controlSeed": 61103,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "packLeader",
+    "acquisitionTargetDefinitionId": "wild_beast_fernback",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "wild_beast_fernback",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 900,
+        "season": "春",
+        "hour": 15,
+        "settlementStage": "hamlet",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 3,
+        "option": {
+          "definitionId": "wild_beast_fernback",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 8,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "wild_beast_hide_coat",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "warding",
+            "tier": 1,
+            "value": 3
+          },
+          {
+            "id": "blocking",
+            "tier": 1,
+            "value": 4
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 905,
+        "timeMinutes": 425,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wild_beast_fur": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 5,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 5,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 905
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_digger/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "cave_insect_digger",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 13,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 494,
+        "timeMinutes": 14,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "potion": -2,
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 14,
+          "goldDelta": 24,
+          "potionUse": 2,
+          "timeDeltaMinutes": 14,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 494
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_razor/damage",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "damage",
+    "combatTargetDefinitionId": "cave_insect_razor",
+    "acquisitionTargetDefinitionId": "slime_glass",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_glass",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "farmland",
+        "worldTime": 87000,
+        "season": "秋",
+        "hour": 10,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 4,
+        "option": {
+          "definitionId": "slime_glass",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 11,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_amber_mace",
+        "level": 4,
+        "rarity": "epic",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 87003,
+        "timeMinutes": 86523,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_glass_shard": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 87003
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_razor/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "cave_insect_razor",
+    "acquisitionTargetDefinitionId": "grayWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "grayWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 2,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 2,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_razor/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "cave_insect_razor",
+    "acquisitionTargetDefinitionId": "scarredWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "scarredWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 2,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "spear",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 484,
+        "timeMinutes": 4,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 484
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_razor/defense",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "cave_insect_razor",
+    "acquisitionTargetDefinitionId": "frontier_goblin_lookout",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "frontier_goblin_lookout",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 900,
+        "season": "春",
+        "hour": 15,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 4,
+        "option": {
+          "definitionId": "frontier_goblin_lookout",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 10,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "frontier_goblin_plate_vest",
+        "level": 4,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "sturdy",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 904,
+        "timeMinutes": 424,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "frontier_goblin_signalcloth": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 904
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_broodguard/damage",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "damage",
+    "combatTargetDefinitionId": "cave_insect_broodguard",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 18,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 485,
+        "timeMinutes": 5,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 5,
+          "goldDelta": 24,
+          "potionUse": 0,
+          "timeDeltaMinutes": 5,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 485
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_broodguard/crit-speed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "crit-speed",
+    "combatTargetDefinitionId": "cave_insect_broodguard",
+    "acquisitionTargetDefinitionId": "fog_undead_gravehound",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "fog_undead_gravehound",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 87600,
+        "season": "秋",
+        "hour": 20,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "fog_undead_gravehound",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 10,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "fog_undead_cryptblade",
+        "level": 5,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "keen",
+            "tier": 1,
+            "value": 3
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1013,
+        "goldDelta": 13,
+        "startWorldTime": 480,
+        "endWorldTime": 87603,
+        "timeMinutes": 87123,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "fog_undead_tendon": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 13,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 87603
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_broodguard/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "cave_insect_broodguard",
+    "acquisitionTargetDefinitionId": "slime_glass",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_glass",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "farmland",
+        "worldTime": 87000,
+        "season": "秋",
+        "hour": 10,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "slime_glass",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 8,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_amber_mace",
+        "level": 4,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 87002,
+        "timeMinutes": 86522,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_glass_shard": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 87002
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_broodguard/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "cave_insect_broodguard",
+    "acquisitionTargetDefinitionId": "frontier_goblin_scout",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "frontier_goblin_scout",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "frontier_goblin_scout",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "frontier_goblin_scrap_spear",
+        "level": 3,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1009,
+        "goldDelta": 9,
+        "startWorldTime": 480,
+        "endWorldTime": 483,
+        "timeMinutes": 3,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "frontier_goblin_scrap": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 9,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 483
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/cave_insect_broodguard/defense",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "cave_insect_broodguard",
+    "acquisitionTargetDefinitionId": "mine_construct_sentinel",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "mine_construct_sentinel",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "mine",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 5,
+        "option": {
+          "definitionId": "mine_construct_sentinel",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 12,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "mine_construct_plateguard",
+        "level": 4,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "warding",
+            "tier": 1,
+            "value": 3
+          },
+          {
+            "id": "sturdy",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 487,
+        "timeMinutes": 7,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "mine_construct_plate": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 7,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 7,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 487
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wild_beast_stonehorn/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "wild_beast_stonehorn",
+    "acquisitionTargetDefinitionId": "alphaWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "alphaWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf",
+          "scarredWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 13,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 5,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1024,
+        "goldDelta": 24,
+        "startWorldTime": 480,
+        "endWorldTime": 494,
+        "timeMinutes": 14,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "potion": -2,
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 14,
+          "goldDelta": 24,
+          "potionUse": 2,
+          "timeDeltaMinutes": 14,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 494
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wild_beast_bristleback/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "wild_beast_bristleback",
+    "acquisitionTargetDefinitionId": "frontier_goblin_scout",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "frontier_goblin_scout",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 480,
+        "season": "春",
+        "hour": 8,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 3,
+        "option": {
+          "definitionId": "frontier_goblin_scout",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 3,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "frontier_goblin_scrap_spear",
+        "level": 3,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1009,
+        "goldDelta": 9,
+        "startWorldTime": 480,
+        "endWorldTime": 484,
+        "timeMinutes": 4,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "frontier_goblin_scrap": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 9,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 484
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wild_beast_bristleback/defense",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "wild_beast_bristleback",
+    "acquisitionTargetDefinitionId": "slime_moss",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_moss",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 1020,
+        "season": "春",
+        "hour": 17,
+        "settlementStage": "village",
+        "threatLevel": 1,
+        "monsterPopulation": 12,
+        "safety": 0,
+        "playerLevel": 3,
+        "option": {
+          "definitionId": "slime_moss",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 7,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_moss_coat",
+        "level": 3,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "blocking",
+            "tier": 1,
+            "value": 4
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1006,
+        "goldDelta": 6,
+        "startWorldTime": 480,
+        "endWorldTime": 1024,
+        "timeMinutes": 544,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_moss_core": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 6,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 1024
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wild_beast_old_matriarch/damage",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "damage",
+    "combatTargetDefinitionId": "wild_beast_old_matriarch",
+    "acquisitionTargetDefinitionId": "slime_glass",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "slime_glass",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "farmland",
+        "worldTime": 87000,
+        "season": "秋",
+        "hour": 10,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 4,
+        "option": {
+          "definitionId": "slime_glass",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 11,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "slime_amber_mace",
+        "level": 4,
+        "rarity": "epic",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "striking",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1008,
+        "goldDelta": 8,
+        "startWorldTime": 480,
+        "endWorldTime": 87003,
+        "timeMinutes": 86523,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "slime_glass_shard": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 3,
+          "goldDelta": 8,
+          "potionUse": 0,
+          "timeDeltaMinutes": 3,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 87003
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wild_beast_old_matriarch/bleed",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "bleed",
+    "combatTargetDefinitionId": "wild_beast_old_matriarch",
+    "acquisitionTargetDefinitionId": "grayWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "grayWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 2,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "shortSword",
+        "level": 2,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1010,
+        "goldDelta": 10,
+        "startWorldTime": 480,
+        "endWorldTime": 482,
+        "timeMinutes": 2,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 2,
+          "goldDelta": 10,
+          "potionUse": 0,
+          "timeDeltaMinutes": 2,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 482
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wild_beast_old_matriarch/penetration",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "penetration",
+    "combatTargetDefinitionId": "wild_beast_old_matriarch",
+    "acquisitionTargetDefinitionId": "scarredWolf",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "scarredWolf",
+      "witness": {
+        "method": "wolfEncounterOptions followed by public encounterWolf",
+        "region": "forest",
+        "worldTime": 480,
+        "prerequisites": [
+          "grayWolf"
+        ],
+        "eligible": true,
+        "reason": null
+      },
+      "attempts": 2,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "spear",
+        "level": 3,
+        "rarity": "rare",
+        "affixes": [
+          {
+            "id": "bleeding",
+            "tier": 1,
+            "value": 1
+          },
+          {
+            "id": "piercing",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 484,
+        "timeMinutes": 4,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "wolfFang": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 484
+    }
+  },
+  {
+    "acquisitionWitnessId": "adventure-loot/61101/wild_beast_old_matriarch/defense",
+    "controlSeed": 61101,
+    "band": "early",
+    "source": "adventure-loot",
+    "style": "defense",
+    "combatTargetDefinitionId": "wild_beast_old_matriarch",
+    "acquisitionTargetDefinitionId": "frontier_goblin_lookout",
+    "itemInstanceId": "item-1",
+    "acquisition": {
+      "method": "legal public encounter + combat victory + actual loot ItemInstance",
+      "targetDefinitionId": "frontier_goblin_lookout",
+      "witness": {
+        "method": "contentEncounterOptions followed by public encounterContentMonster",
+        "region": "forest",
+        "worldTime": 900,
+        "season": "春",
+        "hour": 15,
+        "settlementStage": "hamlet",
+        "threatLevel": 2,
+        "monsterPopulation": 30,
+        "safety": 0,
+        "playerLevel": 4,
+        "option": {
+          "definitionId": "frontier_goblin_lookout",
+          "rank": "normal",
+          "eligible": true
+        }
+      },
+      "attempts": 10,
+      "outcome": "win",
+      "item": {
+        "instanceId": "item-1",
+        "baseId": "frontier_goblin_plate_vest",
+        "level": 4,
+        "rarity": "uncommon",
+        "affixes": [
+          {
+            "id": "sturdy",
+            "tier": 1,
+            "value": 1
+          }
+        ],
+        "provenance": null,
+        "craftProvenance": null
+      },
+      "cost": {
+        "startGold": 1000,
+        "endGold": 1012,
+        "goldDelta": 12,
+        "startWorldTime": 480,
+        "endWorldTime": 904,
+        "timeMinutes": 424,
+        "startStamina": 84,
+        "endStamina": 76,
+        "staminaSpent": 8,
+        "materialDelta": {
+          "frontier_goblin_signalcloth": 1
+        }
+      },
+      "actions": [
+        {
+          "action": "encounter/combat",
+          "outcome": "win",
+          "turns": 4,
+          "goldDelta": 12,
+          "potionUse": 0,
+          "timeDeltaMinutes": 4,
+          "staminaSpent": 0,
+          "grossDamageStatus": "MEASURED"
+        }
+      ],
+      "endedAt": 904
+    }
+  }
+]
