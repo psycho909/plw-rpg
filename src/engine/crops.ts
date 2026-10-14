@@ -32,6 +32,12 @@ interface CropDefinition {
   sell: number
 }
 
+/** Phase8 C-F1 (Owner-approved V4): +1 harvest per two Farming levels, capped at +2 like gathering's daily node cap. */
+const FARMING_YIELD_BONUS_CAP = 2
+export function farmingYieldBonus(level: number) {
+  return Math.min(FARMING_YIELD_BONUS_CAP, Math.floor((level - 1) / 2))
+}
+
 function cropDefinitions(): CropDefinition[] {
   const allSeasons = CONFIG.seasons as readonly ContentSeason[]
   return [
@@ -68,7 +74,7 @@ export function farmCropChoices(state: GameState): FarmCropChoice[] {
     return {
       id: crop.id, name: crop.name, description: crop.description, regions: crop.regions, seasons: crop.seasons,
       growthMinutes: crop.growthMinutes,
-      harvestAmount: crop.harvestBase + (character?.skills.farming.level ?? 1) - 1,
+      harvestAmount: crop.harvestBase + farmingYieldBonus(character?.skills.farming.level ?? 1),
       harvestGoodId: crop.harvestGoodId, foodValue: crop.foodValue, sell: crop.sell, status, reason,
     }
   })

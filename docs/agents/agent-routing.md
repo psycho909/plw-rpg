@@ -22,6 +22,8 @@
 
 一般 bug 若重現需要機械探索，可由 Low 單獨負責 reproduction；已定位的一般修復直接由 Medium 負責。只有一次合理的較低成本嘗試已證明不足、無法可靠定位原因，或證據確認屬核心／高風險問題時才升級。升級一次後不可重複相同失敗的低階嘗試；Max 遇到 Spec／Scope 衝突、產品方向或重大架構取捨，回交 Sol 決策。
 
+**失敗後升級（Owner 2026-10-14 指示）：** 預設升級順序為 Luna Medium → Luna High → GPT-6.1 Sol Medium，但不必逐級嘗試；Lead 依任務複雜度、失敗原因與預期返工成本自主選擇或跳級。Luna Max 用於特殊高推理任務或獨立 Review，不作為必要升級關卡。同一根因持續失敗時，停止原模型重試並重新評估（含流程或環境根因），不得無限制返工。
+
 ## 3. 執行、委派與 Context
 
 每一個問題指定一位施工 owner，明確交代 Scope、已確認契約、Acceptance、必要 context 與證據。只有確實獨立的工作才能平行；不得為同一問題重複開 Agent。Main Agent 不重做 Subagent 已可靠完成的探索、測試或分析，只做必要整合與驗收。依任務提供最少必要 context：Low 取得任務／相關規則／路徑；Medium 或 Max 取得 Ticket、Acceptance、相關探索與檔案；QA runner 取得 source SHA、範圍、命令及判準；Reviewer 取得 Spec 節錄、diff、受影響檔案與測試證據。

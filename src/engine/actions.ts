@@ -4,7 +4,7 @@ import { CONTENT_CROP_GOODS, CONTENT_MONSTERS } from '../data/contentRegistry'
 import type { GameState, ItemId, RegionalCrisisCombatObjective, SkillId } from '../domain/types'
 import { emit } from './events'
 import { random } from './random'
-import { farmCropChoices } from './crops'
+import { farmCropChoices, farmingYieldBonus } from './crops'
 import { changeReputation, recordLifeAction } from './identity'
 import { MERCENARY_REPUTATION } from '../data/lifeRules'
 import { npcCanWork, rememberNpc } from './npcLife'
@@ -61,7 +61,7 @@ function farmInternal(state: GameState, action: 'prepare' | 'plant' | 'harvest',
     const planted = state.crops.find(c => c.status === 'mature'); if (!planted) return '作物還沒成熟，讓世界時間繼續前進。'
     const cropChoice = farmCropChoices(state).find(candidate => candidate.id === planted.cropId)
     const definition = planted.cropId === 'wheat' ? null : cropChoice
-    const yieldAmount = cropChoice?.harvestAmount ?? 8 + player(state).skills.farming.level - 1
+    const yieldAmount = cropChoice?.harvestAmount ?? 8 + farmingYieldBonus(player(state).skills.farming.level)
     const goodId = cropChoice?.harvestGoodId ?? null
     const currentStack = goodId ? state.reward.materials[player(state).id]?.[goodId] ?? 0 : 0
     if (goodId && (!Number.isSafeInteger(currentStack) || currentStack < 0 || yieldAmount > Number.MAX_SAFE_INTEGER - currentStack)) return '收成品堆疊超出安全上限。'

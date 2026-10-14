@@ -22,6 +22,17 @@ describe('farm crop choice projection', () => {
     expect(summer.find(choice => choice.id === 'spring_pea')?.status).toBe('season')
   })
 
+  it('caps the Farming yield bonus at +2, gaining +1 per two levels (Phase8 C-F1, Owner-approved V4)', () => {
+    const state = createGame(703)
+    player(state).currentRegion = 'farmland'
+    const yieldAt = (level: number, cropId: string) => {
+      player(state).skills.farming.level = level
+      return farmCropChoices(state).find(choice => choice.id === cropId)?.harvestAmount
+    }
+    expect([1, 2, 3, 4, 5, 6, 33].map(level => yieldAt(level, 'spring_pea'))).toEqual([4, 4, 5, 5, 6, 6, 6])
+    expect([1, 3, 5, 33].map(level => yieldAt(level, 'wheat'))).toEqual([5, 6, 7, 7])
+  })
+
   it('keeps region and plot-capacity guidance explicit without making unavailable crops selectable', () => {
     const state = createGame(702)
     expect(farmCropChoices(state).every(choice => choice.status === 'region')).toBe(true)

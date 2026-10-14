@@ -1,0 +1,24 @@
+{
+  "command": "node scripts/phase8/run-life-economy.mjs",
+  "startedAt": "2026-10-14T07:02:09.409Z",
+  "head": "5bb7e484a9c0303bade14017c561248271b02e4d",
+  "srcFingerprint": {
+    "method": "sha256 over sorted relative path + NUL + file bytes + NUL",
+    "value": "634eb11f890879c2769250f6fc431f1b759982f37610fde0c2dc79288228087b",
+    "files": 113
+  },
+  "seeds": [
+    61101,
+    61102,
+    61103
+  ],
+  "years": 3,
+  "routeVariants": [
+    "life-normal-economy-observation",
+    "hybrid-alternating-life-adventure-economy-observation",
+    "crafting-focused-legal-recipe-progression"
+  ],
+  "controlledProbe": "Smithing 1/3/5/6 × village/town market-stage fixtures, repeated legal Buy → Craft → Sell; fixture fields are listed in controlled-probes.json.",
+  "marketModel": "The harness records state stock fields and restock events if present. Source search found no merchant stock inventory or restock API; absence is recorded as NOT MODELED, not inferred as a zero stock quantity.",
+  "label": "Normal fresh-save scripted-policy evidence; not human play or product targets"
+}

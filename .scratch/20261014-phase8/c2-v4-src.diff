@@ -1,0 +1,70 @@
+diff --git a/src/engine/actions.ts b/src/engine/actions.ts
+index 5bd832d..ec60675 100644
+--- a/src/engine/actions.ts
++++ b/src/engine/actions.ts
+@@ -4,7 +4,7 @@ import { CONTENT_CROP_GOODS, CONTENT_MONSTERS } from '../data/contentRegistry'
+ import type { GameState, ItemId, RegionalCrisisCombatObjective, SkillId } from '../domain/types'
+ import { emit } from './events'
+ import { random } from './random'
+-import { farmCropChoices } from './crops'
++import { farmCropChoices, farmingYieldBonus } from './crops'
+ import { changeReputation, recordLifeAction } from './identity'
+ import { MERCENARY_REPUTATION } from '../data/lifeRules'
+ import { npcCanWork, rememberNpc } from './npcLife'
+@@ -61,7 +61,7 @@ function farmInternal(state: GameState, action: 'prepare' | 'plant' | 'harvest',
+     const planted = state.crops.find(c => c.status === 'mature'); if (!planted) return '作物還沒成熟，讓世界時間繼續前進。'
+     const cropChoice = farmCropChoices(state).find(candidate => candidate.id === planted.cropId)
+     const definition = planted.cropId === 'wheat' ? null : cropChoice
+-    const yieldAmount = cropChoice?.harvestAmount ?? 8 + player(state).skills.farming.level - 1
++    const yieldAmount = cropChoice?.harvestAmount ?? 8 + farmingYieldBonus(player(state).skills.farming.level)
+     const goodId = cropChoice?.harvestGoodId ?? null
+     const currentStack = goodId ? state.reward.materials[player(state).id]?.[goodId] ?? 0 : 0
+     if (goodId && (!Number.isSafeInteger(currentStack) || currentStack < 0 || yieldAmount > Number.MAX_SAFE_INTEGER - currentStack)) return '收成品堆疊超出安全上限。'
+diff --git a/src/engine/crops.test.ts b/src/engine/crops.test.ts
+index 298d418..030ef7a 100644
+--- a/src/engine/crops.test.ts
++++ b/src/engine/crops.test.ts
+@@ -22,6 +22,17 @@ describe('farm crop choice projection', () => {
+     expect(summer.find(choice => choice.id === 'spring_pea')?.status).toBe('season')
+   })
+ 
++  it('caps the Farming yield bonus at +2, gaining +1 per two levels (Phase8 C-F1, Owner-approved V4)', () => {
++    const state = createGame(703)
++    player(state).currentRegion = 'farmland'
++    const yieldAt = (level: number, cropId: string) => {
++      player(state).skills.farming.level = level
++      return farmCropChoices(state).find(choice => choice.id === cropId)?.harvestAmount
++    }
++    expect([1, 2, 3, 4, 5, 6, 33].map(level => yieldAt(level, 'spring_pea'))).toEqual([4, 4, 5, 5, 6, 6, 6])
++    expect([1, 3, 5, 33].map(level => yieldAt(level, 'wheat'))).toEqual([5, 6, 7, 7])
++  })
++
+   it('keeps region and plot-capacity guidance explicit without making unavailable crops selectable', () => {
+     const state = createGame(702)
+     expect(farmCropChoices(state).every(choice => choice.status === 'region')).toBe(true)
+diff --git a/src/engine/crops.ts b/src/engine/crops.ts
+index 26b005f..3193b64 100644
+--- a/src/engine/crops.ts
++++ b/src/engine/crops.ts
+@@ -32,6 +32,12 @@ interface CropDefinition {
+   sell: number
+ }
+ 
++/** Phase8 C-F1 (Owner-approved V4): +1 harvest per two Farming levels, capped at +2 like gathering's daily node cap. */
++const FARMING_YIELD_BONUS_CAP = 2
++export function farmingYieldBonus(level: number) {
++  return Math.min(FARMING_YIELD_BONUS_CAP, Math.floor((level - 1) / 2))
++}
++
+ function cropDefinitions(): CropDefinition[] {
+   const allSeasons = CONFIG.seasons as readonly ContentSeason[]
+   return [
+@@ -68,7 +74,7 @@ export function farmCropChoices(state: GameState): FarmCropChoice[] {
+     return {
+       id: crop.id, name: crop.name, description: crop.description, regions: crop.regions, seasons: crop.seasons,
+       growthMinutes: crop.growthMinutes,
+-      harvestAmount: crop.harvestBase + (character?.skills.farming.level ?? 1) - 1,
++      harvestAmount: crop.harvestBase + farmingYieldBonus(character?.skills.farming.level ?? 1),
+       harvestGoodId: crop.harvestGoodId, foodValue: crop.foodValue, sell: crop.sell, status, reason,
+     }
+   })

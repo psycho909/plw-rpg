@@ -112,6 +112,20 @@ describe('personal life activities', () => {
     expect(farm(s, 'harvest')).toBe(''); expect(c.inventory.food).toBeGreaterThan(food)
     expect(c.skills.farming.level).toBe(2)
   })
+  it('delivers the capped Farming yield bonus on actual harvests (Phase8 C-F1 V4)', () => {
+    for (const [level, wheat, pea] of [[1, 5, 4], [3, 6, 5], [5, 7, 6], [9, 7, 6]] as const) {
+      for (const [cropId, expected] of [['wheat', wheat], ['spring_pea', pea]] as const) {
+        const s = createGame(), c = player(s); walkTo(s, BUILDINGS.farm.position)
+        expect(farm(s, 'prepare')).toBe(''); expect(farm(s, 'plant', cropId)).toBe('')
+        simulate(s, s.crops[0]!.matureAt - s.worldTime)
+        c.skills.farming.level = level
+        const food = c.inventory.food, pods = s.reward.materials[c.id]?.spring_pea_good ?? 0
+        expect(farm(s, 'harvest')).toBe('')
+        if (cropId === 'wheat') expect(c.inventory.food - food).toBe(expected)
+        else expect(s.reward.materials[c.id]!.spring_pea_good! - pods).toBe(expected)
+      }
+    }
+  })
   it('limits farm plots and blocks work with insufficient stamina', () => {
     const s = createGame(); walkTo(s, BUILDINGS.farm.position)
     for (let i = 0; i < 4; i++) expect(farm(s, 'prepare')).toBe('')

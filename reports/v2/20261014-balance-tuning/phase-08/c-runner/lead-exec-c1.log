@@ -1,0 +1,60 @@
+### node --check scripts/phase8/economy-harness-core.mjs
+exit=0
+### node --check scripts/phase8/run-life-economy.mjs
+D:\Codex\plw-rpg\scripts\phase8\run-life-economy.mjs:337
+  const { ITEMS } = data
+          ^
+
+SyntaxError: Identifier 'ITEMS' has already been declared
+    at checkSyntax (node:internal/main/check_syntax:74:5)
+
+Node.js v22.14.0
+exit=1
+### node --check scripts/phase8/test_economy_harness.mjs
+exit=0
+### node --test scripts/phase8/test_economy_harness.mjs
+TAP version 13
+# Subtest: CSV preserves mixed optional columns and quotes nested values
+ok 1 - CSV preserves mixed optional columns and quotes nested values
+  ---
+  duration_ms: 1.1589
+  ...
+# Subtest: ledger reconciles gross income and sinks against final gold delta
+ok 2 - ledger reconciles gross income and sinks against final gold delta
+  ---
+  duration_ms: 1.3328
+  ...
+# Subtest: absence of a merchant stock field remains NOT MODELED instead of an empty stock
+ok 3 - absence of a merchant stock field remains NOT MODELED instead of an empty stock
+  ---
+  duration_ms: 0.2867
+  ...
+# Subtest: buy-craft-sell loop arithmetic distinguishes a loss from a riskless profit
+ok 4 - buy-craft-sell loop arithmetic distinguishes a loss from a riskless profit
+  ---
+  duration_ms: 1.347
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 212.3763
+exit=0
+### node scripts/phase8/run-life-economy.mjs
+file:///D:/Codex/plw-rpg/scripts/phase8/run-life-economy.mjs:337
+  const { ITEMS } = data
+          ^
+
+SyntaxError: Identifier 'ITEMS' has already been declared
+    at compileSourceTextModule (node:internal/modules/esm/utils:338:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:102:18)
+    at #translate (node:internal/modules/esm/loader:468:12)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:515:27)
+    at async ModuleJob._link (node:internal/modules/esm/module_job:115:19)
+
+Node.js v22.14.0
+exit=1

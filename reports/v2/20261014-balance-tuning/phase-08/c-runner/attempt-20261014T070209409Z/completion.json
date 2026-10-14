@@ -1,0 +1,1368 @@
+{
+  "status": "INVALID_POLICY",
+  "startedAt": "2026-10-14T07:02:09.409Z",
+  "endedAt": "2026-10-14T07:02:50.673Z",
+  "routeCount": 9,
+  "routeSummaries": [
+    {
+      "route": "life",
+      "variant": "life",
+      "seed": 61101,
+      "startTime": 480,
+      "completedAt": 1555200,
+      "aliveAtEnd": true,
+      "finalGold": 75,
+      "startGold": 45,
+      "finalInventory": {
+        "wood": 3,
+        "stone": 2,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "finalMaterials": {},
+      "startSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 1,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "finalSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 2,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 2,
+          "exp": 10
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 10
+        }
+      },
+      "crops": [],
+      "crafts": [
+        {
+          "route": "life",
+          "variant": "life",
+          "seed": 61101,
+          "at": 884,
+          "recipeId": "starterSpear",
+          "smithingLevel": 1,
+          "xpAward": 10,
+          "masterpieceEligible": false,
+          "masterpieceChance": 0,
+          "masterpiece": false,
+          "instanceId": "item-1",
+          "saleValueBeforeSale": 14
+        }
+      ],
+      "recipeAvailability": [],
+      "ledger": {
+        "actionCount": 1096,
+        "grossGoldIncome": 34,
+        "grossGoldSinks": 4,
+        "netGold": 30,
+        "finalGoldDelta": 30,
+        "goldLedgerReconciles": true,
+        "materialIn": {},
+        "materialOut": {}
+      },
+      "marketStockModel": {
+        "modeled": false,
+        "value": null
+      },
+      "restockEvents": [],
+      "observations": {
+        "inputPurchases": 0,
+        "sales": 1,
+        "gatheredUnits": 10,
+        "noActionDays": 1076
+      }
+    },
+    {
+      "route": "hybrid",
+      "variant": "hybrid",
+      "seed": 61101,
+      "startTime": 480,
+      "completedAt": 1555200,
+      "aliveAtEnd": true,
+      "finalGold": 2981,
+      "startGold": 45,
+      "finalInventory": {
+        "wood": 4,
+        "stone": 2,
+        "iron": 0,
+        "food": 3,
+        "material": 130,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "finalMaterials": {
+        "wolfFang": 157,
+        "wolfHide": 40,
+        "moonStone": 5,
+        "slime_resin": 0,
+        "slime_amber_gel": 0,
+        "slime_bog_mucus": 0,
+        "slime_moss_core": 0,
+        "slime_glass_shard": 0,
+        "slime_spring_ichor": 0,
+        "slime_heart_gel": 0,
+        "slime_pool_salt": 0,
+        "cave_insect_chitin": 0,
+        "cave_insect_leg": 0,
+        "cave_insect_resin": 0,
+        "cave_insect_sac": 0,
+        "cave_insect_plate": 0,
+        "cave_insect_venom_gland": 0,
+        "cave_insect_core": 0,
+        "cave_insect_queen_core": 0,
+        "wild_beast_hide": 0,
+        "wild_beast_horn": 0,
+        "wild_beast_tendon": 0,
+        "wild_beast_fur": 0,
+        "wild_beast_antler": 0,
+        "wild_beast_resin": 0,
+        "wild_beast_amber_sinew": 0,
+        "wild_beast_apex_core": 0,
+        "frontier_goblin_scrap": 0,
+        "frontier_goblin_slingcord": 0,
+        "frontier_goblin_plate": 0,
+        "frontier_goblin_signalcloth": 0,
+        "frontier_goblin_ironbits": 0,
+        "frontier_goblin_wire": 0,
+        "frontier_goblin_forgecore": 0,
+        "frontier_goblin_warlord_seal": 0,
+        "fog_undead_bone": 0,
+        "fog_undead_wax": 0,
+        "fog_undead_tendon": 0,
+        "fog_undead_cryptstone": 0,
+        "fog_undead_shroud": 0,
+        "fog_undead_bellmetal": 0,
+        "fog_undead_cinderbone": 0,
+        "fog_undead_crypt_heart": 0,
+        "mine_construct_shard": 0,
+        "mine_construct_plate": 0,
+        "mine_construct_resonant_stone": 0,
+        "mine_construct_joint": 0,
+        "mine_construct_binding": 0,
+        "mine_construct_ironvein": 0,
+        "mine_construct_corechip": 0,
+        "mine_construct_ancient_core": 0,
+        "spring_pea_good": 0,
+        "field_turnip_good": 0,
+        "summer_barley_good": 0,
+        "sun_pepper_good": 0,
+        "forest_bean_good": 0,
+        "autumn_pumpkin_good": 0,
+        "orchard_apple_good": 0,
+        "winter_cabbage_good": 0,
+        "frost_root_good": 0,
+        "marsh_rice_good": 0,
+        "cave_mushroom_good": 0
+      },
+      "startSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 1,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "finalSkills": {
+        "combat": {
+          "level": 24,
+          "exp": 355
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 10
+        },
+        "woodcutting": {
+          "level": 2,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "crops": [],
+      "crafts": [],
+      "recipeAvailability": [],
+      "ledger": {
+        "actionCount": 3441,
+        "grossGoldIncome": 2936,
+        "grossGoldSinks": 0,
+        "netGold": 2936,
+        "finalGoldDelta": 2936,
+        "goldLedgerReconciles": true,
+        "materialIn": {
+          "wolfFang": 157,
+          "wolfHide": 40,
+          "moonStone": 5
+        },
+        "materialOut": {}
+      },
+      "marketStockModel": {
+        "modeled": false,
+        "value": null
+      },
+      "restockEvents": [],
+      "observations": {
+        "inputPurchases": 0,
+        "sales": 0,
+        "gatheredUnits": 6,
+        "noActionDays": 0
+      }
+    },
+    {
+      "route": "life",
+      "variant": "craft-focused",
+      "seed": 61101,
+      "startTime": 480,
+      "completedAt": 1555200,
+      "aliveAtEnd": true,
+      "finalGold": 75,
+      "startGold": 45,
+      "finalInventory": {
+        "wood": 3,
+        "stone": 2,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "finalMaterials": {},
+      "startSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 1,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "finalSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 2,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 2,
+          "exp": 10
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 10
+        }
+      },
+      "crops": [],
+      "crafts": [
+        {
+          "route": "life",
+          "variant": "craft-focused",
+          "seed": 61101,
+          "at": 884,
+          "recipeId": "starterSpear",
+          "smithingLevel": 1,
+          "xpAward": 10,
+          "masterpieceEligible": false,
+          "masterpieceChance": 0,
+          "masterpiece": false,
+          "instanceId": "item-1",
+          "saleValueBeforeSale": 14
+        }
+      ],
+      "recipeAvailability": [],
+      "ledger": {
+        "actionCount": 1096,
+        "grossGoldIncome": 34,
+        "grossGoldSinks": 4,
+        "netGold": 30,
+        "finalGoldDelta": 30,
+        "goldLedgerReconciles": true,
+        "materialIn": {},
+        "materialOut": {}
+      },
+      "marketStockModel": {
+        "modeled": false,
+        "value": null
+      },
+      "restockEvents": [],
+      "observations": {
+        "inputPurchases": 0,
+        "sales": 1,
+        "gatheredUnits": 10,
+        "noActionDays": 1076
+      }
+    },
+    {
+      "route": "life",
+      "variant": "life",
+      "seed": 61102,
+      "startTime": 480,
+      "completedAt": 1555200,
+      "aliveAtEnd": true,
+      "finalGold": 75,
+      "startGold": 45,
+      "finalInventory": {
+        "wood": 3,
+        "stone": 2,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "finalMaterials": {},
+      "startSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 1,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "finalSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 2,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 2,
+          "exp": 10
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 10
+        }
+      },
+      "crops": [],
+      "crafts": [
+        {
+          "route": "life",
+          "variant": "life",
+          "seed": 61102,
+          "at": 884,
+          "recipeId": "starterSpear",
+          "smithingLevel": 1,
+          "xpAward": 10,
+          "masterpieceEligible": false,
+          "masterpieceChance": 0,
+          "masterpiece": false,
+          "instanceId": "item-1",
+          "saleValueBeforeSale": 14
+        }
+      ],
+      "recipeAvailability": [],
+      "ledger": {
+        "actionCount": 1096,
+        "grossGoldIncome": 34,
+        "grossGoldSinks": 4,
+        "netGold": 30,
+        "finalGoldDelta": 30,
+        "goldLedgerReconciles": true,
+        "materialIn": {},
+        "materialOut": {}
+      },
+      "marketStockModel": {
+        "modeled": false,
+        "value": null
+      },
+      "restockEvents": [],
+      "observations": {
+        "inputPurchases": 0,
+        "sales": 1,
+        "gatheredUnits": 10,
+        "noActionDays": 1076
+      }
+    },
+    {
+      "route": "hybrid",
+      "variant": "hybrid",
+      "seed": 61102,
+      "startTime": 480,
+      "completedAt": 1555200,
+      "aliveAtEnd": true,
+      "finalGold": 3113,
+      "startGold": 45,
+      "finalInventory": {
+        "wood": 4,
+        "stone": 2,
+        "iron": 0,
+        "food": 3,
+        "material": 154,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "finalMaterials": {
+        "wolfFang": 152,
+        "wolfHide": 36,
+        "moonStone": 4,
+        "slime_resin": 0,
+        "slime_amber_gel": 0,
+        "slime_bog_mucus": 0,
+        "slime_moss_core": 0,
+        "slime_glass_shard": 0,
+        "slime_spring_ichor": 0,
+        "slime_heart_gel": 0,
+        "slime_pool_salt": 0,
+        "cave_insect_chitin": 0,
+        "cave_insect_leg": 0,
+        "cave_insect_resin": 0,
+        "cave_insect_sac": 0,
+        "cave_insect_plate": 0,
+        "cave_insect_venom_gland": 0,
+        "cave_insect_core": 0,
+        "cave_insect_queen_core": 0,
+        "wild_beast_hide": 0,
+        "wild_beast_horn": 0,
+        "wild_beast_tendon": 0,
+        "wild_beast_fur": 0,
+        "wild_beast_antler": 0,
+        "wild_beast_resin": 0,
+        "wild_beast_amber_sinew": 0,
+        "wild_beast_apex_core": 0,
+        "frontier_goblin_scrap": 0,
+        "frontier_goblin_slingcord": 0,
+        "frontier_goblin_plate": 0,
+        "frontier_goblin_signalcloth": 0,
+        "frontier_goblin_ironbits": 0,
+        "frontier_goblin_wire": 0,
+        "frontier_goblin_forgecore": 0,
+        "frontier_goblin_warlord_seal": 0,
+        "fog_undead_bone": 0,
+        "fog_undead_wax": 0,
+        "fog_undead_tendon": 0,
+        "fog_undead_cryptstone": 0,
+        "fog_undead_shroud": 0,
+        "fog_undead_bellmetal": 0,
+        "fog_undead_cinderbone": 0,
+        "fog_undead_crypt_heart": 0,
+        "mine_construct_shard": 0,
+        "mine_construct_plate": 0,
+        "mine_construct_resonant_stone": 0,
+        "mine_construct_joint": 0,
+        "mine_construct_binding": 0,
+        "mine_construct_ironvein": 0,
+        "mine_construct_corechip": 0,
+        "mine_construct_ancient_core": 0,
+        "spring_pea_good": 0,
+        "field_turnip_good": 0,
+        "summer_barley_good": 0,
+        "sun_pepper_good": 0,
+        "forest_bean_good": 0,
+        "autumn_pumpkin_good": 0,
+        "orchard_apple_good": 0,
+        "winter_cabbage_good": 0,
+        "frost_root_good": 0,
+        "marsh_rice_good": 0,
+        "cave_mushroom_good": 0
+      },
+      "startSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 1,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "finalSkills": {
+        "combat": {
+          "level": 25,
+          "exp": 110
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 10
+        },
+        "woodcutting": {
+          "level": 2,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "crops": [],
+      "crafts": [],
+      "recipeAvailability": [],
+      "ledger": {
+        "actionCount": 3479,
+        "grossGoldIncome": 3068,
+        "grossGoldSinks": 0,
+        "netGold": 3068,
+        "finalGoldDelta": 3068,
+        "goldLedgerReconciles": true,
+        "materialIn": {
+          "wolfFang": 152,
+          "wolfHide": 36,
+          "moonStone": 4
+        },
+        "materialOut": {}
+      },
+      "marketStockModel": {
+        "modeled": false,
+        "value": null
+      },
+      "restockEvents": [],
+      "observations": {
+        "inputPurchases": 0,
+        "sales": 0,
+        "gatheredUnits": 6,
+        "noActionDays": 0
+      }
+    },
+    {
+      "route": "life",
+      "variant": "craft-focused",
+      "seed": 61102,
+      "startTime": 480,
+      "completedAt": 1555200,
+      "aliveAtEnd": true,
+      "finalGold": 75,
+      "startGold": 45,
+      "finalInventory": {
+        "wood": 3,
+        "stone": 2,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "finalMaterials": {},
+      "startSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 1,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "finalSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 2,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 2,
+          "exp": 10
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 10
+        }
+      },
+      "crops": [],
+      "crafts": [
+        {
+          "route": "life",
+          "variant": "craft-focused",
+          "seed": 61102,
+          "at": 884,
+          "recipeId": "starterSpear",
+          "smithingLevel": 1,
+          "xpAward": 10,
+          "masterpieceEligible": false,
+          "masterpieceChance": 0,
+          "masterpiece": false,
+          "instanceId": "item-1",
+          "saleValueBeforeSale": 14
+        }
+      ],
+      "recipeAvailability": [],
+      "ledger": {
+        "actionCount": 1096,
+        "grossGoldIncome": 34,
+        "grossGoldSinks": 4,
+        "netGold": 30,
+        "finalGoldDelta": 30,
+        "goldLedgerReconciles": true,
+        "materialIn": {},
+        "materialOut": {}
+      },
+      "marketStockModel": {
+        "modeled": false,
+        "value": null
+      },
+      "restockEvents": [],
+      "observations": {
+        "inputPurchases": 0,
+        "sales": 1,
+        "gatheredUnits": 10,
+        "noActionDays": 1076
+      }
+    },
+    {
+      "route": "life",
+      "variant": "life",
+      "seed": 61103,
+      "startTime": 480,
+      "completedAt": 1555200,
+      "aliveAtEnd": true,
+      "finalGold": 83,
+      "startGold": 45,
+      "finalInventory": {
+        "wood": 3,
+        "stone": 2,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "finalMaterials": {},
+      "startSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 1,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "finalSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 2,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 2,
+          "exp": 10
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 10
+        }
+      },
+      "crops": [],
+      "crafts": [
+        {
+          "route": "life",
+          "variant": "life",
+          "seed": 61103,
+          "at": 884,
+          "recipeId": "starterSpear",
+          "smithingLevel": 1,
+          "xpAward": 10,
+          "masterpieceEligible": false,
+          "masterpieceChance": 0,
+          "masterpiece": false,
+          "instanceId": "item-1",
+          "saleValueBeforeSale": 22
+        }
+      ],
+      "recipeAvailability": [],
+      "ledger": {
+        "actionCount": 1096,
+        "grossGoldIncome": 42,
+        "grossGoldSinks": 4,
+        "netGold": 38,
+        "finalGoldDelta": 38,
+        "goldLedgerReconciles": true,
+        "materialIn": {},
+        "materialOut": {}
+      },
+      "marketStockModel": {
+        "modeled": false,
+        "value": null
+      },
+      "restockEvents": [],
+      "observations": {
+        "inputPurchases": 0,
+        "sales": 1,
+        "gatheredUnits": 10,
+        "noActionDays": 1076
+      }
+    },
+    {
+      "route": "hybrid",
+      "variant": "hybrid",
+      "seed": 61103,
+      "startTime": 480,
+      "completedAt": 1555200,
+      "aliveAtEnd": true,
+      "finalGold": 2921,
+      "startGold": 45,
+      "finalInventory": {
+        "wood": 4,
+        "stone": 2,
+        "iron": 0,
+        "food": 3,
+        "material": 145,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "finalMaterials": {
+        "wolfFang": 142,
+        "wolfHide": 46,
+        "moonStone": 1,
+        "slime_resin": 0,
+        "slime_amber_gel": 0,
+        "slime_bog_mucus": 0,
+        "slime_moss_core": 0,
+        "slime_glass_shard": 0,
+        "slime_spring_ichor": 0,
+        "slime_heart_gel": 0,
+        "slime_pool_salt": 0,
+        "cave_insect_chitin": 0,
+        "cave_insect_leg": 0,
+        "cave_insect_resin": 0,
+        "cave_insect_sac": 0,
+        "cave_insect_plate": 0,
+        "cave_insect_venom_gland": 0,
+        "cave_insect_core": 0,
+        "cave_insect_queen_core": 0,
+        "wild_beast_hide": 0,
+        "wild_beast_horn": 0,
+        "wild_beast_tendon": 0,
+        "wild_beast_fur": 0,
+        "wild_beast_antler": 0,
+        "wild_beast_resin": 0,
+        "wild_beast_amber_sinew": 0,
+        "wild_beast_apex_core": 0,
+        "frontier_goblin_scrap": 0,
+        "frontier_goblin_slingcord": 0,
+        "frontier_goblin_plate": 0,
+        "frontier_goblin_signalcloth": 0,
+        "frontier_goblin_ironbits": 0,
+        "frontier_goblin_wire": 0,
+        "frontier_goblin_forgecore": 0,
+        "frontier_goblin_warlord_seal": 0,
+        "fog_undead_bone": 0,
+        "fog_undead_wax": 0,
+        "fog_undead_tendon": 0,
+        "fog_undead_cryptstone": 0,
+        "fog_undead_shroud": 0,
+        "fog_undead_bellmetal": 0,
+        "fog_undead_cinderbone": 0,
+        "fog_undead_crypt_heart": 0,
+        "mine_construct_shard": 0,
+        "mine_construct_plate": 0,
+        "mine_construct_resonant_stone": 0,
+        "mine_construct_joint": 0,
+        "mine_construct_binding": 0,
+        "mine_construct_ironvein": 0,
+        "mine_construct_corechip": 0,
+        "mine_construct_ancient_core": 0,
+        "spring_pea_good": 0,
+        "field_turnip_good": 0,
+        "summer_barley_good": 0,
+        "sun_pepper_good": 0,
+        "forest_bean_good": 0,
+        "autumn_pumpkin_good": 0,
+        "orchard_apple_good": 0,
+        "winter_cabbage_good": 0,
+        "frost_root_good": 0,
+        "marsh_rice_good": 0,
+        "cave_mushroom_good": 0
+      },
+      "startSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 1,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "finalSkills": {
+        "combat": {
+          "level": 24,
+          "exp": 205
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 10
+        },
+        "woodcutting": {
+          "level": 2,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "crops": [],
+      "crafts": [],
+      "recipeAvailability": [],
+      "ledger": {
+        "actionCount": 3439,
+        "grossGoldIncome": 2876,
+        "grossGoldSinks": 0,
+        "netGold": 2876,
+        "finalGoldDelta": 2876,
+        "goldLedgerReconciles": true,
+        "materialIn": {
+          "wolfFang": 142,
+          "wolfHide": 46,
+          "moonStone": 1
+        },
+        "materialOut": {}
+      },
+      "marketStockModel": {
+        "modeled": false,
+        "value": null
+      },
+      "restockEvents": [],
+      "observations": {
+        "inputPurchases": 0,
+        "sales": 0,
+        "gatheredUnits": 6,
+        "noActionDays": 0
+      }
+    },
+    {
+      "route": "life",
+      "variant": "craft-focused",
+      "seed": 61103,
+      "startTime": 480,
+      "completedAt": 1555200,
+      "aliveAtEnd": true,
+      "finalGold": 83,
+      "startGold": 45,
+      "finalInventory": {
+        "wood": 3,
+        "stone": 2,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "finalMaterials": {},
+      "startSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 1,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 1,
+          "exp": 0
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 0
+        }
+      },
+      "finalSkills": {
+        "combat": {
+          "level": 1,
+          "exp": 0
+        },
+        "farming": {
+          "level": 1,
+          "exp": 0
+        },
+        "mining": {
+          "level": 2,
+          "exp": 0
+        },
+        "woodcutting": {
+          "level": 2,
+          "exp": 10
+        },
+        "smithing": {
+          "level": 1,
+          "exp": 10
+        }
+      },
+      "crops": [],
+      "crafts": [
+        {
+          "route": "life",
+          "variant": "craft-focused",
+          "seed": 61103,
+          "at": 884,
+          "recipeId": "starterSpear",
+          "smithingLevel": 1,
+          "xpAward": 10,
+          "masterpieceEligible": false,
+          "masterpieceChance": 0,
+          "masterpiece": false,
+          "instanceId": "item-1",
+          "saleValueBeforeSale": 22
+        }
+      ],
+      "recipeAvailability": [],
+      "ledger": {
+        "actionCount": 1096,
+        "grossGoldIncome": 42,
+        "grossGoldSinks": 4,
+        "netGold": 38,
+        "finalGoldDelta": 38,
+        "goldLedgerReconciles": true,
+        "materialIn": {},
+        "materialOut": {}
+      },
+      "marketStockModel": {
+        "modeled": false,
+        "value": null
+      },
+      "restockEvents": [],
+      "observations": {
+        "inputPurchases": 0,
+        "sales": 1,
+        "gatheredUnits": 10,
+        "noActionDays": 1076
+      }
+    }
+  ],
+  "routeValidity": [
+    {
+      "route": "life",
+      "variant": "life",
+      "seed": 61101,
+      "status": "INVALID_POLICY",
+      "failures": [
+        "life-route-had-no-farming-success"
+      ],
+      "checks": {
+        "successfulLifeActions": 7,
+        "successfulGatherActions": 5,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 1,
+        "successfulSellActions": 1,
+        "skillXpGained": 220,
+        "smithingXpGained": 10,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 0,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      }
+    },
+    {
+      "route": "hybrid",
+      "variant": "hybrid",
+      "seed": 61101,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 3,
+        "successfulGatherActions": 3,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 0,
+        "successfulSellActions": 0,
+        "skillXpGained": 2765,
+        "smithingXpGained": 0,
+        "successfulAdventureActions": 607,
+        "encounterCount": 287,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 540,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      }
+    },
+    {
+      "route": "life",
+      "variant": "craft-focused",
+      "seed": 61101,
+      "status": "INVALID_POLICY",
+      "failures": [
+        "life-route-had-no-farming-success"
+      ],
+      "checks": {
+        "successfulLifeActions": 7,
+        "successfulGatherActions": 5,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 1,
+        "successfulSellActions": 1,
+        "skillXpGained": 220,
+        "smithingXpGained": 10,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 0,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      }
+    },
+    {
+      "route": "life",
+      "variant": "life",
+      "seed": 61102,
+      "status": "INVALID_POLICY",
+      "failures": [
+        "life-route-had-no-farming-success"
+      ],
+      "checks": {
+        "successfulLifeActions": 7,
+        "successfulGatherActions": 5,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 1,
+        "successfulSellActions": 1,
+        "skillXpGained": 220,
+        "smithingXpGained": 10,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 0,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      }
+    },
+    {
+      "route": "hybrid",
+      "variant": "hybrid",
+      "seed": 61102,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 3,
+        "successfulGatherActions": 3,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 0,
+        "successfulSellActions": 0,
+        "skillXpGained": 2620,
+        "smithingXpGained": 0,
+        "successfulAdventureActions": 637,
+        "encounterCount": 306,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 540,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      }
+    },
+    {
+      "route": "life",
+      "variant": "craft-focused",
+      "seed": 61102,
+      "status": "INVALID_POLICY",
+      "failures": [
+        "life-route-had-no-farming-success"
+      ],
+      "checks": {
+        "successfulLifeActions": 7,
+        "successfulGatherActions": 5,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 1,
+        "successfulSellActions": 1,
+        "skillXpGained": 220,
+        "smithingXpGained": 10,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 0,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      }
+    },
+    {
+      "route": "life",
+      "variant": "life",
+      "seed": 61103,
+      "status": "INVALID_POLICY",
+      "failures": [
+        "life-route-had-no-farming-success"
+      ],
+      "checks": {
+        "successfulLifeActions": 7,
+        "successfulGatherActions": 5,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 1,
+        "successfulSellActions": 1,
+        "skillXpGained": 220,
+        "smithingXpGained": 10,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 0,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      }
+    },
+    {
+      "route": "hybrid",
+      "variant": "hybrid",
+      "seed": 61103,
+      "status": "VALID_POLICY",
+      "failures": [],
+      "checks": {
+        "successfulLifeActions": 3,
+        "successfulGatherActions": 3,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 0,
+        "successfulSellActions": 0,
+        "skillXpGained": 2615,
+        "smithingXpGained": 0,
+        "successfulAdventureActions": 605,
+        "encounterCount": 287,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 540,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      }
+    },
+    {
+      "route": "life",
+      "variant": "craft-focused",
+      "seed": 61103,
+      "status": "INVALID_POLICY",
+      "failures": [
+        "life-route-had-no-farming-success"
+      ],
+      "checks": {
+        "successfulLifeActions": 7,
+        "successfulGatherActions": 5,
+        "successfulFarmActions": 0,
+        "successfulCraftActions": 1,
+        "successfulSellActions": 1,
+        "skillXpGained": 220,
+        "smithingXpGained": 10,
+        "successfulAdventureActions": 0,
+        "encounterCount": 0,
+        "higherRankEncounterCount": 0,
+        "higherRankEligibleCount": 0,
+        "noProgressActions": 0,
+        "unclassifiedNoProgressActions": 0,
+        "seedVarianceVerified": true,
+        "allWinsExplanationVerified": false
+      }
+    }
+  ],
+  "seedVariance": {
+    "status": "VALID_POLICY",
+    "failures": [],
+    "checks": {
+      "sampleCount": 3,
+      "distinctSeeds": 3,
+      "distinctWorldSeeds": 3,
+      "distinctRngStates": 3,
+      "distinctRngProbes": 3
+    }
+  },
+  "seedEvidence": [
+    {
+      "seed": 61101,
+      "worldSeed": 61101,
+      "rngState": 1216225876,
+      "rngProbe": 1216225876
+    },
+    {
+      "seed": 61102,
+      "worldSeed": 61102,
+      "rngState": 399550865,
+      "rngProbe": 399550865
+    },
+    {
+      "seed": 61103,
+      "worldSeed": 61103,
+      "rngState": 3877843150,
+      "rngProbe": 3877843150
+    }
+  ],
+  "actionRows": 17121,
+  "dayRows": 9720,
+  "craftRows": 6,
+  "cropRows": 0,
+  "controlledProbeRows": 58,
+  "marketModelFinding": "NOT MODELED: no merchant stock state exists on GameState",
+  "restockFinding": "no restock event was observed; probes record repeat-buy availability after one day"
+}

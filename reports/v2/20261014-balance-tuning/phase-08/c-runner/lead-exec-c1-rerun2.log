@@ -1,0 +1,98 @@
+### node --test scripts/phase8/test_economy_harness.mjs scripts/phase8/test_route_validity.mjs
+TAP version 13
+# Subtest: CSV preserves mixed optional columns and quotes nested values
+ok 1 - CSV preserves mixed optional columns and quotes nested values
+  ---
+  duration_ms: 1.9936
+  ...
+# Subtest: ledger reconciles gross income and sinks against final gold delta
+ok 2 - ledger reconciles gross income and sinks against final gold delta
+  ---
+  duration_ms: 2.1949
+  ...
+# Subtest: absence of a merchant stock field remains NOT MODELED instead of an empty stock
+ok 3 - absence of a merchant stock field remains NOT MODELED instead of an empty stock
+  ---
+  duration_ms: 0.4698
+  ...
+# Subtest: buy-craft-sell loop arithmetic distinguishes a loss from a riskless profit
+ok 4 - buy-craft-sell loop arithmetic distinguishes a loss from a riskless profit
+  ---
+  duration_ms: 1.4836
+  ...
+# Subtest: an action succeeds only when the engine and relevant state both report progress
+ok 5 - an action succeeds only when the engine and relevant state both report progress
+  ---
+  duration_ms: 3.064
+  ...
+# Subtest: seed variance requires different seeds and different engine-derived RNG evidence
+ok 6 - seed variance requires different seeds and different engine-derived RNG evidence
+  ---
+  duration_ms: 0.317
+  ...
+# Subtest: life route is invalid until it gathers, farms, and crafts or records verified impossibility
+ok 7 - life route is invalid until it gathers, farms, and crafts or records verified impossibility
+  ---
+  duration_ms: 0.4066
+  ...
+# Subtest: life route accepts measured gathering, farming, crafting, smithing XP, and sales
+ok 8 - life route accepts measured gathering, farming, crafting, smithing XP, and sales
+  ---
+  duration_ms: 0.4813
+  ...
+# Subtest: life route can explain crafting as impossible only when no legal plan was observed
+ok 9 - life route can explain crafting as impossible only when no legal plan was observed
+  ---
+  duration_ms: 0.2867
+  ...
+# Subtest: all-win Adventure needs checked HP transitions and Boss definition IDs
+ok 10 - all-win Adventure needs checked HP transitions and Boss definition IDs
+  ---
+  duration_ms: 0.2307
+  ...
+# Subtest: Adventure fails when it skips an eligible higher rank
+ok 11 - Adventure fails when it skips an eligible higher rank
+  ---
+  duration_ms: 0.2775
+  ...
+# Subtest: Adventure accepts a higher-rank encounter when one was legally available
+ok 12 - Adventure accepts a higher-rank encounter when one was legally available
+  ---
+  duration_ms: 0.1584
+  ...
+# Subtest: Adventure must engage every higher rank that was legally observed
+ok 13 - Adventure must engage every higher rank that was legally observed
+  ---
+  duration_ms: 0.4084
+  ...
+# Subtest: Adventure must record why no higher rank was available
+ok 14 - Adventure must record why no higher rank was available
+  ---
+  duration_ms: 0.4244
+  ...
+# Subtest: hybrid route must complete both policy halves
+ok 15 - hybrid route must complete both policy halves
+  ---
+  duration_ms: 0.2491
+  ...
+# Subtest: no-progress outcomes require a category and reason
+ok 16 - no-progress outcomes require a category and reason
+  ---
+  duration_ms: 0.178
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 296.1381
+exit=0
+### node scripts/phase8/run-life-economy.mjs
+TypeError: Cannot read properties of undefined (reading 'x')
+    at move (file:///D:/Codex/plw-rpg/scripts/phase8/run-life-economy.mjs:98:50)
+    at runRoute (file:///D:/Codex/plw-rpg/scripts/phase8/run-life-economy.mjs:294:61)
+    at file:///D:/Codex/plw-rpg/scripts/phase8/run-life-economy.mjs:337:11
+exit=1

@@ -53,6 +53,6 @@ Evidence 位置：`reports/v2/20261014-balance-tuning/phase-08/`。
 
 ## Evidence
 
-- Verification: Phase8-A accepted PASS WITH FINDINGS 2026-10-14 (see A ticket); Windows baseline check PASS 37/627; A-F1 long-world test timeout flake carried to F. Phase8-B accepted PASS WITH FINDINGS 2026-10-14 (no product value change; B-F1→E, B-F2→F); A-F1 resolved (long-world test timeouts), check PASS 38/629.
+- Verification: Phase8-A accepted PASS WITH FINDINGS 2026-10-14 (see A ticket); Windows baseline check PASS 37/627; A-F1 long-world test timeout flake carried to F. Phase8-B accepted PASS WITH FINDINGS 2026-10-14 (no product value change; B-F1→E, B-F2→F); A-F1 resolved (long-world test timeouts), check PASS 38/629. Phase8-C accepted PASS WITH FINDINGS 2026-10-14: C-F1 farming yield uncapped (77,580 G/seed) resolved by Owner-approved V4 `min(2, floor((level-1)/2))` (src/engine/crops.ts), Before/After same seeds 15/15 valid, check PASS 38/631; merchant stock/restock NOT MODELED kept as product finding; long-world verification of V4 → D.
 - Review / Audit: 待 F。
 - Commit / PR: 無 PR；branch commits 記錄於各子票。
