@@ -8,7 +8,7 @@
 
 ## Now
 
-- [ ] Phase7 Content Expansion — Ticket: [20261008-v2x-07-content-expansion](tickets/20261008-v2x-07-content-expansion.md)
+- [ ] Phase8 Balance & Progression Tuning — Ticket: [20261014-v2x-08-balance-tuning](tickets/20261014-v2x-08-balance-tuning.md)
 
 <!-- 本輪工程已完成；驗收證據保存在正式 Ticket。 -->
 

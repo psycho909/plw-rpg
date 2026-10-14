@@ -1,13 +1,13 @@
 # Phase7 — Living World Content Expansion
 
-- Status: blocked — Development Engineering is complete; Owner final L3 review/approval is pending
+- Status: accepted — PASS WITH FINDINGS（Owner L3 final approval recorded 2026-10-14）
 - Risk: L3
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-08 使用者上傳 Phase7 規格並明確要求「開始進行Phase7的開發」。
 - Branch: v2x/reward-core
 - Git / Remote authority: 沿用 README 現工作分支 commit/push 授權；Root-only Git。不PR/merge/main/force/deploy。
-- Updated: 2026-10-13（Asia/Taipei）
+- Updated: 2026-10-14（Asia/Taipei）
 
 ## Scope
 
@@ -45,6 +45,16 @@ Initial HEAD 2d6af37cb36c9616cb832fc4d839bfd6ea7ef7c9，initial working tree cle
 
 Phase7-H accepted **PASS WITH FINDINGS** after current-region projection, runtime reachability for every registered monster, deterministic same-seed Boss formation, crop-good-to-crisis contribution and Phase6 regression were verified. Independent Standards review passed; follow-up Spec review cleared its initial evidence blockers. Natural encounter frequency remains explicitly `not-measured`; I must consume the H engine projection in UI, and J/K retain distribution and long-world gates. Phase7-I has been released and is now in progress. Human testing remains `DEFERRED / NOT APPLICABLE AT THIS STAGE`. Closeout: `reports/v2/20261008-content-expansion/phase-07/h-review-closeout-20261013.md`.
 
+## Owner L3 Final Approval — 2026-10-14
+
+Owner／Approver 於 2026-10-14 在目前 Session 以正式規格 [`V2X-PHASE8-BALANCE-TUNING.md`](../docs/specs/V2X-PHASE8-BALANCE-TUNING.md) §0 明確審閱並接受 Phase7 Engineering Delivery 的 **PASS WITH FINDINGS** 結果，授權依 L3 治理結案。
+
+- Approved delivery source：`b71201e84ff6b78035f8b6ef9b845dbb831451c5`；tested `src/` fingerprint `585f5e6656d1c63c1de876895750ed6c82ef8f915e6b9613c6234350b480ef58`。
+- Root re-check at closeout：HEAD `a66427ce80d41ecbbfffb8a15f5ab8ac194e00c7` 與 `origin/v2x/reward-core` 一致；working tree clean；`git diff b71201e..HEAD -- src` 為空（112 tracked `src/` files），受測來源與核准交付來源一致。
+- 保留：所有歷史失敗、Evidence Limitations（含 D／F 歷史 P2）、Product Findings 與未完成的人類產品驗證。
+- 本核准**不代表**：Phase7 Human Fun Gate 通過、V2 Product Gate 通過、歷史審計缺口消失、PR merge／production deploy／修改 `main`，或開始 Phase9／Phase10／V3。
+- Phase8 授權另記於 [Phase8 Parent](20261014-v2x-08-balance-tuning.md)。
+
 ## Current delivery state
 
 ### Authoritative Phase7-K closeout — 2026-10-13
@@ -71,7 +81,7 @@ The 20 Definition-of-Done items were assessed against current code and evidence;
 
 The two-hour Chromium soak and one-hour runner-driven content lane each completed with zero recorded Browser errors; both runner statuses remain `COMPLETE_STRESS_REVIEW_REQUIRED` because the visible-action no-progress classifier found repeated actions. Life, Adventure and Hybrid mastery are **NOT ESTABLISHED**. Native Safari and physical iOS/Android tests are excluded; Firefox was unavailable. V2 Product Gate is **NOT APPROVED**. The external code-review packet is prepared but external review has not been performed.
 
-The parent is L3 and remains blocked only on the Owner's final review/approval of this completed engineering evidence package. Human Fun Gate is separately `DEFERRED / NOT APPLICABLE AT THIS STAGE` and does not block Engineering QA. No Phase8/V3 work is authorized by this closeout.
+(Superseded 2026-10-14 by the Owner L3 Final Approval above.) The parent was L3 and blocked only on the Owner's final review/approval of this completed engineering evidence package. Human Fun Gate is separately `DEFERRED / NOT APPLICABLE AT THIS STAGE` and does not block Engineering QA. No Phase8/V3 work was authorized by this closeout; Phase8 was later authorized separately by the Owner on 2026-10-14.
 
 2026-10-13 latest: Phase7-G accepted by Root **PASS WITH FINDINGS**. Final source check passed 614 tests, typecheck/build; seven packs and merged pack validated; 108 crop-economy public API scenarios and production Chromium crop conversion/save-reload smoke passed. Findings: seasonal crops outperform wheat under some measured single-cycle throughput metrics (no numeric balance cutoff in G); a low-severity duplicated wheat presentation rule. Original failures and retries are retained in `g-review-closeout-20261013.md`. Root released H; Human validation remains DEFERRED / NOT APPLICABLE AT THIS STAGE.
 
