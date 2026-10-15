@@ -8,7 +8,6 @@
 
 ## Now
 
-- [ ] Phase8 Balance & Progression Tuning — Ticket: [20261014-v2x-08-balance-tuning](tickets/20261014-v2x-08-balance-tuning.md)
 
 <!-- 本輪工程已完成；驗收證據保存在正式 Ticket。 -->
 
@@ -20,7 +19,7 @@
 
 ## Blocked
 
-<!-- 當前沒有因真人驗證而阻擋的工程工作。 -->
+- [ ] Phase8 工程交付完成，等待 Owner 審閱後決定是否進入 Phase9 — Ticket: [20261014-v2x-08-balance-tuning](tickets/20261014-v2x-08-balance-tuning.md)
 
 
 完成條件：每個項目都有唯一正式 Ticket、只出現在一個區段，且沒有已完成工作或執行細節。

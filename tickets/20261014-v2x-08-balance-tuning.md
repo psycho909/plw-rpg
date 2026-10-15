@@ -1,6 +1,6 @@
 # Phase8 — Balance & Progression Tuning
 
-- Status: in_progress
+- Status: accepted — PASS WITH FINDINGS（Phase8 工程交付完成 2026-10-15；等待 Owner 審閱；Human Product DEFERRED；不自動進入 Phase9）
 - Owner: 本專案使用者，沿用 README 已確認身份（2026-10-02）。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-14 Owner 於目前 Session 提供正式規格 [V2X-PHASE8-BALANCE-TUNING](../docs/specs/V2X-PHASE8-BALANCE-TUNING.md)，§0 明確「正式授權進入 Phase8 — Balance & Progression Tuning」並授權必要程式修改、測試、獨立審查與目前工作分支 commit／push。
@@ -32,11 +32,11 @@ Evidence 位置：`reports/v2/20261014-balance-tuning/phase-08/`。
 
 ## Acceptance
 
-- [ ] 規格 §16 十一項 Gate 分別以 `PASS / PASS WITH FINDINGS / FAIL` 判定，沒有正式數值 Target 的指標只保留觀察分布與設計理由，不事後發明門檻。
-- [ ] 規格 §17 十七份報告完整，含 Raw Evidence、Seed／Sample／Scenario、Before／After、Source Fingerprint、Tested Source／Delivery Commit Correlation、Historical Failures。
-- [ ] 每個平衡修改回答規格 §4 五問並有 Before／After 證據；controlled fixture 與 normal fresh-save 分開標示。
-- [ ] §18 DoD 15 項與 §19 Q1–Q7 以證據回答；Human Product = DEFERRED。
-- [ ] 未參與施工的 Independent Review 完成，Engineering Gate 阻擋缺陷已修正；commit／push 並遠端核對；停止等待 Owner 審閱，不自動進入 Phase9。
+- [x] 規格 §16 十一項 Gate 分別以 `PASS / PASS WITH FINDINGS / FAIL` 判定，沒有正式數值 Target 的指標只保留觀察分布與設計理由，不事後發明門檻。
+- [x] 規格 §17 十七份報告完整，含 Raw Evidence、Seed／Sample／Scenario、Before／After、Source Fingerprint、Tested Source／Delivery Commit Correlation、Historical Failures。
+- [x] 每個平衡修改回答規格 §4 五問並有 Before／After 證據；controlled fixture 與 normal fresh-save 分開標示。
+- [x] §18 DoD 15 項與 §19 Q1–Q7 以證據回答；Human Product = DEFERRED。
+- [x] 未參與施工的 Independent Review 完成，Engineering Gate 阻擋缺陷已修正；commit／push 並遠端核對；停止等待 Owner 審閱，不自動進入 Phase9。
 
 ## Constraints and Decisions
 
@@ -54,5 +54,5 @@ Evidence 位置：`reports/v2/20261014-balance-tuning/phase-08/`。
 ## Evidence
 
 - Verification: Phase8-A accepted PASS WITH FINDINGS 2026-10-14 (see A ticket); Windows baseline check PASS 37/627; A-F1 long-world test timeout flake carried to F. Phase8-B accepted PASS WITH FINDINGS 2026-10-14 (no product value change; B-F1→E, B-F2→F); A-F1 resolved (long-world test timeouts), check PASS 38/629. Phase8-C accepted PASS WITH FINDINGS 2026-10-14: C-F1 farming yield uncapped (77,580 G/seed) resolved by Owner-approved V4 `min(2, floor((level-1)/2))` (src/engine/crops.ts), Before/After same seeds 15/15 valid, check PASS 38/631; merchant stock/restock NOT MODELED kept as product finding; long-world verification of V4 → D. Phase8-E accepted PASS WITH FINDINGS 2026-10-15: E2 NO CHANGE; instrumented lane 9/9 valid, loot 100,008 rerun; E-F1..E-F3 → F/Human gate; independent Max review findings resolved. Phase8-D accepted PASS WITH FINDINGS 2026-10-15: 54 checkpoints valid, succession, corrected time accounting, D2 controlled comparison; Owner KEEP V0 for D-F1 threat saturation (High product finding); no src change.
-- Review / Audit: 待 F。
+- Review / Audit: D、E 由未施工 Max 審查並修正；Phase8 整體最終獨立審查 `reports/v2/20261014-balance-tuning/phase-08/f-review/`（無 P0/P1，FMAX-01..03 已解決）。Phase8-F accepted PASS WITH FINDINGS 2026-10-15：browser lanes 0 errors，final-review.md 11 Gates（Engineering／Combat／Boss／Equipment／Reward／Life／Economy／World／Pacing／Stability = PASS WITH FINDINGS；Human Product DEFERRED）。
 - Commit / PR: 無 PR；branch commits 記錄於各子票。
