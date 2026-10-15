@@ -1,0 +1,3426 @@
+[
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 1,
+    "phase": "warning",
+    "at": 252557,
+    "outcome": null,
+    "readiness": 79.01966060606061,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 1,
+    "phase": "preparation",
+    "at": 255437,
+    "outcome": null,
+    "readiness": 79.01046060606062,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 1,
+    "phase": "active",
+    "at": 262640,
+    "outcome": null,
+    "readiness": 80.05683636363636,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": {
+      "actorKind": "npc",
+      "actorId": "npc-5",
+      "at": 256320
+    }
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 1,
+    "phase": "aftermath",
+    "at": 265520,
+    "outcome": "costly_success",
+    "readiness": 80.08883636363637,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 80.08883636363637,
+      "threatDemand": 52.57626512099998,
+      "successChance": 0.821783251775487,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -1.4000000000000004,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-13",
+          "durationDays": 2,
+          "injuredUntil": 267840
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": {
+      "actorKind": "npc",
+      "actorId": "npc-5",
+      "at": 256320
+    }
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 1,
+    "phase": "cooldown",
+    "at": 275600,
+    "outcome": "costly_success",
+    "readiness": 80.08883636363637,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 80.08883636363637,
+      "threatDemand": 52.57626512099998,
+      "successChance": 0.821783251775487,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -1.4000000000000004,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-13",
+          "durationDays": 2,
+          "injuredUntil": 267840
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": {
+      "actorKind": "npc",
+      "actorId": "npc-5",
+      "at": 256320
+    }
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 2,
+    "phase": "warning",
+    "at": 7506465,
+    "outcome": null,
+    "readiness": 88.97777777777777,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 2,
+    "phase": "preparation",
+    "at": 7509345,
+    "outcome": null,
+    "readiness": 88.95777777777778,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 2,
+    "phase": "active",
+    "at": 7516545,
+    "outcome": null,
+    "readiness": 87.95777777777776,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 2,
+    "phase": "aftermath",
+    "at": 7519427,
+    "outcome": "decisive_success",
+    "readiness": 87.99997777777777,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 87.99997777777777,
+      "threatDemand": 57.40120850099997,
+      "successChance": 0.8455258047318369,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 1.7560000000000002
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 2,
+    "phase": "cooldown",
+    "at": 7529507,
+    "outcome": "decisive_success",
+    "readiness": 87.99997777777777,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 87.99997777777777,
+      "threatDemand": 57.40120850099997,
+      "successChance": 0.8455258047318369,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 1.7560000000000002
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 3,
+    "phase": "warning",
+    "at": 8141719,
+    "outcome": null,
+    "readiness": 86.91888888888889,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 3,
+    "phase": "preparation",
+    "at": 8144599,
+    "outcome": null,
+    "readiness": 86.87888888888888,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 3,
+    "phase": "active",
+    "at": 8151799,
+    "outcome": null,
+    "readiness": 86.77888888888887,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 3,
+    "phase": "aftermath",
+    "at": 8154679,
+    "outcome": "decisive_success",
+    "readiness": 86.73888888888888,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 86.73888888888888,
+      "threatDemand": 61.447072934999866,
+      "successChance": 0.8029920746875157,
+      "pressureDays": 3,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 3,
+    "phase": "cooldown",
+    "at": 8164759,
+    "outcome": "decisive_success",
+    "readiness": 86.73888888888888,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 86.73888888888888,
+      "threatDemand": 61.447072934999866,
+      "successChance": 0.8029920746875157,
+      "pressureDays": 3,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 4,
+    "phase": "warning",
+    "at": 8784376,
+    "outcome": null,
+    "readiness": 80.97222222222223,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 4,
+    "phase": "preparation",
+    "at": 8787256,
+    "outcome": null,
+    "readiness": 80.97222222222223,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 4,
+    "phase": "active",
+    "at": 8794456,
+    "outcome": null,
+    "readiness": 80.97222222222223,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 4,
+    "phase": "aftermath",
+    "at": 8797336,
+    "outcome": "setback",
+    "readiness": 80.84342222222223,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 80.84342222222223,
+      "threatDemand": 84,
+      "successChance": 0.45627065209014694,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 0,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-32",
+          "durationDays": 3,
+          "injuredUntil": 8801280
+        },
+        {
+          "npcId": "npc-38",
+          "durationDays": 3,
+          "injuredUntil": 8801280
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 4,
+    "phase": "cooldown",
+    "at": 8807416,
+    "outcome": "setback",
+    "readiness": 80.84342222222223,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 80.84342222222223,
+      "threatDemand": 84,
+      "successChance": 0.45627065209014694,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 0,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-32",
+          "durationDays": 3,
+          "injuredUntil": 8801280
+        },
+        {
+          "npcId": "npc-38",
+          "durationDays": 3,
+          "injuredUntil": 8801280
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 5,
+    "phase": "warning",
+    "at": 9602583,
+    "outcome": null,
+    "readiness": 81.05555555555556,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 5,
+    "phase": "preparation",
+    "at": 9605463,
+    "outcome": null,
+    "readiness": 81.05555555555556,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 5,
+    "phase": "active",
+    "at": 9612663,
+    "outcome": null,
+    "readiness": 81.05555555555556,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 5,
+    "phase": "aftermath",
+    "at": 9615543,
+    "outcome": "setback",
+    "readiness": 81.05555555555556,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 81.05555555555556,
+      "threatDemand": 81.74419685500035,
+      "successChance": 0.49043670393287536,
+      "pressureDays": 28,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-111",
+          "durationDays": 3,
+          "injuredUntil": 9619200
+        },
+        {
+          "npcId": "npc-113",
+          "durationDays": 3,
+          "injuredUntil": 9619200
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 5,
+    "phase": "cooldown",
+    "at": 9625623,
+    "outcome": "setback",
+    "readiness": 81.05555555555556,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 81.05555555555556,
+      "threatDemand": 81.74419685500035,
+      "successChance": 0.49043670393287536,
+      "pressureDays": 28,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-111",
+          "durationDays": 3,
+          "injuredUntil": 9619200
+        },
+        {
+          "npcId": "npc-113",
+          "durationDays": 3,
+          "injuredUntil": 9619200
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 6,
+    "phase": "warning",
+    "at": 10402192,
+    "outcome": null,
+    "readiness": 86.83916666666664,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 6,
+    "phase": "preparation",
+    "at": 10405072,
+    "outcome": null,
+    "readiness": 86.8522222222222,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 6,
+    "phase": "active",
+    "at": 10412272,
+    "outcome": null,
+    "readiness": 87.11749999999998,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 6,
+    "phase": "aftermath",
+    "at": 10415152,
+    "outcome": "costly_success",
+    "readiness": 87.13749999999997,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 87.13749999999997,
+      "threatDemand": 61.25325256250066,
+      "successChance": 0.8081468802503625,
+      "pressureDays": 4,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-113",
+          "durationDays": 2,
+          "injuredUntil": 10416960
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 6,
+    "phase": "cooldown",
+    "at": 10425232,
+    "outcome": "costly_success",
+    "readiness": 87.13749999999997,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 87.13749999999997,
+      "threatDemand": 61.25325256250066,
+      "successChance": 0.8081468802503625,
+      "pressureDays": 4,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-113",
+          "durationDays": 2,
+          "injuredUntil": 10416960
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 7,
+    "phase": "warning",
+    "at": 40950862,
+    "outcome": null,
+    "readiness": 87.3897619047615,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 7,
+    "phase": "preparation",
+    "at": 40953742,
+    "outcome": null,
+    "readiness": 86.41944444444404,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 7,
+    "phase": "active",
+    "at": 40960943,
+    "outcome": null,
+    "readiness": 86.60555555555516,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 7,
+    "phase": "aftermath",
+    "at": 40963823,
+    "outcome": "setback",
+    "readiness": 86.63555555555516,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 86.63555555555516,
+      "threatDemand": 56.06316223899996,
+      "successChance": 0.845334318105631,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 8,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-271",
+          "durationDays": 3,
+          "injuredUntil": 40968000
+        },
+        {
+          "npcId": "npc-273",
+          "durationDays": 3,
+          "injuredUntil": 40968000
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40131,
+    "sequence": 7,
+    "phase": "cooldown",
+    "at": 40973903,
+    "outcome": "setback",
+    "readiness": 86.63555555555516,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 86.63555555555516,
+      "threatDemand": 56.06316223899996,
+      "successChance": 0.845334318105631,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 8,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-271",
+          "durationDays": 3,
+          "injuredUntil": 40968000
+        },
+        {
+          "npcId": "npc-273",
+          "durationDays": 3,
+          "injuredUntil": 40968000
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 1,
+    "phase": "warning",
+    "at": 245359,
+    "outcome": null,
+    "readiness": 76.98660606060608,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 1,
+    "phase": "preparation",
+    "at": 248239,
+    "outcome": null,
+    "readiness": 76.97780606060607,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 1,
+    "phase": "active",
+    "at": 255439,
+    "outcome": null,
+    "readiness": 79.45540606060607,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 1,
+    "phase": "aftermath",
+    "at": 258319,
+    "outcome": "decisive_success",
+    "readiness": 79.90115151515153,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 79.90115151515153,
+      "threatDemand": 60.577041002499975,
+      "successChance": 0.7452736614767832,
+      "pressureDays": 2,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 2.5999999999999233,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 1,
+    "phase": "cooldown",
+    "at": 268403,
+    "outcome": "decisive_success",
+    "readiness": 79.90115151515153,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 79.90115151515153,
+      "threatDemand": 60.577041002499975,
+      "successChance": 0.7452736614767832,
+      "pressureDays": 2,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 2.5999999999999233,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 2,
+    "phase": "warning",
+    "at": 880536,
+    "outcome": null,
+    "readiness": 84.51450980392156,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 2,
+    "phase": "preparation",
+    "at": 883416,
+    "outcome": null,
+    "readiness": 84.55450980392155,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 2,
+    "phase": "active",
+    "at": 890616,
+    "outcome": null,
+    "readiness": 84.65450980392156,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 2,
+    "phase": "aftermath",
+    "at": 893496,
+    "outcome": "decisive_success",
+    "readiness": 84.69450980392156,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 84.69450980392156,
+      "threatDemand": 57.96371067449996,
+      "successChance": 0.8153332981883455,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 2,
+    "phase": "cooldown",
+    "at": 903576,
+    "outcome": "decisive_success",
+    "readiness": 84.69450980392156,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 84.69450980392156,
+      "threatDemand": 57.96371067449996,
+      "successChance": 0.8153332981883455,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 3,
+    "phase": "warning",
+    "at": 8792730,
+    "outcome": null,
+    "readiness": 87.16030303030303,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 3,
+    "phase": "preparation",
+    "at": 8795610,
+    "outcome": null,
+    "readiness": 87.10030303030304,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 3,
+    "phase": "active",
+    "at": 8802810,
+    "outcome": null,
+    "readiness": 86.95030303030303,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 3,
+    "phase": "aftermath",
+    "at": 8805690,
+    "outcome": "decisive_success",
+    "readiness": 86.89030303030304,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 86.89030303030304,
+      "threatDemand": 58.68034680400001,
+      "successChance": 0.8273869061378202,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 3,
+    "phase": "cooldown",
+    "at": 8815771,
+    "outcome": "decisive_success",
+    "readiness": 86.89030303030304,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 86.89030303030304,
+      "threatDemand": 58.68034680400001,
+      "successChance": 0.8273869061378202,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 4,
+    "phase": "warning",
+    "at": 9423860,
+    "outcome": null,
+    "readiness": 86.94871794871796,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 4,
+    "phase": "preparation",
+    "at": 9426740,
+    "outcome": null,
+    "readiness": 86.93871794871795,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 4,
+    "phase": "active",
+    "at": 9433940,
+    "outcome": null,
+    "readiness": 87.0852380952381,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 4,
+    "phase": "aftermath",
+    "at": 9436820,
+    "outcome": "decisive_success",
+    "readiness": 87.0852380952381,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 87.0852380952381,
+      "threatDemand": 56.79155627099985,
+      "successChance": 0.8432990361774277,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 4,
+    "phase": "cooldown",
+    "at": 9446900,
+    "outcome": "decisive_success",
+    "readiness": 87.0852380952381,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 87.0852380952381,
+      "threatDemand": 56.79155627099985,
+      "successChance": 0.8432990361774277,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 5,
+    "phase": "warning",
+    "at": 16235556,
+    "outcome": null,
+    "readiness": 90,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 5,
+    "phase": "preparation",
+    "at": 16238436,
+    "outcome": null,
+    "readiness": 89.98,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 5,
+    "phase": "active",
+    "at": 16245637,
+    "outcome": null,
+    "readiness": 87.955,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 5,
+    "phase": "aftermath",
+    "at": 16248517,
+    "outcome": "costly_success",
+    "readiness": 87.98499999999999,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 87.98499999999999,
+      "threatDemand": 56.28503080549995,
+      "successChance": 0.8533485502350819,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-101",
+          "durationDays": 2,
+          "injuredUntil": 16250400
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 5,
+    "phase": "cooldown",
+    "at": 16258597,
+    "outcome": "costly_success",
+    "readiness": 87.98499999999999,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 87.98499999999999,
+      "threatDemand": 56.28503080549995,
+      "successChance": 0.8533485502350819,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-101",
+          "durationDays": 2,
+          "injuredUntil": 16250400
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 6,
+    "phase": "warning",
+    "at": 24784699,
+    "outcome": null,
+    "readiness": 89.66666666666667,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 6,
+    "phase": "preparation",
+    "at": 24787579,
+    "outcome": null,
+    "readiness": 88.75326666666668,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 6,
+    "phase": "active",
+    "at": 24794779,
+    "outcome": null,
+    "readiness": 88.86666666666667,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 6,
+    "phase": "aftermath",
+    "at": 24797659,
+    "outcome": "costly_success",
+    "readiness": 88.84285714285714,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 88.84285714285714,
+      "threatDemand": 56.36957478649997,
+      "successChance": 0.8586438024496772,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-155",
+          "durationDays": 2,
+          "injuredUntil": 24799680
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40132,
+    "sequence": 6,
+    "phase": "cooldown",
+    "at": 24807740,
+    "outcome": "costly_success",
+    "readiness": 88.84285714285714,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 88.84285714285714,
+      "threatDemand": 56.36957478649997,
+      "successChance": 0.8586438024496772,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-155",
+          "durationDays": 2,
+          "injuredUntil": 24799680
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 1,
+    "phase": "warning",
+    "at": 258316,
+    "outcome": null,
+    "readiness": 79.05660606060606,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 1,
+    "phase": "preparation",
+    "at": 261198,
+    "outcome": null,
+    "readiness": 79.64820606060606,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": {
+      "actorKind": "npc",
+      "actorId": "npc-13",
+      "at": 260640
+    }
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 1,
+    "phase": "active",
+    "at": 268398,
+    "outcome": null,
+    "readiness": 79.81820606060606,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": {
+      "actorKind": "npc",
+      "actorId": "npc-13",
+      "at": 260640
+    }
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 1,
+    "phase": "aftermath",
+    "at": 271278,
+    "outcome": "costly_success",
+    "readiness": 79.85020606060606,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 79.85020606060606,
+      "threatDemand": 52.59224215099998,
+      "successChance": 0.8197022226114138,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -2.45,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-13",
+          "durationDays": 2,
+          "injuredUntil": 273600
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": {
+      "actorKind": "npc",
+      "actorId": "npc-13",
+      "at": 260640
+    }
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 1,
+    "phase": "cooldown",
+    "at": 281358,
+    "outcome": "costly_success",
+    "readiness": 79.85020606060606,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 79.85020606060606,
+      "threatDemand": 52.59224215099998,
+      "successChance": 0.8197022226114138,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -2.45,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-13",
+          "durationDays": 2,
+          "injuredUntil": 273600
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": {
+      "actorKind": "npc",
+      "actorId": "npc-13",
+      "at": 260640
+    }
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 2,
+    "phase": "warning",
+    "at": 7923666,
+    "outcome": null,
+    "readiness": 89.29545454545455,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 2,
+    "phase": "preparation",
+    "at": 7926546,
+    "outcome": null,
+    "readiness": 89.31333333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 2,
+    "phase": "active",
+    "at": 7933746,
+    "outcome": null,
+    "readiness": 89.26333333333332,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 2,
+    "phase": "aftermath",
+    "at": 7936626,
+    "outcome": "costly_success",
+    "readiness": 89.24333333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 89.24333333333333,
+      "threatDemand": 57.812301507999905,
+      "successChance": 0.8514688776163766,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-35",
+          "durationDays": 2,
+          "injuredUntil": 7938720
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 2,
+    "phase": "cooldown",
+    "at": 7946706,
+    "outcome": "costly_success",
+    "readiness": 89.24333333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 89.24333333333333,
+      "threatDemand": 57.812301507999905,
+      "successChance": 0.8514688776163766,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-35",
+          "durationDays": 2,
+          "injuredUntil": 7938720
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 3,
+    "phase": "warning",
+    "at": 8609520,
+    "outcome": null,
+    "readiness": 80.57692307692308,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 3,
+    "phase": "preparation",
+    "at": 8612400,
+    "outcome": null,
+    "readiness": 80.83333333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 3,
+    "phase": "active",
+    "at": 8619600,
+    "outcome": null,
+    "readiness": 80.76813333333332,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 3,
+    "phase": "aftermath",
+    "at": 8622480,
+    "outcome": "decisive_success",
+    "readiness": 80.80937333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 80.80937333333333,
+      "threatDemand": 79.42089620549997,
+      "successChance": 0.5192748480480113,
+      "pressureDays": 21,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0.4791999999999632
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 3,
+    "phase": "cooldown",
+    "at": 8632560,
+    "outcome": "decisive_success",
+    "readiness": 80.80937333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 80.80937333333333,
+      "threatDemand": 79.42089620549997,
+      "successChance": 0.5192748480480113,
+      "pressureDays": 21,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0.4791999999999632
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 4,
+    "phase": "warning",
+    "at": 9312655,
+    "outcome": null,
+    "readiness": 81.99785454545454,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 4,
+    "phase": "preparation",
+    "at": 9315535,
+    "outcome": null,
+    "readiness": 82.04545454545455,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 4,
+    "phase": "active",
+    "at": 9322735,
+    "outcome": null,
+    "readiness": 82.04545454545455,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 4,
+    "phase": "aftermath",
+    "at": 9325615,
+    "outcome": "decisive_success",
+    "readiness": 82,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 82,
+      "threatDemand": 81.54661739900065,
+      "successChance": 0.5062966476736904,
+      "pressureDays": 24,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 4,
+    "phase": "cooldown",
+    "at": 9335697,
+    "outcome": "decisive_success",
+    "readiness": 82,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 82,
+      "threatDemand": 81.54661739900065,
+      "successChance": 0.5062966476736904,
+      "pressureDays": 24,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 5,
+    "phase": "warning",
+    "at": 10022991,
+    "outcome": null,
+    "readiness": 80.5952380952381,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 5,
+    "phase": "preparation",
+    "at": 10025873,
+    "outcome": null,
+    "readiness": 80.5952380952381,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 5,
+    "phase": "active",
+    "at": 10033073,
+    "outcome": null,
+    "readiness": 80.5952380952381,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 5,
+    "phase": "aftermath",
+    "at": 10035953,
+    "outcome": "decisive_success",
+    "readiness": 80.5952380952381,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 80.5952380952381,
+      "threatDemand": 83.26437911200166,
+      "successChance": 0.46299637704555346,
+      "pressureDays": 25,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 5,
+    "phase": "cooldown",
+    "at": 10046033,
+    "outcome": "decisive_success",
+    "readiness": 80.5952380952381,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 80.5952380952381,
+      "threatDemand": 83.26437911200166,
+      "successChance": 0.46299637704555346,
+      "pressureDays": 25,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 6,
+    "phase": "warning",
+    "at": 10738961,
+    "outcome": null,
+    "readiness": 80.83333333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 6,
+    "phase": "preparation",
+    "at": 10741841,
+    "outcome": null,
+    "readiness": 80.83333333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 6,
+    "phase": "active",
+    "at": 10749041,
+    "outcome": null,
+    "readiness": 80.83333333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 6,
+    "phase": "aftermath",
+    "at": 10751921,
+    "outcome": "setback",
+    "readiness": 80.83333333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 80.83333333333333,
+      "threatDemand": 83.62859212150005,
+      "successChance": 0.46125479382796075,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 1.857039392499729,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-100",
+          "durationDays": 3,
+          "injuredUntil": 10755360
+        },
+        {
+          "npcId": "npc-108",
+          "durationDays": 3,
+          "injuredUntil": 10755360
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 6,
+    "phase": "cooldown",
+    "at": 10762001,
+    "outcome": "setback",
+    "readiness": 80.83333333333333,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 80.83333333333333,
+      "threatDemand": 83.62859212150005,
+      "successChance": 0.46125479382796075,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 1.857039392499729,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-100",
+          "durationDays": 3,
+          "injuredUntil": 10755360
+        },
+        {
+          "npcId": "npc-108",
+          "durationDays": 3,
+          "injuredUntil": 10755360
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 7,
+    "phase": "warning",
+    "at": 11548450,
+    "outcome": null,
+    "readiness": 85.29666666666674,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 7,
+    "phase": "preparation",
+    "at": 11551330,
+    "outcome": null,
+    "readiness": 85.42925925925934,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 7,
+    "phase": "active",
+    "at": 11558530,
+    "outcome": null,
+    "readiness": 85.52925925925933,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 7,
+    "phase": "aftermath",
+    "at": 11561410,
+    "outcome": "costly_success",
+    "readiness": 85.56925925925933,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 85.56925925925933,
+      "threatDemand": 57.22552117200041,
+      "successChance": 0.828445793224659,
+      "pressureDays": 5,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-100",
+          "durationDays": 2,
+          "injuredUntil": 11563200
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 7,
+    "phase": "cooldown",
+    "at": 11571490,
+    "outcome": "costly_success",
+    "readiness": 85.56925925925933,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 85.56925925925933,
+      "threatDemand": 57.22552117200041,
+      "successChance": 0.828445793224659,
+      "pressureDays": 5,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-100",
+          "durationDays": 2,
+          "injuredUntil": 11563200
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 8,
+    "phase": "warning",
+    "at": 34803685,
+    "outcome": null,
+    "readiness": 89.3747619047619,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 8,
+    "phase": "preparation",
+    "at": 34806565,
+    "outcome": null,
+    "readiness": 89.05555555555556,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 8,
+    "phase": "active",
+    "at": 34813765,
+    "outcome": null,
+    "readiness": 89.1047619047619,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 8,
+    "phase": "aftermath",
+    "at": 34816645,
+    "outcome": "decisive_success",
+    "readiness": 89.03897435897434,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 89.03897435897434,
+      "threatDemand": 56.85141303049991,
+      "successChance": 0.8567061857091774,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 3.2000000000001023,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 8,
+    "phase": "cooldown",
+    "at": 34826726,
+    "outcome": "decisive_success",
+    "readiness": 89.03897435897434,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 89.03897435897434,
+      "threatDemand": 56.85141303049991,
+      "successChance": 0.8567061857091774,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 3.2000000000001023,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 9,
+    "phase": "warning",
+    "at": 49040547,
+    "outcome": null,
+    "readiness": 89.11111111111111,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 9,
+    "phase": "preparation",
+    "at": 49043427,
+    "outcome": null,
+    "readiness": 89.11111111111111,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 9,
+    "phase": "active",
+    "at": 49050627,
+    "outcome": null,
+    "readiness": 89.22222222222223,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": null,
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 9,
+    "phase": "aftermath",
+    "at": 49053507,
+    "outcome": "costly_success",
+    "readiness": 89.22222222222223,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 89.22222222222223,
+      "threatDemand": 56.70991579449994,
+      "successChance": 0.8589067385668326,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-331",
+          "durationDays": 2,
+          "injuredUntil": 49055040
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  },
+  {
+    "scenario": "adventure-focused",
+    "seed": 40133,
+    "sequence": 9,
+    "phase": "cooldown",
+    "at": 49063587,
+    "outcome": "costly_success",
+    "readiness": 89.22222222222223,
+    "contribution": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "summary": {
+      "readiness": 89.22222222222223,
+      "threatDemand": 56.70991579449994,
+      "successChance": 0.8589067385668326,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-331",
+          "durationDays": 2,
+          "injuredUntil": 49055040
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null
+  }
+]

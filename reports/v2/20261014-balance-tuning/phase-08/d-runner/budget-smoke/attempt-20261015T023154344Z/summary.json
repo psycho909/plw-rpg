@@ -1,0 +1,53 @@
+{
+  "validity": {
+    "status": "VALID",
+    "failures": []
+  },
+  "summaries": {
+    "life-focused": {
+      "10": {
+        "count": 21,
+        "resolved": 21,
+        "outcomeDistribution": {
+          "decisive_success": 4,
+          "costly_success": 4,
+          "setback": 8,
+          "local_defeat": 5
+        },
+        "intervalDays": {
+          "min": 479,
+          "median": 545,
+          "max": 601
+        },
+        "readinessAtTrigger": [
+          73.62413333333335,
+          78.59843137254902,
+          83.28999999999988,
+          82.5,
+          86.26424242424223,
+          88.25,
+          88.47166666666664,
+          73.47962424242424,
+          80.23205882352941,
+          82.16666666666667,
+          81.7806862745098,
+          82.86666666666667,
+          89.01698412698408,
+          88.17769841269838,
+          73.14013333333334,
+          80.31705882352941,
+          83.8869607843136,
+          82.5649999999999,
+          81.86150793650795,
+          90,
+          87.81148148148145
+        ],
+        "avgReadinessAtTrigger": 82.77623816044932
+      }
+    }
+  },
+  "checkpointCount": 3,
+  "crisisCount": 21,
+  "transitionCount": 105,
+  "actionCount": 438
+}

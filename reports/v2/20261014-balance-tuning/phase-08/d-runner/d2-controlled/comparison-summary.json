@@ -1,0 +1,1988 @@
+[
+  {
+    "label": "V0-current",
+    "scenario": "no-intervention",
+    "attempt": "attempt-20261015T023846374Z",
+    "parameters": {
+      "label": "V0-current",
+      "growthRate": "state-default",
+      "guardCoefficient": 0.035,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518560,
+      "elapsedMinutes": 155518560,
+      "crisisOutcomeDelta": -957.4500000000004,
+      "crisisOutcomeDeltaFromRaw": -957.4500000000004,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 201,
+      "meanPerSeedCentury": 67,
+      "meanPerSeedYear": 0.67
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -957.4500000000004,
+      "meanPerSeedCentury": -319.15000000000015,
+      "meanPerSeedYear": -3.1915000000000013
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 105,
+        "percent": 0.0972
+      },
+      "2": {
+        "days": 227,
+        "percent": 0.2102
+      },
+      "3": {
+        "days": 107668,
+        "percent": 99.6926
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 96759,
+      "0-24": 75,
+      "25-49": 150,
+      "50-74": 276,
+      "75-99": 10740
+    },
+    "safetyDays": {
+      "0-25": 35766,
+      "26-50": 49888,
+      "51-75": 10146,
+      "76-100": 12200
+    },
+    "safetyFloorDays": 35766,
+    "meanGrowthPerDay": 0.65,
+    "meanGuardReductionPerDay": 0.3002,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 65,
+      "costly_success": 37,
+      "setback": 66,
+      "local_defeat": 33
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 93.2567,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 93.9,
+        "safetyMin": 90.24999999999868,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 7,
+        "crisisCount": 21,
+        "crisisResolved": 21,
+        "crisisIntervalsDays": {
+          "min": 475,
+          "median": 558.5,
+          "max": 597
+        },
+        "crisisOutcomes": {
+          "decisive_success": 6,
+          "costly_success": 1,
+          "setback": 7,
+          "local_defeat": 7
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 100,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 27.5333,
+        "safetyMin": 25,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 22,
+        "crisisCount": 101,
+        "crisisResolved": 101,
+        "crisisIntervalsDays": {
+          "min": 475,
+          "median": 547.5,
+          "max": 628
+        },
+        "crisisOutcomes": {
+          "decisive_success": 29,
+          "costly_success": 18,
+          "setback": 35,
+          "local_defeat": 19
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 100,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 30.85,
+        "safetyMin": 25,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 36.3333,
+        "crisisCount": 201,
+        "crisisResolved": 201,
+        "crisisIntervalsDays": {
+          "min": 475,
+          "median": 544.5,
+          "max": 628
+        },
+        "crisisOutcomes": {
+          "decisive_success": 65,
+          "costly_success": 37,
+          "setback": 66,
+          "local_defeat": 33
+        }
+      }
+    }
+  },
+  {
+    "label": "V0-current",
+    "scenario": "life-focused",
+    "attempt": "attempt-20261015T023929673Z",
+    "parameters": {
+      "label": "V0-current",
+      "growthRate": "state-default",
+      "guardCoefficient": 0.035,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518560,
+      "elapsedMinutes": 155518560,
+      "crisisOutcomeDelta": -849.5700000000003,
+      "crisisOutcomeDeltaFromRaw": -849.5700000000003,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 200,
+      "meanPerSeedCentury": 66.66666666666667,
+      "meanPerSeedYear": 0.6666666666666666
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -849.5700000000003,
+      "meanPerSeedCentury": -283.1900000000001,
+      "meanPerSeedYear": -2.831900000000001
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 107,
+        "percent": 0.0991
+      },
+      "2": {
+        "days": 223,
+        "percent": 0.2065
+      },
+      "3": {
+        "days": 107670,
+        "percent": 99.6944
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 97580,
+      "0-24": 77,
+      "25-49": 150,
+      "50-74": 242,
+      "75-99": 9951
+    },
+    "safetyDays": {
+      "0-25": 33949,
+      "26-50": 52875,
+      "51-75": 8620,
+      "76-100": 12556
+    },
+    "safetyFloorDays": 33949,
+    "meanGrowthPerDay": 0.65,
+    "meanGuardReductionPerDay": 0.3027,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 53,
+      "costly_success": 39,
+      "setback": 75,
+      "local_defeat": 33
+    },
+    "lifeForcedFightCheck": {
+      "combatOrEncounterActions": 0,
+      "actionKinds": []
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 100,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 91.15,
+        "safetyMin": 81.14999999999844,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 4,
+        "crisisCount": 21,
+        "crisisResolved": 21,
+        "crisisIntervalsDays": {
+          "min": 479,
+          "median": 545,
+          "max": 601
+        },
+        "crisisOutcomes": {
+          "decisive_success": 4,
+          "costly_success": 4,
+          "setback": 8,
+          "local_defeat": 5
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 100,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 33.7,
+        "safetyMin": 25,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 99.5667,
+        "bossSpawnsMean": 20.3333,
+        "crisisCount": 102,
+        "crisisResolved": 102,
+        "crisisIntervalsDays": {
+          "min": 474,
+          "median": 542,
+          "max": 602
+        },
+        "crisisOutcomes": {
+          "decisive_success": 32,
+          "costly_success": 20,
+          "setback": 32,
+          "local_defeat": 18
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 93.3417,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 29.45,
+        "safetyMin": 25,
+        "populationMean": 79.3333,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 34,
+        "crisisCount": 200,
+        "crisisResolved": 200,
+        "crisisIntervalsDays": {
+          "min": 474,
+          "median": 549,
+          "max": 602
+        },
+        "crisisOutcomes": {
+          "decisive_success": 53,
+          "costly_success": 39,
+          "setback": 75,
+          "local_defeat": 33
+        }
+      }
+    }
+  },
+  {
+    "label": "V0-current",
+    "scenario": "adventure-focused",
+    "attempt": "attempt-20261015T024022650Z",
+    "parameters": {
+      "label": "V0-current",
+      "growthRate": "state-default",
+      "guardCoefficient": 0.035,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518632,
+      "elapsedMinutes": 155518632,
+      "crisisOutcomeDelta": -845.7050000000029,
+      "crisisOutcomeDeltaFromRaw": -845.7050000000029,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 200,
+      "meanPerSeedCentury": 66.66666666666667,
+      "meanPerSeedYear": 0.6666666666666666
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -845.7050000000029,
+      "meanPerSeedCentury": -281.9016666666676,
+      "meanPerSeedYear": -2.8190166666666765
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 105,
+        "percent": 0.0972
+      },
+      "2": {
+        "days": 292,
+        "percent": 0.2704
+      },
+      "3": {
+        "days": 107603,
+        "percent": 99.6324
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 73131,
+      "0-24": 75,
+      "25-49": 183,
+      "50-74": 793,
+      "75-99": 33818
+    },
+    "safetyDays": {
+      "0-25": 39239,
+      "26-50": 47903,
+      "51-75": 9657,
+      "76-100": 11201
+    },
+    "safetyFloorDays": 39239,
+    "meanGrowthPerDay": 0.65,
+    "meanGuardReductionPerDay": 0.2973,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 58,
+      "costly_success": 40,
+      "setback": 69,
+      "local_defeat": 33
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 90.9883,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 95.65,
+        "safetyMin": 91.54999999999957,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 5.3333,
+        "crisisCount": 21,
+        "crisisResolved": 21,
+        "crisisIntervalsDays": {
+          "min": 487,
+          "median": 534.5,
+          "max": 594
+        },
+        "crisisOutcomes": {
+          "decisive_success": 8,
+          "costly_success": 3,
+          "setback": 9,
+          "local_defeat": 1
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 98.3333,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 28.0167,
+        "safetyMin": 25,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 21.3333,
+        "crisisCount": 101,
+        "crisisResolved": 101,
+        "crisisIntervalsDays": {
+          "min": 486,
+          "median": 530,
+          "max": 595
+        },
+        "crisisOutcomes": {
+          "decisive_success": 35,
+          "costly_success": 18,
+          "setback": 32,
+          "local_defeat": 16
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 96.6667,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 51.25,
+        "safetyMin": 25,
+        "populationMean": 79.6667,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 34.3333,
+        "crisisCount": 200,
+        "crisisResolved": 200,
+        "crisisIntervalsDays": {
+          "min": 480,
+          "median": 545,
+          "max": 607
+        },
+        "crisisOutcomes": {
+          "decisive_success": 58,
+          "costly_success": 40,
+          "setback": 69,
+          "local_defeat": 33
+        }
+      }
+    }
+  },
+  {
+    "label": "G1-growth-equals-guard-offset",
+    "scenario": "no-intervention",
+    "attempt": "attempt-20261015T030444138Z",
+    "parameters": {
+      "label": "G1-growth-equals-guard-offset",
+      "growthRate": 0.299319489084277,
+      "guardCoefficient": 0.035,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518560,
+      "elapsedMinutes": 155518560,
+      "crisisOutcomeDelta": -273.7242112113173,
+      "crisisOutcomeDeltaFromRaw": -273.7242112113173,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 45,
+      "meanPerSeedCentury": 15,
+      "meanPerSeedYear": 0.15
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -273.7242112113173,
+      "meanPerSeedCentury": -91.24140373710577,
+      "meanPerSeedYear": -0.9124140373710578
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 92855,
+        "percent": 85.9769
+      },
+      "2": {
+        "days": 11144,
+        "percent": 10.3185
+      },
+      "3": {
+        "days": 4001,
+        "percent": 3.7046
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 281,
+      "0-24": 86830,
+      "25-49": 12544,
+      "50-74": 6028,
+      "75-99": 2317
+    },
+    "safetyDays": {
+      "0-25": 2924,
+      "26-50": 3207,
+      "51-75": 2666,
+      "76-100": 99203
+    },
+    "safetyFloorDays": 2924,
+    "meanGrowthPerDay": 0.2993,
+    "meanGuardReductionPerDay": 0.2909,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 23,
+      "costly_success": 11,
+      "setback": 8,
+      "local_defeat": 3
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 0,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 4.3333,
+        "crisisCount": 6,
+        "crisisResolved": 6,
+        "crisisIntervalsDays": {
+          "min": 444,
+          "median": 503,
+          "max": 542
+        },
+        "crisisOutcomes": {
+          "decisive_success": 4,
+          "costly_success": 1,
+          "setback": 0,
+          "local_defeat": 1
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 11.0713,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 97.8,
+        "safetyMin": 93.39999999999992,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 23.3333,
+        "crisisCount": 27,
+        "crisisResolved": 27,
+        "crisisIntervalsDays": {
+          "min": 443,
+          "median": 547,
+          "max": 5868
+        },
+        "crisisOutcomes": {
+          "decisive_success": 13,
+          "costly_success": 7,
+          "setback": 4,
+          "local_defeat": 3
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 3.6799,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 41.3333,
+        "crisisCount": 45,
+        "crisisResolved": 45,
+        "crisisIntervalsDays": {
+          "min": 439,
+          "median": 521.5,
+          "max": 24160
+        },
+        "crisisOutcomes": {
+          "decisive_success": 23,
+          "costly_success": 11,
+          "setback": 8,
+          "local_defeat": 3
+        }
+      }
+    }
+  },
+  {
+    "label": "G1-growth-equals-guard-offset",
+    "scenario": "life-focused",
+    "attempt": "attempt-20261015T030608188Z",
+    "parameters": {
+      "label": "G1-growth-equals-guard-offset",
+      "growthRate": 0.299319489084277,
+      "guardCoefficient": 0.035,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518560,
+      "elapsedMinutes": 155518560,
+      "crisisOutcomeDelta": -259.9204250530566,
+      "crisisOutcomeDeltaFromRaw": -259.9204250530566,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 46,
+      "meanPerSeedCentury": 15.333333333333334,
+      "meanPerSeedYear": 0.15333333333333332
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -259.9204250530566,
+      "meanPerSeedCentury": -86.6401416843522,
+      "meanPerSeedYear": -0.866401416843522
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 92838,
+        "percent": 85.9611
+      },
+      "2": {
+        "days": 11620,
+        "percent": 10.7593
+      },
+      "3": {
+        "days": 3542,
+        "percent": 3.2796
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 859,
+      "0-24": 87155,
+      "25-49": 13230,
+      "50-74": 5233,
+      "75-99": 1523
+    },
+    "safetyDays": {
+      "0-25": 2714,
+      "26-50": 3794,
+      "51-75": 2956,
+      "76-100": 98536
+    },
+    "safetyFloorDays": 2714,
+    "meanGrowthPerDay": 0.2993,
+    "meanGuardReductionPerDay": 0.2898,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 20,
+      "costly_success": 14,
+      "setback": 9,
+      "local_defeat": 3
+    },
+    "lifeForcedFightCheck": {
+      "combatOrEncounterActions": 0,
+      "actionKinds": []
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 0,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 3.6667,
+        "crisisCount": 9,
+        "crisisResolved": 9,
+        "crisisIntervalsDays": {
+          "min": 437,
+          "median": 491,
+          "max": 534
+        },
+        "crisisOutcomes": {
+          "decisive_success": 3,
+          "costly_success": 4,
+          "setback": 1,
+          "local_defeat": 1
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 26.6668,
+        "threatBands": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 0
+        },
+        "safetyMean": 77.7667,
+        "safetyMin": 48.80000000000037,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 21,
+        "crisisCount": 30,
+        "crisisResolved": 30,
+        "crisisIntervalsDays": {
+          "min": 437,
+          "median": 526,
+          "max": 9892
+        },
+        "crisisOutcomes": {
+          "decisive_success": 12,
+          "costly_success": 9,
+          "setback": 7,
+          "local_defeat": 2
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 1.6687,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 98.6333,
+        "safetyMin": 95.89999999999978,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 37,
+        "crisisCount": 46,
+        "crisisResolved": 46,
+        "crisisIntervalsDays": {
+          "min": 437,
+          "median": 529,
+          "max": 11662
+        },
+        "crisisOutcomes": {
+          "decisive_success": 20,
+          "costly_success": 14,
+          "setback": 9,
+          "local_defeat": 3
+        }
+      }
+    }
+  },
+  {
+    "label": "G1-growth-equals-guard-offset",
+    "scenario": "adventure-focused",
+    "attempt": "attempt-20261015T030734989Z",
+    "parameters": {
+      "label": "G1-growth-equals-guard-offset",
+      "growthRate": 0.299319489084277,
+      "guardCoefficient": 0.035,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "INVALID",
+      "failures": [
+        "no-crisis-phase-evidence"
+      ]
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518562,
+      "elapsedMinutes": 155518562,
+      "crisisOutcomeDelta": 0,
+      "crisisOutcomeDeltaFromRaw": 0,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 0,
+      "meanPerSeedCentury": 0,
+      "meanPerSeedYear": 0
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": 0,
+      "meanPerSeedCentury": 0,
+      "meanPerSeedYear": 0
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 107982,
+        "percent": 99.9833
+      },
+      "2": {
+        "days": 18,
+        "percent": 0.0167
+      },
+      "3": {
+        "days": 0,
+        "percent": 0
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 0,
+      "0-24": 107736,
+      "25-49": 264,
+      "50-74": 0,
+      "75-99": 0
+    },
+    "safetyDays": {
+      "0-25": 0,
+      "26-50": 68,
+      "51-75": 358,
+      "76-100": 107574
+    },
+    "safetyFloorDays": 0,
+    "meanGrowthPerDay": 0.2993,
+    "meanGuardReductionPerDay": 0.2881,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 0,
+      "costly_success": 0,
+      "setback": 0,
+      "local_defeat": 0
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 0,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 3.3333,
+        "crisisCount": 0,
+        "crisisResolved": 0,
+        "crisisIntervalsDays": null,
+        "crisisOutcomes": {
+          "decisive_success": 0,
+          "costly_success": 0,
+          "setback": 0,
+          "local_defeat": 0
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 0,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 16,
+        "crisisCount": 0,
+        "crisisResolved": 0,
+        "crisisIntervalsDays": null,
+        "crisisOutcomes": {
+          "decisive_success": 0,
+          "costly_success": 0,
+          "setback": 0,
+          "local_defeat": 0
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 1.6044,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 28.3333,
+        "crisisCount": 0,
+        "crisisResolved": 0,
+        "crisisIntervalsDays": null,
+        "crisisOutcomes": {
+          "decisive_success": 0,
+          "costly_success": 0,
+          "setback": 0,
+          "local_defeat": 0
+        }
+      }
+    }
+  },
+  {
+    "label": "G2-halfway-growth",
+    "scenario": "no-intervention",
+    "attempt": "attempt-20261015T030900918Z",
+    "parameters": {
+      "label": "G2-halfway-growth",
+      "growthRate": 0.474659744542139,
+      "guardCoefficient": 0.035,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518560,
+      "elapsedMinutes": 155518560,
+      "crisisOutcomeDelta": -834.5464760612485,
+      "crisisOutcomeDeltaFromRaw": -834.5464760612485,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 200,
+      "meanPerSeedCentury": 66.66666666666667,
+      "meanPerSeedYear": 0.6666666666666666
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -834.5464760612485,
+      "meanPerSeedCentury": -278.18215868708285,
+      "meanPerSeedYear": -2.7818215868708283
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 167,
+        "percent": 0.1546
+      },
+      "2": {
+        "days": 542,
+        "percent": 0.5019
+      },
+      "3": {
+        "days": 107291,
+        "percent": 99.3435
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 87691,
+      "0-24": 117,
+      "25-49": 330,
+      "50-74": 790,
+      "75-99": 19072
+    },
+    "safetyDays": {
+      "0-25": 35791,
+      "26-50": 51115,
+      "51-75": 10695,
+      "76-100": 10399
+    },
+    "safetyFloorDays": 35791,
+    "meanGrowthPerDay": 0.4747,
+    "meanGuardReductionPerDay": 0.3005,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 57,
+      "costly_success": 35,
+      "setback": 63,
+      "local_defeat": 45
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 85.5349,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 89.3667,
+        "safetyMin": 68.0999999999979,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 6,
+        "crisisCount": 21,
+        "crisisResolved": 21,
+        "crisisIntervalsDays": {
+          "min": 441,
+          "median": 556,
+          "max": 591
+        },
+        "crisisOutcomes": {
+          "decisive_success": 7,
+          "costly_success": 3,
+          "setback": 6,
+          "local_defeat": 5
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 100,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 27.2833,
+        "safetyMin": 26.10000000000002,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 21.3333,
+        "crisisCount": 101,
+        "crisisResolved": 101,
+        "crisisIntervalsDays": {
+          "min": 441,
+          "median": 549.5,
+          "max": 600
+        },
+        "crisisOutcomes": {
+          "decisive_success": 28,
+          "costly_success": 18,
+          "setback": 32,
+          "local_defeat": 23
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 100,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 29.3333,
+        "safetyMin": 26.850000000000026,
+        "populationMean": 79.6667,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 32,
+        "crisisCount": 200,
+        "crisisResolved": 200,
+        "crisisIntervalsDays": {
+          "min": 441,
+          "median": 554,
+          "max": 606
+        },
+        "crisisOutcomes": {
+          "decisive_success": 57,
+          "costly_success": 35,
+          "setback": 63,
+          "local_defeat": 45
+        }
+      }
+    }
+  },
+  {
+    "label": "G2-halfway-growth",
+    "scenario": "life-focused",
+    "attempt": "attempt-20261015T031015899Z",
+    "parameters": {
+      "label": "G2-halfway-growth",
+      "growthRate": 0.474659744542139,
+      "guardCoefficient": 0.035,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518560,
+      "elapsedMinutes": 155518560,
+      "crisisOutcomeDelta": -897.969653399786,
+      "crisisOutcomeDeltaFromRaw": -897.969653399786,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 201,
+      "meanPerSeedCentury": 67,
+      "meanPerSeedYear": 0.67
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -897.969653399786,
+      "meanPerSeedCentury": -299.32321779992867,
+      "meanPerSeedYear": -2.9932321779992868
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 167,
+        "percent": 0.1546
+      },
+      "2": {
+        "days": 536,
+        "percent": 0.4963
+      },
+      "3": {
+        "days": 107297,
+        "percent": 99.3491
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 86501,
+      "0-24": 117,
+      "25-49": 329,
+      "50-74": 629,
+      "75-99": 20424
+    },
+    "safetyDays": {
+      "0-25": 34636,
+      "26-50": 52037,
+      "51-75": 9595,
+      "76-100": 11732
+    },
+    "safetyFloorDays": 34636,
+    "meanGrowthPerDay": 0.4747,
+    "meanGuardReductionPerDay": 0.3002,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 59,
+      "costly_success": 38,
+      "setback": 80,
+      "local_defeat": 24
+    },
+    "lifeForcedFightCheck": {
+      "combatOrEncounterActions": 0,
+      "actionKinds": []
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 94.2247,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 95.2167,
+        "safetyMin": 91.99999999999864,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 5,
+        "crisisCount": 21,
+        "crisisResolved": 21,
+        "crisisIntervalsDays": {
+          "min": 447,
+          "median": 494,
+          "max": 599
+        },
+        "crisisOutcomes": {
+          "decisive_success": 13,
+          "costly_success": 2,
+          "setback": 3,
+          "local_defeat": 3
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 93.7973,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 41.5833,
+        "safetyMin": 25,
+        "populationMean": 79.3333,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 23.6667,
+        "crisisCount": 102,
+        "crisisResolved": 102,
+        "crisisIntervalsDays": {
+          "min": 447,
+          "median": 539,
+          "max": 601
+        },
+        "crisisOutcomes": {
+          "decisive_success": 33,
+          "costly_success": 21,
+          "setback": 34,
+          "local_defeat": 14
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 99.7262,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 33.8833,
+        "safetyMin": 25.05,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 34.3333,
+        "crisisCount": 201,
+        "crisisResolved": 201,
+        "crisisIntervalsDays": {
+          "min": 447,
+          "median": 543,
+          "max": 601
+        },
+        "crisisOutcomes": {
+          "decisive_success": 59,
+          "costly_success": 38,
+          "setback": 80,
+          "local_defeat": 24
+        }
+      }
+    }
+  },
+  {
+    "label": "G2-halfway-growth",
+    "scenario": "adventure-focused",
+    "attempt": "attempt-20261015T031148826Z",
+    "parameters": {
+      "label": "G2-halfway-growth",
+      "growthRate": 0.474659744542139,
+      "guardCoefficient": 0.035,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518716,
+      "elapsedMinutes": 155518716,
+      "crisisOutcomeDelta": -709.9356726841921,
+      "crisisOutcomeDeltaFromRaw": -709.9356726841921,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 200,
+      "meanPerSeedCentury": 66.66666666666667,
+      "meanPerSeedYear": 0.6666666666666666
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -709.9356726841921,
+      "meanPerSeedCentury": -236.64522422806405,
+      "meanPerSeedYear": -2.36645224228064
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 1602,
+        "percent": 1.4833
+      },
+      "2": {
+        "days": 4916,
+        "percent": 4.5519
+      },
+      "3": {
+        "days": 101482,
+        "percent": 93.9648
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 36130,
+      "0-24": 982,
+      "25-49": 2695,
+      "50-74": 8281,
+      "75-99": 59912
+    },
+    "safetyDays": {
+      "0-25": 32441,
+      "26-50": 46968,
+      "51-75": 12838,
+      "76-100": 15753
+    },
+    "safetyFloorDays": 32441,
+    "meanGrowthPerDay": 0.4747,
+    "meanGuardReductionPerDay": 0.2991,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 58,
+      "costly_success": 41,
+      "setback": 64,
+      "local_defeat": 37
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 45.2077,
+        "threatBands": {
+          "0": 0,
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "safetyMean": 96.7167,
+        "safetyMin": 93.5,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 5.3333,
+        "crisisCount": 21,
+        "crisisResolved": 21,
+        "crisisIntervalsDays": {
+          "min": 441,
+          "median": 545,
+          "max": 697
+        },
+        "crisisOutcomes": {
+          "decisive_success": 7,
+          "costly_success": 3,
+          "setback": 6,
+          "local_defeat": 5
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 94.0992,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 30.5833,
+        "safetyMin": 25,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 20.3333,
+        "crisisCount": 100,
+        "crisisResolved": 100,
+        "crisisIntervalsDays": {
+          "min": 441,
+          "median": 542,
+          "max": 1070
+        },
+        "crisisOutcomes": {
+          "decisive_success": 34,
+          "costly_success": 17,
+          "setback": 31,
+          "local_defeat": 18
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 98.3333,
+        "threatBands": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 3
+        },
+        "safetyMean": 33.6833,
+        "safetyMin": 25,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 34.3333,
+        "crisisCount": 200,
+        "crisisResolved": 200,
+        "crisisIntervalsDays": {
+          "min": 441,
+          "median": 547,
+          "max": 1070
+        },
+        "crisisOutcomes": {
+          "decisive_success": 58,
+          "costly_success": 41,
+          "setback": 64,
+          "local_defeat": 37
+        }
+      }
+    }
+  },
+  {
+    "label": "K1-guard-coefficient-equals-growth",
+    "scenario": "no-intervention",
+    "attempt": "attempt-20261015T031326865Z",
+    "parameters": {
+      "label": "K1-guard-coefficient-equals-growth",
+      "growthRate": "state-default",
+      "guardCoefficient": 0.0760057424580011,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518560,
+      "elapsedMinutes": 155518560,
+      "crisisOutcomeDelta": -717.226559897608,
+      "crisisOutcomeDeltaFromRaw": -717.226559897608,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 119,
+      "meanPerSeedCentury": 39.666666666666664,
+      "meanPerSeedYear": 0.39666666666666667
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -717.226559897608,
+      "meanPerSeedCentury": -239.07551996586935,
+      "meanPerSeedYear": -2.3907551996586935
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 61250,
+        "percent": 56.713
+      },
+      "2": {
+        "days": 21260,
+        "percent": 19.6852
+      },
+      "3": {
+        "days": 25490,
+        "percent": 23.6019
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 5992,
+      "0-24": 54978,
+      "25-49": 19463,
+      "50-74": 13886,
+      "75-99": 13681
+    },
+    "safetyDays": {
+      "0-25": 12962,
+      "26-50": 13122,
+      "51-75": 3542,
+      "76-100": 78374
+    },
+    "safetyFloorDays": 12962,
+    "meanGrowthPerDay": 0.65,
+    "meanGuardReductionPerDay": 0.6329,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 54,
+      "costly_success": 34,
+      "setback": 24,
+      "local_defeat": 7
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 0.014,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 5,
+        "crisisCount": 12,
+        "crisisResolved": 12,
+        "crisisIntervalsDays": {
+          "min": 443,
+          "median": 505,
+          "max": 603
+        },
+        "crisisOutcomes": {
+          "decisive_success": 6,
+          "costly_success": 3,
+          "setback": 2,
+          "local_defeat": 1
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 41.4459,
+        "threatBands": {
+          "0": 0,
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "safetyMean": 71.4,
+        "safetyMin": 25.150000000000002,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 19,
+        "crisisCount": 55,
+        "crisisResolved": 55,
+        "crisisIntervalsDays": {
+          "min": 438,
+          "median": 525.5,
+          "max": 6127
+        },
+        "crisisOutcomes": {
+          "decisive_success": 23,
+          "costly_success": 17,
+          "setback": 12,
+          "local_defeat": 3
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 31.5201,
+        "threatBands": {
+          "0": 0,
+          "1": 2,
+          "2": 0,
+          "3": 1
+        },
+        "safetyMean": 94.8167,
+        "safetyMin": 84.44999999999867,
+        "populationMean": 79.6667,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 37,
+        "crisisCount": 119,
+        "crisisResolved": 119,
+        "crisisIntervalsDays": {
+          "min": 437,
+          "median": 525.5,
+          "max": 6127
+        },
+        "crisisOutcomes": {
+          "decisive_success": 54,
+          "costly_success": 34,
+          "setback": 24,
+          "local_defeat": 7
+        }
+      }
+    }
+  },
+  {
+    "label": "K1-guard-coefficient-equals-growth",
+    "scenario": "life-focused",
+    "attempt": "attempt-20261015T031450035Z",
+    "parameters": {
+      "label": "K1-guard-coefficient-equals-growth",
+      "growthRate": "state-default",
+      "guardCoefficient": 0.0760057424580011,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518560,
+      "elapsedMinutes": 155518560,
+      "crisisOutcomeDelta": -402.4407952257786,
+      "crisisOutcomeDeltaFromRaw": -402.4407952257786,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 91,
+      "meanPerSeedCentury": 30.333333333333332,
+      "meanPerSeedYear": 0.30333333333333334
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -402.4407952257786,
+      "meanPerSeedCentury": -134.14693174192618,
+      "meanPerSeedYear": -1.341469317419262
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 71861,
+        "percent": 66.538
+      },
+      "2": {
+        "days": 15783,
+        "percent": 14.6139
+      },
+      "3": {
+        "days": 20356,
+        "percent": 18.8481
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 5791,
+      "0-24": 67972,
+      "25-49": 13744,
+      "50-74": 9088,
+      "75-99": 11405
+    },
+    "safetyDays": {
+      "0-25": 9986,
+      "26-50": 11080,
+      "51-75": 3756,
+      "76-100": 83178
+    },
+    "safetyFloorDays": 9986,
+    "meanGrowthPerDay": 0.65,
+    "meanGuardReductionPerDay": 0.641,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 35,
+      "costly_success": 22,
+      "setback": 21,
+      "local_defeat": 13
+    },
+    "lifeForcedFightCheck": {
+      "combatOrEncounterActions": 0,
+      "actionKinds": []
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 0,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 4.3333,
+        "crisisCount": 12,
+        "crisisResolved": 12,
+        "crisisIntervalsDays": {
+          "min": 440,
+          "median": 509,
+          "max": 554
+        },
+        "crisisOutcomes": {
+          "decisive_success": 5,
+          "costly_success": 3,
+          "setback": 3,
+          "local_defeat": 1
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 36.0071,
+        "threatBands": {
+          "0": 0,
+          "1": 2,
+          "2": 0,
+          "3": 1
+        },
+        "safetyMean": 75,
+        "safetyMin": 25,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 21.6667,
+        "crisisCount": 44,
+        "crisisResolved": 44,
+        "crisisIntervalsDays": {
+          "min": 438,
+          "median": 557,
+          "max": 7026
+        },
+        "crisisOutcomes": {
+          "decisive_success": 16,
+          "costly_success": 7,
+          "setback": 13,
+          "local_defeat": 8
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 23.1796,
+        "threatBands": {
+          "0": 0,
+          "1": 2,
+          "2": 1,
+          "3": 0
+        },
+        "safetyMean": 90.8,
+        "safetyMin": 72.3999999999991,
+        "populationMean": 79.6667,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 38,
+        "crisisCount": 91,
+        "crisisResolved": 91,
+        "crisisIntervalsDays": {
+          "min": 437,
+          "median": 557,
+          "max": 7026
+        },
+        "crisisOutcomes": {
+          "decisive_success": 35,
+          "costly_success": 22,
+          "setback": 21,
+          "local_defeat": 13
+        }
+      }
+    }
+  },
+  {
+    "label": "K1-guard-coefficient-equals-growth",
+    "scenario": "adventure-focused",
+    "attempt": "attempt-20261015T031756483Z",
+    "parameters": {
+      "label": "K1-guard-coefficient-equals-growth",
+      "growthRate": "state-default",
+      "guardCoefficient": 0.0760057424580011,
+      "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+    },
+    "validity": {
+      "status": "VALID",
+      "failures": []
+    },
+    "checkpoints": 9,
+    "totalDays": 108000,
+    "dailyBudget": {
+      "rows": 3,
+      "expectedDailyTicks": 108000,
+      "simulatedMinutes": 155518716,
+      "elapsedMinutes": 155518716,
+      "crisisOutcomeDelta": -158.1429606151021,
+      "crisisOutcomeDeltaFromRaw": -158.1429606151021,
+      "accountingValid": true
+    },
+    "crisisDenominators100y": {
+      "totalAcrossThreeSeeds": 22,
+      "meanPerSeedCentury": 7.333333333333333,
+      "meanPerSeedYear": 0.07333333333333333
+    },
+    "crisisPopulationDelta100y": {
+      "totalAcrossThreeSeeds": -158.1429606151021,
+      "meanPerSeedCentury": -52.714320205034035,
+      "meanPerSeedYear": -0.5271432020503404
+    },
+    "monsterThreatBandDays": {
+      "0": {
+        "days": 0,
+        "percent": 0
+      },
+      "1": {
+        "days": 101446,
+        "percent": 93.9315
+      },
+      "2": {
+        "days": 3719,
+        "percent": 3.4435
+      },
+      "3": {
+        "days": 2835,
+        "percent": 2.625
+      }
+    },
+    "monsterPopulationDays": {
+      "100": 420,
+      "0-24": 99816,
+      "25-49": 4027,
+      "50-74": 1964,
+      "75-99": 1773
+    },
+    "safetyDays": {
+      "0-25": 2339,
+      "26-50": 853,
+      "51-75": 1065,
+      "76-100": 103743
+    },
+    "safetyFloorDays": 2339,
+    "meanGrowthPerDay": 0.65,
+    "meanGuardReductionPerDay": 0.6278,
+    "crisisOutcomesAllHorizon": {
+      "decisive_success": 10,
+      "costly_success": 8,
+      "setback": 4,
+      "local_defeat": 0
+    },
+    "horizons": {
+      "10": {
+        "checkpoints": 3,
+        "monsterPopulation": 0.0393,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 4.6667,
+        "crisisCount": 4,
+        "crisisResolved": 4,
+        "crisisIntervalsDays": {
+          "min": 441,
+          "median": 441,
+          "max": 441
+        },
+        "crisisOutcomes": {
+          "decisive_success": 2,
+          "costly_success": 2,
+          "setback": 0,
+          "local_defeat": 0
+        }
+      },
+      "50": {
+        "checkpoints": 3,
+        "monsterPopulation": 0.014,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 17.3333,
+        "crisisCount": 19,
+        "crisisResolved": 19,
+        "crisisIntervalsDays": {
+          "min": 438,
+          "median": 526,
+          "max": 5937
+        },
+        "crisisOutcomes": {
+          "decisive_success": 9,
+          "costly_success": 7,
+          "setback": 3,
+          "local_defeat": 0
+        }
+      },
+      "100": {
+        "checkpoints": 3,
+        "monsterPopulation": 1.1044,
+        "threatBands": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 0
+        },
+        "safetyMean": 100,
+        "safetyMin": 100,
+        "populationMean": 80,
+        "foodMean": 100,
+        "prosperityMean": 100,
+        "bossSpawnsMean": 29,
+        "crisisCount": 22,
+        "crisisResolved": 22,
+        "crisisIntervalsDays": {
+          "min": 438,
+          "median": 562,
+          "max": 21215
+        },
+        "crisisOutcomes": {
+          "decisive_success": 10,
+          "costly_success": 8,
+          "setback": 4,
+          "local_defeat": 0
+        }
+      }
+    }
+  }
+]

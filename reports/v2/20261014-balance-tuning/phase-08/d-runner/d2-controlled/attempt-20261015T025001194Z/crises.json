@@ -1,0 +1,7069 @@
+[
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 1,
+    "id": "goblin-regional:00009cc3:1",
+    "triggeredAt": 216000,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 57.056037674999914,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 98.19999999999997,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 75.97414545454546,
+    "threatDemandAtTrigger": 61.41120753499998,
+    "outcome": "decisive_success",
+    "resolvedAt": 228960,
+    "resolutionSummary": {
+      "readiness": 75.93054545454545,
+      "threatDemand": 61.89715585249998,
+      "successChance": 0.6856009589801157,
+      "pressureDays": 4,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 3.600000000000051,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 2,
+    "id": "goblin-regional:00009cc3:2",
+    "triggeredAt": 969120,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 51.20059517999967,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.11111111111111,
+    "threatDemandAtTrigger": 60.24011903599993,
+    "outcome": "decisive_success",
+    "resolvedAt": 982080,
+    "resolutionSummary": {
+      "readiness": 87.1875,
+      "threatDemand": 60.315636343999934,
+      "successChance": 0.8165103482725399,
+      "pressureDays": 2,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 3,
+    "id": "goblin-regional:00009cc3:3",
+    "triggeredAt": 1607040,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 58.69831266999963,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 80.49999999999943,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.52916666666661,
+    "threatDemandAtTrigger": 61.739662533999926,
+    "outcome": "local_defeat",
+    "resolvedAt": 1620000,
+    "resolutionSummary": {
+      "readiness": 87.72333333333327,
+      "threatDemand": 61.81517984199993,
+      "successChance": 0.8083527140969768,
+      "pressureDays": 10,
+      "applied": {
+        "monsterPopulation": 10,
+        "bossProgress": 0,
+        "food": -12,
+        "safety": -8,
+        "prosperity": -6
+      },
+      "injuries": [
+        {
+          "npcId": "npc-1",
+          "durationDays": 5,
+          "injuredUntil": 1627200
+        },
+        {
+          "npcId": "npc-16",
+          "durationDays": 5,
+          "injuredUntil": 1627200
+        },
+        {
+          "npcId": "npc-27",
+          "durationDays": 5,
+          "injuredUntil": 1627200
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 4,
+    "id": "goblin-regional:00009cc3:4",
+    "triggeredAt": 2384640,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 58.06298985500273,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 61.09999999999859,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 86.10999999999986,
+    "threatDemandAtTrigger": 61.61259797100055,
+    "outcome": "costly_success",
+    "resolvedAt": 2397600,
+    "resolutionSummary": {
+      "readiness": 86.28999999999986,
+      "threatDemand": 61.61259797100055,
+      "successChance": 0.7975363064173592,
+      "pressureDays": 10,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-1",
+          "durationDays": 2,
+          "injuredUntil": 2400480
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 5,
+    "id": "goblin-regional:00009cc3:5",
+    "triggeredAt": 8280000,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 32.34642059749985,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 90,
+    "threatDemandAtTrigger": 56.46928411949997,
+    "outcome": "costly_success",
+    "resolvedAt": 8292960,
+    "resolutionSummary": {
+      "readiness": 89.91,
+      "threatDemand": 56.818422100499966,
+      "successChance": 0.8627618541735064,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-27",
+          "durationDays": 2,
+          "injuredUntil": 8295840
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 6,
+    "id": "goblin-regional:00009cc3:6",
+    "triggeredAt": 8956800,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 60.5698534849989,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 91.79999999999998,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 85.84666666666666,
+    "threatDemandAtTrigger": 62.11397069699978,
+    "outcome": "decisive_success",
+    "resolvedAt": 8969760,
+    "resolutionSummary": {
+      "readiness": 85.84666666666666,
+      "threatDemand": 62.32629834149977,
+      "successChance": 0.7869582646887122,
+      "pressureDays": 4,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 7,
+    "id": "goblin-regional:00009cc3:7",
+    "triggeredAt": 9599040,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 96.16943567750118,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.08974358974359,
+    "threatDemandAtTrigger": 83.23388713550024,
+    "outcome": "setback",
+    "resolvedAt": 9612000,
+    "resolutionSummary": {
+      "readiness": 81.21794871794872,
+      "threatDemand": 83.44621478000026,
+      "successChance": 0.46909132209254545,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 2.7689260999987226,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-101",
+          "durationDays": 3,
+          "injuredUntil": 9616320
+        },
+        {
+          "npcId": "npc-103",
+          "durationDays": 3,
+          "injuredUntil": 9616320
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 8,
+    "id": "goblin-regional:00009cc3:8",
+    "triggeredAt": 10402560,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 86.81768233750243,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.35416666666667,
+    "threatDemandAtTrigger": 81.3635364675005,
+    "outcome": "setback",
+    "resolvedAt": 10415520,
+    "resolutionSummary": {
+      "readiness": 81.45833333333334,
+      "threatDemand": 81.4390537755005,
+      "successChance": 0.5002677716109678,
+      "pressureDays": 28,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-101",
+          "durationDays": 3,
+          "injuredUntil": 10419840
+        },
+        {
+          "npcId": "npc-103",
+          "durationDays": 3,
+          "injuredUntil": 10419840
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 9,
+    "id": "goblin-regional:00009cc3:9",
+    "triggeredAt": 11216160,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 71.69498175250209,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 34.6999999999993,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 82.26629629629622,
+    "threatDemandAtTrigger": 78.33899635050042,
+    "outcome": "decisive_success",
+    "resolvedAt": 11229120,
+    "resolutionSummary": {
+      "readiness": 82.33049019607836,
+      "threatDemand": 78.33899635050042,
+      "successChance": 0.5552113577900736,
+      "pressureDays": 17,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 10,
+    "id": "goblin-regional:00009cc3:10",
+    "triggeredAt": 12867840,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.154798742499995,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.85416666666667,
+    "threatDemandAtTrigger": 56.030959748499995,
+    "outcome": "costly_success",
+    "resolvedAt": 12880800,
+    "resolutionSummary": {
+      "readiness": 88.10153333333334,
+      "threatDemand": 56.1064770565,
+      "successChance": 0.8553882787135376,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-104",
+          "durationDays": 2,
+          "injuredUntil": 12883680
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 11,
+    "id": "goblin-regional:00009cc3:11",
+    "triggeredAt": 21690720,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.849583802499975,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 94.99999999999983,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.80555555555554,
+    "threatDemandAtTrigger": 56.169916760499994,
+    "outcome": "decisive_success",
+    "resolvedAt": 21703680,
+    "resolutionSummary": {
+      "readiness": 88.80555555555554,
+      "threatDemand": 56.382244404999994,
+      "successChance": 0.8583065092671113,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 12,
+    "id": "goblin-regional:00009cc3:12",
+    "triggeredAt": 26408160,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 31.150020929999606,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 96.79999999999973,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.79111111111109,
+    "threatDemandAtTrigger": 56.230004185999924,
+    "outcome": "decisive_success",
+    "resolvedAt": 26421120,
+    "resolutionSummary": {
+      "readiness": 88.55785714285712,
+      "threatDemand": 56.24233183049992,
+      "successChance": 0.857576693878636,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 13,
+    "id": "goblin-regional:00009cc3:13",
+    "triggeredAt": 28141920,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.457482959999968,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.77777777777777,
+    "threatDemandAtTrigger": 56.09149659199999,
+    "outcome": "decisive_success",
+    "resolvedAt": 28154880,
+    "resolutionSummary": {
+      "readiness": 88.96190476190476,
+      "threatDemand": 56.30382423649999,
+      "successChance": 0.8598853206747472,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 14,
+    "id": "goblin-regional:00009cc3:14",
+    "triggeredAt": 32068800,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 38.73247893499975,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 99.79999999999998,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.87615384615384,
+    "threatDemandAtTrigger": 57.74649578699995,
+    "outcome": "costly_success",
+    "resolvedAt": 32081760,
+    "resolutionSummary": {
+      "readiness": 87.93615384615384,
+      "threatDemand": 58.09563376799994,
+      "successChance": 0.839943354972892,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-206",
+          "durationDays": 2,
+          "injuredUntil": 32084640
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 15,
+    "id": "goblin-regional:00009cc3:15",
+    "triggeredAt": 32752800,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 99.1001661025026,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 80.63992222222222,
+    "threatDemandAtTrigger": 83.82003322050052,
+    "outcome": "local_defeat",
+    "resolvedAt": 32765760,
+    "resolutionSummary": {
+      "readiness": 80.72222222222223,
+      "threatDemand": 84,
+      "successChance": 0.45460069263234854,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 0,
+        "bossProgress": 0,
+        "food": -12,
+        "safety": 0,
+        "prosperity": -6
+      },
+      "injuries": [
+        {
+          "npcId": "npc-217",
+          "durationDays": 5,
+          "injuredUntil": 32772960
+        },
+        {
+          "npcId": "npc-220",
+          "durationDays": 5,
+          "injuredUntil": 32772960
+        },
+        {
+          "npcId": "npc-231",
+          "durationDays": 5,
+          "injuredUntil": 32772960
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 16,
+    "id": "goblin-regional:00009cc3:16",
+    "triggeredAt": 33599520,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 98.16120914500041,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 26.150000000000016,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.92872549019609,
+    "threatDemandAtTrigger": 83.63224182900008,
+    "outcome": "setback",
+    "resolvedAt": 33612480,
+    "resolutionSummary": {
+      "readiness": 82.07176470588234,
+      "threatDemand": 83.63224182900008,
+      "successChance": 0.4783402706048558,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 2.1452559974995182,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -1.6000000000000227,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-217",
+          "durationDays": 3,
+          "injuredUntil": 33616800
+        },
+        {
+          "npcId": "npc-220",
+          "durationDays": 3,
+          "injuredUntil": 33616800
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 17,
+    "id": "goblin-regional:00009cc3:17",
+    "triggeredAt": 34403040,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 64.20433424500389,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 29.649999999999984,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 80.61205882352941,
+    "threatDemandAtTrigger": 62.840866849000776,
+    "outcome": "setback",
+    "resolvedAt": 34416000,
+    "resolutionSummary": {
+      "readiness": 80.7920588235294,
+      "threatDemand": 62.840866849000776,
+      "successChance": 0.7305251202719061,
+      "pressureDays": 23,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-231",
+          "durationDays": 3,
+          "injuredUntil": 34420320
+        },
+        {
+          "npcId": "npc-234",
+          "durationDays": 3,
+          "injuredUntil": 34420320
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 18,
+    "id": "goblin-regional:00009cc3:18",
+    "triggeredAt": 35172000,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 74.49458487500749,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.875,
+    "threatDemandAtTrigger": 78.8989169750015,
+    "outcome": "setback",
+    "resolvedAt": 35184960,
+    "resolutionSummary": {
+      "readiness": 81.875,
+      "threatDemand": 78.97443428300151,
+      "successChance": 0.5401986862482271,
+      "pressureDays": 25,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-251",
+          "durationDays": 3,
+          "injuredUntil": 35189280
+        },
+        {
+          "npcId": "npc-261",
+          "durationDays": 3,
+          "injuredUntil": 35189280
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 19,
+    "id": "goblin-regional:00009cc3:19",
+    "triggeredAt": 35966880,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 93.36860006251231,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.19047619047619,
+    "threatDemandAtTrigger": 82.67372001250246,
+    "outcome": "local_defeat",
+    "resolvedAt": 35979840,
+    "resolutionSummary": {
+      "readiness": 80.72222222222223,
+      "threatDemand": 82.74923732050249,
+      "successChance": 0.4718767265709417,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 6.253813397487605,
+        "bossProgress": 0,
+        "food": -12,
+        "safety": 0,
+        "prosperity": -6
+      },
+      "injuries": [
+        {
+          "npcId": "npc-251",
+          "durationDays": 5,
+          "injuredUntil": 35987040
+        },
+        {
+          "npcId": "npc-259",
+          "durationDays": 5,
+          "injuredUntil": 35987040
+        },
+        {
+          "npcId": "npc-272",
+          "durationDays": 5,
+          "injuredUntil": 35987040
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 20,
+    "id": "goblin-regional:00009cc3:20",
+    "triggeredAt": 36820800,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.66666666666666,
+    "threatDemandAtTrigger": 84,
+    "outcome": "costly_success",
+    "resolvedAt": 36833760,
+    "resolutionSummary": {
+      "readiness": 81.61111111111111,
+      "threatDemand": 84,
+      "successChance": 0.4668696020443402,
+      "pressureDays": 29,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-251",
+          "durationDays": 2,
+          "injuredUntil": 36836640
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 21,
+    "id": "goblin-regional:00009cc3:21",
+    "triggeredAt": 37584000,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 81.54182337750215,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 27.550000000000047,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.9706862745098,
+    "threatDemandAtTrigger": 80.30836467550043,
+    "outcome": "setback",
+    "resolvedAt": 37596960,
+    "resolutionSummary": {
+      "readiness": 81.6986862745098,
+      "threatDemand": 80.30836467550043,
+      "successChance": 0.5193004275828278,
+      "pressureDays": 27,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -0.10000000000000142,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-251",
+          "durationDays": 3,
+          "injuredUntil": 37601280
+        },
+        {
+          "npcId": "npc-259",
+          "durationDays": 3,
+          "injuredUntil": 37601280
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 22,
+    "id": "goblin-regional:00009cc3:22",
+    "triggeredAt": 38393280,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 87.30635700000683,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.2375,
+    "threatDemandAtTrigger": 81.46127140000137,
+    "outcome": "costly_success",
+    "resolvedAt": 38406240,
+    "resolutionSummary": {
+      "readiness": 82.16666666666667,
+      "threatDemand": 81.56719100500138,
+      "successChance": 0.5083252813580174,
+      "pressureDays": 26,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-259",
+          "durationDays": 2,
+          "injuredUntil": 38409120
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 23,
+    "id": "goblin-regional:00009cc3:23",
+    "triggeredAt": 39146400,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 63.34531556751082,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 41.500000000000206,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 83.95392156862746,
+    "threatDemandAtTrigger": 62.66906311350216,
+    "outcome": "decisive_success",
+    "resolvedAt": 39159360,
+    "resolutionSummary": {
+      "readiness": 83.33392156862747,
+      "threatDemand": 62.66906311350216,
+      "successChance": 0.759154139264442,
+      "pressureDays": 16,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 24,
+    "id": "goblin-regional:00009cc3:24",
+    "triggeredAt": 39801600,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 52.26904041001106,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 82.90000000000029,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.45666666666669,
+    "threatDemandAtTrigger": 60.45380808200221,
+    "outcome": "costly_success",
+    "resolvedAt": 39814560,
+    "resolutionSummary": {
+      "readiness": 87.45666666666669,
+      "threatDemand": 60.666135726502205,
+      "successChance": 0.815832415157511,
+      "pressureDays": 4,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-267",
+          "durationDays": 2,
+          "injuredUntil": 39817440
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 25,
+    "id": "goblin-regional:00009cc3:25",
+    "triggeredAt": 40494240,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 82.33414345251327,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.38888888888889,
+    "threatDemandAtTrigger": 80.46682869050265,
+    "outcome": "setback",
+    "resolvedAt": 40507200,
+    "resolutionSummary": {
+      "readiness": 81.38888888888889,
+      "threatDemand": 80.54234599850267,
+      "successChance": 0.5117553734775988,
+      "pressureDays": 27,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-267",
+          "durationDays": 3,
+          "injuredUntil": 40511520
+        },
+        {
+          "npcId": "npc-281",
+          "durationDays": 3,
+          "injuredUntil": 40511520
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 26,
+    "id": "goblin-regional:00009cc3:26",
+    "triggeredAt": 41296320,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 80.73529411764706,
+    "threatDemandAtTrigger": 84,
+    "outcome": "setback",
+    "resolvedAt": 41309280,
+    "resolutionSummary": {
+      "readiness": 80.72916666666666,
+      "threatDemand": 84,
+      "successChance": 0.4546963497475419,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 0,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-281",
+          "durationDays": 3,
+          "injuredUntil": 41313600
+        },
+        {
+          "npcId": "npc-286",
+          "durationDays": 3,
+          "injuredUntil": 41313600
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 27,
+    "id": "goblin-regional:00009cc3:27",
+    "triggeredAt": 42111360,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 91.94958702250352,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 82.39583333333334,
+    "threatDemandAtTrigger": 82.38991740450071,
+    "outcome": "setback",
+    "resolvedAt": 42124320,
+    "resolutionSummary": {
+      "readiness": 82.5,
+      "threatDemand": 82.46543471250072,
+      "successChance": 0.5004800732899664,
+      "pressureDays": 29,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-281",
+          "durationDays": 3,
+          "injuredUntil": 42128640
+        },
+        {
+          "npcId": "npc-286",
+          "durationDays": 3,
+          "injuredUntil": 42128640
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 28,
+    "id": "goblin-regional:00009cc3:28",
+    "triggeredAt": 42912000,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.07142857142857,
+    "threatDemandAtTrigger": 84,
+    "outcome": "decisive_success",
+    "resolvedAt": 42924960,
+    "resolutionSummary": {
+      "readiness": 81.16666666666666,
+      "threatDemand": 84,
+      "successChance": 0.46072919937021484,
+      "pressureDays": 26,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 29,
+    "id": "goblin-regional:00009cc3:29",
+    "triggeredAt": 43627680,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.61764705882354,
+    "threatDemandAtTrigger": 84,
+    "outcome": "costly_success",
+    "resolvedAt": 43640640,
+    "resolutionSummary": {
+      "readiness": 81.61764705882354,
+      "threatDemand": 84,
+      "successChance": 0.4669599816261515,
+      "pressureDays": 29,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-292",
+          "durationDays": 2,
+          "injuredUntil": 43643520
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 30,
+    "id": "goblin-regional:00009cc3:30",
+    "triggeredAt": 44390880,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 62.84599152000154,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 86.24999999999936,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.99999999999994,
+    "threatDemandAtTrigger": 62.56919830400031,
+    "outcome": "decisive_success",
+    "resolvedAt": 44403840,
+    "resolutionSummary": {
+      "readiness": 88.04833333333326,
+      "threatDemand": 62.64471561200031,
+      "successChance": 0.8039728130778466,
+      "pressureDays": 5,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 31,
+    "id": "goblin-regional:00009cc3:31",
+    "triggeredAt": 45041760,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 61.52460070750219,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 95.5999999999998,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.51833333333332,
+    "threatDemandAtTrigger": 62.30492014150044,
+    "outcome": "setback",
+    "resolvedAt": 45054720,
+    "resolutionSummary": {
+      "readiness": 87.6960333333333,
+      "threatDemand": 62.38043744950044,
+      "successChance": 0.8032009846505505,
+      "pressureDays": 8,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-311",
+          "durationDays": 3,
+          "injuredUntil": 45059040
+        },
+        {
+          "npcId": "npc-314",
+          "durationDays": 3,
+          "injuredUntil": 45059040
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 32,
+    "id": "goblin-regional:00009cc3:32",
+    "triggeredAt": 45833760,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 48.17605726250306,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.16666666666666,
+    "threatDemandAtTrigger": 59.63521145250061,
+    "outcome": "decisive_success",
+    "resolvedAt": 45846720,
+    "resolutionSummary": {
+      "readiness": 88.44444444444444,
+      "threatDemand": 59.710728760500615,
+      "successChance": 0.831503080828758,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 33,
+    "id": "goblin-regional:00009cc3:33",
+    "triggeredAt": 46573920,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 32.272484300003285,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.22222222222223,
+    "threatDemandAtTrigger": 56.45449686000066,
+    "outcome": "decisive_success",
+    "resolvedAt": 46586880,
+    "resolutionSummary": {
+      "readiness": 89.22222222222223,
+      "threatDemand": 56.53001416800066,
+      "successChance": 0.8601135966183742,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 34,
+    "id": "goblin-regional:00009cc3:34",
+    "triggeredAt": 50618880,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.67113266749996,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 99.89999999999999,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.3947619047619,
+    "threatDemandAtTrigger": 56.13422653349999,
+    "outcome": "decisive_success",
+    "resolvedAt": 50631840,
+    "resolutionSummary": {
+      "readiness": 89.32897435897436,
+      "threatDemand": 56.37695647499999,
+      "successChance": 0.8618412449474645,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 0.3000000000000256,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40131,
+    "sequence": 35,
+    "id": "goblin-regional:00009cc3:35",
+    "triggeredAt": 51256800,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 81.86611603000068,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 46.79999999999769,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 83.0133333333331,
+    "threatDemandAtTrigger": 80.37322320600013,
+    "outcome": "decisive_success",
+    "resolvedAt": 51269760,
+    "resolutionSummary": {
+      "readiness": 82.8783333333331,
+      "threatDemand": 80.58555085050016,
+      "successChance": 0.5318012152765312,
+      "pressureDays": 17,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 1,
+    "id": "goblin-regional:00009cc4:1",
+    "triggeredAt": 208800,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 54.70618123749992,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 97.80000000000008,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 74.79993939393941,
+    "threatDemandAtTrigger": 60.94123624749999,
+    "outcome": "setback",
+    "resolvedAt": 221760,
+    "resolutionSummary": {
+      "readiness": 75.14426666666667,
+      "threatDemand": 61.42718456499998,
+      "successChance": 0.6818008402330922,
+      "pressureDays": 7,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-13",
+          "durationDays": 3,
+          "injuredUntil": 226080
+        },
+        {
+          "npcId": "npc-14",
+          "durationDays": 3,
+          "injuredUntil": 226080
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 2,
+    "id": "goblin-regional:00009cc4:2",
+    "triggeredAt": 936000,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 91.88535501500188,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 27.650000000000038,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 79.62774509803921,
+    "threatDemandAtTrigger": 82.37707100300038,
+    "outcome": "decisive_success",
+    "resolvedAt": 948960,
+    "resolutionSummary": {
+      "readiness": 79.7707843137255,
+      "threatDemand": 82.37707100300038,
+      "successChance": 0.46386468377361245,
+      "pressureDays": 24,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 3,
+    "id": "goblin-regional:00009cc4:3",
+    "triggeredAt": 1648800,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 72.98652444500584,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 26.050000000000015,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 82.01676470588235,
+    "threatDemandAtTrigger": 78.59730488900117,
+    "outcome": "setback",
+    "resolvedAt": 1661760,
+    "resolutionSummary": {
+      "readiness": 82.06176470588235,
+      "threatDemand": 78.59730488900117,
+      "successChance": 0.5479695041597905,
+      "pressureDays": 25,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -1.5000000000000213,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-14",
+          "durationDays": 3,
+          "injuredUntil": 1666080
+        },
+        {
+          "npcId": "npc-16",
+          "durationDays": 3,
+          "injuredUntil": 1666080
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 4,
+    "id": "goblin-regional:00009cc4:4",
+    "triggeredAt": 2517120,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 32.59344603500927,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 90,
+    "threatDemandAtTrigger": 56.518689207001856,
+    "outcome": "costly_success",
+    "resolvedAt": 2530080,
+    "resolutionSummary": {
+      "readiness": 90,
+      "threatDemand": 56.518689207001856,
+      "successChance": 0.8653054357995947,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-14",
+          "durationDays": 2,
+          "injuredUntil": 2532960
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 5,
+    "id": "goblin-regional:00009cc4:5",
+    "triggeredAt": 8762400,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 47.6902699499992,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.47222222222223,
+    "threatDemandAtTrigger": 59.53805398999984,
+    "outcome": "costly_success",
+    "resolvedAt": 8775360,
+    "resolutionSummary": {
+      "readiness": 88.66,
+      "threatDemand": 59.88719197099984,
+      "successChance": 0.8318071429451506,
+      "pressureDays": 3,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-105",
+          "durationDays": 2,
+          "injuredUntil": 8778240
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 6,
+    "id": "goblin-regional:00009cc4:6",
+    "triggeredAt": 9439200,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.38888888888889,
+    "threatDemandAtTrigger": 84,
+    "outcome": "setback",
+    "resolvedAt": 9452160,
+    "resolutionSummary": {
+      "readiness": 81.38888888888889,
+      "threatDemand": 84,
+      "successChance": 0.4637980285353084,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 0,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-105",
+          "durationDays": 3,
+          "injuredUntil": 9456480
+        },
+        {
+          "npcId": "npc-106",
+          "durationDays": 3,
+          "injuredUntil": 9456480
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 7,
+    "id": "goblin-regional:00009cc4:7",
+    "triggeredAt": 10247040,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.30952380952381,
+    "threatDemandAtTrigger": 84,
+    "outcome": "setback",
+    "resolvedAt": 10260000,
+    "resolutionSummary": {
+      "readiness": 81.54761904761905,
+      "threatDemand": 84,
+      "successChance": 0.46599174301481533,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 0,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-106",
+          "durationDays": 3,
+          "injuredUntil": 10264320
+        },
+        {
+          "npcId": "npc-108",
+          "durationDays": 3,
+          "injuredUntil": 10264320
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 8,
+    "id": "goblin-regional:00009cc4:8",
+    "triggeredAt": 11060640,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 81.7087782425031,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 82.35088888888889,
+    "threatDemandAtTrigger": 80.34175564850062,
+    "outcome": "setback",
+    "resolvedAt": 11073600,
+    "resolutionSummary": {
+      "readiness": 82.38888888888889,
+      "threatDemand": 80.55408329300064,
+      "successChance": 0.5254613685766701,
+      "pressureDays": 27,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-106",
+          "durationDays": 3,
+          "injuredUntil": 11077920
+        },
+        {
+          "npcId": "npc-108",
+          "durationDays": 3,
+          "injuredUntil": 11077920
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 9,
+    "id": "goblin-regional:00009cc4:9",
+    "triggeredAt": 11859840,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 93.67184726000151,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 26.400000000000023,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.46352941176471,
+    "threatDemandAtTrigger": 82.73436945200031,
+    "outcome": "decisive_success",
+    "resolvedAt": 11872800,
+    "resolutionSummary": {
+      "readiness": 81.50852941176471,
+      "threatDemand": 82.73436945200031,
+      "successChance": 0.48298102108915286,
+      "pressureDays": 24,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 10,
+    "id": "goblin-regional:00009cc4:10",
+    "triggeredAt": 12566880,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 86.16396259250578,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 27.50000000000004,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 79.90686274509804,
+    "threatDemandAtTrigger": 81.23279251850116,
+    "outcome": "decisive_success",
+    "resolvedAt": 12579840,
+    "resolutionSummary": {
+      "readiness": 79.73844117647059,
+      "threatDemand": 81.23279251850116,
+      "successChance": 0.47925703267460634,
+      "pressureDays": 23,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 2
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 11,
+    "id": "goblin-regional:00009cc4:11",
+    "triggeredAt": 13272480,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 92.82130843001016,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.66666666666666,
+    "threatDemandAtTrigger": 82.56426168600203,
+    "outcome": "costly_success",
+    "resolvedAt": 13285440,
+    "resolutionSummary": {
+      "readiness": 81.66666666666666,
+      "threatDemand": 82.63977899400206,
+      "successChance": 0.48648784182264265,
+      "pressureDays": 27,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-100",
+          "durationDays": 2,
+          "injuredUntil": 13288320
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 12,
+    "id": "goblin-regional:00009cc4:12",
+    "triggeredAt": 14027040,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 92.15997826251458,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25.750000000000014,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 80.90833333333333,
+    "threatDemandAtTrigger": 82.43199565250292,
+    "outcome": "costly_success",
+    "resolvedAt": 14040000,
+    "resolutionSummary": {
+      "readiness": 81.13851851851852,
+      "threatDemand": 82.43199565250292,
+      "successChance": 0.4820427664926169,
+      "pressureDays": 27,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -1.2000000000000206,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-100",
+          "durationDays": 2,
+          "injuredUntil": 14042880
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 13,
+    "id": "goblin-regional:00009cc4:13",
+    "triggeredAt": 14797440,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 68.77839129251869,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 29.250000000000064,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 82.92500000000001,
+    "threatDemandAtTrigger": 77.75567825850374,
+    "outcome": "local_defeat",
+    "resolvedAt": 14810400,
+    "resolutionSummary": {
+      "readiness": 82.96000000000001,
+      "threatDemand": 77.75567825850374,
+      "successChance": 0.5717828808351345,
+      "pressureDays": 25,
+      "applied": {
+        "monsterPopulation": 10,
+        "bossProgress": 0,
+        "food": -12,
+        "safety": -4.6000000000000725,
+        "prosperity": -6
+      },
+      "injuries": [
+        {
+          "npcId": "npc-100",
+          "durationDays": 5,
+          "injuredUntil": 14817600
+        },
+        {
+          "npcId": "npc-102",
+          "durationDays": 5,
+          "injuredUntil": 14817600
+        },
+        {
+          "npcId": "npc-109",
+          "durationDays": 5,
+          "injuredUntil": 14817600
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 14,
+    "id": "goblin-regional:00009cc4:14",
+    "triggeredAt": 15635520,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 47.02741050502188,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 59.85000000000066,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 84.58149122807025,
+    "threatDemandAtTrigger": 59.405482101004374,
+    "outcome": "decisive_success",
+    "resolvedAt": 15648480,
+    "resolutionSummary": {
+      "readiness": 84.93921052631586,
+      "threatDemand": 59.405482101004374,
+      "successChance": 0.8051095058747298,
+      "pressureDays": 5,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 15,
+    "id": "goblin-regional:00009cc4:15",
+    "triggeredAt": 17125920,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.226463799999248,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 94.44999999999986,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.33388888888888,
+    "threatDemandAtTrigger": 56.04529275999985,
+    "outcome": "setback",
+    "resolvedAt": 17138880,
+    "resolutionSummary": {
+      "readiness": 88.33388888888888,
+      "threatDemand": 56.257620404499846,
+      "successChance": 0.8559454889156367,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-107",
+          "durationDays": 3,
+          "injuredUntil": 17143200
+        },
+        {
+          "npcId": "npc-114",
+          "durationDays": 3,
+          "injuredUntil": 17143200
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 16,
+    "id": "goblin-regional:00009cc4:16",
+    "triggeredAt": 17860320,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 58.0552181599995,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 81.2499999999977,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 86.36029411764683,
+    "threatDemandAtTrigger": 61.6110436319999,
+    "outcome": "decisive_success",
+    "resolvedAt": 17873280,
+    "resolutionSummary": {
+      "readiness": 86.63029411764683,
+      "threatDemand": 61.6110436319999,
+      "successChance": 0.8005855955294187,
+      "pressureDays": 3,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 17,
+    "id": "goblin-regional:00009cc4:17",
+    "triggeredAt": 18499680,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 62.09862555499941,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 93.89999999999908,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.89980392156853,
+    "threatDemandAtTrigger": 62.419725110999885,
+    "outcome": "costly_success",
+    "resolvedAt": 18512640,
+    "resolutionSummary": {
+      "readiness": 88.27980392156854,
+      "threatDemand": 62.419725110999885,
+      "successChance": 0.8079386142866813,
+      "pressureDays": 6,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-107",
+          "durationDays": 2,
+          "injuredUntil": 18515520
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 18,
+    "id": "goblin-regional:00009cc4:18",
+    "triggeredAt": 19186560,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 40.54002468499968,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 96.50000000000004,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.3375,
+    "threatDemandAtTrigger": 58.10800493699993,
+    "outcome": "costly_success",
+    "resolvedAt": 19199520,
+    "resolutionSummary": {
+      "readiness": 89.51750000000001,
+      "threatDemand": 58.10800493699993,
+      "successChance": 0.8513174947336001,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-107",
+          "durationDays": 2,
+          "injuredUntil": 19202400
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 19,
+    "id": "goblin-regional:00009cc4:19",
+    "triggeredAt": 21497760,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.73936966249785,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.55555555555556,
+    "threatDemandAtTrigger": 56.14787393249957,
+    "outcome": "decisive_success",
+    "resolvedAt": 21510720,
+    "resolutionSummary": {
+      "readiness": 88.55555555555556,
+      "threatDemand": 56.36020157699957,
+      "successChance": 0.8567593236777473,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 20,
+    "id": "goblin-regional:00009cc4:20",
+    "triggeredAt": 22129920,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 42.08564991749808,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 85.49999999999855,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.13333333333318,
+    "threatDemandAtTrigger": 58.41712998349961,
+    "outcome": "decisive_success",
+    "resolvedAt": 22142880,
+    "resolutionSummary": {
+      "readiness": 88.22333333333319,
+      "threatDemand": 58.49264729149962,
+      "successChance": 0.8391213232305711,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 21,
+    "id": "goblin-regional:00009cc4:21",
+    "triggeredAt": 22760640,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 42.60908602499867,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.95833333333334,
+    "threatDemandAtTrigger": 58.521817204999735,
+    "outcome": "costly_success",
+    "resolvedAt": 22773600,
+    "resolutionSummary": {
+      "readiness": 89.01960784313725,
+      "threatDemand": 58.521817204999735,
+      "successChance": 0.8447916606284923,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-137",
+          "durationDays": 2,
+          "injuredUntil": 22776480
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 22,
+    "id": "goblin-regional:00009cc4:22",
+    "triggeredAt": 23748480,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.08713062249829,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 93.34999999999992,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.21595238095237,
+    "threatDemandAtTrigger": 56.01742612449966,
+    "outcome": "costly_success",
+    "resolvedAt": 23761440,
+    "resolutionSummary": {
+      "readiness": 89.21388888888887,
+      "threatDemand": 56.244954917499655,
+      "successChance": 0.8619531076767717,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-147",
+          "durationDays": 2,
+          "injuredUntil": 23764320
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 23,
+    "id": "goblin-regional:00009cc4:23",
+    "triggeredAt": 25428960,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 31.27759458999995,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 97.29999999999917,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.22444444444436,
+    "threatDemandAtTrigger": 56.25551891799999,
+    "outcome": "decisive_success",
+    "resolvedAt": 25441920,
+    "resolutionSummary": {
+      "readiness": 88.37444444444436,
+      "threatDemand": 56.46784656249999,
+      "successChance": 0.8547793147060558,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 24,
+    "id": "goblin-regional:00009cc4:24",
+    "triggeredAt": 26068320,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 35.28522594250015,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.16666666666666,
+    "threatDemandAtTrigger": 57.05704518850003,
+    "outcome": "setback",
+    "resolvedAt": 26081280,
+    "resolutionSummary": {
+      "readiness": 89.2156862745098,
+      "threatDemand": 57.05704518850003,
+      "successChance": 0.8565088354741083,
+      "pressureDays": 2,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-171",
+          "durationDays": 3,
+          "injuredUntil": 26085600
+        },
+        {
+          "npcId": "npc-177",
+          "durationDays": 3,
+          "injuredUntil": 26085600
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 25,
+    "id": "goblin-regional:00009cc4:25",
+    "triggeredAt": 29652480,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.440927919997637,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 97.49999999999969,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.52777777777774,
+    "threatDemandAtTrigger": 56.088185583999525,
+    "outcome": "costly_success",
+    "resolvedAt": 29665440,
+    "resolutionSummary": {
+      "readiness": 87.61777777777775,
+      "threatDemand": 56.16370289199953,
+      "successChance": 0.8516307074074799,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-199",
+          "durationDays": 2,
+          "injuredUntil": 29668320
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 26,
+    "id": "goblin-regional:00009cc4:26",
+    "triggeredAt": 30329280,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 57.20847313499696,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 79.0999999999993,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 86.79659999999994,
+    "threatDemandAtTrigger": 61.44169462699939,
+    "outcome": "decisive_success",
+    "resolvedAt": 30342240,
+    "resolutionSummary": {
+      "readiness": 86.90999999999994,
+      "threatDemand": 61.654022271499386,
+      "successChance": 0.8026769148439893,
+      "pressureDays": 3,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 27,
+    "id": "goblin-regional:00009cc4:27",
+    "triggeredAt": 30980160,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 40.15389362499698,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.25925925925927,
+    "threatDemandAtTrigger": 58.030778724999394,
+    "outcome": "decisive_success",
+    "resolvedAt": 30993120,
+    "resolutionSummary": {
+      "readiness": 89.35185185185185,
+      "threatDemand": 58.030778724999394,
+      "successChance": 0.8506946379247912,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 28,
+    "id": "goblin-regional:00009cc4:28",
+    "triggeredAt": 33274080,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 31.163228679999857,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 99.5,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.59583333333333,
+    "threatDemandAtTrigger": 56.232645735999974,
+    "outcome": "local_defeat",
+    "resolvedAt": 33287040,
+    "resolutionSummary": {
+      "readiness": 88.64583333333334,
+      "threatDemand": 56.30816304399997,
+      "successChance": 0.8577268924127022,
+      "pressureDays": 2,
+      "applied": {
+        "monsterPopulation": 10,
+        "bossProgress": 0,
+        "food": -12,
+        "safety": -8,
+        "prosperity": -6
+      },
+      "injuries": [
+        {
+          "npcId": "npc-235",
+          "durationDays": 5,
+          "injuredUntil": 33294240
+        },
+        {
+          "npcId": "npc-243",
+          "durationDays": 5,
+          "injuredUntil": 33294240
+        },
+        {
+          "npcId": "npc-248",
+          "durationDays": 5,
+          "injuredUntil": 33294240
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 29,
+    "id": "goblin-regional:00009cc4:29",
+    "triggeredAt": 37634400,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.766112809999832,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.55555555555556,
+    "threatDemandAtTrigger": 56.15322256199997,
+    "outcome": "costly_success",
+    "resolvedAt": 37647360,
+    "resolutionSummary": {
+      "readiness": 89.55555555555556,
+      "threatDemand": 56.36555020649997,
+      "successChance": 0.8634080256571918,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-246",
+          "durationDays": 2,
+          "injuredUntil": 37650240
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 30,
+    "id": "goblin-regional:00009cc4:30",
+    "triggeredAt": 38315520,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 36.05592792249961,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 96.29999999999976,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.17901960784312,
+    "threatDemandAtTrigger": 57.21118558449992,
+    "outcome": "decisive_success",
+    "resolvedAt": 38328480,
+    "resolutionSummary": {
+      "readiness": 87.46509803921566,
+      "threatDemand": 57.286702892499925,
+      "successChance": 0.8424508047374376,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 2.8000000000002956,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 31,
+    "id": "goblin-regional:00009cc4:31",
+    "triggeredAt": 38959200,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 31.752784037499342,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 90,
+    "threatDemandAtTrigger": 56.35055680749987,
+    "outcome": "decisive_success",
+    "resolvedAt": 38972160,
+    "resolutionSummary": {
+      "readiness": 90,
+      "threatDemand": 56.42607411549987,
+      "successChance": 0.8659040021059464,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 32,
+    "id": "goblin-regional:00009cc4:32",
+    "triggeredAt": 39592800,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 45.63728250749965,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 85.84999999999842,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.58499999999984,
+    "threatDemandAtTrigger": 59.12745650149993,
+    "outcome": "costly_success",
+    "resolvedAt": 39605760,
+    "resolutionSummary": {
+      "readiness": 87.66499999999984,
+      "threatDemand": 59.218174957999935,
+      "successChance": 0.8292582108513804,
+      "pressureDays": 2,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-266",
+          "durationDays": 2,
+          "injuredUntil": 39608640
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 33,
+    "id": "goblin-regional:00009cc4:33",
+    "triggeredAt": 40268160,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 59.84577684500047,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 86.04999999999585,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 86.74225490196037,
+    "threatDemandAtTrigger": 61.96915536900009,
+    "outcome": "costly_success",
+    "resolvedAt": 40281120,
+    "resolutionSummary": {
+      "readiness": 87.01029411764665,
+      "threatDemand": 61.96915536900009,
+      "successChance": 0.800779659237167,
+      "pressureDays": 5,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-266",
+          "durationDays": 2,
+          "injuredUntil": 40284000
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 34,
+    "id": "goblin-regional:00009cc4:34",
+    "triggeredAt": 40966560,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 67.50499060500076,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 67.4499999999992,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 85.85611111111103,
+    "threatDemandAtTrigger": 77.50099812100015,
+    "outcome": "decisive_success",
+    "resolvedAt": 40979520,
+    "resolutionSummary": {
+      "readiness": 85.72111111111103,
+      "threatDemand": 77.71332576550017,
+      "successChance": 0.6094204980291423,
+      "pressureDays": 8,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 35,
+    "id": "goblin-regional:00009cc4:35",
+    "triggeredAt": 41660640,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 41.45414694000389,
+      "campLevel": 2,
+      "bossAlive": false,
+      "settlementSafety": 43.300000000000026,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety"
+      ]
+    },
+    "readinessAtTrigger": 82.35083333333334,
+    "threatDemandAtTrigger": 50.29082938800078,
+    "outcome": "decisive_success",
+    "resolvedAt": 41673600,
+    "resolutionSummary": {
+      "readiness": 82.80083333333334,
+      "threatDemand": 50.36634669600078,
+      "successChance": 0.8583819993033902,
+      "pressureDays": 8,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 36,
+    "id": "goblin-regional:00009cc4:36",
+    "triggeredAt": 42602400,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.1364984125038,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.85714285714286,
+    "threatDemandAtTrigger": 56.02729968250076,
+    "outcome": "costly_success",
+    "resolvedAt": 42615360,
+    "resolutionSummary": {
+      "readiness": 87.85714285714286,
+      "threatDemand": 56.23962732700076,
+      "successChance": 0.8527743636634142,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-311",
+          "durationDays": 2,
+          "injuredUntil": 42618240
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 37,
+    "id": "goblin-regional:00009cc4:37",
+    "triggeredAt": 43675200,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.274602045002922,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 95.09999999999982,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.28777777777776,
+    "threatDemandAtTrigger": 56.05492040900059,
+    "outcome": "decisive_success",
+    "resolvedAt": 43688160,
+    "resolutionSummary": {
+      "readiness": 89.37777777777775,
+      "threatDemand": 56.13043771700058,
+      "successChance": 0.8637832436003084,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 38,
+    "id": "goblin-regional:00009cc4:38",
+    "triggeredAt": 44314560,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 43.78295121000286,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.375,
+    "threatDemandAtTrigger": 58.75659024200057,
+    "outcome": "costly_success",
+    "resolvedAt": 44327520,
+    "resolutionSummary": {
+      "readiness": 89.375,
+      "threatDemand": 58.83210755000057,
+      "successChance": 0.8451199152803806,
+      "pressureDays": 2,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-313",
+          "durationDays": 2,
+          "injuredUntil": 44330400
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40132,
+    "sequence": 39,
+    "id": "goblin-regional:00009cc4:39",
+    "triggeredAt": 49069440,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 32.41050099249996,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.33333333333333,
+    "threatDemandAtTrigger": 56.48210019849999,
+    "outcome": "decisive_success",
+    "resolvedAt": 49082400,
+    "resolutionSummary": {
+      "readiness": 88.78285714285714,
+      "threatDemand": 56.785634733999984,
+      "successChance": 0.8554031641178159,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 1,
+    "id": "goblin-regional:00009cc5:1",
+    "triggeredAt": 213120,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 54.516095099999916,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 99.19999999999999,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 74.25666666666667,
+    "threatDemandAtTrigger": 60.90321901999998,
+    "outcome": "decisive_success",
+    "resolvedAt": 226080,
+    "resolutionSummary": {
+      "readiness": 75.5456,
+      "threatDemand": 61.389167337499984,
+      "successChance": 0.6870725424884524,
+      "pressureDays": 3,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 2.600000000000037,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 2,
+    "id": "goblin-regional:00009cc5:2",
+    "triggeredAt": 856800,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 69.02803493750324,
+      "campLevel": 3,
+      "bossAlive": false,
+      "settlementSafety": 56.5499999999996,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety"
+      ]
+    },
+    "readinessAtTrigger": 83.05083333333329,
+    "threatDemandAtTrigger": 69.80560698750065,
+    "outcome": "decisive_success",
+    "resolvedAt": 869760,
+    "resolutionSummary": {
+      "readiness": 82.22166666666662,
+      "threatDemand": 77.88112429550067,
+      "successChance": 0.5599948714303192,
+      "pressureDays": 13,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 3,
+    "id": "goblin-regional:00009cc5:3",
+    "triggeredAt": 1553760,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 80.22790747500588,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.25,
+    "threatDemandAtTrigger": 80.04558149500117,
+    "outcome": "costly_success",
+    "resolvedAt": 1566720,
+    "resolutionSummary": {
+      "readiness": 81.2497,
+      "threatDemand": 80.12109880300119,
+      "successChance": 0.5156698833791044,
+      "pressureDays": 25,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-1",
+          "durationDays": 2,
+          "injuredUntil": 1569600
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 4,
+    "id": "goblin-regional:00009cc5:4",
+    "triggeredAt": 2314080,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 46.60766838250695,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 90,
+    "threatDemandAtTrigger": 59.32153367650139,
+    "outcome": "decisive_success",
+    "resolvedAt": 2327040,
+    "resolutionSummary": {
+      "readiness": 90,
+      "threatDemand": 59.412252133001395,
+      "successChance": 0.8454458140625457,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 5,
+    "id": "goblin-regional:00009cc5:5",
+    "triggeredAt": 8301600,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.083367679999377,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 92.64999999999995,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.46166923076923,
+    "threatDemandAtTrigger": 56.01667353599988,
+    "outcome": "decisive_success",
+    "resolvedAt": 8314560,
+    "resolutionSummary": {
+      "readiness": 88.49576923076923,
+      "threatDemand": 56.22900118049988,
+      "successChance": 0.8572455311704876,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 6,
+    "id": "goblin-regional:00009cc5:6",
+    "triggeredAt": 8932320,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 56.89875462749913,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 77.59999999999984,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 84.65599999999999,
+    "threatDemandAtTrigger": 61.37975092549983,
+    "outcome": "decisive_success",
+    "resolvedAt": 8945280,
+    "resolutionSummary": {
+      "readiness": 85.07999999999998,
+      "threatDemand": 61.865699242999824,
+      "successChance": 0.7840935923555625,
+      "pressureDays": 4,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 7,
+    "id": "goblin-regional:00009cc5:7",
+    "triggeredAt": 9577440,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 79.2948717948718,
+    "threatDemandAtTrigger": 84,
+    "outcome": "decisive_success",
+    "resolvedAt": 9590400,
+    "resolutionSummary": {
+      "readiness": 79.67948717948718,
+      "threatDemand": 84,
+      "successChance": 0.4402793298250911,
+      "pressureDays": 26,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 8,
+    "id": "goblin-regional:00009cc5:8",
+    "triggeredAt": 10287360,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.05555555555556,
+    "threatDemandAtTrigger": 84,
+    "outcome": "decisive_success",
+    "resolvedAt": 10300320,
+    "resolutionSummary": {
+      "readiness": 81.05555555555556,
+      "threatDemand": 84,
+      "successChance": 0.45919588578364284,
+      "pressureDays": 26,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 9,
+    "id": "goblin-regional:00009cc5:9",
+    "triggeredAt": 11000160,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 82.05555555555556,
+    "threatDemandAtTrigger": 84,
+    "outcome": "decisive_success",
+    "resolvedAt": 11013120,
+    "resolutionSummary": {
+      "readiness": 81.93995555555556,
+      "threatDemand": 84,
+      "successChance": 0.47141946068432344,
+      "pressureDays": 26,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 2
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 10,
+    "id": "goblin-regional:00009cc5:10",
+    "triggeredAt": 11712960,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 75.10504722750423,
+      "campLevel": 3,
+      "bossAlive": false,
+      "settlementSafety": 40.44999999999986,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety"
+      ]
+    },
+    "readinessAtTrigger": 84.04499999999999,
+    "threatDemandAtTrigger": 71.02100944550085,
+    "outcome": "setback",
+    "resolvedAt": 11725920,
+    "resolutionSummary": {
+      "readiness": 84.35999999999999,
+      "threatDemand": 71.09652675350087,
+      "successChance": 0.6763087613021947,
+      "pressureDays": 22,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 8,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-101",
+          "durationDays": 3,
+          "injuredUntil": 11730240
+        },
+        {
+          "npcId": "npc-110",
+          "durationDays": 3,
+          "injuredUntil": 11730240
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 11,
+    "id": "goblin-regional:00009cc5:11",
+    "triggeredAt": 12507840,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 98.66163983250036,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25.150000000000002,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.05375555555555,
+    "threatDemandAtTrigger": 83.73232796650007,
+    "outcome": "costly_success",
+    "resolvedAt": 12520800,
+    "resolutionSummary": {
+      "readiness": 81.11555555555556,
+      "threatDemand": 83.73232796650007,
+      "successChance": 0.4637198124622804,
+      "pressureDays": 28,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -0.6000000000000085,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-104",
+          "durationDays": 2,
+          "injuredUntil": 12523680
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 12,
+    "id": "goblin-regional:00009cc5:12",
+    "triggeredAt": 13271040,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 77.3074733000005,
+      "campLevel": 3,
+      "bossAlive": false,
+      "settlementSafety": 50.2499999999997,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety"
+      ]
+    },
+    "readinessAtTrigger": 83.77499999999998,
+    "threatDemandAtTrigger": 71.4614946600001,
+    "outcome": "setback",
+    "resolvedAt": 13284000,
+    "resolutionSummary": {
+      "readiness": 84.19416666666663,
+      "threatDemand": 71.53701196800012,
+      "successChance": 0.6688913920637417,
+      "pressureDays": 20,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 8,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-103",
+          "durationDays": 3,
+          "injuredUntil": 13288320
+        },
+        {
+          "npcId": "npc-105",
+          "durationDays": 3,
+          "injuredUntil": 13288320
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 13,
+    "id": "goblin-regional:00009cc5:13",
+    "triggeredAt": 14058720,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 65.64542693000473,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 27.15000000000003,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.73460784313725,
+    "threatDemandAtTrigger": 77.12908538600095,
+    "outcome": "costly_success",
+    "resolvedAt": 14071680,
+    "resolutionSummary": {
+      "readiness": 81.56960784313725,
+      "threatDemand": 77.12908538600095,
+      "successChance": 0.5613630316953317,
+      "pressureDays": 21,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -0.5000000000000391,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-103",
+          "durationDays": 2,
+          "injuredUntil": 14074560
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 14,
+    "id": "goblin-regional:00009cc5:14",
+    "triggeredAt": 19946880,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.704037459999977,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.4375,
+    "threatDemandAtTrigger": 56.14080749199999,
+    "outcome": "costly_success",
+    "resolvedAt": 19959840,
+    "resolutionSummary": {
+      "readiness": 88.4375,
+      "threatDemand": 56.3531351365,
+      "successChance": 0.8560009414968883,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-100",
+          "durationDays": 2,
+          "injuredUntil": 19962720
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 15,
+    "id": "goblin-regional:00009cc5:15",
+    "triggeredAt": 20620800,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 89.03580341250138,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.34615384615384,
+    "threatDemandAtTrigger": 81.80716068250028,
+    "outcome": "decisive_success",
+    "resolvedAt": 20633760,
+    "resolutionSummary": {
+      "readiness": 81.38888888888889,
+      "threatDemand": 82.29310900000027,
+      "successChance": 0.4874440276510124,
+      "pressureDays": 25,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 16,
+    "id": "goblin-regional:00009cc5:16",
+    "triggeredAt": 21346560,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 82.78534696500068,
+      "campLevel": 3,
+      "bossAlive": false,
+      "settlementSafety": 39.5,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety"
+      ]
+    },
+    "readinessAtTrigger": 82.28333333333333,
+    "threatDemandAtTrigger": 72.55706939300013,
+    "outcome": "costly_success",
+    "resolvedAt": 21359520,
+    "resolutionSummary": {
+      "readiness": 82.42833333333333,
+      "threatDemand": 80.76939703750016,
+      "successChance": 0.5230244866134655,
+      "pressureDays": 21,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-132",
+          "durationDays": 2,
+          "injuredUntil": 21362400
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 17,
+    "id": "goblin-regional:00009cc5:17",
+    "triggeredAt": 22096800,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.42857142857143,
+    "threatDemandAtTrigger": 84,
+    "outcome": "setback",
+    "resolvedAt": 22109760,
+    "resolutionSummary": {
+      "readiness": 81.5625,
+      "threatDemand": 84,
+      "successChance": 0.4661974725293538,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 0,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-132",
+          "durationDays": 3,
+          "injuredUntil": 22114080
+        },
+        {
+          "npcId": "npc-169",
+          "durationDays": 3,
+          "injuredUntil": 22114080
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 18,
+    "id": "goblin-regional:00009cc5:18",
+    "triggeredAt": 22900320,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 99.2409555625015,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.12745098039215,
+    "threatDemandAtTrigger": 83.8481911125003,
+    "outcome": "costly_success",
+    "resolvedAt": 22913280,
+    "resolutionSummary": {
+      "readiness": 81.04166666666666,
+      "threatDemand": 83.93890956900032,
+      "successChance": 0.45984716599277475,
+      "pressureDays": 29,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-169",
+          "durationDays": 2,
+          "injuredUntil": 22916160
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 19,
+    "id": "goblin-regional:00009cc5:19",
+    "triggeredAt": 23659200,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 100,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.97916666666666,
+    "threatDemandAtTrigger": 84,
+    "outcome": "setback",
+    "resolvedAt": 23672160,
+    "resolutionSummary": {
+      "readiness": 81.97916666666666,
+      "threatDemand": 84,
+      "successChance": 0.47196231361698104,
+      "pressureDays": 30,
+      "applied": {
+        "monsterPopulation": 0,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": 0,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-169",
+          "durationDays": 3,
+          "injuredUntil": 23676480
+        },
+        {
+          "npcId": "npc-172",
+          "durationDays": 3,
+          "injuredUntil": 23676480
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 20,
+    "id": "goblin-regional:00009cc5:20",
+    "triggeredAt": 24474240,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 99.37227794750162,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.25,
+    "threatDemandAtTrigger": 83.87445558950033,
+    "outcome": "decisive_success",
+    "resolvedAt": 24487200,
+    "resolutionSummary": {
+      "readiness": 81.1388,
+      "threatDemand": 83.94997289750034,
+      "successChance": 0.46103509930043607,
+      "pressureDays": 26,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 2
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 21,
+    "id": "goblin-regional:00009cc5:21",
+    "triggeredAt": 25189920,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 81.10216953750242,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 26.650000000000023,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.97872549019608,
+    "threatDemandAtTrigger": 80.22043390750048,
+    "outcome": "local_defeat",
+    "resolvedAt": 25202880,
+    "resolutionSummary": {
+      "readiness": 82.06185185185186,
+      "threatDemand": 80.22043390750048,
+      "successChance": 0.5255529677441072,
+      "pressureDays": 28,
+      "applied": {
+        "monsterPopulation": 10,
+        "bossProgress": 0,
+        "food": -12,
+        "safety": -2.10000000000003,
+        "prosperity": -6
+      },
+      "injuries": [
+        {
+          "npcId": "npc-178",
+          "durationDays": 5,
+          "injuredUntil": 25210080
+        },
+        {
+          "npcId": "npc-182",
+          "durationDays": 5,
+          "injuredUntil": 25210080
+        },
+        {
+          "npcId": "npc-184",
+          "durationDays": 5,
+          "injuredUntil": 25210080
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 22,
+    "id": "goblin-regional:00009cc5:22",
+    "triggeredAt": 26040960,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 71.96569983250696,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 27.20000000000003,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.9356862745098,
+    "threatDemandAtTrigger": 78.3931399665014,
+    "outcome": "local_defeat",
+    "resolvedAt": 26053920,
+    "resolutionSummary": {
+      "readiness": 81.98068627450981,
+      "threatDemand": 78.3931399665014,
+      "successChance": 0.5496627416835558,
+      "pressureDays": 26,
+      "applied": {
+        "monsterPopulation": 10,
+        "bossProgress": 0,
+        "food": -12,
+        "safety": -2.6500000000000377,
+        "prosperity": -6
+      },
+      "injuries": [
+        {
+          "npcId": "npc-184",
+          "durationDays": 5,
+          "injuredUntil": 26061120
+        },
+        {
+          "npcId": "npc-191",
+          "durationDays": 5,
+          "injuredUntil": 26061120
+        },
+        {
+          "npcId": "npc-193",
+          "durationDays": 5,
+          "injuredUntil": 26061120
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 23,
+    "id": "goblin-regional:00009cc5:23",
+    "triggeredAt": 26880480,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 77.9227633750117,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 82.5,
+    "threatDemandAtTrigger": 79.58455267500234,
+    "outcome": "decisive_success",
+    "resolvedAt": 26893440,
+    "resolutionSummary": {
+      "readiness": 82.5,
+      "threatDemand": 79.66006998300236,
+      "successChance": 0.5393618547371073,
+      "pressureDays": 22,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 24,
+    "id": "goblin-regional:00009cc5:24",
+    "triggeredAt": 27590400,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 65.6344193075162,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 46.79999999999975,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 83.50352941176469,
+    "threatDemandAtTrigger": 77.12688386150325,
+    "outcome": "setback",
+    "resolvedAt": 27603360,
+    "resolutionSummary": {
+      "readiness": 83.54852941176469,
+      "threatDemand": 77.12688386150325,
+      "successChance": 0.5882554322158636,
+      "pressureDays": 19,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-193",
+          "durationDays": 3,
+          "injuredUntil": 27607680
+        },
+        {
+          "npcId": "npc-195",
+          "durationDays": 3,
+          "injuredUntil": 27607680
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 25,
+    "id": "goblin-regional:00009cc5:25",
+    "triggeredAt": 28391040,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 56.17409729751909,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 46.15000000000062,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 83.50388888888895,
+    "threatDemandAtTrigger": 61.23481945950382,
+    "outcome": "decisive_success",
+    "resolvedAt": 28404000,
+    "resolutionSummary": {
+      "readiness": 83.81611111111118,
+      "threatDemand": 61.31033676750382,
+      "successChance": 0.7773553877080881,
+      "pressureDays": 11,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 26,
+    "id": "goblin-regional:00009cc5:26",
+    "triggeredAt": 29208960,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 33.47339880501875,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.95833333333334,
+    "threatDemandAtTrigger": 56.69467976100375,
+    "outcome": "decisive_success",
+    "resolvedAt": 29221920,
+    "resolutionSummary": {
+      "readiness": 88.88888888888889,
+      "threatDemand": 56.77019706900376,
+      "successChance": 0.8562358516611362,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 27,
+    "id": "goblin-regional:00009cc5:27",
+    "triggeredAt": 31662720,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.10503273749992,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 99.89999999999998,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.96435897435897,
+    "threatDemandAtTrigger": 56.02100654749999,
+    "outcome": "decisive_success",
+    "resolvedAt": 31675680,
+    "resolutionSummary": {
+      "readiness": 89.1025641025641,
+      "threatDemand": 48.02100654749999,
+      "successChance": 0.9,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -7.534774324999923,
+        "bossProgress": -2.8,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": {
+      "actorKind": "npc",
+      "actorId": "npc-272",
+      "at": 31664160
+    },
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 28,
+    "id": "goblin-regional:00009cc5:28",
+    "triggeredAt": 33773760,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 34.79814173749989,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 90,
+    "threatDemandAtTrigger": 48.95962834749998,
+    "outcome": "decisive_success",
+    "resolvedAt": 33786720,
+    "resolutionSummary": {
+      "readiness": 90,
+      "threatDemand": 48.95962834749998,
+      "successChance": 0.9,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -10.859779959999887,
+        "bossProgress": -2.4299999999999997,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": {
+      "actorKind": "npc",
+      "actorId": "npc-240",
+      "at": 33773760
+    },
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 29,
+    "id": "goblin-regional:00009cc5:29",
+    "triggeredAt": 34421760,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.954756882499552,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.52941176470588,
+    "threatDemandAtTrigger": 56.19095137649991,
+    "outcome": "decisive_success",
+    "resolvedAt": 34434720,
+    "resolutionSummary": {
+      "readiness": 88.82352941176471,
+      "threatDemand": 56.266468684499905,
+      "successChance": 0.8592077804628545,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 0,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 30,
+    "id": "goblin-regional:00009cc5:30",
+    "triggeredAt": 35053920,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 33.30403745999983,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 98.39999999999986,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.83999999999999,
+    "threatDemandAtTrigger": 56.66080749199997,
+    "outcome": "costly_success",
+    "resolvedAt": 35066880,
+    "resolutionSummary": {
+      "readiness": 89.74999999999997,
+      "threatDemand": 57.00994547299996,
+      "successChance": 0.86043311287718,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-232",
+          "durationDays": 2,
+          "injuredUntil": 35069760
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 31,
+    "id": "goblin-regional:00009cc5:31",
+    "triggeredAt": 35755200,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 45.46727096999857,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 92,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.65238095238095,
+    "threatDemandAtTrigger": 59.09345419399971,
+    "outcome": "costly_success",
+    "resolvedAt": 35768160,
+    "resolutionSummary": {
+      "readiness": 87.65238095238095,
+      "threatDemand": 59.305781838499705,
+      "successChance": 0.8284683819742091,
+      "pressureDays": 2,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-232",
+          "durationDays": 2,
+          "injuredUntil": 35771040
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 32,
+    "id": "goblin-regional:00009cc5:32",
+    "triggeredAt": 36444960,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 61.919443727499385,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 81.6499999999988,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 85.81663333333321,
+    "threatDemandAtTrigger": 62.383888745499874,
+    "outcome": "decisive_success",
+    "resolvedAt": 36457920,
+    "resolutionSummary": {
+      "readiness": 86.05333333333323,
+      "threatDemand": 62.383888745499874,
+      "successChance": 0.7883434854437733,
+      "pressureDays": 4,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 33,
+    "id": "goblin-regional:00009cc5:33",
+    "triggeredAt": 37084320,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 48.86744834249894,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 96.70000000000006,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.71761904761905,
+    "threatDemandAtTrigger": 59.773489668499785,
+    "outcome": "costly_success",
+    "resolvedAt": 37097280,
+    "resolutionSummary": {
+      "readiness": 88.71761904761905,
+      "threatDemand": 59.98581731299978,
+      "successChance": 0.8314881827911855,
+      "pressureDays": 3,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-250",
+          "durationDays": 2,
+          "injuredUntil": 37100160
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 34,
+    "id": "goblin-regional:00009cc5:34",
+    "triggeredAt": 42647040,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.69441072249978,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.33333333333333,
+    "threatDemandAtTrigger": 56.13888214449996,
+    "outcome": "costly_success",
+    "resolvedAt": 42660000,
+    "resolutionSummary": {
+      "readiness": 89.3947619047619,
+      "threatDemand": 56.36641093749996,
+      "successChance": 0.8623454177735302,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-281",
+          "durationDays": 2,
+          "injuredUntil": 42662880
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 35,
+    "id": "goblin-regional:00009cc5:35",
+    "triggeredAt": 43322400,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 61.23221434999962,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 72.2999999999986,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 86.34111111111098,
+    "threatDemandAtTrigger": 62.246442869999925,
+    "outcome": "decisive_success",
+    "resolvedAt": 43335360,
+    "resolutionSummary": {
+      "readiness": 86.27761904761891,
+      "threatDemand": 62.45877051449992,
+      "successChance": 0.7897251290622891,
+      "pressureDays": 5,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 36,
+    "id": "goblin-regional:00009cc5:36",
+    "triggeredAt": 43960320,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 63.1815126375001,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 68.69999999999717,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 85.49745098039187,
+    "threatDemandAtTrigger": 62.63630252750002,
+    "outcome": "setback",
+    "resolvedAt": 43973280,
+    "resolutionSummary": {
+      "readiness": 85.58745098039186,
+      "threatDemand": 62.71181983550003,
+      "successChance": 0.7808913669056071,
+      "pressureDays": 12,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -5,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-300",
+          "durationDays": 3,
+          "injuredUntil": 43977600
+        },
+        {
+          "npcId": "npc-309",
+          "durationDays": 3,
+          "injuredUntil": 43977600
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 37,
+    "id": "goblin-regional:00009cc5:37",
+    "triggeredAt": 44696160,
+    "severity": 3,
+    "cause": {
+      "threatLevel": 3,
+      "monsterPopulation": 65.21026860750425,
+      "campLevel": 3,
+      "bossAlive": true,
+      "settlementSafety": 25.75000000000001,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 81.98676470588235,
+    "threatDemandAtTrigger": 77.04205372150085,
+    "outcome": "setback",
+    "resolvedAt": 44709120,
+    "resolutionSummary": {
+      "readiness": 82.06176470588235,
+      "threatDemand": 77.04205372150085,
+      "successChance": 0.5692698621664178,
+      "pressureDays": 23,
+      "applied": {
+        "monsterPopulation": 4,
+        "bossProgress": 0,
+        "food": -8,
+        "safety": -1.5000000000000142,
+        "prosperity": -4
+      },
+      "injuries": [
+        {
+          "npcId": "npc-300",
+          "durationDays": 3,
+          "injuredUntil": 44713440
+        },
+        {
+          "npcId": "npc-311",
+          "durationDays": 3,
+          "injuredUntil": 44713440
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 38,
+    "id": "goblin-regional:00009cc5:38",
+    "triggeredAt": 45493920,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 36.20856839750547,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 77.05000000000105,
+      "settlementFood": 100,
+      "conditions": [
+        "low_safety",
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.18416666666677,
+    "threatDemandAtTrigger": 57.241713679501096,
+    "outcome": "costly_success",
+    "resolvedAt": 45506880,
+    "resolutionSummary": {
+      "readiness": 87.37833333333343,
+      "threatDemand": 57.3172309875011,
+      "successChance": 0.8415839860572759,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-300",
+          "durationDays": 2,
+          "injuredUntil": 45509760
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 39,
+    "id": "goblin-regional:00009cc5:39",
+    "triggeredAt": 46170720,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 46.71088471750625,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 84.3499999999986,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.28916666666653,
+    "threatDemandAtTrigger": 59.34217694350125,
+    "outcome": "decisive_success",
+    "resolvedAt": 46183680,
+    "resolutionSummary": {
+      "readiness": 86.7733333333332,
+      "threatDemand": 59.34217694350125,
+      "successChance": 0.8211198620407912,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 40,
+    "id": "goblin-regional:00009cc5:40",
+    "triggeredAt": 46801440,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 48.14638973500613,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 90.64999999999844,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.50249999999984,
+    "threatDemandAtTrigger": 59.62927794700123,
+    "outcome": "decisive_success",
+    "resolvedAt": 46814400,
+    "resolutionSummary": {
+      "readiness": 87.56833333333317,
+      "threatDemand": 59.62927794700123,
+      "successChance": 0.8252268893387408,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 41,
+    "id": "goblin-regional:00009cc5:41",
+    "triggeredAt": 47442240,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 49.191521490006004,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 90.54999999999829,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 87.38833333333315,
+    "threatDemandAtTrigger": 59.8383042980012,
+    "outcome": "decisive_success",
+    "resolvedAt": 47455200,
+    "resolutionSummary": {
+      "readiness": 87.56833333333316,
+      "threatDemand": 59.8383042980012,
+      "successChance": 0.8235457065460988,
+      "pressureDays": 1,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 42,
+    "id": "goblin-regional:00009cc5:42",
+    "triggeredAt": 48087360,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 36.459353830006144,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 97.49999999999957,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.49999999999996,
+    "threatDemandAtTrigger": 57.29187076600123,
+    "outcome": "decisive_success",
+    "resolvedAt": 48100320,
+    "resolutionSummary": {
+      "readiness": 88.58999999999995,
+      "threatDemand": 57.367388074001234,
+      "successChance": 0.8499985332412683,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 1.6000000000004775,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 43,
+    "id": "goblin-regional:00009cc5:43",
+    "triggeredAt": 49042080,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 30.6236019375051,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 100,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 89.79166666666667,
+    "threatDemandAtTrigger": 56.12472038750102,
+    "outcome": "decisive_success",
+    "resolvedAt": 49055040,
+    "resolutionSummary": {
+      "readiness": 88.93486666666666,
+      "threatDemand": 56.200237695501016,
+      "successChance": 0.8603969120560664,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 1.5360000000000014
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 44,
+    "id": "goblin-regional:00009cc5:44",
+    "triggeredAt": 50760000,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 31.268044860004284,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 93.94999999999989,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.06166666666665,
+    "threatDemandAtTrigger": 56.253608972000855,
+    "outcome": "decisive_success",
+    "resolvedAt": 50772960,
+    "resolutionSummary": {
+      "readiness": 88.08547619047619,
+      "threatDemand": 56.465936616500855,
+      "successChance": 0.8527884808370562,
+      "pressureDays": 0,
+      "applied": {
+        "monsterPopulation": -12,
+        "bossProgress": -18,
+        "food": -4,
+        "safety": 4,
+        "prosperity": 0
+      },
+      "injuries": [],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  },
+  {
+    "scenario": "no-intervention",
+    "seed": 40133,
+    "sequence": 45,
+    "id": "goblin-regional:00009cc5:45",
+    "triggeredAt": 51389280,
+    "severity": 2,
+    "cause": {
+      "threatLevel": 2,
+      "monsterPopulation": 49.066910850004625,
+      "campLevel": 2,
+      "bossAlive": true,
+      "settlementSafety": 91.39999999999901,
+      "settlementFood": 100,
+      "conditions": [
+        "chief_present"
+      ]
+    },
+    "readinessAtTrigger": 88.72333333333324,
+    "threatDemandAtTrigger": 59.81338217000093,
+    "outcome": "costly_success",
+    "resolvedAt": 51402240,
+    "resolutionSummary": {
+      "readiness": 88.81333333333323,
+      "threatDemand": 59.88889947800093,
+      "successChance": 0.8329823547233277,
+      "pressureDays": 3,
+      "applied": {
+        "monsterPopulation": -6,
+        "bossProgress": -8,
+        "food": -8,
+        "safety": -2,
+        "prosperity": -2
+      },
+      "injuries": [
+        {
+          "npcId": "npc-345",
+          "durationDays": 2,
+          "injuredUntil": 51405120
+        }
+      ],
+      "recovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "chiefOutcome": null,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    }
+  }
+]

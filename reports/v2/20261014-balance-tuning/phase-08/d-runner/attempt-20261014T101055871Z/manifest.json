@@ -1,0 +1,26 @@
+{
+  "command": "node scripts/phase8/run-world-crisis.mjs",
+  "startedAt": "2026-10-14T10:10:55.871Z",
+  "head": "5e223beb2ef056968861bc4c7125c1fb41da8728",
+  "srcFingerprint": "6ab18dfe0259d99d4d74802c612b32268930926676e5d0312ae37513cda3f95d",
+  "seeds": [
+    40131,
+    40132,
+    40133
+  ],
+  "years": [
+    10,
+    50,
+    100
+  ],
+  "scenarios": [
+    "no-intervention",
+    "life-focused",
+    "adventure-focused",
+    "mixed",
+    "prosperous-controlled",
+    "struggling-controlled"
+  ],
+  "policy": "Normal fresh-save worlds. Life periodically performs public farm actions and attempts one unit of public crisis food contribution when legal; Adventure periodically enters public forest encounters and fights by public combatTurn; Mixed alternates both. Prosperous/Struggling change only documented initial settlement fields as controlled fixtures.",
+  "timeModel": "Real simulation.simulate(), advanced in canonical one-day intervals; no parallel world model."
+}

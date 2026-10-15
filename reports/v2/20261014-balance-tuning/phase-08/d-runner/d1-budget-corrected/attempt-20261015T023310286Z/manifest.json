@@ -1,0 +1,31 @@
+{
+  "command": "node scripts/phase8/run-world-crisis.mjs --scenario=life-focused,adventure-focused,mixed,prosperous-controlled,struggling-controlled --comparison=D1-budget-corrected --output=d1-budget-corrected",
+  "startedAt": "2026-10-15T02:33:10.286Z",
+  "head": "c489ff18ac656d3c483a5b9d1b59e3d61257270b",
+  "srcFingerprint": "6ab18dfe0259d99d4d74802c612b32268930926676e5d0312ae37513cda3f95d",
+  "seeds": [
+    40131,
+    40132,
+    40133
+  ],
+  "years": [
+    10,
+    50,
+    100
+  ],
+  "scenarios": [
+    "life-focused",
+    "adventure-focused",
+    "mixed",
+    "prosperous-controlled",
+    "struggling-controlled"
+  ],
+  "parameterComparison": {
+    "label": "D1-budget-corrected",
+    "growthRate": "state-default",
+    "guardCoefficient": 0.035,
+    "overrideScope": "in-memory only; simulation.ts transformed by runner; src files unchanged"
+  },
+  "policy": "Normal fresh-save worlds. Life uses legal in-season farm crops and public farm actions; seasonal crop sale variant sells harvest goods through the public material trade action. Adventure periodically enters public forest encounters and fights by public combatTurn; Mixed alternates both. Only active-policy scenarios perform succession after death: choose the first living adult NPC in state order, matching App.vue successor-list filtering, then call public chooseSuccessor. No-intervention and settlement control fixtures do not take succession as a player action.",
+  "timeModel": "Real simulation.simulate(), advanced in canonical one-day intervals; no parallel world model."
+}

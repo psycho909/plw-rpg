@@ -1,0 +1,1699 @@
+[
+  {
+    "kind": "food-only",
+    "costModel": "max useful contribution within the live forecast/need and per-crisis caps; guards fill the remaining defender target.",
+    "before": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "after": {
+      "readiness": 35.08818181818182,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 53.80000000000001,
+          "required": 55,
+          "shortage": 1.1999999999999886
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 53.80000000000001,
+        "projectedAtResolution": 53.80000000000001,
+        "shortage": 1.1999999999999886,
+        "coverage": 0.9781818181818184
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "readinessDelta": 3.490909090909092,
+    "successChanceDelta": 0,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 16,
+        "credits": [
+          {
+            "donorId": "alden",
+            "amount": 16
+          }
+        ]
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "interventions": [
+      {
+        "type": "food",
+        "amount": 4,
+        "supply": 16,
+        "result": ""
+      }
+    ],
+    "caps": {
+      "foodSupply": 100,
+      "gold": 100,
+      "equipmentAllocations": 16,
+      "targetDefenders": 8
+    }
+  },
+  {
+    "kind": "gold-only",
+    "costModel": "max useful contribution within the live forecast/need and per-crisis caps; guards fill the remaining defender target.",
+    "before": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "after": {
+      "readiness": 37.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 75,
+          "required": 75,
+          "shortage": 0
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "readinessDelta": 6,
+    "successChanceDelta": 0,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 75,
+        "credits": [
+          {
+            "donorId": "alden",
+            "amount": 75
+          }
+        ]
+      }
+    },
+    "interventions": [
+      {
+        "type": "gold",
+        "amount": 75,
+        "spent": 75,
+        "result": ""
+      }
+    ],
+    "caps": {
+      "foodSupply": 100,
+      "gold": 100,
+      "equipmentAllocations": 16,
+      "targetDefenders": 8
+    }
+  },
+  {
+    "kind": "equipment-only",
+    "costModel": "max useful contribution within the live forecast/need and per-crisis caps; guards fill the remaining defender target.",
+    "before": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "after": {
+      "readiness": 34.2687012987013,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 8,
+          "required": 8,
+          "shortage": 0
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 8,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "readinessDelta": 2.671428571428571,
+    "successChanceDelta": 0,
+    "contributions": {
+      "equipment": [
+        {
+          "defenderNpcId": "npc-1",
+          "slot": "weapon",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-1",
+            "ownerId": "alden",
+            "baseId": "shortSword",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 4,
+              "defense": 0,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-1",
+          "slot": "armor",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-2",
+            "ownerId": "alden",
+            "baseId": "hideArmor",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 0,
+              "defense": 2,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-2",
+          "slot": "weapon",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-3",
+            "ownerId": "alden",
+            "baseId": "shortSword",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 4,
+              "defense": 0,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-2",
+          "slot": "armor",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-4",
+            "ownerId": "alden",
+            "baseId": "hideArmor",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 0,
+              "defense": 2,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-3",
+          "slot": "weapon",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-5",
+            "ownerId": "alden",
+            "baseId": "shortSword",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 4,
+              "defense": 0,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-3",
+          "slot": "armor",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-6",
+            "ownerId": "alden",
+            "baseId": "hideArmor",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 0,
+              "defense": 2,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-4",
+          "slot": "weapon",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-7",
+            "ownerId": "alden",
+            "baseId": "shortSword",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 4,
+              "defense": 0,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-4",
+          "slot": "armor",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-8",
+            "ownerId": "alden",
+            "baseId": "hideArmor",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 0,
+              "defense": 2,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        }
+      ],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "interventions": [
+      {
+        "type": "equipment",
+        "itemCount": 8,
+        "allocations": 8,
+        "result": ""
+      }
+    ],
+    "caps": {
+      "foodSupply": 100,
+      "gold": 100,
+      "equipmentAllocations": 16,
+      "targetDefenders": 8
+    }
+  },
+  {
+    "kind": "defenders-only",
+    "costModel": "max useful contribution within the live forecast/need and per-crisis caps; guards fill the remaining defender target.",
+    "before": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "after": {
+      "readiness": 46.59727272727273,
+      "successChance": 0.11126055687248328,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 8,
+          "required": 8,
+          "shortage": 0
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 16,
+          "shortage": 16
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 8,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 16,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "readinessDelta": 15,
+    "successChanceDelta": 0.011260556872483271,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "interventions": [
+      {
+        "type": "guards",
+        "promotedNpcIds": [
+          "npc-10",
+          "npc-11",
+          "npc-12",
+          "npc-13"
+        ],
+        "count": 4,
+        "cap": 8
+      }
+    ],
+    "caps": {
+      "foodSupply": 100,
+      "gold": 100,
+      "equipmentAllocations": 16,
+      "targetDefenders": 8
+    }
+  },
+  {
+    "kind": "mixed",
+    "costModel": "max useful contribution within the live forecast/need and per-crisis caps; guards fill the remaining defender target.",
+    "before": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "after": {
+      "readiness": 57.423896103896105,
+      "successChance": 0.1859641919555263,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 8,
+          "required": 8,
+          "shortage": 0
+        },
+        {
+          "id": "food",
+          "current": 53.80000000000001,
+          "required": 55,
+          "shortage": 1.1999999999999886
+        },
+        {
+          "id": "equipment",
+          "current": 8,
+          "required": 16,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 75,
+          "required": 75,
+          "shortage": 0
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 53.80000000000001,
+        "projectedAtResolution": 53.80000000000001,
+        "shortage": 1.1999999999999886,
+        "coverage": 0.9781818181818184
+      },
+      "defenders": 8,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 8,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 16,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "readinessDelta": 25.826623376623374,
+    "successChanceDelta": 0.08596419195552629,
+    "contributions": {
+      "equipment": [
+        {
+          "defenderNpcId": "npc-1",
+          "slot": "weapon",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-1",
+            "ownerId": "alden",
+            "baseId": "shortSword",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 4,
+              "defense": 0,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-1",
+          "slot": "armor",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-2",
+            "ownerId": "alden",
+            "baseId": "hideArmor",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 0,
+              "defense": 2,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-2",
+          "slot": "weapon",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-3",
+            "ownerId": "alden",
+            "baseId": "shortSword",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 4,
+              "defense": 0,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-2",
+          "slot": "armor",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-4",
+            "ownerId": "alden",
+            "baseId": "hideArmor",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 0,
+              "defense": 2,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-3",
+          "slot": "weapon",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-5",
+            "ownerId": "alden",
+            "baseId": "shortSword",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 4,
+              "defense": 0,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-3",
+          "slot": "armor",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-6",
+            "ownerId": "alden",
+            "baseId": "hideArmor",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 0,
+              "defense": 2,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-4",
+          "slot": "weapon",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-7",
+            "ownerId": "alden",
+            "baseId": "shortSword",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 4,
+              "defense": 0,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        },
+        {
+          "defenderNpcId": "npc-4",
+          "slot": "armor",
+          "donorId": "alden",
+          "contributedAt": 480,
+          "sourceItem": {
+            "instanceId": "controlled-8",
+            "ownerId": "alden",
+            "baseId": "hideArmor",
+            "level": 1,
+            "material": null,
+            "rarity": "common",
+            "rolledStats": {
+              "attack": 0,
+              "defense": 2,
+              "critical": 0,
+              "penetration": 0,
+              "bleed": 0,
+              "block": 0,
+              "reduction": 0
+            },
+            "affixes": [],
+            "specialTrait": null,
+            "provenance": null,
+            "craftProvenance": null
+          }
+        }
+      ],
+      "food": {
+        "supplied": 16,
+        "credits": [
+          {
+            "donorId": "alden",
+            "amount": 16
+          }
+        ]
+      },
+      "gold": {
+        "spent": 75,
+        "credits": [
+          {
+            "donorId": "alden",
+            "amount": 75
+          }
+        ]
+      }
+    },
+    "interventions": [
+      {
+        "type": "food",
+        "amount": 4,
+        "supply": 16,
+        "result": ""
+      },
+      {
+        "type": "gold",
+        "amount": 75,
+        "spent": 75,
+        "result": ""
+      },
+      {
+        "type": "equipment",
+        "itemCount": 8,
+        "allocations": 8,
+        "result": ""
+      },
+      {
+        "type": "guards",
+        "promotedNpcIds": [
+          "npc-10",
+          "npc-11",
+          "npc-12",
+          "npc-13"
+        ],
+        "count": 4,
+        "cap": 8
+      }
+    ],
+    "caps": {
+      "foodSupply": 100,
+      "gold": 100,
+      "equipmentAllocations": 16,
+      "targetDefenders": 8
+    }
+  },
+  {
+    "kind": "equal-action-food-only",
+    "costModel": "equal action-count probe: one public API call/item per donation source; guards use one controlled job reassignment; mixed uses one of each.",
+    "before": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "after": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "readinessDelta": 0,
+    "successChanceDelta": 0,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "interventions": [],
+    "caps": {
+      "foodSupply": 100,
+      "gold": 100,
+      "equipmentAllocations": 16,
+      "targetDefenders": 8
+    }
+  },
+  {
+    "kind": "equal-action-gold-only",
+    "costModel": "equal action-count probe: one public API call/item per donation source; guards use one controlled job reassignment; mixed uses one of each.",
+    "before": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "after": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "readinessDelta": 0,
+    "successChanceDelta": 0,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "interventions": [],
+    "caps": {
+      "foodSupply": 100,
+      "gold": 100,
+      "equipmentAllocations": 16,
+      "targetDefenders": 8
+    }
+  },
+  {
+    "kind": "equal-action-equipment-only",
+    "costModel": "equal action-count probe: one public API call/item per donation source; guards use one controlled job reassignment; mixed uses one of each.",
+    "before": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "after": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "readinessDelta": 0,
+    "successChanceDelta": 0,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "interventions": [],
+    "caps": {
+      "foodSupply": 100,
+      "gold": 100,
+      "equipmentAllocations": 16,
+      "targetDefenders": 8
+    }
+  },
+  {
+    "kind": "equal-action-defenders-only",
+    "costModel": "equal action-count probe: one public API call/item per donation source; guards use one controlled job reassignment; mixed uses one of each.",
+    "before": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "after": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "readinessDelta": 0,
+    "successChanceDelta": 0,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "interventions": [],
+    "caps": {
+      "foodSupply": 100,
+      "gold": 100,
+      "equipmentAllocations": 16,
+      "targetDefenders": 8
+    }
+  },
+  {
+    "kind": "equal-action-mixed",
+    "costModel": "equal action-count probe: one public API call/item per donation source; guards use one controlled job reassignment; mixed uses one of each.",
+    "before": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "after": {
+      "readiness": 31.59727272727273,
+      "successChance": 0.1,
+      "threatDemand": 84,
+      "needs": [
+        {
+          "id": "defenders",
+          "current": 4,
+          "required": 8,
+          "shortage": 4
+        },
+        {
+          "id": "food",
+          "current": 37.80000000000001,
+          "required": 55,
+          "shortage": 17.19999999999999
+        },
+        {
+          "id": "equipment",
+          "current": 0,
+          "required": 8,
+          "shortage": 8
+        },
+        {
+          "id": "gold",
+          "current": 0,
+          "required": 75,
+          "shortage": 75
+        }
+      ],
+      "food": {
+        "dailyNet": 4.200000000000001,
+        "rawProjectedAtResolution": 37.80000000000001,
+        "projectedAtResolution": 37.80000000000001,
+        "shortage": 17.19999999999999,
+        "coverage": 0.6872727272727275
+      },
+      "defenders": 4,
+      "targetDefenders": 8,
+      "equippedDefenderSlots": 0,
+      "capacities": {
+        "defenderSlots": 8,
+        "equipmentSlots": 8,
+        "foodPoints": 55,
+        "gold": 75
+      }
+    },
+    "readinessDelta": 0,
+    "successChanceDelta": 0,
+    "contributions": {
+      "equipment": [],
+      "food": {
+        "supplied": 0,
+        "credits": []
+      },
+      "gold": {
+        "spent": 0,
+        "credits": []
+      }
+    },
+    "interventions": [],
+    "caps": {
+      "foodSupply": 100,
+      "gold": 100,
+      "equipmentAllocations": 16,
+      "targetDefenders": 8
+    }
+  }
+]

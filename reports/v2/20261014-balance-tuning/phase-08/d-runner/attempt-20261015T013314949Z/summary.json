@@ -1,0 +1,53 @@
+{
+  "validity": {
+    "status": "VALID",
+    "failures": []
+  },
+  "summaries": {
+    "life-seasonal-sell": {
+      "10": {
+        "count": 21,
+        "resolved": 21,
+        "outcomeDistribution": {
+          "decisive_success": 4,
+          "costly_success": 3,
+          "setback": 10,
+          "local_defeat": 4
+        },
+        "intervalDays": {
+          "min": 480,
+          "median": 548,
+          "max": 600
+        },
+        "readinessAtTrigger": [
+          73.62413333333335,
+          78.59843137254902,
+          83.28999999999988,
+          82.5,
+          86.26424242424223,
+          88.25,
+          88.50666666666663,
+          73.47962424242424,
+          80.23205882352941,
+          82.16666666666667,
+          81.7806862745098,
+          82.46000000000001,
+          88.9431746031746,
+          88.88888888888889,
+          73.14013333333334,
+          80.31705882352941,
+          83.88696078431362,
+          82.63,
+          84.56150793650781,
+          88.66666666666666,
+          87.71092592592586
+        ],
+        "avgReadinessAtTrigger": 82.85227746506007
+      }
+    }
+  },
+  "checkpointCount": 3,
+  "crisisCount": 21,
+  "transitionCount": 105,
+  "actionCount": 4623
+}

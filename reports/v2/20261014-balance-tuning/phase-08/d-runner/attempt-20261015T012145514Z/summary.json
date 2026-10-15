@@ -1,0 +1,53 @@
+{
+  "validity": {
+    "status": "VALID",
+    "failures": []
+  },
+  "summaries": {
+    "adventure-focused": {
+      "10": {
+        "count": 21,
+        "resolved": 21,
+        "outcomeDistribution": {
+          "decisive_success": 8,
+          "costly_success": 3,
+          "setback": 9,
+          "local_defeat": 1
+        },
+        "intervalDays": {
+          "min": 487,
+          "median": 539,
+          "max": 594
+        },
+        "readinessAtTrigger": [
+          75.87414545454544,
+          81.51166666666666,
+          81.97916666666666,
+          82.08333333333334,
+          87.98245614035088,
+          88.57452380952378,
+          88.01587301587297,
+          74.91493939393939,
+          79.98583333333333,
+          81.48500000000001,
+          81.62460784313726,
+          81.81460784313725,
+          88.02579365079364,
+          89.75,
+          74.03746666666667,
+          80.34705882352941,
+          81.875,
+          82.30392156862746,
+          81.5625,
+          89.44444444444444,
+          88.47499999999995
+        ],
+        "avgReadinessAtTrigger": 82.93653993593182
+      }
+    }
+  },
+  "checkpointCount": 3,
+  "crisisCount": 21,
+  "transitionCount": 105,
+  "actionCount": 644
+}
