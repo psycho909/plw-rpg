@@ -1,9 +1,10 @@
 # Phase8 — Balance & Progression Tuning
 
-- Status: accepted — PASS WITH FINDINGS（Phase8 工程交付完成 2026-10-15；等待 Owner 審閱；Human Product DEFERRED；不自動進入 Phase9）
+- Status: accepted — PASS WITH FINDINGS（Owner L3 final approval recorded 2026-10-15）
 - Owner: 本專案使用者，沿用 README 已確認身份（2026-10-02）。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-14 Owner 於目前 Session 提供正式規格 [V2X-PHASE8-BALANCE-TUNING](../docs/specs/V2X-PHASE8-BALANCE-TUNING.md)，§0 明確「正式授權進入 Phase8 — Balance & Progression Tuning」並授權必要程式修改、測試、獨立審查與目前工作分支 commit／push。
+- Owner final approval: 2026-10-15 Owner 於 Session 提供「Phase8 Owner Approval & Phase9 UI/UX Polish」正式規格（[V2X-PHASE9](../docs/specs/V2X-PHASE9-UI-UX-POLISH.md) §0），接受 Phase8 Engineering Delivery **PASS WITH FINDINGS**（交付參考 `53dbec2`，ticket close `97dd33c`，遠端核對一致）。保留全部 Product Findings（D-F1 KEEP V0、merchant stock/restock NOT MODELED、E-F1..E-F3、B-F1/B-F2、F-F1 等）、證據限制與歷史失敗。Human Product Gate 仍 DEFERRED；不宣告 V2 Product Gate 通過；不授權 PR／merge／deploy／main／Phase10／V3。
 - Risk: L3（沿用 Phase7 治理等級；最終需 Independent Review 與 Owner 審閱）
 - Updated: 2026-10-14
 - Branch: v2x/reward-core
