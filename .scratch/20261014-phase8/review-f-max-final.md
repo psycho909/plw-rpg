@@ -1,0 +1,11 @@
+# Final independent review — Phase8 (g6-luna-max-deep-reviewer, fresh session `g6_luna_max_final_reviewer`; did not build or review any Phase8 work)
+
+Review only; do not modify files except your review outputs; no commit. Write `reports/v2/20261014-balance-tuning/phase-08/f-review/f-max-final-review.md`; reply with only that path.
+
+- Spec (authoritative): `docs/specs/V2X-PHASE8-BALANCE-TUNING.md` — esp. §0 authorization limits, §4, §13 scope bans, §16 Gates, §17 reports, §18 DoD, §19 Q1–Q7, §20 stop conditions.
+- Tickets: parent `tickets/20261014-v2x-08-balance-tuning.md`, sub-tickets 08a–08f. Branch `v2x/reward-core`; Phase8 base `a66427c`; current HEAD + working tree (F files uncommitted).
+- Only product source change in Phase8: `git diff a66427c HEAD -- src` (V4 farming yield cap + tests + A-F1 test timeouts). Verify nothing else in src changed and nothing violates §13.
+- Reports dir `reports/v2/20261014-balance-tuning/phase-08/` — all 17 §17 reports must exist: baseline, combat-balance, boss-progression, equipment-build-analysis, loot-reward-distribution, life-progression, economy-balance, world-crisis-balance, reward-pacing, long-world, browser-regression, browser-stress, agent-role-playtests, performance-storage, bugs, balance-findings, final-review.
+- Prior reviews: `c-review/`, `d-review/`, `e-review/` (B/A/C-analysis used Root non-independent fallback — assess them now: `combat-balance.md`, `baseline.md`, `economy-balance.md`, `life-progression.md`).
+
+Assess: (1) each Gate verdict in `final-review.md` is supported by evidence and not inflated (no invented thresholds; controlled not substituted for normal play; Human Product DEFERRED); (2) DoD 15 and Q1–Q7 answered with evidence; (3) Engineering gate blockers (correctness, save/migration/determinism, regression) — any P0/P1; (4) source correlation (tested source vs delivery commit) and raw-evidence retention incl. local-only raw policy (`c-runner/.gitignore`, `e-runner/.gitignore`, manifests) and historical failures preserved; (5) Owner decisions recorded faithfully (C-F1 V4, D-F1 KEEP V0); (6) anything that must be fixed before Owner review vs findings to carry forward. Spot-check numbers against raw (`.gz` raw: read with node zlib). Severity P0–P3; explicit disposition.

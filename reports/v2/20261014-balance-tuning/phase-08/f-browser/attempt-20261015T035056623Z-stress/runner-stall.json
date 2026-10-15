@@ -1,0 +1,18 @@
+{
+  "lane": "stress",
+  "startedAt": "2026-10-15T03:50:56.626Z",
+  "stoppedAt": "2026-10-15T04:21:00Z",
+  "status": "INCOMPLETE_RUNNER_STALL",
+  "reason": "Runner remained alive after the 20-30 minute window and produced no closeout or checkpoint file. The active CDP page remained responsive, but the Node process was idle and made no progress for over 12 minutes.",
+  "lastReadOnlyBrowserObservation": {
+    "chromeVersion": "Chrome/153.0.8010.53",
+    "pageTitle": "住所與產業 — 橡谷",
+    "worldClock": "Year 2 Fall 19, 08:00",
+    "cdpStorageUsageBytes": 180875,
+    "cdpStorageQuotaBytes": 322121915596,
+    "latestExportFile": "downloads/oakvale-play-records.json",
+    "latestExportBytes": 341727
+  },
+  "preserved": ["manifest.json", "chrome-profile/", "downloads/"],
+  "note": "No attempt data was deleted. The partial export is evidence that export actions ran, but it is not substituted for a completed stress result. A retry uses per-action/checkpoint trace flushing and CDP call timeouts."
+}
