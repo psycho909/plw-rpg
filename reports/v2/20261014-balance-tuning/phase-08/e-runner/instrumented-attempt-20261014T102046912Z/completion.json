@@ -1,0 +1,32 @@
+{
+  "status": "FAIL",
+  "failure": {
+    "message": "Error: spawn EPERM",
+    "stack": "Error: spawn EPERM\n    at ChildProcess.spawn (node:internal/child_process:420:11)\n    at spawn (node:child_process:753:9)\n    at Object.execFile (node:child_process:346:17)\n    at exec (node:child_process:233:25)\n    at optimizeSafeRealPathSync (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:2230:2)\n    at windowsSafeRealPathSync (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:2216:3)\n    at getRealPath (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:33013:36)\n    at tryResolveRealFileOrType (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:33007:9)\n    at tryCleanFsResolve (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:32731:21)\n    at tryFsResolve (file:///D:/Codex/plw-rpg/node_modules/vite/dist/node/chunks/config.js:32724:14)"
+  },
+  "endedAt": "2026-10-14T10:20:47.018Z",
+  "seedVariance": {
+    "status": "INVALID_POLICY",
+    "failures": [
+      "seed-rng-variance-not-verified"
+    ],
+    "checks": {}
+  },
+  "seedEvidence": [],
+  "routeValidity": [],
+  "encounterSummaries": [],
+  "bossVisibility": [],
+  "instrumentation": {
+    "decisionRows": 0,
+    "scope": "pre-decision world state, projected legal options, selected action/outcome; snapshots are synchronous engine observations"
+  },
+  "rows": {
+    "daily": 0,
+    "encounters": 0,
+    "actions": 0,
+    "crafts": 0,
+    "gearChanges": 0,
+    "unlocks": 0,
+    "cropYields": 0
+  }
+}

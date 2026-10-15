@@ -1,0 +1,1768 @@
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\e-runner\\instrumented-attempt-20261014T102419801Z",
+  "sourceHead": "5e223beb2ef056968861bc4c7125c1fb41da8728",
+  "routeStatus": "PASS",
+  "decisionCount": 50889,
+  "noProgressCount": 1423,
+  "noProgressCounts": {
+    "runner policy defect": 0,
+    "runner-policy-limited": 147,
+    "UI not visible or reachable": 0,
+    "lacking resources": 0,
+    "no understandable next goal": 1276,
+    "excessive wait-repeat cost": 0,
+    "legitimate world wait": 0
+  },
+  "noProgressByRoute": {
+    "adventure": {
+      "runner policy defect": 0,
+      "runner-policy-limited": 114,
+      "UI not visible or reachable": 0,
+      "lacking resources": 0,
+      "no understandable next goal": 352,
+      "excessive wait-repeat cost": 0,
+      "legitimate world wait": 0
+    },
+    "hybrid": {
+      "runner policy defect": 0,
+      "runner-policy-limited": 33,
+      "UI not visible or reachable": 0,
+      "lacking resources": 0,
+      "no understandable next goal": 198,
+      "excessive wait-repeat cost": 0,
+      "legitimate world wait": 0
+    },
+    "life": {
+      "runner policy defect": 0,
+      "runner-policy-limited": 0,
+      "UI not visible or reachable": 0,
+      "lacking resources": 0,
+      "no understandable next goal": 726,
+      "excessive wait-repeat cost": 0,
+      "legitimate world wait": 0
+    }
+  },
+  "noProgressExamples": {
+    "runner-policy-limited": [
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 563,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 60,
+        "hp": 95,
+        "gold": 75,
+        "legalOptions": [
+          {
+            "definitionId": "slime_bog",
+            "rank": "normal",
+            "eligible": true,
+            "reason": null
+          },
+          {
+            "definitionId": "wild_beast_stonehorn",
+            "rank": "normal",
+            "eligible": true,
+            "reason": null
+          }
+        ],
+        "confidence": "high",
+        "reason": "v3 daily encounter cap is consumed while eligible Normal targets remain; this is a runner limit, not a world wait"
+      },
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 4431,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 36,
+        "hp": 84,
+        "gold": 103,
+        "legalOptions": [
+          {
+            "definitionId": "wild_beast_stonehorn",
+            "rank": "normal",
+            "eligible": true,
+            "reason": null
+          },
+          {
+            "definitionId": "wild_beast_redtail",
+            "rank": "normal",
+            "eligible": true,
+            "reason": null
+          },
+          {
+            "definitionId": "wild_beast_marshstag",
+            "rank": "normal",
+            "eligible": true,
+            "reason": null
+          }
+        ],
+        "confidence": "high",
+        "reason": "v3 daily encounter cap is consumed while eligible Normal targets remain; this is a runner limit, not a world wait"
+      },
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 8746,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 12,
+        "hp": 77,
+        "gold": 131,
+        "legalOptions": [
+          {
+            "definitionId": "wild_beast_stonehorn",
+            "rank": "normal",
+            "eligible": true,
+            "reason": null
+          },
+          {
+            "definitionId": "wild_beast_redtail",
+            "rank": "normal",
+            "eligible": true,
+            "reason": null
+          },
+          {
+            "definitionId": "wild_beast_marshstag",
+            "rank": "normal",
+            "eligible": true,
+            "reason": null
+          }
+        ],
+        "confidence": "high",
+        "reason": "v3 daily encounter cap is consumed while eligible Normal targets remain; this is a runner limit, not a world wait"
+      }
+    ],
+    "no understandable next goal": [
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 21701,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 26,
+        "hp": 116,
+        "gold": 194,
+        "legalOptions": [],
+        "confidence": "low",
+        "reason": "no policy-relevant immediate option projected; player goal comprehension is outside this runner observation"
+      },
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 26021,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 18,
+        "hp": 116,
+        "gold": 204,
+        "legalOptions": [],
+        "confidence": "low",
+        "reason": "no policy-relevant immediate option projected; player goal comprehension is outside this runner observation"
+      },
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 30341,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 10,
+        "hp": 116,
+        "gold": 214,
+        "legalOptions": [],
+        "confidence": "low",
+        "reason": "no policy-relevant immediate option projected; player goal comprehension is outside this runner observation"
+      }
+    ]
+  },
+  "choreRows": [
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "zeroXpStarterSpearCrafts": 0,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 0,
+      "repeatedSameEnemyAdjacentEncounters": 142,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 141,
+      "otherLegalTargetExamples": [
+        {
+          "at": 555,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 559,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4420,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4427,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 8744,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 254,
+      "encounterRows": 254
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "zeroXpStarterSpearCrafts": 0,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 0,
+      "repeatedSameEnemyAdjacentEncounters": 143,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 142,
+      "otherLegalTargetExamples": [
+        {
+          "at": 554,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 558,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4420,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4426,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 8744,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 257,
+      "encounterRows": 257
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "zeroXpStarterSpearCrafts": 0,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 0,
+      "repeatedSameEnemyAdjacentEncounters": 142,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 141,
+      "otherLegalTargetExamples": [
+        {
+          "at": 555,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 560,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4420,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4429,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 8744,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 257,
+      "encounterRows": 257
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "zeroXpStarterSpearCrafts": 452,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 452,
+      "repeatedSameEnemyAdjacentEncounters": 76,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 76,
+      "otherLegalTargetExamples": [
+        {
+          "at": 4882,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4884,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13520,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13524,
+          "definitionId": "slime_spring",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 30800,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 121,
+      "encounterRows": 121
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "zeroXpStarterSpearCrafts": 451,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 451,
+      "repeatedSameEnemyAdjacentEncounters": 77,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 77,
+      "otherLegalTargetExamples": [
+        {
+          "at": 4882,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4884,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13520,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13524,
+          "definitionId": "slime_spring",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 30800,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 125,
+      "encounterRows": 125
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "zeroXpStarterSpearCrafts": 449,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 449,
+      "repeatedSameEnemyAdjacentEncounters": 77,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 77,
+      "otherLegalTargetExamples": [
+        {
+          "at": 4882,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4884,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13520,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13524,
+          "definitionId": "slime_spring",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 30800,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 124,
+      "encounterRows": 124
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "zeroXpStarterSpearCrafts": 670,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 670,
+      "repeatedSameEnemyAdjacentEncounters": 0,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 0,
+      "otherLegalTargetExamples": [],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 0,
+      "encounterRows": 0
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "zeroXpStarterSpearCrafts": 670,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 670,
+      "repeatedSameEnemyAdjacentEncounters": 0,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 0,
+      "otherLegalTargetExamples": [],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 0,
+      "encounterRows": 0
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "zeroXpStarterSpearCrafts": 670,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 670,
+      "repeatedSameEnemyAdjacentEncounters": 0,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 0,
+      "otherLegalTargetExamples": [],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 0,
+      "encounterRows": 0
+    }
+  ],
+  "bossMilestones": [
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116542,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 115992,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116195,
+      "firstEngagedAt": 116195,
+      "firstWinAt": 116202,
+      "visibilityToEligibilityMinutes": 115645,
+      "encounterToWinMinutes": 7
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116542,
+      "firstEngagedAt": 116542,
+      "firstWinAt": 261664,
+      "visibilityToEligibilityMinutes": 115992,
+      "encounterToWinMinutes": 145122
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 1525,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116541,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 115991,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116195,
+      "firstEngagedAt": 116195,
+      "firstWinAt": 116201,
+      "visibilityToEligibilityMinutes": 115645,
+      "encounterToWinMinutes": 6
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116541,
+      "firstEngagedAt": 116541,
+      "firstWinAt": 261664,
+      "visibilityToEligibilityMinutes": 115991,
+      "encounterToWinMinutes": 145123
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 1525,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 120866,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 120316,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116195,
+      "firstEngagedAt": 116195,
+      "firstWinAt": 261997,
+      "visibilityToEligibilityMinutes": 115645,
+      "encounterToWinMinutes": 145802
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 120866,
+      "firstEngagedAt": 120866,
+      "firstWinAt": 261664,
+      "visibilityToEligibilityMinutes": 120316,
+      "encounterToWinMinutes": 140798
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 1525,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 99023,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 98408,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 88912,
+      "firstWinAt": 94795,
+      "visibilityToEligibilityMinutes": 86832,
+      "encounterToWinMinutes": 5883
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 81804,
+      "firstEngagedAt": 86150,
+      "firstWinAt": 86156,
+      "visibilityToEligibilityMinutes": 80981,
+      "encounterToWinMinutes": 6
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 88820,
+      "firstWinAt": 88827,
+      "visibilityToEligibilityMinutes": 86624,
+      "encounterToWinMinutes": 7
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 104934,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 104319,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 89080,
+      "firstWinAt": 112076,
+      "visibilityToEligibilityMinutes": 86832,
+      "encounterToWinMinutes": 22996
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 81804,
+      "firstEngagedAt": 86150,
+      "firstWinAt": 86157,
+      "visibilityToEligibilityMinutes": 80981,
+      "encounterToWinMinutes": 7
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 88820,
+      "firstWinAt": 103255,
+      "visibilityToEligibilityMinutes": 86624,
+      "encounterToWinMinutes": 14435
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 104934,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 104319,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 89080,
+      "firstWinAt": 112076,
+      "visibilityToEligibilityMinutes": 86832,
+      "encounterToWinMinutes": 22996
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 81804,
+      "firstEngagedAt": 86150,
+      "firstWinAt": 86156,
+      "visibilityToEligibilityMinutes": 80981,
+      "encounterToWinMinutes": 6
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 88820,
+      "firstWinAt": 103255,
+      "visibilityToEligibilityMinutes": 86624,
+      "encounterToWinMinutes": 14435
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 57283,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 56668,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87582,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 86967,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 55883,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 55060,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 89007,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 88184,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "chief",
+      "firstVisibleAt": 177745,
+      "firstEligibleAt": 177745,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 0,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 57283,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 56668,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87582,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 86967,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 55883,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 55060,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 89007,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 88184,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "chief",
+      "firstVisibleAt": 176305,
+      "firstEligibleAt": 176305,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 0,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 57283,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 56668,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87582,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 86967,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 55883,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 55060,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 89007,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 88184,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "chief",
+      "firstVisibleAt": 176305,
+      "firstEligibleAt": 176305,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 0,
+      "encounterToWinMinutes": null
+    }
+  ],
+  "bossRouteProgression": [
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "firstBossVisibleAt": 480,
+      "visibleDefinitionId": "wolfKing",
+      "firstBossEligibleAt": 116195,
+      "eligibleDefinitionId": "wild_beast_apex",
+      "firstBossEngagedAt": 116195,
+      "engagedDefinitionId": "wild_beast_apex",
+      "firstBossWinAt": 116202,
+      "winDefinitionId": "wild_beast_apex",
+      "visibilityToEligibilityMinutes": 115715,
+      "routeElapsedFromFirstBossEngagementToFirstWinMinutes": 7
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "firstBossVisibleAt": 480,
+      "visibleDefinitionId": "wolfKing",
+      "firstBossEligibleAt": 116195,
+      "eligibleDefinitionId": "wild_beast_apex",
+      "firstBossEngagedAt": 116195,
+      "engagedDefinitionId": "wild_beast_apex",
+      "firstBossWinAt": 116201,
+      "winDefinitionId": "wild_beast_apex",
+      "visibilityToEligibilityMinutes": 115715,
+      "routeElapsedFromFirstBossEngagementToFirstWinMinutes": 6
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "firstBossVisibleAt": 480,
+      "visibleDefinitionId": "wolfKing",
+      "firstBossEligibleAt": 116195,
+      "eligibleDefinitionId": "wild_beast_apex",
+      "firstBossEngagedAt": 116195,
+      "engagedDefinitionId": "wild_beast_apex",
+      "firstBossWinAt": 261664,
+      "winDefinitionId": "frontier_goblin_warlord",
+      "visibilityToEligibilityMinutes": 115715,
+      "routeElapsedFromFirstBossEngagementToFirstWinMinutes": 145469
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "firstBossVisibleAt": 480,
+      "visibleDefinitionId": "wolfKing",
+      "firstBossEligibleAt": 81804,
+      "eligibleDefinitionId": "slime_heart",
+      "firstBossEngagedAt": 86150,
+      "engagedDefinitionId": "slime_heart",
+      "firstBossWinAt": 86156,
+      "winDefinitionId": "slime_heart",
+      "visibilityToEligibilityMinutes": 81324,
+      "routeElapsedFromFirstBossEngagementToFirstWinMinutes": 6
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "firstBossVisibleAt": 480,
+      "visibleDefinitionId": "wolfKing",
+      "firstBossEligibleAt": 81804,
+      "eligibleDefinitionId": "slime_heart",
+      "firstBossEngagedAt": 86150,
+      "engagedDefinitionId": "slime_heart",
+      "firstBossWinAt": 86157,
+      "winDefinitionId": "slime_heart",
+      "visibilityToEligibilityMinutes": 81324,
+      "routeElapsedFromFirstBossEngagementToFirstWinMinutes": 7
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "firstBossVisibleAt": 480,
+      "visibleDefinitionId": "wolfKing",
+      "firstBossEligibleAt": 81804,
+      "eligibleDefinitionId": "slime_heart",
+      "firstBossEngagedAt": 86150,
+      "engagedDefinitionId": "slime_heart",
+      "firstBossWinAt": 86156,
+      "winDefinitionId": "slime_heart",
+      "visibilityToEligibilityMinutes": 81324,
+      "routeElapsedFromFirstBossEngagementToFirstWinMinutes": 6
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "firstBossVisibleAt": 480,
+      "visibleDefinitionId": "wolfKing",
+      "firstBossEligibleAt": 55883,
+      "eligibleDefinitionId": "slime_heart",
+      "firstBossEngagedAt": null,
+      "engagedDefinitionId": null,
+      "firstBossWinAt": null,
+      "winDefinitionId": null,
+      "visibilityToEligibilityMinutes": 55403,
+      "routeElapsedFromFirstBossEngagementToFirstWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "firstBossVisibleAt": 480,
+      "visibleDefinitionId": "wolfKing",
+      "firstBossEligibleAt": 55883,
+      "eligibleDefinitionId": "slime_heart",
+      "firstBossEngagedAt": null,
+      "engagedDefinitionId": null,
+      "firstBossWinAt": null,
+      "winDefinitionId": null,
+      "visibilityToEligibilityMinutes": 55403,
+      "routeElapsedFromFirstBossEngagementToFirstWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "firstBossVisibleAt": 480,
+      "visibleDefinitionId": "wolfKing",
+      "firstBossEligibleAt": 55883,
+      "eligibleDefinitionId": "slime_heart",
+      "firstBossEngagedAt": null,
+      "engagedDefinitionId": null,
+      "firstBossWinAt": null,
+      "winDefinitionId": null,
+      "visibilityToEligibilityMinutes": 55403,
+      "routeElapsedFromFirstBossEngagementToFirstWinMinutes": null
+    }
+  ],
+  "interpretation": {
+    "uiNotVisibleOrReachable": "0 assigned; the runner does not observe rendered UI/accessibility, so this category is NOT MEASURED rather than disproven",
+    "excessiveWaitRepeatCost": "zero observed because the v3 runner stops after one policy no-op and the action log contains no repeated wait action"
+  }
+}

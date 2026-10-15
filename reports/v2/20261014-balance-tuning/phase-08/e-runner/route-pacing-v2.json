@@ -1,0 +1,4772 @@
+{
+  "sourceAttempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\a-baseline-run\\attempt-20261014T040039340Z",
+  "policy": "A v3 normal scripted policies",
+  "routes": [
+    {
+      "route": "life",
+      "seed": 61101,
+      "policy": "normal-fresh-save-routes-v3",
+      "window": {
+        "start": 480,
+        "end": 518400
+      },
+      "actionCount": 6424,
+      "events": {
+        "meaningfulItem": [],
+        "skillLevel": [
+          {
+            "at": 2920,
+            "actionIndex": 35,
+            "evidence": "woodcutting:3"
+          },
+          {
+            "at": 2920,
+            "actionIndex": 35,
+            "evidence": "smithing:2"
+          },
+          {
+            "at": 4800,
+            "actionIndex": 54,
+            "evidence": "farming:2"
+          },
+          {
+            "at": 6240,
+            "actionIndex": 70,
+            "evidence": "mining:3"
+          },
+          {
+            "at": 7680,
+            "actionIndex": 88,
+            "evidence": "smithing:3"
+          },
+          {
+            "at": 8644,
+            "actionIndex": 104,
+            "evidence": "woodcutting:4"
+          },
+          {
+            "at": 10560,
+            "actionIndex": 122,
+            "evidence": "farming:3"
+          },
+          {
+            "at": 12000,
+            "actionIndex": 135,
+            "evidence": "mining:4"
+          },
+          {
+            "at": 14880,
+            "actionIndex": 169,
+            "evidence": "woodcutting:5"
+          },
+          {
+            "at": 20640,
+            "actionIndex": 233,
+            "evidence": "mining:5"
+          },
+          {
+            "at": 22080,
+            "actionIndex": 251,
+            "evidence": "woodcutting:6"
+          },
+          {
+            "at": 30720,
+            "actionIndex": 349,
+            "evidence": "woodcutting:7"
+          },
+          {
+            "at": 35040,
+            "actionIndex": 401,
+            "evidence": "mining:6"
+          },
+          {
+            "at": 40800,
+            "actionIndex": 475,
+            "evidence": "woodcutting:8"
+          },
+          {
+            "at": 50880,
+            "actionIndex": 605,
+            "evidence": "mining:7"
+          },
+          {
+            "at": 53760,
+            "actionIndex": 643,
+            "evidence": "woodcutting:9"
+          },
+          {
+            "at": 65280,
+            "actionIndex": 772,
+            "evidence": "mining:8"
+          },
+          {
+            "at": 72480,
+            "actionIndex": 852,
+            "evidence": "woodcutting:10"
+          },
+          {
+            "at": 82560,
+            "actionIndex": 971,
+            "evidence": "mining:9"
+          },
+          {
+            "at": 94080,
+            "actionIndex": 1107,
+            "evidence": "woodcutting:11"
+          },
+          {
+            "at": 99840,
+            "actionIndex": 1181,
+            "evidence": "mining:10"
+          },
+          {
+            "at": 117120,
+            "actionIndex": 1413,
+            "evidence": "woodcutting:12"
+          },
+          {
+            "at": 120000,
+            "actionIndex": 1446,
+            "evidence": "mining:11"
+          },
+          {
+            "at": 141600,
+            "actionIndex": 1752,
+            "evidence": "woodcutting:13"
+          },
+          {
+            "at": 143040,
+            "actionIndex": 1778,
+            "evidence": "mining:12"
+          },
+          {
+            "at": 166080,
+            "actionIndex": 2120,
+            "evidence": "mining:13"
+          },
+          {
+            "at": 170400,
+            "actionIndex": 2194,
+            "evidence": "woodcutting:14"
+          },
+          {
+            "at": 201600,
+            "actionIndex": 2581,
+            "evidence": "mining:14"
+          },
+          {
+            "at": 211680,
+            "actionIndex": 2701,
+            "evidence": "woodcutting:15"
+          },
+          {
+            "at": 241920,
+            "actionIndex": 3091,
+            "evidence": "mining:15"
+          },
+          {
+            "at": 260640,
+            "actionIndex": 3303,
+            "evidence": "woodcutting:16"
+          },
+          {
+            "at": 290880,
+            "actionIndex": 3676,
+            "evidence": "mining:16"
+          },
+          {
+            "at": 315360,
+            "actionIndex": 3968,
+            "evidence": "woodcutting:17"
+          },
+          {
+            "at": 342720,
+            "actionIndex": 4318,
+            "evidence": "mining:17"
+          },
+          {
+            "at": 378720,
+            "actionIndex": 4744,
+            "evidence": "woodcutting:18"
+          },
+          {
+            "at": 404640,
+            "actionIndex": 5040,
+            "evidence": "mining:18"
+          },
+          {
+            "at": 449280,
+            "actionIndex": 5583,
+            "evidence": "woodcutting:19"
+          },
+          {
+            "at": 469440,
+            "actionIndex": 5829,
+            "evidence": "mining:19"
+          }
+        ],
+        "newEnemy": [],
+        "wealthStep": [
+          {
+            "at": 4800,
+            "actionIndex": 54,
+            "band": 100,
+            "evidence": "gold high-water 100"
+          },
+          {
+            "at": 43680,
+            "actionIndex": 513,
+            "band": 500,
+            "evidence": "gold high-water 500"
+          },
+          {
+            "at": 102720,
+            "actionIndex": 1225,
+            "band": 1000,
+            "evidence": "gold high-water 1000"
+          },
+          {
+            "at": 329760,
+            "actionIndex": 4151,
+            "band": 5000,
+            "evidence": "gold high-water 5000"
+          }
+        ],
+        "newRecipeGoal": [
+          {
+            "at": 1920,
+            "actionIndex": 17,
+            "evidence": "starterSpear"
+          },
+          {
+            "at": 41003,
+            "actionIndex": 482,
+            "evidence": "fieldArmor"
+          }
+        ]
+      },
+      "gaps": {
+        "meaningfulItem": {
+          "minutes": {
+            "samples": 1,
+            "median": 517920,
+            "p90": 517920,
+            "max": 517920
+          },
+          "actions": {
+            "samples": 1,
+            "median": 6424,
+            "p90": 6424,
+            "max": 6424
+          }
+        },
+        "skillLevel": {
+          "minutes": {
+            "samples": 39,
+            "median": 8640,
+            "p90": 31200,
+            "max": 48960
+          },
+          "actions": {
+            "samples": 39,
+            "median": 98,
+            "p90": 390,
+            "max": 595
+          }
+        },
+        "newEnemy": {
+          "minutes": {
+            "samples": 1,
+            "median": 517920,
+            "p90": 517920,
+            "max": 517920
+          },
+          "actions": {
+            "samples": 1,
+            "median": 6424,
+            "p90": 6424,
+            "max": 6424
+          }
+        },
+        "wealthStep": {
+          "minutes": {
+            "samples": 5,
+            "median": 59040,
+            "p90": 227040,
+            "max": 227040
+          },
+          "actions": {
+            "samples": 5,
+            "median": 712,
+            "p90": 2926,
+            "max": 2926
+          }
+        },
+        "newRecipeGoal": {
+          "minutes": {
+            "samples": 3,
+            "median": 39083,
+            "p90": 477397,
+            "max": 477397
+          },
+          "actions": {
+            "samples": 3,
+            "median": 465,
+            "p90": 5942,
+            "max": 5942
+          }
+        }
+      },
+      "choreRisk": {
+        "lowTierCraftsAfterPracticeCap": 670,
+        "gatherStreakCount": 741,
+        "maxConsecutiveGatherActions": 2,
+        "repeatedSameWaitActions": 0,
+        "sameEnemyStreaks": [],
+        "betterLegalOptionAtAction": "NOT RECORDED in A-v3 action evidence; cannot infer."
+      },
+      "noProgress": {
+        "count": 242,
+        "byClass": {
+          "no understandable next goal": 242
+        },
+        "lowConfidenceOrUnknown": 242
+      },
+      "goalEvidence": {
+        "recipeUnlocks": [
+          {
+            "at": 1920,
+            "recipeId": "starterSpear"
+          },
+          {
+            "at": 41003,
+            "recipeId": "fieldArmor"
+          }
+        ],
+        "rankUnlocks": "NOT TIME-INDEXED in retained A-v3 files",
+        "bossEligibility": "NOT TIME-INDEXED in retained A-v3 files"
+      },
+      "wealthHighWater": 9068
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "policy": "normal-fresh-save-routes-v3",
+      "window": {
+        "start": 480,
+        "end": 518400
+      },
+      "actionCount": 6424,
+      "events": {
+        "meaningfulItem": [],
+        "skillLevel": [
+          {
+            "at": 2920,
+            "actionIndex": 35,
+            "evidence": "woodcutting:3"
+          },
+          {
+            "at": 2920,
+            "actionIndex": 35,
+            "evidence": "smithing:2"
+          },
+          {
+            "at": 4800,
+            "actionIndex": 54,
+            "evidence": "farming:2"
+          },
+          {
+            "at": 6240,
+            "actionIndex": 70,
+            "evidence": "mining:3"
+          },
+          {
+            "at": 7680,
+            "actionIndex": 88,
+            "evidence": "smithing:3"
+          },
+          {
+            "at": 8644,
+            "actionIndex": 104,
+            "evidence": "woodcutting:4"
+          },
+          {
+            "at": 10560,
+            "actionIndex": 122,
+            "evidence": "farming:3"
+          },
+          {
+            "at": 12000,
+            "actionIndex": 135,
+            "evidence": "mining:4"
+          },
+          {
+            "at": 14880,
+            "actionIndex": 169,
+            "evidence": "woodcutting:5"
+          },
+          {
+            "at": 20640,
+            "actionIndex": 233,
+            "evidence": "mining:5"
+          },
+          {
+            "at": 22080,
+            "actionIndex": 251,
+            "evidence": "woodcutting:6"
+          },
+          {
+            "at": 30720,
+            "actionIndex": 349,
+            "evidence": "woodcutting:7"
+          },
+          {
+            "at": 35040,
+            "actionIndex": 401,
+            "evidence": "mining:6"
+          },
+          {
+            "at": 40800,
+            "actionIndex": 475,
+            "evidence": "woodcutting:8"
+          },
+          {
+            "at": 50880,
+            "actionIndex": 605,
+            "evidence": "mining:7"
+          },
+          {
+            "at": 53760,
+            "actionIndex": 643,
+            "evidence": "woodcutting:9"
+          },
+          {
+            "at": 65280,
+            "actionIndex": 772,
+            "evidence": "mining:8"
+          },
+          {
+            "at": 72480,
+            "actionIndex": 852,
+            "evidence": "woodcutting:10"
+          },
+          {
+            "at": 82560,
+            "actionIndex": 971,
+            "evidence": "mining:9"
+          },
+          {
+            "at": 94080,
+            "actionIndex": 1107,
+            "evidence": "woodcutting:11"
+          },
+          {
+            "at": 99840,
+            "actionIndex": 1181,
+            "evidence": "mining:10"
+          },
+          {
+            "at": 117120,
+            "actionIndex": 1413,
+            "evidence": "woodcutting:12"
+          },
+          {
+            "at": 120000,
+            "actionIndex": 1446,
+            "evidence": "mining:11"
+          },
+          {
+            "at": 141600,
+            "actionIndex": 1752,
+            "evidence": "woodcutting:13"
+          },
+          {
+            "at": 143040,
+            "actionIndex": 1778,
+            "evidence": "mining:12"
+          },
+          {
+            "at": 166080,
+            "actionIndex": 2120,
+            "evidence": "mining:13"
+          },
+          {
+            "at": 170400,
+            "actionIndex": 2194,
+            "evidence": "woodcutting:14"
+          },
+          {
+            "at": 201600,
+            "actionIndex": 2581,
+            "evidence": "mining:14"
+          },
+          {
+            "at": 211680,
+            "actionIndex": 2701,
+            "evidence": "woodcutting:15"
+          },
+          {
+            "at": 241920,
+            "actionIndex": 3091,
+            "evidence": "mining:15"
+          },
+          {
+            "at": 260640,
+            "actionIndex": 3303,
+            "evidence": "woodcutting:16"
+          },
+          {
+            "at": 290880,
+            "actionIndex": 3676,
+            "evidence": "mining:16"
+          },
+          {
+            "at": 315360,
+            "actionIndex": 3968,
+            "evidence": "woodcutting:17"
+          },
+          {
+            "at": 342720,
+            "actionIndex": 4318,
+            "evidence": "mining:17"
+          },
+          {
+            "at": 378720,
+            "actionIndex": 4744,
+            "evidence": "woodcutting:18"
+          },
+          {
+            "at": 404640,
+            "actionIndex": 5040,
+            "evidence": "mining:18"
+          },
+          {
+            "at": 449280,
+            "actionIndex": 5583,
+            "evidence": "woodcutting:19"
+          },
+          {
+            "at": 469440,
+            "actionIndex": 5829,
+            "evidence": "mining:19"
+          }
+        ],
+        "newEnemy": [],
+        "wealthStep": [
+          {
+            "at": 4800,
+            "actionIndex": 54,
+            "band": 100,
+            "evidence": "gold high-water 100"
+          },
+          {
+            "at": 43680,
+            "actionIndex": 513,
+            "band": 500,
+            "evidence": "gold high-water 500"
+          },
+          {
+            "at": 102720,
+            "actionIndex": 1225,
+            "band": 1000,
+            "evidence": "gold high-water 1000"
+          },
+          {
+            "at": 329760,
+            "actionIndex": 4151,
+            "band": 5000,
+            "evidence": "gold high-water 5000"
+          }
+        ],
+        "newRecipeGoal": [
+          {
+            "at": 1920,
+            "actionIndex": 17,
+            "evidence": "starterSpear"
+          },
+          {
+            "at": 41003,
+            "actionIndex": 482,
+            "evidence": "fieldArmor"
+          }
+        ]
+      },
+      "gaps": {
+        "meaningfulItem": {
+          "minutes": {
+            "samples": 1,
+            "median": 517920,
+            "p90": 517920,
+            "max": 517920
+          },
+          "actions": {
+            "samples": 1,
+            "median": 6424,
+            "p90": 6424,
+            "max": 6424
+          }
+        },
+        "skillLevel": {
+          "minutes": {
+            "samples": 39,
+            "median": 8640,
+            "p90": 31200,
+            "max": 48960
+          },
+          "actions": {
+            "samples": 39,
+            "median": 98,
+            "p90": 390,
+            "max": 595
+          }
+        },
+        "newEnemy": {
+          "minutes": {
+            "samples": 1,
+            "median": 517920,
+            "p90": 517920,
+            "max": 517920
+          },
+          "actions": {
+            "samples": 1,
+            "median": 6424,
+            "p90": 6424,
+            "max": 6424
+          }
+        },
+        "wealthStep": {
+          "minutes": {
+            "samples": 5,
+            "median": 59040,
+            "p90": 227040,
+            "max": 227040
+          },
+          "actions": {
+            "samples": 5,
+            "median": 712,
+            "p90": 2926,
+            "max": 2926
+          }
+        },
+        "newRecipeGoal": {
+          "minutes": {
+            "samples": 3,
+            "median": 39083,
+            "p90": 477397,
+            "max": 477397
+          },
+          "actions": {
+            "samples": 3,
+            "median": 465,
+            "p90": 5942,
+            "max": 5942
+          }
+        }
+      },
+      "choreRisk": {
+        "lowTierCraftsAfterPracticeCap": 670,
+        "gatherStreakCount": 741,
+        "maxConsecutiveGatherActions": 2,
+        "repeatedSameWaitActions": 0,
+        "sameEnemyStreaks": [],
+        "betterLegalOptionAtAction": "NOT RECORDED in A-v3 action evidence; cannot infer."
+      },
+      "noProgress": {
+        "count": 242,
+        "byClass": {
+          "no understandable next goal": 242
+        },
+        "lowConfidenceOrUnknown": 242
+      },
+      "goalEvidence": {
+        "recipeUnlocks": [
+          {
+            "at": 1920,
+            "recipeId": "starterSpear"
+          },
+          {
+            "at": 41003,
+            "recipeId": "fieldArmor"
+          }
+        ],
+        "rankUnlocks": "NOT TIME-INDEXED in retained A-v3 files",
+        "bossEligibility": "NOT TIME-INDEXED in retained A-v3 files"
+      },
+      "wealthHighWater": 9068
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "policy": "normal-fresh-save-routes-v3",
+      "window": {
+        "start": 480,
+        "end": 518400
+      },
+      "actionCount": 6424,
+      "events": {
+        "meaningfulItem": [],
+        "skillLevel": [
+          {
+            "at": 2920,
+            "actionIndex": 35,
+            "evidence": "woodcutting:3"
+          },
+          {
+            "at": 2920,
+            "actionIndex": 35,
+            "evidence": "smithing:2"
+          },
+          {
+            "at": 4800,
+            "actionIndex": 54,
+            "evidence": "farming:2"
+          },
+          {
+            "at": 6240,
+            "actionIndex": 70,
+            "evidence": "mining:3"
+          },
+          {
+            "at": 7680,
+            "actionIndex": 88,
+            "evidence": "smithing:3"
+          },
+          {
+            "at": 8644,
+            "actionIndex": 104,
+            "evidence": "woodcutting:4"
+          },
+          {
+            "at": 10560,
+            "actionIndex": 122,
+            "evidence": "farming:3"
+          },
+          {
+            "at": 12000,
+            "actionIndex": 135,
+            "evidence": "mining:4"
+          },
+          {
+            "at": 14880,
+            "actionIndex": 169,
+            "evidence": "woodcutting:5"
+          },
+          {
+            "at": 20640,
+            "actionIndex": 233,
+            "evidence": "mining:5"
+          },
+          {
+            "at": 22080,
+            "actionIndex": 251,
+            "evidence": "woodcutting:6"
+          },
+          {
+            "at": 30720,
+            "actionIndex": 349,
+            "evidence": "woodcutting:7"
+          },
+          {
+            "at": 35040,
+            "actionIndex": 401,
+            "evidence": "mining:6"
+          },
+          {
+            "at": 40800,
+            "actionIndex": 475,
+            "evidence": "woodcutting:8"
+          },
+          {
+            "at": 50880,
+            "actionIndex": 605,
+            "evidence": "mining:7"
+          },
+          {
+            "at": 53760,
+            "actionIndex": 643,
+            "evidence": "woodcutting:9"
+          },
+          {
+            "at": 65280,
+            "actionIndex": 772,
+            "evidence": "mining:8"
+          },
+          {
+            "at": 72480,
+            "actionIndex": 852,
+            "evidence": "woodcutting:10"
+          },
+          {
+            "at": 82560,
+            "actionIndex": 971,
+            "evidence": "mining:9"
+          },
+          {
+            "at": 94080,
+            "actionIndex": 1107,
+            "evidence": "woodcutting:11"
+          },
+          {
+            "at": 99840,
+            "actionIndex": 1181,
+            "evidence": "mining:10"
+          },
+          {
+            "at": 117120,
+            "actionIndex": 1413,
+            "evidence": "woodcutting:12"
+          },
+          {
+            "at": 120000,
+            "actionIndex": 1446,
+            "evidence": "mining:11"
+          },
+          {
+            "at": 141600,
+            "actionIndex": 1752,
+            "evidence": "woodcutting:13"
+          },
+          {
+            "at": 143040,
+            "actionIndex": 1778,
+            "evidence": "mining:12"
+          },
+          {
+            "at": 166080,
+            "actionIndex": 2120,
+            "evidence": "mining:13"
+          },
+          {
+            "at": 170400,
+            "actionIndex": 2194,
+            "evidence": "woodcutting:14"
+          },
+          {
+            "at": 201600,
+            "actionIndex": 2581,
+            "evidence": "mining:14"
+          },
+          {
+            "at": 211680,
+            "actionIndex": 2701,
+            "evidence": "woodcutting:15"
+          },
+          {
+            "at": 241920,
+            "actionIndex": 3091,
+            "evidence": "mining:15"
+          },
+          {
+            "at": 260640,
+            "actionIndex": 3303,
+            "evidence": "woodcutting:16"
+          },
+          {
+            "at": 290880,
+            "actionIndex": 3676,
+            "evidence": "mining:16"
+          },
+          {
+            "at": 315360,
+            "actionIndex": 3968,
+            "evidence": "woodcutting:17"
+          },
+          {
+            "at": 342720,
+            "actionIndex": 4318,
+            "evidence": "mining:17"
+          },
+          {
+            "at": 378720,
+            "actionIndex": 4744,
+            "evidence": "woodcutting:18"
+          },
+          {
+            "at": 404640,
+            "actionIndex": 5040,
+            "evidence": "mining:18"
+          },
+          {
+            "at": 449280,
+            "actionIndex": 5583,
+            "evidence": "woodcutting:19"
+          },
+          {
+            "at": 469440,
+            "actionIndex": 5829,
+            "evidence": "mining:19"
+          }
+        ],
+        "newEnemy": [],
+        "wealthStep": [
+          {
+            "at": 4800,
+            "actionIndex": 54,
+            "band": 100,
+            "evidence": "gold high-water 100"
+          },
+          {
+            "at": 43680,
+            "actionIndex": 513,
+            "band": 500,
+            "evidence": "gold high-water 500"
+          },
+          {
+            "at": 102720,
+            "actionIndex": 1225,
+            "band": 1000,
+            "evidence": "gold high-water 1000"
+          },
+          {
+            "at": 329760,
+            "actionIndex": 4151,
+            "band": 5000,
+            "evidence": "gold high-water 5000"
+          }
+        ],
+        "newRecipeGoal": [
+          {
+            "at": 1920,
+            "actionIndex": 17,
+            "evidence": "starterSpear"
+          },
+          {
+            "at": 41003,
+            "actionIndex": 482,
+            "evidence": "fieldArmor"
+          }
+        ]
+      },
+      "gaps": {
+        "meaningfulItem": {
+          "minutes": {
+            "samples": 1,
+            "median": 517920,
+            "p90": 517920,
+            "max": 517920
+          },
+          "actions": {
+            "samples": 1,
+            "median": 6424,
+            "p90": 6424,
+            "max": 6424
+          }
+        },
+        "skillLevel": {
+          "minutes": {
+            "samples": 39,
+            "median": 8640,
+            "p90": 31200,
+            "max": 48960
+          },
+          "actions": {
+            "samples": 39,
+            "median": 98,
+            "p90": 390,
+            "max": 595
+          }
+        },
+        "newEnemy": {
+          "minutes": {
+            "samples": 1,
+            "median": 517920,
+            "p90": 517920,
+            "max": 517920
+          },
+          "actions": {
+            "samples": 1,
+            "median": 6424,
+            "p90": 6424,
+            "max": 6424
+          }
+        },
+        "wealthStep": {
+          "minutes": {
+            "samples": 5,
+            "median": 59040,
+            "p90": 227040,
+            "max": 227040
+          },
+          "actions": {
+            "samples": 5,
+            "median": 712,
+            "p90": 2926,
+            "max": 2926
+          }
+        },
+        "newRecipeGoal": {
+          "minutes": {
+            "samples": 3,
+            "median": 39083,
+            "p90": 477397,
+            "max": 477397
+          },
+          "actions": {
+            "samples": 3,
+            "median": 465,
+            "p90": 5942,
+            "max": 5942
+          }
+        }
+      },
+      "choreRisk": {
+        "lowTierCraftsAfterPracticeCap": 670,
+        "gatherStreakCount": 741,
+        "maxConsecutiveGatherActions": 2,
+        "repeatedSameWaitActions": 0,
+        "sameEnemyStreaks": [],
+        "betterLegalOptionAtAction": "NOT RECORDED in A-v3 action evidence; cannot infer."
+      },
+      "noProgress": {
+        "count": 242,
+        "byClass": {
+          "no understandable next goal": 242
+        },
+        "lowConfidenceOrUnknown": 242
+      },
+      "goalEvidence": {
+        "recipeUnlocks": [
+          {
+            "at": 1920,
+            "recipeId": "starterSpear"
+          },
+          {
+            "at": 41003,
+            "recipeId": "fieldArmor"
+          }
+        ],
+        "rankUnlocks": "NOT TIME-INDEXED in retained A-v3 files",
+        "bossEligibility": "NOT TIME-INDEXED in retained A-v3 files"
+      },
+      "wealthHighWater": 9068
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "policy": "normal-fresh-save-routes-v3",
+      "window": {
+        "start": 480,
+        "end": 518410
+      },
+      "actionCount": 4483,
+      "events": {
+        "meaningfulItem": [
+          {
+            "at": 555,
+            "actionIndex": 7,
+            "evidence": {
+              "level": 2,
+              "rarity": 0,
+              "id": "item-1"
+            }
+          },
+          {
+            "at": 4423,
+            "actionIndex": 58,
+            "evidence": {
+              "level": 2,
+              "rarity": 0,
+              "id": "item-2"
+            }
+          },
+          {
+            "at": 4431,
+            "actionIndex": 69,
+            "evidence": {
+              "level": 4,
+              "rarity": 0,
+              "id": "item-3"
+            }
+          },
+          {
+            "at": 13284,
+            "actionIndex": 161,
+            "evidence": {
+              "level": 4,
+              "rarity": 1,
+              "id": "item-7"
+            }
+          },
+          {
+            "at": 17604,
+            "actionIndex": 208,
+            "evidence": {
+              "level": 4,
+              "rarity": 3,
+              "id": "item-8"
+            }
+          },
+          {
+            "at": 64901,
+            "actionIndex": 637,
+            "evidence": {
+              "level": 2,
+              "rarity": 1,
+              "id": "item-14"
+            }
+          },
+          {
+            "at": 116202,
+            "actionIndex": 1076,
+            "evidence": {
+              "level": 9,
+              "rarity": 2,
+              "id": "item-27"
+            }
+          },
+          {
+            "at": 285221,
+            "actionIndex": 2396,
+            "evidence": {
+              "level": 2,
+              "rarity": 3,
+              "id": "item-100"
+            }
+          },
+          {
+            "at": 449381,
+            "actionIndex": 3868,
+            "evidence": {
+              "level": 2,
+              "rarity": 4,
+              "id": "item-125"
+            }
+          }
+        ],
+        "skillLevel": [
+          {
+            "at": 5760,
+            "actionIndex": 71,
+            "evidence": "combat:4"
+          },
+          {
+            "at": 10080,
+            "actionIndex": 116,
+            "evidence": "combat:5"
+          },
+          {
+            "at": 14400,
+            "actionIndex": 163,
+            "evidence": "combat:6"
+          },
+          {
+            "at": 18720,
+            "actionIndex": 210,
+            "evidence": "combat:7"
+          },
+          {
+            "at": 36000,
+            "actionIndex": 369,
+            "evidence": "combat:8"
+          },
+          {
+            "at": 61920,
+            "actionIndex": 600,
+            "evidence": "combat:9"
+          },
+          {
+            "at": 92160,
+            "actionIndex": 873,
+            "evidence": "combat:10"
+          },
+          {
+            "at": 106560,
+            "actionIndex": 992,
+            "evidence": "combat:11"
+          },
+          {
+            "at": 115200,
+            "actionIndex": 1056,
+            "evidence": "combat:12"
+          },
+          {
+            "at": 116694,
+            "actionIndex": 1087,
+            "evidence": "combat:13"
+          },
+          {
+            "at": 126720,
+            "actionIndex": 1160,
+            "evidence": "combat:14"
+          },
+          {
+            "at": 136800,
+            "actionIndex": 1232,
+            "evidence": "combat:15"
+          },
+          {
+            "at": 149760,
+            "actionIndex": 1331,
+            "evidence": "combat:16"
+          },
+          {
+            "at": 162720,
+            "actionIndex": 1433,
+            "evidence": "combat:17"
+          },
+          {
+            "at": 178560,
+            "actionIndex": 1557,
+            "evidence": "combat:18"
+          },
+          {
+            "at": 192960,
+            "actionIndex": 1661,
+            "evidence": "combat:19"
+          },
+          {
+            "at": 205920,
+            "actionIndex": 1753,
+            "evidence": "combat:20"
+          },
+          {
+            "at": 223200,
+            "actionIndex": 1873,
+            "evidence": "combat:21"
+          },
+          {
+            "at": 240480,
+            "actionIndex": 2001,
+            "evidence": "combat:22"
+          },
+          {
+            "at": 262164,
+            "actionIndex": 2185,
+            "evidence": "combat:23"
+          },
+          {
+            "at": 321120,
+            "actionIndex": 2708,
+            "evidence": "combat:24"
+          },
+          {
+            "at": 403200,
+            "actionIndex": 3442,
+            "evidence": "combat:25"
+          },
+          {
+            "at": 489600,
+            "actionIndex": 4218,
+            "evidence": "combat:26"
+          }
+        ],
+        "newEnemy": [
+          {
+            "at": 550,
+            "actionIndex": 1,
+            "evidence": "grayWolf"
+          },
+          {
+            "at": 4423,
+            "actionIndex": 58,
+            "evidence": "wild_beast_marshstag"
+          },
+          {
+            "at": 13282,
+            "actionIndex": 157,
+            "evidence": "slime_spring"
+          },
+          {
+            "at": 100885,
+            "actionIndex": 953,
+            "evidence": "cave_insect_digger"
+          },
+          {
+            "at": 105476,
+            "actionIndex": 987,
+            "evidence": "cave_insect_carrier"
+          },
+          {
+            "at": 116195,
+            "actionIndex": 1068,
+            "evidence": "wild_beast_apex"
+          },
+          {
+            "at": 116542,
+            "actionIndex": 1081,
+            "evidence": "frontier_goblin_warlord"
+          }
+        ],
+        "wealthStep": [
+          {
+            "at": 5760,
+            "actionIndex": 71,
+            "band": 100,
+            "evidence": "gold high-water 100"
+          },
+          {
+            "at": 115200,
+            "actionIndex": 1056,
+            "band": 500,
+            "evidence": "gold high-water 500"
+          },
+          {
+            "at": 174240,
+            "actionIndex": 1528,
+            "band": 1000,
+            "evidence": "gold high-water 1000"
+          }
+        ],
+        "newRecipeGoal": []
+      },
+      "gaps": {
+        "meaningfulItem": {
+          "minutes": {
+            "samples": 10,
+            "median": 8853,
+            "p90": 164160,
+            "max": 169019
+          },
+          "actions": {
+            "samples": 10,
+            "median": 92,
+            "p90": 1320,
+            "max": 1472
+          }
+        },
+        "skillLevel": {
+          "minutes": {
+            "samples": 24,
+            "median": 14400,
+            "p90": 58956,
+            "max": 86400
+          },
+          "actions": {
+            "samples": 24,
+            "median": 104,
+            "p90": 523,
+            "max": 776
+          }
+        },
+        "newEnemy": {
+          "minutes": {
+            "samples": 8,
+            "median": 4591,
+            "p90": 401868,
+            "max": 401868
+          },
+          "actions": {
+            "samples": 8,
+            "median": 57,
+            "p90": 3402,
+            "max": 3402
+          }
+        },
+        "wealthStep": {
+          "minutes": {
+            "samples": 4,
+            "median": 59040,
+            "p90": 344170,
+            "max": 344170
+          },
+          "actions": {
+            "samples": 4,
+            "median": 472,
+            "p90": 2955,
+            "max": 2955
+          }
+        },
+        "newRecipeGoal": {
+          "minutes": {
+            "samples": 1,
+            "median": 517930,
+            "p90": 517930,
+            "max": 517930
+          },
+          "actions": {
+            "samples": 1,
+            "median": 4483,
+            "p90": 4483,
+            "max": 4483
+          }
+        }
+      },
+      "choreRisk": {
+        "lowTierCraftsAfterPracticeCap": 0,
+        "gatherStreakCount": 0,
+        "maxConsecutiveGatherActions": 0,
+        "repeatedSameWaitActions": 0,
+        "sameEnemyStreaks": [
+          {
+            "definitionId": "grayWolf",
+            "length": 4,
+            "from": 550,
+            "to": 4420
+          },
+          {
+            "definitionId": "wild_beast_marshstag",
+            "length": 2,
+            "from": 4423,
+            "to": 4427
+          },
+          {
+            "definitionId": "wild_beast_marshstag",
+            "length": 2,
+            "from": 8742,
+            "to": 8744
+          },
+          {
+            "definitionId": "slime_spring",
+            "length": 2,
+            "from": 13282,
+            "to": 13283
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 4,
+            "from": 21700,
+            "to": 34660
+          },
+          {
+            "definitionId": "slime_spring",
+            "length": 2,
+            "from": 34881,
+            "to": 34882
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 15,
+            "from": 38980,
+            "to": 99460
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 100885,
+            "to": 100887
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 105476,
+            "to": 105477
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 109796,
+            "to": 109797
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 114116,
+            "to": 114117
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 118165,
+            "to": 118167
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 122485,
+            "to": 122487
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 126805,
+            "to": 126807
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 131125,
+            "to": 131127
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 135445,
+            "to": 135447
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 139765,
+            "to": 139767
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 144085,
+            "to": 144087
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 148405,
+            "to": 148407
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 152725,
+            "to": 152727
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 157045,
+            "to": 157047
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 161365,
+            "to": 161367
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 165685,
+            "to": 165687
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 170005,
+            "to": 170007
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 174325,
+            "to": 174327
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 178645,
+            "to": 178647
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 183236,
+            "to": 183237
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 187556,
+            "to": 187557
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 191605,
+            "to": 191606
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 195925,
+            "to": 195926
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 200245,
+            "to": 200247
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 204565,
+            "to": 204567
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 208885,
+            "to": 208887
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 213205,
+            "to": 213207
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 217525,
+            "to": 217527
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 221845,
+            "to": 221847
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 226165,
+            "to": 226167
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 230756,
+            "to": 230757
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 235076,
+            "to": 235077
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 239125,
+            "to": 239126
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 243445,
+            "to": 243446
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 247765,
+            "to": 247766
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 3,
+            "from": 250655,
+            "to": 259300
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 59,
+            "from": 263604,
+            "to": 514180
+          }
+        ],
+        "betterLegalOptionAtAction": "NOT RECORDED in A-v3 action evidence; cannot infer."
+      },
+      "noProgress": {
+        "count": 155,
+        "byClass": {
+          "no understandable next goal": 155
+        },
+        "lowConfidenceOrUnknown": 155
+      },
+      "goalEvidence": {
+        "recipeUnlocks": [],
+        "rankUnlocks": "NOT TIME-INDEXED in retained A-v3 files",
+        "bossEligibility": "NOT TIME-INDEXED in retained A-v3 files"
+      },
+      "wealthHighWater": 2290
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "policy": "normal-fresh-save-routes-v3",
+      "window": {
+        "start": 480,
+        "end": 518410
+      },
+      "actionCount": 4472,
+      "events": {
+        "meaningfulItem": [
+          {
+            "at": 562,
+            "actionIndex": 16,
+            "evidence": {
+              "level": 2,
+              "rarity": 0,
+              "id": "item-1"
+            }
+          },
+          {
+            "at": 4431,
+            "actionIndex": 67,
+            "evidence": {
+              "level": 4,
+              "rarity": 0,
+              "id": "item-2"
+            }
+          },
+          {
+            "at": 13284,
+            "actionIndex": 159,
+            "evidence": {
+              "level": 4,
+              "rarity": 1,
+              "id": "item-6"
+            }
+          },
+          {
+            "at": 17383,
+            "actionIndex": 201,
+            "evidence": {
+              "level": 4,
+              "rarity": 2,
+              "id": "item-7"
+            }
+          },
+          {
+            "at": 38981,
+            "actionIndex": 404,
+            "evidence": {
+              "level": 2,
+              "rarity": 1,
+              "id": "item-12"
+            }
+          },
+          {
+            "at": 116201,
+            "actionIndex": 1073,
+            "evidence": {
+              "level": 9,
+              "rarity": 2,
+              "id": "item-30"
+            }
+          },
+          {
+            "at": 116834,
+            "actionIndex": 1088,
+            "evidence": {
+              "level": 2,
+              "rarity": 2,
+              "id": "item-31"
+            }
+          }
+        ],
+        "skillLevel": [
+          {
+            "at": 5760,
+            "actionIndex": 69,
+            "evidence": "combat:4"
+          },
+          {
+            "at": 10080,
+            "actionIndex": 114,
+            "evidence": "combat:5"
+          },
+          {
+            "at": 14400,
+            "actionIndex": 161,
+            "evidence": "combat:6"
+          },
+          {
+            "at": 18720,
+            "actionIndex": 208,
+            "evidence": "combat:7"
+          },
+          {
+            "at": 36000,
+            "actionIndex": 367,
+            "evidence": "combat:8"
+          },
+          {
+            "at": 61920,
+            "actionIndex": 599,
+            "evidence": "combat:9"
+          },
+          {
+            "at": 92160,
+            "actionIndex": 871,
+            "evidence": "combat:10"
+          },
+          {
+            "at": 106560,
+            "actionIndex": 990,
+            "evidence": "combat:11"
+          },
+          {
+            "at": 115200,
+            "actionIndex": 1054,
+            "evidence": "combat:12"
+          },
+          {
+            "at": 116693,
+            "actionIndex": 1084,
+            "evidence": "combat:13"
+          },
+          {
+            "at": 126720,
+            "actionIndex": 1156,
+            "evidence": "combat:14"
+          },
+          {
+            "at": 136800,
+            "actionIndex": 1228,
+            "evidence": "combat:15"
+          },
+          {
+            "at": 149760,
+            "actionIndex": 1327,
+            "evidence": "combat:16"
+          },
+          {
+            "at": 162720,
+            "actionIndex": 1429,
+            "evidence": "combat:17"
+          },
+          {
+            "at": 178560,
+            "actionIndex": 1553,
+            "evidence": "combat:18"
+          },
+          {
+            "at": 192960,
+            "actionIndex": 1657,
+            "evidence": "combat:19"
+          },
+          {
+            "at": 205920,
+            "actionIndex": 1749,
+            "evidence": "combat:20"
+          },
+          {
+            "at": 223200,
+            "actionIndex": 1869,
+            "evidence": "combat:21"
+          },
+          {
+            "at": 240480,
+            "actionIndex": 1997,
+            "evidence": "combat:22"
+          },
+          {
+            "at": 262089,
+            "actionIndex": 2171,
+            "evidence": "combat:23"
+          },
+          {
+            "at": 308160,
+            "actionIndex": 2581,
+            "evidence": "combat:24"
+          },
+          {
+            "at": 390240,
+            "actionIndex": 3315,
+            "evidence": "combat:25"
+          },
+          {
+            "at": 476640,
+            "actionIndex": 4090,
+            "evidence": "combat:26"
+          }
+        ],
+        "newEnemy": [
+          {
+            "at": 550,
+            "actionIndex": 1,
+            "evidence": "grayWolf"
+          },
+          {
+            "at": 4422,
+            "actionIndex": 56,
+            "evidence": "wild_beast_marshstag"
+          },
+          {
+            "at": 13282,
+            "actionIndex": 155,
+            "evidence": "slime_spring"
+          },
+          {
+            "at": 100885,
+            "actionIndex": 951,
+            "evidence": "cave_insect_digger"
+          },
+          {
+            "at": 105476,
+            "actionIndex": 985,
+            "evidence": "cave_insect_carrier"
+          },
+          {
+            "at": 116195,
+            "actionIndex": 1066,
+            "evidence": "wild_beast_apex"
+          },
+          {
+            "at": 116541,
+            "actionIndex": 1078,
+            "evidence": "frontier_goblin_warlord"
+          }
+        ],
+        "wealthStep": [
+          {
+            "at": 5760,
+            "actionIndex": 69,
+            "band": 100,
+            "evidence": "gold high-water 100"
+          },
+          {
+            "at": 115200,
+            "actionIndex": 1054,
+            "band": 500,
+            "evidence": "gold high-water 500"
+          },
+          {
+            "at": 174240,
+            "actionIndex": 1524,
+            "band": 1000,
+            "evidence": "gold high-water 1000"
+          }
+        ],
+        "newRecipeGoal": []
+      },
+      "gaps": {
+        "meaningfulItem": {
+          "minutes": {
+            "samples": 8,
+            "median": 4099,
+            "p90": 401576,
+            "max": 401576
+          },
+          "actions": {
+            "samples": 8,
+            "median": 51,
+            "p90": 3384,
+            "max": 3384
+          }
+        },
+        "skillLevel": {
+          "minutes": {
+            "samples": 24,
+            "median": 14400,
+            "p90": 46071,
+            "max": 86400
+          },
+          "actions": {
+            "samples": 24,
+            "median": 104,
+            "p90": 410,
+            "max": 775
+          }
+        },
+        "newEnemy": {
+          "minutes": {
+            "samples": 8,
+            "median": 4591,
+            "p90": 401869,
+            "max": 401869
+          },
+          "actions": {
+            "samples": 8,
+            "median": 55,
+            "p90": 3394,
+            "max": 3394
+          }
+        },
+        "wealthStep": {
+          "minutes": {
+            "samples": 4,
+            "median": 59040,
+            "p90": 344170,
+            "max": 344170
+          },
+          "actions": {
+            "samples": 4,
+            "median": 470,
+            "p90": 2948,
+            "max": 2948
+          }
+        },
+        "newRecipeGoal": {
+          "minutes": {
+            "samples": 1,
+            "median": 517930,
+            "p90": 517930,
+            "max": 517930
+          },
+          "actions": {
+            "samples": 1,
+            "median": 4472,
+            "p90": 4472,
+            "max": 4472
+          }
+        }
+      },
+      "choreRisk": {
+        "lowTierCraftsAfterPracticeCap": 0,
+        "gatherStreakCount": 0,
+        "maxConsecutiveGatherActions": 0,
+        "repeatedSameWaitActions": 0,
+        "sameEnemyStreaks": [
+          {
+            "definitionId": "grayWolf",
+            "length": 4,
+            "from": 550,
+            "to": 4420
+          },
+          {
+            "definitionId": "wild_beast_marshstag",
+            "length": 2,
+            "from": 4422,
+            "to": 4426
+          },
+          {
+            "definitionId": "wild_beast_marshstag",
+            "length": 2,
+            "from": 8742,
+            "to": 8744
+          },
+          {
+            "definitionId": "slime_spring",
+            "length": 2,
+            "from": 13282,
+            "to": 13283
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 4,
+            "from": 21700,
+            "to": 34660
+          },
+          {
+            "definitionId": "slime_spring",
+            "length": 2,
+            "from": 34881,
+            "to": 34882
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 15,
+            "from": 38980,
+            "to": 99460
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 100885,
+            "to": 100887
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 105476,
+            "to": 105477
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 109796,
+            "to": 109797
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 114116,
+            "to": 114117
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 118165,
+            "to": 118167
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 122485,
+            "to": 122487
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 126805,
+            "to": 126807
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 131125,
+            "to": 131127
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 135445,
+            "to": 135447
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 139765,
+            "to": 139767
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 144085,
+            "to": 144087
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 148405,
+            "to": 148407
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 152725,
+            "to": 152727
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 157045,
+            "to": 157047
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 161365,
+            "to": 161367
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 165685,
+            "to": 165687
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 170005,
+            "to": 170007
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 174325,
+            "to": 174327
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 178645,
+            "to": 178647
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 183236,
+            "to": 183237
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 187556,
+            "to": 187557
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 191605,
+            "to": 191606
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 195925,
+            "to": 195926
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 200245,
+            "to": 200247
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 204565,
+            "to": 204567
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 208885,
+            "to": 208887
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 213205,
+            "to": 213207
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 217525,
+            "to": 217527
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 221845,
+            "to": 221847
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 226165,
+            "to": 226167
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 230756,
+            "to": 230757
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 235076,
+            "to": 235077
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 239125,
+            "to": 239126
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 243445,
+            "to": 243446
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 247765,
+            "to": 247766
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 252085,
+            "to": 252087
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 2,
+            "from": 254900,
+            "to": 259300
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 59,
+            "from": 263624,
+            "to": 514180
+          }
+        ],
+        "betterLegalOptionAtAction": "NOT RECORDED in A-v3 action evidence; cannot infer."
+      },
+      "noProgress": {
+        "count": 156,
+        "byClass": {
+          "no understandable next goal": 156
+        },
+        "lowConfidenceOrUnknown": 156
+      },
+      "goalEvidence": {
+        "recipeUnlocks": [],
+        "rankUnlocks": "NOT TIME-INDEXED in retained A-v3 files",
+        "bossEligibility": "NOT TIME-INDEXED in retained A-v3 files"
+      },
+      "wealthHighWater": 2311
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "policy": "normal-fresh-save-routes-v3",
+      "window": {
+        "start": 480,
+        "end": 518410
+      },
+      "actionCount": 4490,
+      "events": {
+        "meaningfulItem": [
+          {
+            "at": 4422,
+            "actionIndex": 56,
+            "evidence": {
+              "level": 2,
+              "rarity": 0,
+              "id": "item-1"
+            }
+          },
+          {
+            "at": 4429,
+            "actionIndex": 65,
+            "evidence": {
+              "level": 4,
+              "rarity": 2,
+              "id": "item-2"
+            }
+          },
+          {
+            "at": 17381,
+            "actionIndex": 197,
+            "evidence": {
+              "level": 2,
+              "rarity": 4,
+              "id": "item-8"
+            }
+          },
+          {
+            "at": 261664,
+            "actionIndex": 2182,
+            "evidence": {
+              "level": 9,
+              "rarity": 2,
+              "id": "item-96"
+            }
+          }
+        ],
+        "skillLevel": [
+          {
+            "at": 5760,
+            "actionIndex": 70,
+            "evidence": "combat:4"
+          },
+          {
+            "at": 10080,
+            "actionIndex": 115,
+            "evidence": "combat:5"
+          },
+          {
+            "at": 14400,
+            "actionIndex": 160,
+            "evidence": "combat:6"
+          },
+          {
+            "at": 18720,
+            "actionIndex": 207,
+            "evidence": "combat:7"
+          },
+          {
+            "at": 36000,
+            "actionIndex": 366,
+            "evidence": "combat:8"
+          },
+          {
+            "at": 61920,
+            "actionIndex": 597,
+            "evidence": "combat:9"
+          },
+          {
+            "at": 92160,
+            "actionIndex": 869,
+            "evidence": "combat:10"
+          },
+          {
+            "at": 106560,
+            "actionIndex": 988,
+            "evidence": "combat:11"
+          },
+          {
+            "at": 115200,
+            "actionIndex": 1052,
+            "evidence": "combat:12"
+          },
+          {
+            "at": 123840,
+            "actionIndex": 1126,
+            "evidence": "combat:13"
+          },
+          {
+            "at": 135360,
+            "actionIndex": 1220,
+            "evidence": "combat:14"
+          },
+          {
+            "at": 145440,
+            "actionIndex": 1300,
+            "evidence": "combat:15"
+          },
+          {
+            "at": 158400,
+            "actionIndex": 1401,
+            "evidence": "combat:16"
+          },
+          {
+            "at": 171360,
+            "actionIndex": 1502,
+            "evidence": "combat:17"
+          },
+          {
+            "at": 184320,
+            "actionIndex": 1600,
+            "evidence": "combat:18"
+          },
+          {
+            "at": 200160,
+            "actionIndex": 1717,
+            "evidence": "combat:19"
+          },
+          {
+            "at": 214560,
+            "actionIndex": 1812,
+            "evidence": "combat:20"
+          },
+          {
+            "at": 231840,
+            "actionIndex": 1940,
+            "evidence": "combat:21"
+          },
+          {
+            "at": 247680,
+            "actionIndex": 2057,
+            "evidence": "combat:22"
+          },
+          {
+            "at": 262082,
+            "actionIndex": 2192,
+            "evidence": "combat:23"
+          },
+          {
+            "at": 321120,
+            "actionIndex": 2716,
+            "evidence": "combat:24"
+          },
+          {
+            "at": 403200,
+            "actionIndex": 3450,
+            "evidence": "combat:25"
+          },
+          {
+            "at": 489600,
+            "actionIndex": 4225,
+            "evidence": "combat:26"
+          }
+        ],
+        "newEnemy": [
+          {
+            "at": 550,
+            "actionIndex": 1,
+            "evidence": "grayWolf"
+          },
+          {
+            "at": 4422,
+            "actionIndex": 56,
+            "evidence": "wild_beast_marshstag"
+          },
+          {
+            "at": 13281,
+            "actionIndex": 155,
+            "evidence": "slime_spring"
+          },
+          {
+            "at": 100885,
+            "actionIndex": 949,
+            "evidence": "cave_insect_digger"
+          },
+          {
+            "at": 105476,
+            "actionIndex": 983,
+            "evidence": "cave_insect_carrier"
+          },
+          {
+            "at": 116195,
+            "actionIndex": 1064,
+            "evidence": "wild_beast_apex"
+          },
+          {
+            "at": 120866,
+            "actionIndex": 1108,
+            "evidence": "frontier_goblin_warlord"
+          }
+        ],
+        "wealthStep": [
+          {
+            "at": 5760,
+            "actionIndex": 70,
+            "band": 100,
+            "evidence": "gold high-water 100"
+          },
+          {
+            "at": 115200,
+            "actionIndex": 1052,
+            "band": 500,
+            "evidence": "gold high-water 500"
+          },
+          {
+            "at": 184320,
+            "actionIndex": 1600,
+            "band": 1000,
+            "evidence": "gold high-water 1000"
+          }
+        ],
+        "newRecipeGoal": []
+      },
+      "gaps": {
+        "meaningfulItem": {
+          "minutes": {
+            "samples": 5,
+            "median": 12952,
+            "p90": 256746,
+            "max": 256746
+          },
+          "actions": {
+            "samples": 5,
+            "median": 132,
+            "p90": 2308,
+            "max": 2308
+          }
+        },
+        "skillLevel": {
+          "minutes": {
+            "samples": 24,
+            "median": 14400,
+            "p90": 59038,
+            "max": 86400
+          },
+          "actions": {
+            "samples": 24,
+            "median": 101,
+            "p90": 524,
+            "max": 775
+          }
+        },
+        "newEnemy": {
+          "minutes": {
+            "samples": 8,
+            "median": 4671,
+            "p90": 397544,
+            "max": 397544
+          },
+          "actions": {
+            "samples": 8,
+            "median": 55,
+            "p90": 3382,
+            "max": 3382
+          }
+        },
+        "wealthStep": {
+          "minutes": {
+            "samples": 4,
+            "median": 69120,
+            "p90": 334090,
+            "max": 334090
+          },
+          "actions": {
+            "samples": 4,
+            "median": 548,
+            "p90": 2890,
+            "max": 2890
+          }
+        },
+        "newRecipeGoal": {
+          "minutes": {
+            "samples": 1,
+            "median": 517930,
+            "p90": 517930,
+            "max": 517930
+          },
+          "actions": {
+            "samples": 1,
+            "median": 4490,
+            "p90": 4490,
+            "max": 4490
+          }
+        }
+      },
+      "choreRisk": {
+        "lowTierCraftsAfterPracticeCap": 0,
+        "gatherStreakCount": 0,
+        "maxConsecutiveGatherActions": 0,
+        "repeatedSameWaitActions": 0,
+        "sameEnemyStreaks": [
+          {
+            "definitionId": "grayWolf",
+            "length": 4,
+            "from": 550,
+            "to": 4420
+          },
+          {
+            "definitionId": "wild_beast_marshstag",
+            "length": 2,
+            "from": 4422,
+            "to": 4429
+          },
+          {
+            "definitionId": "wild_beast_marshstag",
+            "length": 2,
+            "from": 8742,
+            "to": 8744
+          },
+          {
+            "definitionId": "slime_spring",
+            "length": 2,
+            "from": 13281,
+            "to": 13282
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 4,
+            "from": 21700,
+            "to": 34660
+          },
+          {
+            "definitionId": "slime_spring",
+            "length": 2,
+            "from": 34881,
+            "to": 34882
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 15,
+            "from": 38980,
+            "to": 99460
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 100885,
+            "to": 100887
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 105476,
+            "to": 105477
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 109796,
+            "to": 109797
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 114116,
+            "to": 114117
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 118165,
+            "to": 118167
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 122485,
+            "to": 122487
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 126805,
+            "to": 126807
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 131125,
+            "to": 131127
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 135445,
+            "to": 135447
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 139765,
+            "to": 139767
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 144085,
+            "to": 144087
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 148405,
+            "to": 148407
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 152725,
+            "to": 152727
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 157045,
+            "to": 157047
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 161365,
+            "to": 161367
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 165685,
+            "to": 165687
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 170005,
+            "to": 170007
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 174325,
+            "to": 174327
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 178645,
+            "to": 178647
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 183236,
+            "to": 183237
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 187556,
+            "to": 187557
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 191605,
+            "to": 191606
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 195925,
+            "to": 195926
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 200245,
+            "to": 200247
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 204565,
+            "to": 204567
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 208885,
+            "to": 208887
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 213205,
+            "to": 213207
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 217525,
+            "to": 217527
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 221845,
+            "to": 221847
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 3,
+            "from": 226165,
+            "to": 226167
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 230756,
+            "to": 230757
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 2,
+            "from": 235076,
+            "to": 235077
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 239125,
+            "to": 239126
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 243445,
+            "to": 243446
+          },
+          {
+            "definitionId": "cave_insect_digger",
+            "length": 2,
+            "from": 247765,
+            "to": 247766
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 3,
+            "from": 250655,
+            "to": 259300
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 59,
+            "from": 263617,
+            "to": 514180
+          }
+        ],
+        "betterLegalOptionAtAction": "NOT RECORDED in A-v3 action evidence; cannot infer."
+      },
+      "noProgress": {
+        "count": 155,
+        "byClass": {
+          "no understandable next goal": 155
+        },
+        "lowConfidenceOrUnknown": 155
+      },
+      "goalEvidence": {
+        "recipeUnlocks": [],
+        "rankUnlocks": "NOT TIME-INDEXED in retained A-v3 files",
+        "bossEligibility": "NOT TIME-INDEXED in retained A-v3 files"
+      },
+      "wealthHighWater": 2290
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "policy": "normal-fresh-save-routes-v3",
+      "window": {
+        "start": 480,
+        "end": 518420
+      },
+      "actionCount": 6064,
+      "events": {
+        "meaningfulItem": [
+          {
+            "at": 4880,
+            "actionIndex": 46,
+            "evidence": {
+              "level": 2,
+              "rarity": 0,
+              "id": "item-1"
+            }
+          },
+          {
+            "at": 7760,
+            "actionIndex": 81,
+            "evidence": {
+              "level": 2,
+              "rarity": 1,
+              "id": "item-2"
+            }
+          },
+          {
+            "at": 13526,
+            "actionIndex": 146,
+            "evidence": {
+              "level": 4,
+              "rarity": 0,
+              "id": "item-6"
+            }
+          },
+          {
+            "at": 21708,
+            "actionIndex": 237,
+            "evidence": {
+              "level": 2,
+              "rarity": 3,
+              "id": "item-13"
+            }
+          },
+          {
+            "at": 86156,
+            "actionIndex": 874,
+            "evidence": {
+              "level": 8,
+              "rarity": 2,
+              "id": "item-61"
+            }
+          },
+          {
+            "at": 88827,
+            "actionIndex": 921,
+            "evidence": {
+              "level": 9,
+              "rarity": 2,
+              "id": "item-64"
+            }
+          },
+          {
+            "at": 163915,
+            "actionIndex": 1716,
+            "evidence": {
+              "level": 9,
+              "rarity": 3,
+              "id": "item-150"
+            }
+          }
+        ],
+        "skillLevel": [
+          {
+            "at": 4800,
+            "actionIndex": 45,
+            "evidence": "farming:2"
+          },
+          {
+            "at": 5760,
+            "actionIndex": 59,
+            "evidence": "combat:3"
+          },
+          {
+            "at": 7680,
+            "actionIndex": 80,
+            "evidence": "woodcutting:3"
+          },
+          {
+            "at": 7680,
+            "actionIndex": 80,
+            "evidence": "smithing:2"
+          },
+          {
+            "at": 13440,
+            "actionIndex": 136,
+            "evidence": "mining:3"
+          },
+          {
+            "at": 14400,
+            "actionIndex": 150,
+            "evidence": "combat:4"
+          },
+          {
+            "at": 16320,
+            "actionIndex": 168,
+            "evidence": "smithing:3"
+          },
+          {
+            "at": 18729,
+            "actionIndex": 196,
+            "evidence": "woodcutting:4"
+          },
+          {
+            "at": 21627,
+            "actionIndex": 234,
+            "evidence": "mining:4"
+          },
+          {
+            "at": 30720,
+            "actionIndex": 313,
+            "evidence": "woodcutting:5"
+          },
+          {
+            "at": 31680,
+            "actionIndex": 320,
+            "evidence": "combat:5"
+          },
+          {
+            "at": 42240,
+            "actionIndex": 421,
+            "evidence": "mining:5"
+          },
+          {
+            "at": 45120,
+            "actionIndex": 451,
+            "evidence": "woodcutting:6"
+          },
+          {
+            "at": 65280,
+            "actionIndex": 652,
+            "evidence": "mining:6"
+          },
+          {
+            "at": 65280,
+            "actionIndex": 652,
+            "evidence": "woodcutting:7"
+          },
+          {
+            "at": 66240,
+            "actionIndex": 656,
+            "evidence": "combat:6"
+          },
+          {
+            "at": 85440,
+            "actionIndex": 859,
+            "evidence": "woodcutting:8"
+          },
+          {
+            "at": 86426,
+            "actionIndex": 878,
+            "evidence": "combat:7"
+          },
+          {
+            "at": 89316,
+            "actionIndex": 934,
+            "evidence": "combat:8"
+          },
+          {
+            "at": 92160,
+            "actionIndex": 962,
+            "evidence": "combat:9"
+          },
+          {
+            "at": 95045,
+            "actionIndex": 1001,
+            "evidence": "combat:10"
+          },
+          {
+            "at": 96960,
+            "actionIndex": 1024,
+            "evidence": "mining:7"
+          },
+          {
+            "at": 108480,
+            "actionIndex": 1148,
+            "evidence": "woodcutting:9"
+          },
+          {
+            "at": 115200,
+            "actionIndex": 1217,
+            "evidence": "combat:11"
+          },
+          {
+            "at": 123840,
+            "actionIndex": 1301,
+            "evidence": "combat:12"
+          },
+          {
+            "at": 128640,
+            "actionIndex": 1348,
+            "evidence": "mining:8"
+          },
+          {
+            "at": 141120,
+            "actionIndex": 1468,
+            "evidence": "combat:13"
+          },
+          {
+            "at": 145920,
+            "actionIndex": 1518,
+            "evidence": "woodcutting:10"
+          },
+          {
+            "at": 149760,
+            "actionIndex": 1564,
+            "evidence": "combat:14"
+          },
+          {
+            "at": 157440,
+            "actionIndex": 1641,
+            "evidence": "mining:9"
+          },
+          {
+            "at": 164185,
+            "actionIndex": 1720,
+            "evidence": "combat:15"
+          },
+          {
+            "at": 175680,
+            "actionIndex": 1835,
+            "evidence": "combat:16"
+          },
+          {
+            "at": 186240,
+            "actionIndex": 1956,
+            "evidence": "woodcutting:11"
+          },
+          {
+            "at": 192000,
+            "actionIndex": 2016,
+            "evidence": "mining:10"
+          },
+          {
+            "at": 192960,
+            "actionIndex": 2027,
+            "evidence": "combat:17"
+          },
+          {
+            "at": 218880,
+            "actionIndex": 2323,
+            "evidence": "combat:18"
+          },
+          {
+            "at": 229440,
+            "actionIndex": 2446,
+            "evidence": "mining:11"
+          },
+          {
+            "at": 232320,
+            "actionIndex": 2478,
+            "evidence": "woodcutting:12"
+          },
+          {
+            "at": 239040,
+            "actionIndex": 2544,
+            "evidence": "combat:19"
+          },
+          {
+            "at": 272640,
+            "actionIndex": 2933,
+            "evidence": "mining:12"
+          },
+          {
+            "at": 281280,
+            "actionIndex": 3037,
+            "evidence": "woodcutting:13"
+          },
+          {
+            "at": 318720,
+            "actionIndex": 3473,
+            "evidence": "mining:13"
+          },
+          {
+            "at": 334080,
+            "actionIndex": 3660,
+            "evidence": "combat:20"
+          },
+          {
+            "at": 338880,
+            "actionIndex": 3716,
+            "evidence": "woodcutting:14"
+          },
+          {
+            "at": 367680,
+            "actionIndex": 4087,
+            "evidence": "mining:14"
+          },
+          {
+            "at": 396480,
+            "actionIndex": 4439,
+            "evidence": "woodcutting:15"
+          },
+          {
+            "at": 419520,
+            "actionIndex": 4741,
+            "evidence": "mining:15"
+          },
+          {
+            "at": 459840,
+            "actionIndex": 5286,
+            "evidence": "woodcutting:16"
+          },
+          {
+            "at": 472320,
+            "actionIndex": 5444,
+            "evidence": "combat:21"
+          },
+          {
+            "at": 477120,
+            "actionIndex": 5506,
+            "evidence": "mining:16"
+          }
+        ],
+        "newEnemy": [
+          {
+            "at": 4880,
+            "actionIndex": 46,
+            "evidence": "grayWolf"
+          },
+          {
+            "at": 13522,
+            "actionIndex": 140,
+            "evidence": "slime_spring"
+          },
+          {
+            "at": 86150,
+            "actionIndex": 867,
+            "evidence": "slime_heart"
+          },
+          {
+            "at": 88820,
+            "actionIndex": 913,
+            "evidence": "wild_beast_apex"
+          },
+          {
+            "at": 88912,
+            "actionIndex": 923,
+            "evidence": "frontier_goblin_warlord"
+          },
+          {
+            "at": 105675,
+            "actionIndex": 1115,
+            "evidence": "cave_insect_carrier"
+          }
+        ],
+        "wealthStep": [
+          {
+            "at": 5760,
+            "actionIndex": 59,
+            "band": 100,
+            "evidence": "gold high-water 100"
+          },
+          {
+            "at": 62400,
+            "actionIndex": 620,
+            "band": 500,
+            "evidence": "gold high-water 500"
+          },
+          {
+            "at": 92160,
+            "actionIndex": 962,
+            "band": 1000,
+            "evidence": "gold high-water 1000"
+          },
+          {
+            "at": 368640,
+            "actionIndex": 4091,
+            "band": 5000,
+            "evidence": "gold high-water 5000"
+          }
+        ],
+        "newRecipeGoal": [
+          {
+            "at": 1920,
+            "actionIndex": 17,
+            "evidence": "starterSpear"
+          },
+          {
+            "at": 41002,
+            "actionIndex": 408,
+            "evidence": "fieldArmor"
+          }
+        ]
+      },
+      "gaps": {
+        "meaningfulItem": {
+          "minutes": {
+            "samples": 8,
+            "median": 5766,
+            "p90": 354505,
+            "max": 354505
+          },
+          "actions": {
+            "samples": 8,
+            "median": 65,
+            "p90": 4348,
+            "max": 4348
+          }
+        },
+        "skillLevel": {
+          "minutes": {
+            "samples": 51,
+            "median": 5760,
+            "p90": 28800,
+            "max": 41300
+          },
+          "actions": {
+            "samples": 51,
+            "median": 62,
+            "p90": 352,
+            "max": 558
+          }
+        },
+        "newEnemy": {
+          "minutes": {
+            "samples": 7,
+            "median": 8642,
+            "p90": 412745,
+            "max": 412745
+          },
+          "actions": {
+            "samples": 7,
+            "median": 94,
+            "p90": 4949,
+            "max": 4949
+          }
+        },
+        "wealthStep": {
+          "minutes": {
+            "samples": 5,
+            "median": 56640,
+            "p90": 276480,
+            "max": 276480
+          },
+          "actions": {
+            "samples": 5,
+            "median": 561,
+            "p90": 3129,
+            "max": 3129
+          }
+        },
+        "newRecipeGoal": {
+          "minutes": {
+            "samples": 3,
+            "median": 39082,
+            "p90": 477418,
+            "max": 477418
+          },
+          "actions": {
+            "samples": 3,
+            "median": 391,
+            "p90": 5656,
+            "max": 5656
+          }
+        }
+      },
+      "choreRisk": {
+        "lowTierCraftsAfterPracticeCap": 452,
+        "gatherStreakCount": 527,
+        "maxConsecutiveGatherActions": 2,
+        "repeatedSameWaitActions": 0,
+        "sameEnemyStreaks": [
+          {
+            "definitionId": "grayWolf",
+            "length": 4,
+            "from": 4880,
+            "to": 13520
+          },
+          {
+            "definitionId": "slime_spring",
+            "length": 2,
+            "from": 13522,
+            "to": 13524
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 8,
+            "from": 21707,
+            "to": 82640
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 105675,
+            "to": 105947
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 114315,
+            "to": 114317
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 122955,
+            "to": 122957
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 131595,
+            "to": 131597
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 140235,
+            "to": 140237
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 148875,
+            "to": 148877
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 157515,
+            "to": 157517
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 166155,
+            "to": 166157
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 174795,
+            "to": 174797
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 183435,
+            "to": 183707
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 192075,
+            "to": 192347
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 200715,
+            "to": 200987
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 209355,
+            "to": 209627
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 217995,
+            "to": 218267
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 226635,
+            "to": 226637
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 235275,
+            "to": 235277
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 243915,
+            "to": 244187
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 32,
+            "from": 246800,
+            "to": 514640
+          }
+        ],
+        "betterLegalOptionAtAction": "NOT RECORDED in A-v3 action evidence; cannot infer."
+      },
+      "noProgress": {
+        "count": 77,
+        "byClass": {
+          "no understandable next goal": 77
+        },
+        "lowConfidenceOrUnknown": 77
+      },
+      "goalEvidence": {
+        "recipeUnlocks": [
+          {
+            "at": 1920,
+            "recipeId": "starterSpear"
+          },
+          {
+            "at": 41002,
+            "recipeId": "fieldArmor"
+          }
+        ],
+        "rankUnlocks": "NOT TIME-INDEXED in retained A-v3 files",
+        "bossEligibility": "NOT TIME-INDEXED in retained A-v3 files"
+      },
+      "wealthHighWater": 7594
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "policy": "normal-fresh-save-routes-v3",
+      "window": {
+        "start": 480,
+        "end": 518420
+      },
+      "actionCount": 6085,
+      "events": {
+        "meaningfulItem": [
+          {
+            "at": 4880,
+            "actionIndex": 46,
+            "evidence": {
+              "level": 2,
+              "rarity": 0,
+              "id": "item-1"
+            }
+          },
+          {
+            "at": 7760,
+            "actionIndex": 81,
+            "evidence": {
+              "level": 2,
+              "rarity": 2,
+              "id": "item-4"
+            }
+          },
+          {
+            "at": 13524,
+            "actionIndex": 143,
+            "evidence": {
+              "level": 4,
+              "rarity": 2,
+              "id": "item-9"
+            }
+          },
+          {
+            "at": 86157,
+            "actionIndex": 876,
+            "evidence": {
+              "level": 8,
+              "rarity": 2,
+              "id": "item-65"
+            }
+          },
+          {
+            "at": 91281,
+            "actionIndex": 956,
+            "evidence": {
+              "level": 2,
+              "rarity": 0,
+              "id": "item-70"
+            }
+          },
+          {
+            "at": 103255,
+            "actionIndex": 1107,
+            "evidence": {
+              "level": 9,
+              "rarity": 2,
+              "id": "item-80"
+            }
+          },
+          {
+            "at": 143121,
+            "actionIndex": 1546,
+            "evidence": {
+              "level": 2,
+              "rarity": 1,
+              "id": "item-129"
+            }
+          },
+          {
+            "at": 186321,
+            "actionIndex": 1992,
+            "evidence": {
+              "level": 2,
+              "rarity": 2,
+              "id": "item-183"
+            }
+          }
+        ],
+        "skillLevel": [
+          {
+            "at": 4800,
+            "actionIndex": 45,
+            "evidence": "farming:2"
+          },
+          {
+            "at": 5760,
+            "actionIndex": 59,
+            "evidence": "combat:3"
+          },
+          {
+            "at": 7680,
+            "actionIndex": 80,
+            "evidence": "woodcutting:3"
+          },
+          {
+            "at": 7680,
+            "actionIndex": 80,
+            "evidence": "smithing:2"
+          },
+          {
+            "at": 13440,
+            "actionIndex": 136,
+            "evidence": "mining:3"
+          },
+          {
+            "at": 14400,
+            "actionIndex": 149,
+            "evidence": "combat:4"
+          },
+          {
+            "at": 16320,
+            "actionIndex": 167,
+            "evidence": "smithing:3"
+          },
+          {
+            "at": 18729,
+            "actionIndex": 195,
+            "evidence": "woodcutting:4"
+          },
+          {
+            "at": 21627,
+            "actionIndex": 233,
+            "evidence": "mining:4"
+          },
+          {
+            "at": 30720,
+            "actionIndex": 311,
+            "evidence": "woodcutting:5"
+          },
+          {
+            "at": 31680,
+            "actionIndex": 318,
+            "evidence": "combat:5"
+          },
+          {
+            "at": 42240,
+            "actionIndex": 420,
+            "evidence": "mining:5"
+          },
+          {
+            "at": 45120,
+            "actionIndex": 450,
+            "evidence": "woodcutting:6"
+          },
+          {
+            "at": 65280,
+            "actionIndex": 652,
+            "evidence": "mining:6"
+          },
+          {
+            "at": 65280,
+            "actionIndex": 652,
+            "evidence": "woodcutting:7"
+          },
+          {
+            "at": 66240,
+            "actionIndex": 656,
+            "evidence": "combat:6"
+          },
+          {
+            "at": 85440,
+            "actionIndex": 860,
+            "evidence": "woodcutting:8"
+          },
+          {
+            "at": 86427,
+            "actionIndex": 880,
+            "evidence": "combat:7"
+          },
+          {
+            "at": 96960,
+            "actionIndex": 1021,
+            "evidence": "mining:7"
+          },
+          {
+            "at": 100800,
+            "actionIndex": 1071,
+            "evidence": "combat:8"
+          },
+          {
+            "at": 103687,
+            "actionIndex": 1117,
+            "evidence": "combat:9"
+          },
+          {
+            "at": 108480,
+            "actionIndex": 1184,
+            "evidence": "woodcutting:9"
+          },
+          {
+            "at": 112346,
+            "actionIndex": 1222,
+            "evidence": "combat:10"
+          },
+          {
+            "at": 115200,
+            "actionIndex": 1256,
+            "evidence": "combat:11"
+          },
+          {
+            "at": 123840,
+            "actionIndex": 1343,
+            "evidence": "combat:12"
+          },
+          {
+            "at": 125760,
+            "actionIndex": 1366,
+            "evidence": "mining:8"
+          },
+          {
+            "at": 141120,
+            "actionIndex": 1515,
+            "evidence": "combat:13"
+          },
+          {
+            "at": 145920,
+            "actionIndex": 1568,
+            "evidence": "woodcutting:10"
+          },
+          {
+            "at": 155544,
+            "actionIndex": 1663,
+            "evidence": "combat:14"
+          },
+          {
+            "at": 157440,
+            "actionIndex": 1683,
+            "evidence": "mining:9"
+          },
+          {
+            "at": 167040,
+            "actionIndex": 1787,
+            "evidence": "combat:15"
+          },
+          {
+            "at": 184320,
+            "actionIndex": 1965,
+            "evidence": "combat:16"
+          },
+          {
+            "at": 186240,
+            "actionIndex": 1989,
+            "evidence": "woodcutting:11"
+          },
+          {
+            "at": 192000,
+            "actionIndex": 2050,
+            "evidence": "mining:10"
+          },
+          {
+            "at": 210240,
+            "actionIndex": 2249,
+            "evidence": "combat:17"
+          },
+          {
+            "at": 227520,
+            "actionIndex": 2445,
+            "evidence": "combat:18"
+          },
+          {
+            "at": 229440,
+            "actionIndex": 2469,
+            "evidence": "mining:11"
+          },
+          {
+            "at": 232320,
+            "actionIndex": 2498,
+            "evidence": "woodcutting:12"
+          },
+          {
+            "at": 272640,
+            "actionIndex": 2955,
+            "evidence": "mining:12"
+          },
+          {
+            "at": 273600,
+            "actionIndex": 2962,
+            "evidence": "combat:19"
+          },
+          {
+            "at": 284160,
+            "actionIndex": 3090,
+            "evidence": "woodcutting:13"
+          },
+          {
+            "at": 318720,
+            "actionIndex": 3496,
+            "evidence": "mining:13"
+          },
+          {
+            "at": 338880,
+            "actionIndex": 3740,
+            "evidence": "woodcutting:14"
+          },
+          {
+            "at": 367680,
+            "actionIndex": 4112,
+            "evidence": "mining:14"
+          },
+          {
+            "at": 396480,
+            "actionIndex": 4463,
+            "evidence": "woodcutting:15"
+          },
+          {
+            "at": 403200,
+            "actionIndex": 4548,
+            "evidence": "combat:20"
+          },
+          {
+            "at": 422400,
+            "actionIndex": 4799,
+            "evidence": "mining:15"
+          },
+          {
+            "at": 459840,
+            "actionIndex": 5309,
+            "evidence": "woodcutting:16"
+          },
+          {
+            "at": 480000,
+            "actionIndex": 5569,
+            "evidence": "mining:16"
+          }
+        ],
+        "newEnemy": [
+          {
+            "at": 4880,
+            "actionIndex": 46,
+            "evidence": "grayWolf"
+          },
+          {
+            "at": 13522,
+            "actionIndex": 140,
+            "evidence": "slime_spring"
+          },
+          {
+            "at": 86150,
+            "actionIndex": 868,
+            "evidence": "slime_heart"
+          },
+          {
+            "at": 88820,
+            "actionIndex": 915,
+            "evidence": "wild_beast_apex"
+          },
+          {
+            "at": 89080,
+            "actionIndex": 925,
+            "evidence": "frontier_goblin_warlord"
+          },
+          {
+            "at": 105675,
+            "actionIndex": 1151,
+            "evidence": "cave_insect_carrier"
+          }
+        ],
+        "wealthStep": [
+          {
+            "at": 5760,
+            "actionIndex": 59,
+            "band": 100,
+            "evidence": "gold high-water 100"
+          },
+          {
+            "at": 62400,
+            "actionIndex": 620,
+            "band": 500,
+            "evidence": "gold high-water 500"
+          },
+          {
+            "at": 100800,
+            "actionIndex": 1071,
+            "band": 1000,
+            "evidence": "gold high-water 1000"
+          },
+          {
+            "at": 373440,
+            "actionIndex": 4181,
+            "band": 5000,
+            "evidence": "gold high-water 5000"
+          }
+        ],
+        "newRecipeGoal": [
+          {
+            "at": 1920,
+            "actionIndex": 17,
+            "evidence": "starterSpear"
+          },
+          {
+            "at": 41007,
+            "actionIndex": 407,
+            "evidence": "fieldArmor"
+          }
+        ]
+      },
+      "gaps": {
+        "meaningfulItem": {
+          "minutes": {
+            "samples": 9,
+            "median": 11974,
+            "p90": 332099,
+            "max": 332099
+          },
+          "actions": {
+            "samples": 9,
+            "median": 151,
+            "p90": 4093,
+            "max": 4093
+          }
+        },
+        "skillLevel": {
+          "minutes": {
+            "samples": 50,
+            "median": 4800,
+            "p90": 28800,
+            "max": 40320
+          },
+          "actions": {
+            "samples": 50,
+            "median": 56,
+            "p90": 351,
+            "max": 516
+          }
+        },
+        "newEnemy": {
+          "minutes": {
+            "samples": 7,
+            "median": 8642,
+            "p90": 412745,
+            "max": 412745
+          },
+          "actions": {
+            "samples": 7,
+            "median": 94,
+            "p90": 4934,
+            "max": 4934
+          }
+        },
+        "wealthStep": {
+          "minutes": {
+            "samples": 5,
+            "median": 56640,
+            "p90": 272640,
+            "max": 272640
+          },
+          "actions": {
+            "samples": 5,
+            "median": 561,
+            "p90": 3110,
+            "max": 3110
+          }
+        },
+        "newRecipeGoal": {
+          "minutes": {
+            "samples": 3,
+            "median": 39087,
+            "p90": 477413,
+            "max": 477413
+          },
+          "actions": {
+            "samples": 3,
+            "median": 390,
+            "p90": 5678,
+            "max": 5678
+          }
+        }
+      },
+      "choreRisk": {
+        "lowTierCraftsAfterPracticeCap": 451,
+        "gatherStreakCount": 526,
+        "maxConsecutiveGatherActions": 2,
+        "repeatedSameWaitActions": 0,
+        "sameEnemyStreaks": [
+          {
+            "definitionId": "grayWolf",
+            "length": 4,
+            "from": 4880,
+            "to": 13520
+          },
+          {
+            "definitionId": "slime_spring",
+            "length": 2,
+            "from": 13522,
+            "to": 13524
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 8,
+            "from": 21707,
+            "to": 82640
+          },
+          {
+            "definitionId": "wild_beast_apex",
+            "length": 2,
+            "from": 94610,
+            "to": 97460
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 105675,
+            "to": 105677
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 114315,
+            "to": 114317
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 122955,
+            "to": 122957
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 131595,
+            "to": 131867
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 140235,
+            "to": 140507
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 148875,
+            "to": 148877
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 157515,
+            "to": 157517
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 166155,
+            "to": 166157
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 174795,
+            "to": 174797
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 183435,
+            "to": 183437
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 192075,
+            "to": 192077
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 200715,
+            "to": 200717
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 209355,
+            "to": 209627
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 217995,
+            "to": 218267
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 226635,
+            "to": 226637
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 235275,
+            "to": 235277
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 243915,
+            "to": 244187
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 32,
+            "from": 246800,
+            "to": 514640
+          }
+        ],
+        "betterLegalOptionAtAction": "NOT RECORDED in A-v3 action evidence; cannot infer."
+      },
+      "noProgress": {
+        "count": 77,
+        "byClass": {
+          "no understandable next goal": 77
+        },
+        "lowConfidenceOrUnknown": 77
+      },
+      "goalEvidence": {
+        "recipeUnlocks": [
+          {
+            "at": 1920,
+            "recipeId": "starterSpear"
+          },
+          {
+            "at": 41007,
+            "recipeId": "fieldArmor"
+          }
+        ],
+        "rankUnlocks": "NOT TIME-INDEXED in retained A-v3 files",
+        "bossEligibility": "NOT TIME-INDEXED in retained A-v3 files"
+      },
+      "wealthHighWater": 7513
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "policy": "normal-fresh-save-routes-v3",
+      "window": {
+        "start": 480,
+        "end": 518420
+      },
+      "actionCount": 6065,
+      "events": {
+        "meaningfulItem": [
+          {
+            "at": 4880,
+            "actionIndex": 46,
+            "evidence": {
+              "level": 2,
+              "rarity": 1,
+              "id": "item-1"
+            }
+          },
+          {
+            "at": 4884,
+            "actionIndex": 53,
+            "evidence": {
+              "level": 2,
+              "rarity": 1,
+              "id": "item-2"
+            }
+          },
+          {
+            "at": 7760,
+            "actionIndex": 83,
+            "evidence": {
+              "level": 2,
+              "rarity": 2,
+              "id": "item-4"
+            }
+          },
+          {
+            "at": 13524,
+            "actionIndex": 145,
+            "evidence": {
+              "level": 4,
+              "rarity": 0,
+              "id": "item-9"
+            }
+          },
+          {
+            "at": 74001,
+            "actionIndex": 746,
+            "evidence": {
+              "level": 2,
+              "rarity": 2,
+              "id": "item-55"
+            }
+          },
+          {
+            "at": 86156,
+            "actionIndex": 876,
+            "evidence": {
+              "level": 8,
+              "rarity": 4,
+              "id": "item-65"
+            }
+          },
+          {
+            "at": 103255,
+            "actionIndex": 1107,
+            "evidence": {
+              "level": 9,
+              "rarity": 3,
+              "id": "item-80"
+            }
+          }
+        ],
+        "skillLevel": [
+          {
+            "at": 4800,
+            "actionIndex": 45,
+            "evidence": "farming:2"
+          },
+          {
+            "at": 5760,
+            "actionIndex": 60,
+            "evidence": "combat:3"
+          },
+          {
+            "at": 7680,
+            "actionIndex": 82,
+            "evidence": "woodcutting:3"
+          },
+          {
+            "at": 7680,
+            "actionIndex": 82,
+            "evidence": "smithing:2"
+          },
+          {
+            "at": 13440,
+            "actionIndex": 138,
+            "evidence": "mining:3"
+          },
+          {
+            "at": 14400,
+            "actionIndex": 151,
+            "evidence": "combat:4"
+          },
+          {
+            "at": 16320,
+            "actionIndex": 169,
+            "evidence": "smithing:3"
+          },
+          {
+            "at": 18729,
+            "actionIndex": 197,
+            "evidence": "woodcutting:4"
+          },
+          {
+            "at": 21627,
+            "actionIndex": 235,
+            "evidence": "mining:4"
+          },
+          {
+            "at": 30720,
+            "actionIndex": 313,
+            "evidence": "woodcutting:5"
+          },
+          {
+            "at": 31680,
+            "actionIndex": 320,
+            "evidence": "combat:5"
+          },
+          {
+            "at": 42240,
+            "actionIndex": 421,
+            "evidence": "mining:5"
+          },
+          {
+            "at": 45120,
+            "actionIndex": 451,
+            "evidence": "woodcutting:6"
+          },
+          {
+            "at": 65280,
+            "actionIndex": 653,
+            "evidence": "mining:6"
+          },
+          {
+            "at": 65280,
+            "actionIndex": 653,
+            "evidence": "woodcutting:7"
+          },
+          {
+            "at": 66240,
+            "actionIndex": 657,
+            "evidence": "combat:6"
+          },
+          {
+            "at": 85440,
+            "actionIndex": 861,
+            "evidence": "woodcutting:8"
+          },
+          {
+            "at": 86426,
+            "actionIndex": 880,
+            "evidence": "combat:7"
+          },
+          {
+            "at": 96960,
+            "actionIndex": 1025,
+            "evidence": "mining:7"
+          },
+          {
+            "at": 100800,
+            "actionIndex": 1072,
+            "evidence": "combat:8"
+          },
+          {
+            "at": 103687,
+            "actionIndex": 1117,
+            "evidence": "combat:9"
+          },
+          {
+            "at": 108480,
+            "actionIndex": 1184,
+            "evidence": "woodcutting:9"
+          },
+          {
+            "at": 112346,
+            "actionIndex": 1223,
+            "evidence": "combat:10"
+          },
+          {
+            "at": 115200,
+            "actionIndex": 1256,
+            "evidence": "combat:11"
+          },
+          {
+            "at": 123840,
+            "actionIndex": 1344,
+            "evidence": "combat:12"
+          },
+          {
+            "at": 125760,
+            "actionIndex": 1367,
+            "evidence": "mining:8"
+          },
+          {
+            "at": 141120,
+            "actionIndex": 1516,
+            "evidence": "combat:13"
+          },
+          {
+            "at": 145920,
+            "actionIndex": 1566,
+            "evidence": "woodcutting:10"
+          },
+          {
+            "at": 155544,
+            "actionIndex": 1661,
+            "evidence": "combat:14"
+          },
+          {
+            "at": 157440,
+            "actionIndex": 1681,
+            "evidence": "mining:9"
+          },
+          {
+            "at": 167040,
+            "actionIndex": 1784,
+            "evidence": "combat:15"
+          },
+          {
+            "at": 184320,
+            "actionIndex": 1962,
+            "evidence": "combat:16"
+          },
+          {
+            "at": 186240,
+            "actionIndex": 1986,
+            "evidence": "woodcutting:11"
+          },
+          {
+            "at": 192000,
+            "actionIndex": 2046,
+            "evidence": "mining:10"
+          },
+          {
+            "at": 210240,
+            "actionIndex": 2246,
+            "evidence": "combat:17"
+          },
+          {
+            "at": 227520,
+            "actionIndex": 2441,
+            "evidence": "combat:18"
+          },
+          {
+            "at": 229440,
+            "actionIndex": 2465,
+            "evidence": "mining:11"
+          },
+          {
+            "at": 232320,
+            "actionIndex": 2495,
+            "evidence": "woodcutting:12"
+          },
+          {
+            "at": 272640,
+            "actionIndex": 2953,
+            "evidence": "mining:12"
+          },
+          {
+            "at": 273600,
+            "actionIndex": 2960,
+            "evidence": "combat:19"
+          },
+          {
+            "at": 284160,
+            "actionIndex": 3087,
+            "evidence": "woodcutting:13"
+          },
+          {
+            "at": 318720,
+            "actionIndex": 3494,
+            "evidence": "mining:13"
+          },
+          {
+            "at": 338880,
+            "actionIndex": 3737,
+            "evidence": "woodcutting:14"
+          },
+          {
+            "at": 367680,
+            "actionIndex": 4108,
+            "evidence": "mining:14"
+          },
+          {
+            "at": 396480,
+            "actionIndex": 4461,
+            "evidence": "woodcutting:15"
+          },
+          {
+            "at": 403200,
+            "actionIndex": 4546,
+            "evidence": "combat:20"
+          },
+          {
+            "at": 422400,
+            "actionIndex": 4797,
+            "evidence": "mining:15"
+          },
+          {
+            "at": 459840,
+            "actionIndex": 5307,
+            "evidence": "woodcutting:16"
+          },
+          {
+            "at": 480000,
+            "actionIndex": 5567,
+            "evidence": "mining:16"
+          }
+        ],
+        "newEnemy": [
+          {
+            "at": 4880,
+            "actionIndex": 46,
+            "evidence": "grayWolf"
+          },
+          {
+            "at": 13522,
+            "actionIndex": 142,
+            "evidence": "slime_spring"
+          },
+          {
+            "at": 86150,
+            "actionIndex": 869,
+            "evidence": "slime_heart"
+          },
+          {
+            "at": 88820,
+            "actionIndex": 916,
+            "evidence": "wild_beast_apex"
+          },
+          {
+            "at": 89080,
+            "actionIndex": 926,
+            "evidence": "frontier_goblin_warlord"
+          },
+          {
+            "at": 105675,
+            "actionIndex": 1151,
+            "evidence": "cave_insect_carrier"
+          }
+        ],
+        "wealthStep": [
+          {
+            "at": 5760,
+            "actionIndex": 60,
+            "band": 100,
+            "evidence": "gold high-water 100"
+          },
+          {
+            "at": 62400,
+            "actionIndex": 621,
+            "band": 500,
+            "evidence": "gold high-water 500"
+          },
+          {
+            "at": 102720,
+            "actionIndex": 1095,
+            "band": 1000,
+            "evidence": "gold high-water 1000"
+          },
+          {
+            "at": 373440,
+            "actionIndex": 4177,
+            "band": 5000,
+            "evidence": "gold high-water 5000"
+          }
+        ],
+        "newRecipeGoal": [
+          {
+            "at": 1920,
+            "actionIndex": 17,
+            "evidence": "starterSpear"
+          },
+          {
+            "at": 41002,
+            "actionIndex": 408,
+            "evidence": "fieldArmor"
+          }
+        ]
+      },
+      "gaps": {
+        "meaningfulItem": {
+          "minutes": {
+            "samples": 8,
+            "median": 5764,
+            "p90": 415165,
+            "max": 415165
+          },
+          "actions": {
+            "samples": 8,
+            "median": 62,
+            "p90": 4958,
+            "max": 4958
+          }
+        },
+        "skillLevel": {
+          "minutes": {
+            "samples": 50,
+            "median": 4800,
+            "p90": 28800,
+            "max": 40320
+          },
+          "actions": {
+            "samples": 50,
+            "median": 56,
+            "p90": 353,
+            "max": 510
+          }
+        },
+        "newEnemy": {
+          "minutes": {
+            "samples": 7,
+            "median": 8642,
+            "p90": 412745,
+            "max": 412745
+          },
+          "actions": {
+            "samples": 7,
+            "median": 96,
+            "p90": 4914,
+            "max": 4914
+          }
+        },
+        "wealthStep": {
+          "minutes": {
+            "samples": 5,
+            "median": 56640,
+            "p90": 270720,
+            "max": 270720
+          },
+          "actions": {
+            "samples": 5,
+            "median": 561,
+            "p90": 3082,
+            "max": 3082
+          }
+        },
+        "newRecipeGoal": {
+          "minutes": {
+            "samples": 3,
+            "median": 39082,
+            "p90": 477418,
+            "max": 477418
+          },
+          "actions": {
+            "samples": 3,
+            "median": 391,
+            "p90": 5657,
+            "max": 5657
+          }
+        }
+      },
+      "choreRisk": {
+        "lowTierCraftsAfterPracticeCap": 449,
+        "gatherStreakCount": 524,
+        "maxConsecutiveGatherActions": 2,
+        "repeatedSameWaitActions": 0,
+        "sameEnemyStreaks": [
+          {
+            "definitionId": "grayWolf",
+            "length": 4,
+            "from": 4880,
+            "to": 13520
+          },
+          {
+            "definitionId": "slime_spring",
+            "length": 2,
+            "from": 13522,
+            "to": 13524
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 8,
+            "from": 21707,
+            "to": 82640
+          },
+          {
+            "definitionId": "wild_beast_apex",
+            "length": 2,
+            "from": 94610,
+            "to": 97460
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 105675,
+            "to": 105677
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 114315,
+            "to": 114317
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 122955,
+            "to": 122957
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 131595,
+            "to": 131867
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 140235,
+            "to": 140507
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 148875,
+            "to": 148877
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 157515,
+            "to": 157517
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 166155,
+            "to": 166157
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 174795,
+            "to": 174797
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 183435,
+            "to": 183437
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 192075,
+            "to": 192077
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 200715,
+            "to": 200717
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 209355,
+            "to": 209627
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 217995,
+            "to": 218267
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 226635,
+            "to": 226637
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 235275,
+            "to": 235277
+          },
+          {
+            "definitionId": "cave_insect_carrier",
+            "length": 3,
+            "from": 243915,
+            "to": 244187
+          },
+          {
+            "definitionId": "grayWolf",
+            "length": 32,
+            "from": 246800,
+            "to": 514640
+          }
+        ],
+        "betterLegalOptionAtAction": "NOT RECORDED in A-v3 action evidence; cannot infer."
+      },
+      "noProgress": {
+        "count": 77,
+        "byClass": {
+          "no understandable next goal": 77
+        },
+        "lowConfidenceOrUnknown": 77
+      },
+      "goalEvidence": {
+        "recipeUnlocks": [
+          {
+            "at": 1920,
+            "recipeId": "starterSpear"
+          },
+          {
+            "at": 41002,
+            "recipeId": "fieldArmor"
+          }
+        ],
+        "rankUnlocks": "NOT TIME-INDEXED in retained A-v3 files",
+        "bossEligibility": "NOT TIME-INDEXED in retained A-v3 files"
+      },
+      "wealthHighWater": 7506
+    }
+  ],
+  "limitations": [
+    "No human play evidence.",
+    "Action evidence has no full per-action state snapshots; legal-option-at-moment judgments are unavailable.",
+    "Rank unlock and Boss eligibility timestamps are not retained in the A-v3 seed files.",
+    "Gold bands are analyst bins only, not product targets."
+  ]
+}

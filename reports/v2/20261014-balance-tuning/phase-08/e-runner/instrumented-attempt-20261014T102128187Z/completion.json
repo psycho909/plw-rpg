@@ -1,0 +1,55 @@
+{
+  "status": "FAIL",
+  "failure": {
+    "message": "TypeError: buyPrice is not a function",
+    "stack": "TypeError: buyPrice is not a function\n    at file:///D:/Codex/plw-rpg/scripts/phase8/run-pacing-instrumented.mjs:175:17\n    at Array.map (<anonymous>)\n    at file:///D:/Codex/plw-rpg/scripts/phase8/run-pacing-instrumented.mjs:174:113\n    at Array.map (<anonymous>)\n    at decisionSnapshot (file:///D:/Codex/plw-rpg/scripts/phase8/run-pacing-instrumented.mjs:173:43)\n    at file:///D:/Codex/plw-rpg/scripts/phase8/run-pacing-instrumented.mjs:610:32"
+  },
+  "endedAt": "2026-10-14T10:21:34.720Z",
+  "seedVariance": {
+    "status": "VALID_POLICY",
+    "failures": [],
+    "checks": {
+      "sampleCount": 3,
+      "distinctSeeds": 3,
+      "distinctWorldSeeds": 3,
+      "distinctRngStates": 3,
+      "distinctRngProbes": 3
+    }
+  },
+  "seedEvidence": [
+    {
+      "seed": 61101,
+      "worldSeed": 61101,
+      "rngState": 1216225876,
+      "rngProbe": 0.5262475989293307
+    },
+    {
+      "seed": 61102,
+      "worldSeed": 61102,
+      "rngState": 399550865,
+      "rngProbe": 0.14355979766696692
+    },
+    {
+      "seed": 61103,
+      "worldSeed": 61103,
+      "rngState": 3877843150,
+      "rngProbe": 0.7608719964046031
+    }
+  ],
+  "routeValidity": [],
+  "encounterSummaries": [],
+  "bossVisibility": [],
+  "instrumentation": {
+    "decisionRows": 0,
+    "scope": "pre-decision world state, projected legal options, selected action/outcome; snapshots are synchronous engine observations"
+  },
+  "rows": {
+    "daily": 0,
+    "encounters": 0,
+    "actions": 0,
+    "crafts": 0,
+    "gearChanges": 0,
+    "unlocks": 0,
+    "cropYields": 0
+  }
+}

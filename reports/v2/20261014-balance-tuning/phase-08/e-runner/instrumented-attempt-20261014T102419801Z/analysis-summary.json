@@ -1,0 +1,2679 @@
+{
+  "attempt": "D:\\Codex\\plw-rpg\\reports\\v2\\20261014-balance-tuning\\phase-08\\e-runner\\instrumented-attempt-20261014T102419801Z",
+  "sourceHead": "5e223beb2ef056968861bc4c7125c1fb41da8728",
+  "routeStatus": "PASS",
+  "decisionCount": 50889,
+  "noProgressCount": 1423,
+  "noProgressCounts": {
+    "runner policy defect": 1390,
+    "UI not visible or reachable": 0,
+    "lacking resources": 0,
+    "no understandable next goal": 33,
+    "excessive wait-repeat cost": 0,
+    "legitimate world wait": 0
+  },
+  "noProgressExamples": {
+    "runner policy defect": [
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 563,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 60,
+        "hp": 95,
+        "gold": 75,
+        "legalOptions": {
+          "encounterProjections": {
+            "content": [
+              {
+                "definitionId": "slime_bog",
+                "rank": "normal",
+                "eligible": true,
+                "reason": null
+              },
+              {
+                "definitionId": "slime_moss",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_spring",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_cinder",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_tidecaller",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_heart",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_stonehorn",
+                "rank": "normal",
+                "eligible": true,
+                "reason": null
+              },
+              {
+                "definitionId": "wild_beast_redtail",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_fernback",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_marshstag",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_amberfox",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_bristleback",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_galehorn",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_old_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_apex",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_scout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_slinger",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_lookout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_trapper",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_duelist",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_standardbearer",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_warlord",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_bonewalker",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_gravehound",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_mourner",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_wight",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_hollow_bell",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              }
+            ],
+            "wolves": [
+              {
+                "definitionId": "grayWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "scarredWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "alphaWolf",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "packLeader",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "wolfKing",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              }
+            ]
+          },
+          "crops": [
+            {
+              "id": "wheat",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "spring_pea",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 720,
+              "harvestAmount": 4
+            },
+            {
+              "id": "field_turnip",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 1440,
+              "harvestAmount": 6
+            },
+            {
+              "id": "summer_barley",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 8
+            },
+            {
+              "id": "sun_pepper",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2160,
+              "harvestAmount": 4
+            },
+            {
+              "id": "forest_bean",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 6
+            },
+            {
+              "id": "autumn_pumpkin",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 10
+            },
+            {
+              "id": "orchard_apple",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "winter_cabbage",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 6
+            },
+            {
+              "id": "frost_root",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 5
+            },
+            {
+              "id": "marsh_rice",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 8
+            },
+            {
+              "id": "cave_mushroom",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 4
+            }
+          ],
+          "recipes": [],
+          "blockedRecipeReasons": {
+            "station_unavailable": 25,
+            "too_far": 3
+          },
+          "trades": [],
+          "gatherable": true
+        },
+        "confidence": "high",
+        "reason": "policy no-op while legal options were projected: encounter:slime_bog, encounter:wild_beast_stonehorn, gather:available-region-resource"
+      },
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 4431,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 36,
+        "hp": 84,
+        "gold": 103,
+        "legalOptions": {
+          "encounterProjections": {
+            "content": [
+              {
+                "definitionId": "slime_bog",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_moss",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_spring",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_cinder",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_tidecaller",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_heart",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_stonehorn",
+                "rank": "normal",
+                "eligible": true,
+                "reason": null
+              },
+              {
+                "definitionId": "wild_beast_redtail",
+                "rank": "normal",
+                "eligible": true,
+                "reason": null
+              },
+              {
+                "definitionId": "wild_beast_fernback",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_marshstag",
+                "rank": "normal",
+                "eligible": true,
+                "reason": null
+              },
+              {
+                "definitionId": "wild_beast_amberfox",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_bristleback",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_galehorn",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_old_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_apex",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_scout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_slinger",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_lookout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_trapper",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_duelist",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_standardbearer",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_warlord",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_bonewalker",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_gravehound",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_mourner",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_wight",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_hollow_bell",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              }
+            ],
+            "wolves": [
+              {
+                "definitionId": "grayWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "scarredWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "alphaWolf",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "packLeader",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "wolfKing",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              }
+            ]
+          },
+          "crops": [
+            {
+              "id": "wheat",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "spring_pea",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 720,
+              "harvestAmount": 4
+            },
+            {
+              "id": "field_turnip",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 1440,
+              "harvestAmount": 6
+            },
+            {
+              "id": "summer_barley",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 8
+            },
+            {
+              "id": "sun_pepper",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2160,
+              "harvestAmount": 4
+            },
+            {
+              "id": "forest_bean",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 6
+            },
+            {
+              "id": "autumn_pumpkin",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 10
+            },
+            {
+              "id": "orchard_apple",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "winter_cabbage",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 6
+            },
+            {
+              "id": "frost_root",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 5
+            },
+            {
+              "id": "marsh_rice",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 8
+            },
+            {
+              "id": "cave_mushroom",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 4
+            }
+          ],
+          "recipes": [],
+          "blockedRecipeReasons": {
+            "station_unavailable": 25,
+            "too_far": 3
+          },
+          "trades": [],
+          "gatherable": true
+        },
+        "confidence": "high",
+        "reason": "policy no-op while legal options were projected: encounter:wild_beast_stonehorn, encounter:wild_beast_redtail, encounter:wild_beast_marshstag, gather:available-region-resource"
+      },
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 8746,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 12,
+        "hp": 77,
+        "gold": 131,
+        "legalOptions": {
+          "encounterProjections": {
+            "content": [
+              {
+                "definitionId": "slime_bog",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_moss",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_spring",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_cinder",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_tidecaller",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_heart",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_stonehorn",
+                "rank": "normal",
+                "eligible": true,
+                "reason": null
+              },
+              {
+                "definitionId": "wild_beast_redtail",
+                "rank": "normal",
+                "eligible": true,
+                "reason": null
+              },
+              {
+                "definitionId": "wild_beast_fernback",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_marshstag",
+                "rank": "normal",
+                "eligible": true,
+                "reason": null
+              },
+              {
+                "definitionId": "wild_beast_amberfox",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_bristleback",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_galehorn",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_old_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_apex",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_scout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_slinger",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_lookout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_trapper",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_duelist",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_standardbearer",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_warlord",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_bonewalker",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_gravehound",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_mourner",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_wight",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_hollow_bell",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              }
+            ],
+            "wolves": [
+              {
+                "definitionId": "grayWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "scarredWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "alphaWolf",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "packLeader",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "wolfKing",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              }
+            ]
+          },
+          "crops": [
+            {
+              "id": "wheat",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "spring_pea",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 720,
+              "harvestAmount": 4
+            },
+            {
+              "id": "field_turnip",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 1440,
+              "harvestAmount": 6
+            },
+            {
+              "id": "summer_barley",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 8
+            },
+            {
+              "id": "sun_pepper",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2160,
+              "harvestAmount": 4
+            },
+            {
+              "id": "forest_bean",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 6
+            },
+            {
+              "id": "autumn_pumpkin",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 10
+            },
+            {
+              "id": "orchard_apple",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "winter_cabbage",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 6
+            },
+            {
+              "id": "frost_root",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 5
+            },
+            {
+              "id": "marsh_rice",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 8
+            },
+            {
+              "id": "cave_mushroom",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 4
+            }
+          ],
+          "recipes": [],
+          "blockedRecipeReasons": {
+            "station_unavailable": 25,
+            "too_far": 3
+          },
+          "trades": [],
+          "gatherable": true
+        },
+        "confidence": "high",
+        "reason": "policy no-op while legal options were projected: encounter:wild_beast_stonehorn, encounter:wild_beast_redtail, encounter:wild_beast_marshstag, gather:available-region-resource"
+      }
+    ],
+    "no understandable next goal": [
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 60581,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 8,
+        "hp": 136,
+        "gold": 300,
+        "legalOptions": {
+          "encounterProjections": {
+            "content": [
+              {
+                "definitionId": "slime_bog",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_moss",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_spring",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_cinder",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_tidecaller",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_heart",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_stonehorn",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_redtail",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_fernback",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_marshstag",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_amberfox",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_bristleback",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_galehorn",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_old_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_apex",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_scout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_slinger",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_lookout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_trapper",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_duelist",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_standardbearer",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_warlord",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_bonewalker",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_gravehound",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_mourner",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_wight",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_hollow_bell",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              }
+            ],
+            "wolves": [
+              {
+                "definitionId": "grayWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "scarredWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "alphaWolf",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "packLeader",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "wolfKing",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              }
+            ]
+          },
+          "crops": [
+            {
+              "id": "wheat",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "spring_pea",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 720,
+              "harvestAmount": 4
+            },
+            {
+              "id": "field_turnip",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 1440,
+              "harvestAmount": 6
+            },
+            {
+              "id": "summer_barley",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 8
+            },
+            {
+              "id": "sun_pepper",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2160,
+              "harvestAmount": 4
+            },
+            {
+              "id": "forest_bean",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 6
+            },
+            {
+              "id": "autumn_pumpkin",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 10
+            },
+            {
+              "id": "orchard_apple",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "winter_cabbage",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 6
+            },
+            {
+              "id": "frost_root",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 5
+            },
+            {
+              "id": "marsh_rice",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 8
+            },
+            {
+              "id": "cave_mushroom",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 4
+            }
+          ],
+          "recipes": [],
+          "blockedRecipeReasons": {
+            "station_unavailable": 25,
+            "too_far": 3
+          },
+          "trades": [],
+          "gatherable": false
+        },
+        "confidence": "low",
+        "reason": "no immediate legal progression option was projected; player-facing goal comprehension is not observable in this harness"
+      },
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 103776,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 9,
+        "hp": 148,
+        "gold": 421,
+        "legalOptions": {
+          "encounterProjections": {
+            "content": [
+              {
+                "definitionId": "slime_bog",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_moss",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_spring",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_cinder",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_tidecaller",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_heart",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_stonehorn",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_redtail",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_fernback",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_marshstag",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_amberfox",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_bristleback",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_galehorn",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_old_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_apex",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_scout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_slinger",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_lookout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_trapper",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_duelist",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_standardbearer",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_warlord",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_bonewalker",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_gravehound",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_mourner",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_wight",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_hollow_bell",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              }
+            ],
+            "wolves": [
+              {
+                "definitionId": "grayWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "scarredWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "alphaWolf",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "packLeader",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "wolfKing",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              }
+            ]
+          },
+          "crops": [
+            {
+              "id": "wheat",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "spring_pea",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 720,
+              "harvestAmount": 4
+            },
+            {
+              "id": "field_turnip",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 1440,
+              "harvestAmount": 6
+            },
+            {
+              "id": "summer_barley",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 8
+            },
+            {
+              "id": "sun_pepper",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2160,
+              "harvestAmount": 4
+            },
+            {
+              "id": "forest_bean",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 6
+            },
+            {
+              "id": "autumn_pumpkin",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 10
+            },
+            {
+              "id": "orchard_apple",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "winter_cabbage",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 6
+            },
+            {
+              "id": "frost_root",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 5
+            },
+            {
+              "id": "marsh_rice",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 8
+            },
+            {
+              "id": "cave_mushroom",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 4
+            }
+          ],
+          "recipes": [],
+          "blockedRecipeReasons": {
+            "too_far": 28
+          },
+          "trades": [],
+          "gatherable": false
+        },
+        "confidence": "low",
+        "reason": "no immediate legal progression option was projected; player-facing goal comprehension is not observable in this harness"
+      },
+      {
+        "route": "adventure",
+        "seed": 61101,
+        "at": 259301,
+        "location": {
+          "region": "forest",
+          "x": 1,
+          "y": 1
+        },
+        "stamina": 9,
+        "hp": 202,
+        "gold": 1624,
+        "legalOptions": {
+          "encounterProjections": {
+            "content": [
+              {
+                "definitionId": "slime_bog",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_moss",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_spring",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_cinder",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_tidecaller",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "slime_heart",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_stonehorn",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_redtail",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_fernback",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_marshstag",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_amberfox",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_bristleback",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_galehorn",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_old_matriarch",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "wild_beast_apex",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_scout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_slinger",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_lookout",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_trapper",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_duelist",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_standardbearer",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "frontier_goblin_warlord",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_bonewalker",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_gravehound",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_mourner",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_wight",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              },
+              {
+                "definitionId": "fog_undead_hollow_bell",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。"
+              }
+            ],
+            "wolves": [
+              {
+                "definitionId": "grayWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "scarredWolf",
+                "rank": "normal",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "alphaWolf",
+                "rank": "elite",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "packLeader",
+                "rank": "miniBoss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              },
+              {
+                "definitionId": "wolfKing",
+                "rank": "boss",
+                "eligible": false,
+                "reason": "附近暫時沒有怪物。"
+              }
+            ]
+          },
+          "crops": [
+            {
+              "id": "wheat",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "spring_pea",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 720,
+              "harvestAmount": 4
+            },
+            {
+              "id": "field_turnip",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 1440,
+              "harvestAmount": 6
+            },
+            {
+              "id": "summer_barley",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 8
+            },
+            {
+              "id": "sun_pepper",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2160,
+              "harvestAmount": 4
+            },
+            {
+              "id": "forest_bean",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 6
+            },
+            {
+              "id": "autumn_pumpkin",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 10
+            },
+            {
+              "id": "orchard_apple",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 2880,
+              "harvestAmount": 5
+            },
+            {
+              "id": "winter_cabbage",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 6
+            },
+            {
+              "id": "frost_root",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 5
+            },
+            {
+              "id": "marsh_rice",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 5760,
+              "harvestAmount": 8
+            },
+            {
+              "id": "cave_mushroom",
+              "status": "region",
+              "reason": "請先前往東方農田。",
+              "growthMinutes": 4320,
+              "harvestAmount": 4
+            }
+          ],
+          "recipes": [],
+          "blockedRecipeReasons": {
+            "too_far": 28
+          },
+          "trades": [],
+          "gatherable": false
+        },
+        "confidence": "low",
+        "reason": "no immediate legal progression option was projected; player-facing goal comprehension is not observable in this harness"
+      }
+    ]
+  },
+  "choreRows": [
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "zeroXpStarterSpearCrafts": 0,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithAnyOtherProjectedProgressOption": 0,
+      "repeatedSameEnemyAdjacentEncounters": 142,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "higherRankExamples": [],
+      "encounterStartDecisions": 254,
+      "encounterRows": 254
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "zeroXpStarterSpearCrafts": 0,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithAnyOtherProjectedProgressOption": 0,
+      "repeatedSameEnemyAdjacentEncounters": 143,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "higherRankExamples": [],
+      "encounterStartDecisions": 257,
+      "encounterRows": 257
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "zeroXpStarterSpearCrafts": 0,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithAnyOtherProjectedProgressOption": 0,
+      "repeatedSameEnemyAdjacentEncounters": 142,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "higherRankExamples": [],
+      "encounterStartDecisions": 257,
+      "encounterRows": 257
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "zeroXpStarterSpearCrafts": 452,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithAnyOtherProjectedProgressOption": 452,
+      "repeatedSameEnemyAdjacentEncounters": 76,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "higherRankExamples": [],
+      "encounterStartDecisions": 121,
+      "encounterRows": 121
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "zeroXpStarterSpearCrafts": 451,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithAnyOtherProjectedProgressOption": 451,
+      "repeatedSameEnemyAdjacentEncounters": 77,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "higherRankExamples": [],
+      "encounterStartDecisions": 125,
+      "encounterRows": 125
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "zeroXpStarterSpearCrafts": 449,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithAnyOtherProjectedProgressOption": 449,
+      "repeatedSameEnemyAdjacentEncounters": 77,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "higherRankExamples": [],
+      "encounterStartDecisions": 124,
+      "encounterRows": 124
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "zeroXpStarterSpearCrafts": 670,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithAnyOtherProjectedProgressOption": 670,
+      "repeatedSameEnemyAdjacentEncounters": 0,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "higherRankExamples": [],
+      "encounterStartDecisions": 0,
+      "encounterRows": 0
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "zeroXpStarterSpearCrafts": 670,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithAnyOtherProjectedProgressOption": 670,
+      "repeatedSameEnemyAdjacentEncounters": 0,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "higherRankExamples": [],
+      "encounterStartDecisions": 0,
+      "encounterRows": 0
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "zeroXpStarterSpearCrafts": 670,
+      "zeroXpCraftsWithAlternativeRecipeGrantingPracticeXp": 0,
+      "zeroXpCraftsWithAnyOtherProjectedProgressOption": 670,
+      "repeatedSameEnemyAdjacentEncounters": 0,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "higherRankExamples": [],
+      "encounterStartDecisions": 0,
+      "encounterRows": 0
+    }
+  ],
+  "bossMilestones": [
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116542,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 115992,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116195,
+      "firstEngagedAt": 116195,
+      "firstWinAt": 116195,
+      "visibilityToEligibilityMinutes": 115645,
+      "encounterToWinMinutes": 0
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116542,
+      "firstEngagedAt": 116542,
+      "firstWinAt": 261660,
+      "visibilityToEligibilityMinutes": 115992,
+      "encounterToWinMinutes": 145118
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 1525,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116541,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 115991,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116195,
+      "firstEngagedAt": 116195,
+      "firstWinAt": 116195,
+      "visibilityToEligibilityMinutes": 115645,
+      "encounterToWinMinutes": 0
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116541,
+      "firstEngagedAt": 116541,
+      "firstWinAt": 261660,
+      "visibilityToEligibilityMinutes": 115991,
+      "encounterToWinMinutes": 145119
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 1525,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 120866,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 120316,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 116195,
+      "firstEngagedAt": 116195,
+      "firstWinAt": 261994,
+      "visibilityToEligibilityMinutes": 115645,
+      "encounterToWinMinutes": 145799
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 550,
+      "firstEligibleAt": 120866,
+      "firstEngagedAt": 120866,
+      "firstWinAt": 261660,
+      "visibilityToEligibilityMinutes": 120316,
+      "encounterToWinMinutes": 140794
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 1525,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 2890,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 99023,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 98408,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 88912,
+      "firstWinAt": 94790,
+      "visibilityToEligibilityMinutes": 86832,
+      "encounterToWinMinutes": 5878
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 81804,
+      "firstEngagedAt": 86150,
+      "firstWinAt": 86150,
+      "visibilityToEligibilityMinutes": 80981,
+      "encounterToWinMinutes": 0
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 88820,
+      "firstWinAt": 88820,
+      "visibilityToEligibilityMinutes": 86624,
+      "encounterToWinMinutes": 0
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 104934,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 104319,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 89080,
+      "firstWinAt": 112070,
+      "visibilityToEligibilityMinutes": 86832,
+      "encounterToWinMinutes": 22990
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 81804,
+      "firstEngagedAt": 86150,
+      "firstWinAt": 86150,
+      "visibilityToEligibilityMinutes": 80981,
+      "encounterToWinMinutes": 0
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 88820,
+      "firstWinAt": 103250,
+      "visibilityToEligibilityMinutes": 86624,
+      "encounterToWinMinutes": 14430
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 104934,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 104319,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 89080,
+      "firstWinAt": 112070,
+      "visibilityToEligibilityMinutes": 86832,
+      "encounterToWinMinutes": 22990
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 81804,
+      "firstEngagedAt": 86150,
+      "firstWinAt": 86150,
+      "visibilityToEligibilityMinutes": 80981,
+      "encounterToWinMinutes": 0
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 87447,
+      "firstEngagedAt": 88820,
+      "firstWinAt": 103250,
+      "visibilityToEligibilityMinutes": 86624,
+      "encounterToWinMinutes": 14430
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "fog_undead_cryptlord",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "definitionId": "mine_construct_heart",
+      "firstVisibleAt": 7760,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 57283,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 56668,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87582,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 86967,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 55883,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 55060,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 89007,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 88184,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "definitionId": "chief",
+      "firstVisibleAt": 177745,
+      "firstEligibleAt": 177745,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 0,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 57283,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 56668,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87582,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 86967,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 55883,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 55060,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 89007,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 88184,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "definitionId": "chief",
+      "firstVisibleAt": 176305,
+      "firstEligibleAt": 176305,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 0,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "wolfKing",
+      "firstVisibleAt": 480,
+      "firstEligibleAt": null,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": null,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "cave_insect_queen",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 57283,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 56668,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "frontier_goblin_warlord",
+      "firstVisibleAt": 615,
+      "firstEligibleAt": 87582,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 86967,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "slime_heart",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 55883,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 55060,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "wild_beast_apex",
+      "firstVisibleAt": 823,
+      "firstEligibleAt": 89007,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 88184,
+      "encounterToWinMinutes": null
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "definitionId": "chief",
+      "firstVisibleAt": 176305,
+      "firstEligibleAt": 176305,
+      "firstEngagedAt": null,
+      "firstWinAt": null,
+      "visibilityToEligibilityMinutes": 0,
+      "encounterToWinMinutes": null
+    }
+  ],
+  "interpretation": {
+    "uiNotVisibleOrReachable": "not assigned without direct UI visibility/reachability observation; the engine projection alone cannot establish rendered accessibility",
+    "excessiveWaitRepeatCost": "zero observed because the v3 runner stops after one policy no-op and the action log contains no repeated wait action"
+  }
+}
