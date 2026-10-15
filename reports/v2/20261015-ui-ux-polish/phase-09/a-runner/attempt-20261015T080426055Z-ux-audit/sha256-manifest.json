@@ -1,0 +1,21 @@
+{
+  "policy": "raw files over 256 KiB losslessly gzip-compressed; original and gzip SHA-256 retained",
+  "files": [
+    {
+      "path": "closeout.json",
+      "gzipPath": "closeout.json.gz",
+      "originalBytes": 330525,
+      "gzipBytes": 21167,
+      "sha256Original": "372ee5e4bb2aba7d74f48b071cf309991297d8100c1c4b2616a558ba570fd62a",
+      "sha256Gzip": "6d585920a4586caecdb1c612cb9d61134502e138a48d83a9ef30cdff5ec2fb43"
+    },
+    {
+      "path": "results.json",
+      "gzipPath": "results.json.gz",
+      "originalBytes": 304637,
+      "gzipBytes": 20146,
+      "sha256Original": "4dfbe5bdbc40d420de0602f72529bd2bb993314af4cde35afe2819d99089de4d",
+      "sha256Gzip": "0cb293eab982762c5341fcb60ad4cf68fafdca1b6c3eeacf995efc6f9987eaad"
+    }
+  ]
+}

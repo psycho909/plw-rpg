@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-15T08:04:03.379Z",
+  "error": "Error: EEXIST: file already exists, open 'D:\\Codex\\plw-rpg\\reports\\v2\\20261015-ui-ux-polish\\phase-09\\a-runner\\attempt-20261015T080359214Z-ux-audit\\window-shot.png'",
+  "stack": "Error: EEXIST: file already exists, open 'D:\\Codex\\plw-rpg\\reports\\v2\\20261015-ui-ux-polish\\phase-09\\a-runner\\attempt-20261015T080359214Z-ux-audit\\window-shot.png'\n    at async open (node:internal/fs/promises:638:25)\n    at async writeFile (node:internal/fs/promises:1212:14)\n    at async Audit.screenshot (file:///D:/Codex/plw-rpg/scripts/phase9/audit-runner.mjs:133:165)\n    at async file:///D:/Codex/plw-rpg/scripts/phase9/audit-runner.mjs:191:24",
+  "traceCount": 8,
+  "note": "Attempt retained; no attempt directory cleanup is performed."
+}
