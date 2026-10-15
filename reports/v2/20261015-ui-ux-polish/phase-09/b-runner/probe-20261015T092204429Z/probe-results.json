@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-15T09:22:04.462Z",
+  "attempt": "reports/v2/20261015-ui-ux-polish/phase-09/b-runner/probe-20261015T092204429Z",
+  "lane": "fresh save; visible UI only; production dist",
+  "url": "http://127.0.0.1:61036/",
+  "forestDetails": [],
+  "notes": null,
+  "hintDestination": null,
+  "errors": [],
+  "chrome": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.53",
+    "revision": "@792bf6722e73a45aa9e47c163b9901bdc17f3230",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.13"
+  },
+  "status": "FAIL",
+  "error": "Error: start-fresh-save: elementFromPoint did not verify target: null",
+  "stack": "Error: start-fresh-save: elementFromPoint did not verify target: null\n    at assert (file:///D:/Codex/plw-rpg/scripts/phase9/b-probe.mjs:15:64)\n    at clickSelector (file:///D:/Codex/plw-rpg/scripts/phase9/b-probe.mjs:56:3)\n    at async file:///D:/Codex/plw-rpg/scripts/phase9/b-probe.mjs:101:3",
+  "chromeStderr": "[153112:141160:1015/172204.815:ERROR:components\\policy\\core\\common\\cloud\\cloud_policy_validator.cc:652] [policy_type=google/chrome/machine-level-user] Cached key new signature verification failed\r\n\r\nDevTools listening on ws://127.0.0.1:53929/devtools/browser/0b578180-5b93-415f-9158-f3be5df4dd48\r\n",
+  "chromeExitCode": null,
+  "chromeProfileBytesBeforeCleanup": 10080982,
+  "chromeProfileRemoved": true,
+  "finishedAt": "2026-10-15T09:22:06.947Z"
+}

@@ -1,0 +1,456 @@
+diff --git a/docs/UI.md b/docs/UI.md
+index 1469798..fb4cf57 100644
+--- a/docs/UI.md
++++ b/docs/UI.md
+@@ -35,6 +35,7 @@
+ | World First map | WorldMap.vue + `projectWorld` | `GameState` 經 `worldProjection.ts`／`worldUI.ts` 投影 | 已探索圖格、居民、產業、作物和威脅標記 | `worldProjection.test.ts`、瀏覽器遊玩流程 |
+ | Procedural gear / discovery | InventoryWindow.vue、CharacterSheet.vue + `rewardProjection` | `state.reward`、rewards catalog、rewardActions / combatStats | 原生分類／部位／品質按鈕、裝備搜尋、20 件分頁、同部位比較、穿戴、出售確認、素材交易、有限見聞收藏；搜尋／分類狀態只在視窗期間保留 | `rewardProjection.test.ts`、Phase2 engine tests、Phase 7-I Chromium search/filter/page flow |
+ | Content discovery / encounter | `PlaceWindow.vue`、`AdventureWindow.vue`、`InventoryWindow.vue` | `contentEncounterOptions`／`contentCombatPresentation`、`contentKnowledgeCatalog`、`state.reward.collection` | 工作台配方依類別／搜尋即時篩選；森林、礦場、農田等地區視窗只顯示目前已探索區域的族群，階級與資格／拒絕原因讀取 engine projection；素材來源依已發現 ID 和區域知識投影，未探索地區只顯示一般提示；Boss 形態和下一回合 cue 由戰鬥投影提供 | `contentFamilies.test.ts`、`contentBosses.integration.test.ts`、Phase 7-I Chromium search/encounter flow |
++| Contextual goals / Boss preparation | `WorldRecords.vue` Notes pane、`PlaceWindow.vue` | `projectGoalHints` over requests, `farmCropChoices`, `contentEncounterOptions`, `wolfEncounterOptions`, crisis phase; registered `CONTENT_MONSTERS` / loot and `contentKnowledgeCatalog`; `WOLF_MONSTERS` / `WOLF_ENCOUNTER_RULES` / `wolfCombatPresentation` | Notes show at most five condition-based what/why/where suggestions with travel action and empty state; high-rank rows use native expandable details for factual level comparison, discovered mechanics/loot, retreat effects and configured cooldown. No quest tracker, danger score, or recommended level. | `goalHints.test.ts`; Phase9-B after-build browser screenshot pending Lead runner |
+ | Adventure reward / comparison | PlaceWindow.vue + AdventureWindow.vue + `wolfRewardExpectation` / `rewardProjection` | `state.reward`、wolf loot configuration、current slot equipment | 追蹤目標逐列呈現真實 gear/rank/rarity/material/exclusive expectation；單一下一目標提示；戰鬥顯示 reward forecast；同窗比較 rarity、逐項能力差與 affix/special 差異 | `rewardProjection.test.ts`、Phase4 targeted browser、Adventure stress/playtest |
+ | Crafting / craftsmanship | Home／雜貨店／鐵匠鋪 `PlaceWindow.vue` 共用工作台 + `InventoryWindow.vue` gear detail + `CharacterSheet.vue` Smithing | `CRAFTING_RECIPES`、`planCraft` / `craft`、`state.reward.instances`、角色技能與持有素材、既有 life identity projection | 配方選取、合法性／成本／拒絕原因／實際站點與時段均由 engine plan 提供；可在既有 Home 檢視基礎／中階 recipe，所有服務費、站點與營業時間只讀 plan；仍由同一工作台互動。解鎖、熟練 XP 上限、畢業狀態、品質下限／機率與下一目標讀取 plan；鍛造能力不增加裝備原始數值。預設不加影響素材，只有 registry allowlist 會顯示為選項。F masterpiece 是既有裝備身分標記，不是新稀有度或通用戰力保證；現有 gear row/detail 與成功回饋呈現傑作、原製作者、時間及配方。G 鍛造師／傑作匠師標籤由 engine lifetime identity 投影形成，UI 不重算門檻；不新增 inspector 或 ownership panel | `craftingProjection.test.ts`、`rewardProjection.test.ts`、`gameStore.test.ts`、engine crafting tests、C fresh-save browser pilot；E/F/G UI browser flow；save/reload |
+ 
+diff --git a/src/components/PixelWindow.vue b/src/components/PixelWindow.vue
+index 4684764..d6a0161 100644
+--- a/src/components/PixelWindow.vue
++++ b/src/components/PixelWindow.vue
+@@ -8,7 +8,7 @@ let trigger: HTMLElement | null = null
+ function containFocus(event: KeyboardEvent) {
+   if (event.key !== 'Tab' || event.ctrlKey || event.metaKey || event.altKey) return
+   const controls = Array.from(dialog.value?.querySelectorAll<HTMLElement>(
+-    'button:not(:disabled), a[href], input:not(:disabled):not([type="hidden"]), select:not(:disabled), textarea:not(:disabled), [tabindex], [contenteditable]:not([contenteditable="false"])',
++    'button:not(:disabled), details > summary, a[href], input:not(:disabled):not([type="hidden"]), select:not(:disabled), textarea:not(:disabled), [tabindex], [contenteditable]:not([contenteditable="false"])',
+   ) ?? []).filter(el => {
+     const style = getComputedStyle(el)
+     return el.tabIndex >= 0 && el.getClientRects().length > 0
+diff --git a/src/components/PlaceWindow.vue b/src/components/PlaceWindow.vue
+index f735f3d..02b4925 100644
+--- a/src/components/PlaceWindow.vue
++++ b/src/components/PlaceWindow.vue
+@@ -1,16 +1,16 @@
+ <script setup lang="ts">
+ import { computed, nextTick, ref, watch } from 'vue'
+-import { BUILDINGS, CONFIG, DUNGEON, ITEMS, REGIONS } from '../data/config'
++import { BUILDINGS, CONFIG, DUNGEON, ITEMS, MONSTERS, REGIONS } from '../data/config'
+ import { CRAFTING_RECIPES } from '../data/crafting'
+-import { ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
+-import { CONTENT_CROP_GOODS, CONTENT_CROPS, CONTENT_FAMILIES } from '../data/contentRegistry'
+-import type { MaterialId, MonsterDefinitionId, RarityId } from '../domain/reward'
++import { ITEM_BASES, MATERIALS, RARITIES, WOLF_ENCOUNTER_RULES, WOLF_MONSTERS } from '../data/rewards'
++import { CONTENT_CROP_GOODS, CONTENT_CROPS, CONTENT_EQUIPMENT, CONTENT_FAMILIES, CONTENT_LOOT_TABLES, CONTENT_MATERIALS, CONTENT_MONSTERS } from '../data/contentRegistry'
++import type { MaterialId, MonsterDefinitionId, MonsterRank, RarityId } from '../domain/reward'
+ import type { ContentMonsterRank, ContentSeason } from '../domain/content'
+ import type { ItemId } from '../domain/types'
+ import { buyPrice, canVisit, encounter, enterDungeon, farm, gather, hire, hireTerms, rest, trade, startRegionalCampRaid } from '../engine/actions'
+ import { wolfRewardExpectation } from '../engine/itemGeneration'
+ import { npcCanWork } from '../engine/npcLife'
+-import { encounterWolf, wolfEncounterOptions } from '../engine/wolfFamily'
++import { encounterWolf, wolfEncounterOptions, wolfCombatPresentation } from '../engine/wolfFamily'
+ import { contentEncounterOptions, contentKnowledgeCatalog, encounterContentMonster } from '../engine/contentFamilies'
+ import { farmCropChoices, farmCropPlantingGuidance } from '../engine/crops'
+ import { craft, type CraftResult } from '../engine/crafting'
+@@ -102,12 +102,70 @@ const monsterRankFilters: { id: 'all' | ContentMonsterRank; name: string }[] = [
+   { id: 'miniBoss', name: '小首領' }, { id: 'boss', name: '首領' },
+ ]
+ const monsterRankNames: Record<ContentMonsterRank, string> = { normal: '普通', elite: '精英', miniBoss: '小首領', boss: '首領' }
++const wolfRankNames: Record<MonsterRank, string> = { normal: '普通', elite: '精英', miniBoss: '小首領', boss: '首領' }
+ const contentOptions = computed(() => contentEncounterOptions(game.state))
+ const monsterFamilies = computed(() => [...new Set(contentOptions.value.map(option => option.familyId))]
+   .map(id => ({ id, name: CONTENT_FAMILIES[id]?.name['zh-TW'] ?? id })))
+ function contentSeen(definitionId: string) {
+   return game.state.reward.collection.seen.includes(definitionId)
+     || game.state.reward.collection.defeated.includes(definitionId)
++    || game.state.reward.collection.bosses.includes(definitionId)
++}
++function contentCombatDetails(definitionId: string) {
++  const definition = CONTENT_MONSTERS[definitionId]
++  if (!definition) return null
++  if (!contentSeen(definitionId)) return { mechanics: ['情報不足：尚未遭遇。'], loot: [] as string[] }
++  const lootTable = CONTENT_LOOT_TABLES[definition.lootTableId]
++  const lootIds = new Set([
++    ...(lootTable?.guaranteedMaterialIds ?? []),
++    ...(lootTable?.rareMaterials.map(item => item.materialId) ?? []),
++    ...(lootTable?.weightedEquipment.map(item => item.equipmentId) ?? []),
++    ...(definition.bossRules?.guaranteedMaterialIds ?? []),
++    ...(definition.bossRules?.exclusiveEquipmentId ? [definition.bossRules.exclusiveEquipmentId] : []),
++  ])
++  // The canonical knowledge projection gates source names by discovery of this monster and its region.
++  const knowledge = contentKnowledgeCatalog(game.state, [...lootIds])
++  const loot = [...lootIds].filter(id => knowledge[id]?.sources.some(source => source.label === `擊敗${definition.name['zh-TW']}`))
++    .map(id => CONTENT_MATERIALS[id]?.name['zh-TW'] ?? CONTENT_EQUIPMENT[id]?.name['zh-TW'] ?? id)
++  return { mechanics: definition.mechanics.map(mechanic => mechanic.telegraph['zh-TW']), loot }
++}
++function wolfKnown(definitionId: string) {
++  const collection = game.state.reward.collection
++  return collection.seen.includes(definitionId) || collection.defeated.includes(definitionId) || collection.bosses.includes(definitionId)
++}
++function wolfKnownMechanics(definitionId: string) {
++  if (!wolfKnown(definitionId)) return ['情報不足：尚未遭遇。']
++  const activeEncounter = game.state.combat?.familyEncounter
++  if (activeEncounter?.definitionId === definitionId) {
++    // Active encounter traits come from the canonical combat presentation, not a second UI rules table.
++    const presentation = wolfCombatPresentation(game.state)
++    return presentation?.traits.map(trait => `${trait.name}：${trait.description}`) ?? []
++  }
++  // Fixed core text follows WOLF_MONSTERS.core and its branches in wolfFamily.ts; past random traits are not persisted.
++  const definition = WOLF_MONSTERS[definitionId as MonsterDefinitionId]
++  if (definition.core === 'howl') return ['固定核心會戰吼並強化反擊。']
++  if (definition.core === 'moonCharge') return ['固定核心會施展月襲；變種效果只在該遭遇形成後顯示。']
++  return ['收藏記錄此狼種曾遭遇；過往隨機特性未保存在收藏中。']
++}
++// This is a factual comparison of catalog level and active-character level, never an inferred danger rating.
++function levelComparison(monsterLevel: number) {
++  return `怪物 Lv.${monsterLevel} · 你 Lv.${c.value.level}`
++}
++// Cooldown values are read from the existing canonical rules/config, not copied numeric thresholds.
++function cooldownText(kind: 'wolf' | 'content' | 'chief', definitionId?: string) {
++  if (kind === 'wolf' && definitionId && WOLF_MONSTERS[definitionId as MonsterDefinitionId]?.rank === 'boss') {
++    return `勝利後冷卻 ${WOLF_ENCOUNTER_RULES.bossCooldownDays} 日。`
++  }
++  if (kind === 'content' && definitionId) {
++    const days = CONTENT_MONSTERS[definitionId]?.bossRules?.cooldownDays
++    return days === undefined ? '此目標沒有首領冷卻規則。' : `勝利後冷卻 ${days} 日。`
++  }
++  return '沒有獨立冷卻；首領是否出現依既有世界威脅進度。'
++}
++function goblinChiefKnown() {
++  return game.state.threat.bossAlive
++    || game.state.history.some(event => event.type === 'boss.spawned' || event.type === 'boss.defeated')
++    || game.state.life.worldMemories.some(memory => memory.kind === 'GOBLIN_CHIEF_DEFEATED')
+ }
+ const visibleContentOptions = computed(() => {
+   const query = monsterSearch.value.trim().toLocaleLowerCase('zh-TW')
+@@ -188,6 +246,14 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
+     <div class="action-buttons"><button v-for="kind in place === 'forest' ? ['wood' as const] : ['stone' as const, 'iron' as const]" :key="kind" :disabled="blocked || c.stamina < 10 || game.state.regions[place].remainingAmount < 2 + Math.floor((c.skills[place === 'forest' ? 'woodcutting' : 'mining'].level - 1) / 2)" @click="game.act(() => gather(game.state, kind))">{{ itemIcons[kind] }} {{ kind === 'wood' ? '伐木' : kind === 'stone' ? '採石' : '採鐵礦' }}</button>
+       <button v-if="place === 'forest'" class="primary" :disabled="blocked || c.stamina < 8 || game.state.threat.monsterPopulation < 1" @click="game.act(() => encounter(game.state))">尋找怪物 · 體力 8</button>
+       <button v-if="place === 'forest' && game.state.threat.bossAlive" class="danger" :disabled="blocked || c.stamina < 8" @click="game.act(() => encounter(game.state, true))">👹 挑戰哥布林酋長</button>
++      <details v-if="place === 'forest' && game.state.threat.bossAlive" class="boss-preparation-details">
++        <summary>哥布林酋長戰前情報</summary>
++        <p class="muted">首領 · 已現身</p>
++        <p>{{ levelComparison(MONSTERS.chief.level) }}</p>
++        <p>{{ goblinChiefKnown() ? '特性情報：目前哥布林酋長資料未登錄額外特性或特殊招式。' : '情報不足：尚未遭遇。' }}</p>
++        <p>{{ goblinChiefKnown() ? `已知掉落：${ITEMS[MONSTERS.chief.loot].name}；勝利可獲得戰鬥獎勵。` : '情報不足：尚未遭遇。' }}</p>
++        <p>撤退會結束戰鬥並推進世界時間，不取得經驗或戰利品。{{ cooldownText('chief') }}</p>
++      </details>
+       <template v-if="place === 'forest' && (game.state.regionalCrisis.phase === 'warning' || game.state.regionalCrisis.phase === 'preparation' || game.state.regionalCrisis.phase === 'active')">
+         <button class="primary" data-camp-raid :disabled="blocked || game.state.regionalCrisis.adventure.campRaidAt !== null" @click="game.act(() => startRegionalCampRaid(game.state, game.state.regionalCrisis.phase === 'dormant' ? '' : game.state.regionalCrisis.id))">{{ game.state.regionalCrisis.adventure.campRaidAt !== null ? '哥布林營地已遭突襲' : '突襲哥布林營地 · 體力 8' }}</button>
+         <p class="muted help-text">突襲只在勝利後記錄成果；錯過時機仍可繼續森林生活。世界時間照常流動。</p>
+@@ -198,7 +264,7 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
+       <h3 id="wolf-track-title" class="section-title">狼族蹤跡</h3>
+       <p class="muted help-text">沿著擊退紀錄追蹤更深處的狼群。每次追蹤花費 8 體力；先準備裝備與藥水，再留意戰鬥中的下一回合提示。</p>
+       <p class="adventure-goal" data-adventure-goal><strong>下一個冒險目標</strong> · {{ adventureGoal }}</p>
+-      <div class="wolf-track-list"><div v-for="option in wolfOptions" :key="option.definitionId" class="wolf-track-row" :data-wolf-track="option.definitionId" :data-rank="option.rank"><button :class="{ danger: option.rank === 'boss' }" :disabled="!option.eligible" @click="game.act(() => encounterWolf(game.state, option.definitionId))">{{ option.label }}</button><span v-if="option.reason" class="muted">{{ option.reason }}</span><p class="wolf-track-reward" data-wolf-reward-expectation>{{ rewardExpectationText(option.definitionId) }}</p></div></div>
++      <div class="wolf-track-list"><div v-for="option in wolfOptions" :key="option.definitionId" class="wolf-track-row" :data-wolf-track="option.definitionId" :data-rank="option.rank"><button :class="{ danger: option.rank === 'boss' }" :disabled="!option.eligible" @click="game.act(() => encounterWolf(game.state, option.definitionId))">{{ option.label }} · {{ wolfRankNames[option.rank] }}</button><span class="muted">{{ option.eligible ? '可挑戰' : option.reason }}</span><p class="wolf-track-reward" data-wolf-reward-expectation>{{ rewardExpectationText(option.definitionId) }}</p><details v-if="option.rank === 'elite' || option.rank === 'miniBoss' || option.rank === 'boss'" class="boss-preparation-details"><summary>戰前情報</summary><p>{{ levelComparison(WOLF_MONSTERS[option.definitionId].level) }}</p><p v-for="line in wolfKnownMechanics(option.definitionId)" :key="line">{{ line }}</p><p>戰利品預期：{{ rewardExpectationText(option.definitionId) }}</p><p>撤退會結束戰鬥並推進世界時間，不取得經驗或戰利品。{{ cooldownText('wolf', option.definitionId) }}</p></details></div></div>
+     </section>
+   </template>
+   <template v-else-if="place === 'unknown'">
+@@ -256,10 +322,17 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
+           <h4>{{ family.name }}</h4>
+           <article v-for="option in family.options" :key="option.definitionId" class="content-monster-row" :data-content-monster="option.definitionId" :data-content-rank="option.rank">
+             <button :aria-describedby="option.reason ? `content-reason-${option.definitionId}` : undefined" :disabled="!option.eligible" @click="game.act(() => encounterContentMonster(game.state, option.definitionId))">追蹤{{ option.label }} · {{ monsterRankNames[option.rank] }}</button>
+-            <span class="muted">{{ contentSeen(option.definitionId) ? '已遇見' : '尚未相遇' }}<template v-if="option.eligible"> · 花費 8 體力</template></span>
++            <span class="muted">{{ contentSeen(option.definitionId) ? '已遇見' : '尚未相遇' }} · {{ option.eligible ? '可追蹤 · 花費 8 體力' : '暫不可追蹤' }}</span>
+             <p v-if="contentSeen(option.definitionId)" class="muted">{{ option.description }}</p>
+             <p v-else class="muted">這片區域尚未留下足夠的相遇紀錄。</p>
+             <p v-if="option.reason" :id="`content-reason-${option.definitionId}`" class="inline-warning">{{ option.reason }}</p>
++            <details v-if="option.rank === 'elite' || option.rank === 'miniBoss' || option.rank === 'boss'" class="boss-preparation-details">
++              <summary>戰前情報</summary>
++              <p>{{ levelComparison(CONTENT_MONSTERS[option.definitionId]!.level) }}</p>
++              <p v-for="line in contentCombatDetails(option.definitionId)?.mechanics ?? []" :key="line">{{ line }}</p>
++              <p>已知戰利品：{{ contentCombatDetails(option.definitionId)?.loot.join('、') || (contentSeen(option.definitionId) ? '目前知識投影沒有已知掉落來源。' : '情報不足：尚未遭遇。') }}</p>
++              <p>撤退會結束戰鬥並推進世界時間，不取得經驗或戰利品。{{ cooldownText('content', option.definitionId) }}</p>
++            </details>
+           </article>
+         </section>
+       </div>
+@@ -323,3 +396,7 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
+     </p>
+   </section>
+ </template>
++
++<style scoped>
++.boss-preparation-details { grid-column: 1 / -1; }
++</style>
+diff --git a/src/components/WorldRecords.vue b/src/components/WorldRecords.vue
+index b3a71b2..1984bf6 100644
+--- a/src/components/WorldRecords.vue
++++ b/src/components/WorldRecords.vue
+@@ -7,6 +7,7 @@ import { population } from '../engine/simulation'
+ import { activities, buildingIcons, jobIcons, stages } from '../presentation/icons'
+ import { useGameStore } from '../stores/gameStore'
+ import { projectNpc } from '../presentation/lifeProjection'
++import { projectGoalHints } from '../presentation/goalHints'
+ import PixelMeter from './PixelMeter.vue'
+ import WorldMap from './WorldMap.vue'
+ defineProps<{ kind: 'world' | 'log' | 'history' | 'notes' }>()
+@@ -17,6 +18,7 @@ const filter = ref<Category | 'all'>('all')
+ const filters: { id: Category | 'all'; label: string }[] = [{ id: 'all', label: '全部' }, { id: 'player', label: '自己' }, { id: 'npc', label: '居民' }, { id: 'world', label: '世界' }, { id: 'monster', label: '威脅' }, { id: 'settlement', label: '聚落' }]
+ const logs = computed(() => game.state.events.filter(e => filter.value === 'all' || e.category === filter.value).slice(-100).reverse())
+ const people = computed(() => game.state.npcs.filter(n => n.isAlive).map(npc => projectNpc(game.state, npc.id)!))
++const goalHints = computed(() => projectGoalHints(game.state))
+ const northernNews = computed(() => {
+   if (game.state.threat.bossAlive) return '哥布林酋長已在北方現身。商路傳來襲擊消息，前往森林前先備妥裝備。'
+   if (game.state.threat.threatLevel >= 3) return '北方怪物活動頻繁，居民開始擔心往來商路。'
+@@ -36,5 +38,5 @@ const paths = [{ label: '家', position: BUILDINGS.house.position }, { label: '
+   </template>
+   <template v-else-if="kind === 'log'"><div class="filter-buttons" role="group" aria-label="日誌分類"><button v-for="f in filters" :key="f.id" :aria-pressed="filter === f.id" :class="{ selected: filter === f.id }" @click="filter = f.id">{{ f.label }}</button></div><p class="muted">最新 {{ logs.length }} 筆，最多顯示 100 筆。時間為遊戲世界時間。</p><p v-if="!logs.length" class="empty-state">這個分類還沒有事件。世界正在前進。</p><ol class="event-list"><li v-for="event in logs" :key="event.id"><time>{{ clockLabel(event.at) }}</time><p>{{ event.message }}</p></li></ol></template>
+   <template v-else-if="kind === 'history'"><p class="muted">世界記得 {{ game.state.history.length }} 個重要時刻，顯示最近 100 筆。時間為遊戲世界時間。</p><p v-if="!game.state.history.length" class="empty-state">還沒有歷史紀錄。你的旅程才剛開始。</p><ol class="event-list history-list"><li v-for="event in game.state.history.slice(-100).reverse()" :key="event.id"><time>{{ clockLabel(event.at) }}</time><p>{{ event.message }}</p></li></ol></template>
+-  <template v-else><h3>今天，想去哪裡？</h3><p class="help-text">去東方農田種小麥，到森林伐木，或到礦場採石。素材可以賣給雜貨店。也可以走入迷霧山谷，探索廢棄礦坑。</p><p class="muted">這裡沒有每日任務。居民、聚落與怪物會隨自己的時間繼續生活。</p><h3 class="section-title">讓時間往前走</h3><p class="inline-warning">等待不會自動恢復生命與體力。田地會成熟、契約會到期，所有人也會衰老。</p><div class="action-buttons"><button v-for="w in [{ label: '等待 1 日', days: 1 }, { label: '度過一季', days: CONFIG.daysPerSeason }, { label: '度過一年', days: CONFIG.daysPerSeason * 4 }]" :key="w.days" :disabled="!!game.state.combat || game.state.dungeon.inDungeon || !game.character.isAlive" @click="emit('wait', w.days * 1440)">{{ w.label }}</button></div><h3 class="section-title">同行者 · {{ game.state.party.length }}/2</h3><p v-if="!game.state.party.length" class="empty-state">目前獨自旅行。村莊的酒館裡，或許有人願意同行。</p><div v-for="p in game.state.party" :key="p.npcId" class="party-detail"><h4>⚔️ {{ people.find(n => n.id === p.npcId)?.name }}</h4><p>{{ p.archetype === 'healer' ? '生命不足時協助治療' : '戰鬥中攻擊並掩護你' }} · 日薪 {{ p.dailyWage }} 金</p><small>契約至 {{ clockLabel(p.contractEnd) }}</small></div><h3 class="section-title">操作</h3><p class="shortcut-help"><kbd>WASD</kbd>／方向鍵移動 · <kbd>Enter</kbd> 互動 · <kbd>Esc</kbd> 選單<br><kbd>C</kbd> 角色 · <kbd>I</kbd> 物品 · <kbd>L</kbd> 日誌 · <kbd>M</kbd> 地圖</p><p class="muted">開啟視窗後世界時間仍會前進，可隨時用視窗底部按鈕暫停。</p></template>
++  <template v-else><h3>今天，想去哪裡？</h3><p class="help-text">去東方農田種小麥，到森林伐木，或到礦場採石。素材可以賣給雜貨店。也可以走入迷霧山谷，探索廢棄礦坑。</p><p class="muted">這裡沒有每日任務。居民、聚落與怪物會隨自己的時間繼續生活。</p><section aria-labelledby="goal-hints-title"><h3 id="goal-hints-title" class="section-title">此刻可留意</h3><ul v-if="goalHints.length" class="goal-hints"><li v-for="hint in goalHints" :key="hint.id"><p><strong>{{ hint.what }}</strong></p><p class="muted">{{ hint.why }} · 地點：{{ hint.where }}</p><button type="button" @click="emit('travel', hint.position)">前往{{ hint.where }}</button></li></ul><p v-else class="empty-state">目前沒有符合條件的提示；可以依自己的步調探索世界。</p></section><h3 class="section-title">讓時間往前走</h3><p class="inline-warning">等待不會自動恢復生命與體力。田地會成熟、契約會到期，所有人也會衰老。</p><div class="action-buttons"><button v-for="w in [{ label: '等待 1 日', days: 1 }, { label: '度過一季', days: CONFIG.daysPerSeason }, { label: '度過一年', days: CONFIG.daysPerSeason * 4 }]" :key="w.days" :disabled="!!game.state.combat || game.state.dungeon.inDungeon || !game.character.isAlive" @click="emit('wait', w.days * 1440)">{{ w.label }}</button></div><h3 class="section-title">同行者 · {{ game.state.party.length }}/2</h3><p v-if="!game.state.party.length" class="empty-state">目前獨自旅行。村莊的酒館裡，或許有人願意同行。</p><div v-for="p in game.state.party" :key="p.npcId" class="party-detail"><h4>⚔️ {{ people.find(n => n.id === p.npcId)?.name }}</h4><p>{{ p.archetype === 'healer' ? '生命不足時協助治療' : '戰鬥中攻擊並掩護你' }} · 日薪 {{ p.dailyWage }} 金</p><small>契約至 {{ clockLabel(p.contractEnd) }}</small></div><h3 class="section-title">操作</h3><p class="shortcut-help"><kbd>WASD</kbd>／方向鍵移動 · <kbd>Enter</kbd> 互動 · <kbd>Esc</kbd> 選單<br><kbd>C</kbd> 角色 · <kbd>I</kbd> 物品 · <kbd>L</kbd> 日誌 · <kbd>M</kbd> 地圖</p><p class="muted">開啟視窗後世界時間仍會前進，可隨時用視窗底部按鈕暫停。</p></template>
+ </template>
+diff --git a/src/presentation/goalHints.ts b/src/presentation/goalHints.ts
+new file mode 100644
+index 0000000..c64c499
+--- /dev/null
++++ b/src/presentation/goalHints.ts
+@@ -0,0 +1,117 @@
++import { BUILDINGS, CONFIG, DUNGEON, JOBS, MONSTERS } from '../data/config'
++import { CONTENT_CROPS } from '../data/contentRegistry'
++import { WOLF_ENCOUNTER_RULES, WOLF_MONSTERS } from '../data/rewards'
++import type { GameState, Position, RegionId } from '../domain/types'
++import { contentEncounterOptions } from '../engine/contentFamilies'
++import { farmCropChoices } from '../engine/crops'
++import { wolfEncounterOptions } from '../engine/wolfFamily'
++
++export interface GoalHint {
++  id: string
++  what: string
++  why: string
++  where: string
++  position: Position
++}
++
++const REGION_DESTINATIONS: Record<RegionId, { label: string; position: Position }> = {
++  village: { label: '橡谷廣場', position: { x: 10, y: 10 } },
++  farmland: { label: '東方農田', position: BUILDINGS.farm.position },
++  forest: { label: '北方森林', position: JOBS.woodcutter.workplace },
++  mine: { label: '灰石礦場', position: JOBS.miner.workplace },
++  unknown: { label: DUNGEON.name, position: DUNGEON.position },
++}
++
++function requestDestination(state: GameState, request: GameState['life']['requests'][number]) {
++  if (request.kind === 'medicine') {
++    const npc = state.npcs.find(candidate => candidate.id === request.npcId && candidate.isAlive)
++    return npc ? { label: `前往${npc.name}身邊`, position: npc.position } : null
++  }
++  if (request.kind === 'hunt' && request.progress < request.amount) return REGION_DESTINATIONS.forest
++  return REGION_DESTINATIONS.village
++}
++
++/**
++ * Contextual, display-only suggestions. Every candidate comes from persisted state or an
++ * existing canonical projection; this never creates a quest, reserves an action, or mutates state.
++ */
++export function projectGoalHints(state: GameState): GoalHint[] {
++  const hints: GoalHint[] = []
++  const add = (hint: GoalHint) => { if (hints.length < 5) hints.push(hint) }
++  const character = state.characters.find(candidate => candidate.id === state.activeCharacterId)
++  const currentRegion = character?.currentRegion
++
++  // Existing request projection/UI route: LifeNewsWindow.requestRoute and WorldRequest progress.
++  for (const request of state.life.requests.filter(item => item.status === 'open' && item.expiresAt > state.worldTime).slice(-2).reverse()) {
++    const labels = { food: '糧食供應', hunt: '北方狩獵', iron: '鐵礦供應', medicine: '照料傷者' } as const
++    const destination = requestDestination(state, request)
++    if (!destination) continue
++    const why = request.kind === 'hunt'
++      ? `狩獵進度 ${request.progress}／${request.amount}，期限依委託資料為 ${Math.max(0, Math.ceil((request.expiresAt - state.worldTime) / CONFIG.minutesPerDay))} 日內。`
++      : `目前進度 ${request.progress}／${request.amount}，請求狀態仍為開啟。`
++    add({ id: `request:${request.id}`, what: `回應「${labels[request.kind]}」`, why, where: destination.label, position: destination.position })
++  }
++
++  // Regional crisis phase is the canonical current world-state; the forest coordinate is the existing PlaceWindow destination.
++  const crisis = state.regionalCrisis
++  if (crisis.phase === 'warning' || crisis.phase === 'preparation' || crisis.phase === 'active') {
++    add({
++      id: `crisis:${crisis.id}`,
++      what: '查看進行中的北方危機',
++      why: `目前階段：${crisis.phase === 'warning' ? '警訊' : crisis.phase === 'preparation' ? '備戰' : '危機進行中'}。`,
++      where: REGION_DESTINATIONS.forest.label,
++      position: REGION_DESTINATIONS.forest.position,
++    })
++  }
++
++  // farmCropChoices is the shared seasonal/region eligibility projection; only suggest when a plot is available.
++  const hasPlotCapacity = state.crops.length + state.preparedPlots < CONFIG.maxPlots
++  const availableCrop = currentRegion === 'farmland' && hasPlotCapacity
++    ? farmCropChoices(state).find(choice => choice.status === 'available' && choice.id in CONTENT_CROPS)
++    : undefined
++  if (availableCrop) {
++    add({
++      id: `crop:${availableCrop.id}`,
++      what: `可在本季種植${availableCrop.name}`,
++      why: `${availableCrop.name}的註冊季節包含目前時節；預估收成 ${availableCrop.harvestAmount} 份。`,
++      where: REGION_DESTINATIONS.farmland.label,
++      position: REGION_DESTINATIONS.farmland.position,
++    })
++  }
++
++  // Eligibility and blocker reasons are read from the same engine projections used by PlaceWindow.
++  const contentTarget = contentEncounterOptions(state).find(option => option.eligible && option.rank !== 'normal')
++  if (contentTarget && currentRegion) {
++    add({
++      id: `encounter:${contentTarget.definitionId}`,
++      what: `可追蹤${contentTarget.label}（${contentTarget.rank === 'boss' ? '首領' : contentTarget.rank === 'elite' ? '精英' : '小首領'}）`,
++      why: `引擎資格投影目前允許追蹤此目標。`,
++      where: REGION_DESTINATIONS[currentRegion].label,
++      position: REGION_DESTINATIONS[currentRegion].position,
++    })
++  }
++
++  const wolfBoss = wolfEncounterOptions(state).find(option => option.rank === 'boss' && option.eligible)
++  if (wolfBoss && currentRegion === 'forest') {
++    add({
++      id: `wolf:${wolfBoss.definitionId}`,
++      what: `可追蹤${wolfBoss.label}`,
++      why: `狼族追蹤投影目前允許挑戰；追蹤消耗 ${WOLF_ENCOUNTER_RULES.staminaCost} 體力。`,
++      where: REGION_DESTINATIONS.forest.label,
++      position: REGION_DESTINATIONS.forest.position,
++    })
++  }
++
++  // Existing chief spawn state and authored monster data; no threat formula is recomputed here.
++  if (state.threat.bossAlive && currentRegion === 'forest' && hints.length < 5) {
++    add({
++      id: 'boss:goblin-chief',
++      what: `哥布林酋長已現身（怪物 Lv.${MONSTERS.chief.level}）`,
++      why: '現有世界狀態標記首領仍在場。',
++      where: REGION_DESTINATIONS.forest.label,
++      position: REGION_DESTINATIONS.forest.position,
++    })
++  }
++
++  return hints.slice(0, 5)
++}
+diff --git a/src/presentation/goalHints.test.ts b/src/presentation/goalHints.test.ts
+new file mode 100644
+index 0000000..748385c
+--- /dev/null
++++ b/src/presentation/goalHints.test.ts
+@@ -0,0 +1,127 @@
++import { describe, expect, it } from 'vitest'
++import { tryStartRegionalCrisis } from '../engine/regionalCrisis'
++import { createGame, player } from '../engine/simulation'
++import { projectGoalHints } from './goalHints'
++
++describe('contextual goal hints', () => {
++  it('only includes an open request and derives its reason and route from request state', () => {
++    const state = createGame(901)
++    state.life.requests.push({
++      id: 'request-food-1', kind: 'food', npcId: null, arcId: null, createdAt: 0,
++      expiresAt: state.worldTime + 3 * 1440, status: 'open', amount: 5, progress: 2,
++    })
++    const before = structuredClone(state)
++
++    const hints = projectGoalHints(state)
++
++    expect(hints).toContainEqual(expect.objectContaining({
++      id: 'request:request-food-1', what: '回應「糧食供應」', why: expect.stringContaining('2／5'), where: '橡谷廣場',
++    }))
++    expect(state).toEqual(before)
++  })
++
++  it('does not suggest closed requests or crops when every plot is occupied', () => {
++    const state = createGame(902)
++    state.life.requests.push({
++      id: 'request-closed', kind: 'iron', npcId: null, arcId: null, createdAt: 0,
++      expiresAt: state.worldTime + 100, status: 'completed', amount: 2, progress: 2,
++    })
++    const actor = player(state)
++    actor.currentRegion = 'farmland'
++    state.crops = Array.from({ length: 4 }, (_, index) => ({
++      id: index + 1, cropId: 'wheat', plantedAt: 0, growthDuration: 1, matureAt: 1, status: 'growing' as const,
++    }))
++
++    const hints = projectGoalHints(state)
++
++    expect(hints.some(hint => hint.id.startsWith('request:'))).toBe(false)
++    expect(hints.some(hint => hint.id.startsWith('crop:'))).toBe(false)
++  })
++
++  it('does not suggest an expired request while its world status is still open', () => {
++    const state = createGame(908)
++    state.life.requests.push({
++      id: 'request-expired', kind: 'food', npcId: null, arcId: null, createdAt: 0,
++      expiresAt: state.worldTime, status: 'open', amount: 1, progress: 0,
++    })
++
++    expect(projectGoalHints(state)).toEqual([])
++  })
++
++  it('only suggests a high-rank encounter when the engine eligibility projection allows it', () => {
++    const state = createGame(903)
++    const actor = player(state)
++    actor.currentRegion = 'forest'
++    actor.level = 10
++    state.threat.threatLevel = 3
++    state.threat.monsterPopulation = 80
++    state.regions.forest.discovered = true
++
++    const hints = projectGoalHints(state)
++
++    expect(hints.some(hint => hint.id.startsWith('encounter:'))).toBe(true)
++  })
++
++  it('surfaces the wolf Boss only after the canonical wolf projection makes it eligible', () => {
++    const state = createGame(909)
++    const actor = player(state)
++    actor.currentRegion = 'forest'
++    state.threat.monsterPopulation = 40
++    state.reward.collection.defeated.push('grayWolf', 'scarredWolf', 'alphaWolf', 'packLeader')
++
++    expect(projectGoalHints(state)).toContainEqual(expect.objectContaining({ id: 'wolf:wolfKing', what: expect.stringContaining('北林狼王') }))
++  })
++
++  it('surfaces the Goblin Chief only while its existing world-state flag is active', () => {
++    const state = createGame(910)
++    player(state).currentRegion = 'forest'
++    state.threat.bossAlive = true
++
++    expect(projectGoalHints(state)).toContainEqual(expect.objectContaining({ id: 'boss:goblin-chief', what: expect.stringContaining('哥布林酋長') }))
++  })
++
++  it('suggests a seasonal content crop only when the shared farm projection says it is plantable', () => {
++    const state = createGame(905)
++    player(state).currentRegion = 'farmland'
++
++    const hints = projectGoalHints(state)
++
++    expect(hints).toContainEqual(expect.objectContaining({ id: 'crop:spring_pea', what: expect.stringContaining('豌豆'), where: '東方農田' }))
++  })
++
++  it('surfaces a crisis only while the persisted crisis is in an actionable phase', () => {
++    const state = createGame(906)
++    state.settlement.food = 0
++    state.settlement.safety = 25
++    Object.assign(state.threat, { threatLevel: 3, monsterPopulation: 100, campLevel: 3, bossAlive: true })
++    expect(tryStartRegionalCrisis(state, () => 0)).toBe(true)
++
++    expect(projectGoalHints(state)).toContainEqual(expect.objectContaining({ id: expect.stringMatching(/^crisis:/), where: '北方森林' }))
++  })
++
++  it('does not create goal hints without a matching world condition', () => {
++    const state = createGame(907)
++
++    expect(projectGoalHints(state)).toEqual([])
++  })
++
++  it('caps the returned contextual suggestions at five', () => {
++    const state = createGame(904)
++    for (let index = 0; index < 8; index++) state.life.requests.push({
++      id: `request-${index}`, kind: 'food', npcId: null, arcId: null, createdAt: index,
++      expiresAt: state.worldTime + 1440, status: 'open', amount: 1, progress: 0,
++    })
++    const actor = player(state)
++    actor.currentRegion = 'forest'
++    state.threat.monsterPopulation = 40
++    state.threat.bossAlive = true
++    state.reward.collection.defeated.push('grayWolf', 'scarredWolf', 'alphaWolf', 'packLeader')
++    state.settlement.food = 0
++    state.settlement.safety = 25
++    Object.assign(state.threat, { threatLevel: 3, campLevel: 3 })
++    expect(tryStartRegionalCrisis(state, () => 0)).toBe(true)
++
++    expect(projectGoalHints(state)).toHaveLength(5)
++    expect(projectGoalHints(state).length).toBeLessThanOrEqual(5)
++  })
++})

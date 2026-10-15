@@ -226,15 +226,27 @@ export function advanceWolfTurn(snapshot: FamilyEncounter) {
     && snapshot.turn % WOLF_ENCOUNTER_RULES.howlEvery === WOLF_ENCOUNTER_RULES.howlEvery - 1
 }
 
+const WOLF_CORE_PRESENTATION = {
+  bite: { preparation: null, combatCue: null },
+  howl: { preparation: '固定核心會戰吼並強化反擊。', combatCue: '戰吼，強化反擊。' },
+  moonCharge: { preparation: '固定核心會施展月襲；變種效果只在該遭遇形成後顯示。', combatCue: '月襲' },
+} satisfies Record<(typeof WOLF_MONSTERS)[MonsterDefinitionId]['core'], { preparation: string | null; combatCue: string | null }>
+
+/** Shared fixed-core presentation for preparation details and in-combat cues. */
+export function wolfCorePresentation(definitionId: MonsterDefinitionId) {
+  return WOLF_CORE_PRESENTATION[WOLF_MONSTERS[definitionId].core]
+}
+
 function cueFor(snapshot: FamilyEncounter, hp: number, maxHp: number): string | null {
   const phase = wolfCombatPhase(snapshot, hp, maxHp)
+  const core = wolfCorePresentation(snapshot.definitionId)
   const cues: string[] = []
   if (phase.moonCharge) {
-    if (snapshot.variant === 'wellFed') cues.push('蓄勢：狼王本回合將打出更猛烈的月襲。')
-    else if (snapshot.variant === 'starved') cues.push('飢餓：狼王半血後會提早月襲，正準備出手。')
-    else cues.push('月影：狼王會在月襲前恢復生命。')
+    if (snapshot.variant === 'wellFed') cues.push(`蓄勢：狼王本回合將打出更猛烈的${core.combatCue}。`)
+    else if (snapshot.variant === 'starved') cues.push(`飢餓：狼王半血後會提早${core.combatCue}，正準備出手。`)
+    else cues.push(`月影：狼王會在${core.combatCue}前恢復生命。`)
   }
-  if (phase.howl) cues.push('狼群領袖本回合將戰吼，強化反擊。')
+  if (phase.howl) cues.push(`狼群領袖本回合將${core.combatCue}`)
   if (phase.armored) cues.push('它要架起硬皮；穿透與裂傷可突破。')
   if (phase.rush) cues.push('迅捷狼本回合將急襲；防禦可化解急襲加成。')
   if (phase.heavyStrike) cues.push('傷痕狼準備重擊；防禦可減輕傷害。')

@@ -8,7 +8,7 @@ let trigger: HTMLElement | null = null
 function containFocus(event: KeyboardEvent) {
   if (event.key !== 'Tab' || event.ctrlKey || event.metaKey || event.altKey) return
   const controls = Array.from(dialog.value?.querySelectorAll<HTMLElement>(
-    'button:not(:disabled), a[href], input:not(:disabled):not([type="hidden"]), select:not(:disabled), textarea:not(:disabled), [tabindex], [contenteditable]:not([contenteditable="false"])',
+    'button:not(:disabled), details > summary, a[href], input:not(:disabled):not([type="hidden"]), select:not(:disabled), textarea:not(:disabled), [tabindex], [contenteditable]:not([contenteditable="false"])',
   ) ?? []).filter(el => {
     const style = getComputedStyle(el)
     return el.tabIndex >= 0 && el.getClientRects().length > 0

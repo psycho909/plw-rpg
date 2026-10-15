@@ -1,0 +1,16 @@
+{
+  "startedAt": "2026-10-15T09:17:43.645Z",
+  "attempt": "reports/v2/20261015-ui-ux-polish/phase-09/b-runner/probe-20261015T091743616Z",
+  "lane": "fresh save; visible UI only; production dist",
+  "url": "http://127.0.0.1:49998/",
+  "forestDetails": [],
+  "notes": null,
+  "hintDestination": null,
+  "errors": [],
+  "status": "FAIL",
+  "error": "Error: Timed out waiting for browser state",
+  "stack": "Error: Timed out waiting for browser state\n    at waitFor (file:///D:/Codex/plw-rpg/scripts/phase9/b-probe.mjs:19:9)\n    at async file:///D:/Codex/plw-rpg/scripts/phase9/b-probe.mjs:87:16",
+  "chromeProfileBytesBeforeCleanup": 1321672,
+  "chromeProfileRemoved": true,
+  "finishedAt": "2026-10-15T09:18:14.258Z"
+}

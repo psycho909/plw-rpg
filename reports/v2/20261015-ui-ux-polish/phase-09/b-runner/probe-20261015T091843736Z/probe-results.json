@@ -1,0 +1,18 @@
+{
+  "startedAt": "2026-10-15T09:18:43.762Z",
+  "attempt": "reports/v2/20261015-ui-ux-polish/phase-09/b-runner/probe-20261015T091843736Z",
+  "lane": "fresh save; visible UI only; production dist",
+  "url": "http://127.0.0.1:57286/",
+  "forestDetails": [],
+  "notes": null,
+  "hintDestination": null,
+  "errors": [],
+  "status": "FAIL",
+  "error": "Error: spawn EPERM",
+  "stack": "Error: spawn EPERM\n    at ChildProcess.spawn (node:internal/child_process:420:11)\n    at spawn (node:child_process:753:9)\n    at file:///D:/Codex/plw-rpg/scripts/phase9/b-probe.mjs:86:12",
+  "chromeStderr": "",
+  "chromeExitCode": null,
+  "chromeProfileBytesBeforeCleanup": 0,
+  "chromeProfileRemoved": true,
+  "finishedAt": "2026-10-15T09:18:44.272Z"
+}

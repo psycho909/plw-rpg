@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { computed, nextTick, ref, watch } from 'vue'
-import { BUILDINGS, CONFIG, DUNGEON, ITEMS, REGIONS } from '../data/config'
+import { BUILDINGS, CONFIG, DUNGEON, ITEMS, MONSTERS, REGIONS } from '../data/config'
 import { CRAFTING_RECIPES } from '../data/crafting'
-import { ITEM_BASES, MATERIALS, RARITIES } from '../data/rewards'
-import { CONTENT_CROP_GOODS, CONTENT_CROPS, CONTENT_FAMILIES } from '../data/contentRegistry'
-import type { MaterialId, MonsterDefinitionId, RarityId } from '../domain/reward'
+import { ITEM_BASES, MATERIALS, RARITIES, WOLF_ENCOUNTER_RULES, WOLF_MONSTERS } from '../data/rewards'
+import { CONTENT_CROP_GOODS, CONTENT_CROPS, CONTENT_EQUIPMENT, CONTENT_FAMILIES, CONTENT_LOOT_TABLES, CONTENT_MATERIALS, CONTENT_MONSTERS } from '../data/contentRegistry'
+import type { MaterialId, MonsterDefinitionId, MonsterRank, RarityId } from '../domain/reward'
 import type { ContentMonsterRank, ContentSeason } from '../domain/content'
 import type { ItemId } from '../domain/types'
 import { buyPrice, canVisit, encounter, enterDungeon, farm, gather, hire, hireTerms, rest, trade, startRegionalCampRaid } from '../engine/actions'
 import { wolfRewardExpectation } from '../engine/itemGeneration'
 import { npcCanWork } from '../engine/npcLife'
-import { encounterWolf, wolfEncounterOptions } from '../engine/wolfFamily'
+import { encounterWolf, wolfEncounterOptions, wolfCombatPresentation, wolfCorePresentation } from '../engine/wolfFamily'
 import { contentEncounterOptions, contentKnowledgeCatalog, encounterContentMonster } from '../engine/contentFamilies'
 import { farmCropChoices, farmCropPlantingGuidance } from '../engine/crops'
 import { craft, type CraftResult } from '../engine/crafting'
@@ -102,12 +102,68 @@ const monsterRankFilters: { id: 'all' | ContentMonsterRank; name: string }[] = [
   { id: 'miniBoss', name: '小首領' }, { id: 'boss', name: '首領' },
 ]
 const monsterRankNames: Record<ContentMonsterRank, string> = { normal: '普通', elite: '精英', miniBoss: '小首領', boss: '首領' }
+const wolfRankNames: Record<MonsterRank, string> = { normal: '普通', elite: '精英', miniBoss: '小首領', boss: '首領' }
 const contentOptions = computed(() => contentEncounterOptions(game.state))
 const monsterFamilies = computed(() => [...new Set(contentOptions.value.map(option => option.familyId))]
   .map(id => ({ id, name: CONTENT_FAMILIES[id]?.name['zh-TW'] ?? id })))
 function contentSeen(definitionId: string) {
   return game.state.reward.collection.seen.includes(definitionId)
     || game.state.reward.collection.defeated.includes(definitionId)
+    || game.state.reward.collection.bosses.includes(definitionId)
+}
+function contentCombatDetails(definitionId: string) {
+  const definition = CONTENT_MONSTERS[definitionId]
+  if (!definition) return null
+  if (!contentSeen(definitionId)) return { mechanics: ['情報不足：尚未遭遇。'], loot: [] as string[] }
+  const lootTable = CONTENT_LOOT_TABLES[definition.lootTableId]
+  const lootIds = new Set([
+    ...(lootTable?.guaranteedMaterialIds ?? []),
+    ...(lootTable?.rareMaterials.map(item => item.materialId) ?? []),
+    ...(lootTable?.weightedEquipment.map(item => item.equipmentId) ?? []),
+    ...(definition.bossRules?.guaranteedMaterialIds ?? []),
+    ...(definition.bossRules?.exclusiveEquipmentId ? [definition.bossRules.exclusiveEquipmentId] : []),
+  ])
+  // The canonical knowledge projection gates source names by discovery of this monster and its region.
+  const knowledge = contentKnowledgeCatalog(game.state, [...lootIds])
+  const loot = [...lootIds].filter(id => knowledge[id]?.sources.some(source => source.label === `擊敗${definition.name['zh-TW']}`))
+    .map(id => CONTENT_MATERIALS[id]?.name['zh-TW'] ?? CONTENT_EQUIPMENT[id]?.name['zh-TW'] ?? id)
+  return { mechanics: definition.mechanics.map(mechanic => mechanic.telegraph['zh-TW']), loot }
+}
+function wolfKnown(definitionId: string) {
+  const collection = game.state.reward.collection
+  return collection.seen.includes(definitionId) || collection.defeated.includes(definitionId) || collection.bosses.includes(definitionId)
+}
+function wolfKnownMechanics(definitionId: string) {
+  if (!wolfKnown(definitionId)) return ['情報不足：尚未遭遇。']
+  const activeEncounter = game.state.combat?.familyEncounter
+  if (activeEncounter?.definitionId === definitionId) {
+    // Active encounter traits come from the canonical combat presentation, not a second UI rules table.
+    const presentation = wolfCombatPresentation(game.state)
+    return presentation?.traits.map(trait => `${trait.name}：${trait.description}`) ?? []
+  }
+  const corePreparation = wolfCorePresentation(definitionId as MonsterDefinitionId).preparation
+  if (corePreparation) return [corePreparation]
+  return ['收藏記錄此狼種曾遭遇；過往隨機特性未保存在收藏中。']
+}
+// This is a factual comparison of catalog level and active-character level, never an inferred danger rating.
+function levelComparison(monsterLevel: number) {
+  return `怪物 Lv.${monsterLevel} · 你 Lv.${c.value.level}`
+}
+// Cooldown values are read from the existing canonical rules/config, not copied numeric thresholds.
+function cooldownText(kind: 'wolf' | 'content' | 'chief', definitionId?: string) {
+  if (kind === 'wolf' && definitionId && WOLF_MONSTERS[definitionId as MonsterDefinitionId]?.rank === 'boss') {
+    return `勝利後冷卻 ${WOLF_ENCOUNTER_RULES.bossCooldownDays} 日。`
+  }
+  if (kind === 'content' && definitionId) {
+    const days = CONTENT_MONSTERS[definitionId]?.bossRules?.cooldownDays
+    return days === undefined ? '此目標沒有首領冷卻規則。' : `勝利後冷卻 ${days} 日。`
+  }
+  return '沒有獨立冷卻；首領是否出現依既有世界威脅進度。'
+}
+function goblinChiefKnown() {
+  return game.state.threat.bossAlive
+    || game.state.history.some(event => event.type === 'boss.spawned' || event.type === 'boss.defeated')
+    || game.state.life.worldMemories.some(memory => memory.kind === 'GOBLIN_CHIEF_DEFEATED')
 }
 const visibleContentOptions = computed(() => {
   const query = monsterSearch.value.trim().toLocaleLowerCase('zh-TW')
@@ -188,6 +244,14 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
     <div class="action-buttons"><button v-for="kind in place === 'forest' ? ['wood' as const] : ['stone' as const, 'iron' as const]" :key="kind" :disabled="blocked || c.stamina < 10 || game.state.regions[place].remainingAmount < 2 + Math.floor((c.skills[place === 'forest' ? 'woodcutting' : 'mining'].level - 1) / 2)" @click="game.act(() => gather(game.state, kind))">{{ itemIcons[kind] }} {{ kind === 'wood' ? '伐木' : kind === 'stone' ? '採石' : '採鐵礦' }}</button>
       <button v-if="place === 'forest'" class="primary" :disabled="blocked || c.stamina < 8 || game.state.threat.monsterPopulation < 1" @click="game.act(() => encounter(game.state))">尋找怪物 · 體力 8</button>
       <button v-if="place === 'forest' && game.state.threat.bossAlive" class="danger" :disabled="blocked || c.stamina < 8" @click="game.act(() => encounter(game.state, true))">👹 挑戰哥布林酋長</button>
+      <details v-if="place === 'forest' && game.state.threat.bossAlive" class="boss-preparation-details">
+        <summary>哥布林酋長戰前情報</summary>
+        <p class="muted">首領 · 已現身</p>
+        <p>{{ levelComparison(MONSTERS.chief.level) }}</p>
+        <p>{{ goblinChiefKnown() ? '特性情報：目前哥布林酋長資料未登錄額外特性或特殊招式。' : '情報不足：尚未遭遇。' }}</p>
+        <p>{{ goblinChiefKnown() ? `已知掉落：${ITEMS[MONSTERS.chief.loot].name}；勝利可獲得戰鬥獎勵。` : '情報不足：尚未遭遇。' }}</p>
+        <p>撤退會結束戰鬥並推進世界時間，不取得經驗或戰利品。{{ cooldownText('chief') }}</p>
+      </details>
       <template v-if="place === 'forest' && (game.state.regionalCrisis.phase === 'warning' || game.state.regionalCrisis.phase === 'preparation' || game.state.regionalCrisis.phase === 'active')">
         <button class="primary" data-camp-raid :disabled="blocked || game.state.regionalCrisis.adventure.campRaidAt !== null" @click="game.act(() => startRegionalCampRaid(game.state, game.state.regionalCrisis.phase === 'dormant' ? '' : game.state.regionalCrisis.id))">{{ game.state.regionalCrisis.adventure.campRaidAt !== null ? '哥布林營地已遭突襲' : '突襲哥布林營地 · 體力 8' }}</button>
         <p class="muted help-text">突襲只在勝利後記錄成果；錯過時機仍可繼續森林生活。世界時間照常流動。</p>
@@ -198,7 +262,7 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
       <h3 id="wolf-track-title" class="section-title">狼族蹤跡</h3>
       <p class="muted help-text">沿著擊退紀錄追蹤更深處的狼群。每次追蹤花費 8 體力；先準備裝備與藥水，再留意戰鬥中的下一回合提示。</p>
       <p class="adventure-goal" data-adventure-goal><strong>下一個冒險目標</strong> · {{ adventureGoal }}</p>
-      <div class="wolf-track-list"><div v-for="option in wolfOptions" :key="option.definitionId" class="wolf-track-row" :data-wolf-track="option.definitionId" :data-rank="option.rank"><button :class="{ danger: option.rank === 'boss' }" :disabled="!option.eligible" @click="game.act(() => encounterWolf(game.state, option.definitionId))">{{ option.label }}</button><span v-if="option.reason" class="muted">{{ option.reason }}</span><p class="wolf-track-reward" data-wolf-reward-expectation>{{ rewardExpectationText(option.definitionId) }}</p></div></div>
+      <div class="wolf-track-list"><div v-for="option in wolfOptions" :key="option.definitionId" class="wolf-track-row" :data-wolf-track="option.definitionId" :data-rank="option.rank"><button :class="{ danger: option.rank === 'boss' }" :disabled="!option.eligible" @click="game.act(() => encounterWolf(game.state, option.definitionId))">{{ option.label }} · {{ wolfRankNames[option.rank] }}</button><span class="muted">{{ option.eligible ? '可挑戰' : option.reason }}</span><p class="wolf-track-reward" data-wolf-reward-expectation>{{ rewardExpectationText(option.definitionId) }}</p><details v-if="option.rank === 'elite' || option.rank === 'miniBoss' || option.rank === 'boss'" class="boss-preparation-details"><summary>戰前情報</summary><p>{{ levelComparison(WOLF_MONSTERS[option.definitionId].level) }}</p><p v-for="line in wolfKnownMechanics(option.definitionId)" :key="line">{{ line }}</p><p>戰利品預期：{{ rewardExpectationText(option.definitionId) }}</p><p>撤退會結束戰鬥並推進世界時間，不取得經驗或戰利品。{{ cooldownText('wolf', option.definitionId) }}</p></details></div></div>
     </section>
   </template>
   <template v-else-if="place === 'unknown'">
@@ -256,10 +320,17 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
           <h4>{{ family.name }}</h4>
           <article v-for="option in family.options" :key="option.definitionId" class="content-monster-row" :data-content-monster="option.definitionId" :data-content-rank="option.rank">
             <button :aria-describedby="option.reason ? `content-reason-${option.definitionId}` : undefined" :disabled="!option.eligible" @click="game.act(() => encounterContentMonster(game.state, option.definitionId))">追蹤{{ option.label }} · {{ monsterRankNames[option.rank] }}</button>
-            <span class="muted">{{ contentSeen(option.definitionId) ? '已遇見' : '尚未相遇' }}<template v-if="option.eligible"> · 花費 8 體力</template></span>
+            <span class="muted">{{ contentSeen(option.definitionId) ? '已遇見' : '尚未相遇' }} · {{ option.eligible ? '可追蹤 · 花費 8 體力' : '暫不可追蹤' }}</span>
             <p v-if="contentSeen(option.definitionId)" class="muted">{{ option.description }}</p>
             <p v-else class="muted">這片區域尚未留下足夠的相遇紀錄。</p>
             <p v-if="option.reason" :id="`content-reason-${option.definitionId}`" class="inline-warning">{{ option.reason }}</p>
+            <details v-if="option.rank === 'elite' || option.rank === 'miniBoss' || option.rank === 'boss'" class="boss-preparation-details">
+              <summary>戰前情報</summary>
+              <p>{{ levelComparison(CONTENT_MONSTERS[option.definitionId]!.level) }}</p>
+              <p v-for="line in contentCombatDetails(option.definitionId)?.mechanics ?? []" :key="line">{{ line }}</p>
+              <p>已知戰利品：{{ contentCombatDetails(option.definitionId)?.loot.join('、') || (contentSeen(option.definitionId) ? '目前知識投影沒有已知掉落來源。' : '情報不足：尚未遭遇。') }}</p>
+              <p>撤退會結束戰鬥並推進世界時間，不取得經驗或戰利品。{{ cooldownText('content', option.definitionId) }}</p>
+            </details>
           </article>
         </section>
       </div>
@@ -323,3 +394,7 @@ function rewardExpectationText(definitionId: MonsterDefinitionId) {
     </p>
   </section>
 </template>
+
+<style scoped>
+.boss-preparation-details { grid-column: 1 / -1; }
+</style>

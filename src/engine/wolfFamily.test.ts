@@ -8,6 +8,7 @@ import {
   encounterWolf,
   resolveWolfCombatStats,
   wolfCombatPresentation,
+  wolfCorePresentation,
   wolfEncounterOptions,
 } from './wolfFamily'
 
@@ -248,6 +249,9 @@ describe('wolf family encounters', () => {
     const packLeader = snapshot(state, 'packLeader', ['swift', 'armored'], null, 2)
     installCombat(state, packLeader)
     expect(state.combat!.familyEncounter?.howlActive).toBe(true)
-    expect(wolfCombatPresentation(state)?.cue).toContain('戰吼')
+    const core = wolfCorePresentation('packLeader')
+    expect(core.preparation).toBe('固定核心會戰吼並強化反擊。')
+    expect(core.combatCue).toBe('戰吼，強化反擊。')
+    expect(wolfCombatPresentation(state)?.cue).toContain(core.combatCue!)
   })
 })
