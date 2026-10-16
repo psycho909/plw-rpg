@@ -78,6 +78,17 @@ describe('safe browser persistence', () => {
     expect(unpackCheckpoint(saved!).journal.pending.at(-1)?.events.map(event => event.type)).toContain('craft.completed')
   })
 
+  it('surfaces boss defeat alongside the combat reward in the immediate action message', () => {
+    const game = startedGame()
+    game.act(() => {
+      emit(game.state, 'boss.defeated', 'monster', '哥布林酋長被擊敗，北方商路暫時恢復平靜。', true)
+      emit(game.state, 'combat.won', 'player', '戰鬥勝利！獲得 20 經驗與 10 金幣。')
+      return ''
+    })
+    expect(game.message).toContain('哥布林酋長被擊敗')
+    expect(game.message).toContain('獲得 20 經驗與 10 金幣')
+  })
+
   it('records factual equip and unequip messages in the stored action journal', () => {
     const game = startedGame()
     const item = generateItem(game.state, { baseId: 'shortSword', level: 1 })

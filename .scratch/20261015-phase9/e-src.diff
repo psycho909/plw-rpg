@@ -1,0 +1,96 @@
+diff --git a/src/components/PlaceWindow.vue b/src/components/PlaceWindow.vue
+index ab8172f..00dce45 100644
+--- a/src/components/PlaceWindow.vue
++++ b/src/components/PlaceWindow.vue
+@@ -18,6 +18,7 @@ import { distance, stageIndex } from '../engine/simulation'
+ import { calendar } from '../engine/calendar'
+ import { buildingIcons, itemIcons, materialIcons } from '../presentation/icons'
+ import { projectCrafting } from '../presentation/craftingProjection'
++import { craftSuccessMessage } from '../presentation/craftingFeedback'
+ import type { PlaceId } from '../presentation/worldUI'
+ import { useGameStore } from '../stores/gameStore'
+ import PixelMeter from './PixelMeter.vue'
+@@ -81,12 +82,13 @@ function clearMonsterSearch() {
+   void nextTick(() => monsterSearchInput.value?.focus())
+ }
+ function craftSelectedRecipe() {
++  const smithingXp = craftingPlan.value?.practice.xpAward ?? 0
+   const result = game.act(() => craft(game.state, {
+     recipeId: selectedRecipeId.value,
+     influenceMaterial: selectedInfluenceMaterial.value,
+   }), {
+     message: result => result.ok
+-      ? `${result.masterpiece ? '鍛造傑作完成' : '製作完成'}：${ITEM_BASES[result.baseId].name}。`
++      ? craftSuccessMessage(ITEM_BASES[result.baseId].name, result.masterpiece, smithingXp)
+       : result.message,
+     succeeded: result => result.ok,
+   })
+diff --git a/src/stores/gameStore.test.ts b/src/stores/gameStore.test.ts
+index 5f97d94..aa8af22 100644
+--- a/src/stores/gameStore.test.ts
++++ b/src/stores/gameStore.test.ts
+@@ -78,6 +78,17 @@ describe('safe browser persistence', () => {
+     expect(unpackCheckpoint(saved!).journal.pending.at(-1)?.events.map(event => event.type)).toContain('craft.completed')
+   })
+ 
++  it('surfaces boss defeat alongside the combat reward in the immediate action message', () => {
++    const game = startedGame()
++    game.act(() => {
++      emit(game.state, 'boss.defeated', 'monster', '哥布林酋長被擊敗，北方商路暫時恢復平靜。', true)
++      emit(game.state, 'combat.won', 'player', '戰鬥勝利！獲得 20 經驗與 10 金幣。')
++      return ''
++    })
++    expect(game.message).toContain('哥布林酋長被擊敗')
++    expect(game.message).toContain('獲得 20 經驗與 10 金幣')
++  })
++
+   it('records factual equip and unequip messages in the stored action journal', () => {
+     const game = startedGame()
+     const item = generateItem(game.state, { baseId: 'shortSword', level: 1 })
+diff --git a/src/stores/gameStore.ts b/src/stores/gameStore.ts
+index b544e1c..3301092 100644
+--- a/src/stores/gameStore.ts
++++ b/src/stores/gameStore.ts
+@@ -106,9 +106,13 @@ export const useGameStore = defineStore('game', () => {
+     if (!state.value.life.openingSeen || !canProgress()) return undefined
+     const before = state.value.worldTime, sequence = state.value.eventSequence, captured = captureEvents(state.value, action), result = captured.result
+     triggerRef(state)
++    const bossDefeat = captured.events.find(event => event.type === 'boss.defeated'
++      || event.type === 'wolf.boss.defeated' || event.type === 'content.boss.defeated')
++    const combatVictory = captured.events.find(event => event.type === 'combat.won')
++    const bossVictoryMessage = bossDefeat && combatVictory ? `${bossDefeat.message} ${combatVictory.message}` : null
+     message.value = policy
+       ? policy.message(result, captured.events)
+-      : typeof result === 'string' ? result || state.value.events.at(-1)?.message || '完成。' : result ? '已到達。' : '目前無法移動。'
++      : typeof result === 'string' ? result || bossVictoryMessage || state.value.events.at(-1)?.message || '完成。' : result ? '已到達。' : '目前無法移動。'
+     const succeeded = policy ? policy.succeeded(result) : result === '' || result === true
+     if (succeeded || before !== state.value.worldTime || sequence !== state.value.eventSequence) {
+       record('action', before, captured.events, message.value); save()
+diff --git a/src/presentation/craftingFeedback.ts b/src/presentation/craftingFeedback.ts
+new file mode 100644
+index 0000000..8930d35
+--- /dev/null
++++ b/src/presentation/craftingFeedback.ts
+@@ -0,0 +1,4 @@
++export function craftSuccessMessage(itemName: string, masterpiece: boolean, smithingXp: number) {
++  const result = `${masterpiece ? '鍛造傑作完成' : '製作完成'}：${itemName}。`
++  return smithingXp > 0 ? `${result} 鍛造熟練 +${smithingXp}。` : result
++}
+diff --git a/src/presentation/craftingFeedback.test.ts b/src/presentation/craftingFeedback.test.ts
+new file mode 100644
+index 0000000..e517540
+--- /dev/null
++++ b/src/presentation/craftingFeedback.test.ts
+@@ -0,0 +1,12 @@
++import { describe, expect, it } from 'vitest'
++import { craftSuccessMessage } from './craftingFeedback'
++
++describe('craftSuccessMessage', () => {
++  it('includes the actual smithing practice award after a successful craft', () => {
++    expect(craftSuccessMessage('木石長矛', false, 10)).toBe('製作完成：木石長矛。 鍛造熟練 +10。')
++  })
++
++  it('keeps masterpiece wording and omits practice when the plan awards none', () => {
++    expect(craftSuccessMessage('木石長矛', true, 0)).toBe('鍛造傑作完成：木石長矛。')
++  })
++})

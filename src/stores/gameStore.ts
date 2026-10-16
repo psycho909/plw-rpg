@@ -106,9 +106,13 @@ export const useGameStore = defineStore('game', () => {
     if (!state.value.life.openingSeen || !canProgress()) return undefined
     const before = state.value.worldTime, sequence = state.value.eventSequence, captured = captureEvents(state.value, action), result = captured.result
     triggerRef(state)
+    const bossDefeat = captured.events.find(event => event.type === 'boss.defeated'
+      || event.type === 'wolf.boss.defeated' || event.type === 'content.boss.defeated')
+    const combatVictory = captured.events.find(event => event.type === 'combat.won')
+    const bossVictoryMessage = bossDefeat && combatVictory ? `${bossDefeat.message} ${combatVictory.message}` : null
     message.value = policy
       ? policy.message(result, captured.events)
-      : typeof result === 'string' ? result || state.value.events.at(-1)?.message || '完成。' : result ? '已到達。' : '目前無法移動。'
+      : typeof result === 'string' ? result || bossVictoryMessage || state.value.events.at(-1)?.message || '完成。' : result ? '已到達。' : '目前無法移動。'
     const succeeded = policy ? policy.succeeded(result) : result === '' || result === true
     if (succeeded || before !== state.value.worldTime || sequence !== state.value.eventSequence) {
       record('action', before, captured.events, message.value); save()

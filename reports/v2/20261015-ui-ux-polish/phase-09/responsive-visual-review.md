@@ -20,3 +20,15 @@ The approved production build passed TypeScript checking and Vite build. Chrome 
 This includes desktop identity, recent-event and shortcut rows, mobile player HUD and four-button navigation. Screenshots are named `responsive-{width}x{height}.png`; `probe-results.json` contains per-control rectangles and measurements. The 320×667 screenshot also confirms the map, HUD and navigation fit together at a common short mobile height. A separate CDP touch event successfully opened Inventory through the mobile nav; the direction pad measured 42×42 px and mobile navigation buttons 72×40 px.
 
 The report is limited to tested viewport states and the production build; it makes no claim about human preference or device-specific browser chrome beyond the emulated viewport.
+
+## Phase9-E visual and feedback consistency
+
+### Before/after evidence
+
+The fresh-save opening and post-start world screenshots, followed by the forest action and log views, are retained in [`e-runner/attempt-20261016T012939967Z/`](e-runner/attempt-20261016T012939967Z/). `menu-hover-active-focus.png` records the real pointer/keyboard state pass; `before-fresh-save-opening.png` and `after-fresh-save-world.png` show the opening-to-world transition; `gather-feedback.png` and `gather-event-log.png` show immediate versus reviewable feedback. The action captures are not represented as a before/after source-code visual diff. The rebuilt production build's craft and boss message captures are retained in [`e-runner/attempt-20261016T013838256Z/`](e-runner/attempt-20261016T013838256Z/), including `starter-spear-craft-feedback.png`, `controlled-boss-immediate-result.png`, and `controlled-boss-event-log.png`. The two source changes affect message text only, so no visual-rule change was justified by the sampled evidence.
+
+### E consistency pass
+
+The production-browser sample retained the existing monochrome palette, zero-radius borders, Traditional Chinese UI font stack, and spacing tokens of 4/8/12/16 px. CDP pointer input observed the menu button hover (`#191919` background, white border) and active state (inverted black/white); Tab reached a modal button with a visible 2 px outline and 4 px offset. The pressed ×1 speed button retained its selected inversion. A disabled map cell remained low-contrast while retaining its map-specific size override. The window header/body/footer and status notice remain within the existing PixelWindow/StatusNotice hierarchy; no dashboard treatment, new color, card style or persistent notification stream was introduced. No visual CSS edit was warranted; changing the Phase9-D height allocation would be out of scope.
+
+The E browser run was at the default headless viewport and is an interaction evidence pass, not a replacement for D's 20-cell responsive matrix. The targeted tests passed 37/37 across two files. Lead's [`e-runner/npm-run-check-e.log`](e-runner/npm-run-check-e.log) records the full check passing (41 files / 650 tests, TypeScript check and Vite build with 103 modules); the post-build E probe passed at [`e-runner/attempt-20261016T013838256Z/probe-results.json`](e-runner/attempt-20261016T013838256Z/probe-results.json).

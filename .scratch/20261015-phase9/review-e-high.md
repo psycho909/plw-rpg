@@ -1,0 +1,6 @@
+# Review request — Phase9-E (g6-luna-high-engineer as reviewer; did not build E)
+
+Review only; no edits except your review; no commit. Write `reports/v2/20261015-ui-ux-polish/phase-09/e-review/e-review.md`; reply with only that path.
+- Spec `docs/specs/V2X-PHASE9-UI-UX-POLISH.md` §3 P9-05, §4, §8. Ticket `tickets/20261015-v2x-09e-visual-feedback.md`.
+- Diff `.scratch/20261015-phase9/e-src.diff` (gameStore.ts boss message merge + test, PlaceWindow.vue craft notice, new src/presentation/craftingFeedback.ts + test). Reports `phase-09/world-feedback.md`, `responsive-visual-review.md` (visual), `e-runner/e-summary.md`; evidence `e-runner/attempt-20261016T013838256Z/` (normal craft lane + labeled controlled boss fixture). Full check `e-runner/npm-run-check-e.log`.
+Check: XP shown is the real plan award (zero-XP shows none); boss+reward merge does not drop or duplicate other messages (crisis, level-up, loot) and works for wolf/content bosses, not just Goblin Chief; no modal/notification fatigue; feedback audit classifications backed by evidence (browser vs source-reviewed clearly labeled); visual claims (no SCSS change needed) credible; no engine/save/balance change. Severity P0–P3, disposition.

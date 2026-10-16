@@ -18,6 +18,7 @@ import { distance, stageIndex } from '../engine/simulation'
 import { calendar } from '../engine/calendar'
 import { buildingIcons, itemIcons, materialIcons } from '../presentation/icons'
 import { projectCrafting } from '../presentation/craftingProjection'
+import { craftSuccessMessage } from '../presentation/craftingFeedback'
 import type { PlaceId } from '../presentation/worldUI'
 import { useGameStore } from '../stores/gameStore'
 import PixelMeter from './PixelMeter.vue'
@@ -81,12 +82,13 @@ function clearMonsterSearch() {
   void nextTick(() => monsterSearchInput.value?.focus())
 }
 function craftSelectedRecipe() {
+  const smithingXp = craftingPlan.value?.practice.xpAward ?? 0
   const result = game.act(() => craft(game.state, {
     recipeId: selectedRecipeId.value,
     influenceMaterial: selectedInfluenceMaterial.value,
   }), {
     message: result => result.ok
-      ? `${result.masterpiece ? '鍛造傑作完成' : '製作完成'}：${ITEM_BASES[result.baseId].name}。`
+      ? craftSuccessMessage(ITEM_BASES[result.baseId].name, result.masterpiece, smithingXp)
       : result.message,
     succeeded: result => result.ok,
   })

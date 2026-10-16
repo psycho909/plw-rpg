@@ -1,0 +1,204 @@
+{
+  "status": "complete",
+  "source": "production dist, new Chrome profile, new localStorage, normal visible UI actions; no state injection",
+  "startedAt": "2026-10-16T01:24:22.373Z",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.53",
+    "revision": "@792bf6722e73a45aa9e47c163b9901bdc17f3230",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.13"
+  },
+  "screenshots": {
+    "beforeFreshSave": {
+      "file": "before-fresh-save-opening.png",
+      "bytes": 24924,
+      "sha256": "dc409dd2bc40a487c1afdfb8998e6b7ef9063a7629ed075a50c10eadbe1d1f06"
+    },
+    "afterFreshSave": {
+      "file": "after-fresh-save-world.png",
+      "bytes": 28449,
+      "sha256": "f513e961df66ba9c4cbd6f09fe0f2c934ca45288776db564b8e647d9c82e51eb"
+    },
+    "mapWindow": {
+      "file": "world-map-window.png",
+      "bytes": 33830,
+      "sha256": "d0c3225f3aba4aab1aaaff9576ea722706d8782908ff682dc80e98a4ac48ef7f"
+    },
+    "forestPlace": {
+      "file": "forest-place-window.png",
+      "bytes": 19971,
+      "sha256": "f9f13c1fe0f4b7df623eaee92a6fc1f7fb235ac30af9b68efbed9389b6185dca"
+    },
+    "gatherFeedback": {
+      "file": "gather-feedback.png",
+      "bytes": 21243,
+      "sha256": "8d1168c51a7ce6e18a6e34561ebd553c759bd106c434a679a07e5fe95ff0b039"
+    },
+    "gatherLog": {
+      "file": "gather-event-log.png",
+      "bytes": 22680,
+      "sha256": "20b0ebcfe583b0a248d26a71df03a82ea26fb7c948613b7e983bc1da3af5f562"
+    }
+  },
+  "interactions": [
+    {
+      "label": "start fresh save",
+      "hit": {
+        "ok": true,
+        "x": 67,
+        "y": 286,
+        "text": "起身",
+        "topWithinTarget": true,
+        "topTag": "BUTTON",
+        "clickSent": true
+      }
+    },
+    {
+      "label": "open world map through visible control",
+      "hit": {
+        "ok": true,
+        "x": 102,
+        "y": 461,
+        "text": "地圖",
+        "topWithinTarget": true,
+        "topTag": "BUTTON",
+        "clickSent": true
+      }
+    },
+    {
+      "label": "walk to a visible northern forest tile",
+      "hit": {
+        "ok": true,
+        "x": 133,
+        "y": 181,
+        "label": "1, 1：北方森林",
+        "topWithinTarget": true
+      }
+    },
+    {
+      "label": "open current forest interaction",
+      "hit": {
+        "ok": true,
+        "x": 314,
+        "y": 378,
+        "text": "🌲 北方森林\n互動",
+        "topWithinTarget": true,
+        "topTag": "BUTTON",
+        "clickSent": true
+      }
+    },
+    {
+      "label": "gather wood",
+      "hit": {
+        "ok": true,
+        "x": 75,
+        "y": 215,
+        "text": "🪵 伐木",
+        "topWithinTarget": true,
+        "topTag": "BUTTON",
+        "clickSent": true
+      }
+    },
+    {
+      "label": "open event log for review",
+      "hit": {
+        "ok": true,
+        "x": 663,
+        "y": 461,
+        "text": "日誌",
+        "topWithinTarget": true,
+        "topTag": "BUTTON",
+        "clickSent": true
+      }
+    }
+  ],
+  "actionFeedback": {
+    "forestNavigationTarget": {
+      "position": "1,1",
+      "label": "1, 1：北方森林",
+      "x": 133,
+      "y": 181
+    },
+    "forestPlace": {
+      "label": "forest interaction window",
+      "notice": "已到達。\n×",
+      "recentEvent": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+      "dialogTitle": "┤ 北方森林 ├",
+      "dialogText": "🌲　🌲　♣　🌲　🌲\n\n北方森林 · 資源餘量 100\n\n採集花費 10 體力，獲得素材與 4 金幣；資源每日恢復。\n\n🪵 伐木\n尋找怪物 · 體力 8\n\n最近林子還算安靜。聽說山谷裡藏著一座舊礦坑。\n\n狼族蹤跡\n\n沿著擊退紀錄追蹤更深處的狼群。每次追蹤花費 8 體力；先準備裝備與藥水，再留意戰鬥中的下一回合提示。\n\n下一個冒險目標 · 追蹤灰狼，繼續認識北林狼族。\n\n灰狼 · 普通\n可挑戰\n\n獵裝 65% · 掉落 Lv.2 · 品質（掉落裝備時） 普通 60%、精良 27%、稀有 10%、史詩 2.8%、傳說 0.2% · 保底 狼牙 ×1 · 機率素材 狼皮 25%、月石 3%\n\n傷痕灰狼 · 普通\n先擊退灰狼，才能追蹤更深處的狼群。\n\n獵裝 65% · 掉落 Lv.3 · 品質（掉落裝備時） 普通 45%、精良 35%、稀有 16%、史詩 3.6%、傳說 0.4% · 保底 狼牙 ×1 · 機率素材 狼皮 25%、月石 4%\n\n精英頭狼 · 精英\n先擊退傷痕灰狼，才能追蹤更深處的狼群。\n\n獵裝 100% · 掉落 Lv.5 · 品質（掉落裝備時） 普通 20%、精良 45%、稀有 28%、史詩 6.5%、傳說 0.5% · 保底 狼牙 ×1 · 機率素材 狼皮 25%、月石 8%\n\n戰前情報\n狼群領袖 · 小首領\n先擊退精英頭狼，才能追蹤更深處的狼群。\n\n獵裝 100% · 掉落 Lv.7 · 品質（掉落裝備時） 精良 35%、稀有 50%、史詩 14%、傳說 1% · 保底 狼牙 ×1 · 機率素材 狼皮 25%、月石 15%\n\n戰前情報\n北林狼王 · 首領\n先擊退狼群領袖，才能追蹤更深處的狼群。\n\n獵裝 100% · 掉落 Lv.7 · 品質（掉落裝備時） 稀有 85%、史詩 14%、傳說 1% · 保底 狼牙 ×1、月石 ×1 · 機率素材 狼皮 25% · 首領限定裝備：月牙獵矛\n\n戰前情報\n北方森林的已知蹤跡\n\n只列目前所在已探索區域可追蹤的族群。遇見紀錄會跨角色保留；追蹤資格與拒絕原因由世界狀態判定。\n\n搜尋蹤跡\n全部族群\n濕地黏怪\n林地野獸\n邊境哥布林\n霧谷亡骨\n全部階級\n普通\n精英\n小首領\n首領\n\n找到 28／28 個目標\n\n濕地黏怪\n追蹤沼泥黏怪 · 普通\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n追蹤苔衣黏怪 · 普通\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n追蹤泉躍黏怪 · 普通\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n追蹤燼晶黏怪 · 精英\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n戰前情報\n追蹤苔池母黏怪 · 小首領\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n戰前情報\n追蹤潮鳴黏怪 · 小首領\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n戰前情報\n追蹤濕地黏核 · 首領\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n戰前情報\n林地野獸\n追蹤石角獸 · 普通\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n追蹤赤尾獸 · 普通\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀",
+      "visibleText": "橡谷\n第 1 年 春 1 日\n09:12\n暫停\n×1\n×5\n×20\n存檔\n選單\n🌲 北方森林 1, 1\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n🙂\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n🪓\n4\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n⛏️\n4\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n🛡️\n4\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n4\n·\n⚒️\n4\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🏠\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n5\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n·\n·\n·\n⚔️\n4\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田"
+    },
+    "gather": {
+      "label": "after wood gathering",
+      "notice": "取得 2 份木材，工作報酬 4 金幣。\n×",
+      "recentEvent": "› 取得 2 份木材，工作報酬 4 金幣。 L",
+      "dialogTitle": "┤ 北方森林 ├",
+      "dialogText": "🌲　🌲　♣　🌲　🌲\n\n北方森林 · 資源餘量 98\n\n採集花費 10 體力，獲得素材與 4 金幣；資源每日恢復。\n\n🪵 伐木\n尋找怪物 · 體力 8\n\n最近林子還算安靜。聽說山谷裡藏著一座舊礦坑。\n\n狼族蹤跡\n\n沿著擊退紀錄追蹤更深處的狼群。每次追蹤花費 8 體力；先準備裝備與藥水，再留意戰鬥中的下一回合提示。\n\n下一個冒險目標 · 追蹤灰狼，繼續認識北林狼族。\n\n灰狼 · 普通\n可挑戰\n\n獵裝 65% · 掉落 Lv.2 · 品質（掉落裝備時） 普通 60%、精良 27%、稀有 10%、史詩 2.8%、傳說 0.2% · 保底 狼牙 ×1 · 機率素材 狼皮 25%、月石 3%\n\n傷痕灰狼 · 普通\n先擊退灰狼，才能追蹤更深處的狼群。\n\n獵裝 65% · 掉落 Lv.3 · 品質（掉落裝備時） 普通 45%、精良 35%、稀有 16%、史詩 3.6%、傳說 0.4% · 保底 狼牙 ×1 · 機率素材 狼皮 25%、月石 4%\n\n精英頭狼 · 精英\n先擊退傷痕灰狼，才能追蹤更深處的狼群。\n\n獵裝 100% · 掉落 Lv.5 · 品質（掉落裝備時） 普通 20%、精良 45%、稀有 28%、史詩 6.5%、傳說 0.5% · 保底 狼牙 ×1 · 機率素材 狼皮 25%、月石 8%\n\n戰前情報\n狼群領袖 · 小首領\n先擊退精英頭狼，才能追蹤更深處的狼群。\n\n獵裝 100% · 掉落 Lv.7 · 品質（掉落裝備時） 精良 35%、稀有 50%、史詩 14%、傳說 1% · 保底 狼牙 ×1 · 機率素材 狼皮 25%、月石 15%\n\n戰前情報\n北林狼王 · 首領\n先擊退狼群領袖，才能追蹤更深處的狼群。\n\n獵裝 100% · 掉落 Lv.7 · 品質（掉落裝備時） 稀有 85%、史詩 14%、傳說 1% · 保底 狼牙 ×1、月石 ×1 · 機率素材 狼皮 25% · 首領限定裝備：月牙獵矛\n\n戰前情報\n北方森林的已知蹤跡\n\n只列目前所在已探索區域可追蹤的族群。遇見紀錄會跨角色保留；追蹤資格與拒絕原因由世界狀態判定。\n\n搜尋蹤跡\n全部族群\n濕地黏怪\n林地野獸\n邊境哥布林\n霧谷亡骨\n全部階級\n普通\n精英\n小首領\n首領\n\n找到 28／28 個目標\n\n濕地黏怪\n追蹤沼泥黏怪 · 普通\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n追蹤苔衣黏怪 · 普通\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n追蹤泉躍黏怪 · 普通\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n追蹤燼晶黏怪 · 精英\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n戰前情報\n追蹤苔池母黏怪 · 小首領\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n戰前情報\n追蹤潮鳴黏怪 · 小首領\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n戰前情報\n追蹤濕地黏核 · 首領\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n戰前情報\n林地野獸\n追蹤石角獸 · 普通\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄。\n\n目前的區域、季節、時段或聚落條件還不適合追蹤這個目標。\n\n追蹤赤尾獸 · 普通\n尚未相遇 · 暫不可追蹤\n\n這片區域尚未留下足夠的相遇紀錄",
+      "visibleText": "橡谷\n第 1 年 春 1 日\n09:56\n暫停\n×1\n×5\n×20\n存檔\n選單\n🌲 北方森林 1, 1\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n🙂\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n🪓\n4\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n⛏️\n4\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n🛡️\n4\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n4\n·\n⚒️\n4\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🏠\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n5\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n·\n·\n·\n⚔️\n4\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田"
+    },
+    "gatherReview": {
+      "label": "gather reviewable event log",
+      "notice": "取得 2 份木材，工作報酬 4 金幣。\n×",
+      "recentEvent": "› 取得 2 份木材，工作報酬 4 金幣。 L",
+      "dialogTitle": "┤ 世界日誌 ├",
+      "dialogText": "全部\n自己\n居民\n世界\n威脅\n聚落\n\n最新 2 筆，最多顯示 100 筆。時間為遊戲世界時間。\n\n第 1 年 春 1 日 09:56\n\n取得 2 份木材，工作報酬 4 金幣。\n\n第 1 年 春 1 日 08:00\n\n陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。",
+      "visibleText": "橡谷\n第 1 年 春 1 日\n09:57\n暫停\n×1\n×5\n×20\n存檔\n選單\n🌲 北方森林 1, 1\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n🙂\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n🪓\n4\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n⛏️\n4\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n🛡️\n4\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n4\n·\n⚒️\n4\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🏠\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n5\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n·\n·\n·\n⚔️\n4\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田"
+    }
+  },
+  "visualStates": {
+    "defaultAndDisabled": {
+      "normal": {
+        "text": "暫停",
+        "background": "rgb(17, 17, 17)",
+        "color": "rgb(240, 240, 240)",
+        "border": "rgb(96, 96, 96)",
+        "radius": "0px",
+        "minHeight": "28px"
+      },
+      "disabled": {
+        "text": "≈",
+        "background": "rgb(17, 17, 17)",
+        "color": "rgb(170, 170, 170)",
+        "border": "rgb(25, 25, 25)",
+        "radius": "0px",
+        "minHeight": "0px"
+      },
+      "focusRule": "none",
+      "spaceTokens": [
+        "4px",
+        "8px",
+        "12px",
+        "16px"
+      ],
+      "font": "\"Microsoft JhengHei\", \"PingFang TC\", \"Noto Sans TC\", system-ui, sans-serif"
+    }
+  },
+  "staticFlowAudit": [
+    {
+      "action": "craft success + smithing XP",
+      "path": "PlaceWindow.vue craftSelectedRecipe → gameStore.act policy; success status previously named item but omitted craftingPlan.practice.xpAward; fixed to include the actual projected award before craft, and regression-tested in craftingFeedback.test.ts"
+    },
+    {
+      "action": "combat reward / boss defeat",
+      "path": "gameStore.act default message uses latest event message; combat events and rewards are written to captured world events and action journal. Boss defeat needs controlled combat state; not reached in this fresh-save lane."
+    },
+    {
+      "action": "NPC state change",
+      "path": "NpcWindow talk action and engine NPC events; journal retains captured events; not reached in bounded fresh-save interaction lane."
+    },
+    {
+      "action": "crisis preparation / outcome",
+      "path": "WorldRecords / LifeNews crisis projection and recorded regional-crisis events; controlled fixture required; no fixture injected in this fresh-save lane."
+    },
+    {
+      "action": "settlement, reputation / identity, property purchase",
+      "path": "Settlement and reputation updates are readable in their existing windows/history; property purchase is actionable in PropertyWindow and recorded in captured events; not reached in bounded fresh-save lane."
+    },
+    {
+      "action": "world history entry",
+      "path": "WorldRecords history window lists state.history; status does not promote ordinary changes into history, following event importance hierarchy."
+    }
+  ],
+  "initialPage": "橡谷\n第 1 年 春 1 日\n08:00\n暫停\n×1\n×5\n×20\n存檔\n選單\n🏘️ 橡谷聚落 7, 9\n世界正在流動\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n░\n░\n░\n░\n░\n≈\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n│\n♣\n♣\n🌲\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n🐺\n♣\n♣\n♣\n♣\n│\n♣\n♣\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n🌲\n♣\n♣\n♣\n🪓\n4\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n│\n♣\n🌲\n♣\n♣\n▲\n░\n░\n░\n░\n░\n≈\n♣\n♣\n🌲\n♣\n♣\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n│\n♣\n♣\n♣\n🌲\n▲\n⛏️\n4\n▲\n▲\n▲\n≈\n≈\n♣\n♣\n♣\n♣\n🌲\n♣\n♣\n🛡️\n4\n♣\n♣\n♣\n🌲\n│\n♣\n♣\n♣\n♣\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n─\n─\n─\n─\n─\n─\n─\n─\n─\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n🏪\n雜貨店\n4\n·\n⚒️\n4\n│\n≋\n≋\n≋\n≋\n▲\n▲\n▲\n▲\n▲\n≈\n≈\n·\n·\n·\n🏠\n·\n·\n🙂\n家\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n─\n┼\n≋\n≋\n≋\n農田\n5\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n🛏️\n旅店\n·\n·\n·\n⚔️\n4\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n🏠\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n·\n│\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≋\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n≈\n北方森林\n橡谷 · 小聚落\n東方農田\n未知之地\n🏠 家\n互動\n附近還有 1 個互動 ›\n↑\n←\n↓\n→\n🙂\n奧登 Lv.1\n生命\n100\n體力\n84\n🪙 45\n地圖\n角色\n物品\n日誌",
+  "endedAt": "2026-10-16T01:24:25.201Z"
+}
