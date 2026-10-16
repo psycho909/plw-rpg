@@ -44,6 +44,191 @@ function versionOneFixture(lastSavedAt = 1000) {
   return JSON.stringify(raw)
 }
 
+describe('legacy archive transfer before first checkpoint', () => {
+  function legacy(messageSize = 300_000, count = 1) {
+    const world = createGame(100016); world.life.openingSeen = true
+    // Construct legacy journal fields directly to reproduce pre-cap checkpoints.
+    const pending: playJournal.PlayRecord[] = Array.from({ length: count }, (_, index) => ({
+      id: index ? `legacy-${index}` : 'legacy-large', worldId: 'legacy-world', at: 100000,
+      kind: 'action', from: 480, to: 480, characterId: world.activeCharacterId,
+      message: 'x'.repeat(messageSize), events: [],
+    }))
+    saved = playJournal.packCheckpoint(world, { version: 1, worldId: 'legacy-world', pending }, 100000)
+    return { world, pending }
+  }
+
+  it('archives original legacy-large before any checkpoint write', async () => {
+    const { world, pending } = legacy()
+    let acknowledge!: () => void
+    const appendBatch = vi.fn(() => new Promise<void>(resolve => { acknowledge = resolve }))
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValue({ appendBatch, readAll: async () => [] })
+    const game = useGameStore()
+    expect(storage.setItem).not.toHaveBeenCalled()
+    expect(game.writerReady).toBe(false)
+    expect(game.writerPending).toBe(true)
+    expect(appendBatch.mock.calls[0]).toEqual([pending])
+    const action = vi.fn(() => true)
+    game.act(action); game.advance(1); game.reset(); game.save()
+    expect(action).not.toHaveBeenCalled()
+    expect(storage.setItem).not.toHaveBeenCalled()
+    acknowledge()
+    await vi.advanceTimersByTimeAsync(0)
+    expect(game.writerReady).toBe(true)
+    expect(unpackCheckpoint(saved!).state).toEqual(world)
+    expect(unpackCheckpoint(storage.setItem.mock.calls[0][1]).journal.pending).toEqual([])
+    expect(game.journalError).toBe('')
+  })
+
+  it('archives an over-quota checkpoint intact, continues, reloads and resets under quota', async () => {
+    const { world, pending } = legacy(5_000_000)
+    const appendBatch = vi.fn(async (_batch: playJournal.PlayRecord[]) => {})
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValue({ appendBatch, readAll: async () => [] })
+    storage.setItem.mockImplementation((_key, value) => {
+      if (value.length > 5_000_000) throw new Error('quota')
+      saved = value
+    })
+    const game = useGameStore()
+    await vi.advanceTimersByTimeAsync(0)
+    expect(appendBatch.mock.calls).toEqual([[pending]])
+    expect(game.saveError).toBe('')
+    expect(unpackCheckpoint(saved!).journal).toEqual({ version: 1, worldId: 'legacy-world', pending: [] })
+    game.advance(1)
+    await vi.advanceTimersByTimeAsync(0)
+    expect(game.state.worldTime).toBe(world.worldTime + 1)
+    expect(game.state.worldSeed).toBe(world.worldSeed)
+    const expected = JSON.parse(JSON.stringify(game.state)), calls = appendBatch.mock.calls.length
+    game.$dispose(); setActivePinia(createPinia())
+    const reopened = useGameStore()
+    await vi.advanceTimersByTimeAsync(0)
+    expect(reopened.state).toEqual(expected)
+    expect(unpackCheckpoint(saved!).journal.worldId).toBe('legacy-world')
+    expect(appendBatch).toHaveBeenCalledTimes(calls)
+    reopened.reset()
+    expect(unpackCheckpoint(saved!).journal.worldId).not.toBe('legacy-world')
+    expect(unpackCheckpoint(saved!).state.worldTime).toBe(480)
+    expect(saved!.length).toBeLessThan(5_000_000)
+    expect(reopened.saveError).toBe('')
+  })
+
+  it.each(['reject', 'timeout'])('bounds %s retries and saves markers so the world continues', async mode => {
+    const { pending } = legacy()
+    const appendBatch = vi.fn((_batch: playJournal.PlayRecord[]) => mode === 'reject'
+      ? Promise.reject(new Error('archive unavailable')) : new Promise<void>(() => {}))
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValue({ appendBatch, readAll: async () => [] })
+    const game = useGameStore(), deadline = mode === 'reject' ? 3000 : 18000
+    await vi.advanceTimersByTimeAsync(deadline - 1)
+    expect(storage.setItem).not.toHaveBeenCalled()
+    expect(game.writerReady).toBe(false)
+    await vi.advanceTimersByTimeAsync(1)
+    expect(appendBatch.mock.calls.slice(0, 3)).toEqual([[pending], [pending], [pending]])
+    const first = unpackCheckpoint(storage.setItem.mock.calls[0][1])
+    expect(first.journal.pending).toHaveLength(2)
+    expect(first.journal.pending.map(record => record.message)).toEqual([
+      expect.stringContaining('待補寫紀錄摘要：'), expect.stringContaining('紀錄缺口：'),
+    ])
+    expect(JSON.stringify(first.journal.pending).length).toBeLessThanOrEqual(256_000)
+    game.advance(1)
+    expect(game.state.worldTime).toBe(481)
+  })
+
+  it.each([false, true])('retries original content after one failure (lost ack: %s)', async lostAck => {
+    const { pending } = legacy()
+    const archived = new Map<string, playJournal.PlayRecord>()
+    const appendBatch = vi.fn(async (batch: playJournal.PlayRecord[]) => {
+      if (!lostAck && appendBatch.mock.calls.length === 1) throw new Error('unavailable')
+      for (const record of batch) {
+        if (archived.has(record.id)) expect(archived.get(record.id)).toEqual(record)
+        else archived.set(record.id, JSON.parse(JSON.stringify(record)))
+      }
+      if (appendBatch.mock.calls.length === 1) throw new Error('lost ack')
+    })
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValue({ appendBatch, readAll: async () => [] })
+    const game = useGameStore()
+    await vi.advanceTimersByTimeAsync(999)
+    expect(storage.setItem).not.toHaveBeenCalled()
+    await vi.advanceTimersByTimeAsync(1)
+    expect(appendBatch.mock.calls).toEqual([[pending], [pending]])
+    expect([...archived.values()]).toEqual(pending)
+    expect(unpackCheckpoint(saved!).journal.pending).toEqual([])
+    expect(game.journalError).toBe('')
+  })
+
+  it('transfers count overflow in batches of 64 with mixed worlds and existing markers intact', async () => {
+    const { world, pending } = legacy(10, 257)
+    pending[0].worldId = 'older-world'; pending[0].message = '待補寫紀錄摘要：fixture'
+    pending[1].worldId = 'older-world'; pending[1].message = '紀錄缺口：fixture'
+    saved = playJournal.packCheckpoint(world, { version: 1, worldId: 'legacy-world', pending })
+    const appendBatch = vi.fn(async (_batch: playJournal.PlayRecord[]) => {
+      expect(storage.setItem).not.toHaveBeenCalled()
+    })
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValue({ appendBatch, readAll: async () => [] })
+    useGameStore()
+    await vi.advanceTimersByTimeAsync(0)
+    expect(appendBatch.mock.calls.map(([batch]) => batch.length)).toEqual([64, 64, 64, 64, 1])
+    expect(appendBatch.mock.calls.flatMap(([batch]) => batch)).toEqual(pending)
+    expect(unpackCheckpoint(saved!).journal).toEqual({ version: 1, worldId: 'legacy-world', pending: [] })
+    for (const [, raw] of storage.setItem.mock.calls) {
+      const records = unpackCheckpoint(raw).journal.pending
+      expect(records.length).toBeLessThanOrEqual(256)
+      expect(JSON.stringify(records).length).toBeLessThanOrEqual(256_000)
+    }
+  })
+
+  it('keeps acknowledged batches archived when a later batch fails', async () => {
+    const { pending } = legacy(10, 257)
+    const appendBatch = vi.fn(async (_batch: playJournal.PlayRecord[]) => {
+      if (appendBatch.mock.calls.length > 1) throw new Error('unavailable')
+    })
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValue({ appendBatch, readAll: async () => [] })
+    useGameStore()
+    await vi.advanceTimersByTimeAsync(3000)
+    const first = unpackCheckpoint(storage.setItem.mock.calls[0][1]).journal.pending
+    expect(first).toEqual(pending.slice(64))
+    expect(appendBatch.mock.calls.slice(1, 4).map(([batch]) => batch)).toEqual([
+      pending.slice(64, 128), pending.slice(64, 128), pending.slice(64, 128),
+    ])
+  })
+
+  it.each(['in-flight', 'retry-delay'])('does not activate or save after disposal during %s', async phase => {
+    legacy(10, 257)
+    let acknowledge!: () => void
+    const appendBatch = vi.fn(() => phase === 'retry-delay' ? Promise.reject(new Error('unavailable'))
+      : new Promise<void>(resolve => { acknowledge = resolve }))
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValue({ appendBatch, readAll: async () => [] })
+    const game = useGameStore()
+    await vi.advanceTimersByTimeAsync(0)
+    game.$dispose()
+    if (phase === 'in-flight') acknowledge()
+    await vi.advanceTimersByTimeAsync(18000)
+    expect(game.writerReady).toBe(false)
+    expect(storage.setItem).not.toHaveBeenCalled()
+    expect(appendBatch).toHaveBeenCalledTimes(1)
+  })
+
+  it('does not transfer or write legacy pending without the writer lock', async () => {
+    legacy()
+    vi.stubGlobal('navigator', { locks: { request: (_name: string, _options: unknown, callback: (lock: null) => unknown) => Promise.resolve(callback(null)) } })
+    const appendBatch = vi.fn(async () => {})
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValue({ appendBatch, readAll: async () => [] })
+    const game = useGameStore()
+    await vi.advanceTimersByTimeAsync(18000)
+    expect(game.writerReady).toBe(false)
+    expect(appendBatch).not.toHaveBeenCalled()
+    expect(storage.setItem).not.toHaveBeenCalled()
+  })
+
+  it('keeps normal-size pending on the synchronous ready/save/flush path', () => {
+    legacy(10, 256)
+    const appendBatch = vi.fn(async () => { expect(storage.setItem).toHaveBeenCalled() })
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValue({ appendBatch, readAll: async () => [] })
+    const game = useGameStore()
+    expect(game.writerReady).toBe(true)
+    expect(game.writerPending).toBe(false)
+    expect(storage.setItem).toHaveBeenCalledTimes(1)
+    expect(appendBatch).toHaveBeenCalledTimes(1)
+  })
+})
+
 describe('safe browser persistence', () => {
   it('returns a typed action result once and does not persist a denied no-op', () => {
     const game = startedGame(), result = { ok: false as const, message: '材料不足。' }
@@ -350,7 +535,7 @@ describe('safe browser persistence', () => {
       saved = value
     })
     const game = useGameStore()
-    await Promise.resolve(); await Promise.resolve()
+    await vi.advanceTimersByTimeAsync(3000)
     expect(game.saveError).toBe('')
     expect(game.speed).toBe(1)
     const compactedCheckpoint = saved
@@ -389,7 +574,7 @@ describe('safe browser persistence', () => {
       saved = value
     })
     const game = useGameStore()
-    await Promise.resolve(); await Promise.resolve()
+    await vi.advanceTimersByTimeAsync(3000)
     const before = game.state.worldTime
     game.advance(1)
     const checkpoint = unpackCheckpoint(saved!)
@@ -426,7 +611,7 @@ describe('safe browser persistence', () => {
     envelope.playJournal = { version: 1, worldId: 'current-world', pending }
     saved = JSON.stringify(envelope)
     const game = useGameStore()
-    await Promise.resolve(); await Promise.resolve()
+    await vi.advanceTimersByTimeAsync(3000)
     game.act(() => true)
     const checkpoint = unpackCheckpoint(saved!), records = checkpoint.journal.pending
     const markers = records.filter(record => record.message.startsWith('待補寫紀錄摘要：') || record.message.startsWith('紀錄缺口：'))
@@ -459,7 +644,7 @@ describe('safe browser persistence', () => {
     envelope.playJournal = { version: 1, worldId: 'current-world', pending }
     saved = JSON.stringify(envelope)
     const game = useGameStore()
-    await Promise.resolve(); await Promise.resolve()
+    await vi.advanceTimersByTimeAsync(3000)
     game.act(() => true)
     const records = unpackCheckpoint(saved!).journal.pending
     expect(records).toHaveLength(256)
@@ -484,7 +669,7 @@ describe('safe browser persistence', () => {
     envelope.playJournal = { version: 1, worldId: `world-${worldCount - 1}`, pending }
     saved = JSON.stringify(envelope)
     const game = useGameStore()
-    await Promise.resolve(); await Promise.resolve()
+    await vi.advanceTimersByTimeAsync(3000)
     game.act(() => true)
     const records = unpackCheckpoint(saved!).journal.pending
     expect(records.length).toBeLessThanOrEqual(256)
@@ -511,7 +696,7 @@ describe('safe browser persistence', () => {
     envelope.playJournal = { version: 1, worldId: 'world-127', pending }
     saved = JSON.stringify(envelope)
     const game = useGameStore()
-    await Promise.resolve(); await Promise.resolve()
+    await vi.advanceTimersByTimeAsync(3000)
     game.act(() => true)
     const records = unpackCheckpoint(saved!).journal.pending
     expect(records).toHaveLength(256)
@@ -536,7 +721,7 @@ describe('safe browser persistence', () => {
     ] }
     saved = JSON.stringify(envelope)
     let game = useGameStore()
-    await Promise.resolve(); await Promise.resolve()
+    await vi.advanceTimersByTimeAsync(3000)
     game.act(() => true)
     let checkpoint = unpackCheckpoint(saved!)
     expect(checkpoint.journal.pending.slice(0, 2).every(record => record.message.includes('較舊 102 個世界'))).toBe(true)
@@ -544,7 +729,7 @@ describe('safe browser persistence', () => {
     checkpoint.journal.pending.push(...Array.from({ length: 10 }, (_, index) => pair(`later-${index}`)).flat())
     saved = playJournal.packCheckpoint(checkpoint.state, checkpoint.journal, 100000)
     setActivePinia(createPinia()); game = useGameStore()
-    await Promise.resolve(); await Promise.resolve()
+    await vi.advanceTimersByTimeAsync(3000)
     game.act(() => true)
     checkpoint = unpackCheckpoint(saved!)
     expect(checkpoint.journal.pending.slice(0, 2).every(record => record.message.includes('較舊 112 個世界'))).toBe(true)
@@ -565,7 +750,7 @@ describe('safe browser persistence', () => {
     envelope.playJournal = { version: 1, worldId: 'world-119', pending }
     saved = JSON.stringify(envelope)
     const game = useGameStore()
-    await Promise.resolve(); await Promise.resolve()
+    await vi.advanceTimersByTimeAsync(3000)
     game.act(() => true, { message: () => 'newest'.repeat(41_000), succeeded: () => true })
     const records = unpackCheckpoint(saved!).journal.pending
     expect(records.at(-1)?.message === 'newest'.repeat(41_000)).toBe(true)
@@ -585,7 +770,7 @@ describe('safe browser persistence', () => {
     }] }
     saved = JSON.stringify(envelope)
     const game = useGameStore()
-    await Promise.resolve(); await Promise.resolve()
+    await vi.advanceTimersByTimeAsync(3000)
     game.act(() => true)
     const records = unpackCheckpoint(saved!).journal.pending
     expect(records.slice(0, 2).map(record => record.worldId)).toEqual(['old-world', 'old-world'])

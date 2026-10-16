@@ -58,3 +58,13 @@ Source: [post-rc-hardening-review](../post-rc/post-rc-hardening-review.md). Prod
 | G-05 determinism | VERIFIED SAFE IN TESTED SCOPE | Craft → Crisis → Save → Reload → Succession → Continue replay equal（`postRcDeterminism.test.ts`）. |
 | S-03 performance | VERIFIED SAFE IN TESTED SCOPE（desktop Chrome, incl. 4× CPU emulation） | x20 high-history tick p95 3.7 ms（14.7 ms at 4× CPU）, no frame drops; physical low-end mobile NOT TESTED. |
 | SEC-01..03 | see report §A | ponytail local-only; Orca hook posts payload to localhost only in Orca sessions; `herring` trust is dangling. Owner actions listed. |
+
+## Final data-integrity hardening（2026-10-16）
+
+Source: [final-hardening-verdict](../final-hardening/final-hardening-verdict.md).
+
+| ID | Status |
+|---|---|
+| B1 legacy pending retention | **VERIFIED_FIXED**: oversized legacy pending is archived intact (original ids/content) before the first checkpoint write; the cap is unchanged. Residual: if the archive stays down past the bounded retries (~18 s), the approved P2-01/O-01 compaction applies. |
+| S-02 defender equipment | **OWNER DECISION REQUIRED**: the Owner rule already holds below the 16-row ledger ceiling. At the ceiling it needs proposal S2-A (validation history cap 32 / active cap 16; no downgrade) and a definition of permanent ineligibility. |
+| RC on new source | Re-verified on dist `977d9883…`: 738 tests, O-01 browser 29/29, Phase10-E smoke identical to RC. |

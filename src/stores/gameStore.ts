@@ -294,13 +294,47 @@ export const useGameStore = defineStore('game', () => {
     setTimeout(() => URL.revokeObjectURL(url), 1000)
     if (!archiveAvailable) journalError.value = '紀錄庫暫時無法讀取；匯出包含待補寫紀錄與目前進度，尚未包含全部舊紀錄。'
   }
+  let disposed = false
+  async function transferLegacyPending() {
+    while (!disposed && journal.pending.length) {
+      const batch = journal.pending.slice(0, 64)
+      for (let attempt = 0; attempt < 3; attempt++) {
+        if (attempt) await new Promise(resolve => setTimeout(resolve, attempt * 1000))
+        if (disposed) return
+        let timeout: ReturnType<typeof setTimeout> | undefined
+        try {
+          await Promise.race([
+            repository.appendBatch(batch),
+            new Promise<never>((_resolve, reject) => { timeout = setTimeout(() => reject(new Error('遊玩紀錄轉移逾時。')), 5000) }),
+          ])
+          if (disposed) return
+          const acknowledged = new Set(batch.map(record => record.id))
+          journal.pending = journal.pending.filter(record => !acknowledged.has(record.id))
+          pendingRecords.value = journal.pending.length
+          break
+        } catch {
+          if (attempt === 2) return
+        } finally { if (timeout !== undefined) clearTimeout(timeout) }
+      }
+    }
+  }
   saveError.value = '正在確認存檔使用狀態，請稍候。'
   const releaseWriter = holdSaveWriter(() => {
     loadCheckpoint(true)
+    const pendingChars = journal.pending.reduce((sum, record) => sum + JSON.stringify(record).length + 1, 0)
+    if (journal.pending.length > MAX_PENDING_RECORDS || pendingChars + 1 > MAX_PENDING_CHARS) {
+      void transferLegacyPending().then(() => {
+        if (disposed) return
+        saveError.value = ''; writerReady.value = true; writerPending.value = false
+        if (!saveBlocked.value) save()
+      })
+      return
+    }
     saveError.value = ''; writerReady.value = true; writerPending.value = false
     if (!saveBlocked.value) save()
   }, error => { writerReady.value = false; writerPending.value = false; speed.value = 0; saveError.value = error; message.value = error })
   onScopeDispose(() => {
+    disposed = true
     writerReady.value = false; writerPending.value = false; speed.value = 0
     if (retryTimer) clearTimeout(retryTimer)
     retryTimer = null; releaseWriter()

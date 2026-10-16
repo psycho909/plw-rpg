@@ -258,7 +258,11 @@ try {
     check(C, 'A2 no reset required (no opening/rebuild, same seed)', !sc.afterLoad.openingDialog && first && J.unpackCheckpoint(first).state.worldSeed === fx.worldSeed, { openingDialog: sc.afterLoad.openingDialog }, lane)
     check(C, 'A3 pending compacted on first save', first && sc.afterLoad.firstSave.checkpointChars < fx.raw.length / 10 && !sc.afterLoad.firstSave.pendingIds.includes('legacy-large'), sc.afterLoad.firstSave && { chars: sc.afterLoad.firstSave.checkpointChars, ids: sc.afterLoad.firstSave.pendingIds }, lane)
     check(C, 'A4 compacted pending within 256 records / 256,000 chars', sc.afterLoad.firstSave?.withinCap, sc.afterLoad.firstSave && { count: sc.afterLoad.firstSave.pendingCount, chars: sc.afterLoad.firstSave.pendingChars }, lane)
-    check(C, 'A5 summary + gap markers saved for legacy-world', ['summary', 'gap'].every(p => sc.afterLoad.firstSave?.markers.some(m => m.prefix === p && m.worldId === 'legacy-world')), sc.afterLoad.firstSave?.markers, lane)
+    // Final hardening B1: a healthy archive receives the legacy record intact before the first write,
+    // so no gap markers are needed here (the archive-failure fallback is covered by C1/C2).
+    const archivedLegacy = (await readArchive(cdp)).find(r => r.id === 'legacy-large')
+    sc.afterLoad.legacyArchivedChars = archivedLegacy?.message.length ?? null
+    check(C, 'A5 legacy record archived intact before the first checkpoint write', archivedLegacy && archivedLegacy.message.length === J.unpackCheckpoint(fx.raw).journal.pending[0].message.length && !sc.afterLoad.firstSave?.pendingIds.includes('legacy-large'), { legacyArchivedChars: sc.afterLoad.legacyArchivedChars }, lane)
     check(C, 'A-state compaction did not alter game state/RNG (first save == fixture)', first && gameJson(first) === gameJson(fx.raw), { equal: first && gameJson(first) === gameJson(fx.raw) }, lane)
     sc.screenshotLoad = await shot(cdp, 'a-legacy-loaded')
     // A6 normal action through the keyboard (move), A7 time flows, A8 manual save.
@@ -298,16 +302,18 @@ try {
     await browser.closePage(cdp)
   }
 
-  // S2 A/C — many small legacy records from two worlds under an injected 1,000,000-char quota (CONTROLLED FAILURE INJECTION)
+  // S2 A/C — many small legacy records from two worlds under an injected 1,000,000-char quota AND an archive outage
+  // at load (CONTROLLED FAILURE INJECTION): the transfer fails, so the approved compaction fallback must keep the world going.
   {
     const lane = 'CONTROLLED FAILURE INJECTION'
     const fx = legacyFixture(100017, s => Array.from({ length: 3000 }, (_, i) => ({ id: `small-${i}`, worldId: i < 1000 ? 'older-world' : 'legacy-world', at: 1_700_000_000_000 + i, kind: 'action', from: i, to: i + 1, characterId: s.activeCharacterId, message: `舊紀錄 ${i} `.padEnd(220, '·'), events: [] })))
-    const sc = results.scenarios.C_manySmall = { lane, injectedQuotaChars: 1_000_000, fixture: { kind: 'controlled legacy checkpoint: 3,000 small records (1,000 older-world + 2,000 legacy-world)', checkpointChars: fx.raw.length, sha256: sha(fx.raw) } }
+    const sc = results.scenarios.C_manySmall = { lane, injectedQuotaChars: 1_000_000, archiveOutageAtLoad: true, fixture: { kind: 'controlled legacy checkpoint: 3,000 small records (1,000 older-world + 2,000 legacy-world)', checkpointChars: fx.raw.length, sha256: sha(fx.raw) } }
     const o = await origin(), cdp = await browser.page()
-    await seed(cdp, o, fx.raw); await setCtl(cdp, { quota: 1_000_000 })
+    await seed(cdp, o, fx.raw); await setCtl(cdp, { quota: 1_000_000, idbFail: true })
     await navigate(cdp, o); await writerReady(cdp)
     const first = await cdp.eval('window.__o01.firstSave')
     sc.afterLoad = { store: await cdp.eval(STORE), firstSave: first && journalStats(first, J) }
+    await setCtl(cdp, { quota: 1_000_000 }) // archive returns; the compacted markers flush normally
     check(C, 'C1 many small records compacted to cap on load', first && sc.afterLoad.firstSave.withinCap && sc.afterLoad.firstSave.pendingCount < 3000, first && { count: sc.afterLoad.firstSave.pendingCount, chars: sc.afterLoad.firstSave.pendingChars }, lane)
     check(C, 'C2 markers attributed per source world', ['older-world', 'legacy-world'].every(w => sc.afterLoad.firstSave?.markers.some(m => m.worldId === w)), sc.afterLoad.firstSave?.markers, lane)
     await key(cdp, 'ArrowRight', 'ArrowRight', 39); await delay(1500)
@@ -327,6 +333,25 @@ try {
       resetRecord: kept.some(r => r.kind === 'reset' && r.worldId === reset.journal.worldId), legacyMarkers: kept.filter(r => r.worldId === 'legacy-world' && (r.message.startsWith(SUMMARY) || r.message.startsWith(GAP))).length }
     check(C, 'C4 reset persists under storage pressure and keeps legacy markers', stReset.saveError === '' && reset.journal.worldId !== 'legacy-world' && sc.reset.journal.withinCap && sc.reset.resetRecord && sc.reset.legacyMarkers >= 2, sc.reset, lane)
     sc.screenshot = await shot(cdp, 'c-reset-under-quota')
+    sc.pageErrors = pageErrors(cdp)
+    await browser.closePage(cdp)
+  }
+
+  // S2b C8 — the same 3,000-record legacy checkpoint with a HEALTHY archive and the injected 1,000,000-char quota:
+  // every legacy record must reach the archive intact before the first (bounded) checkpoint write.
+  {
+    const lane = 'CONTROLLED FAILURE INJECTION'
+    const fx = legacyFixture(100017, s => Array.from({ length: 3000 }, (_, i) => ({ id: `small-${i}`, worldId: i < 1000 ? 'older-world' : 'legacy-world', at: 1_700_000_000_000 + i, kind: 'action', from: i, to: i + 1, characterId: s.activeCharacterId, message: `舊紀錄 ${i} `.padEnd(220, '·'), events: [] })))
+    const sc = results.scenarios.C_manySmallHealthy = { lane, injectedQuotaChars: 1_000_000, archiveOutageAtLoad: false }
+    const o = await origin(), cdp = await browser.page()
+    await seed(cdp, o, fx.raw); await setCtl(cdp, { quota: 1_000_000 })
+    await navigate(cdp, o); await writerReady(cdp)
+    const first = await cdp.eval('window.__o01.firstSave')
+    const archived = await readArchive(cdp)
+    const originals = new Map(J.unpackCheckpoint(fx.raw).journal.pending.map(r => [r.id, JSON.stringify(r)]))
+    const intact = archived.filter(r => originals.get(r.id) === JSON.stringify(r)).length
+    sc.afterLoad = { store: await cdp.eval(STORE), firstSave: first && journalStats(first, J), archived: archived.length, intact }
+    check(C, 'C8 healthy archive: all 3,000 legacy records archived intact; first checkpoint within cap and marker-free', intact === 3000 && first && sc.afterLoad.firstSave.withinCap && sc.afterLoad.firstSave.markers.length === 0 && !sc.afterLoad.store.saveError, { archived: archived.length, intact, firstSave: sc.afterLoad.firstSave && { count: sc.afterLoad.firstSave.pendingCount, markers: sc.afterLoad.firstSave.markers.length } }, lane)
     sc.pageErrors = pageErrors(cdp)
     await browser.closePage(cdp)
   }
