@@ -1,0 +1,155 @@
+diff --git a/src/components/PixelWindow.vue b/src/components/PixelWindow.vue
+index d6a0161..b4623d6 100644
+--- a/src/components/PixelWindow.vue
++++ b/src/components/PixelWindow.vue
+@@ -1,5 +1,6 @@
+ <script setup lang="ts">
+ import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
++import { MODAL_FOCUSABLE_SELECTOR, nextModalFocusable, orderModalFocusables } from '../presentation/modalFocus'
+ 
+ const props = withDefaults(defineProps<{ title: string; dismissible?: boolean }>(), { dismissible: true })
+ const emit = defineEmits<{ close: [] }>()
+@@ -7,22 +8,13 @@ const dialog = ref<HTMLDialogElement>()
+ let trigger: HTMLElement | null = null
+ function containFocus(event: KeyboardEvent) {
+   if (event.key !== 'Tab' || event.ctrlKey || event.metaKey || event.altKey) return
+-  const controls = Array.from(dialog.value?.querySelectorAll<HTMLElement>(
+-    'button:not(:disabled), details > summary, a[href], input:not(:disabled):not([type="hidden"]), select:not(:disabled), textarea:not(:disabled), [tabindex], [contenteditable]:not([contenteditable="false"])',
+-  ) ?? []).filter(el => {
++  const controls = orderModalFocusables(Array.from(dialog.value?.querySelectorAll<HTMLElement>(MODAL_FOCUSABLE_SELECTOR) ?? []), el => {
+     const style = getComputedStyle(el)
+     return el.tabIndex >= 0 && el.getClientRects().length > 0
+       && style.visibility !== 'hidden' && style.visibility !== 'collapse'
+-  }).map((element, domOrder) => ({ element, domOrder }))
+-    .sort((a, b) => {
+-      if (a.element.tabIndex === 0) return b.element.tabIndex === 0 ? a.domOrder - b.domOrder : 1
+-      if (b.element.tabIndex === 0) return -1
+-      return a.element.tabIndex - b.element.tabIndex || a.domOrder - b.domOrder
+-    }).map(({ element }) => element)
++  })
+   event.preventDefault()
+-  const index = controls.indexOf(document.activeElement as HTMLElement)
+-  const next = event.shiftKey ? (index <= 0 ? controls.length - 1 : index - 1) : (index + 1) % controls.length
+-  ;(controls[next] ?? dialog.value)?.focus()
++  ;(nextModalFocusable(controls, document.activeElement as HTMLElement, event.shiftKey) ?? dialog.value)?.focus()
+ }
+ async function focusContent() {
+   await nextTick()
+diff --git a/src/style.scss b/src/style.scss
+index 171759d..095f676 100644
+--- a/src/style.scss
++++ b/src/style.scss
+@@ -57,7 +57,7 @@ h4 { font-size: 14px; }
+ small, .muted { color: var(--text-muted); font-size: 12px; }
+ kbd { display: inline-block; font: 11px var(--font-mono); border: 1px solid currentColor; padding: 2px 4px; line-height: 1.1; }
+ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
+-.game-shell { max-width: 1680px; margin: auto; padding: 0 20px; min-height: 100svh; }
++.game-shell { max-width: 1680px; width: 100%; height: 100dvh; margin: auto; padding: 0 20px; display: flex; flex-direction: column; overflow: hidden; }
+ .time-hud { min-height: 64px; display: flex; align-items: center; gap: 16px; border-bottom: 2px solid var(--border); }
+ .game-name { font-size: 21px; font-weight: 700; letter-spacing: 3px; margin-right: auto; white-space: nowrap; }
+ .game-name small { display: block; font-size: 10px; letter-spacing: 2px; }
+@@ -69,7 +69,7 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
+ .world-caption { min-height: 34px; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12px; }
+ .world-caption small { margin-left: 10px; font-family: var(--font-mono); }
+ .world-condition { color: var(--text-muted); font-size: 11px; }
+-.world-frame { height: calc(100dvh - 220px); min-height: 380px; max-height: 1100px; border: var(--border-width) solid var(--border-muted); position: relative; display: flex; background: var(--surface); }
++.world-frame { height: auto; min-height: 380px; max-height: 1100px; flex: 1 1 0; border: var(--border-width) solid var(--border-muted); position: relative; display: flex; background: var(--surface); }
+ .world-frame.boss-present { border-color: var(--border); border-style: double; }
+ .map-scroll { display: flex; position: relative; min-width: 0; min-height: 0; flex: 1; overflow: auto; overscroll-behavior: contain; }
+ .world-map { display: grid; grid-template-columns: repeat(var(--columns), var(--tile-size)); grid-auto-rows: var(--tile-size); width: max-content; height: max-content; margin: auto; flex-shrink: 0; position: relative; background: var(--bg); isolation: isolate; }
+@@ -274,7 +274,8 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
+ .status-notice { display: flex; align-items: center; justify-content: space-between; gap: 16px; border: 1px solid var(--border-muted); padding: 8px 12px; background: var(--surface-alt); font-size: 12px; line-height: 1.7; }
+ .status-notice button { border: 0; padding: 0 6px; font-size: 18px; min-width: 28px; flex-shrink: 0; }
+ .window-footer .status-notice { margin-bottom: 10px; }
+-.world-notices { display: grid; gap: var(--space-2); padding-top: var(--space-2); }
++.world-stage { position: relative; min-height: 0; flex: 1 1 0; display: flex; flex-direction: column; }
++.world-notices { display: grid; gap: var(--space-2); padding-top: var(--space-2); flex-shrink: 0; }
+ .world-notices > .status-notice { border: 2px solid var(--border); }
+ .world-notices span { min-width: 0; overflow-wrap: anywhere; }
+ .save-warning { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4); border: 3px double var(--border); background: var(--bg); font-size: 12px; }
+@@ -300,7 +301,7 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
+   .world-caption { min-height: 28px; font-size: 11px; }
+   .world-caption small { margin-left: 4px; font-size: 10px; }
+   .world-condition { font-size: 9px; max-width: 45%; text-align: right; }
+-  .world-frame { height: calc(100dvh - 250px); min-height: 240px; }
++  .world-frame { min-height: 240px; }
+   .tile { font-size: 23px; }
+   .map-region { font-size: 9px; letter-spacing: 1px; }
+   .context-prompt { left: 8px; bottom: 10px; width: calc(100% - 152px); max-width: none; }
+diff --git a/src/presentation/modalFocus.ts b/src/presentation/modalFocus.ts
+new file mode 100644
+index 0000000..5bb56a0
+--- /dev/null
++++ b/src/presentation/modalFocus.ts
+@@ -0,0 +1,33 @@
++export const MODAL_FOCUSABLE_SELECTOR = [
++  'button:not(:disabled)',
++  'details > summary',
++  'a[href]',
++  'input:not(:disabled):not([type="hidden"])',
++  'select:not(:disabled)',
++  'textarea:not(:disabled)',
++  '[tabindex]',
++  '[contenteditable]:not([contenteditable="false"])',
++].join(', ')
++
++export function orderModalFocusables<T extends { tabIndex: number }>(
++  candidates: readonly T[],
++  isVisible: (candidate: T) => boolean,
++): T[] {
++  return candidates.map((element, domOrder) => ({ element, domOrder }))
++    .filter(({ element }) => element.tabIndex >= 0 && isVisible(element))
++    .sort((a, b) => {
++      if (a.element.tabIndex === 0) return b.element.tabIndex === 0 ? a.domOrder - b.domOrder : 1
++      if (b.element.tabIndex === 0) return -1
++      return a.element.tabIndex - b.element.tabIndex || a.domOrder - b.domOrder
++    })
++    .map(({ element }) => element)
++}
++
++export function nextModalFocusable<T>(controls: readonly T[], active: T | null, backwards: boolean): T | null {
++  if (!controls.length) return null
++  const index = active === null ? -1 : controls.indexOf(active)
++  const next = backwards
++    ? (index <= 0 ? controls.length - 1 : index - 1)
++    : (index + 1) % controls.length
++  return controls[next] ?? null
++}
+diff --git a/src/presentation/modalFocus.test.ts b/src/presentation/modalFocus.test.ts
+new file mode 100644
+index 0000000..eb10a7f
+--- /dev/null
++++ b/src/presentation/modalFocus.test.ts
+@@ -0,0 +1,32 @@
++import { describe, expect, it } from 'vitest'
++import { MODAL_FOCUSABLE_SELECTOR, nextModalFocusable, orderModalFocusables } from './modalFocus'
++
++describe('modal focus handling', () => {
++  it('includes disclosure summaries alongside native controls', () => {
++    expect(MODAL_FOCUSABLE_SELECTOR).toContain('details > summary')
++    expect(MODAL_FOCUSABLE_SELECTOR).toContain('button:not(:disabled)')
++  })
++
++  it('orders positive tabindex first, preserves DOM order for ties, and skips hidden or negative controls', () => {
++    const controls = [
++      { name: 'first-dom', tabIndex: 0, visible: true },
++      { name: 'second-positive', tabIndex: 2, visible: true },
++      { name: 'first-positive', tabIndex: 1, visible: true },
++      { name: 'same-positive', tabIndex: 1, visible: true },
++      { name: 'hidden', tabIndex: 0, visible: false },
++      { name: 'negative', tabIndex: -1, visible: true },
++    ]
++
++    expect(orderModalFocusables(controls, control => control.visible).map(control => control.name))
++      .toEqual(['first-positive', 'same-positive', 'second-positive', 'first-dom'])
++  })
++
++  it('wraps in both directions and recovers when focus is outside the controls', () => {
++    const controls = ['first', 'second', 'third']
++    expect(nextModalFocusable(controls, 'third', false)).toBe('first')
++    expect(nextModalFocusable(controls, 'first', true)).toBe('third')
++    expect(nextModalFocusable(controls, null, false)).toBe('first')
++    expect(nextModalFocusable(controls, null, true)).toBe('third')
++    expect(nextModalFocusable([], null, false)).toBeNull()
++  })
++})

@@ -1,0 +1,6 @@
+# Review request — Phase9-D (g6-luna-med-reviewer role; did not build D)
+
+Review only; no edits except your review file; no commit. Write `reports/v2/20261015-ui-ux-polish/phase-09/d-review/d-review.md`; reply with only that path.
+- Spec `docs/specs/V2X-PHASE9-UI-UX-POLISH.md` §4, §5, §6, §8. Ticket `tickets/20261015-v2x-09d-responsive-a11y.md`. Baseline P2 HUD clipping in `phase-09/ux-baseline.md`.
+- Diff `.scratch/20261015-phase9/d-src.diff` (style.scss, PixelWindow.vue, new src/presentation/modalFocus.ts + test). Reports `phase-09/interaction-accessibility.md`, `responsive-visual-review.md`, `d-runner/d-summary.md`; evidence `d-runner/probe-20261016T010259948Z/` (20 viewport screenshots + interactions). Full check PASS 40/646 (`d-runner/npm-run-check-d.log`).
+Check: HUD/recent-event/shortcuts/mobile nav fully visible at all 20 cells (inspect screenshots, esp. 320×667, 1280×768); map minimums preserved; no regression in window/dialog sizing; modalFocus logic correct (Tab/Shift+Tab wrap, hidden/disabled excluded, details>summary kept, no focus escape), tests meaningful; retro B/W tokens and zero-radius preserved; no game-loop/engine change; claims match evidence. Severity P0–P3, disposition.

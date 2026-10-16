@@ -1,0 +1,30 @@
+
+> plw-rpg@0.1.0 check
+> npm run test && npm run build
+
+
+> plw-rpg@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.11 D:/Codex/plw-rpg
+
+
+ Test Files  40 passed (40)
+      Tests  646 passed (646)
+   Start at  09:05:36
+   Duration  50.97s (transform 1.68s, setup 0ms, import 5.22s, tests 32.94s, environment 12ms)
+
+
+> plw-rpg@0.1.0 build
+> vue-tsc --noEmit && vite build
+
+[36mvite v7.3.6 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 102 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                 [39m[1m[2m  0.46 kB[22m[1m[22m[2m │ gzip:   0.32 kB[22m
+[2mdist/[22m[35massets/index-DHno1MND.css  [39m[1m[2m 32.79 kB[22m[1m[22m[2m │ gzip:   7.05 kB[22m
+[2mdist/[22m[36massets/index-D7izo4m_.js   [39m[1m[2m497.54 kB[22m[1m[22m[2m │ gzip: 155.32 kB[22m
+[32m✓ built in 2.48s[39m

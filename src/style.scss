@@ -57,7 +57,7 @@ h4 { font-size: 14px; }
 small, .muted { color: var(--text-muted); font-size: 12px; }
 kbd { display: inline-block; font: 11px var(--font-mono); border: 1px solid currentColor; padding: 2px 4px; line-height: 1.1; }
 strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
-.game-shell { max-width: 1680px; margin: auto; padding: 0 20px; min-height: 100svh; }
+.game-shell { max-width: 1680px; width: 100%; height: 100dvh; margin: auto; padding: 0 20px; display: flex; flex-direction: column; overflow: hidden; }
 .time-hud { min-height: 64px; display: flex; align-items: center; gap: 16px; border-bottom: 2px solid var(--border); }
 .game-name { font-size: 21px; font-weight: 700; letter-spacing: 3px; margin-right: auto; white-space: nowrap; }
 .game-name small { display: block; font-size: 10px; letter-spacing: 2px; }
@@ -69,7 +69,7 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .world-caption { min-height: 34px; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12px; }
 .world-caption small { margin-left: 10px; font-family: var(--font-mono); }
 .world-condition { color: var(--text-muted); font-size: 11px; }
-.world-frame { height: calc(100dvh - 220px); min-height: 380px; max-height: 1100px; border: var(--border-width) solid var(--border-muted); position: relative; display: flex; background: var(--surface); }
+.world-frame { height: auto; min-height: 380px; max-height: 1100px; flex: 1 1 0; border: var(--border-width) solid var(--border-muted); position: relative; display: flex; background: var(--surface); }
 .world-frame.boss-present { border-color: var(--border); border-style: double; }
 .map-scroll { display: flex; position: relative; min-width: 0; min-height: 0; flex: 1; overflow: auto; overscroll-behavior: contain; }
 .world-map { display: grid; grid-template-columns: repeat(var(--columns), var(--tile-size)); grid-auto-rows: var(--tile-size); width: max-content; height: max-content; margin: auto; flex-shrink: 0; position: relative; background: var(--bg); isolation: isolate; }
@@ -274,7 +274,8 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
 .status-notice { display: flex; align-items: center; justify-content: space-between; gap: 16px; border: 1px solid var(--border-muted); padding: 8px 12px; background: var(--surface-alt); font-size: 12px; line-height: 1.7; }
 .status-notice button { border: 0; padding: 0 6px; font-size: 18px; min-width: 28px; flex-shrink: 0; }
 .window-footer .status-notice { margin-bottom: 10px; }
-.world-notices { display: grid; gap: var(--space-2); padding-top: var(--space-2); }
+.world-stage { position: relative; min-height: 0; flex: 1 1 0; display: flex; flex-direction: column; }
+.world-notices { display: grid; gap: var(--space-2); padding-top: var(--space-2); flex-shrink: 0; }
 .world-notices > .status-notice { border: 2px solid var(--border); }
 .world-notices span { min-width: 0; overflow-wrap: anywhere; }
 .save-warning { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4); border: 3px double var(--border); background: var(--bg); font-size: 12px; }
@@ -300,7 +301,7 @@ strong, b, time, .meter-value, .gold { font-variant-numeric: tabular-nums; }
   .world-caption { min-height: 28px; font-size: 11px; }
   .world-caption small { margin-left: 4px; font-size: 10px; }
   .world-condition { font-size: 9px; max-width: 45%; text-align: right; }
-  .world-frame { height: calc(100dvh - 250px); min-height: 240px; }
+  .world-frame { min-height: 240px; }
   .tile { font-size: 23px; }
   .map-region { font-size: 9px; letter-spacing: 1px; }
   .context-prompt { left: 8px; bottom: 10px; width: calc(100% - 152px); max-width: none; }

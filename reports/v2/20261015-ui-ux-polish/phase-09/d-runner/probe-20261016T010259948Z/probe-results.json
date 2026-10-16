@@ -1,0 +1,5417 @@
+{
+  "status": "complete",
+  "startedAt": "2026-10-16T01:03:11.377Z",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.53",
+    "revision": "@792bf6722e73a45aa9e47c163b9901bdc17f3230",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.13"
+  },
+  "sourceOfLayout": "production dist; UI state entered through visible controls; no application-state injection",
+  "viewportMatrix": [
+    {
+      "width": 320,
+      "height": 667,
+      "measure": {
+        "innerWidth": 320,
+        "innerHeight": 667,
+        "clientWidth": 320,
+        "scrollWidth": 320,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 83,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 86,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 159,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 162,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 234,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 237,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 310,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 220,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 262,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單",
+            "disabled": false,
+            "box": {
+              "x": 268,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 310,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 10,
+              "y": 116,
+              "w": 300,
+              "h": 421,
+              "right": 310,
+              "bottom": 537
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 550,
+              "w": 145,
+              "h": 30,
+              "right": 155,
+              "bottom": 580
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "地圖",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 623,
+              "w": 72,
+              "h": 40,
+              "right": 82,
+              "bottom": 663
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "角色",
+            "disabled": false,
+            "box": {
+              "x": 86,
+              "y": 623,
+              "w": 72,
+              "h": 40,
+              "right": 158,
+              "bottom": 663
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "物品",
+            "disabled": false,
+            "box": {
+              "x": 162,
+              "y": 623,
+              "w": 72,
+              "h": 40,
+              "right": 234,
+              "bottom": 663
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "日誌",
+            "disabled": false,
+            "box": {
+              "x": 238,
+              "y": 623,
+              "w": 72,
+              "h": 40,
+              "right": 310,
+              "bottom": 663
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 214,
+              "y": 437,
+              "w": 42,
+              "h": 42,
+              "right": 256,
+              "bottom": 479
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 170,
+              "y": 481,
+              "w": 42,
+              "h": 42,
+              "right": 212,
+              "bottom": 523
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 214,
+              "y": 481,
+              "w": 42,
+              "h": 42,
+              "right": 256,
+              "bottom": 523
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 258,
+              "y": 481,
+              "w": 42,
+              "h": 42,
+              "right": 300,
+              "bottom": 523
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 10,
+            "y": 116,
+            "w": 300,
+            "h": 421,
+            "right": 310,
+            "bottom": 537
+          },
+          "hud": {
+            "x": 10,
+            "y": 537,
+            "w": 300,
+            "h": 82,
+            "right": 310,
+            "bottom": 619
+          },
+          "desktopBottom": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "mobileNav": {
+            "x": 10,
+            "y": 619,
+            "w": 300,
+            "h": 48,
+            "right": 310,
+            "bottom": 667
+          }
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-320x667.png",
+        "bytes": 27365,
+        "sha256": "827e469c268417567cdd354ecc2b4df08fc5aa8b02faa645f5b5d3201ae76a7c"
+      }
+    },
+    {
+      "width": 320,
+      "height": 768,
+      "measure": {
+        "innerWidth": 320,
+        "innerHeight": 768,
+        "clientWidth": 320,
+        "scrollWidth": 320,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 83,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 86,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 159,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 162,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 234,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 237,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 310,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 220,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 262,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單",
+            "disabled": false,
+            "box": {
+              "x": 268,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 310,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 10,
+              "y": 116,
+              "w": 300,
+              "h": 522,
+              "right": 310,
+              "bottom": 638
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 651,
+              "w": 145,
+              "h": 30,
+              "right": 155,
+              "bottom": 681
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "地圖",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 724,
+              "w": 72,
+              "h": 40,
+              "right": 82,
+              "bottom": 764
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "角色",
+            "disabled": false,
+            "box": {
+              "x": 86,
+              "y": 724,
+              "w": 72,
+              "h": 40,
+              "right": 158,
+              "bottom": 764
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "物品",
+            "disabled": false,
+            "box": {
+              "x": 162,
+              "y": 724,
+              "w": 72,
+              "h": 40,
+              "right": 234,
+              "bottom": 764
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "日誌",
+            "disabled": false,
+            "box": {
+              "x": 238,
+              "y": 724,
+              "w": 72,
+              "h": 40,
+              "right": 310,
+              "bottom": 764
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 214,
+              "y": 538,
+              "w": 42,
+              "h": 42,
+              "right": 256,
+              "bottom": 580
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 170,
+              "y": 582,
+              "w": 42,
+              "h": 42,
+              "right": 212,
+              "bottom": 624
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 214,
+              "y": 582,
+              "w": 42,
+              "h": 42,
+              "right": 256,
+              "bottom": 624
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 258,
+              "y": 582,
+              "w": 42,
+              "h": 42,
+              "right": 300,
+              "bottom": 624
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 10,
+            "y": 116,
+            "w": 300,
+            "h": 522,
+            "right": 310,
+            "bottom": 638
+          },
+          "hud": {
+            "x": 10,
+            "y": 638,
+            "w": 300,
+            "h": 82,
+            "right": 310,
+            "bottom": 720
+          },
+          "desktopBottom": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "mobileNav": {
+            "x": 10,
+            "y": 720,
+            "w": 300,
+            "h": 48,
+            "right": 310,
+            "bottom": 768
+          }
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-320x768.png",
+        "bytes": 30099,
+        "sha256": "0ab2dfffc5314365893cf3e08f8875842849189f9949fe96fcca0d8202773b62"
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "measure": {
+        "innerWidth": 320,
+        "innerHeight": 900,
+        "clientWidth": 320,
+        "scrollWidth": 320,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 83,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 86,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 159,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 162,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 234,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 237,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 310,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 220,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 262,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單",
+            "disabled": false,
+            "box": {
+              "x": 268,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 310,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 10,
+              "y": 116,
+              "w": 300,
+              "h": 654,
+              "right": 310,
+              "bottom": 770
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 783,
+              "w": 145,
+              "h": 30,
+              "right": 155,
+              "bottom": 813
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "地圖",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 856,
+              "w": 72,
+              "h": 40,
+              "right": 82,
+              "bottom": 896
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "角色",
+            "disabled": false,
+            "box": {
+              "x": 86,
+              "y": 856,
+              "w": 72,
+              "h": 40,
+              "right": 158,
+              "bottom": 896
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "物品",
+            "disabled": false,
+            "box": {
+              "x": 162,
+              "y": 856,
+              "w": 72,
+              "h": 40,
+              "right": 234,
+              "bottom": 896
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "日誌",
+            "disabled": false,
+            "box": {
+              "x": 238,
+              "y": 856,
+              "w": 72,
+              "h": 40,
+              "right": 310,
+              "bottom": 896
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 214,
+              "y": 670,
+              "w": 42,
+              "h": 42,
+              "right": 256,
+              "bottom": 712
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 170,
+              "y": 714,
+              "w": 42,
+              "h": 42,
+              "right": 212,
+              "bottom": 756
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 214,
+              "y": 714,
+              "w": 42,
+              "h": 42,
+              "right": 256,
+              "bottom": 756
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 258,
+              "y": 714,
+              "w": 42,
+              "h": 42,
+              "right": 300,
+              "bottom": 756
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 10,
+            "y": 116,
+            "w": 300,
+            "h": 654,
+            "right": 310,
+            "bottom": 770
+          },
+          "hud": {
+            "x": 10,
+            "y": 770,
+            "w": 300,
+            "h": 82,
+            "right": 310,
+            "bottom": 852
+          },
+          "desktopBottom": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "mobileNav": {
+            "x": 10,
+            "y": 852,
+            "w": 300,
+            "h": 48,
+            "right": 310,
+            "bottom": 900
+          }
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-320x900.png",
+        "bytes": 31801,
+        "sha256": "985ca32cfdbaa7a2d05f331d11a3b555dc28eb7414c1cb90ac6c67443e14f579"
+      }
+    },
+    {
+      "width": 320,
+      "height": 1000,
+      "measure": {
+        "innerWidth": 320,
+        "innerHeight": 1000,
+        "clientWidth": 320,
+        "scrollWidth": 320,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 83,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 86,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 159,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 162,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 234,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 237,
+              "y": 48,
+              "w": 73,
+              "h": 30,
+              "right": 310,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 220,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 262,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單",
+            "disabled": false,
+            "box": {
+              "x": 268,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 310,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 10,
+              "y": 116,
+              "w": 300,
+              "h": 754,
+              "right": 310,
+              "bottom": 870
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 883,
+              "w": 145,
+              "h": 30,
+              "right": 155,
+              "bottom": 913
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "地圖",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 956,
+              "w": 72,
+              "h": 40,
+              "right": 82,
+              "bottom": 996
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "角色",
+            "disabled": false,
+            "box": {
+              "x": 86,
+              "y": 956,
+              "w": 72,
+              "h": 40,
+              "right": 158,
+              "bottom": 996
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "物品",
+            "disabled": false,
+            "box": {
+              "x": 162,
+              "y": 956,
+              "w": 72,
+              "h": 40,
+              "right": 234,
+              "bottom": 996
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "日誌",
+            "disabled": false,
+            "box": {
+              "x": 238,
+              "y": 956,
+              "w": 72,
+              "h": 40,
+              "right": 310,
+              "bottom": 996
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 214,
+              "y": 770,
+              "w": 42,
+              "h": 42,
+              "right": 256,
+              "bottom": 812
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 170,
+              "y": 814,
+              "w": 42,
+              "h": 42,
+              "right": 212,
+              "bottom": 856
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 214,
+              "y": 814,
+              "w": 42,
+              "h": 42,
+              "right": 256,
+              "bottom": 856
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 258,
+              "y": 814,
+              "w": 42,
+              "h": 42,
+              "right": 300,
+              "bottom": 856
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 10,
+            "y": 116,
+            "w": 300,
+            "h": 754,
+            "right": 310,
+            "bottom": 870
+          },
+          "hud": {
+            "x": 10,
+            "y": 870,
+            "w": 300,
+            "h": 82,
+            "right": 310,
+            "bottom": 952
+          },
+          "desktopBottom": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "mobileNav": {
+            "x": 10,
+            "y": 952,
+            "w": 300,
+            "h": 48,
+            "right": 310,
+            "bottom": 1000
+          }
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-320x1000.png",
+        "bytes": 31479,
+        "sha256": "7485e523c30d4a104f5ae01f77bb9f5eb00ad6560f9dc0edfbe5d445d6a4086d"
+      }
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "measure": {
+        "innerWidth": 375,
+        "innerHeight": 667,
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 97,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 100,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 186,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 189,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 276,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 279,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 365,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 275,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 317,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單",
+            "disabled": false,
+            "box": {
+              "x": 323,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 365,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 10,
+              "y": 116,
+              "w": 355,
+              "h": 421,
+              "right": 365,
+              "bottom": 537
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 550,
+              "w": 173,
+              "h": 30,
+              "right": 183,
+              "bottom": 580
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "地圖",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 623,
+              "w": 86,
+              "h": 40,
+              "right": 96,
+              "bottom": 663
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "角色",
+            "disabled": false,
+            "box": {
+              "x": 100,
+              "y": 623,
+              "w": 86,
+              "h": 40,
+              "right": 186,
+              "bottom": 663
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "物品",
+            "disabled": false,
+            "box": {
+              "x": 190,
+              "y": 623,
+              "w": 86,
+              "h": 40,
+              "right": 275,
+              "bottom": 663
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "日誌",
+            "disabled": false,
+            "box": {
+              "x": 279,
+              "y": 623,
+              "w": 86,
+              "h": 40,
+              "right": 365,
+              "bottom": 663
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 269,
+              "y": 437,
+              "w": 42,
+              "h": 42,
+              "right": 311,
+              "bottom": 479
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 225,
+              "y": 481,
+              "w": 42,
+              "h": 42,
+              "right": 267,
+              "bottom": 523
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 269,
+              "y": 481,
+              "w": 42,
+              "h": 42,
+              "right": 311,
+              "bottom": 523
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 313,
+              "y": 481,
+              "w": 42,
+              "h": 42,
+              "right": 355,
+              "bottom": 523
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 10,
+            "y": 116,
+            "w": 355,
+            "h": 421,
+            "right": 365,
+            "bottom": 537
+          },
+          "hud": {
+            "x": 10,
+            "y": 537,
+            "w": 355,
+            "h": 82,
+            "right": 365,
+            "bottom": 619
+          },
+          "desktopBottom": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "mobileNav": {
+            "x": 10,
+            "y": 619,
+            "w": 355,
+            "h": 48,
+            "right": 365,
+            "bottom": 667
+          }
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-375x667.png",
+        "bytes": 32120,
+        "sha256": "5f299a2fc9ed67df403aee46a6ae4de1caefef833ee95d89614e63ce318750f1"
+      }
+    },
+    {
+      "width": 375,
+      "height": 768,
+      "measure": {
+        "innerWidth": 375,
+        "innerHeight": 768,
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 97,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 100,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 186,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 189,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 276,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 279,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 365,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 275,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 317,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單",
+            "disabled": false,
+            "box": {
+              "x": 323,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 365,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 10,
+              "y": 116,
+              "w": 355,
+              "h": 522,
+              "right": 365,
+              "bottom": 638
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 651,
+              "w": 173,
+              "h": 30,
+              "right": 183,
+              "bottom": 681
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "地圖",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 724,
+              "w": 86,
+              "h": 40,
+              "right": 96,
+              "bottom": 764
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "角色",
+            "disabled": false,
+            "box": {
+              "x": 100,
+              "y": 724,
+              "w": 86,
+              "h": 40,
+              "right": 186,
+              "bottom": 764
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "物品",
+            "disabled": false,
+            "box": {
+              "x": 190,
+              "y": 724,
+              "w": 86,
+              "h": 40,
+              "right": 275,
+              "bottom": 764
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "日誌",
+            "disabled": false,
+            "box": {
+              "x": 279,
+              "y": 724,
+              "w": 86,
+              "h": 40,
+              "right": 365,
+              "bottom": 764
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 269,
+              "y": 538,
+              "w": 42,
+              "h": 42,
+              "right": 311,
+              "bottom": 580
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 225,
+              "y": 582,
+              "w": 42,
+              "h": 42,
+              "right": 267,
+              "bottom": 624
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 269,
+              "y": 582,
+              "w": 42,
+              "h": 42,
+              "right": 311,
+              "bottom": 624
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 313,
+              "y": 582,
+              "w": 42,
+              "h": 42,
+              "right": 355,
+              "bottom": 624
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 10,
+            "y": 116,
+            "w": 355,
+            "h": 522,
+            "right": 365,
+            "bottom": 638
+          },
+          "hud": {
+            "x": 10,
+            "y": 638,
+            "w": 355,
+            "h": 82,
+            "right": 365,
+            "bottom": 720
+          },
+          "desktopBottom": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "mobileNav": {
+            "x": 10,
+            "y": 720,
+            "w": 355,
+            "h": 48,
+            "right": 365,
+            "bottom": 768
+          }
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-375x768.png",
+        "bytes": 36610,
+        "sha256": "71d65d9175515786f38445d0716388e7092eeb48a369bd64cb72e8d9c666ef99"
+      }
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "measure": {
+        "innerWidth": 375,
+        "innerHeight": 900,
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 97,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 100,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 186,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 189,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 276,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 279,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 365,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 275,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 317,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單",
+            "disabled": false,
+            "box": {
+              "x": 323,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 365,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 10,
+              "y": 116,
+              "w": 355,
+              "h": 654,
+              "right": 365,
+              "bottom": 770
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 783,
+              "w": 173,
+              "h": 30,
+              "right": 183,
+              "bottom": 813
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "地圖",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 856,
+              "w": 86,
+              "h": 40,
+              "right": 96,
+              "bottom": 896
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "角色",
+            "disabled": false,
+            "box": {
+              "x": 100,
+              "y": 856,
+              "w": 86,
+              "h": 40,
+              "right": 186,
+              "bottom": 896
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "物品",
+            "disabled": false,
+            "box": {
+              "x": 190,
+              "y": 856,
+              "w": 86,
+              "h": 40,
+              "right": 275,
+              "bottom": 896
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "日誌",
+            "disabled": false,
+            "box": {
+              "x": 279,
+              "y": 856,
+              "w": 86,
+              "h": 40,
+              "right": 365,
+              "bottom": 896
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 269,
+              "y": 670,
+              "w": 42,
+              "h": 42,
+              "right": 311,
+              "bottom": 712
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 225,
+              "y": 714,
+              "w": 42,
+              "h": 42,
+              "right": 267,
+              "bottom": 756
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 269,
+              "y": 714,
+              "w": 42,
+              "h": 42,
+              "right": 311,
+              "bottom": 756
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 313,
+              "y": 714,
+              "w": 42,
+              "h": 42,
+              "right": 355,
+              "bottom": 756
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 10,
+            "y": 116,
+            "w": 355,
+            "h": 654,
+            "right": 365,
+            "bottom": 770
+          },
+          "hud": {
+            "x": 10,
+            "y": 770,
+            "w": 355,
+            "h": 82,
+            "right": 365,
+            "bottom": 852
+          },
+          "desktopBottom": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "mobileNav": {
+            "x": 10,
+            "y": 852,
+            "w": 355,
+            "h": 48,
+            "right": 365,
+            "bottom": 900
+          }
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-375x900.png",
+        "bytes": 38464,
+        "sha256": "e5e620d2a2d84101ce065e9d2be37eaefd8c3bc7cf0c175c3131863806f21b95"
+      }
+    },
+    {
+      "width": 375,
+      "height": 1000,
+      "measure": {
+        "innerWidth": 375,
+        "innerHeight": 1000,
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 97,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 100,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 186,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 189,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 276,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 279,
+              "y": 48,
+              "w": 87,
+              "h": 30,
+              "right": 365,
+              "bottom": 78
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 275,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 317,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單",
+            "disabled": false,
+            "box": {
+              "x": 323,
+              "y": 9,
+              "w": 42,
+              "h": 32,
+              "right": 365,
+              "bottom": 41
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 10,
+              "y": 116,
+              "w": 355,
+              "h": 754,
+              "right": 365,
+              "bottom": 870
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 883,
+              "w": 173,
+              "h": 30,
+              "right": 183,
+              "bottom": 913
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "地圖",
+            "disabled": false,
+            "box": {
+              "x": 10,
+              "y": 956,
+              "w": 86,
+              "h": 40,
+              "right": 96,
+              "bottom": 996
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "角色",
+            "disabled": false,
+            "box": {
+              "x": 100,
+              "y": 956,
+              "w": 86,
+              "h": 40,
+              "right": 186,
+              "bottom": 996
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "物品",
+            "disabled": false,
+            "box": {
+              "x": 190,
+              "y": 956,
+              "w": 86,
+              "h": 40,
+              "right": 275,
+              "bottom": 996
+            }
+          },
+          {
+            "selector": ".mobile-nav button",
+            "text": "日誌",
+            "disabled": false,
+            "box": {
+              "x": 279,
+              "y": 956,
+              "w": 86,
+              "h": 40,
+              "right": 365,
+              "bottom": 996
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 269,
+              "y": 770,
+              "w": 42,
+              "h": 42,
+              "right": 311,
+              "bottom": 812
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 225,
+              "y": 814,
+              "w": 42,
+              "h": 42,
+              "right": 267,
+              "bottom": 856
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 269,
+              "y": 814,
+              "w": 42,
+              "h": 42,
+              "right": 311,
+              "bottom": 856
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 313,
+              "y": 814,
+              "w": 42,
+              "h": 42,
+              "right": 355,
+              "bottom": 856
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 10,
+            "y": 116,
+            "w": 355,
+            "h": 754,
+            "right": 365,
+            "bottom": 870
+          },
+          "hud": {
+            "x": 10,
+            "y": 870,
+            "w": 355,
+            "h": 82,
+            "right": 365,
+            "bottom": 952
+          },
+          "desktopBottom": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "mobileNav": {
+            "x": 10,
+            "y": 952,
+            "w": 355,
+            "h": 48,
+            "right": 365,
+            "bottom": 1000
+          }
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-375x1000.png",
+        "bytes": 38654,
+        "sha256": "5e3e2dfcefb785e5c8b49fe908dd8673081af852b8885bf2b6ee288e8f468d51"
+      }
+    },
+    {
+      "width": 768,
+      "height": 667,
+      "measure": {
+        "innerWidth": 768,
+        "innerHeight": 667,
+        "clientWidth": 768,
+        "scrollWidth": 768,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 416,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 460,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 463,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 503,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 506,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 546,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 549,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 592,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 602,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 654,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 664,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 748,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 20,
+              "y": 98,
+              "w": 728,
+              "h": 445,
+              "right": 748,
+              "bottom": 543
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 661,
+              "y": 544,
+              "w": 87,
+              "h": 30,
+              "right": 748,
+              "bottom": 574
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 580,
+              "w": 111,
+              "h": 47,
+              "right": 131,
+              "bottom": 627
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 631,
+              "w": 353,
+              "h": 36,
+              "right": 373,
+              "bottom": 667
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 615,
+              "y": 631,
+              "w": 65,
+              "h": 36,
+              "right": 680,
+              "bottom": 667
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 680,
+              "y": 631,
+              "w": 68,
+              "h": 36,
+              "right": 748,
+              "bottom": 667
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 644,
+              "y": 447,
+              "w": 40,
+              "h": 36,
+              "right": 684,
+              "bottom": 483
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 602,
+              "y": 485,
+              "w": 40,
+              "h": 36,
+              "right": 642,
+              "bottom": 521
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 644,
+              "y": 485,
+              "w": 40,
+              "h": 36,
+              "right": 684,
+              "bottom": 521
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 686,
+              "y": 485,
+              "w": 40,
+              "h": 36,
+              "right": 726,
+              "bottom": 521
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 20,
+            "y": 98,
+            "w": 728,
+            "h": 445,
+            "right": 748,
+            "bottom": 543
+          },
+          "hud": {
+            "x": 20,
+            "y": 575,
+            "w": 728,
+            "h": 56,
+            "right": 748,
+            "bottom": 631
+          },
+          "desktopBottom": {
+            "x": 20,
+            "y": 631,
+            "w": 728,
+            "h": 36,
+            "right": 748,
+            "bottom": 667
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-768x667.png",
+        "bytes": 59171,
+        "sha256": "f7b11ed0de065a8e0fe897d01cce2e3731f80eb1af90bf6039f35272ec478d4c"
+      }
+    },
+    {
+      "width": 768,
+      "height": 768,
+      "measure": {
+        "innerWidth": 768,
+        "innerHeight": 768,
+        "clientWidth": 768,
+        "scrollWidth": 768,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 416,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 460,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 463,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 503,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 506,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 546,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 549,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 592,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 602,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 654,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 664,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 748,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 20,
+              "y": 98,
+              "w": 728,
+              "h": 546,
+              "right": 748,
+              "bottom": 644
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 661,
+              "y": 645,
+              "w": 87,
+              "h": 30,
+              "right": 748,
+              "bottom": 675
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 681,
+              "w": 111,
+              "h": 47,
+              "right": 131,
+              "bottom": 728
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 732,
+              "w": 353,
+              "h": 36,
+              "right": 373,
+              "bottom": 768
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 615,
+              "y": 732,
+              "w": 65,
+              "h": 36,
+              "right": 680,
+              "bottom": 768
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 680,
+              "y": 732,
+              "w": 68,
+              "h": 36,
+              "right": 748,
+              "bottom": 768
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 644,
+              "y": 548,
+              "w": 40,
+              "h": 36,
+              "right": 684,
+              "bottom": 584
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 602,
+              "y": 586,
+              "w": 40,
+              "h": 36,
+              "right": 642,
+              "bottom": 622
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 644,
+              "y": 586,
+              "w": 40,
+              "h": 36,
+              "right": 684,
+              "bottom": 622
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 686,
+              "y": 586,
+              "w": 40,
+              "h": 36,
+              "right": 726,
+              "bottom": 622
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 20,
+            "y": 98,
+            "w": 728,
+            "h": 546,
+            "right": 748,
+            "bottom": 644
+          },
+          "hud": {
+            "x": 20,
+            "y": 676,
+            "w": 728,
+            "h": 56,
+            "right": 748,
+            "bottom": 732
+          },
+          "desktopBottom": {
+            "x": 20,
+            "y": 732,
+            "w": 728,
+            "h": 36,
+            "right": 748,
+            "bottom": 768
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-768x768.png",
+        "bytes": 66144,
+        "sha256": "a620b82f17515cec4c97911d722c63a66971f605d081384fdac1ca28a4656f7a"
+      }
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "measure": {
+        "innerWidth": 768,
+        "innerHeight": 900,
+        "clientWidth": 768,
+        "scrollWidth": 768,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 416,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 460,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 463,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 503,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 506,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 546,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 549,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 592,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 602,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 654,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 664,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 748,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 20,
+              "y": 98,
+              "w": 728,
+              "h": 678,
+              "right": 748,
+              "bottom": 776
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 661,
+              "y": 777,
+              "w": 87,
+              "h": 30,
+              "right": 748,
+              "bottom": 807
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 813,
+              "w": 111,
+              "h": 47,
+              "right": 131,
+              "bottom": 860
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 864,
+              "w": 353,
+              "h": 36,
+              "right": 373,
+              "bottom": 900
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 615,
+              "y": 864,
+              "w": 65,
+              "h": 36,
+              "right": 680,
+              "bottom": 900
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 680,
+              "y": 864,
+              "w": 68,
+              "h": 36,
+              "right": 748,
+              "bottom": 900
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 644,
+              "y": 680,
+              "w": 40,
+              "h": 36,
+              "right": 684,
+              "bottom": 716
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 602,
+              "y": 718,
+              "w": 40,
+              "h": 36,
+              "right": 642,
+              "bottom": 754
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 644,
+              "y": 718,
+              "w": 40,
+              "h": 36,
+              "right": 684,
+              "bottom": 754
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 686,
+              "y": 718,
+              "w": 40,
+              "h": 36,
+              "right": 726,
+              "bottom": 754
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 20,
+            "y": 98,
+            "w": 728,
+            "h": 678,
+            "right": 748,
+            "bottom": 776
+          },
+          "hud": {
+            "x": 20,
+            "y": 808,
+            "w": 728,
+            "h": 56,
+            "right": 748,
+            "bottom": 864
+          },
+          "desktopBottom": {
+            "x": 20,
+            "y": 864,
+            "w": 728,
+            "h": 36,
+            "right": 748,
+            "bottom": 900
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-768x900.png",
+        "bytes": 68194,
+        "sha256": "ae18e118437519f573314934ee009f7f5a4de0fcbe772f54aa7bc25aab02f3a2"
+      }
+    },
+    {
+      "width": 768,
+      "height": 1000,
+      "measure": {
+        "innerWidth": 768,
+        "innerHeight": 1000,
+        "clientWidth": 768,
+        "scrollWidth": 768,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 416,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 460,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 463,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 503,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 506,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 546,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 549,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 592,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 602,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 654,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 664,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 748,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 20,
+              "y": 98,
+              "w": 728,
+              "h": 778,
+              "right": 748,
+              "bottom": 876
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 661,
+              "y": 877,
+              "w": 87,
+              "h": 30,
+              "right": 748,
+              "bottom": 907
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 913,
+              "w": 111,
+              "h": 47,
+              "right": 131,
+              "bottom": 960
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 964,
+              "w": 353,
+              "h": 36,
+              "right": 373,
+              "bottom": 1000
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 615,
+              "y": 964,
+              "w": 65,
+              "h": 36,
+              "right": 680,
+              "bottom": 1000
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 680,
+              "y": 964,
+              "w": 68,
+              "h": 36,
+              "right": 748,
+              "bottom": 1000
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 644,
+              "y": 780,
+              "w": 40,
+              "h": 36,
+              "right": 684,
+              "bottom": 816
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 602,
+              "y": 818,
+              "w": 40,
+              "h": 36,
+              "right": 642,
+              "bottom": 854
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 644,
+              "y": 818,
+              "w": 40,
+              "h": 36,
+              "right": 684,
+              "bottom": 854
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 686,
+              "y": 818,
+              "w": 40,
+              "h": 36,
+              "right": 726,
+              "bottom": 854
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 20,
+            "y": 98,
+            "w": 728,
+            "h": 778,
+            "right": 748,
+            "bottom": 876
+          },
+          "hud": {
+            "x": 20,
+            "y": 908,
+            "w": 728,
+            "h": 56,
+            "right": 748,
+            "bottom": 964
+          },
+          "desktopBottom": {
+            "x": 20,
+            "y": 964,
+            "w": 728,
+            "h": 36,
+            "right": 748,
+            "bottom": 1000
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-768x1000.png",
+        "bytes": 68932,
+        "sha256": "0265cec2ae58311faeadd0421e3f14c67e9cd828b884b4c2359927bac725f614"
+      }
+    },
+    {
+      "width": 1280,
+      "height": 667,
+      "measure": {
+        "innerWidth": 1280,
+        "innerHeight": 667,
+        "clientWidth": 1280,
+        "scrollWidth": 1280,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 916,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 960,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 963,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1003,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 1006,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1046,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 1049,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 1092,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 1108,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 1160,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 1176,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 1260,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 20,
+              "y": 98,
+              "w": 1240,
+              "h": 445,
+              "right": 1260,
+              "bottom": 543
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 1173,
+              "y": 544,
+              "w": 87,
+              "h": 30,
+              "right": 1260,
+              "bottom": 574
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 580,
+              "w": 111,
+              "h": 47,
+              "right": 131,
+              "bottom": 627
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 631,
+              "w": 353,
+              "h": 36,
+              "right": 373,
+              "bottom": 667
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 1127,
+              "y": 631,
+              "w": 65,
+              "h": 36,
+              "right": 1192,
+              "bottom": 667
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 1192,
+              "y": 631,
+              "w": 68,
+              "h": 36,
+              "right": 1260,
+              "bottom": 667
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 1156,
+              "y": 447,
+              "w": 40,
+              "h": 36,
+              "right": 1196,
+              "bottom": 483
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 1114,
+              "y": 485,
+              "w": 40,
+              "h": 36,
+              "right": 1154,
+              "bottom": 521
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 1156,
+              "y": 485,
+              "w": 40,
+              "h": 36,
+              "right": 1196,
+              "bottom": 521
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 1198,
+              "y": 485,
+              "w": 40,
+              "h": 36,
+              "right": 1238,
+              "bottom": 521
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 20,
+            "y": 98,
+            "w": 1240,
+            "h": 445,
+            "right": 1260,
+            "bottom": 543
+          },
+          "hud": {
+            "x": 20,
+            "y": 575,
+            "w": 1240,
+            "h": 56,
+            "right": 1260,
+            "bottom": 631
+          },
+          "desktopBottom": {
+            "x": 20,
+            "y": 631,
+            "w": 1240,
+            "h": 36,
+            "right": 1260,
+            "bottom": 667
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-1280x667.png",
+        "bytes": 87017,
+        "sha256": "9391c5415ce1084706eb3bbb8cce117a5ca4bae4094ffd6a12f38668fe8432f7"
+      }
+    },
+    {
+      "width": 1280,
+      "height": 768,
+      "measure": {
+        "innerWidth": 1280,
+        "innerHeight": 768,
+        "clientWidth": 1280,
+        "scrollWidth": 1280,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 916,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 960,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 963,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1003,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 1006,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1046,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 1049,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 1092,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 1108,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 1160,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 1176,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 1260,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 20,
+              "y": 98,
+              "w": 1240,
+              "h": 546,
+              "right": 1260,
+              "bottom": 644
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 1173,
+              "y": 645,
+              "w": 87,
+              "h": 30,
+              "right": 1260,
+              "bottom": 675
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 681,
+              "w": 111,
+              "h": 47,
+              "right": 131,
+              "bottom": 728
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 732,
+              "w": 353,
+              "h": 36,
+              "right": 373,
+              "bottom": 768
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 1127,
+              "y": 732,
+              "w": 65,
+              "h": 36,
+              "right": 1192,
+              "bottom": 768
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 1192,
+              "y": 732,
+              "w": 68,
+              "h": 36,
+              "right": 1260,
+              "bottom": 768
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 1156,
+              "y": 548,
+              "w": 40,
+              "h": 36,
+              "right": 1196,
+              "bottom": 584
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 1114,
+              "y": 586,
+              "w": 40,
+              "h": 36,
+              "right": 1154,
+              "bottom": 622
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 1156,
+              "y": 586,
+              "w": 40,
+              "h": 36,
+              "right": 1196,
+              "bottom": 622
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 1198,
+              "y": 586,
+              "w": 40,
+              "h": 36,
+              "right": 1238,
+              "bottom": 622
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 20,
+            "y": 98,
+            "w": 1240,
+            "h": 546,
+            "right": 1260,
+            "bottom": 644
+          },
+          "hud": {
+            "x": 20,
+            "y": 676,
+            "w": 1240,
+            "h": 56,
+            "right": 1260,
+            "bottom": 732
+          },
+          "desktopBottom": {
+            "x": 20,
+            "y": 732,
+            "w": 1240,
+            "h": 36,
+            "right": 1260,
+            "bottom": 768
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-1280x768.png",
+        "bytes": 106734,
+        "sha256": "6a9290e96ea8972ed22a5d4bdc21ba3a36b3c0abd3bc02b4213d3550d086ada5"
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "measure": {
+        "innerWidth": 1280,
+        "innerHeight": 900,
+        "clientWidth": 1280,
+        "scrollWidth": 1280,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 916,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 960,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 963,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1003,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 1006,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1046,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 1049,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 1092,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 1108,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 1160,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 1176,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 1260,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 20,
+              "y": 98,
+              "w": 1240,
+              "h": 678,
+              "right": 1260,
+              "bottom": 776
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 1173,
+              "y": 777,
+              "w": 87,
+              "h": 30,
+              "right": 1260,
+              "bottom": 807
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 813,
+              "w": 111,
+              "h": 47,
+              "right": 131,
+              "bottom": 860
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 864,
+              "w": 353,
+              "h": 36,
+              "right": 373,
+              "bottom": 900
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 1127,
+              "y": 864,
+              "w": 65,
+              "h": 36,
+              "right": 1192,
+              "bottom": 900
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 1192,
+              "y": 864,
+              "w": 68,
+              "h": 36,
+              "right": 1260,
+              "bottom": 900
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 1156,
+              "y": 680,
+              "w": 40,
+              "h": 36,
+              "right": 1196,
+              "bottom": 716
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 1114,
+              "y": 718,
+              "w": 40,
+              "h": 36,
+              "right": 1154,
+              "bottom": 754
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 1156,
+              "y": 718,
+              "w": 40,
+              "h": 36,
+              "right": 1196,
+              "bottom": 754
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 1198,
+              "y": 718,
+              "w": 40,
+              "h": 36,
+              "right": 1238,
+              "bottom": 754
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 20,
+            "y": 98,
+            "w": 1240,
+            "h": 678,
+            "right": 1260,
+            "bottom": 776
+          },
+          "hud": {
+            "x": 20,
+            "y": 808,
+            "w": 1240,
+            "h": 56,
+            "right": 1260,
+            "bottom": 864
+          },
+          "desktopBottom": {
+            "x": 20,
+            "y": 864,
+            "w": 1240,
+            "h": 36,
+            "right": 1260,
+            "bottom": 900
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-1280x900.png",
+        "bytes": 132090,
+        "sha256": "500fb49844a9bbf01e3a749e090f2ea889e71e6de990f2b63553d924b1f044bd"
+      }
+    },
+    {
+      "width": 1280,
+      "height": 1000,
+      "measure": {
+        "innerWidth": 1280,
+        "innerHeight": 1000,
+        "clientWidth": 1280,
+        "scrollWidth": 1280,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 916,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 960,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 963,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1003,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 1006,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1046,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 1049,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 1092,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 1108,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 1160,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 1176,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 1260,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 20,
+              "y": 98,
+              "w": 1240,
+              "h": 778,
+              "right": 1260,
+              "bottom": 876
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 1173,
+              "y": 877,
+              "w": 87,
+              "h": 30,
+              "right": 1260,
+              "bottom": 907
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 913,
+              "w": 111,
+              "h": 47,
+              "right": 131,
+              "bottom": 960
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 20,
+              "y": 964,
+              "w": 353,
+              "h": 36,
+              "right": 373,
+              "bottom": 1000
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 1127,
+              "y": 964,
+              "w": 65,
+              "h": 36,
+              "right": 1192,
+              "bottom": 1000
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 1192,
+              "y": 964,
+              "w": 68,
+              "h": 36,
+              "right": 1260,
+              "bottom": 1000
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 1156,
+              "y": 780,
+              "w": 40,
+              "h": 36,
+              "right": 1196,
+              "bottom": 816
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 1114,
+              "y": 818,
+              "w": 40,
+              "h": 36,
+              "right": 1154,
+              "bottom": 854
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 1156,
+              "y": 818,
+              "w": 40,
+              "h": 36,
+              "right": 1196,
+              "bottom": 854
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 1198,
+              "y": 818,
+              "w": 40,
+              "h": 36,
+              "right": 1238,
+              "bottom": 854
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 20,
+            "y": 98,
+            "w": 1240,
+            "h": 778,
+            "right": 1260,
+            "bottom": 876
+          },
+          "hud": {
+            "x": 20,
+            "y": 908,
+            "w": 1240,
+            "h": 56,
+            "right": 1260,
+            "bottom": 964
+          },
+          "desktopBottom": {
+            "x": 20,
+            "y": 964,
+            "w": 1240,
+            "h": 36,
+            "right": 1260,
+            "bottom": 1000
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-1280x1000.png",
+        "bytes": 137629,
+        "sha256": "6b6605173de2cd0ffdd219edc6e7fd0ef358341a27d53934761ac638d05ffbb8"
+      }
+    },
+    {
+      "width": 1920,
+      "height": 667,
+      "measure": {
+        "innerWidth": 1920,
+        "innerHeight": 667,
+        "clientWidth": 1920,
+        "scrollWidth": 1920,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 1436,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 1480,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 1483,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1523,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 1526,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1566,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 1569,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 1612,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 1628,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 1680,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 1696,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 1780,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 140,
+              "y": 98,
+              "w": 1640,
+              "h": 445,
+              "right": 1780,
+              "bottom": 543
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 1693,
+              "y": 544,
+              "w": 87,
+              "h": 30,
+              "right": 1780,
+              "bottom": 574
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 140,
+              "y": 580,
+              "w": 111,
+              "h": 47,
+              "right": 251,
+              "bottom": 627
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 140,
+              "y": 631,
+              "w": 353,
+              "h": 36,
+              "right": 493,
+              "bottom": 667
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 1647,
+              "y": 631,
+              "w": 65,
+              "h": 36,
+              "right": 1712,
+              "bottom": 667
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 1712,
+              "y": 631,
+              "w": 68,
+              "h": 36,
+              "right": 1780,
+              "bottom": 667
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 1676,
+              "y": 447,
+              "w": 40,
+              "h": 36,
+              "right": 1716,
+              "bottom": 483
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 1634,
+              "y": 485,
+              "w": 40,
+              "h": 36,
+              "right": 1674,
+              "bottom": 521
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 1676,
+              "y": 485,
+              "w": 40,
+              "h": 36,
+              "right": 1716,
+              "bottom": 521
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 1718,
+              "y": 485,
+              "w": 40,
+              "h": 36,
+              "right": 1758,
+              "bottom": 521
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 140,
+            "y": 98,
+            "w": 1640,
+            "h": 445,
+            "right": 1780,
+            "bottom": 543
+          },
+          "hud": {
+            "x": 140,
+            "y": 575,
+            "w": 1640,
+            "h": 56,
+            "right": 1780,
+            "bottom": 631
+          },
+          "desktopBottom": {
+            "x": 140,
+            "y": 631,
+            "w": 1640,
+            "h": 36,
+            "right": 1780,
+            "bottom": 667
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-1920x667.png",
+        "bytes": 65449,
+        "sha256": "2fa30d163af93bac0c14c78c794deda01bf73673d6f1b1911ecace986dc73718"
+      }
+    },
+    {
+      "width": 1920,
+      "height": 768,
+      "measure": {
+        "innerWidth": 1920,
+        "innerHeight": 768,
+        "clientWidth": 1920,
+        "scrollWidth": 1920,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 1436,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 1480,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 1483,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1523,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 1526,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1566,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 1569,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 1612,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 1628,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 1680,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 1696,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 1780,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 140,
+              "y": 98,
+              "w": 1640,
+              "h": 546,
+              "right": 1780,
+              "bottom": 644
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 1693,
+              "y": 645,
+              "w": 87,
+              "h": 30,
+              "right": 1780,
+              "bottom": 675
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 140,
+              "y": 681,
+              "w": 111,
+              "h": 47,
+              "right": 251,
+              "bottom": 728
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 140,
+              "y": 732,
+              "w": 353,
+              "h": 36,
+              "right": 493,
+              "bottom": 768
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 1647,
+              "y": 732,
+              "w": 65,
+              "h": 36,
+              "right": 1712,
+              "bottom": 768
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 1712,
+              "y": 732,
+              "w": 68,
+              "h": 36,
+              "right": 1780,
+              "bottom": 768
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 1676,
+              "y": 548,
+              "w": 40,
+              "h": 36,
+              "right": 1716,
+              "bottom": 584
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 1634,
+              "y": 586,
+              "w": 40,
+              "h": 36,
+              "right": 1674,
+              "bottom": 622
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 1676,
+              "y": 586,
+              "w": 40,
+              "h": 36,
+              "right": 1716,
+              "bottom": 622
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 1718,
+              "y": 586,
+              "w": 40,
+              "h": 36,
+              "right": 1758,
+              "bottom": 622
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 140,
+            "y": 98,
+            "w": 1640,
+            "h": 546,
+            "right": 1780,
+            "bottom": 644
+          },
+          "hud": {
+            "x": 140,
+            "y": 676,
+            "w": 1640,
+            "h": 56,
+            "right": 1780,
+            "bottom": 732
+          },
+          "desktopBottom": {
+            "x": 140,
+            "y": 732,
+            "w": 1640,
+            "h": 36,
+            "right": 1780,
+            "bottom": 768
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-1920x768.png",
+        "bytes": 73949,
+        "sha256": "9c34b71ab8277667e3966a77bde9971b7d90e8cf5425fde2b05d4a01fb3bf289"
+      }
+    },
+    {
+      "width": 1920,
+      "height": 900,
+      "measure": {
+        "innerWidth": 1920,
+        "innerHeight": 900,
+        "clientWidth": 1920,
+        "scrollWidth": 1920,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 1436,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 1480,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 1483,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1523,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 1526,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1566,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 1569,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 1612,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 1628,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 1680,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 1696,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 1780,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 140,
+              "y": 98,
+              "w": 1640,
+              "h": 678,
+              "right": 1780,
+              "bottom": 776
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 1693,
+              "y": 777,
+              "w": 87,
+              "h": 30,
+              "right": 1780,
+              "bottom": 807
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 140,
+              "y": 813,
+              "w": 111,
+              "h": 47,
+              "right": 251,
+              "bottom": 860
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 140,
+              "y": 864,
+              "w": 353,
+              "h": 36,
+              "right": 493,
+              "bottom": 900
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 1647,
+              "y": 864,
+              "w": 65,
+              "h": 36,
+              "right": 1712,
+              "bottom": 900
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 1712,
+              "y": 864,
+              "w": 68,
+              "h": 36,
+              "right": 1780,
+              "bottom": 900
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 1676,
+              "y": 680,
+              "w": 40,
+              "h": 36,
+              "right": 1716,
+              "bottom": 716
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 1634,
+              "y": 718,
+              "w": 40,
+              "h": 36,
+              "right": 1674,
+              "bottom": 754
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 1676,
+              "y": 718,
+              "w": 40,
+              "h": 36,
+              "right": 1716,
+              "bottom": 754
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 1718,
+              "y": 718,
+              "w": 40,
+              "h": 36,
+              "right": 1758,
+              "bottom": 754
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 140,
+            "y": 98,
+            "w": 1640,
+            "h": 678,
+            "right": 1780,
+            "bottom": 776
+          },
+          "hud": {
+            "x": 140,
+            "y": 808,
+            "w": 1640,
+            "h": 56,
+            "right": 1780,
+            "bottom": 864
+          },
+          "desktopBottom": {
+            "x": 140,
+            "y": 864,
+            "w": 1640,
+            "h": 36,
+            "right": 1780,
+            "bottom": 900
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-1920x900.png",
+        "bytes": 85124,
+        "sha256": "99b7b9a79e062a339477f4148fab5db94c179010fdee2c485d4c021875b8d09d"
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1000,
+      "measure": {
+        "innerWidth": 1920,
+        "innerHeight": 1000,
+        "clientWidth": 1920,
+        "scrollWidth": 1920,
+        "horizontalOverflow": false,
+        "required": [
+          {
+            "selector": ".time-hud button",
+            "text": "暫停",
+            "disabled": false,
+            "box": {
+              "x": 1436,
+              "y": 13,
+              "w": 44,
+              "h": 36,
+              "right": 1480,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×1",
+            "disabled": false,
+            "box": {
+              "x": 1483,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1523,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×5",
+            "disabled": false,
+            "box": {
+              "x": 1526,
+              "y": 13,
+              "w": 40,
+              "h": 36,
+              "right": 1566,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "×20",
+            "disabled": false,
+            "box": {
+              "x": 1569,
+              "y": 13,
+              "w": 43,
+              "h": 36,
+              "right": 1612,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "存檔",
+            "disabled": false,
+            "box": {
+              "x": 1628,
+              "y": 13,
+              "w": 52,
+              "h": 36,
+              "right": 1680,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".time-hud button",
+            "text": "選單 Esc",
+            "disabled": false,
+            "box": {
+              "x": 1696,
+              "y": 13,
+              "w": 84,
+              "h": 36,
+              "right": 1780,
+              "bottom": 49
+            }
+          },
+          {
+            "selector": ".world-frame",
+            "text": "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ░ ░ ░ ░ ░ ≈ ♣ 🌲 ♣ ♣ ♣ ♣ ♣ ♣ 🌲 ♣ ♣ ♣ │ ♣ ",
+            "box": {
+              "x": 140,
+              "y": 98,
+              "w": 1640,
+              "h": 778,
+              "right": 1780,
+              "bottom": 876
+            }
+          },
+          {
+            "selector": ".exploration-hint button",
+            "text": "查看地圖 M",
+            "disabled": false,
+            "box": {
+              "x": 1693,
+              "y": 877,
+              "w": 87,
+              "h": 30,
+              "right": 1780,
+              "bottom": 907
+            }
+          },
+          {
+            "selector": ".player-hud button",
+            "text": "🙂 奧登 Lv.1",
+            "disabled": false,
+            "box": {
+              "x": 140,
+              "y": 913,
+              "w": 111,
+              "h": 47,
+              "right": 251,
+              "bottom": 960
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "› 陌生的天空下，橡谷的炊煙升起。你將在這片邊境開始新的人生。 L",
+            "disabled": false,
+            "box": {
+              "x": 140,
+              "y": 964,
+              "w": 353,
+              "h": 36,
+              "right": 493,
+              "bottom": 1000
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "物品 I",
+            "disabled": false,
+            "box": {
+              "x": 1647,
+              "y": 964,
+              "w": 65,
+              "h": 36,
+              "right": 1712,
+              "bottom": 1000
+            }
+          },
+          {
+            "selector": ".world-bottom button",
+            "text": "旅人筆記",
+            "disabled": false,
+            "box": {
+              "x": 1712,
+              "y": 964,
+              "w": 68,
+              "h": 36,
+              "right": 1780,
+              "bottom": 1000
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↑",
+            "disabled": false,
+            "box": {
+              "x": 1676,
+              "y": 780,
+              "w": 40,
+              "h": 36,
+              "right": 1716,
+              "bottom": 816
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "←",
+            "disabled": false,
+            "box": {
+              "x": 1634,
+              "y": 818,
+              "w": 40,
+              "h": 36,
+              "right": 1674,
+              "bottom": 854
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "↓",
+            "disabled": false,
+            "box": {
+              "x": 1676,
+              "y": 818,
+              "w": 40,
+              "h": 36,
+              "right": 1716,
+              "bottom": 854
+            }
+          },
+          {
+            "selector": ".direction-pad button",
+            "text": "→",
+            "disabled": false,
+            "box": {
+              "x": 1718,
+              "y": 818,
+              "w": 40,
+              "h": 36,
+              "right": 1758,
+              "bottom": 854
+            }
+          }
+        ],
+        "mainRegions": {
+          "map": {
+            "x": 140,
+            "y": 98,
+            "w": 1640,
+            "h": 778,
+            "right": 1780,
+            "bottom": 876
+          },
+          "hud": {
+            "x": 140,
+            "y": 908,
+            "w": 1640,
+            "h": 56,
+            "right": 1780,
+            "bottom": 964
+          },
+          "desktopBottom": {
+            "x": 140,
+            "y": 964,
+            "w": 1640,
+            "h": 36,
+            "right": 1780,
+            "bottom": 1000
+          },
+          "mobileNav": null
+        },
+        "outsideViewport": [],
+        "smallTargets": []
+      },
+      "shot": {
+        "file": "responsive-1920x1000.png",
+        "bytes": 94997,
+        "sha256": "f4d5b5df3bcebdb19528b8d9e650daf93a98b3e08691053b1837b7714a5a818a"
+      }
+    }
+  ],
+  "interaction": {
+    "hitTests": [
+      {
+        "label": "start-visible-fresh-save",
+        "ok": true,
+        "x": 67,
+        "y": 286,
+        "target": {
+          "tag": "BUTTON",
+          "cls": "primary",
+          "text": "起身"
+        },
+        "top": {
+          "tag": "BUTTON",
+          "cls": "primary",
+          "text": "起身"
+        },
+        "topWithinTarget": true,
+        "rect": {
+          "x": 39,
+          "y": 267.78125,
+          "width": 56,
+          "height": 37
+        },
+        "clickSent": true
+      },
+      {
+        "label": "open-menu",
+        "ok": true,
+        "x": 733,
+        "y": 25,
+        "target": {
+          "tag": "BUTTON",
+          "cls": "menu-trigger",
+          "text": "選單"
+        },
+        "top": {
+          "tag": "BUTTON",
+          "cls": "menu-trigger",
+          "text": "選單"
+        },
+        "topWithinTarget": true,
+        "rect": {
+          "x": 712,
+          "y": 8.5,
+          "width": 42,
+          "height": 32
+        },
+        "clickSent": true
+      },
+      {
+        "label": "reopen-menu",
+        "ok": true,
+        "x": 733,
+        "y": 25,
+        "target": {
+          "tag": "BUTTON",
+          "cls": "menu-trigger",
+          "text": "選單"
+        },
+        "top": {
+          "tag": "BUTTON",
+          "cls": "menu-trigger",
+          "text": "選單"
+        },
+        "topWithinTarget": true,
+        "rect": {
+          "x": 712,
+          "y": 8.5,
+          "width": 42,
+          "height": 32
+        },
+        "clickSent": true
+      },
+      {
+        "label": "menu-before-inventory",
+        "ok": true,
+        "x": 733,
+        "y": 25,
+        "target": {
+          "tag": "BUTTON",
+          "cls": "menu-trigger",
+          "text": "選單"
+        },
+        "top": {
+          "tag": "BUTTON",
+          "cls": "menu-trigger",
+          "text": "選單"
+        },
+        "topWithinTarget": true,
+        "rect": {
+          "x": 712,
+          "y": 8.5,
+          "width": 42,
+          "height": 32
+        },
+        "clickSent": true
+      },
+      {
+        "label": "menu-inventory",
+        "ok": true,
+        "x": 375,
+        "y": 247,
+        "target": {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "物品 I"
+        },
+        "top": {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "物品 I"
+        },
+        "topWithinTarget": true,
+        "rect": {
+          "x": 39,
+          "y": 226.1875,
+          "width": 671,
+          "height": 42
+        },
+        "clickSent": true
+      }
+    ],
+    "modal": {
+      "opened": {
+        "open": true,
+        "isModal": true,
+        "focusedInside": true,
+        "initialFocus": "這一生"
+      },
+      "firstTab": {
+        "tag": "BUTTON",
+        "text": "住所與產業",
+        "className": "",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "insideDialog": true
+      },
+      "enterActivation": {
+        "focusedItem": "住所與產業",
+        "focusAfterEnter": {
+          "tag": "BUTTON",
+          "text": "前往農田",
+          "className": "",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "insideDialog": true
+        },
+        "windowAfterEnter": "┤ 住所與產業 ├\n×",
+        "dialogStillOpen": true
+      },
+      "escape": {
+        "focus": {
+          "tag": "BUTTON",
+          "text": "選單",
+          "className": "menu-trigger",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "insideDialog": false
+        },
+        "stillOpen": false,
+        "triggerFocused": true
+      },
+      "spaceActivation": {
+        "focusedItem": "這一生",
+        "focusAfterSpace": {
+          "tag": "DIALOG",
+          "text": "┤ 這一生 ├ × 第 1 代 · 來自另一個世界 奧登 在橡谷留下的身分 這一生的身分 ▪ 居民 橡谷人們對你的印象 普通居民 地方聲望會影響居民如何認識你，也會影響土地資格與傭兵聘用條件。 人生記",
+          "className": "pixel-window",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "insideDialog": true
+        },
+        "windowAfterSpace": "┤ 這一生 ├\n×",
+        "dialogStillOpen": true
+      },
+      "inventory": {
+        "open": true,
+        "bodyClientHeight": 350,
+        "bodyScrollHeight": 547,
+        "bodyScrollable": true,
+        "footerBottom": 471,
+        "dialogBottom": 475
+      },
+      "inventoryScreenshot": {
+        "file": "inventory-dialog.png",
+        "bytes": 24789,
+        "sha256": "3b4fb24b55432f08bf67f5e144b9616d10824d7d84bd0f5c8209c32c569983c8"
+      }
+    },
+    "touch": {
+      "mobileNav": {
+        "label": "touch-sized-mobile-inventory-control",
+        "ok": true,
+        "x": 198,
+        "y": 643,
+        "target": {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "物品"
+        },
+        "top": {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "物品"
+        },
+        "topWithinTarget": true,
+        "rect": {
+          "x": 162,
+          "y": 623,
+          "width": 72,
+          "height": 40
+        },
+        "clickSent": true,
+        "input": "touch"
+      },
+      "mobileNavDialogOpen": true,
+      "buttonRects": [
+        {
+          "text": "↑",
+          "w": 42,
+          "h": 42
+        },
+        {
+          "text": "←",
+          "w": 42,
+          "h": 42
+        },
+        {
+          "text": "↓",
+          "w": 42,
+          "h": 42
+        },
+        {
+          "text": "→",
+          "w": 42,
+          "h": 42
+        },
+        {
+          "text": "地圖",
+          "w": 72,
+          "h": 40
+        },
+        {
+          "text": "角色",
+          "w": 72,
+          "h": 40
+        },
+        {
+          "text": "物品",
+          "w": 72,
+          "h": 40
+        },
+        {
+          "text": "日誌",
+          "w": 72,
+          "h": 40
+        }
+      ],
+      "mobileNavScreenshot": {
+        "file": "mobile-320x667-nav.png",
+        "bytes": 26656,
+        "sha256": "6a4717341c1cea3d0364fcc68e90051180ddebe24ac5b34e40afb4cad1c49db9"
+      }
+    }
+  },
+  "failures": []
+}

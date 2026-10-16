@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { MODAL_FOCUSABLE_SELECTOR, nextModalFocusable, orderModalFocusables } from '../presentation/modalFocus'
 
 const props = withDefaults(defineProps<{ title: string; dismissible?: boolean }>(), { dismissible: true })
 const emit = defineEmits<{ close: [] }>()
@@ -7,22 +8,13 @@ const dialog = ref<HTMLDialogElement>()
 let trigger: HTMLElement | null = null
 function containFocus(event: KeyboardEvent) {
   if (event.key !== 'Tab' || event.ctrlKey || event.metaKey || event.altKey) return
-  const controls = Array.from(dialog.value?.querySelectorAll<HTMLElement>(
-    'button:not(:disabled), details > summary, a[href], input:not(:disabled):not([type="hidden"]), select:not(:disabled), textarea:not(:disabled), [tabindex], [contenteditable]:not([contenteditable="false"])',
-  ) ?? []).filter(el => {
+  const controls = orderModalFocusables(Array.from(dialog.value?.querySelectorAll<HTMLElement>(MODAL_FOCUSABLE_SELECTOR) ?? []), el => {
     const style = getComputedStyle(el)
     return el.tabIndex >= 0 && el.getClientRects().length > 0
       && style.visibility !== 'hidden' && style.visibility !== 'collapse'
-  }).map((element, domOrder) => ({ element, domOrder }))
-    .sort((a, b) => {
-      if (a.element.tabIndex === 0) return b.element.tabIndex === 0 ? a.domOrder - b.domOrder : 1
-      if (b.element.tabIndex === 0) return -1
-      return a.element.tabIndex - b.element.tabIndex || a.domOrder - b.domOrder
-    }).map(({ element }) => element)
+  })
   event.preventDefault()
-  const index = controls.indexOf(document.activeElement as HTMLElement)
-  const next = event.shiftKey ? (index <= 0 ? controls.length - 1 : index - 1) : (index + 1) % controls.length
-  ;(controls[next] ?? dialog.value)?.focus()
+  ;(nextModalFocusable(controls, document.activeElement as HTMLElement, event.shiftKey) ?? dialog.value)?.focus()
 }
 async function focusContent() {
   await nextTick()
