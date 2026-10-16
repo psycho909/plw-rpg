@@ -1,0 +1,6 @@
+# Review request — Phase10-E (reviewer did not build E)
+Review only; no edits except your review; no commit. Write `reports/v2/20261016-final-qa-rc/phase-10/e-review/e-review.md`; reply with only that path.
+- Spec `docs/specs/V2X-PHASE10-FINAL-QA-RC.md` §9, §10. Ticket `tickets/20261016-v2x-10e-browser.md`.
+- Deliverables: `phase-10/browser-regression.md`, `browser-stress-performance.md`, `e-runner/` (e-summary.md; attempts `attempt-20261016T054428920Z-regression/`, `attempt-20261016T054713528Z-stress/`), scripts `scripts/phase10/e-regression.mjs`, `e-stress.mjs`.
+- Lead note: the "dist fingerprint mismatch" (72dfd027 vs 7f5efed2) is resolved — same build, two path conventions; see `a-check-run/build-correlation-23ef273.txt`.
+Check: all §9.1 items covered with normal vs controlled separation (Hybrid normal short-window vs controlled fixture; crisis/succession/cap fixtures labeled); responsive subset + NOT TESTED browsers stated; stress metrics reproducible from raw (spot-check P95, save latency, IDB errors); the single 2,004 ms menu-open spike handled honestly (cause analysis / not hidden; does it warrant an extended soak per §9.3?); §10 artifact sizes and chrome-profile cleanup; no product src change. Severity P0–P3, disposition.

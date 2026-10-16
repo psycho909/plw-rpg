@@ -1,2 +1,10 @@
 src(tracked, browser-suite alg): fd2f020e4184567978e0608734386ac9b9151361e989522c5e020f0d7ccad75c (120 files)
 dist: 7f5efed239807081c82b1ba48d8b6c1befb24291642509deb32e29cf134d5e00 (3 files)
+
+# Lead correlation note (2026-10-16)
+# The two dist values above/below describe the SAME build output under two path conventions:
+#  - dist-relative rows ("assets/x.js:<sha>")           -> 7f5efed239807081c82b1ba48d8b6c1befb24291642509deb32e29cf134d5e00
+#  - repo-relative rows ("dist/assets/x.js:<sha>")      -> 72dfd027170eb4a129fda4bc564ebff553138d2fbfbba4238c521d76a07b4d04
+# The Phase9/Phase10 browser runners (scripts/phase10/e-regression.mjs hashTree) use the repo-relative convention;
+# recomputed by lead on the current dist with that convention = 72dfd027..., matching Phase9-F1 and Phase10-E runs.
+# Product src is unchanged since Phase9 tested c0a377b, so the production build is byte-identical to Phase9's.

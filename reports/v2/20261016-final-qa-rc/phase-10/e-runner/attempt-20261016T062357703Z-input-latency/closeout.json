@@ -1,0 +1,1896 @@
+{
+  "lane": "input-latency",
+  "startedAt": "2026-10-16T06:23:57.707Z",
+  "sourceHead": "29e7c4b9328c8ea7d58a71a4163a8d93643ea0db",
+  "srcFingerprint": "3f469b14053555bbee38db6eddcd66e3f78980bfe4ed1def6e8bc5677fbc4842",
+  "node": "v22.14.0",
+  "platform": "win32",
+  "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "server": "in-process Node static server serving production dist/",
+  "productionDistFingerprint": "72dfd027170eb4a129fda4bc564ebff553138d2fbfbba4238c521d76a07b4d04",
+  "url": "http://127.0.0.1:51426/",
+  "finishedAt": "2026-10-16T06:24:35.828Z",
+  "browserVersion": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.53",
+    "revision": "@792bf6722e73a45aa9e47c163b9901bdc17f3230",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.13"
+  },
+  "viewport": {
+    "width": 764,
+    "height": 485,
+    "devicePixelRatio": 1
+  },
+  "result": {
+    "fixture": {
+      "kind": "controlled search-latency starting save",
+      "seed": 10421016,
+      "generatedBy": "createGame + engine craft(starterSpear); only search result rows are seeded, all search interactions use visible production UI",
+      "craftedItemId": "item-1",
+      "recipeId": "starterSpear",
+      "initialPosition": {
+        "x": 9,
+        "y": 8
+      }
+    },
+    "recipeSearch": {
+      "label": "recipe-search",
+      "selector": "#recipe-content-search",
+      "countSelector": "[data-content-result-count=recipe]",
+      "sampleCount": 60,
+      "timingBoundary": "CDP keyDown dispatch start to first poll observing both target input value and a changed visible result-count string",
+      "queryAlternation": [
+        "z",
+        ""
+      ],
+      "p50Ms": 5.6432,
+      "p95Ms": 9.9677,
+      "maxMs": 12.4491,
+      "timeouts": 0,
+      "rows": [
+        {
+          "index": 1,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 9.8613,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 2,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 6.1008,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 3,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 3.9249,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 4,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 5.6432,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 5,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 3.0473,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 6,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 3.6644,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 7,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 8.7334,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 8,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 8.8896,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 9,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 7.1367,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 10,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 12.4491,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 11,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 8.4601,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 12,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 7.6286,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 13,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 3.4027,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 14,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 6.0877,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 15,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 4.6098,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 16,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 4.5561,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 17,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 6.0141,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 18,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 5.8609,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 19,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 3.789,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 20,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 7.2153,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 21,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 7.1823,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 22,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 4.4648,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 23,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 4.9674,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 24,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 8.5465,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 25,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 3.9564,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 26,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 6.1652,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 27,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 4.5337,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 28,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 7.3247,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 29,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 5.9184,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 30,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 4.6426,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 31,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 9.9677,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 32,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 8.2576,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 33,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 7.0621,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 34,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 11.3306,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 35,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 6.0785,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 36,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 8.6705,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 37,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 4.2061,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 38,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 4.5883,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 39,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 3.6203,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 40,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 5.283,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 41,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 3.118,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 42,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 6.4268,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 43,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 3.473,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 44,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 4.4873,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 45,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 4.2662,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 46,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 4.1115,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 47,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 2.51,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 48,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 6.9737,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 49,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 4.0619,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 50,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 8.6847,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 51,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 3.9424,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 52,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 3.9475,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 53,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 5.1224,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 54,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 4.6014,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 55,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 8.7937,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 56,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 10.5108,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 57,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 5.4996,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 58,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 6.0907,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 59,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "找到 28／28 項配方",
+          "afterCount": "找到 0／28 項配方",
+          "latencyMs": 3.0912,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 60,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "找到 0／28 項配方",
+          "afterCount": "找到 28／28 項配方",
+          "latencyMs": 5.6613,
+          "visibleResultChanged": true
+        }
+      ]
+    },
+    "equipmentSearch": {
+      "label": "equipment-search",
+      "selector": "#gear-content-search",
+      "countSelector": "[data-content-result-count=gear]",
+      "sampleCount": 60,
+      "timingBoundary": "CDP keyDown dispatch start to first poll observing both target input value and a changed visible result-count string",
+      "queryAlternation": [
+        "z",
+        ""
+      ],
+      "p50Ms": 5.3192,
+      "p95Ms": 8.4854,
+      "maxMs": 9.1536,
+      "timeouts": 0,
+      "rows": [
+        {
+          "index": 1,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 6.4682,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 2,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.8156,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 3,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.3614,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 4,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.5141,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 5,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.1712,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 6,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 6.1548,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 7,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 6.0243,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 8,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 7.36,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 9,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.6969,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 10,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.3014,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 11,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 3.7658,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 12,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 6.6872,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 13,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.9974,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 14,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 8.5248,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 15,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.4162,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 16,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 9.1536,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 17,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.7319,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 18,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 6.4616,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 19,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.0228,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 20,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 7.3715,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 21,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.2312,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 22,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.6603,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 23,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 3.9449,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 24,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.8485,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 25,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 3.5348,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 26,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.7634,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 27,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.6157,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 28,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 6.0282,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 29,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.3639,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 30,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.3438,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 31,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.0383,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 32,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.8111,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 33,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 3.9492,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 34,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 8.6237,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 35,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.2399,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 36,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 7.2866,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 37,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.6495,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 38,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 6.5464,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 39,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 7.5937,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 40,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 8.4854,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 41,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.9054,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 42,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.8263,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 43,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.3344,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 44,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.2808,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 45,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.8517,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 46,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 6.7301,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 47,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.0537,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 48,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 7.2602,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 49,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.3192,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 50,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 6.4423,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 51,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 3.7064,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 52,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.2757,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 53,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.874,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 54,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.8163,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 55,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 3.6432,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 56,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 3.9968,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 57,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 3.6776,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 58,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 4.1015,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 59,
+          "key": "z",
+          "query": "z",
+          "beforeCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 3.0946,
+          "visibleResultChanged": true
+        },
+        {
+          "index": 60,
+          "key": "Backspace",
+          "query": "",
+          "beforeCount": "符合條件 0 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "afterCount": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。",
+          "latencyMs": 5.643,
+          "visibleResultChanged": true
+        }
+      ],
+      "matchingRows": "符合條件 1 件 · 每頁最多 20 件；篩選不會丟棄裝備。"
+    },
+    "menuOpen": {
+      "sampleCount": 120,
+      "p50Ms": 39,
+      "p95Ms": 46,
+      "maxMs": 85,
+      "over200ms": 0,
+      "visibleOpenCount": 120,
+      "hitTestVerifiedCount": 120,
+      "rows": [
+        {
+          "index": 1,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 2,
+          "clickToVisibleChangeMs": 43,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 3,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 4,
+          "clickToVisibleChangeMs": 40,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 5,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 6,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 7,
+          "clickToVisibleChangeMs": 49,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 8,
+          "clickToVisibleChangeMs": 44,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 9,
+          "clickToVisibleChangeMs": 37,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 10,
+          "clickToVisibleChangeMs": 34,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 11,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 12,
+          "clickToVisibleChangeMs": 40,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 13,
+          "clickToVisibleChangeMs": 47,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 14,
+          "clickToVisibleChangeMs": 44,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 15,
+          "clickToVisibleChangeMs": 33,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 16,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 17,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 18,
+          "clickToVisibleChangeMs": 45,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 19,
+          "clickToVisibleChangeMs": 49,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 20,
+          "clickToVisibleChangeMs": 46,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 21,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 22,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 23,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 24,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 25,
+          "clickToVisibleChangeMs": 36,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 26,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 27,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 28,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 29,
+          "clickToVisibleChangeMs": 34,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 30,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 31,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 32,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 33,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 34,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 35,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 36,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 37,
+          "clickToVisibleChangeMs": 53,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 38,
+          "clickToVisibleChangeMs": 40,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 39,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 40,
+          "clickToVisibleChangeMs": 38,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 41,
+          "clickToVisibleChangeMs": 27,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 42,
+          "clickToVisibleChangeMs": 40,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 43,
+          "clickToVisibleChangeMs": 44,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 44,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 45,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 46,
+          "clickToVisibleChangeMs": 46,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 47,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 48,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 49,
+          "clickToVisibleChangeMs": 33,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 50,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 51,
+          "clickToVisibleChangeMs": 37,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 52,
+          "clickToVisibleChangeMs": 44,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 53,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 54,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 55,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 56,
+          "clickToVisibleChangeMs": 27,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 57,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 58,
+          "clickToVisibleChangeMs": 85,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 59,
+          "clickToVisibleChangeMs": 40,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 60,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 61,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 62,
+          "clickToVisibleChangeMs": 34,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 63,
+          "clickToVisibleChangeMs": 43,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 64,
+          "clickToVisibleChangeMs": 27,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 65,
+          "clickToVisibleChangeMs": 40,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 66,
+          "clickToVisibleChangeMs": 45,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 67,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 68,
+          "clickToVisibleChangeMs": 40,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 69,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 70,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 71,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 72,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 73,
+          "clickToVisibleChangeMs": 46,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 74,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 75,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 76,
+          "clickToVisibleChangeMs": 38,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 77,
+          "clickToVisibleChangeMs": 43,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 78,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 79,
+          "clickToVisibleChangeMs": 48,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 80,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 81,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 82,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 83,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 84,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 85,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 86,
+          "clickToVisibleChangeMs": 38,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 87,
+          "clickToVisibleChangeMs": 38,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 88,
+          "clickToVisibleChangeMs": 29,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 89,
+          "clickToVisibleChangeMs": 36,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 90,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 91,
+          "clickToVisibleChangeMs": 34,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 92,
+          "clickToVisibleChangeMs": 43,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 93,
+          "clickToVisibleChangeMs": 29,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 94,
+          "clickToVisibleChangeMs": 43,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 95,
+          "clickToVisibleChangeMs": 34,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 96,
+          "clickToVisibleChangeMs": 27,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 97,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 98,
+          "clickToVisibleChangeMs": 29,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 99,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 100,
+          "clickToVisibleChangeMs": 38,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 101,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 102,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 103,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 104,
+          "clickToVisibleChangeMs": 40,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 105,
+          "clickToVisibleChangeMs": 38,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 106,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 107,
+          "clickToVisibleChangeMs": 36,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 108,
+          "clickToVisibleChangeMs": 37,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 109,
+          "clickToVisibleChangeMs": 34,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 110,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 111,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 112,
+          "clickToVisibleChangeMs": 27,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 113,
+          "clickToVisibleChangeMs": 34,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 114,
+          "clickToVisibleChangeMs": 41,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 115,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 116,
+          "clickToVisibleChangeMs": 42,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 117,
+          "clickToVisibleChangeMs": 27,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 118,
+          "clickToVisibleChangeMs": 35,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 119,
+          "clickToVisibleChangeMs": 43,
+          "menuVisible": true,
+          "hitTestVerified": true
+        },
+        {
+          "index": 120,
+          "clickToVisibleChangeMs": 39,
+          "menuVisible": true,
+          "hitTestVerified": true
+        }
+      ]
+    },
+    "errors": []
+  },
+  "errors": [],
+  "actionCount": 251,
+  "modalLifecycleCycles": 2,
+  "noProgressClassCounts": {},
+  "checkpointCount": 0,
+  "raw": {
+    "artifactManifest": "artifact-sha256.json",
+    "checkpointSnapshot": "checkpoints.json",
+    "screenshots": "checkpoint-stress-final.png",
+    "downloads": "downloads/"
+  }
+}
