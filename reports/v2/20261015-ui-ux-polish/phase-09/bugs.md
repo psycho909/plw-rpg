@@ -1,6 +1,6 @@
 # Phase9 Bug and Defect Register — F2 consolidation
 
-This register separates product/UI defects from test-harness and report-maintenance failures. “Fixed” means the named source or runner correction is present in the accepted sub-phase commit and has the linked verification evidence. Phase9-F's independent browser, stress, and performance work remains owned by F1; this register records only findings already established by A–E and their reviews.
+This register separates product/UI defects from test-harness and report-maintenance failures. “Fixed” means the named source or runner correction is present in the accepted sub-phase commit and has the linked verification evidence. Phase9-F browser regression, stress and performance (F1) found no new product defect; F-phase runner/cleanup items and final-review report-state findings are listed below.
 
 ## Product and UI defects
 
@@ -36,6 +36,10 @@ These were evidence-state inconsistencies, not product-code defects; they were c
 | C P3 — `adventure-ux.md` retained a superseded pending sentence after the C evidence was complete. | **Resolved** in the C accepted report snapshot. | `c-review/c-review.md`; `adventure-ux.md` after-evidence section; C summary. |
 | E P3 — E summary/world-feedback/responsive review said build or browser verification was pending despite retained pass logs and screenshots. | **Resolved** and accepted in E review follow-up. | `e-review/e-review.md`; `e-review/e-review-followup.md`; `e-runner/npm-run-check-e.log`; final E attempt. |
 
+| F · Orphan Chrome profile | An earlier F1 regression attempt left an attempt-local profile (7,011,700 B). | **Resolved**: size recorded in `f1-runner/attempt-20261016T021427597Z-regression/chrome-profile-cleanup.json`, removed by lead; stress export gzip-compressed with SHA manifest. | `f1-runner/` |
+| FMAX-P9-01 · P2 report state | Final review / bugs register still said F1 QA pending. | **Resolved** (report-only). | `f-review/f-max-final-review.md` |
+| FMAX-P9-02 · P3 report count | Regression reported 195 actions; raw trace has 200 records. | **Resolved**: reports use 200 action records. | `f1-runner/attempt-20261016T022825574Z-regression/closeout.json` |
+
 ## Scope and residuals
 
-No unresolved P0/P1 product defect is established by the A–E evidence and reviews. Phase9-F's browser regression, stress and performance reports are F1-owned and pending; this register is not the final Phase9 review. Human comprehension, fun, and retention remain deferred and cannot be inferred from agents or automated probes.
+No unresolved P0/P1 product defect is established by the A–E evidence and reviews. Phase9-F F1 regression and stress completed with 0 browser errors; the final independent review found no P0/P1 source defect (FMAX-P9-01 P2 stale status and FMAX-P9-02 P3 action count were report corrections, resolved). Human comprehension, fun, and retention remain deferred and cannot be inferred from agents or automated probes.

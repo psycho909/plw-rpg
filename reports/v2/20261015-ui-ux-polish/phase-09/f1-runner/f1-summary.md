@@ -4,7 +4,7 @@
 
 ## 範圍與證據
 
-- Regression attempt：`attempt-20261016T022825574Z-regression/`；195 actions、123 clicks、0 遮擋點擊拒絕、0 browser errors、51 screenshots。
+- Regression attempt：`attempt-20261016T022825574Z-regression/`；200 action records、123 clicks、0 遮擋點擊拒絕、0 browser errors、51 screenshots。
 - Stress attempt：`attempt-20261016T015258432Z-stress/`；要求 1,200 秒、實跑 1,200.924 秒；6,467 action records、21 checkpoints、1,862 modal cycles、0 errors；三次重載 parity 相等。
 - 兩次皆使用 HEAD `c0a377b50e09b67664bc07b65d4e81a382daa53f`、src SHA-256 `d312c8b3a95f96ba6609d2531fd770d2b19df3ac64a7796905c2c1fa29ecd305`、production dist SHA-256 `72dfd027170eb4a129fda4bc564ebff553138d2fbfbba4238c521d76a07b4d04`；src/dist 指紋皆由排序相對路徑、逐檔 SHA-256 和串接結果 SHA-256 計算。Chrome 153.0.8010.53、Node v22.14.0、Windows x64。
 - 報告：[`browser-regression.md`](../browser-regression.md)、[`browser-stress.md`](../browser-stress.md)、[`performance.md`](../performance.md)。

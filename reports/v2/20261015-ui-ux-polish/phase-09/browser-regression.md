@@ -4,7 +4,7 @@
 
 - production dist 的 Chromium headless UI 操作；Node 內建靜態伺服器提供 `dist/`，操作以 CDP 可見點擊、鍵盤與畫面文字完成。Chrome `153.0.8010.53`、Node `v22.14.0`、Windows x64。
 - HEAD：`c0a377b50e09b67664bc07b65d4e81a382daa53f`。src 指紋 `d312c8b3a95f96ba6609d2531fd770d2b19df3ac64a7796905c2c1fa29ecd305`；演算法為遞迴列出 `src/` 相對路徑並排序，逐檔 SHA-256，將正規化相對路徑與檔案雜湊串接後再做 SHA-256。dist 指紋 `72dfd027170eb4a129fda4bc564ebff553138d2fbfbba4238c521d76a07b4d04`，同一樹狀雜湊方法。
-- 最終正常路線與受控情境紀錄：`f1-runner/attempt-20261016T022825574Z-regression/`（manifest、results、closeout、`actions.ndjson.gz`、51 張截圖與受控 checkpoint）。195 actions、123 clicks、0 遮擋點擊拒絕、0 browser errors。壓力證據另見 `f1-runner/attempt-20261016T015258432Z-stress/`。
+- 最終正常路線與受控情境紀錄：`f1-runner/attempt-20261016T022825574Z-regression/`（manifest、results、closeout、`actions.ndjson.gz`、51 張截圖與受控 checkpoint）。200 action records、123 clicks、0 遮擋點擊拒絕、0 browser errors。壓力證據另見 `f1-runner/attempt-20261016T015258432Z-stress/`。
 
 ## 正常新存檔路線
 

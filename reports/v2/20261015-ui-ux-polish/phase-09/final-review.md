@@ -1,12 +1,12 @@
 # Phase9 Final Engineering Review
 
-**State: Lead final (2026-10-16), pending independent Max review and Owner review.** Orchestrator: Claude Code (Claude Opus 5.5) via Herdr `w3:p1`, integrating F2 consolidation and F1 production-browser evidence. HEAD under test `c0a377b50e09b67664bc07b65d4e81a382daa53f`; `src/` unchanged during F (F only added `scripts/phase9/f-*.mjs` and reports). Final `npm.cmd run check` PASS 41 files / 650 tests + vue-tsc + build ([`f-check-run/npm-run-check-c0a377b.log`](f-check-run/npm-run-check-c0a377b.log)). Human Product remains **DEFERRED**. Not approval for Phase10, deploy, PR/merge, `main` or V3.
+**State: Lead final (2026-10-16), independent Max review completed (findings resolved, see f-review/); pending Owner review.** Orchestrator: Claude Code (Claude Opus 5.5) via Herdr `w3:p1`, integrating F2 consolidation and F1 production-browser evidence. HEAD under test `c0a377b50e09b67664bc07b65d4e81a382daa53f`; `src/` unchanged during F (F only added `scripts/phase9/f-*.mjs` and reports). Final `npm.cmd run check` PASS 41 files / 650 tests + vue-tsc + build ([`f-check-run/npm-run-check-c0a377b.log`](f-check-run/npm-run-check-c0a377b.log)). Human Product remains **DEFERRED**. Not approval for Phase10, deploy, PR/merge, `main` or V3.
 
 ## 11 Acceptance Gates
 
 | Gate | Status | Engineering evidence and qualification |
 |---|---|---|
-| Engineering | **PASS WITH FINDINGS** | Accepted A–E check logs progress from 38 files / 631 tests to 41 files / 650 tests; E log includes successful TypeScript and Vite build. A–E source changes have focused coverage. F1 production regression ([`browser-regression.md`](browser-regression.md)): 195 actions, 123 clicks, 0 obscured-click refusals, 0 browser errors. No A–E review found a P0/P1 product blocker. |
+| Engineering | **PASS WITH FINDINGS** | Accepted A–E check logs progress from 38 files / 631 tests to 41 files / 650 tests; E log includes successful TypeScript and Vite build. A–E source changes have focused coverage. F1 production regression ([`browser-regression.md`](browser-regression.md)): 200 action records, 123 clicks, 0 obscured-click refusals, 0 browser errors. No A–E review found a P0/P1 product blocker. |
 | Goal Clarity | **PASS WITH FINDINGS** | Notes hints are condition-based, capped at five, use existing eligibility projections and show destinations/reasons. No human goal-understanding study exists; keep subjective clarity **DEFERRED**. |
 | Information Architecture | **PASS WITH FINDINGS** | Progressive high-rank details, discovery-gated information, source/use rows and material/recipe search were verified by component tests and focused probes. F1 regression re-walked Life/Adventure normal routes and a labeled controlled Hybrid fixture. |
 | Adventure UX | **PASS WITH FINDINGS** | Rank, eligibility, factual level comparison, known mechanics/loot, retreat result/time effects and configured cooldown are shown. No explicit danger estimate/recommended level is supplied because the system has no supported value; adequacy is a human question. |
@@ -26,8 +26,8 @@
 | 2 | Unavailable actions give a true reason. | **PASS** — eligibility reasons and quantified crafting blockers are projected from existing rules; tests/probes cover representative cases. |
 | 3 | Boss risk and eligibility are no longer only vague information. | **PASS WITH FINDINGS** — eligibility and blocker reasons, authored rank/level, known mechanics/loot, retreat effects and cooldown are shown; no invented numeric danger/recommended level. Human adequacy is deferred. |
 | 4 | Recipe, material gap and XP state are understandable in the UI. | **PASS WITH FINDINGS** — plan data and success award are visible; controlled cap view is documented, but no post-cap normal craft was browser-tested and human understanding is not measured. |
-| 5 | Inventory / monster / recipe lists have reasonable operation efficiency. | **PASS WITH FINDINGS** — search, origin-label queries and recipe groups are covered by tests/probes. F1 performance and broad regression remain pending. |
-| 6 | Main windows have no blocking modal/focus/keyboard issue. | **PASS WITH FINDINGS** — focus trap includes summary, excludes disabled candidates, and sampled keyboard cycles work. Final F1 regression pending. |
+| 5 | Inventory / monster / recipe lists have reasonable operation efficiency. | **PASS WITH FINDINGS** — search, origin-label queries and recipe groups are covered by tests/probes. F1 stress opened/searched long lists with click-to-visible P95 55 ms and no resource runaway ([`performance.md`](performance.md)); F1 regression re-walked inventory/compare flows. |
+| 6 | Main windows have no blocking modal/focus/keyboard issue. | **PASS WITH FINDINGS** — focus trap includes summary, excludes disabled candidates, and sampled keyboard cycles work. F1 regression verified modal open/close at 1280×768 and 375×667 and 1,862 modal cycles in stress with 0 errors. |
 | 7 | Core mobile functions operate. | **PASS WITH FINDINGS** — 320×667 touch navigation and responsive matrix passed in emulated Chrome. Physical device/Safari not covered. |
 | 8 | Important completed actions provide clear feedback. | **PASS WITH FINDINGS** — gather, craft award, and controlled boss result/reward were observed. Other events are partially source-reviewed. |
 | 9 | Player can observe meaningful World / NPC / Crisis changes. | **PASS WITH FINDINGS** — A/C controlled crisis and history views and the event log are retained; E did not newly exercise every NPC transition. No human recognition test. |
@@ -35,8 +35,8 @@
 | 11 | Adventure / Life / Hybrid freedom is preserved. | **PASS WITH FINDINGS** — hints add optional routes and do not force actions; overall sense of freedom/immersion has no human evidence. |
 | 12 | Phase8 approved balance decisions are not changed without approval. | **PASS** — A–E work did not modify engine balance, threat, crop, combat, loot or save values. D-F1 remains KEEP V0. |
 | 13 | Save / reload / migration / succession remain correct. | **PASS WITH FINDINGS** — A save/reload parity and controlled engine-generated succession evidence are retained; this is not a substitute for F1 full regression. |
-| 14 | No unresolved P0/P1 engineering blocker remains. | **PASS WITH FINDINGS** — A–E reviews report no P0/P1 blocker and fixes are linked in `bugs.md`; F1's integrated QA/review remains outstanding. |
-| 15 | Completion claims have traceable evidence. | **PASS WITH FINDINGS** — A–E source snapshots, tests, builds, probes and reviews are linked below; F1 browser/stress/performance artifacts are still pending. |
+| 14 | No unresolved P0/P1 engineering blocker remains. | **PASS WITH FINDINGS** — A–E reviews report no P0/P1 blocker and fixes are linked in `bugs.md`; F1 regression/stress found no P0/P1; the final independent review ([`f-review/f-max-final-review.md`](f-review/f-max-final-review.md)) found no P0/P1 source defect (its P2/P3 were report-state corrections, resolved). |
+| 15 | Completion claims have traceable evidence. | **PASS WITH FINDINGS** — A–E source snapshots, tests, builds, probes and reviews are linked below; F1 browser/stress/performance artifacts are linked in the F1 evidence section. |
 
 ## Final questions Q1–Q7
 
@@ -59,7 +59,7 @@ Each answer separates engineering evidence from human perception.
 
 ### Q4. Are large monster and equipment collections easy to find, understand and compare?
 
-- **Engineering evidence:** Recipe/material search and displayed-origin label indexing have focused tests; A–E probes inspect high-rank details, source/use and post-craft comparison. F1's broader browser regression and performance evidence remain pending.
+- **Engineering evidence:** Recipe/material search and displayed-origin label indexing have focused tests; A–E probes inspect high-rank details, source/use and post-craft comparison. F1 regression and 20-minute stress (long-list search, P95 55 ms) add production-browser evidence.
 - **Human perception:** No user study or representative task-completion study was run; ease of discovery/comparison is **DEFERRED**.
 
 ### Q5. Can players observe changes in World, NPCs and Crisis?
@@ -69,7 +69,7 @@ Each answer separates engineering evidence from human perception.
 
 ### Q6. Are PC, Mobile, Keyboard and Modal interactions reliable?
 
-- **Engineering evidence:** D's 20 emulated viewport cells passed the recorded bounds checks. Native modal focus, summary Tab/Shift+Tab traversal, Enter/Space toggling, focus restoration, disabled-control filtering, and a hit-tested mobile touch action are covered by browser evidence/tests. Safari and physical hardware were not tested; F1 regression is pending.
+- **Engineering evidence:** D's 20 emulated viewport cells passed the recorded bounds checks. Native modal focus, summary Tab/Shift+Tab traversal, Enter/Space toggling, focus restoration, disabled-control filtering, and a hit-tested mobile touch action are covered by browser evidence/tests. Safari and physical hardware were not tested; F1 regression verified 1280×768 / 375×667 modals and save/reload parity.
 - **Human perception:** Comfort, accessibility for individual needs, and perceived responsiveness are not established by automation.
 
 ### Q7. Did convenience reduce Oakvale's free exploration or world immersion?
@@ -97,7 +97,7 @@ The SHA-1 `src` tree object is obtained with `git rev-parse <commit>:src`. Git's
 | C accepted | `4467fcc` (`4467fccc7f407d9998fbcce6bb0e7b743ca6681b`) | `03ad9527b36eeca6efa1b2a9e0ea426e389690a5` | `c-runner/npm-run-check-c-final.log`: 39 files / 643 tests; build pass. | `c-runner/attempt-20261016T003828476Z/probe-results.json`. |
 | D accepted | `25014bc` (`25014bc00c36c1a96389df96b12fdd39345b8e61`) | `b09200f48d4fdeaf5a0b04108713a6ac556d676a` | `d-runner/npm-run-check-d-final.log`: 40 files / 647 tests; TypeScript/build pass. | `d-runner/probe-20261016T010259948Z/`: 20 viewport combinations; keyboard/touch evidence. |
 | E accepted | `c0a377b` (`c0a377b50e09b67664bc07b65d4e81a382daa53`) | `56aac189bc047c0b17a5b2c370f02ebbe388e0c1` | `e-runner/npm-run-check-e.log`: 41 files / 650 tests; TypeScript/build pass. | `e-runner/attempt-20261016T013838256Z/probe-results.json`: normal fresh-save craft and separately labeled controlled Goblin Chief UI victory. |
-| F2 consolidation | Current source snapshot unchanged from E at review HEAD `c0a377b`; F2 writes reports only. | `56aac189bc047c0b17a5b2c370f02ebbe388e0c1` | No build/test rerun for report-only work. | F1 browser/stress/performance work remains pending. |
+| F2 consolidation | Current source snapshot unchanged from E at review HEAD `c0a377b`; F2 writes reports only. | `56aac189bc047c0b17a5b2c370f02ebbe388e0c1` | No build/test rerun for report-only work. | F1 browser/stress/performance completed at the same source (see F1 evidence section). |
 
 Fingerprint note: A's `audit-runner` also records a custom SHA-256 fingerprint (`23d8f619f94b1d8296eb5f6ecf34cad22f0cf71f650e1a7d271280195a42cba2`) by sorting relative source paths, SHA-256 hashing each file, then SHA-256 hashing newline-joined `path:digest` rows; it matched Phase8-F's same source snapshot. A also records a separate lead fingerprint based on sorted `git ls-files src` / SHA-256-of-SHA-256 (`b2db22c9…058f`). Those algorithms produce different values by design; the table above consistently uses Git `src` tree OIDs.
 
