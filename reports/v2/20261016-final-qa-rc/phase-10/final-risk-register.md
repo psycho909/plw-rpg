@@ -46,4 +46,4 @@ This is the Phase10-F triage of engineering evidence and retained product decisi
 
 | ID | Severity | Finding | Status |
 |---|---|---|---|
-| O-01 | P3 | Journal pending compaction runs only inside `record()` (`src/stores/gameStore.ts`), not on `loadCheckpoint`/`save`; an oversized legacy pending that no longer fits the quota blocks the existing world until reset. Low impact; reset path always works. | **Open, non-blocking**; Owner to decide fix before RC or backlog. Source: [verification report](Oakvale-V2x-External-Code-Review-Verification.md). |
+| O-01 | P3 | Journal pending compaction runs only inside `record()` (`src/stores/gameStore.ts`), not on `loadCheckpoint`/`save`; an oversized legacy pending that no longer fits the quota blocks the existing world until reset. Low impact; reset path always works. | **Resolved** 2026-10-16: `save()` compacts pending before serialization; regression test + independent review APPROVE ([ticket](../../../../tickets/20261016-v2x-10r-o01-load-compaction.md)). Source: [verification report](Oakvale-V2x-External-Code-Review-Verification.md). |

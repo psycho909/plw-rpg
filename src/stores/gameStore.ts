@@ -219,6 +219,7 @@ export const useGameStore = defineStore('game', () => {
     try {
       const recoveringMessage = !!saveError.value && message.value === saveError.value
       const now = Date.now()
+      compactPending()
       localStorage.setItem(SAVE_KEY, packCheckpoint(state.value, journal, now)); savedAt.value = now; saveError.value = ''
       persisted = new Set(journal.pending.map(r => r.id))
       if (flush) requestJournalFlush(manual)

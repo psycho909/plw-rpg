@@ -351,8 +351,14 @@ describe('safe browser persistence', () => {
     })
     const game = useGameStore()
     await Promise.resolve(); await Promise.resolve()
-    expect(game.saveError).toContain('存檔失敗')
-    expect(game.speed).toBe(0)
+    expect(game.saveError).toBe('')
+    expect(game.speed).toBe(1)
+    const compactedCheckpoint = saved
+    expect(compactedCheckpoint).not.toBeNull()
+    expect(compactedCheckpoint!.length).toBeLessThan(5_000_000)
+    expect(unpackCheckpoint(compactedCheckpoint!).journal.pending).toHaveLength(2)
+    expect(unpackCheckpoint(compactedCheckpoint!).journal.pending.some(record => record.message.startsWith('待補寫紀錄摘要：'))).toBe(true)
+    expect(unpackCheckpoint(compactedCheckpoint!).journal.pending.some(record => record.message.startsWith('紀錄缺口：'))).toBe(true)
     const oldCheckpoint = saved
     game.reset()
     expect(saved).not.toBe(oldCheckpoint)
@@ -369,7 +375,34 @@ describe('safe browser persistence', () => {
     expect(reset.journal.worldId).not.toBe('legacy-world')
     expect(reset.journal.pending.at(-1)).toMatchObject({ kind: 'reset', worldId: reset.journal.worldId })
     expect(reset.journal.pending.some(record => record.kind === 'reset')).toBe(true)
-    expect(game.journalError).toContain('匯出遊玩紀錄')
+  })
+  it('compacts oversized legacy pending on load and continues the same world under quota', async () => {
+    const appendBatch = vi.fn(async () => { throw new Error('archive unavailable') })
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
+    const world = createGame(100016); world.life.openingSeen = true
+    const envelope = JSON.parse(serialize(world, 100000))
+    envelope.playJournal = { version: 1, worldId: 'legacy-world', pending: [{ id: 'legacy-large', worldId: 'legacy-world', at: 100000,
+      kind: 'action', from: 480, to: 480, characterId: world.activeCharacterId, message: 'x'.repeat(5_000_000), events: [] }] }
+    saved = JSON.stringify(envelope)
+    storage.setItem.mockImplementation((_key, value) => {
+      if (value.length > 5_000_000) throw new DOMException('localStorage quota exceeded', 'QuotaExceededError')
+      saved = value
+    })
+    const game = useGameStore()
+    await Promise.resolve(); await Promise.resolve()
+    const before = game.state.worldTime
+    game.advance(1)
+    const checkpoint = unpackCheckpoint(saved!)
+    expect(game.state.worldTime).toBe(before + 1)
+    expect(checkpoint.state.worldSeed).toBe(world.worldSeed)
+    expect(checkpoint.state.worldTime).toBe(before + 1)
+    expect(game.saveError).toBe('')
+    expect(checkpoint.journal.pending.length).toBeLessThanOrEqual(256)
+    expect(checkpoint.journal.pending.reduce((chars, record) => chars + JSON.stringify(record).length + 1, 0)).toBeLessThanOrEqual(256_000)
+    const legacyMarkers = checkpoint.journal.pending.filter(record => record.worldId === 'legacy-world')
+    expect(legacyMarkers.some(record => record.message.startsWith('待補寫紀錄摘要：'))).toBe(true)
+    expect(legacyMarkers.some(record => record.message.startsWith('紀錄缺口：'))).toBe(true)
+    expect(appendBatch).toHaveBeenCalled()
   })
   it('compacts mixed worlds into separate chronological source ranges', async () => {
     const appendBatch = vi.fn(async () => { throw new Error('archive unavailable') })
