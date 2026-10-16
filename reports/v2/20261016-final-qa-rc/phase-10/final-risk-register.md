@@ -41,3 +41,9 @@ This is the Phase10-F triage of engineering evidence and retained product decisi
 | FMAX-P10 P2-01 | P2 (evidence) | Long-world runners (Phase10-D and Phase8 run-world-crisis.mjs) used 360-day years; game year = 120 days, so prior "10/50/100 years" = 30/150/300 game years. | **Resolved**: runner uses calendar constants; exact 10/50/100 game-year rerun 9/9 parity, 0 orphans (d-runner/attempt-20261016T065808351Z). Phase8-D labelling recorded as historical evidence limitation. |
 | FMAX-P10 P3-01 | P3 | External handoff Current HEAD stale. | Resolved at delivery (final commit filled). |
 | FMAX-P10 P3-02 | P3 | F ticket used non-enum status in_review. | Resolved (in_progress → accepted). |
+
+## External Code Review re-verification (2026-10-16)
+
+| ID | Severity | Finding | Status |
+|---|---|---|---|
+| O-01 | P3 | Journal pending compaction runs only inside `record()` (`src/stores/gameStore.ts`), not on `loadCheckpoint`/`save`; an oversized legacy pending that no longer fits the quota blocks the existing world until reset. Low impact; reset path always works. | **Open, non-blocking**; Owner to decide fix before RC or backlog. Source: [verification report](Oakvale-V2x-External-Code-Review-Verification.md). |

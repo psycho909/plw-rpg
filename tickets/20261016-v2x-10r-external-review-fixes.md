@@ -1,6 +1,6 @@
 # Phase10-R — External Code Review Remediation
 
-- Status: blocked（工程完成；等待 Owner 啟動外部審查者複審）
+- Status: accepted — 外部複審 APPROVED WITH FINDINGS（2026-10-16；4/4 VERIFIED_FIXED；新增 O-01 P3 不阻擋，待 Owner 決定修正時程）
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-16 Owner 交付外部獨立 Code Review 報告 `reports/v2/20261016-final-qa-rc/phase-10/Oakvale-V2x-External-Code-Review.md`（Verdict CHANGES REQUIRED）並指示依其處理；Phase10 規格 §0（授權工程缺陷修復、最小必要修正）與 §17（External Review → 必要修復 → Regression）。Parent [Phase10](20261016-v2x-10-final-qa-rc.md)。
@@ -32,7 +32,7 @@ S-01（crisis／旅人 360 日冷卻意圖，待 Owner 決定）、S-02、S-03�
 - [x] P2-01 修正＋G-03 測試；P3-02 守衛＋測試；P3-01 報告補註。
 - [x] `npm.cmd run check` 完整通過；未參與施工的 internal review。
 - [x] commit／push 並遠端核對。
-- [ ] 交回外部審查者複審（由 Owner 啟動）。
+- [x] 交回外部審查者複審（由 Owner 啟動）：APPROVED WITH FINDINGS。
 
 ## Constraints and Decisions
 
@@ -49,5 +49,7 @@ S-01（crisis／旅人 360 日冷卻意圖，待 Owner 決定）、S-02、S-03�
 - Review / Audit:
   - 第一次獨立審查（GPT-6.1 Sol，Codex，唯讀，未施工）：CHANGES REQUIRED — P2 合併改寫已存檔紀錄、P2 時間併入 marker、P3 P3-02 測試無效 → round 3–4 修正。Lead 另拒收 round 3（合併實質失效、marker 測試無效）。
   - Luna Max 獨立複審 `luna-max-p10r-review`（唯讀，未施工）：round 4 → P2 壓縮跨 worldId；round 5 → P2 多世界無上限；round 6 → **APPROVE**。lost-ack 不同 ID 範圍重疊經審查判定目前 IndexedDB adapter 下可接受（appendBatch 僅於交易完成 resolve）。
-- Commit / PR: 本 Ticket 更新所在 commit，push 至 `origin/v2x/reward-core` 並核對遠端；不 PR／merge。
-- 剩餘風險：combined marker 失去極舊世界的個別來源（Owner 決策）；IndexedDB 總歷史量未設上限；lost-ack 可能留下不同 ID 的重疊時間範圍（消費端不可加總為唯一時間）。
+- External re-review（Owner 啟動，全新 Claude Opus 5.5 session，唯讀、隔離副本）：`reports/v2/20261016-final-qa-rc/phase-10/Oakvale-V2x-External-Code-Review-Verification.md` — **APPROVED WITH FINDINGS**，受審 `b21ce0c`；P1-01／P2-01／P3-01／P3-02 皆 VERIFIED_FIXED；Release Blocker 無；隔離 `npm run check` 48 files／718 tests PASS；b11d760 舊版重現 → HEAD 拒絕；238 組合法鍛造新舊 byte-identical（RNG／Determinism 不變）；journal fuzz 24 seeds×900 步 0 mismatch、上限未超過。
+- 新 finding O-01（P3，不阻擋）：`compactPending()` 只在 `record()` 執行，載入／存檔時不壓縮；超過上限的舊 pending 若重寫時超過配額，需 reset 才能繼續。最小修正為可寫入的 `loadCheckpoint` 或 `save()` 前壓縮。待 Owner 決定 RC 前修或列 backlog。
+- Commit / PR: 工程修正 `b21ce0c`；外部複審結果記錄於本 Ticket 更新所在 commit，push 至 `origin/v2x/reward-core` 並核對遠端；不 PR／merge。
+- 剩餘風險：O-01（P3，見上）；G-02 僅涵蓋代表性 action；compactPending 經 6 輪修改複雜度偏高；combined marker 失去極舊世界的個別來源（Owner 決策）；IndexedDB 總歷史量未設上限；lost-ack 可能留下不同 ID 的重疊時間範圍（消費端不可加總為唯一時間）。
