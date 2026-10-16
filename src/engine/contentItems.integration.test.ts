@@ -60,14 +60,19 @@ describe('Phase 7 content item integration', () => {
       const plan = planCraft(state, request)
       expect(plan.ok, `${recipe.id} should be available in its controlled station/window/progression fixture`).toBe(true)
       expect(state).toEqual(beforePlan)
-      expect(plan.inputs).toEqual([
-        ...recipe.inputs.map(input => input.source === 'inventory'
+      // P1-01: an influence material equal to a base input is summed into that input's requirement.
+      const expectedInputs = new Map<string, Record<string, unknown> & { amount: number; required: number }>()
+      for (const input of [...recipe.inputs,
+        ...(influenceMaterial ? [{ source: 'material' as const, materialId: influenceMaterial, amount: 1 }] : [])]) {
+        const key = input.source === 'inventory' ? `inventory:${input.itemId}` : `material:${input.materialId}`
+        const existing = expectedInputs.get(key)
+        if (existing) { existing.amount += input.amount; existing.required += input.amount; continue }
+        expectedInputs.set(key, input.source === 'inventory'
           ? { ...input, required: input.amount, current: beforePlan.characters.find(value => value.id === character.id)!.inventory[input.itemId] }
           : { ...input, required: input.amount,
-            current: beforePlan.reward.materials[character.id]?.[input.materialId] ?? 0 }),
-        ...(influenceMaterial ? [{ source: 'material', materialId: influenceMaterial, amount: 1,
-          required: 1, current: (beforePlan.reward.materials[character.id]?.[influenceMaterial] ?? 0) }] : []),
-      ])
+            current: beforePlan.reward.materials[character.id]?.[input.materialId] ?? 0 })
+      }
+      expect(plan.inputs).toEqual([...expectedInputs.values()])
 
       const expectedState = structuredClone(state)
       const expected = generateItem(expectedState, {

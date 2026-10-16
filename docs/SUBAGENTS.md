@@ -16,6 +16,7 @@
 - 委派前確認工具支援的 agent type、requested model 與 effort；直接按 [Agent Routing & Naming Rules](agents/agent-routing.md) 選擇最低且可靠足夠的固定角色。
 - 工具限制 task name 時，採小寫英數與底線；例如 `g6_luna_med_engineer` 對應顯示名稱 `g6-luna-med-engineer`（Medium 設定）；實際顯示名稱與工具 task name 都須反映所選模型與 effort。不得把工具限制下的 task name 誤報成 runtime 模型證據。
 - 若工具不支援所需角色或設定，記錄可觀察到的實際入口與限制；不得只憑名稱、TOML 或請求接受推論後端實際執行模型。
+- 委派給 Codex 時，依 [Codex Worker 指派指南](agents/codex-herdr-workers.md) 以 Herdr 啟動具名 worker 並選擇模型。
 - 每次委派明確交代目標、允許修改範圍、單一 owner、禁止事項、已確認契約、Acceptance、驗證方式、必要證據、預期輸出及 blocking edges。
 
 ## 4. 驗收與整合

@@ -12,6 +12,7 @@ const MAX_PENDING_RECORDS = 256
 const MAX_PENDING_CHARS = 256_000
 const JOURNAL_SUMMARY_PREFIX = '待補寫紀錄摘要：'
 const JOURNAL_GAP_PREFIX = '紀錄缺口：'
+const COMBINED_JOURNAL_WORLD = 'journal-combined-worlds'
 
 export const useGameStore = defineStore('game', () => {
   const state = shallowRef(createGame()), speed = ref(0), message = ref(''), savedAt = ref<number | null>(null)
@@ -23,54 +24,126 @@ export const useGameStore = defineStore('game', () => {
   const journalError = ref(''), pendingRecords = ref(0), repository = createPlayJournal()
   let journal = emptyJournal(), flushing = false, persisted = new Set<string>(), inFlight = new Set<string>()
   let retryTimer: ReturnType<typeof setTimeout> | null = null, retryDelay = 1000
+  function isJournalMarker(record: PlayRecord) {
+    return record.message.startsWith(JOURNAL_SUMMARY_PREFIX) || record.message.startsWith(JOURNAL_GAP_PREFIX)
+  }
+  function combinedWorldCount(record: PlayRecord) {
+    if (record.worldId !== COMBINED_JOURNAL_WORLD || !isJournalMarker(record)) return 0
+    return Number(record.message.match(/：較舊 (\d+) 個世界/)?.[1] ?? 0)
+  }
+  function gapMarkers(source: PlayRecord, from: number, to: number, mergedWorlds = 0): PlayRecord[] {
+    // This reserved, schema-valid id keeps combined markers separate from the current
+    // world's event-gap markers. Counts live in both messages, so old schemas load them.
+    const base = { worldId: mergedWorlds ? COMBINED_JOURNAL_WORLD : source.worldId, at: source.at, kind: 'time' as const, from, to,
+      // Legacy checkpoints allow arbitrary character strings; markers must stay bounded.
+      characterId: source.characterId.length <= 128 ? source.characterId : '' }
+    const combined = mergedWorlds ? `較舊 ${mergedWorlds} 個世界的紀錄缺口已合併；時間範圍跨世界。` : ''
+    return [
+      { ...base, id: crypto.randomUUID(), message: `${JOURNAL_SUMMARY_PREFIX}${combined}為控制本機存檔大小，部分較舊紀錄已摘要。`, events: [] },
+      { ...base, id: crypto.randomUUID(), message: `${JOURNAL_GAP_PREFIX}${combined}部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。`, events: [] },
+    ]
+  }
   function markJournalGap(from: number, to: number) {
-    const hasMarkers = journal.pending[0]?.message.startsWith(JOURNAL_SUMMARY_PREFIX)
-      && journal.pending[1]?.message.startsWith(JOURNAL_GAP_PREFIX)
-    const existingSummary = hasMarkers ? journal.pending[0] : undefined
-    const records = hasMarkers ? journal.pending.slice(2) : journal.pending
-    from = Math.min(from, existingSummary?.from ?? from)
-    to = Math.max(to, existingSummary?.to ?? to)
-    const at = Date.now(), characterId = state.value.activeCharacterId
-    const summary: PlayRecord = { id: crypto.randomUUID(), worldId: journal.worldId, at, kind: 'time', from, to, characterId,
-      message: `${JOURNAL_SUMMARY_PREFIX}為控制本機存檔大小，部分較舊紀錄已摘要。`, events: [] }
-    const gap: PlayRecord = { id: crypto.randomUUID(), worldId: journal.worldId, at, kind: 'time', from, to, characterId,
-      message: `${JOURNAL_GAP_PREFIX}部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。`, events: [] }
-    journal.pending = [summary, gap, ...records]
+    const first = journal.pending.findIndex(record => record.worldId === journal.worldId && isJournalMarker(record))
+    const source = first >= 0 ? journal.pending[first] : journal.pending.at(-1)!
+    const records = journal.pending.filter(record => {
+      if (record.worldId !== journal.worldId || !isJournalMarker(record)) return true
+      from = Math.min(from, record.from); to = Math.max(to, record.to)
+      return false
+    })
+    records.splice(first >= 0 ? first : records.length - 1, 0, ...gapMarkers(source, from, to))
+    journal.pending = records
     pendingRecords.value = journal.pending.length
     journalError.value = '遊玩紀錄待補寫資料超過上限：較舊逐筆訊息與事件已移除，僅保留時間摘要與缺口標記。可用「匯出遊玩紀錄」保留目前剩餘資料。'
   }
   function compactPending() {
     let pendingChars = 0
     for (const record of journal.pending) pendingChars += JSON.stringify(record).length + 1
-    if (journal.pending.length <= MAX_PENDING_RECORDS && pendingChars <= MAX_PENDING_CHARS) return
-    const hasMarkers = journal.pending[0]?.message.startsWith(JOURNAL_SUMMARY_PREFIX)
-      && journal.pending[1]?.message.startsWith(JOURNAL_GAP_PREFIX)
-    const existingSummary = hasMarkers ? journal.pending[0] : undefined
-    const records = hasMarkers ? journal.pending.slice(2) : journal.pending
-    let firstRetained = records.length, retainedChars = 0
-    while (firstRetained > 0 && records.length - firstRetained < MAX_PENDING_RECORDS - 2) {
-      const size = JSON.stringify(records[firstRetained - 1]).length + 1
-      if (retainedChars + size > MAX_PENDING_CHARS - 2048) break
-      retainedChars += size
-      firstRetained--
+    if (journal.pending.length <= MAX_PENDING_RECORDS && pendingChars + 1 <= MAX_PENDING_CHARS) return
+    const records = journal.pending
+    const size = (items: PlayRecord[]) => items.reduce((sum, item) => sum + JSON.stringify(item).length + 1, 0)
+    const worlds = new Map<string, { source: PlayRecord; from: number; to: number; count: number }>()
+    for (const record of records) {
+      const existing = worlds.get(record.worldId)
+      worlds.set(record.worldId, { source: existing?.source ?? record,
+        from: Math.min(record.from, existing?.from ?? record.from), to: Math.max(record.to, existing?.to ?? record.to),
+        count: Math.max(existing?.count ?? 0, combinedWorldCount(record) || 1) })
     }
-    const dropped = records.slice(0, firstRetained)
-    if (!dropped.length && !existingSummary) return
-
-    let from = existingSummary?.from ?? Number.MAX_SAFE_INTEGER, to = existingSummary?.to ?? 0
-    for (const record of dropped) { from = Math.min(from, record.from); to = Math.max(to, record.to) }
-    const at = Date.now(), characterId = state.value.activeCharacterId
-    const summary: PlayRecord = { id: crypto.randomUUID(), worldId: journal.worldId, at, kind: 'time', from, to, characterId,
-      message: `${JOURNAL_SUMMARY_PREFIX}為控制本機存檔大小，部分較舊紀錄已摘要。`, events: [] }
-    const gap: PlayRecord = { id: crypto.randomUUID(), worldId: journal.worldId, at, kind: 'time', from, to, characterId,
-      message: `${JOURNAL_GAP_PREFIX}部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。`, events: [] }
-    journal.pending = [summary, gap, ...records.slice(firstRetained)]
+    // Reserve space for the newest record when it can fit. Only when per-world
+    // pairs cannot fit this budget do we combine oldest worlds, preserving newer pairs.
+    const newestChars = size(records.slice(-1))
+    const allWorlds = [...worlds.values()]
+    const entireRange = allWorlds.reduce((range, world) => ({ from: Math.min(range.from, world.from), to: Math.max(range.to, world.to) }),
+      { from: records[0].from, to: records[0].to })
+    const smallestSummary = gapMarkers(records[0],
+      entireRange.from, entireRange.to,
+      allWorlds.reduce((sum, world) => sum + world.count, 0))
+    const reserveChars = newestChars + size(smallestSummary) + 1 <= MAX_PENDING_CHARS ? newestChars : 0
+    const merged = new Set<string>()
+    let compacted = consumePrefix(merged)
+    // Preserve round-5 attribution whenever ordinary prefix compaction suffices.
+    // Retry with combined worlds only for overflow or avoidable loss of the newest record.
+    if (compacted.pending.length > MAX_PENDING_RECORDS || size(compacted.pending) + 1 > MAX_PENDING_CHARS
+      || (!compacted.retained && reserveChars > 0)) {
+      let projectedCount = worlds.size * 2
+      let projectedChars = [...worlds.values()].reduce((sum, world) => sum + size(gapMarkers(world.source, world.from, world.to, world.source.worldId === COMBINED_JOURNAL_WORLD ? world.count : 0)), 0)
+      let combined: PlayRecord[] = [], mergedCount = 0
+      for (const [worldId, world] of worlds) {
+        if (projectedCount + 1 <= MAX_PENDING_RECORDS && projectedChars + reserveChars + 1 <= MAX_PENDING_CHARS) break
+        projectedCount -= combined.length ? 2 : 0
+        projectedChars -= size(combined) + size(gapMarkers(world.source, world.from, world.to, worldId === COMBINED_JOURNAL_WORLD ? world.count : 0))
+        merged.add(worldId); mergedCount += world.count
+        combined = gapMarkers(combined[0] ?? world.source,
+          Math.min(world.from, combined[0]?.from ?? world.from), Math.max(world.to, combined[0]?.to ?? world.to), mergedCount)
+        projectedChars += size(combined)
+      }
+      compacted = consumePrefix(merged)
+    }
+    journal.pending = compacted.pending
     pendingRecords.value = journal.pending.length
     journalError.value = '遊玩紀錄待補寫資料超過上限：較舊逐筆訊息與事件已移除，僅保留時間摘要與缺口標記。可用「匯出遊玩紀錄」保留目前剩餘資料。'
+
+    function consumePrefix(merged: Set<string>) {
+      const markersByWorld = new Map<string, PlayRecord[]>()
+      let remainingChars = pendingChars
+      const consumedWorlds = new Set<string>()
+      let consumedMergedCount = 0
+      let firstRetained = 0, markerChars = 0
+      // Consume only an oldest prefix. World times restart on reset, so queue order
+      // (and the source timestamp), rather than from/to, defines chronology.
+      while (firstRetained < records.length) {
+        const next = records[firstRetained]
+        const key = merged.has(next.worldId) ? COMBINED_JOURNAL_WORLD : next.worldId
+        if (records.length - firstRetained + markersByWorld.size * 2 <= MAX_PENDING_RECORDS
+          && remainingChars + markerChars + 1 <= MAX_PENDING_CHARS
+          && !(isJournalMarker(next) && markersByWorld.has(key))) break
+        firstRetained++
+        remainingChars -= JSON.stringify(next).length + 1
+        const existing = markersByWorld.get(key)
+        if (merged.has(next.worldId) && !consumedWorlds.has(next.worldId)) {
+          consumedMergedCount += worlds.get(next.worldId)!.count
+          consumedWorlds.add(next.worldId)
+        }
+        if (existing) markerChars -= existing.reduce((size, marker) => size + JSON.stringify(marker).length + 1, 0)
+        const markers = gapMarkers(existing?.[0] ?? next,
+          Math.min(next.from, existing?.[0].from ?? next.from), Math.max(next.to, existing?.[0].to ?? next.to),
+          key === COMBINED_JOURNAL_WORLD ? consumedMergedCount || worlds.get(key)!.count : 0)
+        markersByWorld.set(key, markers)
+        markerChars += markers.reduce((size, marker) => size + JSON.stringify(marker).length + 1, 0)
+      }
+      return { pending: [...markersByWorld.values()].flat().concat(records.slice(firstRetained)), retained: firstRetained < records.length }
+    }
   }
   function record(kind: PlayRecord['kind'], from: number, events: WorldEvent[], result: string) {
-    const previous = journal.pending.at(-1)
-    if (kind === 'time' && previous?.kind === 'time' && previous.worldId === journal.worldId && !inFlight.has(previous.id)) {
+    let previous = journal.pending.at(-1)
+    if (kind === 'time' && previous?.kind === 'time' && previous.worldId === journal.worldId
+      && !inFlight.has(previous.id)
+      && !previous.message.startsWith(JOURNAL_SUMMARY_PREFIX) && !previous.message.startsWith(JOURNAL_GAP_PREFIX)) {
+      if (persisted.has(previous.id)) {
+        // An older checkpoint may replay the old id after a failed save or lost acknowledgement.
+        previous = { ...previous, id: crypto.randomUUID() }
+        journal.pending[journal.pending.length - 1] = previous
+      }
       previous.at = Date.now(); previous.to = state.value.worldTime
       const combinedEvents = [...previous.events, ...events]
       if (combinedEvents.length > 128) {

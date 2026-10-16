@@ -116,8 +116,16 @@ describe('Phase10-R save invariants', () => {
   })
 
   it.each(['dead', 'combat', 'dungeon'] as const)('blocks crop-good conversion for an unavailable actor (%s) without mutation', mode => {
+    const available = createGame(101024)
+    const availableCharacter = player(available)
+    available.reward.materials[availableCharacter.id] = fullMaterialStacks()
+    available.reward.materials[availableCharacter.id]!.spring_pea_good = 1
+    expect(convertCropGoodToFood(available, 'spring_pea_good', 1)).toBe('')
+
     const state = createGame(101024)
     const character = player(state)
+    state.reward.materials[character.id] = fullMaterialStacks()
+    state.reward.materials[character.id]!.spring_pea_good = 1
     if (mode === 'dead') {
       character.isAlive = false
       character.status = 'dead'
@@ -125,7 +133,9 @@ describe('Phase10-R save invariants', () => {
     else state.dungeon.inDungeon = true
     const before = structuredClone(state)
 
-    expect(convertCropGoodToFood(state, 'spring_pea_good', 1)).not.toBe('')
+    expect(convertCropGoodToFood(state, 'spring_pea_good', 1)).toBe(
+      mode === 'dead' ? '角色已離世，請選擇繼任者。' : '目前無法進行這項活動。',
+    )
     expect(state).toEqual(before)
   })
 })
