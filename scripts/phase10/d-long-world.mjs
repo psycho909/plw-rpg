@@ -41,7 +41,7 @@ const manifest = {
   command: `node scripts/phase10/d-long-world.mjs ${process.argv.slice(2).join(' ')}`.trim(),
   startedAt: started.toISOString(), head, source,
   scenario: 'No Intervention', scenarioType: 'normal fresh-save; createGame(seed), no fixture overrides or player actions',
-  horizon: 'Elapsed years from each fresh save: target worldTime = createGame(seed).worldTime + year * 360 * minutesPerDay.',
+  horizon: 'Elapsed game-calendar years from each fresh save: target worldTime = createGame(seed).worldTime + year * CONFIG.daysPerSeason * CONFIG.seasons.length * CONFIG.minutesPerDay.',
   seeds, years, dayMinutes,
   model: 'Public simulation.simulate() advanced to canonical day boundaries; serialize/deserialize at each horizon; compare one-day live and reloaded continuations.',
   comparedState: 'Full GameState JSON, including rngState, worldTime, reward, characters, NPCs, crisis state, events and history. Save lastSavedAt is fixed at 0 and is persistence metadata, not game state.',
@@ -177,14 +177,23 @@ try {
   const { serialize, deserialize } = save
   const minutesPerDay = data.CONFIG.minutesPerDay
   if (minutesPerDay !== dayMinutes) throw new Error(`unexpected canonical day length: ${minutesPerDay}`)
+  const daysPerGameYear = data.CONFIG.daysPerSeason * data.CONFIG.seasons.length
+  const minutesPerGameYear = data.CONFIG.daysPerSeason * data.CONFIG.seasons.length * data.CONFIG.minutesPerDay
+  manifest.calendar = {
+    daysPerSeason: data.CONFIG.daysPerSeason,
+    seasonsPerYear: data.CONFIG.seasons.length,
+    daysPerGameYear,
+    minutesPerDay: data.CONFIG.minutesPerDay,
+    minutesPerGameYear,
+  }
+  await writeFile(join(attempt, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`)
 
   for (const seed of seeds) {
     const state = createGame(seed)
     const startAt = state.worldTime
-    const yearMinutes = 360 * minutesPerDay
     const horizons = new Set(years)
     const crisisRecords = new Map()
-    const endAt = startAt + Math.max(...years) * yearMinutes
+    const endAt = startAt + Math.max(...years) * minutesPerGameYear
     await appendFile(progressPath, `${JSON.stringify({ phase: 'world-start', seed, years })}\n`)
     while (state.worldTime < endAt) {
       simulate(state, Math.min(minutesPerDay, endAt - state.worldTime))
@@ -196,7 +205,7 @@ try {
           ? { ...crisis.resolutionSummary.recovery } : previous.recovery
         crisisRecords.set(crisis.sequence, { ...previous, phase: crisis.phase, outcome, recovery, cooldownUntil: crisis.cooldownUntil })
       }
-      const completedYears = [...horizons].filter(year => state.worldTime >= startAt + year * yearMinutes).sort((a, b) => a - b)
+      const completedYears = [...horizons].filter(year => state.worldTime >= startAt + year * minutesPerGameYear).sort((a, b) => a - b)
       for (const year of completedYears) {
         const row = checkpoint(state, seed, year, serialize, deserialize, simulate, population, crisisRecords)
         checkpoints.push(row)

@@ -2,26 +2,28 @@
 
 ## 狀態
 
-**D 執行、定向驗證與 L3 獨立稽核均完成；Owner 最終驗收待完成。** 本摘要不代表 Ticket 已 accepted，也不代表 Phase10 整體已驗收。
+**曆法修正、精確年數長跑、獨立稽核與證據包完整性核對均完成；Owner 最終驗收待進行。** 本摘要不代表 Ticket 已 accepted，也不代表 Phase10 整體已驗收。
 
 ## 範圍與結果
 
-- 依 Ticket `20261016-v2x-10d-persistence.md`、dispatch D 與 Feature Freeze 執行；沒有修改 `src/` 產品程式或存檔格式。新增 `src/services/phase10Persistence.test.ts`、`src/engine/phase10Determinism.test.ts`，以及 `scripts/phase10/d-long-world.mjs`。
-- 存檔／遷移／確定性契約盤點及 coverage mapping：[`save-migration-determinism.md`](../save-migration-determinism.md)。新增的 NPC-linked request/arc round trip 與同 seed 合法 Boss 行動重播測試均通過。
-- Phase8-D1 核心 long-world 證據可重用：從 `5e223be` 到 D 執行快照 `4a71d35`，engine/domain/data/services 僅 `wolfFamily.ts` presentation refactor 及其測試變化；模擬、保存、RNG 路徑未變。稽核時目前 HEAD 已到 `2330441d`；D snapshot 後只新增 Phase10-C 測試檔，沒有產品程式變更。
-- 目前來源 No Intervention 3 seeds × 10／50／100 年確認 9/9 通過。每個 checkpoint 完整存檔重載及一天續跑相等、孤兒參照 0；JSON save payload 245,272–608,331 bytes。詳細數據、限制與 provenance：[`long-world.md`](../long-world.md)。
-- 定向 Vitest 10 檔／238 測試全通過；runner syntax check 通過。精確命令與執行限制：[`test-results.md`](test-results.md)。全專案 check/build 交由 Phase10 lead。
+- 依 Ticket `20261016-v2x-10d-persistence.md`、dispatch D 與 Feature Freeze 執行；本次只修改 `scripts/phase10/d-long-world.mjs` 與 D 範圍報告，沒有修改 `src/` 產品程式或存檔格式。
+- 修正 runner 年長計算，使用 `CONFIG.daysPerSeason * CONFIG.seasons.length * CONFIG.minutesPerDay`。目前遊戲年為 120 天／172,800 分鐘，manifest 明列曆法設定與換算值。
+- 精確命令 `node scripts/phase10/d-long-world.mjs --seeds=40131,40132,40133 --years=10,50,100` 通過：9/9 checkpoint、save/reload 9/9、continuation 9/9、orphan references 0，JSON payload 211,769–379,777 bytes。精確數據見 [`long-world.md`](../long-world.md)。
+- 原 attempt `attempt-20261016T034911258Z` 已保留並重新標示為 30／150／300 個遊戲年；解讀補充見其 [`calendar-correction.json`](attempt-20261016T034911258Z/calendar-correction.json)。其較長 horizon parity 仍有效，但不能替代精確 10／50／100 年檢查點。
+- Phase8 `run-world-crisis.mjs` 使用相同 360 天／年慣例，故 Phase8-D「10／50／100 年」同樣是 30／150／300 個遊戲年。這是歷史證據限制，不是產品缺陷；詳見 [`long-world.md`](../long-world.md)。
+- 存檔／遷移／確定性契約盤點與定向 Vitest 證據見 [`save-migration-determinism.md`](../save-migration-determinism.md) 及 [`test-results.md`](test-results.md)。10 個檔案、238 個測試是在修正 runner 前執行；本次重新執行 runner syntax check 與完整長跑。
 
-## 最終 run
+## 最終精確曆法 run
 
-- Attempt：[`attempt-20261016T034911258Z`](attempt-20261016T034911258Z/summary.json)
-- D run HEAD：`4a71d3599cdf17ac3dab189d88e16fabcebe5033`；稽核時目前 HEAD：`2330441d76ccfb42d064b8442709c26733ab48fd`（origin 同步）
-- Source fingerprint：119 個追蹤 `src/` 檔案，`d312c8b3a95f96ba6609d2531fd770d2b19df3ac64a7796905c2c1fa29ecd305`
-- 結果：PASS，9/9 checkpoints；save/reload 9/9，continuation 9/9，orphans 0。
-- Runner model requested：`gpt-6-luna / max`（task label `g6-luna-max-core-engineer`）；實際 runtime 身分無法由工具確認，不作宣稱。
+- Attempt：[`attempt-20261016T065808351Z`](attempt-20261016T065808351Z/summary.json)
+- 執行 HEAD：`e9f2efc90ad7da46331245a8ee229a3296187fcf`
+- Source fingerprint：123 個追蹤 `src/` 檔案，`3f469b14053555bbee38db6eddcd66e3f78980bfe4ed1def6e8bc5677fbc4842`
+- 曆法：30 天／季 × 4 季／年 × 1,440 分鐘／天 = 172,800 分鐘／遊戲年；checkpoint `worldTime` 為 1,728,480、8,640,480、17,280,480。
+- 結果：PASS，9/9 checkpoints；全部 save/reload 與 continuation parity 通過；orphans 0。
+- Runner requested role：`gpt-6-luna / max`（task label `g6-luna-max-core-engineer`）；實際 runtime 身分無法由工具確認，不作宣稱。
 
 ## 獨立稽核
 
-L3 獨立稽核由 requested `gpt-6-luna / max` reviewer 在獨立 context 完成；實際 runtime 無法確認。結論 **通過、無 findings**，詳見 [`d-audit.md`](d-audit.md)。Reviewer 初讀時曾懷疑 progress row 欄位缺失，按最終 attempt 的精確路徑與 SHA-256 重查後撤回；九列資料皆一致。Owner 最終驗收仍待 Owner 執行。
+舊版 D 稽核不涵蓋本次 calendar fix 與重跑結果，不能作為此修正的獨立稽核。follow-up 獨立稽核已記錄於 [`d-audit.md`](d-audit.md)，並關閉曆法 finding。最終 aggregate hash 清單列出 19 個 D 交付檔案，重建後逐項核對通過；兩個 attempt 的內層清單也分別通過 4/4 與 5/5。L3 的 Owner 最終核准仍待 Owner 執行。
 
 本次 D 交付檔的 SHA-256 與位元組數彙總見 [`d-artifacts.sha256`](d-artifacts.sha256)。

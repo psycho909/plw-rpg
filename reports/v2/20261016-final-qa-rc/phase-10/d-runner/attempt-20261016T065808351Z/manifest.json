@@ -1,0 +1,37 @@
+{
+  "command": "node scripts/phase10/d-long-world.mjs --seeds=40131,40132,40133 --years=10,50,100",
+  "startedAt": "2026-10-16T06:58:08.351Z",
+  "head": "e9f2efc90ad7da46331245a8ee229a3296187fcf",
+  "source": {
+    "fileCount": 123,
+    "sha256": "3f469b14053555bbee38db6eddcd66e3f78980bfe4ed1def6e8bc5677fbc4842"
+  },
+  "scenario": "No Intervention",
+  "scenarioType": "normal fresh-save; createGame(seed), no fixture overrides or player actions",
+  "horizon": "Elapsed game-calendar years from each fresh save: target worldTime = createGame(seed).worldTime + year * CONFIG.daysPerSeason * CONFIG.seasons.length * CONFIG.minutesPerDay.",
+  "seeds": [
+    40131,
+    40132,
+    40133
+  ],
+  "years": [
+    10,
+    50,
+    100
+  ],
+  "dayMinutes": 1440,
+  "model": "Public simulation.simulate() advanced to canonical day boundaries; serialize/deserialize at each horizon; compare one-day live and reloaded continuations.",
+  "comparedState": "Full GameState JSON, including rngState, worldTime, reward, characters, NPCs, crisis state, events and history. Save lastSavedAt is fixed at 0 and is persistence metadata, not game state.",
+  "referenceAudit": "Explicit actor, party, property, arc/request, memory, crisis-contribution/recovery, and reward-owner references; strict deserialize validation also runs at every checkpoint.",
+  "runtime": {
+    "platform": "win32",
+    "node": "v22.14.0"
+  },
+  "calendar": {
+    "daysPerSeason": 30,
+    "seasonsPerYear": 4,
+    "daysPerGameYear": 120,
+    "minutesPerDay": 1440,
+    "minutesPerGameYear": 172800
+  }
+}

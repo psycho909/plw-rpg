@@ -1,0 +1,17 @@
+{
+  "attemptId": "attempt-20261016T034911258Z",
+  "originalCommand": "node scripts/phase10/d-long-world.mjs --seeds=40131,40132,40133 --years=10,50,100",
+  "originalYearFormula": "year * 360 * minutesPerDay",
+  "gameCalendar": {
+    "daysPerSeason": 30,
+    "seasonsPerYear": 4,
+    "daysPerGameYear": 120,
+    "minutesPerDay": 1440,
+    "minutesPerGameYear": 172800
+  },
+  "requestedYearLabels": [10, 50, 100],
+  "actualElapsedGameYears": [30, 150, 300],
+  "interpretation": "The original run's save/reload parity, continuation parity, and orphan-reference evidence remain valid for its actual longer horizons. These rows do not establish the exact 10/50/100 game-year checkpoints.",
+  "rawAttemptFilesPreserved": true,
+  "supersededForExactCheckpointsBy": "attempt-20261016T065808351Z"
+}

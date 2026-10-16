@@ -2,7 +2,7 @@
 
 ## 結果
 
-**D 範圍驗證通過，待整合與 Owner 最終驗收。** 本工作沒有修改 `src/` 產品程式或存檔格式；新增兩個契約測試與一支受限長跑 runner。定向測試與 long-world runner 的來源快照是 `4a71d3599cdf17ac3dab189d88e16fabcebe5033`。稽核時目前 HEAD 已前進到 `2330441d76ccfb42d064b8442709c26733ab48fd` 並與 `origin/v2x/reward-core` 同步；相較 D 快照，`src/` 只多 Phase10-C 的 `src/engine/phase10GoalContinuity.test.ts`，沒有產品程式變更。D worker 未提交或推送。
+**D 的存檔、遷移與確定性契約證據完成，待整合與 Owner 最終驗收。** 本工作沒有修改 `src/` 產品程式或存檔格式；新增兩個契約測試與一支受限長跑 runner。原定向測試的來源快照是 `4a71d3599cdf17ac3dab189d88e16fabcebe5033`。本次 follow-up 只修正 runner 年長換算並重跑長世界；精確曆法 run 捕捉到 HEAD `e9f2efc90ad7da46331245a8ee229a3296187fcf`、123 個追蹤 `src/` 檔案、fingerprint `3f469b14053555bbee38db6eddcd66e3f78980bfe4ed1def6e8bc5677fbc4842`。本次沒有變更 `src/`，也沒有重跑 Vitest；runner syntax check 與正確曆法長跑通過。D worker 未提交或推送。
 
 Ticket：[`20261016-v2x-10d-persistence.md`](../../../../tickets/20261016-v2x-10d-persistence.md)。範圍依 Ticket §8 與 `.scratch/20261016-phase10/dispatch-d-max.md`。
 
@@ -31,10 +31,10 @@ Ticket：[`20261016-v2x-10d-persistence.md`](../../../../tickets/20261016-v2x-10
 
 ### 測試結果
 
-精確命令與結果見 [`d-runner/test-results.md`](d-runner/test-results.md)：10 個 Vitest 檔案、238 個測試全數通過；runner `node --check` 通過。Phase10-D 依共同規則執行範圍內的定向測試；全專案 check/build 由 Phase10 lead 負責。
+精確命令與時間點見 [`d-runner/test-results.md`](d-runner/test-results.md)：原定向 Vitest 為 10 個檔案、238 個測試全數通過；曆法修正後另執行 runner `node --check` 及完整 3 seeds × 10／50／100 個遊戲年 run，兩者通過。Phase10-D 依共同規則執行範圍內的定向測試；全專案 check/build 由 Phase10 lead 負責。
 
 ## 邊界與未涵蓋風險
 
 - 本次確認 Store 層的保存、阻擋及重載契約，沒有執行真實瀏覽器重啟、IndexedDB／localStorage 配額或 UI 手動保存操作；不可由序列化 JSON 位元組推論瀏覽器配額。
-- 100 年 No Intervention 長跑中，玩家角色自然死亡而未 succession，原因是該情境不呼叫玩家繼承操作；既有 500 年測試覆蓋有 succession 的模擬續跑。這份結果不等同於玩家操作的 100 年遊戲。
+- 修正後 100 個遊戲年 No Intervention 長跑中，玩家角色自然死亡而未 succession，原因是該情境不呼叫玩家繼承操作；既有 500 年測試覆蓋有 succession 的模擬續跑。這份結果不等同於玩家操作的 100 年遊戲。舊 Phase10 attempt 與 Phase8-D 長跑曾將 360 天當一年，需按 30／150／300 個遊戲年解讀；詳見 [`long-world.md`](long-world.md)。
 - 尚待 Phase10 整合與 Owner 最終驗收；L3 獨立稽核記錄收錄於 [`d-runner/d-summary.md`](d-runner/d-summary.md)。

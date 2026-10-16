@@ -33,3 +33,11 @@ This is the Phase10-F triage of engineering evidence and retained product decisi
 - P3: isolated E menu-open spike (unreproduced), Phase10-A validator wrapper portability, and app/test TypeScript environment maintainability note.
 - Retained Owner decisions: P10-F03 **KEEP V0**, P10-F04 **NOT MODELED**, P10-F05 **DEFERRED**.
 - Phase10 A–E are accepted: A `4a71d35`, B `29e7c4b`, C `2330441` (typing fix `23ef273`), D `9928112`, E `076edeb`. E’s three P2 findings are resolved; retain only its unreproduced, non-blocking P3 latency outlier. A fresh whole-phase Independent Max Review remains pending.
+
+## Final independent review findings (2026-10-16)
+
+| ID | Severity | Finding | Status |
+|---|---|---|---|
+| FMAX-P10 P2-01 | P2 (evidence) | Long-world runners (Phase10-D and Phase8 run-world-crisis.mjs) used 360-day years; game year = 120 days, so prior "10/50/100 years" = 30/150/300 game years. | **Resolved**: runner uses calendar constants; exact 10/50/100 game-year rerun 9/9 parity, 0 orphans (d-runner/attempt-20261016T065808351Z). Phase8-D labelling recorded as historical evidence limitation. |
+| FMAX-P10 P3-01 | P3 | External handoff Current HEAD stale. | Resolved at delivery (final commit filled). |
+| FMAX-P10 P3-02 | P3 | F ticket used non-enum status in_review. | Resolved (in_progress → accepted). |

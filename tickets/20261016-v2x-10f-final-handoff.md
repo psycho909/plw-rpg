@@ -1,6 +1,6 @@
 # Phase10-F — Final QA, Internal Review & Handoff
 
-- Status: in_review — internal independent Max review pending
+- Status: in_progress — internal independent Max review findings being addressed（P2-01 long-world calendar years）
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-16 Owner 正式規格 [V2X-PHASE10-FINAL-QA-RC](../docs/specs/V2X-PHASE10-FINAL-QA-RC.md) §0「正式啟動 Phase10」；Parent [Phase10](20261016-v2x-10-final-qa-rc.md)。
