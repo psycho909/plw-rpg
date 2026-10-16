@@ -212,12 +212,21 @@ function blankContext(recipeId: CraftRecipeId | null, state: GameState | null, i
       nextFloor: null, nextFloorAtSmithing: null }
   const goldValue = character && safeCount(character.gold) ? character.gold : null
   const staminaValue = character && safeCount(character.stamina) ? character.stamina : null
-  const plannedInputs: CraftingInput[] = recipe ? [
+  const rawInputs: CraftingInput[] = recipe ? [
     ...recipe.inputs,
     ...(influenceMaterial && recipe.allowedBiasMaterials.includes(influenceMaterial)
       ? [{ source: 'material' as const, materialId: influenceMaterial, amount: 1 }]
       : []),
   ] : []
+  const inputTotals = new Map<string, CraftingInput>()
+  for (const input of rawInputs) {
+    const id = input.source === 'inventory' ? input.itemId : input.materialId
+    const key = `${input.source}:${id}`
+    const existing = inputTotals.get(key)
+    if (existing) existing.amount += input.amount
+    else inputTotals.set(key, { ...input })
+  }
+  const plannedInputs = [...inputTotals.values()]
   const inputs: CraftInputPreview[] = plannedInputs.map(input => ({
     ...input,
     required: input.amount,
@@ -432,6 +441,13 @@ function craftInternal(state: GameState, request: CraftRequest, planned: CraftPl
 
   const recipe = CRAFTING_RECIPES[result.recipeId!]
   const character = state.characters.find(candidate => candidate.id === state.activeCharacterId)!
+  if (result.inputs.some(input => {
+    const current = currentInput(state, character.id, character, input)
+    return current === null || current < input.required
+  })) {
+    const failure = fail('materials_required')
+    return { ok: false, reasonCode: failure.reasonCode, message: failure.message }
+  }
   const crafterId = character.id
   const startedAt = state.worldTime
   const item = generateItem(state, {

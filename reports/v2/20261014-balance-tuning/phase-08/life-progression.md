@@ -1,5 +1,7 @@
 # Phase 8-C1：生活成長與 Smithing
 
+> **Erratum（2026-10-16，外部 Code Review P3-01）：** 本報告的經濟 runner（`scripts/phase8/run-life-economy.mjs:19`、`economy-harness-core.mjs:2`）以 360 天為一年；Oakvale 遊戲年為 4 季 × 30 天＝120 天。因此文中「3 年／三年」實為 1,080 天＝**9 個遊戲年**，「第一年末（day 359）」實為第 3 遊戲年末。同一 horizon 的 Before／After 相對比較（含 C-F1 V4 決策依據）不受影響，但每遊戲年的絕對金幣量被高估約 3 倍。數據未重跑。
+
 ## 範圍與證據
 
 - A v3 驗證樣本：`a-baseline-run/attempt-20261014T040039340Z/`，Life 3 seeds × 3 年，9/9 路線有效。

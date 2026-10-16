@@ -1,5 +1,7 @@
 # Phase 8-C1：Life 經濟、收入速率與 Farm supply
 
+> **Erratum（2026-10-16，外部 Code Review P3-01）：** 本報告的經濟 runner（`scripts/phase8/run-life-economy.mjs:19`、`economy-harness-core.mjs:2`）以 360 天為一年；Oakvale 遊戲年為 4 季 × 30 天＝120 天。因此文中「3 年／三年」實為 1,080 天＝**9 個遊戲年**，「第一年末（day 359）」實為第 3 遊戲年末。同一 horizon 的 Before／After 相對比較（含 C-F1 V4 決策依據）不受影響，但每遊戲年的絕對金幣量被高估約 3 倍。數據未重跑。
+
 ## 樣本與比較界線
 
 有效 itinerary 都以相同 3 seeds（61101–61103）、3 遊戲年、公開引擎 action 執行。A v3 Life `attempt-20261014T040039340Z` 驗證 9/9；C 最終 `c-runner/attempt-20261014T090744303Z` 含 Life、Hybrid、craft-focused、farm-business-supply、seasonal-farm-sell 五種 variant，15/15 `VALID_POLICY`。這些是不同但合法的 scripted policies，不能將其中一方當成另一方的 runner 偏差而排除；也不能把 policy 結果當成人類玩家預測。

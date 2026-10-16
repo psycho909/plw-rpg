@@ -336,6 +336,108 @@ describe('safe browser persistence', () => {
     expect(game.saveError).toBe('')
     expect(game.speed).toBe(20)
   })
+  it('compacts oversized legacy pending data so reset persists under quota', async () => {
+    const appendBatch = vi.fn(async () => { throw new Error('archive unavailable') })
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
+    const world = createGame(100016); world.life.openingSeen = true
+    const envelope = JSON.parse(serialize(world, 100000))
+    envelope.playJournal = { version: 1, worldId: 'legacy-world', pending: [{ id: 'legacy-large', worldId: 'legacy-world', at: 100000,
+      kind: 'action', from: 480, to: 480, characterId: world.activeCharacterId, message: 'x'.repeat(5_000_000), events: [] }] }
+    saved = JSON.stringify(envelope)
+    expect(saved.length).toBeGreaterThan(5_000_000)
+    storage.setItem.mockImplementation((_key, value) => {
+      if (value.length > 5_000_000) throw new DOMException('localStorage quota exceeded', 'QuotaExceededError')
+      saved = value
+    })
+    const game = useGameStore()
+    await Promise.resolve(); await Promise.resolve()
+    expect(game.saveError).toContain('存檔失敗')
+    expect(game.speed).toBe(0)
+    const oldCheckpoint = saved
+    game.reset()
+    expect(saved).not.toBe(oldCheckpoint)
+    expect(game.saveError).toBe('')
+    const reset = unpackCheckpoint(saved!)
+    expect(reset.state.worldTime).toBe(480)
+    expect(saved!.length).toBeLessThan(5_000_000)
+    expect(reset.journal.pending).toHaveLength(3)
+    expect(reset.journal.pending.some(record => record.message.startsWith('待補寫紀錄摘要：'))).toBe(true)
+    expect(reset.journal.pending.some(record => record.message.startsWith('紀錄缺口：'))).toBe(true)
+    expect(reset.journal.pending.some(record => record.kind === 'reset')).toBe(true)
+    expect(game.journalError).toContain('匯出遊玩紀錄')
+  })
+  it('merges consecutive pending time records into one range without losing events', async () => {
+    const appendBatch = vi.fn(async () => { throw new Error('archive unavailable') })
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
+    const game = startedGame()
+    await Promise.resolve(); await Promise.resolve()
+    const from = game.state.worldTime
+    game.advance(1440)
+    const first = unpackCheckpoint(saved!).journal.pending.filter(record => record.kind === 'time').at(-1)!
+    const sequenceBeforeSecond = game.state.eventSequence
+    await Promise.resolve(); await Promise.resolve()
+    game.advance(1440)
+    const secondEvents = game.state.events.filter(event => event.id > sequenceBeforeSecond)
+    const times = unpackCheckpoint(saved!).journal.pending.filter(record => record.kind === 'time')
+    expect(times).toHaveLength(1)
+    expect(times[0]).toMatchObject({ from, to: from + 2880 })
+    expect(times[0]!.events).toEqual([...first.events, ...secondEvents])
+  })
+  it('keeps 25,000 time advances resumable with a bounded checkpoint during archive failure', async () => {
+    const appendBatch = vi.fn(async () => { throw new Error('archive unavailable') })
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
+    const game = startedGame(), before = game.state.worldTime
+    await Promise.resolve(); await Promise.resolve()
+    storage.setItem.mockImplementation((_key, value) => {
+      if (value.length > 5_000_000) throw new DOMException('localStorage quota exceeded', 'QuotaExceededError')
+      saved = value
+    })
+
+    for (let i = 0; i < 25_000; i++) {
+      game.advance(1)
+      if (i % 100 === 99) storage.setItem.mockClear()
+    }
+    const checkpoint = unpackCheckpoint(saved!)
+    const ranges = checkpoint.journal.pending.filter(record => record.message.startsWith('世界時間由'))
+    expect(game.state.worldTime).toBe(before + 25_000)
+    expect(game.speed).toBe(1)
+    expect(game.saveError).toBe('')
+    expect(game.pendingRecords).toBeLessThanOrEqual(256)
+    expect(ranges).toHaveLength(1)
+    expect(ranges[0]).toMatchObject({ from: before, to: before + 25_000 })
+    expect(saved!.length).toBeLessThan(5_000_000)
+  }, 45_000)
+  it('retries a rejected journal append after a backoff delay', async () => {
+    let attempts = 0
+    const appendBatch = vi.fn(async () => { if (++attempts === 1) throw new Error('archive unavailable') })
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
+    const game = startedGame()
+    await Promise.resolve(); await Promise.resolve()
+    expect(appendBatch).toHaveBeenCalledTimes(1)
+    await vi.advanceTimersByTimeAsync(999)
+    expect(appendBatch).toHaveBeenCalledTimes(1)
+    await vi.advanceTimersByTimeAsync(1)
+    await Promise.resolve(); await Promise.resolve()
+    expect(appendBatch).toHaveBeenCalledTimes(2)
+    expect(game.pendingRecords).toBe(0)
+  })
+  it('flushes checkpointed records even when a later local checkpoint write fails', async () => {
+    let fail = true
+    const appendBatch = vi.fn(async () => { if (fail) throw new Error('archive unavailable') })
+    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
+    const game = startedGame()
+    await Promise.resolve(); await Promise.resolve()
+    expect(appendBatch).toHaveBeenCalledTimes(1)
+    fail = false; appendBatch.mockClear()
+    storage.setItem.mockImplementationOnce(() => { throw new DOMException('localStorage quota exceeded', 'QuotaExceededError') })
+    game.advance(1)
+    expect(appendBatch).not.toHaveBeenCalled()
+    await vi.advanceTimersByTimeAsync(1000)
+    await Promise.resolve(); await Promise.resolve(); await Promise.resolve()
+    expect(appendBatch).toHaveBeenCalled()
+    expect(game.saveError).toBe('')
+    expect(unpackCheckpoint(saved!).state).toEqual(game.state)
+  })
   it('allows confirmed reset during both storage failures and retains the old pending records', async () => {
     let archiveFails = true
     const appended: playJournal.PlayRecord[] = []
@@ -451,7 +553,7 @@ describe('safe browser persistence', () => {
     expect(unpackCheckpoint(saved!).state.worldTime).toBe(initialTime + 10)
     expect(unpackCheckpoint(saved!).journal.pending).toEqual(pending)
     expect(game.state.worldTime).toBe(initialTime + (saveFails ? 15 : 10))
-    expect(game.pendingRecords).toBe(pending.length + (saveFails ? 1 : 0))
+    expect(game.pendingRecords).toBe(pending.length)
     expect(game.journalError).toContain(conflict)
     expect(game.journalError).toContain('遊玩紀錄尚待補寫。請重試存檔，或匯出保留。')
     if (saveFails) {
@@ -461,8 +563,11 @@ describe('safe browser persistence', () => {
     expect(game.save()).toBe(true)
     await Promise.resolve()
     expect(unpackCheckpoint(saved!).state.worldTime).toBe(game.state.worldTime)
-    expect(unpackCheckpoint(saved!).journal.pending.slice(0, pending.length)).toEqual(pending)
-    expect(unpackCheckpoint(saved!).journal.pending).toHaveLength(game.pendingRecords)
+    const retriedPending = unpackCheckpoint(saved!).journal.pending
+    expect(retriedPending).toHaveLength(game.pendingRecords)
+    expect(retriedPending[0]).toMatchObject({ id: pending[0]!.id })
+    expect(retriedPending.at(-1)).toMatchObject({ id: pending.at(-1)!.id, kind: 'time', from: initialTime,
+      to: initialTime + (saveFails ? 15 : 10) })
     expect(game.journalError).toContain(conflict)
   })
 })

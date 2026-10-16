@@ -93,9 +93,11 @@ export function tradeMaterial(state: GameState, materialId: MaterialId): string 
 
 /** Converts a bounded stack of owned crop goods into their declared food value. */
 export function convertCropGoodToFood(state: GameState, goodId: MaterialId, amount: number): string {
+  const character = player(state)
+  if (!character.isAlive || character.status === 'dead') return '角色已離世，請選擇繼任者。'
+  if (state.combat || character.status === 'combat' || state.dungeon.inDungeon) return '目前無法進行這項活動。'
   if (!Object.hasOwn(CONTENT_CROP_GOODS, goodId)) return '這項素材不能轉換成食物。'
   if (!Number.isSafeInteger(amount) || amount <= 0) return '轉換數量必須是正整數。'
-  const character = player(state)
   const counts = state.reward.materials[character.id]
   if (!counts || !Number.isSafeInteger(counts[goodId]) || counts[goodId]! < amount) return '沒有足夠的收成品可轉換。'
   const foodValue = CONTENT_CROP_GOODS[goodId]!.foodValue

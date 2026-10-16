@@ -8,6 +8,11 @@ import { holdSaveWriter } from '../services/saveWriter'
 import { createPlayJournal, emptyJournal, packCheckpoint, unpackCheckpoint, type PlayRecord } from '../services/playJournal'
 import type { WorldEvent } from '../domain/types'
 
+const MAX_PENDING_RECORDS = 256
+const MAX_PENDING_CHARS = 256_000
+const JOURNAL_SUMMARY_PREFIX = '待補寫紀錄摘要：'
+const JOURNAL_GAP_PREFIX = '紀錄缺口：'
+
 export const useGameStore = defineStore('game', () => {
   const state = shallowRef(createGame()), speed = ref(0), message = ref(''), savedAt = ref<number | null>(null)
   const saveBlocked = ref(false), saveError = ref(''), offline = ref<{
@@ -16,11 +21,69 @@ export const useGameStore = defineStore('game', () => {
   } | null>(null)
   const writerReady = ref(false), writerPending = ref(true)
   const journalError = ref(''), pendingRecords = ref(0), repository = createPlayJournal()
-  let journal = emptyJournal(), flushing = false, persisted = new Set<string>()
-  function record(kind: PlayRecord['kind'], from: number, events: WorldEvent[], result: string) {
-    journal.pending.push({ id: crypto.randomUUID(), worldId: journal.worldId, at: Date.now(), kind, from, to: state.value.worldTime,
-      characterId: state.value.activeCharacterId, message: result, events })
+  let journal = emptyJournal(), flushing = false, persisted = new Set<string>(), inFlight = new Set<string>()
+  let retryTimer: ReturnType<typeof setTimeout> | null = null, retryDelay = 1000
+  function markJournalGap(from: number, to: number) {
+    const hasMarkers = journal.pending[0]?.message.startsWith(JOURNAL_SUMMARY_PREFIX)
+      && journal.pending[1]?.message.startsWith(JOURNAL_GAP_PREFIX)
+    const existingSummary = hasMarkers ? journal.pending[0] : undefined
+    const records = hasMarkers ? journal.pending.slice(2) : journal.pending
+    from = Math.min(from, existingSummary?.from ?? from)
+    to = Math.max(to, existingSummary?.to ?? to)
+    const at = Date.now(), characterId = state.value.activeCharacterId
+    const summary: PlayRecord = { id: crypto.randomUUID(), worldId: journal.worldId, at, kind: 'time', from, to, characterId,
+      message: `${JOURNAL_SUMMARY_PREFIX}為控制本機存檔大小，部分較舊紀錄已摘要。`, events: [] }
+    const gap: PlayRecord = { id: crypto.randomUUID(), worldId: journal.worldId, at, kind: 'time', from, to, characterId,
+      message: `${JOURNAL_GAP_PREFIX}部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。`, events: [] }
+    journal.pending = [summary, gap, ...records]
     pendingRecords.value = journal.pending.length
+    journalError.value = '遊玩紀錄待補寫資料超過上限：較舊逐筆訊息與事件已移除，僅保留時間摘要與缺口標記。可用「匯出遊玩紀錄」保留目前剩餘資料。'
+  }
+  function compactPending() {
+    let pendingChars = 0
+    for (const record of journal.pending) pendingChars += JSON.stringify(record).length + 1
+    if (journal.pending.length <= MAX_PENDING_RECORDS && pendingChars <= MAX_PENDING_CHARS) return
+    const hasMarkers = journal.pending[0]?.message.startsWith(JOURNAL_SUMMARY_PREFIX)
+      && journal.pending[1]?.message.startsWith(JOURNAL_GAP_PREFIX)
+    const existingSummary = hasMarkers ? journal.pending[0] : undefined
+    const records = hasMarkers ? journal.pending.slice(2) : journal.pending
+    let firstRetained = records.length, retainedChars = 0
+    while (firstRetained > 0 && records.length - firstRetained < MAX_PENDING_RECORDS - 2) {
+      const size = JSON.stringify(records[firstRetained - 1]).length + 1
+      if (retainedChars + size > MAX_PENDING_CHARS - 2048) break
+      retainedChars += size
+      firstRetained--
+    }
+    const dropped = records.slice(0, firstRetained)
+    if (!dropped.length && !existingSummary) return
+
+    let from = existingSummary?.from ?? Number.MAX_SAFE_INTEGER, to = existingSummary?.to ?? 0
+    for (const record of dropped) { from = Math.min(from, record.from); to = Math.max(to, record.to) }
+    const at = Date.now(), characterId = state.value.activeCharacterId
+    const summary: PlayRecord = { id: crypto.randomUUID(), worldId: journal.worldId, at, kind: 'time', from, to, characterId,
+      message: `${JOURNAL_SUMMARY_PREFIX}為控制本機存檔大小，部分較舊紀錄已摘要。`, events: [] }
+    const gap: PlayRecord = { id: crypto.randomUUID(), worldId: journal.worldId, at, kind: 'time', from, to, characterId,
+      message: `${JOURNAL_GAP_PREFIX}部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。`, events: [] }
+    journal.pending = [summary, gap, ...records.slice(firstRetained)]
+    pendingRecords.value = journal.pending.length
+    journalError.value = '遊玩紀錄待補寫資料超過上限：較舊逐筆訊息與事件已移除，僅保留時間摘要與缺口標記。可用「匯出遊玩紀錄」保留目前剩餘資料。'
+  }
+  function record(kind: PlayRecord['kind'], from: number, events: WorldEvent[], result: string) {
+    const previous = journal.pending.at(-1)
+    if (kind === 'time' && previous?.kind === 'time' && previous.worldId === journal.worldId && !inFlight.has(previous.id)) {
+      previous.at = Date.now(); previous.to = state.value.worldTime
+      const combinedEvents = [...previous.events, ...events]
+      if (combinedEvents.length > 128) {
+        previous.events = combinedEvents.slice(-128)
+        markJournalGap(previous.from, previous.to)
+      } else previous.events = combinedEvents
+      previous.message = `世界時間由 ${previous.from} 推進至 ${previous.to} 分鐘。`
+    } else {
+      journal.pending.push({ id: crypto.randomUUID(), worldId: journal.worldId, at: Date.now(), kind, from, to: state.value.worldTime,
+        characterId: state.value.activeCharacterId, message: result, events })
+    }
+    pendingRecords.value = journal.pending.length
+    compactPending()
   }
   function loadCheckpoint(writable: boolean) {
     speed.value = 0; saveBlocked.value = false; savedAt.value = null
@@ -42,24 +105,40 @@ export const useGameStore = defineStore('game', () => {
   // Read-only preview. Acquisition re-reads under the lock before any write or action.
   loadCheckpoint(false)
   const character = computed(() => projectCharacter(state.value))
+  function scheduleJournalRetry() {
+    if (retryTimer || saveBlocked.value || !writerReady.value) return
+    const delay = retryDelay
+    retryDelay = Math.min(retryDelay * 2, 60_000)
+    retryTimer = setTimeout(() => { retryTimer = null; void flushJournal() }, delay)
+  }
   async function flushJournal() {
-    if (flushing || saveBlocked.value || !writerReady.value) return
+    if (flushing || retryTimer || saveBlocked.value || !writerReady.value) return
     flushing = true
     try {
       while (true) {
-        const batch = journal.pending.filter(r => persisted.has(r.id))
+        const batch = journal.pending.filter(r => persisted.has(r.id)).slice(0, 64)
         if (!batch.length) break
+        inFlight = new Set(batch.map(r => r.id))
         await repository.appendBatch(batch)
+        inFlight.clear()
         const acknowledged = new Set(batch.map(r => r.id))
         // Work from the latest queue and latest world, never the pre-await snapshot.
         journal.pending = journal.pending.filter(r => !acknowledged.has(r.id)); pendingRecords.value = journal.pending.length
-        journalError.value = ''
+        journalError.value = ''; retryDelay = 1000
         if (!save(false, false)) break
       }
     } catch (error) {
       journalError.value = `${error instanceof Error ? error.message : ''} 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。`.trim()
+      scheduleJournalRetry()
     }
-    finally { flushing = false }
+    finally { inFlight.clear(); flushing = false }
+  }
+  function requestJournalFlush(manual: boolean) {
+    if (retryTimer) {
+      if (!manual) return
+      clearTimeout(retryTimer); retryTimer = null; retryDelay = 1000
+    }
+    void flushJournal()
   }
   function save(manual = false, flush = true) {
     if (!writerReady.value) return false
@@ -69,9 +148,13 @@ export const useGameStore = defineStore('game', () => {
       const now = Date.now()
       localStorage.setItem(SAVE_KEY, packCheckpoint(state.value, journal, now)); savedAt.value = now; saveError.value = ''
       persisted = new Set(journal.pending.map(r => r.id))
-      if (flush) void flushJournal()
+      if (flush) requestJournalFlush(manual)
       if (manual || recoveringMessage) message.value = '世界已儲存。'; return true
-    } catch { speed.value = 0; saveError.value = '存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。'; message.value = saveError.value; return false }
+    } catch {
+      speed.value = 0; saveError.value = '存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。'; message.value = saveError.value
+      if (flush) requestJournalFlush(manual)
+      return false
+    }
   }
   function reset() {
     if (!writerReady.value) return
@@ -143,6 +226,10 @@ export const useGameStore = defineStore('game', () => {
     saveError.value = ''; writerReady.value = true; writerPending.value = false
     if (!saveBlocked.value) save()
   }, error => { writerReady.value = false; writerPending.value = false; speed.value = 0; saveError.value = error; message.value = error })
-  onScopeDispose(() => { writerReady.value = false; writerPending.value = false; speed.value = 0; releaseWriter() })
+  onScopeDispose(() => {
+    writerReady.value = false; writerPending.value = false; speed.value = 0
+    if (retryTimer) clearTimeout(retryTimer)
+    retryTimer = null; releaseWriter()
+  })
   return { state, speed, setSpeed, startLife, message, savedAt, saveBlocked, saveError, writerReady, writerPending, offline, character, save, reset, advance, act, journalError, pendingRecords, exportJournal }
 })
