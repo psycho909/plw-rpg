@@ -3,7 +3,7 @@ import { CRAFTING_RECIPES } from '../data/crafting'
 import { CONTENT_CROPS, CONTENT_CROP_GOODS, CONTENT_FAMILIES, CONTENT_LOOT_TABLES, CONTENT_MATERIALS, CONTENT_MONSTERS, CONTENT_RECIPES } from '../data/contentRegistry'
 import { LOOT_TABLES, MATERIALS, WOLF_MONSTERS } from '../data/rewards'
 import type { ContentSeason, ContentSettlementStage, ContentSpawnPredicate } from '../domain/content'
-import type { GameState, RegionId } from '../domain/types'
+import type { BuildingId, GameState, RegionId } from '../domain/types'
 import { contentEncounterOptions } from './contentFamilies'
 import { farmCropChoices } from './crops'
 import { planCraft } from './crafting'
@@ -194,7 +194,7 @@ describe('Phase10 goal continuity closure', () => {
     actor.stamina = actor.maxStamina
     actor.currentRegion = 'village'
     craftState.settlement.stage = 'town'
-    craftState.settlement.buildings = [...new Set([...craftState.settlement.buildings, 'store', 'blacksmith'])]
+    craftState.settlement.buildings = [...new Set<BuildingId>([...craftState.settlement.buildings, 'store', 'blacksmith'])]
     for (const recipe of Object.values(CRAFTING_RECIPES)) {
       actor.skills.smithing.level = recipe.requiredSmithing
       actor.position = { ...BUILDINGS[recipe.station].position }

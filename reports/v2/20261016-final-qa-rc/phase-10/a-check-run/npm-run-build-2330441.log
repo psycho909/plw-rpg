@@ -1,0 +1,17 @@
+
+> plw-rpg@0.1.0 build
+> vue-tsc --noEmit && vite build
+
+src/engine/phase10GoalContinuity.test.ts(197,5): error TS2322: Type 'string[]' is not assignable to type 'BuildingId[]'.
+  Type 'string' is not assignable to type 'BuildingId'.
+src/engine/phase10Integration.test.ts(44,43): error TS2339: Property 'name' does not exist on type 'WolfEncounterOption'.
+src/engine/phase10Integration.test.ts(102,3): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+src/engine/phase10Integration.test.ts(227,80): error TS2339: Property 'message' does not exist on type 'CraftResult'.
+  Property 'message' does not exist on type '{ ok: true; instanceId: string; recipeId: string; baseId: string; masterpiece: boolean; }'.
+src/engine/phase10Integration.test.ts(286,72): error TS2339: Property 'message' does not exist on type 'CraftResult'.
+  Property 'message' does not exist on type '{ ok: true; instanceId: string; recipeId: string; baseId: string; masterpiece: boolean; }'.
+src/engine/phase10Integration.test.ts(298,3): error TS2591: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+src/engine/phase10Integration.test.ts(324,30): error TS2339: Property 'message' does not exist on type 'CraftResult'.
+  Property 'message' does not exist on type '{ ok: true; instanceId: string; recipeId: string; baseId: string; masterpiece: boolean; }'.
+src/engine/phase10Integration.test.ts(325,67): error TS2339: Property 'message' does not exist on type 'CraftResult'.
+  Property 'message' does not exist on type '{ ok: true; instanceId: string; recipeId: string; baseId: string; masterpiece: boolean; }'.
