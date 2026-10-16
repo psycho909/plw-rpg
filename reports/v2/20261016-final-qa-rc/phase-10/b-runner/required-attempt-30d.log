@@ -1,0 +1,11 @@
+> npx.cmd vitest run src/engine/phase10Integration.test.ts --silent=false
+
+ RUN  v4.1.11 D:/Codex/plw-rpg
+
+[phase10-b-normal] COMPLETED — NORMAL PROGRESSION (optional influence-material path); blocker=none; fresh save seed=20261016 | start time=480 | starting wolfFang=0 | visible source: grayWolf; eligible=true; reason=none | adventure material acquired at world time=519; wolfFang=1 | crafted and equipped at world time=988; wolfFang after craft=0 | end time=1035; elapsed days=0.39 | material=1; wood=1; stone=0; gold=73; smithing=1; alive=true
+[phase10-b-required] NOT ESTABLISHED — NORMAL PROGRESSION (required adventure-input path); blocker=station_unavailable: 這項配方的工作台尚未開放。; fresh save seed=20261017 | start time=480 | window=30 days / 250 public action calls | target=slime_resin_guard_recipe; required input=slime_resin x3; station=blacksmith; Smithing=2 | legal Smithing progression: 1 -> 2 via 2 starterSpear crafts | visible source slime_slick: region=farmland; eligible=true; reason=none | required material=3; time=1129 | required recipe preview: ok=false; reasonCode=station_unavailable; message=這項配方的工作台尚未開放。; stage=hamlet; blacksmithBuilt=false | end time=1159; elapsed days=0.47; public action calls=24 | start/end slime_resin=0/3; Smithing=1/2; stage=hamlet; blacksmith=false; alive=true
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  11:44:52
+   Duration  1.52s (transform 778ms, setup 0ms, import 925ms, tests 77ms, environment 1ms)

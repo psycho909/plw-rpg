@@ -1,6 +1,6 @@
 # Phase10-B — Cross-system Integration QA
 
-- Status: approved — waiting on dependency
+- Status: accepted — PASS WITH FINDINGS（2026-10-16）
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-16 Owner 正式規格 [V2X-PHASE10-FINAL-QA-RC](../docs/specs/V2X-PHASE10-FINAL-QA-RC.md) §0「正式啟動 Phase10」；Parent [Phase10](20261016-v2x-10-final-qa-rc.md)。
@@ -23,8 +23,8 @@
 
 ## Acceptance
 
-- [ ] `cross-system-integration.md`、`adventure-life-hybrid.md`。
-- [ ] 缺陷修正有 before／after、測試與獨立 review。
+- [x] `cross-system-integration.md`、`adventure-life-hybrid.md`。
+- [x] 缺陷修正有 before／after、測試與獨立 review。
 
 ## Constraints and Decisions
 
@@ -36,6 +36,10 @@ Feature Freeze：只有具體證據的缺陷才改產品 source（Feature Freeze
 
 ## Evidence
 
-- Verification:
-- Review / Audit:
-- Commit / PR:
+- Routing（requested → observed）：施工 `g6-luna-high-engineer`（gpt-6-luna high；UI GPT-6-Luna high fast）；審查 `g6-luna-med-engineer`（gpt-6-luna medium；未參與 B）。Lead 退回兩次：重標 optional influence-material path，並要求 required adventure-input 路線；延長至 2 遊戲年。
+- Integration：`phase-10/cross-system-integration.md`、`adventure-life-hybrid.md`；targeted vitest 15 files／255 tests（`b-runner/targeted-vitest.log`）；新測試 `src/engine/phase10Integration.test.ts`。Adventure／Life／Crisis（含無介入）／Succession 對應既有與新增測試。
+- P10-F01：Normal fresh-save (A) **COMPLETED — optional influence-material path**（seed 20261016，wolfFang 用於 starterSpear influence，0.39 遊戲天）；(B) **COMPLETED — required adventure-input path**（seed 20261017，Smithing Lv.2＋slime_resin 早於 0.47 天取得；聚落於 day 68.70 成為 village、blacksmith 於 world time 99405 建成，day 69.04 製作 slime_resin_guard、裝備並再冒險；1,675 public actions；Home workbench 不能取代 blacksmith）。Phase9 未達成的原因 = station 受聚落成長門檻（合法世界限制），非缺陷。Controlled fixture 另計。
+- P10-F02：XP cap 可見、有其他成長方向、進階配方／素材可達；無可重現無效重複流程；XP 公式未改。
+- 無產品 src 變更；無 P0–P2 產品缺陷。
+- Review / Audit：`phase-10/b-review/b-review.md` PASS WITH FINDINGS（P2：normal 路線測試接受任一結果）→ Lead 改為斷言兩條路線皆 COMPLETED（3/3 pass、vue-tsc 0 errors）。型別錯誤（7 處）由施工者修正。
+- Commit / PR：本次 commit；無 PR。
