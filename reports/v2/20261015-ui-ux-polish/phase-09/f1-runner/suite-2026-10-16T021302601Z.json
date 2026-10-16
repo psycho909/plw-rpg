@@ -1,0 +1,47 @@
+{
+  "finishedAt": "2026-10-16T02:13:02.601Z",
+  "results": [
+    {
+      "lane": "stress",
+      "startedAt": "2026-10-16T01:52:58.437Z",
+      "sourceHead": "c0a377b50e09b67664bc07b65d4e81a382daa53f",
+      "srcFingerprint": "d312c8b3a95f96ba6609d2531fd770d2b19df3ac64a7796905c2c1fa29ecd305",
+      "node": "v22.14.0",
+      "platform": "win32",
+      "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "server": "in-process Node static server serving production dist/",
+      "productionDistFingerprint": "72dfd027170eb4a129fda4bc564ebff553138d2fbfbba4238c521d76a07b4d04",
+      "url": "http://127.0.0.1:50268/",
+      "finishedAt": "2026-10-16T02:13:01.731Z",
+      "browserVersion": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.53",
+        "revision": "@792bf6722e73a45aa9e47c163b9901bdc17f3230",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.13"
+      },
+      "viewport": {
+        "width": 764,
+        "height": 485,
+        "devicePixelRatio": 1
+      },
+      "result": {
+        "requestedSeconds": 1200,
+        "elapsedSeconds": 1200.924,
+        "actionCount": 6467,
+        "checkpoints": 21
+      },
+      "errors": [],
+      "actionCount": 6467,
+      "noProgressClassCounts": {},
+      "checkpointCount": 21,
+      "raw": {
+        "actions": "actions.ndjson",
+        "actionTrace": "action-trace.ndjson",
+        "checkpoints": "checkpoints.json",
+        "checkpointTrace": "checkpoint-trace.ndjson",
+        "downloads": "downloads/"
+      }
+    }
+  ]
+}
