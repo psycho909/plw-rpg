@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "expectedCheckpoints": 9,
+  "checkpointCount": 9,
+  "seeds": [
+    40131,
+    40132,
+    40133
+  ],
+  "years": [
+    10,
+    50,
+    100
+  ],
+  "allSaveReloadEqual": true,
+  "allContinuationEqual": true,
+  "orphanReferenceCount": 0,
+  "saveBytes": {
+    "min": 245272,
+    "max": 608348
+  },
+  "failure": null
+}

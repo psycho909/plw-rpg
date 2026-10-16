@@ -1,0 +1,91 @@
+[
+  {
+    "seed": 40131,
+    "year": 10,
+    "worldTime": 5184000,
+    "rngState": 3891835974,
+    "population": 80,
+    "livingNpcs": 79,
+    "livingCharacters": 1,
+    "settlement": {
+      "stage": "town",
+      "capacity": 80,
+      "food": 100,
+      "safety": 91.44999999999962,
+      "prosperity": 100,
+      "infrastructure": 100,
+      "growth": 5263.350049706775
+    },
+    "economy": {
+      "totalActorGold": 3600,
+      "activeCharacterGold": 45,
+      "activeCharacterInventory": {
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "food": 3,
+        "material": 0,
+        "potion": 2,
+        "sword": 0,
+        "armor": 0
+      },
+      "materialUnits": 0
+    },
+    "threat": {
+      "level": 3,
+      "monsterPopulation": 100,
+      "bossAlive": true,
+      "bossProgress": 100,
+      "campLevel": 3,
+      "bossSpawns": 7,
+      "bossDefeats": 0
+    },
+    "crisis": {
+      "sequence": 7,
+      "phase": "cooldown",
+      "outcome": "decisive_success",
+      "cooldownUntil": 5503680,
+      "observedCount": 7,
+      "resolvedHistoryEvents": 7,
+      "outcomeCounts": {
+        "decisive_success": 3,
+        "costly_success": 0,
+        "setback": 3,
+        "local_defeat": 1
+      },
+      "recoveryCounts": {
+        "not_required": 7,
+        "pending": 0,
+        "granted": 0,
+        "cancelled": 0
+      },
+      "latestRecovery": {
+        "status": "not_required",
+        "dueAt": null,
+        "npcId": null
+      }
+    },
+    "history": {
+      "events": 150,
+      "retainedHistory": 206,
+      "eventSequence": 1379,
+      "successionEvents": 0
+    },
+    "succession": {
+      "characterRecords": 1,
+      "activeCharacterId": "alden",
+      "activeCharacterAlive": true,
+      "playerSuccessionPolicy": "No Intervention; no player succession action is issued."
+    },
+    "inventoryState": {
+      "rewardInstances": 0,
+      "rewardMaterialsOwners": 0,
+      "openRequests": 0,
+      "arcs": 12
+    },
+    "saveBytes": 257949,
+    "saveReloadEqual": true,
+    "continuationEqual": true,
+    "orphanReferences": []
+  }
+]

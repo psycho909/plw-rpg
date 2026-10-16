@@ -1,0 +1,5 @@
+# Review request — Phase10-C (g6-luna-med-reviewer role; reviewer built A only, not C)
+Review only; no edits except your review; no commit. Write `reports/v2/20261016-final-qa-rc/phase-10/c-review/c-review.md`; reply with only that path.
+- Spec `docs/specs/V2X-PHASE10-FINAL-QA-RC.md` §7, §4 (P10-F02, P10-F05). Ticket `tickets/20261016-v2x-10c-reward-signals.md`.
+- Deliverables: `phase-10/reward-retention-signals.md`, `content-coverage.md`, `c-runner/`; new test `src/engine/phase10GoalContinuity.test.ts`; script `scripts/phase10/c-reward-retention.mjs`.
+Check: metric definitions exclude plain gold; first-meaningful-reward numbers reproducible from cited Phase8 instrumented traces (spot-check one route/seed); source correlation claim (Phase9 changed no reward/progression rules) holds via git diff; goal-continuity test actually would fail if a recipe input lost its source / an unlock became impossible / a hint pointed to an illegal action (read the assertions); dead-end classification honest; no daily quest/login/cadence proposals; human gate DEFERRED. Severity P0–P3, disposition.

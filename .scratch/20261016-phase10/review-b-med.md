@@ -1,0 +1,5 @@
+# Review request — Phase10-B (reviewer did not build B)
+Review only; no edits except your review; no commit. Write `reports/v2/20261016-final-qa-rc/phase-10/b-review/b-review.md`; reply with only that path.
+- Spec `docs/specs/V2X-PHASE10-FINAL-QA-RC.md` §6 and §4 (P10-F01, P10-F02). Ticket `tickets/20261016-v2x-10b-integration.md`.
+- Deliverables: `phase-10/cross-system-integration.md`, `adventure-life-hybrid.md`, `b-runner/` (b-summary.md, normal-attempt.log, required-attempt.log, targeted-vitest.log), test `src/engine/phase10Integration.test.ts`.
+Check: normal fresh-save attempts use only public actions and legal waits (no state injection; read the test) and are counted separately from the controlled fixture; required-input route claim (seed 20261017, blacksmith built at world time 99405, craft at 99960, day 69.04, 1,675 actions) reproducible from log/test; Home workbench claim matches planCraft station rules; adventure/life/crisis/succession coverage maps to real tests (spot-check); P10-F02 conclusion supported; no product src change. Full check now PASS 45/658 (`a-check-run/npm-run-check-bcd-tests.log`). Severity P0–P3, disposition.

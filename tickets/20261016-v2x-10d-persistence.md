@@ -1,6 +1,6 @@
 # Phase10-D — Persistence & Long-world Stability
 
-- Status: approved — waiting on dependency
+- Status: accepted — PASS（2026-10-16）
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-16 Owner 正式規格 [V2X-PHASE10-FINAL-QA-RC](../docs/specs/V2X-PHASE10-FINAL-QA-RC.md) §0「正式啟動 Phase10」；Parent [Phase10](20261016-v2x-10-final-qa-rc.md)。
@@ -23,7 +23,7 @@ Save／Reload／Migration／invalid／unknown version／no silent overwrite／re
 
 ## Acceptance
 
-- [ ] `save-migration-determinism.md`、`long-world.md`。
+- [x] `save-migration-determinism.md`、`long-world.md`。
 
 ## Constraints and Decisions
 
@@ -35,6 +35,9 @@ Feature Freeze：只有具體證據的缺陷才改產品 source（Feature Freeze
 
 ## Evidence
 
-- Verification:
-- Review / Audit:
-- Commit / PR:
+- Routing（requested → observed）：施工 `g6-luna-max-core-engineer`（gpt-6-luna max；UI GPT-6-Luna max fast）；審查 `g6-luna-med-engineer-2`（gpt-6-luna medium；只建 C，未參與 D）。D 自行委託的 `d-runner/d-audit.md` 視為施工者自我檢查，不作為獨立審查。
+- Save／Migration／Determinism：`phase-10/save-migration-determinism.md` 將 §8 各契約點對應既有測試（file:line）並補 `src/services/phase10Persistence.test.ts`（NPC-linked request／arc round trip 等）、`src/engine/phase10Determinism.test.ts`（同 seed＋同初始狀態＋同合法 Boss 行動重播 → 相同相關狀態；排除欄位附理由）。未改存檔格式。
+- Long-world：`phase-10/long-world.md`；Phase8-D1 核心證據可重用（`5e223be..HEAD` engine／domain／data／services 只有 wolfFamily presentation refactor）；目前來源 No Intervention 3 seeds × 10／50／100 年確認 `d-runner/attempt-20261016T034911258Z/`：9/9 checkpoints、save/reload 9/9、continuation 9/9、orphan references 0、save payload 245,272–608,331 B（`scripts/phase10/d-long-world.mjs`）。100 年模擬 ≠ 真人 100 年遊玩。
+- Verification：targeted vitest 10 files／238 tests；`npm.cmd run check` PASS 45 files／658 tests＋vue-tsc＋build（`a-check-run/npm-run-check-bcd-tests.log`）。
+- Review / Audit：`phase-10/d-review/d-review.md` 無 P0–P3 findings。
+- Commit / PR：本次 commit；無 PR。

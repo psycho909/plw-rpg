@@ -1,0 +1,29 @@
+{
+  "command": "node scripts/phase10/d-long-world.mjs --seeds=40131,40132,40133 --years=10,50,100",
+  "startedAt": "2026-10-16T03:47:03.932Z",
+  "head": "4a71d3599cdf17ac3dab189d88e16fabcebe5033",
+  "source": {
+    "fileCount": 119,
+    "sha256": "d312c8b3a95f96ba6609d2531fd770d2b19df3ac64a7796905c2c1fa29ecd305"
+  },
+  "scenario": "No Intervention",
+  "scenarioType": "normal fresh-save; createGame(seed), no fixture overrides or player actions",
+  "seeds": [
+    40131,
+    40132,
+    40133
+  ],
+  "years": [
+    10,
+    50,
+    100
+  ],
+  "dayMinutes": 1440,
+  "model": "Public simulation.simulate() advanced to canonical day boundaries; serialize/deserialize at each horizon; compare one-day live and reloaded continuations.",
+  "comparedState": "Full GameState JSON, including rngState, worldTime, reward, characters, NPCs, crisis state, events and history. Save lastSavedAt is fixed at 0 and is persistence metadata, not game state.",
+  "referenceAudit": "Explicit actor, party, property, arc/request, memory, crisis-contribution/recovery, and reward-owner references; strict deserialize validation also runs at every checkpoint.",
+  "runtime": {
+    "platform": "win32",
+    "node": "v22.14.0"
+  }
+}
