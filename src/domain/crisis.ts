@@ -67,6 +67,7 @@ export interface RegionalCrisisContributions {
 
 export const REGIONAL_CRISIS_CONTRIBUTION_LIMITS = {
   equipmentAllocations: 16,
+  equipmentHistory: 32,
   foodSupply: 100,
   gold: 100,
   foodPerInventoryItem: 4,

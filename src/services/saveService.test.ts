@@ -3,6 +3,7 @@ import { CONFIG, ITEMS } from '../data/config'
 import { LEGACY_MATERIALS, MATERIALS } from '../data/rewards'
 import { combatTurn, encounter, equip, farm } from '../engine/actions'
 import { generateItem } from '../engine/itemGeneration'
+import { rolledItemStats } from '../engine/gearStats'
 import { chooseSuccessor, createGame, die, player, simulate, walkTo } from '../engine/simulation'
 import { tryStartRegionalCrisis } from '../engine/regionalCrisis'
 import { deserialize, serialize } from './saveService'
@@ -13,6 +14,49 @@ import archivedV4Preparation from '../../reports/v2/20261008-regional-crisis/pha
 import archivedV4Active from '../../reports/v2/20261008-regional-crisis/phase-06/d-v4-fixtures/crisis-v4-active.json'
 import archivedV5Preparation from '../../reports/v2/20261008-regional-crisis/phase-06/e-v5-fixtures/crisis-v5-preparation-d-ledger.json'
 import archivedV6Preparation from '../../reports/v2/20261008-regional-crisis/phase-06/f-v6-fixtures/crisis-v6-preparation-d-life-adventure.json'
+
+function equipmentLedgerSave(length: number, reserved = 0) {
+  const state = createGame(8219)
+  state.threat.monsterPopulation = 30
+  state.threat.threatLevel = 3
+  state.threat.campLevel = 3
+  state.settlement.safety = 60
+  expect(tryStartRegionalCrisis(state, () => 0)).toBe(true)
+  if (state.regionalCrisis.phase !== 'warning') throw new Error('expected warning')
+  state.nextNpcId = 1000
+  state.reward.nextInstanceId = 1000
+  state.regionalCrisis.contributions.equipment = Array.from({ length }, (_, index) => {
+    const baseId = index % 2 === 0 ? 'shortSword' : 'hideArmor'
+    return {
+      defenderNpcId: index < reserved ? state.npcs[Math.floor(index / 2)]!.id : `npc-${500 + index}`,
+      slot: index % 2 === 0 ? 'weapon' : 'armor', donorId: player(state).id, contributedAt: state.worldTime,
+      sourceItem: { instanceId: `item-${100 + index}`, ownerId: player(state).id, baseId, level: 1,
+        material: null, rarity: 'common', rolledStats: rolledItemStats(baseId, 1, []), affixes: [],
+        specialTrait: null, provenance: null, craftProvenance: null },
+    }
+  })
+  for (const npc of state.npcs) {
+    npc.isAlive = true
+    state.life.npcs[npc.id]!.career = 'worker'
+  }
+  return JSON.parse(serialize(state, 8219))
+}
+
+it.each([0, 1, 16, ...Array.from({ length: 16 }, (_, i) => i + 17)])(
+  'loads %i historical equipment rows unchanged with at most 16 reservations', length => {
+    const raw = equipmentLedgerSave(length, Math.min(length, 16))
+    expect(JSON.parse(serialize(deserialize(JSON.stringify(raw)).state, 8219))).toEqual(raw)
+  })
+
+it.each([[33, 0], [17, 17]])('rejects %i history / %i reserved equipment rows', (length, reserved) => {
+  expect(() => deserialize(JSON.stringify(equipmentLedgerSave(length, reserved)))).toThrow('原始存檔已保留')
+})
+
+it.each([null, {}, { npcs: null }, { npcs: {} }])('rejects malformed life safely while validating the ledger: %j', life => {
+  const raw = equipmentLedgerSave(17, 16)
+  raw.life = life
+  expect(() => deserialize(JSON.stringify(raw))).toThrow('原始存檔已保留')
+})
 
 function versionOneFixture(seed = 88, lastSavedAt = 1000) {
   const raw = JSON.parse(serialize(createGame(seed), lastSavedAt))

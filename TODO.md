@@ -18,6 +18,6 @@
 
 ## Blocked
 
-- [ ] Phase10 工程交付完成，外部複審 APPROVED WITH FINDINGS；Engineering RC READY WITH FINDINGS；Post-RC hardening COMPLETE WITH FINDINGS；等待 Owner 決策（Release／Deploy、Human Playtest、SEC-01..03、S-02 S2-A 授權與永久失格定義）— Data integrity: [20261016-v2x-final-data-integrity](tickets/20261016-v2x-final-data-integrity.md)— Ticket: [20261016-v2x-10-final-qa-rc](tickets/20261016-v2x-10-final-qa-rc.md)
+- [ ] Phase10 工程交付完成，外部複審 APPROVED WITH FINDINGS；Engineering RC READY WITH FINDINGS；Post-RC hardening COMPLETE WITH FINDINGS；等待 Owner 決策（Release／Deploy、Human Playtest、SEC-01..03、S-02 訪客離開釋額語義確認）— S-02: [20261017-v2x-s02-equipment-ledger](tickets/20261017-v2x-s02-equipment-ledger.md)— Ticket: [20261016-v2x-10-final-qa-rc](tickets/20261016-v2x-10-final-qa-rc.md)
 
 完成條件：每個項目都有唯一正式 Ticket、只出現在一個區段，且沒有已完成工作或執行細節。

@@ -12,6 +12,7 @@ import {
   type RegionalCrisisOutcome, type RegionalCrisisResolutionSummary, type RegionalCrisisState,
 } from '../domain/crisis'
 import { createGame } from '../engine/simulation'
+import { isCivilDefenseAllocationReserved } from '../engine/civilDefense'
 import { initializeLife } from '../engine/lifeState'
 import { emptyReward, migrateRewardV1, migrateRewardV2, normalizeRewardV3MaterialKeys } from '../engine/rewardState'
 import { validContentFamilyEncounter, validFamilyEncounter, validateReward, validateRewardInstanceSnapshot, validateRewardV1, validateRewardV2 } from './rewardValidation'
@@ -148,7 +149,7 @@ function validContributionCredits(value: unknown, s: GameState, total: number, m
 
 function validRegionalCrisisContributions(value: unknown, s: GameState, triggeredAt: number) {
   if (!exactShape(value, ['equipment', 'food', 'gold']) || !Array.isArray(value.equipment)
-    || value.equipment.length > REGIONAL_CRISIS_CONTRIBUTION_LIMITS.equipmentAllocations
+    || value.equipment.length > REGIONAL_CRISIS_CONTRIBUTION_LIMITS.equipmentHistory
     || !exactShape(value.food, ['supplied', 'credits']) || !safeInt(value.food.supplied, 0, REGIONAL_CRISIS_CONTRIBUTION_LIMITS.foodSupply)
     || value.food.supplied % REGIONAL_CRISIS_CONTRIBUTION_LIMITS.foodPerInventoryItem !== 0
     || !validContributionCredits(value.food.credits, s, value.food.supplied,
@@ -157,6 +158,7 @@ function validRegionalCrisisContributions(value: unknown, s: GameState, triggere
     || !validContributionCredits(value.gold.credits, s, value.gold.spent, REGIONAL_CRISIS_CONTRIBUTION_LIMITS.gold)) return false
 
   const defenders = new Set<string>(), sourceItems = new Set<string>()
+  let reserved = 0
   for (const allocation of value.equipment) {
     if (!exactShape(allocation, ['defenderNpcId', 'slot', 'donorId', 'contributedAt', 'sourceItem'])
       || !shortString(allocation.defenderNpcId, 128, 1) || !/^npc-[1-9]\d*$/.test(allocation.defenderNpcId)
@@ -171,8 +173,10 @@ function validRegionalCrisisContributions(value: unknown, s: GameState, triggere
       || (Array.isArray(s.reward.instances) && s.reward.instances.some(item => object(item) && item.instanceId === sourceItem.instanceId))) return false
     defenders.add(`${allocation.defenderNpcId}:${allocation.slot}`)
     sourceItems.add(sourceItem.instanceId)
+    // validBase has checked NPCs; life is safely read here and fully validated by deserialize afterwards.
+    if (isCivilDefenseAllocationReserved(s, { defenderNpcId: allocation.defenderNpcId })) reserved++
   }
-  return true
+  return reserved <= REGIONAL_CRISIS_CONTRIBUTION_LIMITS.equipmentAllocations
 }
 
 function validRegionalCrisisAdventure(value: unknown, triggeredAt: number, worldTime: number) {

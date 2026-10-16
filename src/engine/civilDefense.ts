@@ -1,5 +1,5 @@
 import { CONFIG, EQUIPMENT } from '../data/config'
-import { REGIONAL_CRISIS_CONTRIBUTION_LIMITS, type RegionalCrisisState } from '../domain/crisis'
+import { REGIONAL_CRISIS_CONTRIBUTION_LIMITS, type CrisisEquipmentAllocation, type RegionalCrisisState } from '../domain/crisis'
 import type { EquipmentSlot, GearStats } from '../domain/reward'
 import type { GameState, NPC } from '../domain/types'
 import { npcCanWork } from './npcLife'
@@ -85,6 +85,12 @@ function eligibleWorkers(state: GameState) {
 /** Exposes the same current workforce predicate to atomic contribution actions. */
 export function availableCivilDefenseDefenders(state: GameState): NPC[] {
   return eligibleWorkers(state).filter(npc => npc.job === 'guard' || npc.job === 'mercenary')
+}
+
+/** Injury, job changes and party membership retain the allocation reservation. */
+export function isCivilDefenseAllocationReserved(state: GameState, allocation: Pick<CrisisEquipmentAllocation, 'defenderNpcId'>): boolean {
+  return state.npcs.some(npc => npc.id === allocation.defenderNpcId && npc.isAlive)
+    && state.life?.npcs?.[allocation.defenderNpcId]?.career !== 'retired'
 }
 
 function phaseDays(state: GameState, crisis: ActiveCrisis) {

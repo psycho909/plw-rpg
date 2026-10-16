@@ -64,7 +64,101 @@ function currentCrisis(state: ReturnType<typeof createGame>): RegionalCrisisStat
   return state.regionalCrisis
 }
 
-it('records factual S-02 allocation behavior when an equipped defender dies', () => {
+function fullLedgerFixture() {
+  const fixture = crisisFixture(3)
+  const { state, crisis, defenders, character } = fixture
+  for (const [index, defender] of defenders.slice(0, 8).entries()) {
+    for (const [offset, baseId] of (['shortSword', 'hideArmor'] as const).entries()) {
+      const gear = item(`item-${100 + index * 2 + offset}`, character.id, baseId)
+      state.reward.instances.push(gear)
+      expect(contributeCrisisEquipment(state, crisis.id, defender.id, gear.instanceId)).toBe('')
+    }
+  }
+  return fixture
+}
+
+it.each(['injury', 'job', 'party'] as const)('keeps all 16 reservations during temporary %s and restores the same rows', reason => {
+  const { state, crisis, defenders, character } = fullLedgerFixture()
+  const defender = defenders[0]!
+  const rows = structuredClone(crisis.contributions.equipment)
+  if (reason === 'injury') defender.injuredUntil = state.worldTime + CONFIG.minutesPerDay
+  if (reason === 'job') {
+    defender.job = 'woodcutter'
+    state.life.npcs[defender.id]!.careerJob = 'woodcutter'
+  }
+  if (reason === 'party') state.party.push({ npcId: defender.id, hireCost: 20, dailyWage: 4,
+    contractEnd: state.worldTime + CONFIG.minutesPerDay, archetype: 'fighter' })
+  expect(deriveCivilDefense(state, crisis)!.equippedDefenderSlots).toBe(14)
+  const gear = item('item-200', character.id, 'shortSword')
+  state.reward.instances.push(gear)
+  const before = serialize(state, 8219)
+  expect(contributeCrisisEquipment(state, crisis.id, defenders[8]!.id, gear.instanceId)).toBe('目前沒有可用的防衛裝備欄位。')
+  expect(serialize(state, 8219)).toBe(before)
+  expect(deserialize(before).state).toEqual(state)
+  defender.injuredUntil = state.worldTime
+  defender.job = 'guard'
+  state.life.npcs[defender.id]!.careerJob = 'guard'
+  state.party = []
+  expect(deriveCivilDefense(state, crisis)!.equippedDefenderSlots).toBe(16)
+  expect(crisis.contributions.equipment).toEqual(rows)
+  const recovered = serialize(state, 8219)
+  expect(contributeCrisisEquipment(state, crisis.id, defender.id, gear.instanceId)).not.toBe('')
+  expect(serialize(state, 8219)).toBe(recovered)
+})
+
+it.each(['retired', 'successor'] as const)('releases a full reservation after permanent %s without refunding history', reason => {
+  const { state, crisis, defenders, character } = fullLedgerFixture()
+  const defender = defenders[0]!
+  const rows = structuredClone(crisis.contributions.equipment)
+  if (reason === 'retired') state.life.npcs[defender.id]!.career = 'retired'
+  else {
+    die(state, character, '接班測試')
+    expect(chooseSuccessor(state, defender.id)).toBe(true)
+    player(state).position = { x: 8, y: 10 }
+    player(state).currentRegion = 'village'
+  }
+  equip(state, crisis.id, defenders[8]!.id, 'item-200')
+  expect(crisis.contributions.equipment).toHaveLength(17)
+  expect(crisis.contributions.equipment.slice(0, 16)).toEqual(rows)
+  expect(state.reward.instances).toHaveLength(0)
+  expect(deserialize(serialize(state, 8219)).state).toEqual(state)
+})
+
+it('bounds sequential death replacements at 32 history rows and rejects atomically with spare reserved capacity', () => {
+  const { state, crisis, defenders } = fullLedgerFixture()
+  defenders[8]!.job = 'woodcutter'
+  state.life.npcs[defenders[8]!.id]!.careerJob = 'woodcutter'
+  let casualty = defenders[0]!
+  for (let cycle = 0; cycle < 8; cycle++) {
+    const successor = structuredClone(casualty)
+    successor.id = `npc-${state.nextNpcId++}`
+    state.life.npcs[successor.id] = structuredClone(state.life.npcs[casualty.id]!)
+    die(state, casualty, '連續傷亡測試')
+    state.npcs.push(successor)
+    for (const [offset, baseId] of (['shortSword', 'hideArmor'] as const).entries()) {
+      const gear = item(`item-${200 + cycle * 2 + offset}`, player(state).id, baseId)
+      state.reward.instances.push(gear)
+      expect(contributeCrisisEquipment(state, crisis.id, successor.id, gear.instanceId)).toBe('')
+      expect(crisis.contributions.equipment.length).toBe(17 + cycle * 2 + offset)
+      expect(deriveCivilDefense(state, crisis)!.equippedDefenderSlots).toBe(15 + offset)
+      expect(deserialize(serialize(state, 8219)).state).toEqual(state)
+    }
+    casualty = successor
+  }
+  die(state, casualty, '歷史滿額測試')
+  defenders[8]!.job = 'guard'
+  state.life.npcs[defenders[8]!.id]!.careerJob = 'guard'
+  expect(crisis.contributions.equipment).toHaveLength(32)
+  expect(deriveCivilDefense(state, crisis)!.equippedDefenderSlots).toBe(14)
+  const gear = item('item-300', player(state).id, 'shortSword')
+  state.reward.instances.push(gear)
+  const before = serialize(state, 8219)
+  expect(contributeCrisisEquipment(state, crisis.id, defenders[8]!.id, gear.instanceId)).toBe('目前沒有可用的防衛裝備欄位。')
+  expect(serialize(state, 8219)).toBe(before)
+  expect(deserialize(before).state).toEqual(state)
+})
+
+it('releases reserved capacity at 16 historical rows when an equipped defender dies', () => {
   const state = createGame(8216)
   state.threat.monsterPopulation = 30
   state.threat.threatLevel = 3
@@ -119,28 +213,27 @@ it('records factual S-02 allocation behavior when an equipped defender dies', ()
   die(state, equippedDefenders[0]!, '測試中的危機傷亡')
 
   const afterLoss = deriveCivilDefense(state, crisis)!
-  const remainingAllocatableByLedger = 16 - crisis.contributions.equipment.length
   const casualtyEffect = crisis.contributions.equipment
     .filter(allocation => allocation.defenderNpcId === equippedDefenders[0]!.id)
     .reduce((total, allocation) => total + civilDefenseGearEffect(
       allocation.sourceItem.rolledStats, allocation.slot, equippedDefenders[0]!.skills.combat.level), 0)
   state.reward.instances.push(item('item-17', character.id, 'shortSword'))
   state.reward.nextInstanceId = 18
-  const snapshot = structuredClone(state)
 
   expect(state.regionalCrisis.contributions.equipment).toHaveLength(16)
   expect(afterLoss.availableDefenders).toBe(8)
   expect(afterLoss.equippedDefenderSlots).toBe(14)
   expect(afterLoss.needs.find(need => need.id === 'equipment')?.shortage).toBe(2)
   expect(priorEffect - afterLoss.factors.find(factor => factor.id === 'equipment')!.observed).toBeCloseTo(casualtyEffect)
-  expect(remainingAllocatableByLedger).toBe(0)
-  expect(contributeCrisisEquipment(state, crisis.id, defenders[8]!.id, 'item-17')).toBe('目前沒有可用的防衛裝備欄位。')
-  expect(state).toEqual(snapshot)
+  expect(contributeCrisisEquipment(state, crisis.id, defenders[8]!.id, 'item-17')).toBe('')
+  expect(crisis.contributions.equipment).toHaveLength(17)
+  expect(deriveCivilDefense(state, crisis)!.equippedDefenderSlots).toBe(15)
+  expect(state.reward.instances.some(gear => gear.instanceId === 'item-17')).toBe(false)
 
   const loaded = deserialize(serialize(state, 8216)).state
   expect(loaded).toEqual(state)
   if (loaded.regionalCrisis.phase === 'dormant') throw new Error('expected persisted crisis allocation ledger')
-  expect(loaded.regionalCrisis.contributions.equipment).toHaveLength(16)
+  expect(loaded.regionalCrisis.contributions.equipment).toHaveLength(17)
   expect(loaded.regionalCrisis.contributions.equipment.filter(entry => entry.defenderNpcId === equippedDefenders[0]!.id))
     .toHaveLength(2)
   expect(casualtyEffect).toBeGreaterThan(0)
@@ -185,11 +278,13 @@ it('rejects duplicate instance contribution without consuming another item or ch
   state.reward.instances.push(gear)
   const beforeGold = character.gold
   const beforeRows = structuredClone(crisis.contributions.equipment)
+  const before = serialize(state, 8219)
   // Observed rule: an instanceId already present in the ledger is rejected atomically.
   expect(contributeCrisisEquipment(state, crisis.id, defenders[1]!.id, gear.instanceId)).toBe('這件裝備已經交付過。')
   expect(state.reward.instances).toContainEqual(gear)
   expect(character.gold).toBe(beforeGold)
   expect(crisis.contributions.equipment).toEqual(beforeRows)
+  expect(serialize(state, 8219)).toBe(before)
 })
 
 it('counts dead defender craft rows toward recognition threshold without duplicate major reward', () => {
@@ -225,9 +320,9 @@ it('records successor-chosen defender removal as lost capacity while retaining i
 
 it('keeps dead defender gear history through crisis resolution and deterministic reload replay', () => {
   const makeRun = (reloadMidway: boolean) => {
-    const { state, crisis, defenders } = crisisFixture(1)
-    equip(state, crisis.id, defenders[0]!.id, 'item-100')
+    const { state, crisis, defenders } = fullLedgerFixture()
     die(state, defenders[0] as never, '測試傷亡')
+    equip(state, crisis.id, defenders[8]!.id, 'item-200')
     const saveTime = 8216
     let loaded = state
     while (loaded.regionalCrisis.phase === 'warning' || loaded.regionalCrisis.phase === 'preparation') {
@@ -246,7 +341,7 @@ it('keeps dead defender gear history through crisis resolution and deterministic
     const resolved = structuredClone(currentCrisis(loaded))
     if (resolved.phase !== 'aftermath' && resolved.phase !== 'cooldown') throw new Error('expected crisis resolution')
     // Observed rule: a dead defender's contribution row remains in the resolution history.
-    expect(resolved.contributions.equipment).toHaveLength(1)
+    expect(resolved.contributions.equipment).toHaveLength(17)
     expect(resolved.contributions.equipment[0]!.defenderNpcId).toBe(defenders[0]!.id)
     expect(deserialize(serialize(loaded, saveTime)).state).toEqual(loaded)
     return { loaded, outcome: resolved.outcome }

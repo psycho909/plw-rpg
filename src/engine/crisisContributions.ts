@@ -9,7 +9,7 @@ import {
 import type { EquipmentSlot, ItemInstance } from '../domain/reward'
 import type { GameState } from '../domain/types'
 import { emit } from './events'
-import { availableCivilDefenseDefenders, deriveCivilDefense } from './civilDefense'
+import { availableCivilDefenseDefenders, deriveCivilDefense, isCivilDefenseAllocationReserved } from './civilDefense'
 import { distance, tileAt } from './simulation'
 import {
   hasRegionalContributionEventCapacity,
@@ -77,7 +77,9 @@ export function contributeCrisisEquipment(state: GameState, crisisId: string, de
   if (typeof context === 'string') return context
   const { crisis, character, model } = context
   const allocations = crisis.contributions.equipment
-  if (allocations.length >= REGIONAL_CRISIS_CONTRIBUTION_LIMITS.equipmentAllocations
+  if (allocations.length >= REGIONAL_CRISIS_CONTRIBUTION_LIMITS.equipmentHistory
+    || allocations.filter(allocation => isCivilDefenseAllocationReserved(state, allocation)).length
+      >= REGIONAL_CRISIS_CONTRIBUTION_LIMITS.equipmentAllocations
     || model.needs.find(need => need.id === 'equipment')?.shortage === 0) {
     return '目前沒有可用的防衛裝備欄位。'
   }

@@ -1,0 +1,11 @@
+# Independent review — S-02 S2-A (luna-max-s02-review)
+
+You ARE the assigned reviewer `luna-max-s02-review`. Read-only: do not edit any file, do not delegate, do not use herdr, no commit/push.
+Ticket + Lead contract: `tickets/20261017-v2x-s02-equipment-ledger.md`. Worker summary: `reports/v2/20261016-final-qa-rc/s02-fix/sol-medium-s02-ledger-summary.md`. Change: `git diff` vs HEAD `c2cca17` (src/domain/crisis.ts, src/engine/civilDefense.ts, src/engine/crisisContributions.ts, src/services/saveService.ts + tests).
+
+Owner rules: permanent (effect stops, reservation released, history kept): death, chosen successor, `NpcLife.career === 'retired'`. Temporary (effect paused, reservation kept): job change away from guard/mercenary, injury. No refund/transfer/duplication; no duplicate recognition. Reserved ≤ 16, history ≤ 32, effective ≤ 16 — three distinct numbers. At history 32: legal rejection with no state/RNG/reward change. Old saves (≤ 16 rows) must load; 17–32 must validate. No saveVersion bump unless the version contract requires it. NPC removed/left without an identifiable permanent state must not be presumed dead/retired — the Lead contract argues removal from `npcs` is provably irreversible (enumerate the removal paths yourself and verify; also check whether any path could re-add an id or un-retire).
+
+Check: temporary vs permanent classification correct (incl. party membership, visitors leaving, dead-but-not-yet-filtered NPCs, successor); the three counts stay consistent under roster reordering, recovery and multiple replacements (could reserved ever exceed 16 or effective exceed 16?); validation accepts every legal ledger and rejects 33 rows / 17 reserved; validation order safe (life not yet validated); recognition not duplicated; determinism/resolution unchanged; any new P0/P1 or blocking P2.
+You may run `npx.cmd vitest run src/engine/postRcS02Defender.test.ts src/engine/crisisContributions.test.ts src/engine/civilDefense.test.ts src/services/saveService.test.ts src/engine/crisisResolution.test.ts src/engine/regionalCrisis.test.ts` (escalation allowed).
+
+Final message (≤ 50 lines): verdict APPROVE / CHANGES REQUIRED, findings by severity (file:line, failure scenario, suggestion), and whether the "removed ⇒ permanent" interpretation is sound; what you ran.

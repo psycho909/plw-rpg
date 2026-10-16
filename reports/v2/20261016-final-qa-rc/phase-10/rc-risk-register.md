@@ -68,3 +68,9 @@ Source: [final-hardening-verdict](../final-hardening/final-hardening-verdict.md)
 | B1 legacy pending retention | **VERIFIED_FIXED**: oversized legacy pending is archived intact (original ids/content) before the first checkpoint write; the cap is unchanged. Residual: if the archive stays down past the bounded retries (~18 s), the approved P2-01/O-01 compaction applies. |
 | S-02 defender equipment | **OWNER DECISION REQUIRED**: the Owner rule already holds below the 16-row ledger ceiling. At the ceiling it needs proposal S2-A (validation history cap 32 / active cap 16; no downgrade) and a definition of permanent ineligibility. |
 | RC on new source | Re-verified on dist `977d9883…`: 738 tests, O-01 browser 29/29, Phase10-E smoke identical to RC. |
+
+## S-02 ledger fix（2026-10-17）
+
+| ID | Status |
+|---|---|
+| S-02 defender equipment | **VERIFIED_FIXED**（S2-A）: reserved ≤ 16（defender in `npcs`, alive, not retired）, history ≤ 32, effective ≤ 16. Permanent: death, successor, retired, and removal from `npcs`（irreversible; includes departed visitors — Owner to confirm）. Temporary: injury, job change, party. Old saves load; 17–32 rows validate; saves with more than 16 rows are not readable by older builds（accepted by Owner）. [Report](../s02-fix/s02-fix-report.md). |

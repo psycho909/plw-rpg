@@ -37,6 +37,22 @@ function item(instanceId = 'item-1', ownerId = 'alden', baseId: ItemInstance['ba
     rolledStats: rolledItemStats(baseId, 1, []), affixes: [], specialTrait: null, provenance: null, craftProvenance: null }
 }
 
+it('rejects zero equipment shortage byte-for-byte even when historical and reserved limits have room', () => {
+  const { state, crisis, defender } = crisisWorld()
+  for (const npc of availableCivilDefenseDefenders(state)) {
+    npc.equipment.weapon = 'sword'
+    npc.equipment.armor = 'armor'
+  }
+  expect(deriveCivilDefense(state, crisis)!.needs.find(need => need.id === 'equipment')!.shortage).toBe(0)
+  expect(crisis.contributions.equipment).toHaveLength(0)
+  const gear = item('item-100', player(state).id)
+  state.reward.instances.push(gear)
+  state.reward.nextInstanceId = 101
+  const before = serialize(state, 8219)
+  expect(contributeCrisisEquipment(state, crisis.id, defender.id, gear.instanceId)).toBe('目前沒有可用的防衛裝備欄位。')
+  expect(serialize(state, 8219)).toBe(before)
+})
+
 function strongItem(instanceId = 'item-1', ownerId = 'alden'): ItemInstance {
   const affixes: ItemInstance['affixes'] = [
     { id: 'striking', tier: 3, value: 4 },
