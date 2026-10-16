@@ -1,6 +1,6 @@
 # Phase9 — UI/UX Polish
 
-- Status: in_progress
+- Status: accepted — PASS WITH FINDINGS（Phase9 工程交付完成 2026-10-16；等待 Owner 審閱；Human Product DEFERRED；不自動進入 Phase10）
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-15 Owner 正式規格 [V2X-PHASE9-UI-UX-POLISH](../docs/specs/V2X-PHASE9-UI-UX-POLISH.md) §0「正式啟動 Phase9 — UI/UX Polish」；Parent [Phase9](20261015-v2x-09-ui-ux-polish.md)。
@@ -32,10 +32,10 @@ Evidence：`reports/v2/20261015-ui-ux-polish/phase-09/`。
 
 ## Acceptance
 
-- [ ] 規格 §11 十一項 Gate 判定（PASS／PASS WITH FINDINGS／FAIL；Human Product DEFERRED）。
-- [ ] 規格 §13 十三份報告完成，含 Source Fingerprint／Build Correlation 與歷史 evidence。
-- [ ] §12 DoD 15 項與 Final Review Q1–Q7 以證據回答，區分工程證據與未取得的真人感受。
-- [ ] 未參與施工的 Independent Review 完成，阻擋級 Engineering Findings 已修正；commit／push 並遠端核對；停止等待 Owner 審閱。
+- [x] 規格 §11 十一項 Gate 判定（PASS／PASS WITH FINDINGS／FAIL；Human Product DEFERRED）。
+- [x] 規格 §13 十三份報告完成，含 Source Fingerprint／Build Correlation 與歷史 evidence。
+- [x] §12 DoD 15 項與 Final Review Q1–Q7 以證據回答，區分工程證據與未取得的真人感受。
+- [x] 未參與施工的 Independent Review 完成，阻擋級 Engineering Findings 已修正；commit／push 並遠端核對；停止等待 Owner 審閱。
 
 ## Constraints and Decisions
 
@@ -51,6 +51,10 @@ Evidence：`reports/v2/20261015-ui-ux-polish/phase-09/`。
 
 ## Evidence
 
-- Verification:
-- Review / Audit:
-- Commit / PR:
+- Verification：sub-phase checks 38/631 → 41/650；final `npm.cmd run check` PASS 41 files／650 tests＋build（`reports/v2/20261015-ui-ux-polish/phase-09/f-check-run/npm-run-check-c0a377b.log`）。Production Chromium regression（200 action records、0 errors）＋20 分 stress（0 errors、P95 55 ms、1,862 modal cycles、0 IDB errors、3/3 reload parity）。
+- Sub-phases：A `6f9ecb6`、B `4afc604`、C `4467fcc`（+`eb8ed8c`）、D `25014bc`、E `c0a377b`、F `369df60`／`3830523`／`e5cfa6e`，均 accepted PASS WITH FINDINGS。
+- Product changes：旅人筆記情境提示（≤5、資料觸發、無任務語意）；高階目標戰前詳情（實際等級、已遭遇才顯示機制／戰利品、撤退與冷卻讀常數）；素材來源標籤與中文搜尋；製作成功顯示實際熟練 XP；Boss 擊敗訊息合併獎勵；HUD 響應式高度分配（20 組合）；modal focus（summary、排除 disabled）。無 engine 規則／平衡／存檔／Threat V0／Farming V4 變更。
+- Gates（`phase-09/final-review.md`）：Engineering、Goal Clarity、Information Architecture、Adventure UX、Life／Craft UX、World Feedback、Interaction、Responsive、Visual Consistency、Performance = PASS WITH FINDINGS；Human Product = DEFERRED。
+- Review / Audit：B／C／E 由 High、D 由 Medium 獨立審查並修正；Phase9 整體由未參與施工的 `g6_luna_max_final_reviewer`（gpt-6-luna max；UI GPT-6-Luna max fast）最終審查 → OWNER-READY（`phase-09/f-review/`）。
+- Open product findings：`phase-09/ux-findings.md`（Hybrid 自然進度鏈未於 bounded run 達成、無危險估計／建議等級（無模型支援）、Phase8 D-F1 KEEP V0 只改呈現、merchant stock/restock NOT MODELED、Safari／實體裝置未測）。
+- Commit / PR：見各子票；無 PR／merge／deploy／`main`。

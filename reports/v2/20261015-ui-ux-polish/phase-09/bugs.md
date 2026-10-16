@@ -36,6 +36,10 @@ These were evidence-state inconsistencies, not product-code defects; they were c
 | C P3 — `adventure-ux.md` retained a superseded pending sentence after the C evidence was complete. | **Resolved** in the C accepted report snapshot. | `c-review/c-review.md`; `adventure-ux.md` after-evidence section; C summary. |
 | E P3 — E summary/world-feedback/responsive review said build or browser verification was pending despite retained pass logs and screenshots. | **Resolved** and accepted in E review follow-up. | `e-review/e-review.md`; `e-review/e-review-followup.md`; `e-runner/npm-run-check-e.log`; final E attempt. |
 
+## Phase9-F runner and final-review items
+
+| ID / severity | Finding | Status | Evidence |
+|---|---|---|---|
 | F · Orphan Chrome profile | An earlier F1 regression attempt left an attempt-local profile (7,011,700 B). | **Resolved**: size recorded in `f1-runner/attempt-20261016T021427597Z-regression/chrome-profile-cleanup.json`, removed by lead; stress export gzip-compressed with SHA manifest. | `f1-runner/` |
 | FMAX-P9-01 · P2 report state | Final review / bugs register still said F1 QA pending. | **Resolved** (report-only). | `f-review/f-max-final-review.md` |
 | FMAX-P9-02 · P3 report count | Regression reported 195 actions; raw trace has 200 records. | **Resolved**: reports use 200 action records. | `f1-runner/attempt-20261016T022825574Z-regression/closeout.json` |
