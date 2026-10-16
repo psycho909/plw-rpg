@@ -1,6 +1,6 @@
 # Phase9-C — Gameplay Interaction Polish
 
-- Status: approved — ready（B accepted 2026-10-15）
+- Status: accepted — PASS WITH FINDINGS（2026-10-16）
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-15 Owner 正式規格 [V2X-PHASE9-UI-UX-POLISH](../docs/specs/V2X-PHASE9-UI-UX-POLISH.md) §0「正式啟動 Phase9 — UI/UX Polish」；Parent [Phase9](20261015-v2x-09-ui-ux-polish.md)。
@@ -23,8 +23,8 @@
 
 ## Acceptance
 
-- [ ] `life-crafting-ux.md`、`adventure-ux.md`（compare／loot）、`world-feedback.md`（history／crisis）。
-- [ ] Component tests；Before／After；Medium review。
+- [x] `life-crafting-ux.md`、`adventure-ux.md`（compare／loot）、`world-feedback.md`（history／crisis）。
+- [x] Component tests；Before／After；Medium review。
 
 ## Constraints and Decisions
 
@@ -36,6 +36,10 @@
 
 ## Evidence
 
-- Verification:
-- Review / Audit:
-- Commit / PR:
+- Routing（requested → observed）：施工 `g6-luna-med-engineer`（gpt-6-luna medium；UI GPT-6-Luna medium fast）；審查 `g6-luna-high-engineer`（gpt-6-luna high；未參與 C 施工）。
+- Changes：`src/presentation/craftingProjection.ts`（+test）素材來源分類（區域登錄素材／舊狼族影響素材／作物收成品）與共用 `projectMaterialOriginLabel`／`projectMaterialSearchIndex`；`src/components/InventoryWindow.vue` 素材列顯示來源標籤、區分一般怪物掉落補給；`docs/UI.md`。未改 engine／平衡／存檔；未新增 collection DB。
+- Verified no-change：工作台缺料列已顯示需求／持有與已知來源（同一 knowledge projection）；製作成功後已開啟物品視窗並聚焦新裝備可比較／穿戴／出售；危機捐獻與世界歷史流程依 A 證據無需改動。
+- Evidence：`phase-09/life-crafting-ux.md`、`adventure-ux.md`、`world-feedback.md`；probe `c-runner/attempt-20261016T003828476Z/`（labeled controlled fixture）；失敗 attempts 保留（bundle glob、store timeout、invalid save、Vite transport、store locator）。
+- Verification：craftingProjection 10/10；`npm.cmd run check` PASS 39 files／643 tests＋build（`c-runner/npm-run-check-c-final.log`）。
+- Review / Audit：`phase-09/c-review/c-review.md` PASS WITH FINDINGS（P3 中文來源標籤搜尋、P3 報告 pending 語句）→ 已修正並重測。
+- Commit / PR：本次 commit；無 PR。

@@ -1,0 +1,39 @@
+{
+  "startedAt": "2026-10-15T10:08:32.646Z",
+  "attempt": "reports/v2/20261015-ui-ux-polish/phase-09/c-runner/attempt-20261015T100825778Z",
+  "lane": "controlled starting save; UI actions only; rebuilt production dist",
+  "fixture": {
+    "kind": "controlled Phase9-C display fixture, separate from fresh-save route",
+    "seed": 92341,
+    "generatedBy": "createGame + explicit inventory, discovery, and store-position setup",
+    "position": {
+      "x": 10,
+      "y": 8
+    },
+    "discoveredRegions": [
+      "forest",
+      "farmland"
+    ],
+    "seenSources": [
+      "grayWolf",
+      "slime_slick"
+    ],
+    "materials": {
+      "wolfFang": 1,
+      "slime_resin": 1,
+      "spring_pea_good": 1
+    },
+    "genericMonsterDrops": {
+      "material": 1
+    }
+  },
+  "evidence": {},
+  "errors": [],
+  "status": "FAIL",
+  "error": "Error: Timed out waiting for browser state",
+  "stack": "Error: Timed out waiting for browser state\n    at waitFor (file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:19:9)\n    at async clickText (file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:93:16)\n    at async openStoreCorrect (file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:116:3)\n    at async file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:131:3",
+  "chromeStderr": "[154728:146336:1015/180833.021:ERROR:components\\policy\\core\\common\\cloud\\cloud_policy_validator.cc:652] [policy_type=google/chrome/machine-level-user] Cached key new signature verification failed\r\n\r\nDevTools listening on ws://127.0.0.1:62359/devtools/browser/3c6752c9-fc56-4d4c-acd8-28522d2a4c5a\r\n[154728:146336:1015/180836.486:ERROR:components\\policy\\core\\browser\\policy_conversions_client.cc:311] SSLVersionMin has an error of type: 不明政策。\r\n[154728:157652:1015/180836.795:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT\r\n[154728:157652:1015/180836.822:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT\r\n[154728:157652:1015/180836.842:ERROR:google_apis\\gcm\\engine\\connection_factory_impl.cc:435] Failed to connect to MCS endpoint with error -101\r\n",
+  "chromeProfileBytesBeforeCleanup": 15866838,
+  "chromeProfileRemoved": true,
+  "finishedAt": "2026-10-15T10:08:43.172Z"
+}

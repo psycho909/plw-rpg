@@ -1,0 +1,12 @@
+# Dispatch 9C — Gameplay Interaction Polish (g6-luna-med-engineer; requested gpt-6-luna / medium)
+
+- Ticket `tickets/20261015-v2x-09c-interaction.md`; spec §3 P9-03/P9-04/P9-05, §4, §8. Baseline `phase-09/ux-baseline.md` (P3 P9-04: generic monster loot vs recipe-registered materials hard to connect; compare/equip, crisis contribution, history flows otherwise worked). HEAD `4afc604`.
+- Single owner of: `src/components/InventoryWindow.vue`, the workbench part of `src/components/PlaceWindow.vue`, `src/presentation/craftingProjection.ts` (+test) or a new presentation helper (+test), relevant `docs/UI.md` rows. No engine rules/config numbers/save schema/balance changes; no second collection DB/encyclopedia.
+- Sandbox escalation allowed: `npx.cmd vitest run`, `node scripts/phase9/`. Single standalone commands. Lead runs build + full check.
+
+## Work (only what the baseline evidences — keep it small)
+1. Material ↔ recipe linkage (P9-04): in the inventory material rows show, for discovered materials only, "用途" = recipes that consume it (from `CRAFTING_RECIPES` / planCraft inputs) and "來源" via the existing `contentKnowledgeCatalog` (undiscovered → existing general hint). Visually distinguish generic monster loot (legacy `MATERIALS` like wolf fang etc.) from registered content materials if that is what confused the run — read the actual data to decide and document.
+2. Workbench missing-material rows: where a selected recipe shows required/held and is short, add the known source line (same knowledge projection) so the player knows where to get it, without leaving the window. Do not change legality or numbers.
+3. Post-craft quick actions: verify (don't assume) the success message offers compare/equip/sell paths; only if a real extra window switch is needed, add a minimal in-place link to the existing inventory compare for the new item.
+4. Tests for any new projection/helper (each line has a data source; undiscovered gated). Focused probe `scripts/phase9/c-probe.mjs` (reuse b-probe approach; elementFromPoint clicks; delete chrome-profile after recording size) capturing before-state reference from A screenshots and after-state on rebuilt dist (ask lead to build).
+5. Reports: `phase-09/life-crafting-ux.md`, add compare/loot part to `adventure-ux.md`, add history/crisis observation to `world-feedback.md` (state "no change needed" with evidence where true). `c-runner/c-summary.md`; reply with only that path.

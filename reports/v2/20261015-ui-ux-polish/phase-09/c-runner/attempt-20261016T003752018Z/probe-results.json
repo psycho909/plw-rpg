@@ -1,0 +1,39 @@
+{
+  "startedAt": "2026-10-16T00:37:58.466Z",
+  "attempt": "reports/v2/20261015-ui-ux-polish/phase-09/c-runner/attempt-20261016T003752018Z",
+  "lane": "controlled starting save; UI actions only; rebuilt production dist",
+  "fixture": {
+    "kind": "controlled Phase9-C display fixture, separate from fresh-save route",
+    "seed": 92341,
+    "generatedBy": "createGame + explicit inventory, discovery, and store-position setup",
+    "position": {
+      "x": 10,
+      "y": 8
+    },
+    "discoveredRegions": [
+      "forest",
+      "farmland"
+    ],
+    "seenSources": [
+      "grayWolf",
+      "slime_slick"
+    ],
+    "materials": {
+      "wolfFang": 1,
+      "slime_resin": 1,
+      "spring_pea_good": 1
+    },
+    "genericMonsterDrops": {
+      "material": 1
+    }
+  },
+  "evidence": {},
+  "errors": [],
+  "status": "FAIL",
+  "error": "Error: Timed out waiting for browser state",
+  "stack": "Error: Timed out waiting for browser state\n    at waitFor (file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:19:9)\n    at async clickText (file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:93:16)\n    at async openStoreCorrect (file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:119:3)\n    at async file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:134:3",
+  "chromeStderr": "[154212:161184:1016/083758.776:ERROR:components\\policy\\core\\common\\cloud\\cloud_policy_validator.cc:652] [policy_type=google/chrome/machine-level-user] Cached key new signature verification failed\r\n\r\nDevTools listening on ws://127.0.0.1:59152/devtools/browser/059ff40e-2894-471c-a836-efaad831a90d\r\n[154212:161184:1016/083802.405:ERROR:components\\policy\\core\\browser\\policy_conversions_client.cc:311] SSLVersionMin has an error of type: 不明政策。\r\n[154212:148268:1016/083802.729:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: QUOTA_EXCEEDED\r\n[154212:148268:1016/083802.758:ERROR:google_apis\\gcm\\engine\\connection_factory_impl.cc:435] Failed to connect to MCS endpoint with error -101\r\n[154212:148268:1016/083802.805:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT\r\n[154212:148268:1016/083802.839:ERROR:google_apis\\gcm\\engine\\connection_factory_impl.cc:435] Failed to connect to MCS endpoint with error -101\r\n",
+  "chromeProfileBytesBeforeCleanup": 15763953,
+  "chromeProfileRemoved": true,
+  "finishedAt": "2026-10-16T00:38:10.285Z"
+}

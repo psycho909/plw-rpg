@@ -1,0 +1,9 @@
+file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:15
+const assert = (condition, message) => { if (!condition) throw new Error(message) }
+                                                               ^
+
+Error: Rebuild production dist after Phase9-C source changes before running this probe
+    at assert (file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:15:64)
+    at file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:49:1
+
+Node.js v22.14.0

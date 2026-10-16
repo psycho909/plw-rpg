@@ -43,3 +43,13 @@ The first focused probe temporarily assigned `tabIndex=0`, masking that the prod
 ## Deliberately absent
 
 No danger score, recommended level, combat-power system, unobserved random trait, undiscovered content loot, new Boss rule, or encounter balance change was introduced. Phase8 controlled difficulty evidence remains separate from ordinary route experience; this interface change does not claim human players understand the information.
+
+## Phase9-C: loot, crafting materials, and comparison handoff
+
+The A1 inventory screenshot showed a generic `怪物素材` item in ordinary supplies after a monster win. It is a legacy generic drop and is distinct from entries in the material registry. Legacy wolf materials (`wolfFang`, `wolfHide`, `moonStone`) are specifically wolf-family materials used as influence materials by legacy recipes; registered content materials such as `slime_resin` are named recipe inputs. This distinction is now visible as `狼族素材` versus `區域登錄素材` in collected material rows. The detailed source and use rows continue to come from `contentKnowledgeCatalog`, gated by the existing discovery state.
+
+The selected workbench recipe already renders required/held material amounts and adds known source information for missing material inputs using the same knowledge projection. Post-craft feedback already offers `檢視裝備`; its handler opens Inventory with the crafted instance focused, where the existing compare view exposes equip and sell actions. The completed C probe captured these on the rebuilt production bundle in a labeled controlled starting save; see the final attempt linked below. Before reference: [A1 adventure loot](a-runner/attempt-20261015T085040840Z-ux-audit/adventure-loot-comparison.png) and [A1 workbench blockers](a-runner/attempt-20261015T084824269Z-ux-audit/craft-cap-advanced-recipe-blockers.png). After evidence: [`c-runner/attempt-20261016T003828476Z/probe-results.json`](c-runner/attempt-20261016T003828476Z/probe-results.json).
+
+## Phase9-C after-evidence update
+
+This replaces the pending C-probe reference above. The controlled rebuilt-dist probe passed at [`c-runner/attempt-20261016T003828476Z/probe-results.json`](c-runner/attempt-20261016T003828476Z/probe-results.json), recording the generic monster supply distinction, material origins and known source/use rows, missing-input workbench context, and post-craft focused comparison handoff. This evidence is a controlled starting-save inspection, separate from A1 normal-route evidence.

@@ -1,11 +1,40 @@
 import { BUILDINGS, ITEMS } from '../data/config'
+import { CONTENT_CROP_GOODS, CONTENT_MATERIALS } from '../data/contentRegistry'
 import { CRAFTING_RECIPES } from '../data/crafting'
-import { AFFIXES, ITEM_BASES, ITEM_GENERATION_RULES, MATERIALS, RARITIES } from '../data/rewards'
+import { AFFIXES, ITEM_BASES, ITEM_GENERATION_RULES, LEGACY_MATERIALS, MATERIALS, RARITIES } from '../data/rewards'
 import type { AffixId, CraftingInput, CraftRecipeId, MaterialId, RarityId } from '../domain/reward'
 import type { GameState } from '../domain/types'
 import { planCraft } from '../engine/crafting'
 
 const RARITY_ORDER: RarityId[] = ['common', 'uncommon', 'rare', 'epic', 'legendary']
+export type MaterialOrigin = ReturnType<typeof projectMaterialOrigin>
+
+/** Distinguishes saved wolf-family materials from materials in the authored content registry. */
+export function projectMaterialOrigin(materialId: MaterialId): 'registered' | 'wolf' | 'harvest' | 'other' {
+  if (Object.hasOwn(CONTENT_MATERIALS, materialId)) return 'registered'
+  if (Object.hasOwn(CONTENT_CROP_GOODS, materialId)) return 'harvest'
+  return Object.hasOwn(LEGACY_MATERIALS, materialId) ? 'wolf' : 'other'
+}
+
+/** User-facing origin label shared by material rows and their searchable text. */
+export function projectMaterialOriginLabel(origin: MaterialOrigin): string {
+  if (origin === 'registered') return '區域登錄素材'
+  if (origin === 'wolf') return '狼族素材'
+  if (origin === 'harvest') return '作物收成品'
+  return '其他素材'
+}
+
+/** Lowercase index for the visible material name, origin, and discovered knowledge. */
+export function projectMaterialSearchIndex(
+  materialId: MaterialId,
+  name: string,
+  description: string,
+  sourceLabels: readonly string[],
+  uses: readonly string[],
+): string {
+  return [name, description, projectMaterialOriginLabel(projectMaterialOrigin(materialId)), ...sourceLabels, ...uses]
+    .join(' ').toLocaleLowerCase('zh-TW')
+}
 
 function inputKey(input: CraftingInput) {
   return input.source === 'inventory' ? `${input.source}:${input.itemId}` : `${input.source}:${input.materialId}`

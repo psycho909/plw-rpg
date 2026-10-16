@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { BUILDINGS } from '../data/config'
 import { createGame, player } from '../engine/simulation'
-import { projectCrafting } from './craftingProjection'
+import { MATERIALS } from '../data/rewards'
+import { projectCrafting, projectMaterialOrigin, projectMaterialOriginLabel, projectMaterialSearchIndex } from './craftingProjection'
 
 function readyAtStore() {
   const state = createGame(7302)
@@ -14,6 +15,21 @@ function readyAtStore() {
 }
 
 describe('crafting UI projection', () => {
+  it('distinguishes authored content materials from legacy wolf materials by registry ownership', () => {
+    expect(projectMaterialOrigin('wolfFang')).toBe('wolf')
+    expect(projectMaterialOrigin('slime_resin')).toBe('registered')
+    expect(projectMaterialOrigin('spring_pea_good')).toBe('harvest')
+  })
+
+  it('matches a material search query by its displayed Chinese origin label', () => {
+    const materialId = 'slime_resin'
+    const label = projectMaterialOriginLabel(projectMaterialOrigin(materialId))
+    const searchable = projectMaterialSearchIndex(materialId, MATERIALS[materialId].name, MATERIALS[materialId].description, [], [])
+
+    expect(label).toBe('區域登錄素材')
+    expect(searchable.includes(label.toLocaleLowerCase('zh-TW'))).toBe(true)
+  })
+
   it('projects neutral crafting and only the influence materials allowed by the recipe', () => {
     const state = readyAtStore(), before = structuredClone(state)
     const projection = projectCrafting(state)

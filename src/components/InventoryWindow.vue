@@ -13,6 +13,7 @@ import { CONTENT_CROP_GOODS } from '../data/contentRegistry'
 import { convertCropGoodToFood } from '../engine/rewardActions'
 import { contentKnowledgeCatalog } from '../engine/contentFamilies'
 import { affixMechanics, GEAR_PAGE_SIZE, projectCraftProvenance, projectGearComparison, projectGearPage, projectLatestLootFeedback, statDeltaText, statKeys, statLabels, statText } from '../presentation/rewardProjection'
+import { projectMaterialOrigin, projectMaterialOriginLabel, projectMaterialSearchIndex } from '../presentation/craftingProjection'
 import { useGameStore } from '../stores/gameStore'
 const props = defineProps<{ focusInstanceId?: string | null }>()
 const emit = defineEmits<{ (event: 'focus-consumed'): void }>()
@@ -50,11 +51,12 @@ const lootFeedback = computed(() => projectLatestLootFeedback(game.state))
 const materialKnowledge = computed(() => contentKnowledgeCatalog(game.state, materials.value))
 const materialEntries = computed(() => materials.value.map(id => {
   const hints = materialKnowledge.value[id]
+  const origin = projectMaterialOrigin(id)
   const isCraftMaterial = hints?.uses.some(use => use.startsWith('配方：') || use.startsWith('影響配方：')) ?? false
   const group = CONTENT_CROP_GOODS[id] ? 'harvest' : isCraftMaterial ? 'craft' : 'other'
-  const searchable = [MATERIALS[id].name, MATERIALS[id].description, ...(hints?.sources.map(source => source.label) ?? []), ...(hints?.uses ?? [])]
-    .join(' ').toLocaleLowerCase('zh-TW')
-  return { id, hints, group, searchable }
+  const searchable = projectMaterialSearchIndex(id, MATERIALS[id].name, MATERIALS[id].description,
+    hints?.sources.map(source => source.label) ?? [], hints?.uses ?? [])
+  return { id, hints, group, origin, searchable }
 }).filter(entry => (materialGroup.value === 'all' || entry.group === materialGroup.value)
   && (!materialSearch.value.trim() || entry.searchable.includes(materialSearch.value.trim().toLocaleLowerCase('zh-TW')))))
 function wolfNames(ids: readonly string[]) {
@@ -133,7 +135,7 @@ function equipGear() {
 const equipped = computed(() => game.character.equipment.weapon === selected.value || game.character.equipment.armor === selected.value)
 const descriptions: Record<ItemId, string> = {
   wood: '森林採集的木材，可以到雜貨店出售。', stone: '礦場採集的石材，可以到雜貨店出售。', iron: '礦場與地下城取得的鐵礦，可以出售。',
-  food: '農田收穫的食物，可以到雜貨店出售。', material: '怪物留下的素材，可以到雜貨店出售。', potion: '恢復 45 生命。戰鬥中使用會消耗一回合。',
+  food: '農田收穫的食物，可以到雜貨店出售。', material: '一般怪物掉落物，可出售；配方素材與收成品請在「素材與收成」查看。', potion: '恢復 45 生命。戰鬥中使用會消耗一回合。',
   sword: `裝備後攻擊增加 ${EQUIPMENT.sword.attack}。`, armor: `裝備後防禦增加 ${EQUIPMENT.armor.defense}。`,
 }
 function useSelected() {
@@ -205,7 +207,7 @@ function useSelected() {
       <p v-if="!materialEntries.length" class="empty-state" data-content-empty="no-results">找不到符合條件的素材。清除搜尋或改選用途分類。</p>
       <div v-else>
       <section v-for="entry in materialEntries" :key="entry.id" class="reward-material" :data-material-group="entry.group">
-        <h3>{{ MATERIALS[entry.id].name }} · 持有 {{ materialStacks?.[entry.id] ?? 0 }}</h3>
+        <h3>{{ MATERIALS[entry.id].name }} · 持有 {{ materialStacks?.[entry.id] ?? 0 }} <small class="material-origin" :data-material-origin="entry.origin">{{ projectMaterialOriginLabel(entry.origin) }}</small></h3>
         <p class="muted">{{ MATERIALS[entry.id].description }}</p>
         <div v-if="entry.hints?.sources.length" class="content-hints">
           <h4>已知來源</h4>
@@ -237,3 +239,7 @@ function useSelected() {
     <h4 class="section-title">首領紀錄</h4><p>{{ wolfNames(collection.bosses) || '尚未擊退狼族首領。' }}</p>
   </section>
 </template>
+
+<style scoped>
+.material-origin { display: inline-block; border: 1px solid var(--border); padding: 0 4px; font-size: 11px; font-weight: 400; }
+</style>

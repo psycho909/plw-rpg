@@ -1,0 +1,39 @@
+{
+  "startedAt": "2026-10-15T10:06:44.728Z",
+  "attempt": "reports/v2/20261015-ui-ux-polish/phase-09/c-runner/attempt-20261015T100638897Z",
+  "lane": "controlled starting save; UI actions only; rebuilt production dist",
+  "fixture": {
+    "kind": "controlled Phase9-C display fixture, separate from fresh-save route",
+    "seed": 92341,
+    "generatedBy": "createGame + explicit inventory, discovery, and store-position setup",
+    "position": {
+      "x": 10,
+      "y": 8
+    },
+    "discoveredRegions": [
+      "forest",
+      "farmland"
+    ],
+    "seenSources": [
+      "grayWolf",
+      "slime_slick"
+    ],
+    "materials": {
+      "wolfFang": 1,
+      "slime_resin": 1,
+      "spring_pea_good": 1
+    },
+    "genericMonsterDrops": {
+      "material": 1
+    }
+  },
+  "evidence": {},
+  "errors": [],
+  "status": "FAIL",
+  "error": "Error: Timed out waiting for browser state",
+  "stack": "Error: Timed out waiting for browser state\n    at waitFor (file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:19:9)\n    at async openStore (file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:102:3)\n    at async file:///D:/Codex/plw-rpg/scripts/phase9/c-probe.mjs:124:3",
+  "chromeStderr": "[130112:128680:1015/180645.035:ERROR:components\\policy\\core\\common\\cloud\\cloud_policy_validator.cc:652] [policy_type=google/chrome/machine-level-user] Cached key new signature verification failed\r\n\r\nDevTools listening on ws://127.0.0.1:55253/devtools/browser/170487e4-965c-4140-bbb1-ea5dda29bd6c\r\n[130112:128680:1015/180648.306:ERROR:components\\policy\\core\\browser\\policy_conversions_client.cc:311] SSLVersionMin has an error of type: 不明政策。\r\n[130112:140136:1015/180650.983:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT\r\n[130112:140136:1015/180651.006:ERROR:google_apis\\gcm\\engine\\connection_factory_impl.cc:435] Failed to connect to MCS endpoint with error -101\r\n[130112:140136:1015/180651.026:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT\r\n[130112:140136:1015/180651.063:ERROR:google_apis\\gcm\\engine\\connection_factory_impl.cc:435] Failed to connect to MCS endpoint with error -101\r\nCreated TensorFlow Lite XNNPACK delegate for CPU.\r\n[130112:140136:1015/180715.567:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT\r\n[130112:140136:1015/180716.658:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: QUOTA_EXCEEDED\r\n",
+  "chromeProfileBytesBeforeCleanup": 56667479,
+  "chromeProfileRemoved": true,
+  "finishedAt": "2026-10-15T10:07:29.134Z"
+}
