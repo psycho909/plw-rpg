@@ -8,6 +8,7 @@
 
 ## Now
 
+- [ ] Phase10 Final QA & Release Candidate — Ticket: [20261016-v2x-10-final-qa-rc](tickets/20261016-v2x-10-final-qa-rc.md)
 
 <!-- 本輪工程已完成；驗收證據保存在正式 Ticket。 -->
 
@@ -19,6 +20,6 @@
 
 ## Blocked
 
-- [ ] Phase9 工程交付完成，等待 Owner 審閱後決定下一步 — Ticket: [20261015-v2x-09-ui-ux-polish](tickets/20261015-v2x-09-ui-ux-polish.md)
+<!-- 當前沒有因真人驗證而阻擋的工程工作。 -->
 
 完成條件：每個項目都有唯一正式 Ticket、只出現在一個區段，且沒有已完成工作或執行細節。

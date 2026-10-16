@@ -1,9 +1,10 @@
 # Phase9 — UI/UX Polish
 
-- Status: accepted — PASS WITH FINDINGS（Phase9 工程交付完成 2026-10-16；等待 Owner 審閱；Human Product DEFERRED；不自動進入 Phase10）
+- Status: accepted — PASS WITH FINDINGS（Owner L3 final approval recorded 2026-10-16）
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-15 Owner 正式規格 [V2X-PHASE9-UI-UX-POLISH](../docs/specs/V2X-PHASE9-UI-UX-POLISH.md) §0「正式啟動 Phase9 — UI/UX Polish」；Parent [Phase9](20261015-v2x-09-ui-ux-polish.md)。
+- Owner final approval: 2026-10-16 Owner 於 Session 提供「Phase9 Owner Approval & Phase10 Final QA / Release Candidate」正式規格（[V2X-PHASE10](../docs/specs/V2X-PHASE10-FINAL-QA-RC.md) §0），接受 Phase9 Engineering Delivery **PASS WITH FINDINGS**（受測 source `c0a377b`，結案 `2c93a08`，遠端核對一致）。保留全部 Findings 與 Evidence Limitations（Hybrid 自然進度、無危險估計、D-F1 KEEP V0、merchant stock NOT MODELED、Safari／實體裝置未測、Human Product DEFERRED）。
 - Risk: L3（沿用 Phase7／8 治理；最終需 Independent Review 與 Owner 審閱）
 - Updated: 2026-10-15
 - Branch: v2x/reward-core
