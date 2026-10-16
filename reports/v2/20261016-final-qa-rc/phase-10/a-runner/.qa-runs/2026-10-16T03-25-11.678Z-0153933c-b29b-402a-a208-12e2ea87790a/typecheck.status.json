@@ -1,0 +1,13 @@
+{
+  "command": "npm",
+  "args": [
+    "exec",
+    "--",
+    "vue-tsc",
+    "--noEmit"
+  ],
+  "exitCode": null,
+  "signal": null,
+  "error": "Error: spawnSync npm ENOENT",
+  "status": "FAIL"
+}

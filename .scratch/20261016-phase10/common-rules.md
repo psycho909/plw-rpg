@@ -1,0 +1,6 @@
+# Phase10 common worker rules
+- Spec `docs/specs/V2X-PHASE10-FINAL-QA-RC.md` (read fully); parent ticket `tickets/20261016-v2x-10-final-qa-rc.md`. HEAD `baa2a29`; check baseline PASS 41/650 (`reports/v2/20261016-final-qa-rc/phase-10/a-check-run/npm-run-check-baseline-2c93a08.log`).
+- **Feature Freeze**: do not change product `src/` on your own. If you find a defect, record a reproducible failing test/evidence and send it to the lead in your summary (severity P0–P3); the lead assigns a single owner for any fix. New test files (`*.test.ts`) and scripts under `scripts/phase10/` are allowed and are not product source.
+- Parallel workers exist (A baseline Medium, B integration High, D persistence Max, later C/E). Only write files in your own scope; never edit another worker's files.
+- Sandbox: escalation allowed for `npx.cmd vitest run <files>` (targeted), `node scripts/` and `node --test scripts/`. Single standalone commands (no chaining). Lead runs `npm.cmd run check` and `npm.cmd run build`.
+- Evidence under `reports/v2/20261016-final-qa-rc/phase-10/<your-prefix>-*/`; raw bounded, gzip >256KB with SHA-256 manifest; browser runs delete their chrome-profile in `finally` after recording size. Keep failed attempts. Normal fresh-save vs controlled fixture always separately labelled. No human-fun claims. Root-only Git: no commit/push.

@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "capturedAt": "2026-10-16T03:25:12.245Z",
+  "git": {
+    "head": "baa2a2947be643fc847a2a731e3479d6287a6150",
+    "branch": "v2x/reward-core"
+  },
+  "input": {
+    "originalPath": "reports\\v2\\20261008-content-expansion\\phase-07\\f-content-validation-run\\runs\\2026-10-13T07-26-49.218Z-83f60eb4-456f-4e14-a8ad-b10771503854\\packs\\six-family-combined.json",
+    "snapshot": "input/six-family-combined.json",
+    "bytes": 118309,
+    "sha256": "ed565e8a33abd28d5a76e330c9e8e78856eb9017b13d3839f7f9273ce8d380fe"
+  },
+  "pack": {
+    "bytes": 118309,
+    "sha256": "ed565e8a33abd28d5a76e330c9e8e78856eb9017b13d3839f7f9273ce8d380fe"
+  },
+  "sourceFingerprintAlgorithm": "SHA-256 over compact JSON mapping sorted source paths to their SHA-256 values",
+  "sourceFingerprint": "29ad4550ee6c9bca802d84125d14bbda892284e6399b4ee72d1bcaf6377f5923",
+  "runtime": {
+    "node": "v22.14.0",
+    "platform": "win32",
+    "architecture": "x64"
+  },
+  "sourceFiles": {
+    "package-lock.json": {
+      "sha256": "dd09e92e2fe2ee18c2d817bc5f902e36ad31f9df8071bc490b88a5ed17f4ba61",
+      "snapshot": "source/package-lock.json"
+    },
+    "package.json": {
+      "sha256": "002dfc795a79e55e6548921a8686a44b61e630293b7ae04fbc5800055fa2cde3",
+      "snapshot": "source/package.json"
+    },
+    "reports/v2/20261008-content-expansion/phase-07/content-baseline.json": {
+      "sha256": "ff419de6fa365920ecf2fd823c774469d996b23d262dea298e753ac00bea1fe0",
+      "snapshot": "source/reports/v2/20261008-content-expansion/phase-07/content-baseline.json"
+    },
+    "scripts/recorded_reports.py": {
+      "sha256": "c60667ee6524efbefa74b169772899dc7cbb1a2f41361f047b255eed9b854ec3",
+      "snapshot": "source/scripts/recorded_reports.py"
+    },
+    "scripts/validate_content_batch.mjs": {
+      "sha256": "777172c7a55f50d35b51a1657c31c1990e5778d3e57828d6820042fbf5301b0a",
+      "snapshot": "source/scripts/validate_content_batch.mjs"
+    },
+    "scripts/validate_content_evidence.mjs": {
+      "sha256": "488a4d9768030b92b09be83c5818fa86b1f7271529448fdf55e99c597ce3ae0f",
+      "snapshot": "source/scripts/validate_content_evidence.mjs"
+    },
+    "src/domain/content.ts": {
+      "sha256": "08312f1b83507d6d31379c9eb9725b9dd3565631fb35297dd4f2e80dc1797c7c",
+      "snapshot": "source/src/domain/content.ts"
+    },
+    "src/engine/contentValidation.test.ts": {
+      "sha256": "f56b3134803b4508c666f5aea05c72b61e50411998b52ec4dbf394b3eed9fb27",
+      "snapshot": "source/src/engine/contentValidation.test.ts"
+    },
+    "src/engine/contentValidation.ts": {
+      "sha256": "8f3cb498b6707a7c3fae5b625a89903e782cd4a4b0c677611f521a9fda8872ce",
+      "snapshot": "source/src/engine/contentValidation.ts"
+    },
+    "src/data/content/caveInsects.ts": {
+      "sha256": "800b3920535e599ccf23838c4271a41049b2ebd0500f6346b587c039254c39c7",
+      "snapshot": "source/src/data/content/caveInsects.ts"
+    },
+    "src/data/content/farmCrops.ts": {
+      "sha256": "9033d540bbaa2540195513e58e1dabe0fe00c41b0081cd5e816f0d31ab4558ee",
+      "snapshot": "source/src/data/content/farmCrops.ts"
+    },
+    "src/data/content/fogUndead.ts": {
+      "sha256": "cbd0c4d3e3fc9536843f0f7e0abb216c70ccbb5b9e029574ff56e60ef7915d12",
+      "snapshot": "source/src/data/content/fogUndead.ts"
+    },
+    "src/data/content/frontierGoblins.ts": {
+      "sha256": "22451cf4ead2bd377942497dd9eb33d44711ab35b4c2ade6b58c4487338c32b4",
+      "snapshot": "source/src/data/content/frontierGoblins.ts"
+    },
+    "src/data/content/mineConstructs.ts": {
+      "sha256": "3e91395460e19d71ccafb463d1c023ea9641b1920c1aa98f4a7f9a89eca37744",
+      "snapshot": "source/src/data/content/mineConstructs.ts"
+    },
+    "src/data/content/slime.ts": {
+      "sha256": "1a93f1b4202bd50c76945ed5a6b9c766e239a42251e9031841cd712f297751b4",
+      "snapshot": "source/src/data/content/slime.ts"
+    },
+    "src/data/content/wildBeasts.ts": {
+      "sha256": "2c1aaa5ff82e4169d2187e53f10c42f43aa42a37ca50112d8105f2d48e3e7c56",
+      "snapshot": "source/src/data/content/wildBeasts.ts"
+    },
+    "tsconfig.json": {
+      "sha256": "1c0bcf2cb70bf97b6da7a5d7e87f2e2befbbb9dc6b91d4e7f3d6bd026f2bd5be",
+      "snapshot": "source/tsconfig.json"
+    },
+    "vite.config.ts": {
+      "sha256": "0f9c92da8a8e31d82bca36ae8319fa597084522f2613b2d60fd0c755ed40043d",
+      "snapshot": "source/vite.config.ts"
+    }
+  },
+  "provenance": "Input and source files are independent run-time captures; this manifest does not claim that the captured source generated the supplied pack."
+}

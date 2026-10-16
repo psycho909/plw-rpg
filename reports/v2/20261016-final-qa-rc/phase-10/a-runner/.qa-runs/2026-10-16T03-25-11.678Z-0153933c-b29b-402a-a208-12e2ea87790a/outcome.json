@@ -1,0 +1,41 @@
+{
+  "completedAt": "2026-10-16T03:25:12.819Z",
+  "contentValidationStatus": "PASS",
+  "overallStatus": "FAIL",
+  "diagnostics": {
+    "validation": []
+  },
+  "checks": {
+    "targetedTests": {
+      "command": "npm",
+      "args": [
+        "exec",
+        "--",
+        "vitest",
+        "run",
+        "src/engine/contentValidation.test.ts"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "exitCode": null,
+      "signal": null,
+      "error": "Error: spawnSync npm ENOENT",
+      "status": "FAIL"
+    },
+    "typecheck": {
+      "command": "npm",
+      "args": [
+        "exec",
+        "--",
+        "vue-tsc",
+        "--noEmit"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "exitCode": null,
+      "signal": null,
+      "error": "Error: spawnSync npm ENOENT",
+      "status": "FAIL"
+    }
+  }
+}

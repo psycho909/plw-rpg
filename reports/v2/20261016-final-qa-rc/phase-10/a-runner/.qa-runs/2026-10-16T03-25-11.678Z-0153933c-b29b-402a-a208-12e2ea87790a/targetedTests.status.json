@@ -1,0 +1,14 @@
+{
+  "command": "npm",
+  "args": [
+    "exec",
+    "--",
+    "vitest",
+    "run",
+    "src/engine/contentValidation.test.ts"
+  ],
+  "exitCode": null,
+  "signal": null,
+  "error": "Error: spawnSync npm ENOENT",
+  "status": "FAIL"
+}
