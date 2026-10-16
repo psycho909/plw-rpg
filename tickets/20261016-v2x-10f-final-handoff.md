@@ -1,6 +1,6 @@
 # Phase10-F — Final QA, Internal Review & Handoff
 
-- Status: in_progress — internal independent Max review findings being addressed（P2-01 long-world calendar years）
+- Status: accepted — PASS WITH FINDINGS（Phase10 工程交付完成 2026-10-16；等待 Owner 決策；External Code Review NOT STARTED）
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-16 Owner 正式規格 [V2X-PHASE10-FINAL-QA-RC](../docs/specs/V2X-PHASE10-FINAL-QA-RC.md) §0「正式啟動 Phase10」；Parent [Phase10](20261016-v2x-10-final-qa-rc.md)。
@@ -23,8 +23,8 @@ Full regression、findings triage、Internal Independent Max Review、RC enginee
 
 ## Acceptance
 
-- [ ] `human-playtest-packet.md`、`external-review-handoff.md`、`final-review.md`；Gates／DoD／Q1–Q9。
-- [ ] Internal Independent Max Review；commit／push 並遠端核對；停止等待 Owner。
+- [x] `human-playtest-packet.md`、`external-review-handoff.md`、`final-review.md`；Gates／DoD／Q1–Q9。
+- [x] Internal Independent Max Review；commit／push 並遠端核對；停止等待 Owner。
 
 ## Constraints and Decisions
 
@@ -39,5 +39,5 @@ Feature Freeze：只有具體證據的缺陷才改產品 source（Feature Freeze
 - Routing：F docs `g6-luna-med-engineer-2`（gpt-6-luna medium；UI GPT-6-Luna medium fast）；Lead 定稿；internal independent review 由全新 Max session（未參與 Phase10 施工或審查）。
 - Verification：`npm.cmd run check` PASS 45 files／658 tests＋vue-tsc＋build at `29e7c4b`（`phase-10/a-check-run/npm-run-check-29e7c4b.log`）；之後僅報告／測試外檔案變更。
 - Reports：§16 十三份（baseline、cross-system-integration、adventure-life-hybrid、reward-retention-signals、content-coverage、save-migration-determinism、long-world、browser-regression、browser-stress-performance、final-risk-register、human-playtest-packet、external-review-handoff、final-review）。
-- Review / Audit：pending（`phase-10/f-review/`）。
-- Commit / PR：待回填；無 PR／merge／deploy；External Code Review NOT STARTED。
+- Review / Audit：全新 Max `g6_luna_max_final_reviewer`（gpt-6-luna max；未參與 Phase10 施工或審查）`phase-10/f-review/f-max-final-review.md`：無 P0/P1；P2-01 long-world 年數用 360 天（遊戲年 120 天）→ runner 改用曆法常數並重跑精確 10/50/100 遊戲年（`b11d760`）；P3-01 handoff HEAD 已填；P3-02 ticket status enum 已修 → `f-max-final-review-followup.md` RESOLVED，Owner-ready（限內部 Engineering Gate／RC 決策）。
+- Commit / PR：F deliverables `e9f2efc`、P2-01 fix `b11d760`（delivery source for external review），本結案 commit 另行推送並遠端核對；無 PR／merge／deploy／main；External Code Review NOT STARTED。
