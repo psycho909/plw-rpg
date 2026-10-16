@@ -1,6 +1,6 @@
 # Phase10-F — Final QA, Internal Review & Handoff
 
-- Status: approved — waiting on dependency
+- Status: in_review — internal independent Max review pending
 - Owner: 本專案使用者，沿用 README 已確認身份。
 - Approver: 同 Owner。
 - Approval evidence: 2026-10-16 Owner 正式規格 [V2X-PHASE10-FINAL-QA-RC](../docs/specs/V2X-PHASE10-FINAL-QA-RC.md) §0「正式啟動 Phase10」；Parent [Phase10](20261016-v2x-10-final-qa-rc.md)。
@@ -36,6 +36,8 @@ Feature Freeze：只有具體證據的缺陷才改產品 source（Feature Freeze
 
 ## Evidence
 
-- Verification:
-- Review / Audit:
-- Commit / PR:
+- Routing：F docs `g6-luna-med-engineer-2`（gpt-6-luna medium；UI GPT-6-Luna medium fast）；Lead 定稿；internal independent review 由全新 Max session（未參與 Phase10 施工或審查）。
+- Verification：`npm.cmd run check` PASS 45 files／658 tests＋vue-tsc＋build at `29e7c4b`（`phase-10/a-check-run/npm-run-check-29e7c4b.log`）；之後僅報告／測試外檔案變更。
+- Reports：§16 十三份（baseline、cross-system-integration、adventure-life-hybrid、reward-retention-signals、content-coverage、save-migration-determinism、long-world、browser-regression、browser-stress-performance、final-risk-register、human-playtest-packet、external-review-handoff、final-review）。
+- Review / Audit：pending（`phase-10/f-review/`）。
+- Commit / PR：待回填；無 PR／merge／deploy；External Code Review NOT STARTED。

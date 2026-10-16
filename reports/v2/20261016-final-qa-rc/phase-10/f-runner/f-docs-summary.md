@@ -1,0 +1,7 @@
+﻿# Phase10-F Documentation Summary
+
+- Created `human-playtest-packet.md` with a blank 1–2 hour normal-play protocol, consent and environment recording, observation log, the spec’s eight questions verbatim, filing guidance, and Owner-only gate decisions. Status is **HUMAN PRODUCT — DEFERRED**; no participant responses or simulated answers are included.
+- Created `external-review-handoff.md` with the requested architecture, Phase0–10 status and ticket/review links, save/RNG/world/combat/crafting contracts, QA evidence index, high-risk paths, open findings, known debt, data-integrity notes, and external review checklist. External Code Review is **NOT STARTED** and must use an independent context.
+- Snapshot in the handoff: current HEAD `99281125046b7b0aae89830d568a439033b8545b`; current tracked `src/` fingerprint 122 files, `858cff9d86b6dc35edca2fad46e4f1173406f1bd8069feeb9df09e8da01388ce`. Final source commit remains `<filled by lead at delivery>`.
+- Fingerprint discrepancy was handled explicitly: `d312c8b3…` is the 119-file Phase9/D snapshot; `build-correlation-23ef273.txt` actually lists `fd2f020e…` across 120 files. The captured `dist` fingerprint is `7f5efed2…`, but available evidence does not tie it directly to the current HEAD; the handoff requests a final correlated rebuild/hash.
+- Verification: document content and links were checked against the requested spec sections, tickets, review files and Phase10 evidence. No product source was modified; no tests were run for this documentation-only task. No commit was created per dispatch.

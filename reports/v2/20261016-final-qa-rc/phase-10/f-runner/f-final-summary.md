@@ -1,0 +1,7 @@
+# Phase10-F Final Documentation Summary
+
+- Updated [final risk register](../final-risk-register.md): B’s route-completion P2 is fixed and accepted; E’s three P2 findings are resolved and accepted; retained E P3 is the unreproduced 2,004 ms menu-opening outlier, with 120 re-tests maxing at 85 ms. No open Phase10 B/E P2 remains.
+- Updated the lead assessment with all 13 §14 gates, 18 §15 DoD items, Q1–Q9 and the evidence-backed Q8 RC proposal; renamed it to `final-review.md`. State line: **Lead final pending independent review**. Internal whole-phase fresh Max review remains pending, Human Product is DEFERRED, and External Code Review is NOT STARTED.
+- Updated [external review handoff](../external-review-handoff.md) with accepted sub-phase evidence/commits: A `4a71d35`, B `29e7c4b`, C `2330441` plus typing fix `23ef273`, D `9928112`, E `076edeb`. The exact-HEAD check at `29e7c4b` passed 45 files / 658 tests, `vue-tsc --noEmit` and Vite build; source product files have not changed since.
+- E accepted evidence includes equipment-search P95 8.49 ms, recipe-search P95 9.97 ms, 120 menu-opening re-tests (max 85 ms), and the correlation `72dfd027… ≡ 7f5efed2…`. The original P3 outlier remains unexplained; review found no need for extended soak. Cross-browser and physical-device coverage remains NOT TESTED.
+- Checked local Markdown links in the risk register, final review and handoff; no tests were run because this was documentation-only work. No `src/` files were changed and no commit was created, per dispatch.
