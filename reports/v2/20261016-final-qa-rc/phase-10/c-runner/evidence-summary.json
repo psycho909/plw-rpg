@@ -1,0 +1,943 @@
+{
+  "headRef": "ref: refs/heads/v2x/reward-core",
+  "phase8SourceHead": "5e223beb2ef056968861bc4c7125c1fb41da8728",
+  "phase8SourceFingerprint": {
+    "method": "sha256 over sorted relative path + NUL + file bytes + NUL",
+    "value": "6ab18dfe0259d99d4d74802c612b32268930926676e5d0312ae37513cda3f95d",
+    "files": 113
+  },
+  "phase8Seeds": [
+    61101,
+    61102,
+    61103
+  ],
+  "routePolicyVersion": "normal-fresh-save-routes-v3",
+  "phase8SummaryHash": "9f27f152e306ce4de2dbbb1c63e854b084864ef0a75174cccf4f28fffff021dd",
+  "validator": {
+    "semanticStatus": "PASS",
+    "overallStatus": "FAIL",
+    "checks": {
+      "targetedTests": "FAIL",
+      "typecheck": "FAIL"
+    },
+    "outcomePath": "reports/v2/20261016-final-qa-rc/phase-10/a-runner/.qa-runs/2026-10-16T03-25-11.678Z-0153933c-b29b-402a-a208-12e2ea87790a/outcome.json"
+  },
+  "noProgress": {
+    "total": 1423,
+    "counts": {
+      "runner policy defect": 0,
+      "runner-policy-limited": 147,
+      "UI not visible or reachable": 0,
+      "lacking resources": 0,
+      "no understandable next goal": 1276,
+      "excessive wait-repeat cost": 0,
+      "legitimate world wait": 0
+    },
+    "byRoute": {
+      "adventure": {
+        "runner policy defect": 0,
+        "runner-policy-limited": 114,
+        "UI not visible or reachable": 0,
+        "lacking resources": 0,
+        "no understandable next goal": 352,
+        "excessive wait-repeat cost": 0,
+        "legitimate world wait": 0
+      },
+      "hybrid": {
+        "runner policy defect": 0,
+        "runner-policy-limited": 33,
+        "UI not visible or reachable": 0,
+        "lacking resources": 0,
+        "no understandable next goal": 198,
+        "excessive wait-repeat cost": 0,
+        "legitimate world wait": 0
+      },
+      "life": {
+        "runner policy defect": 0,
+        "runner-policy-limited": 0,
+        "UI not visible or reachable": 0,
+        "lacking resources": 0,
+        "no understandable next goal": 726,
+        "excessive wait-repeat cost": 0,
+        "legitimate world wait": 0
+      }
+    }
+  },
+  "choreRows": [
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "zeroXpStarterSpearCrafts": 0,
+      "zeroXpCraftsWithOtherLegalRecipeProjectedAtDecision": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 0,
+      "repeatedSameEnemyAdjacentEncounters": 142,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 141,
+      "otherLegalTargetExamples": [
+        {
+          "at": 555,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 559,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4420,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4427,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 8744,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 254,
+      "encounterRows": 254
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "zeroXpStarterSpearCrafts": 0,
+      "zeroXpCraftsWithOtherLegalRecipeProjectedAtDecision": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 0,
+      "repeatedSameEnemyAdjacentEncounters": 143,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 142,
+      "otherLegalTargetExamples": [
+        {
+          "at": 554,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 558,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4420,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4426,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 8744,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 257,
+      "encounterRows": 257
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "zeroXpStarterSpearCrafts": 0,
+      "zeroXpCraftsWithOtherLegalRecipeProjectedAtDecision": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 0,
+      "repeatedSameEnemyAdjacentEncounters": 142,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 141,
+      "otherLegalTargetExamples": [
+        {
+          "at": 555,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 560,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4420,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4429,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 8744,
+          "definitionId": "wild_beast_marshstag",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 257,
+      "encounterRows": 257
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "zeroXpStarterSpearCrafts": 452,
+      "zeroXpCraftsWithOtherLegalRecipeProjectedAtDecision": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 452,
+      "repeatedSameEnemyAdjacentEncounters": 76,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 76,
+      "otherLegalTargetExamples": [
+        {
+          "at": 4882,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4884,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13520,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13524,
+          "definitionId": "slime_spring",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 30800,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 121,
+      "encounterRows": 121
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "zeroXpStarterSpearCrafts": 451,
+      "zeroXpCraftsWithOtherLegalRecipeProjectedAtDecision": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 451,
+      "repeatedSameEnemyAdjacentEncounters": 77,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 77,
+      "otherLegalTargetExamples": [
+        {
+          "at": 4882,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4884,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13520,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13524,
+          "definitionId": "slime_spring",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 30800,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 125,
+      "encounterRows": 125
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "zeroXpStarterSpearCrafts": 449,
+      "zeroXpCraftsWithOtherLegalRecipeProjectedAtDecision": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 449,
+      "repeatedSameEnemyAdjacentEncounters": 77,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 77,
+      "otherLegalTargetExamples": [
+        {
+          "at": 4882,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 4884,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_bog",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_stonehorn",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13520,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "slime_spring",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 13524,
+          "definitionId": "slime_spring",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "wild_beast_redtail",
+              "rank": "normal"
+            },
+            {
+              "definitionId": "wild_beast_marshstag",
+              "rank": "normal"
+            }
+          ]
+        },
+        {
+          "at": 30800,
+          "definitionId": "grayWolf",
+          "rank": "normal",
+          "betterLegalHigherRankTarget": false,
+          "higherRankAlternatives": [],
+          "otherLegalTargets": [
+            {
+              "definitionId": "scarredWolf",
+              "rank": "normal"
+            }
+          ]
+        }
+      ],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 124,
+      "encounterRows": 124
+    },
+    {
+      "route": "life",
+      "seed": 61101,
+      "zeroXpStarterSpearCrafts": 670,
+      "zeroXpCraftsWithOtherLegalRecipeProjectedAtDecision": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 670,
+      "repeatedSameEnemyAdjacentEncounters": 0,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 0,
+      "otherLegalTargetExamples": [],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 0,
+      "encounterRows": 0
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "zeroXpStarterSpearCrafts": 670,
+      "zeroXpCraftsWithOtherLegalRecipeProjectedAtDecision": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 670,
+      "repeatedSameEnemyAdjacentEncounters": 0,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 0,
+      "otherLegalTargetExamples": [],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 0,
+      "encounterRows": 0
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "zeroXpStarterSpearCrafts": 670,
+      "zeroXpCraftsWithOtherLegalRecipeProjectedAtDecision": 0,
+      "zeroXpCraftsWithOtherLegalActionProjectedAtDecision": 670,
+      "repeatedSameEnemyAdjacentEncounters": 0,
+      "repeatedEnemyMomentsWithHigherRankTargetLegal": 0,
+      "repeatedEnemyMomentsWithAnyOtherLegalTarget": 0,
+      "otherLegalTargetExamples": [],
+      "higherRankExamples": [],
+      "encounterStartDecisions": 0,
+      "encounterRows": 0
+    }
+  ],
+  "firstRewardByRouteSeed": [
+    {
+      "route": "life",
+      "seed": 61101,
+      "events": {
+        "equippedUpgrade": null,
+        "craftSuccess": 1965,
+        "skillLevelUpSnapshot": 1920,
+        "bossReward": null
+      },
+      "firstMeaningfulReward": 1920
+    },
+    {
+      "route": "life",
+      "seed": 61102,
+      "events": {
+        "equippedUpgrade": null,
+        "craftSuccess": 1965,
+        "skillLevelUpSnapshot": 1920,
+        "bossReward": null
+      },
+      "firstMeaningfulReward": 1920
+    },
+    {
+      "route": "life",
+      "seed": 61103,
+      "events": {
+        "equippedUpgrade": null,
+        "craftSuccess": 1965,
+        "skillLevelUpSnapshot": 1920,
+        "bossReward": null
+      },
+      "firstMeaningfulReward": 1920
+    },
+    {
+      "route": "adventure",
+      "seed": 61101,
+      "events": {
+        "equippedUpgrade": 555,
+        "craftSuccess": null,
+        "skillLevelUpSnapshot": 1440,
+        "bossReward": 116202
+      },
+      "firstMeaningfulReward": 555
+    },
+    {
+      "route": "adventure",
+      "seed": 61102,
+      "events": {
+        "equippedUpgrade": 562,
+        "craftSuccess": null,
+        "skillLevelUpSnapshot": 1440,
+        "bossReward": 116201
+      },
+      "firstMeaningfulReward": 562
+    },
+    {
+      "route": "adventure",
+      "seed": 61103,
+      "events": {
+        "equippedUpgrade": 4422,
+        "craftSuccess": null,
+        "skillLevelUpSnapshot": 1440,
+        "bossReward": 261664
+      },
+      "firstMeaningfulReward": 1440
+    },
+    {
+      "route": "hybrid",
+      "seed": 61101,
+      "events": {
+        "equippedUpgrade": 4880,
+        "craftSuccess": 3405,
+        "skillLevelUpSnapshot": 1920,
+        "bossReward": 86156
+      },
+      "firstMeaningfulReward": 1920
+    },
+    {
+      "route": "hybrid",
+      "seed": 61102,
+      "events": {
+        "equippedUpgrade": 4880,
+        "craftSuccess": 3405,
+        "skillLevelUpSnapshot": 1920,
+        "bossReward": 86157
+      },
+      "firstMeaningfulReward": 1920
+    },
+    {
+      "route": "hybrid",
+      "seed": 61103,
+      "events": {
+        "equippedUpgrade": 4880,
+        "craftSuccess": 3405,
+        "skillLevelUpSnapshot": 1920,
+        "bossReward": 86156
+      },
+      "firstMeaningfulReward": 1920
+    }
+  ]
+}
