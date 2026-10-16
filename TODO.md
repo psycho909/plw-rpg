@@ -8,6 +8,7 @@
 
 ## Now
 
+- [ ] Phase10-R External Code Review remediation — Ticket: [20261016-v2x-10r-external-review-fixes](tickets/20261016-v2x-10r-external-review-fixes.md)
 
 <!-- 本輪工程已完成；驗收證據保存在正式 Ticket。 -->
 
