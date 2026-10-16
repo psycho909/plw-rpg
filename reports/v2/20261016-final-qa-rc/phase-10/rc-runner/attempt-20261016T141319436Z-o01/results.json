@@ -1,0 +1,1126 @@
+{
+  "meta": {
+    "startedAt": "2026-10-16T14:13:26.020Z",
+    "head": "76595c5cd568e9b8a8d094a2bce4d7675817d324",
+    "srcTree": "b1a1ff204ec4fbcf35035b5e7ecb0bd911346946",
+    "workingTreeClean": true,
+    "distFingerprint": "9ce31ea5793490aa6da23c3ff77ce8590ced7e61bed64437d0807ef687214272",
+    "node": "v22.20.0",
+    "chromePath": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    "browser": "Chrome/155.0.8059.82"
+  },
+  "scenarios": {
+    "quotaProbe": {
+      "lane": "REAL BROWSER OBSERVATION",
+      "maxValueChars": 5242870,
+      "key": "oakvale-v1"
+    },
+    "A_realQuota": {
+      "lane": "REAL BROWSER OBSERVATION",
+      "fixture": {
+        "kind": "controlled legacy checkpoint: one oversized pending record sized to the real quota minus 64 chars",
+        "seed": 100016,
+        "checkpointChars": 5242806,
+        "headroomChars": 64,
+        "sha256": "a8296557d7bf5b3ad8222a11c4d65767a705af77acd43f7205ff7d0f085e6363"
+      },
+      "afterLoad": {
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "遊玩紀錄待補寫資料超過上限：較舊逐筆訊息與事件已移除，僅保留時間摘要與缺口標記。可用「匯出遊玩紀錄」保留目前剩餘資料。",
+          "pendingRecords": 2,
+          "speed": 1,
+          "message": "",
+          "worldTime": 480,
+          "saveBlocked": false
+        },
+        "setItemLog": [
+          {
+            "at": 1792160013207,
+            "length": 79728,
+            "threw": false
+          }
+        ],
+        "firstSave": {
+          "checkpointChars": 79728,
+          "worldId": "legacy-world",
+          "pendingCount": 2,
+          "pendingChars": 401,
+          "withinCap": true,
+          "markers": [
+            {
+              "id": "81253500-0255-4f90-8a0e-c12005f9111f",
+              "worldId": "legacy-world",
+              "kind": "time",
+              "from": 480,
+              "to": 480,
+              "prefix": "summary",
+              "message": "待補寫紀錄摘要：為控制本機存檔大小，部分較舊紀錄已摘要。"
+            },
+            {
+              "id": "da5a0c6e-bdf8-4acc-b371-425790290eed",
+              "worldId": "legacy-world",
+              "kind": "time",
+              "from": 480,
+              "to": 480,
+              "prefix": "gap",
+              "message": "紀錄缺口：部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。"
+            }
+          ],
+          "pendingIds": [
+            "81253500-0255-4f90-8a0e-c12005f9111f",
+            "da5a0c6e-bdf8-4acc-b371-425790290eed"
+          ]
+        },
+        "openingDialog": false
+      },
+      "screenshotLoad": "a-legacy-loaded.png",
+      "afterActions": {
+        "moves": [
+          {
+            "key": "ArrowRight",
+            "message": "已到達。",
+            "saves": 4
+          },
+          {
+            "key": "ArrowDown",
+            "message": "已到達。",
+            "saves": 4
+          },
+          {
+            "key": "ArrowLeft",
+            "message": "已到達。",
+            "saves": 2
+          },
+          {
+            "key": "ArrowUp",
+            "message": "已到達。",
+            "saves": 4
+          }
+        ],
+        "manualSaveButton": "存檔",
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "",
+          "pendingRecords": 0,
+          "speed": 1,
+          "message": "世界已儲存。",
+          "worldTime": 509,
+          "saveBlocked": false
+        },
+        "worldTimeBefore": 481,
+        "worldTimeAfter": 509,
+        "positionBefore": "null",
+        "journal": {
+          "checkpointChars": 79328,
+          "worldId": "legacy-world",
+          "pendingCount": 0,
+          "pendingChars": 0,
+          "withinCap": true,
+          "markers": [],
+          "pendingIds": []
+        },
+        "failedWrites": 0
+      },
+      "afterReload": {
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "",
+          "pendingRecords": 0,
+          "speed": 1,
+          "message": "已到達。",
+          "worldTime": 522,
+          "saveBlocked": false
+        },
+        "initialWorldTime": 510,
+        "firstSaveWorldTime": 510,
+        "endWorldTime": 522,
+        "journalWorldId": "legacy-world",
+        "journal": {
+          "checkpointChars": 79328,
+          "worldId": "legacy-world",
+          "pendingCount": 0,
+          "pendingChars": 0,
+          "withinCap": true,
+          "markers": [],
+          "pendingIds": []
+        }
+      },
+      "determinism": {
+        "minutes": 4,
+        "equal": true,
+        "note": "browser time-only segment (100 ms ticks) vs one Node simulate() call"
+      },
+      "screenshotEnd": "a-after-reload.png",
+      "pageErrors": []
+    },
+    "C_manySmall": {
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "injectedQuotaChars": 1000000,
+      "fixture": {
+        "kind": "controlled legacy checkpoint: 3,000 small records (1,000 older-world + 2,000 legacy-world)",
+        "checkpointChars": 1182071,
+        "sha256": "bf6272d9f47a11724d9e46b8539cfeb25487ff65457b010d69003f7d3909a70d"
+      },
+      "afterLoad": {
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "遊玩紀錄待補寫資料超過上限：較舊逐筆訊息與事件已移除，僅保留時間摘要與缺口標記。可用「匯出遊玩紀錄」保留目前剩餘資料。",
+          "pendingRecords": 256,
+          "speed": 1,
+          "message": "",
+          "worldTime": 480,
+          "saveBlocked": false
+        },
+        "firstSave": {
+          "checkpointChars": 173188,
+          "worldId": "legacy-world",
+          "pendingCount": 256,
+          "pendingChars": 93790,
+          "withinCap": true,
+          "markers": [
+            {
+              "id": "f13b33cb-e9f0-4065-9190-8052f8d2ff31",
+              "worldId": "older-world",
+              "kind": "time",
+              "from": 0,
+              "to": 1000,
+              "prefix": "summary",
+              "message": "待補寫紀錄摘要：為控制本機存檔大小，部分較舊紀錄已摘要。"
+            },
+            {
+              "id": "db0facdb-79e7-41d3-b7cd-73968a916ed4",
+              "worldId": "older-world",
+              "kind": "time",
+              "from": 0,
+              "to": 1000,
+              "prefix": "gap",
+              "message": "紀錄缺口：部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。"
+            },
+            {
+              "id": "0f6bb76e-2e98-41bd-9f64-37914ed900ae",
+              "worldId": "legacy-world",
+              "kind": "time",
+              "from": 1000,
+              "to": 2748,
+              "prefix": "summary",
+              "message": "待補寫紀錄摘要：為控制本機存檔大小，部分較舊紀錄已摘要。"
+            },
+            {
+              "id": "bf9525f4-631a-47f4-a74d-f47e27396ebf",
+              "worldId": "legacy-world",
+              "kind": "time",
+              "from": 1000,
+              "to": 2748,
+              "prefix": "gap",
+              "message": "紀錄缺口：部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。"
+            }
+          ],
+          "pendingIds": [
+            "f13b33cb-e9f0-4065-9190-8052f8d2ff31",
+            "db0facdb-79e7-41d3-b7cd-73968a916ed4",
+            "0f6bb76e-2e98-41bd-9f64-37914ed900ae",
+            "bf9525f4-631a-47f4-a74d-f47e27396ebf",
+            "small-2748",
+            "small-2749",
+            "small-2750",
+            "small-2751",
+            "small-2752",
+            "small-2753",
+            "small-2754",
+            "small-2755",
+            "small-2756",
+            "small-2757",
+            "small-2758",
+            "small-2759",
+            "small-2760",
+            "small-2761",
+            "small-2762",
+            "small-2763",
+            "small-2764",
+            "small-2765",
+            "small-2766",
+            "small-2767",
+            "small-2768",
+            "small-2769",
+            "small-2770",
+            "small-2771",
+            "small-2772",
+            "small-2773",
+            "small-2774",
+            "small-2775",
+            "small-2776",
+            "small-2777",
+            "small-2778",
+            "small-2779",
+            "small-2780",
+            "small-2781",
+            "small-2782",
+            "small-2783",
+            "small-2784",
+            "small-2785",
+            "small-2786",
+            "small-2787",
+            "small-2788",
+            "small-2789",
+            "small-2790",
+            "small-2791",
+            "small-2792",
+            "small-2793",
+            "small-2794",
+            "small-2795",
+            "small-2796",
+            "small-2797",
+            "small-2798",
+            "small-2799",
+            "small-2800",
+            "small-2801",
+            "small-2802",
+            "small-2803",
+            "small-2804",
+            "small-2805",
+            "small-2806",
+            "small-2807",
+            "small-2808",
+            "small-2809",
+            "small-2810",
+            "small-2811",
+            "small-2812",
+            "small-2813",
+            "small-2814",
+            "small-2815",
+            "small-2816",
+            "small-2817",
+            "small-2818",
+            "small-2819",
+            "small-2820",
+            "small-2821",
+            "small-2822",
+            "small-2823",
+            "small-2824",
+            "small-2825",
+            "small-2826",
+            "small-2827",
+            "small-2828",
+            "small-2829",
+            "small-2830",
+            "small-2831",
+            "small-2832",
+            "small-2833",
+            "small-2834",
+            "small-2835",
+            "small-2836",
+            "small-2837",
+            "small-2838",
+            "small-2839",
+            "small-2840",
+            "small-2841",
+            "small-2842",
+            "small-2843",
+            "small-2844",
+            "small-2845",
+            "small-2846",
+            "small-2847",
+            "small-2848",
+            "small-2849",
+            "small-2850",
+            "small-2851",
+            "small-2852",
+            "small-2853",
+            "small-2854",
+            "small-2855",
+            "small-2856",
+            "small-2857",
+            "small-2858",
+            "small-2859",
+            "small-2860",
+            "small-2861",
+            "small-2862",
+            "small-2863",
+            "small-2864",
+            "small-2865",
+            "small-2866",
+            "small-2867",
+            "small-2868",
+            "small-2869",
+            "small-2870",
+            "small-2871",
+            "small-2872",
+            "small-2873",
+            "small-2874",
+            "small-2875",
+            "small-2876",
+            "small-2877",
+            "small-2878",
+            "small-2879",
+            "small-2880",
+            "small-2881",
+            "small-2882",
+            "small-2883",
+            "small-2884",
+            "small-2885",
+            "small-2886",
+            "small-2887",
+            "small-2888",
+            "small-2889",
+            "small-2890",
+            "small-2891",
+            "small-2892",
+            "small-2893",
+            "small-2894",
+            "small-2895",
+            "small-2896",
+            "small-2897",
+            "small-2898",
+            "small-2899",
+            "small-2900",
+            "small-2901",
+            "small-2902",
+            "small-2903",
+            "small-2904",
+            "small-2905",
+            "small-2906",
+            "small-2907",
+            "small-2908",
+            "small-2909",
+            "small-2910",
+            "small-2911",
+            "small-2912",
+            "small-2913",
+            "small-2914",
+            "small-2915",
+            "small-2916",
+            "small-2917",
+            "small-2918",
+            "small-2919",
+            "small-2920",
+            "small-2921",
+            "small-2922",
+            "small-2923",
+            "small-2924",
+            "small-2925",
+            "small-2926",
+            "small-2927",
+            "small-2928",
+            "small-2929",
+            "small-2930",
+            "small-2931",
+            "small-2932",
+            "small-2933",
+            "small-2934",
+            "small-2935",
+            "small-2936",
+            "small-2937",
+            "small-2938",
+            "small-2939",
+            "small-2940",
+            "small-2941",
+            "small-2942",
+            "small-2943",
+            "small-2944",
+            "small-2945",
+            "small-2946",
+            "small-2947",
+            "small-2948",
+            "small-2949",
+            "small-2950",
+            "small-2951",
+            "small-2952",
+            "small-2953",
+            "small-2954",
+            "small-2955",
+            "small-2956",
+            "small-2957",
+            "small-2958",
+            "small-2959",
+            "small-2960",
+            "small-2961",
+            "small-2962",
+            "small-2963",
+            "small-2964",
+            "small-2965",
+            "small-2966",
+            "small-2967",
+            "small-2968",
+            "small-2969",
+            "small-2970",
+            "small-2971",
+            "small-2972",
+            "small-2973",
+            "small-2974",
+            "small-2975",
+            "small-2976",
+            "small-2977",
+            "small-2978",
+            "small-2979",
+            "small-2980",
+            "small-2981",
+            "small-2982",
+            "small-2983",
+            "small-2984",
+            "small-2985",
+            "small-2986",
+            "small-2987",
+            "small-2988",
+            "small-2989",
+            "small-2990",
+            "small-2991",
+            "small-2992",
+            "small-2993",
+            "small-2994",
+            "small-2995",
+            "small-2996",
+            "small-2997",
+            "small-2998",
+            "small-2999"
+          ]
+        }
+      },
+      "reset": {
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "",
+          "pendingRecords": 0,
+          "speed": 0,
+          "message": "世界已儲存。",
+          "worldTime": 480,
+          "saveBlocked": false
+        },
+        "journal": {
+          "checkpointChars": 79327,
+          "worldId": "e272288d-a87e-4dfe-81be-4a5d54d11d72",
+          "pendingCount": 0,
+          "pendingChars": 0,
+          "withinCap": true,
+          "markers": [],
+          "pendingIds": []
+        },
+        "newWorldId": "e272288d-a87e-4dfe-81be-4a5d54d11d72"
+      },
+      "screenshot": "c-reset-under-quota.png",
+      "pageErrors": []
+    },
+    "B_indexedDb": {
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "fixture": {
+        "kind": "controlled legacy checkpoint: 400,000-char record + one small record",
+        "checkpointChars": 479676,
+        "sha256": "863e629b9c62816dcef00d31c7f3777d679c64eb7125d6ac0cc090ef4da47992"
+      },
+      "outage": {
+        "attemptsAt": [
+          {
+            "second": 5,
+            "attempts": 3
+          },
+          {
+            "second": 10,
+            "attempts": 4
+          },
+          {
+            "second": 15,
+            "attempts": 4
+          },
+          {
+            "second": 20,
+            "attempts": 5
+          },
+          {
+            "second": 25,
+            "attempts": 5
+          },
+          {
+            "second": 30,
+            "attempts": 5
+          }
+        ],
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "injected archive outage 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。",
+          "pendingRecords": 4,
+          "speed": 1,
+          "message": "",
+          "worldTime": 540,
+          "saveBlocked": false
+        },
+        "journal": {
+          "checkpointChars": 80118,
+          "worldId": "legacy-world",
+          "pendingCount": 4,
+          "pendingChars": 749,
+          "withinCap": true,
+          "markers": [
+            {
+              "id": "8d8320b1-2a2f-4ea4-bbc0-936436940ff2",
+              "worldId": "legacy-world",
+              "kind": "time",
+              "from": 480,
+              "to": 480,
+              "prefix": "summary",
+              "message": "待補寫紀錄摘要：為控制本機存檔大小，部分較舊紀錄已摘要。"
+            },
+            {
+              "id": "011da172-1d75-46e4-9427-8954d0de7d7d",
+              "worldId": "legacy-world",
+              "kind": "time",
+              "from": 480,
+              "to": 480,
+              "prefix": "gap",
+              "message": "紀錄缺口：部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。"
+            }
+          ],
+          "pendingIds": [
+            "8d8320b1-2a2f-4ea4-bbc0-936436940ff2",
+            "011da172-1d75-46e4-9427-8954d0de7d7d",
+            "legacy-kept",
+            "eb044bc4-69c5-4839-823d-ca65ed0a7518"
+          ]
+        }
+      },
+      "screenshotOutage": "b-archive-outage.png",
+      "readOnlyPreview": {
+        "lane": "REAL BROWSER OBSERVATION",
+        "previewSaveWrites": 0,
+        "previewIdbWrites": 0,
+        "previewStore": {
+          "writerReady": false,
+          "saveError": "另一個遊戲頁面正在使用此存檔，此頁已停止操作。請先關閉其他遊戲頁面，再重新整理此頁以讀取最新進度。",
+          "journalError": "",
+          "pendingRecords": 4,
+          "speed": 0,
+          "message": "另一個遊戲頁面正在使用此存檔，此頁已停止操作。請先關閉其他遊戲頁面，再重新整理此頁以讀取最新進度。",
+          "worldTime": 540,
+          "saveBlocked": false
+        },
+        "screenshot": "b-read-only-preview.png",
+        "pageErrors": [],
+        "writerTabCheckpointChangedMeanwhile": true
+      },
+      "recovery": {
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "",
+          "pendingRecords": 0,
+          "speed": 1,
+          "message": "世界已儲存。",
+          "worldTime": 547,
+          "saveBlocked": false
+        },
+        "archiveCount": 5,
+        "uniqueIds": 5,
+        "markerIds": [
+          {
+            "id": "8d8320b1-2a2f-4ea4-bbc0-936436940ff2",
+            "worldId": "legacy-world"
+          },
+          {
+            "id": "011da172-1d75-46e4-9427-8954d0de7d7d",
+            "worldId": "legacy-world"
+          }
+        ],
+        "droppedPresent": false,
+        "conflictIds": []
+      },
+      "idbInjectedFailures": 2,
+      "pageErrors": []
+    },
+    "C_negative": {
+      "normal": {
+        "lane": "REAL BROWSER OBSERVATION (archive held by injected outage so pending stays visible)",
+        "journal": {
+          "count": 8,
+          "chars": 1629,
+          "markers": 0
+        },
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "injected archive outage 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。",
+          "pendingRecords": 8,
+          "speed": 1,
+          "message": "已到達。",
+          "worldTime": 512,
+          "saveBlocked": false
+        }
+      },
+      "failedWrite": {
+        "lane": "CONTROLLED FAILURE INJECTION",
+        "store": {
+          "writerReady": true,
+          "saveError": "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。",
+          "journalError": "",
+          "pendingRecords": 1,
+          "speed": 0,
+          "message": "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。",
+          "worldTime": 521,
+          "saveBlocked": false
+        },
+        "unchanged": true,
+        "loadable": true,
+        "screenshot": "c-save-failure.png"
+      },
+      "pageErrors": []
+    }
+  },
+  "checks": [
+    {
+      "id": "A1 legacy checkpoint loads",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "遊玩紀錄待補寫資料超過上限：較舊逐筆訊息與事件已移除，僅保留時間摘要與缺口標記。可用「匯出遊玩紀錄」保留目前剩餘資料。",
+        "pendingRecords": 2,
+        "speed": 1,
+        "message": "",
+        "worldTime": 480,
+        "saveBlocked": false
+      }
+    },
+    {
+      "id": "A2 no reset required (no opening/rebuild, same seed)",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "openingDialog": false
+      }
+    },
+    {
+      "id": "A3 pending compacted on first save",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "chars": 79728,
+        "ids": [
+          "81253500-0255-4f90-8a0e-c12005f9111f",
+          "da5a0c6e-bdf8-4acc-b371-425790290eed"
+        ]
+      }
+    },
+    {
+      "id": "A4 compacted pending within 256 records / 256,000 chars",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "count": 2,
+        "chars": 401
+      }
+    },
+    {
+      "id": "A5 summary + gap markers saved for legacy-world",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": [
+        {
+          "id": "81253500-0255-4f90-8a0e-c12005f9111f",
+          "worldId": "legacy-world",
+          "kind": "time",
+          "from": 480,
+          "to": 480,
+          "prefix": "summary",
+          "message": "待補寫紀錄摘要：為控制本機存檔大小，部分較舊紀錄已摘要。"
+        },
+        {
+          "id": "da5a0c6e-bdf8-4acc-b371-425790290eed",
+          "worldId": "legacy-world",
+          "kind": "time",
+          "from": 480,
+          "to": 480,
+          "prefix": "gap",
+          "message": "紀錄缺口：部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。"
+        }
+      ]
+    },
+    {
+      "id": "A-state compaction did not alter game state/RNG (first save == fixture)",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "equal": true
+      }
+    },
+    {
+      "id": "A6 normal game action succeeds (keyboard move recorded and saved)",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": [
+        {
+          "key": "ArrowRight",
+          "message": "已到達。",
+          "saves": 4
+        },
+        {
+          "key": "ArrowDown",
+          "message": "已到達。",
+          "saves": 4
+        },
+        {
+          "key": "ArrowLeft",
+          "message": "已到達。",
+          "saves": 2
+        },
+        {
+          "key": "ArrowUp",
+          "message": "已到達。",
+          "saves": 4
+        }
+      ]
+    },
+    {
+      "id": "A7 world time keeps advancing",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "t0": 481,
+        "tAct": 509
+      }
+    },
+    {
+      "id": "A8 save succeeds (manual save, no failed writes)",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "message": "世界已儲存。",
+        "failedWrites": 0
+      }
+    },
+    {
+      "id": "A9 reload restores the same world (seed, journal worldId, exact state)",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "seed": 100016,
+        "journalWorldId": "legacy-world",
+        "initialEqualsFirstSave": true
+      }
+    },
+    {
+      "id": "A10 play continues after reload",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "from": 510,
+        "to": 522
+      }
+    },
+    {
+      "id": "A-determinism browser segment equals Node replay",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "minutes": 4,
+        "equal": true,
+        "note": "browser time-only segment (100 ms ticks) vs one Node simulate() call"
+      }
+    },
+    {
+      "id": "C1 many small records compacted to cap on load",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "count": 256,
+        "chars": 93790
+      }
+    },
+    {
+      "id": "C2 markers attributed per source world",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": [
+        {
+          "id": "f13b33cb-e9f0-4065-9190-8052f8d2ff31",
+          "worldId": "older-world",
+          "kind": "time",
+          "from": 0,
+          "to": 1000,
+          "prefix": "summary",
+          "message": "待補寫紀錄摘要：為控制本機存檔大小，部分較舊紀錄已摘要。"
+        },
+        {
+          "id": "db0facdb-79e7-41d3-b7cd-73968a916ed4",
+          "worldId": "older-world",
+          "kind": "time",
+          "from": 0,
+          "to": 1000,
+          "prefix": "gap",
+          "message": "紀錄缺口：部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。"
+        },
+        {
+          "id": "0f6bb76e-2e98-41bd-9f64-37914ed900ae",
+          "worldId": "legacy-world",
+          "kind": "time",
+          "from": 1000,
+          "to": 2748,
+          "prefix": "summary",
+          "message": "待補寫紀錄摘要：為控制本機存檔大小，部分較舊紀錄已摘要。"
+        },
+        {
+          "id": "bf9525f4-631a-47f4-a74d-f47e27396ebf",
+          "worldId": "legacy-world",
+          "kind": "time",
+          "from": 1000,
+          "to": 2748,
+          "prefix": "gap",
+          "message": "紀錄缺口：部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。"
+        }
+      ]
+    },
+    {
+      "id": "C3 world continues under injected quota",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "message": "已到達。",
+        "worldTime": 488,
+        "saveBlocked": false
+      }
+    },
+    {
+      "id": "C4 reset persists under storage pressure and keeps legacy markers",
+      "pass": false,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "",
+          "pendingRecords": 0,
+          "speed": 0,
+          "message": "世界已儲存。",
+          "worldTime": 480,
+          "saveBlocked": false
+        },
+        "journal": {
+          "checkpointChars": 79327,
+          "worldId": "e272288d-a87e-4dfe-81be-4a5d54d11d72",
+          "pendingCount": 0,
+          "pendingChars": 0,
+          "withinCap": true,
+          "markers": [],
+          "pendingIds": []
+        },
+        "newWorldId": "e272288d-a87e-4dfe-81be-4a5d54d11d72"
+      }
+    },
+    {
+      "id": "B1 archive outage does not block the world (saves ok, time advances)",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "injected archive outage 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。",
+        "pendingRecords": 4,
+        "speed": 1,
+        "message": "",
+        "worldTime": 540,
+        "saveBlocked": false
+      }
+    },
+    {
+      "id": "B2 retry is bounded by backoff (<= 8 write attempts in 30 s)",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": [
+        {
+          "second": 5,
+          "attempts": 3
+        },
+        {
+          "second": 10,
+          "attempts": 4
+        },
+        {
+          "second": 15,
+          "attempts": 4
+        },
+        {
+          "second": 20,
+          "attempts": 5
+        },
+        {
+          "second": 25,
+          "attempts": 5
+        },
+        {
+          "second": 30,
+          "attempts": 5
+        }
+      ]
+    },
+    {
+      "id": "B3 journal error shown while archive is down",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": "injected archive outage 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。"
+    },
+    {
+      "id": "B4 pending markers survive save/reload during outage",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "before": [
+          "8d8320b1-2a2f-4ea4-bbc0-936436940ff2",
+          "011da172-1d75-46e4-9427-8954d0de7d7d"
+        ],
+        "after": 4
+      }
+    },
+    {
+      "id": "B5 read-only preview tab never writes checkpoint or archive",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "lane": "REAL BROWSER OBSERVATION",
+        "previewSaveWrites": 0,
+        "previewIdbWrites": 0,
+        "previewStore": {
+          "writerReady": false,
+          "saveError": "另一個遊戲頁面正在使用此存檔，此頁已停止操作。請先關閉其他遊戲頁面，再重新整理此頁以讀取最新進度。",
+          "journalError": "",
+          "pendingRecords": 4,
+          "speed": 0,
+          "message": "另一個遊戲頁面正在使用此存檔，此頁已停止操作。請先關閉其他遊戲頁面，再重新整理此頁以讀取最新進度。",
+          "worldTime": 540,
+          "saveBlocked": false
+        },
+        "screenshot": "b-read-only-preview.png",
+        "pageErrors": [],
+        "writerTabCheckpointChangedMeanwhile": true
+      }
+    },
+    {
+      "id": "B6 pending drains after archive recovery; journal error cleared",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "message": "世界已儲存。",
+        "worldTime": 547,
+        "saveBlocked": false
+      }
+    },
+    {
+      "id": "B7 summary/gap markers appended to the archive after recovery",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": [
+        {
+          "id": "8d8320b1-2a2f-4ea4-bbc0-936436940ff2",
+          "worldId": "legacy-world"
+        },
+        {
+          "id": "011da172-1d75-46e4-9427-8954d0de7d7d",
+          "worldId": "legacy-world"
+        }
+      ]
+    },
+    {
+      "id": "B8 dropped (compacted) record never sent",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "droppedPresent": false
+      }
+    },
+    {
+      "id": "B9 no same-id/different-content in archive (ids unique, match pending snapshots)",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "archive": 5,
+        "unique": 5,
+        "conflicts": []
+      }
+    },
+    {
+      "id": "C5 normal-size pending is not compacted (no markers, no compaction message)",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "lane": "REAL BROWSER OBSERVATION (archive held by injected outage so pending stays visible)",
+        "journal": {
+          "count": 8,
+          "chars": 1629,
+          "markers": 0
+        },
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "injected archive outage 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。",
+          "pendingRecords": 8,
+          "speed": 1,
+          "message": "已到達。",
+          "worldTime": 512,
+          "saveBlocked": false
+        }
+      }
+    },
+    {
+      "id": "C6 failed write keeps previous valid save and pauses time",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "lane": "CONTROLLED FAILURE INJECTION",
+        "store": {
+          "writerReady": true,
+          "saveError": "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。",
+          "journalError": "",
+          "pendingRecords": 1,
+          "speed": 0,
+          "message": "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。",
+          "worldTime": 521,
+          "saveBlocked": false
+        },
+        "unchanged": true,
+        "loadable": true,
+        "screenshot": "c-save-failure.png"
+      }
+    },
+    {
+      "id": "C7 save recovers after storage returns",
+      "pass": true,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 0,
+        "message": "世界已儲存。",
+        "worldTime": 521,
+        "saveBlocked": false
+      }
+    }
+  ],
+  "runtime": {
+    "chromeProfileBytesBeforeCleanup": 57859741,
+    "chromeProfileRemoved": true
+  },
+  "finishedAt": "2026-10-16T14:14:29.627Z",
+  "summary": {
+    "checks": 28,
+    "passed": 27,
+    "failed": [
+      "C4 reset persists under storage pressure and keeps legacy markers"
+    ],
+    "runnerFailure": null
+  }
+}

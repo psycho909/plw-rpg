@@ -1,0 +1,407 @@
+{
+  "meta": {
+    "startedAt": "2026-10-16T14:29:23.901Z",
+    "head": "",
+    "srcTree": "",
+    "workingTreeClean": true,
+    "distFingerprint": "92a927d697ced3883d8133db645c02a66666a28f4145636c02ccd8f09723f098",
+    "node": "v22.20.0",
+    "chromePath": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    "browser": "Chrome/155.0.8059.82"
+  },
+  "scenarios": {
+    "quotaProbe": {
+      "lane": "REAL BROWSER OBSERVATION",
+      "maxValueChars": 5242870,
+      "key": "oakvale-v1"
+    },
+    "A_realQuota": {
+      "lane": "REAL BROWSER OBSERVATION",
+      "fixture": {
+        "kind": "controlled legacy checkpoint: one oversized pending record sized to the real quota minus 64 chars",
+        "seed": 100016,
+        "checkpointChars": 5242806,
+        "headroomChars": 64,
+        "sha256": "a8296557d7bf5b3ad8222a11c4d65767a705af77acd43f7205ff7d0f085e6363"
+      },
+      "afterLoad": {
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "Internal error opening backing store for indexedDB.open. 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。",
+          "pendingRecords": 1,
+          "speed": 1,
+          "message": "",
+          "worldTime": 480,
+          "saveBlocked": false
+        },
+        "setItemLog": [
+          {
+            "at": 1792160972333,
+            "length": 5242806,
+            "threw": false
+          }
+        ],
+        "firstSave": {
+          "checkpointChars": 5242806,
+          "worldId": "legacy-world",
+          "pendingCount": 1,
+          "pendingChars": 5163479,
+          "withinCap": false,
+          "markers": [],
+          "pendingIds": [
+            "legacy-large"
+          ]
+        },
+        "openingDialog": false
+      },
+      "screenshotLoad": "a-legacy-loaded.png",
+      "afterActions": {
+        "moves": [
+          {
+            "key": "ArrowRight",
+            "message": "已到達。",
+            "saves": 2
+          },
+          {
+            "key": "ArrowDown",
+            "message": "已到達。",
+            "saves": 1
+          },
+          {
+            "key": "ArrowLeft",
+            "message": "已到達。",
+            "saves": 2
+          },
+          {
+            "key": "ArrowUp",
+            "message": "已到達。",
+            "saves": 1
+          }
+        ],
+        "manualSaveButton": "存檔",
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "Internal error opening backing store for indexedDB.open. 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。",
+          "pendingRecords": 10,
+          "speed": 1,
+          "message": "世界已儲存。",
+          "worldTime": 509,
+          "saveBlocked": false
+        },
+        "worldTimeBefore": 481,
+        "worldTimeAfter": 509,
+        "positionBefore": "null",
+        "journal": {
+          "checkpointChars": 81168,
+          "worldId": "legacy-world",
+          "pendingCount": 10,
+          "pendingChars": 1841,
+          "withinCap": true,
+          "markers": [
+            {
+              "id": "92546271-0d9f-42fe-b301-a95926c58e7d",
+              "worldId": "legacy-world",
+              "kind": "time",
+              "from": 480,
+              "to": 480,
+              "prefix": "summary",
+              "message": "待補寫紀錄摘要：為控制本機存檔大小，部分較舊紀錄已摘要。"
+            },
+            {
+              "id": "5b74ed94-c9f1-4b61-968c-93c6d19dc167",
+              "worldId": "legacy-world",
+              "kind": "time",
+              "from": 480,
+              "to": 480,
+              "prefix": "gap",
+              "message": "紀錄缺口：部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。"
+            }
+          ],
+          "pendingIds": [
+            "92546271-0d9f-42fe-b301-a95926c58e7d",
+            "5b74ed94-c9f1-4b61-968c-93c6d19dc167",
+            "11478513-fa2b-45ae-8fa0-cb2e9cf8f9e9",
+            "eacc6cab-3f72-441d-b8ff-09ebc28c9a27",
+            "aa886e43-579c-40e8-b052-fea02941cc25",
+            "c71b006a-f7c3-40d1-b064-cf5b6dff449d",
+            "06fd5ab3-a0ce-4e35-9b39-eddb349f2abf",
+            "1a23ec9e-203c-4c69-b149-d514b7185ac1",
+            "730e3254-c1a0-4c12-85ce-d6248410bd85",
+            "42c52cd8-9cbf-4b52-b6a0-5ce407d34652"
+          ]
+        },
+        "failedWrites": 0
+      },
+      "afterReload": {
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "Internal error opening backing store for indexedDB.open. 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。",
+          "pendingRecords": 12,
+          "speed": 1,
+          "message": "已到達。",
+          "worldTime": 521,
+          "saveBlocked": false
+        },
+        "initialWorldTime": 509,
+        "firstSaveWorldTime": 509,
+        "endWorldTime": 521,
+        "journalWorldId": "legacy-world",
+        "journal": {
+          "checkpointChars": 81537,
+          "worldId": "legacy-world",
+          "pendingCount": 12,
+          "pendingChars": 2210,
+          "withinCap": true,
+          "markers": [
+            {
+              "id": "92546271-0d9f-42fe-b301-a95926c58e7d",
+              "worldId": "legacy-world",
+              "kind": "time",
+              "from": 480,
+              "to": 480,
+              "prefix": "summary",
+              "message": "待補寫紀錄摘要：為控制本機存檔大小，部分較舊紀錄已摘要。"
+            },
+            {
+              "id": "5b74ed94-c9f1-4b61-968c-93c6d19dc167",
+              "worldId": "legacy-world",
+              "kind": "time",
+              "from": 480,
+              "to": 480,
+              "prefix": "gap",
+              "message": "紀錄缺口：部分逐筆訊息與事件未保留；可由選單匯出目前剩餘紀錄。"
+            }
+          ],
+          "pendingIds": [
+            "92546271-0d9f-42fe-b301-a95926c58e7d",
+            "5b74ed94-c9f1-4b61-968c-93c6d19dc167",
+            "11478513-fa2b-45ae-8fa0-cb2e9cf8f9e9",
+            "eacc6cab-3f72-441d-b8ff-09ebc28c9a27",
+            "aa886e43-579c-40e8-b052-fea02941cc25",
+            "c71b006a-f7c3-40d1-b064-cf5b6dff449d",
+            "06fd5ab3-a0ce-4e35-9b39-eddb349f2abf",
+            "1a23ec9e-203c-4c69-b149-d514b7185ac1",
+            "730e3254-c1a0-4c12-85ce-d6248410bd85",
+            "f6beb91d-501a-43fb-a9b6-f088dc147789",
+            "555c2f9b-6ef4-46c8-88f6-b81589e9b8ef",
+            "ce486156-c0f0-4f0d-917d-b51ec5a902b6"
+          ]
+        }
+      },
+      "determinism": {
+        "minutes": 4,
+        "equal": true,
+        "note": "browser time-only segment (100 ms ticks) vs one Node simulate() call"
+      },
+      "screenshotEnd": "a-after-reload.png",
+      "pageErrors": []
+    },
+    "C_manySmall": {
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "injectedQuotaChars": 1000000,
+      "fixture": {
+        "kind": "controlled legacy checkpoint: 3,000 small records (1,000 older-world + 2,000 legacy-world)",
+        "checkpointChars": 1182071,
+        "sha256": "bf6272d9f47a11724d9e46b8539cfeb25487ff65457b010d69003f7d3909a70d"
+      },
+      "afterLoad": {
+        "store": {
+          "writerReady": true,
+          "saveError": "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。",
+          "journalError": "Internal error opening backing store for indexedDB.open. 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。",
+          "pendingRecords": 3000,
+          "speed": 0,
+          "message": "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。",
+          "worldTime": 480,
+          "saveBlocked": false
+        },
+        "firstSave": null
+      }
+    }
+  },
+  "checks": [
+    {
+      "id": "A1 legacy checkpoint loads",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "Internal error opening backing store for indexedDB.open. 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。",
+        "pendingRecords": 1,
+        "speed": 1,
+        "message": "",
+        "worldTime": 480,
+        "saveBlocked": false
+      }
+    },
+    {
+      "id": "A2 no reset required (no opening/rebuild, same seed)",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "openingDialog": false
+      }
+    },
+    {
+      "id": "A3 pending compacted on first save",
+      "pass": false,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "chars": 5242806,
+        "ids": [
+          "legacy-large"
+        ]
+      }
+    },
+    {
+      "id": "A4 compacted pending within 256 records / 256,000 chars",
+      "pass": false,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "count": 1,
+        "chars": 5163479
+      }
+    },
+    {
+      "id": "A5 summary + gap markers saved for legacy-world",
+      "pass": false,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": []
+    },
+    {
+      "id": "A-state compaction did not alter game state/RNG (first save == fixture)",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "equal": true
+      }
+    },
+    {
+      "id": "A6 normal game action succeeds (keyboard move recorded and saved)",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": [
+        {
+          "key": "ArrowRight",
+          "message": "已到達。",
+          "saves": 2
+        },
+        {
+          "key": "ArrowDown",
+          "message": "已到達。",
+          "saves": 1
+        },
+        {
+          "key": "ArrowLeft",
+          "message": "已到達。",
+          "saves": 2
+        },
+        {
+          "key": "ArrowUp",
+          "message": "已到達。",
+          "saves": 1
+        }
+      ]
+    },
+    {
+      "id": "A7 world time keeps advancing",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "t0": 481,
+        "tAct": 509
+      }
+    },
+    {
+      "id": "A8 save succeeds (manual save, no failed writes)",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "message": "世界已儲存。",
+        "failedWrites": 0
+      }
+    },
+    {
+      "id": "A9 reload restores the same world (seed, journal worldId, exact state)",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "seed": 100016,
+        "journalWorldId": "legacy-world",
+        "initialEqualsFirstSave": true
+      }
+    },
+    {
+      "id": "A10 play continues after reload",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "from": 509,
+        "to": 521
+      }
+    },
+    {
+      "id": "A-determinism browser segment equals Node replay",
+      "pass": true,
+      "lane": "REAL BROWSER OBSERVATION",
+      "detail": {
+        "minutes": 4,
+        "equal": true,
+        "note": "browser time-only segment (100 ms ticks) vs one Node simulate() call"
+      }
+    },
+    {
+      "id": "C1 many small records compacted to cap on load",
+      "pass": false,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": null
+    },
+    {
+      "id": "C2 markers attributed per source world",
+      "pass": false,
+      "lane": "CONTROLLED FAILURE INJECTION"
+    },
+    {
+      "id": "C3 world continues under injected quota",
+      "pass": false,
+      "lane": "CONTROLLED FAILURE INJECTION",
+      "detail": {
+        "writerReady": true,
+        "saveError": "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。",
+        "journalError": "Internal error opening backing store for indexedDB.open. 遊玩紀錄尚待補寫。請重試存檔，或匯出保留。",
+        "pendingRecords": 3000,
+        "speed": 0,
+        "message": "存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。",
+        "worldTime": 480,
+        "saveBlocked": false
+      }
+    }
+  ],
+  "failure": {
+    "at": "2026-10-16T14:29:45.401Z",
+    "error": "Error: UnknownError: Internal error opening backing store for indexedDB.open.",
+    "stack": "Error: UnknownError: Internal error opening backing store for indexedDB.open.\n    at Cdp.eval (file:///C:/Users/pc/AppData/Local/Temp/claude/D--Codex-plw-rpg/75889be5-5943-48d0-ae44-0e83cba8db3b/scratchpad/prefix-b21ce0c/scripts/phase10/rc-o01-browser.mjs:72:35)\n    at async file:///C:/Users/pc/AppData/Local/Temp/claude/D--Codex-plw-rpg/75889be5-5943-48d0-ae44-0e83cba8db3b/scratchpad/prefix-b21ce0c/scripts/phase10/rc-o01-browser.mjs:324:22"
+  },
+  "runtime": {
+    "chromeProfileBytesBeforeCleanup": 14375106,
+    "chromeProfileRemoved": true
+  },
+  "finishedAt": "2026-10-16T14:29:47.313Z",
+  "summary": {
+    "checks": 15,
+    "passed": 9,
+    "failed": [
+      "A3 pending compacted on first save",
+      "A4 compacted pending within 256 records / 256,000 chars",
+      "A5 summary + gap markers saved for legacy-world",
+      "C1 many small records compacted to cap on load",
+      "C2 markers attributed per source world",
+      "C3 world continues under injected quota"
+    ],
+    "runnerFailure": "Error: UnknownError: Internal error opening backing store for indexedDB.open."
+  }
+}

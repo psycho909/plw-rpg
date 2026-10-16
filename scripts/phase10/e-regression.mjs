@@ -8,8 +8,9 @@ import path from 'node:path'
 import { setTimeout as delay } from 'node:timers/promises'
 
 const ROOT = process.cwd()
-const CHROME = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
-const OUT = path.join(ROOT, 'reports/v2/20261016-final-qa-rc/phase-10/e-runner')
+// CHROME_PATH / QA_OUT let later gates (e.g. RC smoke) reuse this runner; defaults are the Phase10-E setup.
+const CHROME = process.env.CHROME_PATH ?? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+const OUT = process.env.QA_OUT ? path.resolve(ROOT, process.env.QA_OUT) : path.join(ROOT, 'reports/v2/20261016-final-qa-rc/phase-10/e-runner')
 const DIST = path.join(ROOT, 'dist')
 const widths = [320, 375, 768, 1280, 1920]
 const heights = [768, 900, 1000]
@@ -446,7 +447,8 @@ await writeFile(audit.actionPath, '', { flag: 'wx' })
 let result = {}
 try {
   await audit.start()
-  await waitFor(() => audit.cdp.eval('!!document.querySelector(".life-opening button.primary")'))
+  // 起身 stays disabled until the Web Lock writer is acquired; clicking earlier is refused.
+  await waitFor(() => audit.cdp.eval('!!document.querySelector(".life-opening button.primary:not(:disabled)")'))
   await audit.safeClick('起身', 'start-fresh-save', 'text'); await delay(650)
   await audit.safeClick('.speed-controls button:first-child', 'pause-world')
   const winShots = []
