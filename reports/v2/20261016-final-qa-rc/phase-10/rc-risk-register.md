@@ -45,3 +45,16 @@ None found（P0 / P1 / data integrity / save-migration / world continuation / du
 | SEC-03 | New trusted project `C:\Users\pc\orca\workspaces\dv3-dito-web\herring`（origin unknown） | Confirm or remove |
 
 Process change already applied: no blind keystrokes to Codex startup screens; read the screen first.
+
+## Post-RC hardening（2026-10-16）
+
+Source: [post-rc-hardening-review](../post-rc/post-rc-hardening-review.md). Product source unchanged; RC verdict still applies.
+
+| ID | Classification | Status |
+|---|---|---|
+| B1 legacy pending retention | CONFIRMED DEFECT（P3, play-journal detail only）+ PRODUCT DECISION REQUIRED | O-01 discards an oversized legacy pending record at the first save even when IndexedDB is healthy and the checkpoint fits（pre-fix archived it）. Fix proposal `post-rc/b1-retention-proposal.patch` not applied: independent review found it lets pending exceed the P2-01 cap until the next `record()`. Owner to choose: approve exception / keep O-01 / new ticket. |
+| B2 archive growth | VERIFIED SAFE IN TESTED SCOPE（≤50 h x1） | Export loads the whole archive: 50 h → 2.3 s, 227 MB blob, 155 MB heap, 1.3 s long task; ~6 MB/h at x1, ~31 MB/h at x20. Eviction, mobile quota, >50 h NOT TESTED. |
+| S-02 defender equipment | PRODUCT DECISION REQUIRED | Dead defender's allocations keep 2 of 16 slots; effect drops 4.2743 → 3.7400; substitute cannot receive gear. Spec does not define equipment lifecycle. |
+| G-05 determinism | VERIFIED SAFE IN TESTED SCOPE | Craft → Crisis → Save → Reload → Succession → Continue replay equal（`postRcDeterminism.test.ts`）. |
+| S-03 performance | VERIFIED SAFE IN TESTED SCOPE（desktop Chrome, incl. 4× CPU emulation） | x20 high-history tick p95 3.7 ms（14.7 ms at 4× CPU）, no frame drops; physical low-end mobile NOT TESTED. |
+| SEC-01..03 | see report §A | ponytail local-only; Orca hook posts payload to localhost only in Orca sessions; `herring` trust is dangling. Owner actions listed. |

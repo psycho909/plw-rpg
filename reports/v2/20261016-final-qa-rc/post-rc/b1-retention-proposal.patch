@@ -1,0 +1,109 @@
+diff --git a/scripts/phase10/rc-o01-browser.mjs b/scripts/phase10/rc-o01-browser.mjs
+index de6e0df..32cf4ce 100644
+--- a/scripts/phase10/rc-o01-browser.mjs
++++ b/scripts/phase10/rc-o01-browser.mjs
+@@ -256,9 +256,6 @@ try {
+     sc.afterLoad = { store: store0, setItemLog: await cdp.eval('window.__o01.setItemLog'), firstSave: first && journalStats(first, J), openingDialog: await cdp.eval('!!document.querySelector(".life-opening")') }
+     check(C, 'A1 legacy checkpoint loads', store0?.writerReady && !store0.saveBlocked, store0, lane)
+     check(C, 'A2 no reset required (no opening/rebuild, same seed)', !sc.afterLoad.openingDialog && first && J.unpackCheckpoint(first).state.worldSeed === fx.worldSeed, { openingDialog: sc.afterLoad.openingDialog }, lane)
+-    check(C, 'A3 pending compacted on first save', first && sc.afterLoad.firstSave.checkpointChars < fx.raw.length / 10 && !sc.afterLoad.firstSave.pendingIds.includes('legacy-large'), sc.afterLoad.firstSave && { chars: sc.afterLoad.firstSave.checkpointChars, ids: sc.afterLoad.firstSave.pendingIds }, lane)
+-    check(C, 'A4 compacted pending within 256 records / 256,000 chars', sc.afterLoad.firstSave?.withinCap, sc.afterLoad.firstSave && { count: sc.afterLoad.firstSave.pendingCount, chars: sc.afterLoad.firstSave.pendingChars }, lane)
+-    check(C, 'A5 summary + gap markers saved for legacy-world', ['summary', 'gap'].every(p => sc.afterLoad.firstSave?.markers.some(m => m.prefix === p && m.worldId === 'legacy-world')), sc.afterLoad.firstSave?.markers, lane)
+     check(C, 'A-state compaction did not alter game state/RNG (first save == fixture)', first && gameJson(first) === gameJson(fx.raw), { equal: first && gameJson(first) === gameJson(fx.raw) }, lane)
+     sc.screenshotLoad = await shot(cdp, 'a-legacy-loaded')
+     // A6 normal action through the keyboard (move), A7 time flows, A8 manual save.
+@@ -273,6 +270,14 @@ try {
+     const manual = await click(cdp, '.save-button')
+     const afterAct = await cdp.eval(STORE), rawAct = await saved(cdp), tAct = J.unpackCheckpoint(rawAct).state.worldTime
+     sc.afterActions = { moves, manualSaveButton: manual, store: afterAct, worldTimeBefore: t0, worldTimeAfter: tAct, positionBefore: pos0, journal: journalStats(rawAct, J), failedWrites: (await cdp.eval('window.__o01.setItemLog')).filter(e => e.threw).length }
++    // Post-RC B1: a legacy checkpoint that still fits the quota is not compacted at the first save,
++    // so a healthy archive receives the legacy record intact; the next record() then bounds pending.
++    const archivedA = await readArchive(cdp)
++    const legacyArchived = archivedA.find(r => r.id === 'legacy-large')
++    sc.archiveAfterActions = { count: archivedA.length, legacyArchivedChars: legacyArchived?.message.length ?? null }
++    check(C, 'A3 legacy record archived intact (healthy IndexedDB, checkpoint fits quota)', legacyArchived && legacyArchived.message.length === J.unpackCheckpoint(fx.raw).journal.pending[0].message.length, sc.archiveAfterActions, lane)
++    check(C, 'A4 pending within 256 records / 256,000 chars after play', sc.afterActions.journal.withinCap, { count: sc.afterActions.journal.pendingCount, chars: sc.afterActions.journal.pendingChars }, lane)
++    check(C, 'A5 oversized legacy record no longer pending after play', !sc.afterActions.journal.pendingIds.includes('legacy-large'), { ids: sc.afterActions.journal.pendingIds.slice(0, 8) }, lane)
+     check(C, 'A6 normal game action succeeds (keyboard move recorded and saved)', moves.some(m => m.saves > 0) && !afterAct.saveError, moves, lane)
+     check(C, 'A7 world time keeps advancing', tAct > t0, { t0, tAct }, lane)
+     check(C, 'A8 save succeeds (manual save, no failed writes)', afterAct.message === '世界已儲存。' && sc.afterActions.failedWrites === 0 && afterAct.saveError === '', { message: afterAct.message, failedWrites: sc.afterActions.failedWrites }, lane)
+diff --git a/src/stores/gameStore.test.ts b/src/stores/gameStore.test.ts
+index 5a2c644..ac08039 100644
+--- a/src/stores/gameStore.test.ts
++++ b/src/stores/gameStore.test.ts
+@@ -336,6 +336,52 @@ describe('safe browser persistence', () => {
+     expect(game.saveError).toBe('')
+     expect(game.speed).toBe(20)
+   })
++  it('archives oversized legacy pending intact when the checkpoint fits quota', async () => {
++    const appended: playJournal.PlayRecord[] = []
++    const appendBatch = vi.fn(async (batch: playJournal.PlayRecord[]) => { appended.push(...structuredClone(batch)) })
++    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
++    const world = createGame(100016); world.life.openingSeen = true
++    // Controlled legacy fixture: older checkpoints accept pending messages above the current cap.
++    const envelope = JSON.parse(serialize(world, 100000))
++    envelope.playJournal = { version: 1, worldId: 'legacy-world', pending: [{ id: 'legacy-large', worldId: 'legacy-world', at: 100000,
++      kind: 'action', from: 480, to: 480, characterId: world.activeCharacterId, message: 'x'.repeat(400_000), events: [] }] }
++    saved = JSON.stringify(envelope)
++    storage.setItem.mockImplementation((_key, value) => {
++      if (value.length > 5_000_000) throw new DOMException('localStorage quota exceeded', 'QuotaExceededError')
++      saved = value
++    })
++    const game = useGameStore()
++    await vi.advanceTimersByTimeAsync(0)
++    expect(appended.map(record => record.id)).toEqual(['legacy-large'])
++    expect(appended).toEqual(envelope.playJournal.pending)
++    expect(game.pendingRecords).toBe(0)
++    expect(game.saveError).toBe('')
++    expect(game.journalError).toBe('')
++    expect(unpackCheckpoint(saved!).state).toEqual(world)
++  })
++  it('does not compact legacy pending when checkpoint storage is disabled', async () => {
++    vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({
++      appendBatch: async () => { throw new Error('archive unavailable') }, readAll: async () => [],
++    })
++    const world = createGame(100016); world.life.openingSeen = true
++    // Controlled legacy fixture: inspect the pending passed to the public checkpoint boundary.
++    const envelope = JSON.parse(serialize(world, 100000))
++    envelope.playJournal = { version: 1, worldId: 'legacy-world', pending: [{ id: 'legacy-large', worldId: 'legacy-world', at: 100000,
++      kind: 'action', from: 480, to: 480, characterId: world.activeCharacterId, message: 'x'.repeat(400_000), events: [] }] }
++    saved = JSON.stringify(envelope)
++    const original = saved, checkpointSpy = vi.spyOn(playJournal, 'packCheckpoint')
++    storage.setItem.mockImplementation(() => { throw new Error('disabled') })
++    const game = useGameStore()
++    await vi.advanceTimersByTimeAsync(0)
++    expect(checkpointSpy.mock.calls.at(-1)![1].pending.map(record => record.id)).toEqual(['legacy-large'])
++    expect(game.pendingRecords).toBe(1)
++    expect(storage.setItem).toHaveBeenCalledTimes(1)
++    expect(saved).toBe(original)
++    expect(game.speed).toBe(0)
++    expect(game.saveError).toBe('存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。')
++    expect(game.message).toBe(game.saveError)
++    expect(game.journalError).not.toContain('較舊逐筆訊息與事件已移除')
++  })
+   it('compacts oversized legacy pending data so reset persists under quota', async () => {
+     const appendBatch = vi.fn(async () => { throw new Error('archive unavailable') })
+     vi.spyOn(playJournal, 'createPlayJournal').mockReturnValueOnce({ appendBatch, readAll: async () => [] })
+diff --git a/src/stores/gameStore.ts b/src/stores/gameStore.ts
+index 591a917..0746977 100644
+--- a/src/stores/gameStore.ts
++++ b/src/stores/gameStore.ts
+@@ -219,8 +219,16 @@ export const useGameStore = defineStore('game', () => {
+     try {
+       const recoveringMessage = !!saveError.value && message.value === saveError.value
+       const now = Date.now()
+-      compactPending()
+-      localStorage.setItem(SAVE_KEY, packCheckpoint(state.value, journal, now)); savedAt.value = now; saveError.value = ''
++      try {
++        localStorage.setItem(SAVE_KEY, packCheckpoint(state.value, journal, now))
++      } catch (error) {
++        if (!(error instanceof DOMException) || !(error.name === 'QuotaExceededError'
++          || error.name === 'NS_ERROR_DOM_QUOTA_REACHED' || error.code === 22 || error.code === 1014)) throw error
++        // Preserve legacy detail for archiving; O-01 compaction is only a quota fallback.
++        compactPending()
++        localStorage.setItem(SAVE_KEY, packCheckpoint(state.value, journal, now))
++      }
++      savedAt.value = now; saveError.value = ''
+       persisted = new Set(journal.pending.map(r => r.id))
+       if (flush) requestJournalFlush(manual)
+       if (manual || recoveringMessage) message.value = '世界已儲存。'; return true

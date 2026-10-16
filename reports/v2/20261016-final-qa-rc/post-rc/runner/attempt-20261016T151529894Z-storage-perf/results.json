@@ -1,0 +1,485 @@
+{
+  "meta": {
+    "startedAt": "2026-10-16T15:15:34.894Z",
+    "head": "6a15a2b2d93da79ff37fad141e79064aebb69880",
+    "srcTree": "b1a1ff204ec4fbcf35035b5e7ecb0bd911346946",
+    "srcClean": false,
+    "distFingerprint": "9ce31ea5793490aa6da23c3ff77ce8590ced7e61bed64437d0807ef687214272",
+    "node": "v22.20.0",
+    "secondsPerRun": 60,
+    "platform": "desktop Windows headless Chrome; CPU throttle lanes are desktop emulation, NOT a physical device",
+    "browser": "Chrome/155.0.8059.82"
+  },
+  "B2": {
+    "1h-x1": {
+      "records": 400,
+      "recordChars": 3700,
+      "approxArchiveChars": 1544000,
+      "seedMs": 869,
+      "estimateBefore": {
+        "usage": 0,
+        "quota": 10737418240,
+        "idb": null
+      },
+      "estimateAfterSeed": {
+        "usage": 3188011,
+        "quota": 10740606251,
+        "idb": 3188011
+      },
+      "exportMs": 51,
+      "exportBlobBytes": 4695853,
+      "heapBefore": {
+        "JSHeapUsedSize": 2590036,
+        "JSHeapTotalSize": 3145728
+      },
+      "heapAfterExport": {
+        "JSHeapUsedSize": 10248400,
+        "JSHeapTotalSize": 14016512
+      },
+      "longTasksMs": [
+        191
+      ],
+      "store": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "worldTime": 481
+      },
+      "pageErrors": []
+    },
+    "10h-x1": {
+      "records": 4000,
+      "recordChars": 3700,
+      "approxArchiveChars": 15440000,
+      "seedMs": 1246,
+      "estimateBefore": {
+        "usage": 0,
+        "quota": 10737418240,
+        "idb": null
+      },
+      "estimateAfterSeed": {
+        "usage": 10461677,
+        "quota": 10747879917,
+        "idb": 10461677
+      },
+      "exportMs": 449.1,
+      "exportBlobBytes": 45548523,
+      "heapBefore": {
+        "JSHeapUsedSize": 2581568,
+        "JSHeapTotalSize": 3145728
+      },
+      "heapAfterExport": {
+        "JSHeapUsedSize": 65486128,
+        "JSHeapTotalSize": 75472896
+      },
+      "longTasksMs": [
+        165,
+        248
+      ],
+      "store": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "worldTime": 482
+      },
+      "pageErrors": []
+    },
+    "50h-x1": {
+      "records": 20000,
+      "recordChars": 3700,
+      "approxArchiveChars": 77200000,
+      "seedMs": 8453,
+      "estimateBefore": {
+        "usage": 0,
+        "quota": 10737418240,
+        "idb": null
+      },
+      "estimateAfterSeed": {
+        "usage": 16543987,
+        "quota": 10753962227,
+        "idb": 16543987
+      },
+      "exportMs": 2329.6,
+      "exportBlobBytes": 227160505,
+      "heapBefore": {
+        "JSHeapUsedSize": 2585896,
+        "JSHeapTotalSize": 3145728
+      },
+      "heapAfterExport": {
+        "JSHeapUsedSize": 154610876,
+        "JSHeapTotalSize": 223404032
+      },
+      "longTasksMs": [
+        171,
+        1294
+      ],
+      "store": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "worldTime": 486
+      },
+      "pageErrors": []
+    }
+  },
+  "E": {
+    "fresh-x1": {
+      "world": "fresh",
+      "speed": 1,
+      "cpuThrottle": 1,
+      "worldMinutesAdvanced": 120,
+      "tickMs": {
+        "n": 600,
+        "p50": 0,
+        "p95": 1.2,
+        "p99": 1.6,
+        "max": 2.3
+      },
+      "setItemMs": {
+        "n": 245,
+        "p50": 0.1,
+        "p95": 0.2,
+        "p99": 0.4,
+        "max": 0.5
+      },
+      "checkpointChars": {
+        "min": 79326,
+        "max": 79529
+      },
+      "savesPerSecond": 4.08,
+      "frameGapMs": {
+        "n": 3592,
+        "p50": 16.7,
+        "p95": 16.8,
+        "p99": 16.8,
+        "max": 154.6
+      },
+      "framesOver50ms": 1,
+      "longTasks": {
+        "count": 1,
+        "maxMs": 151
+      },
+      "heapBefore": {
+        "JSHeapUsedSize": 5369440,
+        "JSHeapTotalSize": 9142272
+      },
+      "heapAfter": {
+        "JSHeapUsedSize": 8108852,
+        "JSHeapTotalSize": 14876672
+      },
+      "storageUsageDelta": 101541,
+      "idbUsage": [
+        3721,
+        105262
+      ],
+      "store": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "worldTime": 601
+      },
+      "reloadContinues": true,
+      "reloadStore": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "worldTime": 604
+      },
+      "pageErrors": []
+    },
+    "fresh-x20": {
+      "world": "fresh",
+      "speed": 20,
+      "cpuThrottle": 1,
+      "worldMinutesAdvanced": 2399,
+      "tickMs": {
+        "n": 600,
+        "p50": 1,
+        "p95": 1.3,
+        "p99": 1.8,
+        "max": 4.7
+      },
+      "setItemMs": {
+        "n": 1205,
+        "p50": 0.1,
+        "p95": 0.2,
+        "p99": 0.4,
+        "max": 0.7
+      },
+      "checkpointChars": {
+        "min": 79326,
+        "max": 82286
+      },
+      "savesPerSecond": 20.08,
+      "frameGapMs": {
+        "n": 3601,
+        "p50": 16.7,
+        "p95": 16.8,
+        "p99": 16.8,
+        "max": 17
+      },
+      "framesOver50ms": 0,
+      "longTasks": {
+        "count": 0,
+        "maxMs": 0
+      },
+      "heapBefore": {
+        "JSHeapUsedSize": 5410592,
+        "JSHeapTotalSize": 9404416
+      },
+      "heapAfter": {
+        "JSHeapUsedSize": 22978560,
+        "JSHeapTotalSize": 42926080
+      },
+      "storageUsageDelta": 517187,
+      "idbUsage": [
+        3721,
+        520908
+      ],
+      "store": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 20,
+        "worldTime": 2880
+      },
+      "reloadContinues": true,
+      "reloadStore": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "worldTime": 2886
+      },
+      "pageErrors": []
+    },
+    "high-history-x1": {
+      "world": "high-history",
+      "speed": 1,
+      "cpuThrottle": 1,
+      "worldMinutesAdvanced": 120,
+      "tickMs": {
+        "n": 600,
+        "p50": 0,
+        "p95": 3.4,
+        "p99": 4,
+        "max": 4.8
+      },
+      "setItemMs": {
+        "n": 245,
+        "p50": 0.7,
+        "p95": 1.2,
+        "p99": 1.3,
+        "max": 1.5
+      },
+      "checkpointChars": {
+        "min": 202297,
+        "max": 202508
+      },
+      "savesPerSecond": 4.08,
+      "frameGapMs": {
+        "n": 3601,
+        "p50": 16.7,
+        "p95": 16.8,
+        "p99": 16.8,
+        "max": 17.3
+      },
+      "framesOver50ms": 0,
+      "longTasks": {
+        "count": 0,
+        "maxMs": 0
+      },
+      "heapBefore": {
+        "JSHeapUsedSize": 7057804,
+        "JSHeapTotalSize": 12206080
+      },
+      "heapAfter": {
+        "JSHeapUsedSize": 7048452,
+        "JSHeapTotalSize": 17047552
+      },
+      "storageUsageDelta": 103913,
+      "idbUsage": [
+        null,
+        103913
+      ],
+      "store": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "worldTime": 1728600
+      },
+      "reloadContinues": true,
+      "reloadStore": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "worldTime": 1728603
+      },
+      "pageErrors": []
+    },
+    "high-history-x20": {
+      "world": "high-history",
+      "speed": 20,
+      "cpuThrottle": 1,
+      "worldMinutesAdvanced": 2399,
+      "tickMs": {
+        "n": 600,
+        "p50": 2.8,
+        "p95": 3.7,
+        "p99": 4.9,
+        "max": 6.5
+      },
+      "setItemMs": {
+        "n": 1204,
+        "p50": 0.5,
+        "p95": 0.9,
+        "p99": 1.3,
+        "max": 2.4
+      },
+      "checkpointChars": {
+        "min": 202292,
+        "max": 202768
+      },
+      "savesPerSecond": 20.07,
+      "frameGapMs": {
+        "n": 3600,
+        "p50": 16.7,
+        "p95": 16.8,
+        "p99": 16.8,
+        "max": 17
+      },
+      "framesOver50ms": 0,
+      "longTasks": {
+        "count": 0,
+        "maxMs": 0
+      },
+      "heapBefore": {
+        "JSHeapUsedSize": 7086076,
+        "JSHeapTotalSize": 12468224
+      },
+      "heapAfter": {
+        "JSHeapUsedSize": 28650448,
+        "JSHeapTotalSize": 63578112
+      },
+      "storageUsageDelta": 519992,
+      "idbUsage": [
+        null,
+        519992
+      ],
+      "store": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 20,
+        "worldTime": 1730879
+      },
+      "reloadContinues": true,
+      "reloadStore": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "worldTime": 1730885
+      },
+      "pageErrors": []
+    },
+    "high-history-x20-cpu4x": {
+      "world": "high-history",
+      "speed": 20,
+      "cpuThrottle": 4,
+      "worldMinutesAdvanced": 2399,
+      "tickMs": {
+        "n": 600,
+        "p50": 10.5,
+        "p95": 14.7,
+        "p99": 18.4,
+        "max": 23.5
+      },
+      "setItemMs": {
+        "n": 1204,
+        "p50": 1.8,
+        "p95": 3.9,
+        "p99": 5.9,
+        "max": 9.5
+      },
+      "checkpointChars": {
+        "min": 202292,
+        "max": 202768
+      },
+      "savesPerSecond": 20.07,
+      "frameGapMs": {
+        "n": 3601,
+        "p50": 16.7,
+        "p95": 16.8,
+        "p99": 16.8,
+        "max": 16.9
+      },
+      "framesOver50ms": 0,
+      "longTasks": {
+        "count": 0,
+        "maxMs": 0
+      },
+      "heapBefore": {
+        "JSHeapUsedSize": 7057220,
+        "JSHeapTotalSize": 12206080
+      },
+      "heapAfter": {
+        "JSHeapUsedSize": 29503612,
+        "JSHeapTotalSize": 64389120
+      },
+      "storageUsageDelta": 519992,
+      "idbUsage": [
+        null,
+        519992
+      ],
+      "store": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 20,
+        "worldTime": 1730879
+      },
+      "reloadContinues": true,
+      "reloadStore": {
+        "writerReady": true,
+        "saveError": "",
+        "journalError": "",
+        "pendingRecords": 0,
+        "speed": 1,
+        "worldTime": 1730886
+      },
+      "pageErrors": []
+    }
+  },
+  "highHistoryFixture": {
+    "seed": 100019,
+    "simulatedGameYears": 10,
+    "checkpointChars": 202297,
+    "events": 150,
+    "sha256": "9474e947797c33f696eaa5097423d20fa5a0b39307e11b4828db4ccb5f631f50"
+  },
+  "runtime": {
+    "chromeProfileBytesBeforeCleanup": 156126782,
+    "chromeProfileRemoved": true
+  },
+  "finishedAt": "2026-10-16T15:21:13.348Z"
+}

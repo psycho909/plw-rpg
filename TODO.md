@@ -18,6 +18,6 @@
 
 ## Blocked
 
-- [ ] Phase10 工程交付完成，外部複審 APPROVED WITH FINDINGS；Engineering RC READY WITH FINDINGS；等待 Owner 決策（Release／Deploy、Human Playtest、Security follow-up SEC-01..03）— Ticket: [20261016-v2x-10-final-qa-rc](tickets/20261016-v2x-10-final-qa-rc.md)
+- [ ] Phase10 工程交付完成，外部複審 APPROVED WITH FINDINGS；Engineering RC READY WITH FINDINGS；Post-RC hardening COMPLETE WITH FINDINGS；等待 Owner 決策（Release／Deploy、Human Playtest、SEC-01..03、B1 保留提案、S-02 裝備規則）— Hardening: [20261016-v2x-post-rc-hardening](tickets/20261016-v2x-post-rc-hardening.md)— Ticket: [20261016-v2x-10-final-qa-rc](tickets/20261016-v2x-10-final-qa-rc.md)
 
 完成條件：每個項目都有唯一正式 Ticket、只出現在一個區段，且沒有已完成工作或執行細節。
