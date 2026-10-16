@@ -1,0 +1,10 @@
+# Final independent review — Phase9 UI/UX Polish (g6-luna-max-deep-reviewer; session g6_luna_max_final_reviewer — did not build or review any Phase9 sub-phase)
+
+Review only; no edits except your review output; no commit. Write `reports/v2/20261015-ui-ux-polish/phase-09/f-review/f-max-final-review.md`; reply with only that path.
+
+- Spec (authoritative): `docs/specs/V2X-PHASE9-UI-UX-POLISH.md` — esp. §0 authorization limits, §3 P9-01..05, §4 visual identity, §8 scope bans (no Threat V0 / Farming V4 / combat-loot / save schema changes, no quests/daily tasks, no combat power rating, no new UI framework), §9 QA, §11 Gates, §12 DoD, §13 reports + Q1–Q7, §14 stop.
+- Tickets: parent `tickets/20261015-v2x-09-ui-ux-polish.md`, children 09a–09f. Base `97dd33c`; delivery HEAD `369df60` (src identical to `c0a377b`).
+- Product source diff: `git diff 97dd33c 369df60 -- src` — verify every change maps to a Phase9 finding and stays within §8 (no engine rule/balance/save change; wolfFamily text-only refactor; gameStore message merge; presentation projections).
+- Reports dir `reports/v2/20261015-ui-ux-polish/phase-09/` — 13 §13 reports incl. `final-review.md`; sub-phase reviews in `b-review/ c-review/ d-review/ e-review/`; runner evidence `a-runner/ b-runner/ c-runner/ d-runner/ e-runner/ f1-runner/`.
+
+Assess: (1) each Gate verdict and DoD item supported by evidence, not inflated; Goal Clarity/Fun not claimed without human data; (2) hints/details are data-backed (spot-check goalHints, boss details) and never quest-like; (3) Engineering blockers: correctness, save/reload/succession, keyboard/modal focus (PixelWindow + modalFocus), responsive layout — any P0/P1; (4) controlled fixtures clearly separated from normal play (Hybrid natural route not reached — is that honestly reported?); (5) source/build correlation and raw-evidence retention (gz + sha, chrome-profile cleanup, failed attempts kept); (6) Phase8 decisions untouched (D-F1 KEEP V0 presentation only; merchant stock NOT MODELED not claimed). Spot-check numbers against raw. Severity P0–P3, explicit disposition (Owner-ready or not).
