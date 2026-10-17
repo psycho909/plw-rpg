@@ -1,0 +1,105 @@
+{
+  "url": "https://plw-rpg.vercel.app/",
+  "startedAt": "2026-10-17T01:39:18.481Z",
+  "checks": [
+    {
+      "id": "L1 app boots (game shell, fresh storage)",
+      "pass": true,
+      "detail": {
+        "assets": [
+          "https://plw-rpg.vercel.app/assets/index-CXJSZMya.js",
+          "https://plw-rpg.vercel.app/assets/index-C6FjWgbh.css"
+        ]
+      }
+    },
+    {
+      "id": "L2 new world starts and time advances",
+      "pass": true,
+      "detail": {
+        "t0": 480,
+        "t1": 488
+      }
+    },
+    {
+      "id": "L3 keyboard movement works",
+      "pass": true,
+      "detail": [
+        "已到達。",
+        "已到達。",
+        "已到達。",
+        "已到達。"
+      ]
+    },
+    {
+      "id": "L4 inventory window opens (I) and closes (Esc)",
+      "pass": true,
+      "detail": "┤ 物品 ├\n× Esc\n\n隨身物品\n🪙 45 金幣\n\n日常物品\n獵獲裝備\n素材與收成\n見聞收藏\n🪵 木材\n×0\n🪨 石材\n×0\n⛏️ 鐵礦\n×0\n🌾 "
+    },
+    {
+      "id": "L5 manual save writes saveVersion 8",
+      "pass": true,
+      "detail": {
+        "saveVersion": 8,
+        "msg": "世界已儲存。"
+      }
+    },
+    {
+      "id": "L6 reload keeps the same world and keeps advancing",
+      "pass": true,
+      "detail": {
+        "seed": [
+          909,
+          909
+        ],
+        "time": [
+          514,
+          519
+        ]
+      }
+    },
+    {
+      "id": "L7 IndexedDB play journal has records",
+      "pass": true,
+      "detail": {
+        "archived": 24,
+        "journalError": ""
+      }
+    },
+    {
+      "id": "L8 mobile 375x667: no horizontal overflow, mobile nav visible",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "nav": true
+      }
+    },
+    {
+      "id": "L9 no page/console errors",
+      "pass": false,
+      "detail": {
+        "errs": [
+          "Failed to load resource: the server responded with a status of 404 ()"
+        ],
+        "failedRequests": []
+      }
+    }
+  ],
+  "browser": "Chrome/155.0.8059.82",
+  "assets": [
+    "https://plw-rpg.vercel.app/assets/index-CXJSZMya.js",
+    "https://plw-rpg.vercel.app/assets/index-C6FjWgbh.css"
+  ],
+  "pageErrors": [
+    "Failed to load resource: the server responded with a status of 404 ()"
+  ],
+  "failedRequests": [],
+  "summary": {
+    "checks": 9,
+    "passed": 8,
+    "failed": [
+      "L9 no page/console errors"
+    ],
+    "failure": null
+  }
+}

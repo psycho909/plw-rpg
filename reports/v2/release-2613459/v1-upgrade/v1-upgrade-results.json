@@ -1,0 +1,111 @@
+{
+  "startedAt": "2026-10-16T16:56:52.428Z",
+  "origin": "http://127.0.0.1:1063/",
+  "oldDist": "e0a737a08b45ffaa0518b5d448717c8dcd262a0c27fe4470e4dc169ecfb8e742",
+  "newDist": "38765fa2d1feb72fec00b85233135270678c76b0f92f2c3cfb6d1a26027b294c",
+  "checks": [
+    {
+      "id": "U1 production V1 build created a V1 save",
+      "pass": true,
+      "detail": {
+        "saveVersion": 1,
+        "worldSeed": 909,
+        "worldTime": 515,
+        "chars": 72351,
+        "sha256": "8f999f471d5195c931a1f4fc08102b40b460279366709b82e1d2f2e39fb7f137"
+      }
+    },
+    {
+      "id": "U2 release build loads the V1 save in place and writes saveVersion 8",
+      "pass": true,
+      "detail": {
+        "saveVersion": 8,
+        "worldSeed": 909,
+        "worldTime": 523,
+        "journalPending": [],
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "",
+          "worldTime": 523,
+          "openingSeen": true
+        }
+      }
+    },
+    {
+      "id": "U3 same world after upgrade (seed kept, time not rolled back)",
+      "pass": true,
+      "detail": {
+        "v1": [
+          909,
+          515
+        ],
+        "v8": [
+          909,
+          523
+        ]
+      }
+    },
+    {
+      "id": "U4 journal starts with an imported record",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "id": "U5 upgraded world saves, reloads and keeps advancing",
+      "pass": true,
+      "detail": {
+        "before": 533,
+        "after": 537,
+        "store": {
+          "writerReady": true,
+          "saveError": "",
+          "journalError": "",
+          "worldTime": 537,
+          "openingSeen": true
+        }
+      }
+    },
+    {
+      "id": "U6 IndexedDB journal receives records after upgrade",
+      "pass": true,
+      "detail": {
+        "archived": 14
+      }
+    },
+    {
+      "id": "U7 no page/console errors on the release build",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "browser": "Chrome/155.0.8059.82",
+  "v1": {
+    "saveVersion": 1,
+    "worldSeed": 909,
+    "worldTime": 515,
+    "chars": 72351,
+    "sha256": "8f999f471d5195c931a1f4fc08102b40b460279366709b82e1d2f2e39fb7f137"
+  },
+  "upgraded": {
+    "saveVersion": 8,
+    "worldSeed": 909,
+    "worldTime": 523,
+    "journalPending": [],
+    "store": {
+      "writerReady": true,
+      "saveError": "",
+      "journalError": "",
+      "worldTime": 523,
+      "openingSeen": true
+    }
+  },
+  "v1PageErrors": [],
+  "releasePageErrors": [],
+  "summary": {
+    "checks": 7,
+    "passed": 7,
+    "failed": [],
+    "failure": null
+  }
+}
