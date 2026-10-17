@@ -8,6 +8,8 @@ import { chooseSuccessor, movePlayer, walkTo } from './engine/simulation'
 import { jobIcons, regionIcons } from './presentation/icons'
 import { directionFor, interactions, type Interaction, type PlaceId } from './presentation/worldUI'
 import { useGameStore } from './stores/gameStore'
+import { useCloudStore } from './stores/cloudStore'
+import CloudSaveWindow from './components/CloudSaveWindow.vue'
 import AdventureWindow from './components/AdventureWindow.vue'
 import CharacterSheet from './components/CharacterSheet.vue'
 import InventoryWindow from './components/InventoryWindow.vue'
@@ -22,8 +24,9 @@ import StatusNotice from './components/StatusNotice.vue'
 import WorldMap from './components/WorldMap.vue'
 import WorldRecords from './components/WorldRecords.vue'
 
-type WindowId = 'menu' | 'character' | 'inventory' | 'log' | 'history' | 'world' | 'notes' | 'interact' | 'place' | 'npc' | 'battle' | 'dungeon' | 'reset' | 'successor' | 'opening' | 'identity' | 'property' | 'news'
+type WindowId = 'menu' | 'character' | 'inventory' | 'log' | 'history' | 'world' | 'notes' | 'interact' | 'place' | 'npc' | 'battle' | 'dungeon' | 'reset' | 'successor' | 'opening' | 'identity' | 'property' | 'news' | 'cloud'
 const game = useGameStore()
+useCloudStore()
 const pane = ref<WindowId | null>(!game.state.life.openingSeen && !game.saveBlocked ? 'opening' : null)
 const place = ref<PlaceId>('house')
 const selectedNpc = ref('')
@@ -33,9 +36,9 @@ const c = computed(() => game.character)
 const time = computed(() => calendar(game.state.worldTime))
 const nearby = computed(() => interactions(game.state))
 const prompt = computed(() => !c.value.isAlive ? '接續旅程' : game.state.combat ? '返回戰鬥' : game.state.dungeon.inDungeon ? '繼續探索礦坑' : `${nearby.value[0]?.icon ?? ''} ${nearby.value[0]?.label ?? REGIONS[c.value.currentRegion].name}`)
-const titles: Record<WindowId, string> = { menu: '選單', character: '角色', inventory: '物品', log: '世界日誌', history: '世界歷史', world: '地圖與世界', notes: '旅人筆記', interact: '附近的生活', place: '互動', npc: '居民近況', battle: '戰鬥', dungeon: '廢棄礦坑', reset: '重建世界', successor: '這一生結束，世界繼續', opening: '在陌生的天空下', identity: '這一生', property: '住所與產業', news: '地方消息與委託' }
+const titles: Record<WindowId, string> = { menu: '選單', character: '角色', inventory: '物品', log: '世界日誌', history: '世界歷史', world: '地圖與世界', notes: '旅人筆記', interact: '附近的生活', place: '互動', npc: '居民近況', battle: '戰鬥', dungeon: '廢棄礦坑', reset: '重建世界', successor: '這一生結束，世界繼續', opening: '在陌生的天空下', identity: '這一生', property: '住所與產業', news: '地方消息與委託', cloud: '雲端存檔' }
 const title = computed(() => pane.value === 'place' ? Object.hasOwn(BUILDINGS, place.value) ? BUILDINGS[place.value as keyof typeof BUILDINGS].name : REGIONS[place.value as keyof typeof REGIONS].name : pane.value ? titles[pane.value] : '世界')
-const menus: { id: WindowId; label: string; key?: string }[] = [{ id: 'identity', label: '這一生' }, { id: 'property', label: '住所與產業' }, { id: 'news', label: '地方消息與委託' }, { id: 'character', label: '角色', key: 'C' }, { id: 'inventory', label: '物品', key: 'I' }, { id: 'log', label: '日誌', key: 'L' }, { id: 'world', label: '地圖與世界', key: 'M' }, { id: 'history', label: '世界歷史' }, { id: 'notes', label: '旅人筆記' }]
+const menus: { id: WindowId; label: string; key?: string }[] = [{ id: 'cloud', label: '雲端存檔' }, { id: 'identity', label: '這一生' }, { id: 'property', label: '住所與產業' }, { id: 'news', label: '地方消息與委託' }, { id: 'character', label: '角色', key: 'C' }, { id: 'inventory', label: '物品', key: 'I' }, { id: 'log', label: '日誌', key: 'L' }, { id: 'world', label: '地圖與世界', key: 'M' }, { id: 'history', label: '世界歷史' }, { id: 'notes', label: '旅人筆記' }]
 const records = computed(() => pane.value === 'world' || pane.value === 'log' || pane.value === 'history' || pane.value === 'notes' ? pane.value : null)
 const successors = computed(() => game.state.npcs.filter(n => n.isAlive && n.age >= 15)
   .map(npc => ({ id: npc.id, name: npc.name, age: npc.age, job: npc.job, level: npc.level })))
@@ -144,6 +147,7 @@ onUnmounted(() => {
       <div v-if="pane === 'menu'" class="pixel-menu"><p class="muted">世界正在你的身後繼續生活。</p><button v-for="menu in menus" :key="menu.id" :aria-label="menu.label" @click="openWindow(menu.id)"><span>{{ menu.label }}</span><kbd v-if="menu.key">{{ menu.key }}</kbd></button><button @click="game.save(true)">儲存世界 <small>{{ game.savedAt ? '已存於此瀏覽器 · 操作後立即保存' : '每次操作自動存檔' }}</small></button><button @click="game.exportJournal()">匯出遊玩紀錄 <small>{{ game.pendingRecords ? `待補寫 ${game.pendingRecords} 筆` : '紀錄只能追加' }}</small></button><button class="danger reset-trigger" @click="openWindow('reset')">重建世界</button></div>
       <section v-else-if="pane === 'opening'" class="life-opening"><p>你醒了過來。</p><p>陌生的天空，陌生的土地。</p><p>你記得另一個地方、另一段人生。但那已經結束了。</p><p>遠方似乎有炊煙。你得先想辦法活下去。</p><button class="primary" data-autofocus :disabled="!game.writerReady" @click="beginLife">起身</button></section>
       <IdentityWindow v-else-if="pane === 'identity'" />
+      <CloudSaveWindow v-else-if="pane === 'cloud'" />
       <PropertyWindow v-else-if="pane === 'property'" @travel="go" />
       <LifeNewsWindow v-else-if="pane === 'news'" @travel="go" />
       <CharacterSheet v-else-if="pane === 'character'" />

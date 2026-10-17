@@ -44,6 +44,23 @@ function versionOneFixture(lastSavedAt = 1000) {
   return JSON.stringify(raw)
 }
 
+describe('adoptCheckpoint storage failure', () => {
+  it('restores writer readiness and speed, preserves the checkpoint and reports quota failure without reload', () => {
+    vi.stubGlobal('location', { reload: vi.fn() })
+    const game = startedGame()
+    game.speed = 5
+    const before = saved, savedAt = game.savedAt
+    const next = playJournal.packCheckpoint(createGame(99), playJournal.emptyJournal(), 2000)
+    storage.setItem.mockImplementation(() => { throw new Error('quota') })
+    expect(() => game.adoptCheckpoint(next)).toThrow('quota')
+    expect(saved).toBe(before); expect(game.savedAt).toBe(savedAt)
+    expect(game.writerReady).toBe(true); expect(game.speed).toBe(5)
+    expect(game.saveError).toBe('存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。')
+    expect(game.message).toBe(game.saveError)
+    expect(location.reload).not.toHaveBeenCalled()
+  })
+})
+
 describe('legacy archive transfer before first checkpoint', () => {
   function legacy(messageSize = 300_000, count = 1) {
     const world = createGame(100016); world.life.openingSeen = true

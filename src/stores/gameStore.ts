@@ -230,6 +230,19 @@ export const useGameStore = defineStore('game', () => {
       return false
     }
   }
+  function adoptCheckpoint(raw: string) {
+    if (!writerReady.value) throw new Error('只有持有存檔寫入權的分頁可以載入雲端存檔。')
+    unpackCheckpoint(raw)
+    const previousSpeed = speed.value
+    writerReady.value = false; speed.value = 0
+    try { localStorage.setItem(SAVE_KEY, raw) }
+    catch (error) {
+      writerReady.value = true; speed.value = previousSpeed
+      saveError.value = '存檔失敗：瀏覽器儲存空間不足或被停用，時間已暫停，請保留此頁。'; message.value = saveError.value
+      throw error
+    }
+    location.reload()
+  }
   function reset() {
     if (!writerReady.value) return
     const before = state.value.worldTime, pending = journal.pending
@@ -339,5 +352,5 @@ export const useGameStore = defineStore('game', () => {
     if (retryTimer) clearTimeout(retryTimer)
     retryTimer = null; releaseWriter()
   })
-  return { state, speed, setSpeed, startLife, message, savedAt, saveBlocked, saveError, writerReady, writerPending, offline, character, save, reset, advance, act, journalError, pendingRecords, exportJournal }
+  return { state, speed, setSpeed, startLife, message, savedAt, saveBlocked, saveError, writerReady, writerPending, offline, character, save, reset, adoptCheckpoint, advance, act, journalError, pendingRecords, exportJournal }
 })
