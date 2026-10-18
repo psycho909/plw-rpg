@@ -4,9 +4,17 @@
 
 ## [Unreleased]
 
+## [Cloud Save] - 2026-10-18
+
+正式部署至 https://plw-rpg.vercel.app（`main`@`8ac65bc`，Vercel `dpl_6JNbFcUxQjEcWrqvMZo6phaXakHC`）。
+
 ### Added
 
-- 雲端存檔（2026-10-18 正式上線）：可用 GitHub 登入，把本機世界上傳到雲端、在其他裝置載入；本機存檔成功後會定期自動同步。雲端版本與本機不同時會提示選擇，載入雲端前一定先下載本機備份並確認；離線或登入過期時，本機遊玩不受影響。
+- 雲端存檔：可用 GitHub 登入，把本機世界上傳到雲端、在其他裝置載入；本機存檔成功後會定期自動同步。雲端版本與本機不同時會提示選擇，載入雲端前一定先下載本機備份並確認；離線或登入過期時，本機遊玩不受影響。
+
+## [V2.x] - 2026-10-17
+
+正式部署至 https://plw-rpg.vercel.app（`main`@`2613459`，Vercel `dpl_6NLDHhNicSsk5BJWQQVL7Cekazh9`）。既有 V1 存檔會在載入時原地升級為 V2.x 格式；升級後的存檔無法再由 V1 讀取。
 
 ### Changed
 
