@@ -36,7 +36,7 @@ class Cdp {
 }
 async function page(p) {
   const list = await (await fetch(`http://127.0.0.1:${p}/json/list`)).json()
-  const target = list.find(t => t.type === 'page' && t.url.startsWith('http://127.0.0.1:5173'))
+  const target = list.find(t => t.type === 'page' && t.url.startsWith(process.env.APP_ORIGIN ?? 'http://127.0.0.1:5173'))
   if (!target) throw new Error('no app page in that window')
   const cdp = await new Cdp(target.webSocketDebuggerUrl).open()
   for (const d of ['Page', 'Runtime', 'Network']) await cdp.call(`${d}.enable`)
